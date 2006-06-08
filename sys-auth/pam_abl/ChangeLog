@@ -1,0 +1,8 @@
+# ChangeLog for sys-auth/pam_abl
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jun 2006; Jakub Moc <jakub@gentoo.org> +pam_abl-0.2.3.ebuild:
+  New ebuild, based on ebuild submitted by iryoku (iryoku at terra dot es),
+  Bug 95248
+
