@@ -1,0 +1,84 @@
+--- gentoolkit-dev-0.2.6.1/src/echangelog/echangelog	2006-06-08 12:12:34.000000000 +0200
++++ gentoolkit-dev-0.2.6.1/src/echangelog/echangelog	2006-06-08 12:23:21.000000000 +0200
+@@ -47,7 +47,12 @@
+ }
+ 
+ # Figure out what has changed around here
++if (-e "CVS/Entries") {
+ open C, 'cvs -fn up 2>&1 |' or die "Can't run cvs -fn up: $!\n";
++} elsif (-e ".svn/entries") {
++open C, 'svn st 2>&1 |' or die "Can't run svn st: $!\n";
++}
++
+ while (<C>) {
+     if (/^C (\S+)/) {
+         push @conflicts, $1; 
+@@ -56,7 +61,7 @@
+         push @unknown, $1;
+         $actions{$1} = '+';
+         next;
+-    } elsif (/^([ARM]) (\S+)/) {
++    } elsif (/^([ARM]) *(\S+)/) {
+         push @files, $2;
+         ($actions{$2} = $1) =~ tr/ARM/+-/d;
+     }
+@@ -84,7 +89,7 @@
+ # out above)
+ if (@unknown) {
+     print STDERR <<EOT;
+-Cvs reports the following unknown files.  Please use "cvs add" before
++Cvs reports the following unknown files.  Please use "cvs/svn add" before
+ running echangelog, or remove the files in question.
+ EOT
+     print STDERR map "? $_\n", @unknown;
+@@ -180,10 +185,15 @@
+ @ebuilds = grep /\.ebuild$/, @files;
+ @files = grep !/\.ebuild$/, @files;
+ if (@ebuilds) {
++    if (-e "CVS/Entries") {
+     open C, "cvs -f diff -U0 @ebuilds 2>&1 |" or die "Can't run cvs diff: $!\n";
++    } elsif (-e ".svn/entries") {
++    open C, 'svn --force diff @ebuilds 2>&1 |' or die "Can't run svn diff: $!\n";
++    }
++
+     $_ = <C>;
+     while (defined $_) {
+-        if (/^cvs diff: (([^\/]*?)\.ebuild) was removed/) { 
++        if (/^cvs\/svn diff: (([^\/]*?)\.ebuild) was removed/) { 
+             push @files, $1;
+         }
+         elsif (/^Index: (([^\/]*?)\.ebuild)\s*$/) { 
+@@ -207,11 +217,11 @@
+             # and we have the next line in $_ for processing
+             next;
+         }
+-        elsif (/^cvs.*?: (([^\/]*?)\.ebuild) is a new entry/) { 
++        elsif (/^cvs\/svn.*?: (([^\/]*?)\.ebuild) is a new entry/) { 
+             push @files, $1;
+             push @new_versions, $2;  # new ebuild, will create a new entry
+         }
+-        # other cvs output is ignored
++        # other cvs/svn output is ignored
+         $_ = <C>;
+     }
+ }
+@@ -230,7 +240,7 @@
+     print STDERR "**\n";
+     print STDERR "** NOTE: No non-trivial changed files found.  Normally echangelog\n";
+     print STDERR "** should be run after all affected files have been added and/or\n";
+-    print STDERR "** modified.  Did you forget to cvs add?\n";
++    print STDERR "** modified.  Did you forget to cvs/svn add?\n";
+     print STDERR "**\n";
+     @files = sort sortfunc @trivial;
+     @files = qw/ChangeLog/ unless @files;  # last resort to put something in the list
+@@ -362,7 +372,9 @@
+ # The text will be added just like with any other ChangeLog below.  
+ # Add the new ChangeLog to cvs before continuing.
+ if (open F, "CVS/Entries") {
+-    system("cvs -f add ChangeLog") unless (scalar grep /^\/ChangeLog\//, <F>);
++    system("cvs -f add ChangeLcg") unless (scalar grep /^\/ChangeLog\//, <F>);
++} elsif (open F, ".svn/entries") {
++    system("svn --force add ChangeLog") unless (scalar grep /^\/ChangeLog\//, <F>);
+ }
+ 
+ # vim:sw=4 ts=8 expandtab
