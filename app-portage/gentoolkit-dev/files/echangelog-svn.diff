@@ -27,7 +27,7 @@
  if (@unknown) {
      print STDERR <<EOT;
 -Cvs reports the following unknown files.  Please use "cvs add" before
-+Cvs reports the following unknown files.  Please use "cvs/svn add" before
++CVS/SVN reports the following unknown files.  Please use "cvs/svn add" before
  running echangelog, or remove the files in question.
  EOT
      print STDERR map "? $_\n", @unknown;
@@ -76,7 +76,7 @@
  # Add the new ChangeLog to cvs before continuing.
  if (open F, "CVS/Entries") {
 -    system("cvs -f add ChangeLog") unless (scalar grep /^\/ChangeLog\//, <F>);
-+    system("cvs -f add ChangeLcg") unless (scalar grep /^\/ChangeLog\//, <F>);
++    system("cvs -f add ChangeLog") unless (scalar grep /^\/ChangeLog\//, <F>);
 +} elsif (open F, ".svn/entries") {
 +    system("svn --force add ChangeLog") unless (scalar grep /^\/ChangeLog\//, <F>);
  }
