@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jun 2006; Jakub Moc <jakub@gentoo.org> +pam_pgsql-1.0.0.ebuild:
+  Version bump, changed HOMEPAGE and SRC_URI
+
   08 Jun 2006; Jakub Moc <jakub@gentoo.org> +pam_pgsql-0.6.3.ebuild:
   New ebuild, based on ebuild submitted by steveb (steeeeeveee at gmx.net) in
   Bug 34517

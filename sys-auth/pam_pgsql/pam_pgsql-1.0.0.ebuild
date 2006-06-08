@@ -5,8 +5,8 @@
 inherit pam
 
 DESCRIPTION="pam_pgsql is a module for pam to authenticate users with PostgreSQL"
-HOMEPAGE="http://sourceforge.net/projects/pam-pgsql/"
-SRC_URI="mirror://sourceforge/${PN/_/-}/lib${PN/_/-}-${PV}.tar.bz2"
+HOMEPAGE="http://pgfoundry.org/frs/?group_id=1000039"
+SRC_URI="mirror://postgresql/projects/pgFoundry/sysauth/${PN/_/-}-${PV}.tgz"
 RESTRICT="mirror"
 
 DEPEND=">=sys-libs/pam-0.78-r3
@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
-S="${WORKDIR}/${PN/_/-}-${PV}"
+S="${WORKDIR}/${PN/_/-}"
 
 src_unpack() {
 	unpack ${A} || die "unpack failed"
