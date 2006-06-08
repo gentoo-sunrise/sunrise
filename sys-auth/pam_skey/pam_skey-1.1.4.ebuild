@@ -4,7 +4,6 @@
 
 inherit eutils pam
 
-qevcqejfnv
 DESCRIPTION="pam interface to existing S/Key library/interface"
 HOMEPAGE="http://freshmeat.net/projects/pam_skey/"
 SRC_URI="http://kreator.esa.fer.hr/projects/tarballs/${P}.tar.gz"
