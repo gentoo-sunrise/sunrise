@@ -1,0 +1,11 @@
+--- xmoto-0.1.14/Makefile.am.orig	2006-05-22 17:29:02.000000000 +0200
++++ xmoto-0.1.14/Makefile.am	2006-05-22 17:28:10.000000000 +0200
+@@ -34,7 +34,7 @@
+ 	src/EditorData.cpp src/EditorLog.cpp src/Editor.h src/EditorData.h \
+ 	src/EditorLog.h src/Packager.cpp src/Packager.h
+ 
+-xmoto_edit_LDADD = $(common_LDADD)
++xmoto_edit_LDADD = $(common_LDADD) $(SDL_LIBS)
+ 
+ xmoto_SOURCES = $(common_SOURCES) src/BSP.cpp src/Game.cpp src/GameMain.cpp \
+ 	src/GameMenus.cpp src/GUIBestTimes.cpp src/GUIButton.cpp src/GUI.cpp \
