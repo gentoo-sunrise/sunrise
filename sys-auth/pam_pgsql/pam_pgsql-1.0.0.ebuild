@@ -36,5 +36,5 @@ src_install() {
 
 pkg_postinst() {
 	einfo "From version 0.6 you can also use new style configuration (overrides"
-	einfo "legacy values). See /usr/share/doc/${PVR}/README for more info."
+	einfo "legacy values). See /usr/share/doc/${P}/README for more info."
 }
