@@ -2,12 +2,12 @@
 
 
 auth       required	pam_env.so
-auth       optional     /@get_libdir/security/pam_mount.so service=system-auth
+auth       optional     pam_mount.so service=system-auth
 auth       sufficient	pam_unix.so likeauth nullok use_first_pass
 auth       required	pam_deny.so
 
 # Added for pam_mount support
-auth       required     /@get_libdir/security/pam_stack.so service=system-auth 
+auth       required     pam_stack.so service=system-auth 
 auth       required	pam_tally.so file=/var/log/faillog onerr=succeed no_magic_root
 auth       required	pam_shells.so
 auth       required	pam_nologin.so
@@ -20,4 +20,4 @@ password   required	pam_deny.so
 
 session    required	pam_limits.so
 session    required	pam_unix.so
-session    optional     /@get_libdir/security/pam_mount.so use_first_pass service=system-auth
+session    optional     pam_mount.so use_first_pass service=system-auth

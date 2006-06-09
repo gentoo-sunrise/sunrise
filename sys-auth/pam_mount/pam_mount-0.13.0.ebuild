@@ -29,10 +29,6 @@ src_unpack() {
 	# locations, in srcipts/(u)mount.crypt and adds gentoo specific
 	# comments to pam_mount.conf
 	epatch ${FILESDIR}/pam_mount-gentoo-paths-and-examples.patch || die "patch failed"
-
-	# libdir magic
-	cp ${FILESDIR}/system-auth system-auth
-	sed -ie "s:@get_libdir:$(get_libdir):" ${S}/system-auth || die "sed failed"
 }
 
 src_compile() {
@@ -52,7 +48,7 @@ src_install() {
 	insinto /etc/security
 	insopts -m0644
 	doins ${S}/config/pam_mount.conf
-	dopamd ${S}/system-auth
+	dopamd ${FILESDIR}/system-auth
 
 	dodir /sbin
 	dosym /usr/bin/mount.crypt /sbin/mount.crypt
