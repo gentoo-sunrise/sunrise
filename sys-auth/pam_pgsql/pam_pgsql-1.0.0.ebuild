@@ -18,10 +18,6 @@ KEYWORDS="~x86 ~amd64"
 
 S="${WORKDIR}/${PN/_/-}"
 
-src_unpack() {
-	unpack ${A} || die "unpack failed"
-}
-
 src_compile() {
 	econf || die "econf failed"
 	emake CFLAGS="${CFLAGS}" || die "emake failed"
