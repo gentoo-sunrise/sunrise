@@ -14,7 +14,7 @@ SRC_URI="ftp://ftp.uk.linux.org/pub/linux/Networking/netkit/linux-${P}.tar.gz
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="alpha amd64 ~ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 
 DEPEND="ssl? ( dev-libs/openssl )"
 
