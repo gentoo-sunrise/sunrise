@@ -1,0 +1,7 @@
+# ChangeLog for app-misc/mc-mp
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Jun 2006; Jakub Moc <jakub@gentoo.org> +mc-mp-4.1.40_pre9.ebuild:
+  New ebuild, based on work of Dmitry S. Kulyabov. Bug 35032.
+
