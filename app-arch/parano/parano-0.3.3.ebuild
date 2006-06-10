@@ -7,18 +7,17 @@ inherit gnome2
 DESCRIPTION="GNOME program to create, edit and verify hashfiles"
 HOMEPAGE="http://parano.berlios.de"
 SRC_URI="http://download.berlios.de/parano/${P}.tar.gz
-		http://download2.berlios.de/parano/${P}.tar.gz"
+	http://download2.berlios.de/parano/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="doc"
 
 RDEPEND=">=dev-python/pygtk-2.0
-		dev-python/gnome-python"
-DEPEND="${RDPENED}"
+	dev-python/gnome-python"
+DEPEND="${RDEPEND}"
 
-RESTRICT=""
 
 src_unpack() {
 	unpack ${A}
