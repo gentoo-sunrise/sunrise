@@ -1,0 +1,7 @@
+# ChangeLog for app-antivirus/kav4fileservers
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Jun 2006; Jakub Moc <jakub@gentoo.org> +kav4fileservers-5.5.3.ebuild:
+  New ebuild, Bug 62588.
+
