@@ -1,0 +1,7 @@
+# ChangeLog for media-gfx/mirage
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Jun 2006; David Shakaryan <d@ompty.org> +mirage-0.6.ebuild:
+  new ebuild for bug 131291
+
