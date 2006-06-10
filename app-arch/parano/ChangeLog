@@ -1,0 +1,7 @@
+# ChangeLog for app-arch/parano
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Jun 2006; Piotr Jaroszynski <peper@aster.pl> ChangeLog:
+  New ebuild. Requested in bug #124290
+

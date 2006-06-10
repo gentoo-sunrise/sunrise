@@ -1,0 +1,64 @@
+Only in parano-0.3.3: autom4te.cache
+diff -ur parano-0.3.3-orig/mime/Makefile.am parano-0.3.3/mime/Makefile.am
+--- parano-0.3.3-orig/mime/Makefile.am	2006-06-10 23:04:54.000000000 +0200
++++ parano-0.3.3/mime/Makefile.am	2006-06-10 23:05:55.000000000 +0200
+@@ -12,9 +12,3 @@
+ 	$(app_DATA) \
+ 	$(mime_DATA) \
+ 	$(mimexml_DATA)
+-
+-install-data-local: install-mimexmlDATA
+-	update-mime-database $(datadir)/mime
+-
+-uninstall-local:
+-	update-mime-database $(datadir)/mime
+diff -ur parano-0.3.3-orig/mime/Makefile.in parano-0.3.3/mime/Makefile.in
+--- parano-0.3.3-orig/mime/Makefile.in	2006-06-10 23:04:54.000000000 +0200
++++ parano-0.3.3/mime/Makefile.in	2006-06-10 23:06:07.000000000 +0200
+@@ -357,8 +357,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-appDATA install-data-local install-mimeDATA \
+-	install-mimexmlDATA
++install-data-am: install-appDATA install-mimeDATA install-mimexmlDATA
+ 
+ install-exec-am:
+ 
+@@ -384,27 +383,20 @@
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-appDATA uninstall-info-am uninstall-local \
+-	uninstall-mimeDATA uninstall-mimexmlDATA
++uninstall-am: uninstall-appDATA uninstall-info-am uninstall-mimeDATA \
++	uninstall-mimexmlDATA
+ 
+ .PHONY: all all-am check check-am clean clean-generic distclean \
+ 	distclean-generic distdir dvi dvi-am html html-am info info-am \
+ 	install install-am install-appDATA install-data \
+-	install-data-am install-data-local install-exec \
+-	install-exec-am install-info install-info-am install-man \
+-	install-mimeDATA install-mimexmlDATA install-strip \
+-	installcheck installcheck-am installdirs maintainer-clean \
+-	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
+-	pdf-am ps ps-am uninstall uninstall-am uninstall-appDATA \
+-	uninstall-info-am uninstall-local uninstall-mimeDATA \
+-	uninstall-mimexmlDATA
+-
+-
+-install-data-local: install-mimexmlDATA
+-	update-mime-database $(datadir)/mime
++	install-data-am install-exec install-exec-am install-info \
++	install-info-am install-man install-mimeDATA \
++	install-mimexmlDATA install-strip installcheck installcheck-am \
++	installdirs maintainer-clean maintainer-clean-generic \
++	mostlyclean mostlyclean-generic pdf pdf-am ps ps-am uninstall \
++	uninstall-am uninstall-appDATA uninstall-info-am \
++	uninstall-mimeDATA uninstall-mimexmlDATA
+ 
+-uninstall-local:
+-	update-mime-database $(datadir)/mime
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
