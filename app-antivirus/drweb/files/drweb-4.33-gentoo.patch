@@ -86,7 +86,7 @@
 +   compress
 +    postrotate
 +        /etc/init.d/syslog-ng reload > /dev/null 2>&1 || true
-+        /etc/init.d/drwebd restart > /dev/null 2>&1 || true
++        /etc/init.d/drweb restart > /dev/null 2>&1 || true
 +    endscript
 +}
 
