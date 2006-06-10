@@ -18,7 +18,7 @@ RDEPEND=">=dev-python/pygtk-2.0
 		dev-python/gnome-python"
 DEPEND="${RDPENED}"
 
-RESTRICT="nomirror"
+RESTRICT=""
 
 src_unpack() {
 	unpack ${A}
@@ -29,6 +29,6 @@ src_unpack() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}"
+	emake install DESTDIR="${D}" || die "emake install failed"
 	dodoc AUTHORS ChangeLog README NEWS TODO
 }
