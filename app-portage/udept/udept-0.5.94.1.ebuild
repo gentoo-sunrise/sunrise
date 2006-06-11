@@ -11,8 +11,7 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
-RDEPEND="sys-apps/portage
-	app-shells/bash"
+RDEPEND="sys-apps/portage"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
