@@ -1,0 +1,3 @@
+app-dicts/ktranslator:festival - Enable festival support
+app-dicts/ktranslator:lowmem - Disable optimizations for searches
+app-dicts/ktranslator:ocr - Enable GOCR support
