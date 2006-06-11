@@ -4,33 +4,34 @@
 
 inherit eutils ssl-cert
 
-IUSE="ssl"
 
-S=${WORKDIR}/linux-${P}
 DESCRIPTION="The netkit FTP server with optional SSL support"
 HOMEPAGE="http://www.hcs.harvard.edu/~dholland/computers/netkit.html"
 SRC_URI="ftp://ftp.uk.linux.org/pub/linux/Networking/netkit/linux-${P}.tar.gz
-		mirror://gentoo/linux-${P}-ssl.patch"
+	mirror://gentoo/linux-${P}-ssl.patch"
 
-SLOT="0"
 LICENSE="as-is"
+SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+IUSE="ssl"
 
 DEPEND="ssl? ( dev-libs/openssl )"
 
 RDEPEND="${DEPEND}
 	virtual/inetd"
 
+S="${WORKDIR}"/linux-${P}
+
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	if use ssl; then
-		epatch ${DISTDIR}/linux-${P}-ssl.patch
+		epatch "${DISTDIR}"/linux-${P}-ssl.patch
 	fi
-	epatch ${FILESDIR}/${P}-shadowfix.patch
+	epatch "${FILESDIR}"/${P}-shadowfix.patch
 
 	# fixes gcc 4.1 compatibility
-	epatch ${FILESDIR}/${P}-gcc41.patch
+	epatch "${FILESDIR}"/${P}-gcc41.patch
 }
 
 src_compile() {
@@ -45,7 +46,7 @@ src_install() {
 	doman ftpd/ftpd.8
 	dodoc README ChangeLog
 	insinto /etc/xinetd.d
-	newins ${FILESDIR}/ftp.xinetd ftp
+	newins "${FILESDIR}"/ftp.xinetd ftp
 	if use ssl;
 	then
 		insinto /etc/ssl/certs/
