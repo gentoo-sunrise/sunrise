@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="Clock for desktop with ARGB visuals."
 HOMEPAGE="http://macslow.thepimp.net/?page_id=23"
-SRC_URI="http://macslow.thepimp.net/projects/cairo-clock/$P.tar.bz2"
+SRC_URI="http://macslow.thepimp.net/projects/cairo-clock/${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86 ~ppc"
@@ -23,8 +23,8 @@ src_install() {
 }
 
 pkg_postinst() {
-        echo
-        einfo "Note, that you need running composite manager for visuals."
+	echo
+	einfo "Note, that you need running composite manager for visuals."
 	epause 5
-        echo
+	echo
 }
