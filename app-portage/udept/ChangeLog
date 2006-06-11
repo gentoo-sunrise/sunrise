@@ -1,0 +1,8 @@
+# ChangeLog for app-portage/udept
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Jun 2006; David Shakaryan <d@ompty.org> +udept-0.5.94.1.ebuild:
+  new ebuild, bug 129813, thanks to Ed Catmur for ebuild and Patrick
+  Zimmermann for bug
+
