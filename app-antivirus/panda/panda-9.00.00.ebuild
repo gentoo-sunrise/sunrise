@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-S=${WORKDIR}
+S="${WORKDIR}"
 
 DESCRIPTION="Panda Antivirus for Linux"
 HOMEPAGE="http://www.pandasoftware.com/download/linux/linux.asp"
@@ -21,7 +21,7 @@ RESTRICT="mirror strip"
 QA_TEXTRELS_x86="opt/pavcl/usr/lib/libPsk*.so.*"
 
 src_install() {
-	cd ${S}
+	cd "${S}"
 	cp -r . ${D}
 
 	dodir /etc/env.d
