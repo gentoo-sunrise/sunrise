@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit gnome2
+inherit gnome2 autotools
 
 DESCRIPTION="GNOME program to create, edit and verify hashfiles"
 HOMEPAGE="http://parano.berlios.de"
@@ -22,9 +22,11 @@ DEPEND="${RDEPEND}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	# Removes update-mime-database error
-	epatch "${FILESDIR}"/${P}-makefile.patch
+	
+	# Many fixes, thanks to dragonheart
+	mv src/parano.py src/parano.in
+	epatch "${FILESDIR}/${P}-autoconf.patch"
+	eautoreconf
 }
 
 src_install() {

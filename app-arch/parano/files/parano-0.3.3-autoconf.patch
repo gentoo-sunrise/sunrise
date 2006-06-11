@@ -1,0 +1,64 @@
+diff -ru parano-0.3.3/mime/Makefile.am parano-0.3.3.new/mime/Makefile.am
+--- parano-0.3.3/mime/Makefile.am	2005-12-15 08:13:47.000000000 +1100
++++ parano-0.3.3.new/mime/Makefile.am	2006-06-11 11:14:05.000000000 +1000
+@@ -12,9 +12,3 @@
+ 	$(app_DATA) \
+ 	$(mime_DATA) \
+ 	$(mimexml_DATA)
+-
+-install-data-local: install-mimexmlDATA
+-	update-mime-database $(datadir)/mime
+-
+-uninstall-local:
+-	update-mime-database $(datadir)/mime
+diff -ru parano-0.3.3/src/Makefile.am parano-0.3.3.new/src/Makefile.am
+--- parano-0.3.3/src/Makefile.am	2005-12-15 08:13:48.000000000 +1100
++++ parano-0.3.3.new/src/Makefile.am	2006-06-11 11:14:05.000000000 +1000
+@@ -11,7 +11,3 @@
+ 
+ EXTRA_DIST = parano.gladep parano.py
+ CLEANFILES = parano
+-
+-parano: parano.py
+-	sed -e s!\@datadir\@!$(gladedir)! -e s!\@version\@!$(VERSION)! < $< > $@
+-	chmod +x $@
+--- /tmp/parano-0.3.3/configure.in	2006-05-13 03:10:02.000000000 +1000
++++ parano-0.3.3/configure.in	2006-06-11 19:46:28.000000000 +1000
+@@ -1,8 +1,9 @@
+ dnl -*- Mode: autoconf -*-
+ dnl Process this file with autoconf to produce a configure script.
+ AC_PREREQ(2.53)
+-AC_INIT(src/parano.py)
+-AM_INIT_AUTOMAKE(parano, "0.3.3")
++
++AC_INIT(parano, 0.3.3, http://developer.berlios.de/projects/parano/)
++AM_INIT_AUTOMAKE(parano, $PACKAGE_VERSION)
+ 
+ m4_define(required_python_abi, 2.3)
+ m4_define(required_python_version, 2.3.3)
+@@ -34,9 +35,12 @@
+     AC_MSG_ERROR(required pygtk version not found)
+ fi
+ 
++AC_SUBST(PACKAGE_VERSION)
++#AC_SUBST(datadir)
+ AC_OUTPUT(
+         Makefile
+         po/Makefile.in
+         src/Makefile
++		src/parano
+         mime/Makefile
+         )
+--- /tmp/parano-0.3.3/src/parano.py	2006-05-12 06:52:45.000000000 +1000
++++ parano-0.3.3/src/parano.in	2006-06-11 19:48:24.000000000 +1000
+@@ -18,8 +18,8 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+ NAME="Parano"
+-VERSION="@version@"
+-DATADIR="@datadir@"
++VERSION="@PACKAGE_VERSION@"
++DATADIR="@datadir@/@PACKAGE@"
+ URL="http://parano.berlios.de"
+ 
+ import os, sys, time, re, thread
