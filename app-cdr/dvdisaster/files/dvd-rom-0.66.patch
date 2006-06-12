@@ -1,0 +1,12 @@
+--- scsi-layer.c	2005-08-01 22:18:43.000000000 +0200
++++ scsi-layer.c	2005-10-05 14:59:23.000000000 +0200
+@@ -929,7 +929,7 @@
+ 	    dh->typedescr = "DVD-ROM (faked book type)";
+ 	 else
+ 	 {  dh->typedescr = "DVD-ROM";
+-	    dh->subType = UNSUPPORTED;
++/*	    dh->subType = UNSUPPORTED; */
+ 	 }
+ 	 break;
+       }
+
