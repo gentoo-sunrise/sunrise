@@ -58,10 +58,7 @@ src_install() {
 	insinto /usr/share/applications
 	doins contrib/${PN}.desktop
 
-	dodoc CHANGELOG CREDITS.* DRIVE-NOTES TODO README TRANSLATION.HOWTO
-
 	rm -f ${D}/usr/bin/*.sh
-	rm -f ${D}/usr/share/doc/${P}/COPYING
 }
 
 pkg_postinst() {
