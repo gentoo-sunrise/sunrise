@@ -9,9 +9,10 @@ HOMEPAGE="http://dvdisaster.berlios.de/"
 SRC_URI="http://download.berlios.de/dvdisaster/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-IUSE="gnome nls"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
+IUSE_LINGUAS="linguas_cs linguas_de linguas_it"
+IUSE="${IUSE_LINGUAS} gnome nls"
 
 DEPEND=">=x11-libs/gtk+-2.2
 	dev-util/pkgconfig
@@ -42,7 +43,7 @@ src_compile() {
 src_install() {
 	make install \
 	BINDIR=${D}/usr/bin \
-	DOCSUBDIR=${D}/usr/share/doc/${P} \
+	DOCSUBDIR=${D}/usr/share/doc/${PF} \
 	MANDIR=${D}/usr/share/man \
 	LOCALEDIR=${D}/usr/share/locale \
 	|| die "make install failed"
@@ -58,6 +59,15 @@ src_install() {
 	insinto /usr/share/applications
 	doins contrib/${PN}.desktop
 
+	# no sane way to disable unwanted LINGUAS at compile time
+	# there are no Italian docs, only manpage and localization for now
+	local docdir="${D}/usr/share/doc/${PF}"
+	local mandir="${D}/usr/share/man"
+	local localedir="${D}/usr/share/locale"
+	for lang in cs de it ; do
+		use linguas_${lang} || rm -rf ${docdir}/${lang} ${mandir}/${lang} ${localedir}/${lang}
+		use linguas_${lang} || rm -f ${docdir}/CREDITS.${lang}
+	done
 	rm -f ${D}/usr/bin/*.sh
 }
 
