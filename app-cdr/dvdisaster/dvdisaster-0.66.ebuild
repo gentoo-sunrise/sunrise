@@ -16,8 +16,8 @@ SLOT="0"
 DEPEND=">=x11-libs/gtk+-2.2
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
-
-RESTRICT="mirror"
+RDEPEND=">=x11-libs/gtk+-2.2
+	nls? ( virtual/libintl )"
 
 src_unpack() {
 	unpack ${A}
