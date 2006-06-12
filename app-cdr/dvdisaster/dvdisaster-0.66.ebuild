@@ -41,11 +41,15 @@ src_compile() {
 }
 
 src_install() {
+	local docdir="${D}/usr/share/doc/${PF}"
+	local mandir="${D}/usr/share/man"
+	local localedir="${D}/usr/share/locale"
+
 	make install \
 	BINDIR=${D}/usr/bin \
-	DOCSUBDIR=${D}/usr/share/doc/${PF} \
-	MANDIR=${D}/usr/share/man \
-	LOCALEDIR=${D}/usr/share/locale \
+	DOCSUBDIR=${docdir} \
+	MANDIR=${mandir} \
+	LOCALEDIR=${localedir} \
 	|| die "make install failed"
 
 	insinto /usr/share/pixmaps
@@ -61,9 +65,6 @@ src_install() {
 
 	# no sane way to disable unwanted LINGUAS at compile time
 	# there are no Italian docs, only manpage and localization for now
-	local docdir="${D}/usr/share/doc/${PF}"
-	local mandir="${D}/usr/share/man"
-	local localedir="${D}/usr/share/locale"
 	for lang in cs de it ; do
 		use linguas_${lang} || rm -rf ${docdir}/${lang} ${mandir}/${lang} ${localedir}/${lang}
 		use linguas_${lang} || rm -f ${docdir}/CREDITS.${lang}
