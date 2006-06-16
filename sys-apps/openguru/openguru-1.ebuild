@@ -1,11 +1,11 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="openGuru is an utility used to read Abit uGuru sensors"
-HOMEPAGE=""
+HOMEPAGE="http://forum.abit-usa.com/showpost.php?p=532726&postcount=3"
 SRC_URI="http://hem.bredband.net/b330708/oguru/oguru.tar.gz"
 
 LICENSE="GPL-2"
