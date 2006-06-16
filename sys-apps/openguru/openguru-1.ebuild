@@ -5,7 +5,7 @@
 inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="openGuru is an utility used to read Abit uGuru sensors"
-HOMEPAGE="http://forum.abit-usa.com/showpost.php?p=532726&postcount=3"
+HOMEPAGE="http://forum.abit-usa.com/showpost.php?p=532726"
 SRC_URI="http://hem.bredband.net/b330708/oguru/oguru.tar.gz"
 
 LICENSE="GPL-2"
