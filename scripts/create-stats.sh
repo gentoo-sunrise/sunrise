@@ -24,4 +24,3 @@ for ((i=0;i<${#ebuilds[@]};i++)) do
 		echo ${ebuilds[$i]} - bug ${bugs[$i]} - on CC: ${cc[$i]};
 	fi
 done
-
