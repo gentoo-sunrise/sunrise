@@ -1,0 +1,7 @@
+# ChangeLog for x11-themes/qtcurve
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Jun 2006; Stefan Schweizer <genstef@gentoo.org> +qtcurve-0.38.ebuild:
+  Initial import of qtcurve ebuild thanks to many contributors in bug 24830
+
