@@ -38,7 +38,7 @@ src_unpack() {
 
 src_install() {
 	dopammod pam_abl.so
-	dopamd ${FILESDIR}/system-auth
+	dopamd "${FILESDIR}/system-auth"
 	insinto /etc/security
 	doins conf/pam_abl.conf
 	dobin tools/pam_abl
@@ -47,6 +47,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "See /usr/share/doc/${P}/html/index.html for configuration info"
+	einfo "See /usr/share/doc/${PF}/html/index.html for configuration info"
 	einfo "and set up /etc/security/pam_abl.conf as needed."
 }
