@@ -21,8 +21,8 @@ S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-gentoo.patch || die "patch failed"
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-gentoo.patch" || die "patch failed"
 }
 
 src_compile() {
@@ -33,5 +33,5 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc README INSTALL
-	newpamd ${FILESDIR}/pam_skey-system-auth.pam.d system-auth
+	newpamd "${FILESDIR}/pam_skey-system-auth.pam.d" system-auth
 }
