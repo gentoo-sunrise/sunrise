@@ -30,7 +30,7 @@ PROVIDE="virtual/antivirus"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch ${FILESDIR}/${PF}-gentoo.patch || die "epatch failed"
+	epatch "${FILESDIR}/${PF}-gentoo.patch" || die "epatch failed"
 }
 
 pkg_setup() {
@@ -128,5 +128,5 @@ pkg_postinst() {
 	ewarn "If you don't have a license for DrWeb, go to http://download.drweb.com/demo/ "
 	ewarn "to obtain a demo licence."
 	ewarn
-	ewarn "Additional information can be obtained from /usr/share/doc/${P}/readme.license"
+	ewarn "Additional information can be obtained from /usr/share/doc/${PF}/readme.license"
 }
