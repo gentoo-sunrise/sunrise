@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Jun 2006; Markus Ullmann <jokey@gentoo.org> x-lite-2.0.1105d.ebuild:
+  minor QA fixes
+
   17 Jun 2006; Stefan Schweizer <genstef@gentoo.org> x-lite-2.0.1105d.ebuild:
   Initial import from bug 112891
 

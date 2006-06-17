@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,7 +26,7 @@ RDEPEND="${DEPEND}
 	amd64? ( >=app-emulation/emul-linux-x86-baselibs-2.4.1
 		 >=app-emulation/emul-linux-x86-xlibs-2.2.2
 		 >=app-emulation/emul-linux-x86-compat-1.0-r1
-		 >=app-emulation/emul-linux-x86-gtklibs-2.3)"
+		 >=app-emulation/emul-linux-x86-gtklibs-2.3 )"
 
 S=${WORKDIR}/xten-xlite
 
@@ -39,7 +39,7 @@ pkg_setup() {
 src_install() {
 	exeinto "${dir}"
 	doexe xtensoftphone
-	
+
 	dodir /opt/bin
 	dosym /opt/x-lite/xtensoftphone /opt/bin/xtensoftphone
 
