@@ -1,8 +1,0 @@
-# ChangeLog for app-cdr/dvdisaster
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  12 Jun 2006; <jakub@gentoo.org> +dvdisaster-0.66.ebuild:
-  New ebuild, based on ebuild submitted by stephan (stephanjansen at yahoo dot
-  de). Bug 81290
-
