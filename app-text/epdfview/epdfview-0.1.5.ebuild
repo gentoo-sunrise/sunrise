@@ -13,14 +13,18 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cups nls test"
 
-RDEPEND=">=x11-libs/gtk+-2.6
-	>=app-text/poppler-bindings-0.5.0
-	cups? ( >=net-print/cups-1.1 )
+COMMON_DEPEND=">=x11-libs/gtk+-2.6
+		>=app-text/poppler-bindings-0.5.0
+		cups? ( >=net-print/cups-1.1 )"
+
+DEPEND="${COMMON_DEPEND}
+	>=dev-util/pkgconfig-0.9
+	test? ( dev-util/cppunit )
 	nls? ( sys-devel/gettext )"
 
-DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9
-	test? ( dev-util/cppunit )"
+RDEPEND="${COMMON_DEPEND}
+	nls? ( virtual/libintl )"
+
 
 pkg_setup() {
 	if ! built_with_use app-text/poppler-bindings gtk; then
@@ -39,5 +43,5 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ABOUT-NLS AUTHORS NEWS README THANKS
+	dodoc AUTHORS NEWS README THANKS
 }
