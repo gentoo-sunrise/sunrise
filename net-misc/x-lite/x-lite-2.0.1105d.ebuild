@@ -10,12 +10,11 @@ SRC_URI="http://www.counterpath.net/download/X-Lite_Install.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="strip"
 
-RDEPEND="${DEPEND}
-	dev-libs/atk
+RDEPEND="dev-libs/atk
 	dev-libs/glib
 	dev-libs/libxml2
 	gnome-base/libglade
