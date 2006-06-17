@@ -23,19 +23,18 @@ RDEPEND="${DEPEND}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	# Gentoo installs cryptsetup in /bin, this patches the relevant 
 	# locations, in srcipts/(u)mount.crypt and adds gentoo specific
 	# comments to pam_mount.conf
-	epatch ${FILESDIR}/pam_mount-gentoo-paths-and-examples.patch || die "patch failed"
+	epatch "${FILESDIR}/${PN}-gentoo-paths-and-examples.patch" || die "patch failed"
 }
 
 src_compile() {
 	# fixes the sanity check failure
 	_elibtoolize --copy --force
 
-	# configure and build pam_mount
 	econf \
 	    --libdir=/$(get_libdir) \
 		--with-pam-dir=$(getpam_mod_dir) || die "econf failed"
@@ -47,8 +46,8 @@ src_install() {
 
 	insinto /etc/security
 	insopts -m0644
-	doins ${S}/config/pam_mount.conf
-	dopamd ${FILESDIR}/system-auth
+	doins "${S}/config/pam_mount.conf"
+	dopamd "${FILESDIR}/system-auth"
 
 	dodir /sbin
 	dosym /usr/bin/mount.crypt /sbin/mount.crypt
@@ -70,5 +69,5 @@ pkg_postinst() {
 	einfo "support pam_mount. If you have any programs that use pam with "
 	einfo "a configuration file that does NOT include system-auth you will "
 	einfo "need to modify this file too. Look at /etc/pam.d/system-auth or "
-	einfo "the /usr/share/doc/${P}/README file for more informations."
+	einfo "the /usr/share/doc/${PF}/README file for more informations."
 }
