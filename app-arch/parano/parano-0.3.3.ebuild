@@ -14,8 +14,10 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
 
+
 DEPEND=">=dev-python/pygtk-2.0
 	dev-python/gnome-python"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
