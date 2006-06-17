@@ -13,7 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-cpp/gtkmm-2"
+RDEPEND=">=dev-cpp/gtkmm-2.6
+	>=dev-libs/glib-2.6
+	>=x11-libs/gtk+-2.6"
+
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 
