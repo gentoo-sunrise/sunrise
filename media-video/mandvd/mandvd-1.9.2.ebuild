@@ -19,7 +19,7 @@ KEYWORDS="~x86"
 DEPEND="$(qt_min_version 3.3)
 	|| ( ( x11-libs/libX11 x11-libs/libXext ) virtual/x11 )"
 
-# media-video/dvd-slideshow-0.7.5 not in portage
+# media-video/dvd-slideshow-0.7.5 not in portage - see Bug 116295
 RDEPEND="${DEPEND}
 	>=app-cdr/cdrtools-2.01
 	>=app-cdr/dvd+rw-tools-5.21.4
@@ -38,7 +38,7 @@ src_compile() {
 	emake || die "emake failed"
 }
 
-src_install () {
+src_install() {
 	dobin ${PN}
 	newicon ${PN}ico.png ${PN}.png
 	make_desktop_entry ${PN} ${PN} ${PN}.png "AudioVideo;QT"
