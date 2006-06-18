@@ -18,4 +18,3 @@ RDEPEND="${DEPEND}"
 src_install() {
 	emake INSTROOT="${D}" install || die "emake install failed"
 }
-
