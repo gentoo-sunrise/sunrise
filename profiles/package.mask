@@ -24,6 +24,9 @@
 # Gustavo Felisberto <humpback@gentoo.org> (19 Jun 2006)
 # This is beta... very beta
 >=app-crypt/qca-2.0_beta2
+app-crypt/qca-openssl
+app-crypt/qca-gnupg
+app-crypt/qca-pkcs11
 
 # Jakub Moc <jakub@gentoo.org> (09 Jun 2006)
 # This is for testing only, upstream not active ATM

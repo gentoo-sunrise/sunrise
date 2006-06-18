@@ -1,0 +1,23 @@
+diff -ur qca-gnupg-0.1-20060406/qca-gnupg.cpp qca-gnupg-0.1-20060406.new/qca-gnupg.cpp
+--- qca-gnupg-0.1-20060406/qca-gnupg.cpp	2006-04-06 23:55:19.000000000 +0200
++++ qca-gnupg-0.1-20060406.new/qca-gnupg.cpp	2006-04-12 12:31:30.000000000 +0200
+@@ -720,12 +724,14 @@
+ 
+ 				SecureMessageKey key;
+ 				PGPKey pub = publicKeyFromId(signerId, provider());
+-				if(!pub.isNull())
+-				{
+-					key.setPGPPublicKey(pub);
+-					signer = SecureMessageSignature(ir, v, key, ts);
+-					wasSigned = true;
++				if(pub.isNull()) {
++					MyPGPKeyContext *kc = new MyPGPKeyContext(provider());
++					kc->_props.keyId = signerId;
++					pub.change(kc);
+ 				}
++				key.setPGPPublicKey(pub);
++				signer = SecureMessageSignature(ir, v, key, ts);
++				wasSigned = true;
+ 			}
+ 		}
+ 		else
