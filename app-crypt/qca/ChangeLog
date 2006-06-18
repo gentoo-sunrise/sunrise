@@ -1,0 +1,7 @@
+# ChangeLog for app-crypt/qca
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jun 2006; Gustavo Felisberto <humpback@gentoo.org>; ChangeLog:
+  Sloted qca from bug 129536
+

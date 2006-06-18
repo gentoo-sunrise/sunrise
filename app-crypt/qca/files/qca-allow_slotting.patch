@@ -1,0 +1,316 @@
+diff -Naur qca-2.0-beta2-orig/examples/examples.pri qca-2.0-beta2/examples/examples.pri
+--- qca-2.0-beta2-orig/examples/examples.pri	2005-08-01 03:15:35.000000000 +0000
++++ qca-2.0-beta2/examples/examples.pri	2006-06-18 03:12:07.000000000 +0000
+@@ -5,5 +5,5 @@
+ LIBS += -L../../lib
+ 
+ # link
+-LIBS += -lqca
++LIBS += -lqca-2
+ 
+diff -Naur qca-2.0-beta2-orig/extra.qcm qca-2.0-beta2/extra.qcm
+--- qca-2.0-beta2-orig/extra.qcm	2006-04-03 01:00:35.000000000 +0000
++++ qca-2.0-beta2/extra.qcm	2006-06-18 03:19:26.000000000 +0000
+@@ -48,7 +48,7 @@
+ 		"CONFIG *= qt\n"
+ 		"INCLUDEPATH += %1/include/QtCrypto\n").arg(prefix);
+ 		str += QString(
+-		"LIBS += -L%1/lib -lqca\n").arg(prefix);
++		"LIBS += -L%1/lib -lqca-2\n").arg(prefix);
+ 
+ 		f.setFileName("crypto.prf");
+ 		if(f.open(QFile::WriteOnly | QFile::Truncate))
+@@ -74,7 +74,7 @@
+ 		"Description: Qt Cryptographic Architecture library\n"
+ 		"Version: 2.0.0 #maybe this shouldn't be literal...\n"
+ 		"Requires: %2\n"
+-		"Libs: -L${libdir} -lqca\n"
++		"Libs: -L${libdir} -lqca-2\n"
+ 		"Cflags: -I${includedir}\n"
+ 		"\n"
+ 		).arg(prefix).arg(qtcore);
+diff -Naur qca-2.0-beta2-orig/src/src.pro qca-2.0-beta2/src/src.pro
+--- qca-2.0-beta2-orig/src/src.pro	2006-04-03 01:00:35.000000000 +0000
++++ qca-2.0-beta2/src/src.pro	2006-06-18 03:11:51.000000000 +0000
+@@ -6,7 +6,7 @@
+ 
+ TEMPLATE = lib
+ QT      -= gui
+-TARGET   = qca
++TARGET   = qca-2
+ DESTDIR  = $$QCA_BASE/lib
+ 
+ MOC_DIR        = .moc
+diff -Naur qca-2.0-beta2-orig/unittest/base64unittest/base64unittest.pro qca-2.0-beta2/unittest/base64unittest/base64unittest.pro
+--- qca-2.0-beta2-orig/unittest/base64unittest/base64unittest.pro	2005-12-23 07:02:32.000000000 +0000
++++ qca-2.0-beta2/unittest/base64unittest/base64unittest.pro	2006-06-18 03:12:56.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = base64unittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/bigintunittest/bigintunittest.pro qca-2.0-beta2/unittest/bigintunittest/bigintunittest.pro
+--- qca-2.0-beta2-orig/unittest/bigintunittest/bigintunittest.pro	2005-11-08 10:25:12.000000000 +0000
++++ qca-2.0-beta2/unittest/bigintunittest/bigintunittest.pro	2006-06-18 03:13:02.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = bigintunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/certunittest/certunittest.pro qca-2.0-beta2/unittest/certunittest/certunittest.pro
+--- qca-2.0-beta2-orig/unittest/certunittest/certunittest.pro	2006-01-29 11:24:50.000000000 +0000
++++ qca-2.0-beta2/unittest/certunittest/certunittest.pro	2006-06-18 03:13:07.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = certunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/filewatchunittest/filewatchunittest.pro qca-2.0-beta2/unittest/filewatchunittest/filewatchunittest.pro
+--- qca-2.0-beta2-orig/unittest/filewatchunittest/filewatchunittest.pro	2006-03-30 10:38:13.000000000 +0000
++++ qca-2.0-beta2/unittest/filewatchunittest/filewatchunittest.pro	2006-06-18 03:13:25.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = filewatchunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/hashunittest/hashunittest.pro qca-2.0-beta2/unittest/hashunittest/hashunittest.pro
+--- qca-2.0-beta2-orig/unittest/hashunittest/hashunittest.pro	2005-12-23 06:34:28.000000000 +0000
++++ qca-2.0-beta2/unittest/hashunittest/hashunittest.pro	2006-06-18 03:13:29.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = hashunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/hexunittest/hexunittest.pro qca-2.0-beta2/unittest/hexunittest/hexunittest.pro
+--- qca-2.0-beta2-orig/unittest/hexunittest/hexunittest.pro	2005-12-23 06:05:33.000000000 +0000
++++ qca-2.0-beta2/unittest/hexunittest/hexunittest.pro	2006-06-18 03:13:34.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = hexunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/kdfunittest/kdfunittest.pro qca-2.0-beta2/unittest/kdfunittest/kdfunittest.pro
+--- qca-2.0-beta2-orig/unittest/kdfunittest/kdfunittest.pro	2005-12-23 07:02:32.000000000 +0000
++++ qca-2.0-beta2/unittest/kdfunittest/kdfunittest.pro	2006-06-18 03:13:38.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = kdfunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/keygenunittest/keygenunittest.pro qca-2.0-beta2/unittest/keygenunittest/keygenunittest.pro
+--- qca-2.0-beta2-orig/unittest/keygenunittest/keygenunittest.pro	2005-12-23 06:16:08.000000000 +0000
++++ qca-2.0-beta2/unittest/keygenunittest/keygenunittest.pro	2006-06-18 03:13:43.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = keygenunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ # check target
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/keylengthunittest/keylengthunittest.pro qca-2.0-beta2/unittest/keylengthunittest/keylengthunittest.pro
+--- qca-2.0-beta2-orig/unittest/keylengthunittest/keylengthunittest.pro	2006-03-26 06:08:00.000000000 +0000
++++ qca-2.0-beta2/unittest/keylengthunittest/keylengthunittest.pro	2006-06-18 03:13:47.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = keylengthunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/macunittest/macunittest.pro qca-2.0-beta2/unittest/macunittest/macunittest.pro
+--- qca-2.0-beta2-orig/unittest/macunittest/macunittest.pro	2006-01-19 10:35:44.000000000 +0000
++++ qca-2.0-beta2/unittest/macunittest/macunittest.pro	2006-06-18 03:13:52.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = macunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/pkits/pkits.pro qca-2.0-beta2/unittest/pkits/pkits.pro
+--- qca-2.0-beta2-orig/unittest/pkits/pkits.pro	2006-02-11 01:06:44.000000000 +0000
++++ qca-2.0-beta2/unittest/pkits/pkits.pro	2006-06-18 03:13:57.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = pkits
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/randomunittest/randomunittest.pro qca-2.0-beta2/unittest/randomunittest/randomunittest.pro
+--- qca-2.0-beta2-orig/unittest/randomunittest/randomunittest.pro	2006-03-31 10:39:03.000000000 +0000
++++ qca-2.0-beta2/unittest/randomunittest/randomunittest.pro	2006-06-18 03:14:02.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = randomunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/rsaunittest/rsaunittest.pro qca-2.0-beta2/unittest/rsaunittest/rsaunittest.pro
+--- qca-2.0-beta2-orig/unittest/rsaunittest/rsaunittest.pro	2006-03-31 10:42:02.000000000 +0000
++++ qca-2.0-beta2/unittest/rsaunittest/rsaunittest.pro	2006-06-18 03:14:07.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = rsaunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/securearrayunittest/securearrayunittest.pro qca-2.0-beta2/unittest/securearrayunittest/securearrayunittest.pro
+--- qca-2.0-beta2-orig/unittest/securearrayunittest/securearrayunittest.pro	2005-12-23 06:05:33.000000000 +0000
++++ qca-2.0-beta2/unittest/securearrayunittest/securearrayunittest.pro	2006-06-18 03:14:12.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = securearrayunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/staticunittest/staticunittest.pro qca-2.0-beta2/unittest/staticunittest/staticunittest.pro
+--- qca-2.0-beta2-orig/unittest/staticunittest/staticunittest.pro	2005-12-23 07:02:32.000000000 +0000
++++ qca-2.0-beta2/unittest/staticunittest/staticunittest.pro	2006-06-18 03:14:16.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = staticunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/symmetrickeyunittest/symmetrickeyunittest.pro qca-2.0-beta2/unittest/symmetrickeyunittest/symmetrickeyunittest.pro
+--- qca-2.0-beta2-orig/unittest/symmetrickeyunittest/symmetrickeyunittest.pro	2006-01-15 08:54:59.000000000 +0000
++++ qca-2.0-beta2/unittest/symmetrickeyunittest/symmetrickeyunittest.pro	2006-06-18 03:14:20.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = symmetrickeyunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/tls/tls.pro qca-2.0-beta2/unittest/tls/tls.pro
+--- qca-2.0-beta2-orig/unittest/tls/tls.pro	2006-03-18 05:06:10.000000000 +0000
++++ qca-2.0-beta2/unittest/tls/tls.pro	2006-06-18 03:14:27.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = tlsunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/tools/mozcerts/mozcerts.pro qca-2.0-beta2/tools/mozcerts/mozcerts.pro
+--- qca-2.0-beta2-orig/tools/mozcerts/mozcerts.pro	2006-04-03 01:00:35.000000000 +0000
++++ qca-2.0-beta2/tools/mozcerts/mozcerts.pro	2006-06-18 03:29:30.000000000 +0000
+@@ -4,7 +4,7 @@
+ include(../../confapp.pri)
+ 
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ 
+ SOURCES += main.cpp
+ 
+diff -Naur qca-2.0-beta2-orig/tools/qcatool/qcatool.pro qca-2.0-beta2/tools/qcatool/qcatool.pro
+--- qca-2.0-beta2-orig/tools/qcatool/qcatool.pro	2006-04-03 01:00:35.000000000 +0000
++++ qca-2.0-beta2/tools/qcatool/qcatool.pro	2006-06-18 03:29:42.000000000 +0000
+@@ -5,7 +5,7 @@
+ DESTDIR = ../../bin
+ 
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ 
+ SOURCES += main.cpp
+ 
+diff -Naur qca-2.0-beta2-orig/configure qca-2.0-beta2/configure
+--- qca-2.0-beta2-orig/configure	2006-06-18 03:36:56.000000000 +0000
++++ qca-2.0-beta2/configure	2006-06-18 03:36:30.000000000 +0000
+@@ -442,7 +442,7 @@
+ 		"CONFIG *= qt\n"
+ 		"INCLUDEPATH += %1/include/QtCrypto\n").arg(prefix);
+ 		str += QString(
+-		"LIBS += -L%1/lib -lqca\n").arg(prefix);
++		"LIBS += -L%1/lib -lqca-2\n").arg(prefix);
+ 
+ 		f.setFileName("crypto.prf");
+ 		if(f.open(QFile::WriteOnly | QFile::Truncate))
+@@ -468,7 +468,7 @@
+ 		"Description: Qt Cryptographic Architecture library\n"
+ 		"Version: 2.0.0 #maybe this shouldn't be literal...\n"
+ 		"Requires: %2\n"
+-		"Libs: -L\${libdir} -lqca\n"
++		"Libs: -L\${libdir} -lqca-2\n"
+ 		"Cflags: -I\${includedir}\n"
+ 		"\n"
+ 		).arg(prefix).arg(qtcore);
+diff -Naur qca-2.0-beta2-orig/unittest/cipherunittest/cipherunittest.pro qca-2.0-beta2/unittest/cipherunittest/cipherunittest.pro
+--- qca-2.0-beta2-orig/unittest/cipherunittest/cipherunittest.pro	2006-01-15 05:17:47.000000000 +0000
++++ qca-2.0-beta2/unittest/cipherunittest/cipherunittest.pro	2006-06-18 23:09:38.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = cipherunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
+diff -Naur qca-2.0-beta2-orig/unittest/dsaunittest/dsaunittest.pro qca-2.0-beta2/unittest/dsaunittest/dsaunittest.pro
+--- qca-2.0-beta2-orig/unittest/dsaunittest/dsaunittest.pro	2006-03-31 10:44:58.000000000 +0000
++++ qca-2.0-beta2/unittest/dsaunittest/dsaunittest.pro	2006-06-18 23:09:44.000000000 +0000
+@@ -2,7 +2,7 @@
+ TARGET = dsaunittest
+ DEPENDPATH += .
+ INCLUDEPATH += ../../include/QtCrypto
+-LIBS += -L../../lib -lqca
++LIBS += -L../../lib -lqca-2
+ CONFIG += qtestlib thread console
+ QT -= gui
+ 
