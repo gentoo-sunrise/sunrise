@@ -19,10 +19,7 @@ IUSE=""
 RESTRICT="mirror strip"
 QA_TEXTREL_x86="opt/gizmo/libsipphoneapi.so.0.78.20060211"
 
-RDEPEND="amd64? ( app-emulation/emul-linux-x86-glibc
-		>=app-emulation/emul-linux-x86-xlibs-1.2
-		>=app-emulation/emul-linux-x86-baselibs-2.1.1 )
-	dev-libs/atk
+RDEPEND="dev-libs/atk
 	dev-libs/expat
 	dev-libs/glib
 	dev-libs/libxml2
