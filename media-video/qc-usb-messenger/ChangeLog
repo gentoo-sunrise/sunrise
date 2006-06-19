@@ -3,5 +3,8 @@
 # $Header: $
 
   19 Jun 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
-  Initial version.
+  Changed layout of ebuild to match qc-usb ebuild.
+
+  19 Jun 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
+  Initial ebuild by Samuli Suominen for bug #75705
 

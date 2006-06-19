@@ -16,13 +16,26 @@ KEYWORDS="~x86 ~ppc ~amd64"
 DEPEND="virtual/linux-sources
 	!media-video/qc-usb"
 
-src_compile() {
-	emake LINUX_DIR=${KERNEL_DIR} all || die "building of quickcam kernel module failed."
+CONFIG_CHECK="USB VIDEO_DEV"
+MODULE_NAMES="quickcam(usb:)"
+BUILD_TARGETS="all"
+
+pkg_setup() {
+	ABI=${KERNEL_ABI}
+	linux-mod_pkg_setup
+	BUILD_PARAMS="LINUX_DIR=${KV_DIR}"
+}
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	convert_to_m ${S}/Makefile
 }
 
 src_install() {
-	insinto /lib/modules/${KV}/drivers/usb
-	doins quickcam.${KV_OBJ}
+	linux-mod_src_install
 	dobin qcset
 	dodoc README* APPLICATIONS CREDITS TODO FAQ _CHANGES_MESSENGER _README_MESSENGER
+	insinto /usr/share/doc/${PF}
+	doins quickcam.sh debug.sh freeshm.sh
 }
