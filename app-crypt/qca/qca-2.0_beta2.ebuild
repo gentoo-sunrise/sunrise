@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: $
 
 inherit eutils qt4
 
@@ -42,7 +42,7 @@ src_compile() {
 	else
 		myconf="${myconf} --enable-debug"
 		qmyconf="${qmyconf} debug"
-	fi;
+	fi
 
 	QTDIR="/usr/lib" \
 		./configure \
@@ -58,7 +58,7 @@ src_compile() {
 		"${qmyconf}" \
 		${PN}.pro \
 		|| die "qmake failed"
-		
+
 	make || die "make failed"
 
 	use doc && doxygen
@@ -75,5 +75,5 @@ src_install() {
 	if use doc; then
 		insinto /usr/share/doc/${PF}/doxydoc
 		doins ${S}/apidocs/html/*
-	fi;
+	fi
 }
