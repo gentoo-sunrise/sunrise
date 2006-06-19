@@ -10,7 +10,7 @@ SRC_URI="http://www.counterpath.net/download/X-Lite_Install.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE=""
 RESTRICT="strip"
 
