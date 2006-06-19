@@ -9,7 +9,7 @@ HOMEPAGE="http://amlc.berlios.de"
 SRC_URI="http://amlc.berlios.de/src/${P}.cpp"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86"
 IUSE=""
 S=${WORKDIR}
 
@@ -18,7 +18,7 @@ src_unpack() {
 }
 
 src_compile() {
-	$(tc-getCXX) ${CXXFLAGS} ${LDFLAGS} ${S}/${P}.cpp -o amlc -Os -Wall -pedantic
+	$(tc-getCXX) ${CXXFLAGS} ${LDFLAGS} ${S}/${P}.cpp -o amlc
 }
 
 src_install() {

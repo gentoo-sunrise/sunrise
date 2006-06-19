@@ -3,5 +3,8 @@
 # $Header: $
 
   19 Jun 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
+  Changed compiler flags after consulting upstream.
+
+  19 Jun 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
   Initial ebuild.
 
