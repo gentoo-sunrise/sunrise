@@ -47,10 +47,6 @@ RDEPEND="dev-libs/atk
 
 S=${WORKDIR}
 
-pkg_setup() {
-	has_multilib_profile && ABI="x86"
-}
-
 src_install() {
 	exeinto /opt/gizmo
 	doexe usr/bin/gizmo usr/lib/libsipphone{sslops,}api.so.${SIPPHONE_VER2}
