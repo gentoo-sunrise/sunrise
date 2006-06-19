@@ -1,0 +1,24 @@
+diff -Naur psi-0.11-beta2-orig/iris/example/example.pri psi-0.11-beta2/iris/example/example.pri
+--- psi-0.11-beta2-orig/iris/example/example.pri	2006-04-19 16:28:24.000000000 +0000
++++ psi-0.11-beta2/iris/example/example.pri	2006-06-18 22:37:14.000000000 +0000
+@@ -26,7 +26,7 @@
+ #DEPENDPATH += $$QCA_PREFIX
+ #HEADERS += $$QCA_PREFIX/qca.h $$QCA_PREFIX/qcaprovider.h
+ #SOURCES += $$QCA_PREFIX/qca.cpp
+-LIBS += -lqca
++LIBS += -lqca-2
+ 
+ # iris
+ exists(iris) {
+diff -Naur psi-0.11-beta2-orig/iris.pri psi-0.11-beta2/iris.pri
+--- psi-0.11-beta2-orig/iris.pri	2006-04-19 16:28:24.000000000 +0000
++++ psi-0.11-beta2/iris.pri	2006-06-18 22:34:51.000000000 +0000
+@@ -6,7 +6,7 @@
+ # qca
+ #unix:{
+ #	INCLUDEPATH += /usr/local/include
+-#	LIBS += -L/usr/local/lib -lqca
++#	LIBS += -L/usr/local/lib -lqca-2
+ #}
+ #win32:{
+ #	INCLUDEPATH += c:\local\include

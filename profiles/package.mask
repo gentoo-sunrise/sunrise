@@ -24,6 +24,7 @@
 # Gustavo Felisberto <humpback@gentoo.org> (19 Jun 2006)
 # This is beta... very beta
 >=app-crypt/qca-2.0_beta2
+>=net-im/psi-0.11_beta2
 app-crypt/qca-openssl
 app-crypt/qca-gnupg
 app-crypt/qca-pkcs11
