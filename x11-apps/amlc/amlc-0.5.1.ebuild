@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit toolchain-funcs
+
 DESCRIPTION="Another Modeline Calculator. Generates quality X11 display configs easily."
 HOMEPAGE="http://amlc.berlios.de"
 SRC_URI="http://amlc.berlios.de/src/${P}.cpp"
@@ -12,11 +14,11 @@ IUSE=""
 S=${WORKDIR}
 
 src_unpack() {
-        cp ${DISTDIR}/${P}.cpp ${S}
+	cp ${DISTDIR}/${P}.cpp ${S}
 }
 
 src_compile() {
-	g++ ${S}/${P}.cpp -o amlc -Os -Wall -pedantic
+	$(tc-getCXX) ${CFLAGS} ${CXXFLAGS} ${LDFLAGS} ${S}/${P}.cpp -o amlc -Os -Wall -pedantic
 }
 
 src_install() {
