@@ -18,7 +18,7 @@ src_unpack() {
 }
 
 src_compile() {
-	$(tc-getCXX) ${CFLAGS} ${CXXFLAGS} ${LDFLAGS} ${S}/${P}.cpp -o amlc -Os -Wall -pedantic
+	$(tc-getCXX) ${CXXFLAGS} ${LDFLAGS} ${S}/${P}.cpp -o amlc -Os -Wall -pedantic
 }
 
 src_install() {
