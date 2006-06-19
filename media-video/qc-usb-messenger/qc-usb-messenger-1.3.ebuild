@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-mod eutils
+inherit linux-mod
 
 DESCRIPTION="Logitech USB Quickcam Express Messenger & Communicate Linux Driver Modules"
 HOMEPAGE="http://home.mag.cx/messenger/"
