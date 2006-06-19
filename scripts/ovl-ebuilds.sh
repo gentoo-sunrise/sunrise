@@ -4,7 +4,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
 source /etc/make.conf
-OVERLAY=""
 
 echo "This will take a while depending on no. of installed packages."
 echo "Packages installed not from portage dir:"
