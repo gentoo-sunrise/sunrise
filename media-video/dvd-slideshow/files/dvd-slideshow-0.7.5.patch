@@ -1,0 +1,11 @@
+--- dvd-slideshow.orig	2006-03-10 06:56:54.000000000 +0100
++++ dvd-slideshow	2006-06-20 13:09:06.000000000 +0200
+@@ -622,7 +622,7 @@
+ if [ -f "${HOME}/.dvd-slideshowrc" ] ; then
+ 	myecho "[dvd-slideshow] Reading default variables in ${HOME}/.dvd-slideshowrc"
+ 	tmptxtfile="tmp_txtfile.txt"
+-	total_lines=`wc -l "$input_txtfile" | awk '{print $1}'`
++	total_lines=`wc -l "${input_txtfile}" | awk '{print $1}'`
+ 	total_lines=$(( $total_lines + 1 ))
+ 	line=1
+ 	while [ $line -ne $total_lines -a $total_lines -ne 0 ];
