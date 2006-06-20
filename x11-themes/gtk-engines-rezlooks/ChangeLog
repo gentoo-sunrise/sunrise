@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jun 2006; David Shakaryan <d@ompty.org> -gtk-engines-rezlooks-0.5.ebuild,
+  +gtk-engines-rezlooks-0.6.ebuild:
+  Version bump to 0.6
+
   16 Jun 2006; David Shakaryan <d@ompty.org> -gtk-engines-rezlooks-0.4.ebuild,
   +gtk-engines-rezlooks-0.5.ebuild:
   bump to 0.5
