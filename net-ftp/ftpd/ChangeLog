@@ -1,9 +1,0 @@
-# ChangeLog for net-ftp/ftpd
-# Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/ftpd/ChangeLog,v 1.24 2006/01/30 19:03:56 blubb Exp $
-
-  09 Jun 2006; Piotr Jaroszynski <peper@aster.pl> +ftpd-0.17-r4.ebuild:
-  revbump to avoid conflicts with main tree
-
-  08 Jun 2006; Piotr Jaroszynski <peper@aster.pl> +files/ftpd-0.17-gcc41.patch, ftpd-0.17-r3.ebuild:
-  Add patch to fix compilation with gcc-4.1; bug #135713
