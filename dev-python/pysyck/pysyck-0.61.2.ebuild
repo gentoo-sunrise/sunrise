@@ -13,7 +13,7 @@ SRC_URI="http://pyyaml.org/download/${PN}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="test"
+IUSE=""
 
 DEPEND=">=dev-libs/syck-0.55"
 RDEPEND=${DEPEND}
