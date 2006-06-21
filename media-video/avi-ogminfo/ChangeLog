@@ -4,5 +4,9 @@
 
   21 Jun 2006; Alexandru Toma (analoguedragon) <flash3001@yahoo.com>
   ChangeLog:
+  Added ~amd64 keyword
+
+  21 Jun 2006; Alexandru Toma (analoguedragon) <flash3001@yahoo.com>
+  ChangeLog:
   New ebuild for bug 130528
 
