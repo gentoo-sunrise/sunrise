@@ -1,0 +1,9 @@
+# ChangeLog for media-sound/pykaraoke
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*pykaraoke-0.4.1 (20 Jun 2006)
+
+  21 Jun 2006; Michael Pagano <mpagano@gentoo.org> pykaraoke-0.4.1.ebuild:
+  New ebuild for bug 137415, reviewed by genstef, jakub and Peper
+
