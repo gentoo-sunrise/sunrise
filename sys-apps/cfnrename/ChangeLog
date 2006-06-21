@@ -1,0 +1,8 @@
+# ChangeLog for sys-apps/cfnrename
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Jun 2006; Alexandru Toma (analoguedragon) <flash3001@yahoo.com>
+  ChangeLog:
+  New ebuild for bug 45907
+
