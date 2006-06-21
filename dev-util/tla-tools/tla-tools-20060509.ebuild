@@ -1,7 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# Kirill A. Korinskiy <catap@catap.ru>
-# $Header: /var/cvsroot/gentoo-x86/dev-util/tla-tools/tla-tools-20060509.ebuild,v 1.3 2006/04/29 05:07:25 mkennedy Exp $
+# $Header: $
 
 inherit tla
 
@@ -21,6 +20,6 @@ src_compile() {
 	emake || die "make failed"
 }
 
-src_install () {
-	emake DESTDIR=${D} install || die "make install failed"
+src_install() {
+	emake DESTDIR="${D}" install || die "make install failed"
 }
