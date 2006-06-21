@@ -19,11 +19,7 @@ src_compile() {
 }
 
 src_install() {
-	# The Makefile doesn't install the docs in the right place and
-	# doesn't compress them so we have to do things manually.
-	dobin src/fileschanged
-	doman man/fileschanged.1
-	doinfo info/fileschanged.info
+	emake DESTDIR="${D}" install || die "emake failed"
 	dodoc ChangeLog README TODO
-	emake -C po DESTDIR="${D}" install || die "emake -C po install failed"
+	rm -rf "${D}"/usr/share/${PN}
 }
