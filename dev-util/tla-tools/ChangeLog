@@ -1,0 +1,7 @@
+# ChangeLog for dev-util/tla-tools
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Jun 2006; DrChandra <gentooperson@yahoo.com> ChangeLog:
+  Added new ebuild tla-tools-20060509.ebuild
+
