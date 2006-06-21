@@ -19,6 +19,6 @@ xfce44_goodies_panel_plugin
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	sed -i '7d' Makefile.am || die "sed failed"
-	sed -i '250d' Makefile.in || die "sed failed"
+	sed -i -e '7d' Makefile.am || die "sed failed"
+	sed -i -e '250d' Makefile.in || die "sed failed"
 }
