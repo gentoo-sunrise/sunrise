@@ -3,5 +3,5 @@
 # $Header: $
 
   21 Jun 2006; DrChandra <gentooperson@yahoo.com> ChangeLog:
-  Added new ebuild tla-tools-20060509.ebuild
+  New Ebuild for bug 137090 thanks to Kirill A. Korinskiy <catap@catap.ru>
 
