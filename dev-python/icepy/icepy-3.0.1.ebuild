@@ -4,7 +4,7 @@
 
 inherit distutils eutils
 
-MY_P=${PN/icepy/IcePy}-${PV}
+MY_P=${P/icepy/IcePy}
 
 DESCRIPTION="ICE middleware Python bindings"
 HOMEPAGE="http://www.zeroc.com/index.html"
@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/python-2.4
-	=dev-cpp/ice-${PV}*"
+DEPEND="~dev-cpp/ice-${PV}"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_P}
