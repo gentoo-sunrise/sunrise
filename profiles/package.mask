@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# David Shakaryan <d@ompty.org> (21 Jun 2006)
+# Has dependencies that are masked.
+xfce-extra/verve
+
 # Gustavo Felisberto <humpback@gentoo.org> (19 Jun 2006)
 # This is beta... very beta
 >=app-crypt/qca-2.0_beta2
