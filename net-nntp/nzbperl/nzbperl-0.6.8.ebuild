@@ -29,8 +29,8 @@ src_unpack() {
 }
 
 src_install() {
-	newbin ${DISTDIR}/${P}.pl ${PN}
-	dodoc ${FILESDIR}/${PN}rc.sample
+	newbin "${DISTDIR}/${P}.pl" ${PN}
+	dodoc "${FILESDIR}/${PN}rc.sample"
 }
 
 pkg_postinst() {

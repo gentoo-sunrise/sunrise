@@ -3,6 +3,9 @@
 # $Header: $
 
   22 Jun 2006; Alexis Ballier <alexis.ballier@gmail.com> ChangeLog:
+  Adding quotes around variables
+
+  22 Jun 2006; Alexis Ballier <alexis.ballier@gmail.com> ChangeLog:
   Adding an empty src_unpack as suggested by Peper
 
   22 Jun 2006; Alexis Ballier <alexis.ballier@gmail.com> ChangeLog:
