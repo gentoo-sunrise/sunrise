@@ -7,12 +7,10 @@ need-kde 3.5.2
 
 DESCRIPTION="A simple backup system for KDE"
 HOMEPAGE="http://jr.falleri.free.fr/keep/wiki/Home"
-
 SRC_URI="http://jr.falleri.free.fr/files/devel/keep/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-
 KEYWORDS="~x86"
 IUSE=""
 
