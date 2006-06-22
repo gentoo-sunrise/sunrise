@@ -1,0 +1,6 @@
+MD5 889575db32ffa2550d3f3b05aa262262 ChangeLog 215
+MD5 18092190170a867a3078d5ba394f80ad files/digest-lm1100-1.0.2a 64
+MD5 ca3ce790ea4e3094a12b80382a4a6447 files/lm1100-1.0.2a-class.patch 709
+MD5 1745c18b44d2c9673e415d9661b90529 files/lm1100-1.0.2a-fix-compile-gcc-3.4.patch 866
+MD5 d1466763cddcc993a2f101e0c58b4aa3 lm1100-1.0.2a.ebuild 716
+MD5 26b4b081d538c195dc39bcb2ec8e6f3a metadata.xml 161
