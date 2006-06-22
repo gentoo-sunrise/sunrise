@@ -14,15 +14,15 @@ IUSE="gtk"
 DEPEND="gtk? ( =x11-libs/gtk+-2* )"
 
 src_compile() {
-	cd ${S}
+	cd "${S}"
 	emake OS=linux || die "emake failed"
 
-	for module in dot_draw dyn_gw httpinfo nameservice powerinfo secure; do
-		cd "${S}/lib/$module"
+	for module in dot_draw dyn_gw httpinfo nameservice powerinfo secure ; do
+		cd "${S}/lib/${module}"
 		emake OS=linux || die "emake failed"
 	done
 
-	if use gtk; then
+	if use gtk ; then
 		cd "${S}/gui/linux-gtk"
 		einfo "Building GUI ..."
 		emake || die "emake failed"
@@ -46,7 +46,7 @@ src_install() {
 
 	use gtk && dobin gui/linux-gtk/olsrd-gui
 
-	doinitd ${FILESDIR}/olsrd
+	doinitd "${FILESDIR}/olsrd"
 }
 
 pkg_postinst() {
