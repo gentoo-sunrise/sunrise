@@ -3,5 +3,8 @@
 # $Header: $
 
   22 Jun 2006; Alexis Ballier <alexis.ballier@gmail.com> ChangeLog:
+  Adding an empty src_unpack as suggested by Peper
+
+  22 Jun 2006; Alexis Ballier <alexis.ballier@gmail.com> ChangeLog:
   Initial import, ebuild submitted by    Ben Kohler (ben@bkohler.net) bug #124582
 

@@ -24,6 +24,10 @@ DEPEND="dev-lang/perl
 	ipv6? ( dev-perl/IO-Socket-INET6 )
 "
 
+src_unpack() {
+	:
+}
+
 src_install() {
 	newbin ${DISTDIR}/${P}.pl ${PN}
 	dodoc ${FILESDIR}/${PN}rc.sample
