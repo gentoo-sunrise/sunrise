@@ -1,0 +1,213 @@
+#
+# nzbperl configuration file
+# For more information, visit
+# http://noisybox.net/computers/nzbperl/ 
+# 
+# The options should be given just like the commandline 
+# options, but without leading dashes.
+#
+# Any options given on the commandline will override
+# the options provided here.
+#
+
+# The server to connect to
+server=your.newsserver.com
+
+# The number of connections to use to the server (default = 2)
+#conn=2
+
+# The username to use for login
+user=your_username
+
+# The password to use.  Note that actually having this
+# value here is a pretty big security risk and is discouraged.
+#pw=secret
+
+# If connecting over ssl, uncommend the following line.
+# This will enable a secure socket connection to the  NNTP (news) 
+# server.  Requires IO::Socket::SSL module to be installed.
+#ssl
+
+# If you wish to use a SOCKS proxy server to connect to your news
+# provider, you can enable the socks_server option.
+# The proxy, obviously, must allow you to connect to your news 
+# provider on the desired port.
+#socks_server=your.socksproxy.com
+#or include a port number:
+#socks_server=your.socksproxy.com:10183
+
+# If you wish to tunnel your NNTP (news) traffic over HTTP through
+# a proxy, you can use the http_proxy option.  Again, the HTTP proxy
+# server must allow you to connect to your news provider for this
+# to work.
+#http_proxy=your.httpproxy.com
+#or include a port number:
+#http_proxy=your.httpproxy.com:10184
+
+# If you're using a proxy server (either SOCKS or HTTP tunnel) and your 
+# proxy server requires authentication, you can provide the proxy_user 
+# and proxy_passwd options.
+#proxy_user=my-proxy-username
+#proxy_passwd=my-proxy-secretpassword
+
+# If you wish to use ipv6, uncomment this option.  If you don't know what
+# ipv6 is, then you're probably not using it (at least in 2005 this was
+# still generally the case)
+#ipv6
+
+# You can explicitly specify the location of uudeview.
+# The default is to be found in the path...
+#uudeview=/usr/local/bin/uudeview
+
+# Specify what bandwidth in kBps for "low" speed
+#low=35
+
+# Specify what bandwidth in kBps for "medium" speed
+#med=95
+
+# Start downloading with speed restricted to this many kBps
+#speed=100
+
+# The dlpath option tells nzbperl where to put all downloads.  All 
+# downloaded files and unencoded files will be placed into the directory
+# given.  Default is the current directory.
+# This option conflicts with --dlrelative
+#dlpath=/home/foo/downloads
+
+# The dlrelative option tells nzbperl to put downloaded and extracted 
+# files into the same directory that their nzb file came from.  This
+# can allow you to have multiple nzb files in various places and to
+# be sure that downloads go into their respective locations.
+#dlrelative
+
+# The dlcreate option tells nzbperl to create new subdirectires for
+# each nzbfile and to place decoded files in the new directories.
+# This can be useful when running with several nzbfiles and trying
+# to keep some filesystem organization.
+#dlcreate
+
+
+# The dlcreategrp option tells nzbperl to create new subdirectories
+# that correspond to the usenet group name that the file was
+# downloaded from.  Each downloaded file will be placed into a 
+# directory named after the group it was fetched from.
+#dlcreategrp
+
+# queuedir tells nzbperl to monitor the given directory for new nzb
+# files during run time.  New nzb files will be queued and downloaded.
+# Some people find more useful than restarting nzbperl.
+#queuedir=/path/to/your/queue/dir
+
+# If uncommented, the forever option will tell nzbperl to try and 
+# hang around forever and never quit.  It requires the --queuedir
+# option to also be specified.  This is probably what you want
+# if you only want to use nzbperl as a daemon that monitors a 
+# queue.
+#forever
+
+# postdec allows nzbperl to run an external command after each file
+# is decoded.  If additional processing of decoded files is required,
+# you may use this option.  Note: nzbperl will be (at least partially)
+# blocked until the command finishes, so it's wise to wrap your
+# postdec program in a shell script that forks if it does lengthy
+# operations.  One easy way to accomplish this is to add an ampersand
+# '&' to the end of the postdec option.
+# NZBP_FILE, NZBP_TEMPFILE, NZBP_ISBROKEN environment variables will
+# be passed to the program.
+#postdec=/path/to/your/post_decoding_program
+
+
+# postnzb allows nzbperl to run an external command after each
+# nzb file is completed.  As noted above, nzbperl will become
+# blocked while the program is running, so the program should
+# likely fork() unless you don't mind waiting.
+# Parameters to the program are: NZBP_NZBDIR, NZBP_NZBFILE,
+# NZBP_DECODEDIR, and NZBP_LASTFILE
+#postnzb=/path/to/your/post_nzb_program
+
+# Diskfree tells nzbperl to stop downloading when the free space
+# on the download path gets below the given percentage.  If this
+# option is given and the free disk space drops below the given
+# percentage, all file downloading will stop until the space is
+# freed back up.
+#diskfree=10
+
+# Whether or not to keep parts files after decoding (default = no)
+#keepparts
+
+# Whether or not to continue downloading broken files when parts
+# are missing.  Will leave parts files with missing/broken
+# segments around on disk still encoded.
+#keepbroken
+
+# Use uudeview in a desparate mode and try and create binary files
+# and allow it to decode to broken binary files.
+#keepbrokenbin
+
+# Uncomment to disable download order sorting files by subject
+#nosort
+
+# chunksize determines how many bytes are read on each pass through
+# a network receive.  Most people shouldn't change this, but in some
+# cases it may impact CPU usage and/or thruput.  If you experiment
+# with changing this, please provide feedback/success stories.
+# default value is 5k.
+#chunksize=5k
+
+# Uncomment to always redownload (don't skip existing files)
+#redo
+
+# Uncomment to disable color
+#nocolor
+
+# If your terminal doesn't support ANSI character graphics or you
+# just don't want to see them, you can enable the noansi option.
+#noansi
+
+# Uncomment to prevent up-to-date version checking at startup
+#noupdate
+
+# The log file to use.  Comment out to disable logging.
+log=/tmp/nzb.log
+
+# The decodelog option tells nzbperl to append the output of 
+# uudeview into the provided file.
+decodelog=/tmp/nzbdbgout.txt
+
+# The "dthreadct" option specifies how many decoder threads should be used for
+# decoding.  Most users will want the default of 1, however, if you don't have
+# a threaded Perl, you should set dthreadct=0 to disable all threaded functions.
+# Note: the --nothread option has been deprecated in favor of --dthreadct=0 
+# Default: 1
+dthreadct=1
+
+# The daemon option tells nzbperl to fork into the background and run
+# as a daemon.  There's no UI with this option, and all interaction 
+# should be performed with the log file and/or remote control functions.
+#daemon
+
+# If rcport is enabled, nzbperl will service clients that connect on the
+# port and allow them to perform remote control operations.  This is 
+# experimental, insecure, undocumented, and subject to change...
+# so use at your own risk!
+#rcport=9011
+
+# Uncomment this line to bypass NZB sanity checking 
+#insane
+
+# Uncomment to auto-skip all files with suspected broken parts
+#dropbad
+
+# You probably wouldn't ever want to specify a skip value in the config file
+#skip=0
+
+# The number of seconds to wait between reconnection attempts
+#retrywait=300
+
+# The subject line filter expresssion. Probably rarely used in config file.
+#filter=rar
+
+# The *inverse* subject line filter expression...also rarely specified in 
+# config files.  This will select all parts with subject lines that DO NOT 
+# match the expression given.
+#ifilter=par2
