@@ -17,10 +17,10 @@ DEPEND=""
 S=${WORKDIR}/${MY_P}
 
 src_unpack() {
-	unpack "${A}"
-	cd ${S}
-	epatch ${FILESDIR}/${P}-fix-compile-gcc-3.4.patch
-	epatch ${FILESDIR}/${P}-class.patch
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-fix-compile-gcc-3.4.patch"
+	epatch "${FILESDIR}/${P}-class.patch"
 	sed -i -e "/^CC/s/=.*/= $(tc-getCXX) ${CXXFLAGS}/" \
 		"${S}/Makefile" || die "sed failed."
 }
