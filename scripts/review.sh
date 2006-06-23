@@ -9,6 +9,7 @@ if [ -z "$1" ]; then
 	exit
 fi
 
+echo Updating everything to current revision...
 svn up
 # first-time
 #reviewed=$(svn log --verbose --stop-on-copy reviewed | grep "sunrise:[0-9]*)" -o | sed -e "s/sunrise:\([0-9]*\))/\1/")
@@ -20,5 +21,8 @@ if [ $reviewed -gt $sunrise ]; then
 	exit
 fi
 
+echo Merging in changes...
 svn merge sunrise@$reviewed sunrise@$sunrise reviewed
+echo Commiting your review
 svn ci -m "Reviewed up to revision $1"
+
