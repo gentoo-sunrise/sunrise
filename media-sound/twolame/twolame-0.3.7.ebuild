@@ -8,15 +8,12 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
-
+KEYWORDS="~amd64 ~x86"
 IUSE=""
-
 
 DEPEND=">=media-libs/libsndfile-1.0.11"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-
 	dodoc AUTHORS ChangeLog README TODO
 }
