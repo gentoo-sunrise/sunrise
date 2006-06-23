@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit tla eautoreconf
+inherit tla autotools
 
 DESCRIPTION="tla-tools is a package of helpful commands to use with the tla program."
 HOMEPAGE="http://www.gnuarch.org/gnuarchwiki/tla-tools"
