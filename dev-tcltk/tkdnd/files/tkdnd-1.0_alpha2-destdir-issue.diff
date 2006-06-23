@@ -5,7 +5,7 @@
  	  else :; fi; \
  	done
 -	$(TCLSH_PROG) mkIndex.tcl
-+	$(TCLSH_PROG) mkIndex.tcl $(DESTDIR)$(libdir)
++	$(TCLSH_PROG) mkIndex.tcl $(DESTDIR)$(pkglibdir)
  
  #========================================================================
  # Install binary executables (e.g. .exe files)
