@@ -9,7 +9,7 @@ HOMEPAGE="http://gdmap.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 
 IUSE="doc"
 SLOT="0"

@@ -36,7 +36,8 @@ src_install() {
 	dohtml manual.html
 
 	if use doc; then
-		epydoc build/lib/amara && dohtml -r html/*
+		epydoc build/lib/amara
+		dohtml -r html/*
 	fi
 
 	if use examples; then
