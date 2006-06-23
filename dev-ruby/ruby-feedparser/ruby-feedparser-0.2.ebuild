@@ -10,5 +10,3 @@ SRC_URI="http://download.gna.org/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-
-RDEPEND=""
