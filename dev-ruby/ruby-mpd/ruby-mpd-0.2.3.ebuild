@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="virtual/ruby"
-RDEPEND="${DEPEND}
+RDEPEND="virtual/ruby
 	|| ( media-sound/mpd media-sound/mpd-svn )"
 
 S=${WORKDIR}/${MY_P}
