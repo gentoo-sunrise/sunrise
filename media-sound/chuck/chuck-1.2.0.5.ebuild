@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs base
+inherit toolchain-funcs eutils
 
 DESCRIPTION="ChuCK - On-the-fly Audio Programming"
 HOMEPAGE="http://chuck.cs.princeton.edu/release/"
@@ -19,7 +19,11 @@ DEPEND="jack? ( media-sound/jack-audio-connection-kit )
 	sys-devel/bison
 	sys-devel/flex"
 
-PATCHES="${FILESDIR}/chuck-1.2.0.5-makefile.patch"
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-makefile.patch"
+}
 
 pkg_setup() {
 	local cnt=0
