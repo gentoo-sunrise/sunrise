@@ -4,27 +4,25 @@
 
 inherit eutils
 
-MY_P=${P/_/-}
-S="${WORKDIR}/ttcut"
-
-IUSE=""
-
-DESCRIPTION="TTCut is a tool for cutting MPEG especially for removing adds fom tv-recordings"
+DESCRIPTION="Tool for removing advertisements from recorded MPEG files"
 HOMEPAGE="http://ttcut.tritime.org/"
-SRC_URI="http://download.berlios.de/ttcut/${MY_P}.tar.gz"
+SRC_URI="http://download.berlios.de/${PN}/${P/_/-}.tar.gz"
 
-KEYWORDS="~x86"
-SLOT="0"
 LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~x86"
+IUSE=""
 
 DEPEND=">=media-libs/libmpeg2-0.4.0
 	>=x11-libs/qt-4.1.0"
 
-RDEPEND="${_DEPEND}
+RDEPEND="${DEPEND}
 	media-video/mplayer
 	media-video/dvdauthor
 	media-video/transcode
 	media-video/ffmpeg"
+
+S="${WORKDIR}/${PN}"
 
 src_compile() {
 	qmake ttcut.pro -o Makefile.ttcut
@@ -34,12 +32,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin ttcut
-	dobin ttmpeg2
+	dobin ttcut ttmpeg2
 	make_desktop_entry ttcut Ttcut "" AudioVideoEditing
 	make_desktop_entry ttmpeg2 Ttmpeg2 "" AudioVideoEditing
 }
-
-
-
-
