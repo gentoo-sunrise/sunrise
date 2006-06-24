@@ -13,7 +13,7 @@ echo Updating everything to current revision...
 svn up
 # first-time
 #reviewed=$(svn log --verbose --stop-on-copy reviewed | grep "sunrise:[0-9]*)" -o | sed -e "s/sunrise:\([0-9]*\))/\1/")
-reviewed=$(svn log reviewed | grep "Reviewed up to revision " -m 1 | sed "s:Reviewed up to revision ::" 2>/dev/null)
+reviewed=$(svn log reviewed 2>/dev/null | grep "Reviewed up to revision " -m 1 | sed "s:Reviewed up to revision ::")
 sunrise=$1
 
 if [ $reviewed -gt $sunrise ]; then
