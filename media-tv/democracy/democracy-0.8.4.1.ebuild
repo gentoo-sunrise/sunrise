@@ -41,8 +41,8 @@ S="${WORKDIR}/${MY_P}/platform/gtk-x11/"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/democracy-{use-gecko-sdk,as-needed-libX11}.patch
+	cd "${S}"
+	epatch "${FILESDIR}"/democracy-{use-gecko-sdk,as-needed-libX11}.patch
 }
 
 pkg_postinst(){
