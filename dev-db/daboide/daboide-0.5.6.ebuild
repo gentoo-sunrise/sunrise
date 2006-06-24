@@ -13,8 +13,7 @@ KEYWORDS="~x86"
 IUSE=""
 S=${WORKDIR}/${PN}
 
-DEPEND="app-arch/gzip
-	app-arch/tar"
+DEPEND=""
 
 RDEPEND=">=dev-python/wxpython-2.5.2.8
 	dev-db/dabo
@@ -22,10 +21,8 @@ RDEPEND=">=dev-python/wxpython-2.5.2.8
 	dev-python/reportlab
 	${DEPEND}"
 
-distutils_src_compile() {
-	# Prevent inherited method from trying to run setup.py
-	false
-}
+# Prevent inherited method from trying to run setup.py
+src_compile() { :; }
 
 src_install() {
 	# Install daboide into site-packages
@@ -34,6 +31,7 @@ src_install() {
 
 	dodoc ChangeLog
 
+	# investigate usage of doins -r please
 	# for each source directory
 	for DDIR in $(find . -type d)
 	do
@@ -64,9 +62,3 @@ src_install() {
 	echo "exec /usr/lib/python${PYVER}/site-packages/${P}/IDE.py" >> daboide
 	dobin daboide
 }
-
-#pkg_postinst() {
-	# There is currently a problem trying to optimise some of the files
-	# under AppWizard
-	#python_mod_optimize ${D}
-#}

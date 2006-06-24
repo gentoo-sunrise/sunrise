@@ -13,16 +13,14 @@ KEYWORDS="~x86"
 IUSE=""
 S=${WORKDIR}/${PN}
 
-DEPEND=">=dev-python/setuptools-0.6_alpha9
-	app-arch/gzip
-	app-arch/tar"
+DEPEND=">=dev-python/setuptools-0.6_alpha9"
 
 RDEPEND=">=dev-python/wxpython-2.5.2.8
 	${DEPEND}"
 
 src_install() {
 	${python} setup.py install --root=${D} --no-compile \
-		--single-version-externally-managed "$@" || die
+		--single-version-externally-managed "$@" || die "setup.py install failed"
 
 	dodoc ANNOUNCE AUTHORS ChangeLog INSTALL README TODO
 }
