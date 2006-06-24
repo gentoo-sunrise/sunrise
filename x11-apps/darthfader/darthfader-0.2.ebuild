@@ -8,7 +8,7 @@ HOMEPAGE="http://cs.joensuu.fi/~agrohn/darthfader/"
 IUSE=""
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DEPEND="|| ( ( x11-libs/libX11
 		x11-libs/libXext )
