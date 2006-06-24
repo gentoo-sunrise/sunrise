@@ -22,8 +22,7 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-fix-compile-gcc-3.4.patch"
 	epatch "${FILESDIR}/${P}-class.patch"
-	sed -i -e "/^CC/s/=.*/= $(tc-getCXX) ${CXXFLAGS}/" \
-		"${S}/Makefile" || die "sed failed."
+	epatch "${FILESDIR}/${P}-makefile.patch"
 }
 
 src_install() {
