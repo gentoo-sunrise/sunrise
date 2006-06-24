@@ -1,0 +1,13 @@
+diff -ur olsrd-0.4.10~/gui/linux-gtk/Makefile olsrd-0.4.10/gui/linux-gtk/Makefile
+--- olsrd-0.4.10~/gui/linux-gtk/Makefile	2006-06-24 13:43:07.000000000 +0200
++++ olsrd-0.4.10/gui/linux-gtk/Makefile	2006-06-24 13:44:01.000000000 +0200
+@@ -1,7 +1,7 @@
+-CC=	gcc
++CC?=	gcc
+ #CC=     arm-linux-gcc
+ 
+-CFLAGS= -Wall `pkg-config --cflags gtk+-2.0` #-g #to use GDB
++CFLAGS+= -Wall `pkg-config --cflags gtk+-2.0` #-g #to use GDB
+ LFLAGS= `pkg-config --libs gtk+-2.0`
+ 
+ SRCS=	src/main.c src/interface.c src/callbacks.c src/ipc.c \

@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="An implementation of the Optimized Link State Routing protocol"
 HOMEPAGE="http://www.olsr.org/"
 SRC_URI="http://www.olsr.org/releases/${PV%.*}/${P}.tar.bz2"
@@ -12,6 +14,12 @@ KEYWORDS="~x86"
 IUSE="gtk"
 
 DEPEND="gtk? ( =x11-libs/gtk+-2* )"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-gui_makefile.patch"
+}
 
 src_compile() {
 	cd "${S}"
