@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 	media-video/transcode
 	media-video/ffmpeg"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_compile() {
 	qmake ttcut.pro -o Makefile.ttcut
