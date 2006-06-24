@@ -1,0 +1,45 @@
+diff -ur chuck-1.2.0.5~/src/makefile.alsa chuck-1.2.0.5/src/makefile.alsa
+--- chuck-1.2.0.5~/src/makefile.alsa	2006-06-24 01:38:24.000000000 +0200
++++ chuck-1.2.0.5/src/makefile.alsa	2006-06-24 01:39:06.000000000 +0200
+@@ -1,9 +1,9 @@
+ 
+-CXX=gcc
++#CXX=gcc
+ LEX=flex
+ YACC=bison
+ INCLUDES=
+-FLAGS=-D__LINUX_ALSA__ -O3 -c
++#FLAGS=-D__LINUX_ALSA__ -O3 -c
+ LIBS=-lasound -lstdc++ -ldl -lm
+ SF_OBJ=util_sndfile.o
+ 
+diff -ur chuck-1.2.0.5~/src/makefile.jack chuck-1.2.0.5/src/makefile.jack
+--- chuck-1.2.0.5~/src/makefile.jack	2006-06-24 01:38:24.000000000 +0200
++++ chuck-1.2.0.5/src/makefile.jack	2006-06-24 01:39:19.000000000 +0200
+@@ -1,9 +1,9 @@
+ 
+-CXX=gcc
++#CXX=gcc
+ LEX=flex
+ YACC=bison
+ INCLUDES=
+-FLAGS=-D__LINUX_JACK__ -O3 -c
++#FLAGS=-D__LINUX_JACK__ -O3 -c
+ LIBS=-lasound -ljack -lstdc++ -ldl -lm
+ SF_OBJ=util_sndfile.o
+ 
+diff -ur chuck-1.2.0.5~/src/makefile.oss chuck-1.2.0.5/src/makefile.oss
+--- chuck-1.2.0.5~/src/makefile.oss	2006-06-24 01:38:24.000000000 +0200
++++ chuck-1.2.0.5/src/makefile.oss	2006-06-24 01:39:29.000000000 +0200
+@@ -1,9 +1,9 @@
+ 
+-CXX=gcc
++#CXX=gcc
+ LEX=flex
+ YACC=bison
+ INCLUDES=
+-FLAGS=-D__LINUX_OSS__ -O3 -c
++#FLAGS=-D__LINUX_OSS__ -O3 -c
+ LIBS=-lpthread -lstdc++ -ldl -lm
+ SF_OBJ=util_sndfile.o
+ 
