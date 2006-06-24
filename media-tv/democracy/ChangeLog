@@ -3,5 +3,7 @@
 # $Header: $
 
   24 Jun 2006; Stefan Schweizer <genstef@gentoo.org> ChangeLog:
-  New democracy ebuild thanks to Louis C. in bug 131527
+  New democracy ebuild thanks to Jorge Vargas for the initial ebuild, Martin
+  Meyer and Anton for helping with improving it and Louis C. for bumping it in
+  bug 131527
 
