@@ -3,5 +3,8 @@
 # $Header: $
 
   24 Jun 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
+  Add missing depend of gst-plugins-base thanks to Joonas Niilola.
+
+  24 Jun 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
   Initial version. See bug #116068.
 

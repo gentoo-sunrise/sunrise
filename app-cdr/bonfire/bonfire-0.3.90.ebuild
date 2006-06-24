@@ -26,6 +26,7 @@ RDEPEND="|| ( ( x11-libs/libXrandr
 	>=gnome-base/libgnomeui-2.14 
 	>=gnome-base/gnome-vfs-2.14.2 
 	>=media-libs/gstreamer-0.10.6 
+	>=media-libs/gst-plugins-base-0.10.6
 	>=sys-apps/hal-0.5 
 	>=sys-apps/dbus-0.5
 	>=gnome-extra/nautilus-cd-burner-2.14
@@ -44,8 +45,8 @@ G2CONF="${G2CONF} \
 	$(use_enable beagle search)"
 
 src_install() {
-        gnome2_src_install
-        use nls || rm -rf ${D}/usr/share/locale
+	gnome2_src_install
+	use nls || rm -rf ${D}/usr/share/locale
 }
 
 DOCS="ChangeLog NEWS README MAINTAINERS"
