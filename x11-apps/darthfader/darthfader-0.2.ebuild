@@ -9,13 +9,15 @@ IUSE=""
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86"
-RDEPEND="|| ( ( x11-libs/libX11
+
+DEPEND="|| ( ( x11-libs/libX11
 		x11-libs/libXext )
 		virtual/x11 )"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	sed -i -e 's:CF=:CF=${CFLAGS}:' \
 		-e 's:/usr/X11R6:/usr:g' Makefile
 }
