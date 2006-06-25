@@ -14,10 +14,7 @@ IUSE=""
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	sed -i \
-		-e 's:-O2:$(E_CXXFLAGS):' \
-		Makefile || die "sed Makefile failed"
+	sed -i -e 's:-O2:$(E_CXXFLAGS):' Makefile || die "sed Makefile failed"
 }
 
 src_compile() {
