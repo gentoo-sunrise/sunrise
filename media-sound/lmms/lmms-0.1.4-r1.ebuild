@@ -11,10 +11,9 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
+IUSE="alsa debug flac jack ladspa oss samplerate sdl vorbis"
 RESTRICT="strip"
 
-IUSE="alsa flac ladspa vorbis oss sdl samplerate jack debug"
 DEPEND="=x11-libs/qt-3.3*
 	vorbis? ( media-libs/libvorbis )
 	alsa? ( media-libs/alsa-lib )
@@ -24,6 +23,8 @@ DEPEND="=x11-libs/qt-3.3*
 	jack? ( >=media-sound/jack-audio-connection-kit-0.99.0 )
 	flac? ( media-libs/flac )
 	ladspa? ( media-libs/ladspa-sdk )"
+
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	econf \
