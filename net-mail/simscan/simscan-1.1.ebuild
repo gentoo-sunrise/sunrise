@@ -4,31 +4,27 @@
 
 inherit eutils
 
-DESCRIPTION="Simscan is a simple program that enables qmail-smtpd to reject viruses, spam, and block attachments during the SMTP conversation"
+DESCRIPTION="A simple program that enables qmail-smtpd to reject viruses, spam, and block attachments during the SMTP conversation"
 HOMEPAGE="http://www.inter7.com/?page=simscan"
 SRC_URI="http://www.inter7.com/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="clamav attachement custom-smtp-reject dropmsg regex quarantine perdomain
-received spamassassin passthru"
+IUSE="attachment clamav custom-smtp-reject dropmsg received passthru perdomain regex quarantine spamassassin"
 
-DEPEND="
-	clamav? ( app-antivirus/clamav )
-	attachement? ( net-mail/ripmime )
+DEPEND="clamav? ( app-antivirus/clamav )
+	attachment? ( net-mail/ripmime )
 	spamassassin? ( mail-filter/spamassassin )
-	regex? ( dev-libs/libpcre )
-"
+	regex? ( dev-libs/libpcre )"
 RDEPEND="${DEPEND}
-	virtual/qmail
-"
+	virtual/qmail"
 
-RESTRICT=strip
+RESTRICT="strip"
 
 pkg_setup() {
 	enewgroup clamav
-	enewuser simscan -1 -1 /dev/null clamav '-c	"simscan user (portage)"'
+	enewuser simscan -1 -1 /dev/null clamav
 }
 
 src_compile() {
@@ -40,7 +36,7 @@ src_compile() {
 		myconf="${myconf} --enable-clamav=n"
 	fi
 
-	if use attachement ; then
+	if use attachment ; then
 		myconf="${myconf} --enable-attach=y"
 		myconf="${myconf} --enable-ripmime=/usr/bin/ripmime"
 	else
@@ -122,34 +118,34 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo ""
+	einfo
 
 	if use custom-smtp-reject ; then
-		einfo "Becareful, if you use the \"custom-smtp-reject\" flag you will"
-		einfo "have many problems if qmail was not patched with"
-		einfo "qmail-queue-custom-error.patch"
-		einfo ""
+		ewarn "Be careful when using the \"custom-smtp-reject\" flag you will"
+		ewarn "have many problems if qmail was not patched with"
+		ewarn "qmail-queue-custom-error.patch"
+		ewarn
 		ewarn "If your not sure, re-emerge simscan without this flag"
-		einfo ""
+		ewarn
 	fi
 
 	einfo "Now update the simscan configuration files :"
 	ewarn "You have to do that after clamav or spamassassin update"
-	einfo ""
+	einfo
 	einfo "/var/qmail/bin/simscanmk"
 	einfo "`/var/qmail/bin/simscanmk`"
-	einfo ""
+	einfo
 	einfo "/var/qmail/bin/simscanmk -g"
 	einfo "`/var/qmail/bin/simscanmk -g`"
-	einfo ""
+	einfo
 
 	einfo "You must have qmail with QMAILQUEUE patch"
 	einfo "And, in order use simscan, edit your tcp.qmail-smtpd rules"
 	einfo "and update as follow (for example only)"
-	einfo ""
+	einfo
 	einfo ":allow,QMAILQUEUE=\"/var/qmail/bin/simscan\""
-	einfo ""
+	einfo
 
 	ewarn "Read the documentation and personnalize /var/qmail/control/simcontrol"
-	einfo ""
+	einfo
 }
