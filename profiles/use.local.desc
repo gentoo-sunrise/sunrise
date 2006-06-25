@@ -10,6 +10,7 @@ app-misc/mc-mp:7zip - Add support for 7zip archives
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
+media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
 net-im/psi:xscreensaver - Enables detection of xscreensaver
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
@@ -24,4 +25,3 @@ dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 media-sound/lmms:ladspa - Enables support for ladspa plugins
 media-sound/lmms:samplerate - Enable support for libsamplerate
-media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
