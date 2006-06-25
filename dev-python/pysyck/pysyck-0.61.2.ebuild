@@ -16,7 +16,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=dev-libs/syck-0.55"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
