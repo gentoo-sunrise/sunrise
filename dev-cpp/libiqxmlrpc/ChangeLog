@@ -1,0 +1,7 @@
+# ChangeLog for dev-cpp/libiqxmlrpc
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Jun 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
+  New ebuild for bug 71785
+
