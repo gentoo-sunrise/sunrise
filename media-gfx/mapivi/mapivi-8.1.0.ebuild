@@ -20,17 +20,15 @@ DEPEND=">=dev-lang/perl-5.5
 	dev-perl/ImageInfo"
 
 src_unpack() {
-	unpack "${A}"
-	cd ${S}
+	unpack ${A}
+	cd "${S}"
 	sed -i -e 's:$configdir/PlugIns:/usr/share/mapivi/plugins:' mapivi
 }
 
 src_install() {
-	exeinto /usr/bin
-	doexe mapivi
+	dobin mapivi
 	dodir /usr/share/mapivi/plugins
 	exeinto /usr/share/mapivi/plugins
-	doexe PlugIns/Channel-Separator PlugIns/Join-RGB PlugIns/checkDir-plugin\
-		PlugIns/filelist-plugin PlugIns/test-plugin
+	doexe PlugIns/{Channel-Separator,Join-RGB,checkDir-plugin,filelist-plugin,test-plugin}
 	dodoc Changes.txt FAQ README Tips.txt ToDo
 }
