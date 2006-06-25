@@ -32,7 +32,7 @@ src_install() {
 	dodoc ChangeLog
 
 	insinto ${INS}
-	doins -r .
+	doins -r *
 
 	# pick out those files which should be executable
 	for EFIL in $(grep -RI '^#!' * | cut -d : -f 1)
@@ -47,3 +47,7 @@ src_install() {
 	echo "exec /usr/lib/python${PYVER}/site-packages/${PN}/IDE.py" >> daboide
 	dobin daboide
 }
+
+# Prevent the optimiser from running
+# as there are problems with some non-standard python files
+distutils_pkg_postinst() { :; }
