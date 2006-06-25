@@ -16,7 +16,7 @@ KEYWORDS="~x86"
 IUSE="examples"
 
 DEPEND=""
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
