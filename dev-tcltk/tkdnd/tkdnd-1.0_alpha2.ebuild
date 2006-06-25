@@ -16,19 +16,17 @@ KEYWORDS="~x86"
 RESTRICT="test"
 
 DEPEND=">=dev-lang/tcl-8.4
-	>=dev-lang/tk-8.4
-	"
+	>=dev-lang/tk-8.4"
 
 S=${WORKDIR}/${MY_P}/unix/
 
 src_unpack() {
 	unpack ${A}
 	# Patch to avoid a sandbox issue
-	epatch ${FILESDIR}/${P}-destdir-issue.diff
+	epatch "${FILESDIR}/${P}-destdir-issue.diff"
 }
 
 src_install() {
 	emake install DESTDIR="${D}" || die "emake install failed"
 	dodoc doc/* Readme.txt
 }
-
