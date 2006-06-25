@@ -16,16 +16,20 @@ IUSE=""
 
 DEPEND=">=gnome-base/gconf-2.0
 		>=x11-libs/gtk+-2.6
+		sys-libs/zlib
 		>=media-libs/gstreamer-0.10.0
-		>=media-libs/gst-plugins-base-0.10.0
-		>=media-plugins/gst-plugins-gnomevfs-0.10.0
-		>=media-plugins/gst-plugins-gconf-0.10.0
-		>=media-plugins/gst-plugins-mad-0.10.0
 		>=dev-lang/mono-1.0
 		>=dev-dotnet/gtk-sharp-1.9.2
 		>=dev-dotnet/gnome-sharp-1.9.2
 		>=dev-dotnet/glade-sharp-1.9.2
 		>=dev-dotnet/gconf-sharp-1.9.2"
+
+RDEPEND="${DEPEND}
+		>=media-libs/gst-plugins-base-0.10.0
+		>=media-plugins/gst-plugins-gnomevfs-0.10.0
+		>=media-plugins/gst-plugins-gconf-0.10.0
+		>=media-plugins/gst-plugins-mad-0.10.0"
+
 
 pkg_setup() {
 	G2CONF="${G2CONF} \
