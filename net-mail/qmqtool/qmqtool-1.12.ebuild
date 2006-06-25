@@ -13,16 +13,14 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND="
-	virtual/qmail
-	dev-lang/perl
-"
+RDEPEND="virtual/qmail
+	dev-lang/perl"
 DEPEND=""
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/qmqtool-perlpath.patch
+	cd "${S}"
+	epatch "${FILESDIR}/qmqtool-perlpath.patch"
 }
 
 src_install() {
