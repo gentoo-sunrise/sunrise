@@ -3,7 +3,7 @@ app-misc/mc-mp:7zip - Add support for 7zip archives
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
-net-mail/simscan:attachement - Enable attachment filtering
+net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
 net-mail/simscan:dropmsg - Enable dropping message contains virus/spam
 net-mail/simscan:regex - Enable regex attachment filename checking
