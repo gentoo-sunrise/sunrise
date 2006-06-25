@@ -44,13 +44,13 @@ src_compile() {
 }
 
 src_install() {
-	cp -pPR ${S}/opt/ ${D}/opt
-	cp -pPR ${S}/var/ ${D}/var
-	cp -pPR ${S}/etc/ ${D}/etc
+	cp -pPR "${S}"/opt/ "${D}"/opt
+	cp -pPR "${S}"/var/ "${D}"/var
+	cp -pPR "${S}"/etc/ "${D}"/etc
 
 	# Create log dir in proper location
-	rm -rf ${D}/var/drweb/log/
-	rm -rf ${D}/var/drweb/spool/
+	rm -rf "${D}"/var/drweb/log/
+	rm -rf "${D}"/var/drweb/spool/
 	dodir /var/log/drweb
 	dodir /var/spool/drweb
 
@@ -65,17 +65,17 @@ src_install() {
 	fperms 0700 /var/drweb/run
 	fperms 0700 /var/drweb/updates
 	fperms 0770 /var/spool/drweb
-	chown -R drweb:drweb ${D}/var/drweb/bases
-	chown -R drweb:drweb ${D}/opt/drweb/lib
+	chown -R drweb:drweb "${D}"/var/drweb/bases
+	chown -R drweb:drweb "${D}"/opt/drweb/lib
 
 	if use logrotate ; then
 		insinto /etc/logrotate.d
-		newins ${D}/etc/drweb/drweb-log drweb
+		newins "${D}"/etc/drweb/drweb-log drweb
 	fi
-	rm -f ${D}/etc/drweb/drweb-log
+	rm -f "${D}"/etc/drweb/drweb-log
 
-	newinitd ${D}/etc/init.d/drwebd drweb
-	rm -f ${D}/etc/init.d/drwebd
+	newinitd "${D}"/etc/init.d/drwebd drweb
+	rm -f "${D}"/etc/init.d/drwebd
 
 	local docdir="${D}/opt/drweb/doc"
 	for doc in ${docdir}/{ChangeLog,FAQ,readme.eicar,readme.license} \
@@ -84,7 +84,7 @@ src_install() {
 		    ${docdir}/update/readme.update ; do
 		dodoc ${doc} && rm -f ${doc}
 	done
-	dodoc ${D}/opt/drweb/getkey.HOWTO
+	dodoc "${D}"/opt/drweb/getkey.HOWTO
 
 	if use linguas_ru ; then
 		    for doc_ru in ${docdir}/{ChangeLog.rus,FAQ.rus,readme.eicar.rus,readme.license.rus} \
@@ -93,10 +93,10 @@ src_install() {
 			${docdir}/update/readme.update.rus ; do
 		dodoc ${doc_ru} && rm -f ${doc_ru}
 		done
-		dodoc ${D}/opt/drweb/getkey.rus.HOWTO
+		dodoc "${D}"/opt/drweb/getkey.rus.HOWTO
 	fi
 
-	rm -rf ${docdir} && rm -f ${D}/opt/drweb/getkey.*
+	rm -rf ${docdir} && rm -f "${D}"/opt/drweb/getkey.*
 
 	use doc && dodoc ${WORKDIR}/drwunxen.pdf
 	use doc && use linguas_ru && dodoc ${WORKDIR}/drwunxru.pdf
