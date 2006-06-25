@@ -19,7 +19,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog README TODO
 	rm -rf "${D}"/usr/share/${PN}
 }
