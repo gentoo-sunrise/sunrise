@@ -10,7 +10,7 @@ HOMEPAGE="http://www.getdemocracy.com"
 SRC_URI="ftp://ftp.osuosl.org/pub/pculture.org/democracy/src/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64" 
+KEYWORDS="~x86 ~amd64"
 #currently the support for firefox appears to be broken
 #IUSE="gecko-sdk mozilla firefox"
 
@@ -46,7 +46,7 @@ src_unpack() {
 }
 
 pkg_postinst(){
-	if ! built_with_use -a xine-lib aac ffmpeg mad asf flac sdl win32codecs; then 
+	if ! built_with_use -a xine-lib aac ffmpeg mad asf flac sdl win32codecs; then
 		ewarn "The Democracy team recommends you to emerge xine-lib as follows:"
 		ewarn ""
 		ewarn "# echo \"media-libs/xine-lib aac ffmpeg mad asf flac sdl win32codecs\" \ "
