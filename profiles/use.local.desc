@@ -19,9 +19,9 @@ net-im/psi:xscreensaver - Enables detection of xscreensaver
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
 net-mail/simscan:dropmsg - Enable dropping message contains virus/spam
-net-mail/simscan:regex - Enable regex attachment filename checking
-net-mail/simscan:quarantine - Enable the detected spam/virus to be stored in quarantine
-net-mail/simscan:per-domain - Enable per domain virus/spam/attach checks/filters
-net-mail/simscan:received - Enable the add of a Received line in scanned messages
-net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-mail/simscan:passthru - Disable reject of messages where spam or virus is detected
+net-mail/simscan:per-domain - Enable per domain virus/spam/attach checks/filters
+net-mail/simscan:quarantine - Enable the detected spam/virus to be stored in quarantine
+net-mail/simscan:received - Enable the add of a Received line in scanned messages
+net-mail/simscan:regex - Enable regex attachment filename checking
+net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
