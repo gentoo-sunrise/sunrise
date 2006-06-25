@@ -17,5 +17,5 @@ RDEPEND=">=dev-python/pygtk-2.6"
 
 src_install() {
 	distutils_src_install
-	rm -rf ${D}/usr/share/mirage
+	rm -rf "${D}"/usr/share/mirage
 }
