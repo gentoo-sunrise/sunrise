@@ -9,12 +9,17 @@ HOMEPAGE="http://sourceforge.net/projects/pam-pgsql/"
 SRC_URI="mirror://sourceforge/${PN/_/-}/lib${PN/_/-}-${PV}.tar.bz2"
 RESTRICT="mirror"
 
+LICENSE="GPL-2"
+SLOT="0"
+IUSE=""
+KEYWORDS="~amd64 ~x86"
+
 DEPEND=">=sys-libs/pam-0.78-r3
 	>=app-crypt/mhash-0.9.1
 	>=dev-db/postgresql-7.3.6"
-LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS="~x86 ~amd64"
+
+RDEPEND="${DEPEND}"
+
 
 S="${WORKDIR}/${PN/_/-}-${PV}"
 
