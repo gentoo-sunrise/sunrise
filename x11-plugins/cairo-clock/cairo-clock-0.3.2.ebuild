@@ -18,7 +18,7 @@ DEPEND=">=x11-libs/cairo-1.0.2
 RDEPEND="${DEPEND}"
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README NEWS AUTHORS TODO
 }
 
