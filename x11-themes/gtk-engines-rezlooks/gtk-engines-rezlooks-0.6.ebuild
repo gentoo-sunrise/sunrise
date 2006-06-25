@@ -13,7 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=x11-libs/gtk+-2.6"
+DEPEND=">=x11-libs/gtk+-2.6"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
