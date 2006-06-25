@@ -13,3 +13,4 @@ net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-mail/simscan:passthru - Disable reject of messages where spam or virus is detected
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
