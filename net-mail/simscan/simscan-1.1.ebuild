@@ -29,7 +29,7 @@ pkg_setup() {
 
 src_compile() {
 	local myconf
-	
+
 	for flag in clamav custom-smtp-reject dropmsg per-domain received ; do
 		if use ${flag} ; then
 			myconf="${myconf} --enable-${flag}=y"
