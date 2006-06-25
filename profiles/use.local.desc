@@ -1,8 +1,14 @@
+# This file contains descriptions of local USE flags, and the ebuilds which
+# contain them.
+
+# Keep it sorted.
+
 app-antivirus/drweb:logrotate - Use logrotate for rotating logs
 app-misc/mc-mp:7zip - Add support for 7zip archives
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
+net-im/psi:xscreensaver - Enables detection of xscreensaver
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
 net-mail/simscan:dropmsg - Enable dropping message contains virus/spam
