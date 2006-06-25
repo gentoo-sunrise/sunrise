@@ -22,7 +22,7 @@ S="${WORKDIR}/${MY_PN}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	sed -i \
 		-e '/^CFLAGS =/s:-fmessage-length=0 -fexpensive-optimizations -O3:$(E_CFLAGS):' \
