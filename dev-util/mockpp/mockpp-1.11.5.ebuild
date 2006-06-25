@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
 		app-text/docbook-xml-dtd )"
 
 pkg_setup() {
-	if (use boost) && (use cppunit); then
+	if use boost && use cppunit; then
 		ewarn
 		ewarn "Both boost and cppunit use-flags specified, will use boost"
 		ewarn
