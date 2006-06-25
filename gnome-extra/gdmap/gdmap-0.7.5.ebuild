@@ -10,13 +10,12 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-
 IUSE="doc"
 SLOT="0"
 
 DEPEND=">=x11-libs/gtk+-2.6.0
 	dev-libs/libxml2"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 src_install() {
 	gnome2_src_install
