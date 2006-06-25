@@ -31,7 +31,7 @@ src_compile() {
 }
 
 src_install() {
-	dodoc Readme.txt ToDo.txt WishList.txt Informations.txt Changes.txt Bugs.txt
+	dodoc {Readme,ToDo,WishList,Informations,Changes,Bugs}.txt
 	dobin binary/monkey_x11
 	dosym monkey_x11 /usr/bin/monkeystudio
 	use doc && dohtml -r docqt4ds/english/html/*
