@@ -16,7 +16,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="~dev-cpp/ice-${PV}"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
@@ -35,4 +35,3 @@ src_unpack() {
 	# This step calls slice2py and generates all the python files
 	emake || die "Failed to create the .py-Files"
 }
-
