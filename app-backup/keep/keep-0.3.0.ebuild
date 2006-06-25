@@ -18,8 +18,8 @@ DEPEND=""
 RDEPEND=">=app-backup/rdiff-backup-1.0.1-r1"
 
 src_install() {
-	emake DESTDIR=${D} install || die "install failed"
-	dodoc ChangeLog INSTALL TODO AUTHORS README VERSION
+	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc ChangeLog TODO AUTHORS README VERSION
 }
 
 pkg_postinst() {
