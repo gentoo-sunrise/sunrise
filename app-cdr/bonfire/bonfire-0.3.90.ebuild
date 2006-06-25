@@ -6,7 +6,7 @@ inherit gnome2
 
 DESCRIPTION="Bonfire is yet another application to burn CD/DVD for the gnome desktop."
 HOMEPAGE="http://perso.wanadoo.fr/bonfire/"
-SRC_URI="mirror://sourceforge/bonfire/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
