@@ -13,3 +13,4 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND="dev-ruby/ruby-feedparser
 	dev-ruby/rubymail"
+RDEPEND="${DEPEND}"
