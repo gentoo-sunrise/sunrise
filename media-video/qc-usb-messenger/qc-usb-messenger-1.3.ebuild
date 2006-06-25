@@ -28,8 +28,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	convert_to_m ${S}/Makefile
+	cd "${S}"
+	convert_to_m "${S}/Makefile"
 }
 
 src_install() {
