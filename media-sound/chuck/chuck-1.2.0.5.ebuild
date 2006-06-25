@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs eutils
+inherit eutils
 
 DESCRIPTION="ChuCK - On-the-fly Audio Programming"
 HOMEPAGE="http://chuck.cs.princeton.edu/release/"
