@@ -1,15 +1,10 @@
-# This file contains descriptions of local USE flags, and the ebuilds which
-# contain them.
-
-# Keep it sorted.
-
 app-antivirus/drweb:logrotate - Use logrotate for rotating logs
 app-cdr/bonfire:beagle - Enable support for beagle
 app-cdr/bonfire:totem - Enable support for totem
-app-misc/mc-mp:7zip - Add support for 7zip archives
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
+app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 media-sound/lmms:ladspa - Enables support for LADSPA plugins
