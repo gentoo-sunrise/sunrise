@@ -40,7 +40,7 @@ src_compile() {
 }
 
 src_install() {
-	make install DESTDIR="${D}" || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog README NEWS TODO
 	if use doc; then
 		dohtml doc/libiqxmlrpc.html/*
