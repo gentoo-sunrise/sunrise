@@ -11,11 +11,12 @@ RESTRICT="mirror"
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=sys-libs/pam-0.78-r2
 	>=sys-libs/db-4.2.52_p2"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
