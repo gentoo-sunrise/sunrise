@@ -9,7 +9,7 @@ HOMEPAGE="http://macslow.thepimp.net/?page_id=23"
 SRC_URI="http://macslow.thepimp.net/projects/cairo-clock/${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DEPEND=">=x11-libs/cairo-1.0.2
 	>=x11-libs/gtk+-2.8.8
@@ -18,7 +18,7 @@ DEPEND=">=x11-libs/cairo-1.0.2
 RDEPEND="${DEPEND}"
 
 src_install() {
-	make DESTDIR=${D} install || die "make install failed."
+	make DESTDIR="${D}" install || die "make install failed"
 	dodoc README NEWS AUTHORS TODO
 }
 
