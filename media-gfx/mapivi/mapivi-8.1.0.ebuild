@@ -7,7 +7,7 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Picture manager / organizer written in Perl/Tk."
 HOMEPAGE="http://mapivi.sourceforge.net/mapivi.shtml"
-SRC_URI="mirror://sourceforge/mapivi/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
