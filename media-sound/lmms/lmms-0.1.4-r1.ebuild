@@ -6,18 +6,16 @@ inherit eutils
 
 DESCRIPTION="free alternative to popular programs such as FruityLoops, Cubase and Logic"
 HOMEPAGE="http://lmms.sourceforge.net"
-SRC_URI="mirror://sourceforge/lmms/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-
-S="${WORKDIR}/${P}"
+KEYWORDS="~amd64 ~x86"
 
 RESTRICT="strip"
 
 IUSE="alsa flac ladspa vorbis oss sdl samplerate jack debug"
-DEPEND=">=x11-libs/qt-3.3.4
+DEPEND="=x11-libs/qt-3.3*
 	vorbis? ( media-libs/libvorbis )
 	alsa? ( media-libs/alsa-lib )
 	sdl? ( media-libs/libsdl
@@ -29,25 +27,25 @@ DEPEND=">=x11-libs/qt-3.3.4
 
 src_compile() {
 	econf \
-		$( use_with alsa asound ) \
-		$( use_with flac ) \
-		$( use_with ladspa ) \
-		$( use_with vorbis ) \
-		$( use_with samplerate ) \
-		$( use_with oss ) \
-		$( use_with sdl ) \
-		$( use_with sdl sdlsound )\
-		$( use_with jack ) \
-		$( use_enable debug ) \
-		--enable-hqsinc || die "Configure failed"
+		$(use_with alsa asound) \
+		$(use_with flac) \
+		$(use_with ladspa) \
+		$(use_with vorbis) \
+		$(use_with samplerate) \
+		$(use_with oss) \
+		$(use_with sdl) \
+		$(use_with sdl sdlsound)\
+		$(use_with jack) \
+		$(use_enable debug) \
+		--enable-hqsinc || die "econf failed"
 
-	emake || die "Make failed"
+	emake || die "emake failed"
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "Install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
-	newicon "artwork/icon.png" ${PN}.png || die "newicon failed"
-	make_desktop_entry ${PN} "Linux MultiMedia Studio" ${PN}.png || die "make_desktop_entry failed"
-	dodoc README AUTHORS ChangeLog TODO || die "dodoc failed"
+	newicon "artwork/icon.png" ${PN}.png
+	make_desktop_entry ${PN} "Linux MultiMedia Studio"
+	dodoc README AUTHORS ChangeLog TODO
 }
