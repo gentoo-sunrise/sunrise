@@ -22,11 +22,11 @@ QA_TEXTRELS_x86="opt/pavcl/usr/lib/libPsk*.so.*"
 
 src_install() {
 	cd "${S}"
-	cp -r . ${D}
+	cp -r . "${D}"
 
 	dodir /etc/env.d
-	echo "PATH=\"/opt/pavcl/usr/bin\"" >> ${D}/etc/env.d/90panda
-	echo "MANPATH=\"/opt/pavcl/usr/man\"" >> ${D}/etc/env.d/90panda
+	echo "PATH=\"/opt/pavcl/usr/bin\"" >> "${D}"/etc/env.d/90panda
+	echo "MANPATH=\"/opt/pavcl/usr/man\"" >> "${D}"/etc/env.d/90panda
 }
 
 pkg_postinst() {
