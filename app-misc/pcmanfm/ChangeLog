@@ -1,0 +1,7 @@
+# ChangeLog for app-misc/pcmanfm
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Jun 2006; David Shakaryan <d@ompty.org> +pcmanfm-0.2.4.ebuild:
+  New ebuild by Victor Tseng for bug #121902 by Fabio Bonfante.
+
