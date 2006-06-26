@@ -1,0 +1,7 @@
+# ChangeLog for net-dns/dnsproxy
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Jun 2006; Martin Hierling <mad@cc.fh-luh.de> ChangeLog:
+  New Ebuild for bug 104208 net-dns/dnsproxy thanks to Tomoyuki Sakurai
+

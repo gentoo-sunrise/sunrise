@@ -1,0 +1,35 @@
+opts="depend checkconfig start stop"
+BIN="dnsproxy"
+CONF="/etc/dnsproxy/dnsproxy.conf"
+
+depend() {
+	need net
+}
+
+checkconfig() {
+	if [ ! -e ${CONF} ] ; then
+		eerror "You need to create ${CONF} first."
+		eerror "An example can be found in ${CONF}-dist"
+		return 1
+	fi
+}
+start() {
+	ebegin "Starting ${BIN}"
+	checkconfig && \
+	start-stop-daemon --start --make-pidfile \
+		--quiet -b --pidfile ${PIDFILE} \
+		--exec /usr/sbin/${BIN}  -- ${OPTIONS}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${BIN}"
+	start-stop-daemon --stop --quiet \
+		--pidfile ${PIDFILE} \
+		&& rm ${PIDFILE}
+	eend $?
+}
+
+restart() {
+
+}

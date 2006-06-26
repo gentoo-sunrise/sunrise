@@ -1,0 +1,5 @@
+MD5 402ae6d7449c6630cbb343a49a8ed43d ChangeLog 251
+MD5 84552d2ecde34e9fb6a297e28461f248 dnsproxy-1.15.ebuild 558
+MD5 dd1ad38ad64858ee3c1ecc49f9c114b1 files/confd 297
+MD5 0f41464d3234fd6811e6b569acb2e549 files/digest-dnsproxy-1.15 65
+MD5 014840e6426c7af958c263164a9985be files/initd 598

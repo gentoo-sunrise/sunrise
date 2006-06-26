@@ -1,0 +1,10 @@
+# options for dnsproxy
+#
+# -c file	Read configuration from file.
+# -d		Detach from current terminal and run as background process.
+#			(do NOT use here, start-stop-daemon does it for you)
+
+# rarely you need to change these
+OPTIONS="-c /etc/dnsproxy/dnsproxy.conf"
+PIDFILE="/var/run/dnsproxy.pid"
+
