@@ -1,0 +1,7 @@
+# ChangeLog for x11-themes/polyester
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Jun 2006; Jakub Moc <jakub@gentoo.org> +polyester-0.9.3.ebuild:
+  New ebuild, based on ebuild provided by upstream. Bug 128092
+
