@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="Nullsoft Scriptable Install System"
-HOMEPAGE="http://${PN}.sourceforge.net/"
+HOMEPAGE="http://nsis.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}-src.tar.bz2"
 
 LICENSE="as-is"
