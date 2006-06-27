@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Cedric Krier <ced@ced.homedns.org> (28 Jun 2006)
+# Has dependencias that are masked
+dev-util/nsis
+
 # David Shakaryan <d@ompty.org> (21 Jun 2006)
 # Has dependencies that are masked.
 xfce-extra/verve
