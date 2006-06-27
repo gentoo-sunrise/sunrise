@@ -17,5 +17,7 @@ RDEPEND=">=dev-python/pygtk-2.6"
 
 src_install() {
 	distutils_src_install
-	rm -rf "${D}"/usr/share/mirage
+
+	# Don't install duplicate ungzipped docs.
+	rm -rf "${D}/usr/share/mirage"
 }
