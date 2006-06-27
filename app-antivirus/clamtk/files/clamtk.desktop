@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ClamTk Virus Scanner
+Comment=Scan your system for viruses.
+Exec=clamtk
+Icon=/usr/share/clamtk/clam.xpm
+Terminal=false
+Type=Application
+Categories=Application;Utility;
+StartupNotify=false
