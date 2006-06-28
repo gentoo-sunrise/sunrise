@@ -15,6 +15,7 @@ IUSE=""
 DEPEND="media-tv/xmltv
 	dev-perl/gtk2-perl
 	dev-perl/gtk2-gladexml
+	dev-perl/gnome2-perl
 	gnome-base/libgnomeui"
 RDEPEND="${DEPEND}"
 
