@@ -5,8 +5,8 @@
 inherit eutils
 
 DESCRIPTION="nzb based nntp/usenet downloader in perl"
-HOMEPAGE="http://noisybox.net/computers/nzbperl"
-SRC_URI="${HOMEPAGE}/${P}.pl"
+HOMEPAGE="http://noisybox.net/computers/nzbperl/"
+SRC_URI="http://noisybox.net/computers/nzbperl/${P}.pl"
 
 LICENSE="GPL-2"
 SLOT="0"
