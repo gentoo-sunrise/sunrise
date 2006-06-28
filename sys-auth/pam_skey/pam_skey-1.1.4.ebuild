@@ -22,7 +22,7 @@ S="${WORKDIR}/${PN}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-gentoo.patch" || die "patch failed"
+	epatch "${FILESDIR}/${P}-gentoo.patch"
 }
 
 src_compile() {
