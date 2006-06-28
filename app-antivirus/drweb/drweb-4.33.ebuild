@@ -30,7 +30,7 @@ PROVIDE="virtual/antivirus"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${PF}-gentoo.patch" || die "epatch failed"
+	epatch "${FILESDIR}/${PF}-gentoo.patch"
 }
 
 pkg_setup() {
