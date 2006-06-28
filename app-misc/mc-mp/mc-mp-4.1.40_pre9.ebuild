@@ -36,12 +36,12 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	if ( use x86 || use amd64 ) && use 7zip; then
-		epatch ${FILESDIR}/${PV}/u7z.patch || die "u7z patch failed"
+		epatch ${FILESDIR}/${PV}/u7z.patch
 	fi
 
-	epatch ${FILESDIR}/${PV}/ebuild-syntax.patch || die "ebuild-syntax patch failed"
-	epatch ${FILESDIR}/${PV}/mc-menu.patch || die "mc-menu patch-failed"
-	epatch ${FILESDIR}/${PV}/gcc34.patch || die "mc-menu patch-failed"
+	epatch ${FILESDIR}/${PV}/ebuild-syntax.patch
+	epatch ${FILESDIR}/${PV}/mc-menu.patch
+	epatch ${FILESDIR}/${PV}/gcc34.patch
 
 	# Prevent lazy bindings in cons.saver binary. (bug #135009)
 	# Also prevent stripping the binary, portage takes care of this as needed
