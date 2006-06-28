@@ -13,4 +13,4 @@ for i in *.ebuild; do
 ebuild $i digest
 done
 svn add *.ebuild Manifest files/digest-*
-svn commit -m "$1"
+svn commit -m "$*"
