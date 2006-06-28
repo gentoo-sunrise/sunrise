@@ -28,7 +28,7 @@ src_unpack() {
 	# Gentoo installs cryptsetup in /bin, this patches the relevant 
 	# locations, in srcipts/(u)mount.crypt and adds gentoo specific
 	# comments to pam_mount.conf
-	epatch "${FILESDIR}/${PN}-gentoo-paths-and-examples.patch" || die "patch failed"
+	epatch "${FILESDIR}/${PN}-gentoo-paths-and-examples.patch"
 }
 
 src_compile() {
