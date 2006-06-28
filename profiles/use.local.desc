@@ -20,3 +20,10 @@ net-mail/simscan:quarantine - Enable the detected spam/virus to be stored in qua
 net-mail/simscan:received - Enable the add of a Received line in scanned messages
 net-mail/simscan:regex - Enable regex attachment filename checking
 net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
+net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
+net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
+net-dns/nsd:checking - Enable internal runtime checks
+net-dns/nsd:dnssec - Enable DNSSEC support
+net-dns/nsd:plugins - Enable plugin support
+net-dns/nsd:root-server - Configure NSD as a root server
+net-dns/nsd:tsig - Enable TSIG support

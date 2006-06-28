@@ -1,0 +1,61 @@
+#!/sbin/runscript 
+# Copyright 1999-2005 Gentoo Foundation 
+# Distributed under the terms of the GNU General Public License v2 
+# $Header: $ 
+# 
+opts="${opts} rebuild reload status update notify" 
+depend() { 
+   need net 
+   use logger 
+} 
+
+checkconfig() {
+	if [ ! -e "/etc/nsd/nsdc.conf" -a ! -e "/etc/nsd/nsd.zones" ]; then
+		eerror "You need to create apropriate configs"
+		eerror "in /etc/nsd/ . Examples can be found in /etc/nsd/*.sample"
+		return 1
+	fi
+}
+
+start() { 
+	ebegin "Starting nsd" 
+	checkconfig && \
+	/usr/sbin/nsdc start &>/dev/null
+	eend $? 
+} 
+
+stop() { 
+	ebegin "Stopping nsd" 
+	/usr/sbin/nsdc stop &>/dev/null 
+	eend $? 
+} 
+
+reload() { 
+	ebegin "Reloading nsd" 
+	/usr/sbin/nsdc reload &>/dev/null 
+	eend $? 
+} 
+
+rebuild() { 
+	ebegin "Rebuild nsd database" 
+	/usr/sbin/nsdc rebuild &>/dev/null 
+	eend $? 
+} 
+
+status() { 
+	ebegin "Check if nsd is running" 
+	/usr/sbin/nsdc running &>/dev/null 
+	eend $? 
+} 
+
+update() { 
+	ebegin "Updating nsd zones" 
+	/usr/sbin/nsdc update &>/dev/null 
+	eend $? 
+} 
+
+notify() { 
+	ebegin "Notify slave servers for zones" 
+	/usr/sbin/nsdc notify &>/dev/null 
+	eend $? 
+}

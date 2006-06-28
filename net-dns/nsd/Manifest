@@ -1,0 +1,5 @@
+MD5 9736bf8dd99bcf9b22b120e34b477018 ChangeLog 236
+MD5 73d00928fec6d9afbb8bfc9f640c15d3 files/digest-nsd-2.3.5 61
+MD5 3c43bbd149f9936267d3b11e84c9e329 files/nsd.cron 237
+MD5 5861af65e070abf9d31b6f32bd853c93 files/nsd.initd 1120
+MD5 2424b2d73fc1663691a57157b44bf3c8 nsd-2.3.5.ebuild 1598
