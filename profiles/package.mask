@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Patrick Zimmermann <patrick@zakweb.de> (28 Jun 2006)
+# Has dependencies that are masked
+games-fps/unreal-tournament-operationnapali
+
 # Cedric Krier <ced@ced.homedns.org> (28 Jun 2006)
 # Has dependencias that are masked
 dev-util/nsis
@@ -46,7 +50,3 @@ app-crypt/qca-pkcs11
 # http://bugs.gentoo.org/show_bug.cgi?id=34517#c3 and
 # http://pgfoundry.org/frs/shownotes.php?release_id=230
 =sys-auth/pam_pgsql-0.6.3
-
-# Patrick Zimmermann <patrick@zakweb.de> (28 Jun 2006)
-# Has dependencies that are masked
-games-fps/unreal-tournament-operationnapali
