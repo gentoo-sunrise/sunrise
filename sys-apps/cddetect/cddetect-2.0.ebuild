@@ -16,9 +16,9 @@ S=${WORKDIR}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	sed -i -e '1,2d' Makefile || die "sed failed"
+	sed -i -e '1,2d' Makefile
 }
 
 src_install() {
-	dobin ${PN} || die "dobin failed"
+	dobin ${PN}
 }
