@@ -36,7 +36,8 @@ src_unpack() {
 }
 
 src_compile() {
-	econf   $(use_enable cppunit) \
+	econf \
+		$(use_enable cppunit) \
 		$(use_enable boost boosttest) \
 		$(use_enable doc doxygen) \
 		$(use_enable doc docbook) || die "econf failed"
