@@ -163,4 +163,4 @@ if [[ "$quiet" == "0" ]] ; then
 	esac
 fi
 
-svn_commit || exit $?
+svn_commit "$*" || exit $?
