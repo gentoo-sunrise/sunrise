@@ -11,7 +11,8 @@ SRC_URI="http://www.nufw.org/download/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="pam_nuauth pic prelude mysql postgres pam ldap gdbm ident unicode doc"
+IUSE="pam_nuauth pic prelude mysql postgres pam ldap gdbm ident unicode doc
+debug"
 
 DEPEND=">=dev-libs/glib-2
 	net-firewall/iptables
@@ -45,9 +46,9 @@ src_compile() {
 		$(use_with gdbm) \
 		$(use_with indent) \
 		$(use_with unicode utf8) \
+		$(use_with debug) \
 		--sysconfdir="/etc/nufw" \
 		--localstatedir="/var" \
-		--disable-debug \
 		|| die "econf failed"
 	emake || die "emake failed"
 }
