@@ -31,7 +31,7 @@ src_unpack() {
 }
 src_compile() {
 	if use gtk; then
-		emake E_CFLAGS="${CFLAGS}"  || die "emake failed"
+		emake E_CFLAGS="${CFLAGS}" || die "emake failed"
 	else
 		emake E_CFLAGS="${CFLAGS}" rdko || die "emake failed"
 	fi
