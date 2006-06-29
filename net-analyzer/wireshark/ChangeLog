@@ -1,0 +1,10 @@
+# ChangeLog for <CATEGORY>/<PACKAGE_NAME>
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*wireshark-0.99.1_pre1 (29 Jun 2006)
+
+  29 Jun 2006; DrChandra gentooperson@yahoo.com Initial import
+	Ebuild submitted by DrChandra <gentooperson@yahoo.com>.
+	Taken from ethereal-0.99.0-r1.ebuild
+	Original ebuild submitted by Daniel Black <dragonheart@gentoo.org>

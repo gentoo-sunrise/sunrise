@@ -1,0 +1,12 @@
+diff -uNr wireshark-0.99.1pre1.orig/epan/Makefile.am wireshark-0.99.1pre1/epan/Makefile.am
+--- wireshark-0.99.1pre1/epan/Makefile.am	2006-04-17 14:46:53.000000000 +0000
++++ wireshark-0.99.1pre1/epan/Makefile.am		2006-04-25 21:21:15.000000000 +0000
+@@ -84,7 +84,7 @@
+ #
+ # Add the object files for missing routines, if any.
+ #
+-libwireshark_la_LIBADD = @G_ASCII_STRTOULL_LO@ @INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ dfilter/libdfilter.la ftypes/libftypes.la dissectors/libdissectors.la
++libwireshark_la_LIBADD = @G_ASCII_STRTOULL_LO@ @INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ dfilter/libdfilter.la ftypes/libftypes.la dissectors/libdissectors.la @ADNS_LIBS@ @LIBGNUTLS_LIBS@ @KRB5_LIBS@ @SNMP_LIBS@ @SSL_LIBS@ -lm
+ libwireshark_la_DEPENDENCIES = @G_ASCII_STRTOULL_LO@ @INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ dfilter/libdfilter.la ftypes/libftypes.la dissectors/libdissectors.la
+ 
+ tvbtest: tvbtest.o tvbuff.o except.o strutil.o
