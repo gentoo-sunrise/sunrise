@@ -33,7 +33,7 @@ pkg_postinst() {
 		einfo
 		einfo "To add famd to the default runlevel and start it, run:"
 		einfo
-    		einfo "# rc-update add famd default"
+		einfo "# rc-update add famd default"
 		einfo "# /etc/init.d/famd start"
 		einfo
 		einfo "It is recommended you use gamin instead of fam."
