@@ -1,0 +1,21 @@
+diff -ur mod_auth_nufw-2.2.0/configure.in mod_auth_nufw-2.2.0.new/configure.in
+--- mod_auth_nufw-2.2.0/configure.in	2006-05-12 09:22:02.000000000 +0200
++++ mod_auth_nufw-2.2.0.new/configure.in	2006-06-29 19:39:22.000000000 +0200
+@@ -3,12 +3,12 @@
+ AC_PROG_CC
+ 
+ AC_ARG_WITH(apxs,          --with-apxs                   Path to Apache's apxs command, test $withval = no || APXS=$withval)
+-AC_ARG_WITH(apache20,  [--with-apache20           Compile module for Apache 2.0], apache_20="yes",apache_20="")
+-AC_ARG_WITH(apache22,  [--with-apache22           Compile module for Apache 2.2], apache_22="yes",apache_22="")
++AC_ARG_WITH(apache20,  [--with-apache20           Compile module for Apache 2.0], apache_20=$withval,apache_20="")
++AC_ARG_WITH(apache22,  [--with-apache22           Compile module for Apache 2.2], apache_22=$withval,apache_22="")
+ 
+-AC_ARG_WITH(mysql,   [--with-mysql                  Use Mysql as backend (PostgreSQL is selected if not Mysql)],db_mysql="yes", db_mysql="") 
+-AC_ARG_WITH(ldap-uids,   [--with-ldap-uids          Resolve numeric uids on a ldap tree],ldap_uid="yes", ldap_uid="") 
+-AC_ARG_WITH(ldap-uids-cache,   [--with-ldap-uids-cache     Cache numeric resolution of uids on a ldap tree],ldap_uid_cache="yes", ldap_uid_cache="") 
++AC_ARG_WITH(mysql,   [--with-mysql                  Use Mysql as backend (PostgreSQL is selected if not Mysql)],db_mysql=$withval, db_mysql="") 
++AC_ARG_WITH(ldap-uids,   [--with-ldap-uids          Resolve numeric uids on a ldap tree],ldap_uid=$withval, ldap_uid="") 
++AC_ARG_WITH(ldap-uids-cache,   [--with-ldap-uids-cache     Cache numeric resolution of uids on a ldap tree],ldap_uid_cache=$withval, ldap_uid_cache="") 
+ #, test $withval = yes && DB_TYPE_MYSQL=1)
+ #AC_ARG_WITH(sdk-directory, --with-sdk-headers            Specify the path to the LDAP SDK header files)
+ #AC_ARG_WITH(sdk-directory, --with-sdk-libs               Specify the path to the LDAP SDK libraries)
