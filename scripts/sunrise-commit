@@ -26,7 +26,11 @@ create_digests() {
 
 svn_add() {
 	ebegin "Adding local changes to local Subversion copy"
-	svn add *
+	if [[ "$verbose" == "1" ]] ; then
+		svn add *
+	else
+		svn add -q *
+	fi
 	eend $?
 }
 
@@ -40,11 +44,11 @@ usage() {
 cat << EOF
 ${BOLD}Usage:${NORMAL} ${HILITE}sunrise-commit${NORMAL} [ ${GOOD}option${NORMAL} ] ${GOOD}message${NORMAL}
 
-${GOOD}option${NORMAL} is one of:
+${GOOD}option${NORMAL} is:
   ${BOLD}-c, --changelog${NORMAL}    Also create a ChangeLog entry using ${GOOD}message${NORMAL}
   ${BOLD}-f, --force${NORMAL}        Commit even if no ebuilds are present
   ${BOLD}-h, --help${NORMAL}         Show help
-  ${BOLD}-q, --quiet${NORMAL}        Commit changes without asking for confirmation
+  ${BOLD}-q, --quiet${NORMAL}        Don't ask for confirmation
   ${BOLD}-v, --verbose${NORMAL}      Show more detailed information during commit
 
 ${GOOD}message${NORMAL} is:
@@ -87,6 +91,11 @@ while [[ $# > 0 ]] ; do
 	esac
 done
 
+if [[ -z "$*" ]] ; then
+	echo "!!! Error: You must supply a commit message. See: sunrise-commit -h"
+	exit 1
+fi
+
 svn_up || exit $?
 
 if [[ "$force" == "0" ]] ; then
@@ -103,19 +112,19 @@ svn_add || exit $?
 if [[ "$verbose" == "1" ]] ; then
 	einfo "The following local changes will be committed to Sunrise:"
 	svn status
-	echo
 fi
 
 if [[ "$quiet" == "0" ]] ; then
+	echo
 	echo -n "${BOLD}Commit changes?${NORMAL} [${GOOD}Yes${NORMAL}/${BAD}No${NORMAL}] "
 	read choice
+	echo
 
 	case $choice in
 		y*|Y*|"")
 			;;
 
 		*)
-			echo
 			echo "Quitting."
 			echo
 			exit 1 ;;
