@@ -1,0 +1,7 @@
+# ChangeLog for x11-misc/obmenu
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Jun 2006; David Shakaryan <d@ompty.org> +obmenu-1.0.ebuild:
+  New ebuild by me for bug #138417.
+
