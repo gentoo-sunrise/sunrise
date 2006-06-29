@@ -4,16 +4,22 @@
 source /sbin/functions.sh
 
 BOLD=$'\e[0;01m'
+GREEN=$'\e[32m'
 
 changelog=0
 force=0
+noupdate=0
 quiet=0
 verbose=0
 
 changelog_append() {
-	ebegin "Appending/creating ChangeLog"
-	echangelog "$1"
-	eend $?
+	if [[ "$changelog" == "1" ]] ; then
+		ebegin "Appending/creating ChangeLog"
+		echangelog "$1"
+		eend $?
+	else
+		return 0
+	fi
 }
 
 create_digests() {
@@ -25,7 +31,7 @@ create_digests() {
 }
 
 svn_add() {
-	ebegin "Adding local changes to local Subversion copy"
+	ebegin "Adding local changes to working copy"
 	if [[ "$verbose" == "1" ]] ; then
 		svn add *
 	else
@@ -34,10 +40,24 @@ svn_add() {
 	eend $?
 }
 
-svn_up() {
-	ebegin "Updating local Subversion copy"
-	svn update
+svn_commit() {
+	ebegin "Committing working copy to repository"
+	svn commit -m "$*"
 	eend $?
+}
+
+svn_up() {
+	if [[ "$noupdate" == "0" ]] ; then
+		ebegin "Updating working copy to latest version from repository"
+		if [[ "$verbose" == "1" ]] ; then
+			svn update
+		else
+			svn update -q
+		fi
+		eend $?
+	else
+		return 0
+	fi
 }
 
 usage() {
@@ -48,23 +68,29 @@ ${GOOD}option${NORMAL} is:
   ${BOLD}-c, --changelog${NORMAL}    Also create a ChangeLog entry using ${GOOD}message${NORMAL}
   ${BOLD}-f, --force${NORMAL}        Commit even if no ebuilds are present
   ${BOLD}-h, --help${NORMAL}         Show help
+  ${BOLD}-n, --noupdate${NORMAL}     Don't update from repository before committing
   ${BOLD}-q, --quiet${NORMAL}        Don't ask for confirmation
   ${BOLD}-v, --verbose${NORMAL}      Show more detailed information during commit
 
 ${GOOD}message${NORMAL} is:
-  Subversion commit message. For new ebuilds the suggested message format is:
-  "New Ebuild for bug ${BRACKET}Gentoo bug #${NORMAL}, thanks to${NORMAL} ${BRACKET}list of contributors${NORMAL}"
+  Message describing commit. For new ebuilds the suggested message format is:
+  "New Ebuild for bug ${BRACKET}Gentoo bug #${NORMAL}, thanks to ${BRACKET}list of contributors${NORMAL}"
 EOF
 	exit ${1:-0}
 }
 
 [[ -z "$1" ]] && usage 1
 
+if [[ -z "$(echo `svn status`)" ]] ; then
+	ewarn "No changes found in current directory."
+	exit 1
+fi
+
 while [[ $# > 0 ]] ; do
 	case "$1" in
 		--changelog|-c)
 			if [[ -z "$ECHANGELOG_USER" ]] ; then
-				echo "!!! Error: You must set \$ECHANGELOG_USER in your environment:"
+				echo "!!! Error: --changelog option requires ECHANGELOG_USER to be set:"
 				echo "!!!   export ECHANGELOG_USER=\"Your Name <your@mail.org>\""
 				exit 1
 			fi
@@ -77,6 +103,10 @@ while [[ $# > 0 ]] ; do
 
 		--help|-h)
 			usage ;;
+
+		--noupdate|-n)
+			noupdate=1
+			shift ;;
 
 		--quiet|-q)
 			quiet=1
@@ -100,17 +130,19 @@ svn_up || exit $?
 
 if [[ "$force" == "0" ]] ; then
 	if [[ ! $(find *.ebuild -maxdepth 0) ]] ; then
-		echo "!!! Error: No ebuilds found in current directory"
+		echo "!!! Error: No ebuilds found in current directory. Use -f to force commit."
 		exit 1
 	fi
 	create_digests || exit $?
 fi
 
-[[ "$changelog" == "1" ]] && (changelog_append "$1" || exit $?)
+changelog_append "$1" || exit $?
 svn_add || exit $?
 
 if [[ "$verbose" == "1" ]] ; then
-	einfo "The following local changes will be committed to Sunrise:"
+	echo
+	echo "${GREEN}The following local changes will be committed to the repository:${NORMAL}"
+	echo
 	svn status
 fi
 
@@ -120,7 +152,7 @@ if [[ "$quiet" == "0" ]] ; then
 	read choice
 	echo
 
-	case $choice in
+	case "$choice" in
 		y*|Y*|"")
 			;;
 
@@ -131,6 +163,4 @@ if [[ "$quiet" == "0" ]] ; then
 	esac
 fi
 
-ebegin "Committing to Sunrise"
-svn commit -m "$*"
-eend $?
+svn_commit || exit $?
