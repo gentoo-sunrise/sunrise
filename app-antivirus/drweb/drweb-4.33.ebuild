@@ -79,15 +79,15 @@ src_install() {
 
 	local docdir="${D}/opt/drweb/doc"
 	for doc in ${docdir}/{ChangeLog,FAQ,readme.eicar,readme.license} \
-		    ${docdir}/daemon/readme.daemon \
-		    ${docdir}/scanner/readme.scanner \
-		    ${docdir}/update/readme.update ; do
+			${docdir}/daemon/readme.daemon \
+			${docdir}/scanner/readme.scanner \
+			${docdir}/update/readme.update ; do
 		dodoc ${doc} && rm -f ${doc}
 	done
 	dodoc "${D}"/opt/drweb/getkey.HOWTO
 
 	if use linguas_ru ; then
-		    for doc_ru in ${docdir}/{ChangeLog.rus,FAQ.rus,readme.eicar.rus,readme.license.rus} \
+			for doc_ru in ${docdir}/{ChangeLog.rus,FAQ.rus,readme.eicar.rus,readme.license.rus} \
 			${docdir}/daemon/readme.daemon.rus \
 			${docdir}/scanner/readme.scanner.rus \
 			${docdir}/update/readme.update.rus ; do
