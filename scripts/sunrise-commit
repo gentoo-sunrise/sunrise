@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: $
+# $Id$
 
 source /sbin/functions.sh
 
@@ -23,11 +23,17 @@ changelog_append() {
 }
 
 create_digests() {
-	ebegin "Digesting ebuilds"
-	for i in *.ebuild ; do
-		ebuild $i digest
-	done
-	eend $?
+	if [[ "$force" == "0" ]] ; then
+		if [[ ! $(find *.ebuild -maxdepth 0) ]] ; then
+			echo "!!! Error: No ebuilds found in current directory. Use -f to force commit."
+			exit 1
+		fi
+		ebegin "Digesting ebuilds"
+		for i in *.ebuild ; do
+			ebuild $i digest
+		done
+		eend $?
+	fi
 }
 
 svn_add() {
@@ -41,6 +47,30 @@ svn_add() {
 }
 
 svn_commit() {
+	if [[ "$verbose" == "1" ]] ; then
+		echo
+		echo "${GREEN}The following local changes will be committed to the repository:${NORMAL}"
+		echo
+		svn status
+	fi
+
+	if [[ "$quiet" == "0" ]] ; then
+		echo
+		echo -n "${BOLD}Commit changes?${NORMAL} [${GOOD}Yes${NORMAL}/${BAD}No${NORMAL}] "
+		read choice
+		echo
+
+		case "$choice" in
+			y*|Y*|"")
+				;;
+
+			*)
+				echo "Quitting."
+				echo
+				return 1 ;;
+		esac
+	fi
+
 	ebegin "Committing working copy to repository"
 	svn commit -m "$*"
 	eend $?
@@ -62,19 +92,25 @@ svn_up() {
 
 usage() {
 cat << EOF
-${BOLD}Usage:${NORMAL} ${HILITE}sunrise-commit${NORMAL} [ ${GOOD}option${NORMAL} ] ${GOOD}message${NORMAL}
+${BOLD}Usage:${NORMAL} ${HILITE}sunrise-commit${NORMAL} [ ${GOOD}options${NORMAL} ] ${BRACKET}message${NORMAL}
 
-${GOOD}option${NORMAL} is:
-  ${BOLD}-c, --changelog${NORMAL}    Also create a ChangeLog entry using ${GOOD}message${NORMAL}
-  ${BOLD}-f, --force${NORMAL}        Commit even if no ebuilds are present
-  ${BOLD}-h, --help${NORMAL}         Show help
-  ${BOLD}-n, --noupdate${NORMAL}     Don't update from repository before committing
-  ${BOLD}-q, --quiet${NORMAL}        Don't ask for confirmation
-  ${BOLD}-v, --verbose${NORMAL}      Show more detailed information during commit
+${GOOD}options${NORMAL} are:
+  ${BOLD}-c, --changelog${NORMAL}  Create a ChangeLog entry using ${BRACKET}message${NORMAL}
+  ${BOLD}-f, --force${NORMAL}      Commit even if no ebuilds are present
+  ${BOLD}-h, --help${NORMAL}       Show help
+  ${BOLD}-n, --noupdate${NORMAL}   Don't update from repository before committing
+  ${BOLD}-q, --quiet${NORMAL}      Don't ask for confirmation
+  ${BOLD}-v, --verbose${NORMAL}    Show more detailed information during commit
 
-${GOOD}message${NORMAL} is:
-  Message describing commit. For new ebuilds the suggested message format is:
-  "New Ebuild for bug ${BRACKET}Gentoo bug #${NORMAL}, thanks to ${BRACKET}list of contributors${NORMAL}"
+${BRACKET}message${NORMAL} is:
+  Commit message describing changes made. ${BOLD}Please include the ebuild's name here.${NORMAL}
+  For ebuild updates the suggested message format is:
+
+    "${WARN}categoryname${NORMAL}/${WARN}packagename${NORMAL}: ${WARN}List of changes${NORMAL}. Thanks to ${WARN}list of contributors${NORMAL}."
+
+  For new ebuilds, prefix the above message with:
+
+    "[New ebuild] Bug ${WARN}Gentoo bug #${NORMAL}, "
 EOF
 	exit ${1:-0}
 }
@@ -116,6 +152,10 @@ while [[ $# > 0 ]] ; do
 			verbose=1
 			shift ;;
 
+		-*)
+   			echo "!!! Error: Unknown option ${1}. See: sunrise-commit -h"
+   			exit 1 ;;
+
 		*)
 			break ;;
 	esac
@@ -127,40 +167,7 @@ if [[ -z "$*" ]] ; then
 fi
 
 svn_up || exit $?
-
-if [[ "$force" == "0" ]] ; then
-	if [[ ! $(find *.ebuild -maxdepth 0) ]] ; then
-		echo "!!! Error: No ebuilds found in current directory. Use -f to force commit."
-		exit 1
-	fi
-	create_digests || exit $?
-fi
-
+create_digests || exit $?
 changelog_append "$1" || exit $?
 svn_add || exit $?
-
-if [[ "$verbose" == "1" ]] ; then
-	echo
-	echo "${GREEN}The following local changes will be committed to the repository:${NORMAL}"
-	echo
-	svn status
-fi
-
-if [[ "$quiet" == "0" ]] ; then
-	echo
-	echo -n "${BOLD}Commit changes?${NORMAL} [${GOOD}Yes${NORMAL}/${BAD}No${NORMAL}] "
-	read choice
-	echo
-
-	case "$choice" in
-		y*|Y*|"")
-			;;
-
-		*)
-			echo "Quitting."
-			echo
-			exit 1 ;;
-	esac
-fi
-
 svn_commit "$*" || exit $?
