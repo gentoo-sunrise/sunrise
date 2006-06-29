@@ -46,7 +46,7 @@ src_compile() {
 		$(use_with gdbm) \
 		$(use_with indent) \
 		$(use_with unicode utf8) \
-		$(use_with debug) \
+		$(use_enable debug) \
 		--sysconfdir="/etc/nufw" \
 		--localstatedir="/var" \
 		|| die "econf failed"
