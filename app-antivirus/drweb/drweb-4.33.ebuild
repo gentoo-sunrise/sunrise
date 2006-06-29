@@ -78,23 +78,16 @@ src_install() {
 	rm -f "${D}"/etc/init.d/drwebd
 
 	local docdir="${D}/opt/drweb/doc"
-	for doc in ${docdir}/{ChangeLog,FAQ,readme.eicar,readme.license} \
-			${docdir}/daemon/readme.daemon \
-			${docdir}/scanner/readme.scanner \
-			${docdir}/update/readme.update ; do
+	for doc in ${docdir}/{ChangeLog,FAQ,readme.{eicar,license}} \
+	${docdir}/{daemon/readme.daemon,scanner/readme.scanner,update/readme.update}
+	do
 		dodoc ${doc} && rm -f ${doc}
+		if use linguas_ru; then
+			dodoc ${doc}.rus && rm -f ${doc}.rus
+		fi
 	done
 	dodoc "${D}"/opt/drweb/getkey.HOWTO
-
-	if use linguas_ru ; then
-			for doc_ru in ${docdir}/{ChangeLog.rus,FAQ.rus,readme.eicar.rus,readme.license.rus} \
-			${docdir}/daemon/readme.daemon.rus \
-			${docdir}/scanner/readme.scanner.rus \
-			${docdir}/update/readme.update.rus ; do
-		dodoc ${doc_ru} && rm -f ${doc_ru}
-		done
-		dodoc "${D}"/opt/drweb/getkey.rus.HOWTO
-	fi
+	use linguas_ru && dodoc "${D}"/opt/drweb/getkey.rus.HOWTO
 
 	rm -rf ${docdir} && rm -f "${D}"/opt/drweb/getkey.*
 
