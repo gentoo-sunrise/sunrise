@@ -1,0 +1,9 @@
+# ChangeLog for media-gfx/metapixel
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jun 2006; Santiago M. Mola <cooldwind@gmail.com> ChangeLog:
+  New ebuild for bug #26144. Thanks to Carl A. Dunham
+  <gentoo-bugs@carldunham.com>, Eric Harney <eharney@clemson.edu> and Matt
+  McHenry <jerith@speakeasy.org>.
+
