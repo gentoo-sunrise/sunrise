@@ -11,7 +11,7 @@ KEYWORDS="~x86"
 LICENSE="GPL-2"
 SLOT="0"
 
-S="${WORKDIR}"
+S=${WORKDIR}
 
 RDEPEND=">=x11-libs/gtk+-2.2"
 
@@ -20,10 +20,10 @@ src_unpack() {
 	cd "${S}"
 
 	# Clean up unnecessary files
-	rm -r */*/{*xcf,.gtkrc.swp,.xvpics} || die "rm failed"
+	rm -r */*/{*xcf,.gtkrc.swp,.xvpics}
 }
 
 src_install() {
 	insinto /usr/share/themes
-	doins -r * || die "doins failed"
+	doins -r *
 }
