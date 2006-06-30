@@ -18,7 +18,7 @@ RDEPEND="gtk? ( >=x11-libs/gtk+-2.4.0 )"
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.15"
 
-S="${WORKDIR}/${MY_PN}"
+S=${WORKDIR}/${MY_PN}
 
 src_unpack() {
 	unpack ${A}
@@ -39,8 +39,6 @@ src_compile() {
 
 src_install() {
 	dodoc CHANGELOG
-	dobin rdko || die "dobin rdko failed"
-	if use gtk; then
-		dobin gredeko || die "dobin gredeko failed"
-	fi
+	dobin rdko
+	use gtk && dobin gredeko
 }
