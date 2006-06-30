@@ -26,13 +26,13 @@ opt_verbose=0
 changelog_append() {
 	if [[ "$opt_changelog" == "1" ]] ; then
 		ebegin "Appending/creating ChangeLog"
-		echangelog "$1"
+		echangelog "$*"
 		eend $?
 	fi
 }
 
 create_digests() {
-	if [[ $(find *.ebuild -maxdepth 0) ]] ; then
+	if [[ "$(ls)" =~ '\.ebuild' ]] ; then
 		ebegin "Digesting ebuilds"
 		for i in *.ebuild ; do
 			ebuild $i digest
@@ -195,7 +195,7 @@ fi
 
 svn_up || exit $?
 create_digests || exit $?
-changelog_append "$1" || exit $?
+changelog_append "$*" || exit $?
 svn_add || exit $?
 repoman_check || exit $?
 svn_commit "$*" || exit $?
