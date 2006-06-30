@@ -7,6 +7,7 @@ BOLD=$'\e[0;01m'
 GREEN=$'\e[32m'
 
 changelog=0
+disable_repoman=0
 force=0
 noupdate=0
 quiet=0
@@ -36,6 +37,18 @@ create_digests() {
 	fi
 }
 
+repoman_check() {
+	if [[ "$disable_repoman" == "0" ]] ; then
+		ebegin "Running repoman"
+		PORTDIR_OVERLAY=$(dirname $(dirname $(pwd)))
+		export PORTDIR_OVERLAY
+		repoman
+		eend $?
+	else
+		return 0
+	fi
+}
+
 svn_add() {
 	ebegin "Adding local changes to working copy"
 	if [[ "$verbose" == "1" ]] ; then
@@ -47,12 +60,10 @@ svn_add() {
 }
 
 svn_commit() {
-	if [[ "$verbose" == "1" ]] ; then
-		echo
-		echo "${GREEN}The following local changes will be committed to the repository:${NORMAL}"
-		echo
-		svn status
-	fi
+	echo
+	echo "${GREEN}The following local changes will be committed to the repository:${NORMAL}"
+	echo
+	svn status
 
 	if [[ "$quiet" == "0" ]] ; then
 		echo
@@ -95,12 +106,13 @@ cat << EOF
 ${BOLD}Usage:${NORMAL} ${HILITE}sunrise-commit${NORMAL} [ ${GOOD}options${NORMAL} ] ${BRACKET}message${NORMAL}
 
 ${GOOD}options${NORMAL} are:
-  ${BOLD}-c, --changelog${NORMAL}  Create a ChangeLog entry using ${BRACKET}message${NORMAL}
-  ${BOLD}-f, --force${NORMAL}      Commit even if no ebuilds are present
-  ${BOLD}-h, --help${NORMAL}       Show help
-  ${BOLD}-n, --noupdate${NORMAL}   Don't update from repository before committing
-  ${BOLD}-q, --quiet${NORMAL}      Don't ask for confirmation
-  ${BOLD}-v, --verbose${NORMAL}    Show more detailed information during commit
+  ${BOLD}-c, --changelog${NORMAL}        Create a ChangeLog entry using ${BRACKET}message${NORMAL}
+  ${BOLD}-d, --disable-repoman${NORMAL}  Skip repoman check
+  ${BOLD}-f, --force${NORMAL}            Commit even if no ebuilds are present
+  ${BOLD}-h, --help${NORMAL}             Show help
+  ${BOLD}-n, --noupdate${NORMAL}         Don't update from repository before committing
+  ${BOLD}-q, --quiet${NORMAL}            Don't ask for confirmation
+  ${BOLD}-v, --verbose${NORMAL}          Show more detailed information during commit
 
 ${BRACKET}message${NORMAL} is:
   Commit message describing changes made. ${BOLD}Please include the ebuild's name here.${NORMAL}
@@ -117,11 +129,6 @@ EOF
 
 [[ -z "$1" ]] && usage 1
 
-if [[ -z "$(echo `svn status`)" ]] ; then
-	ewarn "No changes found in current directory."
-	exit 1
-fi
-
 while [[ $# > 0 ]] ; do
 	case "$1" in
 		--changelog|-c)
@@ -131,6 +138,10 @@ while [[ $# > 0 ]] ; do
 				exit 1
 			fi
 			changelog=1
+			shift ;;
+
+		--disable-repoman|-d)
+			disable_repoman=1
 			shift ;;
 
 		--force|-f)
@@ -166,8 +177,14 @@ if [[ -z "$*" ]] ; then
 	exit 1
 fi
 
+if [[ -z "$(echo `svn status`)" ]] ; then
+	ewarn "No changes found in current directory."
+	exit 1
+fi
+
 svn_up || exit $?
 create_digests || exit $?
 changelog_append "$1" || exit $?
 svn_add || exit $?
+#repoman_check || exit $?
 svn_commit "$*" || exit $?
