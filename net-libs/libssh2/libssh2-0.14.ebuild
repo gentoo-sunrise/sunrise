@@ -12,7 +12,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-DEPEND="dev-libs/openssl sys-libs/zlib"
+DEPEND="dev-libs/openssl"
 
 src_unpack() {
 	unpack ${A}
