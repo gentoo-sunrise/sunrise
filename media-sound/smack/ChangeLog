@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/smack
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Jun 2006; Santiago M. Mola <cooldwind@gmail.com> ChangeLog:
+  Initial ebuild (smack-0.3.ebuild) for bug #137010 Thanks to Jouni Rinne
+  <jouni.rinne@saunalahti.fi>
+
