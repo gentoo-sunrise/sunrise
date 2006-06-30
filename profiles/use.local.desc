@@ -7,6 +7,9 @@ app-dicts/ktranslator:ocr - Enable GOCR support
 app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+media-sound/om:dssi - Enables support for DSSI plugins
+media-sound/om:patch-loader - Installs a command line patch loading client
+media-sound/om:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:samplerate - Enable support for libsamplerate
 media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
