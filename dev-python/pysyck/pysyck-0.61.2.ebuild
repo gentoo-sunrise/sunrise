@@ -18,7 +18,7 @@ IUSE=""
 DEPEND=">=dev-libs/syck-0.55"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_test() {
 	cd "${S}/tests"
