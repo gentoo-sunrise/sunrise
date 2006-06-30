@@ -4,7 +4,7 @@
 
 DESCRIPTION="Drum synth, 100% sample free"
 HOMEPAGE="http://smack.berlios.de/"
-SRC_URI="http://download.berlios.de/smack/${P}.tar.gz"
+SRC_URI="http://download.berlios.de/${PN}/${P}.tar.gz"
 
 IUSE=""
 LICENSE="GPL-2"
@@ -19,6 +19,6 @@ DEPEND=">=media-sound/om-0.2.0
 	media-libs/ladspa-cmt"
 
 src_install() {
-	emake DESTDIR=${D} install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS THANKS README
 }
