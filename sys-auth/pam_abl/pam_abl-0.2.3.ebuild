@@ -18,7 +18,7 @@ DEPEND=">=sys-libs/pam-0.78-r2
 	>=sys-libs/db-4.2.52_p2"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_unpack() {
 	unpack ${A}
