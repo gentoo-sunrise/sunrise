@@ -10,20 +10,16 @@ BOLD=$'\e[0;01m'
 DARKGREEN=$'\e[32m'
 GREEN=$GOOD
 LIGHTBLUE=$HILITE
-MSG_NEW_EBUILD="New Ebuild"
-MSG_PATCH="Patch"
-MSG_REVISION_BUMP="Revision Bump"
-MSG_VERSION_BUMP="Version Bump"
 RED=$BAD
 YELLOW=$WARN
 
 commit_category=$(echo `pwd` | awk -F/ '{ print $(NF-1) }')
-commit_message="moo"
 commit_package=$(echo `pwd` | awk -F/ '{ print $NF }')
 commit_status="$(echo `svn status`)"
 opt_changelog=0
-opt_disable_repoman=0
 opt_force=0
+opt_noformat=0
+opt_norepoman=0
 opt_noupdate=0
 opt_quiet=0
 opt_verbose=0
@@ -52,17 +48,8 @@ create_digests() {
 	fi
 }
 
-format_message() {
-	commit_status="$(echo `svn status`)"
-	if [[ "$commit_status" =~ '\.ebuild' ]] ; then
-		commit_message="${commit_category}/${commit_package}: $*"
-	else
-		commit_message="${commit_package}/$(echo $commit_status | awk '{ print $2 }'): $*"
-	fi
-}
-
 repoman_check() {
-	if [[ "$opt_disable_repoman" == "0" ]] ; then
+	if [[ "$opt_norepoman" == "0" ]] ; then
 		ebegin "Running repoman"
 		PORTDIR_OVERLAY=$(dirname $(dirname $(pwd)))
 		export PORTDIR_OVERLAY
@@ -84,6 +71,17 @@ svn_add() {
 }
 
 svn_commit() {
+	local commit_message="$*"
+
+	if [[ "$opt_noformat" == "0" ]] ; then
+		commit_status="$(echo `svn status`)"
+		if [[ "$commit_status" =~ '\.ebuild' ]] ; then
+			commit_message="${commit_category}/${commit_package}: $commit_message"
+		else
+			commit_message="${commit_package}/$(echo $commit_status | awk '{ print $2 }'): $commit_message"
+		fi
+	fi
+
 	echo
 	echo "${DARKGREEN}The following local changes will be committed to the repository:${NORMAL}"
 	echo
@@ -91,7 +89,7 @@ svn_commit() {
 	echo
 	echo "${DARKGREEN}The following commit message will be used:${NORMAL}"
 	echo
-	echo "$*"
+	echo "$commit_message"
 
 	if [[ "$opt_quiet" == "0" ]] ; then
 		echo
@@ -111,7 +109,7 @@ svn_commit() {
 	fi
 
 	ebegin "Committing working copy to repository"
-	svn commit -m "$*"
+	svn commit -m "$commit_message"
 	eend $?
 }
 
@@ -134,13 +132,14 @@ cat << EOF
 ${BOLD}Usage:${NORMAL} ${HILITE}sunrise-commit${NORMAL} [ ${GREEN}options${NORMAL} ] ${BLUE}message${NORMAL}
 
 ${GREEN}options${NORMAL} are:
-  ${BOLD}-c, --changelog${NORMAL}        Create a ChangeLog entry using ${BLUE}message${NORMAL}
-  ${BOLD}-d, --disable-repoman${NORMAL}  Skip repoman check
-  ${BOLD}-f, --force${NORMAL}            Commit even if no ebuilds are present
-  ${BOLD}-h, --help${NORMAL}             Show help
-  ${BOLD}-n, --noupdate${NORMAL}         Don't update from repository before committing
-  ${BOLD}-q, --quiet${NORMAL}            Don't ask for confirmation
-  ${BOLD}-v, --verbose${NORMAL}          Show more detailed information during commit
+  ${BOLD}-c, --changelog${NORMAL}  Create a ChangeLog entry using ${BLUE}message${NORMAL}
+  ${BOLD}-f, --force${NORMAL}      Commit even if no ebuilds are present
+  ${BOLD}-h, --help${NORMAL}       Show help
+  ${BOLD}-m, --noformat${NORMAL}   Disable automatic formatting of commit message
+  ${BOLD}-n, --noupdate${NORMAL}   Don't update from repository before committing
+  ${BOLD}-q, --quiet${NORMAL}      Don't ask for confirmation
+  ${BOLD}-r, --norepoman${NORMAL}  Skip repoman check
+  ${BOLD}-v, --verbose${NORMAL}    Show more detailed information during commit
 
 ${BLUE}message${NORMAL} is:
   Commit message describing changes and listing names/emails of anyone (other
@@ -162,16 +161,20 @@ while [[ $# > 0 ]] ; do
 			opt_changelog=1
 			shift ;;
 
-		--disable-repoman|-d)
-			opt_disable_repoman=1
-			shift ;;
-
 		--force|-f)
 			opt_force=1
 			shift ;;
 
 		--help|-h)
 			usage ;;
+
+		--noformat|-m)
+			opt_noformat=1
+			shift ;;
+
+		--norepoman|-r)
+			opt_norepoman=1
+			shift ;;
 
 		--noupdate|-n)
 			opt_noupdate=1
@@ -209,5 +212,4 @@ create_digests || exit $?
 changelog_append "$1" || exit $?
 svn_add || exit $?
 #repoman_check || exit $?
-format_message "$*"
-svn_commit "$commit_message" || exit $?
+svn_commit "$*" || exit $?
