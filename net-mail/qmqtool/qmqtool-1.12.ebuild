@@ -32,5 +32,5 @@ src_install() {
 	docinto contrib/cricket
 	dodoc contrib/cricket/*
 
-	dobin qmqtool || die "dobin failed"
+	dobin qmqtool
 }
