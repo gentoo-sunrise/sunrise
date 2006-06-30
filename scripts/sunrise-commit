@@ -13,11 +13,10 @@ LIGHTBLUE=$HILITE
 RED=$BAD
 YELLOW=$WARN
 
-commit_category=$(echo `pwd` | awk -F/ '{ print $(NF-1) }')
-commit_package=$(echo `pwd` | awk -F/ '{ print $NF }')
+commit_category="$(echo `pwd` | awk -F/ '{ print $(NF-1) }')"
+commit_package="$(echo `pwd` | awk -F/ '{ print $NF }')"
 commit_status="$(echo `svn status`)"
 opt_changelog=0
-opt_force=0
 opt_noformat=0
 opt_norepoman=0
 opt_noupdate=0
@@ -29,17 +28,11 @@ changelog_append() {
 		ebegin "Appending/creating ChangeLog"
 		echangelog "$1"
 		eend $?
-	else
-		return 0
 	fi
 }
 
 create_digests() {
-	if [[ "$opt_force" == "0" ]] ; then
-		if [[ ! $(find *.ebuild -maxdepth 0) ]] ; then
-			echo "!!! Error: No ebuilds found in current directory. Use -f to force commit."
-			exit 1
-		fi
+	if [[ $(find *.ebuild -maxdepth 0) ]] ; then
 		ebegin "Digesting ebuilds"
 		for i in *.ebuild ; do
 			ebuild $i digest
@@ -50,22 +43,22 @@ create_digests() {
 
 repoman_check() {
 	if [[ "$opt_norepoman" == "0" ]] ; then
-		ebegin "Running repoman"
-		PORTDIR_OVERLAY=$(dirname $(dirname $(pwd)))
-		export PORTDIR_OVERLAY
-		repoman
-		eend $?
-	else
-		return 0
+		commit_status="$(echo `svn status`)"
+		if [[ "$commit_status" =~ '\.ebuild' ]] ; then
+			ebegin "Running repoman"
+			export PORTDIR_OVERLAY="$(dirname $(dirname $(pwd)))"
+			repoman
+			eend $?
+		fi
 	fi
 }
 
 svn_add() {
 	ebegin "Adding local changes to working copy"
 	if [[ "$opt_verbose" == "1" ]] ; then
-		svn add *
+		svn add * --force
 	else
-		svn add -q *
+		svn add * --force -q
 	fi
 	eend $?
 }
@@ -76,9 +69,9 @@ svn_commit() {
 	if [[ "$opt_noformat" == "0" ]] ; then
 		commit_status="$(echo `svn status`)"
 		if [[ "$commit_status" =~ '\.ebuild' ]] ; then
-			commit_message="${commit_category}/${commit_package}: $commit_message"
+			commit_message="${commit_category}/${commit_package}: ${commit_message}"
 		else
-			commit_message="${commit_package}/$(echo $commit_status | awk '{ print $2 }'): $commit_message"
+			commit_message="${commit_package}/$(echo $commit_status | awk '{ print $2 }'): ${commit_message}"
 		fi
 	fi
 
@@ -122,8 +115,6 @@ svn_up() {
 			svn update -q
 		fi
 		eend $?
-	else
-		return 0
 	fi
 }
 
@@ -132,14 +123,13 @@ cat << EOF
 ${BOLD}Usage:${NORMAL} ${HILITE}sunrise-commit${NORMAL} [ ${GREEN}options${NORMAL} ] ${BLUE}message${NORMAL}
 
 ${GREEN}options${NORMAL} are:
-  ${BOLD}-c, --changelog${NORMAL}  Create a ChangeLog entry using ${BLUE}message${NORMAL}
-  ${BOLD}-f, --force${NORMAL}      Commit even if no ebuilds are present
-  ${BOLD}-h, --help${NORMAL}       Show help
-  ${BOLD}-m, --noformat${NORMAL}   Disable automatic formatting of commit message
-  ${BOLD}-n, --noupdate${NORMAL}   Don't update from repository before committing
-  ${BOLD}-q, --quiet${NORMAL}      Don't ask for confirmation
-  ${BOLD}-r, --norepoman${NORMAL}  Skip repoman check
-  ${BOLD}-v, --verbose${NORMAL}    Show more detailed information during commit
+  ${BOLD}--changelog, -c${NORMAL}  Create a ChangeLog entry using ${BLUE}message${NORMAL}
+  ${BOLD}--help, -h${NORMAL}       Show help
+  ${BOLD}--noformat, -m${NORMAL}   Disable automatic formatting of ${BLUE}message${NORMAL}
+  ${BOLD}--norepoman, -p${NORMAL}  Skip repoman check
+  ${BOLD}--noupdate, -d${NORMAL}   Don't update from repository before committing
+  ${BOLD}--quiet, -q${NORMAL}      Don't ask for confirmation
+  ${BOLD}--verbose, -v${NORMAL}    Show detailed information during commit
 
 ${BLUE}message${NORMAL} is:
   Commit message describing changes and listing names/emails of anyone (other
@@ -161,10 +151,6 @@ while [[ $# > 0 ]] ; do
 			opt_changelog=1
 			shift ;;
 
-		--force|-f)
-			opt_force=1
-			shift ;;
-
 		--help|-h)
 			usage ;;
 
@@ -172,11 +158,11 @@ while [[ $# > 0 ]] ; do
 			opt_noformat=1
 			shift ;;
 
-		--norepoman|-r)
+		--norepoman|-p)
 			opt_norepoman=1
 			shift ;;
 
-		--noupdate|-n)
+		--noupdate|-d)
 			opt_noupdate=1
 			shift ;;
 
@@ -211,5 +197,5 @@ svn_up || exit $?
 create_digests || exit $?
 changelog_append "$1" || exit $?
 svn_add || exit $?
-#repoman_check || exit $?
+repoman_check || exit $?
 svn_commit "$*" || exit $?
