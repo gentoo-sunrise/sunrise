@@ -17,6 +17,7 @@ KEYWORDS="~x86"
 IUSE="adns gtk ipv6 snmp ssl kerberos threads"
 
 RDEPEND=">=sys-libs/zlib-1.1.4
+	!net-analyzer/ethereal
 	snmp? ( >=net-analyzer/net-snmp-5.1.1 )
 	gtk? ( >=dev-libs/glib-2.0.4
 		=x11-libs/gtk+-2*
@@ -59,7 +60,6 @@ src_unpack() {
 }
 
 src_compile() {
-
 	replace-flags -O? -O
 
 	# Fix gcc-3.4 segfault #49238
@@ -95,17 +95,17 @@ src_compile() {
 		--enable-text2pcap \
 		--enable-dftest \
 		--enable-randpkt \
-		${myconf} || die "bad ./configure"
+		${myconf} || die "econf failed"
 
 	# fixes an access violation caused by libnetsnmp - see bug 79068
 	use snmp && export MIBDIRS="${D}/usr/share/snmp/mibs"
 
-	emake || die "compile problem"
+	emake || die "emake failed"
 }
 
 src_install() {
 	dodir /usr/lib/wireshark/plugins/${PV}
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS ChangeLog NEWS README*
 
