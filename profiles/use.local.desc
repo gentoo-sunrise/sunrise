@@ -32,3 +32,5 @@ net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:tsig - Enable TSIG support
 net-firewall/nufw:pam_nufw - Adds support for pam nufw from PAM
 net-firewall/nufw:ident - Add support ident users authentication
+sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
+sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
