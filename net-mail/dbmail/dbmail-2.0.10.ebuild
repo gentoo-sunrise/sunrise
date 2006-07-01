@@ -11,27 +11,21 @@ SRC_URI="http://www.dbmail.org/download/2.0/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="ssl postgres mysql"
+IUSE="ssl postgres"
 
-DEPEND="
-	ssl? ( dev-libs/openssl )
-	mysql? ( >=dev-db/mysql-4.0.12 )
+DEPEND="ssl? ( dev-libs/openssl )
 	postgres? ( dev-db/postgresql )
-	sys-libs/zlib
-"
+	!postgres? ( >=dev-db/mysql-4.0.12 )
+	sys-libs/zlib"
 
 pkg_setup() {
-	if  use mysql && use postgres ; then
-		eerror "Unfortunatly you can't have both MySQL and PostgreSQL"
-		eerror " enabled at the same time."
-		eerror "You have to remove either 'mysql' or 'postgres'"
-		eerror "from your USE flags before emerging dbmail."
-		exit 1
-	fi
-
-	if ! use mysql && ! use postgres ; then
-		eerror "Unfortunatly you have to enable either MySQL or PostgreSQL"
-		exit 1
+	if use postgres && has_version dev-db/mysql ; then
+		einfo "You have postgres use flag set, ${PN} will compile against PostgreSQL."
+		einfo "If you want to use MySQL instead, unset postgres use flag for this ebuild:"
+		einfo
+		einfo "echo \"net-mail/dbmail -postgres\" >> /etc/portage/package.use"
+		einfo
+		epause 3
 	fi
 
 	enewgroup dbmail
@@ -41,18 +35,18 @@ pkg_setup() {
 src_compile() {
 	econf \
 		$(use_with ssl) \
-		$(use_with mysql) \
-		$(use_with postgres) || die "econf failed"
+		$(use_with postgres) \
+		$(use_with !postgres mysql) || die "econf failed"
 	# --sysconfdir is not taken into consideration thus we use sed here
 	sed -i -e "s:\(.*etc/\)\(.*$\):\1dbmail/\2:" dbmail.h
 	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS BUGS EXTRAS ChangeLog UPGRADING \
-	INSTALL* VERSION NEWS README THANKS TODO
+		INSTALL* VERSION NEWS README THANKS TODO
 	dodoc sql/mysql/*
 	dodoc sql/postgresql/*
 
@@ -61,9 +55,9 @@ src_install() {
 	insinto /etc/dbmail
 	newins dbmail.conf dbmail.conf.dist
 
-	newinitd ${FILESDIR}/dbmail-imapd.initd dbmail-imapd
-	newinitd ${FILESDIR}/dbmail-lmtpd.initd dbmail-lmtpd
-	newinitd ${FILESDIR}/dbmail-pop3d.initd dbmail-pop3d
+	newinitd "${FILESDIR}"/dbmail-imapd.initd dbmail-imapd
+	newinitd "${FILESDIR}"/dbmail-lmtpd.initd dbmail-lmtpd
+	newinitd "${FILESDIR}"/dbmail-pop3d.initd dbmail-pop3d
 
 	dobin contrib/mailbox2dbmail/mailbox2dbmail
 	doman contrib/mailbox2dbmail/mailbox2dbmail.1
@@ -74,15 +68,15 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Please read /usr/share/doc/${P}/INSTALL.gz"
+	einfo "Please read /usr/share/doc/${PF}/INSTALL.gz"
 	einfo "for remaining instructions on setting up dbmail users and "
 	einfo "for finishing configuration to connect to your MTA and "
 	einfo "to connect to your db."
-	einfo "Database schemes can be found in /usr/share/doc/${P}/"
+	einfo
+	einfo "Database schemes can be found in /usr/share/doc/${PF}/"
 	einfo "You will also want to follow the installation instructions"
 	einfo "on setting up the maintenance program to delete old messages."
 	einfo "Don't forget to edit /etc/dbmail/dbmail.conf as well. :)"
 	einfo ">>> --- For maintenance ---"
 	einfo ">>> add this to crontab: 0 3 * * * /usr/bin/dbmail-util -cpdy >/dev/null 2>&1 "
 }
-
