@@ -1,0 +1,7 @@
+# ChangeLog for games-puzzle/pythonsudoku
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
+  New ebuild for bug 113932, thanks to Nick Devito for the initial
+

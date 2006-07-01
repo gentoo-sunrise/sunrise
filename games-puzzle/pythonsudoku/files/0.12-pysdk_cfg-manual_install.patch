@@ -1,0 +1,37 @@
+diff -Naur pythonsudoku-0.12/setup.py pythonsudoku-0.12.new/setup.py
+--- pythonsudoku-0.12/setup.py	2006-05-31 14:10:57.000000000 +0200
++++ pythonsudoku-0.12.new/setup.py	2006-07-01 22:23:09.000000000 +0200
+@@ -31,7 +31,7 @@
+ 
+         # TODO: check for OS to set the default values
+         if self.syscfg is None:
+-            self.syscfg = "/etc/pysdk.cfg"
++            self.syscfg = "/etc/games/pythonsudoku/pysdk.cfg"
+         if self.usercfg is None:
+             self.usercfg = "~/.pysdk.cfg"
+         if self.localedir is None:
+@@ -83,8 +83,6 @@
+     # searched
+     data_files.append((get_python_lib(plat_specific=False) + "/pythonsudoku",
+                        ["pythonsudoku/platform.cfg"]))
+-    data_files.append((os.path.dirname(config.get("paths", "syscfg")),
+-                       ["pysdk.cfg"]))
+     data_files.append(("pythonsudoku", ["data/FreeSans.ttf"]))
+ 
+     for lingua in linguas():
+diff -Naur pythonsudoku-0.12/test.sdk pythonsudoku-0.12.new/test.sdk
+--- pythonsudoku-0.12/test.sdk	1970-01-01 01:00:00.000000000 +0100
++++ pythonsudoku-0.12.new/test.sdk	2006-07-01 22:01:58.000000000 +0200
+@@ -0,0 +1,12 @@
++# boardsize 3 x 3
++  1  0  0    0  0  8    0  9  0
++  0  0  0    0  0  0    0  0  8
++  0  0  0    0  2  0    7  6  0
++
++  8  0  0    0  1  0    0  0  0
++  0  0  0    0  4  0    0  0  0
++  0  2  7    5  0  6    4  0  0
++
++  0  0  3    2  0  0    0  0  5
++  5  0  0    4  0  0    0  0  6
++  0  8  9    0  0  0    3  2  0
