@@ -26,9 +26,9 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 pkg_setup() {
-	if use gtk && !use patch-loader ; then
-		eerror "USE="gtk" requires USE="patch-loader" too."
-		die
+	if use gtk && !use patch-loader; then
+		eerror 'USE="gtk" requires USE="patch-loader" too.'
+		die "gtk without patch-loader detected"
 	fi
 }
 
