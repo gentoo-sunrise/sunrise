@@ -1,0 +1,22 @@
+--- libnautilus-actions/Makefile.am.orig	2006-05-24 20:02:51.728490731 +0200
++++ libnautilus-actions/Makefile.am	2006-05-24 20:03:22.729777819 +0200
+@@ -20,4 +20,5 @@
+ 	nautilus-actions-config-schema-reader.h \
+ 	nautilus-actions-config-xml.c	\
+ 	nautilus-actions-config-xml.h
+-libnautilus_actions_la_LIBADD = -luuid
++libnautilus_actions_la_LIBADD = $(NAUTILUS_ACTIONS_LIBS)    \
++	-luuid
+--- nact/Makefile.am.orig	2006-05-24 20:01:26.806400851 +0200
++++ nact/Makefile.am	2006-05-24 20:01:41.944099571 +0200
+@@ -17,8 +17,8 @@
+ 	nact-editor.c			\
+ 	nact-editor.h
+ nautilus_actions_config_LDADD =						\
+-	$(NAUTILUS_ACTIONS_LIBS)					\
+-	$(top_builddir)/libnautilus-actions/libnautilus-actions.la
++	$(top_builddir)/libnautilus-actions/libnautilus-actions.la \
++	$(NAUTILUS_ACTIONS_LIBS)
+ 
+ gladedir = $(datadir)/nautilus-actions/nact
+ glade_DATA = nautilus-actions-config.glade

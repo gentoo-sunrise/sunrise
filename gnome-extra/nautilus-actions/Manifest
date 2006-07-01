@@ -1,0 +1,12 @@
+AUX nautilus-actions-1.2-as-needed.patch 877 RMD160 12b4d315b65e8df02d8c5c220c706dad31c26904 SHA1 eb0e5332dbf2075c38011a0e08d785d9134183d1 SHA256 0caa342bf923ef40a22d6d48052d1f911d041d1390961b987d14832f8263de85
+MD5 ed9aec6af6ac7bc4d5bc679eb80d24b0 files/nautilus-actions-1.2-as-needed.patch 877
+RMD160 12b4d315b65e8df02d8c5c220c706dad31c26904 files/nautilus-actions-1.2-as-needed.patch 877
+SHA256 0caa342bf923ef40a22d6d48052d1f911d041d1390961b987d14832f8263de85 files/nautilus-actions-1.2-as-needed.patch 877
+DIST nautilus-actions-1.2.tar.gz 768856 RMD160 5d0ed04738e42a055d4b46ddba996043d85ac2f7 SHA1 265d04c70d1e58f4f5d2e8549b20dd4d56ab4977 SHA256 8eb38c71384653f198a46171d1d57d857a2961e0dd2d9e7b475d6d5b8729795c
+EBUILD nautilus-actions-1.2.ebuild 856 RMD160 73992c0544b8bb42b2eb8568896cee7d2d72d8e7 SHA1 987475c32ef3fffb12a89789d6dc834cebd03fa2 SHA256 d841cb28d885469c8484bfd52d805a2de7b0474025ad951da42c90753e497f22
+MD5 4d5e1985072c57a1dd9fd126bf7c6c19 nautilus-actions-1.2.ebuild 856
+RMD160 73992c0544b8bb42b2eb8568896cee7d2d72d8e7 nautilus-actions-1.2.ebuild 856
+SHA256 d841cb28d885469c8484bfd52d805a2de7b0474025ad951da42c90753e497f22 nautilus-actions-1.2.ebuild 856
+MD5 3858464118f1b28d55685fb3e171ac41 files/digest-nautilus-actions-1.2 262
+RMD160 ad31f65e8cb73853b5f692f1679fae517949ba4f files/digest-nautilus-actions-1.2 262
+SHA256 25afc85f31004ab145b2b3d786042d222be74f12bd10b9fae2e1528431cfe7b4 files/digest-nautilus-actions-1.2 262
