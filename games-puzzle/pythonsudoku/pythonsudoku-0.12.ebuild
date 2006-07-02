@@ -21,7 +21,8 @@ RDEPEND="dev-python/pygtk
 src_unpack() {
 	unpack ${A}
 	epatch "${FILESDIR}/${PV}-setup_py-various_fix.patch"
-	sed -i -e 's#syscfg = pysdk.cfg#syscfg = /etc/games/pythonsudoku/pysdk.cfg#'  "${S}/pythonsudoku/platform.cfg" || die "fixing configfile path failed"
+	sed -i -e 's#syscfg = pysdk.cfg#syscfg = /etc/games/pythonsudoku/pysdk.cfg#' \
+		"${S}/pythonsudoku/platform.cfg" || die "fixing configfile path failed"
 }
 
 src_install() {
@@ -32,5 +33,4 @@ src_install() {
 
 	insinto /etc/games/pythonsudoku
 	doins pysdk.cfg
-
 }
