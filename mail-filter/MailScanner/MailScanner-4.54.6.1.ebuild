@@ -59,8 +59,6 @@ src_unpack() {
 	unpack ${A}
 	echo ">>> Unpacking ${MAILSCANNER_REAL_ARCHIVE}"
 	tar -zxf "${MAILSCANNER_REAL_ARCHIVE}"
-	echo "Done unpacking"
-	cd ${S}
 }
 
 src_compile() {

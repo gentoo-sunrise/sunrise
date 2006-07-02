@@ -3,5 +3,8 @@
 # $Header: $
 
   02 Jul 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Minor QA fix
+
+  02 Jul 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
   Initial import -- thanks to various people in bug #36060
 
