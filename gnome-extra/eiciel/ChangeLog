@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/eiciel
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
+  New ebuild for bug 109221, ebuild provided by Tristan Heaven with minor
+  cleanups
+
