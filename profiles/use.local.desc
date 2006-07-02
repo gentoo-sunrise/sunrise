@@ -7,6 +7,13 @@ app-dicts/ktranslator:ocr - Enable GOCR support
 app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+mail-filter/MailScanner: bitdefender - Enable usage of bitdefender virus scanner
+mail-filter/MailScanner: exim - Set exim to used MTA
+mail-filter/MailScanner: fprot - Enable usage of fprot virus scanner
+mail-filter/MailScanner: postfix - Set postfix to used MTA
+mail-filter/MailScanner: sendmail - Set sendmail to used MTA
+mail-filter/MailScanner: spamassassin - Enable usage of spamassassin for spam detection
+mail-filter/MailScanner: vlnx - Enable usage of vnlx virus scanner
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/om:ladspa - Enables support for LADSPA plugins
