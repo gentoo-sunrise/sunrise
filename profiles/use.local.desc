@@ -9,7 +9,7 @@ dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 mail-filter/MailScanner:bitdefender - Enable usage of bitdefender virus scanner
 mail-filter/MailScanner:exim - Set exim to used MTA
-mail-filter/MailScanner:fprot - Enable usage of fprot virus scanner
+mail-filter/MailScanner:f-prot - Enable usage of fprot virus scanner
 mail-filter/MailScanner:postfix - Set postfix to used MTA
 mail-filter/MailScanner:sendmail - Set sendmail to used MTA
 mail-filter/MailScanner:spamassassin - Enable usage of spamassassin for spam detection
