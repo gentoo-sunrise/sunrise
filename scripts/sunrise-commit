@@ -124,7 +124,7 @@ svn_up() {
 			svn update -q || set $?
 		fi
 		eend ${1:-0}
-		for (( i=$num_new_dirs ; i > 0 ; i++ )) ; do
+		for (( i=$num_new_dirs ; i > 0 ; i-- )) ; do
 	   		popd >/dev/null
 		done
 	fi
