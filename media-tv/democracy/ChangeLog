@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jul 2006; Stefan Schweizer <genstef@gentoo.org> ChangeLog:
+  add firefox support thanks to Rick Harris, add ~ppc and python-berkdb check
+  thanks to Steffen Strobel and Jorge Vargas in bug 131527
+
   24 Jun 2006; Stefan Schweizer <genstef@gentoo.org> ChangeLog:
   New democracy ebuild thanks to Jorge Vargas for the initial ebuild, Martin
   Meyer and Anton for helping with improving it and Louis C. for bumping it in

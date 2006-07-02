@@ -1,0 +1,57 @@
+diff -ur Democracy-0.8.4.1.orig/platform/gtk-x11/frontend_implementation/MozillaBrowserXPCOM.h Democracy-0.8.4.1/platform/gtk-x11/frontend_implementation/MozillaBrowserXPCOM.h
+--- Democracy-0.8.4.1.orig/platform/gtk-x11/frontend_implementation/MozillaBrowserXPCOM.h	2006-07-02 15:35:18.000000000 +0200
++++ Democracy-0.8.4.1/platform/gtk-x11/frontend_implementation/MozillaBrowserXPCOM.h	2006-07-02 15:35:23.000000000 +0200
+@@ -1,6 +1,9 @@
+ #ifndef MOZILLA_BROWSER_XPCOM_H
+ #define MOZILLA_BROWSER_XPCOM_H
+ 
++#ifndef MOZILLA_INTERNAL_API
++#define MOZILLA_INTERNAL_API
++
+ #include <gtkmozembed.h>
+ #include <nscore.h>
+ 
+@@ -25,4 +28,6 @@
+ }
+ #endif
+ 
++#endif /* MOZILLA_INTERNAL_API */
++
+ #endif /* MOZILLA_BROWSER_XPCOM_H */
+diff -ur Democracy-0.8.4.1.orig/platform/gtk-x11/setup.py Democracy-0.8.4.1/platform/gtk-x11/setup.py
+--- Democracy-0.8.4.1.orig/platform/gtk-x11/setup.py	2006-07-02 15:35:18.000000000 +0200
++++ Democracy-0.8.4.1/platform/gtk-x11/setup.py	2006-07-02 15:35:58.000000000 +0200
+@@ -129,10 +129,11 @@
+ 
+     if options_dict is None:
+         options_dict = {
+-            'include_dirs' : [],
++            'include_dirs' : ['/usr/lib/mozilla-firefox/include/webbrwsr',
++                              '/usr/lib/mozilla-firefox/include/dom',
++                              '/usr/lib/mozilla-firefox/include/uriloader'],
+             'library_dirs' : [],
+             'libraries' : [],
+-            'extra_compile_args' : []
+         }
+     commandLine = "%s --cflags --libs %s" % (command, components)
+     output = getCommandOutput(commandLine).strip()
+@@ -144,8 +145,6 @@
+             options_dict['library_dirs'].append(rest)
+         elif prefix == '-l':
+             options_dict['libraries'].append(rest)
+-        else:
+-            options_dict['extra_compile_args'].append(comp)
+     return options_dict
+ 
+ #### The fasttypes extension ####
+@@ -157,8 +156,8 @@
+ 
+ #### MozillaBrowser Extension ####
+ mozilla_browser_options = parsePkgConfig("pkg-config" , 
+-        "gtk+-2.0 glib-2.0 pygtk-2.0 mozilla-gtkmozembed mozilla-xpcom")
+-mozilla_lib_path = parsePkgConfig('pkg-config', 'mozilla-gtkmozembed')['library_dirs']
++        "gtk+-2.0 glib-2.0 pygtk-2.0 firefox-gtkmozembed firefox-xpcom")
++mozilla_lib_path = parsePkgConfig('pkg-config', 'firefox-gtkmozembed')['library_dirs']
+ mozilla_browser_ext = Extension("democracy.MozillaBrowser",
+         [ os.path.join(frontend_implementation_dir,'MozillaBrowser.pyx'),
+           os.path.join(frontend_implementation_dir,'MozillaBrowserXPCOM.cc'),
