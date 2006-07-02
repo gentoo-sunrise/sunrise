@@ -9,10 +9,10 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="bittorrent crypt gnutls openssl nls"
+IUSE="bittorrent crypt gnutls nls ssl"
 
 RDEPEND="gnutls? ( net-libs/gnutls )
-	 openssl? ( dev-libs/openssl )
+	 ssl? ( dev-libs/openssl )
 	 crypt? ( dev-libs/libgcrypt )
 	 nls? ( virtual/libiconv virtual/libintl )"
 DEPEND="${RDEPEND}"
@@ -24,12 +24,12 @@ pkg_setup() {
 		die "use flag inconsistency"
 	fi
 }
-		
+
 src_compile() {
 	econf \
 		$(use_enable nls) \
 		$(use_with gnutls) \
-		$(use_with openssl) \
+		$(use_with ssl openssl) \
 		|| die "econf failed"
 	emake || die "emake failed"
 }
