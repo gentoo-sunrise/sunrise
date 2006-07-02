@@ -1,0 +1,10 @@
+# ChangeLog for dev-util/monkeystudio
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
+  New ebuild for bug 132029
+
+  25 Jun 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
+  New ebuild for bug 132029
+
