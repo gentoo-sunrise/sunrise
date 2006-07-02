@@ -108,21 +108,28 @@ svn_commit() {
 
 svn_up() {
 	if [[ "$opt_noupdate" == "0" ]] ; then
+		local update_package=0
+		local update_category=0
+		[[ "$(echo `svn status`)" =~ "A.*\." ]] && { update_package=1 ; pushd . >/dev/null ; cd .. ; }
+		[[ "$(echo `svn status ..`)" =~ "A.*\.\." ]] && { update_category=1 ; pushd . >/dev/null ; cd .. ; }
 		ebegin "Updating working copy to latest version from repository"
 		if [[ "$opt_verbose" == "1" ]] ; then
-			svn update
+			svn update || set $?  
 		else
-			svn update -q
+			svn update -q || set $?
 		fi
-		eend $?
+		eend ${1:-0}
+		[[ "$update_category" == "1" ]] && popd >/dev/null
+		[[ "$update_package" == "1" ]] && popd >/dev/null
 	fi
+	return ${1:-0}
 }
 
 usage() {
 cat << EOF
-${BOLD}Usage:${NORMAL} ${HILITE}sunrise-commit${NORMAL} [ ${GREEN}options${NORMAL} ] ${BLUE}message${NORMAL}
+${BOLD}Usage:${NORMAL} ${LIGHTBLUE}sunrise-commit${NORMAL} [ ${GREEN}options${NORMAL} ] ${BLUE}message${NORMAL}
 
-${GREEN}options${NORMAL} are:
+${GREEN}options${NORMAL}:
   ${BOLD}--changelog, -c${NORMAL}  Create a ChangeLog entry using ${BLUE}message${NORMAL}
   ${BOLD}--help, -h${NORMAL}       Show help
   ${BOLD}--noformat, -m${NORMAL}   Disable automatic formatting of ${BLUE}message${NORMAL}
@@ -131,7 +138,7 @@ ${GREEN}options${NORMAL} are:
   ${BOLD}--quiet, -q${NORMAL}      Don't ask for confirmation
   ${BOLD}--verbose, -v${NORMAL}    Show detailed information during commit
 
-${BLUE}message${NORMAL} is:
+${BLUE}message${NORMAL}:
   Commit message describing changes and listing names/emails of anyone (other
   than the commiter) who contributed.
 EOF
