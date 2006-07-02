@@ -1,0 +1,16 @@
+--- squidclamav~/squidclamav.conf.dist	2006-06-30 18:17:32.000000000 +0200
++++ squidclamav/squidclamav.conf.dist	2006-07-02 14:18:35.000000000 +0200
+@@ -30,11 +30,11 @@
+ # Examples of valid lines:
+ #
+ # proxy http://127.0.0.1:3128/
+-# logfile /usr/local/squidclamav/logs/squidclamav.log
++# logfile /var/log/squidclamav/squidclamav.log
+ # redirect http://proxy.domain.com/cgi-bin/clwarn.cgi
+ # debug 0
+ # force 1
+-# clamd_ip 192.168.1.5
++# clamd_ip 127.0.0.1
+ # clamd_port 3310
+ # timeout 60
+ # abort ^.*\.gz$

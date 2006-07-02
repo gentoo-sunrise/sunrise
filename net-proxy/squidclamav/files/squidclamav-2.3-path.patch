@@ -1,0 +1,15 @@
+--- squidclamav~/paths.h	2006-06-30 18:17:32.000000000 +0200
++++ squidclamav/paths.h	2006-06-30 18:41:49.000000000 +0200
+@@ -25,10 +25,10 @@
+ 
+ /*************  Log File Locations (must be writable by **********/
+ /*************  the user given in the squid.conf file   **********/
+-#define LOG_FILE "/usr/local/squidclamav/logs/squidclamav.log"
++#define LOG_FILE "/var/log/squidclamav/squidclamav.log"
+ 
+ /*************  Configuration file locations  ***********/
+-#define CONFIG_FILE "/usr/local/squidclamav/etc/squidclamav.conf"
++#define CONFIG_FILE "/etc/squidclamav.conf"
+ 
+ /************* Proxy to use *************/
+ #define MY_PROXY "http://127.0.0.1:3128"
