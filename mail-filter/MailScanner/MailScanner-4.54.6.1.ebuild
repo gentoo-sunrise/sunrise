@@ -47,7 +47,7 @@ RDEPEND="dev-lang/perl
 	vlnx? ( app-antivirus/vlnx )
 	bitdefender? ( app-antivirus/bitdefender-console )
 	spamassassin? ( mail-filter/spamassassin )
-	"
+	virtual/cron"
 
 IUSE="postfix sendmail exim clamav vlnx spamassassin f-prot bitdefender doc"
 
@@ -94,7 +94,7 @@ src_compile() {
 	# update init script parameters for selected MTA
 	sed \
 		-e "s|^\(MTA=\).*|\1${MTA}|g" \
-		${FILESDIR}/confd.mailscanner-mta > ${S}/confd.mailscanner-mta
+		"${FILESDIR}"/confd.mailscanner-mta > ${S}/confd.mailscanner-mta
 
 	# setup virus scanner(s)
 		VIRUS_SCANNERS=""
@@ -269,10 +269,10 @@ src_install() {
 	doexe	lib/MailScanner/CustomFunctions/MyExample.pm
 
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/initd.mailscanner MailScanner
-	newexe ${FILESDIR}/initd.mailscanner-mta MailScanner-mta
+	newexe "${FILESDIR}"/initd.mailscanner MailScanner
+	newexe "${FILESDIR}"/initd.mailscanner-mta MailScanner-mta
 	insinto /etc/conf.d
-	newins ${FILESDIR}/confd.mailscanner MailScanner
+	newins "${FILESDIR}"/confd.mailscanner MailScanner
 	newins ${S}/confd.mailscanner-mta MailScanner-mta
 
 	#Set up cron jobs
@@ -284,8 +284,8 @@ src_install() {
 	newexe ${S}/bin/cron/clean.quarantine.cron clean.quarantine
 
 	if use doc ; then
-		mkdir -p ${D}usr/share/doc/${PF}/html
-		cp -a docs/* ${D}usr/share/doc/${PF}/html
+		dodir /usr/share/doc/${PF}/html
+		cp -r docs/* "${D}"usr/share/doc/${PF}/html
 	fi
 
 	dodoc notes.txt docs/QuickInstall.txt docs/README.sql-logging
@@ -297,9 +297,9 @@ src_install() {
 	keepdir ${BASE}/var
 
 	if use postfix ; then
-		chown -R postfix:postfix ${D}/var/spool/MailScanner/
+		chown -R postfix:postfix "${D}"/var/spool/MailScanner/
 	elif use exim ; then
-		chown -R mail:mail ${D}/var/spool/MailScanner/
+		chown -R mail:mail "${D}"/var/spool/MailScanner/
 	else
 		keepdir /var/spool/mqueue.in
 	fi
