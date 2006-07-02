@@ -7,6 +7,7 @@ app-dicts/ktranslator:ocr - Enable GOCR support
 app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+gnome-extra/eiciel:xattr - if you want extended attributes support enabled
 mail-filter/MailScanner:bitdefender - Enable usage of bitdefender virus scanner
 mail-filter/MailScanner:exim - Set exim to used MTA
 mail-filter/MailScanner:f-prot - Enable usage of fprot virus scanner
