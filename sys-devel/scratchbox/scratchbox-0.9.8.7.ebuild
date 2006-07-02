@@ -26,11 +26,6 @@ TARGET_DIR="/opt/scratchbox"
 
 S=${WORKDIR}/scratchbox
 
-pkg_setup() {
-	einfo "Creating group sbox"
-	enewgroup "${SBOX_GROUP}"
-}
-
 src_install() {
 	cd "${S}"
 	dodir ${TARGET_DIR}
@@ -41,14 +36,20 @@ src_install() {
 	# scratchbox service loader
 	newinitd "${FILESDIR}/scratchbox.rc" scratchbox || die "newinitd failed"
 
+	# group already created
+	echo ${SBOX_GROUP} > "${D}/${TARGET_DIR}/.run_me_first_done"
+}
+
+pkg_preinst() {
+	einfo "Creating group sbox"
+	enewgroup "${SBOX_GROUP}" || die "adding group '${SBOX_GROUP}' failed"
 }
 
 pkg_postinst() {
 	einfo
-	einfo "You need to run /opt/scratchbox/run_me_first.sh to complete the install."
-	einfo
-	einfo "Do not forget to create a scratchbox user:"
-	einfo "/opt/scratchbox/sbin/sbox_adduser <user>"
+	einfo "You need to run:"
+	einfo "\"emerge --config =${CATEGORY}/${PF}\""
+	einfo "to set permissions right and setup scratchbox and users"
 	einfo
 	einfo "For further documentation about how to setup"
 	einfo "scratchbox for your development needs have a look at"
@@ -62,18 +63,6 @@ pkg_postinst() {
 	einfo
 	einfo "Type /opt/scratchbox/login to start scratchbox."
 	einfo
-
-	ewarn
-	ewarn "Remember, in order to run scratchbox, you have to"
-	ewarn "be in the '${SBOX_GROUP}' group."
-	ewarn
-
-	ewarn
-	ewarn "For scratchbox to work, you have to set the following files to suid root (chmod u+s FILE):"
-	ewarn " - /opt/scratchbox/sbin/chroot-uid"
-	ewarn " - /opt/scratchbox/compilers/host-gcc/usr/libexec/pt_chown"
-	ewarn "Please note that this could be a security risk and should not be done when security is a concern"
-	ewarn
 }
 
 pkg_postrm() {
@@ -83,3 +72,43 @@ pkg_postrm() {
 	einfo
 }
 
+pkg_config() {
+	if [ `id -u` != "0" ]; then
+		ewarn "Must be root to run this"
+		die "not root"
+	fi
+
+	einfo "Do you want to configure scratchbox? [Yes/No]"
+	einfo "Note: This will set permissions and copy files from the system into the scratchbox"
+	read choice
+	echo
+	case "$choice" in
+		y*|Y*|"")
+			source "${TARGET_DIR}/sbin/sbox_configure" "no" ${SBOX_GROUP} || die "sbox_configure failed"
+			;;
+		*)
+			;;
+	esac
+
+	mkdir -p "${TARGET_DIR}/scratchbox/users"
+
+	while true; do
+		einfo "Existing users:"
+		einfo $(ls "${TARGET_DIR}/users")
+		echo
+
+		einfo "Create new user (leaf empty to skip): "
+		read newuser
+		case "$newuser" in
+			"")
+				break;
+				;;
+			*)
+				einfo "Note: users have to be in the '${SBOX_GROUP}' to be able to login into the scratchbox"
+				"${TARGET_DIR}/sbin/sbox_adduser" ${newuser} || die "sbox_adduser failed"
+				;;
+		esac
+	done
+
+	einfo "Configuration finished. Make sure you run '/etc/init.d/scratchbox start' before logging in."
+}
