@@ -6,7 +6,8 @@ inherit eutils pam
 
 DESCRIPTION="pam interface to existing S/Key library/interface"
 HOMEPAGE="http://freshmeat.net/projects/pam_skey/"
-SRC_URI="http://kreator.esa.fer.hr/projects/tarballs/${P}.tar.gz"
+SRC_URI="http://kreator.esa.fer.hr/projects/tarballs/${P}.tar.gz
+	http://gentooexperimental.org/~genstef/dist/${P}-gentoo.patch.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,7 +23,7 @@ S="${WORKDIR}/${PN}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-gentoo.patch"
+	epatch "${WORKDIR}/${P}-gentoo.patch"
 }
 
 src_compile() {
