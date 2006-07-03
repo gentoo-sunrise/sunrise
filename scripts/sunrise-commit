@@ -208,8 +208,8 @@ if [[ -z "$commit_status" ]] ; then
 fi
 
 svn_up || exit $?
-changelog_append "$*" || exit $?
 [[ ! -e metadata.xml ]] && cp ../../skel.metadata.xml metadata.xml >/dev/null 2>&1
+changelog_append "$*" || exit $?
 create_digests || exit $?
 svn_add || exit $?
 repoman_check || exit $?
