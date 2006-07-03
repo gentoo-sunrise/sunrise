@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Jul 2006; Alex Tarkovsky <alextarkovsky@gmail.org> ChangeLog:
+  Patch buggy makefile to check for and use the proper versions of gtk-sharp
+  and glade-sharp
+
   28 Jun 2006; Alex Tarkovsky <alextarkovsky@gmail.org> ChangeLog:
   New Ebuild for bug 128628
 
