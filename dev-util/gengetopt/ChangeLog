@@ -1,0 +1,7 @@
+# ChangeLog for dev-util/gengetopt
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Jul 2006; Cedric Krier <ced@ced.homedns.org> ChangeLog:
+  New Ebuild for bug 115541 thanks to Jonas Jonsson, Scott Amort
+
