@@ -1,7 +1,6 @@
 #!/bin/bash
 # sunrise-commit - Automates the Gentoo Sunrise Overlay commit process
 # Released into the public domain
-# $Id$
 
 source /sbin/functions.sh
 
@@ -118,16 +117,33 @@ svn_up() {
 			pushd .. >/dev/null
 			(( num_new_dirs++ ))
 		done
+
 		ebegin "Updating working copy to latest version from repository"
+
 		if [[ "$opt_verbose" == "1" ]] ; then
 			svn update || set $?  
 		else
 			svn update -q || set $?
 		fi
+
 		eend ${1:-0}
+
 		for (( i=num_new_dirs ; i > 0 ; i-- )) ; do
 	   		popd >/dev/null
 		done
+
+		local conflict_files=$(svn status | sed -rn 's/^C.+ ([^ ]+)$/\1/p')
+		if [[ -n "$conflict_files" ]] ; then
+			echo "!!! Error: Some local files have changes that conflict with the latest"
+			echo "!!! revisions in the repository. Please contact their committer(s) to resolve"
+			echo "!!! the conflicts manually before running sunrise-commit again:"
+			for filename in $conflict_files ; do
+				echo "!!!"
+				echo "!!!        file: ${filename}"
+				echo "!!!   committer: $(svn info ${filename} | sed -rn 's/Last Changed Author\: (.*)$/\1/p')"
+			done
+			exit 1
+		fi
 	fi
 	return ${1:-0}
 }
