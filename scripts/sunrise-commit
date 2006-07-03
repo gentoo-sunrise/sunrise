@@ -51,6 +51,7 @@ repoman_check() {
 			repoman
 			eend $?
 		fi
+		return $?
 	fi
 }
 
@@ -113,7 +114,7 @@ svn_commit() {
 
 svn_up() {
 	if [[ "$opt_noupdate" == "0" ]] ; then
-		while [[ "$(echo `svn status`)" =~ "A.+? \." ]] ; do
+		while [[ "$(echo `svn status`)" =~ 'A.+? \.' ]] ; do
 			pushd .. >/dev/null
 			(( num_new_dirs++ ))
 		done
@@ -124,7 +125,7 @@ svn_up() {
 			svn update -q || set $?
 		fi
 		eend ${1:-0}
-		for (( i=$num_new_dirs ; i > 0 ; i-- )) ; do
+		for (( i=num_new_dirs ; i > 0 ; i-- )) ; do
 	   		popd >/dev/null
 		done
 	fi
@@ -207,8 +208,9 @@ if [[ -z "$commit_status" ]] ; then
 fi
 
 svn_up || exit $?
-create_digests || exit $?
 changelog_append "$*" || exit $?
+[[ ! -e metadata.xml ]] && cp ../../skel.metadata.xml metadata.xml >/dev/null 2>&1
+create_digests || exit $?
 svn_add || exit $?
 repoman_check || exit $?
 svn_commit "$*" || exit $?
