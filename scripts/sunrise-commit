@@ -25,6 +25,14 @@ opt_verbose=0
 
 changelog_append() {
 	if [[ "$opt_changelog" == "1" ]] ; then
+		if [[ "$(svn status)" =~ 'ChangeLog' ]] ; then
+			echo "!!! Error: Only one ChangeLog entry should be made per commit, and you have"
+			echo "!!! already modified your ChangeLog locally since your last commit. To keep the"
+			echo "!!! pre-existing modifications please run sunrise-commit again without the -c"
+			echo "!!! option. To discard the pre-existing modifications run:"
+			echo "!!!   svn revert ChangeLog"
+			exit 1
+		fi
 		ebegin "Appending/creating ChangeLog"
 		echangelog "$*"
 		eend $?
@@ -41,10 +49,10 @@ create_digests() {
 	fi
 }
 
+
 repoman_check() {
 	if [[ "$opt_norepoman" == "0" ]] ; then
-		commit_status="$(echo `svn status`)"
-		if [[ "$commit_status" =~ '\.ebuild' ]] ; then
+		if [[ "$(svn status)" =~ '\.ebuild' ]] ; then
 			ebegin "Running repoman"
 			export PORTDIR_OVERLAY="$(dirname $(dirname $(pwd)))"
 			repoman
