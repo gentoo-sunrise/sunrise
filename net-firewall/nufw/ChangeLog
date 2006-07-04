@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jul 2006; Cedric Krier <ced@ced.homedns.org> ChangeLog:
+  Add new version 2.0.4 - minor security fix
+
   28 Jun 2006; Cedric Krier <ced@ced.homedns.org> ChangeLog:
   New Ebuild for bug 138378
 
