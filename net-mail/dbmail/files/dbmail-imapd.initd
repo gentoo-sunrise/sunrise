@@ -27,6 +27,7 @@ start() {
 	    start-stop-daemon --start --quiet \
 		--exec /usr/sbin/dbmail-imapd \
 		--name dbmail-imapd \
+		--pidfile ${PIDFILE} \
 		-- -f /etc/dbmail/dbmail.conf 2>&1
 	eend $?
 }	

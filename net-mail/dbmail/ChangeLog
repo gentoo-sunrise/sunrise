@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jul 2006; Martin Hierling <mad@cc.fh-luh.de> ChangeLog:
+  Version Bump to 2.1.6, real unstable, SQLite Support not yet added
+
   01 Jul 2006; Martin Hierling <mad@cc.fh-luh.de> ChangeLog:
   New Ebuild for bug 22331 net-mail/dbmail Thanks to all contributors, to much
   to mention them all.
