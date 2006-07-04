@@ -22,16 +22,16 @@ src_unpack() {
 	cd ${S}
 
 	for jar in `find . -iname *.jar`; do
-	unzip $jar -d ${jar%.jar}
-	rm $jar
+		unzip ${jar} -d ${jar%.jar}
+		rm ${jar}
 	done
 }
 
 src_install() {
-        eclipse-ext_require-slot 3 || die "Failed to find suitable Eclipse installation"
+	eclipse-ext_require-slot 3 || die "Failed to find suitable Eclipse installation"
 
-        eclipse-ext_create-ext-layout binary || die "Failed to create layout"
+	eclipse-ext_create-ext-layout binary || die "Failed to create layout"
 
-        eclipse-ext_install-features features/* || die "Failed to install features"
-        eclipse-ext_install-plugins plugins/* || die "Failed to install plugins"
+	eclipse-ext_install-features features/* || die "Failed to install features"
+	eclipse-ext_install-plugins plugins/* || die "Failed to install plugins"
 }
