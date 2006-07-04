@@ -4,7 +4,7 @@
 
 inherit eutils
 
-DESCRIPTION="an authenticating gateway"
+DESCRIPTION="An enterprise grade authenticating firewall based on netfilter"
 HOMEPAGE="http://www.nufw.org/"
 SRC_URI="http://www.nufw.org/download/${PN}/${P}.tar.gz"
 
