@@ -5,7 +5,7 @@
 inherit gnome2
 
 DESCRIPTION="GNOME applet to control various music players"
-HOMEPAGE="http://web.ics.purdue.edu/~kuliniew/${PN}"
+HOMEPAGE="http://web.ics.purdue.edu/~kuliniew/music-applet"
 SRC_URI="http://web.ics.purdue.edu/~kuliniew/${PN}/downloads/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
