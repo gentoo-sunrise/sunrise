@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="wdfs is a webdav filesystem with special features for accessing subversion repositories"
+DESCRIPTION="WebDAV filesystem with special features for accessing subversion repositories"
 HOMEPAGE="http://noedler.de/projekte/wdfs/"
 SRC_URI="http://noedler.de/projekte/${PN}/${P}.tar.gz"
 
@@ -16,6 +16,6 @@ RDEPEND=">=net-misc/neon-0.24.7
 DEPEND="${RDEPEND}"
 
 src_install() {
-	emake DESTDIR=${D} install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 	dodoc ChangeLog AUTHORS NEWS README
 }
