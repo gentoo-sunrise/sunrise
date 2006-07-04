@@ -15,16 +15,16 @@ KEYWORDS="~x86"
 IUSE="debug doc gdbm ident ldap mysql pam pam_nuauth pic postgres prelude unicode"
 
 DEPEND=">=dev-libs/glib-2
-        dev-libs/libgcrypt
-        >=dev-libs/cyrus-sasl-2
-        net-firewall/iptables
-        >=net-libs/gnutls-1.1
-        gdbm? ( sys-libs/gdbm )
-        ident? ( net-libs/libident )
-        ldap? ( >=net-nds/openldap-2 )
-        mysql? ( dev-db/mysql )
-        pam_auth? ( sys-libs/pam )
-        postgres? ( dev-db/postgresql )"
+	dev-libs/libgcrypt
+	>=dev-libs/cyrus-sasl-2
+	net-firewall/iptables
+	>=net-libs/gnutls-1.1
+	gdbm? ( sys-libs/gdbm )
+	ident? ( net-libs/libident )
+	ldap? ( >=net-nds/openldap-2 )
+	mysql? ( dev-db/mysql )
+	pam_auth? ( sys-libs/pam )
+	postgres? ( dev-db/postgresql )"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
