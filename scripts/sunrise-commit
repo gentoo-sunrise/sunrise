@@ -64,9 +64,9 @@ repoman_check() {
 svn_add() {
 	ebegin "Adding local changes to working copy"
 	if [[ "$opt_verbose" == "1" ]] ; then
-		svn add * --force
+		svn add ../$(basename `pwd`) --force
 	else
-		svn add * --force -q
+		svn add ../$(basename `pwd`) --force -q
 	fi
 	eend $?
 }
@@ -142,8 +142,8 @@ svn_up() {
 		local conflict_files=$(svn status | sed -rn 's/^C.+ ([^ ]+)$/\1/p')
 		if [[ -n "$conflict_files" ]] ; then
 			echo "!!! Error: Some local files have changes that conflict with the latest"
-			echo "!!! revisions in the repository. Please contact their committer(s) to resolve"
-			echo "!!! the conflicts manually before running sunrise-commit again:"
+			echo "!!! revisions in the repository. Please contact the previous committer(s) to"
+			echo "!!! resolve the conflicts manually before running sunrise-commit again:"
 			for filename in $conflict_files ; do
 				echo "!!!"
 				echo "!!!        file: ${filename}"
