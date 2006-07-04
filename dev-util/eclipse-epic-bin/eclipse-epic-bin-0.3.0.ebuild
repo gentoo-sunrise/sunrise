@@ -7,7 +7,7 @@ inherit eclipse-ext
 DESCRIPTION="EPIC is an opensource Perl IDE for the Eclipse platform."
 HOMEPAGE="http://e-p-i-c.sourceforge.net/"
 SRC_URI="http://e-p-i-c.sourceforge.net/downloads/org.epic.updatesite_${PV}_20040711.zip"
-LICENSE="CPL-1"
+LICENSE="CPL-1.0"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
