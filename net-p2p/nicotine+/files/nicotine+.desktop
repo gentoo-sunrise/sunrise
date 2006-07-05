@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Nicotine
+Comment=Nicotine SoulSeek Client
+Exec=nicotine
+Icon=nicotine-n.png
+Terminal=false
+Categories=Application;Network;
+Type=Application
