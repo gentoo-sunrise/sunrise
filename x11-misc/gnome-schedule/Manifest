@@ -1,0 +1,8 @@
+DIST gnome-schedule-1.0.0.tar.gz 628913 RMD160 3eb2593aa1a7fd73a35fa490e5778bfaee6ad590 SHA1 06a887dbff00538929d466dbec674f3144aa0143 SHA256 23b9abfc558e9ce1f33b41a526f5ac0ea080ab8522f7f24a8ee8756890631e0b
+EBUILD gnome-schedule-1.0.0.ebuild 652 RMD160 efcdb2f52e1ea9c19b62cc92040fa1d39e1cb146 SHA1 ea7f79bec66d068cdf1239ab5811d831127bb2cc SHA256 62ce3454c1e847f4ebec572759bac6374a4ff408af376e0702db29dc2cb06f04
+MD5 374adb45c340907260ae8c40bc9619f4 gnome-schedule-1.0.0.ebuild 652
+RMD160 efcdb2f52e1ea9c19b62cc92040fa1d39e1cb146 gnome-schedule-1.0.0.ebuild 652
+SHA256 62ce3454c1e847f4ebec572759bac6374a4ff408af376e0702db29dc2cb06f04 gnome-schedule-1.0.0.ebuild 652
+MD5 7e89234e7aaeb03ec112acb22c2dd81f files/digest-gnome-schedule-1.0.0 262
+RMD160 195f405e722d06845f41a5f8bcd0383642ce579b files/digest-gnome-schedule-1.0.0 262
+SHA256 dbd71f5720ec543c0a42ab4854ea8479fcdb1f9977268494535b57edeeb79933 files/digest-gnome-schedule-1.0.0 262
