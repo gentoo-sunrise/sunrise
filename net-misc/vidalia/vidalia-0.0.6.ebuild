@@ -14,7 +14,7 @@ KEYWORDS="~x86"
 IUSE="debug"
 
 DEPEND=">=x11-libs/qt-4.1.1"
-RDEPEND="$(DEPEND)
+RDEPEND="${DEPEND}
 	>=net-misc/tor-0.1.1.20"
 
 pkg_setup() {
