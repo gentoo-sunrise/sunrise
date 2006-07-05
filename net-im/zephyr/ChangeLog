@@ -1,0 +1,7 @@
+# ChangeLog for net-im/zephyr
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Jul 2006; Mike Kelly <pioto@pioto.org> ChangeLog:
+  New ebuild for zephyr, from bug #112194
+
