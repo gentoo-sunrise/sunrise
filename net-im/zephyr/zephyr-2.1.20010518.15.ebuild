@@ -3,14 +3,14 @@
 # $Header: $
 
 inherit eutils versionator
-DESCRIPTION="The original \"Instant Message\" system client"
-
-HOMEPAGE="http://packages.debian.org/unstable/source/zephyr"
 
 MY_PV=$(replace_version_separator 3 '.SNAPSHOT_')
 MY_PV=${MY_PV%%_*}
 
-SRC_URI="http://ftp.debian.org/debian/pool/main/z/zephyr/${PN}_${MY_PV}.orig.tar.gz"
+DESCRIPTION="The original \"Instant Message\" system client"
+HOMEPAGE="http://packages.debian.org/unstable/source/zephyr"
+SRC_URI="http://ftp.debian.org/debian/pool/main/z/zephyr/${PN}_${MY_PV}.orig.tar.gz
+	http://gentooexperimental.org/~genstef/dist/${P}-debian.patch.bz2"
 
 LICENSE="MIT"
 SLOT="0"
@@ -35,19 +35,22 @@ S=${WORKDIR}/${PN}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
-	epatch ${FILESDIR}/${P}-debian.patch
+	epatch ${WORKDIR}/${P}-debian.patch
 }
 
 src_compile() {
-	econf $(use_with krb4 krb4=/usr) $(use_with X x) || die "econf failed"
+	econf \
+		$(use_with krb4 krb4=/usr) \
+		$(use_with X x) \
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
-	newinitd ${FILESDIR}/zhm.initd zhm
-	newconfd ${FILESDIR}/zhm.confd zhm
+	newinitd "${FILESDIR}/zhm.initd" zhm
+	newconfd "${FILESDIR}/zhm.confd" zhm
 }
