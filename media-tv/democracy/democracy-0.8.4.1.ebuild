@@ -24,14 +24,22 @@ DEPEND="${RDEPEND}
 
 DOCS="README"
 
-S="${WORKDIR}/${MY_P}/platform/gtk-x11/"
+S=${WORKDIR}/${MY_P}/platform/gtk-x11
 
 pkg_setup() {
 	if ! built_with_use python berkdb; then
 		eerror "You must build python with berkdb support"
 		die "Please re-emerge python with berkdb USE flag ON"
 	fi
+
+	if ! grep -q compiler.find /usr/lib/python2.4/distutils/unixccompiler.py; then
+		eerror "You need to apply a patch to make distutils use the correct RPATH."
+		eerror "To do this execute the following command:"
+		eerror "wget -q 'http://sourceforge.net/tracker/download.php?group_id=5470&atid=305470&file_id=144928&aid=1254718' -O -|patch -p1 -d /usr/lib/python2.4"
+		die "python version not patched"
+	fi
 }
+
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
