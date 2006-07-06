@@ -9,27 +9,21 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="bittorrent crypt gnutls nls ssl"
+IUSE="bittorrent gnutls nls ssl"
 
-RDEPEND="gnutls? ( net-libs/gnutls )
-	 ssl? ( dev-libs/openssl )
-	 crypt? ( dev-libs/libgcrypt )
+RDEPEND="ssl? ( gnutls? ( net-libs/gnutls )
+		!gnutls? ( dev-libs/openssl )
+		)
+	 bittorrent? ( gnutls? ( dev-libs/libgcrypt ) )
 	 nls? ( virtual/libiconv virtual/libintl )"
 DEPEND="${RDEPEND}"
 
-pkg_setup() {
-	if use bittorrent && ! use openssl && ! ( use gnutls && use crypt ); then
-		eerror "For bittorrent, you need either openssl or gnutls and grypt"
-		eerror "use flags enabled"
-		die "use flag inconsistency"
-	fi
-}
-
 src_compile() {
+	use ssl && \
+		myconf="${myconf} $(use_enable gnutls) $(use_enable !gnutls openssl)"
 	econf \
 		$(use_enable nls) \
-		$(use_with gnutls) \
-		$(use_with ssl openssl) \
+		${myconf} \
 		|| die "econf failed"
 	emake || die "emake failed"
 }
