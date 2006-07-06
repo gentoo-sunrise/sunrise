@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit toolchain-funcs
+
 MY_PN="RemenDeKO"
 DESCRIPTION="File corruption detection and repair program"
 HOMEPAGE="http://rdko.sourceforge.net/"
@@ -9,7 +11,7 @@ SRC_URI="mirror://sourceforge/rdko/${MY_PN}-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk"
 RESTRICT="strip"
 
@@ -29,11 +31,14 @@ src_unpack() {
 		-e '/^CFLAGSGUI/s:-fmessage-length=0 -fexpensive-optimizations -O3:$(CFLAGS):' \
 		Makefile || die "sed Makefile failed"
 }
+
 src_compile() {
 	if use gtk; then
-		emake E_CFLAGS="${CFLAGS}" || die "emake failed"
+		emake E_CFLAGS="${CFLAGS}" CC="$(tc-getCC)" \
+			|| die "emake failed"
 	else
-		emake E_CFLAGS="${CFLAGS}" rdko || die "emake failed"
+		emake E_CFLAGS="${CFLAGS}" CC="$(tc-getCC)" rdko \
+			|| die "emake failed"
 	fi
 }
 
