@@ -232,7 +232,7 @@ done
 
 svn_up || exit $?
 
-[[ ! -e metadata.xml ]] && cp ../../skel.metadata.xml metadata.xml >/dev/null 2>&1
+[[ "$cwd_is_ebuild_dir" == "1" && ! -e metadata.xml ]] && cp ../../skel.metadata.xml metadata.xml >/dev/null 2>&1
 
 changelog_append "$*" || exit $?
 create_digests || exit $?
