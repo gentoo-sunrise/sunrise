@@ -3,6 +3,9 @@
 # $Header: $
 
   06 Jul 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
+  Changed the way to respect CC and CFLAGS
+
+  06 Jul 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
   Respect correct CC. Added ~amd64 and ~ppc keywords
 
   20 Jun 2006; Alexandru Toma (analoguedragon) <flash3001@yahoo.com>

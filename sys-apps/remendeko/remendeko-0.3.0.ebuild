@@ -27,18 +27,19 @@ src_unpack() {
 	cd "${S}"
 
 	sed -i \
-		-e '/^CFLAGS =/s:-fmessage-length=0 -fexpensive-optimizations -O3:$(E_CFLAGS):' \
-		-e '/^CFLAGSGUI/s:-fmessage-length=0 -fexpensive-optimizations -O3:$(CFLAGS):' \
+		-e "s:^\(CC   = \).*$:\1$(tc-getCC):" \
+		-e "s:^\(CFLAGS = \).*$:\1${CFLAGS} -Wall:" \
+		-e "s:^\(CFLAGSGUI = \).*$:\1${CFLAGS} -DUSEGUI -Wall \
+			`pkg-config gtk+-2.0 gthread-2.0 --cflags`:" \
 		Makefile || die "sed Makefile failed"
+
 }
 
 src_compile() {
 	if use gtk; then
-		emake E_CFLAGS="${CFLAGS}" CC="$(tc-getCC)" \
-			|| die "emake failed"
+		emake || die "emake failed"
 	else
-		emake E_CFLAGS="${CFLAGS}" CC="$(tc-getCC)" rdko \
-			|| die "emake failed"
+		emake rdko || die "emake rdko failed"
 	fi
 }
 
