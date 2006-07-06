@@ -82,7 +82,7 @@ svn_commit() {
 		if [[ "$(ls)" =~ '\.ebuild' ]] ; then
 			commit_message="${commit_category}/${commit_package}: ${commit_message}"
 		else
-			commit_message="${commit_package}/$(svn status | awk '{ print $2 }'): ${commit_message}"
+			commit_message="${commit_package}/$(echo `svn status` | awk '{ print $2 }'): ${commit_message}"
 		fi
 	fi
 
