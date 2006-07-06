@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/rdko/${MY_PN}-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="gtk"
 RESTRICT="strip"
 
