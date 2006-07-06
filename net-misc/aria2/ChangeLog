@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
+  Added ~amd64 and ~ppc keywords
+
   02 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   New ebuild for bug 134540, based on the ebuild provided in bugzilla with
   some modifications in DEPEND and the USE-flags
