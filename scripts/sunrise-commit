@@ -14,6 +14,7 @@ YELLOW=$WARN
 
 commit_category="$(pwd | awk -F/ '{ print $(NF-1) }')"
 commit_package="$(pwd | awk -F/ '{ print $NF }')"
+cwd_is_ebuild_dir=0
 num_new_dirs=0
 opt_changelog=0
 opt_noformat=0
@@ -39,7 +40,7 @@ changelog_append() {
 }
 
 create_digests() {
-	if [[ "$(ls)" =~ '\.ebuild' ]] ; then
+	if [[ "$cwd_is_ebuild_dir" == "1" ]] ; then
 		ebegin "Digesting ebuilds"
 		for i in *.ebuild ; do
 			ebuild $i digest
@@ -51,7 +52,7 @@ create_digests() {
 
 repoman_check() {
 	if [[ "$opt_norepoman" == "0" ]] ; then
-		if [[ "$(ls)" =~ '\.ebuild' ]] ; then
+		if [[ "$cwd_is_ebuild_dir" == "1" ]] ; then
 			ebegin "Running repoman"
 			export PORTDIR_OVERLAY="$(dirname $(dirname $(pwd)))"
 			repoman
@@ -74,17 +75,17 @@ svn_add() {
 svn_commit() {
 	local commit_message="$*"
 
-	for (( i=num_new_dirs ; i > 0 ; i-- )) ; do
-		cd ..
-	done
-
 	if [[ "$opt_noformat" == "0" ]] ; then
-		if [[ "$(ls)" =~ '\.ebuild' ]] ; then
+		if [[ "$cwd_is_ebuild_dir" == "1" ]] ; then
 			commit_message="${commit_category}/${commit_package}: ${commit_message}"
 		else
 			commit_message="${commit_package}/$(echo `svn status` | awk '{ print $2 }'): ${commit_message}"
 		fi
 	fi
+
+	for (( i=num_new_dirs ; i > 0 ; i-- )) ; do
+		cd ..
+	done
 
 	echo
 	echo "${DARKGREEN}The following local changes will be committed to the repository:${NORMAL}"
@@ -222,6 +223,8 @@ if [[ -z "$*" ]] ; then
 	echo "!!! Error: You must supply a commit message. See: sunrise-commit -h"
 	exit 1
 fi
+
+[[ "$(ls)" =~ '\.ebuild' ]] && cwd_is_ebuild_dir=1
 
 while [[ "$(echo `svn status`)" =~ 'A.+? \.' ]] ; do
 	(( num_new_dirs++ ))
