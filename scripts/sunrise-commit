@@ -12,8 +12,8 @@ LIGHTBLUE=$HILITE
 RED=$BAD
 YELLOW=$WARN
 
-commit_category="$(echo `pwd` | awk -F/ '{ print $(NF-1) }')"
-commit_package="$(echo `pwd` | awk -F/ '{ print $NF }')"
+commit_category="$(pwd | awk -F/ '{ print $(NF-1) }')"
+commit_package="$(pwd | awk -F/ '{ print $NF }')"
 num_new_dirs=0
 opt_changelog=0
 opt_noformat=0
@@ -51,7 +51,7 @@ create_digests() {
 
 repoman_check() {
 	if [[ "$opt_norepoman" == "0" ]] ; then
-		if [[ "$(echo `svn status`)" =~ '\.ebuild' ]] ; then
+		if [[ "$(ls)" =~ '\.ebuild' ]] ; then
 			ebegin "Running repoman"
 			export PORTDIR_OVERLAY="$(dirname $(dirname $(pwd)))"
 			repoman
@@ -79,11 +79,10 @@ svn_commit() {
 	done
 
 	if [[ "$opt_noformat" == "0" ]] ; then
-		local commit_status="$(echo `svn status`)"
-		if [[ "$commit_status" =~ '\.ebuild' ]] ; then
+		if [[ "$(ls)" =~ '\.ebuild' ]] ; then
 			commit_message="${commit_category}/${commit_package}: ${commit_message}"
 		else
-			commit_message="${commit_package}/$(echo $commit_status | awk '{ print $2 }'): ${commit_message}"
+			commit_message="${commit_package}/$(svn status | awk '{ print $2 }'): ${commit_message}"
 		fi
 	fi
 
