@@ -49,7 +49,6 @@ create_digests() {
 	fi
 }
 
-
 repoman_check() {
 	if [[ "$opt_norepoman" == "0" ]] ; then
 		if [[ "$cwd_is_ebuild_dir" == "1" ]] ; then
@@ -226,9 +225,12 @@ fi
 
 [[ "$(ls)" =~ '\.ebuild' ]] && cwd_is_ebuild_dir=1
 
+pushd . >/dev/null
 while [[ "$(echo `svn status`)" =~ 'A.+? \.' ]] ; do
 	(( num_new_dirs++ ))
+	cd ..
 done
+popd >/dev/null
 
 svn_up || exit $?
 
