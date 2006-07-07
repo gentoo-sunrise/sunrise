@@ -32,13 +32,13 @@ RDEPEND="dev-libs/atk
 	media-libs/freetype
 	media-libs/tiff
 	net-misc/mDNSResponder
-	>x11-libs/gtk+-2
+	>=x11-libs/gtk+-2
 	|| (
 		( x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/libXft
 		x11-libs/libXrender )
-		virtual/x11 )
+		<virtual/x11-7.0 )
 	x11-libs/pango
 	media-libs/jpeg
 	media-libs/libpng
