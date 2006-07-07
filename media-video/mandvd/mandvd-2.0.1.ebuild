@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~x86"
 
 DEPEND="$(qt_min_version 3.3)
-	|| ( ( x11-libs/libX11 x11-libs/libXext ) virtual/x11 )"
+	|| ( ( x11-libs/libX11 x11-libs/libXext ) <virtual/x11-7.0 )"
 
 RDEPEND="${DEPEND}
 	>=app-cdr/cdrtools-2.01
