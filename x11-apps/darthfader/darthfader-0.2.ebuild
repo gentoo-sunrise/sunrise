@@ -12,7 +12,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND="|| ( ( x11-libs/libX11
 		x11-libs/libXext )
-		virtual/x11 )"
+		<virtual/x11-7.0 )"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
