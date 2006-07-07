@@ -14,13 +14,11 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=media-libs/jpeg-6b"
-RDEPEND=""
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-
 	dodoc AUTHORS ChangeLog NEWS README
-
 }
