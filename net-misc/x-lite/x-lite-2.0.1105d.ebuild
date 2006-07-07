@@ -19,7 +19,7 @@ RDEPEND="dev-libs/atk
 	dev-libs/libxml2
 	gnome-base/libglade
 	x11-libs/gtk+
-	|| ( x11-libs/libX11 virtual/x11 )
+	|| ( x11-libs/libX11 <virtual/x11-7.0 )
 	x11-libs/pango
 	sys-libs/zlib
 	amd64? ( >=app-emulation/emul-linux-x86-baselibs-2.4.1
