@@ -105,23 +105,23 @@ pkg_postinst() {
 		ewarn
 	fi
 
-	einfo "Now update the simscan configuration files :"
-	einfo "You have to do that after clamav or spamassassin update"
-	einfo
-	einfo "/var/qmail/bin/simscanmk"
-	einfo "`/var/qmail/bin/simscanmk`"
-	einfo
-	einfo "/var/qmail/bin/simscanmk -g"
-	einfo "`/var/qmail/bin/simscanmk -g`"
-	einfo
+	elog "Now update the simscan configuration files :"
+	elog "You have to do that after clamav or spamassassin update"
+	elog
+	elog "/var/qmail/bin/simscanmk"
+	elog "`/var/qmail/bin/simscanmk`"
+	elog
+	elog "/var/qmail/bin/simscanmk -g"
+	elog "`/var/qmail/bin/simscanmk -g`"
+	elog
 
-	einfo "You must have qmail with QMAILQUEUE patch"
-	einfo "In order use simscan, edit your tcp.qmail-smtpd rules"
-	einfo "and update as follow (for example only)"
-	einfo
-	einfo ":allow,QMAILQUEUE=\"/var/qmail/bin/simscan\""
-	einfo
+	elog "You must have qmail with QMAILQUEUE patch"
+	elog "In order use simscan, edit your tcp.qmail-smtpd rules"
+	elog "and update as follow (for example only)"
+	elog
+	elog ":allow,QMAILQUEUE=\"/var/qmail/bin/simscan\""
+	elog
 
-	einfo "Read the documentation and personalize /var/qmail/control/simcontrol"
-	einfo
+	elog "Read the documentation and personalize /var/qmail/control/simcontrol"
+	elog
 }
