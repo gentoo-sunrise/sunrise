@@ -50,8 +50,9 @@ src_compile() {
 	elif use oss ; then
 		backend="oss"
 	else
-		einfo "One of the following USE flags is needed: jack, alsa or oss"
-		die "One of the following USE flags is needed: jack, alsa or oss"
+		local msg="One of the following USE flags is needed: jack, alsa or oss"
+		eerror "${msg}"
+		die "${msg}"
 	fi
 	einfo "Compiling against ${backend}"
 	emake -j1 "linux-${backend}" || die "emake failed"
