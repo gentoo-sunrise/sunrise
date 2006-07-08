@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 pkg_setup() {
-	if use gtk && !use patch-loader; then
+	if use gtk && ! use patch-loader ; then
 		eerror 'USE="gtk" requires USE="patch-loader" too.'
 		die "gtk without patch-loader detected"
 	fi
@@ -48,14 +48,14 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README THANKS TODO
 }
 
 pkg_postinst() {
-	einfo ""
-	einfo "NOTE: If you want to be able to run the om-synth example"
-	einfo "patches (in /usr/share/om/patches/), please install the"
-	einfo "media-plugins/omins (>=0.2.0) package, too."
-	einfo ""
+	einfo
+	elog "NOTE: If you want to be able to run the om-synth example"
+	elog "patches (in /usr/share/om/patches/), please install the"
+	elog "media-plugins/omins (>=0.2.0) package, too."
+	einfo
 }
