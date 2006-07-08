@@ -20,13 +20,12 @@ IUSE="krb4 X"
 DEPEND="krb4? ( app-crypt/mit-krb5 )
 	sys-libs/ncurses
 	sys-libs/readline
-	X? ( || ( x11-libs/libSM
+	X? ( || ( ( x11-libs/libSM
 		    x11-libs/libXau
 		    x11-libs/libXdmcp
 		    x11-libs/libXmu
-		    x11-libs/libXpm
-		)
-	    <virtual/x11-7.0 )"
+		    x11-libs/libXpm )
+	    <virtual/x11-7.0 ) )"
 
 S=${WORKDIR}/${PN}
 
