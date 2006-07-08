@@ -30,7 +30,11 @@ pkg_setup() {
 	use jack && cnt="$((${cnt} + 1))"
 	use alsa && cnt="$((${cnt} + 1))"
 	use oss && cnt="$((${cnt} + 1))"
-	if [[ "${cnt}" -ne 1 ]] ; then
+	if [[ "${cnt}" -eq 0 ]] ; then
+		local msg="One of the following USE flags is needed: jack, alsa or oss"
+		eerror "${msg}"
+		die "${msg}"
+	elif [[ "${cnt}" -ne 1 ]] ; then
 		eerror "You have set ${P} to use multiple audio engine."
 		eerror "I don't know which to use!"
 		eerror "You can use /etc/portage/package.use to set per-package USE flags"
@@ -49,10 +53,6 @@ src_compile() {
 		backend="alsa"
 	elif use oss ; then
 		backend="oss"
-	else
-		local msg="One of the following USE flags is needed: jack, alsa or oss"
-		eerror "${msg}"
-		die "${msg}"
 	fi
 	einfo "Compiling against ${backend}"
 	emake -j1 "linux-${backend}" || die "emake failed"
