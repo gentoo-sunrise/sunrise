@@ -72,19 +72,19 @@ pkg_postinst() {
 	ewarn
 	ewarn "    /opt/kav/5.5/kav4unix/bin/keepup2date"
 
-	einfo
-	einfo " To keep anti-virus bases up-to-date, create a cron job for KAV:"
-	einfo
-	einfo " crontab -u kluser -e"
-	einfo
-	einfo " and add the following line (change the frequency of update if required):"
-	einfo
-	einfo " * */4 * * *     /opt/kav/5.5/kav4unix/bin/keepup2date >/dev/null 2>&1"
-	einfo
-	einfo "Configuration file was installed in /etc/kav/5.5/kav4unix/kav4unix.conf."
-	einfo "See \"man 8 kav4unix.conf\" for detailed configuration info."
-	einfo
-	einfo "If you want to use web interface to configure and use Kaspersky Anti-Virus"
-	einfo "emerge app-admin/webmin and then install the module via webmin interface."
-	einfo "Webmin module is located in /opt/kav/5.5/kav4unix/contrib/kavfs.wbm"
+	elog
+	elog " To keep anti-virus bases up-to-date, create a cron job for KAV:"
+	elog
+	elog " crontab -u kluser -e"
+	elog
+	elog " and add the following line (change the frequency of update if required):"
+	elog
+	elog " * */4 * * *     /opt/kav/5.5/kav4unix/bin/keepup2date >/dev/null 2>&1"
+	elog
+	elog "Configuration file was installed in /etc/kav/5.5/kav4unix/kav4unix.conf."
+	elog "See \"man 8 kav4unix.conf\" for detailed configuration info."
+	elog
+	elog "If you want to use web interface to configure and use Kaspersky Anti-Virus"
+	elog "emerge app-admin/webmin and then install the module via webmin interface."
+	elog "Webmin module is located in /opt/kav/5.5/kav4unix/contrib/kavfs.wbm"
 }
