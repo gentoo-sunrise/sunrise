@@ -44,9 +44,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Add following lines to your squid.conf"
-	einfo "${HILITE}   redirect_program /usr/sbin/squidclamav ${NORMAL}"
-	einfo "${HILITE}   redirect_children 15 ${NORMAL} #adjust to your needs"
-	einfo "and this line to your acl list to prevent loops:"
-	einfo "${HILITE}   redirector_access deny localhost ${NORMAL}"
+	elog "Add following lines to your squid.conf"
+	elog "${HILITE}   redirect_program /usr/sbin/squidclamav ${NORMAL}"
+	elog "${HILITE}   redirect_children 15 ${NORMAL} #adjust to your needs"
+	elog "and this line to your acl list to prevent loops:"
+	elog "${HILITE}   redirector_access deny localhost ${NORMAL}"
 }
