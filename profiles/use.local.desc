@@ -32,6 +32,7 @@ net-mail/simscan:received - Enable the add of a Received line in scanned message
 net-mail/simscan:regex - Enable regex attachment filename checking
 net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/aria2:bittorrent - Enable support for the bittorrent protocol
+net-misc/aria2:metalink - Enable support for metalink
 net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
 net-dns/nsd:checking - Enable internal runtime checks
