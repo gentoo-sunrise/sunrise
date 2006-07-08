@@ -165,5 +165,5 @@ fi
 eend ${1:-0}
 
 ebegin "Committing working copy to repository"
-svn commit -m "$commit_message"
+svn commit -m "Reviewed up to revision $*"
 eend $?
