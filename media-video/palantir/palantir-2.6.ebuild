@@ -43,7 +43,7 @@ src_install() {
 
 	insinto /usr/share/${PN}
 	doins -r pict
-	
+
 	insinto /etc/palantir
 	doins "${FILESDIR}/palantir.conf.sample"
 

@@ -1,5 +1,6 @@
+diff -Naur palantir-2.6/server/Makefile palantir-2.6.new/server/Makefile
 --- palantir-2.6/server/Makefile	2005-09-02 14:33:50.000000000 +0200
-+++ palantir-2.6.new/server/Makefile	2006-07-08 23:06:04.000000000 +0200
++++ palantir-2.6.new/server/Makefile	2006-07-09 00:08:24.000000000 +0200
 @@ -8,7 +8,7 @@
  
  # most installation directories are relative to this one.
@@ -33,12 +34,14 @@
  
  # set to 1 to enable capture monitoring in a stand-alone window
  # (requires Imlib)
-@@ -47,8 +47,6 @@
+@@ -46,9 +46,7 @@
+ 
  .PHONY : tools man
  
- 
+-
 -CFLAGS= -Wall -D_REENTRANT -O3 -g
 -CC= gcc
++CFLAGS+= -D_REENTRANT
  libjpeg= -ljpeg
  
  ifeq ($(TARGET),mips)
