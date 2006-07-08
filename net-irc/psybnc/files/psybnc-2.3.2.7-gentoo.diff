@@ -1,0 +1,11 @@
+--- tools/autoconf.c	2004-05-07 01:33:25.956597616 +0200
++++ tools/autoconf.c	2004-05-07 01:33:43.075995072 +0200
+@@ -462,7 +462,7 @@
+ 	    fprintf(makefile,"	@echo \"* for the sake of correct Cert-Checking   *\"\n");
+ 	    fprintf(makefile,"	@echo \"*******************************************\"\n");
+ 	    fprintf(makefile,"	@echo \"Generating certificate request .. \"\n");
+-	    fprintf(makefile,"	@%s req -new -config src/ssl.cnf -out key/psybnc.req.pem \\\n",sslbin);
++	    fprintf(makefile,"	@%s req -batch -new -config src/ssl.cnf -out key/psybnc.req.pem \\\n",sslbin);
+ 	    fprintf(makefile,"      	-keyout key/psybnc.key.pem -nodes\n");
+ 	    fprintf(makefile,"	@echo \"Generating self-signed certificate .. \"\n");
+ 	    fprintf(makefile,"	@%s req -x509 -days 365 -in key/psybnc.req.pem \\\n",sslbin);

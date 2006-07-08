@@ -1,0 +1,32 @@
+#!/sbin/runscript
+
+depend() {
+	need net
+}
+
+check_config() {
+	if [ -z "${USER}" ]
+	then
+	    eerror "Please set \$USER in /etc/conf.d/psybnc!"
+	    return 1
+	fi
+	if [ -z "${BNCPATH}" ]
+	then
+	    eerror "Please set \$BNCPATH in /etc/conf.d/psybnc!"
+	    return 1
+	fi
+}
+
+start() {
+	ebegin "Starting psybnc"
+	check_config || return 1
+	export HOME="${BNCPATH}"
+	start-stop-daemon -c ${USER} -S -q --chdir ${BNCPATH} -x ${BNCPATH}/psybnc  1>/dev/null 2>&1
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping psybnc"
+	start-stop-daemon -K -q --exec ${BNCPATH}/psybnc -s 9
+	eend $?
+}

@@ -1,0 +1,8 @@
+# ChangeLog for net-irc/psybnc
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*psybnc-2.3.2.7 (08 Jul 2006)
+
+  08 Jul 2006; Bjarke Istrup Pedersen <gurligebis@gentoo.org> :
+  Initial import.  Based on ebuild by Lorenzo Grandi <popposoft@gmail.com>.
