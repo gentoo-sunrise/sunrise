@@ -28,14 +28,14 @@ src_install() {
 
 pkg_postinst() {
 	if has_version app-admin/fam ; then
-		einfo "You are using fam as your file alteration monitor,"
-		einfo "so you must have famd started before running pcmanfm."
-		einfo
-		einfo "To add famd to the default runlevel and start it, run:"
-		einfo
-		einfo "# rc-update add famd default"
-		einfo "# /etc/init.d/famd start"
-		einfo
-		einfo "It is recommended you use gamin instead of fam."
+		elog "You are using fam as your file alteration monitor,"
+		elog "so you must have famd started before running pcmanfm."
+		elog
+		elog "To add famd to the default runlevel and start it, run:"
+		elog
+		elog "# rc-update add famd default"
+		elog "# /etc/init.d/famd start"
+		elog
+		elog "It is recommended you use gamin instead of fam."
 	fi
 }
