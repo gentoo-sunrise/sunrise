@@ -313,10 +313,10 @@ pkg_postinst() {
 		ewarn
 		echo
 	fi
-	einfo "Remove the line containing 'provide mta' from your MTA's init script"
-	einfo "and take care that using etc-update will not insert this line after"
-	einfo "re-emerging / updating your mta!"
-	einfo "The related bug in bugs.gentoo.org is #46897"
+	elog "Remove the line containing 'provide mta' from your MTA's init script"
+	elog "and take care that using etc-update will not insert this line after"
+	elog "re-emerging / updating your mta!"
+	elog "The related bug in bugs.gentoo.org is #46897"
 	echo
 
 	if [ -f "/etc/MailScanner/MailScanner.conf" ]; then
