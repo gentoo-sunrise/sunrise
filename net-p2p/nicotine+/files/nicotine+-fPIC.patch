@@ -1,9 +1,0 @@
---- trayicon/Makefile.in.orig	2006-07-06 00:28:59.000000000 +0200
-+++ trayicon/Makefile.in	2006-07-06 00:29:09.000000000 +0200
-@@ -1,5 +1,5 @@
- # Set the C flags to include the GTK+ and Python libraries
--CFLAGS = `pkg-config --cflags gtk+-2.0 pygtk-2.0` -I@@PREFIX@@/include/python@@PY_VER@@/ -I.
-+CFLAGS = `pkg-config --cflags gtk+-2.0 pygtk-2.0` -I@@PREFIX@@/include/python@@PY_VER@@/ -I. -fPIC
- LDFLAGS = `pkg-config --libs gtk+-2.0 pygtk-2.0`
- 
- all: trayicon.so
