@@ -4,7 +4,7 @@
 
 inherit eutils qt3
 
-MY_P="ManDVD-${PV}src"
+MY_P="ManDVD-${PV}"
 S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="This is a program to simply create DVD Video"
