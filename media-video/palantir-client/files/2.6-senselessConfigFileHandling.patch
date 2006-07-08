@@ -1,0 +1,16 @@
+diff -Naur qt/MainWindow.cpp qt.new/MainWindow.cpp
+--- qt/MainWindow.cpp	2005-08-16 01:10:46.000000000 +0200
++++ qt.new/MainWindow.cpp	2006-07-08 18:49:49.000000000 +0200
+@@ -103,12 +103,6 @@
+     iniSetIgnored(true);
+   }
+  }
+- else
+- {
+-  if (iniOpen("./pclient.ini")==0)
+-   QMessageBox::information(this,"Palantir configuration","Found pclient.ini in the current directory;\nwill use it instead of ~./pclientrc.\nNo updates will be made to any of these files.",QMessageBox::Ok);
+-  iniSetIgnored(true);
+- } 
+ 
+  InitGrid(servername,serverport);
+ 

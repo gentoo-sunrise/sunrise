@@ -1,0 +1,7 @@
+# ChangeLog for media-video/palantir
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
+  New ebuild for bug 126282 (server)
+

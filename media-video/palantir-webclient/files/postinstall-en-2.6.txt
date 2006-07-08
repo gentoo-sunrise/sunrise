@@ -1,0 +1,2 @@
+If the webcamserver runs on a different machine than the client,
+you have to change the server parameter for the applet in 'index.html'.
