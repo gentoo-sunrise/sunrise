@@ -1,0 +1,2 @@
+If the webcamserver runs on a different machine than the client,
+you have to change the URL parameter in the file 'webcam.html'.
