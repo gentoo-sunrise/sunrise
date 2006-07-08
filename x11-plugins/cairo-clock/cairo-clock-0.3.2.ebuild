@@ -24,7 +24,7 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	einfo "Note, that you need running composite manager for visuals."
+	elog "Note, that you need running composite manager for visuals."
 	epause 5
 	echo
 }
