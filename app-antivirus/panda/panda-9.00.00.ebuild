@@ -30,11 +30,11 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "See \"man pavcl\" for usage instructions."
-	einfo
-	einfo "Updated virus definitions are not available for free."
-	einfo "You need a username and password to download them"
-	einfo "from http://acs.pandasoftware.com/software/basevirus/"
+	elog "See \"man pavcl\" for usage instructions."
+	elog
+	elog "Updated virus definitions are not available for free."
+	elog "You need a username and password to download them"
+	elog "from http://acs.pandasoftware.com/software/basevirus/"
 }
 
 pkg_prerm() {
