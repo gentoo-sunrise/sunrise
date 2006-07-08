@@ -1,0 +1,164 @@
+#!/bin/bash
+# review - Move a certain revision from sunrise/ to reviewed/
+# Released into the public domain
+
+source /sbin/functions.sh
+
+BLUE=$BRACKET
+BOLD=$'\e[0;01m'
+DARKGREEN=$'\e[32m'
+GREEN=$GOOD
+LIGHTBLUE=$HILITE
+RED=$BAD
+YELLOW=$WARN
+opt_norepoman=0
+opt_noupdate=0
+opt_quiet=0
+opt_verbose=0
+
+if ! [ -e sunrise ] || ! [ -e reviewed ]; then
+	eerror "You need to have sunrise and reviewed subdirs"
+	exit
+fi
+
+svn_up() {
+	if [[ "$opt_noupdate" == "0" ]] ; then
+		ebegin "Updating working copy to latest version from repository"
+
+		if [[ "$opt_verbose" == "1" ]] ; then
+			svn update || set $?  
+		else
+			svn update -q || set $?
+		fi
+
+		eend ${1:-0}
+
+		local conflict_files=$(svn status | sed -rn 's/^C.+ ([^ ]+)$/\1/p')
+		if [[ -n "$conflict_files" ]] ; then
+			echo "!!! Error: Some local files have changes that conflict with the latest"
+			echo "!!! revisions in the repository. Please contact the previous committer(s) to"
+			echo "!!! resolve the conflicts manually before running sunrise-commit again:"
+			for filename in $conflict_files ; do
+				echo "!!!"
+				echo "!!!        file: ${filename}"
+				echo "!!!   committer: $(svn info ${filename} | sed -rn 's/Last Changed Author\: (.*)$/\1/p')"
+			done
+			exit 1
+		fi
+	fi
+	return ${1:-0}
+}
+
+repoman_check() {
+	if [[ "$opt_norepoman" == "0" ]] ; then
+		ebegin "Running repoman"
+		export PORTDIR_OVERLAY="$(pwd)"
+		repoman
+		eend $?
+		return $?
+	fi
+}
+
+usage() {
+cat << EOF
+${BOLD}Usage:${NORMAL} ${LIGHTBLUE}$0${NORMAL} [ ${GREEN}options${NORMAL} ] ${BLUE}revision${NORMAL}
+
+${GREEN}options${NORMAL}:
+  ${BOLD}--help, -h${NORMAL}       Show help
+  ${BOLD}--norepoman, -p${NORMAL}  Skip repoman check
+  ${BOLD}--noupdate, -d${NORMAL}   Don't update from repository before committing
+  ${BOLD}--quiet, -q${NORMAL}      Don't ask for confirmation
+  ${BOLD}--verbose, -v${NORMAL}    Show detailed information during commit
+EOF
+	exit ${1:-0}
+}
+
+[[ -z "$1" ]] && usage 1
+
+while [[ $# > 0 ]] ; do
+	case "$1" in
+		--help|-h)
+			usage ;;
+
+		--norepoman|-p)
+			opt_norepoman=1
+			shift ;;
+
+		--noupdate|-d)
+			opt_noupdate=1
+			shift ;;
+
+		--quiet|-q)
+			opt_quiet=1
+			shift ;;
+
+		--verbose|-v)
+			opt_verbose=1
+			shift ;;
+
+		-*)
+   			echo "!!! Error: Unknown option ${1}. See: sunrise-commit -h"
+   			exit 1 ;;
+
+		*)
+			break ;;
+	esac
+done
+
+if [[ -z "$*" ]] ; then
+	echo "!!! Error: You must supply a revision. See: $0 -h"
+	exit 1
+fi
+
+svn_up || exit $?
+
+sunrise_revision=$*
+reviewed_revision=$(svn log reviewed 2>/dev/null | grep "Reviewed up to revision " -m 1 | sed "s:Reviewed up to revision ::")
+
+if [ $reviewed_revision -gt $sunrise_revision ]; then
+	eerror "a newer revision is already reviewed"
+	exit
+fi
+(
+cd sunrise
+
+repoman_check || exit $?
+
+ebegin "Running portdupe"
+scripts/portdupe
+eend $?
+
+cd ..
+if [[ "$opt_quiet" == "0" ]] ; then
+	diff -Nur reviewed sunrise --exclude=Manifest --exclude=.svn --exclude=metadata.xml --exclude=digest-*
+fi
+) | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
+
+if [[ "$opt_quiet" == "0" ]] ; then
+	echo
+	echo -n "${BOLD}Commit changes?${NORMAL} [${GREEN}Yes${NORMAL}/${RED}No${NORMAL}] "
+	read choice
+	echo
+
+	case "$choice" in
+		y*|Y*|"")
+			;;
+
+		*)
+			echo "Quitting."
+			echo
+			exit ;;
+	esac
+fi
+
+ebegin "Merging in changes..."
+if [[ "$opt_verbose" == "1" ]] ; then
+	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed || set $?  
+else
+	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed -q || set $?
+fi
+eend ${1:-0}
+
+ebegin "Committing working copy to repository"
+svn commit -m "$commit_message"
+eend $?
