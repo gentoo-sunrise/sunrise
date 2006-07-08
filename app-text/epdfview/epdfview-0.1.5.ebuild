@@ -28,7 +28,7 @@ RDEPEND="${COMMON_DEPEND}
 
 pkg_setup() {
 	if ! built_with_use app-text/poppler-bindings gtk; then
-		einfo "Please re-emerge app-text/poppler-binding with the gtk USE flag set."
+		eerror "Please re-emerge app-text/poppler-binding with the gtk USE flag set."
 		die "poppler-bindings needs gtk flag set."
 	fi
 }
