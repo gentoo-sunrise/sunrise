@@ -29,18 +29,17 @@ RDEPEND="dev-libs/atk
 
 S=${WORKDIR}/xten-xlite
 
-dir="/opt/x-lite"
-
 pkg_setup() {
 	has_multilib_profile && ABI="x86"
 }
 
 src_install() {
+	local dir="/opt/x-lite"
 	exeinto "${dir}"
 	doexe xtensoftphone
 
 	dodir /opt/bin
-	dosym /opt/x-lite/xtensoftphone /opt/bin/xtensoftphone
+	dosym ${dir}/xtensoftphone /opt/bin/xtensoftphone
 
 	make_desktop_entry xtensoftphone X-Lite
 	doicon "${FILESDIR}/x-lite.png"
@@ -49,10 +48,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo ""
-	einfo "Warning:"
-	einfo "this is still a beta release!"
-	einfo "if you need support please browse counterpath's forums:"
-	einfo "http://support.counterpath.com/"
-	einfo ""
+	elog
+	elog "Warning: this is still a beta release!"
+	elog "If you need support please browse counterpath's forums:"
+	elog "http://support.counterpath.com/"
+	elog
 }
