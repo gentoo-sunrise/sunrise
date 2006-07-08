@@ -31,7 +31,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Now you can run ${PN} as root to read sensors values."
+	elog "Now you can run ${PN} as root to read sensors values."
 	ewarn "If you want non-root users to be able to use ${PN} as well,"
 	ewarn "you must add them to wheel group - see man usermod."
 }
