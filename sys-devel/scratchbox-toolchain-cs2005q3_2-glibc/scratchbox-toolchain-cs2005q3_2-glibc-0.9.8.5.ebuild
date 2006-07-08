@@ -29,6 +29,7 @@ pkg_setup() {
 	if ! use arm  && ! use i386; then
 		ewarn "You have to specify at least one of the 'arm' and 'i386' use flags"
 		ewarn "No toolchain will be installed now"
+		die "Nothing to install!"
 	fi
 }
 
