@@ -58,16 +58,16 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "You must have root privileges to run olsrd!"
-	einfo ""
-	einfo "olsrd uses the config file /etc/olsrd.conf"
-	einfo "There are two example config files"
-	einfo ""
-	einfo "  /usr/share/doc/${PF}/olsrd.conf.default.rfc.gz"
-	einfo "  /usr/share/doc/${PF}/olsrd.conf.default.lq.gz"
-	einfo ""
-	einfo "First one uses RFC conform OLSR and the second uses"
-	einfo "the Link Quality Extensions:"
-	einfo ""
-	einfo "  http://www.olsr.org/docs/README-Link-Quality.html"
+	ewarn "You must have root privileges to run olsrd!"
+	elog
+	elog "olsrd uses the config file /etc/olsrd.conf"
+	elog "There are two example config files"
+	elog
+	elog "	/usr/share/doc/${PF}/olsrd.conf.default.rfc.gz"
+	elog "  /usr/share/doc/${PF}/olsrd.conf.default.lq.gz"
+	elog
+	elog "First one uses RFC conform OLSR and the second uses"
+	elog "the Link Quality Extensions:"
+	elog
+	elog "  http://www.olsr.org/docs/README-Link-Quality.html"
 }
