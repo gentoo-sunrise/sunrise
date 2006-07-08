@@ -1,0 +1,19 @@
+diff -Naur homebank/images/Makefile.am homebank.new/images/Makefile.am
+--- homebank/images/Makefile.am	2006-06-19 13:39:36.000000000 +0200
++++ homebank.new/images/Makefile.am	2006-07-08 23:57:53.000000000 +0200
+@@ -1,5 +1,5 @@
+ 
+-pixmapsdir   = $(datadir)/images/homebank
++pixmapsdir   = $(datadir)/homebank/images
+ 
+ pixmaps_DATA = \
+ account.svg \
+diff -Naur homebank/src/Makefile.am homebank.new/src/Makefile.am
+--- homebank/src/Makefile.am	2006-06-26 09:49:01.000000000 +0200
++++ homebank.new/src/Makefile.am	2006-07-09 00:06:25.000000000 +0200
+@@ -37,4 +37,4 @@
+ 
+ AM_CPPFLAGS = $(DEPS_CFLAGS) \
+ 	      -DLOCALE_DIR=\""$(datadir)/locale"\" \
+-	      -DPIXMAPS_DIR=\""$(datadir)/images/homebank"\" 
++	      -DPIXMAPS_DIR=\""$(datadir)/homebank/images"\" 
