@@ -46,30 +46,30 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo "You need to run:"
-	einfo "\"emerge --config =${CATEGORY}/${PF}\""
-	einfo "to set permissions right and setup scratchbox and users"
-	einfo
-	einfo "For further documentation about how to setup"
-	einfo "scratchbox for your development needs have a look at"
-	einfo "http://scratchbox.org/documentation/user/scratchbox-${MAJOR_VERSION}/"
-	einfo
-	einfo "Also note that when you reboot you should run:"
-	einfo "/etc/init.d/scratchbox start"
-	einfo "before trying to run scratchbox."
-	einfo "You can also add it to the default runlevel:"
-	einfo "rc-update add scratchbox default"
-	einfo
-	einfo "Type /opt/scratchbox/login to start scratchbox."
-	einfo
+	elog
+	elog "You need to run:"
+	elog "\"emerge --config =${CATEGORY}/${PF}\""
+	elog "to set permissions right and setup scratchbox and users"
+	elog
+	elog "For further documentation about how to setup"
+	elog "scratchbox for your development needs have a look at"
+	elog "http://scratchbox.org/documentation/user/scratchbox-${MAJOR_VERSION}/"
+	elog
+	elog "Also note that when you reboot you should run:"
+	elog "/etc/init.d/scratchbox start"
+	elog "before trying to run scratchbox."
+	elog "You can also add it to the default runlevel:"
+	elog "rc-update add scratchbox default"
+	elog
+	elog "Type /opt/scratchbox/login to start scratchbox."
+	elog
 }
 
 pkg_postrm() {
-	einfo
-	einfo "To remove all traces of scratchbox you will need to remove the file"
-	einfo "/etc/init.d/scratchbox. Don't forget to delete the sbox group."
-	einfo
+	elog
+	elog "To remove all traces of scratchbox you will need to remove the file"
+	elog "/etc/init.d/scratchbox. Don't forget to delete the sbox group."
+	elog
 }
 
 pkg_config() {
