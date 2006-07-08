@@ -16,11 +16,6 @@ opt_noupdate=0
 opt_quiet=0
 opt_verbose=0
 
-if ! [ -e sunrise ] || ! [ -e reviewed ]; then
-	eerror "You need to have sunrise and reviewed subdirs"
-	exit
-fi
-
 svn_up() {
 	if [[ "$opt_noupdate" == "0" ]] ; then
 		ebegin "Updating working copy to latest version from repository"
@@ -111,6 +106,16 @@ if [[ -z "$*" ]] ; then
 fi
 
 svn_up || exit $?
+
+if ! [ -e sunrise ] || ! [ -e reviewed ]; then
+	eerror "You need to have sunrise and reviewed subdirs"
+	exit
+fi
+
+if svn st | grep -q sunrise/ 2>/dev/null; then
+	eerror "Please commit your local changes to sunrise before running this script"
+	exit
+fi
 
 sunrise_revision=$*
 reviewed_revision=$(svn log reviewed 2>/dev/null | grep "Reviewed up to revision " -m 1 | sed "s:Reviewed up to revision ::")
