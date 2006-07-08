@@ -96,23 +96,23 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo " Create a cron entry for DrWeb auto updates in a similar manner:"
-	einfo
-	einfo " crontab -u drweb -e"
-	einfo
-	einfo " and add the following line (change the frequency of update if required):"
-	einfo
-	einfo " * */4 * * *     if [ -x /opt/drweb/update/update.pl ]; then /opt/drweb/update/update.pl; fi"
-	einfo
+	elog
+	elog " Create a cron entry for DrWeb auto updates in a similar manner:"
+	elog
+	elog " crontab -u drweb -e"
+	elog
+	elog " and add the following line (change the frequency of update if required):"
+	elog
+	elog " * */4 * * *     if [ -x /opt/drweb/update/update.pl ]; then /opt/drweb/update/update.pl; fi"
+	elog
 
-	einfo
-	einfo "To configure DrWeb, edit /etc/drweb/drweb32.ini as needed."
-	einfo
+	elog
+	elog "To configure DrWeb, edit /etc/drweb/drweb32.ini as needed."
+	elog
 
 	if use logrotate ; then
-		einfo "DrWeb logrotate script has been provided."
-		einfo "Edit /etc/logrotate.d/drweb as needed."
+		elog "DrWeb logrotate script has been provided."
+		elog "Edit /etc/logrotate.d/drweb as needed."
 	fi
 
 	ewarn
