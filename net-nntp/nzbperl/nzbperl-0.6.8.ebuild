@@ -43,6 +43,6 @@ pkg_postinst() {
 		ewarn "so it is recommended that you build perl with ithreads enabled."
 	fi
 
-	einfo "A sample config file has been copied into /usr/share/doc/${PF}"
-	einfo "You may want to take it as a sample for your ~/.nzbperlrc"
+	elog "A sample config file has been copied into /usr/share/doc/${PF}"
+	elog "You may want to take it as a sample for your ~/.nzbperlrc"
 }
