@@ -115,11 +115,11 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Add the following line to your ~/.bashrc to"
-	einfo "allow mc to chdir to its latest working dir at exit"
-	einfo
-	einfo "# Midnight Commander chdir enhancement"
-	einfo "if [ -f /usr/lib/mc/mc.gentoo ]; then"
-	einfo ". /usr/lib/mc/mc.gentoo"
-	einfo "fi"
+	elog "Add the following line to your ~/.bashrc to"
+	elog "allow mc to chdir to its latest working dir at exit"
+	elog
+	elog "# Midnight Commander chdir enhancement"
+	elog "if [ -f /usr/lib/mc/mc.gentoo ]; then"
+	elog ". /usr/lib/mc/mc.gentoo"
+	elog "fi"
 }
