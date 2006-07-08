@@ -35,6 +35,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "From version 0.6 you can also use new style configuration (overrides"
-	einfo "legacy values). See /usr/share/doc/${PF}/README for more info."
+	elog "From version 0.6 you can also use new style configuration (overrides"
+	elog "legacy values). See /usr/share/doc/${PF}/README for more info."
 }

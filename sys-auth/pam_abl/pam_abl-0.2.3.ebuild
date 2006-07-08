@@ -48,6 +48,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "See /usr/share/doc/${PF}/html/index.html for configuration info"
-	einfo "and set up /etc/security/pam_abl.conf as needed."
+	elog "See /usr/share/doc/${PF}/html/index.html for configuration info"
+	elog "and set up /etc/security/pam_abl.conf as needed."
 }
