@@ -4,7 +4,7 @@
 
 DESCRIPTION="A Portage analysis toolkit"
 HOMEPAGE="http://catmur.co.uk/gentoo/udept"
-SRC_URI="http://gentooexperimental.org/~genstef/public_html/dist/${P}.tar.bz2"
+SRC_URI="http://gentooexperimental.org/~genstef/dist/${P}.tar.bz2"
 #http://catmur.co.uk/~ed/downloads/${PN}/${P}.tar.bz2
 
 LICENSE="GPL-2"
