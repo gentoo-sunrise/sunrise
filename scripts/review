@@ -21,12 +21,12 @@ svn_up() {
 		ebegin "Updating working copy to latest version from repository"
 
 		if [[ "$opt_verbose" == "1" ]] ; then
-			svn update || set $?  
+			svn update $* || set $?  
 		else
-			svn update -q || set $?
+			svn update -q $* || set $?
 		fi
 
-		eend ${1:-0}
+		eend 0
 
 		local conflict_files=$(svn status | sed -rn 's/^C.+ ([^ ]+)$/\1/p')
 		if [[ -n "$conflict_files" ]] ; then
@@ -41,7 +41,7 @@ svn_up() {
 			exit 1
 		fi
 	fi
-	return ${1:-0}
+	return 0
 }
 
 repoman_check() {
@@ -103,21 +103,19 @@ done
 if [[ -z "$*" ]] ; then
 	echo "!!! Error: You must supply a revision. See: $0 -h"
 	exit 1
+#elif [[ "$*" =~ "^[0-9]*$" ]]; then 
+#	echo "!!! Error: The revision must be an integer value $*"
+#	exit 1
 fi
+sunrise_revision=$*
 
-svn_up || exit $?
+svn_up -r $sunrise_revision || exit $?
 
 if ! [ -e sunrise ] || ! [ -e reviewed ]; then
 	eerror "You need to have sunrise and reviewed subdirs"
 	exit
 fi
 
-if svn st | grep -q sunrise/ 2>/dev/null; then
-	eerror "Please commit your local changes to sunrise before running this script"
-	exit
-fi
-
-sunrise_revision=$*
 reviewed_revision=$(svn log reviewed 2>/dev/null | grep "Reviewed up to revision " -m 1 | sed "s:Reviewed up to revision ::")
 
 if [ $reviewed_revision -gt $sunrise_revision ]; then
@@ -165,5 +163,5 @@ fi
 eend ${1:-0}
 
 ebegin "Committing working copy to repository"
-svn commit -m "Reviewed up to revision $*"
+svn commit reviewed -m "Reviewed up to revision $*"
 eend $?
