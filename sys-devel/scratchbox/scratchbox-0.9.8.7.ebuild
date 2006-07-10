@@ -84,7 +84,7 @@ pkg_config() {
 	echo
 	case "$choice" in
 		y*|Y*|"")
-			source "${TARGET_DIR}/sbin/sbox_configure" "no" ${SBOX_GROUP} || die "sbox_configure failed"
+			"${TARGET_DIR}/sbin/sbox_configure" "no" ${SBOX_GROUP} || die "sbox_configure failed"
 			;;
 		*)
 			;;
