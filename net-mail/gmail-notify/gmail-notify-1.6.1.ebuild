@@ -14,10 +14,10 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="virtual/python
-         >=dev-python/pygtk-2.0*
-         >=x11-libs/gtk+-2.4*"
+	>=dev-python/pygtk-2.0*
+	>=x11-libs/gtk+-2.4*"
 DEPEND="${RDEPEND}
-        app-arch/bzip2"
+	app-arch/bzip2"
 
 S=${WORKDIR}/${PN}
 
@@ -28,7 +28,7 @@ src_install() {
 	#Install docs
 	dodoc README
 	rm -f README
-	
+
 	#Install all python files into site-packages
 	insinto ${INST_DIR}
 	doins -r *
