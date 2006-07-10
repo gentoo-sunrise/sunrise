@@ -3,6 +3,9 @@
 # $Header: $
 
   10 Jul 2006; Stefan Schweizer <genstef@gentoo.org> ChangeLog:
+  version bump
+
+  10 Jul 2006; Stefan Schweizer <genstef@gentoo.org> ChangeLog:
   mirror it on gentooexperimental, because upstream server is down.
 
   11 Jun 2006; David Shakaryan <d@ompty.org> +udept-0.5.94.1.ebuild:
