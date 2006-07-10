@@ -21,12 +21,12 @@ svn_up() {
 		ebegin "Updating working copy to latest version from repository"
 
 		if [[ "$opt_verbose" == "1" ]] ; then
-			svn update $* || set $?  
+			svn update $*
 		else
-			svn update -q $* || set $?
+			svn update -q $*
 		fi
 
-		eend 0
+		eend $?
 
 		local conflict_files=$(svn status | sed -rn 's/^C.+ ([^ ]+)$/\1/p')
 		if [[ -n "$conflict_files" ]] ; then
@@ -156,11 +156,11 @@ fi
 
 ebegin "Merging in changes..."
 if [[ "$opt_verbose" == "1" ]] ; then
-	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed || set $?  
+	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed
 else
-	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed -q || set $?
+	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed -q
 fi
-eend ${1:-0}
+eend ${?}
 
 ebegin "Committing working copy to repository"
 svn commit reviewed -m "Reviewed up to revision $*"
