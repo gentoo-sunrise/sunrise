@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jul 2006; David Grant (dgrant) <davidgrant@gmail.com> ChangeLog:
+  incorporated suggestions from Tristan Heaven
+
   10 Jul 2006; David Grant (dgrant) <davidgrant@gmail.com> ChangeLog:
   New Ebuild for bug 13991
 

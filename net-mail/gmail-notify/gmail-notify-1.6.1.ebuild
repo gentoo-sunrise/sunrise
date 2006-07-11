@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python
+inherit python eutils
 
 DESCRIPTION="Gmail Notifier is a Linux alternative for the notifier program released by Google"
-HOMEPAGE="http://gmail-notify.sf.net"
+HOMEPAGE="http://gmail-notify.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 
@@ -14,10 +14,9 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="virtual/python
-	>=dev-python/pygtk-2.0*
-	>=x11-libs/gtk+-2.4*"
-DEPEND="${RDEPEND}
-	app-arch/bzip2"
+	>=dev-python/pygtk-2.0
+	>=x11-libs/gtk+-2.4"
+DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${PN}
 
@@ -27,16 +26,16 @@ src_install() {
 
 	#Install docs
 	dodoc README
-	rm -f README
 
 	#Install all python files into site-packages
 	insinto ${INST_DIR}
-	doins -r *
+	doins *.py *.jpg *.png langs.xml pytrayicon.so notifier.conf.sample
 
 	#Install a script in /usr/bin
 	echo "#!/bin/bash" > gmail-notify
 	echo "exec /usr/bin/python ${INST_DIR}/notifier.py \"\$1\"" >> gmail-notify
 	dobin gmail-notify
+	make_wrapper gmail-notify "/usr/bin/python ${INST_DIR}/notifier.py"
 }
 
 pkg_postinst() {
