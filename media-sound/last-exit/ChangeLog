@@ -1,7 +1,0 @@
-# ChangeLog for media-sound/last-exit
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  25 Jun 2006; Jakub Moc <jakub@gentoo.org> +last-exit-0.2.ebuild:
-  New ebuild for Bug 128843. Thanks to steev at gentoo dot org.
-
