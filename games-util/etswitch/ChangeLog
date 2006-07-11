@@ -1,0 +1,7 @@
+# ChangeLog for games-util/etswitch
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Jul 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
+  Initial ebuild for bug 133879, thanks to Denis Gubanov.
+
