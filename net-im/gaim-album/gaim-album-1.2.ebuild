@@ -11,21 +11,19 @@ SLOT=0
 LICENSE="GPL-2"
 KEYWORDS="~x86"
 IUSE=""
-RDEPEND="
-	>=x11-libs/gtk+-2.4
+RDEPEND=">=x11-libs/gtk+-2.4
 	net-im/gaim"
-DEPEND="$RDEPEND
+DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/gaim-album-1.1-all-users-install.patch
+	cd "${S}"
+	epatch "${FILESDIR}/gaim-album-1.1-all-users-install.patch"
 }
 
 src_install() {
-	emake install DESTDIR=${D} || die "emake install failed"
+	emake install DESTDIR="${D}" || die "emake install failed"
 	dodoc COPYRIGHT ChangeLog README TODO
 }
-
