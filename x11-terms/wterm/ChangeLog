@@ -1,7 +1,0 @@
-# ChangeLog for x11-terms/wterm
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  11 Jul 2006; Greg Watson (eimono) <gwatson@linuxlogin.com> ChangeLog:
-  Updated ebuild with new homepage and changed make to emake.
-
