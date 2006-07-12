@@ -24,8 +24,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${PF}-gentoo.diff
+	cd "${S}"
+	epatch "${FILESDIR}/${PF}-gentoo.diff"
 }
 
 src_compile() {
@@ -33,32 +33,24 @@ src_compile() {
 }
 
 src_install() {
-	dodoc CHANGES COPYING FAQ README SCRIPTING TODO
-	dodir ${INSTALLDIR}/help ${INSTALLDIR}/key ${INSTALLDIR}/lang ${INSTALLDIR}/log ${INSTALLDIR}/motd ${INSTALLDIR}/scripts
+	dodoc CHANGES FAQ README SCRIPTING TODO
 
-	insinto ${INSTALLDIR}/help
-	doins help/*
-	insinto ${INSTALLDIR}/key
-	doins key/*
-	insinto ${INSTALLDIR}/lang
-	doins lang/*
-	insinto ${INSTALLDIR}/log
-	doins log/*
-	insinto ${INSTALLDIR}/motd
-	doins motd/*
-	insinto	${INSTALLDIR}/scripts
-	doins scripts/*
+	for dir in help key lang log motd scripts ; do
+		dodir ${INSTALLDIR}/${dir}
+		insinto ${INSTALLDIR}/${dir}
+		doins ${dir}/*
+	done
+
 	insinto ${INSTALLDIR}
-	doins ${FILESDIR}/psybnc.conf config.h
+	doins "${FILESDIR}"/psybnc.conf config.h
 
 	exeinto ${INSTALLDIR}
 	doexe psybnc
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/psybnc.initd psybnc
-	insinto /etc/conf.d
-	newins ${FILESDIR}/psybnc.confd psybnc
 
-	chown -R psybnc:psybnc ${D}/${INSTALLDIR}
+	newinitd "${FILESDIR}"/psybnc.initd psybnc
+	newconfd "${FILESDIR}"/psybnc.confd psybnc
+
+	chown -R psybnc:psybnc "${D}"/${INSTALLDIR}
 }
 
 pkg_config() {
@@ -72,7 +64,7 @@ pkg_config() {
 
 pkg_postinst() {
 	einfo ""
-	einfo "Please run \"emerge --config =psybnc-${MY_PV}\" to create SSL certificates for your system."
+	einfo "Please run \"emerge --config =${CATEGORY}/${PF}\" to create SSL certificates for your system."
 	einfo "You can connect to the bnc on port 23998, user=gentoo, pass=gentoo,"
 	einfo "please edit the psybnc configuration in ${INSTALLDIR}/psybnc.conf to change this."
 	einfo ""
