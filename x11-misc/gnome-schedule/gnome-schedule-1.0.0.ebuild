@@ -17,11 +17,11 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	>=dev-libs/glib-2.6
 	>=dev-lang/python-2.3
 	>=dev-python/pygtk-2.6
-	virtual/cron"
+	virtual/cron
+	sys-process/at"
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	sys-process/at
 	>=dev-util/pkgconfig-0.9
 	>=dev-util/intltool-0.28"
 
