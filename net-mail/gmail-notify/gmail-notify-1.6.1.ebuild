@@ -41,12 +41,12 @@ src_install() {
 pkg_postinst() {
 	python_version
 	python_mod_optimize /usr/lib/python${PYVER}/site-packages/${PN}
-	einfo "Run gmail-notify to start the program"
-	einfo ""
-	einfo "Warning: if you check the 'save username and password' option"
-	einfo "your password will be stored in plaintext in ~/.notifier.conf"
-	einfo "with world-readable permissions. If this concerns you, do not"
-	einfo "check the 'save username and password' option."
+	elog "Run gmail-notify to start the program"
+	elog ""
+	elog "Warning: if you check the 'save username and password' option"
+	elog "your password will be stored in plaintext in ~/.notifier.conf"
+	elog "with world-readable permissions. If this concerns you, do not"
+	elog "check the 'save username and password' option."
 }
 
 pkg_postrm() {
