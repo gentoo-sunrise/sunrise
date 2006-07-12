@@ -63,9 +63,9 @@ pkg_config() {
 }
 
 pkg_postinst() {
-	einfo ""
-	einfo "Please run \"emerge --config =${CATEGORY}/${PF}\" to create SSL certificates for your system."
-	einfo "You can connect to the bnc on port 23998, user=gentoo, pass=gentoo,"
-	einfo "please edit the psybnc configuration in ${INSTALLDIR}/psybnc.conf to change this."
-	einfo ""
+	elog ""
+	elog "Please run \"emerge --config =${CATEGORY}/${PF}\" to create SSL certificates for your system."
+	elog "You can connect to the bnc on port 23998, user=gentoo, pass=gentoo,"
+	elog "please edit the psybnc configuration in ${INSTALLDIR}/psybnc.conf to change this."
+	elog ""
 }
