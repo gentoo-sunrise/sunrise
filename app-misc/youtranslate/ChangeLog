@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jul 2006; Alex Tarkovsky <alextarkovsky@gmail.org> ChangeLog:
+  Version bump to 1.1.7.3, no changes in ebuild
+
   03 Jul 2006; Alex Tarkovsky <alextarkovsky@gmail.org> ChangeLog:
   Patch buggy makefile to check for and use the proper versions of gtk-sharp
   and glade-sharp
