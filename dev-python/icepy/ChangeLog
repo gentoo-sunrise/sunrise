@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
+  new version
+
   20 Jun 2006; Tiziano Mueller <tiziano@gentoo.org> ChangeLog:
   New ebuild for bug 135207
 
