@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="GUI to edit XServer-file xorg.conf easily"
 HOMEPAGE="http://www.cyskat.de/dee/progxorg.htm"
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/xorg-edit/${PN}-src.tar.gz"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND=">=x11-libs/wxGTK-2.6"
@@ -26,7 +26,7 @@ src_unpack() {
 
 src_compile() {
 	cd sources
-	emake || die "emake failed"
+	emake CXX=$(tc-getCXX) || die "emake failed"
 }
 
 src_install() {
