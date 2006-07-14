@@ -9,7 +9,7 @@ HOMEPAGE="http://dkbza.org/"
 SRC_URI="http://dkbza.org/data/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="dev-python/pyparsing
