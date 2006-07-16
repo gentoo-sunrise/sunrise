@@ -20,6 +20,8 @@ media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/om:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:samplerate - Enable support for libsamplerate
+media-video/gcstar:md5 - Enables generation of md5 checksums
+media-video/gcstar:zip - Enables support for zip files
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
 media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
