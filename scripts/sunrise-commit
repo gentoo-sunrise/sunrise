@@ -147,6 +147,7 @@ repoman_check() {
 	if [[ $opt_norepoman == 0 ]] ; then
 		if [[ $cwd_is_ebuild_dir == 1 ]] ; then
 			ebegin "Running repoman"
+			echo export PORTDIR_OVERLAY="$working_copy_base_dir"
 			export PORTDIR_OVERLAY="$working_copy_base_dir"
 			repoman
 			eend $?
