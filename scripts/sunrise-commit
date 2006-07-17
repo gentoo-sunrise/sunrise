@@ -34,7 +34,6 @@ opt_norepoman=0
 opt_noupdate=0
 opt_quiet=0
 opt_verbose=0
-working_copy_base_dir=""
 
 changelog_append() {
 	if [[ $opt_changelog == 1 ]] ; then
@@ -48,41 +47,10 @@ changelog_append() {
 			exit 1
 		fi
 		ebegin "Appending/creating ChangeLog"
-		echangelog "$*"
+		[ -e $(dirname $0)/echangelog ] && ec="$(dirname $0)/echangelog" || ec="echangelog"
+		$ec "$*"
 		eend $?
 	fi
-}
-
-check_working_copy_base_dir() {
-	local num_dirs=0
-
-	# Ascend to nearest working copy dir in parent dirs
-	while ! get_current_svn_status ; do
-		if [[ "$(pwd)" == "$(dirs -l +1 2>&1)" ]] ; then
-			echo "!!! Error: No working copy found in parents of current directory."
-			echo "!!! sunrise-commit must be run from within a working copy tree."
-			exit 1
-		fi
-		(( num_dirs++ ))
-		pushd .. >/dev/null
-	done
-
-	# Ascend from there to nearest non-working copy dir in parent dirs
-	while get_current_svn_status ; do
-		if [[ "$(pwd)" == "$(dirs -l +1 2>&1)" ]] ; then
-			break
-		fi
-		(( num_dirs++ ))
-		pushd .. >/dev/null
-	done
-
-	# Working copy base dir is previous dir on stack
-	popd >/dev/null && (( num_dirs-- ))
-    working_copy_base_dir="$(pwd)"
-
-	for (( i=num_dirs ; i > 0 ; i-- )) ; do
-		popd >/dev/null
-	done
 }
 
 create_digests() {
@@ -147,7 +115,7 @@ repoman_check() {
 	if [[ $opt_norepoman == 0 ]] ; then
 		if [[ $cwd_is_ebuild_dir == 1 ]] ; then
 			ebegin "Running repoman"
-			export PORTDIR_OVERLAY="$working_copy_base_dir"
+			export PORTDIR_OVERLAY="$(dirname $(dirname $(pwd)))"
 			repoman
 			eend $?
 		fi
@@ -344,7 +312,6 @@ if [[ -z "$*" ]] ; then
 	exit 1
 fi
 
-check_working_copy_base_dir
 [[ "$(ls)" =~ '\.ebuild' ]] && cwd_is_ebuild_dir=1
 
 pushd . >/dev/null

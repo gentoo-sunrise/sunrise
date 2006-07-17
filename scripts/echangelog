@@ -93,11 +93,11 @@ while (<C>) {
 
 # Separate out the trivial files for now
 @files = grep { 
-    !/files.digest|Manifest|ChangeLog/ or do { push @trivial, $_; 0; }
+    !/files.digest|Manifest|ChangeLog|^files$|^\.$/ or do { push @trivial, $_; 0; }
 } @files;
 
 @unknown = grep { 
-    !/files.digest|Manifest|ChangeLog/ or do { push @trivial, $_; 0; }
+    !/files.digest|Manifest|ChangeLog|^files$|^\.$/ or do { push @trivial, $_; 0; }
 } @unknown;
 
 # Don't allow any conflicts
@@ -207,9 +207,9 @@ sub sortfunc($$) {
 
 # Forget ebuilds that only have changed copyrights, unless that's all
 # the changed files we have
-
-@ebuilds = grep /\.ebuild$/, @files;
-@files = grep !/\.ebuild$/, @files;
+# does not work with svn TODO
+#@ebuilds = grep /\.ebuild$/, @files;
+#@files = grep !/\.ebuild$/, @files;
 
 if (@ebuilds) {
     open C, $vcs{$vcs}{diff}.@ebuilds." 2>&1 |" or die "Can't run: ".$vcs{$vcs}{diff}."$!\n";
