@@ -1,0 +1,12 @@
+--- client/usr/bin/gnumed	2005-08-26 13:56:53.000000000 +0200
++++ client/usr/bin/gnumed.new	2005-12-15 16:40:19.000000000 +0100
+@@ -23,6 +23,9 @@
+ 	if [ ! -e ${CONFSOURCE} ] ; then
+ 		echo "Global config file ${CONFSOURCE} missing."
+ 	else
++		if [ ! -d ${HOME}/.gnumed ] ; then
++			mkdir ${HOME}/.gnumed
++		fi
+ 		cp -Rv ${CONFSOURCE} ${HOME}/.gnumed/gnumed.conf
+ 	fi
+ fi
