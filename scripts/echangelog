@@ -36,6 +36,11 @@ my %vcs =     ( cvs => { diff => "cvs -f -U0 diff",
 			 status => "git up",
 			 add => "git add",
 			 skip => 0,
+			 entries => "wtf" },
+		nov => { diff => "echo M $(ls -tr *.ebuild | tail -n 1)",
+			 status => "echo M $(ls -tr *.ebuild | tail -n 1)",
+			 add => "",
+			 skip => 0,
 			 entries => "wtf" }
 );
 
@@ -48,7 +53,8 @@ if ( -d "CVS" ) {
 } elsif ( -d '.git' ) {
     $vcs = "git";
 } else {
-    die "No CVS, .git, .svn directories found, what kind of repo is this?";
+    print STDERR "** NOTE: No CVS, .git, .svn directories found, cannot know modifications\n";
+    $vcs = "nov";
 }
 
 # Read the current ChangeLog
