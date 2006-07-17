@@ -3,5 +3,5 @@
 # $Header: $
 
   16 Jul 2006; Ulrich Mueller (ulm) <ulm@kph.uni-mainz.de> ChangeLog:
-  Initial commit.
+  dev-tex/catdvi: New ebuild for bug #107248.
 
