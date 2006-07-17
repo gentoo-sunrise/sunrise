@@ -27,8 +27,7 @@ start() {
 	    start-stop-daemon --start --quiet \
 		--exec /usr/sbin/dbmail-lmtpd \
 		--name dbmail-lmtpd \
-		--pidfile ${PIDFILE} \
-		-- -f /etc/dbmail/dbmail.conf 2>&1
+		-- -p ${PIDFILE} -f /etc/dbmail/dbmail.conf 2>&1
 	eend $?
 }	
 
