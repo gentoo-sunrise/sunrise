@@ -1,0 +1,14 @@
+diff -u yapgvb-1.1.1.orig/config_unix.py yapgvb-1.1.1/config_unix.py
+--- yapgvb-1.1.1.orig/config_unix.py	2006-07-13 16:36:32.000000000 -0700
++++ yapgvb-1.1.1/config_unix.py	2006-07-17 10:12:18.000000000 -0700
+@@ -10,7 +10,7 @@
+     # Location of Graphviz headers
+     '/usr/include/graphviz',
+     # Location of boost/ header directory
+-    '/usr/local/include',
++    '/usr/include/boost',
+ ]
+ 
+ libraries = [   
+Common subdirectories: yapgvb-1.1.1.orig/doc and yapgvb-1.1.1/doc
+Common subdirectories: yapgvb-1.1.1.orig/examples and yapgvb-1.1.1/examples
