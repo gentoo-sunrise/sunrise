@@ -325,6 +325,7 @@ svn_up || exit $?
 
 [[ $cwd_is_ebuild_dir == 1 && ! -e metadata.xml ]] && cp ../../skel.metadata.xml metadata.xml >/dev/null 2>&1
 
+svn_add || exit $?
 changelog_append "$*" || exit $?
 create_digests || exit $?
 svn_add || exit $?
