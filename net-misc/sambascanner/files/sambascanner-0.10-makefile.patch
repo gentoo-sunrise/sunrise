@@ -1,0 +1,36 @@
+--- SambaScanner-0.10~/Makefile	2006-07-17 12:59:45.000000000 +0200
++++ SambaScanner-0.10/Makefile	2006-07-17 13:01:37.000000000 +0200
+@@ -1,5 +1,5 @@
+ OBJS = Parser.o Mutex.o Semaphore.o
+-CFLAGS = -O2 -Wall -DDEFAULT_SMBCLIENT=\"/usr/bin/smbclient\" -DDEFAULT_NMBLOOKUP=\"/usr/bin/nmblookup\" -DDEFAULT_SMBLISTER=\"/usr/bin/smblister\"
++CFLAGS += -Wall -DDEFAULT_SMBCLIENT=\"/usr/bin/smbclient\" -DDEFAULT_NMBLOOKUP=\"/usr/bin/nmblookup\" -DDEFAULT_SMBLISTER=\"/usr/bin/smblister\"
+ #CFLAGS += -ggdb3
+ #CFLAGS += -ansi -pedantic -D_POSIX_SOURCE -D_XOPEN_SOURCE=500
+ 
+@@ -9,20 +9,20 @@
+ 	rm -f sambascanner semaphore_test smblister Filelist.txt Retrieve.txt $(OBJS)
+ 
+ sambascanner: sambascanner.c sambascanner.h $(OBJS)
+-	gcc $(CFLAGS) -lpthread -lsmbclient -o sambascanner sambascanner.c $(OBJS)
++	$(CC) $(CFLAGS) -lpthread -lsmbclient -o sambascanner sambascanner.c $(OBJS)
+ 
+ smblister: smblister.c
+-	gcc $(CFLAGS) -lsmbclient -o smblister smblister.c
++	$(CC) $(CFLAGS) -lsmbclient -o smblister smblister.c
+ 
+ Parser.o: Parser.c Parser.h
+-	gcc $(CFLAGS) -c -o Parser.o Parser.c
++	$(CC) $(CFLAGS) -c -o Parser.o Parser.c
+ 
+ Mutex.o: Mutex.c Mutex.h
+-	gcc $(CFLAGS) -c -o Mutex.o Mutex.c
++	$(CC) $(CFLAGS) -c -o Mutex.o Mutex.c
+ 
+ Semaphore.o: Semaphore.c Semaphore.h
+-	gcc $(CFLAGS) -c -o Semaphore.o Semaphore.c
++	$(CC) $(CFLAGS) -c -o Semaphore.o Semaphore.c
+ 
+ semaphore_test: semaphore_test.c $(OBJS)
+-	gcc $(CFLAGS) -lpthread -o semaphore_test semaphore_test.c $(OBJS)
++	$(CC) $(CFLAGS) -lpthread -o semaphore_test semaphore_test.c $(OBJS)
+ 
