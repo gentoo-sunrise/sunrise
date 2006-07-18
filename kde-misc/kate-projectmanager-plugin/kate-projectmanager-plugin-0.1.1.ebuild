@@ -3,6 +3,7 @@
 # $Header: $
 
 inherit kde
+need-kde 3.5
 
 MY_PN="projectmanager"
 
