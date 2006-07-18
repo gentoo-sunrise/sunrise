@@ -10,7 +10,7 @@ SRC_URI="http://download.gna.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="md5 mime zip zlib"
 
 DEPEND="dev-lang/perl
