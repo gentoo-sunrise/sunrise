@@ -30,8 +30,8 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-		export WX_GTK_VER="2.6"
-		need-wxwidgets unicode
+	export WX_GTK_VER="2.6"
+	need-wxwidgets unicode
 }
 
 src_unpack() {
