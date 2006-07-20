@@ -1,0 +1,8 @@
+# ChangeLog for dev-cpp/cairomm
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Jul 2006; Samuli Suominen <sasuomin@uusikaupunki.fi>
+  +cairomm-1.1.10.ebuild, +metadata.xml:
+  New ebuild for bug 117364, Thanks to Matteo Settenvini and Alex Buell.
+
