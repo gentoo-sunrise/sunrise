@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jul 2006; Josu López Fernández <zamorate@zamorate.net>
+  etswitch-0.1.14.ebuild:
+  Added ~amd64 keyword
+
   11 Jul 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
   Initial ebuild for bug 133879, thanks to Denis Gubanov.
 
