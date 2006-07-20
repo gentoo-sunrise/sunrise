@@ -25,13 +25,12 @@ src_unpack() {
 }
 
 src_compile() {
-	"${QTDIR}"/bin/qmake -o Makefile f4l.pro || die "qmake failed"
+	"${QTDIR}"/bin/qmake -o Makefile ${PN}.pro || die "qmake failed"
 	emake || die "emake failed"
 }
 
 src_install() {
-	dobin bin/f4l
-	insinto /usr/share/pixmaps/${PN}/
-	doins src/cursor/main_ico1.xpm
-	make_desktop_entry f4l "Flash for Linux" ${PN}/main_ico1.xpm Graphics
+	dobin bin/${PN}
+	newicon src/cursor/main_ico1.xpm ${PN}.xpm
+	make_desktop_entry ${PN} "Flash for Linux" ${PN}.xpm Graphics
 }
