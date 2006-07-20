@@ -6,7 +6,7 @@ DESCRIPTION="C++ wrapper for the cairo graphics library."
 HOMEPAGE="http://cairographics.org/cairomm"
 SRC_URI="http://cairographics.org/snapshots/${P}.tar.gz"
 
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
@@ -17,8 +17,7 @@ DEPEND="${RDEPEND}
 		doc? ( app-doc/doxygen )"
 
 src_compile() {
-	econf \
-		$(use_enable doc docs) || die "econf failed."
+	econf $(use_enable doc docs) || die "econf failed."
 	emake || "emake failed."
 }
 

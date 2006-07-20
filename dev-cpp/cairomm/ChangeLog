@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Jul 2006; Samuli Suominen <sasuomin@uusikaupunki.fi>
+  cairomm-1.1.10.ebuild:
+  Fixed license and line wrapping, thanks to genstef.
+
+  20 Jul 2006; Samuli Suominen <sasuomin@uusikaupunki.fi>
   +cairomm-1.1.10.ebuild, +metadata.xml:
   New ebuild for bug 117364, Thanks to Matteo Settenvini and Alex Buell.
 
