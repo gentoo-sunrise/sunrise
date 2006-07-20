@@ -16,6 +16,13 @@ IUSE=""
 DEPEND=">=dev-lang/mono-1.0
 	>=dev-dotnet/gtk-sharp-2.4
 	>=dev-dotnet/glade-sharp-2.4"
+RDEPEND="${DEPEND}"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch "${FILESDIR}/${P}-makefile-depend-bump.patch"
+}
 
 src_compile() {
 	emake -f Makefile.solution.youtranslate || die "emake failed"
