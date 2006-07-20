@@ -1,0 +1,7 @@
+# ChangeLog for media-gfx/xaralx
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Jul 2006; Piotr Jaroszyński <peper@aster.pl> ChangeLog:
+  New ebuild. bug #126867
+
