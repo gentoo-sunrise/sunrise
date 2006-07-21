@@ -12,6 +12,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND=">=net-misc/neon-0.24.7
+	!=net-misc/neon-0.26*
 	 >=sys-fs/fuse-2.3"
 DEPEND="${RDEPEND}"
 
