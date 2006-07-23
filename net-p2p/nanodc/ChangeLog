@@ -1,0 +1,8 @@
+# ChangeLog for net-p2p/nanodc
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Jul 2006; Toni Takarautio (secretz) <thtaka@utu.fi>
+  +nanodc-0.1_alpha39.ebuild, +metadata.xml:
+  First commit
+
