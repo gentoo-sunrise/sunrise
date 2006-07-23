@@ -1,0 +1,102 @@
+diff -ru dwm-0.5~/dwm.h dwm-0.5/dwm.h
+--- dwm-0.5~/dwm.h	2006-07-22 15:38:12.000000000 +0200
++++ dwm-0.5/dwm.h	2006-07-22 17:28:41.000000000 +0200
+@@ -21,7 +21,7 @@
+ #define WM_PROTOCOL_DELWIN	1
+ 
+ /* tags */
+-enum { Tfnord, Tdev, Tnet, Twork, Tmisc, TLast };
++enum { };
+ 
+ /* END CUSTOMIZE */
+ 
+diff -ru dwm-0.5~/event.c dwm-0.5/event.c
+--- dwm-0.5~/event.c	2006-07-22 15:38:12.000000000 +0200
++++ dwm-0.5/event.c	2006-07-22 19:16:58.000000000 +0200
+@@ -34,26 +34,41 @@
+ 
+ static Key key[] = {
+ 	/* modifier		key		function	arguments */
+-	{ MODKEY,		XK_0,		view,		{ .i = Tfnord } }, 
+-	{ MODKEY,		XK_1,		view,		{ .i = Tdev } }, 
+-	{ MODKEY,		XK_2,		view,		{ .i = Tnet } }, 
+-	{ MODKEY,		XK_3,		view,		{ .i = Twork } }, 
+-	{ MODKEY,		XK_4,		view,		{ .i = Tmisc} }, 
++	{ MODKEY,		XK_0,		view,		{ .i =  GT9 } }, 
++	{ MODKEY,		XK_1,		view,		{ .i =  GT0 } }, 
++	{ MODKEY,		XK_2,		view,		{ .i =  GT1 } }, 
++	{ MODKEY,		XK_3,		view,		{ .i =  GT2 } }, 
++	{ MODKEY,		XK_4,		view,		{ .i =  GT3 } }, 
++	{ MODKEY,		XK_5,		view,		{ .i =  GT4 } }, 
++	{ MODKEY,		XK_6,		view,		{ .i =  GT5 } }, 
++	{ MODKEY,		XK_7,		view,		{ .i =  GT6 } }, 
++	{ MODKEY,		XK_8,		view,		{ .i =  GT7 } }, 
++	{ MODKEY,		XK_9,		view,		{ .i =  GT8 } }, 
+ 	{ MODKEY,		XK_j,		focusnext,	{ 0 } }, 
+ 	{ MODKEY,		XK_k,		focusprev,	{ 0 } },
+ 	{ MODKEY,		XK_m,		togglemax,	{ 0 } }, 
+ 	{ MODKEY,		XK_space,	togglemode,	{ 0 } }, 
+ 	{ MODKEY,		XK_Return,	zoom,		{ 0 } },
+-	{ MODKEY|ControlMask,	XK_0,		appendtag,	{ .i = Tfnord } }, 
+-	{ MODKEY|ControlMask,	XK_1,		appendtag,	{ .i = Tdev } }, 
+-	{ MODKEY|ControlMask,	XK_2,		appendtag,	{ .i = Tnet } }, 
+-	{ MODKEY|ControlMask,	XK_3,		appendtag,	{ .i = Twork } }, 
+-	{ MODKEY|ControlMask,	XK_4,		appendtag,	{ .i = Tmisc } }, 
+-	{ MODKEY|ShiftMask,	XK_0,		replacetag,	{ .i = Tfnord } }, 
+-	{ MODKEY|ShiftMask,	XK_1,		replacetag,	{ .i = Tdev } }, 
+-	{ MODKEY|ShiftMask,	XK_2,		replacetag,	{ .i = Tnet } }, 
+-	{ MODKEY|ShiftMask,	XK_3,		replacetag,	{ .i = Twork } }, 
+-	{ MODKEY|ShiftMask,	XK_4,		replacetag,	{ .i = Tmisc } }, 
++	{ MODKEY|ControlMask,	XK_0,		appendtag,	{ .i = GT9 } }, 
++	{ MODKEY|ControlMask,	XK_1,		appendtag,	{ .i = GT0 } }, 
++	{ MODKEY|ControlMask,	XK_2,		appendtag,	{ .i = GT1 } }, 
++	{ MODKEY|ControlMask,	XK_3,		appendtag,	{ .i = GT2 } }, 
++	{ MODKEY|ControlMask,	XK_4,		appendtag,	{ .i = GT3 } }, 
++	{ MODKEY|ControlMask,	XK_5,		appendtag,	{ .i = GT4 } }, 
++	{ MODKEY|ControlMask,	XK_6,		appendtag,	{ .i = GT5 } }, 
++	{ MODKEY|ControlMask,	XK_7,		appendtag,	{ .i = GT6 } }, 
++	{ MODKEY|ControlMask,	XK_8,		appendtag,	{ .i = GT7 } }, 
++	{ MODKEY|ControlMask,	XK_9,		appendtag,	{ .i = GT8 } }, 
++	{ MODKEY|ShiftMask,	XK_0,		replacetag,	{ .i = GT9 } }, 
++	{ MODKEY|ShiftMask,	XK_1,		replacetag,	{ .i = GT0 } }, 
++	{ MODKEY|ShiftMask,	XK_2,		replacetag,	{ .i = GT1 } }, 
++	{ MODKEY|ShiftMask,	XK_3,		replacetag,	{ .i = GT2 } }, 
++	{ MODKEY|ShiftMask,	XK_4,		replacetag,	{ .i = GT3 } }, 
++	{ MODKEY|ShiftMask,	XK_5,		replacetag,	{ .i = GT4 } }, 
++	{ MODKEY|ShiftMask,	XK_6,		replacetag,	{ .i = GT5 } }, 
++	{ MODKEY|ShiftMask,	XK_7,		replacetag,	{ .i = GT6 } }, 
++	{ MODKEY|ShiftMask,	XK_8,		replacetag,	{ .i = GT7 } }, 
++	{ MODKEY|ShiftMask,	XK_9,		replacetag,	{ .i = GT8 } }, 
+ 	{ MODKEY|ShiftMask,	XK_c,		killclient,	{ 0 } }, 
+ 	{ MODKEY|ShiftMask,	XK_q,		quit,		{ 0 } },
+ 	{ MODKEY|ShiftMask,	XK_Return,	spawn,		{ .argv = term } },
+diff -ru dwm-0.5~/tag.c dwm-0.5/tag.c
+--- dwm-0.5~/tag.c	2006-07-22 15:38:12.000000000 +0200
++++ dwm-0.5/tag.c	2006-07-22 15:41:40.000000000 +0200
+@@ -19,12 +19,17 @@
+ } Rule;
+ 
+ /* CUSTOMIZE */ 
++static Rule rule[] = { };
++/*
+ static Rule rule[] = {
+-	/* class:instance	tags				isfloat */
++	/ * class:instance	tags				isfloat * /
+ 	{ "Firefox.*",		{ [Tnet] = "net" },		False },
+ 	{ "Gimp.*",		{ 0 },				True},
+ };
++*/
+ 
++char *tags[TLast] = { };
++/*
+ char *tags[TLast] = {
+ 	[Tfnord] = "fnord",
+ 	[Tdev] = "dev",
+@@ -32,6 +37,7 @@
+ 	[Twork] = "work",
+ 	[Tmisc] = "misc",
+ };
++*/
+ 
+ void (*arrange)(Arg *) = dotile;
+ 
