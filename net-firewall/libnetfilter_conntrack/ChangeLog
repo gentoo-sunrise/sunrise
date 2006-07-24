@@ -1,0 +1,8 @@
+# ChangeLog for net-firewall/libnetfilter_conntrack
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Jul 2006; Cedric Krier <ced@ced.homedns.org>
+  +libnetfilter_conntrack-0.0.31.ebuild, +metadata.xml:
+  New Ebuild for bug 141593
+
