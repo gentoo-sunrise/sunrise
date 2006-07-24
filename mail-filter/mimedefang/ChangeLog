@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jul 2006; Jakub Moc <jakub@gentoo.org> mimedefang-2.57.ebuild:
+  Fix for enewuser broken permissions, cosmetics
+
   24 Jul 2006; Stas Korzovsky <staskorz@gmail.com> :
   Fixed permissions on /var/spool/MIMEDefang
 

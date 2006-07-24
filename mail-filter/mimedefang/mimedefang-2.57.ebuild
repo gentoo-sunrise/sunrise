@@ -28,9 +28,6 @@ RDEPEND="${DEPEND}"
 pkg_setup() {
 	enewgroup defang
 	enewuser defang -1 -1 /var/spool/MIMEDefang defang
-	mkdir -p /var/spool/MIMEDefang
-	chmod 775 /var/spool/MIMEDefang
-	chown defang:defang /var/spool/MIMEDefang
 }
 
 src_install() {
@@ -43,15 +40,16 @@ src_install() {
 		mimedefang-filter.example
 	[ -f /etc/mail/spamassassin/local.cf ] && \
 		dosym /etc/mail/spamassassin/local.cf /etc/mail/sa-mimedefang.cf
-	dodoc Changelog README README.ANOMY README.IRIX README.NONROOT \
-		README.SECURITY README.SOPHIE README.SPAMASSASSIN
-	keepdir /var/spool/{MIMEDefang,MD-Quarantine}
-	fperms 775 /var/spool/MIMEDefang
-	fperms 755 /var/spool/MD-Quarantine
+	dodoc Changelog README README.{ANOMY,IRIX,NONROOT,SECURITY,SOPHIE,SPAMASSASSIN}
+	dodir /var/spool/{MIMEDefang,MD-Quarantine}
+	fperms 0775 /var/spool/MIMEDefang
+	fperms 0755 /var/spool/MD-Quarantine
 	fowners defang:defang /var/spool/{MIMEDefang,MD-Quarantine}
 }
 
-pkg_postrm() {
-	[[ -e ${ROOT}/var/spool/MIMEDefang/.keep ]] && \
-		rm -f ${ROOT}/var/spool/{MIMEDefang,MD-Quarantine}/.keep
+pkg_postinst() {
+	# portage won't fix the permissions on ${ROOT}/var/spool/MIMEDefang
+	# that were created by enewuser - see Bug 141619
+	chmod 0775 ${ROOT}/var/spool/MIMEDefang
+	chown defang:defang ${ROOT}/var/spool/MIMEDefang
 }
