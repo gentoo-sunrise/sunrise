@@ -1,0 +1,132 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+# NB: Config is in /etc/conf.d/mimedefang
+
+depend() {
+	need net
+	before mta
+	after antivirus
+}
+
+
+prog='mimedefang'
+
+# Main PID file
+PID="$SPOOLDIR/$prog.pid"
+
+# Multiplexor PID file
+MXPID="$SPOOLDIR/$prog-multiplexor.pid"
+
+PROGDIR=/usr/bin
+
+# Locale should be set to "C" for generating valid date headers
+LC_ALL=C
+export LC_ALL
+
+
+# Make sure required vars are set
+SOCKET=${SOCKET:=$SPOOLDIR/$prog.sock}
+MX_SOCKET=${MX_SOCKET:=$SPOOLDIR/$prog-multiplexor.sock}
+
+start() {
+	# Is there /etc/mail/mimedefang-filter ?
+	if [ ! -f /etc/mail/mimedefang-filter ]; then
+		eerror "Cannot find /etc/mail/mimedefang-filter"
+		return 1
+	fi
+    
+	if test -r $PID ; then
+		if kill -0 `cat $PID` > /dev/null 2>&1 ; then
+			eerror "mimedefang (`cat $PID`) seems to be running."
+			return 1
+		fi
+	fi
+	
+	if test -r $MXPID ; then
+		if kill -0 `cat $MXPID` > /dev/null 2>&1 ; then
+			eerror "mimedefang-multiplexor (`cat $MXPID`) seems to be running."
+			return 1
+		fi
+	fi
+
+	rm -f $MX_SOCKET > /dev/null 2>&1
+	if [ "$MX_EMBED_PERL" = "yes" ] ; then
+		EMBEDFLAG=-E
+	else
+		EMBEDFLAG=""
+	fi
+	
+	ebegin "Starting mimedefang-multiplexor"
+	start-stop-daemon --start --quiet \
+		--exec $PROGDIR/$prog-multiplexor -- -p $MXPID \
+			$EMBEDFLAG \
+			`[ -n "$FILTER" ] && echo "-f $FILTER"` \
+			`[ -n "$SYSLOG_FACILITY" ] && echo "-S $SYSLOG_FACILITY"` \
+			`[ -n "$SUBFILTER" ] && echo "-F $SUBFILTER"` \
+			`[ -n "$MX_MINIMUM" ] && echo "-m $MX_MINIMUM"` \
+			`[ -n "$MX_MAXIMUM" ] && echo "-x $MX_MAXIMUM"` \
+			`[ -n "$MX_MAP_SOCKET" ] && echo "-N $MX_MAP_SOCKET"` \
+			`[ -n "$MX_LOG_SLAVE_STATUS_INTERVAL" ] && echo "-L $MX_LOG_SLAVE_STATUS_INTERVAL"` \
+			`[ -n "$MX_USER" ] && echo "-U $MX_USER"` \
+			`[ -n "$MX_IDLE" ] && echo "-i $MX_IDLE"` \
+			`[ -n "$MX_BUSY" ] && echo "-b $MX_BUSY"` \
+			`[ -n "$MX_REQUESTS" ] && echo "-r $MX_REQUESTS"` \
+			`[ -n "$MX_SLAVE_DELAY" ] && echo "-w $MX_SLAVE_DELAY"` \
+			`[ -n "$MX_MIN_SLAVE_DELAY" ] && echo "-W $MX_MIN_SLAVE_DELAY"` \
+			`[ -n "$MX_MAX_RSS" ] && echo "-R $MX_MAX_RSS"` \
+			`[ -n "$MX_MAX_AS" ] && echo "-M $MX_MAX_AS"` \
+			`[ "$MX_LOG" = "yes" ] && echo "-l"` \
+			`[ "$MX_STATS" = "yes" ] && echo "-t /var/log/mimedefang/stats"` \
+			`[ "$MX_STATS" = "yes" -a "$MX_FLUSH_STATS" = "yes" ] && echo "-u"` \
+			`[ "$MX_STATS_SYSLOG" = "yes" ] && echo "-T"` \
+			`[ "$MX_STATUS_UPDATES" = "yes" ] && echo "-Z"` \
+			`[ -n "$MX_QUEUE_SIZE" ] && echo "-q $MX_QUEUE_SIZE"` \
+			`[ -n "$MX_QUEUE_TIMEOUT" ] && echo "-Q $MX_QUEUE_TIMEOUT"` \
+			`[ -n "$MX_NOTIFIER" ] && echo "-O $MX_NOTIFIER"` \
+			-s $MX_SOCKET
+	eend $? "Failed to start mimedefang-multiplexor"
+		
+
+	rm -f $SOCKET > /dev/null 2>&1
+
+	ebegin "Starting mimedefang"
+	start-stop-daemon --start --quiet \
+		--exec $PROGDIR/$prog -- -P $PID \
+			-m $MX_SOCKET \
+			`[ -n "$MX_USER" ] && echo "-U $MX_USER"` \
+			`[ -n "$SYSLOG_FACILITY" ] && echo "-S $SYSLOG_FACILITY"` \
+			`[ "$MX_RELAY_CHECK" = "yes" ] && echo "-r"` \
+			`[ "$MX_SENDER_CHECK" = "yes" ] && echo "-s"` \
+			`[ "$MX_RECIPIENT_CHECK" = "yes" ] && echo "-t"` \
+			`[ "$KEEP_FAILED_DIRECTORIES" = "yes" ] && echo "-k"` \
+			`[ "$MD_EXTRA" != "" ] && echo $MD_EXTRA` \
+			-p $SOCKET
+	eend $? "Failed to start mimedefang"
+}
+
+stop() {
+	ebegin "Stopping mimedefang"
+	start-stop-daemon --stop --quiet --retry 10 --oknodo --exec $PROGDIR/$prog --pidfile $PID
+	RETVAL=$?
+
+	if [ $RETVAL -eq "0" ] ; then
+		rm -f $PID
+		rm -f $SOCKET
+	fi
+	
+	eend $RETVAL "Failed to stop mimedefang"
+
+	ebegin "Stopping mimedefang-multiplexor"
+	start-stop-daemon --stop --quiet --retry 10 --oknodo --exec $PROGDIR/$prog-multiplexor --pidfile $MXPID
+	RETVAL=$?
+	
+	if [ $RETVAL -eq "0" ] ; then
+		rm -f $MXPID
+		rm -f $MX_SOCKET
+	fi	
+	
+	eend $RETVAL "Failed to stop mimedefang-multiplexor"
+}
