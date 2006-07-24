@@ -46,6 +46,12 @@ src_install() {
 	dodoc Changelog README README.ANOMY README.IRIX README.NONROOT \
 		README.SECURITY README.SOPHIE README.SPAMASSASSIN 
 	keepdir /var/spool/{MIMEDefang,MD-Quarantine}
+	fperms 775 /var/spool/MIMEDefang
 	fperms 755 /var/spool/MD-Quarantine
-	fowners defang:defang /var/spool/MD-Quarantine
+	fowners defang:defang /var/spool/{MIMEDefang,MD-Quarantine}
+}
+
+pkg_postrm() {
+	[[ -e ${ROOT}/var/spool/MIMEDefang/.keep ]] && \
+		rm -f ${ROOT}/var/spool/{MIMEDefang,MD-Quarantine}/.keep
 }
