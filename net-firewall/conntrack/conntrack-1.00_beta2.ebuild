@@ -4,7 +4,7 @@
 
 inherit linux-info
 
-MY_P="${P/_beta/beta}"
+MY_P="${P/_}"
 
 DESCRIPTION="view and manage the in-kernel connection tracking state table"
 HOMEPAGE="http://www.netfilter.org/projects/conntrack/"
