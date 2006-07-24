@@ -5,4 +5,4 @@
 *psybnc-2.3.2.7 (08 Jul 2006)
 
   08 Jul 2006; Bjarke Istrup Pedersen <gurligebis@gentoo.org> :
-  Initial import.  Based on ebuild by Lorenzo Grandi <popposoft@gmail.com>.
+  Initial import.  Based on ebuild by Lorenzo Grandi <popposoft@gmail.com>, bug 35887
