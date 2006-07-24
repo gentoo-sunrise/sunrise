@@ -10,7 +10,7 @@ SRC_URI="http://gentoo.fh-luh.de/files/dbmail/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="-*"
 IUSE="ssl postgres"
 
 DEPEND="ssl? ( dev-libs/openssl )

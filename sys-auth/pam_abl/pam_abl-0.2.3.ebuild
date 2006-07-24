@@ -7,7 +7,7 @@ inherit pam toolchain-funcs
 DESCRIPTION="Provides auto blacklisting of hosts and users responsible for repeated failed authentication attempts"
 HOMEPAGE="http://www.hexten.net/pam_abl/"
 SRC_URI="mirror://sourceforge/${PN/_/-}/${P}.tar.gz"
-RESTRICT="mirror"
+RESTRICT=""
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"

@@ -7,7 +7,7 @@ inherit pam
 DESCRIPTION="pam_pgsql is a module for pam to authenticate users with PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/frs/?group_id=1000039"
 SRC_URI="mirror://postgresql/projects/pgFoundry/sysauth/${PN/_/-}-${PV}.tgz"
-RESTRICT="mirror"
+RESTRICT=""
 
 LICENSE="GPL-2"
 SLOT="0"

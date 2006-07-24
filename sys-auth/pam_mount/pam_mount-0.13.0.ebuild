@@ -7,7 +7,7 @@ inherit eutils pam autotools
 DESCRIPTION="A PAM module that can mount volumes for a user session e.g. encrypted home directories"
 HOMEPAGE="http://pam-mount.souceforge.net"
 SRC_URI="mirror://sourceforge/pam-mount/${P}.tbz2"
-RESTRICT="mirror"
+RESTRICT=""
 
 LICENSE="GPL-2"
 SLOT="0"

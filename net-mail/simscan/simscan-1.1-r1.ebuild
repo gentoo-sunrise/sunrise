@@ -11,12 +11,12 @@ SRC_URI="http://www.inter7.com/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="clamav attachement custom-smtp-reject dropmsg regex quarantine perdomain
+IUSE="clamav attachment custom-smtp-reject dropmsg regex quarantine per-domain
 received spamassassin passthru"
 
 DEPEND="
 	clamav? ( app-antivirus/clamav )
-	attachement? ( net-mail/ripmime )
+	attachment? ( net-mail/ripmime )
 	spamassassin? ( mail-filter/spamassassin )
 	regex? ( dev-libs/libpcre )
 "
@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 	virtual/qmail
 "
 
-RESTRICT=strip
+RESTRICT="strip"
 
 pkg_setup() {
 	enewgroup clamav
@@ -42,7 +42,7 @@ src_compile() {
 		myconf="${myconf} --enable-clamav=n"
 	fi
 
-	if use attachement ; then
+	if use attachment ; then
 		myconf="${myconf} --enable-attach=y"
 		myconf="${myconf} --enable-ripmime=/usr/bin/ripmime"
 	else
@@ -70,7 +70,7 @@ src_compile() {
 
 	use quarantine && myconf="${myconf} --enable-quarantinedir"
 
-	if use perdomain ; then
+	if use per-domain ; then
 		myconf="${myconf} --enable-per-domain=y"
 	else
 		myconf="${myconf} --enable-per-domain=n"
@@ -115,7 +115,7 @@ src_install() {
 	fperms 4711 /var/qmail/bin/simscan
 	keepdir /var/qmail/simscan
 
-	if use perdomain ; then
+	if use per-domain ; then
 		einfo "Setting default configuration..."
 		echo ':clam=yes,spam=yes' > simcontrol
 		insopts -o root -g root -m 644

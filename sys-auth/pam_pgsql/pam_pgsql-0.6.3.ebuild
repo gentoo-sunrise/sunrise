@@ -7,7 +7,7 @@ inherit pam
 DESCRIPTION="pam_pgsql is a module for pam to authenticate users with PostgreSQL"
 HOMEPAGE="http://sourceforge.net/projects/pam-pgsql/"
 SRC_URI="mirror://sourceforge/${PN/_/-}/lib${PN/_/-}-${PV}.tar.bz2"
-RESTRICT="mirror"
+RESTRICT=""
 
 LICENSE="GPL-2"
 SLOT="0"
