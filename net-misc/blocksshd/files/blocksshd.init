@@ -1,0 +1,30 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header:$
+
+depend() {
+	need net
+}
+
+checkconfig() {
+	if [ ! -e /etc/blocksshd/blocksshd.conf ] ; then
+		eerror "You need a /etc/blocksshd/blocksshd.conf file to run blocksshd"
+		eerror "There is a sample file in /etc/blocksshd/"
+		return 1
+	fi
+
+}
+
+start() {
+	checkconfig || return 1
+	ebegin "Starting BlockSSHD"
+	/usr/sbin/blocksshd --start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping BlockSSHD"
+	start-stop-daemon --verbose --stop --pidfile /var/run/blocksshd.pid 
+	eend $?
+}
