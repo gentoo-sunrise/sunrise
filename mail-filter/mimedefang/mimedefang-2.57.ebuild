@@ -44,7 +44,7 @@ src_install() {
 	[ -f /etc/mail/spamassassin/local.cf ] && \
 		dosym /etc/mail/spamassassin/local.cf /etc/mail/sa-mimedefang.cf
 	dodoc Changelog README README.ANOMY README.IRIX README.NONROOT \
-		README.SECURITY README.SOPHIE README.SPAMASSASSIN 
+		README.SECURITY README.SOPHIE README.SPAMASSASSIN
 	keepdir /var/spool/{MIMEDefang,MD-Quarantine}
 	fperms 775 /var/spool/MIMEDefang
 	fperms 755 /var/spool/MD-Quarantine
