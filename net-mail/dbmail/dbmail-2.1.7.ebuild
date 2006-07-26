@@ -10,7 +10,7 @@ SRC_URI="http://www.dbmail.org/download/2.1/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-*"
+KEYWORDS="~x86 ~amd64"
 IUSE="ssl postgres"
 
 DEPEND="ssl? ( dev-libs/openssl )
