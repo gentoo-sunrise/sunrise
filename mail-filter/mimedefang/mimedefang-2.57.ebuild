@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	enewgroup defang
-	enewuser defang -1 -1 /var/spool/MIMEDefang defang
+	enewuser defang -1 -1 /home/defang defang
 }
 
 src_install() {
@@ -47,9 +47,9 @@ src_install() {
 	fowners defang:defang /var/spool/{MIMEDefang,MD-Quarantine}
 }
 
-pkg_postinst() {
+#pkg_postinst() {
 	# portage won't fix the permissions on ${ROOT}/var/spool/MIMEDefang
 	# that were created by enewuser - see Bug 141619
-	chmod 0775 ${ROOT}/var/spool/MIMEDefang
-	chown defang:defang ${ROOT}/var/spool/MIMEDefang
-}
+#	chmod 0775 ${ROOT}/var/spool/MIMEDefang
+#	chown defang:defang ${ROOT}/var/spool/MIMEDefang
+#}
