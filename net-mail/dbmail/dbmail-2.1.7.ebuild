@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils autotools
+inherit eutils
 
 DESCRIPTION="A mail storage and retrieval daemon that uses MySQL or PostgreSQL as its data store"
 HOMEPAGE="http://www.dbmail.org/"
@@ -40,7 +40,6 @@ pkg_setup() {
 }
 
 src_compile() {
-	eautoreconf
 	econf \
 		--sysconfdir=/etc/dbmail \
 		$(use_with ssl) \
