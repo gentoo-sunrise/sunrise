@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="ChuCK - On-the-fly Audio Programming"
 HOMEPAGE="http://chuck.cs.princeton.edu/release/"
@@ -55,7 +55,7 @@ src_compile() {
 		backend="oss"
 	fi
 	einfo "Compiling against ${backend}"
-	emake -j1 "linux-${backend}" || die "emake failed"
+	emake -j1 "linux-${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
 }
 
 src_install() {

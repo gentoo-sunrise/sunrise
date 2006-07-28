@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jul 2006; Cedric Krier <ced@ced.homedns.org> -chuck-1.2.0.5.ebuild,
+  -files/chuck-1.2.0.5-makefile.patch, chuck-1.2.0.6.ebuild:
+  use correct CC and CXX, clean old version
+
   20 Jul 2006; Cedric Krier <ced@ced.homedns.org> +chuck-1.2.0.6.ebuild,
   +files/chuck-1.2.0.6-makefile.patch:
   Version bump
