@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="An implementation of the Optimized Link State Routing protocol"
 HOMEPAGE="http://www.olsr.org/"
@@ -19,21 +19,22 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-gui_makefile.patch"
+	epatch "${FILESDIR}/${P}-memleak_in_olsr_remove_scheduler_event.patch"
 }
 
 src_compile() {
 	cd "${S}"
-	emake OS=linux || die "emake failed"
+	emake OS=linux CC=$(tc-getCC) || die "emake failed"
 
 	for module in dot_draw dyn_gw httpinfo nameservice powerinfo secure ; do
 		cd "${S}/lib/${module}"
-		emake OS=linux || die "emake failed"
+		emake OS=linux CC=$(tc-getCC) || die "emake failed"
 	done
 
 	if use gtk ; then
 		cd "${S}/gui/linux-gtk"
 		einfo "Building GUI ..."
-		emake || die "emake failed"
+		emake CC=$(tc-getCC) || die "emake failed"
 	fi
 }
 
