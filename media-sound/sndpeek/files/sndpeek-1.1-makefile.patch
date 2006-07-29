@@ -1,0 +1,289 @@
+diff -ru sndpeek-1.1~/src/sndpeek/makefile.alsa sndpeek-1.1/src/sndpeek/makefile.alsa
+--- sndpeek-1.1~/src/sndpeek/makefile.alsa	2006-07-29 12:50:41.000000000 +0200
++++ sndpeek-1.1/src/sndpeek/makefile.alsa	2006-07-29 12:57:13.000000000 +0200
+@@ -4,63 +4,63 @@
+ 	Centroid.o DownSampler.o Flux.o LPC.o MFCC.o RMS.o Rolloff.o System.o fvec.o \
+ 	AutoCorrelation.o Communicator.o Hamming.o MagFFT.o NormRMS.o MarSignal.o fmatrix.o
+ 
+-CC=gcc
+-CPP=g++
++CC?=gcc
++CXX?=g++
+ INCLUDES=-I../marsyas/
+ MARSYAS_DIR=../marsyas/
+-CFLAGS=-D__LINUX_ALSA__ -D__LITTLE_ENDIAN__ $(INCLUDES) -O3 -c
+-LIBS=-L/usr/X11R6/lib -lglut -lGL -lGLU -lasound -lXmu -lX11 -lXext -lXi -lm
++CFLAGS+=-D__LINUX_ALSA__ -D__LITTLE_ENDIAN__ $(INCLUDES) -c
++LIBS=-L/usr/X11R6/lib -lpthread -lstdc++ -lglut -lGL -lGLU -lasound -lXmu -lX11 -lXext -lXi -lm
+ 
+ sndpeek: $(OBJS)
+-	$(CPP) -o $@ $(OBJS) $(LIBS)
++	$(CXX) -o $@ $(OBJS) $(LIBS)
+ 
+ Centroid.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ DownSampler.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Flux.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ LPC.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MFCC.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ RMS.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Rolloff.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ System.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ fvec.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ AutoCorrelation.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Communicator.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Hamming.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MagFFT.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ NormRMS.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MarSignal.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ fmatrix.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ .o: $*.h
+ 
+@@ -68,7 +68,7 @@
+ 	$(CC) $(CFLAGS) $*.c
+ 
+ .cpp.o: $*.h $*.cpp
+-	$(CC) $(CFLAGS) $*.cpp
++	$(CXX) $(CFLAGS) $*.cpp
+ 
+ clean: 
+ 	rm -f sndpeek *~ *.o
+diff -ru sndpeek-1.1~/src/sndpeek/makefile.jack sndpeek-1.1/src/sndpeek/makefile.jack
+--- sndpeek-1.1~/src/sndpeek/makefile.jack	2006-07-29 12:50:41.000000000 +0200
++++ sndpeek-1.1/src/sndpeek/makefile.jack	2006-07-29 12:56:20.000000000 +0200
+@@ -4,63 +4,63 @@
+ 	Centroid.o DownSampler.o Flux.o LPC.o MFCC.o RMS.o Rolloff.o System.o fvec.o \
+ 	AutoCorrelation.o Communicator.o Hamming.o MagFFT.o NormRMS.o MarSignal.o fmatrix.o
+ 
+-CC=gcc
+-CPP=g++
++CC?=gcc
++CXX?=g++
+ INCLUDES=-I../marsyas/
+ MARSYAS_DIR=../marsyas/
+-CFLAGS=-D__LINUX_JACK__ -D__LITTLE_ENDIAN__ $(INCLUDES) -O3 -c
++CFLAGS+=-D__LINUX_JACK__ -D__LITTLE_ENDIAN__ $(INCLUDES) -c
+ LIBS=-L/usr/X11R6/lib -lpthread -lstdc++ -lglut -lGL -lGLU -lasound -ljack -lXmu -lX11 -lXext -lXi -lm
+ 
+ sndpeek: $(OBJS)
+-	$(CPP) -o $@ $(OBJS) $(LIBS)
++	$(CXX) -o $@ $(OBJS) $(LIBS)
+ 
+ Centroid.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ DownSampler.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Flux.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ LPC.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MFCC.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ RMS.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Rolloff.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ System.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ fvec.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ AutoCorrelation.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Communicator.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Hamming.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MagFFT.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ NormRMS.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MarSignal.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ fmatrix.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ .o: $*.h
+ 
+@@ -68,7 +68,7 @@
+ 	$(CC) $(CFLAGS) $*.c
+ 
+ .cpp.o: $*.h $*.cpp
+-	$(CC) $(CFLAGS) $*.cpp
++	$(CXX) $(CFLAGS) $*.cpp
+ 
+ clean: 
+ 	rm -f sndpeek *~ *.o
+diff -ru sndpeek-1.1~/src/sndpeek/makefile.oss sndpeek-1.1/src/sndpeek/makefile.oss
+--- sndpeek-1.1~/src/sndpeek/makefile.oss	2006-07-29 12:50:41.000000000 +0200
++++ sndpeek-1.1/src/sndpeek/makefile.oss	2006-07-29 12:58:02.000000000 +0200
+@@ -4,63 +4,63 @@
+ 	Centroid.o DownSampler.o Flux.o LPC.o MFCC.o RMS.o Rolloff.o System.o fvec.o \
+ 	AutoCorrelation.o Communicator.o Hamming.o MagFFT.o NormRMS.o MarSignal.o fmatrix.o
+ 
+-CC=gcc
+-CPP=g++
++CC?=gcc
++CXX?=g++
+ INCLUDES=-I../marsyas/
+ MARSYAS_DIR=../marsyas/
+-CFLAGS=-D__LINUX_OSS__ -D__LITTLE_ENDIAN__ $(INCLUDES) -O3 -c
++CFLAGS+=-D__LINUX_OSS__ -D__LITTLE_ENDIAN__ $(INCLUDES) -c
+ LIBS=-L/usr/X11R6/lib -lpthread -lstdc++ -lglut -lGL -lGLU -lXmu -lX11 -lXext -lXi -lm
+ 
+ sndpeek: $(OBJS)
+-	$(CPP) -o $@ $(OBJS) $(LIBS)
++	$(CXX) -o $@ $(OBJS) $(LIBS)
+ 
+ Centroid.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ DownSampler.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Flux.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ LPC.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MFCC.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ RMS.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Rolloff.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ System.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ fvec.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ AutoCorrelation.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Communicator.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ Hamming.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MagFFT.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ NormRMS.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ MarSignal.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ fmatrix.o:
+-	$(CC) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
++	$(CXX) $(CFLAGS) $(MARSYAS_DIR)$*.cpp
+ 
+ .o: $*.h
+ 
+@@ -68,7 +68,7 @@
+ 	$(CC) $(CFLAGS) $*.c
+ 
+ .cpp.o: $*.h $*.cpp
+-	$(CC) $(CFLAGS) $*.cpp
++	$(CXX) $(CFLAGS) $*.cpp
+ 
+ clean: 
+ 	rm -f sndpeek *~ *.o
