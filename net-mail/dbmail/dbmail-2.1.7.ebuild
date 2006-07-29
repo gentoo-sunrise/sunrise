@@ -27,10 +27,10 @@ DEPEND="ssl? ( dev-libs/openssl )
 
 pkg_setup() {
 	if use postgres && has_version dev-db/mysql ; then
-		einfo "You have postgres use flag set, ${PN} will compile against PostgreSQL."
-		einfo "If you want to use MySQL instead, unset postgres use flag for this ebuild:"
+		elog "You have postgres use flag set, ${PN} will compile against PostgreSQL."
+		elog "If you want to use MySQL instead, unset postgres use flag for this ebuild:"
 		einfo
-		einfo "echo \"net-mail/dbmail -postgres\" >> /etc/portage/package.use"
+		elog "echo \"net-mail/dbmail -postgres\" >> /etc/portage/package.use"
 		einfo
 		epause 3
 	fi
@@ -74,15 +74,15 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Please read /usr/share/doc/${PF}/INSTALL.gz"
-	einfo "for remaining instructions on setting up dbmail users and "
-	einfo "for finishing configuration to connect to your MTA and "
-	einfo "to connect to your db."
+	elog "Please read /usr/share/doc/${PF}/INSTALL.gz"
+	elog "for remaining instructions on setting up dbmail users and "
+	elog "for finishing configuration to connect to your MTA and "
+	elog "to connect to your db."
 	einfo
-	einfo "Database schemes can be found in /usr/share/doc/${PF}/"
-	einfo "You will also want to follow the installation instructions"
-	einfo "on setting up the maintenance program to delete old messages."
-	einfo "Don't forget to edit /etc/dbmail/dbmail.conf as well. :)"
-	einfo ">>> --- For maintenance ---"
-	einfo ">>> add this to crontab: 0 3 * * * /usr/bin/dbmail-util -cpdy >/dev/null 2>&1 "
+	elog "Database schemes can be found in /usr/share/doc/${PF}/"
+	elog "You will also want to follow the installation instructions"
+	elog "on setting up the maintenance program to delete old messages."
+	elog "Don't forget to edit /etc/dbmail/dbmail.conf as well. :)"
+	elog ">>> --- For maintenance ---"
+	elog ">>> add this to crontab: 0 3 * * * /usr/bin/dbmail-util -cpdy >/dev/null 2>&1 "
 }
