@@ -55,7 +55,7 @@ src_compile() {
 		backend="oss"
 	fi
 	einfo "Compiling against ${backend}"
-	emake -j1 "linux-${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
+	emake -f "makefile.${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
 }
 
 src_install() {
