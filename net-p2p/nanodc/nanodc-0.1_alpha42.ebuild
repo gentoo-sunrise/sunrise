@@ -9,7 +9,7 @@ HOMEPAGE="http://sourceforge.net/projects/nanodc/"
 SRC_URI="http://secretz.kapsi.fi/cow/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 DEPEND="app-arch/bzip2
 	sys-libs/ncurses
