@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/ripoff
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jul 2006; Ryan Newberry <brnewber@gmail.com> +ripoff-0.8.ebuild,
+  +metadata.xml:
+  New Ebuild for Gentoo Bugzilla 133502
+
