@@ -1,0 +1,8 @@
+# ChangeLog for media-gfx/denormgen
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jul 2006; Plüss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
+  +denormgen-1.4.ebuild, +metadata.xml:
+  New Ebuild for bug 134456 thanks to Stefan Schweizer
+
