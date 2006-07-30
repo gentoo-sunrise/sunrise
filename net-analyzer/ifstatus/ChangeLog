@@ -1,0 +1,8 @@
+# ChangeLog for net-analyzer/ifstatus
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> +ifstatus-1.1.0.ebuild,
+  +metadata.xml:
+  Ebuild for bug #141854, initial ebuild written by Jose daLuz
+
