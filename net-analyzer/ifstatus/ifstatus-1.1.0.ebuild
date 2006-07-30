@@ -4,7 +4,7 @@
 
 inherit toolchain-funcs
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="A simple CLI program for displaying network statistics in real time."
 HOMEPAGE="http://ifstatus.sourceforge.net"
@@ -31,10 +31,10 @@ src_unpack() {
 }
 
 src_compile() {
-	emake -j1 CXX=$(tc-getCXX) || die "Build failed"
+	emake -j1 CXX=$(tc-getCXX) || die "emake failed"
 }
 
 src_install() {
-	dosbin ifstatus
+	dobin ifstatus
 	dodoc AUTHORS README
 }
