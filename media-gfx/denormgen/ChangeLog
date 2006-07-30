@@ -2,7 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  29 Jul 2006; Plüss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
+  30 Jul 2006; Luca Longinotti <chtekk@gentoo.org> denormgen-1.4.ebuild:
+  Simplfy DEPEND, quote S and D vars, fix whitespace error, fix non-UTF8
+  character in ChangeLog.
+
+  29 Jul 2006; PlÃ¼ss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
   +denormgen-1.4.ebuild, +metadata.xml:
   New Ebuild for bug 134456 thanks to Stefan Schweizer
 

@@ -14,17 +14,17 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND=">=x11-libs/fox-1.2"
-DEPEND=">=x11-libs/fox-1.2"
+DEPEND="${RDEPEND}"
 
 src_unpack(){
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	eautoreconf
 }
 
 src_install(){
-	emake DESTDIR=${D} install || die "emake failed"
-	
+	emake DESTDIR="${D}" install || die "emake failed"
+
 	# http://bugs.gentoo.org/show_bug.cgi?id=134456#c7
 	#
 	# the blender build does not yet have a fixed place
