@@ -35,11 +35,7 @@ pkg_setup() {
 		eerror "One of the following USE flags is needed: jack, alsa or oss"
 		die "Please set one audio engine type"
 	elif [[ "${cnt}" -ne 1 ]] ; then
-		eerror "You have set ${P} to use multiple audio engine."
-		eerror "I don't know which to use!"
-		eerror "You can use /etc/portage/package.use to set per-package USE flags"
-		eerror "Set it so only one audio engine type jack, alsa, oss"
-		die "Please set only one audio engine type"
+		ewarn "You have set ${P} to use multiple audio engine."
 	fi
 }
 
