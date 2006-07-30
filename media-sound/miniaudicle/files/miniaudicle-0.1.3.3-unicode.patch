@@ -1,0 +1,116 @@
+diff -ru miniAudicle-0.1.3.3~/wxw/mAConsoleMonitor.cpp miniAudicle-0.1.3.3/wxw/mAConsoleMonitor.cpp
+--- miniAudicle-0.1.3.3~/wxw/mAConsoleMonitor.cpp	2006-07-26 21:52:18.000000000 +0200
++++ miniAudicle-0.1.3.3/wxw/mAConsoleMonitor.cpp	2006-07-27 15:53:20.000000000 +0200
+@@ -203,14 +203,14 @@
+ 			{
+ 				len = read( console_monitor->err_fd, buf, BUF_SIZE-1 );
+ 				buf[len] = 0;
+-				console_monitor->text->AppendText( _T( buf ) );
++				console_monitor->text->AppendText( wxString(buf, wxConvUTF8) );
+ 			}
+ 
+ 			if( pfd[1].revents & POLLIN )
+ 			{
+ 				len = read( console_monitor->out_fd, buf, BUF_SIZE-1 );
+ 				buf[len] = 0;
+-				console_monitor->text->AppendText( _T( buf ) );
++				console_monitor->text->AppendText( wxString(buf, wxConvUTF8) );
+ 			}
+ 		}
+ 	}
+@@ -223,7 +223,7 @@
+ 		//fflush( NULL );
+ 
+ 		if( fgets( buf, BUF_SIZE, f ) )
+-			console_monitor->text->AppendText( _T( buf ) );
++			console_monitor->text->AppendText( wxString(buf, wxConvUTF8) );
+ 	}
+ 
+ #endif /* __PLATFORM_WIN32__ */
+diff -ru miniAudicle-0.1.3.3~/wxw/mAParentFrame.cpp miniAudicle-0.1.3.3/wxw/mAParentFrame.cpp
+--- miniAudicle-0.1.3.3~/wxw/mAParentFrame.cpp	2006-07-26 21:52:18.000000000 +0200
++++ miniAudicle-0.1.3.3/wxw/mAParentFrame.cpp	2006-07-27 15:49:39.000000000 +0200
+@@ -366,7 +366,7 @@
+ 	sizer->Add( logo, 0, wxALL | wxALIGN_CENTER, 10 );
+ 
+ 	wxString copystring;
+-	copystring.Printf( MA_ABOUT, MA_VERSION, CK_VERSION );
++	copystring.Printf( wxString(MA_ABOUT, wxConvUTF8), MA_VERSION, CK_VERSION );
+ 	copystring.Prepend( _T( "miniAudicle\n" ) );
+ 	wxStaticText * copytext = new wxStaticText( &about_dialog, wxID_ANY, 
+ 		copystring, wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE );
+diff -ru miniAudicle-0.1.3.3~/wxw/mAView.cpp miniAudicle-0.1.3.3/wxw/mAView.cpp
+--- miniAudicle-0.1.3.3~/wxw/mAView.cpp	2006-07-26 21:52:18.000000000 +0200
++++ miniAudicle-0.1.3.3/wxw/mAView.cpp	2006-07-27 15:51:55.000000000 +0200
+@@ -179,7 +179,7 @@
+ 
+ 	ma->run_code( code, name, cid, cgid, result );
+ 	
+-	wxString status( _T( result.c_str() ) );
++	wxString status(result.c_str(), wxConvUTF8);
+ 	
+ 	frame->SetStatusText( status );
+ }
+@@ -191,7 +191,7 @@
+ 
+ 	ma->remove_code( cid, cgid, result );
+ 	
+-	wxString status( _T( result.c_str() ) );
++	wxString status(result.c_str(), wxConvUTF8);
+ 	
+ 	frame->SetStatusText( status );
+ }
+@@ -203,7 +203,7 @@
+ 
+ 	ma->replace_code( code, cid, cgid, result );
+ 
+-	wxString status( _T( result.c_str() ) );
++	wxString status( result.c_str(), wxConvUTF8);
+ 	
+ 	frame->SetStatusText( status );
+ }
+diff -ru miniAudicle-0.1.3.3~/wxw/mAVMMonitor.cpp miniAudicle-0.1.3.3/wxw/mAVMMonitor.cpp
+--- miniAudicle-0.1.3.3~/wxw/mAVMMonitor.cpp	2006-07-26 21:52:18.000000000 +0200
++++ miniAudicle-0.1.3.3/wxw/mAVMMonitor.cpp	2006-07-28 18:05:25.000000000 +0200
+@@ -83,7 +83,7 @@
+ 		wxSize( 250, 300 ), wxSUNKEN_BORDER );
+ 	sizer->Add( grid, 2, wxALL | wxALIGN_CENTER | wxEXPAND, 10 );
+ 
+-	vm_start = new wxButton( this, mAID_TOGGLE_VM, "Start Virtual Machine" );
++	vm_start = new wxButton( this, mAID_TOGGLE_VM, _T( "Start Virtual Machine" ) );
+ 	sizer->Add( vm_start, 0, wxBOTTOM | wxALIGN_CENTER, 10 );
+ 
+ 	grid->CreateGrid( 0, 4 );
+@@ -220,27 +220,27 @@
+ 	now = ( time_t ) ( status.now_system / status.srate );
+ 	if( now != last_now )
+ 	{
+-		time_counter->SetLabel( wxString::Format( "running time: %u:%02u",
++		time_counter->SetLabel( wxString::Format( _T( "running time: %u:%02u" ),
+ 												  now / 60, now % 60 ) );
+ 		last_now = now;
+ 	}
+ 
+ 	if( num_shreds != last_num_shreds )
+ 	{
+-		shred_count->SetLabel( wxString::Format( "shreds: %u", num_shreds ) );
++		shred_count->SetLabel( wxString::Format( _T( "shreds: %u" ), num_shreds ) );
+ 		last_num_shreds = num_shreds;
+ 	}
+ 
+ 	for( int i = 0; i < num_shreds; i++ )
+ 	{
+-		temp = wxString::Format( "%u", status.list[i]->xid );
++		temp = wxString::Format( _T( "%u" ), status.list[i]->xid );
+ 		grid->SetCellValue( i, 0, temp );
+ 
+-		temp = wxString::Format( "%s", status.list[i]->name.c_str() );
++		temp = wxString(status.list[i]->name.c_str(), wxConvUTF8);
+ 		grid->SetCellValue( i, 1, temp );
+ 
+ 		age = ( time_t ) ( ( status.now_system - status.list[i]->start ) / status.srate );
+-		temp = wxString::Format( "%u:%02u", age / 60, age % 60 );
++		temp = wxString::Format( _T( "%u:%02u" ), age / 60, age % 60 );
+ 		grid->SetCellValue( i, 2, temp );
+ 
+ 		grid->SetCellValue( i, 3, _T( "-" ) );
