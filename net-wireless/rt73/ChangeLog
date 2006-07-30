@@ -1,0 +1,8 @@
+# ChangeLog for net-wireless/rt73
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/rt73/ChangeLog,v 1.1 2006/07/01 12:12:16 genstef Exp $
+
+*rt73-1.0.3.6 (29 Jul 2006)
+  New Ebuild - driver for RaLink RT73 WLAN USB Dongles by Roy Bamford <neddyseagoon@gentoo.org>
+  +rt73.ebuild:
+  Shamelessly modelled on the RT61 driver by Stefan Schweizer <genstef@gentoo.org>
