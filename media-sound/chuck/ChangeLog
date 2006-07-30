@@ -3,6 +3,9 @@
 # $Header: $
 
   30 Jul 2006; Cedric Krier <ced@ced.homedns.org> chuck-1.2.0.6.ebuild:
+  simplify DEPEND & RDEPEND
+
+  30 Jul 2006; Cedric Krier <ced@ced.homedns.org> chuck-1.2.0.6.ebuild:
   fix RDEPEND
 
   29 Jul 2006; Cedric Krier <ced@ced.homedns.org> chuck-1.2.0.6.ebuild:

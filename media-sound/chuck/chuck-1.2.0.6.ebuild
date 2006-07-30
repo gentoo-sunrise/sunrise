@@ -13,14 +13,12 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="oss jack alsa doc"
 
-DEPEND="jack? ( media-sound/jack-audio-connection-kit )
-	alsa? ( >=media-libs/alsa-lib-0.9 )
-	media-libs/libsndfile
-	sys-devel/bison
-	sys-devel/flex"
 RDEPEND="jack? ( media-sound/jack-audio-connection-kit )
 	alsa? ( >=media-libs/alsa-lib-0.9 )
 	media-libs/libsndfile"
+DEPEND="${RDEPEND}
+	sys-devel/bison
+	sys-devel/flex"
 
 src_unpack() {
 	unpack ${A}
