@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> +wdfs-1.3.0.ebuild:
+  Version bump to v1.3.0 -> dependency changed to neon-0.26.1
+
   21 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> wdfs-1.2.1.ebuild:
   doesn't compile with neon-0.26*, blocking dep added
 
