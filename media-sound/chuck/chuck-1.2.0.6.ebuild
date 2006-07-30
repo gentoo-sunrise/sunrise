@@ -18,6 +18,9 @@ DEPEND="jack? ( media-sound/jack-audio-connection-kit )
 	media-libs/libsndfile
 	sys-devel/bison
 	sys-devel/flex"
+RDEPEND="jack? ( media-sound/jack-audio-connection-kit )
+	alsa? ( >=media-libs/alsa-lib-0.9 )
+	media-libs/libsndfile"
 
 src_unpack() {
 	unpack ${A}
@@ -31,9 +34,8 @@ pkg_setup() {
 	use alsa && cnt="$((${cnt} + 1))"
 	use oss && cnt="$((${cnt} + 1))"
 	if [[ "${cnt}" -eq 0 ]] ; then
-		local msg="One of the following USE flags is needed: jack, alsa or oss"
-		eerror "${msg}"
-		die "${msg}"
+		eerror "One of the following USE flags is needed: jack, alsa or oss"
+		die "Please set one audio engine type"
 	elif [[ "${cnt}" -ne 1 ]] ; then
 		eerror "You have set ${P} to use multiple audio engine."
 		eerror "I don't know which to use!"
