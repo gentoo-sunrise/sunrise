@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="sci-libs/blas-atlas
+DEPEND="virtual/blas
 	virtual/opengl"
 
 S="${WORKDIR}/${P/.1}"
@@ -38,5 +38,3 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README THANKS AUTHORS NEWS
 }
-
-
