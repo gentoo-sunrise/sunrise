@@ -11,13 +11,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="bittorrent gnutls metalink nls ssl"
 
-RDEPEND="ssl? ( gnutls? ( net-libs/gnutls )
-		!gnutls? ( dev-libs/openssl )
-		)
-	 bittorrent? ( gnutls? ( dev-libs/libgcrypt ) )
-	 nls? ( virtual/libiconv virtual/libintl )
-	 metalink? ( >=dev-libs/libxml2-2.6.26 )"
-DEPEND="${RDEPEND}"
+COMMON_DEPEND="ssl? (
+		    gnutls? ( net-libs/gnutls )
+		    !gnutls? ( dev-libs/openssl )
+		    )
+	    bittorrent? ( gnutls? ( dev-libs/libgcrypt ) )
+	    metalink? ( >=dev-libs/libxml2-2.6.26 )"
+DEPEND="${COMMON_DEPEND}
+	nls? ( sys-devel/gettext )"
+RDEPEND="${COMMON_DEPEND}
+	 nls? ( virtual/libiconv virtual/libintl )"
 
 S="${WORKDIR}/${P/_p/+}"
 

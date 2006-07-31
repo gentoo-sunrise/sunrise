@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2006; Jakub Moc <jakub@gentoo.org> aria2-0.6.0_p1.ebuild:
+  Fix dependencies
+
   08 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   Bumped to version 0.6.0_p1, metalink USE-flag added for new version
 
