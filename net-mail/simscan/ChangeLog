@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2006; Jakub Moc <jakub@gentoo.org> +simscan-1.1-r2.ebuild:
+  Sort use flags alphabetically, shorten src_compile, einfo -> ewarn/elog,
+  cosmetics
+
   21 Jul 2006; David CHANIAL (davixx) <david@chanial.com>
   +simscan-1.1-r1.ebuild:
   new simscan-1.1-r1.ebuild - correcting somes bugs (owners, keepdir)
