@@ -13,10 +13,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="axfr bind8-stats checking dnssec ipv6 plugins root-server ssl tsig"
 
-DEPEND="
-	ssl? ( >=dev-libs/openssl-0.9.7i )
-	tcpd? ( sys-apps/tcp-wrappers )
-	"
+DEPEND="ssl? ( >=dev-libs/openssl-0.9.7i )
+	tcpd? ( sys-apps/tcp-wrappers )"
 
 pkg_setup() {
 	enewuser nsd -1 -1 /var/lib/nsd
@@ -24,9 +22,8 @@ pkg_setup() {
 
 src_compile() {
 	if use plugins; then
-		echo
 		ewarn
-		einfo "Plugin support is highly experimental!"
+		ewarn "Plugin support is highly experimental!"
 		ewarn "Plugin support enabled!"
 		epause 10
 	fi
@@ -50,7 +47,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc \
 		DIFFERENCES \
@@ -65,9 +62,9 @@ src_install() {
 	dobin nsdc.sh
 
 	exeinto /etc/cron.hourly
-	newexe ${FILESDIR}/nsd.cron nsd.cron
+	newexe "${FILESDIR}"/nsd.cron nsd.cron
 
-	newinitd ${FILESDIR}/nsd.initd nsd
+	newinitd "${FILESDIR}"/nsd.initd nsd
 
 	keepdir /var/run/nsd
 	fowners nsd /var/run/nsd

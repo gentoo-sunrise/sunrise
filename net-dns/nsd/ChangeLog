@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2006; Jakub Moc <jakub@gentoo.org> nsd-2.3.5.ebuild:
+  Do not mix ewarn/einfo, add quoting
+
   28 Jun 2006; Martin Hierling <mad@cc.fh-luh.de> ChangeLog:
   New Ebuild for bug 128246 net-dns/nsd thanks to Albert Holm
 
