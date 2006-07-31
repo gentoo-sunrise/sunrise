@@ -32,6 +32,13 @@ RDEPEND="${DEPEND}
 	>=media-video/mplayer-1.0_pre8
 	>=media-video/transcode-1.0.2"
 
+pkg_setup() {
+	if ! built_with_use media-video/mplayer encode ; then
+		eerror "${PN} needs mencoder to work."
+		eerror "Re-emerge media-video/mplayer with USE=encode."
+		die "Re-emerge media-video/mplayer with USE=encode."
+	fi
+}
 
 src_compile() {
 	${QTDIR}/bin/qmake mandvd.pro || die "qmake failed"
