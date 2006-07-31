@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2006; Jakub Moc <jakub@gentoo.org> +blocksshd-0.7.ebuild,
+  +files/blocksshd-0.7.conf-dir-change.patch,
+  +files/blocksshd-0.7.etc-dir-change.patch:
+  Version bump, cosmetics
+
   24 Jul 2006; Michael Pagano <mpagano@gmail.com> +blocksshd-0.6.ebuild,
   +files/blocksshd-0.6.conf-dir-change.patch,
   +files/blocksshd-0.6.etc-dir-change.patch, +files/blocksshd.init,
