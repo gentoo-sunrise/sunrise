@@ -28,10 +28,14 @@ src_install() {
 	insinto /usr/lib/postsync.d
 	doins postsync.d/*
 
-	fowners root:portage /usr/sbin/postsync ${PORTCFG}/bin/post_sync \
-		/usr/lib/postsync.d/*
-
 	dodoc README ChangeLog doc/*
+
+	fowners root:portage /usr/sbin/postsync ${PORTCFG}/bin/post_sync
+	cd postsync.d
+	for f in *
+	do
+		fowners root:portage /usr/lib/${f}
+	done
 }
 
 pkg_postinst() {
