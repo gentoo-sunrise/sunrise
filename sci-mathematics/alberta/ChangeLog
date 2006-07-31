@@ -3,7 +3,7 @@
 # $Header: $
 
   31 Jul 2006; Jakub Moc <jakub@gentoo.org> alberta-1.2.1.ebuild:
-  Fix deps to virtual/blas, thanks to Kugenlfang
+  Fix deps to virtual/blas, thanks to Kugelfang
 
   28 Jun 2006; Alexis Ballier <alexis.ballier@gmail.com> ChangeLog:
   New ebuild by me for bug #131822 by phl0ri4n <a_jay1981@hotmail.com>
