@@ -12,7 +12,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=x11-libs/gtk+-2"
-RDEPEND=""
+RDEPEND="${DEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
