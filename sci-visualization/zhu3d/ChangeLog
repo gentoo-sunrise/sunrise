@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2006; Jakub Moc <jakub@gentoo.org> zhu3d-1.5.ebuild:
+  Fix make_desktop_entry to match FDO categories standard
+
   30 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> +zhu3d-1.5.ebuild,
   +metadata.xml:
   New ebuild for bug #142178

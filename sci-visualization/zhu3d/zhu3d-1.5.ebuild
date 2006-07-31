@@ -39,6 +39,6 @@ src_install() {
 	doins -r work
 	doins -r system
 
-
-	make_desktop_entry ${PN} "Zhu3D: Interactive 3D function viewer" /usr/share/${PN}/system/icons/${PN}.png sci-math
+	doicon system/icons/${PN}.png
+	make_desktop_entry ${PN} "Zhu3D: Interactive 3D function viewer" ${PN}.png "Qt;Science;Math"
 }
