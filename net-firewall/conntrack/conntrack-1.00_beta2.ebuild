@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND="net-firewall/libnfnetlink
 	net-firewall/libnetfilter_conntrack"
-RDEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -25,7 +25,7 @@ CONFIG_CHECK="IP_NF_CONNTRACK_NETLINK"
 
 pkg_setup() {
 	linux-info_pkg_setup
-	kernel_is lt 2 6 14 && die "requires at least 2.6.14 kernel version"
+	kernel_is lt 2 6 14 && die "${PN} requires at least 2.6.14 kernel version"
 }
 
 src_install() {
