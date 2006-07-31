@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2006; Jakub Moc <jakub@gentoo.org> xorp-1.2.ebuild:
+  Fix typo in src_compile
+
   21 Jul 2006; Cedric Krier <ced@ced.homedns.org> +xorp-1.2.ebuild,
   +files/xorp-confd, +files/xorp-initd, +metadata.xml:
   New Ebuild for bug 56603 thanks to Davin Boling, Ghislain Bourgeois, Miles

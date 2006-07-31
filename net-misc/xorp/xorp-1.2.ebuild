@@ -34,9 +34,9 @@ src_compile() {
 		|| die "econf failed"
 
 	# -Werror prevents building snmp agent...
-	find ${S} -name Makefile -exec sed -i -e '/^C.*FLAGS/s/-Werror//g' '{}' \;
+	find "${S}" -name Makefile -exec sed -i -e '/^C.*FLAGS/s/-Werror//g' '{}' \;
 
-	emake -j 1 || die "emake failed"
+	emake -j1 || die "emake failed"
 }
 
 src_test() {
