@@ -23,6 +23,7 @@
 
 # Jakub Moc <jakub@gentoo.org> (31 Jul 2006)
 # masked as it needs testing with other virtual/blas providers
+# (blas-atlas, blas-reference, and acml)
 sci-mathematics/alberta
 
 # Patrick Zimmermann <patrick@zakweb.de> (28 Jun 2006)
