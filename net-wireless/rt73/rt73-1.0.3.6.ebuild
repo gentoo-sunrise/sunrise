@@ -6,7 +6,7 @@ inherit linux-mod
 
 DESCRIPTION="Driver for the RaLink RT73/2571 wireless chipsets"
 HOMEPAGE="http://www.ralink.com.tw"
-LICENSE="GPL"
+LICENSE="GPL-2"
 
 MY_P=RT73_Linux_STA_Drv${PV}
 
@@ -54,7 +54,7 @@ src_unpack (){
 	fi
 
 #       if you are really careful you can edit this patch to add your RT73 Device too
-        epatch ${FILESDIR}/deviceID.patch
+	epatch ${FILESDIR}/deviceID.patch
 }
 
 
