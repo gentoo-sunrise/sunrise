@@ -11,7 +11,7 @@ DESCRIPTION="MailScanner / A Free Anti-Virus and Anti-Spam Filter "
 HOMEPAGE="http://www.mailscanner.info/"
 SRC_URI="http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/${PN}-install-${MY_PVR}.tar.gz"
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
