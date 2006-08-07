@@ -1,0 +1,9 @@
+# ChangeLog for x11-misc/slim
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Aug 2006; Jakub Moc <jakub@gentoo.org> +slim-1.2.5.ebuild,
+  +files/slim-cflags.patch, +metadata.xml:
+  New ebuild, thanks for Robert Führicht, Zeksers (zeksers at gmail dot com)
+  and others in Bug 107526
+
