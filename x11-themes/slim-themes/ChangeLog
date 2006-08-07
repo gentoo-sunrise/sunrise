@@ -1,0 +1,8 @@
+# ChangeLog for x11-themes/slim-themes
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Aug 2006; Jakub Moc <jakub@gentoo.org> +slim-themes-1.ebuild,
+  +metadata.xml:
+  New ebuild, based on ebuild by Robert Führicht in Bug 107526
+
