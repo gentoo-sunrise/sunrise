@@ -1,6 +1,6 @@
---- Makefile.org	2005-09-30 19:04:43.000000000 +0200
-+++ Makefile	2005-09-30 19:06:45.000000000 +0200
-@@ -5,9 +5,8 @@
+--- Makefile.orig	2006-07-24 18:40:12.000000000 +0200
++++ Makefile	2006-08-07 14:30:36.000000000 +0200
+@@ -5,13 +5,12 @@
  #######################################################
  CXX=/usr/bin/g++
  CC=/usr/bin/gcc
@@ -12,6 +12,11 @@
  CUSTOM=-DHAVE_SHADOW
  PREFIX=/usr
  CFGDIR=/etc
+-MANDIR=/usr/man
++MANDIR=/usr/share/man
+ DESTDIR=
+ #######################################################
+ 
 @@ -26,13 +25,13 @@
  all: slim
  
@@ -29,4 +34,3 @@
  
  install: slim install-theme
  	install -D -m 755 slim $(DESTDIR)$(PREFIX)/bin/slim
-

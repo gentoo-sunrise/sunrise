@@ -47,8 +47,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	doman slim.1
-	rm -rf "${D}"/usr/man
 	dodoc xinitrc.sample README TODO THEMES
 }
 
