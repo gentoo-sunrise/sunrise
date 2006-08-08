@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Aug 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
+  Adding again ~amd64 and ~ppc keywords
+
   08 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +aria2-0.7.0.ebuild:
   Version bump to v0.7.0
   dodoc'ing ChangeLog now as well
