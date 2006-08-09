@@ -59,6 +59,9 @@ src_install() {
 	dolib.so lib/*.so*
 	dolib.so plugins/*.so*
 
+	insinto /usr/include
+	doins -r include/amanith
+
 	dodoc CHANGELOG FAQ README
 	insinto "/usr/share/doc/${PF}"
 	doins "doc/amanith.chm"
