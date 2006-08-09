@@ -1,0 +1,8 @@
+# ChangeLog for kde-misc/dolphin
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +dolphin-0.6.1.ebuild,
+  +metadata.xml:
+  New ebuild for bug #141799
+
