@@ -16,7 +16,7 @@ IUSE="oss jack alsa doc"
 RDEPEND="jack? ( media-sound/jack-audio-connection-kit )
 	alsa? ( >=media-libs/alsa-lib-0.9 )
 	media-libs/libsndfile
-	media-libs/glut
+	virtual/glut
 	virtual/opengl
 	virtual/glu
 	>=x11-libs/gtk+-2"
