@@ -4,10 +4,10 @@ EBUILD kate-projectmanager-plugin-0.1.1.ebuild 497 RMD160 91ccd7173a062c1ebf1310
 MD5 d02993a0950f1e4cacacc5840d851a95 kate-projectmanager-plugin-0.1.1.ebuild 497
 RMD160 91ccd7173a062c1ebf1310af01586b0319baaba2 kate-projectmanager-plugin-0.1.1.ebuild 497
 SHA256 9091ed870742628dbea6e77521d58ab94c165cf88a4db61501607094168a5d1a kate-projectmanager-plugin-0.1.1.ebuild 497
-EBUILD kate-projectmanager-plugin-0.1.2.ebuild 497 RMD160 91ccd7173a062c1ebf1310af01586b0319baaba2 SHA1 0af89664bcad20d24bcfa7e5c230a524d68cb85e SHA256 9091ed870742628dbea6e77521d58ab94c165cf88a4db61501607094168a5d1a
-MD5 d02993a0950f1e4cacacc5840d851a95 kate-projectmanager-plugin-0.1.2.ebuild 497
-RMD160 91ccd7173a062c1ebf1310af01586b0319baaba2 kate-projectmanager-plugin-0.1.2.ebuild 497
-SHA256 9091ed870742628dbea6e77521d58ab94c165cf88a4db61501607094168a5d1a kate-projectmanager-plugin-0.1.2.ebuild 497
+EBUILD kate-projectmanager-plugin-0.1.2.ebuild 498 RMD160 0760fb5965b06405e3cfa7649b8b8c1a3303b6f4 SHA1 06099d7248147cf16e05af39ad3e6dfe89bf48dc SHA256 5547fa36b84f56c3f0d5770b8c0a00e59c016204862ca8923a186f15a75bc9e0
+MD5 f57c054d270a99d085831158048204e2 kate-projectmanager-plugin-0.1.2.ebuild 498
+RMD160 0760fb5965b06405e3cfa7649b8b8c1a3303b6f4 kate-projectmanager-plugin-0.1.2.ebuild 498
+SHA256 5547fa36b84f56c3f0d5770b8c0a00e59c016204862ca8923a186f15a75bc9e0 kate-projectmanager-plugin-0.1.2.ebuild 498
 MISC ChangeLog 350 RMD160 ed0f0588936ca99f8b1f39e926d3eacc13105c11 SHA1 5e1e29cede85b16ab7ed8dfc2f30cf9a883c6df6 SHA256 9122c7d436f801341d86186b461d03aae954dceb578a0774198fc39923a679b9
 MD5 279a60e5abc874b0adb9f19dc04d2163 ChangeLog 350
 RMD160 ed0f0588936ca99f8b1f39e926d3eacc13105c11 ChangeLog 350
