@@ -4,7 +4,7 @@
 
 inherit eutils
 
-DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for GTK"
+DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for wxGTK"
 HOMEPAGE="http://www.exaile.org"
 SRC_URI="http://www.exaile.org/files/${PN}_${PVR/_beta/b}.tar.gz"
 
