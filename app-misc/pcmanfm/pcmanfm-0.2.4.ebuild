@@ -17,9 +17,7 @@ RDEPEND="virtual/fam
 	x11-misc/shared-mime-info
 	x11-themes/gnome-icon-theme"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
-	sys-devel/autoconf
-	>=sys-devel/automake-1.9"
+	dev-util/pkgconfig"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
