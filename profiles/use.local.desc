@@ -6,6 +6,7 @@ app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
 app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
+dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
