@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Aug 2006; Jakub Moc <jakub@gentoo.org> gizmo-1.0.0.18.ebuild:
+  fix curl dependency
+
   18 Jun 2006; Gustavo Felisberto <humpback@gentoo.org>; ChangeLog:
   Removed amd64 deps as they do not cover all that is needed and the amd64
   team is not going to fix this. One should pester upstream and ask for a 64

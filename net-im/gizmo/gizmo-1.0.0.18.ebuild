@@ -42,7 +42,7 @@ RDEPEND="dev-libs/atk
 	x11-libs/pango
 	media-libs/jpeg
 	media-libs/libpng
-	net-misc/curl
+	>=net-misc/curl-7.15.1-r1
 	sys-libs/zlib"
 
 S=${WORKDIR}
