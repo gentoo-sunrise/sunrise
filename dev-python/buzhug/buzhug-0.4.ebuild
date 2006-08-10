@@ -4,13 +4,13 @@
 
 inherit distutils
 
+KEYWORDS="~x86"
+
 DESCRIPTION="buzhug is a fast, pure-Python database engine, using a syntax that Python programmers should find very intuitive"
 HOMEPAGE="http://buzhug.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
-
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=app-arch/unzip-5"
