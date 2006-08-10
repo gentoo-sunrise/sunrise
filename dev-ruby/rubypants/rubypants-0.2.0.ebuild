@@ -13,7 +13,6 @@ LICENSE="Ruby"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-RESTRICT="test"
 
 DEPEND=">=dev-lang/ruby-1.8.4"
 RDEPEND=${DEPEND}
