@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Aug 2006; Jakub Moc <jakub@gentoo.org> +bsc-2.26.ebuild:
+  Version bump
+
   18 Jun 2006; Jakub Moc <jakub@gentoo.org> +bsc-2.23.ebuild:
   New ebuild, originally submitted by Maciej Milewski in Bug 115002.
 
