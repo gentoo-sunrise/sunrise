@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/rubypants
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  +rubypants-0.2.0.ebuild, +metadata.xml:
+  New ebuild for bug 143439. Thanks genstef, bonsaikitten, jakub.
+
