@@ -13,7 +13,7 @@ SRC_URI="http://download.berlios.de/slim/slim-lunar-0.4.tar.bz2
 	http://download.berlios.de/slim/slim-flower2.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 DEPEND="x11-misc/slim"
 RESTRICT="strip binchecks"
