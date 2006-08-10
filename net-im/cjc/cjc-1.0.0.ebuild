@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="The Console Jabber Client - Jabber client with text-based user interface"
-HOMEPAGE="http://jabberstudio.org/projects/cjc/project/view.phpom/"
+HOMEPAGE="http://jabberstudio.org/projects/cjc/project/view.php/"
 SRC_URI="http://files.jabberstudio.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
