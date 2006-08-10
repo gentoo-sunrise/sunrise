@@ -9,7 +9,7 @@ HOMEPAGE="http://slim.berlios.de/"
 SRC_URI="http://download.berlios.de/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DEPEND="|| ( ( x11-proto/xproto
 		x11-libs/libXmu
