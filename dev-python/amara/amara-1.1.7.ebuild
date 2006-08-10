@@ -4,27 +4,27 @@
 
 inherit distutils
 
+KEYWORDS="~x86"
+
 MY_P=${P/amara/Amara}
 
 DESCRIPTION="Python tools for XML processing."
 HOMEPAGE="http://uche.ogbuji.net/uche.ogbuji.net/tech/4suite/amara/"
 SRC_URI="http://uche.ogbuji.net/tech/4suite/etc/${MY_P}.tar.bz2"
-
 LICENSE="Apache-1.1"
 SLOT="0"
-KEYWORDS="~x86"
 IUSE="doc examples"
 
 DEPEND=">=dev-python/4suite-1.0_beta2
-	doc? ( dev-python/epydoc )"
+		doc? ( dev-python/epydoc )"
 RDEPEND=">=dev-python/4suite-1.0_beta2"
 
 S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
 
+	cd "${S}"
 	# We would get 'unknown module amara' if amara is not yet installed
 	ln -s lib amara
 }
