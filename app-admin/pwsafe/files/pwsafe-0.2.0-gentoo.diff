@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2006-08-12 02:24:12.000000000 +0300
++++ Makefile.in	2006-08-12 02:24:30.000000000 +0300
+@@ -94,7 +94,7 @@
+ X_PRE_LIBS = @X_PRE_LIBS@
+ pwsafe_OBJECTS =  pwsafe.o
+ pwsafe_DEPENDENCIES = 
+-pwsafe_LDFLAGS = 
++pwsafe_LDFLAGS = -Wl,-z,now
+ CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@
