@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2006; Stefan Schweizer <genstef@gentoo.org> -udept-0.5.94.1.ebuild,
+  -udept-0.5.95.2.ebuild, +udept-0.5.96.2.ebuild:
+  version bump, remove old
+
   10 Jul 2006; Stefan Schweizer <genstef@gentoo.org> ChangeLog:
   version bump
 
