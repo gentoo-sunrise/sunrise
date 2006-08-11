@@ -6,7 +6,7 @@ inherit eutils pam autotools
 
 DESCRIPTION="A PAM module that can mount volumes for a user session e.g. encrypted home directories"
 HOMEPAGE="http://pam-mount.sourceforge.net"
-SRC_URI="mirror://sourceforge/pam-mount/${P}.tbz2"
+SRC_URI="mirror://sourceforge/pam-mount/${P}.tar.bz2"
 RESTRICT=""
 
 LICENSE="GPL-2"
@@ -48,9 +48,6 @@ src_install() {
 	insopts -m0644
 	doins "${S}/config/pam_mount.conf"
 	dopamd "${FILESDIR}/system-auth"
-
-	dodir /sbin
-	dosym /usr/bin/mount.crypt /sbin/mount.crypt
 
 	dodoc README TODO AUTHORS ChangeLog FAQ NEWS
 }

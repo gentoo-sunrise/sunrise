@@ -1,5 +1,17 @@
---- config/pam_mount.conf	2005-12-24 20:28:33.000000000 +0100
-+++ pam_mount-0.11.0.pam_mount.conf	2005-12-29 20:37:32.000000000 +0100
+--- config/pam_mount.conf.orig	2006-08-11 12:44:04.000000000 +0200
++++ config/pam_mount.conf	2006-08-11 12:51:24.000000000 +0200
+@@ -79,7 +79,7 @@
+ # source in mount.c (it sends the password to the stdin file descriptor
+ # of the child process -- look for STDIN_FILENO).
+ #
+-lsof /usr/bin/lsof %(MNTPT)
++lsof /usr/sbin/lsof %(MNTPT)
+ fsck /sbin/fsck -p %(FSCKTARGET)
+ losetup /sbin/losetup -p0 "%(before=\"-e\" CIPHER)" "%(before=\"-k\" KEYBITS)" %(FSCKLOOP) %(VOLUME)
+ unlosetup /sbin/losetup -d %(FSCKLOOP)
+
+--- config/pam_mount.conf.orig	2006-08-11 12:44:04.000000000 +0200
++++ config/pam_mount.conf	2006-08-11 12:51:24.000000000 +0200
 @@ -197,6 +197,46 @@
  # (thanks to Mike Hommey for this example)
  # volume test local - /tmpfs/test /home/test "size=10M,uid=test,gid=users,mode=0700 -t tmpfs" - -

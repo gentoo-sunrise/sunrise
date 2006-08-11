@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2006; Jakub Moc <jakub@gentoo.org> pam_mount-0.13.0.ebuild,
+  +pam_mount-0.17.ebuild, files/pam_mount-gentoo-paths-and-examples.patch:
+  Version bump. Update patch to fix lsof path. Fix typo in HOMEPAGE.
+
   08 Jun 2006; Jakub Moc <jakub@gentoo.org> +pam_mount-0.13.0.ebuild:
   New ebuild, based on work of Sven Peter, Priit Laes and others in Bug 24213
 
