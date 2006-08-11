@@ -7,7 +7,6 @@ inherit eutils pam autotools
 DESCRIPTION="A PAM module that can mount volumes for a user session e.g. encrypted home directories"
 HOMEPAGE="http://pam-mount.sourceforge.net"
 SRC_URI="mirror://sourceforge/pam-mount/${P}.tbz2"
-RESTRICT=""
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -26,7 +25,7 @@ src_unpack() {
 	cd "${S}"
 
 	# Gentoo installs cryptsetup in /bin, this patches the relevant 
-	# locations, in srcipts/(u)mount.crypt and adds gentoo specific
+	# locations, in scripts/(u)mount.crypt and adds gentoo specific
 	# comments to pam_mount.conf
 	epatch "${FILESDIR}/${PN}-gentoo-paths-and-examples.patch"
 }
