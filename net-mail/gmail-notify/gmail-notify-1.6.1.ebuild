@@ -12,6 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+RESTRICT="strip"
 
 RDEPEND="virtual/python
 	>=dev-python/pygtk-2.0
