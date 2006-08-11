@@ -5,4 +5,4 @@
 *rt73-1.0.3.6 (29 Jul 2006)
   New Ebuild - driver for RaLink RT73 WLAN USB Dongles by Roy Bamford <neddyseagoon@gentoo.org>
   +rt73.ebuild:
-  Shamelessly modelled on the RT61 driver by Stefan Schweizer <genstef@gentoo.org>
+  Shamelessly modelled on the RT61 driver by Stefan Schweizer <genstef@gentoo.org>.  Bug 142204
