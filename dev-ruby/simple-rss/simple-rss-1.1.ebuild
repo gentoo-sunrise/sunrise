@@ -15,4 +15,4 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ruby-1.8.4"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
