@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Aug 2006; Cedric Krier <ced@ced.homedns.org> +nufw-2.0.8.ebuild,
+  +files/nufw-2.0.8-configure_ac.patch:
+  Version bump
+
   04 Aug 2006; Cedric Krier <ced@ced.homedns.org> +nufw-2.0.7.ebuild,
   +files/nufw-2.0.7-configure_ac.patch:
   version bump, add USE-flags
