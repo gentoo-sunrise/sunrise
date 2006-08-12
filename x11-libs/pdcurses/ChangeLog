@@ -1,0 +1,8 @@
+# ChangeLog for x11-libs/pdcurses
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +pdcurses-2.8.ebuild,
+  +files/pdcurses-2.8-configure.patch, +metadata.xml:
+  New ebuild for bug #94414
+
