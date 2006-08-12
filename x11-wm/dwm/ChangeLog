@@ -2,6 +2,14 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Aug 2006; Cedric Krier <ced@ced.homedns.org> -dwm-0.5.ebuild,
+  -files/dwm-0.5-config_mk.patch, -files/dwm-0.5-fixfocus.patch,
+  -files/dwm-0.5-numlock.patch, -files/dwm-0.5-tags.patch, -dwm-0.7.ebuild,
+  -files/dwm-0.7-config_mk.patch, -files/dwm-0.7-makefile.patch,
+  +dwm-0.8.ebuild, +files/dwm-0.8-config_mk.patch,
+  +files/dwm-0.8-makefile.patch:
+  Version bump and new config (from sys-apps/busybox)
+
   09 Aug 2006; Cedric Krier <ced@ced.homedns.org> +dwm-0.7.ebuild,
   +files/dwm-0.7-config_mk.patch, +files/dwm-0.7-makefile.patch:
   Version bump, new config
