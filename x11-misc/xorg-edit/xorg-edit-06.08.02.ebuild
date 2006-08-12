@@ -8,7 +8,7 @@ DESCRIPTION="GUI to edit XServer-file xorg.conf easily"
 HOMEPAGE="http://www.cyskat.de/dee/progxorg.htm"
 SRC_URI="mirror://sourceforge/xorg-edit/${PN}_${PV}_src.tar.gz"
 
-LICENSE="GPL-1"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
