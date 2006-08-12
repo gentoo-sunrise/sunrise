@@ -52,3 +52,5 @@ net-firewall/nufw:nfqueue - Use NFQUEUE instead of QUEUE
 net-firewall/nufw:nfconntrack - Use netfilter_conntrack
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
+x11-libs/pdcurses:latin1 - Add support for latin1 characters
+x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
