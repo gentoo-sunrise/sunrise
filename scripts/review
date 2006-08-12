@@ -133,6 +133,7 @@ eend $?
 
 cd ..
 if [[ "$opt_quiet" == "0" ]] ; then
+	which diffstat >/dev/null 2>&1 && diff -Nur reviewed sunrise --exclude=Manifest --exclude=.svn --exclude=metadata.xml --exclude=digest-* | diffstat
 	diff -Nur reviewed sunrise --exclude=Manifest --exclude=.svn --exclude=metadata.xml --exclude=digest-*
 fi
 ) | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
