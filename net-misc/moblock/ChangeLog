@@ -1,0 +1,9 @@
+# ChangeLog for net-misc/moblock
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +moblock-0.8.ebuild,
+  +files/moblock-0.8-makefile.patch, +files/confd, +files/initd,
+  +metadata.xml:
+  New ebuild for bug #143535
+

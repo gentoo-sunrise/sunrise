@@ -1,0 +1,30 @@
+--- Makefile.orig	2006-08-13 00:55:15.000000000 +0200
++++ Makefile	2006-08-13 00:55:27.000000000 +0200
+@@ -7,9 +7,7 @@
+ #QUEUE_LIB=LIBIPQ
+ QUEUE_LIB=NFQUEUE
+ 
+-CFLAGS=-Wall -O2 -march=i586 -mtune=i686 -fomit-frame-pointer -ffast-math \
+-	-D_GNU_SOURCE -D$(QUEUE_LIB) -L/usr/include/libipq
+-CC=gcc
++CFLAGS+=-Wall -D_GNU_SOURCE -D$(QUEUE_LIB) -L/usr/include/libipq
+ 
+ all: moblock
+ 
+@@ -17,7 +15,6 @@
+ moblock: MoBlock.o rbt.o
+ 	gcc -o $@ MoBlock.o rbt.o -lnetfilter_queue -lnfnetlink
+ 	#gcc -o $@ MoBlock.o rbt.o -lipq
+-	strip $@
+ 
+ moblock-static: MoBlock.o rbt.o
+ 	gcc -static -o $@ MoBlock.o rbt.o -lnetfilter_queue -lnfnetlink
+@@ -28,6 +25,7 @@
+ 	rm -f *.o *~ *# moblock
+ 
+ install:
+-	install -m 755 moblock $(DESTDIR)/usr/bin
++	mkdir -p "$(DESTDIR)/usr/bin"
++	install -m 755 moblock "$(DESTDIR)/usr/bin"
+ 
+ .PHONY: clean
