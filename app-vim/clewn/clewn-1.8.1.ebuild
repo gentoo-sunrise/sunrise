@@ -21,15 +21,15 @@ S=${WORKDIR}/${PN}
 pkg_setup() {
 	if ! built_with_use app-editors/gvim netbeans ; then
 		eerror "Please (re)emerge gvim with netbeans USE flag on before "
-		eerror "emerging clewn" 
+		eerror "emerging clewn"
 		die "please (re)emerge app-editors/gvim with USE='netbeans'"
 	fi
 }
 
 src_install() {
-	dodoc README.txt CHANGELOG 
+	dodoc README.txt CHANGELOG
 	dobin clewn
-	dodir /usr/share/vim/vimfiles/
+	dodir /usr/share/vim/vimfiles
 	tar -xzf ${S}/runtime/clewn_runtime.tgz -C ${D}/usr/share/vim/vimfiles
 }
 
