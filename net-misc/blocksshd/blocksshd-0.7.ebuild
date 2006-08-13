@@ -8,7 +8,7 @@ DESCRIPTION="Protects computers from SSH brute force attacks by dynamically bloc
 HOMEPAGE="http://sourceforge.net/projects/blocksshd"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
-LICENSE="GPL-1"
+LICENSE="GPL-2"
 SLOT="0"
 
 KEYWORDS="~x86"
