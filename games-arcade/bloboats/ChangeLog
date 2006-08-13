@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
+  Added ~amd64 keyword. Added missing dep. Respect CXX and CXXFLAGS
+
   13 Aug 2006; Santiago M. Mola <cooldwind@gmail.com>
   +bloboats-1.0.1.ebuild, +metadata.xml:
   New ebuild for bug #143733, thanks to Stefan Schweizer <genstef@gentoo.org>
