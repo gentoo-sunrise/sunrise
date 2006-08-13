@@ -17,16 +17,28 @@ mail-filter/MailScanner:postfix - Set postfix to used MTA
 mail-filter/MailScanner:sendmail - Set sendmail to used MTA
 mail-filter/MailScanner:spamassassin - Enable usage of spamassassin for spam detection
 mail-filter/MailScanner:vlnx - Enable usage of vnlx virus scanner
-media-sound/om:dssi - Enables support for DSSI plugins
-media-sound/om:patch-loader - Installs a command line patch loading client
-media-sound/om:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:samplerate - Enable support for libsamplerate
-media-video/gcstar:md5 - Enables generation of md5 checksums
-media-video/gcstar:zip - Enables support for zip files
+media-sound/om:dssi - Enables support for DSSI plugins
+media-sound/om:ladspa - Enables support for LADSPA plugins
+media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
+media-sound/podcatcher:bittorrent - Enable support for the BitTorrent protocol.
+media-video/gcstar:md5 - Enables generation of md5 checksums
+media-video/gcstar:zip - Enables support for zip files
 media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
+net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
+net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
+net-dns/nsd:checking - Enable internal runtime checks
+net-dns/nsd:dnssec - Enable DNSSEC support
+net-dns/nsd:plugins - Enable plugin support
+net-dns/nsd:root-server - Configure NSD as a root server
+net-dns/nsd:tsig - Enable TSIG support
+net-firewall/nufw:ident - Add support ident users authentication
+net-firewall/nufw:nfconntrack - Use netfilter_conntrack
+net-firewall/nufw:nfqueue - Use NFQUEUE instead of QUEUE
+net-firewall/nufw:pam_nuauth - Add support for pam nufw from PAM
 net-im/psi:xscreensaver - Enables detection of xscreensaver
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
@@ -39,17 +51,6 @@ net-mail/simscan:regex - Enable regex attachment filename checking
 net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/aria2:bittorrent - Enable support for the bittorrent protocol
 net-misc/aria2:metalink - Enable support for metalink
-net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
-net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
-net-dns/nsd:checking - Enable internal runtime checks
-net-dns/nsd:dnssec - Enable DNSSEC support
-net-dns/nsd:plugins - Enable plugin support
-net-dns/nsd:root-server - Configure NSD as a root server
-net-dns/nsd:tsig - Enable TSIG support
-net-firewall/nufw:pam_nuauth - Add support for pam nufw from PAM
-net-firewall/nufw:ident - Add support ident users authentication
-net-firewall/nufw:nfqueue - Use NFQUEUE instead of QUEUE
-net-firewall/nufw:nfconntrack - Use netfilter_conntrack
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
