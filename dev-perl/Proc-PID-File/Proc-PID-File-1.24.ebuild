@@ -8,7 +8,7 @@ DESCRIPTION="Perl module used to determine if processes are already running"
 HOMEPAGE="http://search.cpan.org/search?query=${PN}"
 SRC_URI="mirror://cpan/authors/id/E/EC/ECALDER/${P}.tar.gz"
 
-LICENSE="GPL-1"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
