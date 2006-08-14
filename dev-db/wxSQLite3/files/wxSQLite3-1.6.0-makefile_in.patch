@@ -1,0 +1,11 @@
+--- wxsqlite3~/Makefile.in	2006-08-15 01:04:23.000000000 +0200
++++ wxsqlite3/Makefile.in	2006-08-15 01:05:40.000000000 +0200
+@@ -249,7 +249,7 @@
+ @COND_WX_SHARED_1@	$(INSTALL_PROGRAM) ./lib/$(DLLPREFIX)wxsqlite3$(__wxsqlite3_dll___targetsuf3) $(DESTDIR)$(libdir)
+ @COND_WX_SHARED_1@	(cd $(DESTDIR)$(libdir) ; $(__wxsqlite3_dll___so_symlinks_inst_cmd))
+ 
+-./samples/minimal$(EXEEXT): $(MINIMAL_OBJECTS) $(__wxsqlite3_lib___depname) $(__minimal___win32rc)
++./samples/minimal$(EXEEXT): $(MINIMAL_OBJECTS) $(__wxsqlite3_lib___depname) $(__wxsqlite3_dll___depname) $(__minimal___win32rc)
+ 	$(CXX) -o $@ $(MINIMAL_OBJECTS) -L./lib $(LDFLAGS)   -L./lib  -L$(SQLITE3_DIR)/lib   $(WX_LIBS) -lwxsqlite3 $(__SQLITE3_DEP_p)
+ 	
+ 	$(__minimal___mac_setfilecmd)
