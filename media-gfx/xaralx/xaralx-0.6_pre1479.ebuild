@@ -18,14 +18,15 @@ IUSE=""
 
 RDEPEND="x11-libs/gtk+
 	>=x11-libs/wxGTK-2.6.3
-	>=sys-devel/gettext-0.14.3
+	virtual/libintl
 	>=media-libs/libpng-1.2.8
 	>=media-libs/jpeg-6b
 	app-arch/zip
 	dev-lang/perl
 	>=dev-libs/libxml2-2.6.0"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	>=sys-devel/gettext-0.14.3"
 
 S=${WORKDIR}/${MY_P}
 
