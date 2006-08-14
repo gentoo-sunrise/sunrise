@@ -3,6 +3,11 @@
 # $Header: $
 
   14 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  ruby-gd2-1.1.1.ebuild:
+  Added ~amd64 keyword. Added "Built with USE" dependency on media-libs/gd
+  truetype.
+
+  14 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
   +ruby-gd2-1.1.1.ebuild, +metadata.xml:
   New ebuild for bug 143784.
 
