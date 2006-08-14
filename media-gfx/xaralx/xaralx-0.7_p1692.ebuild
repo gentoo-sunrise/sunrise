@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils wxwidgets autotools
+inherit eutils wxwidgets autotools gnome2
 
-MY_P=XaraLX-${PV/_pre/r}
+MY_P=XaraLX-${PV/_p/r}
 
 DESCRIPTION="Xara LX is a commercial vector graphics platform, recently made
 available on Gentoo as a free OpenSource port."
@@ -38,25 +38,44 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+	sed -i -e "s/CXFTreeDlg:://" Kernel/cxftree.h
+	sed -i -e "s:XaraLX:xaralx:g" Makefile.am
 
 	eautoreconf
 }
 
 src_compile() {
-	econf --with-wx-config=${WX_CONFIG} --with-wx-base-config=${WX_CONFIG} \
+	econf \
+		--with-wx-config=${WX_CONFIG} \
+		--with-wx-base-config=${WX_CONFIG} \
+		--enable-filters \
 		|| die "econf failed"
 
 	emake || die "emake failed"
 }
 
 src_install() {
-	# For now installs just the bin
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	doicon ${PN}.png
-	dodoc README
+	insinto /usr/share/${PN}
+	doins -r Designs Templates
 
-	# Fix and install desktop file
-	sed -i -e "s#c=xaralx#c=XaraLX#g" ${PN}.desktop
+	doicon ${PN}.png
 	domenu ${PN}.desktop
+
+	insinto /usr/share/icons/hicolor/48x48/mimetypes
+	newins xaralx.png gnome-mime-application-vnd.xara.png
+	insinto /usr/share/mime/packages
+	doins Mime/xaralx.xml
+	insinto /usr/share/application-registry
+	doins Mime/mime-storage/gnome/xaralx.applications
+	insinto /usr/share/mime-info
+	doins Mime/mime-storage/gnome/xaralx.{keys,mime}
+
+	doman doc/xaralx.1
+	dodoc AUTHORS ChangeLog LICENSE NEWS README \
+		doc/{gifutil.txt,mtrand.txt,XSVG.txt}
+	newdoc doc/en/LICENSE LICENSE-docs
+	dodir /usr/share/doc/${PF}/html
+	tar xjf doc/en/xaralxHelp.tar.gz -C ${D}/usr/share/doc/${PF}/html
 }
