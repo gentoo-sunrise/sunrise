@@ -32,7 +32,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PV}-destdir.patch"
 	epatch "${FILESDIR}/${PV}-boost_incdir_m4.patch"
 	cd "${S}"
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 }
 
 src_compile() {
