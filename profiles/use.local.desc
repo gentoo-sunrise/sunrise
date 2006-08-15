@@ -49,6 +49,7 @@ net-mail/simscan:quarantine - Enable the detected spam/virus to be stored in qua
 net-mail/simscan:received - Enable the add of a Received line in scanned messages
 net-mail/simscan:regex - Enable regex attachment filename checking
 net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
+net-misc/aria2:ares - Enable support for asynchronous DNS using the c-ares library
 net-misc/aria2:bittorrent - Enable support for the bittorrent protocol
 net-misc/aria2:metalink - Enable support for metalink
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
