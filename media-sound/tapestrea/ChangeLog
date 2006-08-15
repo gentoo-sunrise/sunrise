@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Aug 2006; Cedric Krier <ced@ced.homedns.org> +tapestrea-0.1.0.3.ebuild,
+  +files/tapestrea-0.1.0.3-makefile.patch:
+  Version bump
+
   09 Aug 2006; Jakub Moc <jakub@gentoo.org> tapestrea-0.1.0.1.ebuild:
   fix dependencies to use virtual/glut
 
