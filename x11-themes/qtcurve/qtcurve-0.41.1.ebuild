@@ -36,7 +36,7 @@ S="${WORKDIR}"
 src_compile() {
 	if use kde ; then
 		cd ${S}/${MY_P_KDE}
-		econf || die "econf failed"
+		econf --without-arts || die "econf failed"
 		emake || die "emake failed"
 	fi
 	if use gtk1 ; then
