@@ -1,0 +1,8 @@
+# ChangeLog for app-text/pdf2oo
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Aug 2006; Michael Pagano <mpagano@gmail.com> +pdf2oo-20060811.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 143919
+
