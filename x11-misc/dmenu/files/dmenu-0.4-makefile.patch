@@ -1,0 +1,10 @@
+--- dmenu-0.4~/Makefile	2006-08-15 15:37:08.000000000 +0200
++++ dmenu-0.4/Makefile	2006-08-15 15:38:48.000000000 +0200
+@@ -28,7 +28,6 @@
+ dmenu: ${OBJ}
+ 	@echo LD $@
+ 	@${LD} -o $@ ${OBJ} ${LDFLAGS}
+-	@strip $@
+ 
+ clean:
+ 	@echo cleaning

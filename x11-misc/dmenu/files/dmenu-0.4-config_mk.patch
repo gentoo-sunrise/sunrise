@@ -1,0 +1,27 @@
+--- dmenu-0.4~/config.mk	2006-08-15 15:37:08.000000000 +0200
++++ dmenu-0.4/config.mk	2006-08-15 15:38:32.000000000 +0200
+@@ -4,8 +4,8 @@
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX ?= /usr/local
++MANPREFIX ?= ${PREFIX}/share/man
+ 
+ X11INC = /usr/X11R6/include
+ X11LIB = /usr/X11R6/lib
+@@ -15,11 +15,11 @@
+ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
+ 
+ # flags
+-CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
++CFLAGS = -g -Wall ${INCS} -DVERSION=\"${VERSION}\"
+ LDFLAGS = ${LIBS}
+ #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = -g ${LIBS}
+ 
+ # compiler and linker
+-CC = cc
++CC ?= cc
+ LD = ${CC}
