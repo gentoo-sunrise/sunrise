@@ -27,7 +27,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install
+	emake DESTDIR=${D} install || die "emake install failed"
 
 	dodoc ChangeLog README
 	insinto /etc/udev/rules.d
