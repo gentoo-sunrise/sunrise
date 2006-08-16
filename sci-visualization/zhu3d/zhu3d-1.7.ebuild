@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND="$(qt_min_version 4.0)"
+DEPEND="$(qt4_min_version 4.0)"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
