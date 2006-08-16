@@ -4,9 +4,9 @@
 
 inherit eutils
 
-DESCRIPTION="libmtp is a C library and API for communicating with MTP/PlaysForSure media players under BSD and Linux."
+DESCRIPTION="Library for MTP/PlaysForSure media players"
 HOMEPAGE="http://libmtp.sourceforge.net/"
-SRC_URI="mirror://sourceforge/libmtp/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,8 +22,8 @@ src_unpack() {
 }
 
 src_compile() {
-	econf --enable-hotplugging
-	emake -j1
+	econf --enable-hotplugging || die "econf failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
