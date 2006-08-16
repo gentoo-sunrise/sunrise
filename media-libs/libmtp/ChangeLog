@@ -3,6 +3,10 @@
 # $Header: $
 
   16 Aug 2006; Jeremy Sermersheim (jsermer) <jsermer@gmail.com>
+  libmtp-0.0.11.ebuild:
+  Removed -ppc and dodoc INSTALL, sorry genstef
+
+  16 Aug 2006; Jeremy Sermersheim (jsermer) <jsermer@gmail.com>
   +libmtp-0.0.11.ebuild, +files/udev-permissions.patch, +metadata.xml:
   New Ebuild for bug 144010 thanks to genstef
 

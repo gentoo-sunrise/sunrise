@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/libmtp/${P}.tar.gz"
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 -ppc"
+KEYWORDS="~x86"
 
 DEPEND=">=dev-libs/libusb-0.1.7"
 RDEPEND=${DEPEND}
@@ -29,7 +29,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR=${D} install
 
-	dodoc INSTALL ChangeLog README
+	dodoc ChangeLog README
 	insinto /etc/udev/rules.d
 	newins libmtp.rules 65-mtp.rules
 }
