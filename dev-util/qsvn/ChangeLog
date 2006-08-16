@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Aug 2006; Jakub Moc <jakub@gentoo.org> qsvn-0.4.0.ebuild:
+  Fix for changed qt4.eclass: qt_min_version -> qt4_min_version
+
   25 Jun 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   New ebuild for bug 135792
 
