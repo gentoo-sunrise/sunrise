@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="$(qt_min_version 4.1)"
+DEPEND="$(qt4_min_version 4.1)"
 RDEPEND="${DEPEND}"
 
 src_compile() {

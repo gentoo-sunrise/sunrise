@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Aug 2006; Jakub Moc <jakub@gentoo.org> qbrew-0.3.9.ebuild:
+  Fix for changed qt4.eclass: qt_min_version -> qt4_min_version
+
   17 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> +qbrew-0.3.9.ebuild:
   New/updated ebuild for bug #33679
 
