@@ -16,7 +16,7 @@ SLOT="2"
 KEYWORDS="~x86 ~amd64"
 IUSE="debug"
 
-RDEPEND="$(qt_min_version 4.1.0)
+RDEPEND="$(qt4_min_version 4.1.0)
 	>app-crypt/qca-1.99
 	dev-libs/openssl"
 
