@@ -57,7 +57,7 @@ KEYWORDS="~x86 ~amd64"
 S="${WORKDIR}/${MY_P}"
 
 DEPEND=">app-crypt/qca-1.99
-	$(qt_min_version 4.1.3)
+	$(qt4_min_version 4.1.3)
 	xscreensaver? ( x11-misc/xscreensaver )
 	xmms? ( media-sound/xmms )"
 
