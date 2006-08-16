@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
 
-DEPEND="$(qt_min_version 4)"
+DEPEND="$(qt4_min_version 4)"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_PN}-${PV}"
