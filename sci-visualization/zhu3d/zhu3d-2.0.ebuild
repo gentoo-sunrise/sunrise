@@ -36,8 +36,7 @@ src_install() {
 	dohtml doc/*
 
 	insinto /usr/share/${PN}
-	doins -r work
-	doins -r system
+	doins -r work system
 
 	doicon system/icons/${PN}.png
 	make_desktop_entry ${PN} "Zhu3D: Interactive 3D function viewer" ${PN}.png "Qt;Science;Math"
