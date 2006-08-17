@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit debian eutils
+inherit eutils
 
 GIZMO_VER="1.0.0.18-1_debian"
 SIPPHONE_VER2="0.78.20060211"
@@ -46,6 +46,13 @@ RDEPEND="dev-libs/atk
 	sys-libs/zlib"
 
 S=${WORKDIR}
+
+src_unpack() {
+	for i in ${A} ; do
+		ar x $i
+		tar xzf data.tar.gz
+	done
+}
 
 src_install() {
 	exeinto /opt/gizmo
