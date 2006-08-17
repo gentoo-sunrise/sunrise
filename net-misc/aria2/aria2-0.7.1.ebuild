@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 KEYWORDS="~amd64 ~ppc ~x86"
 
 MY_P=${P/_p/+}
@@ -17,7 +19,7 @@ COMMON_DEPEND="ssl? (
 			gnutls? ( net-libs/gnutls )
 			!gnutls? ( dev-libs/openssl )
 			)
-		ares? ( >=net-dns/c-ares-1.3.0 )
+		ares? ( >=net-dns/c-ares-1.3.1 )
 		bittorrent? ( gnutls? ( dev-libs/libgcrypt ) )
 		metalink? ( >=dev-libs/libxml2-2.6.26 )"
 DEPEND="${COMMON_DEPEND}
@@ -26,6 +28,17 @@ RDEPEND="${COMMON_DEPEND}
 		nls? ( virtual/libiconv virtual/libintl )"
 
 S=${WORKDIR}/${MY_P}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	sed -i \
+		-e 's/-lares/-lcares/g' \
+		configure || die "sed failed"
+	epatch "${FILESDIR}/${P}-nameresolver_h.patch"
+	epatch "${FILESDIR}/${P}-nameresolver_cc.patch"
+}
 
 src_compile() {
 	use ssl && \
