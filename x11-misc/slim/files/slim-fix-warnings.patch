@@ -92,16 +92,17 @@
      XGlyphInfo extents;
  
      bool singleInputMode =
---- slim-1.2.5/switchuser.cpp.orig	2006-08-18 14:06:31.000000000 +0900
-+++ slim-1.2.5/switchuser.cpp	2006-08-18 14:15:10.000000000 +0900
-@@ -14,9 +14,6 @@
+--- slim-1.2.5/switchuser.cpp.orig	2006-08-18 20:24:00.000000000 +0900
++++ slim-1.2.5/switchuser.cpp	2006-08-18 20:25:12.000000000 +0900
+@@ -14,8 +14,8 @@
  using namespace std;
  
  SwitchUser::SwitchUser(struct passwd *pw, Cfg *c, const string& display)
 -    : Pw(pw),
 -      cfg(c),
--      displayName(display)
++    : cfg(c),
++      Pw(pw),
+       displayName(display)
  {
  }
- 
 
