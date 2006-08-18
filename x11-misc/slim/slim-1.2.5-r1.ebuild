@@ -37,7 +37,7 @@ src_unpack() {
 	# Remove all X11R6 references from slim.conf
 	# Set slim to daemon mode as default to stop xdm runscript from throwing errors on stop
 	# Set the default logfile to /dev/null to avoid cluttering up the harddisk
-	#as slim puts a lot of garbage in it's logfile
+	# as slim puts a lot of garbage in its logfile
 	sed -i -e 's#X11R6/##g' -e 's#/usr/bin:##' \
 		-e 's/# daemon/daemon/' \
 		-e 's#/var/log/slim.log#/dev/null#g' \
