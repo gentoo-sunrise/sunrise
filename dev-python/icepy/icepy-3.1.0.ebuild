@@ -4,15 +4,15 @@
 
 inherit distutils eutils
 
+KEYWORDS="~x86"
+
 MY_P=${P/icepy/IcePy}
 
 DESCRIPTION="ICE middleware Python bindings"
 HOMEPAGE="http://www.zeroc.com/index.html"
 SRC_URI="http://www.zeroc.com/download/Ice/${PV%.?}/${MY_P}.tar.gz"
-
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
 IUSE="examples"
 
 DEPEND="~dev-cpp/ice-${PV}"
@@ -22,11 +22,12 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-
 	cd "${S}"
 
-	cp "${FILESDIR}"/${PN}-setup.py setup.py
-	sed -i -e "s/ICEVERSION/${PV}/" setup.py
+	cp "${FILESDIR}/${PN}-setup.py" setup.py
+	sed -i \
+		-e "s/ICEVERSION/${PV}/" \
+		setup.py || die "sed failed"
 
 }
 
