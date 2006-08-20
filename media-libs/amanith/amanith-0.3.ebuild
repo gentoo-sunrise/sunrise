@@ -2,27 +2,26 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
+
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="Crossplatform & Opensource C++ Vector Graphic Framework"
 HOMEPAGE="http://www.amanith.org/blog/index.php"
 SRC_URI="http://www.amanith.org/download/files/${PN}_${PV/./}.tar.gz"
-
 LICENSE="QPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="examples qt4"
 
-
 DEPEND=">=media-libs/freetype-2.1.10
-	>=media-libs/jpeg-6b
-	>=media-libs/libpng-1.2.10
-	>=sys-libs/zlib-1.2.3
-	qt4? ( >=x11-libs/qt-4.1.0 )
-	!qt4? ( =x11-libs/qt-3* )"
+		>=media-libs/jpeg-6b
+		>=media-libs/libpng-1.2.10
+		>=sys-libs/zlib-1.2.3
+		qt4? ( >=x11-libs/qt-4.1.0 )
+		!qt4? ( =x11-libs/qt-3* )"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_unpack() {
 	unpack ${A}
@@ -45,14 +44,13 @@ src_unpack() {
 }
 
 src_compile() {
-	cd "${S}"
 	export AMANITHDIR="${S}"
 	if ! use qt4; then
 		export QTDIR="/usr/qt/3"
 		PATH="${QTDIR}/bin:${PATH}"
 	fi
 	qmake || die "qmake failed"
-	emake || die "emake failed"
+	emake CXX=$(tc-getCXX) || die "emake failed"
 }
 
 src_install() {
@@ -67,23 +65,10 @@ src_install() {
 	doins "doc/amanith.chm"
 
 	if use examples; then
-		insinto "/usr/share/${PN}"
-
 		# remove the object files
 		find ./examples -iname "*.o" -delete
 
-		doins -r examples
-		# and set the executable bit for the demos (removed by doins),
-		# note: do not use 'cp -r' since every file has executable bit set
-		for file in $(find "${D}/usr/share/${PN}/examples" -print); do
-			if [[ -n $(readelf -s "${file}" 2>/dev/null) ]]; then
-				chmod a+x ${file};
-			fi
-		done
-
-
-		doins -r data
-		doins -r config
+		insinto "/usr/share/${PN}"
+		doins -r examples data config
 	fi
-
 }

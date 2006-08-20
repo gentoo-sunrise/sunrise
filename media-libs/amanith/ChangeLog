@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> amanith-0.3.ebuild:
+  Added CXX= since it didn't respect CXX
+  Cosmetic cleanups
+  Not setting +x on the examples anymore, the user should do it if needed
+
   13 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> amanith-0.3.ebuild:
   Adding ~amd64 KEYWORD, thanks to M.Schouten for testing
 
