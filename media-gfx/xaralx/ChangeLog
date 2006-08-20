@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Aug 2006; Stefan Schweizer <genstef@gentoo.org>
+  -xaralx-0.6_pre1692.ebuild, +xaralx-0.7_p1709.ebuild:
+  version bump thanks to Jiri Tyr <jiri.tyr@e-learning.vslib.cz> in bug 126867
+
   14 Aug 2006; Stefan Schweizer <genstef@gentoo.org>
   -xaralx-0.6_pre1479.ebuild, +xaralx-0.7_p1692.ebuild:
   version bump, much improved ebuild
