@@ -6,8 +6,7 @@ inherit eutils wxwidgets autotools gnome2
 
 MY_P=XaraLX-${PV/_p/r}
 
-DESCRIPTION="Xara LX is a commercial vector graphics platform, recently made
-available on Gentoo as a free OpenSource port."
+DESCRIPTION="general purpose vector graphics program"
 HOMEPAGE="http://www.xaraxtreme.org"
 SRC_URI="http://downloads2.xara.com/opensource/${MY_P}.tar.bz2"
 
