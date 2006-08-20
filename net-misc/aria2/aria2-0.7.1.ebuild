@@ -38,6 +38,7 @@ src_unpack() {
 		configure || die "sed failed"
 	epatch "${FILESDIR}/${P}-nameresolver_h.patch"
 	epatch "${FILESDIR}/${P}-nameresolver_cc.patch"
+	epatch "${FILESDIR}/${P}-metalink_main_cc.patch"
 }
 
 src_compile() {
@@ -45,7 +46,6 @@ src_compile() {
 		myconf="${myconf} $(use_with gnutls) $(use_with !gnutls openssl)"
 	econf \
 		$(use_with ares libares) \
-		$(use_with metalink libxml2) \
 		$(use_enable nls) \
 		$(use_enable metalink) \
 		$(use_with metalink libxml2) \
