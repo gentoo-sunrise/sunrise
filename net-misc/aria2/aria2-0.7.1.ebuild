@@ -50,7 +50,7 @@ src_compile() {
 		$(use_enable metalink) \
 		$(use_with metalink libxml2) \
 		${myconf} \
-	|| die "econf failed"
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 
