@@ -1,0 +1,24 @@
+--- typemaps.i.orig	2006-08-17 01:17:39.000000000 +0200
++++ typemaps.i	2006-08-17 01:17:57.000000000 +0200
+@@ -104,13 +104,13 @@
+ 
+ namespace std
+ {
+-  %template(GPoint2Vector)        vector<::Amanith::GPoint2 >;
+-  %template(GPoint3Vector)        vector<::Amanith::GPoint3 >;
+-  %template(GPoint4Vector)        vector<::Amanith::GPoint4 >;
+-  %template(GKeyValueVector)      vector<::Amanith::GKeyValue >;
+-  %template(GImpExpFeatureVector) vector<::Amanith::GImpExpFeature >;
+-  %template(GPropertyVector)      vector<::Amanith::GProperty >;
+-  %template(GProxyStateVector)    vector<::Amanith::GProxyState >;
++  %template(GPoint2Vector)        vector<Amanith::GPoint2 >;
++  %template(GPoint3Vector)        vector<Amanith::GPoint3 >;
++  %template(GPoint4Vector)        vector<Amanith::GPoint4 >;
++  %template(GKeyValueVector)      vector<Amanith::GKeyValue >;
++  %template(GImpExpFeatureVector) vector<Amanith::GImpExpFeature >;
++  %template(GPropertyVector)      vector<Amanith::GProperty >;
++  %template(GProxyStateVector)    vector<Amanith::GProxyState >;
+   %template(GRealVector)          vector<GReal >;
+-  %template(GHermiteKey1DVector)  vector<::Amanith::GHermiteKey1D >;
++  %template(GHermiteKey1DVector)  vector<Amanith::GHermiteKey1D >;
+ }
