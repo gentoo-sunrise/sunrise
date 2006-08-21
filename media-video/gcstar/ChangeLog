@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +gcstar-0.3.ebuild:
+  Version bump.
+
   18 Jul 2006; Josu López Fernández <zamorate@zamorate.net>
   gcstar-0.2.ebuild:
   Added ~amd64 and ~ppc keywords
