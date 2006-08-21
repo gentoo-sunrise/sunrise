@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs flag-o-matic
 
 DESCRIPTION="Techniques And Paradigms for Expressive Synthesis, Transformation, and Rendering of Environmental Audio"
 HOMEPAGE="http://taps.cs.princeton.edu/"
@@ -53,6 +53,8 @@ src_compile() {
 		backend="oss"
 	fi
 	einfo "Compiling against ${backend}"
+
+	filter-flags "-march=*"
 
 	cd "${S}/scripting/chuck-1.2.0.6/src"
 	emake -f "makefile.${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
