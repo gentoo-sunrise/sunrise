@@ -48,8 +48,9 @@ RDEPEND="dev-libs/atk
 S=${WORKDIR}
 
 src_unpack() {
+	cd $S
 	for i in ${A} ; do
-		ar x $i
+		unpack ${i}
 		tar xzf data.tar.gz
 	done
 }
@@ -80,6 +81,7 @@ src_install() {
 	dosym /opt/gizmo/libsipphoneapi /usr/share/libsipphoneapi
 
 	make_wrapper ${PN} ./${PN} /opt/${PN} . || die "make_wrapper failed"
+	make_desktop_entry ${PN} "Gizmo Project" gizmo.png
 
 	domenu usr/share/applications/gizmo.png
 	doicon usr/share/pixmaps/gizmo.png
