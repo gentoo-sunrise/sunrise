@@ -55,7 +55,7 @@ src_compile() {
 	fi
 	einfo "Compiling against ${backend}"
 
-	filter-flags "-march=*"
+	replace-cpu-flags athlon athlon-xp i686
 
 	cd "${S}/chuck/src"
 	emake -f "makefile.${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
