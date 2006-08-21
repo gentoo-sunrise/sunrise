@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs flag-o-matic
 
 DESCRIPTION="ChuCK - On-the-fly Audio Programming"
 HOMEPAGE="http://chuck.cs.princeton.edu/release/"
@@ -40,8 +40,6 @@ pkg_setup() {
 }
 
 src_compile() {
-	cd "${S}/src"
-
 	local backend
 	if use jack ; then
 		backend="jack"
@@ -51,6 +49,10 @@ src_compile() {
 		backend="oss"
 	fi
 	einfo "Compiling against ${backend}"
+
+	filter-flags "-march=*"
+
+	cd "${S}/src"
 	emake -f "makefile.${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
 }
 
