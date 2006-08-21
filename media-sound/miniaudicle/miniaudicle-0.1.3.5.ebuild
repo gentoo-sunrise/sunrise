@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs flag-o-matic
 
 MY_P=${P/a/A}
 
@@ -54,6 +54,8 @@ src_compile() {
 		backend="oss"
 	fi
 	einfo "Compiling against ${backend}"
+
+	filter-flags "-march=*"
 
 	cd "${S}/chuck/src"
 	emake -f "makefile.${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
