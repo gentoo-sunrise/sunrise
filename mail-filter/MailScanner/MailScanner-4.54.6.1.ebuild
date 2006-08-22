@@ -7,11 +7,11 @@ inherit eutils versionator
 MY_PV=$(get_version_component_range 1-3 )
 MY_PVR=$(replace_version_separator 3 '-' )
 
-DESCRIPTION="MailScanner / A Free Anti-Virus and Anti-Spam Filter "
+DESCRIPTION="Free Anti-Virus and Anti-Spam Filter"
 HOMEPAGE="http://www.mailscanner.info/"
 SRC_URI="http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/${PN}-install-${MY_PVR}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
@@ -52,13 +52,11 @@ RDEPEND="dev-lang/perl
 IUSE="postfix sendmail exim clamav vlnx spamassassin f-prot bitdefender doc"
 
 S="${WORKDIR}/MailScanner-${MY_PV}"
-MAILSCANNER_REAL_ARCHIVE="${WORKDIR}/MailScanner-install-${MY_PV}/perl-tar/MailScanner-${MY_PVR}.tar.gz"
 BASE="/usr"
 
 src_unpack() {
 	unpack ${A}
-	echo ">>> Unpacking ${MAILSCANNER_REAL_ARCHIVE}"
-	tar -zxf "${MAILSCANNER_REAL_ARCHIVE}"
+	unpack ./MailScanner-install-${MY_PV}/perl-tar/MailScanner-${MY_PVR}.tar.gz
 }
 
 src_compile() {
