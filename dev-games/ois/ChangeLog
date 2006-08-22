@@ -1,7 +1,0 @@
-# ChangeLog for dev-games/ois
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  24 Jul 2006; Patrick Zimmermann (moHiJ) <patrick@zakweb.de> ChangeLog:
-  New Ebuild for bug 129365 thanks to Matt Hamilton
-

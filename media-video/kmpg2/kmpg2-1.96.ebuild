@@ -33,13 +33,10 @@ src_unpack() {
 	cd "${S}"
 
 	sed -i \
-		-e "s#/\(Profiles\)#/../share/apps/${PN}/\1#" \
-		KmPg2.kmdr
+		-e "s:'(@global\(_KDDIR\)/Profiles/)':/usr/share/apps/${PN}/:" \
+		KmPg2.kmdr || die "sed failed in KmPg2.kmdr"
 
-	sed -i \
-		-e "s#%VERSION%#${PV}#" \
-		-e "s#%KDEDIR%#${KDEDIR}#" \
-		kmpg2.desktop kmpg2profiler.desktop || die "sed failed"
+	sed -i -e "s#%VERSION%#${PV}#" kmpg2.desktop kmpg2profiler.desktop || die "sed failed"
 
 }
 
@@ -48,11 +45,11 @@ src_compile() {
 }
 
 src_install() {
-	insinto "${KDEDIR}/share/apps/${PN}"
+	insinto /usr/share/apps/${PN}
 	doins -r Profiles
 
-	DESTTREE="${KDEDIR}"
-	dobin KmPg2*.kmdr YUV*.sh
+	exeinto /usr/bin
+	doexe KmPg2*.kmdr YUV*.sh
 
 	domenu kmpg2.desktop kmpg2profiler.desktop
 
