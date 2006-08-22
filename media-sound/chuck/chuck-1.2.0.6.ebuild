@@ -50,6 +50,10 @@ src_compile() {
 	fi
 	einfo "Compiling against ${backend}"
 
+	# when compile with athlon or athlon-xp flags
+	# chuck crashes on removing a shred with a double free or corruption
+	# it happens in Chuck_VM_Stack::shutdown() on the line
+	#   SAFE_DELETE_ARRAY( stack );
 	replace-cpu-flags athlon athlon-xp i686
 
 	cd "${S}/src"
