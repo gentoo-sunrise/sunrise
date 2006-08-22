@@ -268,12 +268,10 @@ src_install() {
 	exeinto	${BASE}/lib/MailScanner/MailScanner/CustomFunctions
 	doexe	lib/MailScanner/CustomFunctions/MyExample.pm
 
-	exeinto /etc/init.d
-	newexe "${FILESDIR}"/initd.mailscanner MailScanner
-	newexe "${FILESDIR}"/initd.mailscanner-mta MailScanner-mta
-	insinto /etc/conf.d
-	newins "${FILESDIR}"/confd.mailscanner MailScanner
-	newins ${S}/confd.mailscanner-mta MailScanner-mta
+	newinitd "${FILESDIR}"/initd.mailscanner MailScanner
+	newinitd "${FILESDIR}"/initd.mailscanner-mta MailScanner-mta
+	newconfd "${FILESDIR}"/confd.mailscanner MailScanner
+	newconfd ${S}/confd.mailscanner-mta MailScanner-mta
 
 	#Set up cron jobs
 	exeinto /etc/cron.hourly
