@@ -1,0 +1,13 @@
+--- winetools-0.9jo-III/findwine	2005-12-12 12:18:57.000000000 +0100
++++ winetools-0.9jo-III.ebuild/findwine	2006-08-18 21:38:04.000000000 +0200
+@@ -2,8 +2,8 @@ export WINEDEBUG="fixme-all"
+ SETARCH=""
+ WINE=""
+ WINEDIR="`echo ~/.wine`"
+-DIALOG="/usr/local/winetools/Xdialog"
+-BASEDIR="/usr/local/winetools"
++DIALOG="/usr/bin/Xdialog"
++BASEDIR="/usr/winetools"
+ #export PATH="$BASEDIR:$PATH"
+ BINDIR="$HOME/bin"
+ CDROM="`ls -l $HOME/.wine/dosdevices/ 2>/dev/null | grep \" d: -> \"| sed -e \"s/^.* d: -> \(.*\)$/\1/\"`"
