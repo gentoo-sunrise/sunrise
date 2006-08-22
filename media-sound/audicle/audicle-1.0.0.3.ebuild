@@ -58,6 +58,10 @@ src_compile() {
 	local config
 	use truetype && config="USE_FREETYPE_LIBS=1"
 
+	# when compile with athlon or athlon-xp flags
+	# audicle crashes on removing a shred with a double free or corruption
+	# it happens in Chuck_VM_Stack::shutdown() on the line
+	#   SAFE_DELETE_ARRAY( stack );
 	replace-cpu-flags athlon athlon-xp i686
 
 	cd "${S}/src"
