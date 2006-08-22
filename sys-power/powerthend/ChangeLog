@@ -1,0 +1,8 @@
+# ChangeLog for sys-power/powerthend
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Aug 2006; martn <martn@gentoo.reallinks.de> +powerthend-1.1.1.ebuild,
+  +files/powerthend.confd, +files/powerthend.rc, +metadata.xml:
+  New Ebuild for bug #142964
+

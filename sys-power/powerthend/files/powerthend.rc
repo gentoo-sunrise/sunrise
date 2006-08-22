@@ -1,0 +1,20 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	need localmount
+	use logger
+}
+
+start() {
+	ebegin "Starting powerthend"
+	/usr/sbin/powerthend	-q ${POWERTHEND_OPTS}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping powerthend"
+	start-stop-daemon --stop --exec /usr/sbin/powerthend
+	eend $?
+}
