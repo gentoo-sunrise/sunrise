@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs flag-o-matic
+inherit eutils toolchain-funcs flag-o-matic wxwidgets
 
 MY_P=${P/a/A}
 
@@ -13,7 +13,7 @@ SRC_URI="http://audicle.cs.princeton.edu/mini/release/files/${MY_P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="oss jack alsa"
+IUSE="oss jack alsa unicode"
 
 RDEPEND="jack? ( media-sound/jack-audio-connection-kit )
 	alsa? ( >=media-libs/alsa-lib-0.9 )
@@ -45,6 +45,13 @@ pkg_setup() {
 }
 
 src_compile() {
+	export WX_GTK_VER=2.6
+	if use unicode; then
+		need-wxwidgets unicode || die
+	else
+		need-wxwidgets gtk2 || die
+	fi
+
 	local backend
 	if use jack; then
 		backend="jack"

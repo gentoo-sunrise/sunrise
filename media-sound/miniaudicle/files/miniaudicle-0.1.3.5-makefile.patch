@@ -1,6 +1,6 @@
 diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.alsa miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.alsa
---- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.alsa	2006-08-15 18:39:01.000000000 +0200
-+++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.alsa	2006-08-15 19:05:28.000000000 +0200
+--- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.alsa	2006-08-23 22:40:35.000000000 +0200
++++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.alsa	2006-08-23 22:41:34.000000000 +0200
 @@ -1,9 +1,11 @@
  
 -CXX=gcc
@@ -71,8 +71,8 @@ diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.alsa miniAudicle-0.1.3.
  clean: 
  	rm -f chuck *~ *.o chuck.output chuck.tab.h chuck.tab.c chuck.yy.c
 diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.jack miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.jack
---- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.jack	2006-08-15 18:39:01.000000000 +0200
-+++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.jack	2006-08-15 19:06:40.000000000 +0200
+--- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.jack	2006-08-23 22:40:35.000000000 +0200
++++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.jack	2006-08-23 22:41:34.000000000 +0200
 @@ -1,9 +1,11 @@
  
 -CXX=gcc
@@ -143,8 +143,8 @@ diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.jack miniAudicle-0.1.3.
  clean: 
  	rm -f chuck *~ *.o chuck.output chuck.tab.h chuck.tab.c chuck.yy.c
 diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.oss miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.oss
---- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.oss	2006-08-15 18:39:01.000000000 +0200
-+++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.oss	2006-08-15 19:07:58.000000000 +0200
+--- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.oss	2006-08-23 22:40:35.000000000 +0200
++++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.oss	2006-08-23 22:41:34.000000000 +0200
 @@ -1,9 +1,11 @@
  
 -CXX=gcc
@@ -215,11 +215,13 @@ diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.oss miniAudicle-0.1.3.5
  clean: 
  	rm -f chuck *~ *.o chuck.output chuck.tab.h chuck.tab.c chuck.yy.c
 diff -ru miniAudicle-0.1.3.5~/makefile.alsa miniAudicle-0.1.3.5/makefile.alsa
---- miniAudicle-0.1.3.5~/makefile.alsa	2006-08-15 18:39:01.000000000 +0200
-+++ miniAudicle-0.1.3.5/makefile.alsa	2006-08-15 18:40:59.000000000 +0200
-@@ -6,12 +6,14 @@
+--- miniAudicle-0.1.3.5~/makefile.alsa	2006-08-23 22:40:35.000000000 +0200
++++ miniAudicle-0.1.3.5/makefile.alsa	2006-08-23 22:44:21.000000000 +0200
+@@ -5,14 +5,17 @@
+ 
  WXW_DIR=wxw
  BIN_DIR=wxw
++WX_CONFIG?=wx-config
  
 -CC=gcc
 +CC?=gcc
@@ -230,11 +232,13 @@ diff -ru miniAudicle-0.1.3.5~/makefile.alsa miniAudicle-0.1.3.5/makefile.alsa
 +CFLAGS?=-O3
  FLAGS=-D__LINUX_ALSA__ -D__LINUX__ -D__MA_WXWIDGETS__ \
 -	  `wx-config --cppflags` -O3 -c -DwxABI_VERSION=20600
-+	  `wx-config --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
- LIBS=`wx-config --libs stc,adv,core,base` -lasound -lpthread \
+-LIBS=`wx-config --libs stc,adv,core,base` -lasound -lpthread \
++	  `$(WX_CONFIG) --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
++LIBS=`$(WX_CONFIG) --libs stc,adv,core,base` -lasound -lpthread \
  	 -lstdc++ -ldl -lm
  SF_OBJ=$(CHUCK_SRC_DIR)/util_sndfile.o
-@@ -79,41 +81,41 @@
+ 
+@@ -79,41 +82,41 @@
  	 $(WXW_DIR)/icons/replace.xpm $(WXW_DIR)/icons/miniAudicle.xpm
  
  miniAudicle: $(OBJS) $(CHUCK_OBJS)
@@ -288,11 +292,13 @@ diff -ru miniAudicle-0.1.3.5~/makefile.alsa miniAudicle-0.1.3.5/makefile.alsa
  clean: 
  	rm -rf *.o $(WXW_DIR)/*.o $(BIN_DIR)/miniAudicle
 diff -ru miniAudicle-0.1.3.5~/makefile.jack miniAudicle-0.1.3.5/makefile.jack
---- miniAudicle-0.1.3.5~/makefile.jack	2006-08-15 18:39:01.000000000 +0200
-+++ miniAudicle-0.1.3.5/makefile.jack	2006-08-15 18:39:12.000000000 +0200
-@@ -6,12 +6,14 @@
+--- miniAudicle-0.1.3.5~/makefile.jack	2006-08-23 22:40:35.000000000 +0200
++++ miniAudicle-0.1.3.5/makefile.jack	2006-08-23 22:43:44.000000000 +0200
+@@ -5,14 +5,17 @@
+ 
  WXW_DIR=wxw
  BIN_DIR=wxw
++WX_CONFIG?=wx-config
  
 -CC=gcc
 +CC?=gcc
@@ -303,11 +309,13 @@ diff -ru miniAudicle-0.1.3.5~/makefile.jack miniAudicle-0.1.3.5/makefile.jack
 +CFLAGS?=-O3
  FLAGS=-D__LINUX_JACK__ -D__LINUX__ -D__MA_WXWIDGETS__ \
 -	  `wx-config --cppflags` -O3 -c -DwxABI_VERSION=20600
-+	  `wx-config --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
- LIBS=`wx-config --libs stc,adv,core,base` -lasound -ljack \
+-LIBS=`wx-config --libs stc,adv,core,base` -lasound -ljack \
++	  `$(WX_CONFIG) --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
++LIBS=`$(WX_CONFIG) --libs stc,adv,core,base` -lasound -ljack \
  	 -lstdc++ -ldl -lm
  SF_OBJ=$(CHUCK_SRC_DIR)/util_sndfile.o
-@@ -79,41 +81,41 @@
+ 
+@@ -79,41 +82,41 @@
  	 $(WXW_DIR)/icons/replace.xpm $(WXW_DIR)/icons/miniAudicle.xpm
  
  miniAudicle: $(OBJS) $(CHUCK_OBJS)
@@ -361,11 +369,13 @@ diff -ru miniAudicle-0.1.3.5~/makefile.jack miniAudicle-0.1.3.5/makefile.jack
  clean: 
  	rm -rf *.o $(WXW_DIR)/*.o $(BIN_DIR)/miniAudicle
 diff -ru miniAudicle-0.1.3.5~/makefile.oss miniAudicle-0.1.3.5/makefile.oss
---- miniAudicle-0.1.3.5~/makefile.oss	2006-08-15 18:39:01.000000000 +0200
-+++ miniAudicle-0.1.3.5/makefile.oss	2006-08-15 18:42:01.000000000 +0200
-@@ -6,12 +6,14 @@
+--- miniAudicle-0.1.3.5~/makefile.oss	2006-08-23 22:40:35.000000000 +0200
++++ miniAudicle-0.1.3.5/makefile.oss	2006-08-23 22:44:18.000000000 +0200
+@@ -5,14 +5,17 @@
+ 
  WXW_DIR=wxw
  BIN_DIR=wxw
++WX_CONFIG?=wx-config
  
 -CC=gcc
 +CC?=gcc
@@ -376,11 +386,13 @@ diff -ru miniAudicle-0.1.3.5~/makefile.oss miniAudicle-0.1.3.5/makefile.oss
 +CFLAGS?=-O3
  FLAGS=-D__LINUX_OSS___ -D__LINUX__ -D__PLATFORM_LINUX__ -D__MA_WXWIDGETS__ \
 -	  `wx-config --cppflags` -O3 -c -DwxABI_VERSION=20600
-+	  `wx-config --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
- LIBS=`wx-config --libs stc,adv,core,base` -lpthread -lstdc++ -ldl -lm
+-LIBS=`wx-config --libs stc,adv,core,base` -lpthread -lstdc++ -ldl -lm
++	  `$(WX_CONFIG) --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
++LIBS=`$(WX_CONFIG) --libs stc,adv,core,base` -lpthread -lstdc++ -ldl -lm
  SF_OBJ=$(CHUCK_SRC_DIR)/util_sndfile.o
  
-@@ -78,41 +80,41 @@
+ ifneq ($(CHUCK_STAT),)
+@@ -78,41 +81,41 @@
  	 $(WXW_DIR)/icons/replace.xpm $(WXW_DIR)/icons/miniAudicle.xpm
  
  miniAudicle: $(OBJS) $(CHUCK_OBJS)
