@@ -34,7 +34,7 @@ src_install() {
 	dodoc doc/*
 	doins -r 3rdParty icon scripts po
 	doins chopctrl.pl findwine gettext.sh.dummy listit wt-config.reg
-	
+
 	newins wt0.9jo wt
 	fperms 755 /usr/winetools/wt
 
