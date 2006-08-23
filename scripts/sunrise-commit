@@ -44,7 +44,24 @@ changelog_append() {
 			echo "!!! pre-existing modifications please run sunrise-commit again without the -c"
 			echo "!!! option. To discard the pre-existing modifications run:"
 			echo "!!!   svn revert ChangeLog"
-			exit 1
+			echo "!!!"
+			echo -n "!!! "
+			echo -n "${BOLD}Are you SURE you want to append to ChangeLog?${NORMAL} [${GREEN}No${NORMAL}/${RED}Yes${NORMAL}] "
+	                read choice
+	                echo
+	                case "$choice" in
+				yes|Yes|YES)
+					;;
+
+				n*|N*|"")
+					echo "Aborting.  Run sunrise-commit without the -c this time around."
+					exit 1 ;;
+
+				*)
+					echo "Unrecognized response - assuming no."
+					echo "Aborting.  Run sunrise-commit without the -c this time around."
+					exit 1 ;;
+	                esac
 		fi
 		ebegin "Appending/creating ChangeLog"
 		[ -e $(dirname $0)/echangelog ] && ec="$(dirname $0)/echangelog" || ec="echangelog"
