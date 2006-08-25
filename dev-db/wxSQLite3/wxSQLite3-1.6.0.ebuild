@@ -36,6 +36,7 @@ src_compile() {
 	econf \
 		$(use_enable unicode) \
 		--enable-shared \
+		--with-wx-config="${WX_CONFIG}" \
 		--with-gtk \
 		--with-wxshared \
 		--with-sqlite3-prefix=/usr \
