@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Aug 2006; Cedric Krier <ced@ced.homedns.org>
+  files/audicle-1.0.0.3-makefile.patch.gz:
+  fix yacc vs bison
+
   21 Aug 2006; Cedric Krier <ced@ced.homedns.org> +audicle-1.0.0.3.ebuild,
   +files/audicle-1.0.0.3-font.patch, +files/audicle-1.0.0.3-makefile.patch,
   +metadata.xml:
