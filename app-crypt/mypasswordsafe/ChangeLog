@@ -1,0 +1,9 @@
+# ChangeLog for app-crypt/mypasswordsafe
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Aug 2006; David Grant (dgrant) <davidgrant@gmail.com>
+  +mypasswordsafe-20060326.ebuild,
+  +files/mypasswordsafe-20060326-gentoo.patch, +metadata.xml:
+  new ebuild for bug #100985
+
