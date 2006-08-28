@@ -68,7 +68,7 @@
 +    		    kill -HUP `head -1 ${PID}`
 +	    fi
 +	eend $?
-+
++}
 +restart() {
 +	svc_stop
 +	sleep 2

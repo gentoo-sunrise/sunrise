@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Aug 2006; Jakub Moc <jakub@gentoo.org> drweb-4.33.ebuild,
+  files/drweb-4.33-gentoo.patch:
+  Fix typo in init script
+
   10 Jun 2006; Jakub Moc <jakub@gentoo.org> +drweb-4.33.ebuild:
   New ebuild, parts of it based on ebuild submitted by Arhont (mlists at
   arhont dot com) in Bug 78124.

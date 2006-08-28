@@ -34,7 +34,6 @@ src_unpack() {
 }
 
 pkg_setup() {
-	# Create drweb user/group
 	enewgroup drweb
 	enewuser drweb -1 -1 /var/drweb drweb
 }
