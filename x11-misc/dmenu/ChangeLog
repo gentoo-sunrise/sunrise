@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Aug 2006; Cedric Krier <ced@ced.homedns.org> +dmenu-0.6.ebuild,
+  +files/dmenu-0.6-config_mk.patch, +files/dmenu-0.6-makefile.patch:
+  Version bump
+
   24 Aug 2006; Cedric Krier <ced@ced.homedns.org> -dmenu-0.3.ebuild,
   -files/dmenu-0.3-config_mk.patch, -files/dmenu-0.3-makefile.patch,
   -dmenu-0.4.ebuild, -files/dmenu-0.4-config_mk.patch,
