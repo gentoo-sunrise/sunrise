@@ -3,6 +3,10 @@
 # $Header: $
 
   28 Aug 2006; David Grant (dgrant) <davidgrant@gmail.com>
+  hot-babe-0.2.2.ebuild:
+  some cleanup I forgot to do
+
+  28 Aug 2006; David Grant (dgrant) <davidgrant@gmail.com>
   +hot-babe-0.2.2.ebuild, +metadata.xml:
   new ebuild for bug #52292
 

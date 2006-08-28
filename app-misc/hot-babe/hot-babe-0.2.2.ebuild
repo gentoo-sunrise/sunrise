@@ -23,12 +23,9 @@ pkg_setup() {
 
 src_compile() {
 	emake CC=$(tc-getCC) PREFIX="/usr" || die "emake failed"
-#	emake PREFIX="/usr" || die "emake failed"
 }
 
 src_install() {
-	emake PREFIX="${D}"/usr install || die "install failed"
-#	mv "${D}"/usr/share/doc/{${PN},${PF}}
-	newman "${D}"/usr/share/man/man1/${PN}.1 ${PN}.6
-#	rm -r "${D}"/usr/share/man/man1
+	emake PREFIX="${D}/usr" install || die "install failed"
+	newman "${D}/usr/share/man/man1/${PN}.1" ${PN}.6
 }
