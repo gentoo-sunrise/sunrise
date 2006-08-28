@@ -1,0 +1,10 @@
+--- dwm-1.1~/Makefile	2006-08-28 13:18:03.000000000 +0200
++++ dwm-1.1/Makefile	2006-08-28 13:19:11.000000000 +0200
+@@ -28,7 +28,6 @@
+ dwm: ${OBJ}
+ 	@echo LD $@
+ 	@${LD} -o $@ ${OBJ} ${LDFLAGS}
+-	@strip $@
+ 
+ clean:
+ 	@echo cleaning

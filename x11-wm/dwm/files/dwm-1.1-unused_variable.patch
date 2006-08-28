@@ -1,0 +1,33 @@
+diff -ru dwm-1.1~/client.c dwm-1.1/client.c
+--- dwm-1.1~/client.c	2006-08-28 13:18:03.000000000 +0200
++++ dwm-1.1/client.c	2006-08-28 13:19:15.000000000 +0200
+@@ -52,8 +52,6 @@
+ static void
+ resizetitle(Client *c)
+ {
+-	int i;
+-
+ 	c->tw = textw(c->name);
+ 	if(c->tw > c->w)
+ 		c->tw = c->w + 2;
+@@ -340,7 +338,7 @@
+ settitle(Client *c)
+ {
+ 	char **list = NULL;
+-	int i, n;
++	int n;
+ 	XTextProperty name;
+ 
+ 	name.nitems = 0;
+diff -ru dwm-1.1~/draw.c dwm-1.1/draw.c
+--- dwm-1.1~/draw.c	2006-08-28 13:18:03.000000000 +0200
++++ dwm-1.1/draw.c	2006-08-28 13:20:02.000000000 +0200
+@@ -133,8 +133,6 @@
+ void
+ drawtitle(Client *c)
+ {
+-	int i;
+-
+ 	if(c == sel && issel) {
+ 		drawstatus();
+ 		XUnmapWindow(dpy, c->twin);
