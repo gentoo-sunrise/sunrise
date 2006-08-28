@@ -5,7 +5,7 @@
  LIBDIR = -L$(top_builddir)
  INCDIR = -I$(top_builddir) -I/usr/include/libpisock
 -CFLAGS =  -Wall -w -O -g $(INCDIR) $(DEFINES)
-+CFLAGS += $(INCDIR) $(DEFINES)
++CFLAGS += -Wall -w -g $(INCDIR) $(DEFINES)
  SYNCAL_OBJS = syncal.o syncal_cat.c syncal_list.o syncal_dates.o\
  	syncal_reconcile.o syncal_gmt.o
  LIBTOOL = $(top_builddir)/libtool
