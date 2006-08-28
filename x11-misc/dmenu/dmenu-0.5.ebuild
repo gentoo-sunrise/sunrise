@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="savedconfig"
 
-DEPEND="|| ( x11-libs/libX11 virtual/x11 )"
+DEPEND="|| ( x11-libs/libX11 <virtual/x11-7 )"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
@@ -52,8 +52,7 @@ src_install() {
 
 pkg_preinst() {
 	if use savedconfig; then
-		local
-		config_dir="${PORTAGE_CONFIGROOT:-${ROOT}}/etc/portage/savedconfig"
+		local config_dir="${PORTAGE_CONFIGROOT:-${ROOT}}/etc/portage/savedconfig"
 		elog "Saving this build config to ${config_dir}/${PF}.config.h"
 		einfo "Read this ebuild for more info on how to take advantage of this option."
 		mkdir -p "${config_dir}"
