@@ -34,10 +34,10 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-configure_ac.patch"
+	eautoreconf
 }
 
 src_compile() {
-	eautoreconf
 	econf \
 		$(use_enable static) \
 		$(use_enable pam_nuauth pam-nuauth) \
