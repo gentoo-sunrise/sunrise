@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Aug 2006; Jakub Moc <jakub@gentoo.org> ptlens-profiles-06.02.08.ebuild:
+  Add missing depend
+
   29 Aug 2006; Jakub Moc <jakub@gentoo.org> -ptlens-profiles-0.2.ebuild:
   Remove broken version
 
