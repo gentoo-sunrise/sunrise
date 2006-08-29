@@ -19,7 +19,7 @@ DEPEND="media-libs/glut
 	|| ( ( x11-libs/libXmu
 			x11-libs/libX11
 			x11-libs/libXext )
-		virtual/x11 )
+		<virtual/x11-7 )
 	jack? ( media-sound/jack-audio-connection-kit )
 	alsa? ( media-libs/alsa-lib )"
 RDEPEND="${DEPEND}"
