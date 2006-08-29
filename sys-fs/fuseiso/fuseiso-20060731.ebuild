@@ -8,7 +8,7 @@ HOMEPAGE="http://fuse.sourceforge.net/wiki/index.php/FuseIso"
 LICENSE="GPL-2"
 DEPEND=">=sys-fs/fuse-2.2.1
 	>=dev-libs/glib-2.4.2"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 SLOT="0"
 

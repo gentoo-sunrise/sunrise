@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Aug 2006; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
+  fuseiso-20060731.ebuild:
+  Added ~amd64 keyword
+
   12 Aug 2006; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
   +fuseiso-20060731.ebuild, +metadata.xml:
   New Ebuild for bug 143307
