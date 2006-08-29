@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="savedconfig"
 
-DEPEND="|| ( x11-libs/libX11 virtual/x11 )"
+DEPEND="|| ( x11-libs/libX11 <virtual/x11-7 )"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
