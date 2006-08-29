@@ -3,6 +3,11 @@
 # $Header: $
 
   29 Aug 2006; David Grant (dgrant) <davidgrant@gmail.com>
+  ptlens-profiles-0.2.ebuild:
+  changed license to public-domain according to answer I received on ptx/hugin
+  mailing list
+
+  29 Aug 2006; David Grant (dgrant) <davidgrant@gmail.com>
   +ptlens-profiles-0.2.ebuild, +metadata.xml:
   new ebuild for bug #76484
 
