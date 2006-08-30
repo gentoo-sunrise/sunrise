@@ -21,7 +21,7 @@ src_install() {
 	PSDIR="/usr/lib/postsync.d"
 	PSBIN="${PSDIR}/bin"
 	PSETC="${PSDIR}/etc"
-	
+
 	exeinto /usr/sbin
 	doexe postsync
 
