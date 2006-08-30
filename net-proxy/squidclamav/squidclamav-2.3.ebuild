@@ -22,7 +22,7 @@ DEPEND=">=net-misc/curl-7.12.1
 RDEPEND="${DEPEND}
 	net-proxy/squid"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_unpack() {
 	unpack ${A}
