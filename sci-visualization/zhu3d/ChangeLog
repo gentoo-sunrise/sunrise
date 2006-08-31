@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +zhu3d-2.1.ebuild:
+  Version bump.
+
   19 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> zhu3d-2.0.ebuild:
   Added CXX=... to emake, to make zhu3d cross-compilable
 
