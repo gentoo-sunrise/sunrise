@@ -1,0 +1,27 @@
+#!/sbin/runscript
+# Copyright 1999-2006 BreakMyGentoo.net
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need net
+	use jabber-server
+}
+
+start() {
+	ebegin "Starting ICQ Jabber Transport"
+	start-stop-daemon --start --quiet --pidfile /var/run/jabber/pyicq-t.pid \
+	        --background --chuid jabber:jabber \
+		--exec /usr/bin/python \
+		/usr/lib/PATH/site-packages/pyicq-t/pyicq-t.py -- \
+		-c /etc/jabber/pyicq-t.xml \
+		-l /var/log/jabber/pyicq-t.log
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ICQ Jabber Transport"
+	start-stop-daemon --stop --quiet --pidfile /var/run/jabber/pyicq-t.pid
+	eend $?
+}
+
