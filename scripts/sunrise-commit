@@ -64,9 +64,8 @@ changelog_append() {
 	                esac
 		fi
 		ebegin "Appending/creating ChangeLog"
-		# [ -e $(dirname $0)/echangelog ] && ec="$(dirname $0)/echangelog" || ec="echangelog"
-		# $ec "$*"
-		echangelog-tng "$*"
+		[ -e $(dirname $0)/echangelog ] && ec="$(dirname $0)/echangelog" || ec="echangelog"
+		$ec "$*"
 		eend $?
 	fi
 }
