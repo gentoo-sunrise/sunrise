@@ -1,0 +1,15 @@
+--- pkg/Makefile.am.orig	2006-08-30 00:45:42.000000000 +0200
++++ pkg/Makefile.am	2006-08-30 00:46:18.000000000 +0200
+@@ -3,9 +3,9 @@
+ CLEANFILES = $(bin_SCRIPTS) litesql.pc
+ 
+ install-data-local: litesql.pc
+-	mkdir -p $(libdir)/pkgconfig && \
+-	cp -p litesql.pc $(libdir)/pkgconfig
++	mkdir -p $(DESTDIR)/$(libdir)/pkgconfig && \
++	cp -p litesql.pc $(DESTDIR)/$(libdir)/pkgconfig
+ 
+ uninstall-local:
+-	-rm -f $(libdir)/pkgconfig/litesql.pc
++	-rm -f $(DESTDIR)/$(libdir)/pkgconfig/litesql.pc
+ 

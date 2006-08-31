@@ -1,0 +1,18 @@
+--- include/litesql/persistent.hpp.orig	2006-08-30 00:12:01.000000000 +0200
++++ include/litesql/persistent.hpp	2006-08-30 00:12:32.000000000 +0200
+@@ -32,13 +32,13 @@
+ protected:
+     typedef map<string, vector<pair<FieldType, string> > > Updates;
+     /** executed when object is created into database */    
+-    string Persistent::insert(Record& tables, 
++    string insert(Record& tables, 
+                               Records& fieldRecs,
+                               Records& values,
+                               const string& sequence);
+     void update(Updates& updates); 
+     template <class T>
+-    void updateField(litesql::Persistent::Updates& updates, 
++    void updateField(Updates& updates, 
+                      const std::string& table, 
+                      litesql::Field<T> fld) {
+         if (fld.modified()) {
