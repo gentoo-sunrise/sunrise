@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
+  files/digest-overlay-utils-0.1, Manifest:
+  New digest for fixed tarball
+
   31 Aug 2006; Alex Tarkovsky <alextarkovsky@gmail.org> ChangeLog:
   Initial commit, contains sunrise-commit and svn-enabled version of echangelog
 
