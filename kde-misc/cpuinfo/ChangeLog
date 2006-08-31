@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> cpuinfo-0.5.ebuild:
+  Adding ~amd64 KEYWORD, thanks to Karel De Vriendt for testing
+
   29 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +cpuinfo-0.5.ebuild,
   +metadata.xml:
   New (written from scratch) ebuild for bug #117618

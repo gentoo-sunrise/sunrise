@@ -4,7 +4,7 @@
 
 inherit kde
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="Small kicker applet for KDE 3.x which shows the current CPU temperature and frequency."
 HOMEPAGE="http://kde-apps.org/content/show.php?content=33257"
