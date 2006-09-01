@@ -4,8 +4,8 @@
 
 inherit eutils qt3
 
-MY_PN="${PN/-client/}"
-MY_P="${MY_PN}-${PV}"
+MY_PN=${PN/-client/}
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Palantir is a Linux-based streaming system designed to transmit live video, audio and data over a TCP/IP network, as well as to control remote devices."
 HOMEPAGE="http://www.fastpath.it/products/palantir/index.php"
@@ -19,12 +19,12 @@ IUSE=""
 DEPEND="$(qt_min_version 3.3)"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}/clients/qt"
+S=${WORKDIR}/${MY_P}/clients/qt
 
 src_unpack() {
 	unpack ${A}
-
 	cd "${S}"
+
 	# patching in subdir because there are ebuilds for parts of this package
 	epatch "${FILESDIR}/${PV}-senselessConfigFileHandling.patch"
 
@@ -41,14 +41,12 @@ src_unpack() {
 			-e 's#./pclient.ini#/usr/share/palantir-client/pclient.ini#g' \
 			${file} || die "sed failed"
 	done
-
 }
 
 src_install() {
-	dobin pclient || die "pclient not built"
+	dobin pclient
 	dodoc README
 	insinto /usr/share/${PN}
 	doins -r icons/
 	doins pclient.ini
 }
-
