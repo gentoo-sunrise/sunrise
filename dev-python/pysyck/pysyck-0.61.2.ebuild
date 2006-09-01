@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+inherit distutils eutils
 
 MY_P=${P/pysyck/PySyck}
 
@@ -19,6 +19,13 @@ DEPEND=">=dev-libs/syck-0.55"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
+
+pkg_setup() {
+	if has_version ">=dev-libs/syck-0.55-r1" && built_with_use dev-libs/syck python ; then
+		eerror "dev-libs/syck was already compiled with python bindings."
+		die "Recompile dev-libs/syck with USE=\"-python\" to prevent collisions!"
+	fi
+}
 
 src_test() {
 	cd "${S}/tests"
