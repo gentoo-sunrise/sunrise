@@ -18,15 +18,7 @@ opt_verbose=0
 
 svn_up() {
 	if [[ "$opt_noupdate" == "0" ]] ; then
-		ebegin "Updating working copy to latest version from repository"
-
-		if [[ "$opt_verbose" == "1" ]] ; then
-			svn update $*
-		else
-			svn update -q $*
-		fi
-
-		eend $?
+		svn update $*
 
 		local conflict_files=$(svn status | sed -rn 's/^C.+ ([^ ]+)$/\1/p')
 		if [[ -n "$conflict_files" ]] ; then
@@ -68,8 +60,6 @@ EOF
 	exit ${1:-0}
 }
 
-[[ -z "$1" ]] && usage 1
-
 while [[ $# > 0 ]] ; do
 	case "$1" in
 		--help|-h)
@@ -101,15 +91,26 @@ while [[ $# > 0 ]] ; do
 done
 
 if [[ -z "$*" ]] ; then
-	echo "!!! Error: You must supply a revision. See: $0 -h"
-	exit 1
+	ebegin "Updating working copy to latest version from repository"
+	update=$(svn_up)
+	if [[ "$opt_verbose" == "1" ]] ; then
+		echo $update
+	fi
+	update=$(echo $update | tail -n 1)
+	update=${update/At revision }
+	sunrise_revision=${update/.}
+	[ "$sunrise_revision" -lt "10" ] && exit 1
+	eend
 #elif [[ "$*" =~ "^[0-9]*$" ]]; then 
 #	echo "!!! Error: The revision must be an integer value $*"
 #	exit 1
-fi
-sunrise_revision=$*
+else
+	sunrise_revision=$*
 
-svn_up -r $sunrise_revision || exit $?
+	ebegin "Updating working copy to latest version from repository"
+	svn_up -r $sunrise_revision || exit $?
+	eend
+fi
 
 if ! [ -e sunrise ] || ! [ -e reviewed ]; then
 	eerror "You need to have sunrise and reviewed subdirs"
@@ -164,5 +165,5 @@ fi
 eend ${?}
 
 ebegin "Committing working copy to repository"
-svn commit reviewed -m "Reviewed up to revision $*"
+svn commit reviewed -m "Reviewed up to revision $sunrise_revision"
 eend $?
