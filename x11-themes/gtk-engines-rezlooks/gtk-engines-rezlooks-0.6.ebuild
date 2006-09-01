@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="${P/gtk-engines-rezlooks/rezlooks}"
+MY_P=${P/gtk-engines-rezlooks/rezlooks}
 
 DESCRIPTION="Simple GTK+ theme engine based on Clearlooks."
 HOMEPAGE="http://www.gnome-look.org/content/show.php?content=39179"
