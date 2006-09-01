@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="${P/_rc/-rc}"
+MY_P=${P/_rc/-rc}
 
 DESCRIPTION="GTK+ wallpaper browser and setter for X."
 HOMEPAGE="http://www.minuslab.net/code/nitrogen/"
