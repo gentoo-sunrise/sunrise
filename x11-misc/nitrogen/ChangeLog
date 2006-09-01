@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2006; David Shakaryan <d@ompty.org> -nitrogen-1.0_rc2.ebuild,
+  +nitrogen-1.0_rc3.ebuild:
+  Version bump to 1.0_rc3.
+
   10 Jun 2006; David Shakaryan <d@ompty.org> +nitrogen-1.0_rc2.ebuild:
   new ebuild for bug 129901
 
