@@ -4,7 +4,7 @@
 
 inherit ruby
 
-MY_P="${P/ruby-mpd/mpd-rb}"
+MY_P=${P/ruby-mpd/mpd-rb}
 
 DESCRIPTION="Ruby class for communicating with an MPD server"
 HOMEPAGE="http://www.andsoforth.com/geek/mpd_rb.html"
