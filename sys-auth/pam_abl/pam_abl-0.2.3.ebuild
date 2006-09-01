@@ -26,15 +26,15 @@ src_unpack() {
 
 	# fix hardcoded values in Makefile
 	sed -i -e "s:-Wall -fPIC:${CFLAGS} -Wall -fPIC:" \
-	    -e "s:/lib/security:$(getpam_mod_dir):" \
-	    -e "s:cc:$(tc-getCC):" \
-	    -e "s:ld -:$(tc-getLD) -:" Makefile || die "sed failed in Makefile"
+		-e "s:/lib/security:$(getpam_mod_dir):" \
+		-e "s:cc:$(tc-getCC):" \
+		-e "s:ld -:$(tc-getLD) -:" Makefile || die "sed failed in Makefile"
 	sed -i -e "s:-Wall:${CFLAGS} -Wall:" \
-	    -e "s:cc:$(tc-getCC):" tools/Makefile || die "sed failed in tools/Makefile"
+		-e "s:cc:$(tc-getCC):" tools/Makefile || die "sed failed in tools/Makefile"
 
 	# comment out default configuration
 	sed -i -e "s:host:#host:" \
-	    -e "s:user:#user:" conf/pam_abl.conf || die "sed failed in conf/pam_abl.conf"
+		-e "s:user:#user:" conf/pam_abl.conf || die "sed failed in conf/pam_abl.conf"
 }
 
 src_install() {
