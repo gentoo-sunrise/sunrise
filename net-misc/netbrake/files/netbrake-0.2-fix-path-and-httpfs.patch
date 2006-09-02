@@ -1,0 +1,31 @@
+--- configure.orig	2001-09-13 20:18:02.000000000 -0400
++++ ../netbrake/configure	2006-09-02 11:52:34.000000000 -0400
+@@ -2,17 +2,10 @@
+ 
+ CC=${CC:=cc}
+ DEFAULT_HTTPFS_FLAG="0"
+-DEFAULT_LIBPATH="/usr/local/lib"
+-DEFAULT_BINPATH="/usr/local/bin"
++DEFAULT_LIBPATH="/usr/lib"
++DEFAULT_BINPATH="/usr/bin"
+ COMPILE_TIME=""
+ 
+-echo -n "Enable the HTTP filesystem support? [y/N]: "
+-read HTTPFS_FLAG
+-echo -n "Path where to put libnetbrake? [$DEFAULT_LIBPATH]: "
+-read LIBPATH
+-echo -n "Path where to put the netbrake script? [$DEFAULT_BINPATH]: "
+-read BINPATH
+-
+ [ "$HTTPFS_FLAG" = "y" ] && DEFAULT_HTTPFS_FLAG="1"
+ [ "$HTTPFS_FLAG" = "Y" ] && DEFAULT_HTTPFS_FLAG="1"
+ [ "$HTTPFS_FLAG" = "yes" ] && DEFAULT_HTTPFS_FLAG="1"
+@@ -27,8 +20,6 @@
+ echo "Binary path: $DEFAULT_BINPATH"
+ echo ----------------------------------------------
+ echo
+-echo "If the configuration is correct press enter, CTRL+C to abort"
+-read
+ 
+ [ "$DEFAULT_HTTPFS_FLAG" = "1" ] && COMPILE_TIME="-DNB_HTTPFS"
+ 
