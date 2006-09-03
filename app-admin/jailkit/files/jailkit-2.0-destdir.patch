@@ -1,0 +1,68 @@
+diff -ur jailkit-2.0.orig/Makefile.in jailkit-2.0/Makefile.in
+--- jailkit-2.0.orig/Makefile.in	2005-07-30 23:52:54.000000000 +0200
++++ jailkit-2.0/Makefile.in	2006-09-03 17:34:56.000000000 +0200
+@@ -28,8 +28,8 @@
+ #POSSIBILITY OF SUCH DAMAGE.
+ #
+ INSTALL = @INSTALL@
+-prefix = @prefix@
+-iniprefix =/etc/jailkit/
++prefix = $(DESTDIR)@prefix@
++iniprefix = $(DESTDIR)/etc/jailkit/
+ PACKAGE = @PACKAGE@
+ 
+ INIFILES = jk_check.ini jk_init.ini jk_lsh.ini jk_socketd.ini jk_chrootsh.ini
+@@ -70,14 +70,14 @@
+ 	@cd man/ && $(MAKE) install
+ 	# test if the jk_chrootsh is already in /etc/shells
+ 	# this previously had @echo but that fails on FreeBSD
+-	if ! grep ${prefix}/sbin/jk_chrootsh /etc/shells ; then \
+-		echo "appending ${prefix}/sbin/jk_chroots to /etc/shells";\
+-		echo ${prefix}/sbin/jk_chrootsh >> /etc/shells ;\
++	if ! grep @prefix@/sbin/jk_chrootsh $(DESTDIR)/etc/shells ; then \
++		echo "appending @prefix@/sbin/jk_chrootsh to $(DESTDIR)/etc/shells";\
++		echo @prefix@/sbin/jk_chrootsh >> $(DESTDIR)/etc/shells ;\
+ 	fi
+ 
+ 
+ uninstall:
+-	rm -f /etc/jailkit/*.ini
++	rm -f $(DESTDIR)/etc/jailkit/*.ini
+ 	@cd py/ && $(MAKE) uninstall
+ 	@cd man/ && $(MAKE) uninstall
+ 	@cd src/ && $(MAKE) uninstall
+Only in jailkit-2.0: jailkit-2.0-destdir.patch
+diff -ur jailkit-2.0.orig/man/Makefile.in jailkit-2.0/man/Makefile.in
+--- jailkit-2.0.orig/man/Makefile.in	2005-07-30 15:08:30.000000000 +0200
++++ jailkit-2.0/man/Makefile.in	2006-09-03 17:12:40.000000000 +0200
+@@ -1,5 +1,5 @@
+ INSTALL = @INSTALL@
+-prefix = @prefix@
++prefix = $(DESTDIR)@prefix@
+ 
+ SRCS = jailkit.8 jk_chrootsh.8 jk_lsh.8 jk_socketd.8 jk_init.8 jk_check.8 jk_cp.8 jk_chrootlaunch.8 jk_procmailwrapper.8 jk_addjailuser.8 jk_jailuser.8
+ OBJS = $(SRCS:.8=.8.gz)
+diff -ur jailkit-2.0.orig/py/Makefile.in jailkit-2.0/py/Makefile.in
+--- jailkit-2.0.orig/py/Makefile.in	2005-07-30 23:52:54.000000000 +0200
++++ jailkit-2.0/py/Makefile.in	2006-09-03 17:12:40.000000000 +0200
+@@ -30,7 +30,7 @@
+ 
+ INSTALL = @INSTALL@
+ PACKAGE = @PACKAGE@
+-prefix = @prefix@
++prefix = $(DESTDIR)@prefix@
+ PYTHONPATH = @PYTHONPATH@
+ 
+ PYLIBDIR=${prefix}/share/${PACKAGE}
+diff -ur jailkit-2.0.orig/src/Makefile.in jailkit-2.0/src/Makefile.in
+--- jailkit-2.0.orig/src/Makefile.in	2005-07-10 15:23:08.000000000 +0200
++++ jailkit-2.0/src/Makefile.in	2006-09-03 17:12:40.000000000 +0200
+@@ -4,7 +4,7 @@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ PTHREAD_LIBS = @PTHREAD_LIBS@
+-prefix = @prefix@
++prefix = $(DESTDIR)@prefix@
+ 
+ #CFLAGS = ${CFLAGS} -g -O2 -Wall -pipe
+ 

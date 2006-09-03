@@ -1,0 +1,9 @@
+# ChangeLog for app-admin/jailkit
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Sep 2006; Stephen Tallowitz (geta2) <dev@tallowitz.ch>
+  +jailkit-2.0.ebuild, +files/jailkit-2.0-destdir.patch,
+  +files/jailkit-2.0-gentoo-sandbox.patch, +files/jailkit, +metadata.xml:
+  New ebuild for bug #60653. Thanks to Markus Glaser, themgt and Vieri.
+

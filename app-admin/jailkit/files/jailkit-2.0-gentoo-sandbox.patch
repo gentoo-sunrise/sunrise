@@ -1,0 +1,28 @@
+diff -ur jailkit-2.0.orig/py/Makefile.in jailkit-2.0/py/Makefile.in
+--- jailkit-2.0.orig/py/Makefile.in	2005-07-30 23:52:54.000000000 +0200
++++ jailkit-2.0/py/Makefile.in	2006-09-03 12:44:00.000000000 +0200
+@@ -39,19 +39,19 @@
+ 	python -c "import py_compile;py_compile.compile('jk_lib.py')"
+ 
+ jk_init: jk_init.in
+-	sed -e "s!LIBDIR='[a-z/]*'!LIBDIR='${PYLIBDIR}'!" -e "s:#!/usr/bin/python:#!$(PYTHONPATH):" < jk_init.in > jk_init
++	cp jk_init.in jk_init
+ 
+ jk_check: jk_check.in
+-	sed -e "s!LIBDIR='[a-z/]*'!LIBDIR='${PYLIBDIR}'!" -e "s:#!/usr/bin/python:#!$(PYTHONPATH):" < jk_check.in > jk_check
++	cp jk_check.in jk_check
+ 
+ jk_cp: jk_cp.in
+-	sed -e "s!LIBDIR='[a-z/]*'!LIBDIR='${PYLIBDIR}'!" -e "s:#!/usr/bin/python:#!$(PYTHONPATH):" < jk_cp.in > jk_cp
++	cp jk_cp.in jk_cp
+ 
+ jk_addjailuser: jk_addjailuser.in
+-	sed -e "s!LIBDIR='[a-z/]*'!LIBDIR='${PYLIBDIR}'!" -e "s:#!/usr/bin/python:#!$(PYTHONPATH):" < jk_addjailuser.in > jk_addjailuser
++	cp jk_addjailuser.in jk_addjailuser
+ 
+ jk_jailuser: jk_jailuser.in
+-	sed -e "s!LIBDIR='[a-z/]*'!LIBDIR='${PYLIBDIR}'!" -e "s:#!/usr/bin/python:#!$(PYTHONPATH):" < jk_jailuser.in > jk_jailuser
++	cp jk_jailuser.in jk_jailuser
+ 
+ jailkit: jk_lib.pyc jk_cp jk_init jk_check jk_addjailuser jk_jailuser
+ 
