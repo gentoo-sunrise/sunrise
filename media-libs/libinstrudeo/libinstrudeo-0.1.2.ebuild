@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools eutils
+inherit eutils
 
 DESCRIPTION="Provides the necessary logic to capture screen recordings and to process them"
 HOMEPAGE="http://libinstrudeo.sourceforge.net"
@@ -14,27 +14,31 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=dev-cpp/libxmlpp-2.10.0
-	>=media-libs/freetype-2.1.9
-	>=dev-libs/glib-2.10.0
-	>=dev-cpp/glibmm-2.8.4
-	media-libs/libvorbis
-	media-libs/libdc1394
-	media-libs/libdts
-	media-libs/libtheora
-	media-libs/ftgl
-	media-video/ffmpeg
-	media-sound/gsm
-	net-misc/curl
-	dev-libs/openssl
-	sys-libs/zlib
-	virtual/glut"
+		>=media-libs/freetype-2.1.9
+		>=dev-libs/glib-2.10.0
+		>=dev-cpp/glibmm-2.8.4
+		media-libs/libvorbis
+		media-libs/libdc1394
+		media-libs/libdts
+		media-libs/libtheora
+		media-libs/ftgl
+		media-video/ffmpeg
+		media-sound/gsm
+		net-misc/curl
+		dev-libs/openssl
+		sys-libs/zlib
+		virtual/glut"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}/${PV}-font_commentboxes_path.patch"
 	cd "${S}"
-	eautoreconf
+	sed -i \
+		-e 's#/etc/instrudeo#/usr/share/instrudeo#g' \
+		data/commentboxes/Makefile.in \
+		data/fonts/Makefile.in \
+		src/libinstrudeo/isdcommentbox.h \
+		|| die "sed failed"
 }
 
 src_install() {

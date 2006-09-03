@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch>
+  files/0.1.2-font_commentboxes_path.patch, libinstrudeo-0.1.2.ebuild:
+  Patching Makefile.in's directly now since running autoconf doesn't work
+  anymore. Thanks to verus for reporting the bug
+
   16 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   New ebuild for bug 139855
 
