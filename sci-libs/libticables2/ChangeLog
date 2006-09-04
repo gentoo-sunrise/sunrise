@@ -1,0 +1,8 @@
+# ChangeLog for sci-libs/libticables2
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Sep 2006; Christian Helbling <helch@gmx.ch>
+  +libticables2-20060723.ebuild, +metadata.xml:
+  New ebuild for bug 146028
+
