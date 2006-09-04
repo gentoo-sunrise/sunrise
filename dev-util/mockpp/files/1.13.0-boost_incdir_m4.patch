@@ -1,0 +1,11 @@
+--- mockpp-1.11.5/config/ac_cxx_boosttest.m4	2006-01-01 18:15:43.000000000 +0100
++++ mockpp-1.11.5.new/config/ac_cxx_boosttest.m4	2006-06-24 21:44:44.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ AC_ARG_ENABLE(boostdir, [  --boost-dir             directory where the root of the Boost headers is located], [boostdir=NO])
+ 
+-boost_inc_dirs="/usr/include/boost-* /usr/local/include/boost-*"
++boost_inc_dirs="/usr/include/boost-* /usr/local/include/boost-* /usr/include"
+ if test x$boostdir != xNO; then
+   boost_inc_dirs="$boost_inc_dirs $boostdir"
+ fi

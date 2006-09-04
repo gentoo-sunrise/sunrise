@@ -1,0 +1,76 @@
+diff -Naur mockpp-1.11.5/Makefile.am mockpp-1.11.5.new/Makefile.am
+--- mockpp-1.11.5/Makefile.am	2006-04-26 22:01:19.000000000 +0200
++++ mockpp-1.11.5.new/Makefile.am	2006-06-24 21:51:29.000000000 +0200
+@@ -11,12 +11,6 @@
+   mockpp.doxygen.in \
+   mockpp.kdevses \
+   mockpp.kdevelop \
+-  AUTHORS \
+-  COPYING \
+-  ChangeLog \
+-  INSTALL \
+-  README \
+-  TODO \
+   Makefile.cvs \
+   mockpp.lsm \
+   gen_files_N.sh \
+@@ -95,7 +89,5 @@
+ htmldir = $(pkgdatadir)/html
+ 
+ install-data-hook:
+-	$(mkdir_p) $(htmldir)
+-	$(INSTALL) $(srcdir)/AUTHORS $(srcdir)/COPYING $(srcdir)/README $(srcdir)/ChangeLog   $(pkgdatadir)
+ 
+ #################################################################
+diff -Naur mockpp-1.11.5/mockpp/docs/api/Makefile.am mockpp-1.11.5.new/mockpp/docs/api/Makefile.am
+--- mockpp-1.11.5/mockpp/docs/api/Makefile.am	2005-11-19 21:21:24.000000000 +0100
++++ mockpp-1.11.5.new/mockpp/docs/api/Makefile.am	2006-06-24 22:35:12.000000000 +0200
+@@ -52,9 +52,9 @@
+ if DOXYGEN_DOC
+ 
+ install-data-hook: doc
+-	$(mkdir_p)                       $(DESTDIR)$(htmldir)/api-doc
+-	-find html | xargs -n 1 cp -v -t $(DESTDIR)$(htmldir)/api-doc
+-#	$(INSTALL) html/*                $(DESTDIR)$(htmldir)/api-doc
++	$(mkdir_p)                       $(DESTDIR)/$(DOCDIR)/api-doc
++	-find html | xargs -n 1 cp -v -t $(DESTDIR)/$(DOCDIR)/api-doc
++#	$(INSTALL) html/*                $(DESTDIR)/$(DOCDIR)/api-doc
+ 
+ else
+ 
+diff -Naur mockpp-1.11.5/mockpp/docs/en/Makefile.am mockpp-1.11.5.new/mockpp/docs/en/Makefile.am
+--- mockpp-1.11.5/mockpp/docs/en/Makefile.am	2006-04-08 18:49:52.000000000 +0200
++++ mockpp-1.11.5.new/mockpp/docs/en/Makefile.am	2006-06-24 22:36:10.000000000 +0200
+@@ -80,12 +80,12 @@
+ if DOCBOOK_DOC
+ 
+ install-data-hook: doc
+-	$(mkdir_p)                                 $(DESTDIR)$(htmldir)/handbook/common
+-	$(mkdir_p)                                 $(DESTDIR)$(htmldir)/handbook/images/callouts
+-	$(INSTALL) var/*.html                      $(DESTDIR)$(htmldir)/handbook
+-	$(INSTALL) $(srcdir)/common/*.css          $(DESTDIR)$(htmldir)/handbook/common
+-	$(INSTALL) $(srcdir)/images/*.png          $(DESTDIR)$(htmldir)/handbook/images
+-	$(INSTALL) $(srcdir)/images/callouts/*.png $(DESTDIR)$(htmldir)/handbook/images/callouts
++	$(mkdir_p)                                 $(DESTDIR)/$(DOCDIR)/handbook/common
++	$(mkdir_p)                                 $(DESTDIR)/$(DOCDIR)/handbook/images/callouts
++	$(INSTALL) var/*.html                      $(DESTDIR)/$(DOCDIR)/handbook
++	$(INSTALL) $(srcdir)/common/*.css          $(DESTDIR)/$(DOCDIR)/handbook/common
++	$(INSTALL) $(srcdir)/images/*.png          $(DESTDIR)/$(DOCDIR)/handbook/images
++	$(INSTALL) $(srcdir)/images/callouts/*.png $(DESTDIR)/$(DOCDIR)/handbook/images/callouts
+ 
+ else
+ 
+diff -Naur mockpp-1.11.5/mockpp/examples/tutorial/Makefile.am mockpp-1.11.5.new/mockpp/examples/tutorial/Makefile.am
+--- mockpp-1.11.5/mockpp/examples/tutorial/Makefile.am	2005-11-19 20:17:51.000000000 +0100
++++ mockpp-1.11.5.new/mockpp/examples/tutorial/Makefile.am	2006-06-24 22:41:04.000000000 +0200
+@@ -88,8 +88,8 @@
+ if DOXYGEN_DOC
+ 
+ install-data-hook: tutorial
+-	$(mkdir_p) $(htmldir)/tutorial
+-	$(INSTALL) html/* $(htmldir)/tutorial
++	$(mkdir_p) $(DESTDIR)/$(DOCDIR)/tutorial
++	$(INSTALL) html/* $(DESTDIR)/$(DOCDIR)/tutorial
+ 
+ else
+ 
