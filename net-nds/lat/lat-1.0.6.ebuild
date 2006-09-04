@@ -4,7 +4,7 @@
 
 inherit gnome2 mono
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="LDAP Administration Tool, allows you to browse LDAP-based directories and add/edit/delete entries."
 HOMEPAGE="http://dev.mmgsecurity.com/projects/lat"
