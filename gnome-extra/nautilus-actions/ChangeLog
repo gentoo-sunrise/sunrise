@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Sep 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
+  +nautilus-actions-1.4.ebuild:
+  New version 1.4; as-needed patch now incorporated upstream.
+
   01 Jul 2006; Alex Tarkovsky <alextarkovsky@gmail.org> ChangeLog:
   New ebuild for bug 104816. Thanks to Guy Ratcliffe <guy.ratcliffe@gmail.com>
   and rajas@gmx.net.
