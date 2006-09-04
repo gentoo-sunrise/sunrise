@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> +xenman-0.4.2.2.ebuild:
+  Version bump.
+
   30 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> +xenman-0.4.1.ebuild,
   +metadata.xml:
   New ebuild for bug #142177
