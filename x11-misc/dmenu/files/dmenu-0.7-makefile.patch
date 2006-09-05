@@ -1,0 +1,11 @@
+diff -ru dmenu-0.7~/Makefile dmenu-0.7/Makefile
+--- dmenu-0.7~/Makefile	2006-09-05 10:52:18.000000000 +0200
++++ dmenu-0.7/Makefile	2006-09-05 10:52:39.000000000 +0200
+@@ -28,7 +28,6 @@
+ dmenu: ${OBJ}
+ 	@echo LD $@
+ 	@${LD} -o $@ ${OBJ} ${LDFLAGS}
+-	@strip $@
+ 
+ clean:
+ 	@echo cleaning
