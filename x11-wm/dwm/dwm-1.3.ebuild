@@ -22,6 +22,7 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${P}-config_mk.patch"
 	epatch "${FILESDIR}/${P}-makefile.patch"
+	epatch "${FILESDIR}/${P}-weight.patch"
 
 	if use savedconfig; then
 		local conf root

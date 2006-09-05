@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Sep 2006; Cedric Krier <ced@ced.homedns.org> dwm-1.3.ebuild,
+  +files/dwm-1.3-weight.patch:
+  patch fixing c->weight handling
+
   05 Sep 2006; Cedric Krier <ced@ced.homedns.org> -dwm-1.2.ebuild,
   -files/dwm-1.2-config_mk.patch, -files/dwm-1.2-makefile.patch,
   +dwm-1.3.ebuild, +files/dwm-1.3-config_mk.patch,
