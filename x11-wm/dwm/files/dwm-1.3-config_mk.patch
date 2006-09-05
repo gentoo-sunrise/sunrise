@@ -1,5 +1,6 @@
---- dwm-1.2~/config.mk	2006-08-30 15:28:07.000000000 +0200
-+++ dwm-1.2/config.mk	2006-08-30 15:28:44.000000000 +0200
+diff -ru dwm-1.3~/config.mk dwm-1.3/config.mk
+--- dwm-1.3~/config.mk	2006-09-05 10:25:29.000000000 +0200
++++ dwm-1.3/config.mk	2006-09-05 10:25:53.000000000 +0200
 @@ -4,8 +4,8 @@
  # Customize below to fit your system
  

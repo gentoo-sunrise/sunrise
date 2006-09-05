@@ -1,0 +1,11 @@
+diff -ru dwm-1.3~/Makefile dwm-1.3/Makefile
+--- dwm-1.3~/Makefile	2006-09-05 10:25:29.000000000 +0200
++++ dwm-1.3/Makefile	2006-09-05 10:42:10.000000000 +0200
+@@ -28,7 +28,6 @@
+ dwm: ${OBJ}
+ 	@echo LD $@
+ 	@${LD} -o $@ ${OBJ} ${LDFLAGS}
+-	@strip $@
+ 
+ clean:
+ 	@echo cleaning
