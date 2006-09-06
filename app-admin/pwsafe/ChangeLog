@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  -files/pwsafe-0.2.0-gentoo.diff:
+  ebuild now uses flag-o-matic eclass instead of patching.
+
   11 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
   +pwsafe-0.2.0.ebuild, +files/pwsafe-0.2.0-gentoo.diff, +metadata.xml:
   New ebuild for bug 102677.

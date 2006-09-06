@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit flag-o-matic
 
 DESCRIPTION="Manages encrypted password databases (compatible with Counterpane's Password Safe)."
 HOMEPAGE="http://nsd.dyndns.org/pwsafe/"
@@ -16,10 +16,10 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-src_unpack() {
-	unpack "${A}"
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-gentoo.diff"
+src_compile() {
+	append-ldflags -Wl,-z,now
+	econf
+	emake || die "emake failed"
 }
 
 src_install() {
