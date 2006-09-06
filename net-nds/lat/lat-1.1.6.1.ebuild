@@ -4,7 +4,7 @@
 
 inherit gnome2 mono
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="-* ~amd64 ~x86"
 
 DESCRIPTION="LDAP Administration Tool, allows you to browse LDAP-based directories and add/edit/delete entries."
 HOMEPAGE="http://dev.mmgsecurity.com/projects/lat"
@@ -35,4 +35,11 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO
+}
+
+pkg_postinst() {
+	if use avahi ; then
+		ewarn "You've enabled avahi support."
+		ewarn "Make sure the avahi daemon is running before you try to start ${PN}"
+	fi
 }

@@ -2,6 +2,12 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> +lat-1.0.7.ebuild,
+  -lat-1.1.6.ebuild, lat-1.1.6.1.ebuild,
+  -files/lat-1.1.6-service_finder_cs.patch:
+  Version bump.
+  Keywording v1.1.6.1 with '-*' since it is in the development tree.
+
   05 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> +lat-1.1.6.1.ebuild:
   Version bump:
   -> Upstream fixed the bug we had to patch.
