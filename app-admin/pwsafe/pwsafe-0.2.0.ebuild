@@ -18,7 +18,7 @@ RDEPEND=""
 
 src_compile() {
 	append-ldflags -Wl,-z,now
-	econf
+	econf || die "econf failed"
 	emake || die "emake failed"
 }
 
