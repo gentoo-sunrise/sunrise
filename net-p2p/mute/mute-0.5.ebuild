@@ -40,11 +40,11 @@ src_compile() {
 	./configure >/dev/null
 
 	filter-flags -fomit-frame-pointer
-	
+
 	emake GXX=$(tc-getCXX) || die "emake failed"
 
 	if use wxwindows; then
-		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows" 
+		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows"
 		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" || die "emake failed"
 	fi
 }
