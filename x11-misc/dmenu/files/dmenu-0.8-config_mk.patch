@@ -1,6 +1,5 @@
-diff -ru dmenu-0.7~/config.mk dmenu-0.7/config.mk
---- dmenu-0.7~/config.mk	2006-09-05 10:52:18.000000000 +0200
-+++ dmenu-0.7/config.mk	2006-09-05 10:52:37.000000000 +0200
+--- dmenu-0.8~/config.mk	2006-09-06 17:54:02.000000000 +0200
++++ dmenu-0.8/config.mk	2006-09-06 17:54:18.000000000 +0200
 @@ -4,8 +4,8 @@
  # Customize below to fit your system
  
