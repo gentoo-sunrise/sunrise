@@ -1,0 +1,29 @@
+--- MUTE_fileSharing-0.5_UnixSource~/MUTE/configure	2006-09-04 11:54:51.000000000 +0200
++++ MUTE_fileSharing-0.5_UnixSource/MUTE/configure	2006-09-04 11:56:24.000000000 +0200
+@@ -41,7 +41,6 @@
+ # templates.
+ #
+ 
+-
+ while [ -z "$userEntry" ]
+ do
+     echo "select platform:"
+@@ -57,7 +56,8 @@
+     echo ""
+     echo -n "> "
+ 
+-    read userEntry
++#    read userEntry
++    userEntry=1
+ 
+ 	
+ 	if [ "$userEntry" = "q" ]
+@@ -359,7 +359,7 @@
+ echo ""
+ echo -n "> "
+ 
+-read userEntry
++#read userEntry
+ 
+ 
+ if [ "$userEntry" = "" ]

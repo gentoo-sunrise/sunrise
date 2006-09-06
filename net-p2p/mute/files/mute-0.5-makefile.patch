@@ -1,0 +1,38 @@
+diff -ru MUTE_fileSharing-0.5_UnixSource~/MUTE/Makefile.common MUTE_fileSharing-0.5_UnixSource/MUTE/Makefile.common
+--- MUTE_fileSharing-0.5_UnixSource~/MUTE/Makefile.common	2006-09-04 11:54:51.000000000 +0200
++++ MUTE_fileSharing-0.5_UnixSource/MUTE/Makefile.common	2006-09-04 19:32:46.000000000 +0200
+@@ -37,8 +37,9 @@
+ 
+ 
+ 
++CXXFLAGS ?=
++COMPILE_FLAGS = -Wall ${CXXFLAGS} ${DEBUG_FLAG} ${PLATFORM_COMPILE_FLAGS} ${PROFILE_FLAG}
+ 
+-COMPILE_FLAGS = -Wall ${DEBUG_FLAG} ${PLATFORM_COMPILE_FLAGS} ${PROFILE_FLAG}
+ 
+ 
+ COMPILE = ${GXX} ${COMPILE_FLAGS} -c
+diff -ru MUTE_fileSharing-0.5_UnixSource~/MUTE/Makefile.GnuLinuxX86 MUTE_fileSharing-0.5_UnixSource/MUTE/Makefile.GnuLinuxX86
+--- MUTE_fileSharing-0.5_UnixSource~/MUTE/Makefile.GnuLinuxX86	2006-09-04 11:54:51.000000000 +0200
++++ MUTE_fileSharing-0.5_UnixSource/MUTE/Makefile.GnuLinuxX86	2006-09-04 12:02:50.000000000 +0200
+@@ -22,7 +22,7 @@
+ 
+ 
+ # All platforms but OSX support g++ and need no linker hacks
+-GXX=g++ 
++GXX?=g++ 
+ LINK_FLAGS = 
+ 
+ 
+diff -ru MUTE_fileSharing-0.5_UnixSource~/MUTE/otherApps/fileSharing/userInterface/wxWindows/Makefile.all MUTE_fileSharing-0.5_UnixSource/MUTE/otherApps/fileSharing/userInterface/wxWindows/Makefile.all
+--- MUTE_fileSharing-0.5_UnixSource~/MUTE/otherApps/fileSharing/userInterface/wxWindows/Makefile.all	2006-09-04 11:54:51.000000000 +0200
++++ MUTE_fileSharing-0.5_UnixSource/MUTE/otherApps/fileSharing/userInterface/wxWindows/Makefile.all	2006-09-04 20:23:38.000000000 +0200
+@@ -47,6 +47,8 @@
+ 
+ ROOT_PATH = ../../../../..
+ 
++WX_CONFIG?="/usr/bin/wx-config"
++WX_CONFIG_LOCATION=${WX_CONFIG}
+ WX_LIBS = $(shell ${WX_CONFIG_LOCATION} --libs)
+ WX_COMPILE_FLAGS = $(shell ${WX_CONFIG_LOCATION} --cxxflags)
+ 

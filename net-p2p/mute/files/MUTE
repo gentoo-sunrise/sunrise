@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ ! -d "$HOME/.mute" ]; then
+	mkdir -p "${HOME}/.mute"
+	cp -r /etc/mute/settings "${HOME}/.mute"
+	ln -s /etc/mute/languages "${HOME}/.mute"
+	mkdir -p "${HOME}/.mute/files"
+fi
+
+cd "${HOME}/.mute"
+DIR=`dirname $0`
+FILE=${0#${DIR}/}
+
+case "${FILE}" in
+	"MUTE")
+		/usr/share/mute/textFileSharingMUTE $@
+		;;
+	"wxMUTE")
+		/usr/share/mute/fileSharingMUTE $@
+		;;
+esac

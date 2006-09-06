@@ -1,0 +1,9 @@
+# ChangeLog for net-p2p/mute
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Sep 2006; Cedric Krier <ced@ced.homedns.org> +mute-0.5.ebuild,
+  +files/mute-0.5-configure.patch, +files/mute-0.5-makefile.patch,
+  +files/MUTE, +metadata.xml:
+  New Ebuild for bug #60392 thanks to Sébastien Cérèze
+
