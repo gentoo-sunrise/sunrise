@@ -36,9 +36,11 @@ src_compile() {
 	export WX_GTK_VER=2.6
 	need-wxwidgets gtk2 || die
 
+	# not an autotools configure
 	cd "${S}/MUTE"
 	./configure >/dev/null
 
+	# break the crypto at startup
 	filter-flags -fomit-frame-pointer
 
 	emake GXX=$(tc-getCXX) || die "emake failed"
