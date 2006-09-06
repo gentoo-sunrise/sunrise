@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  +podcatcher-1.3.7.ebuild:
+  Version bump.
+
   13 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
   +podcatcher-1.3.5.ebuild, +metadata.xml:
   New ebuild for bug 143726.
