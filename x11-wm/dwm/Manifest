@@ -1,7 +1,7 @@
-AUX dwm-1.4-config_mk.patch 675 RMD160 a3d645a63ccf52f88be31e321eaa4fc57a73ed72 SHA1 25f5ea6be496a09197072157930bc5fed2a97f7c SHA256 ac7c6f820ccb33665d7cf69cf47f4a0e2f1a9b807a7a1a4327bd1ecea21bea28
-MD5 fc5b7c2e25992bbe703af0b47e82f99f files/dwm-1.4-config_mk.patch 675
-RMD160 a3d645a63ccf52f88be31e321eaa4fc57a73ed72 files/dwm-1.4-config_mk.patch 675
-SHA256 ac7c6f820ccb33665d7cf69cf47f4a0e2f1a9b807a7a1a4327bd1ecea21bea28 files/dwm-1.4-config_mk.patch 675
+AUX dwm-1.4-config_mk.patch 377 RMD160 e4f3aa36cca7c78a8ea6c41f8bd63448050b4a0a SHA1 02d0f84eada7c6a650a0b37d342b17af3b26baec SHA256 ddc5f4b3fdfc5906b920d68924d3e10e240918e99b072264b86416ecb6e1ab7e
+MD5 25878938e380896c9d4e0c50130e5475 files/dwm-1.4-config_mk.patch 377
+RMD160 e4f3aa36cca7c78a8ea6c41f8bd63448050b4a0a files/dwm-1.4-config_mk.patch 377
+SHA256 ddc5f4b3fdfc5906b920d68924d3e10e240918e99b072264b86416ecb6e1ab7e files/dwm-1.4-config_mk.patch 377
 AUX dwm-1.4-makefile.patch 232 RMD160 a9944325fa4d4285d7b76f8a9dd652028e44358a SHA1 ac4b04aae4c3f966b9407cbcd676ee149b0ca35f SHA256 5e78a8f36c6b18f41282759ec379b4c0491a36646be71174375369beb179b88d
 MD5 5579e32834d00bf40bc9670120462810 files/dwm-1.4-makefile.patch 232
 RMD160 a9944325fa4d4285d7b76f8a9dd652028e44358a files/dwm-1.4-makefile.patch 232
