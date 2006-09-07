@@ -41,7 +41,9 @@ src_unpack() {
 }
 
 src_compile() {
-	emake CC=$(tc-getCC) || die "emake failed"
+	local msg
+	use savedconfig && msg=", please check the configfile"
+	emake CC=$(tc-getCC) || die "emake failed${msg}"
 }
 
 src_install() {
