@@ -2,6 +2,19 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Sep 2006; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
+  +democracy-0.8.4.ebuild, democracy-0.8.4.1.ebuild,
+  +democracy-0.8.5.ebuild, +democracy-0.8.5.3.ebuild,
+  +files/democracy-0.8.5.3-firefox.patch,
+  +files/democracy-0.8.5.3-r1-firefox.patch,
+  +files/democracy-0.8.5.9999-firefox.patch,
+  +files/democracy-0.8.5-firefox.patch, +democracy-0.9.0_rc1.ebuild,
+  files/democracy-as-needed-libX11.patch:
+  new rc is out, this compiles without ANY patches on gentoo. Thanks to Ben
+  Dean-Kawamura, Chris Lahey and Greg Opperman from democracy team for getting
+  our work into the trunk./testRead.sh testRead.sh Also I added the last
+  stable 0.8.5 from the bug, from now on I'll keel releasing in sunrise.
+
   05 Jul 2006; Stefan Schweizer <genstef@gentoo.org> ChangeLog:
   Add check for the distutils patch
 

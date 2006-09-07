@@ -1,7 +1,7 @@
-diff -ur Democracy-0.8.4.1.orig/platform/gtk-x11/setup.py Democracy-0.8.4.1/platform/gtk-x11/setup.py
---- Democracy-0.8.4.1.orig/platform/gtk-x11/setup.py	2006-06-24 12:49:54.000000000 +0200
-+++ Democracy-0.8.4.1/platform/gtk-x11/setup.py	2006-06-24 12:52:30.000000000 +0200
-@@ -168,7 +168,7 @@
+diff -ur Democracy-2006-07-25.orig/platform/gtk-x11/setup.py Democracy-2006-07-25/platform/gtk-x11/setup.py
+--- Democracy-2006-07-25.orig/platform/gtk-x11/setup.py	2006-06-24 12:49:54.000000000 +0200
++++ Democracy-2006-07-25/platform/gtk-x11/setup.py	2006-06-24 12:52:30.000000000 +0200
+@@ -213,7 +213,7 @@
  
  #### Xine Extension ####
  xine_options = parsePkgConfig('pkg-config', 

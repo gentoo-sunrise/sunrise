@@ -1,0 +1,44 @@
+diff -urN Democracy-2006-07-25/platform/gtk-x11/setup.py Democracy-0.8.5-patched/platform/gtk-x11/setup.py
+--- Democracy-2006-07-25/platform/gtk-x11/setup.py	2006-07-21 05:20:25.000000000 +0930
++++ Democracy-2006-07-25-patched/platform/gtk-x11/setup.py	2006-07-29 11:41:22.000000000 +0930
+@@ -146,10 +146,11 @@
+ 
+     if options_dict is None:
+         options_dict = {
+-            'include_dirs' : [],
++            'include_dirs' : ['/usr/lib/mozilla-firefox/include/webbrwsr',
++                              '/usr/lib/mozilla-firefox/include/dom',
++                              '/usr/lib/mozilla-firefox/include/uriloader'],
+             'library_dirs' : [],
+             'libraries' : [],
+-            'extra_compile_args' : []
+         }
+     commandLine = "%s --cflags --libs %s" % (command, components)
+     output = getCommandOutput(commandLine).strip()
+@@ -160,8 +161,6 @@
+             options_dict['library_dirs'].append(rest)
+         elif prefix == '-l':
+             options_dict['libraries'].append(rest)
+-        else:
+-            options_dict['extra_compile_args'].append(comp)
+     return options_dict
+ 
+ #### The fasttypes extension ####
+@@ -172,15 +171,8 @@
+     )
+ 
+ #### MozillaBrowser Extension ####
+-packages = getCommandOutput("pkg-config --list-all")
+-if re.search("^xulrunner-xpcom", packages, re.MULTILINE):
+-    xpcom = 'xulrunner-xpcom'
+-    gtkmozembed = 'xulrunner-gtkmozembed'
+-elif re.search("^mozilla-xpcom", packages, re.MULTILINE):
+-    xpcom = 'mozilla-xpcom'
+-    gtkmozembed = 'mozilla-gtkmozembed'
+-else:
+-    raise RuntimeError("Can't find xulrunner-xpcom or mozilla-xpcom")
++xpcom = 'firefox-xpcom'
++gtkmozembed = 'firefox-gtkmozembed'
+ mozilla_browser_options = parsePkgConfig("pkg-config" , 
+         "gtk+-2.0 glib-2.0 pygtk-2.0 %s %s" % (gtkmozembed, xpcom))
+ mozilla_lib_path = parsePkgConfig('pkg-config', 
