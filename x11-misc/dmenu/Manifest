@@ -1,7 +1,7 @@
-AUX dmenu-0.8-config_mk.patch 678 RMD160 bfa6f106903595b9d749047415b4faca52cb8404 SHA1 d876cb638cfb81a3301dbf290c07b91928ba94df SHA256 47cf391fcde1cdbf303024874273b6acd2a0acbcf6853c05c7219aeabf4ea97d
-MD5 363d6c417a9f6ee412a6e472bb3d16e6 files/dmenu-0.8-config_mk.patch 678
-RMD160 bfa6f106903595b9d749047415b4faca52cb8404 files/dmenu-0.8-config_mk.patch 678
-SHA256 47cf391fcde1cdbf303024874273b6acd2a0acbcf6853c05c7219aeabf4ea97d files/dmenu-0.8-config_mk.patch 678
+AUX dmenu-0.8-config_mk.patch 381 RMD160 134a0095832a9ed807f8c6a4b0a1a4c64cca7c0e SHA1 88f5e3efdd233ab62c9a1a673f0ae72c43121b9c SHA256 510335d29bf1d81b0f99fa11b888f4039109e9794a26cab4b0afa3d7670736d6
+MD5 d661bfa52ce43911dc8dae436a7c4286 files/dmenu-0.8-config_mk.patch 381
+RMD160 134a0095832a9ed807f8c6a4b0a1a4c64cca7c0e files/dmenu-0.8-config_mk.patch 381
+SHA256 510335d29bf1d81b0f99fa11b888f4039109e9794a26cab4b0afa3d7670736d6 files/dmenu-0.8-config_mk.patch 381
 AUX dmenu-0.8-makefile.patch 238 RMD160 02d4a6c22dc09b4057a2e3761e38c630a6d009e7 SHA1 114fc5b1909b1c319cbf56af46c8ca02660e089a SHA256 a3b8cbf6dd8be37d1f13e6834bfff779df9237a6b500b617dc5b650102a4a158
 MD5 dc0384efec9207d47e55dd771b069493 files/dmenu-0.8-makefile.patch 238
 RMD160 02d4a6c22dc09b4057a2e3761e38c630a6d009e7 files/dmenu-0.8-makefile.patch 238
