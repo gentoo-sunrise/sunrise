@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> +exaile-0.2.2.ebuild:
+  Version bump. Removed pyogg and pymad dependencies (thanks to Henrique
+  Ferreiro García for letting me know). Added media-libs/mutagen dependency.
+  Added sed-patch to disable the installation of the provided mutagen-files.
+
   06 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch>
   -exaile-0.2_beta2.ebuild, -exaile-0.2_beta4.ebuild, +exaile-0.2.1.ebuild:
   Version bump.
