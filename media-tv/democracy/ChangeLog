@@ -3,6 +3,11 @@
 # $Header: $
 
   07 Sep 2006; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
+  -files/democracy-0.8.5.3-r1-firefox.patch,
+  -files/democracy-0.8.5.9999-firefox.patch:
+  Sorry those two files are not used.
+
+  07 Sep 2006; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
   +democracy-0.8.4.ebuild, democracy-0.8.4.1.ebuild,
   +democracy-0.8.5.ebuild, +democracy-0.8.5.3.ebuild,
   +files/democracy-0.8.5.3-firefox.patch,
