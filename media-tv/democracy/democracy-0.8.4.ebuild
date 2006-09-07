@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils 
+inherit distutils
 
 MY_P="Democracy-${PV}"
 DESCRIPTION="Democracy is a free and open internet TV platform."
@@ -10,7 +10,7 @@ HOMEPAGE="http://www.getdemocracy.com"
 SRC_URI="ftp://ftp.osuosl.org/pub/pculture.org/democracy/src/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64" 
+KEYWORDS="~x86 ~amd64"
 #currently the support for firefox appears to be broken
 #IUSE="gecko-sdk mozilla firefox"
 
@@ -46,7 +46,7 @@ src_unpack() {
 
 pkg_postinst(){
 if ! built_with_use xine-lib aac ffmpeg mad \
-asf flac sdl win32codecs ; then 
+asf flac sdl win32codecs ; then
 
 ewarn "The Democracy team recommends you to emerge xine-lib as follows:"
 ewarn ""
@@ -55,6 +55,6 @@ ewarn " echo \"media-libs/xine-lib aac ffmpeg mad asf flac sdl win32codecs\" >>
 ewarn ""
 ewarn "This way you will have support enable for the most popular video and
 audio formats"
-ewarn "You may also want to add support for theora and vorbis " 
+ewarn "You may also want to add support for theora and vorbis "
 fi
 }
