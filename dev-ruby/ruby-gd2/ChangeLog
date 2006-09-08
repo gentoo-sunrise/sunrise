@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  ruby-gd2-1.1.1.ebuild:
+  Replacing einfo with eerror (more appropriate).
+
   14 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
   ruby-gd2-1.1.1.ebuild:
   Added ~amd64 keyword. Added "Built with USE" dependency on media-libs/gd

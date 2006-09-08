@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 
 pkg_setup() {
 	if ! built_with_use media-libs/gd truetype ; then
-		einfo "You need to build media-libs/gd with USE=truetype enabled."
+		eerror "You need to build media-libs/gd with USE=truetype enabled."
 		die "gd without truetype-support detected."
 	fi
 }
