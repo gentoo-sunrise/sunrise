@@ -49,20 +49,24 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
 
+	insinto /usr/share/${PN}
+	newins config.h ${PF}.config.h
+
 	dodoc README
 }
 
 pkg_preinst() {
+	mv "${D}"/usr/share/${PN}/${PF}.config.h "${T}"/
+}
+
+pkg_postinst() {
 	if use savedconfig; then
 		local config_dir="${PORTAGE_CONFIGROOT:-${ROOT}}/etc/portage/savedconfig"
 		elog "Saving this build config to ${config_dir}/${PF}.config.h"
 		einfo "Read this ebuild for more info on how to take advantage of this option."
 		mkdir -p "${config_dir}"
-		cp "${S}"/config.h "${config_dir}"/${PF}.config.h
+		cp "${T}"/${PF}.config.h "${config_dir}"/${PF}.config.h
 	fi
-}
-
-pkg_postinst() {
 	einfo "This ebuild has support for user defined configs"
 	einfo "Please read this ebuild for more details and re-emerge as needed"
 	einfo "if you want to add or remove functionality for ${PN}"
