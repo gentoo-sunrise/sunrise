@@ -14,6 +14,8 @@ IUSE="char"
 S="${WORKDIR}/${P}/src"
 
 src_compile() {
+	sed -i -e "s:CFLAGS =:CFLAGS = ${CFLAGS}:" Makefile || die "sed failed"
+
 	if use char ; then
 		emake char || die "emake failed"
 	else
