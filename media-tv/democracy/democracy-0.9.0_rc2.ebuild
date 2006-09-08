@@ -44,7 +44,7 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	#epatch "${FILESDIR}"/democracy-{0.8.5-firefox,as-needed-libX11}.patch
+	epatch "${FILESDIR}"/democracy-as-needed-libX11.patch
 }
 
 pkg_postinst(){
