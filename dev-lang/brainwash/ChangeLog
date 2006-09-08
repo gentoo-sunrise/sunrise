@@ -4,6 +4,10 @@
 
   08 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
   brainwash-0.3.ebuild:
+  Added ~amd64. Thanks helch.
+
+  08 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  brainwash-0.3.ebuild:
   Using sed to make package respect $CFLAGS.
 
   10 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
