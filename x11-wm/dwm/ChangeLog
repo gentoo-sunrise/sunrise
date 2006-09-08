@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2006; Cedric Krier <ced@ced.homedns.org> dwm-1.5.ebuild:
+  copy config.h to $D and then move back out so we work with binpkgs
+
   08 Sep 2006; Cedric Krier <ced@ced.homedns.org> -dwm-1.4.ebuild,
   -files/dwm-1.4-config_mk.patch, -files/dwm-1.4-makefile.patch,
   +dwm-1.5.ebuild, +files/dwm-1.5-config_mk.patch,
