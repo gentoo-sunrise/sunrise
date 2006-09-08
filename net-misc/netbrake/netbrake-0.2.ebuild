@@ -23,18 +23,17 @@ src_unpack() {
 	cd "${S}"
 
 	# Makefile.in ignores our compiler and compiler flags preference
-	epatch ${FILESDIR}/${P}-fix-compiler-and-flags.patch
+	epatch "${FILESDIR}/${P}-fix-compiler-and-flags.patch"
 
 	# patch to configure files to install the library and script 
 	# executable according to gentoo's standards and remove user 
 	# interaction for compile options
-	epatch ${FILESDIR}/${P}-fix-path-and-httpfs.patch
+	epatch "${FILESDIR}/${P}-fix-path-and-httpfs.patch"
 
 	use httpfs && export HTTPFS_FLAG=y
 }
 
 src_install() {
-
 	dolib libnetbrake.so.0.1
 	dobin netbrake
 
