@@ -6,23 +6,23 @@ inherit linux-mod
 
 DESCRIPTION="Driver for the RaLink RT73/2571 wireless chipsets"
 HOMEPAGE="http://www.ralink.com.tw"
-LICENSE="GPL-2"
+SRC_URI="http://www.ralink.com.tw/drivers/Linux/RT73_Linux_STA_Drv${PV}.tar.gz"
 
 MY_P=RT73_Linux_STA_Drv${PV}
 
-SRC_URI="http://www.ralink.com.tw/drivers/Linux/RT73_Linux_STA_Drv${PV}.tar.gz"
-
-# May work on other little endien arches, e.g amd64 - known broken on big endian arches
-
+# May work on other little endien arches, e.g amd64
+# Known broken on big endian arches
+LICENSE="GPL-2"
 KEYWORDS="~x86"
 IUSE="debug"
+
 RDEPEND="net-wireless/wireless-tools"
-S="${WORKDIR}/${MY_P}"
 MODULE_NAMES="rt73(net:${S}/Module)"
+
+S=${WORKDIR}/${MY_P}
 
 CONFIG_CHECK="NET_RADIO"
 ERROR_NET_RADIO="${P} requires support for Wireless LAN drivers (non-hamradio) & Wireless Extensions (CONFIG_NET_RADIO)."
-
 MODULESD_RT73_ALIASES=('usbra? rt73')
 
 pkg_setup() {
@@ -33,18 +33,20 @@ pkg_setup() {
 
 src_unpack (){
 	unpack ${A}
-	cd ${S}/Module
-#       Portage expects to do make module, not make all
-#	Only patch the makefile we are going to use
-#       Makefile.4  Makefile for kernel 2.4 series
+	cd "${S}/Module"
+
+	# Portage expects to do make module, not make all
+	# Only patch the makefile we are going to use
+
+	# Makefile.4 - Makefile for kernel 2.4 series
 	if kernel_is 2 4 ; then
-	        epatch ${FILESDIR}/make4.patch
+		epatch "${FILESDIR}/make4.patch"
 		cp Makefile.4 Makefile
 	fi
 
-#       Makefile.6  Makefile for kernel 2.6 series
+	# Makefile.6 - Makefile for kernel 2.6 series
 	if kernel_is 2 6 ; then
-	        epatch ${FILESDIR}/make6.patch
+		epatch "${FILESDIR}/make6.patch"
 		cp Makefile.6 Makefile
 	fi
 	if ! [ -f Makefile ]; then
@@ -53,8 +55,8 @@ src_unpack (){
 		die
 	fi
 
-#       if you are really careful you can edit this patch to add your RT73 Device too
-	epatch ${FILESDIR}/deviceID.patch
+	# You can edit patch to also add your RT73 device if you are careful.
+	epatch "${FILESDIR}/deviceID.patch"
 }
 
 
@@ -66,7 +68,7 @@ src_compile() {
 src_install() {
 	linux-mod_src_install
 	dodoc Module/README Module/iwpriv_usage.txt
-#       The firmware Install
+	# The firmware install
 	insinto /etc/Wireless/RT73STA
 	doins Module/rt73.bin Module/rt73sta.dat
 }
