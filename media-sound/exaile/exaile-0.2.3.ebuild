@@ -4,9 +4,11 @@
 
 inherit eutils toolchain-funcs
 
+MY_P=${PN}_${PV}
+
 DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for GTK"
 HOMEPAGE="http://www.exaile.org"
-SRC_URI="http://www.exaile.org/files/${PN}_${PVR/_beta/b}.tar.gz"
+SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,17 +22,24 @@ RDEPEND="${DEPEND}
 		>=media-libs/gstreamer-0.10
 		>=media-libs/gst-plugins-good-0.10
 		>=dev-python/gst-python-0.10
-		dev-python/pyogg
-		dev-python/pymad
+		>=media-libs/mutagen-1.6
 		sys-apps/dbus"
 
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	if ! built_with_use sys-apps/dbus python; then
 		eerror "dbus has to be built with python support"
 		die "dbus python use-flag not set"
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -i \
+		-e '/mutagen/d' \
+		Makefile || die "sed failed"
 }
 
 src_compile() {
