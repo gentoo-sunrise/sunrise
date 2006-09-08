@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="Command line radio player for Last.fm"
 HOMEPAGE="http://lizer.syslinx.org/shell-fm/"
@@ -29,10 +29,14 @@ src_unpack() {
 src_compile() {
 	# Just in case... It comes with a x86 precompiled binary!
 	rm -f shell-fm
-	emake || die "emake failed"
+	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
 src_install() {
 	dobin shell-fm
 	dodoc shell-fm.rc-example
+}
+
+pkg_postinst() {
+	elog "Sample config file has been installed into ${ROOT}usr/share/doc/${PF}"
 }
