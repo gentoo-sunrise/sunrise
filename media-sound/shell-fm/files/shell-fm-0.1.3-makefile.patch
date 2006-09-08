@@ -1,0 +1,21 @@
+--- Makefile.orig	2006-05-16 21:44:12.000000000 +0200
++++ Makefile	2006-09-08 10:32:27.403065259 +0200
+@@ -21,15 +21,15 @@
+ 	include/ropen.h\
+ 	include/service.h\
+ 	include/settings.h\
+ 	include/autoban.h\
+ 	include/version.h
+-CFLAGS	:= -Wall -W -pedantic -ansi -Os -lcrypto -lmad -lreadline -lncurses
++CFLAGS	:= -Wall -W -pedantic -ansi -g -lcrypto -lmad -lreadline -lncurses $(CFLAGS)
+ OUTPUT	:= shell-fm
+ 
+ .PHONY: all
+ all	: $(CODE) $(HEAD)
+-	$(CC) -o $(OUTPUT) $(CFLAGS) $(CODE) && /usr/bin/strip $(OUTPUT)
++	$(CC) -o $(OUTPUT) $(CFLAGS) $(CODE)
+ 
+ install	: $(all)
+ 	mkdir -p $(BINPATH)
+ 	install -m 755 shell-fm $(BINPATH)
+
