@@ -1,0 +1,12 @@
+diff -Naur kwin-decor-suse2-0.3.5_orig/src/SUSE2.cpp kwin-decor-suse2-0.3.5/src/SUSE2.cpp
+--- kwin-decor-suse2-0.3.5_orig/src/SUSE2.cpp	2006-05-20 14:05:45.000000000 +0200
++++ kwin-decor-suse2-0.3.5/src/SUSE2.cpp	2006-09-09 22:21:28.000000000 +0200
+@@ -182,7 +182,7 @@
+     m_iBgColor = config.readColorEntry("IBgColor", &ibgcolor);
+     m_iconShadow = config.readBoolEntry("IconShadow", false);
+ 
+-    m_titleLogo      = config.readBoolEntry("TitleBarLogo", true);
++    m_titleLogo      = config.readBoolEntry("TitleBarLogo", false);
+     m_titleLogoOffset = config.readNumEntry("TitleBarLogoOffset", 3);
+     m_titleLogoURL   = config.readEntry("TitleBarLogoURL", locate("data", "kwin/pics/titlebar_decor.png"));
+ }

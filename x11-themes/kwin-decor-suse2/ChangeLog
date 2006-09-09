@@ -1,0 +1,9 @@
+# ChangeLog for x11-themes/kwin-decor-suse2
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Sep 2006; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
+  +files/kwin-decor-suse2-disabletitlebarlogo.patch,
+  +kwin-decor-suse2-0.3.5.ebuild, +metadata.xml:
+  New Ebuild for bug 146992
+
