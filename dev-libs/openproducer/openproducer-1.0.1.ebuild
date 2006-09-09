@@ -16,7 +16,10 @@ KEYWORDS="~x86"
 IUSE="doc examples"
 
 RDEPEND="virtual/opengl
-	>=dev-libs/openthreads-1.4.2"
+	>=dev-libs/openthreads-1.4.2
+	|| ( ( x11-libs/libXmu
+			x11-libs/libX11 )
+		<virtual/x11-7 )"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	doc? ( app-doc/doxygen )"
