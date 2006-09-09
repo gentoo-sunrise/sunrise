@@ -1,0 +1,34 @@
+diff -ru OpenThreads~/Make/makedefs OpenThreads/Make/makedefs
+--- OpenThreads~/Make/makedefs	2006-09-09 17:57:31.000000000 +0200
++++ OpenThreads/Make/makedefs	2006-09-09 18:30:11.000000000 +0200
+@@ -64,8 +64,8 @@
+ 
+ INC        = -I$(TOPDIR)/include 
+ 
+-CXXFLAGS   = $(ARCHARGS) $(DOF) $(DEF) $(INC)
+-LDFLAGS    = $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
++CXXFLAGS   += -Wall $(ARCHARGS) $(DOF) $(DEF) $(INC)
++LDFLAGS    += $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
+ OBJS       = $(CXXFILES:.cpp=.o) \
+ 	     $(C++FILES:.c++=.o) \
+ 	     	 $(CFILES:.c=.o) \
+@@ -94,7 +94,7 @@
+ INSTLINKCMD        = $(LINK)
+ 
+ LIB_PREFIX         = lib
+-LIB_EXT            = so
++LIB_EXT            = so.$(VERSION)
+ 
+ MAKEDIST           = echo "   === Distribution build is not implemented yet for $(OS)"; printf "\n"
+ INSTLOGFILE        = /tmp/.openThreads_inst_log
+@@ -218,8 +218,9 @@
+     ifeq (x$(CXX),x)
+       CXX               = g++
+     endif
++    LDFLAGS         += -Wl,-soname -Wl,$@.$(LIB_EXT)
+     ###DEF               += -fPIC
+-    OPTF              = -O2
++    #OPTF              = -O2
+     DBGF              = -ggdb -gstabs
+     ifeq ($(SYSARCH),x86_64)
+       ARCH              = 64
