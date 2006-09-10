@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Sep 2006; Jakub Moc <jakub@gentoo.org> x-lite-2.0.1105d.ebuild:
+  Monolithic X is not supported any more
+
   17 Jun 2006; Thomas Cort <tcort@gentoo.org> x-lite-2.0.1105d.ebuild:
   Removed DEPEND from RDEPEND since DEPEND is never set. Put the KEYWORDS in
   alphabetical order.
