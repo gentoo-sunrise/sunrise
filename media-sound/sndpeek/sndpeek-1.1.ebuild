@@ -16,10 +16,9 @@ IUSE="oss jack alsa"
 DEPEND="media-libs/glut
 	virtual/opengl
 	virtual/glu
-	|| ( ( x11-libs/libXmu
-			x11-libs/libX11
-			x11-libs/libXext )
-		<virtual/x11-7 )
+	x11-libs/libXmu
+	x11-libs/libX11
+	x11-libs/libXext
 	jack? ( media-sound/jack-audio-connection-kit )
 	alsa? ( media-libs/alsa-lib )"
 RDEPEND="${DEPEND}"
