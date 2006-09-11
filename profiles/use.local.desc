@@ -17,6 +17,12 @@ mail-filter/MailScanner:postfix - Set postfix to used MTA
 mail-filter/MailScanner:sendmail - Set sendmail to used MTA
 mail-filter/MailScanner:spamassassin - Enable usage of spamassassin for spam detection
 mail-filter/MailScanner:vlnx - Enable usage of vnlx virus scanner
+media-gfx/openscengraph:introspection - Compile osgIntrospection
+media-gfx/openscengraph:producer - Compile osgProducer
+media-gfx/openscengraph:gdal - Compile gdal plugin
+media-gfx/openscengraph:jasper - Compile jasper plugin
+media-gfx/openscengraph:coin - Compile coin plugin
+media-gfx/openscengraph:inventor - Compile inventor plugin
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
 media-sound/gnormalize:musepack - Enables support for the musepack audio codec
 media-sound/gnormalize:normalize - Enable the normalize front-end
