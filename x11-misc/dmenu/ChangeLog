@@ -26,9 +26,6 @@
   +files/dmenu-0.7-makefile.patch:
   Version bump
 
-  28 Aug 2006; Jakub Moc <jakub@gentoo.org> dmenu-0.5.ebuild:
-  Fix typo, pinpoint DEPEND
-
   28 Aug 2006; Jakub Moc <jakub@gentoo.org> dmenu-0.6.ebuild:
   Fix typo, pinpoint DEPEND
 
