@@ -17,6 +17,8 @@ mail-filter/MailScanner:postfix - Set postfix to used MTA
 mail-filter/MailScanner:sendmail - Set sendmail to used MTA
 mail-filter/MailScanner:spamassassin - Enable usage of spamassassin for spam detection
 mail-filter/MailScanner:vlnx - Enable usage of vnlx virus scanner
+media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
+media-sound/gnormalize:musepack - Enables support for the musepack audio codec
 media-sound/gnormalize:normalize - Enable the normalize front-end
 media-sound/lmms:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:samplerate - Enable support for libsamplerate
@@ -54,6 +56,7 @@ net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/aria2:ares - Enable support for asynchronous DNS using the c-ares library
 net-misc/aria2:bittorrent - Enable support for the bittorrent protocol
 net-misc/aria2:metalink - Enable support for metalink
+net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-nds/lat:avahi - Enable support for avahi
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
