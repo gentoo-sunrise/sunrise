@@ -1,0 +1,76 @@
+diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/instexamplesrc OSG_OP_OT-1.1/OpenSceneGraph/Make/instexamplesrc
+--- OSG_OP_OT-1.1~/OpenSceneGraph/Make/instexamplesrc	2006-09-11 10:07:24.000000000 +0200
++++ OSG_OP_OT-1.1/OpenSceneGraph/Make/instexamplesrc	2006-09-11 14:45:52.000000000 +0200
+@@ -32,7 +32,7 @@
+             cd $TOPDIR/examples/$d
+             [ -d $INST_EXAMPLE_SRC/$d ] || mkdir -m 0755 -p $INST_EXAMPLE_SRC/$d
+             echo "         installing $d"
+-            for f in `$MAKE __instfiles | grep -v $MAKE`
++            for f in `$MAKE __instfiles`
+            do
+                 src=`echo $f | cut -f1 -d"="`
+                 dst=`echo $f | cut -f2 -d"="`
+diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/makedefs OSG_OP_OT-1.1/OpenSceneGraph/Make/makedefs
+--- OSG_OP_OT-1.1~/OpenSceneGraph/Make/makedefs	2006-09-11 10:07:24.000000000 +0200
++++ OSG_OP_OT-1.1/OpenSceneGraph/Make/makedefs	2006-09-11 13:15:48.000000000 +0200
+@@ -76,8 +76,8 @@
+ ##                            doesn't make a distinction, we will.
+ ############################################################################
+ 
+-CXXFLAGS   = $(ARCHARGS) $(DOF) $(DEF) $(INC)
+-LDFLAGS    = $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
++CXXFLAGS   += -Wall $(ARCHARGS) $(DOF) $(DEF) $(INC)
++LDFLAGS    += $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
+ OBJS       = $(C++FILES:.cpp=.o) \
+              $(CXXFILES:.cpp=.o) \
+              $(CFILES:.c=.o) \
+@@ -353,9 +353,9 @@
+     endif
+   else
+ 
+-ifeq ("$(COMPILE_OSG_OP_OT_WITH_SONAMES)","YES")
+-    LDFLAGS         += -Wl,-soname -Wl,$@.0
+-endif
++#ifeq ("$(COMPILE_OSG_OP_OT_WITH_SONAMES)","YES")
++    LDFLAGS         += -Wl,-soname -Wl,$@
++#endif
+ 
+ #    LDFLAGS         += `getconf LFS_LDFLAGS`
+ #    DEF             += `getconf LFS_CFLAGS`
+@@ -363,7 +363,7 @@
+     LIBS            = -lstdc++
+ #    DEF             += -W -Wall -fPIC -pipe -Woverloaded-virtual
+     DEF             += -W -Wall -fPIC -pipe
+-    OPTF            = -O2 
++    #OPTF            = -O2 
+     DBGF            = -g -gstabs+ -DOSG_COMPILE_UNIT_TESTS 
+     SYSARCH           := $(shell arch)
+     ifeq ($(SYSARCH),x86_64)
+@@ -379,15 +379,15 @@
+ 
+   SHARED            = -shared
+   ifeq ($(SYSARCH),x86_64)
+-    LINKARGS          = -L/usr/X11R6/lib64
++    LINKARGS          = -L/usr/lib64
+   else
+-    LINKARGS          = -L/usr/X11R6/lib
++    LINKARGS          = -L/usr/lib
+   endif
+   DYNAMICLIBRARYLIB = -ldl
+   OSG_LIBS          = -losgGA -losgDB -losgUtil -losg 
+   GL_LIBS           = -lGLU -lGL 
+   GLUT_LIBS         = -lglut
+-  X_INC             = -I/usr/X11R6/include
++  X_INC             = -I/usr/include
+   X_LIBS            = -lXi -lXmu -lX11
+   PF_XTRA_LIBS      = -L/usr/lib/libpfdb   -Xlinker -rpath /usr/lib/libpfdb \
+                       -lpfdu -lpfutil -lpf 
+@@ -396,7 +396,7 @@
+   PNG_LIBS          = -lpng
+   JPEG_LIBS         = -ljpeg
+   TIFF_LIB          = -ltiff
+-  GIF_LIBS          = -lungif
++  GIF_LIBS          = -lgif
+   MAKEDIST          = $(TOPDIR)/Make/makerpms
+ 
+   ifeq ("$(PROFILER)","gprof")
