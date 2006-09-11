@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2006; Stefan Schweizer <genstef@gentoo.org>
+  -democracy-0.9.0_rc2.ebuild, +democracy-0.9.0.ebuild:
+  version bump, thanks djay-il
+
   08 Sep 2006; Stefan Schweizer <genstef@gentoo.org>
   -democracy-0.9.0_rc1.ebuild, +democracy-0.9.0_rc2.ebuild:
   version bump
