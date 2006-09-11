@@ -19,5 +19,5 @@ src_install() {
 	distutils_src_install
 
 	# Don't install duplicate ungzipped docs.
-	rm -rf "${D}/usr/share/mirage"
+	rm -rf "${D}/usr/share/mirage/"{CHANGELOG,COPYING,README}
 }
