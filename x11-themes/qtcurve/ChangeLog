@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2006; Stefan Schweizer <genstef@gentoo.org> -qtcurve-0.42.2.ebuild,
+  +qtcurve-0.42.3.ebuild:
+  version bump thanks to Ben de Groot <ben@berkano.net> in bug 24830
+
   01 Sep 2006; Stefan Schweizer <genstef@gentoo.org> -qtcurve-0.38.ebuild,
   -qtcurve-0.41.1.ebuild, +qtcurve-0.42.2.ebuild:
   version bump thanks to Ben de Groot <ben@berkano.net> in bug 24830
