@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/htmlentities
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  +htmlentities-3.0.1.ebuild, +metadata.xml:
+  New ebuild for bug 147048. Thanks Lars Strojny.
+
