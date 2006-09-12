@@ -8,7 +8,7 @@ diff -ru OpenThreads~/Make/makedefs OpenThreads/Make/makedefs
 -CXXFLAGS   = $(ARCHARGS) $(DOF) $(DEF) $(INC)
 -LDFLAGS    = $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
 +CXXFLAGS   += -Wall $(ARCHARGS) $(DOF) $(DEF) $(INC)
-+LDFLAGS    += $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
++LDFLAGS    += $(ARCHARGS) $(DOF) -L$(TOPDIR)/lib/$(OS)$(ARCH) $(LINKARGS)
  OBJS       = $(CXXFILES:.cpp=.o) \
  	     $(C++FILES:.c++=.o) \
  	     	 $(CFILES:.c=.o) \
