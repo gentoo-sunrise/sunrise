@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Sep 2006; Cedric Krier <ced@ced.homedns.org>
+  +openscenegraph-1.0.ebuild, +files/openscenegraph-1.0-build.patch,
+  files/openscenegraph-1.1-build.patch:
+  fix linkage and add previous version for Magrathea
+
   11 Sep 2006; Cedric Krier <ced@ced.homedns.org>
   +openscenegraph-1.1.ebuild, +files/openscenegraph-1.1-build.patch,
   +metadata.xml:

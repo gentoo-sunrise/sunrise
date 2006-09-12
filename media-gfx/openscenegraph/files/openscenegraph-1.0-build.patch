@@ -1,6 +1,6 @@
-diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/instexamplesrc OSG_OP_OT-1.1/OpenSceneGraph/Make/instexamplesrc
---- OSG_OP_OT-1.1~/OpenSceneGraph/Make/instexamplesrc	2006-09-11 10:07:24.000000000 +0200
-+++ OSG_OP_OT-1.1/OpenSceneGraph/Make/instexamplesrc	2006-09-11 14:45:52.000000000 +0200
+diff -ru OSG_OP_OT-1.0~/OpenSceneGraph/Make/instexamplesrc OSG_OP_OT-1.0/OpenSceneGraph/Make/instexamplesrc
+--- OSG_OP_OT-1.0~/OpenSceneGraph/Make/instexamplesrc	2006-09-12 01:10:50.000000000 +0200
++++ OSG_OP_OT-1.0/OpenSceneGraph/Make/instexamplesrc	2006-09-12 01:13:32.000000000 +0200
 @@ -32,7 +32,7 @@
              cd $TOPDIR/examples/$d
              [ -d $INST_EXAMPLE_SRC/$d ] || mkdir -m 0755 -p $INST_EXAMPLE_SRC/$d
@@ -10,9 +10,9 @@ diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/instexamplesrc OSG_OP_OT-1.1/OpenSce
             do
                  src=`echo $f | cut -f1 -d"="`
                  dst=`echo $f | cut -f2 -d"="`
-diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/makedefs OSG_OP_OT-1.1/OpenSceneGraph/Make/makedefs
---- OSG_OP_OT-1.1~/OpenSceneGraph/Make/makedefs	2006-09-11 10:07:24.000000000 +0200
-+++ OSG_OP_OT-1.1/OpenSceneGraph/Make/makedefs	2006-09-11 13:15:48.000000000 +0200
+diff -ru OSG_OP_OT-1.0~/OpenSceneGraph/Make/makedefs OSG_OP_OT-1.0/OpenSceneGraph/Make/makedefs
+--- OSG_OP_OT-1.0~/OpenSceneGraph/Make/makedefs	2006-09-12 01:10:50.000000000 +0200
++++ OSG_OP_OT-1.0/OpenSceneGraph/Make/makedefs	2006-09-12 01:12:37.000000000 +0200
 @@ -76,8 +76,8 @@
  ##                            doesn't make a distinction, we will.
  ############################################################################
@@ -24,7 +24,7 @@ diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/makedefs OSG_OP_OT-1.1/OpenSceneGrap
  OBJS       = $(C++FILES:.cpp=.o) \
               $(CXXFILES:.cpp=.o) \
               $(CFILES:.c=.o) \
-@@ -353,9 +353,9 @@
+@@ -353,16 +353,16 @@
      endif
    else
  
@@ -37,16 +37,15 @@ diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/makedefs OSG_OP_OT-1.1/OpenSceneGrap
  
  #    LDFLAGS         += `getconf LFS_LDFLAGS`
  #    DEF             += `getconf LFS_CFLAGS`
-@@ -363,7 +363,7 @@
+ 
      LIBS            = -lstdc++
- #    DEF             += -W -Wall -fPIC -pipe -Woverloaded-virtual
      DEF             += -W -Wall -fPIC -pipe
 -    OPTF            = -O2 
 +    #OPTF            = -O2 
      DBGF            = -g -gstabs+ -DOSG_COMPILE_UNIT_TESTS 
      SYSARCH           := $(shell arch)
      ifeq ($(SYSARCH),x86_64)
-@@ -379,15 +379,15 @@
+@@ -378,9 +378,9 @@
  
    SHARED            = -shared
    ifeq ($(SYSARCH),x86_64)
@@ -58,14 +57,7 @@ diff -ru OSG_OP_OT-1.1~/OpenSceneGraph/Make/makedefs OSG_OP_OT-1.1/OpenSceneGrap
    endif
    DYNAMICLIBRARYLIB = -ldl
    OSG_LIBS          = -losgGA -losgDB -losgUtil -losg 
-   GL_LIBS           = -lGLU -lGL 
-   GLUT_LIBS         = -lglut
--  X_INC             = -I/usr/X11R6/include
-+  X_INC             = -I/usr/include
-   X_LIBS            = -lXi -lXmu -lX11
-   PF_XTRA_LIBS      = -L/usr/lib/libpfdb   -Xlinker -rpath /usr/lib/libpfdb \
-                       -lpfdu -lpfutil -lpf 
-@@ -396,7 +396,7 @@
+@@ -395,7 +395,7 @@
    PNG_LIBS          = -lpng
    JPEG_LIBS         = -ljpeg
    TIFF_LIB          = -ltiff
