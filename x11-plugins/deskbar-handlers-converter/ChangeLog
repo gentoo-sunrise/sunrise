@@ -1,0 +1,8 @@
+# ChangeLog for x11-plugins/deskbar-handlers-converter
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Sep 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
+  +deskbar-handlers-converter-1.05.ebuild, +metadata.xml:
+  New ebuild for bug 147423
+
