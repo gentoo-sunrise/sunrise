@@ -14,7 +14,7 @@ RESTRICT="nomirror"
 
 LICENSE="GPL-2"
 SLOT="$KDEMAJORVER.$KDEMINORVER"
-KEYWORDS="~x86 ~amd64 ~sparc ~ppc"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 PATCHES="${FILESDIR}/kwin-decor-suse2-disabletitlebarlogo.patch"
 

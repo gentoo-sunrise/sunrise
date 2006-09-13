@@ -51,7 +51,7 @@ SRC_URI="mirror://sourceforge/psi/${MY_P}.tar.bz2
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 #After final relase we do not need this
 S="${WORKDIR}/${MY_P}"

@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/keepassx/KeePassX-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 DEPEND=">=x11-libs/qt-4.1"
 RDEPEND="$DEPEND"

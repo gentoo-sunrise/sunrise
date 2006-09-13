@@ -13,7 +13,7 @@ SRC_URI="http://delta.affinix.com/download/qca/2.0/beta2/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 RDEPEND="$(qt4_min_version 4.1.0)

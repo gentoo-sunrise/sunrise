@@ -14,7 +14,7 @@ SRC_URI="http://delta.affinix.com/download/qca/${MVER}/${SVER}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug doc ssl"
 
 RDEPEND="$(qt4_min_version 4.1.0)"

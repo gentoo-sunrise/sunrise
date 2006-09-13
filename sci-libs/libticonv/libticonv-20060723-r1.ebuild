@@ -12,7 +12,7 @@ PATCHES="${FILESDIR}/${P}-bugfixes-20060807.diff"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
 DEPEND=">=dev-libs/glib-2

@@ -11,7 +11,7 @@ SRC_URI="http://home.mag.cx/messenger/source/${P}.tar.gz"
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DEPEND="virtual/linux-sources
 	!media-video/qc-usb"

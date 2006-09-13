@@ -9,7 +9,7 @@ HOMEPAGE="http://gshowtv.sourceforge.net/xmltv-druid.html"
 SRC_URI="mirror://sourceforge/gshowtv/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="media-tv/xmltv
