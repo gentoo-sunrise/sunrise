@@ -1,0 +1,8 @@
+# ChangeLog for sys-fs/cryptmount
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Sep 2006; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
+  +cryptmount-1.1.ebuild, +metadata.xml:
+  New ebuild (my first :) ) #147491
+
