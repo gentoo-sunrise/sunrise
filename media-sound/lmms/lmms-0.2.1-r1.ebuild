@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa debug flac jack ladspa oss samplerate sdl vorbis"
+IUSE="alsa debug flac jack ladspa oss samplerate sdl vorbis vst"
 RESTRICT="strip"
 
 DEPEND="=x11-libs/qt-3.3*
@@ -22,9 +22,19 @@ DEPEND="=x11-libs/qt-3.3*
 	samplerate? ( media-libs/libsamplerate )
 	jack? ( >=media-sound/jack-audio-connection-kit-0.99.0 )
 	flac? ( media-libs/flac )
-	ladspa? ( media-libs/ladspa-sdk )"
+	ladspa? ( media-libs/ladspa-sdk )
+	vst? ( app-emulation/wine
+		media-plugins/vst-headers )"
 
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	unpack ${A}
+	if use vst ; then
+		cp /usr/include/vst/{AEffect.h,aeffectx.h} ${WORKDIR}/${P}/include/
+	fi
+}
+
 
 src_compile() {
 	econf \
@@ -37,10 +47,14 @@ src_compile() {
 		$(use_with sdl) \
 		$(use_with sdl sdlsound) \
 		$(use_with jack) \
+		$(use_with vst) \
 		$(use_with debug) \
 		--enable-hqsinc || die "econf failed"
-
-	emake || die "emake failed"
+	if use vst ; then
+		emake -j1 || die "emake failed"
+	else
+		emake || die "emake failed"
+	fi
 }
 
 src_install() {
