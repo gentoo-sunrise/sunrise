@@ -3,6 +3,10 @@
 # $Header: $
 
   15 Sep 2006; Santiago M. Mola <cooldwind@gmail.com>
+  vst-headers-2.3.ebuild:
+  ~amd64 added
+
+  15 Sep 2006; Santiago M. Mola <cooldwind@gmail.com>
   +vst-headers-2.3.ebuild, +metadata.xml:
   Initial ebuild for bug #147728
 
