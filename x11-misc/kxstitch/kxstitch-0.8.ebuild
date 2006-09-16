@@ -18,7 +18,7 @@ DEPEND="imagemagick? ( media-gfx/imagemagick )
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
-	use imagemagick && if built_with_use media-gfx/imagemagick nocxx ; then
+	if use imagemagick && built_with_use media-gfx/imagemagick nocxx ; then
 		eerror "Building kxstitch requires imagemagcik built without"
 		eerror "the nocxx use flag to build magick++ (the C++ API)."
 		eerror "Please re-emerge imagemagick with this use flag disabled."
