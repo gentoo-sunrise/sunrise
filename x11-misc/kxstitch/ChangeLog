@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/kxstitch
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Sep 2006; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
+  +kxstitch-0.8.ebuild, +metadata.xml:
+  New ebuild for my wife, :) and #63847
+
