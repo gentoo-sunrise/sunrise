@@ -18,30 +18,12 @@ DEPEND="sys-fs/device-mapper
 	ssl? ( dev-libs/openssl )
 	nls? ( sys-devel/gettext )"
 RDEPEND="${DEPEND}"
-
-dm-crypt_check() {
-	ebegin "Checking for Device mapper support (BLK_DEV_DM)"
-	linux_chkconfig_present BLK_DEV_DM
-	eend $?
-
-	if [[ $? -ne 0 ]] ; then
-		ewarn "Cryptmount requires Device mapper support!"
-		ewarn "Please enable Device mapper support in your kernel config, found at:"
-		ewarn "(for 2.6 kernels)"
-		ewarn
-		ewarn "  Device Drivers"
-		ewarn "    Multi-Device Support"
-		ewarn "      <*> Device mapper support"
-		ewarn
-		ewarn "and recompile your kernel if you want this package to work."
-		epause 10
-	fi
-}
-
-pkg_setup() {
-	linux-info_pkg_setup
-	dm-crypt_check
-}
+CONFIG_CHECK="BLK_DEV_DM"
+ERROR_BLK_DEV_DM="Please enable Device mapper support in your kernel config
+	-> Device Drivers
+	  -> Multi-device support (RAID and LVM)
+	    -> Multiple devices driver support (RAID and LVM) (MD)
+		  <M> Device mapper support"
 
 src_compile() {
 	# recommended for setXid, dynamically linked biraries
@@ -52,12 +34,12 @@ src_compile() {
 		--with-libgcrypt \
 		$(use_enable nls) \
 		$(use_with ssl openssl) \
-	|| die "Configuration failed"
+	|| die "econf failed"
 
-	emake || die "Compilation failed"
+	emake || die "emake failed"
 }
 
 src_install() {
-	make install DESTDIR="${D}" || die "Installation failed"
+	emake install DESTDIR="${D}" || die "emake install failed"
 	dodoc ABOUT-NLS AUTHORS ChangeLog NEWS README RELNOTES ToDo
 }
