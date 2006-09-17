@@ -18,13 +18,13 @@ src_unpack() {
 }
 
 src_compile() {
-	emake powerthend || die "make failed"
+	emake powerthend || die "emake failed"
 }
 
 src_install() {
 	dosbin powerthend || die
 	dodoc README
 
-	doconfd ${FILESDIR}/powerthend.confd powerthend
-	doinitd ${FILESDIR}/powerthend.rc powerthend
+	doconfd "${FILESDIR}/powerthend.confd" powerthend
+	doinitd "${FILESDIR}/powerthend.rc" powerthend
 }
