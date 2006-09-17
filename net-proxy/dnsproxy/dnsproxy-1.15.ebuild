@@ -20,7 +20,7 @@ src_install() {
 	doman dnsproxy.1
 	insinto /etc/dnsproxy
 	newins dnsproxy.conf dnsproxy.conf-dist
-	newconfd ${FILESDIR}/confd dnsproxy
-	newinitd ${FILESDIR}/initd dnsproxy
+	newconfd "${FILESDIR}/confd" dnsproxy
+	newinitd "${FILESDIR}/initd" dnsproxy
 }
 
