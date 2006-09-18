@@ -1,0 +1,8 @@
+# ChangeLog for app-portage/elogviewer
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Sep 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  +elogviewer-0.4.0.7-r1.ebuild, +metadata.xml:
+  elogviewer by Mathias Laurin (initial submitter of ebuild) from bug 136496
+
