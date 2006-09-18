@@ -21,7 +21,8 @@ DEPEND=">=dev-libs/glib-2
 	ident? ( net-libs/libident )
 	ldap? ( >=net-nds/openldap-2 )
 	mysql? ( dev-db/mysql )
-	pam_auth? ( sys-libs/pam )
+	pam? ( sys-libs/pam )
+	pam_nuauth? ( sys-libs/pam )
 	postgres? ( dev-db/postgresql )
 	nfqueue? ( net-firewall/libnfnetlink
 		net-firewall/libnetfilter_queue )
