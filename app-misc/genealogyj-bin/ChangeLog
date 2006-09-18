@@ -3,6 +3,11 @@
 # $Header: $
 
   18 Sep 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  +genealogyj-bin-2.4.2-r2.ebuild:
+  Better ebuild, with LINGUAS support, two new USE flags named geoview and
+  skins which really make this ebuild a must have
+
+  18 Sep 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   +genealogyj-bin-2.4.2-r1.ebuild, +files/genealogyj, +metadata.xml:
   Software for family trees, initially submitted by Stuart Grimshaw in bug 70722
 
