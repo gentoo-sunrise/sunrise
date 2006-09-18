@@ -11,7 +11,7 @@ SRC_URI="http://www.nlnetlabs.nl/downloads/nsd/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="axfr bind8-stats checking dnssec ipv6 plugins root-server ssl tsig"
+IUSE="axfr bind8-stats checking dnssec ipv6 plugins root-server ssl tcpd tsig"
 
 DEPEND="ssl? ( >=dev-libs/openssl-0.9.7i )
 	tcpd? ( sys-apps/tcp-wrappers )"
