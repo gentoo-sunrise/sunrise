@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.planetmirror.com/pub/moddb/2005/07/1263-ONP${MY_PV}_Umod.zip"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="|| (

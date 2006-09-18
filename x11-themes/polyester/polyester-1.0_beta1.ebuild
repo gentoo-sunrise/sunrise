@@ -19,7 +19,7 @@ RESTRICT="confcache"
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )"
 RDEPEND="${DEPEND}"
 
-need-kde 3.2
+need-kde 3.4
 
 S="${WORKDIR}/${MY_P}"
 

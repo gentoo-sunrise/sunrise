@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Minor QA fixes
+
   06 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> +lat-1.0.7.ebuild,
   -lat-1.1.6.ebuild, lat-1.1.6.1.ebuild,
   -files/lat-1.1.6-service_finder_cs.patch:

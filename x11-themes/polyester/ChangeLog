@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Minor QA fixes
+
   02 Sep 2006; Josu López Fernández <zamorate@zamorate.net>
   -polyester-0.9.3.ebuild, +polyester-1.0_beta1.ebuild:
   Version bump to 1.0Beta1, old version removed.

@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Minor QA fixes
+
   15 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   Version bump to 3.2_alpha2, upstream included my patch :-)
 

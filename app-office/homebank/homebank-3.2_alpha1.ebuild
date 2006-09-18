@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=x11-libs/gtk+-2*"
+DEPEND="x11-libs/gtk+"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"

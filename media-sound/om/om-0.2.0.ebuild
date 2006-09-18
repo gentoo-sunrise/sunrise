@@ -17,7 +17,7 @@ RDEPEND=">=media-libs/liblo-0.22
 	dssi? ( media-libs/dssi )
 	ladspa? ( media-libs/ladspa-sdk )
 	lash? ( >=media-sound/lash-0.5.0 )
-	patch-loader? ( >=dev-libs/libxml2-2.6i )
+	patch-loader? ( dev-libs/libxml2 )
 	gtk? ( >=dev-cpp/gtkmm-2.4
 		>=dev-cpp/libgnomecanvasmm-2.6
 		>=dev-cpp/libglademm-2.4.1 )"

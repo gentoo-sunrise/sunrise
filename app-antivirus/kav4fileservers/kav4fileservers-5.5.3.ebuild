@@ -13,7 +13,7 @@ SRC_URI="ftp://ftp.kaspersky.com/products/release/english/businessoptimal/file_s
 
 SLOT="0"
 LICENSE="KASPERSKY"
-KEYWORDS="-* ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""

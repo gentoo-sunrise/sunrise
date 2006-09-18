@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Minor QA fixes
+
   10 Jun 2006; Jakub Moc <jakub@gentoo.org> +panda-9.00.00.ebuild:
   New ebuild, initially submitted by Francisco Javier in Bug 78969.
 

@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Minor QA cleanup
+
   30 Jun 2006; Santiago M. Mola <cooldwind@gmail.com> ChangeLog:
   Initial ebuild (om-0.2.0.ebuild) for bug #107187 Thanks to Pär Karlsson
   <feinorgh@telia.com>, [xaero] <xaero@inwind.it> and Jouni Rinne

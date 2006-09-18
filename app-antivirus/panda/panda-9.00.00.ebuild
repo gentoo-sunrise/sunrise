@@ -10,7 +10,7 @@ SRC_URI="http://shareware.pandasoftware.com/shareware/pavcl_linux.tgz"
 
 SLOT="0"
 LICENSE="Panda-Freeware"
-KEYWORDS="-* ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
