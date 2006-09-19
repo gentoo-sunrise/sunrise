@@ -1,222 +1,6 @@
-diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.alsa miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.alsa
---- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.alsa	2006-08-23 22:40:35.000000000 +0200
-+++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.alsa	2006-08-23 22:41:34.000000000 +0200
-@@ -1,9 +1,11 @@
- 
--CXX=gcc
-+CXX?=g++
-+CC?=gcc
- LEX=flex
- YACC=bison
- INCLUDES=
--FLAGS=-D__LINUX_ALSA__ -O3 -c
-+CFLAGS?=-O3
-+FLAGS=-D__LINUX_ALSA__ -c $(CFLAGS)
- LIBS=-lasound -lstdc++ -ldl -lm
- SF_OBJ=util_sndfile.o
- 
-@@ -46,7 +48,7 @@
- 	$(CXX) -o chuck $(OBJS) $(LIBS)
- 
- chuck.tab.o: chuck.tab.c
--	$(CXX) $(FLAGS) chuck.tab.c
-+	$(CC) $(FLAGS) chuck.tab.c
- 
- chuck.tab.c: chuck.y
- 	$(YACC) -dv -b chuck chuck.y
-@@ -55,7 +57,7 @@
- 	echo "chuck.tab.h was created at the same time as chuck.tab.c"
- 
- chuck.yy.o: chuck.yy.c chuck.tab.h chuck_errmsg.h chuck_utils.h
--	$(CXX) $(FLAGS) chuck.yy.c
-+	$(CC) $(FLAGS) chuck.yy.c
- 
- chuck.yy.c: chuck.lex
- 	$(LEX) -ochuck.yy.c chuck.lex
-@@ -178,19 +180,19 @@
- 	$(CXX) $(FLAGS) util_console.cpp
- 
- util_hid.o: util_hid.h util_hid.c
--	$(CXX) $(FLAGS) util_hid.c
-+	$(CC) $(FLAGS) util_hid.c
- 
- util_math.o: util_math.h util_math.c
--	$(CXX) $(FLAGS) util_math.c
-+	$(CC) $(FLAGS) util_math.c
- 
- util_network.o: util_network.h util_network.c
--	$(CXX) $(FLAGS) util_network.c
-+	$(CC) $(FLAGS) util_network.c
- 
- util_opsc.o: util_opsc.h util_opsc.cpp
- 	$(CXX) $(FLAGS) util_opsc.cpp
- 
- util_raw.o: util_raw.h util_raw.c
--	$(CXX) $(FLAGS) util_raw.c
-+	$(CC) $(FLAGS) util_raw.c
- 
- util_string.o: util_string.h util_string.cpp
- 	$(CXX) $(FLAGS) util_string.cpp
-@@ -199,10 +201,10 @@
- 	$(CXX) $(FLAGS) util_thread.cpp
- 
- util_xforms.o: util_xforms.h util_xforms.c
--	$(CXX) $(FLAGS) util_xforms.c
-+	$(CC) $(FLAGS) util_xforms.c
- 
- util_sndfile.o: util_sndfile.h util_sndfile.c
--	$(CXX) $(FLAGS) util_sndfile.c
-+	$(CC) $(FLAGS) util_sndfile.c
- 
- clean: 
- 	rm -f chuck *~ *.o chuck.output chuck.tab.h chuck.tab.c chuck.yy.c
-diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.jack miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.jack
---- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.jack	2006-08-23 22:40:35.000000000 +0200
-+++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.jack	2006-08-23 22:41:34.000000000 +0200
-@@ -1,9 +1,11 @@
- 
--CXX=gcc
-+CXX?=g++
-+CC?=gcc
- LEX=flex
- YACC=bison
- INCLUDES=
--FLAGS=-D__LINUX_JACK__ -O3 -c
-+CFLAGS?=-O3
-+FLAGS=-D__LINUX_JACK__ -c $(CFLAGS)
- LIBS=-lasound -ljack -lstdc++ -ldl -lm
- SF_OBJ=util_sndfile.o
- 
-@@ -46,7 +48,7 @@
- 	$(CXX) -o chuck $(OBJS) $(LIBS)
- 
- chuck.tab.o: chuck.tab.c
--	$(CXX) $(FLAGS) chuck.tab.c
-+	$(CC) $(FLAGS) chuck.tab.c
- 
- chuck.tab.c: chuck.y
- 	$(YACC) -dv -b chuck chuck.y
-@@ -55,7 +57,7 @@
- 	echo "chuck.tab.h was created at the same time as chuck.tab.c"
- 
- chuck.yy.o: chuck.yy.c chuck.tab.h chuck_errmsg.h chuck_utils.h
--	$(CXX) $(FLAGS) chuck.yy.c
-+	$(CC) $(FLAGS) chuck.yy.c
- 
- chuck.yy.c: chuck.lex
- 	$(LEX) -ochuck.yy.c chuck.lex
-@@ -178,19 +180,19 @@
- 	$(CXX) $(FLAGS) util_console.cpp
- 
- util_hid.o: util_hid.h util_hid.c
--	$(CXX) $(FLAGS) util_hid.c
-+	$(CC) $(FLAGS) util_hid.c
- 
- util_math.o: util_math.h util_math.c
--	$(CXX) $(FLAGS) util_math.c
-+	$(CC) $(FLAGS) util_math.c
- 
- util_network.o: util_network.h util_network.c
--	$(CXX) $(FLAGS) util_network.c
-+	$(CC) $(FLAGS) util_network.c
- 
- util_opsc.o: util_opsc.h util_opsc.cpp
- 	$(CXX) $(FLAGS) util_opsc.cpp
- 
- util_raw.o: util_raw.h util_raw.c
--	$(CXX) $(FLAGS) util_raw.c
-+	$(CC) $(FLAGS) util_raw.c
- 
- util_string.o: util_string.h util_string.cpp
- 	$(CXX) $(FLAGS) util_string.cpp
-@@ -199,10 +201,10 @@
- 	$(CXX) $(FLAGS) util_thread.cpp
- 
- util_xforms.o: util_xforms.h util_xforms.c
--	$(CXX) $(FLAGS) util_xforms.c
-+	$(CC) $(FLAGS) util_xforms.c
- 
- util_sndfile.o: util_sndfile.h util_sndfile.c
--	$(CXX) $(FLAGS) util_sndfile.c
-+	$(CC) $(FLAGS) util_sndfile.c
- 
- clean: 
- 	rm -f chuck *~ *.o chuck.output chuck.tab.h chuck.tab.c chuck.yy.c
-diff -ru miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.oss miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.oss
---- miniAudicle-0.1.3.5~/chuck-1.2.0.6/src/makefile.oss	2006-08-23 22:40:35.000000000 +0200
-+++ miniAudicle-0.1.3.5/chuck-1.2.0.6/src/makefile.oss	2006-08-23 22:41:34.000000000 +0200
-@@ -1,9 +1,11 @@
- 
--CXX=gcc
-+CXX?=g++
-+CC?=gcc
- LEX=flex
- YACC=bison
- INCLUDES=
--FLAGS=-D__LINUX_OSS__ -O3 -c
-+CFLAGS?=-03
-+FLAGS=-D__LINUX_OSS__ -c $(CFLAGS)
- LIBS=-lpthread -lstdc++ -ldl -lm
- SF_OBJ=util_sndfile.o
- 
-@@ -46,7 +48,7 @@
- 	$(CXX) -o chuck $(OBJS) $(LIBS)
- 
- chuck.tab.o: chuck.tab.c
--	$(CXX) $(FLAGS) chuck.tab.c
-+	$(CC) $(FLAGS) chuck.tab.c
- 
- chuck.tab.c: chuck.y
- 	$(YACC) -dv -b chuck chuck.y
-@@ -55,7 +57,7 @@
- 	echo "chuck.tab.h was created at the same time as chuck.tab.c"
- 
- chuck.yy.o: chuck.yy.c chuck.tab.h chuck_errmsg.h chuck_utils.h
--	$(CXX) $(FLAGS) chuck.yy.c
-+	$(CC) $(FLAGS) chuck.yy.c
- 
- chuck.yy.c: chuck.lex
- 	$(LEX) -ochuck.yy.c chuck.lex
-@@ -178,19 +180,19 @@
- 	$(CXX) $(FLAGS) util_console.cpp
- 
- util_hid.o: util_hid.h util_hid.c
--	$(CXX) $(FLAGS) util_hid.c
-+	$(CC) $(FLAGS) util_hid.c
- 
- util_math.o: util_math.h util_math.c
--	$(CXX) $(FLAGS) util_math.c
-+	$(CC) $(FLAGS) util_math.c
- 
- util_network.o: util_network.h util_network.c
--	$(CXX) $(FLAGS) util_network.c
-+	$(CC) $(FLAGS) util_network.c
- 
- util_opsc.o: util_opsc.h util_opsc.cpp
- 	$(CXX) $(FLAGS) util_opsc.cpp
- 
- util_raw.o: util_raw.h util_raw.c
--	$(CXX) $(FLAGS) util_raw.c
-+	$(CC) $(FLAGS) util_raw.c
- 
- util_string.o: util_string.h util_string.cpp
- 	$(CXX) $(FLAGS) util_string.cpp
-@@ -199,10 +201,10 @@
- 	$(CXX) $(FLAGS) util_thread.cpp
- 
- util_xforms.o: util_xforms.h util_xforms.c
--	$(CXX) $(FLAGS) util_xforms.c
-+	$(CC) $(FLAGS) util_xforms.c
- 
- util_sndfile.o: util_sndfile.h util_sndfile.c
--	$(CXX) $(FLAGS) util_sndfile.c
-+	$(CC) $(FLAGS) util_sndfile.c
- 
- clean: 
- 	rm -f chuck *~ *.o chuck.output chuck.tab.h chuck.tab.c chuck.yy.c
-diff -ru miniAudicle-0.1.3.5~/makefile.alsa miniAudicle-0.1.3.5/makefile.alsa
---- miniAudicle-0.1.3.5~/makefile.alsa	2006-08-23 22:40:35.000000000 +0200
-+++ miniAudicle-0.1.3.5/makefile.alsa	2006-08-23 22:44:21.000000000 +0200
+diff -ru miniAudicle-0.1.3.6~/makefile.alsa miniAudicle-0.1.3.6/makefile.alsa
+--- miniAudicle-0.1.3.6~/makefile.alsa	2006-09-19 10:09:03.000000000 +0200
++++ miniAudicle-0.1.3.6/makefile.alsa	2006-09-19 10:13:32.000000000 +0200
 @@ -5,14 +5,17 @@
  
  WXW_DIR=wxw
@@ -238,7 +22,7 @@ diff -ru miniAudicle-0.1.3.5~/makefile.alsa miniAudicle-0.1.3.5/makefile.alsa
  	 -lstdc++ -ldl -lm
  SF_OBJ=$(CHUCK_SRC_DIR)/util_sndfile.o
  
-@@ -79,41 +82,41 @@
+@@ -69,44 +72,44 @@
  	 $(WXW_DIR)/icons/replace.xpm $(WXW_DIR)/icons/miniAudicle.xpm
  
  miniAudicle: $(OBJS) $(CHUCK_OBJS)
@@ -289,11 +73,15 @@ diff -ru miniAudicle-0.1.3.5~/makefile.alsa miniAudicle-0.1.3.5/makefile.alsa
 -	$(CC) -o $(WXW_DIR)/mAConfig.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAConfig.cpp
 +	$(CXX) -o $(WXW_DIR)/mAConfig.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAConfig.cpp
  
+ $(WXW_DIR)/mAPreferencesWindow.o: $(WXW_DIR)/mAPreferencesWindow.cpp $(WXW_DIR)/mAPreferencesWindow.h
+-	$(CC) -o $(WXW_DIR)/mAPreferencesWindow.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAPreferencesWindow.cpp
++	$(CXX) -o $(WXW_DIR)/mAPreferencesWindow.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAPreferencesWindow.cpp
+ 
  clean: 
  	rm -rf *.o $(WXW_DIR)/*.o $(BIN_DIR)/miniAudicle
-diff -ru miniAudicle-0.1.3.5~/makefile.jack miniAudicle-0.1.3.5/makefile.jack
---- miniAudicle-0.1.3.5~/makefile.jack	2006-08-23 22:40:35.000000000 +0200
-+++ miniAudicle-0.1.3.5/makefile.jack	2006-08-23 22:43:44.000000000 +0200
+diff -ru miniAudicle-0.1.3.6~/makefile.jack miniAudicle-0.1.3.6/makefile.jack
+--- miniAudicle-0.1.3.6~/makefile.jack	2006-09-19 10:09:03.000000000 +0200
++++ miniAudicle-0.1.3.6/makefile.jack	2006-09-19 10:15:47.000000000 +0200
 @@ -5,14 +5,17 @@
  
  WXW_DIR=wxw
@@ -310,12 +98,12 @@ diff -ru miniAudicle-0.1.3.5~/makefile.jack miniAudicle-0.1.3.5/makefile.jack
  FLAGS=-D__LINUX_JACK__ -D__LINUX__ -D__MA_WXWIDGETS__ \
 -	  `wx-config --cppflags` -O3 -c -DwxABI_VERSION=20600
 -LIBS=`wx-config --libs stc,adv,core,base` -lasound -ljack \
-+	  `$(WX_CONFIG) --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
++	  `$(WX_CONFIG) --cppflags` -O3 -c -DwxABI_VERSION=20600 $(CFLAGS)
 +LIBS=`$(WX_CONFIG) --libs stc,adv,core,base` -lasound -ljack \
  	 -lstdc++ -ldl -lm
  SF_OBJ=$(CHUCK_SRC_DIR)/util_sndfile.o
  
-@@ -79,41 +82,41 @@
+@@ -73,44 +76,44 @@
  	 $(WXW_DIR)/icons/replace.xpm $(WXW_DIR)/icons/miniAudicle.xpm
  
  miniAudicle: $(OBJS) $(CHUCK_OBJS)
@@ -366,11 +154,15 @@ diff -ru miniAudicle-0.1.3.5~/makefile.jack miniAudicle-0.1.3.5/makefile.jack
 -	$(CC) -o $(WXW_DIR)/mAConfig.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAConfig.cpp
 +	$(CXX) -o $(WXW_DIR)/mAConfig.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAConfig.cpp
  
+ $(WXW_DIR)/mAPreferencesWindow.o: $(WXW_DIR)/mAPreferencesWindow.cpp $(WXW_DIR)/mAPreferencesWindow.h
+-	$(CC) -o $(WXW_DIR)/mAPreferencesWindow.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAPreferencesWindow.cpp
++	$(CXX) -o $(WXW_DIR)/mAPreferencesWindow.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAPreferencesWindow.cpp
+ 
  clean: 
  	rm -rf *.o $(WXW_DIR)/*.o $(BIN_DIR)/miniAudicle
-diff -ru miniAudicle-0.1.3.5~/makefile.oss miniAudicle-0.1.3.5/makefile.oss
---- miniAudicle-0.1.3.5~/makefile.oss	2006-08-23 22:40:35.000000000 +0200
-+++ miniAudicle-0.1.3.5/makefile.oss	2006-08-23 22:44:18.000000000 +0200
+diff -ru miniAudicle-0.1.3.6~/makefile.oss miniAudicle-0.1.3.6/makefile.oss
+--- miniAudicle-0.1.3.6~/makefile.oss	2006-09-19 10:09:03.000000000 +0200
++++ miniAudicle-0.1.3.6/makefile.oss	2006-09-19 10:17:57.000000000 +0200
 @@ -5,14 +5,17 @@
  
  WXW_DIR=wxw
@@ -387,12 +179,12 @@ diff -ru miniAudicle-0.1.3.5~/makefile.oss miniAudicle-0.1.3.5/makefile.oss
  FLAGS=-D__LINUX_OSS___ -D__LINUX__ -D__PLATFORM_LINUX__ -D__MA_WXWIDGETS__ \
 -	  `wx-config --cppflags` -O3 -c -DwxABI_VERSION=20600
 -LIBS=`wx-config --libs stc,adv,core,base` -lpthread -lstdc++ -ldl -lm
-+	  `$(WX_CONFIG) --cppflags` -c -DwxABI_VERSION=20600 $(CFLAGS)
++	  `$(WX_CONFIG) --cppflags` -O3 -c -DwxABI_VERSION=20600 $(CFLAGS)
 +LIBS=`$(WX_CONFIG) --libs stc,adv,core,base` -lpthread -lstdc++ -ldl -lm
  SF_OBJ=$(CHUCK_SRC_DIR)/util_sndfile.o
  
  ifneq ($(CHUCK_STAT),)
-@@ -78,41 +81,41 @@
+@@ -73,44 +76,44 @@
  	 $(WXW_DIR)/icons/replace.xpm $(WXW_DIR)/icons/miniAudicle.xpm
  
  miniAudicle: $(OBJS) $(CHUCK_OBJS)
@@ -442,6 +234,10 @@ diff -ru miniAudicle-0.1.3.5~/makefile.oss miniAudicle-0.1.3.5/makefile.oss
  $(WXW_DIR)/mAConfig.o: $(WXW_DIR)/mAConfig.cpp $(WXW_DIR)/mAConfig.h
 -	$(CC) -o $(WXW_DIR)/mAConfig.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAConfig.cpp
 +	$(CXX) -o $(WXW_DIR)/mAConfig.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAConfig.cpp
+ 
+ $(WXW_DIR)/mAPreferencesWindow.o: $(WXW_DIR)/mAPreferencesWindow.cpp $(WXW_DIR)/mAPreferencesWindow.h
+-	$(CC) -o $(WXW_DIR)/mAPreferencesWindow.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAPreferencesWindow.cpp
++	$(CXX) -o $(WXW_DIR)/mAPreferencesWindow.o $(FLAGS) $(INCLUDES) $(WXW_DIR)/mAPreferencesWindow.cpp
  
  clean: 
  	rm -rf *.o $(WXW_DIR)/*.o $(BIN_DIR)/miniAudicle
