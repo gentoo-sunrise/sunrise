@@ -1,0 +1,8 @@
+# ChangeLog for dev-cpp/libvmime
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> +libvmime-0.8.0.ebuild,
+  +files/libvmime-0.8.0-gnutls_ssl-detection.patch, +metadata.xml:
+  New ebuild for bug 148250.
+
