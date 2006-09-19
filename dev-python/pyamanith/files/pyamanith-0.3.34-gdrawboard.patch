@@ -1,0 +1,11 @@
+--- include/pyamanith.h.orig	2006-08-20 12:24:24.000000000 +0200
++++ include/pyamanith.h	2006-08-20 12:24:39.000000000 +0200
+@@ -59,7 +59,7 @@
+ #include <amanith/numerics/geigen.h>
+ #include <amanith/numerics/gfilter.h>
+ #include <amanith/numerics/gintegration.h>
+-#include <amanith/rendering/gdrawboard.h>
++#include <amanith/rendering/gdrawboard.swig.h>
+ #include <amanith/rendering/gdrawstyle.h>
+ #include <amanith/rendering/gopenglboard.h>
+ #include <amanith/support/gavltree.h>
