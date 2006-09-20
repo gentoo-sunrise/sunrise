@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Sep 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  +elogviewer-0.4.0.7-r3.ebuild, +files/elogviewer.1:
+  added man page for elogviewer, ebuild will install, added log to postinst einfo
+
+  20 Sep 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   elogviewer-0.4.0.7-r2.ebuild:
   minor fix: leading whitespace deleted in einfo
 
