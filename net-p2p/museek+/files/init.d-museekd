@@ -1,0 +1,35 @@
+#!/sbin/runscript
+# Copyright 2004-2005 SeeSchloss
+# Distributed under the terms of the GNU General Public License v2
+
+# NB: Config is in /etc/conf.d/museek
+
+opts="start stop restart reload rescan"
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting museekd as user $MUSEEKD_USER"
+	start-stop-daemon --start --quiet --exec /usr/bin/museekd --chuid $MUSEEKD_USER --background --pidfile /var/run/museekd.pid --make-pidfile -- -c $MUSEEKD_CONFIG
+	eend $? "Failed to start museekd"
+}
+
+stop() {
+	ebegin "Stopping museekd"
+	start-stop-daemon --stop --quiet --pidfile /var/run/museekd.pid
+	eend $? "Failed to stop museekd"
+}
+
+rescan() {
+	ebegin "Scanning museek shares"
+	muscan -c $MUSEEKD_CONFIG
+	eend $? "Failed to rescan shares"
+}
+
+reload() {
+	ebegin "Reloading museek shares"
+	kill -HUP `cat /var/run/museekd.pid`
+	eend $? "Impossible to reload shares ?"
+}

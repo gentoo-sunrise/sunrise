@@ -1,0 +1,16 @@
+####
+# * MUSEEKD_USER
+# Set here your main user.
+# MUSEEKD_USER=jimmy:users
+# Or an users created ad-hoc for this like p2p.
+# MUSEEKD_USER=p2p:users
+#
+#
+# * MUSEEKD_CONFIG
+# Here goes the config file.
+#
+# The standard setting should be set it in your home:
+# MUSEEKD_CONFIG=/home/jimmy/.museekd/config.xml
+#
+# But you can set it system wide with somethine like this:
+# MUSEEKD_CONFIG=/etc/museekd/config.xml

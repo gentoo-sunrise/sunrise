@@ -1,0 +1,21 @@
+#!/sbin/runscript
+# Copyright 2004 SeeSchloss
+# Distributed under the terms of the GNU General Public License v2
+
+# NB: Config is in /etc/conf.d/mulog
+
+depend() {
+	need museekd
+}
+
+start() {
+	ebegin "Starting mulog as user $MULOG_USER"
+	start-stop-daemon --start --quiet --exec /usr/bin/mulog.py --chuid $MULOG_USER --background --pidfile /var/run/mulog.pid --make-pidfile -- $MULOG_HOST:$MULOG_PORT $MULOG_PASS $MULOG_PATH
+	eend $? "Failed to start mulog"
+}
+
+stop() {
+	ebegin "Stopping mulog"
+	start-stop-daemon --stop --quiet --pidfile /var/run/mulog.pid
+	eend $? "Failed to stop mulog"
+}

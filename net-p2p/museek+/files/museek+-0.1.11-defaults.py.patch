@@ -1,0 +1,11 @@
+--- defaults.py.bkp	2006-09-17 23:26:43.000000000 +0200
++++ defaults.py	2006-09-17 23:28:08.000000000 +0200
+@@ -26,7 +26,7 @@
+ MULOG='debug'
+ 
+ # CCFLAGS (fPIC, Wall, pipe) Do not include the prefix "-"
+-CFLAGS='fPIC,Wall,pipe'
++#CFLAGS='-fPIC -Wall -pipe'
+ 
+ # Enable OGG Vorbis support (if available) in file scanner (muscan)
+ VORBIS=1
