@@ -33,7 +33,7 @@ pkg_postinst() {
     einfo 
     einfo "To operate properly this software needs the directory"
     einfo "$PORT_LOGDIR/elog created, belonging to group portage."
-    einfo " To start the software as a user, add yourself to the portage"
+    einfo "To start the software as a user, add yourself to the portage"
     einfo "group."
     einfo
 }
