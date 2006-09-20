@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Sep 2006; Toni Takarautio (secretz) <thtaka@utu.fi>
+  -nanodc-0.2.2.ebuild, +nanodc-0.2.3.ebuild:
+  Version bump. Changed the SRC_URI.
+
+  20 Sep 2006; Toni Takarautio (secretz) <thtaka@utu.fi>
   -nanodc-0.1.44.ebuild, +nanodc-0.2.2.ebuild:
   Version bump and changed SRC_URI
 
