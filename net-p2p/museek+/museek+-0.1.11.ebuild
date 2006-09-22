@@ -97,12 +97,12 @@ src_install() {
 
 	# conf.d and init.d scripts by SeeSchloss
 	exeinto /etc/init.d
-	#newexe ${FILESDIR}/conf.d-mulog mulog
-	newexe ${FILESDIR}/init.d-museekd museekd
+	#newexe "${FILESDIR}/conf.d-mulog" mulog
+	newexe "${FILESDIR}/init.d-museekd" museekd
 
 	insinto /etc/conf.d
 	#newins "${FILESDIR}"/conf.d-mulog mulog
-	newins ${FILESDIR}/conf.d-museekd museekd
+	newins "${FILESDIR}/conf.d-museekd" museekd
 }
 
 pkg_postinst() {
