@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="BitTorrent client in C++ and Qt."
 HOMEPAGE="http://www.qbittorrent.org/"
-SRC_URI="mirror://sourceforge/${PV}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
