@@ -53,25 +53,12 @@ src_unpack() {
 
 src_compile() {
 	local myconf=""
-	if ! use qt3 ; then
-		myconf="${myconf} MUSEEQ=no"
-	fi
-	if ! use qsa ; then
-		myconf="${myconf} QSA=no"
-	fi
-	if ! use gtk ; then
-		myconf="${myconf} MUSETUPGTK=no"
-	fi
-	if ! use ncurses ; then
-		myconf="${myconf} MUCOUS=no"
-	fi
-	if ! use vorbis ; then
-		myconf="${myconf} VORBIS=no"
-	fi
-
-	if use debug ; then
-		myconf="${myconf} MULOG=cycle,debug"
-	fi
+	use qt3 || myconf="${myconf} MUSEEQ=no"
+	use qsa || myconf="${myconf} QSA=no"
+	use gtk || myconf="${myconf} MUSETUPGTK=no"
+	use ncurses || myconf="${myconf} MUCOUS=no"
+	use vorbis || myconf="${myconf} VORBIS=no"
+	use debug && myconf="${myconf} MULOG=cycle,debug"
 
 	local mylinguas=""
 	for X in ${LANGS} ; do
@@ -82,11 +69,11 @@ src_compile() {
 
 	myconf="${myconf} MUSEEQTRANSLATIONS=${mylinguas/,$/}"
 
-	scons ${myconf} CFLAGS="${CFLAGS}" PREFIX=/usr
+	scons ${myconf} CFLAGS="${CFLAGS}" PREFIX=/usr || die "scons failed"
 }
 
 src_install() {
-	scons DESTDIR="${D}" install
+	scons DESTDIR="${D}" install || die "scons install failed"
 	dodoc README
 
 	if use qt3 ; then
@@ -96,13 +83,11 @@ src_install() {
 	fi
 
 	# conf.d and init.d scripts by SeeSchloss
-	exeinto /etc/init.d
-	#newexe "${FILESDIR}/conf.d-mulog" mulog
-	newexe "${FILESDIR}/init.d-museekd" museekd
+	#newinitd "${FILESDIR}/init.d-mulog" mulog
+	newinitd "${FILESDIR}/init.d-museekd" museekd
 
-	insinto /etc/conf.d
-	#newins "${FILESDIR}"/conf.d-mulog mulog
-	newins "${FILESDIR}/conf.d-museekd" museekd
+	#newconfd "${FILESDIR}"/conf.d-mulog mulog
+	newconfd "${FILESDIR}/conf.d-museekd" museekd
 }
 
 pkg_postinst() {

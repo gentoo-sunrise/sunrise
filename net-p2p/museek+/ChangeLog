@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Sep 2006; Stefan Schweizer <genstef@gentoo.org> museek+-0.1.11.ebuild:
+  misc ebuild cleanups, please take a look
+
   20 Sep 2006; Santiago M. Mola <cooldwind@gmail.com>
   +museek+-0.1.11.ebuild, +files/museek+-0.1.11-SConstruct.patch,
   +files/museek+-0.1.11-defaults.py.patch, +files/conf.d-mulog,
