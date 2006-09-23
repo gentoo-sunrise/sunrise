@@ -11,7 +11,7 @@ HOMEPAGE="http://sourceforge.net/projects/xenman/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="LGPL-2"
 SLOT="0"
-IUSE=""
+IUSE="lvm2"
 
 DEPEND=""
 RDEPEND=">=app-emulation/xen-3.0.2
@@ -19,6 +19,7 @@ RDEPEND=">=app-emulation/xen-3.0.2
 		>=app-arch/rpm-4.4.6
 	 	>=dev-python/pygtk-2.8.6
 	 	>=x11-libs/vte-0.12.2
+		lvm2? ( sys-fs/lvm2 )
 		dev-lang/python"
 
 pkg_setup() {
