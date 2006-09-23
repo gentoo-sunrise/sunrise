@@ -4,6 +4,7 @@ app-cdr/bonfire:totem - Enable support for totem
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
+app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/mc-mp:7zip - Add support for 7zip archives
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
