@@ -1,0 +1,72 @@
+diff -ru 06SEPpl1.0~/install/unix/autoconfig 06SEPpl1.0/install/unix/autoconfig
+--- 06SEPpl1.0~/install/unix/autoconfig	2006-09-20 15:13:04.000000000 +0200
++++ 06SEPpl1.0/install/unix/autoconfig	2006-09-20 16:39:57.000000000 +0200
+@@ -24,7 +24,7 @@
+ 	echo="echo -n"
+ fi
+ 
+-clear
++#clear
+ 
+ cd `echo $0 | sed -e 's/[^\/]*$//' -e 's/^$/./' -e 's/\/$//'`
+ MID_INSTALL=`pwd`
+@@ -54,14 +54,14 @@
+ echo "********** DATE:  `date`"
+ echo ""
+ 
+-$echo "Do you want to continue [yn]? (y): " $SV_NONL
+-read answ
+-if [ -z "$answ" ]; then
+-  answ="y"
+-fi
+-if [ "$answ" = "n" -o "$answ" = "N" ]; then
+-  exit 1
+-fi
++#$echo "Do you want to continue [yn]? (y): " $SV_NONL
++#read answ
++#if [ -z "$answ" ]; then
++#  answ="y"
++#fi
++#if [ "$answ" = "n" -o "$answ" = "N" ]; then
++#  exit 1
++#fi
+ 
+ /bin/sh $MID_INSTALL/select all
+ /bin/sh $MID_INSTALL/preinstall -a
+diff -ru 06SEPpl1.0~/install/unix/install1 06SEPpl1.0/install/unix/install1
+--- 06SEPpl1.0~/install/unix/install1	2006-09-20 15:13:04.000000000 +0200
++++ 06SEPpl1.0/install/unix/install1	2006-09-20 16:40:09.000000000 +0200
+@@ -52,7 +52,7 @@
+ PATH=$PATH:$MID_INSTALL
+ export MIDASHOME MIDVERS MID_HOME MID_INSTALL
+ 
+-clear
++#clear
+ 
+ if [ ! -f "$MID_HOME/local/default.mk" ] ; then
+   echo "*** ERROR: File <$MID_HOME/local/default.mk> does not exist."
+@@ -911,13 +911,14 @@
+     mkdir $MID_HOME/tmp
+ fi
+ 
+-time /bin/sh $MID_INSTALL/install -i > $MID_HOME/tmp/install.$$ 2>&1 &
+-echo "Running install in background"
+-echo "Results are coming in $MID_HOME/tmp/install.$$"
+-if [ "$1" = "-a" ]; then 
+-  $echo "Waiting for MIDAS installation to finish..."  $SV_NONL
+-  wait
+-  echo "Finished."
+-  echo ""
+-fi
+-exit 0
++#time /bin/sh $MID_INSTALL/install -i > $MID_HOME/tmp/install.$$ 2>&1 &
++#echo "Running install in background"
++#echo "Results are coming in $MID_HOME/tmp/install.$$"
++#if [ "$1" = "-a" ]; then 
++#  $echo "Waiting for MIDAS installation to finish..."  $SV_NONL
++#  wait
++#  echo "Finished."
++#  echo ""
++#fi
++#exit 0
++/bin/sh $MID_INSTALL/install -i
