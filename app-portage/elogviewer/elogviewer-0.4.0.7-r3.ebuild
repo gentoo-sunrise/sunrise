@@ -13,28 +13,28 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=">=dev-lang/python-2.3
->=dev-python/pygtk-2.0
->=sys-apps/portage-2.1"
+	>=dev-python/pygtk-2.0
+	>=sys-apps/portage-2.1"
 
 src_install() {
-      dobin "${WORKDIR}"/elogviewer 
-      dodoc "${WORKDIR}"/CHANGELOG
-      doman "${FILESDIR}"/elogviewer.1
+	dobin "${WORKDIR}"/elogviewer
+	dodoc "${WORKDIR}"/CHANGELOG
+	doman "${FILESDIR}"/elogviewer.1
 }
 
 pkg_postinst() {
-    einfo 
-    einfo "In order to use this software, you need to activate"
-    einfo "Portage's ELOG features.  Required is"
-    einfo "	     PORTAGE_ELOG_SYSTEM=\"save\" "
-    einfo "and at least one out of "
-    einfo "	     PORTAGE_ELOG_CLASSES=\"warn error info log\""
-    einfo "More information on the ELOG system can be found"
-    einfo "in /etc/make.conf.example"
-    einfo 
-    einfo "To operate properly this software needs the directory"
-    einfo "$PORT_LOGDIR/elog created, belonging to group portage."
-    einfo "To start the software as a user, add yourself to the portage"
-    einfo "group."
-    einfo
+	einfo
+	einfo "In order to use this software, you need to activate"
+	einfo "Portage's ELOG features.  Required is"
+	einfo "	     PORTAGE_ELOG_SYSTEM=\"save\" "
+	einfo "and at least one out of "
+	einfo "	     PORTAGE_ELOG_CLASSES=\"warn error info log\""
+	einfo "More information on the ELOG system can be found"
+	einfo "in /etc/make.conf.example"
+	einfo
+	einfo "To operate properly this software needs the directory"
+	einfo "$PORT_LOGDIR/elog created, belonging to group portage."
+	einfo "To start the software as a user, add yourself to the portage"
+	einfo "group."
+	einfo
 }
