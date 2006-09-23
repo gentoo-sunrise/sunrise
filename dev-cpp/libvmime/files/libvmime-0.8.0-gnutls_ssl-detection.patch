@@ -1,16 +1,11 @@
---- configure.orig	2006-09-19 22:52:19.000000000 +0200
-+++ configure	2006-09-19 22:58:37.000000000 +0200
-@@ -21617,28 +21617,98 @@
+--- configure.orig	2006-09-23 09:48:28.000000000 +0200
++++ configure	2006-09-23 09:50:31.000000000 +0200
+@@ -21617,484 +21617,6 @@
     { (exit 1); exit 1; }; }
  fi
  
 -# -- GNU SASL Library (http://www.gnu.org/software/gsasl/)
-+# -- global constructors (stolen from 'configure.in' in libsigc++)
-+echo "$as_me:$LINENO: checking if linker supports global constructors" >&5
-+echo $ECHO_N "checking if linker supports global constructors... $ECHO_C" >&6
-+cat > mylib.$ac_ext <<EOF
-+#include <stdio.h>
- 
+-
 -if test "${ac_cv_header_gsasl_h+set}" = set; then
 -  echo "$as_me:$LINENO: checking for gsasl.h" >&5
 -echo $ECHO_N "checking for gsasl.h... $ECHO_C" >&6
@@ -19,164 +14,69 @@
 -fi
 -echo "$as_me:$LINENO: result: $ac_cv_header_gsasl_h" >&5
 -echo "${ECHO_T}$ac_cv_header_gsasl_h" >&6
-+struct A
-+{
-+  A() { printf("PASS\n"); }
-+};
-+
-+A a;
-+
-+int foo()
-+  { return 1; }
-+
-+EOF
-+cat > mytest.$ac_ext <<EOF
-+#include <stdio.h>
-+
-+extern int foo();
-+
-+int main(int, char**)
-+{
-+  int i = foo();
-+  if(i != 1) printf("FAIL\n");
-+  return 0;
-+}
-+
-+EOF
-+sh libtool --mode=compile $CXX -c mylib.$ac_ext >&5
-+sh libtool --mode=link $CXX -o libtest.la -rpath / -version-info 0 mylib.lo  >&5
-+$CXX -c $CFLAGS $CPPFLAGS mytest.$ac_ext >&5
-+sh libtool --mode=link $CXX -o mytest mytest.o libtest.la >&5 2>/dev/null
-+
-+if test -x mytest; then
-+	myresult=`./mytest`
-+	if test "X$myresult" = "XPASS"; then
-+		echo "$as_me:$LINENO: result: yes" >&5
-+echo "${ECHO_T}yes" >&6
-+	else
-+		echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6
-+		{ { echo "$as_me:$LINENO: error:
-+===================================================================
-+ERROR: This platform lacks support of construction of global
-+objects in shared libraries.
-+
-+See ftp://rtfm.mit.edu/pub/usenet/news.answers/g++-FAQ/plain
-+for details about this problem.  Also for possible solutions
-+http://www.informatik.uni-frankfurt.de/~fp/Tcl/tcl-c++/tcl-c++.html
-+===================================================================" >&5
-+echo "$as_me: error:
-+===================================================================
-+ERROR: This platform lacks support of construction of global
-+objects in shared libraries.
-+
-+See ftp://rtfm.mit.edu/pub/usenet/news.answers/g++-FAQ/plain
-+for details about this problem.  Also for possible solutions
-+http://www.informatik.uni-frankfurt.de/~fp/Tcl/tcl-c++/tcl-c++.html
-+===================================================================" >&2;}
-+   { (exit 1); exit 1; }; }
-+	fi
- else
+-else
 -  # Is the header compilable?
 -echo "$as_me:$LINENO: checking gsasl.h usability" >&5
 -echo $ECHO_N "checking gsasl.h usability... $ECHO_C" >&6
-+	echo "$as_me:$LINENO: result: unknown" >&5
-+echo "${ECHO_T}unknown" >&6
-+fi
-+rm -f mylib.* mytest.* libtest.la .libs/libtest* mytest .libs/mytest .libs/lt-mytest .libs/mylib.* >&5
-+rmdir .libs >&5
-+
-+# -- const_cast
-+echo "$as_me:$LINENO: checking if C++ compiler supports const_cast<> (required)" >&5
-+echo $ECHO_N "checking if C++ compiler supports const_cast<> (required)... $ECHO_C" >&6
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
+-cat >conftest.$ac_ext <<_ACEOF
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
 -$ac_includes_default
 -#include <gsasl.h>
-+
-+   class foo;
-+
-+int
-+main ()
-+{
-+
-+   const foo *c=0;
-+   foo *c1=const_cast<foo*>(c);
-+
-+  ;
-+  return 0;
-+}
- _ACEOF
- rm -f conftest.$ac_objext
- if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
-@@ -21661,108 +21731,90 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+-_ACEOF
+-rm -f conftest.$ac_objext
+-if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+-  (eval $ac_compile) 2>conftest.er1
+-  ac_status=$?
+-  grep -v '^ *+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; } &&
+-	 { ac_try='test -s conftest.$ac_objext'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
 -  ac_header_compiler=yes
-+
-+  echo "$as_me:$LINENO: result: yes" >&5
-+echo "${ECHO_T}yes" >&6
-+
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
 -ac_header_compiler=no
-+
-+  echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6
-+  { { echo "$as_me:$LINENO: error: C++ compiler const_cast<> does not work" >&5
-+echo "$as_me: error: C++ compiler const_cast<> does not work" >&2;}
-+   { (exit 1); exit 1; }; }
-+
- fi
- rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
+-fi
+-rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
 -echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
 -echo "${ECHO_T}$ac_header_compiler" >&6
- 
+-
 -# Is the header present?
 -echo "$as_me:$LINENO: checking gsasl.h presence" >&5
 -echo $ECHO_N "checking gsasl.h presence... $ECHO_C" >&6
-+# -- dynamic_cast
-+echo "$as_me:$LINENO: checking if C++ compiler supports dynamic_cast<> (required)" >&5
-+echo $ECHO_N "checking if C++ compiler supports dynamic_cast<> (required)... $ECHO_C" >&6
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
+-cat >conftest.$ac_ext <<_ACEOF
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
 -#include <gsasl.h>
-+
-+   class foo { virtual ~foo() { } };
-+   class bar : public foo { };
-+
-+int
-+main ()
-+{
-+
-+   foo *c=0;
-+   bar *c1=dynamic_cast<bar*>(c);
-+
-+  ;
-+  return 0;
-+}
- _ACEOF
+-_ACEOF
 -if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
 -  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
-+rm -f conftest.$ac_objext
-+if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
-+  (eval $ac_compile) 2>conftest.er1
-   ac_status=$?
-   grep -v '^ *+' conftest.er1 >conftest.err
-   rm -f conftest.er1
-   cat conftest.err >&5
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  ac_status=$?
+-  grep -v '^ *+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); } >/dev/null; then
 -  if test -s conftest.err; then
 -    ac_cpp_err=$ac_cxx_preproc_warn_flag
@@ -189,33 +89,16 @@
 -fi
 -if test -z "$ac_cpp_err"; then
 -  ac_header_preproc=yes
-+  (exit $ac_status); } &&
-+	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
-+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
-+  (eval $ac_try) 2>&5
-+  ac_status=$?
-+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-+  (exit $ac_status); }; } &&
-+	 { ac_try='test -s conftest.$ac_objext'
-+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
-+  (eval $ac_try) 2>&5
-+  ac_status=$?
-+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-+  (exit $ac_status); }; }; then
-+
-+  echo "$as_me:$LINENO: result: yes" >&5
-+echo "${ECHO_T}yes" >&6
-+
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
 -  ac_header_preproc=no
 -fi
 -rm -f conftest.err conftest.$ac_ext
 -echo "$as_me:$LINENO: result: $ac_header_preproc" >&5
 -echo "${ECHO_T}$ac_header_preproc" >&6
- 
+-
 -# So?  What about this header?
 -case $ac_header_compiler:$ac_header_preproc:$ac_cxx_preproc_warn_flag in
 -  yes:no: )
@@ -257,13 +140,8 @@
 -fi
 -echo "$as_me:$LINENO: result: $ac_cv_header_gsasl_h" >&5
 -echo "${ECHO_T}$ac_cv_header_gsasl_h" >&6
-+  echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6
-+  { { echo "$as_me:$LINENO: error: C++ compiler dynamic_cast<> does not work" >&5
-+echo "$as_me: error: C++ compiler dynamic_cast<> does not work" >&2;}
-+   { (exit 1); exit 1; }; }
- 
- fi
+-
+-fi
 -if test $ac_cv_header_gsasl_h = yes; then
 -  echo "$as_me:$LINENO: checking for gsasl_check_version in -lgsasl" >&5
 -echo $ECHO_N "checking for gsasl_check_version in -lgsasl... $ECHO_C" >&6
@@ -272,18 +150,13 @@
 -else
 -  ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lgsasl  $LIBS"
-+rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
-+
-+# -- mutable
-+echo "$as_me:$LINENO: checking if C++ compiler supports mutable (required)" >&5
-+echo $ECHO_N "checking if C++ compiler supports mutable (required)... $ECHO_C" >&6
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -21770,24 +21822,24 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
+-cat >conftest.$ac_ext <<_ACEOF
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
+-
 -/* Override any gcc2 internal prototype to avoid an error.  */
 -#ifdef __cplusplus
 -extern "C"
@@ -291,42 +164,35 @@
 -/* We use char because int might match the return type of a gcc2
 -   builtin and then its argument prototype would still apply.  */
 -char gsasl_check_version ();
-+class k {
-+        mutable char *c;
-+public:
-+   void foo() const { c=0; }
-+};
-+
- int
- main ()
- {
+-int
+-main ()
+-{
 -gsasl_check_version ();
-+
-+
-   ;
-   return 0;
- }
- _ACEOF
+-  ;
+-  return 0;
+-}
+-_ACEOF
 -rm -f conftest.$ac_objext conftest$ac_exeext
 -if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
 -  (eval $ac_link) 2>conftest.er1
-+rm -f conftest.$ac_objext
-+if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
-+  (eval $ac_compile) 2>conftest.er1
-   ac_status=$?
-   grep -v '^ *+' conftest.er1 >conftest.err
-   rm -f conftest.er1
-@@ -21800,249 +21852,58 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; } &&
+-  ac_status=$?
+-  grep -v '^ *+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; } &&
 -	 { ac_try='test -s conftest$ac_exeext'
-+	 { ac_try='test -s conftest.$ac_objext'
-   { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
-   (eval $ac_try) 2>&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
 -  ac_cv_lib_gsasl_gsasl_check_version=yes
 -else
 -  echo "$as_me: failed program was:" >&5
@@ -363,22 +229,20 @@
 -else
 -  libgnutls_config_prefix=""
 -fi;
- 
+-
 -  if test x$libgnutls_config_prefix != x ; then
 -     if test x${LIBGNUTLS_CONFIG+set} != xset ; then
 -        LIBGNUTLS_CONFIG=$libgnutls_config_prefix/bin/libgnutls-config
 -     fi
 -  fi
-+  echo "$as_me:$LINENO: result: yes" >&5
-+echo "${ECHO_T}yes" >&6
- 
+-
 -  # Extract the first word of "libgnutls-config", so it can be a program name with args.
 -set dummy libgnutls-config; ac_word=$2
 -echo "$as_me:$LINENO: checking for $ac_word" >&5
 -echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
 -if test "${ac_cv_path_LIBGNUTLS_CONFIG+set}" = set; then
 -  echo $ECHO_N "(cached) $ECHO_C" >&6
- else
+-else
 -  case $LIBGNUTLS_CONFIG in
 -  [\\/]* | ?:[\\/]*)
 -  ac_cv_path_LIBGNUTLS_CONFIG="$LIBGNUTLS_CONFIG" # Let the user override the test with a path.
@@ -397,21 +261,19 @@
 -  fi
 -done
 -done
-+  echo "$as_me: failed program was:" >&5
-+sed 's/^/| /' conftest.$ac_ext >&5
- 
+-
 -  test -z "$ac_cv_path_LIBGNUTLS_CONFIG" && ac_cv_path_LIBGNUTLS_CONFIG="no"
 -  ;;
 -esac
 -fi
 -LIBGNUTLS_CONFIG=$ac_cv_path_LIBGNUTLS_CONFIG
- 
+-
 -if test -n "$LIBGNUTLS_CONFIG"; then
 -  echo "$as_me:$LINENO: result: $LIBGNUTLS_CONFIG" >&5
 -echo "${ECHO_T}$LIBGNUTLS_CONFIG" >&6
 -else
-   echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
+-  echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6
 -fi
 -
 -  min_libgnutls_version=1.2.0
@@ -424,13 +286,8 @@
 -    LIBGNUTLS_CFLAGS=`$LIBGNUTLS_CONFIG $libgnutls_config_args --cflags`
 -    LIBGNUTLS_LIBS=`$LIBGNUTLS_CONFIG $libgnutls_config_args --libs`
 -    libgnutls_config_version=`$LIBGNUTLS_CONFIG $libgnutls_config_args --version`
-+  { { echo "$as_me:$LINENO: error: C++ compiler does not support 'mutable'" >&5
-+echo "$as_me: error: C++ compiler does not support 'mutable'" >&2;}
-+   { (exit 1); exit 1; }; }
- 
-+fi
-+rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
- 
+-
+-
 -      ac_save_CFLAGS="$CFLAGS"
 -      ac_save_LIBS="$LIBS"
 -      CFLAGS="$CFLAGS $LIBGNUTLS_CFLAGS"
@@ -440,28 +297,20 @@
 -  echo $ac_n "cross compiling; assumed OK... $ac_c"
 -else
 -  cat >conftest.$ac_ext <<_ACEOF
-+# -- namespace
-+echo "$as_me:$LINENO: checking if C++ compiler supports name spaces (required)" >&5
-+echo $ECHO_N "checking if C++ compiler supports name spaces (required)... $ECHO_C" >&6
-+cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
+-
 -#include <stdio.h>
 -#include <stdlib.h>
 -#include <string.h>
 -#include <gnutls/gnutls.h>
-+namespace Check
-+  {
-+   int i;
-+  }
- 
- int
- main ()
- {
+-
+-int
+-main ()
+-{
 -    system ("touch conf.libgnutlstest");
 -
 -    if( strcmp( gnutls_check_version(NULL), "$libgnutls_config_version" ) )
@@ -564,41 +413,41 @@
 -cat confdefs.h >>conftest.$ac_ext
 -cat >>conftest.$ac_ext <<_ACEOF
 -/* end confdefs.h.  */
- 
+-
 -#include <stdio.h>
 -#include <stdlib.h>
 -#include <string.h>
 -#include <gnutls/gnutls.h>
-+  Check::i=1;
- 
+-
 -int
 -main ()
 -{
 - return !!gnutls_check_version(NULL);
-   ;
-   return 0;
- }
- _ACEOF
+-  ;
+-  return 0;
+-}
+-_ACEOF
 -rm -f conftest.$ac_objext conftest$ac_exeext
 -if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
 -  (eval $ac_link) 2>conftest.er1
-+rm -f conftest.$ac_objext
-+if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
-+  (eval $ac_compile) 2>conftest.er1
-   ac_status=$?
-   grep -v '^ *+' conftest.er1 >conftest.err
-   rm -f conftest.er1
-@@ -22055,134 +21916,63 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; } &&
+-  ac_status=$?
+-  grep -v '^ *+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; } &&
 -	 { ac_try='test -s conftest$ac_exeext'
-+	 { ac_try='test -s conftest.$ac_objext'
-   { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
-   (eval $ac_try) 2>&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
 -   echo "*** The test program compiled, but did not run. This usually means"
 -          echo "*** that the run-time linker is not finding LIBGNUTLS or finding the wrong"
 -          echo "*** version of LIBGNUTLS. If it is not finding LIBGNUTLS, you'll need to set your"
@@ -609,14 +458,10 @@
 -          echo "*** If you have an old version installed, it is best to remove it, although"
 -          echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"
 -          echo "***"
-+
-+  echo "$as_me:$LINENO: result: yes" >&5
-+echo "${ECHO_T}yes" >&6
-+
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
 - echo "*** The test program failed to compile or link. See the file config.log for the"
 -          echo "*** exact error that occured. This usually means LIBGNUTLS was incorrectly installed"
 -          echo "*** or that you have moved LIBGNUTLS since it was installed. In the latter case, you"
@@ -637,604 +482,25 @@
 -
 -
 -
--# -- global constructors (stolen from 'configure.in' in libsigc++)
--echo "$as_me:$LINENO: checking if linker supports global constructors" >&5
--echo $ECHO_N "checking if linker supports global constructors... $ECHO_C" >&6
--cat > mylib.$ac_ext <<EOF
--#include <stdio.h>
--
--struct A
--{
--  A() { printf("PASS\n"); }
--};
--
--A a;
--
--int foo()
--  { return 1; }
- 
--EOF
--cat > mytest.$ac_ext <<EOF
--#include <stdio.h>
-+  echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6
-+  { { echo "$as_me:$LINENO: error: C++ compiler does not support 'namespace'" >&5
-+echo "$as_me: error: C++ compiler does not support 'namespace'" >&2;}
-+   { (exit 1); exit 1; }; }
- 
--extern int foo();
-+fi
-+rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
- 
--int main(int, char**)
--{
--  int i = foo();
--  if(i != 1) printf("FAIL\n");
--  return 0;
--}
- 
--EOF
--sh libtool --mode=compile $CXX -c mylib.$ac_ext >&5
--sh libtool --mode=link $CXX -o libtest.la -rpath / -version-info 0 mylib.lo  >&5
--$CXX -c $CFLAGS $CPPFLAGS mytest.$ac_ext >&5
--sh libtool --mode=link $CXX -o mytest mytest.o libtest.la >&5 2>/dev/null
-+#
-+# Target OS and architecture
-+#
- 
--if test -x mytest; then
--	myresult=`./mytest`
--	if test "X$myresult" = "XPASS"; then
--		echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6
--	else
--		echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6
--		{ { echo "$as_me:$LINENO: error:
--===================================================================
--ERROR: This platform lacks support of construction of global
--objects in shared libraries.
-+VMIME_TARGET_ARCH=${target_cpu}
-+VMIME_TARGET_OS=${target_os}
- 
--See ftp://rtfm.mit.edu/pub/usenet/news.answers/g++-FAQ/plain
--for details about this problem.  Also for possible solutions
--http://www.informatik.uni-frankfurt.de/~fp/Tcl/tcl-c++/tcl-c++.html
--===================================================================" >&5
--echo "$as_me: error:
--===================================================================
--ERROR: This platform lacks support of construction of global
--objects in shared libraries.
-+#
-+# Byte Order
-+#
- 
--See ftp://rtfm.mit.edu/pub/usenet/news.answers/g++-FAQ/plain
--for details about this problem.  Also for possible solutions
--http://www.informatik.uni-frankfurt.de/~fp/Tcl/tcl-c++/tcl-c++.html
--===================================================================" >&2;}
--   { (exit 1); exit 1; }; }
--	fi
-+echo "$as_me:$LINENO: checking whether byte ordering is bigendian" >&5
-+echo $ECHO_N "checking whether byte ordering is bigendian... $ECHO_C" >&6
-+if test "${ac_cv_c_bigendian+set}" = set; then
-+  echo $ECHO_N "(cached) $ECHO_C" >&6
- else
--	echo "$as_me:$LINENO: result: unknown" >&5
--echo "${ECHO_T}unknown" >&6
--fi
--rm -f mylib.* mytest.* libtest.la .libs/libtest* mytest .libs/mytest .libs/lt-mytest .libs/mylib.* >&5
--rmdir .libs >&5
--
--# -- const_cast
--echo "$as_me:$LINENO: checking if C++ compiler supports const_cast<> (required)" >&5
--echo $ECHO_N "checking if C++ compiler supports const_cast<> (required)... $ECHO_C" >&6
-+  # See if sys/param.h defines the BYTE_ORDER macro.
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--
--   class foo;
-+#include <sys/types.h>
-+#include <sys/param.h>
- 
- int
- main ()
- {
--
--   const foo *c=0;
--   foo *c1=const_cast<foo*>(c);
-+#if !BYTE_ORDER || !BIG_ENDIAN || !LITTLE_ENDIAN
-+ bogus endian macros
-+#endif
- 
-   ;
-   return 0;
-@@ -22209,43 +21999,22 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--
--  echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6
--
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--
--  echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6
--  { { echo "$as_me:$LINENO: error: C++ compiler const_cast<> does not work" >&5
--echo "$as_me: error: C++ compiler const_cast<> does not work" >&2;}
--   { (exit 1); exit 1; }; }
--
--fi
--rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
--
--# -- dynamic_cast
--echo "$as_me:$LINENO: checking if C++ compiler supports dynamic_cast<> (required)" >&5
--echo $ECHO_N "checking if C++ compiler supports dynamic_cast<> (required)... $ECHO_C" >&6
-+  # It does; now see whether it defined to BIG_ENDIAN or not.
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--
--   class foo { virtual ~foo() { } };
--   class bar : public foo { };
-+#include <sys/types.h>
-+#include <sys/param.h>
- 
- int
- main ()
- {
--
--   foo *c=0;
--   bar *c1=dynamic_cast<bar*>(c);
-+#if BYTE_ORDER != BIG_ENDIAN
-+ not big endian
-+#endif
- 
-   ;
-   return 0;
-@@ -22272,45 +22041,38 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--
--  echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6
--
-+  ac_cv_c_bigendian=yes
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--
--  echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6
--  { { echo "$as_me:$LINENO: error: C++ compiler dynamic_cast<> does not work" >&5
--echo "$as_me: error: C++ compiler dynamic_cast<> does not work" >&2;}
--   { (exit 1); exit 1; }; }
--
-+ac_cv_c_bigendian=no
- fi
- rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
-+else
-+  echo "$as_me: failed program was:" >&5
-+sed 's/^/| /' conftest.$ac_ext >&5
- 
--# -- mutable
--echo "$as_me:$LINENO: checking if C++ compiler supports mutable (required)" >&5
--echo $ECHO_N "checking if C++ compiler supports mutable (required)... $ECHO_C" >&6
--cat >conftest.$ac_ext <<_ACEOF
-+# It does not; compile a test program.
-+if test "$cross_compiling" = yes; then
-+  # try to guess the endianness by grepping values into an object file
-+  ac_cv_c_bigendian=unknown
-+  cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--
--class k {
--        mutable char *c;
--public:
--   void foo() const { c=0; }
--};
--
-+short ascii_mm[] = { 0x4249, 0x4765, 0x6E44, 0x6961, 0x6E53, 0x7953, 0 };
-+short ascii_ii[] = { 0x694C, 0x5454, 0x656C, 0x6E45, 0x6944, 0x6E61, 0 };
-+void _ascii () { char *s = (char *) ascii_mm; s = (char *) ascii_ii; }
-+short ebcdic_ii[] = { 0x89D3, 0xE3E3, 0x8593, 0x95C5, 0x89C4, 0x9581, 0 };
-+short ebcdic_mm[] = { 0xC2C9, 0xC785, 0x95C4, 0x8981, 0x95E2, 0xA8E2, 0 };
-+void _ebcdic () { char *s = (char *) ebcdic_mm; s = (char *) ebcdic_ii; }
- int
- main ()
- {
--
--
-+ _ascii (); _ebcdic ();
-   ;
-   return 0;
- }
-@@ -22336,298 +22098,58 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--
--  echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6
--
-+  if grep BIGenDianSyS conftest.$ac_objext >/dev/null ; then
-+  ac_cv_c_bigendian=yes
-+fi
-+if grep LiTTleEnDian conftest.$ac_objext >/dev/null ; then
-+  if test "$ac_cv_c_bigendian" = unknown; then
-+    ac_cv_c_bigendian=no
-+  else
-+    # finding both strings is unlikely to happen, but who knows?
-+    ac_cv_c_bigendian=unknown
-+  fi
-+fi
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--
--  echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6
--  { { echo "$as_me:$LINENO: error: C++ compiler does not support 'mutable'" >&5
--echo "$as_me: error: C++ compiler does not support 'mutable'" >&2;}
--   { (exit 1); exit 1; }; }
--
- fi
- rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
--
--# -- namespace
--echo "$as_me:$LINENO: checking if C++ compiler supports name spaces (required)" >&5
--echo $ECHO_N "checking if C++ compiler supports name spaces (required)... $ECHO_C" >&6
--cat >conftest.$ac_ext <<_ACEOF
-+else
-+  cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--
--namespace Check
--  {
--   int i;
--  }
--
- int
- main ()
- {
--
--  Check::i=1;
--
--  ;
--  return 0;
-+  /* Are we little or big endian?  From Harbison&Steele.  */
-+  union
-+  {
-+    long l;
-+    char c[sizeof (long)];
-+  } u;
-+  u.l = 1;
-+  exit (u.c[sizeof (long) - 1] == 1);
- }
- _ACEOF
--rm -f conftest.$ac_objext
--if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
--  (eval $ac_compile) 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } &&
--	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
-+rm -f conftest$ac_exeext
-+if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
-+  (eval $ac_link) 2>&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; } &&
--	 { ac_try='test -s conftest.$ac_objext'
-+  (exit $ac_status); } && { ac_try='./conftest$ac_exeext'
-   { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
-   (eval $ac_try) 2>&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--
--  echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6
--
-+  ac_cv_c_bigendian=no
- else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--
--  echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6
--  { { echo "$as_me:$LINENO: error: C++ compiler does not support 'namespace'" >&5
--echo "$as_me: error: C++ compiler does not support 'namespace'" >&2;}
--   { (exit 1); exit 1; }; }
--
--fi
--rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
--
--
--#
--# Target OS and architecture
--#
--
--VMIME_TARGET_ARCH=${target_cpu}
--VMIME_TARGET_OS=${target_os}
--
--#
--# Byte Order
--#
--
--echo "$as_me:$LINENO: checking whether byte ordering is bigendian" >&5
--echo $ECHO_N "checking whether byte ordering is bigendian... $ECHO_C" >&6
--if test "${ac_cv_c_bigendian+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
--else
--  # See if sys/param.h defines the BYTE_ORDER macro.
--cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
--/* end confdefs.h.  */
--#include <sys/types.h>
--#include <sys/param.h>
--
--int
--main ()
--{
--#if !BYTE_ORDER || !BIG_ENDIAN || !LITTLE_ENDIAN
-- bogus endian macros
--#endif
--
--  ;
--  return 0;
--}
--_ACEOF
--rm -f conftest.$ac_objext
--if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
--  (eval $ac_compile) 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } &&
--	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; } &&
--	 { ac_try='test -s conftest.$ac_objext'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; }; then
--  # It does; now see whether it defined to BIG_ENDIAN or not.
--cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
--/* end confdefs.h.  */
--#include <sys/types.h>
--#include <sys/param.h>
--
--int
--main ()
--{
--#if BYTE_ORDER != BIG_ENDIAN
-- not big endian
--#endif
--
--  ;
--  return 0;
--}
--_ACEOF
--rm -f conftest.$ac_objext
--if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
--  (eval $ac_compile) 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } &&
--	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; } &&
--	 { ac_try='test -s conftest.$ac_objext'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; }; then
--  ac_cv_c_bigendian=yes
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--ac_cv_c_bigendian=no
--fi
--rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--# It does not; compile a test program.
--if test "$cross_compiling" = yes; then
--  # try to guess the endianness by grepping values into an object file
--  ac_cv_c_bigendian=unknown
--  cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
--/* end confdefs.h.  */
--short ascii_mm[] = { 0x4249, 0x4765, 0x6E44, 0x6961, 0x6E53, 0x7953, 0 };
--short ascii_ii[] = { 0x694C, 0x5454, 0x656C, 0x6E45, 0x6944, 0x6E61, 0 };
--void _ascii () { char *s = (char *) ascii_mm; s = (char *) ascii_ii; }
--short ebcdic_ii[] = { 0x89D3, 0xE3E3, 0x8593, 0x95C5, 0x89C4, 0x9581, 0 };
--short ebcdic_mm[] = { 0xC2C9, 0xC785, 0x95C4, 0x8981, 0x95E2, 0xA8E2, 0 };
--void _ebcdic () { char *s = (char *) ebcdic_mm; s = (char *) ebcdic_ii; }
--int
--main ()
--{
-- _ascii (); _ebcdic ();
--  ;
--  return 0;
--}
--_ACEOF
--rm -f conftest.$ac_objext
--if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
--  (eval $ac_compile) 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } &&
--	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; } &&
--	 { ac_try='test -s conftest.$ac_objext'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; }; then
--  if grep BIGenDianSyS conftest.$ac_objext >/dev/null ; then
--  ac_cv_c_bigendian=yes
--fi
--if grep LiTTleEnDian conftest.$ac_objext >/dev/null ; then
--  if test "$ac_cv_c_bigendian" = unknown; then
--    ac_cv_c_bigendian=no
--  else
--    # finding both strings is unlikely to happen, but who knows?
--    ac_cv_c_bigendian=unknown
--  fi
--fi
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--fi
--rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
--else
--  cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
--/* end confdefs.h.  */
--int
--main ()
--{
--  /* Are we little or big endian?  From Harbison&Steele.  */
--  union
--  {
--    long l;
--    char c[sizeof (long)];
--  } u;
--  u.l = 1;
--  exit (u.c[sizeof (long) - 1] == 1);
--}
--_ACEOF
--rm -f conftest$ac_exeext
--if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
--  (eval $ac_link) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } && { ac_try='./conftest$ac_exeext'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; }; then
--  ac_cv_c_bigendian=no
--else
--  echo "$as_me: program exited with status $ac_status" >&5
--echo "$as_me: failed program was:" >&5
-+  echo "$as_me: program exited with status $ac_status" >&5
-+echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
- ( exit $ac_status )
-@@ -24438,36 +23960,254 @@
+ # -- global constructors (stolen from 'configure.in' in libsigc++)
+ echo "$as_me:$LINENO: checking if linker supports global constructors" >&5
+ echo $ECHO_N "checking if linker supports global constructors... $ECHO_C" >&6
+@@ -24438,6 +23960,224 @@
  fi;
  
  if test "x$conf_sasl" = "xyes"; then
--	if test "x$have_gsasl" = "xyes"; then
- 
++
 +# -- GNU SASL Library (http://www.gnu.org/software/gsasl/)
- 
--if true; then
--  VMIME_HAVE_SASL_SUPPORT_TRUE=
--  VMIME_HAVE_SASL_SUPPORT_FALSE='#'
--else
--  VMIME_HAVE_SASL_SUPPORT_TRUE='#'
--  VMIME_HAVE_SASL_SUPPORT_FALSE=
++
 +if test "${ac_cv_header_gsasl_h+set}" = set; then
 +  echo "$as_me:$LINENO: checking for gsasl.h" >&5
 +echo $ECHO_N "checking for gsasl.h... $ECHO_C" >&6
 +if test "${ac_cv_header_gsasl_h+set}" = set; then
 +  echo $ECHO_N "(cached) $ECHO_C" >&6
- fi
--
--		VMIME_HAVE_SASL_SUPPORT=1
--
--		GSASL_REQUIRED=${GSASL_AVAIL_REQUIRED}
--		GSASL_LIBS=${GSASL_AVAIL_LIBS}
--	else
--		{ { echo "$as_me:$LINENO: error: can't find an usable version of GNU SASL library" >&5
--echo "$as_me: error: can't find an usable version of GNU SASL library" >&2;}
--   { (exit 1); exit 1; }; }
--	fi
--else
--
--
--if false; then
--  VMIME_HAVE_SASL_SUPPORT_TRUE=
--  VMIME_HAVE_SASL_SUPPORT_FALSE='#'
++fi
 +echo "$as_me:$LINENO: result: $ac_cv_header_gsasl_h" >&5
 +echo "${ECHO_T}$ac_cv_header_gsasl_h" >&6
- else
--  VMIME_HAVE_SASL_SUPPORT_TRUE='#'
--  VMIME_HAVE_SASL_SUPPORT_FALSE=
--fi
++else
 +  # Is the header compilable?
 +echo "$as_me:$LINENO: checking gsasl.h usability" >&5
 +echo $ECHO_N "checking gsasl.h usability... $ECHO_C" >&6
@@ -1441,38 +707,8 @@
 +
 +
 +
-+	if test "x$have_gsasl" = "xyes"; then
-+
-+
-+if true; then
-+  VMIME_HAVE_SASL_SUPPORT_TRUE=
-+  VMIME_HAVE_SASL_SUPPORT_FALSE='#'
-+else
-+  VMIME_HAVE_SASL_SUPPORT_TRUE='#'
-+  VMIME_HAVE_SASL_SUPPORT_FALSE=
-+fi
-+
-+		VMIME_HAVE_SASL_SUPPORT=1
-+
-+		GSASL_REQUIRED=${GSASL_AVAIL_REQUIRED}
-+		GSASL_LIBS=${GSASL_AVAIL_LIBS}
-+	else
-+		{ { echo "$as_me:$LINENO: error: can't find an usable version of GNU SASL library" >&5
-+echo "$as_me: error: can't find an usable version of GNU SASL library" >&2;}
-+   { (exit 1); exit 1; }; }
-+	fi
-+else
-+
-+
-+if false; then
-+  VMIME_HAVE_SASL_SUPPORT_TRUE=
-+  VMIME_HAVE_SASL_SUPPORT_FALSE='#'
-+else
-+  VMIME_HAVE_SASL_SUPPORT_TRUE='#'
-+  VMIME_HAVE_SASL_SUPPORT_FALSE=
-+fi
+ 	if test "x$have_gsasl" = "xyes"; then
  
- 	VMIME_HAVE_SASL_SUPPORT=0
  
 @@ -24495,6 +24235,267 @@
  fi;

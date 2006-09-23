@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch>
+  files/libvmime-0.8.0-gnutls_ssl-detection.patch:
+  Made the patch smaller.
+
   20 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> libvmime-0.8.0.ebuild:
   Unneeded inheritance from eclass removed.
 
