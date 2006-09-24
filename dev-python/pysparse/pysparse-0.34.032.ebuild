@@ -10,7 +10,7 @@ HOMEPAGE="http://people.web.psi.ch/geus/pyfemax/pysparse.html"
 
 IUSE=""
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+KEYWORDS="~x86"
 LICENSE="as-is"
 
 DEPEND=">=dev-lang/python-2.2
@@ -22,5 +22,5 @@ RDEPEND="${DEPEND}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}.patch
+	epatch "${FILESDIR}/${P}.patch"
 }
