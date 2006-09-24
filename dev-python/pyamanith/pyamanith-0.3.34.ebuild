@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+inherit distutils versionator
 
 KEYWORDS="~x86"
 
@@ -15,9 +15,9 @@ LICENSE="QPL"
 SLOT="0"
 IUSE=""
 
-DEPEND="~media-libs/amanith-0.3
+RDEPEND="=media-libs/amanith-$(get_version_component_range 1-2)*
 		media-libs/glew"
-RDEPEND="${DEPEND}
+DEPEND="${RDEPEND}
 		>=dev-lang/swig-1.3.29"
 
 S=${WORKDIR}/${MY_P}
