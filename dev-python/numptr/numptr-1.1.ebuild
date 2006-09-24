@@ -15,7 +15,7 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
 
-DEPEND=">=dev-lang/python-2.2*
-		dev-lang/swig"
+DEPEND="dev-lang/swig"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
