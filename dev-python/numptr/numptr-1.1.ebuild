@@ -18,4 +18,4 @@ KEYWORDS="~x86"
 DEPEND="dev-lang/swig"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
