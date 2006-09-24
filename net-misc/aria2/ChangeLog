@@ -2,6 +2,13 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch> -aria2-0.7.0.ebuild,
+  -aria2-0.7.1.ebuild, -files/aria2-0.7.1-metalink_main_cc.patch,
+  -files/aria2-0.7.1-nameresolver_cc.patch,
+  -files/aria2-0.7.1-nameresolver_h.patch, -aria2-0.7.2.ebuild,
+  +aria2-0.8.0.ebuild:
+  Version bump with some cleanups. Old versions removed.
+
   28 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +aria2-0.7.3.ebuild:
   Version bump.
 

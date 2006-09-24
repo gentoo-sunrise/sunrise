@@ -15,39 +15,28 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="ares bittorrent gnutls metalink nls ssl"
 
-COMMON_DEPEND="ssl? (
+CDEPEND="ssl? (
 			gnutls? ( net-libs/gnutls )
-			!gnutls? ( dev-libs/openssl )
-			)
+			!gnutls? ( dev-libs/openssl ) )
 		ares? ( >=net-dns/c-ares-1.3.1 )
 		bittorrent? ( gnutls? ( dev-libs/libgcrypt ) )
 		metalink? ( >=dev-libs/libxml2-2.6.26 )"
-DEPEND="${COMMON_DEPEND}
+DEPEND="${CDEPEND}
 		nls? ( sys-devel/gettext )"
-RDEPEND="${COMMON_DEPEND}
+RDEPEND="${CDEPEND}
 		nls? ( virtual/libiconv virtual/libintl )"
 
 S=${WORKDIR}/${MY_P}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	sed -i \
-		-e 's/-lares/-lcares/g' \
-		configure || die "sed failed"
-	epatch "${FILESDIR}/${P}-nameresolver_h.patch"
-	epatch "${FILESDIR}/${P}-nameresolver_cc.patch"
-	epatch "${FILESDIR}/${P}-metalink_main_cc.patch"
-}
 
 src_compile() {
 	use ssl && \
 		myconf="${myconf} $(use_with gnutls) $(use_with !gnutls openssl)"
 	econf \
-		$(use_with ares libares) \
 		$(use_enable nls) \
 		$(use_enable metalink) \
+		$(use_enable bittorrent) \
+		--without-ares \
+		$(use_with ares libcares) \
 		$(use_with metalink libxml2) \
 		${myconf} \
 		|| die "econf failed"
