@@ -1,0 +1,20 @@
+--- setup.py.orig	2006-09-23 19:49:31.000000000 -0700
++++ setup.py	2006-09-23 19:49:41.000000000 -0700
+@@ -7,14 +7,14 @@
+ 
+ # default settings
+ library_dirs_list= []
+-libraries_list = ['lapack', 'blas', 'g2c']
++libraries_list = ['lapack', 'blas', 'gfortran']
+ superlu_defs = [('USE_VENDOR_BLAS',1)]
+ f77_defs = []
+ linky=[]
+ compily=[]
+ 
+-umfpack_defs = [('DINT', 1), ('NBLAS', 1)] # most basic configuration, no BLAS
+-umfpack_libraries = []
++umfpack_defs = [('DINT', 1)] # most basic configuration, no BLAS
++umfpack_libraries = ['blas', 'atlas', 'gfortran', 'm']
+ umfpack_include_dirs = ['amd', 'umfpack']
+ umfpack_library_dirs = []
+ 

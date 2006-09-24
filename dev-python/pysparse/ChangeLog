@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pysparse
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Sep 2006; David Grant (dgrant) <davidgrant@gmail.com>
+  +pysparse-0.34.032.ebuild, +files/pysparse-0.34.032.patch, +metadata.xml:
+  New ebuild for bug #36158
+
