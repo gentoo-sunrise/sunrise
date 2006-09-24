@@ -12,18 +12,16 @@ LICENSE="GPL-2"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND="<x11-libs/qt-4"
+RDEPEND="=x11-libs/qt-3*"
 DEPEND="${RDEPEND}"
 
 src_compile() {
 	emake -f Makefile.dist
-
 	econf || die "econf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install  || die "install failed"
-
 	dodoc NEWS README
 }
