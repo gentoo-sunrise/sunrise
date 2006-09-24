@@ -36,7 +36,7 @@ src_compile() {
 	cd "${S}/install/unix"
 
 	# this flags failed @@ veriall
-	filter-flags -O3 -O2
+	replace-flags -O[2-9] -O1
 
 	sed -i \
 		-e "s/^\(CC =\).*/\1 $(tc-getCC)/" \
