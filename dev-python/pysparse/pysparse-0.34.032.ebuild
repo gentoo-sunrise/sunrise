@@ -17,9 +17,10 @@ DEPEND=">=dev-lang/python-2.2
 	virtual/blas
 	virtual/lapack
 	>=dev-python/numeric-21.0"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}.patch
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}.patch
 }
