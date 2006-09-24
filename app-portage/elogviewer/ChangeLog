@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Sep 2006; Jakub Moc <jakub@gentoo.org> elogviewer-0.4.0.7-r3.ebuild:
+  einfo -> elog
+
   23 Sep 2006; Stefan Schweizer <genstef@gentoo.org>
   -elogviewer-0.4.0.7-r1.ebuild, -elogviewer-0.4.0.7-r2.ebuild,
   elogviewer-0.4.0.7-r3.ebuild:
