@@ -1,0 +1,3 @@
+alias /dev/fusd kfusd
+alias /dev/fusd/control kfusd
+alias /dev/fusd/status kfusd

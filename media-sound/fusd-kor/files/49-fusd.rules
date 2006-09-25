@@ -1,0 +1,4 @@
+# fusd devices
+KERNEL="control", NAME="fusd/%k", GROUP="wheel", MODE="0660"
+KERNEL="status", NAME="fusd/%k", GROUP="wheel", MODE="0660"
+
