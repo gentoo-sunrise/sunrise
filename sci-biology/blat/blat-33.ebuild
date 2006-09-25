@@ -26,6 +26,7 @@ src_compile() {
 }
 
 src_install() {
-	MACHTYPE="`uname|tr 'A-Z' 'a-z'|sed 's/linux/i386/'`"
+	MACHTYPE=$(tc-arch)
+	if [[ $MACHTYPE == "x86" ]]; then MACHTYPE="i386"; fi
 	dobin "${S}/bin/${MACHTYPE}/"*
 }
