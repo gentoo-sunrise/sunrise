@@ -30,7 +30,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_mod_compile "/usr/lib/deskbar-applet/handlers/${MY_PN}.py"
+	python_mod_compile /usr/lib/deskbar-applet/handlers/${MY_PN}.py
 }
 
 pkg_postrm() {
