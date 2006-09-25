@@ -1,0 +1,12 @@
+# ChangeLog for sci-biology/blat
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Sep 2006; Andrei K. (azazello) <az@horizon.ath.cx> +blat-33.ebuild,
+  +metadata.xml:
+  new ebuild: sci-biology/blat-33 (bug 135307)
+
+  25 Sep 2006; Andrei K. (azazello) <az@horizon.ath.cx> +blat-33.ebuild,
+  +metadata.xml:
+  new ebuild: sci-biology/blat-33 (bug 135307)
+
