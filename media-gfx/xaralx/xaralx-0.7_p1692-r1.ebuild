@@ -77,5 +77,5 @@ src_install() {
 		doc/{gifutil.txt,mtrand.txt,XSVG.txt}
 	newdoc doc/en/LICENSE LICENSE-docs
 	dodir /usr/share/doc/${PF}/html
-	tar xjf doc/en/xaralxHelp.tar.gz -C ${D}/usr/share/doc/${PF}/html
+	tar xzf doc/en/xaralxHelp.tar.gz -C ${D}/usr/share/doc/${PF}/html
 }
