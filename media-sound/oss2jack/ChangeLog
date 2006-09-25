@@ -1,0 +1,7 @@
+# ChangeLog for media-sound/oss2jack
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  ebuild for bug #96450
+
