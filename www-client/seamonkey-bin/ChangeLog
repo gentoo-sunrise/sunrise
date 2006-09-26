@@ -1,0 +1,10 @@
+# ChangeLog for www-client/seamonkey-bin
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Sep 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  +files/10seamonkey-bin, +seamonkey-bin-1.0.5.ebuild, +files/icon,
+  +files/icon/seamonkey-bin.desktop, +files/icon/seamonkey-bin.png,
+  +metadata.xml:
+  New ebuild: seamonkey-bin for bug 147826
+

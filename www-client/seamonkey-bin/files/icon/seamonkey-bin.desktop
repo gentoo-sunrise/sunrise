@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Seamonkey (bin)
+Comment=Seamonkey Web Browser
+Exec=/usr/bin/seamonkey-bin %U
+Icon=seamonkey-bin-icon.png
+Terminal=false
+Type=Application
+Categories=Application;Network;
