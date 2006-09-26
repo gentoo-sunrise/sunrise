@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/imgv
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Sep 2006; David Grant (dgrant) <davidgrant@gmail.com> +imgv-3.1.ebuild,
+  +metadata.xml:
+  new ebuild for bug #149140
+
