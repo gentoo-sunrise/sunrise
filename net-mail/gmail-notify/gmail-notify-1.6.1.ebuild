@@ -14,28 +14,31 @@ KEYWORDS="~x86"
 IUSE=""
 RESTRICT="strip"
 
-RDEPEND="virtual/python
-	>=dev-python/pygtk-2.0
-	>=x11-libs/gtk+-2.4"
+RDEPEND="dev-python/gnome-python-extras
+	>=dev-python/pygtk-2.0"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${PN}
+
+src_unpack() {
+	python_version
+	unpack ${A}
+	epatch "${FILESDIR}/${PN}-trayicon.patch"
+	epatch "${FILESDIR}/${PN}-ubuntu-patches.patch"
+	cd ${S}
+	sed -i -e "s/GENTOO_PYVER/${PYVER}/g" notifier.py || die "Sed broke!"
+	sed -i -e "s/GENTOO_PYVER/${PYVER}/g" GmailConfig.py || die "Sed broke!"
+}
 
 src_install() {
 	python_version
 	INST_DIR=/usr/lib/python${PYVER}/site-packages/${PN}
 
-	#Install docs
 	dodoc README
 
-	#Install all python files into site-packages
 	insinto ${INST_DIR}
 	doins *.py *.jpg *.png langs.xml pytrayicon.so notifier.conf.sample
 
-	#Install a script in /usr/bin
-	echo "#!/bin/bash" > gmail-notify
-	echo "exec /usr/bin/python ${INST_DIR}/notifier.py \"\$1\"" >> gmail-notify
-	dobin gmail-notify
 	make_wrapper gmail-notify "/usr/bin/python ${INST_DIR}/notifier.py"
 }
 
