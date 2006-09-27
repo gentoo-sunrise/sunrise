@@ -13,6 +13,7 @@ IUSE=""
 
 DEPEND="virtual/libc
 	>=media-libs/libao-0.8.5"
+RDEPEND=${DEPEND}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
