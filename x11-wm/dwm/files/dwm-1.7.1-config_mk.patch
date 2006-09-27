@@ -1,0 +1,11 @@
+--- dwm-1.7.1~/config.mk	2006-09-27 20:16:35.000000000 +0200
++++ dwm-1.7.1/config.mk	2006-09-27 20:16:52.000000000 +0200
+@@ -15,7 +15,7 @@
+ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
+ 
+ # flags
+-CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
++CFLAGS += ${INCS} -DVERSION=\"${VERSION}\"
+ LDFLAGS = ${LIBS}
+ #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = -g ${LIBS}
