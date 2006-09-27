@@ -45,20 +45,20 @@ src_install() {
 
 	# Install seamonkey in /opt
 	dodir ${MOZILLA_FIVE_HOME%/*}
-	mv ${S} ${D}${MOZILLA_FIVE_HOME}
+	mv "${S}" "${D}${MOZILLA_FIVE_HOME}"
 
 	# Create /usr/bin/seamonkey-bin
 	install_mozilla_launcher_stub seamonkey-bin ${MOZILLA_FIVE_HOME}
 
 	# Install icon and .desktop for menu entry
 	insinto /usr/share/pixmaps
-	doins ${FILESDIR}/icon/seamonkey-bin-icon.png
+	doins "${FILESDIR}/icon/seamonkey-bin-icon.png"
 	insinto /usr/share/applications
-	doins ${FILESDIR}/icon/seamonkey-bin.desktop
+	doins "${FILESDIR}/icon/seamonkey-bin.desktop"
 
 	# revdep-rebuild entry
 	insinto /etc/revdep-rebuild
-	doins ${FILESDIR}/10seamonkey-bin
+	doins "${FILESDIR}/10seamonkey-bin"
 }
 
 pkg_preinst() {
@@ -66,7 +66,7 @@ pkg_preinst() {
 
 	# Remove entire installed instance to prevent all kinds of
 	# problems... see bug 44772 for example
-	rm -rf ${ROOT}${MOZILLA_FIVE_HOME}
+	rm -rf "${ROOT}${MOZILLA_FIVE_HOME}"
 }
 
 pkg_postinst() {
