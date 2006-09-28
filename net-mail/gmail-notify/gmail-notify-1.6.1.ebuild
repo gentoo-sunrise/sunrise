@@ -23,6 +23,7 @@ S=${WORKDIR}/${PN}
 src_unpack() {
 	python_version
 	unpack ${A}
+	epatch "${FILESDIR}/${PN}-conf-perms.patch"
 	epatch "${FILESDIR}/${PN}-trayicon.patch"
 	epatch "${FILESDIR}/${PN}-ubuntu-patches.patch"
 	cd ${S}
@@ -49,8 +50,6 @@ pkg_postinst() {
 	elog ""
 	elog "Warning: if you check the 'save username and password' option"
 	elog "your password will be stored in plaintext in ~/.notifier.conf"
-	elog "with world-readable permissions. If this concerns you, do not"
-	elog "check the 'save username and password' option."
 }
 
 pkg_postrm() {
