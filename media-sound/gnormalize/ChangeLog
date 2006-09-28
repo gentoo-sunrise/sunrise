@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Sep 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
+  +gnormalize-0.51.ebuild:
+  Bumping to 0.51, no changes from previous ebuild
+
   05 Sep 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
   +gnormalize-0.50.ebuild, +metadata.xml:
   New ebuild for bug 92284. Thanks to Tom <gimpel@sonnenkinder.org>, Sebastien
