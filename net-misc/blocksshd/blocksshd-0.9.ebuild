@@ -15,12 +15,12 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND=">=perl-core/Sys-Syslog-0.16
-	>=dev-perl/Sys-Hostname-Long-1.2
-	>=dev-perl/File-Tail-0.99.1
+RDEPEND=">=dev-perl/File-Tail-0.99.1
 	>=dev-perl/Net-DNS-0.53-r1
+	>=dev-perl/Sys-Hostname-Long-1.2
+	>=net-firewall/iptables-1.3.5-r1
 	>=perl-core/Getopt-Long-2.34
-	>=net-firewall/iptables-1.3.5-r1"
+	>=perl-core/Sys-Syslog-0.16"
 
 src_unpack() {
 	unpack ${A}
@@ -38,7 +38,7 @@ src_install() {
 	dosbin blocksshd || die "dosbin failed"
 	dodoc CHANGELOG CREDITS README VERSION blocksshd.conf
 
-	newinitd ${FILESDIR}/blocksshd.init blocksshd
+	newinitd "${FILESDIR}/blocksshd.init" blocksshd
 
 	insinto /etc/blocksshd
 	newins blocksshd.conf blocksshd.conf.sample
