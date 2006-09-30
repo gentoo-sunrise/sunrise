@@ -5,11 +5,11 @@
 inherit eutils
 
 MY_P="drweb-${PV}"
-S="${WORKDIR}/${P}-glibc2.3"
+S="${WORKDIR}/${P}-glibc2.4"
 
 DESCRIPTION="DrWeb virus scaner for Linux"
 HOMEPAGE="http://www.drweb.com"
-SRC_URI="http://download.drweb.com/files/unix/Linux/Generic/${MY_P}-glibc2.3.tar.gz
+SRC_URI="http://download.drweb.com/files/unix/Linux/Generic/${MY_P}-glibc2.4.tar.gz
 	doc? ( linguas_ru? ( ftp://ftp.drweb.com/pub/drweb/unix/doc/${PN}-${PV/./}-unix-ru-pdf.zip ) )
 	doc? ( ftp://ftp.drweb.com/pub/drweb/unix/doc/${PN}-${PV/./}-unix-en-pdf.zip )"
 RESTRICT="mirror strip"
@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 	dev-perl/libwww-perl
 	virtual/cron
 	logrotate? ( app-admin/logrotate )
-	=sys-libs/glibc-2.3*"
+	=sys-libs/glibc-2.4*"
 
 PROVIDE="virtual/antivirus"
 
