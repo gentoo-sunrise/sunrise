@@ -30,13 +30,9 @@ pkg_setup() {
 src_compile() {
 	./configure --prefix=/usr || die "configure failed"
 	emake || die "emake failed"
-
-	# sandbox violation patch
-	epatch "${FILESDIR}/qbittorrent-0.6.1-sandbox.patch"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dobin src/qbittorrent
+	emake INSTALL_ROOT="${D}" install || die "emake install failed"
 	dodoc AUTHORS Changelog NEWS README TODO
 }
