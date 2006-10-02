@@ -4,8 +4,8 @@
 
 inherit kde-functions
 
-MY_P_GTK1="${PN/qtcurve/QtCurve-Gtk1}-0.42.2" # no .3 release for this
-MY_P_GTK2="${PN/qtcurve/QtCurve-Gtk2}-0.42.2" # no .3 release for this
+MY_P_GTK1="${PN/qtcurve/QtCurve-Gtk1}-0.42.2"  # last gtk1 version
+MY_P_GTK2="${P/qtcurve/QtCurve-Gtk2}"
 MY_P_KDE="${P/qtcurve/QtCurve-KDE3}"
 
 DESCRIPTION="A set of widget styles for KDE, GTK1, and GTK2 based apps."
