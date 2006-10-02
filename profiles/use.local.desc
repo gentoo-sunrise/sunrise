@@ -47,6 +47,7 @@ net-dns/nsd:dnssec - Enable DNSSEC support
 net-dns/nsd:plugins - Enable plugin support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:tsig - Enable TSIG support
+net-firewall/apf:dshieldpy - Add dshieldpy support
 net-firewall/nufw:ident - Add support ident users authentication
 net-firewall/nufw:nfconntrack - Use netfilter_conntrack
 net-firewall/nufw:nfqueue - Use NFQUEUE instead of QUEUE
