@@ -1,8 +1,0 @@
-# ChangeLog for net-mail/tnef
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  02 Oct 2006; Chan Min Wai (dcmwai) <dcmwai@gmail.com> +tnef-1.4.3.ebuild,
-  +metadata.xml:
-  Version bump to 1.4.3
-
