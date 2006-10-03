@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/teardrop
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Oct 2006; Cedric Krier <ced@ced.homedns.org> +teardrop-0.9.ebuild,
+  +metadata.xml:
+  New ebuild for bug 149969
+
