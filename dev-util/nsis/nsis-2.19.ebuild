@@ -11,9 +11,12 @@ SRC_URI="mirror://sourceforge/${PN}/${P}-src.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86"
-DEPEND=">=dev-util/scons-0.96.91
-	cross-mingw32/gcc"
+DEPEND=">=dev-util/scons-0.96.91"
 S=${WORKDIR}/${P}-src
+
+pkg_setup() {
+	has_version cross-mingw32/gcc || die "cross-mingw32/gcc is needed"
+}
 
 src_unpack() {
 	unpack ${A}

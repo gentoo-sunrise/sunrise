@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Oct 2006; Cedric Krier <ced@ced.homedns.org> nsis-2.19.ebuild:
+  fix cross-mingw32 depend
+
   28 Sep 2006; Cedric Krier <ced@ced.homedns.org> -nsis-2.17.ebuild,
   nsis-2.19.ebuild, +files/nsis-2.19-config.patch:
   change DEPEND dev-util/xmingw-gcc to cross-mingw32/gcc
