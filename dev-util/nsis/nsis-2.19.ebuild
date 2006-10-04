@@ -15,7 +15,10 @@ DEPEND=">=dev-util/scons-0.96.91"
 S=${WORKDIR}/${P}-src
 
 pkg_setup() {
-	has_version cross-mingw32/gcc || die "cross-mingw32/gcc is needed"
+	if ! has_version cross-mingw32/gcc; then
+		eerror "cross-mingw32/gcc is needed"
+		die "emerge crossdev && crossdev mingw32"
+	fi
 }
 
 src_unpack() {
