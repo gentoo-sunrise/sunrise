@@ -2,15 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
 inherit autotools eutils
-
-KEYWORDS="~x86"
 
 MY_P=${P/pdc/PDC}
 
 DESCRIPTION="A public domain curses library for DOS, OS/2, Win32 and X11"
 HOMEPAGE="http://pdcurses.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
+
+KEYWORDS="~x86"
+
 LICENSE="public-domain GPL-2"
 SLOT="0"
 IUSE="debug doc examples latin1 nextaw Xaw3d"
