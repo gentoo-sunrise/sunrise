@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2006; Jakub Moc <jakub@gentoo.org> parano-0.3.3.ebuild:
+  Add missing autoconf dependency
+
   06 Jul 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
   Added ~amd64 and ~ppc keywords
 

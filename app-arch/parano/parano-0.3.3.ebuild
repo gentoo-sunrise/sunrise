@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
 inherit gnome2 autotools
 
 DESCRIPTION="GNOME program to create, edit and verify hashfiles"
