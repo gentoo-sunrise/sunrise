@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
 inherit eutils pam autotools
 
 DESCRIPTION="A PAM module that can mount volumes for a user session e.g. encrypted home directories"
