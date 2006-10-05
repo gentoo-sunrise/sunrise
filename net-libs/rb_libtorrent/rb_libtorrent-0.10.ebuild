@@ -7,6 +7,7 @@ WANT_AUTOMAKE="latest"
 inherit eutils autotools
 
 MY_P=${P/rb_/}
+S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="BitTorrent library written in C++ for *nix."
 HOMEPAGE="http://libtorrent.sourceforge.net/"
