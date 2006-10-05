@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
 inherit eutils autotools
 
 DESCRIPTION="creates normal/height maps from high resolution meshes for games or 3d applications"

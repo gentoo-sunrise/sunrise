@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2006; Markus Ullmann <jokey@gentoo.org> denormgen-1.4.ebuild:
+  Add missing autoconf/automake dependency
+
   30 Jul 2006; Luca Longinotti <chtekk@gentoo.org> denormgen-1.4.ebuild:
   Simplfy DEPEND, quote S and D vars, fix whitespace error, fix non-UTF8
   character in ChangeLog.
