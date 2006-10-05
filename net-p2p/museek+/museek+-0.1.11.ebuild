@@ -23,7 +23,7 @@ RDEPEND="dev-lang/python
 		>=dev-cpp/libxmlpp-1.0.2
 		gtk? ( >=dev-python/pygtk-2.6.1 )
 		qsa? ( >=dev-libs/qsa-1.1.1 )
-		qt3? ( $(qt_min_version 3.2) )
+		qt3? ( $(qt_min_version 3.3) )
 		vorbis? ( media-libs/libvorbis
 				media-libs/libogg )"
 DEPEND="${RDEPEND}
