@@ -2,11 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
 inherit eutils apache-module autotools
 
 DESCRIPTION="mod_auth_nufw A NuFW authentication module for apache"
 HOMEPAGE="http://www.inl.fr/mod-auth-nufw.html"
-SRC_URI="http://www.inl.fr/download/${P}.tar.gz"
+SRC_URI="http://software.inl.fr/releases/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
