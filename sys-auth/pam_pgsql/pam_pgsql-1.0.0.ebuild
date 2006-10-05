@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit pam
+WANT_AUTOCONF="2.1"
+inherit pam autotools
 
 DESCRIPTION="pam_pgsql is a module for pam to authenticate users with PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/frs/?group_id=1000039"
