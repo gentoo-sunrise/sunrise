@@ -3,7 +3,7 @@
 # $Header: $
 
   05 Oct 2006; Jakub Moc <jakub@gentoo.org> rb_libtorrent-0.10.ebuild:
-  Fix
+  Fix ${S}
 
   05 Oct 2006; Jakub Moc <jakub@gentoo.org> rb_libtorrent-0.10.ebuild:
   Add missing autoconf/automake dependency
