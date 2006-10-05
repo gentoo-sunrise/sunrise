@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit toolchain-funcs
+
 DESCRIPTION="The BLAST-Like Alignment Tool, a fast genomic sequence aligner"
 LICENSE="blat"
 HOMEPAGE="http://www.cse.ucsc.edu/~kent/"
@@ -14,8 +16,6 @@ S="${WORKDIR}/${PN}Src"
 
 DEPEND="app-arch/unzip"
 RDEPEND=""
-
-inherit toolchain-funcs
 
 src_compile() {
 	MACHTYPE=$(tc-arch)
