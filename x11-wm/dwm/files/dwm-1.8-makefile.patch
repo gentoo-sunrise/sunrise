@@ -1,0 +1,23 @@
+diff -ru dwm-1.8~/config.mk dwm-1.8/config.mk
+--- dwm-1.8~/config.mk	2006-10-05 22:18:46.000000000 +0200
++++ dwm-1.8/config.mk	2006-10-05 22:19:13.000000000 +0200
+@@ -15,7 +15,7 @@
+ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
+ 
+ # flags
+-CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
++CFLAGS += ${INCS} -DVERSION=\"${VERSION}\"
+ LDFLAGS = ${LIBS}
+ #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = -g ${LIBS}
+diff -ru dwm-1.8~/Makefile dwm-1.8/Makefile
+--- dwm-1.8~/Makefile	2006-10-05 22:18:46.000000000 +0200
++++ dwm-1.8/Makefile	2006-10-05 22:19:09.000000000 +0200
+@@ -28,7 +28,6 @@
+ dwm: ${OBJ}
+ 	@echo LD $@
+ 	@${LD} -o $@ ${OBJ} ${LDFLAGS}
+-	@strip $@
+ 
+ clean:
+ 	@echo cleaning
