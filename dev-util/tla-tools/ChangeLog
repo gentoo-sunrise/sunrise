@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2006; Jakub Moc <jakub@gentoo.org> tla-tools-20060509.ebuild:
+  Add missing autoconf/automake dependencies
+
   21 Jun 2006; DrChandra <gentooperson@yahoo.com> ChangeLog:
   New Ebuild for bug 137090 thanks to Kirill A. Korinskiy <catap@catap.ru>
 

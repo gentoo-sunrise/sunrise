@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="2.1"
+WANT_AUTOMAKE="latest"
 inherit tla autotools
 
 DESCRIPTION="tla-tools is a package of helpful commands to use with the tla program."
