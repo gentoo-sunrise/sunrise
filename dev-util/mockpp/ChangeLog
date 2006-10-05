@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2006; Jakub Moc <jakub@gentoo.org> mockpp-1.11.5.ebuild,
+  mockpp-1.13.0.ebuild:
+  Add missing autoconf/automake dependencies
+
   04 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch>
   +files/1.13.0-boost_incdir_m4.patch, +mockpp-1.13.0.ebuild,
   +files/1.13.0-destdir.patch:

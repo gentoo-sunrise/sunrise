@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="1.9"
 inherit eutils autotools
 
 DESCRIPTION="mockpp is a platform independent generic unit testing framework for C++."
