@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="1.4"
 inherit autotools
 
 DESCRIPTION="Fast and lightweight IDE using GTK2"
