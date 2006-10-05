@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
 inherit eutils autotools
 
 DESCRIPTION="An enterprise grade authenticating firewall based on netfilter"
