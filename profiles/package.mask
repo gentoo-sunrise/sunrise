@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Markus Ullmann <jokey@gentoo.org> (05 Oct 2006)
+# using package.mask instead of -*
+www-client/seamonkey-bin
+
 # Stefan Schweizer <genstef@gentoo.org> (11 Sep 2006)
 # gtk+-2.10 is masked in portage and repoman warnings are annoying
 x11-misc/nitrogen
