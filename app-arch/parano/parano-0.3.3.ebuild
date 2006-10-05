@@ -3,6 +3,7 @@
 # $Header: $
 
 WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
 inherit gnome2 autotools
 
 DESCRIPTION="GNOME program to create, edit and verify hashfiles"
