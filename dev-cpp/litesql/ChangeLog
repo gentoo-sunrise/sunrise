@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2006; Markus Ullmann <jokey@gentoo.org> litesql-0.3.2.ebuild:
+  Add missing autoconf/automake dependency
+
   31 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +litesql-0.3.2.ebuild,
   +files/litesql-0.3.2-extra_qualifier.patch,
   +files/litesql-0.3.2-pkg_makefile_am.patch, +metadata.xml:
