@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils pam
+WANT_AUTOCONF="latest"
+inherit eutils pam autotools
 
 DESCRIPTION="pam interface to existing S/Key library/interface"
 HOMEPAGE="http://freshmeat.net/projects/pam_skey/"
