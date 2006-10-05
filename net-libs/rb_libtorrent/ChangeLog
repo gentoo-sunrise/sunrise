@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2006; Jakub Moc <jakub@gentoo.org> rb_libtorrent-0.10.ebuild:
+  Add missing autoconf/automake dependency
+
   22 Sep 2006; Raul Porcel (armin76) <armin76@gmail.com>
   +rb_libtorrent-0.10.ebuild, +metadata.xml:
   New ebuild:net-libs/rb_libtorrent  for bug 148667
