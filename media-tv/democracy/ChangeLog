@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2006; Stefan Schweizer <genstef@gentoo.org>
+  -democracy-0.9.0-r1.ebuild, +democracy-0.9.0.2.ebuild:
+  version bump
+
   13 Sep 2006; Stefan Schweizer <genstef@gentoo.org>
   -democracy-0.8.4.ebuild, -democracy-0.8.4.1.ebuild,
   -files/democracy-0.8.4.1-firefox.patch, -democracy-0.8.5.ebuild,
