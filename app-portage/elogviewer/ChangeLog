@@ -3,6 +3,10 @@
 # $Header: $
 
   07 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  -files/digest-elogviewer-0.4.0.7-r3:
+  remove it right
+
+  07 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   -elogviewer-0.4.0.7-r3.ebuild:
   remove old version
 
