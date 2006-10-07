@@ -29,15 +29,8 @@ RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${PN}
 
-src_unpack() {
-	unpack ${A}
-	sed -i \
-		-e 's/.png/.svg/' \
-		"${S}/share/applications/${PN}.desktop" || die "sed failed"
-}
-
 src_install() {
 	./install --prefix="${D}/usr" --nomenu
-	doicon "${S}/share/${PN}/icons/${PN}.svg"
+	newicon "${S}/share/gcstar/icons/${PN}_64x64.png" ${PN}.png
 	domenu "${S}/share/applications/${PN}.desktop"
 }
