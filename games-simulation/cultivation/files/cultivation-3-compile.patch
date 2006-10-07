@@ -1,0 +1,37 @@
+diff -ur Cultivation_3_UnixSource~/game2/configure Cultivation_3_UnixSource/game2/configure
+--- Cultivation_3_UnixSource~/game2/configure	2006-10-07 20:23:54.000000000 +0200
++++ Cultivation_3_UnixSource/game2/configure	2006-10-07 20:31:02.000000000 +0200
+@@ -8,6 +8,7 @@
+ # nominally supported.
+ #
+ 
++platformSelection=1
+ 
+ while [ -z "$platformSelection" ]
+ do
+diff -ur Cultivation_3_UnixSource~/game2/Makefile.common Cultivation_3_UnixSource/game2/Makefile.common
+--- Cultivation_3_UnixSource~/game2/Makefile.common	2006-10-07 20:23:54.000000000 +0200
++++ Cultivation_3_UnixSource/game2/Makefile.common	2006-10-07 20:55:03.000000000 +0200
+@@ -51,7 +51,7 @@
+ 
+ 
+ 
+-COMPILE_FLAGS = -Wall ${DEBUG_FLAG} ${PLATFORM_COMPILE_FLAGS} ${PROFILE_FLAG} ${OPTIMIZE_FLAG} -I${ROOT_PATH} -I${PORT_AUDIO_PATH}/pa_common
++COMPILE_FLAGS = -Wall ${DEBUG_FLAG} ${PLATFORM_COMPILE_FLAGS} ${PROFILE_FLAG} ${CXXFLAGS} -I${ROOT_PATH} -I${PORT_AUDIO_PATH}/pa_common
+ 
+ 
+ COMPILE = ${GXX} ${COMPILE_FLAGS} -c
+diff -ur Cultivation_3_UnixSource~/game2/Makefile.GnuLinux Cultivation_3_UnixSource/game2/Makefile.GnuLinux
+--- Cultivation_3_UnixSource~/game2/Makefile.GnuLinux	2006-10-07 20:23:54.000000000 +0200
++++ Cultivation_3_UnixSource/game2/Makefile.GnuLinux	2006-10-07 20:36:13.000000000 +0200
+@@ -21,8 +21,8 @@
+ 
+ 
+ # All platforms but OSX support g++ and need no linker hacks
+-GXX = g++ 
+-LINK_FLAGS = 
++GXX ?= g++ 
++LINK_FLAGS = ${LDFLAGS}
+ 
+ 
+ 
