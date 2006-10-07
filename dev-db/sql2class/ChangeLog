@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Oct 2006; Tiziano Müller <dev-zero@gentoo.org>
+  +sql2class-1.9.2.ebuild:
+  Version bump.
+
   06 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +sql2class-1.9.1.ebuild,
   +files/sql2class-1.9.1-extra_qualifiers.patch, +metadata.xml:
   New ebuild for bug #142961
