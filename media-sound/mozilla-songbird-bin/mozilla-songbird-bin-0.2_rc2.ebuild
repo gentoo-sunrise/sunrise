@@ -14,7 +14,7 @@ SRC_URI="http://download.songbirdnest.com/installer/linux/i686/${MY_PN}_${MY_PV/
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="mad mp3 alsa esd ogg oss"
+IUSE=""
 RESTRICT="strip"
 DEPEND=""
 RDEPEND=" x11-libs/libXdmcp
@@ -41,6 +41,6 @@ src_install() {
 	fperms 755 /usr/lib/songbird/xulrunner/xulrunner-bin
 	newbin "${FILESDIR}/${PV}"/songbird-launcher.sh songbird
 
-	doicon ${S}/xulrunner/icons/mozicon16.xpm
-	make_desktop_entry "songbird" "Songbird" "mozicon16.xpm" "AudioVideo;Player"
+	newicon ${S}/xulrunner/icons/mozicon16.xpm ${PN}.xpm
+	make_desktop_entry ${PN} ${PN} ${PN}.xpm "AudioVideo;Player"
 }
