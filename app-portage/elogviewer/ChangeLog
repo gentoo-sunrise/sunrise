@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  +elogviewer-0.4.0.8.ebuild, files/elogviewer.1:
+  version bump, minor improvements in software, changed SRC_URI to a temporary
+  home
+
   24 Sep 2006; Jakub Moc <jakub@gentoo.org> elogviewer-0.4.0.7-r3.ebuild:
   einfo -> elog
 

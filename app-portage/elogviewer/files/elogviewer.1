@@ -1,7 +1,7 @@
-.TH elogviewer 1 "September 20, 2006" "elogviewer -- An interface to Portage's ELOG system"
+.TH elogviewer 1 "October 07, 2006" "elogviewer -- An interface to Portage's ELOG system"
 
 .SH NAME
-elogviewer \-\- program to easily manage elog files created by Portage during emerge
+elogviewer \-\- a program to easily manage elog files created by Portage during emerge
 
 .SH DESCRIPTION
 This manual page explains the
@@ -41,6 +41,26 @@ one step.
 
 .SH BUGS
 For bugs in this man page contact <gentoo@faulhammer.org> and for problems with the program the original author Mathias Laurin <synss@cashette.com>.
+
+There are a few the author will address when time permits.  But elogviewer does what it was created for.
+.PP
+Prints an error message after the last elog has been deleted.
+.PP
+Error messages should be routed to the error dev on not the console. 
+.PP
+No del-key shortcut.
+.PP
+The filter is getting inconvenient.
+
+.SH ENVIRONMENT
+
+Uses 
+.B PORT_LOGDIR
+from 
+.B /etc/make.conf (5)
+. Passing 
+.B PORT_LOGDIR
+on the command line overwrites the defaults.
 
 .SH SEE ALSO
 /etc/make.conf.example
