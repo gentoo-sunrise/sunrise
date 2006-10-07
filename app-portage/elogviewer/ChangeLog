@@ -3,6 +3,10 @@
 # $Header: $
 
   07 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  files/elogviewer.1:
+  corrected some typos
+
+  07 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   +elogviewer-0.4.0.8.ebuild, files/elogviewer.1:
   version bump, minor improvements in software, changed SRC_URI to a temporary
   home

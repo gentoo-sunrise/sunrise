@@ -27,8 +27,8 @@ and choose at least one out of
 PORTAGE_ELOG_CLASSES="warn info error log"
 .RE
 
-Further prerequisite ist the elog directory (in most cases
-/var/log/portage/elog/, see variable $PORT_LOGDIR), which may need to
+Further prerequisite is the elog directory (in most cases
+/var/log/portage/elog/, see variable PORT_LOGDIR), which may need to
 be created and belong to the portage group. If the user wants to start
 the program as non-root, he needs to add himself to portage group.
 For more information on the ELOG system, see /etc/make.conf.example.
@@ -36,7 +36,7 @@ For more information on the ELOG system, see /etc/make.conf.example.
 The program allows to select the ebuild functions in which to look for
 messages, so unpack messages about patching can be disabled while
 still having warnings from the post installation function without
-informational messaes.  elogs can be deleted individually or all in
+informational messages.  elogs can be deleted individually or all in
 one step.
 
 .SH BUGS
