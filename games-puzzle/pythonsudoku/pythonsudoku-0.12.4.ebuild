@@ -4,13 +4,13 @@
 
 inherit games distutils
 
+KEYWORDS="~x86"
+
 DESCRIPTION="A graphical and text-based sudoku game"
 HOMEPAGE="http://pythonsudoku.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
-
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
@@ -20,15 +20,21 @@ RDEPEND="dev-python/pygtk
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}/${PV}-setup_py-various_fix.patch"
-	sed -i -e 's#syscfg = pysdk.cfg#syscfg = /etc/games/pythonsudoku/pysdk.cfg#' \
-		"${S}/pythonsudoku/platform.cfg" || die "fixing configfile path failed"
+	cd "${S}"
+	sed -i \
+		-e 's#\(syscfg[ \t]*\)=.*#\1= /etc/games/pythonsudoku/pysdk.cfg#' \
+		-e 's#\(install-scripts[ \t]*\)=.*#\1= /usr/games/bin#' \
+		pythonsudoku/platform.cfg setup.cfg || die "fixing configfile path failed"
 }
 
 src_install() {
-	newgamesbin pysdk.py pythonsudoku || die "newgamesbin failed"
+	newgamesbin pysdk.py pysdk || die "newgamesbin failed"
 	distutils_src_install
+
 	dohtml -r doc/*
+	doman doc/pysdk.6
+	dodoc doc/*.txt
+
 	prepgamesdirs
 
 	insinto /etc/games/pythonsudoku
