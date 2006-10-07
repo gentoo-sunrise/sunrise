@@ -19,7 +19,8 @@ RDEPEND="cppunit? ( dev-util/cppunit )
 	 boost? ( dev-libs/boost )"
 DEPEND="${RDEPEND}
 	doc? ( 	app-doc/doxygen
-		app-text/docbook-xml-dtd )"
+		app-text/docbook-xml-dtd
+		dev-java/fop )"
 
 pkg_setup() {
 	if use boost && use cppunit; then
@@ -31,9 +32,9 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}/${PV}-destdir.patch"
 	epatch "${FILESDIR}/${PV}-boost_incdir_m4.patch"
-	cd "${S}"
 	eautoreconf
 }
 
