@@ -4,14 +4,16 @@
 
 inherit eutils toolchain-funcs
 
+MY_P=${PN}_${PV}
+
 DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for GTK"
 HOMEPAGE="http://www.exaile.org"
-SRC_URI="http://www.exaile.org/files/${PN}_${PV}.tar.gz"
+SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="fam"
 
 DEPEND=">=dev-lang/python-2.4
 		>=dev-python/pygtk-2.0"
@@ -21,9 +23,10 @@ RDEPEND="${DEPEND}
 		>=media-libs/gst-plugins-good-0.10
 		>=dev-python/gst-python-0.10
 		>=media-libs/mutagen-1.6
-		sys-apps/dbus"
+		sys-apps/dbus
+		fam? ( app-admin/gamin )"
 
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	if ! built_with_use sys-apps/dbus python; then
