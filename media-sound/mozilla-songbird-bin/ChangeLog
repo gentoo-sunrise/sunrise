@@ -1,0 +1,9 @@
+# ChangeLog for media-sound/mozilla-songbird-bin
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  +files/0.2_rc2, +files/0.2_rc2/songbird-launcher.sh,
+  +mozilla-songbird-bin-0.2_rc2.ebuild, +metadata.xml:
+  Songbird binary ebuild, not clean yet
+
