@@ -19,13 +19,13 @@ SLOT="0"
 IUSE="debug doc examples latin1 nextaw Xaw3d"
 
 DEPEND="x11-libs/libX11
-		x11-libs/libXmu
-		x11-libs/libXt
-		x11-libs/libXpm
-		x11-proto/xproto
-		nextaw? ( x11-libs/neXtaw )
-		Xaw3d? ( x11-libs/Xaw3d )
-		!nextaw? ( !Xaw3d? ( x11-libs/libXaw ) )"
+	x11-libs/libXmu
+	x11-libs/libXt
+	x11-libs/libXpm
+	x11-proto/xproto
+	nextaw? ( x11-libs/neXtaw )
+	Xaw3d? ( x11-libs/Xaw3d )
+	!nextaw? ( !Xaw3d? ( x11-libs/libXaw ) )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
