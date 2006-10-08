@@ -4,22 +4,22 @@
 
 inherit eutils
 
-KEYWORDS="~x86"
-
 DESCRIPTION="ACL editor for GNOME, with Nautilus extension"
 HOMEPAGE="http://rofi.pinchito.com/eiciel/"
 SRC_URI="http://rofi.pinchito.com/eiciel/download/${P}.tar.bz2"
+
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
 IUSE="nls xattr"
 
 RDEPEND=">=sys-apps/acl-2.2.32
-		>=dev-cpp/gtkmm-2.8.1
-		>=gnome-base/nautilus-2.12.2
-		nls? ( virtual/libintl )"
+	>=dev-cpp/gtkmm-2.8.1
+	>=gnome-base/nautilus-2.12.2
+	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
-		dev-util/pkgconfig
-		nls? ( sys-devel/gettext )"
+	dev-util/pkgconfig
+	nls? ( sys-devel/gettext )"
 
 src_compile() {
 	econf \
@@ -31,7 +31,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	# Icon-path and category are wrong
 	rm "${D}/usr/share/applications/eiciel.desktop"
