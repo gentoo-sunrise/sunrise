@@ -47,7 +47,7 @@ src_unpack() {
 	# Also prevent stripping the binary, portage takes care of this as needed
 	#  - not using bindnow-flags() because cons.saver is only built on GNU/Linux
 	sed -i -e "s:(CC) -s cons.saver.o:(CC) -Wl,-z,now cons.saver.o:" \
-	    src/Makefile.in || die "sed failed in Makefile.in"
+		src/Makefile.in || die "sed failed in Makefile.in"
 }
 
 src_compile() {
