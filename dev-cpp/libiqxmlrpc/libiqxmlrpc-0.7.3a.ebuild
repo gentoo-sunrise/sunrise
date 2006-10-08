@@ -14,13 +14,13 @@ KEYWORDS="~x86"
 IUSE="doc debug"
 
 RDEPEND="=dev-cpp/libxmlpp-1*
-		dev-libs/libxml2
-		dev-libs/boost
-		dev-libs/openssl"
+	dev-libs/libxml2
+	dev-libs/boost
+	dev-libs/openssl"
 DEPEND="${RDEPEND}
-		doc? ( app-doc/doxygen )"
+	doc? ( app-doc/doxygen )"
 
-pgk_setup() {
+pkg_setup() {
 	if ! built_with_use dev-libs/boost threads ; then
 		eerror "dev-libs/boost has to be compiled with 'threads' USE-flag enabled."
 		die "Needed USE-flag for dev-libs/boost not found."
