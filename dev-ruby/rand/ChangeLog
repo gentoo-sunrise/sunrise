@@ -1,8 +1,0 @@
-# ChangeLog for dev-ruby/rand
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  01 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr> +rand-0.9.0.ebuild,
-  +metadata.xml:
-  New ebuild for bug 145815.
-
