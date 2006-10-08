@@ -40,7 +40,7 @@ src_install() {
 	distutils_python_version
 	dobin client/usr/bin/gnumed
 	insinto /usr/share
-	doins  -r client/usr/share/gnumed
+	doins -r client/usr/share/gnumed
 	insinto /usr/lib/python${PYVER}
 	doins -r client/usr/lib/python/site-packages
 
