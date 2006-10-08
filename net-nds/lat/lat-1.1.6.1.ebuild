@@ -14,16 +14,16 @@ IUSE="avahi"
 SLOT="0"
 
 RDEPEND=">=dev-lang/mono-1.1.13
-		=dev-dotnet/gtk-sharp-2.8*
-		=dev-dotnet/gnome-sharp-2.8*
-		=dev-dotnet/glade-sharp-2.8*
-		=dev-dotnet/gconf-sharp-2.8*
-		=gnome-base/gnome-keyring-0.4*
-		sys-apps/dbus
-		avahi? ( net-dns/avahi )"
+	=dev-dotnet/gtk-sharp-2.8*
+	=dev-dotnet/gnome-sharp-2.8*
+	=dev-dotnet/glade-sharp-2.8*
+	=dev-dotnet/gconf-sharp-2.8*
+	=gnome-base/gnome-keyring-0.4*
+	sys-apps/dbus
+	avahi? ( net-dns/avahi )"
 DEPEND="${RDEPEND}
-		app-text/scrollkeeper
-		dev-util/pkgconfig"
+	app-text/scrollkeeper
+	dev-util/pkgconfig"
 
 src_compile() {
 	econf \
