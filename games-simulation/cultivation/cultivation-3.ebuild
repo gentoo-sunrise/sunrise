@@ -17,7 +17,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="virtual/opengl
-	media-libs/glut
+	virtual/glut
 	media-libs/mesa
 	x11-libs/libX11
 	x11-libs/libXi
@@ -37,6 +37,7 @@ src_unpack() {
 
 src_compile() {
 	cd "${S}"/game2
+	# don't use econf as it is not an autotools configure
 	./configure
 
 	cd "${S}"/minorGems/sound/portaudio
@@ -50,6 +51,5 @@ src_compile() {
 
 src_install() {
 	dogamesbin game2/gameSource/Cultivation
-	dodoc game2/documentation/how_to_*.txt
-	dodoc game2/gameSource/features.txt
+	dodoc game2/{documentation/how_to_*.txt,gameSource/features.txt}
 }
