@@ -12,15 +12,15 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 RDEPEND="dev-python/pyrex
-		>virtual/python-2.4
-		media-libs/xine-lib
-		dev-libs/boost
-		>=dev-python/pygtk-2.0
-		dev-python/gnome-python-extras
-		www-client/mozilla-firefox
-		x11-libs/libX11"
+	>virtual/python-2.4
+	media-libs/xine-lib
+	dev-libs/boost
+	>=dev-python/pygtk-2.0
+	dev-python/gnome-python-extras
+	www-client/mozilla-firefox
+	x11-libs/libX11"
 DEPEND="${RDEPEND}
-		dev-util/pkgconfig"
+	dev-util/pkgconfig"
 
 DOCS="README"
 
