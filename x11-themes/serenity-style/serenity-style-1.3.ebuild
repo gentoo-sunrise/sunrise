@@ -4,18 +4,20 @@
 
 inherit kde
 
+MY_P=${P/-/.}
+
 DESCRIPTION="Serenity is a KDE style with a matching window decoration"
 HOMEPAGE="http://www.kde-look.org/content/show.php?content=35954"
-SRC_URI="http://maxilys.awardspace.com/archives/${P/-/.}.tar.bz2"
-S=${WORKDIR}/${P/-/.}
+SRC_URI="http://maxilys.awardspace.com/archives/${MY_P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~amd64 ~sparc"
+KEYWORDS="~x86"
 IUSE=""
-RESTRICT="nomirror"
 
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )"
+RDEPEND="${DEPEND}"
 
-need-kde 3.2
+need-kde 3.5
 
+S=${WORKDIR}/${MY_P}
