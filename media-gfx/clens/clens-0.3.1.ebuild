@@ -13,12 +13,14 @@ ECVS_UP_OPTS="-dP -D 6/19/06"
 DESCRIPTION="A command-line version of PTLens"
 SRC_URI=""
 HOMEPAGE="http://panotools.sf.net"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+
 DEPEND="media-gfx/ptlens-profiles
-		>=media-libs/libpano12-2.8.4"
+	>=media-libs/libpano12-2.8.4"
 RDEPEND="${DEPEND}"
 
 PTLENS_PROFILES="/usr/share/ptlens/profiles/profile.txt"
@@ -27,12 +29,12 @@ S=${WORKDIR}/${ECVS_MODULE}
 
 src_compile() {
 	./bootstrap || die "bootstrap failed"
-	econf || die "configure failed"
-	emake || die "make failed"
+	econf || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodir /etc/env.d
 	echo "CLENS_PROFILE=\"${PTLENS_PROFILES}\"" > ${D}/etc/env.d/99clens
 }
