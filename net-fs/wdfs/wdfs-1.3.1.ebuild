@@ -11,11 +11,11 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND=">=net-misc/neon-0.26.1
-	 	>=sys-fs/fuse-2.3"
-DEPEND="${RDEPEND}"
+DEPEND=">=net-misc/neon-0.26.1
+	>=sys-fs/fuse-2.3"
+RDEPEND="${DEPEND}"
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog AUTHORS NEWS README
 }
