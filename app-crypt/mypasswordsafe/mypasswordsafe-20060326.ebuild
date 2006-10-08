@@ -4,10 +4,11 @@
 
 inherit eutils qt3 toolchain-funcs
 
-MY_PN="MyPasswordSafe"
-DESCRIPTION="MyPasswordSafe is a password manager compatible with Password Safe."
+MY_P=${P/mypasswords/MyPasswordS}
+
+DESCRIPTION="A password manager compatible with Password Safe."
 HOMEPAGE="http://www.semanticgap.com/myps/"
-SRC_URI="http://www.semanticgap.com/myps/release/${MY_PN}-${PV}.src.tgz"
+SRC_URI="http://www.semanticgap.com/myps/release/${MY_P}.src.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,18 +18,18 @@ IUSE=""
 DEPEND="$(qt_min_version 3.3)"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_PN}-${PV}"
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch "${FILESDIR}/${PF}-gentoo.patch" || die "patch failed"
+	cd "${S}"
+	epatch "${FILESDIR}/${PF}-gentoo.patch" || die "epatch failed"
 }
 
 src_compile() {
-	emake CXX=$(tc-getCXX) PREFIX="/usr" all || die "failed to compile"
+	emake CXX=$(tc-getCXX) PREFIX="/usr" all || die "emake failed"
 }
 
 src_install() {
-	emake PREFIX="${D}/usr" install || die "install failed"
+	emake PREFIX="${D}/usr" install || die "emake install failed"
 }
