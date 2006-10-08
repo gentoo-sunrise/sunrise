@@ -10,13 +10,13 @@ DESCRIPTION="creates normal/height maps from high resolution meshes for games or
 HOMEPAGE="http://epsylon.rptd.dnsalias.net/denormgen.php"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
-SLOT="0"
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND=">=x11-libs/fox-1.2"
-DEPEND="${RDEPEND}"
+DEPEND=">=x11-libs/fox-1.2"
+RDEPEND="${DEPEND}"
 
 src_unpack(){
 	unpack ${A}
@@ -25,7 +25,7 @@ src_unpack(){
 }
 
 src_install(){
-	emake DESTDIR="${D}" install || die "emake failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	# http://bugs.gentoo.org/show_bug.cgi?id=134456#c7
 	#
