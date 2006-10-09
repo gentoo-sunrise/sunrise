@@ -8,9 +8,12 @@ MY_P="Democracy-${PV}"
 DESCRIPTION="Democracy is a free and open internet TV platform."
 HOMEPAGE="http://www.getdemocracy.com"
 SRC_URI="ftp://ftp.osuosl.org/pub/pculture.org/democracy/src/${MY_P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
+IUSE=""
+
 RDEPEND="dev-python/pyrex
 	>virtual/python-2.4
 	media-libs/xine-lib
