@@ -6,7 +6,7 @@ inherit eutils toolchain-funcs
 
 DESCRIPTION="Command line radio player for Last.fm"
 HOMEPAGE="http://lizer.syslinx.org/shell-fm/"
-SRC_URI="${HOMEPAGE}/releases/${P/-/.}.tar.bz2"
+SRC_URI="http://lizer.syslinx.org/shell-fm/releases/${P/-/.}.tar.bz2"
 S=${WORKDIR}/${PN}
 
 LICENSE="GPL-2"
