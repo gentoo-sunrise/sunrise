@@ -11,7 +11,10 @@ SRC_URI="mirror://sourceforge/${PN}/${P}-src.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
+
 DEPEND=">=dev-util/scons-0.96.91"
+
 S=${WORKDIR}/${P}-src
 
 pkg_setup() {
