@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Oct 2006; Cedric Krier <ced@ced.homedns.org> -dmenu-1.1.ebuild,
+  -files/dmenu-1.1-config_mk.patch, -files/dmenu-1.1-makefile.patch,
+  dmenu-1.2.ebuild:
+  Remove old and new domain name
+
   07 Oct 2006; Cedric Krier <ced@ced.homedns.org> +dmenu-1.2.ebuild,
   +files/dmenu-1.2-makefile.patch:
   Version bump
