@@ -1,0 +1,25 @@
+diff -ru sic-0.3~/config.mk sic-0.3/config.mk
+--- sic-0.3~/config.mk	2006-10-09 20:56:24.000000000 +0200
++++ sic-0.3/config.mk	2006-10-09 20:57:05.000000000 +0200
+@@ -12,8 +12,8 @@
+ LIBS = -L/usr/lib -lc
+ 
+ # flags
+-CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
+-LDFLAGS = ${LIBS}
++CFLAGS += ${INCS} -DVERSION=\"${VERSION}\"
++LDFLAGS += ${LIBS}
+ #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = -g ${LIBS}
+ 
+diff -ru sic-0.3~/Makefile sic-0.3/Makefile
+--- sic-0.3~/Makefile	2006-10-09 20:56:24.000000000 +0200
++++ sic-0.3/Makefile	2006-10-09 20:57:15.000000000 +0200
+@@ -24,7 +24,6 @@
+ sic: ${OBJ}
+ 	@echo LD $@
+ 	@${LD} -o $@ ${OBJ} ${LDFLAGS}
+-	@strip $@
+ 
+ clean:
+ 	@echo cleaning

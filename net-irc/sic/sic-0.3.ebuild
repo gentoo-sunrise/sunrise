@@ -5,8 +5,8 @@
 inherit eutils toolchain-funcs
 
 DESCRIPTION="an extremly simple IRC client"
-HOMEPAGE="http://www.10kloc.org/sic/"
-SRC_URI="http://10kloc.org/download/${P}.tar.gz"
+HOMEPAGE="http://suckless.org/view/simple+irc+client"
+SRC_URI="http://www.shortest.de/download/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,7 +20,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-config_mk.patch"
+	epatch "${FILESDIR}/${P}-makefile.patch"
 }
 
 src_compile() {
