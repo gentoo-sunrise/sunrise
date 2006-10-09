@@ -9,11 +9,14 @@ inherit tla autotools
 DESCRIPTION="tla-tools is a package of helpful commands to use with the tla program."
 HOMEPAGE="http://www.gnuarch.org/gnuarchwiki/tla-tools"
 SRC_URI=""
+
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
+
 DEPEND="dev-util/tla"
 RDEPEND="${DEPEND}"
-SLOT="0"
 
 ETLA_VERSION="miles@gnu.org--2006/tla-tools--devo--0"
 ETLA_ARCHIVES="http://mirrors.sourcecontrol.net/miles@gnu.org--2006"
