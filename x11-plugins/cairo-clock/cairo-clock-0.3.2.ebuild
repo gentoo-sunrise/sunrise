@@ -7,9 +7,11 @@ inherit eutils
 DESCRIPTION="Clock for desktop with ARGB visuals."
 HOMEPAGE="http://macslow.thepimp.net/?page_id=23"
 SRC_URI="http://macslow.thepimp.net/projects/cairo-clock/${P}.tar.bz2"
-SLOT="0"
+
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
+IUSE=""
 
 DEPEND=">=x11-libs/cairo-1.0.2
 	>=x11-libs/gtk+-2.8.8
