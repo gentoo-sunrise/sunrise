@@ -7,9 +7,11 @@ inherit eutils toolchain-funcs
 DESCRIPTION="SLiM - Simple Login Manager"
 HOMEPAGE="http://slim.berlios.de/"
 SRC_URI="http://download.berlios.de/${PN}/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
+IUSE=""
 
 DEPEND="|| ( ( x11-proto/xproto
 		x11-libs/libXmu
