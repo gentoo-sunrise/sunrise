@@ -9,10 +9,11 @@ MY_P=${P/_alpha/a}
 DESCRIPTION="TkDnD is an extension that adds native drag & drop capabilities to the tk toolkit."
 HOMEPAGE="http://www.iit.demokritos.gr/~petasis/Tcl/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
-LICENSE="BSD"
 
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 RESTRICT="test"
 
 DEPEND=">=dev-lang/tcl-8.4
