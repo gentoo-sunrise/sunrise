@@ -7,9 +7,10 @@ HOMEPAGE="http://www.complang.tuwien.ac.at/~schani/metapixel/"
 SRC_URI="http://www.complang.tuwien.ac.at/~schani/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
-
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
+
 DEPEND="media-libs/jpeg
 	media-libs/libpng"
 RDEPEND="${DEPEND}
