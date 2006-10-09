@@ -4,7 +4,7 @@
 
 DESCRIPTION="Graphical utility to parse the contents of the elogs"
 HOMEPAGE="http://forums.gentoo.org/viewtopic-p-3374725.html#3374725"
-SRC_URI="http://www.v-li.de/temp/${P}.tar.bz2"
+SRC_URI="http://www.v-li.de/temp/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
