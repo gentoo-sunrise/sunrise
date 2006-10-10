@@ -13,7 +13,7 @@ SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="fam"
+IUSE="fam trayicon"
 
 DEPEND=">=dev-lang/python-2.4
 		>=dev-python/pygtk-2.0"
@@ -24,7 +24,8 @@ RDEPEND="${DEPEND}
 		>=dev-python/gst-python-0.10
 		>=media-libs/mutagen-1.6
 		sys-apps/dbus
-		fam? ( app-admin/gamin )"
+		fam? ( app-admin/gamin )
+		trayicon? ( dev-python/gnome-python-extras )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -38,6 +39,7 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+	# We want Gentoo's mutagen package
 	sed -i \
 		-e '/mutagen/d' \
 		Makefile || die "sed failed"

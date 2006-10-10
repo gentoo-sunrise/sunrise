@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Oct 2006; Tiziano Müller <dev-zero@gentoo.org> -exaile-0.2.3.ebuild,
+  exaile-0.2.4.ebuild:
+  trayicon USE-flag added. Comment added. Removed old version.
+
   07 Oct 2006; Tiziano Müller <dev-zero@gentoo.org> -exaile-0.2.2.ebuild,
   +exaile-0.2.4.ebuild:
   Version bump. Old version removed.
