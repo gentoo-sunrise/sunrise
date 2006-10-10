@@ -4,7 +4,6 @@
 
 DESCRIPTION="KDE based utility to parse the contents of elogs created by Portage"
 HOMEPAGE="http://jeremywick.phpnet.us/"
-
 SRC_URI="http://jeremywick.phpnet.us/kelogviewer.tgz"
 
 LICENSE="GPL-2"
@@ -19,7 +18,7 @@ RDEPEND=">=dev-lang/python-2.3
 	kde-base/pykde"
 
 src_install() {
-	      dobin "${WORKDIR}"/kelogviewer
+	dobin "${WORKDIR}"/kelogviewer
 }
 
 pkg_postinst() {
