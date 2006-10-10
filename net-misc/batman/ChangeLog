@@ -1,0 +1,9 @@
+# ChangeLog for net-misc/batman
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Oct 2006; Cedric Krier <ced@ced.homedns.org> +batman-0.1_rc1.ebuild,
+  +files/batman-0.1_rc1-makefile.patch, +files/batman-conf.d,
+  +files/batman-init.d, +metadata.xml:
+  New Ebuild for bug 150824
+

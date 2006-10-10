@@ -1,0 +1,14 @@
+diff -ru batman-III-0.1-rc1~/Makefile batman-III-0.1-rc1/Makefile
+--- batman-III-0.1-rc1~/Makefile	2006-10-10 21:31:58.000000000 +0200
++++ batman-III-0.1-rc1/Makefile	2006-10-10 21:39:57.000000000 +0200
+@@ -17,8 +17,8 @@
+ #
+ 
+ CC =		gcc
+-CFLAGS =	-Wall -O0 -g3
+-LDFLAGS =	-lpthread
++CFLAGS +=	-Wall
++LDFLAGS +=	-lpthread
+ #LDFLAGS =	-static -lpthread
+ 
+ UNAME=$(shell uname)
