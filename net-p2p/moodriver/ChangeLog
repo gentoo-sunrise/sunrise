@@ -4,5 +4,5 @@
 
   10 Oct 2006; Santiago M. Mola <cooldwind@gmail.com>
   +moodriver-0.09.ebuild, +metadata.xml:
-  Initial ebuild for bug #149975
+  Initial ebuild for bug #149973
 
