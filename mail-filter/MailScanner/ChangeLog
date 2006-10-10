@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Oct 2006; David Shakaryan <d@ompty.org> MailScanner-4.55.10.3.ebuild:
+  Major cleanup.
+
   05 Oct 2006; Chan Min Wai (dcmwai) <dcmwai@gmail.com>
   +MailScanner-4.55.10.3.ebuild:
   Version Pumb 4.55.10.3
