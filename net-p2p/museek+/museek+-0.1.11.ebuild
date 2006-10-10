@@ -93,5 +93,5 @@ src_install() {
 pkg_postinst() {
 	elog "Look at /etc/conf.d/museekd and configure all options"
 	elog "before starting it. When you are done,"
-	elog "configure the all settings with musetup or musetup-gtk."
+	elog "configure all settings with musetup or musetup-gtk."
 }
