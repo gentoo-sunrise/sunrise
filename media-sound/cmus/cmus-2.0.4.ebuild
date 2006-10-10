@@ -5,9 +5,12 @@
 inherit eutils
 
 DESCRIPTION="A ncurses based music player with plugin support for many formats"
-SRC_URI="http://onion.dynserv.net/~timo/files/${P}.tar.bz2"
 HOMEPAGE="http://onion.dynserv.net/~timo/cmus.html"
+SRC_URI="http://onion.dynserv.net/~timo/files/${P}.tar.bz2"
+
+LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
 IUSE="alsa ao arts debug flac oss mad modplug mp3 musepack vorbis"
 
 DEPEND="sys-libs/ncurses
@@ -19,16 +22,10 @@ DEPEND="sys-libs/ncurses
 	vorbis? ( >=media-libs/libvorbis-1.0 )
 	alsa? ( >=media-libs/alsa-lib-1.0.11 )
 	ao? (  media-libs/libao )
-	arts? ( kde-base/arts )
-	"
-
+	arts? ( kde-base/arts )"
 RDEPEND="${DEPEND}"
 
-LICENSE="GPL-2"
-KEYWORDS="~x86"
-
-pkg_setup()
-{
+pkg_setup() {
 	if ! built_with_use sys-libs/ncurses unicode
 	then
 		ewarn
@@ -41,15 +38,13 @@ pkg_setup()
 	fi
 }
 
-my_config()
-{
+my_config() {
 	local value
 	use ${1} && value=y || value=n
 	myconf="${myconf} ${2}=${value}"
 }
 
-src_compile()
-{
+src_compile() {
 	local debuglevel myconf
 
 	if use debug
@@ -72,13 +67,12 @@ src_compile()
 	my_config vorbis CONFIG_VORBIS
 
 	# econf doesn't work, because configure wants "prefix" without dashes
-	./configure prefix=/usr ${myconf} DEBUG=$debuglevel || die "Configure failed"
+	./configure prefix=/usr ${myconf} DEBUG=$debuglevel || die "configure failed"
 
-	emake || die "Make failed"
+	emake || die "emake failed"
 }
 
-src_install()
-{
-	emake DESTDIR="${D}" install || die "Install failed"
+src_install() {
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS README
 }
