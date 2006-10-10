@@ -8,7 +8,6 @@ app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/mc-mp:7zip - Add support for 7zip archives
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
-app-portage/elogviewer:text - install text mode frontend
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
