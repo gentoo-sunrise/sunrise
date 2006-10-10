@@ -3,6 +3,11 @@
 # $Header: $
 
   10 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  +elogviewer-0.4.1-r2.ebuild:
+  removed KDE and text viewers, separate ebuilds now: elogv and kelogviewer in
+  app-portage
+
+  10 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   -elogviewer-0.4.1.ebuild:
   removed old version
 
