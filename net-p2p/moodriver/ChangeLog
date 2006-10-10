@@ -1,0 +1,8 @@
+# ChangeLog for net-p2p/moodriver
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Oct 2006; Santiago M. Mola <cooldwind@gmail.com>
+  +moodriver-0.09.ebuild, +metadata.xml:
+  Initial ebuild for bug #149975
+
