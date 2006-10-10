@@ -3,6 +3,10 @@
 # $Header: $
 
   10 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  elogviewer-0.4.1-r1.ebuild:
+  fixed some ugly typos
+
+  10 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   +elogviewer-0.4.1-r1.ebuild:
   added KDE and text frontends, controlled via text and kde USE flags; added
   gtk USE flag; changed elog to einfo

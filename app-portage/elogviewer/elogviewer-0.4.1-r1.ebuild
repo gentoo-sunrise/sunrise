@@ -64,8 +64,8 @@ pkg_postinst() {
 	einfo "group."
 	einfo
 	einfo "You chose"
-	use gtk && einfo "\t GTK frontend, which is called throug /usr/bin/elogviewer"
-	use kde && einfo "\t KDE frontend, which is called by /usr/bin/kelogviewer"
-	use text && einfo "\t text frontend, which is called be /usr/bin/eread"
+	use gtk && einfo "\t GTK frontend, which is called through /usr/bin/elogviewer"
+	use kde && einfo "\t KDE frontend, which is called through /usr/bin/kelogviewer"
+	use text && einfo "\t text frontend, which is called through /usr/bin/eread"
 	einfo
 }
