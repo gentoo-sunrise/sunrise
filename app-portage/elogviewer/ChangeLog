@@ -3,6 +3,10 @@
 # $Header: $
 
   10 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  -elogviewer-0.4.1.ebuild:
+  removed old version
+
+  10 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   elogviewer-0.4.1-r1.ebuild:
   fixed some ugly typos
 
