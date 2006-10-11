@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="sys-libs/glibc"
+DEPEND="virtual/libc"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_PN}-${MY_PV}
