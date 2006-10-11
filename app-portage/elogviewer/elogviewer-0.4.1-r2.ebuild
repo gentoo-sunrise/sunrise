@@ -24,18 +24,18 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo "In order to use this software, you need to activate"
-	einfo "Portage's EINFO features.  Required is"
-	einfo "	     PORTAGE_EINFO_SYSTEM=\"save\" "
-	einfo "and at least one out of "
-	einfo "	     PORTAGE_EINFO_CLASSES=\"warn error info log\""
-	einfo "More information on the EINFO system can be found"
-	einfo "in /etc/make.conf.example"
-	einfo
-	einfo "To operate properly this software needs the directory"
-	einfo "$PORT_LOGDIR/einfo created, belonging to group portage."
-	einfo "To start the software as a user, add yourself to the portage"
-	einfo "group."
-	einfo
+	elog
+	elog "In order to use this software, you need to activate"
+	elog "Portage's elog features.  Required is"
+	elog "	     PORTAGE_elog_SYSTEM=\"save\" "
+	elog "and at least one out of "
+	elog "	     PORTAGE_elog_CLASSES=\"warn error info log\""
+	elog "More information on the elog system can be found"
+	elog "in /etc/make.conf.example"
+	elog
+	elog "To operate properly this software needs the directory"
+	elog "$PORT_LOGDIR/elog created, belonging to group portage."
+	elog "To start the software as a user, add yourself to the portage"
+	elog "group."
+	elog
 }
