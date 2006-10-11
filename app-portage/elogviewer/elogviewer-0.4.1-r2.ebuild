@@ -3,9 +3,9 @@
 # $Header: $
 
 DESCRIPTION="GTK based utility to parse the contents of elogs created by Portage"
-HOMEPAGE="http://forums.gentoo.org/viewtopic-p-3374725.html#3374725"
+HOMEPAGE="http://sourceforge.net/projects/elogviewer/"
 
-SRC_URI="http://www.v-li.de/temp/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/elogviewer/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,16 +20,16 @@ RDEPEND=">=dev-lang/python-2.3
 src_install() {
 	  dobin "${WORKDIR}"/elogviewer
 	  dodoc "${WORKDIR}"/CHANGELOG
-	  doman "${FILESDIR}"/elogviewer.1
+	  doman "${WORKDIR}"/elogviewer.1
 }
 
 pkg_postinst() {
 	elog
 	elog "In order to use this software, you need to activate"
 	elog "Portage's elog features.  Required is"
-	elog "	     PORTAGE_elog_SYSTEM=\"save\" "
+	elog "	     PORTAGE_ELOG_SYSTEM=\"save\" "
 	elog "and at least one out of "
-	elog "	     PORTAGE_elog_CLASSES=\"warn error info log\""
+	elog "	     PORTAGE_ELOG_CLASSES=\"warn error info log\""
 	elog "More information on the elog system can be found"
 	elog "in /etc/make.conf.example"
 	elog
