@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  elogv-0.4.ebuild:
+  clean up the mess, jakub left behind ;-)
+
   11 Oct 2006; Jakub Moc <jakub@gentoo.org> elogv-0.4.ebuild:
   einfo -> elog
 

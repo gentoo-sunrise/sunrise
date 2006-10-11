@@ -38,9 +38,9 @@ pkg_postinst() {
 	elog
 	elog "In order to use this software, you need to activate"
 	elog "Portage's elog features.  Required is"
-	elog "	     PORTAGE_elog_SYSTEM=\"save\" "
+	elog "	     PORTAGE_ELOG_SYSTEM=\"save\" "
 	elog "and at least one out of "
-	elog "	     PORTAGE_elog_CLASSES=\"warn error info log\""
+	elog "	     PORTAGE_ELOG_CLASSES=\"warn error info log\""
 	elog "More information on the elog system can be found"
 	elog "in /etc/make.conf.example"
 	elog
