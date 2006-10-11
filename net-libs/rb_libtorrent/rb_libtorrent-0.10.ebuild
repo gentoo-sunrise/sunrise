@@ -21,16 +21,15 @@ IUSE="debug"
 DEPEND="dev-libs/boost"
 RDEPEND="${DEPEND}"
 
-pkg_setup() {
-	! built_with_use dev-libs/boost threads && die \
-		 "rb_libtorrent needs dev-libs/boost built with threads USE flag"
-
-	# fix for dev-libs/boost thread lib
-	ln -sf /usr/lib/libboost_thread-mt.so.1.33.1 /usr/lib/libboost_thread.so
-}
-
 src_compile() {
-	econf $(use_enable debug) || die "econf failed"
+	# If threads were used to build boost, the library files will have a suffix.
+	if built_with_use "dev-libs/boost" threads || use built_with_use "dev-libs/boost" threads-only ; then
+		BOOST_LIBS="--with-boost-date-time=mt --with-boost-filesystem=mt --with-boost-thread=mt --with-boost-regex=mt --with-boost-program_options=mt"
+	else
+		die "rb_libtorrent needs dev-libs/boost built with threads USE flag"
+	fi
+
+	econf $(use_enable debug) ${BOOST_LIBS} || die "econf failed"
 	emake || die "emake failed"
 }
 
