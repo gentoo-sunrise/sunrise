@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Oct 2006; Jakub Moc <jakub@gentoo.org> kelogviewer-0.1.ebuild:
+  einfo -> elog
+
   10 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   +kelogviewer-0.1.ebuild, +metadata.xml:
   KDE frontend to have a look at elogs from Portage
