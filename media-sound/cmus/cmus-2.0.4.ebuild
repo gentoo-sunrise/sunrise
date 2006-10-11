@@ -11,7 +11,7 @@ SRC_URI="http://onion.dynserv.net/~timo/files/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="alsa ao arts debug flac oss mad modplug mp3 musepack vorbis"
+IUSE="alsa ao arts debug flac mad modplug mp3 musepack oss vorbis"
 
 DEPEND="sys-libs/ncurses
 	flac? ( >=media-libs/flac-1.1.2 )
@@ -47,12 +47,7 @@ my_config() {
 src_compile() {
 	local debuglevel myconf
 
-	if use debug
-	then
-		debuglevel=2
-	else
-		debuglevel=1
-	fi
+	use debug && debuglevel=2 || debuglevel=1
 
 	myconf="CONFIG_SUN=n"
 	my_config ao CONFIG_AO
