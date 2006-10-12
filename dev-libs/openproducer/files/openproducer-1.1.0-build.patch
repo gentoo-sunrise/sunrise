@@ -1,0 +1,51 @@
+--- OSG_OP_OT-1.2~/Producer/Make/makedefs	2006-10-12 14:45:38.000000000 +0200
++++ OSG_OP_OT-1.2/Producer/Make/makedefs	2006-10-12 14:50:48.000000000 +0200
+@@ -57,8 +57,8 @@
+ 
+ INC        = -I$(TOPDIR)/include 
+ 
+-CXXFLAGS   = $(ARCHARGS) $(DOF) $(DEF) $(INC)
+-LDFLAGS    = $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
++CXXFLAGS   += -Wall $(ARCHARGS) $(DOF) $(DEF) $(INC)
++LDFLAGS    += $(ARCHARGS) $(DOF) -L$(TOPDIR)/lib/$(OS)$(ARCH) $(LINKARGS)
+ OBJS       = $(CXXFILES:.cpp=.o) \
+ 	     	 $(CFILES:.c=.o) \
+ 	     	 $(YACCFILES:.y=.o) \
+@@ -86,7 +86,7 @@
+ INSTLINKCMD        = $(LINK)
+ 
+ LIB_PREFIX         = lib
+-LIB_EXT            = so
++LIB_EXT            = so.$(VERSION)
+ EXE_EXT    =
+ 
+ MAKEDIST           = echo "   === Distribution build is not implemented yet for $(OS)"; printf "\n"
+@@ -249,12 +249,12 @@
+       CXX               = g++
+     endif
+ 
+-ifeq ("$(COMPILE_OSG_OP_OT_WITH_SONAMES)","YES")
+-    LDFLAGS         += -Wl,-soname -Wl,$@.$(LIB_EXT).0
+-endif
++#ifeq ("$(COMPILE_OSG_OP_OT_WITH_SONAMES)","YES")
++    LDFLAGS         += -Wl,-soname -Wl,$@.$(LIB_EXT)
++#endif
+ 
+     DEF               += -fPIC -pthread
+-    OPTF              = -O2
++    #OPTF              = -O2
+     DBGF              = -ggdb -gstabs
+     ifeq ($(SYSARCH),x86_64)
+       ARCH              = 64
+@@ -272,9 +272,9 @@
+   SHARED            = -shared
+   ARCHARGS          = 
+ ifeq ($(SYSARCH),x86_64)
+-  LINKARGS          = -L/usr/X11R6/lib64
++  LINKARGS          = -L/usr/lib64
+ else
+-  LINKARGS          = -L/usr/X11R6/lib
++  LINKARGS          = -L/usr/lib
+ endif
+   MAKEDIST          = $(TOPDIR)/Make/makerpms
+ 
