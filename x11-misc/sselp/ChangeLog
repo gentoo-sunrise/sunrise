@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/sselp
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Oct 2006; Cedric Krier <ced@ced.homedns.org> +sselp-9999.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 151065
+
