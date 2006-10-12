@@ -1,0 +1,9 @@
+# ChangeLog for dev-cpp/libthrowable
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  +libthrowable-0.9.4.ebuild, +metadata.xml:
+  A debuggin library for C++, initial ebuild by Mathias Langer
+  <mlangc@gmx.at>, heavily reworked
+
