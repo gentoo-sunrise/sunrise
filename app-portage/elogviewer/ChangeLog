@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  ChangeLog:
+  recreated Manifest
+
   11 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   elogviewer-0.4.1-r2.ebuild, -files/elogviewer.1:
   Sourceforge project finally: New HOMEPAGE, new SRC_URI; man page included in
