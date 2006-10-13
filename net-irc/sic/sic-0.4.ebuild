@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="an extremly simple IRC client"
 HOMEPAGE="http://suckless.org/view/simple+irc+client"
@@ -20,7 +20,14 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-makefile.patch"
+	sed -i \
+		-e "s/.*strip.*//" \
+		Makefile || die "sed failed"
+
+	sed -i \
+		-e "s/CFLAGS = -Os/CFLAGS +=/" \
+		-e "s/LDFLAGS =/LDFLAGS +=/" \
+		config.mk || die "sed failed"
 }
 
 src_compile() {
@@ -29,4 +36,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
+
+	dodoc README
 }
