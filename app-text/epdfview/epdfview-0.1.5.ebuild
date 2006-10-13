@@ -14,8 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="cups nls test"
 
 COMMON_DEPEND=">=x11-libs/gtk+-2.6
-		>=app-text/poppler-bindings-0.5.0
-		cups? ( >=net-print/cups-1.1 )"
+	>=app-text/poppler-bindings-0.5.0
+	cups? ( >=net-print/cups-1.1 )"
 
 DEPEND="${COMMON_DEPEND}
 	>=dev-util/pkgconfig-0.9
