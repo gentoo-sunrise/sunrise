@@ -14,7 +14,7 @@ SRC_URI="http://www.openscenegraph.org/downloads/snapshots/OSG_OP_OT-${MY_PV}.zi
 LICENSE="OSGPL"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="doc examples introspection  producer gdal jasper truetype xine jpeg gif tiff png coin inventor glut"
+IUSE="doc examples introspection producer gdal jasper truetype xine jpeg gif tiff png coin inventor glut"
 
 RDEPEND="=dev-libs/openproducer-1.0.1
 	>=dev-libs/openthreads-1.4.2
