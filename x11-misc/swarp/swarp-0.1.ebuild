@@ -2,25 +2,22 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit mercurial toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="simple pointer warp"
 HOMEPAGE="http://tools.suckless.org/view/x+tools"
-SRC_URI=""
-EHG_REPO_URI=http://suckless.org/cgi-bin/hgwebdir.cgi/${PN}
+SRC_URI="http://suckless.org/download/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="-x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="x11-libs/libX11"
 RDEPEND=${DEPEND}
 
-S=${WORKDIR}/${PN}
-
 src_unpack() {
-	mercurial_src_unpack
+	unpack ${A}
 	cd "${S}"
 
 	sed -i \
