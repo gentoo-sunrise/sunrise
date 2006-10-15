@@ -3,6 +3,10 @@
 # $Header: $
 
   15 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  -elogv-0.4.ebuild:
+  delete old version
+
+  15 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   +elogv-0.4.1.ebuild:
   version bump
 
