@@ -10,10 +10,11 @@ S="${WORKDIR}/${MY_PN}_20061003"
 
 DESCRIPTION="A multimedia player, inspired by iTunes"
 HOMEPAGE="http://www.songbirdnest.com/"
-SRC_URI="http://download.songbirdnest.com/installer/linux/i686/${MY_PN}_${MY_PV}_linux-i686.tar.gz"
+SRC_URI="x86? ( http://download.songbirdnest.com/installer/linux/i686/${MY_PN}_${MY_PV}_linux-i686.tar.gz )
+	amd64? ( http://download.songbirdnest.com/installer/linux/x86_64/${MY_PN}_${MY_PV}_linux-x86_64.tar.gz ) "
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 RESTRICT="strip"
 DEPEND=""
