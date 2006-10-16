@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Oct 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  +qbittorrent-0.7.0.ebuild:
+  net-p2p/qbittorrent: Version bump 0.7.0
+
   01 Oct 2006; Raul Porcel (armin76) <armin76@gmail.com>
   qbittorrent-0.6.1.ebuild, -files/qbittorrent-0.6.1-sandbox.patch:
   Remove lame patch by me, regarding sandbox violation. Adding a real fix
