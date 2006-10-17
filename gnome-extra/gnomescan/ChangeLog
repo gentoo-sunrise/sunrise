@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Oct 2006; Mikel Olasgasti (Hey_neken) <hey_neken@mundurat.net>
+  +gnomescan-0.3.ebuild:
+  Version bump
+
   03 Oct 2006; Mikel Olasgasti (Hey_neken) <hey_neken@mundurat.net>
   +gnomescan-0.2.3.ebuild, +metadata.xml:
   New ebuild for bug 149644, thanks to genstef
