@@ -4,7 +4,7 @@
 
 
 DESCRIPTION="Python bindings for libsexy."
-HOMEPAGE="http://www.chipx86.com/wiki/Libsexy#sexy-python"
+HOMEPAGE="http://www.chipx86.com/wiki/Libsexy"
 SRC_URI="http://releases.chipx86.com/libsexy/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -12,11 +12,11 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="~x11-libs/libsexy-${PV}
-	>=dev-lang/python-2.3"
+DEPEND=">=x11-libs/libsexy-${PV}
+		>=dev-lang/python-2.4"
 RDEPEND="${DEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README AUTHORS NEWS
+	dodoc AUTHORS ChangeLog NEWS README
 }
