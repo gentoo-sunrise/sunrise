@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Oct 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Dropping old version as dependency has gone from portage
+
   19 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> icepy-3.1.0.ebuild:
   Cosmetic cleanups
 
