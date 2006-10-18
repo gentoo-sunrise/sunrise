@@ -1,0 +1,10 @@
+# ChangeLog for app-office/tinyerp-server
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Oct 2006; Cedric Krier <ced@ced.homedns.org>
+  +tinyerp-server-3.4.2.ebuild, +files/tinyerp-conf.d,
+  +files/tinyerp-init.d, +metadata.xml:
+  Ebuild for bug 106982 thanks Tommie, lzap, Masse Nicolas, Raimondo
+  Giammanco, Jean Delattre
+
