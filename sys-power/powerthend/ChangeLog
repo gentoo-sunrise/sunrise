@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  powerthend-1.1.1.ebuild:
+  doconfd -> newconfd, doinit -> newinit, to solve problems
+
   22 Aug 2006; martn <martn@gentoo.reallinks.de> +powerthend-1.1.1.ebuild,
   +files/powerthend.confd, +files/powerthend.rc, +metadata.xml:
   New Ebuild for bug #142964

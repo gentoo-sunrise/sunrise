@@ -25,6 +25,6 @@ src_install() {
 	dosbin powerthend || die
 	dodoc README
 
-	doconfd "${FILESDIR}/powerthend.confd" powerthend
-	doinitd "${FILESDIR}/powerthend.rc" powerthend
+	newconfd "${FILESDIR}/powerthend.confd" powerthend
+	newinitd "${FILESDIR}/powerthend.rc" powerthend
 }
