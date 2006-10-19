@@ -1,7 +1,0 @@
-# ChangeLog for app-admin/cpulimit
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  12 Jul 2006; Cedric Krier <ced@ced.homedns.org> ChangeLog:
-  New Ebuild for bug 139547 thanks to Rüpel
-
