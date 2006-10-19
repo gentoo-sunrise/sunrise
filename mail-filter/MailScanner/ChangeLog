@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Oct 2006; Markus Ullmann <jokey@gentoo.org>
+  -MailScanner-4.54.6.1.ebuild:
+  Dropping old version
+
   10 Oct 2006; David Shakaryan <d@ompty.org> MailScanner-4.55.10.3.ebuild:
   Major cleanup.
 
