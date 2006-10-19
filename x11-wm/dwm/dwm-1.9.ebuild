@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="a dynamic window manager for X11"
 HOMEPAGE="http://suckless.org/view/dynamic+window+manager"
@@ -14,13 +14,21 @@ KEYWORDS="~x86"
 IUSE="savedconfig"
 
 DEPEND="x11-libs/libX11"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	sys-apps/coreutils"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-makefile.patch"
+	sed -i \
+		-e "s/.*strip.*//" \
+		Makefile || die "sed failed"
+
+	sed -i \
+		-e "s/CFLAGS = -Os/CFLAGS +=/" \
+		-e "s/LDFLAGS =/LDFLAGS +=/" \
+		config.mk || die "sed failed"
 
 	if use savedconfig; then
 		local conf root
@@ -51,6 +59,9 @@ src_install() {
 	insinto /usr/share/${PN}
 	newins config.h ${PF}.config.h
 
+	exeinto /etc/X11/Sessions
+	newexe "${FILESDIR}"/dwm-session dwm
+
 	dodoc README
 }
 
@@ -73,4 +84,6 @@ pkg_postinst() {
 		elog "Installing ${PN} without x11-misc/dmenu"
 		einfo "To have a menu you can install x11-misc/dmenu"
 	fi
+	einfo "You can custom status bar with a script in HOME/.dwm/dwmrc"
+	einfo "the ouput is redirected to the standard input of dwm"
 }
