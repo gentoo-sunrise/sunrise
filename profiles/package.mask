@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# David Shakaryan <omp@gentoo.org> (18 Oct 2006)
+# svn version should be masked
+=media-video/ttcut-9999
+
 # Markus Ullmann <jokey@gentoo.org> (05 Oct 2006)
 # using package.mask instead of -*
 www-client/seamonkey-bin
