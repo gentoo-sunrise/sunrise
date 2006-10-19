@@ -1,0 +1,8 @@
+# ChangeLog for app-portage/forcekeymask
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Oct 2006; Luca Marturana <lucamarturana@gmail.com>
+  +forcekeymask-1.1.ebuild, +metadata.xml:
+  Initial import, see bug #150807
+
