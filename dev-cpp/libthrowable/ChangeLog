@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  libthrowable-0.9.5.ebuild:
+  elog -> ewarn
+
+  19 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   -libthrowable-0.9.4.ebuild:
   remove old version
 
