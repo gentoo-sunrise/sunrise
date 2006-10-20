@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="Library implementing the SSH2 protocol."
-HOMEPAGE="http://www.libssh2.org"
+HOMEPAGE="http://www.libssh2.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
