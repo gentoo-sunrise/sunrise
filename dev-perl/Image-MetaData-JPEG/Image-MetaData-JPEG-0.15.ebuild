@@ -6,7 +6,7 @@ inherit perl-module
 
 DESCRIPTION="Perl extension for manipulating JPEG metadata."
 SRC_URI="mirror://cpan/authors/id/B/BE/BETTELLI/${P}.tar.gz"
-HOMEPAGE="http://search.cpan.org/~bettelli"
+HOMEPAGE="http://search.cpan.org/~bettelli/"
 
 SLOT="0"
 LICENSE="GPL-2"
