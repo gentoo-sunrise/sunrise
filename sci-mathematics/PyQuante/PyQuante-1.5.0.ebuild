@@ -5,7 +5,7 @@
 inherit distutils
 
 DESCRIPTION="PyQuante is a quantum chemistry package written in Python."
-HOMEPAGE="http://pyquante.sf.net"
+HOMEPAGE="http://pyquante.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
