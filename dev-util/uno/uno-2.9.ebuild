@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="A simple tool for source code analysis"
-HOMEPAGE="http://spinroot.com/uno"
+HOMEPAGE="http://spinroot.com/uno/"
 SRC_URI="http://spinroot.com/${PN}/${PN}_v${PV/./}.tar.gz"
 
 LICENSE="public-domain GPL-2"
