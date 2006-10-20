@@ -5,7 +5,7 @@
 inherit distutils
 
 DESCRIPTION="Python bindings for Graphviz"
-HOMEPAGE="http://yapgvb.sourceforge.net"
+HOMEPAGE="http://yapgvb.sourceforge.net/"
 SRC_URI="mirror://sourceforge/yapgvb/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
