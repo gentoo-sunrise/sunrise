@@ -7,7 +7,7 @@ WANT_AUTOMAKE="latest"
 inherit gnome2 autotools
 
 DESCRIPTION="GNOME program to create, edit and verify hashfiles"
-HOMEPAGE="http://parano.berlios.de"
+HOMEPAGE="http://parano.berlios.de/"
 SRC_URI="http://download.berlios.de/parano/${P}.tar.gz
 	http://download2.berlios.de/parano/${P}.tar.gz"
 
