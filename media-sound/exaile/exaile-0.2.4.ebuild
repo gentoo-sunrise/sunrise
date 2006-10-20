@@ -7,7 +7,7 @@ inherit eutils toolchain-funcs
 MY_P=${PN}_${PV}
 
 DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for GTK"
-HOMEPAGE="http://www.exaile.org"
+HOMEPAGE="http://www.exaile.org/"
 SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
