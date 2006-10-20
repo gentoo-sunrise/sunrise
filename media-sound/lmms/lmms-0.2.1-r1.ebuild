@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="free alternative to popular programs such as FruityLoops, Cubase and Logic"
-HOMEPAGE="http://lmms.sourceforge.net"
+HOMEPAGE="http://lmms.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"

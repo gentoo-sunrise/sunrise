@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  lmms-0.2.1.ebuild, lmms-0.2.1-r1.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   15 Sep 2006; Santiago M. Mola <cooldwind@gmail.com> +lmms-0.2.1.ebuild,
   lmms-0.2.1-r1.ebuild:
   Removed ~amd64 from lmms-0.2.1-r1.ebuild. Restored lmms-0.2.1.ebuild for
