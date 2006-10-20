@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  drweb-4.33.ebuild, drweb-4.33-r1.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   30 Sep 2006; Jakub Moc <jakub@gentoo.org> drweb-4.33.ebuild,
   +drweb-4.33-r1.ebuild:
   Add -r1 version for glibc-2.4. If you are using glibc-2.3 and don't want to

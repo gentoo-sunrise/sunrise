@@ -8,7 +8,7 @@ MY_P="drweb-${PV}"
 S="${WORKDIR}/${P}-glibc2.4"
 
 DESCRIPTION="DrWeb virus scaner for Linux"
-HOMEPAGE="http://www.drweb.com"
+HOMEPAGE="http://www.drweb.com/"
 SRC_URI="http://download.drweb.com/files/unix/Linux/Generic/${MY_P}-glibc2.4.tar.gz
 	doc? ( linguas_ru? ( ftp://ftp.drweb.com/pub/drweb/unix/doc/${PN}-${PV/./}-unix-ru-pdf.zip ) )
 	doc? ( ftp://ftp.drweb.com/pub/drweb/unix/doc/${PN}-${PV/./}-unix-en-pdf.zip )"
