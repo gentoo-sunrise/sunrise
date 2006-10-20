@@ -5,7 +5,7 @@
 inherit kde
 
 DESCRIPTION="KTranslator is a translation program to KDE"
-HOMEPAGE="http://ktranslator.sourceforge.net"
+HOMEPAGE="http://ktranslator.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
