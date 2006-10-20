@@ -5,7 +5,7 @@
 inherit toolchain-funcs
 
 DESCRIPTION="Another Modeline Calculator. Generates quality X11 display configs easily."
-HOMEPAGE="http://amlc.berlios.de"
+HOMEPAGE="http://amlc.berlios.de/"
 SRC_URI="http://amlc.berlios.de/src/${P}.cpp"
 LICENSE="GPL-2"
 SLOT="0"

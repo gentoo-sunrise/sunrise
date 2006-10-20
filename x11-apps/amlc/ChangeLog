@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  amlc-0.5.1.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   19 Jun 2006; Samuli Suominen <sasuomin@uusikaupunki.fi> ChangeLog:
   Initial ebuild, after consulting upstream. See bug #82759
 
