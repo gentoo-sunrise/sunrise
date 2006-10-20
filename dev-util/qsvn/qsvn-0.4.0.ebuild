@@ -5,7 +5,7 @@
 inherit qt4
 
 DESCRIPTION="GUI frontend to the Subversion revision system"
-HOMEPAGE="http://ar.oszine.de/projects/qsvn"
+HOMEPAGE="http://ar.oszine.de/projects/qsvn/"
 SRC_URI="http://download.berlios.de/${PN}/${P}-src.tar.gz"
 
 LICENSE="GPL-2"
