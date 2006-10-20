@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  forcekeymask-1.1.ebuild:
+  add 's' to the DESCRIPTION
+
   19 Oct 2006; Luca Marturana <lucamarturana@gmail.com>
   +forcekeymask-1.1.ebuild, +metadata.xml:
   Initial import, see bug #150807
