@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="A small program for getting information about media files"
-HOMEPAGE="http://avi-ogminfo.sourceforge.net"
+HOMEPAGE="http://avi-ogminfo.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
