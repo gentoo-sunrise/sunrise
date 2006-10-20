@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  overlay-utils-0.1.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   02 Sep 2006; Josu López Fernández <zamorate@zamorate.net>
   overlay-utils-0.1.ebuild:
   Added ~amd64 and ~ppc keywords

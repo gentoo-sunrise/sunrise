@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="Utilities for Gentoo repository and overlay development"
-HOMEPAGE="http://gentooexperimental.org/~shillelagh"
+HOMEPAGE="http://gentooexperimental.org/~shillelagh/"
 SRC_URI="http://gentooexperimental.org/~shillelagh/${P}.tar.bz2"
 
 LICENSE="GPL-2"
