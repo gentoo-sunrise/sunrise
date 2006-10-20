@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  ripoff-0.8.ebuild, ripoff-0.8.1.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   29 Jul 2006; Ryan Newberry <brnewber@gmail.com> +ripoff-0.8.ebuild,
   +metadata.xml:
   New Ebuild for Gentoo Bugzilla 133502

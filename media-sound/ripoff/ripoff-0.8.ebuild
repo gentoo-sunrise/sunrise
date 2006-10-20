@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="Simple GTK+ Based CD Ripper"
-HOMEPAGE="http://ripoffc.sourceforge.net"
+HOMEPAGE="http://ripoffc.sourceforge.net/"
 SRC_URI="mirror://sourceforge/ripoffc/${P}.tar.gz"
 
 LICENSE="GPL-2"
