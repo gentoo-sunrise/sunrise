@@ -5,7 +5,7 @@
 inherit eutils vim-doc
 
 DESCRIPTION="A small utility which allows debugging from within vim"
-HOMEPAGE="http://clewn.sourceforge.net"
+HOMEPAGE="http://clewn.sourceforge.net/"
 SRC_URI="mirror://sourceforge/clewn/${P}.tar.gz"
 
 LICENSE="GPL-2"
