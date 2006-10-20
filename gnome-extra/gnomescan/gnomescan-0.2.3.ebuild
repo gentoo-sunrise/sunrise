@@ -5,7 +5,7 @@
 inherit gnome2
 
 DESCRIPTION="The Gnome Scan project aim to provide scan features every where in the desktop like print is."
-HOMEPAGE="http://http://home.gna.org/gnomescan/index"
+HOMEPAGE="http://home.gna.org/gnomescan/index"
 SRC_URI="http://download.gna.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
