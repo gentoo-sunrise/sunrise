@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  catdvi-0.14.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   16 Jul 2006; Ulrich Mueller (ulm) <ulm@kph.uni-mainz.de> ChangeLog:
   New ebuild for bug #107248.
 

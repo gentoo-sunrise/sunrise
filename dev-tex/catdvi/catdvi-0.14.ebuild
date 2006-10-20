@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="DVI to plain text translator"
-HOMEPAGE="http://catdvi.sourceforge.net"
+HOMEPAGE="http://catdvi.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
