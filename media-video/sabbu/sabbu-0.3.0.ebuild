@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="Subtitle script creator/editor"
-HOMEPAGE="http://www.sabbu.com"
+HOMEPAGE="http://www.sabbu.com/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
