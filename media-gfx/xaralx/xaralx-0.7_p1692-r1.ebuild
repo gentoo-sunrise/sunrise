@@ -9,7 +9,7 @@ inherit eutils wxwidgets autotools gnome2
 MY_P=XaraLXSrc-${PV/_p/r}
 
 DESCRIPTION="General purpose vector graphics program"
-HOMEPAGE="http://www.xaraxtreme.org"
+HOMEPAGE="http://www.xaraxtreme.org/"
 SRC_URI="http://downloads.xara.com/opensource/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
