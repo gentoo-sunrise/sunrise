@@ -9,7 +9,7 @@ KEYWORDS="~x86"
 MY_PN="${PN}-src"
 
 DESCRIPTION="Monkey Studio is a cross platform Qt 4 IDE"
-HOMEPAGE="http://www.sourceforge.net/projects/monkeystudio"
+HOMEPAGE="http://monkeystudio.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_PN}-${PV}.zip"
 LICENSE="GPL-2"
 SLOT="0"
