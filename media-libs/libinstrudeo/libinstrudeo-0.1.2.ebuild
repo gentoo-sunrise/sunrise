@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="Provides the necessary logic to capture screen recordings and to process them"
-HOMEPAGE="http://libinstrudeo.sourceforge.net"
+HOMEPAGE="http://libinstrudeo.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
