@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="A 'minimizer' for a few games."
-HOMEPAGE="http://hem.bredband.net/b400150"
+HOMEPAGE="http://hem.bredband.net/b400150/"
 SRC_URI="http://hem.bredband.net/b400150/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
