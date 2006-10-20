@@ -6,7 +6,7 @@ inherit eutils mozilla-launcher multilib
 
 DESCRIPTION="Mozilla Application Suite - web browser, email, HTML editor, IRC"
 SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${PV}/seamonkey-${PV}.en-US.linux-i686.tar.gz"
-HOMEPAGE="http://www.mozilla.org/projects/seamonkey"
+HOMEPAGE="http://www.mozilla.org/projects/seamonkey/"
 RESTRICT="nostrip"
 
 KEYWORDS="~amd64 ~x86"
