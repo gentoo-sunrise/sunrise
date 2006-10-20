@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="Libiqxmlrpc is an object-oriented library, which represents simple XML-RPC solution both for client and server sides."
-HOMEPAGE="http://libiqxmlrpc.sourceforge.net"
+HOMEPAGE="http://libiqxmlrpc.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2"
