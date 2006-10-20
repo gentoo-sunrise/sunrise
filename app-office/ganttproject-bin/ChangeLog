@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  ganttproject-bin-2.0.1.ebuild, ganttproject-bin-2.0.2.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   19 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch>
   +ganttproject-bin-2.0.2.ebuild:
   Version bump to v2.0.2
