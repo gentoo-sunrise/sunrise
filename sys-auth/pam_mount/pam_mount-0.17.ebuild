@@ -7,7 +7,7 @@ WANT_AUTOMAKE="latest"
 inherit eutils pam autotools
 
 DESCRIPTION="A PAM module that can mount volumes for a user session e.g. encrypted home directories"
-HOMEPAGE="http://pam-mount.sourceforge.net"
+HOMEPAGE="http://pam-mount.sourceforge.net/"
 SRC_URI="mirror://sourceforge/pam-mount/${P}.tar.bz2"
 
 LICENSE="GPL-2"
