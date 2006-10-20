@@ -6,7 +6,7 @@ inherit distutils eutils versionator
 
 MY_P="Democracy-${PV}"
 DESCRIPTION="Democracy is a free and open internet TV platform."
-HOMEPAGE="http://www.getdemocracy.com"
+HOMEPAGE="http://www.getdemocracy.com/"
 SRC_URI="ftp://ftp.osuosl.org/pub/pculture.org/democracy/src/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
