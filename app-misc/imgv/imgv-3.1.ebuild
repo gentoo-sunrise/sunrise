@@ -8,7 +8,7 @@ MY_P="${P}-src"
 
 DESCRIPTION="imgv is a unique and feature rich image viewer using Python"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
-HOMEPAGE="http://sourceforge.net/projects/imgv"
+HOMEPAGE="http://imgv.sourceforge.net/"
 SLOT=0
 LICENSE=GPL-2
 KEYWORDS="~x86"
