@@ -21,10 +21,10 @@ pkg_setup() {
 	# must be done before anything is installed!
 	if use threads; then
 	   has_version dev-cpp/libthrowable && ! built_with_use dev-cpp/libthrowable threads \
-	       && ewarn "You recompile with USE=threads, so remember to rebuilt all depending packages!"
+	       && ewarn "You recompile with USE=threads, so remember to rebuilt all depending packages!" && epause
 	else
 	   has_version dev-cpp/libthrowable && built_with_use dev-cpp/libthrowable threads \
-	       && ewarn "You recompile without USE=threads, so remember to rebuilt all depending packages!"
+	       && ewarn "You recompile without USE=threads, so remember to rebuilt all depending packages!" && epause
 	fi
 }
 
