@@ -5,7 +5,7 @@
 inherit linux-mod
 
 DESCRIPTION="Driver for the RaLink RT73/2571 wireless chipsets"
-HOMEPAGE="http://www.ralink.com.tw"
+HOMEPAGE="http://www.ralink.com.tw/"
 SRC_URI="http://www.ralink.com.tw/drivers/Linux/RT73_Linux_STA_Drv${PV}.tar.gz"
 
 MY_P=RT73_Linux_STA_Drv${PV}
