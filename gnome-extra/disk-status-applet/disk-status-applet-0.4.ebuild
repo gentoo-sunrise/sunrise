@@ -5,7 +5,7 @@
 inherit gnome2
 
 DESCRIPTION="Monitor disk usage from GNOME panel"
-HOMEPAGE="http://disk-status.sourceforge.net"
+HOMEPAGE="http://disk-status.sourceforge.net/"
 SRC_URI="mirror://sourceforge/disk-status/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
