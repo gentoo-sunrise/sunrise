@@ -12,7 +12,7 @@ ECVS_UP_OPTS="-dP -D 6/19/06"
 
 DESCRIPTION="A command-line version of PTLens"
 SRC_URI=""
-HOMEPAGE="http://panotools.sf.net"
+HOMEPAGE="http://panotools.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"

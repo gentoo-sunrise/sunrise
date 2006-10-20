@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  clens-0.3.1.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   29 Aug 2006; David Grant (dgrant) <davidgrant@gmail.com>
   +clens-0.3.1.ebuild, +metadata.xml:
   new ebuild for bug #76484
