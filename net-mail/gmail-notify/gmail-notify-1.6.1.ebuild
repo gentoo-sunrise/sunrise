@@ -5,7 +5,7 @@
 inherit python eutils
 
 DESCRIPTION="Gmail Notifier is a Linux alternative for the notifier program released by Google"
-HOMEPAGE="http://gmail-notify.sourceforge.net"
+HOMEPAGE="http://gmail-notify.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 

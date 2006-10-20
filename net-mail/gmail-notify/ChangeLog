@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  gmail-notify-1.6.1.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   28 Sep 2006; David Grant (dgrant) <davidgrant@gmail.com>
   gmail-notify-1.6.1.ebuild, +files/gmail-notify-conf-perms.patch:
   Added a patch to make gmail-notify put 660 permissions on the
