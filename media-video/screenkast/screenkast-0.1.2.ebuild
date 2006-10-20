@@ -5,7 +5,7 @@
 inherit kde
 
 DESCRIPTION="Screen capturing program that records your screen-activities, supports commentboxes and exports to all video formats"
-HOMEPAGE="http://screenkast.sourceforge.net"
+HOMEPAGE="http://screenkast.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
