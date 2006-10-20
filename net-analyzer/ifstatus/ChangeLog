@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  ifstatus-1.1.0.ebuild:
+  added trailing slash to HOMEPAGE URL
+
   30 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ifstatus-1.1.0.ebuild:
   Added ~amd64, replaced dosbin with dobin, cosmetic cleanups
 
