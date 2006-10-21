@@ -6,7 +6,7 @@ inherit mono eutils
 
 DESCRIPTION="Gtk# frontend for Internet translation services"
 HOMEPAGE="http://laas.altervista.org/youtranslate/ytindex.php"
-SRC_URI="http://laas.altervista.org/youtranslate/${P}_src.tar.gz"
+SRC_URI="http://laas.altervista.org/${PN}/${P}_src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,10 +16,11 @@ IUSE=""
 DEPEND=">=dev-lang/mono-1.0
 	>=dev-dotnet/gtk-sharp-2.4
 	>=dev-dotnet/glade-sharp-2.4"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	epatch "${FILESDIR}/${P}-makefile-depend-bump.patch"
 }
 
