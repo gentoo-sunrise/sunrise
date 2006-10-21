@@ -32,15 +32,15 @@ src_unpack() {
 	edos2unix blocksshd blocksshd.conf
 
 	#apply patches
-	epatch ${FILESDIR}/blocksshd-0.6.conf-dir-change.patch
-	epatch ${FILESDIR}/blocksshd-0.6.etc-dir-change.patch
+	epatch "${FILESDIR}/blocksshd-0.6.conf-dir-change.patch"
+	epatch "${FILESDIR}/blocksshd-0.6.etc-dir-change.patch"
 }
 
 src_install() {
 	dosbin blocksshd || die "dosbin failed"
 	dodoc CHANGELOG CREDITS INSTALL README VERSION blocksshd.conf
 
-	newinitd ${FILESDIR}/blocksshd.init blocksshd
+	newinitd "${FILESDIR}/blocksshd.init" blocksshd
 
 	insinto /etc/blocksshd
 	newins blocksshd.conf blocksshd.conf.sample
