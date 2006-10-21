@@ -4,7 +4,7 @@
 
 inherit webapp java-utils-2
 
-MY_P="${P/webcamserver-client/webcam_server}"
+MY_P=${P/webcamserver-client/webcam_server}
 
 DESCRIPTION="webcam_server is a program that allows others to view your webcam from a web browser"
 HOMEPAGE="http://webcamserver.sourceforge.net/"
@@ -17,18 +17,18 @@ IUSE=""
 DEPEND=">=virtual/jdk-1.4"
 RDEPEND=">=virtual/jre-1.4"
 
-S="${WORKDIR}/${MY_P}/src/client"
+S=${WORKDIR}/${MY_P}/src/client
 
 src_compile() {
 	# Remove existing jar
 	rm *.jar
 	ejavac *.java || die "ejavac failed!"
-	jar cf ${S}/applet.jar *.class || die "jar failed!"
+	jar cf "${S}/applet.jar" *.class || die "jar failed!"
 }
 
 src_install() {
 	webapp_src_preinst
 	cp *.jar *.html *.jpg "${D}/${MY_HTDOCSDIR}"
-	webapp_postinst_txt en ${FILESDIR}/postinstall-en-${PV}.txt
+	webapp_postinst_txt en "${FILESDIR}/postinstall-en-${PV}.txt"
 	webapp_src_install
 }
