@@ -54,7 +54,7 @@ src_compile() {
 src_install() {
 	exeinto /usr/share/mute
 	doexe MUTE/otherApps/fileSharing/userInterface/textBased/textFileSharingMUTE
-	dobin ${FILESDIR}/MUTE
+	dobin "${FILESDIR}/MUTE"
 	if use wxwindows; then
 		doexe MUTE/otherApps/fileSharing/userInterface/wxWindows/fileSharingMUTE
 		dohard /usr/bin/MUTE /usr/bin/wxMUTE
