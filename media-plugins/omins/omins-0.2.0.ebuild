@@ -12,6 +12,7 @@ KEYWORDS="~x86"
 SLOT="0"
 
 DEPEND="media-libs/ladspa-sdk"
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	econf $(use_enable debug) || die "econf failed"
