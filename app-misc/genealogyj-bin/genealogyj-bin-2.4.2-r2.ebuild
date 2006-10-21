@@ -55,7 +55,7 @@ src_install() {
 	fperms a+rx ${PROGRAM_DIR}/run.sh
 
 	into /opt
-	dobin ${FILESDIR}/genealogyj
+	dobin "${FILESDIR}/genealogyj"
 }
 
 pkg_postinst() {
