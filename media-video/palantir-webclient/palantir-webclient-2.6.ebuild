@@ -4,8 +4,8 @@
 
 inherit webapp java-utils-2
 
-MY_PN="${PN/-webclient/}"
-MY_P="${MY_PN}-${PV}"
+MY_PN=${PN/-webclient/}
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Palantir is a Linux-based streaming system designed to transmit live video, audio and data over a TCP/IP network, as well as to control remote devices."
 HOMEPAGE="http://www.fastpath.it/products/palantir/index.php"
@@ -18,7 +18,7 @@ IUSE=""
 DEPEND=">=virtual/jdk-1.4"
 RDEPEND=">=virtual/jre-1.4"
 
-S="${WORKDIR}/${MY_P}/clients/java"
+S=${WORKDIR}/${MY_P}/clients/java
 
 
 src_compile() {
@@ -30,7 +30,6 @@ src_install() {
 	webapp_src_preinst
 	cp *.jar *.html "${D}/${MY_HTDOCSDIR}"
 	dodoc README TODO
-	webapp_postinst_txt en ${FILESDIR}/postinstall-en-${PV}.txt
+	webapp_postinst_txt en "${FILESDIR}/postinstall-en-${PV}.txt"
 	webapp_src_install
 }
-
