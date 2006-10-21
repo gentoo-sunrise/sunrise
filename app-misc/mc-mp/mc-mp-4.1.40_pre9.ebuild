@@ -36,12 +36,12 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	if ( use x86 || use amd64 ) && use 7zip; then
-		epatch ${FILESDIR}/${PV}/u7z.patch
+		epatch "${FILESDIR}/${PV}/u7z.patch"
 	fi
 
-	epatch ${FILESDIR}/${PV}/ebuild-syntax.patch
-	epatch ${FILESDIR}/${PV}/mc-menu.patch
-	epatch ${FILESDIR}/${PV}/gcc34.patch
+	epatch "${FILESDIR}/${PV}/ebuild-syntax.patch"
+	epatch "${FILESDIR}/${PV}/mc-menu.patch"
+	epatch "${FILESDIR}/${PV}/gcc34.patch"
 
 	# Prevent lazy bindings in cons.saver binary. (bug #135009)
 	# Also prevent stripping the binary, portage takes care of this as needed
@@ -88,29 +88,29 @@ src_compile() {
 }
 
 src_install() {
-	cat ${FILESDIR}/chdir.gentoo > ${S}/lib/mc.sh
-	rm -f ${S}/README.{NT,OS2,QNX}
+	cat "${FILESDIR}/chdir.gentoo" > "${S}/lib/mc.sh"
+	rm -f "${S}/README."{NT,OS2,QNX}
 
 	einstall || die
 
 	# install cons.saver setuid, to actually work
-	chmod u+s ${D}/usr/lib/mc/bin/cons.saver
+	chmod u+s "${D}/usr/lib/mc/bin/cons.saver"
 
-	use pam && newpamd ${FILESDIR}/mcserv.pamd mcserv
-	use pam && newinitd ${FILESDIR}/mcserv.rc mcserv
+	use pam && newpamd "${FILESDIR}/mcserv.pamd" mcserv
+	use pam && newinitd "${FILESDIR}/mcserv.rc" mcserv
 
 	exeinto /usr/lib/mc/bin
-	doexe ${S}/lib/mc.sh
-	doexe ${S}/lib/mc.csh
+	doexe "${S}/lib/mc.sh"
+	doexe "${S}/lib/mc.csh"
 
 	insinto /usr/lib/mc
-	doins ${FILESDIR}/mc.{gentoo,ini}
+	doins "${FILESDIR}/mc."{gentoo,ini}
 
 	insinto /usr/lib/mc/syntax
-	doins ${FILESDIR}/ebuild.syntax
+	doins "${FILESDIR}/ebuild.syntax"
 
-	rm -rf ${D}/usr/man ${D}/usr/share/man
-	doman ${S}/doc/*.{1,8}
+	rm -rf "${D}/usr/man" "${D}/usr/share/man"
+	doman "${S}/doc/"*.{1,8}
 	dodoc FAQ NEWS README.*
 }
 
