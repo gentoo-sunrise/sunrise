@@ -3,6 +3,11 @@
 # $Header: $
 
   22 Oct 2006; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
+  democracy-0.9.0.2.ebuild, -democracy-0.9.0.2-r1.ebuild:
+  omp is right the change doesn't requires a bump, besides genstef is going to
+  delete it ones he notice I put in 0.9.1
+
+  22 Oct 2006; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
   +democracy-0.9.0.2-r1.ebuild, +democracy-0.9.1.ebuild:
   Added new release, took out check for ffmpeg thanks to Hinrik Örn Sigurðsson
 

@@ -50,7 +50,7 @@ src_unpack() {
 }
 
 pkg_postinst(){
-	if ! built_with_use xine-lib aac ffmpeg mad asf flac sdl win32codecs; then
+	if ! built_with_use xine-lib aac mad asf flac sdl win32codecs; then
 		ewarn "The Democracy team recommends you to emerge xine-lib as follows:"
 		ewarn ""
 		ewarn "# echo \"media-libs/xine-lib aac ffmpeg mad asf flac sdl win32codecs\" \ "
