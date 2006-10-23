@@ -1,5 +1,5 @@
---- SambaScanner-0.14~/Makefile	2006-10-14 10:22:45.000000000 +0200
-+++ SambaScanner-0.14/Makefile	2006-10-14 10:23:15.000000000 +0200
+--- SambaScanner-0.14~/Makefile	2006-10-23 20:26:28.000000000 +0200
++++ SambaScanner-0.14/Makefile	2006-10-23 20:41:56.000000000 +0200
 @@ -4,14 +4,14 @@
  PROJNAME = sambascanner
  VERSION = 0.14
@@ -13,7 +13,7 @@
  CFLAGS += -DDEFAULT_SMBLISTER=\"/usr/bin/smblister\"
  #CFLAGS += -ansi -pedantic -D_POSIX_SOURCE -D_XOPEN_SOURCE=500
 -LDFLAGS = -lpthread -lsmbclient
-+LDFLAGS += -lpthread -lsmbclient
++LIBS = -lpthread -lsmbclient
  TESTPARAMS = -p -d 3 -w alex -c bart -c humpel -c kasten -c joeserver
  
  #CC = gcc
