@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="The Tim Engler's Lexmark 1100 driver"
 HOMEPAGE="http://www.linuxprinting.org/show_driver.cgi?driver=lm1100"
@@ -30,13 +30,17 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}maint-firmware.patch"
 }
 
+src_compile() {
+	emake CXX="$(tc-getCXX)" || die "emake failed"
+}
+
 src_install() {
 	dobin lm1100
 	dodoc README RELEASE.txt LICENSE
 
 	cd "${WORKDIR}/${PN}maint"
 	dobin lm1100back lm1100change
-	insinto "/lib/firmware/${PN}maint"
+	insinto "/usr/share/${PN}"
 	doins lexmarkback lexmarkchange
 	newdoc README README.maint
 }
