@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Oct 2006; Luca Marturana (luca89) <lucamarturana@gmail.com>
+  forcekeymask-1.1.ebuild:
+  Modified HOMEPAGE and SRC_URI
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   forcekeymask-1.1.ebuild:
   add 's' to the DESCRIPTION

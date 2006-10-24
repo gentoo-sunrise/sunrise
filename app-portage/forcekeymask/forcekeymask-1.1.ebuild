@@ -3,8 +3,8 @@
 # $Header: $
 
 DESCRIPTION="This script allows you to unmask a package and its dependencies"
-HOMEPAGE="http://gechi.it/"
-SRC_URI="http://gechi-overlay.sf.net/distfiles/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://gechi-overlay.sourceforge.net/?page=forcekeymask"
+SRC_URI="mirror://sourceforge/gechi-overlay/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
