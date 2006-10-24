@@ -4,6 +4,10 @@
 
   24 Oct 2006; Luca Marturana (luca89) <lucamarturana@gmail.com>
   elogv-0.4.1.ebuild:
+  s/eeror/eerror/, typo mistakes
+
+  24 Oct 2006; Luca Marturana (luca89) <lucamarturana@gmail.com>
+  elogv-0.4.1.ebuild:
   New HOMEPAGE and SRC_URI
 
   15 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>

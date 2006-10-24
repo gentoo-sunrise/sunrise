@@ -20,11 +20,11 @@ S="${WORKDIR}/elogv"
 
 pkg_setup() {
 	if ! built_with_use dev-lang/python ncurses; then
-	   eeror
+	   eerror
 	   eerror "\t ${PN} requires ncurses support on python"
 	   eerror "\t Please, compile python with use ncurses enabled then"
 	   eerror "\t remerge this package"
-	   eeror
+	   eerror
 	   die "dev-lang/python must have ncurses use turned on"
 	fi
 }
