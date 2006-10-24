@@ -26,9 +26,8 @@ for X in ${LANGS} ; do
 done
 SRC_URI="${SRC_URI} ${SRC_MID}mirror://sourceforge/genj/genj_en-${PV}.zip${SRC_END}"
 
-DEPEND=">=virtual/jre-1.4
-	app-arch/unzip"
-RDEPEND="${DEPEND}"
+DEPEND="app-arch/unzip"
+RDEPEND=">=virtual/jre-1.4"
 
 pkg_setup() {
 	if [ -z "${LINGUAS}" ]; then
