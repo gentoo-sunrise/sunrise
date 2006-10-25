@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  libthrowable-0.9.5.ebuild:
+  keyworded ~ppc, thanks to Chris White for testing it
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   libthrowable-0.9.5.ebuild:
   added an epause to emphasize warning
