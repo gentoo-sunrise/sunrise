@@ -1,0 +1,60 @@
+--- libthrowable/internal/internal.cc	2006-10-15 11:48:19.000000000 +0200
++++ /tmp/internal.cc	2006-10-26 11:57:06.000000000 +0200
+@@ -26,7 +26,7 @@
+ 	string tabsToSpaces(const string& str, unsigned spaces) throw()
+ 	{
+ 		string ret(str);
+-		unsigned pos=0;
++		string::size_type pos=0;
+ 		while(true)
+ 		{
+ 			pos = ret.find('\t', pos);
+@@ -108,7 +108,7 @@
+ 	if(line.empty())
+ 		return -1;
+ 	
+-	unsigned ret = line.find_first_not_of(' ');
++	string::size_type ret = line.find_first_not_of(' ');
+ 	if(ret != string::npos)
+ 		return local::unsignedToInt(ret);
+ 	return -1;
+@@ -121,10 +121,10 @@
+ 	const int iIndent = getIndent(line);
+ 	if(iIndent < 0)
+ 		return string::npos;
+-	const unsigned indent = static_cast<unsigned>(iIndent);
++	const string::size_type indent = static_cast<string::size_type>(iIndent);
+ 	//if possible, break after one of the following characters:
+ 	//" .,;"
+-	unsigned ret = line.find_last_of(" ,;.", pos-1);
++	string::size_type ret = line.find_last_of(" ,;.", pos-1);
+ 	if(ret != string::npos && ret > indent)
+ 		return ret;
+ 	//maybe we can find a break point by looking after these chars:
+@@ -187,7 +187,7 @@
+ 			ret += "--" + util::stringify(virtualIndentDiff) + "--spaces-->\n";
+ 		else if(virtualIndentDiff < 0)
+ 			ret += "<--" + util::stringify(-virtualIndentDiff) + "-spaces--\n";
+-		ret += line.substr(static_cast<unsigned>(virtualIndent));
++		ret += line.substr(static_cast<string::size_type>(virtualIndent));
+ 		lastVirtualIndent = virtualIndent;
+ 	}
+ 	return ret;
+@@ -215,7 +215,7 @@
+ 				string prefix(indent, ' ');
+ 				while(true)
+ 				{
+-					unsigned breakAt = getLinebreakPosNear(lines.back(), _width);
++					string::size_type breakAt = getLinebreakPosNear(lines.back(), _width);
+ 					if(breakAt == string::npos)
+ 						break;
+ 
+@@ -240,7 +240,7 @@
+ 				}
+ 			}
+ 		}
+-		for(unsigned i=0; i != lines.size(); ++i)
++		for(string::size_type i=0; i != lines.size(); ++i)
+ 		{
+ 			if(i != 0)
+ 				ret += "\n";
