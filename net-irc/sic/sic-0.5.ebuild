@@ -6,7 +6,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="an extremly simple IRC client"
 HOMEPAGE="http://suckless.org/view/simple+irc+client"
-SRC_URI="http://www.shortest.de/download/${P}.tar.gz"
+SRC_URI="http://suckless.org/download/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

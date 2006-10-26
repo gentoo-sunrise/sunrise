@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Oct 2006; Cedric Krier <ced@ced.homedns.org> -sic-0.4.ebuild,
+  +sic-0.5.ebuild:
+  Version bump
+
   13 Oct 2006; Cedric Krier <ced@ced.homedns.org> -sic-0.3.ebuild,
   -files/sic-0.3-makefile.patch, +sic-0.4.ebuild:
   Version bump
