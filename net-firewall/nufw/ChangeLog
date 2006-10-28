@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Oct 2006; Cedric Krier <ced@ced.homedns.org> +nufw-2.0.10.ebuild,
+  -nufw-2.1.0.ebuild:
+  Version bump
+
   05 Oct 2006; Markus Ullmann <jokey@gentoo.org> nufw-2.0.7.ebuild,
   nufw-2.0.8.ebuild:
   Add missing autoconf/automake dependency
