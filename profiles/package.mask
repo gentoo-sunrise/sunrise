@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Markus Ullmann <jokey@gentoo.org> (20 Oct 2006)
+# mask incomplete ebuild
+net-misc/open-xchange
+
 # David Shakaryan <omp@gentoo.org> (18 Oct 2006)
 # svn version should be masked
 =media-video/ttcut-9999
