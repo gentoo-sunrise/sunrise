@@ -3,6 +3,12 @@
 # $Header: $
 
   30 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
+  -libthrowable-0.9.5.ebuild,
+  -files/libthrowable-0.9.5-internal.cc-64bit.patch,
+  -files/libthrowable-0.9.5-internal.h-64bit.patch:
+  remove old version
+
+  30 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   +libthrowable-0.9.6.ebuild:
   version bump
 
