@@ -31,6 +31,7 @@ media-gfx/openscenegraph:inventor - Compile inventor plugin
 media-sound/cmus:ao - Use libao for sound playback
 media-sound/cmus:modplug - Build with modplug support
 media-sound/cmus:musepack - Enable support for the musepack audio codec
+media-sound/exaile:ipod - Enable support for ipod
 media-sound/exaile:trayicon - Enable support for a trayicon
 media-sound/fusd-kor:udev - Install udev rules file
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
