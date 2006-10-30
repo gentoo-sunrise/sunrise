@@ -1,0 +1,501 @@
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/conf/admintools.conf.in ./conf/admintools.conf.in
+--- ../open-xchange-0.8.2-origin/conf/admintools.conf.in	2006-04-25 10:57:34.000000000 +0200
++++ ./conf/admintools.conf.in	2006-05-04 23:01:37.628100648 +0200
+@@ -69,5 +69,5 @@
+ DEFAULT_SQL_PASS="@dbpass@"
+ ### if u want to use mysql change to mysql
+-SQL_DB_TYPE="pgsql"
++SQL_DB_TYPE="mysql"
+ 
+ 
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/conf/groupware/intranet.conf ./conf/groupware/intranet.conf
+--- ../open-xchange-0.8.2-origin/conf/groupware/intranet.conf	2006-04-25 10:57:34.000000000 +0200
++++ ./conf/groupware/intranet.conf	2006-05-04 23:01:37.629100496 +0200
+@@ -130,16 +130,24 @@
+ 
+ # DATABASE identifiert for SYSDATE
+-SYSDATE='now'
++SYSDATE=now()
+ 
+ # DATABASE identifier for CURRENT_DATE
+-# SQL_TODAY='today'
++SQL_TODAY=curdate()
+ 
+ # Sequence SQL-String for DATABASE
+ # Example for POSTGRES
+-seq-fid=SELECT nextval ('fid')
+-seq-import_id=SELECT nextval ('import_id')
+-seq-insert_id=SELECT nextval ('insert_id')
+-seq-profile_id=SELECT nextval ('profile_id')
+-seq-serial_id=SELECT nextval ('serial_id')
++#seq-fid=SELECT nextval ('fid')
++#seq-import_id=SELECT nextval ('import_id')
++#seq-insert_id=SELECT nextval ('insert_id')
++#seq-profile_id=SELECT nextval ('profile_id')
++#seq-serial_id=SELECT nextval ('serial_id')
++
++# Example for mySQL
++seq-fid=SELECT select_fid()
++seq-import_id=SELECT select_import_id()
++seq-insert_id=SELECT select_insert_id()
++seq-profile_id=SELECT select_profile_id()
++seq-serial_id=SELECT select_serial_id()
++
+ # Example for ORACLE
+ #seq-fid="SELECT fid.nextval"
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/conf/webmail/system.cfg ./conf/webmail/system.cfg
+--- ../open-xchange-0.8.2-origin/conf/webmail/system.cfg	2006-04-25 10:57:34.000000000 +0200
++++ ./conf/webmail/system.cfg	2006-05-04 23:01:37.631100192 +0200
+@@ -167,5 +167,5 @@
+ 
+ # SQL Query to request a new sequence number
+-seq-serial_id="SELECT nextval ('serial_id')"
++seq-serial_id="SELECT select_serial_id()"
+ 
+ # SQL Query field mapping name(s). May needed when having problems with field
+@@ -175,3 +175,3 @@
+ #								^^^^^^^^^^^^^^^^^^^^^
+ # 								usrdata		delete
+-sql-fieldmapname-usrdata_delete="delete"
+\ Kein Zeilenumbruch am Dateiende.
++sql-fieldmapname-usrdata_delete="delete_it"
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/configure.in ./configure.in
+--- ../open-xchange-0.8.2-origin/configure.in	2006-04-25 10:57:34.000000000 +0200
++++ ./configure.in	2006-05-04 23:01:37.633099888 +0200
+@@ -792,4 +792,5 @@
+ conf/admintools.conf 
+ system/setup/init_ldap.ldif
++system/setup/create_mysql_database.sql
+ src/com/openexchange/server/Version.java )
+ 
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/src/com/openexchange/groupware/InsertHandler.java ./src/com/openexchange/groupware/InsertHandler.java
+--- ../open-xchange-0.8.2-origin/src/com/openexchange/groupware/InsertHandler.java	2006-04-25 10:57:34.000000000 +0200
++++ ./src/com/openexchange/groupware/InsertHandler.java	2006-05-05 11:17:26.185499760 +0200
+@@ -245,4 +245,6 @@
+ 		    setBinaryStreamFromFile(pst, value, a+1);
+ 		 }
++	    } else if (type.indexOf("TIMESTAMP") != -1 && (value != null && value.equals(GlobalConfig.getParameter("SYSDATE")))) {
++		    pst.setTimestamp(a+1,new java.sql.Timestamp(System.currentTimeMillis()));
+ 		} else if (type.indexOf("TIMESTAMP") != -1 && (value == null  || !value.equals(GlobalConfig.getParameter("SYSDATE")))) {
+ 		if (value == null) {
+@@ -253,5 +255,7 @@
+ 			try {
+ 			tsf.setCalendar(value, GlobalConfig.getDateTimePattern("DATABASE"));
+-			} catch(Exception e) { e.printStackTrace(); }
++			} catch(Exception e) { 
++				e.printStackTrace(); 
++			}
+ 		   pst.setTimestamp(a+1,new java.sql.Timestamp(tsf.getDate().getTime()));
+ 		}
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/src/com/openexchange/groupware/UpdateHandler.java ./src/com/openexchange/groupware/UpdateHandler.java
+--- ../open-xchange-0.8.2-origin/src/com/openexchange/groupware/UpdateHandler.java	2006-04-25 10:57:34.000000000 +0200
++++ ./src/com/openexchange/groupware/UpdateHandler.java	2006-05-05 11:18:36.848757312 +0200
+@@ -251,4 +251,6 @@
+ 		    setBinaryStreamFromFile(pst, value, a+1);
+ 		}
++            } else if (type.indexOf("TIMESTAMP") != -1 && (value != null && value.equals(GlobalConfig.getParameter("SYSDATE")))) {
++                pst.setTimestamp(a+1,new java.sql.Timestamp(System.currentTimeMillis()));
+ 		} else if (type.indexOf("TIMESTAMP") != -1 && (value == null || !value.equals(GlobalConfig.getParameter("SYSDATE")))) {
+ 		if (value == null) {
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/system/setup/create_mysql_database.sql.in ./system/setup/create_mysql_database.sql.in
+--- ../open-xchange-0.8.2-origin/system/setup/create_mysql_database.sql.in	1970-01-01 01:00:00.000000000 +0100
++++ ./system/setup/create_mysql_database.sql.in	2006-05-04 23:01:37.636099432 +0200
+@@ -0,0 +1,117 @@
++DROP DATABASE IF EXISTS @dbname@;
++
++CREATE DATABASE @dbname@ DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
++
++GRANT ALL PRIVILEGES ON @dbname@.* TO '@dbuser@'@'localhost' IDENTIFIED BY '@dbpass@' WITH GRANT OPTION;
++GRANT ALL PRIVILEGES ON @dbname@.* TO '@dbuser@'@'%' IDENTIFIED BY '@dbpass@';
++
++USE @dbname@;
++
++DROP TABLE IF EXISTS table_fid;
++
++CREATE TABLE table_fid (
++        id INT  NOT NULL AUTO_INCREMENT,
++        primary key (id)
++);
++
++DROP FUNCTION IF EXISTS select_fid;
++
++DELIMITER //
++
++CREATE FUNCTION select_fid () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
++BEGIN
++  DECLARE xid INT;
++  INSERT into table_fid VALUES();
++  SELECT last_insert_id() into xid;
++  RETURN xid;
++END //
++
++DELIMITER ;
++
++DROP TABLE IF EXISTS table_serial_id;
++
++CREATE TABLE table_serial_id (
++        id INT  NOT NULL AUTO_INCREMENT,
++        primary key (id)
++) AUTO_INCREMENT = 10;
++
++DROP FUNCTION IF EXISTS select_serial_id;
++
++DELIMITER //
++
++CREATE FUNCTION select_serial_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
++BEGIN
++  DECLARE xid INT;
++  INSERT into table_serial_id VALUES();
++  SELECT last_insert_id() into xid;
++  RETURN xid;
++END //
++
++DELIMITER ;
++
++
++DROP TABLE IF EXISTS table_import_id;
++
++CREATE TABLE table_import_id (
++        id INT  NOT NULL AUTO_INCREMENT,
++        primary key (id)
++);
++
++DROP FUNCTION IF EXISTS select_import_id;
++
++DELIMITER //
++
++CREATE FUNCTION select_import_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
++BEGIN
++  DECLARE xid INT;
++  INSERT into table_import_id VALUES();
++  SELECT last_insert_id() into xid;
++  RETURN xid;
++END //
++
++DELIMITER ;
++
++
++DROP TABLE IF EXISTS table_insert_id;
++
++CREATE TABLE table_insert_id (
++        id INT  NOT NULL AUTO_INCREMENT,
++        primary key (id)
++) AUTO_INCREMENT = 101;
++
++DROP FUNCTION IF EXISTS select_insert_id;
++
++DELIMITER //
++
++CREATE FUNCTION select_insert_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
++BEGIN
++  DECLARE xid INT;
++  INSERT into table_insert_id VALUES();
++  SELECT last_insert_id() into xid;
++  RETURN xid;
++END //
++
++DELIMITER ;
++
++DROP TABLE IF EXISTS table_profile_id;
++
++CREATE TABLE table_profile_id (
++        id INT  NOT NULL AUTO_INCREMENT,
++        primary key (id)
++);
++
++DROP FUNCTION IF EXISTS select_profile_id;
++
++DELIMITER //
++
++CREATE FUNCTION select_profile_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
++BEGIN
++  DECLARE xid INT;
++  INSERT into table_profile_id VALUES();
++  SELECT last_insert_id() into xid;
++  RETURN xid;
++END //
++
++
++DELIMITER ;
++
+diff -rNBwU 2 ../open-xchange-0.8.2-origin/system/setup/init_mysql_database.sql ./system/setup/init_mysql_database.sql
+--- ../open-xchange-0.8.2-origin/system/setup/init_mysql_database.sql	2006-04-25 10:57:34.000000000 +0200
++++ ./system/setup/init_mysql_database.sql	2006-05-04 23:01:37.640098824 +0200
+@@ -1,110 +1,12 @@
+  
+-DROP TABLE IF EXISTS table_fid;
+ 
+-CREATE TABLE table_fid (
+-	id INT  NOT NULL AUTO_INCREMENT,
+-	primary key (id)
+-);
+-
+-DROP FUNCTION IF EXISTS select_fid;
+-
+-DELIMITER //
+-
+-CREATE FUNCTION select_fid () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
+-BEGIN
+-  DECLARE xid INT;
+-  INSERT into table_fid VALUES();
+-  SELECT last_insert_id() into xid;
+-  RETURN xid;
+-END //
+-
+-DELIMITER ;
+- 
+-DROP TABLE IF EXISTS table_serial_id;
+-
+-CREATE TABLE table_serial_id (
+-	id INT  NOT NULL AUTO_INCREMENT,
+-	primary key (id)
+-) AUTO_INCREMENT = 9;
+-
+-DROP FUNCTION IF EXISTS select_serial_id;
+-
+-DELIMITER //
+-
+-CREATE FUNCTION select_serial_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
+-BEGIN
+-  DECLARE xid INT;
+-  INSERT into table_serial_id VALUES();
+-  SELECT last_insert_id() into xid;
+-  RETURN xid;
+-END //
+-
+-DELIMITER ;
+-
+- 
+-DROP TABLE IF EXISTS table_import_id;
+-
+-CREATE TABLE table_import_id (
+-	id INT  NOT NULL AUTO_INCREMENT,
+-	primary key (id)
+-);
+ 
+-DROP FUNCTION IF EXISTS select_import_id;
+ 
+-DELIMITER //
+ 
+-CREATE FUNCTION select_import_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
+-BEGIN
+-  DECLARE xid INT;
+-  INSERT into table_import_id VALUES();
+-  SELECT last_insert_id() into xid;
+-  RETURN xid;
+-END //
+ 
+-DELIMITER ;
+ 
+  
+-DROP TABLE IF EXISTS table_insert_id;
+ 
+-CREATE TABLE table_insert_id (
+-	id INT  NOT NULL AUTO_INCREMENT,
+-	primary key (id)
+-) AUTO_INCREMENT = 101;
+ 
+-DROP FUNCTION IF EXISTS select_insert_id;
+-
+-DELIMITER //
+-
+-CREATE FUNCTION select_insert_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
+-BEGIN
+-  DECLARE xid INT;
+-  INSERT into table_insert_id VALUES();
+-  SELECT last_insert_id() into xid;
+-  RETURN xid;
+-END //
+-
+-DELIMITER ;
+-
+-DROP TABLE IF EXISTS table_profile_id;
+-
+-CREATE TABLE table_profile_id (
+-	id INT  NOT NULL AUTO_INCREMENT,
+-	primary key (id)
+-);
+-
+-DROP FUNCTION IF EXISTS select_profile_id;
+-
+-DELIMITER //
+-
+-CREATE FUNCTION select_profile_id () RETURNS INTEGER DETERMINISTIC MODIFIES SQL DATA
+-BEGIN
+-  DECLARE xid INT;
+-  INSERT into table_profile_id VALUES();
+-  SELECT last_insert_id() into xid;
+-  RETURN xid;
+-END //
+-
+-
+-DELIMITER ;
+ 
+ CREATE TABLE prg_dlist (
+@@ -309,5 +211,5 @@
+ 	changing_date timestamp ,
+ 	changed_from text,
+-	login text PRIMARY KEY,
++	login varchar(255) PRIMARY KEY,
+ 	addr_u text,
+ 	addr_r text,
+@@ -446,5 +348,5 @@
+ 	timestampfield01 timestamp ,
+ 	timestampfield02 timestamp ,
+-	intfield01 int NOT NULL,
++	intfield01 int PRIMARY KEY,
+ 	intfield02 int,
+ 	intfield03 int,
+@@ -1328,5 +1230,35 @@
+ 	timestampfield01 timestamp ,
+ 	timestampfield02 timestamp ,
+-	intfield01 int NOT NULL,
++	intfield01 int PRIMARY KEY,
++	intfield02 int,
++	intfield03 int,
++	intfield04 int,
++	intfield05 int,
++	intfield06 int,
++	field01 text NOT NULL,
++	field02 text,
++	field03 text,
++	field04 text,
++	field05 text,
++	field06 text,
++	field07 text,
++	field08 text,
++	field09 text,
++	field10 text
++);
++
++CREATE TABLE del_docufolders (
++	creating_date timestamp NOT NULL,
++	created_from text NOT NULL,
++	changing_date timestamp,
++	changed_from text,
++	user_right text NOT NULL,
++	group_right text NOT NULL,
++	sid text NOT NULL,
++	tid text,
++	order_crit text,
++	timestampfield01 timestamp,
++	timestampfield02 timestamp,
++	intfield01 int PRIMARY KEY,
+ 	intfield02 int,
+ 	intfield03 int,
+@@ -1358,5 +1290,35 @@
+ 	timestampfield01 timestamp ,
+ 	timestampfield02 timestamp ,
+-	intfield01 int NOT NULL,
++	intfield01 int PRIMARY KEY,
++	intfield02 int NOT NULL,
++	intfield03 int,
++	intfield04 int,
++	intfield05 int,
++	intfield06 int,
++	field01 text NOT NULL,
++	field02 text,
++	field03 text,
++	field04 text,
++	field05 text,
++	field06 text,
++	field07 text,
++	field08 text,
++	field09 text,
++	field10 text
++);
++
++CREATE TABLE del_documents (
++	creating_date timestamp NOT NULL,
++	created_from text NOT NULL,
++	changing_date timestamp,
++	changed_from text,
++	user_right text NOT NULL,
++	group_right text NOT NULL,
++	sid text NOT NULL,
++	tid text,
++	order_crit text,
++	timestampfield01 timestamp,
++	timestampfield02 timestamp,
++	intfield01 int PRIMARY KEY,
+ 	intfield02 int NOT NULL,
+ 	intfield03 int,
+@@ -1388,5 +1350,35 @@
+ 	timestampfield01 timestamp ,
+ 	timestampfield02 timestamp ,
+-	intfield01 int NOT NULL,
++	intfield01 int PRIMARY KEY,
++	intfield02 int NOT NULL,
++	intfield03 int NOT NULL,
++	intfield04 int,
++	intfield05 int,
++	intfield06 int,
++	field01 text NOT NULL,
++	field02 text,
++	field03 text NOT NULL,
++	field04 text NOT NULL,
++	field05 text,
++	field06 text,
++	field07 text,
++	field08 text,
++	field09 text,
++	field10 text
++);
++
++CREATE TABLE del_documents_files (
++	creating_date timestamp NOT NULL,
++	created_from text,
++	changing_date timestamp,
++	changed_from text,
++	user_right text,
++	group_right text,
++	sid text NOT NULL,
++	tid text,
++	order_crit text,
++	timestampfield01 timestamp,
++	timestampfield02 timestamp,
++	intfield01 int PRIMARY KEY,
+ 	intfield02 int NOT NULL,
+ 	intfield03 int NOT NULL,
+@@ -1972,5 +1964,5 @@
+ CREATE TABLE sys_linkage (
+ 	changing_date timestamp  NOT NULL,
+-	luid int NOT NULL,
++	luid int PRIMARY KEY,
+ 	source_id int NOT NULL,
+ 	src_table text NOT NULL,
+@@ -1992,5 +1984,5 @@
+ CREATE TABLE del_linkage (
+ 	changing_date timestamp  NOT NULL,
+-	luid int NOT NULL,
++	luid int PRIMARY KEY,
+ 	source_id int NOT NULL,
+ 	src_table text NOT NULL,
+@@ -2046,4 +2038,10 @@
+ );
+ 
++CREATE TABLE oxfolder_userfolders_standardfolders (
++        owner text,
++        module text,
++        fuid int
++);
++
+ CREATE TABLE del_oxfolder_tree (
+         fuid int,
+@@ -2110,4 +2108,10 @@
+ );
+ 
++CREATE TABLE del_system_objects (
++		object_type int,
++		object_id text,
++		deleting_date timestamp
++);
++
+ INSERT INTO oxfolder_tree VALUES (1, 0, 'private', 'system', 'system','system', 'system', now(), 'System', null, null);
+ INSERT INTO oxfolder_tree VALUES (2, 0, 'public', 'system', 'system','system', 'system', now(), 'System', null, null);
+@@ -2127,4 +2131,5 @@
+ INSERT INTO oxfolder_permissions VALUES (select_serial_id(), 7, 512, 'all_ox_users_and_ox_groups', 0, 2, 0, 0, 0);
+ INSERT INTO oxfolder_permissions VALUES (select_serial_id(), 8, 512, 'all_ox_users_and_ox_groups', 0, 8, 4, 2, 2);
++INSERT INTO oxfolder_permissions VALUES (select_serial_id(), 9, 32768, 'mailadmin', 0, 128, 128, 128, 128);
+ 
+ INSERT INTO oxfolder_specialfolders VALUES ('private', 1);

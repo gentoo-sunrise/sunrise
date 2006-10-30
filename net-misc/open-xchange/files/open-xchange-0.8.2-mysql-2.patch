@@ -1,0 +1,11 @@
+--- open-xchange-0.8.2/system/setup/init_mysql_database.sql	2006-05-30 17:05:15.000000000 +0200
++++ open-xchange-0.8.2.az/system/setup/init_mysql_database.sql	2006-05-30 17:05:30.000000000 +0200
+@@ -1640,7 +1640,7 @@
+ );
+ 
+ CREATE TABLE usr_settings (
+-	username text,
++	username varchar(255),
+ 	mailoption1 text,
+ 	mailoption2 text,
+ 	mailoption3 text,

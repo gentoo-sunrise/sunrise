@@ -3,6 +3,12 @@
 # $Header: $
 
   30 Oct 2006; Markus Ullmann <jokey@gentoo.org>
+  +files/open-xchange-0.8.2-mysql.patch,
+  +files/open-xchange-0.8.2-mysql-2.patch,
+  +files/open-xchange-0.8.2-sieve.patch:
+  Adding missing patches
+
+  30 Oct 2006; Markus Ullmann <jokey@gentoo.org>
   +open-xchange-0.8.2_p1.ebuild, +metadata.xml:
   Initial import from bug #62197
 

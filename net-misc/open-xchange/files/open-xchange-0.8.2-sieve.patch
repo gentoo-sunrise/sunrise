@@ -1,0 +1,63 @@
+--- open-xchange-0.8.2/webmail/EN/options_navi.htm	2006-05-29 15:19:40.000000000 +0200
++++ open-xchange-0.8.2.az/webmail/EN/options_navi.htm	2006-05-29 15:21:42.000000000 +0200
+@@ -49,13 +49,17 @@
+   <td><a href="**webmail**?NAS_ID=**NAS_ID**&sessionID=**NAS_ID**&SITE=signature&vkn=0&nlf=**NAS_LF**" target="options_main" onClick="selectNaviItem(2);" id="nav2">Signatures</a></td>
+  </tr>
+  <tr>
++   <td width="5"><img src="**imageLink**/arrow.png"></td>
++   <td><a href="/open-xchange/smartsieve/login.php?sessionID=**NAS_ID**" target="options_main" onClick="selectNaviItem(3);" id="nav3">Mail filter rules</a></td>
++ </tr>
++ <tr>
+   <td width="5"><img src="**imageLink**/corner.png"></td>
+   <td><a href="javascript:parent.window.close();">Close</a></td>
+  </tr>
+ </table>
+ <script language="javascript">
+ function selectNaviItem(actItem) {
+-  for (var a = 0; a < 3; a++) {
++  for (var a = 0; a < 4; a++) {
+     var object = document.getElementById("nav" + a);
+     if (actItem == a) {
+       object.style.fontWeight = "bold";
+--- open-xchange-0.8.2/webmail/DE/options_navi.htm	2006-05-29 15:19:34.000000000 +0200
++++ open-xchange-0.8.2.az/webmail/DE/options_navi.htm	2006-05-29 15:21:28.000000000 +0200
+@@ -49,13 +49,17 @@
+   <td><a href="**webmail**?NAS_ID=**NAS_ID**&sessionID=**NAS_ID**&SITE=signature&vkn=0&nlf=**NAS_LF**" target="options_main" onClick="selectNaviItem(2);" id="nav2">Signaturen</a></td>
+  </tr>
+  <tr>
++   <td width="5"><img src="**imageLink**/arrow.png"></td>
++   <td><a href="/open-xchange/smartsieve/login.php?sessionID=**NAS_ID**" target="options_main" onClick="selectNaviItem(3);" id="nav3">Mail filter rules</a></td>
++ </tr>
++ <tr>
+   <td width="5"><img src="**imageLink**/corner.png"></td>
+   <td><a href="javascript:parent.window.close();">Schlie&szlig;en</a></td>
+  </tr>
+ </table>
+ <script language="javascript">
+ function selectNaviItem(actItem) {
+-  for (var a = 0; a < 3; a++) {
++  for (var a = 0; a < 4; a++) {
+     var object = document.getElementById("nav" + a);
+     if (actItem == a) {
+       object.style.fontWeight = "bold";
+--- open-xchange-0.8.2/templates/webmail/html/options_navi.htm	2006-05-29 15:19:47.000000000 +0200
++++ open-xchange-0.8.2.az/templates/webmail/html/options_navi.htm	2006-05-29 15:21:11.000000000 +0200
+@@ -42,13 +42,17 @@
+   <td><a href="**webmail**?NAS_ID=**NAS_ID**&sessionID=**NAS_ID**&SITE=signature&vkn=0&nlf=**NAS_LF**" target="options_main" onClick="selectNaviItem(2);" id="nav2">[signatures]</a></td>
+  </tr>
+  <tr>
++   <td width="5"><img src="**imageLink**/arrow.png"></td>
++   <td><a href="/open-xchange/smartsieve/login.php?sessionID=**NAS_ID**" target="options_main" onClick="selectNaviItem(3);" id="nav3">Mail filter rules</a></td>
++ </tr>
++ <tr>
+   <td width="5"><img src="**imageLink**/corner.png"></td>
+   <td><a href="javascript:parent.window.close();">[close]</a></td>
+  </tr>
+ </table>
+ <script language="javascript">
+ function selectNaviItem(actItem) {
+-  for (var a = 0; a < 3; a++) {
++  for (var a = 0; a < 4; a++) {
+     var object = document.getElementById("nav" + a);
+     if (actItem == a) {
+       object.style.fontWeight = "bold";
