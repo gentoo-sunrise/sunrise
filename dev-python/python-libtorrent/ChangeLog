@@ -3,6 +3,10 @@
 # $Header: $
 
   31 Oct 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  python-libtorrent-0.3.0.ebuild:
+  Remove unneeded eclass
+
+  31 Oct 2006; Raul Porcel (armin76) <armin76@gmail.com>
   +python-libtorrent-0.3.0.ebuild, +metadata.xml:
   New ebuild for bug 153528
 

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils eutils
+inherit distutils
 
 DESCRIPTION="Python bindings for rb_libtorrent"
 HOMEPAGE="http://code.google.com/p/python-libtorrent/"
