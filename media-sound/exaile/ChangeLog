@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Oct 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.4.ebuild:
+  ipod and mp3 USE flags, ~amd64 keyword added
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   exaile-0.2.4.ebuild:
   added trailing slash to HOMEPAGE URL
