@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=TEA
+Comment=Simple text editor
+Exec=tea
+Icon=tea.png
+Terminal=0
+Type=Application
+Categories=GTK;Applications;Office
+
