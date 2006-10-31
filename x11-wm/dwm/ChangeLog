@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Oct 2006; Cedric Krier <ced@ced.homedns.org> -dwm-1.9.ebuild,
+  +dwm-2.0.ebuild:
+  Version bump
+
   09 Oct 2006; Cedric Krier <ced@ced.homedns.org> -dwm-1.7.ebuild,
   -dwm-1.7.1.ebuild, -files/dwm-1.7.1-config_mk.patch,
   -files/dwm-1.7.1-makefile.patch, -files/dwm-1.7-config_mk.patch,
