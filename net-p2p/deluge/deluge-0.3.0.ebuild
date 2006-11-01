@@ -24,7 +24,8 @@ RDEPEND="${DEPEND}"
 src_install() {
 	dodir /usr/lib/deluge
 	insinto /usr/lib/deluge
-	doins -r *
+	doins -r *.py po glade pixmaps po
 
+	dodoc README
 	make_wrapper deluge "/usr/bin/python /usr/lib/${PN}/deluge.py"
 }
