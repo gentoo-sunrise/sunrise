@@ -9,7 +9,7 @@ HOMEPAGE="http://www.olsr.org/"
 SRC_URI="http://www.olsr.org/releases/${PV%.*}/${P}.tar.bz2"
 
 SLOT="0"
-LICENSE="GPL-2"
+LICENSE="as-is"
 KEYWORDS="~x86"
 IUSE="gtk"
 
@@ -18,18 +18,14 @@ DEPEND="gtk? ( =x11-libs/gtk+-2* )"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-gui_makefile.patch"
+
+	epatch "${FILESDIR}/${P}-makefile.patch"
 	epatch "${FILESDIR}/${P}-memleak_in_olsr_remove_scheduler_event.patch"
 }
 
 src_compile() {
 	cd "${S}"
-	emake OS=linux CC=$(tc-getCC) || die "emake failed"
-
-	for module in dot_draw dyn_gw httpinfo nameservice powerinfo secure ; do
-		cd "${S}/lib/${module}"
-		emake OS=linux CC=$(tc-getCC) || die "emake failed"
-	done
+	emake OS=linux CC=$(tc-getCC) build_all || die "emake failed"
 
 	if use gtk ; then
 		cd "${S}/gui/linux-gtk"
@@ -39,36 +35,22 @@ src_compile() {
 }
 
 src_install() {
-	dosbin olsrd
+	emake DESTDIR="${D}" install_all || die "emake install_all failed"
 
-	doman files/olsrd.conf.5.gz files/olsrd.8.gz
-
-	dolib lib/dot_draw/olsrd_dot_draw.so.0.3 lib/dyn_gw/olsrd_dyn_gw.so.0.4
-	dolib lib/httpinfo/olsrd_httpinfo.so.0.1 lib/nameservice/olsrd_nameservice.so.0.2
-	dolib lib/powerinfo/olsrd_power.so.0.3 lib/secure/olsrd_secure.so.0.5
-
-	dodoc files/olsrd.conf.default.rfc files/olsrd.conf.default.lq \
-		lib/dyn_gw/README_DYN_GW lib/dot_draw/README_DOT_DRAW \
-		lib/httpinfo/README_HTTPINFO lib/powerinfo/README_POWER
-	newdoc lib/nameservice/README README-NAMESERVICE
-	newdoc lib/secure/SOLSR-README README-SECURE
-
-	use gtk && dobin gui/linux-gtk/olsrd-gui
+	if use gtk; then
+		cd "${S}/gui/linux-gtk"
+		emake DESTDIR="${D}" install || die "emake install failed"
+	fi
 
 	doinitd "${FILESDIR}/olsrd"
-}
 
-pkg_postinst() {
-	ewarn "You must have root privileges to run olsrd!"
-	elog
-	elog "olsrd uses the config file /etc/olsrd.conf"
-	elog "There are two example config files"
-	elog
-	elog "	/usr/share/doc/${PF}/olsrd.conf.default.rfc.gz"
-	elog "  /usr/share/doc/${PF}/olsrd.conf.default.lq.gz"
-	elog
-	elog "First one uses RFC conform OLSR and the second uses"
-	elog "the Link Quality Extensions:"
-	elog
-	elog "  http://www.olsr.org/docs/README-Link-Quality.html"
+	cd "${S}"
+	dodoc CHANGELOG features.txt README README-Olsr-Switch.html \
+		README-FreeBSD-libnet README-Link-Quality-Fish-Eye.txt \
+		README-Link-Quality.html files/olsrd.conf.default.rfc \
+		files/olsrd.conf.default.lq lib/dyn_gw/README_DYN_GW \
+		lib/dot_draw/README_DOT_DRAW lib/httpinfo/README_HTTPINFO \
+		lib/powerinfo/README_POWER
+	newdoc lib/nameservice/README README-NAMESERVICE
+	newdoc lib/secure/SOLSR-README README-SECURE
 }
