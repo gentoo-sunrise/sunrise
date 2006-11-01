@@ -26,7 +26,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# Gentoo installs cryptsetup in /bin, this patches the relevant 
+	# Gentoo installs cryptsetup in /bin, this patches the relevant
 	# locations, in scripts/(u)mount.crypt and adds gentoo specific
 	# comments to pam_mount.conf
 	epatch "${FILESDIR}/${PN}-gentoo-paths-and-examples.patch"
