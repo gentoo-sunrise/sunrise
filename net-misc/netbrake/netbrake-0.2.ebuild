@@ -25,8 +25,8 @@ src_unpack() {
 	# Makefile.in ignores our compiler and compiler flags preference
 	epatch "${FILESDIR}/${P}-fix-compiler-and-flags.patch"
 
-	# patch to configure files to install the library and script 
-	# executable according to gentoo's standards and remove user 
+	# patch to configure files to install the library and script
+	# executable according to gentoo's standards and remove user
 	# interaction for compile options
 	epatch "${FILESDIR}/${P}-fix-path-and-httpfs.patch"
 
