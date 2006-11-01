@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Nov 2006; Markus Ullmann <jokey@gentoo.org> Manifest:
+  digest fix
+
   01 Nov 2006; Christian Faulhammer <opfer@gentoo.org> tea-14.2.4.ebuild:
   Added trailing slash to HOMEPAGE
 
