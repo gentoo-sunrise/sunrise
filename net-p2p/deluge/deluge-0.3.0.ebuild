@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="BitTorrent client in Python and PyGTK."
 HOMEPAGE="http://zachtib.googlepages.com/deluge/"
 SRC_URI="http://zachtib.googlepages.com/${PN}_${PV}.tar.gz"
@@ -24,5 +26,5 @@ src_install() {
 	insinto /usr/lib/deluge
 	doins -r *
 
-	dobin "${FILESDIR}"/deluge
+	make_wrapper deluge "/usr/bin/python /usr/lib/${PN}/deluge.py"
 }
