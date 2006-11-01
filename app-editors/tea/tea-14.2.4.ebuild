@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="Small GTK+ text editor"
-HOMEPAGE="http://tea-editor.sourceforge.net"
+HOMEPAGE="http://tea-editor.sourceforge.net/"
 SRC_URI="mirror://sourceforge/tea-editor/${P}.tar.bz2"
 
 LICENSE="GPL-2"
