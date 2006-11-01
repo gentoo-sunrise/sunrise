@@ -17,7 +17,7 @@ S=${WORKDIR}/${PN}
 DEPEND="net-libs/rb_libtorrent
 	>dev-lang/python-2.3
 	dev-libs/boost
-	>=dev-python/pygtk-2*
+	=dev-python/pygtk-2*
 	dev-python/python-libtorrent"
 RDEPEND="${DEPEND}"
 
