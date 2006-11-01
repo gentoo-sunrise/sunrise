@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Lightweight BitTorrent client in Python and PyGTK."
+DESCRIPTION="BitTorrent client in Python and PyGTK."
 HOMEPAGE="http://zachtib.googlepages.com/deluge/"
 SRC_URI="http://zachtib.googlepages.com/${PN}_${PV}.tar.gz"
 
@@ -22,19 +22,7 @@ RDEPEND="${DEPEND}"
 src_install() {
 	dodir /usr/lib/deluge
 	insinto /usr/lib/deluge
-	doins *.py
-
-	dodir /usr/lib/deluge/glade
-	insinto /usr/lib/deluge/glade
-	doins glade/*.glade
-
-	dodir /usr/lib/deluge/pixmaps
-	insinto /usr/lib/deluge/pixmaps
-	doins pixmaps/*.png
-
-	dodir /usr/share/pixmaps/deluge
-	insinto /usr/share/pixmaps/deluge
-	newins pixmaps/deluge-32.png deluge.png
+	doins -r *
 
 	dobin "${FILESDIR}"/deluge
 }

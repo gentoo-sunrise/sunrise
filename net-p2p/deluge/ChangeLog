@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  deluge-0.3.0.ebuild:
+  enhanced installation part
+
   31 Oct 2006; Raul Porcel (armin76) <armin76@gmail.com>
   +deluge-0.3.0.ebuild, +metadata.xml:
   New ebuild for bug 153543
