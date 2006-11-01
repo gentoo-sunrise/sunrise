@@ -23,7 +23,7 @@ DEPEND="ssl? ( dev-libs/openssl )
 	>=dev-libs/glib-2"
 
 	# not yet implemented
-	#depend dev-db/sqlite 
+	#depend dev-db/sqlite
 
 pkg_setup() {
 	if use postgres && has_version dev-db/mysql ; then
