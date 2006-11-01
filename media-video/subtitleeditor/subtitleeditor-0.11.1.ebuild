@@ -15,7 +15,7 @@ DEPEND=">=x11-libs/gtk+-2.6
 	>=dev-cpp/gtkmm-2.6
 	>=dev-cpp/libglademm-2.4
 	>=media-libs/gstreamer-0.10
-	>=app-text/enchant"
+	app-text/enchant"
 RDEPEND="${DEPEND}"
 
 src_install() {
