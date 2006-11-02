@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Nov 2006; Markus Ullmann <jokey@gentoo.org> -sql2class-1.9.1.ebuild,
+  -files/sql2class-1.9.1-extra_qualifiers.patch:
+  Drop old
+
   07 Oct 2006; Tiziano Müller <dev-zero@gentoo.org>
   +sql2class-1.9.2.ebuild:
   Version bump.
