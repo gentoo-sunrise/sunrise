@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Nov 2006; Markus Ullmann <jokey@gentoo.org> -libspiff-0.4.2.ebuild:
+  Drop old
+
   13 Oct 2006; Robert Buchholz (rbu) <rob@thetruth.de> ChangeLog:
   Version bump
 
