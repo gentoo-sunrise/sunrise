@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-
 DESCRIPTION="Python bindings for libsexy."
 HOMEPAGE="http://www.chipx86.com/wiki/Libsexy"
 SRC_URI="http://releases.chipx86.com/libsexy/${PN}/${P}.tar.gz"

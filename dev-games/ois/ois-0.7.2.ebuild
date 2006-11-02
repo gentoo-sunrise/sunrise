@@ -37,7 +37,6 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-
 	if use examples ; then
 		rm demos/Make* demos/ogre/Make*
 		insinto /usr/share/doc/${PF}

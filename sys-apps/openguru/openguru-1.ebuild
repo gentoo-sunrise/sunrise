@@ -14,8 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-S=${WORKDIR}
 
+S=${WORKDIR}
 
 src_compile() {
 	! has_hardened && CFLAGS="${CFLAGS} -Wl,-z,now"

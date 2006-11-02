@@ -21,7 +21,6 @@ DEPEND=">=sys-libs/pam-0.78-r3
 
 RDEPEND="${DEPEND}"
 
-
 S="${WORKDIR}/${PN/_/-}-${PV}"
 
 src_compile() {

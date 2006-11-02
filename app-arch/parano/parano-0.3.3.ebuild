@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc"
 
-
 DEPEND=">=dev-python/pygtk-2.0
 	dev-python/gnome-python"
 RDEPEND="${DEPEND}"

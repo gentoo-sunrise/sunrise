@@ -7,15 +7,16 @@ inherit eutils
 DESCRIPTION="Archive all your buddies's icons."
 HOMEPAGE="http://gaim-album.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
 SLOT=0
 LICENSE="GPL-2"
 KEYWORDS="~x86"
 IUSE=""
+
 RDEPEND=">=x11-libs/gtk+-2.4
 	net-im/gaim"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
-
 
 src_unpack() {
 	unpack ${A}

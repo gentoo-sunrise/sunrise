@@ -19,7 +19,6 @@ DEPEND=">=sys-libs/readline-4.3
 	>=dev-libs/openssl-0.9"
 RDEPEND="${DEPEND}"
 
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"

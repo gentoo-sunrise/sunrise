@@ -14,7 +14,6 @@ IUSE="doc examples"
 DEPEND="doc? ( app-doc/doxygen )"
 RDEPEND=""
 
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"

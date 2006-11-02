@@ -9,10 +9,12 @@ MY_P=gizmo-project-${PV}
 DESCRIPTION="Gizmo is a P2P-VoiceIP client"
 HOMEPAGE="http://www.gizmoproject.com/"
 SRC_URI="http://download.gizmoproject.com/GizmoDownload/${MY_P}.tar.gz"
+
 LICENSE="gizmoproject-eula"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+
 RESTRICT="mirror strip"
 
 RDEPEND="dev-libs/atk
@@ -31,7 +33,6 @@ src_install() {
 	doins -r share
 	exeinto /opt/gizmo
 	doexe gizmo{,-run} libsipphoneapi.so{,.1.5.06}
-
 
 	dodoc ChangeLog README.TXT
 

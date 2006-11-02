@@ -59,7 +59,6 @@ src_unpack (){
 	epatch "${FILESDIR}/deviceID.patch"
 }
 
-
 src_compile() {
 	use debug && export debug="y"
 	linux-mod_src_compile

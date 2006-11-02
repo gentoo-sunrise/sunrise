@@ -27,7 +27,6 @@ src_compile() {
 	fi
 }
 
-
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README AUTHORS ChangeLog

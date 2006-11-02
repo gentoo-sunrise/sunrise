@@ -33,7 +33,6 @@ RDEPEND="${DEPEND}
 	>=media-video/mplayer-1.0_pre8
 	>=media-video/transcode-1.0.2"
 
-
 src_compile() {
 	${QTDIR}/bin/qmake mandvd.pro || die "qmake failed"
 	emake || die "emake failed"

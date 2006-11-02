@@ -25,7 +25,6 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	nls? ( virtual/libintl )"
 
-
 pkg_setup() {
 	if ! built_with_use app-text/poppler-bindings gtk; then
 		eerror "Please re-emerge app-text/poppler-binding with the gtk USE flag set."

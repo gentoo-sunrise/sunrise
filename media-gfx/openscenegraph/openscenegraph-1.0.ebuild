@@ -127,7 +127,6 @@ src_install() {
 	insinto /usr/$(get_libdir)/pkgconfig
 	doins Make/openscenegraph.pc
 
-
 	dodoc AUTHORS.txt ChangeLog NEWS.txt README.txt
 
 	if use doc; then

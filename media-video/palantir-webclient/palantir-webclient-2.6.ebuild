@@ -20,7 +20,6 @@ RDEPEND=">=virtual/jre-1.4"
 
 S=${WORKDIR}/${MY_P}/clients/java
 
-
 src_compile() {
 	ejavac *.java || die "ejavac failed!"
 	jar cfm pclient.jar MANIFEST.MF *.class || die "jar failed!"

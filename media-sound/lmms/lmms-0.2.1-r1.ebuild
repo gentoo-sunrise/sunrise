@@ -35,7 +35,6 @@ src_unpack() {
 	fi
 }
 
-
 src_compile() {
 	econf \
 		$(use_with alsa asound) \
