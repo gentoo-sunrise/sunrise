@@ -1,0 +1,18 @@
+--- bugle-0.0.20061022.orig/Makefile.am	2006-11-02 16:10:12.000000000 +0100
++++ bugle-0.0.20061022/Makefile.am	2006-11-02 16:15:11.000000000 +0100
+@@ -119,9 +119,14 @@
+ 
+ # Generated files that generate other files
+ 
++# NOTE: Disabling ccache at line 127 because of a potential bug: 
++# The package breaks at one point where a "translation unit dump" is 
++# needed, triggered by the gcc option -fdump-translation-unit. 
++# This file is not created by ccache.
++
+ src/data/gl.tu: src/data/gl.c src/data/overrides.h
+ 	$(INSTALL) -d src/data
+-	$(COMPILE) -fdump-translation-unit -c $(srcdir)/src/data/gl.c -o src/data/gl.o
++	CCACHE_DISABLE=1 $(COMPILE) -fdump-translation-unit -c $(srcdir)/src/data/gl.c -o src/data/gl.o
+ 	rm -f src/data/gl.o
+ 	mv gl.c.`test -f gl.c.t00.tu && echo t00.`tu src/data/gl.tu
+ 
