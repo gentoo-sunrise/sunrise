@@ -20,7 +20,7 @@ DEPEND="ssl? ( dev-libs/openssl )
 	app-text/xmlto
 	sys-libs/zlib
 	>=dev-libs/gmime-2.1
-	>=dev-libs/glib-2"
+	>=dev-libs/glib-2.6"
 
 	# not yet implemented
 	#depend dev-db/sqlite

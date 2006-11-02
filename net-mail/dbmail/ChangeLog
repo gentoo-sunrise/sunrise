@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Nov 2006; Martin Hierling <mad@cc.fh-luh.de> dbmail-2.1.7.ebuild:
+  glib dep to 2.6
+
   29 Jul 2006; Stefan Schweizer <genstef@gentoo.org> -dbmail-2.0.10.ebuild,
   -dbmail-2.1.6.ebuild, -dbmail-2.1.6.2192.ebuild, dbmail-2.1.7.ebuild:
   remove old ebuilds. CHange einfo to elog again in the latest ebuild
