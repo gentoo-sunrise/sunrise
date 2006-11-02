@@ -4,14 +4,14 @@
 
 inherit eutils
 
-KEYWORDS="~x86"
-
 DESCRIPTION="An intuitive, GUI based Xen management tool covering all phases of the operational lifecycle."
 HOMEPAGE="http://sourceforge.net/projects/xenman/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
 LICENSE="LGPL-2"
 SLOT="0"
 IUSE="lvm2"
+KEYWORDS="~x86"
 
 DEPEND=""
 RDEPEND=">=app-emulation/xen-3.0.2
