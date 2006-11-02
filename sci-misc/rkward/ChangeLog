@@ -1,0 +1,8 @@
+# ChangeLog for sci-misc/rkward
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Nov 2006; Charlie Shepherd <masterdriverz@gmail.com>
+  +rkward-0.4.0.ebuild, +metadata.xml:
+  New ebuild: rkward
+
