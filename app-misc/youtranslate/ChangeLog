@@ -2,6 +2,13 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Nov 2006; Markus Ullmann <jokey@gentoo.org>
+  -youtranslate-1.1.7.2-r1.ebuild,
+  -files/youtranslate-1.1.7.2-makefile-depend-bump.patch,
+  -youtranslate-1.1.7.3.ebuild,
+  -files/youtranslate-1.1.7.3-makefile-depend-bump.patch:
+  Drop old
+
   20 Jul 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
   -youtranslate-1.1.7.2.ebuild, +youtranslate-1.1.8.ebuild,
   +files/youtranslate-1.1.8-makefile-depend-bump.patch:
