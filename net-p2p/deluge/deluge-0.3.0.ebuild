@@ -26,6 +26,8 @@ src_install() {
 	insinto /usr/lib/deluge
 	doins -r *.py po glade pixmaps po
 
+	newicon pixmaps/deluge-32.png deluge.png
+
 	dodoc README
 	make_wrapper deluge "/usr/bin/python /usr/lib/${PN}/deluge.py"
 }
