@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pyrssgen
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Nov 2006; David Grant (dgrant) <davidgrant@gmail.com>
+  +pyrssgen-1.0.0.ebuild, +metadata.xml:
+  new ebuild for pyrssgen
+
