@@ -2,8 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="Small GTK+ text editor"
-HOMEPAGE="http://tea-editor.sourceforge.net/"
+HOMEPAGE="http://tea-editor.sourceforge.net"
 SRC_URI="mirror://sourceforge/tea-editor/${P}.tar.bz2"
 
 LICENSE="GPL-2"
@@ -19,19 +21,17 @@ DEPEND="${RDEPEND}
 
 src_compile() {
 	econf \
-		$(use_enable ipv6 ) \
-		$(use_enable !gnome legacy ) \
-		|| die "Configure failed! *gasp*!"
+	$(use_enable ipv6 ) \
+	$(use_enable !gnome legacy ) \
+	|| die "Configure failed!"
+
+	emake || die "Make failed!"
 }
 
 src_install() {
-	#yaarrrr! emake DESTDIR="${D}" install fails with sandbox error :'(
-	# well, then fix the makefile ..
-	einstall || die "Install failed! *gasp*!"
+	emake DESTDIR="${D}" install || die "Make Install failed!"
 
-	insinto /usr/share/applications/
-	doins ${FILESDIR}/tea.desktop
-
-	insinto /usr/share/pixmaps/
-	doins ${FILESDIR}/tea.png
+	doicon ${FILESDIR}/tea.png
+#	domenu ${FILESDIR}/tea.desktop
+	make_desktop_entry tea Tea tea Office
 }
