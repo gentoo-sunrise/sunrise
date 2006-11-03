@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -democracy-0.9.0.2.ebuild:
+  drop old
+
   26 Oct 2006; Markus Ullmann <jokey@gentoo.org>
   -files/digest-democracy-0.9.0.2-r1:
   delete stray digest
