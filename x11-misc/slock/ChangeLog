@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Cedric Krier <ced@ced.homedns.org> -slock-0.2.ebuild,
+  +slock-0.3.ebuild:
+  Version bump
+
   16 Oct 2006; Cedric Krier <ced@ced.homedns.org> -slock-0.1.ebuild,
   +slock-0.2.ebuild:
   Version bump
