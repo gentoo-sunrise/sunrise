@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -serenity-style-1.3.ebuild:
+  drop old
+
   23 Oct 2006; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
   +serenity-style-1.4.ebuild:
   Version bump to 1.4
