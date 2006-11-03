@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -kate-projectmanager-plugin-0.1.2_p21.ebuild:
+  drop old
+
   20 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch>
   -kate-projectmanager-plugin-0.1.1.ebuild,
   -kate-projectmanager-plugin-0.1.2.ebuild,
