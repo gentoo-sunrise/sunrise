@@ -3,6 +3,10 @@
 # $Header: $
 
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -files/0.12.3-setup_py-various_fix.patch:
+  forgot to remove patch
+
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -pythonsudoku-0.12.3.ebuild:
   drop old
 
