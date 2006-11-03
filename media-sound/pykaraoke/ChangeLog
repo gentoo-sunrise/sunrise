@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -pykaraoke-0.4.1.ebuild:
+  drop old
+
   10 Aug 2006; Michael Pagano (mpagano) mpagano@gmail.com
   +pykaraoke-0.5.ebuild:
   Version bump
