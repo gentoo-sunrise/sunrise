@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com> -gcstar-0.4.ebuild:
+  remove old
+
   07 Oct 2006; Tiziano Müller <dev-zero@gentoo.org> -gcstar-0.2.ebuild,
   -gcstar-0.3.ebuild, +gcstar-0.4.1.ebuild:
   Version bump. Old versions removed.
