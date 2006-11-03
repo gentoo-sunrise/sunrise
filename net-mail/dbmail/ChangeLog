@@ -2,6 +2,14 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Martin Hierling <mad@cc.fh-luh.de> dbmail-2.1.7-r1.ebuild:
+  no db deps anymore
+  added ldap use flag
+  added sieve support
+   needs useflag sieve and
+   libsieve http://bugs.gentoo.org/show_bug.cgi?id=149770
+
+
   02 Nov 2006; Martin Hierling <mad@cc.fh-luh.de> dbmail-2.1.7.ebuild:
   glib dep to 2.6
 
