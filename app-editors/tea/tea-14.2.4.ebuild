@@ -21,17 +21,16 @@ DEPEND="${RDEPEND}
 
 src_compile() {
 	econf \
-	$(use_enable ipv6 ) \
-	$(use_enable !gnome legacy ) \
-	|| die "Configure failed!"
+		$(use_enable ipv6 ) \
+		$(use_enable !gnome legacy ) \
+		|| die "econf failed"
 
-	emake || die "Make failed!"
+	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Make Install failed!"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	doicon ${FILESDIR}/tea.png
-#	domenu ${FILESDIR}/tea.desktop
 	make_desktop_entry tea Tea tea Office
 }
