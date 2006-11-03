@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -mandvd-2.0.4.ebuild, -mandvd-2.0.9.ebuild:
+  remove old versions
+
   10 Sep 2006; Jakub Moc <jakub@gentoo.org> mandvd-2.0.4.ebuild,
   mandvd-2.0.9.ebuild, mandvd-2.1.ebuild:
   Monolithic X is not supported any more
