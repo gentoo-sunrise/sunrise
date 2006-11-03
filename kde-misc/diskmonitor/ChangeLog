@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -diskmonitor-0.3.0.ebuild:
+  drop old
+
   22 Oct 2006; Tiziano Müller <dev-zero@gentoo.org>
   +diskmonitor-0.4.1.ebuild:
   Version bump.
