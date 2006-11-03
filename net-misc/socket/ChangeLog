@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com> -socket-1.3.ebuild:
+  drop old
+
   24 Aug 2006; David CHANIAL (davixx) <david@chanial.com>
   +socket-1.3.ebuild, +socket-1.4.ebuild, +metadata.xml:
   New Ebuild for bug 86010 thanks to Alexandros Diamantidis
