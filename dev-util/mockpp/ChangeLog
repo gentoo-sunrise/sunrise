@@ -3,6 +3,10 @@
 # $Header: $
 
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -files/1.13.0-boost_incdir_m4.patch, -files/1.13.0-destdir.patch:
+  forgot patches
+
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -mockpp-1.13.0.ebuild:
   drop old
 
