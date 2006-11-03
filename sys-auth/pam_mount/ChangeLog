@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -pam_mount-0.13.0.ebuild:
+  drop old
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   pam_mount-0.13.0.ebuild, pam_mount-0.17.ebuild:
   added trailing slash to HOMEPAGE URL
