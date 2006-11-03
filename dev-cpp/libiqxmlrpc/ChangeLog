@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -files/0.7.3a-doc_manual_install.patch, -libiqxmlrpc-0.7.3a.ebuild:
+  drop old
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   libiqxmlrpc-0.7.3a.ebuild, libiqxmlrpc-0.8.1.ebuild:
   added trailing slash to HOMEPAGE URL
