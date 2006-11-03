@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com> -slim-1.2.5.ebuild,
+  -files/slim-cflags.patch:
+  drop old
+
   18 Aug 2006; Jakub Moc <jakub@gentoo.org> -slim-1.2.5-r1.ebuild,
   +slim-1.2.5-r2.ebuild, files/slim-fix-warnings.patch:
   Revbump to fix the warnings patch
