@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -scratchbox-0.9.8.7.ebuild:
+  drop old
+
   25 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch>
   +scratchbox-0.9.8.8.ebuild:
   Version bump to v0.9.8.8
