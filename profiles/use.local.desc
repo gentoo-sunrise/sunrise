@@ -65,6 +65,7 @@ net-firewall/nufw:pam_nuauth - Add support for pam nufw from PAM
 net-im/psi:xscreensaver - Enables detection of xscreensaver
 net-im/pyaim-t:web - Enables optional web interface
 net-im/pyicq-t:web - Enables optional web interface
+net-mail/dbmail:sieve - Add support for sieve mail filtering
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
 net-mail/simscan:dropmsg - Enable dropping message contains virus/spam
