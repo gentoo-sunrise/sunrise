@@ -3,24 +3,8 @@
 # $Header: $
 
   04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
-  exaile-0.2.4.ebuild:
-  Re-add mp3 flag, fix ipod support dependecies
-
-  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
-  exaile-0.2.4.ebuild:
-  Re-add mp3 flag, fix ipod support dependecies
-
-  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
-  exaile-0.2.4.ebuild:
-  Re-add mp3 flag, fix ipod support dependecies
-
-  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
-  exaile-0.2.4.ebuild:
-  Re-add mp3 flag, fix ipod support dependecies
-
-  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
-  exaile-0.2.4.ebuild:
-  Re-add mp3 flag, fix ipod support dependecies
+  ChangeLog:
+  Fix ChangeLog error
 
   04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   exaile-0.2.4.ebuild:
