@@ -1,0 +1,20 @@
+--- Makefile.old	2006-10-31 23:05:42.000000000 +0100
++++ Makefile	2006-10-31 23:06:59.000000000 +0100
+@@ -175,7 +175,7 @@
+ 	done
+ 	@install -d $(MAN_DIR)
+ 	@install -m 644 docs/$(TARGET).1 $(MAN_DIR);
+-	@bzip2 -f $(MAN_DIR)$(TARGET).1;
++	@gzip -f $(MAN_DIR)$(TARGET).1;
+ 
+ ifeq ($(XGD_INTEGRATION), 1)
+ 		@install -d $(XGD_DESKTOP_DIR)
+@@ -199,7 +199,7 @@
+ 	@rm -rf $(DOC_DIR)
+ #	@echo -e "\nif you like you can also delete the icon directory:\n\t$(ICON_DIR)\n"
+ 	@rm -rf $(ICON_DIR)
+-	@rm -f $(MAN_DIR)$(TARGET).1.bz2;
++	@rm -f $(MAN_DIR)$(TARGET).1.gz;
+ 
+ uninstall_plugins:
+ 	@echo "uninstalling plugins from '$(PREFIX)'"
