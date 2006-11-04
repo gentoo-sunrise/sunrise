@@ -17,33 +17,28 @@ DEPEND=">=x11-libs/gtk+-2.6
 		fam? ( virtual/fam )"
 RDEPEND=${DEPEND}
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/emelfm2-gzip-manpage.patch
-}
-
 src_compile() {
 	local myconf
-		
+
 	if use unicode; then
 		myconf="FILES_UTF8ONLY=1"
 	fi
-		
+
 	if use fam; then
 		if has_version "app-admin/gamin"; then
 			myconf="${myconf} USE_GAMIN=1"
-		else 
+		else
 			myconf="${myconf} USE_FAM=1"
 		fi
 	else
 		myconf="${myconf} USE_FAM=0"
 	fi
-	
+
+	# CC= looks bad with CFLAGS, instead the Makefile should be patched
 	emake \
-	ICONDIR="/usr/share/pixmaps" \
-	PREFIX="/usr" \
-	CC="$(tc-getCC) ${CFLAGS}" \
+		ICONDIR="/usr/share/pixmaps" \
+		PREFIX="/usr" \
+		CC="$(tc-getCC) ${CFLAGS}" \
 		${myconf} || die "emake failed"
 }
 
@@ -53,8 +48,8 @@ src_install() {
 	emake \
 		ICONDIR="${D}/usr/share/pixmaps" \
 		PREFIX="${D}/usr" \
-		install || die "make install failed"
-	
+		install || die "emake install failed"
+
 	prepalldocs
 }
 

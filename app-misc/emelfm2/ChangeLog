@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
+  -files/emelfm2-gzip-manpage.patch, emelfm2-0.3.ebuild:
+  remove patch, add comments to the ebuild
+
   04 Nov 2006; Uwe Helm (digitalenemy) <digitalenemy@gmail.com>
   +files/emelfm2-gzip-manpage.patch, +emelfm2-0.3.ebuild, +metadata.xml:
   New Ebuild for Bug 153611
