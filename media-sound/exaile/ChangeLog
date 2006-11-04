@@ -2,6 +2,30 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.4.ebuild:
+  Re-add mp3 flag, fix ipod support dependecies
+
+  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.4.ebuild:
+  Re-add mp3 flag, fix ipod support dependecies
+
+  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.4.ebuild:
+  Re-add mp3 flag, fix ipod support dependecies
+
+  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.4.ebuild:
+  Re-add mp3 flag, fix ipod support dependecies
+
+  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.4.ebuild:
+  Re-add mp3 flag, fix ipod support dependecies
+
+  04 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.4.ebuild:
+  Re-add mp3 flag, fix ipod support dependecies
+
   31 Oct 2006; Tiziano Müller <dev-zero@gentoo.org> exaile-0.2.4.ebuild:
   Removing mp3 USE-flag and dependency since media-libs/gst-plugins-ugly is
   not needed for playing mp3's.

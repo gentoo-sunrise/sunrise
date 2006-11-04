@@ -13,7 +13,7 @@ SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="fam trayicon ipod"
+IUSE="fam mp3 trayicon ipod"
 
 DEPEND=">=dev-lang/python-2.4
 		>=dev-python/pygtk-2.0"
@@ -25,8 +25,10 @@ RDEPEND="${DEPEND}
 		>=media-libs/mutagen-1.6
 		sys-apps/dbus
 		fam? ( app-admin/gamin )
+		mp3? ( >=media-plugins/gst-plugins-mad-0.10 )
 		trayicon? ( dev-python/gnome-python-extras )
-		ipod? ( media-libs/libgpod )"
+		ipod? ( >=media-libs/libgpod-0.3.2-r1
+				>=media-plugins/gst-plugins-faac )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -35,6 +37,12 @@ pkg_setup() {
 		eerror "dbus has to be built with python support"
 		die "dbus python use-flag not set"
 	fi
+
+	if use ipod && ! built_with_use media-libs/libgpod python ; then
+		eerror "libgpod has to be built with python support"
+		die "libgpod python use-flag not set"
+	fi
+
 }
 
 src_unpack() {
