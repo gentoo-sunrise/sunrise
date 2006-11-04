@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/tea-editor/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="ipv6 gnome"
 
 RDEPEND=">=x11-libs/gtk+-2.2
@@ -21,16 +21,17 @@ DEPEND="${RDEPEND}
 
 src_compile() {
 	econf \
-		$(use_enable ipv6 ) \
-		$(use_enable !gnome legacy ) \
-		|| die "econf failed"
+	$(use_enable ipv6 ) \
+	$(use_enable !gnome legacy ) \
+	|| die "Configure failed!"
 
-	emake || die "emake failed"
+	emake || die "Make failed!"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "Make Install failed!"
 
 	doicon ${FILESDIR}/tea.png
+#	domenu ${FILESDIR}/tea.desktop
 	make_desktop_entry tea Tea tea Office
 }

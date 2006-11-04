@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Nov 2006; Peter Weller (welp) <welp@01welp.co.uk> tea-14.2.4.ebuild:
+  Added ~x86 keyword thanks to armin76
+
   03 Nov 2006; Peter Weller (welp) <welp@01welp.co.uk> tea-14.2.4.ebuild:
   Revised Ebuild for bug 153602 thanks to my uberness :)
 
