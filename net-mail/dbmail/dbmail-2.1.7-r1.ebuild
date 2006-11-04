@@ -11,23 +11,18 @@ SRC_URI="http://www.dbmail.org/download/2.1/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="ssl postgres mysql sqlite3"
-# sieve commented for now because libsieve is not in portage, please add it to
-# sunrise and uncomment this useflag
-#	sieve? ( >=mail-filter/libsieve-2.2.1 )
+IUSE="ssl postgres mysql sqlite3 sieve"
 
 DEPEND="ssl? ( dev-libs/openssl )
 	postgres? ( >=dev-db/postgresql-7.4 )
 	mysql? ( >=dev-db/mysql-4.1.13 )
 	sqlite3? ( >=dev-db/sqlite-3.0 )
+	sieve? ( >=mail-filter/libsieve-2.2.1 )
 	app-text/asciidoc
 	app-text/xmlto
 	sys-libs/zlib
 	>=dev-libs/gmime-2.1
 	>=dev-libs/glib-2.6"
-
-	# not yet implemented
-	#depend dev-db/sqlite
 
 pkg_setup() {
 	enewgroup dbmail
