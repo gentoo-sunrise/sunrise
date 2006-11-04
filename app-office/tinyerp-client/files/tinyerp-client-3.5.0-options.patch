@@ -1,5 +1,5 @@
---- tinyerp-client-3.4.2~/bin/options.py	2006-10-17 20:35:15.000000000 +0200
-+++ tinyerp-client-3.4.2/bin/options.py	2006-10-17 21:04:58.000000000 +0200
+--- tinyerp-client-3.5.0~/bin/options.py	2006-11-03 22:53:27.000000000 +0100
++++ tinyerp-client-3.5.0/bin/options.py	2006-11-03 22:55:05.000000000 +0100
 @@ -65,8 +65,8 @@
  			'client.modepda': False,
  			'client.toolbar': 'both',
@@ -7,7 +7,7 @@
 -			'path.share': os.path.dirname(__file__),
 -			'path.pixmaps': os.path.dirname(__file__),
 +			'path.share': '/usr/share/tinyerp-client',
-+			'path.pixmaps': '/usr/share/pixmaps/tinyerp-client',
++			'path.pixmaps': '/usr/share/tinyerp-client',
  			'tip.autostart': True,
  			'tip.position': 0,
  			'survey.position': 0,
