@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Nov 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
+  +dabo-0.6.6.ebuild
+
   23 Jun 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
   Initial import, bug 108226
 
