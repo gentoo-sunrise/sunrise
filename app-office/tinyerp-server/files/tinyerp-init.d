@@ -14,7 +14,7 @@ start() {
 	[ -n "${SERVER_PORT}" ] && SERVER_OPTS="${SERVER_OPTS} --db_port=${SERVER_PORT}"
 								
 	ebegin "Starting TinyERP"
-	start-stop-daemon --start --quiet --background --chuid terp:terp --pidfile=/var/run/tinyerp/tinyerp.pid --startas /usr/bin/tinyerp-server --exec /usr/bin/python -- ${SERVER_OPTS} --pidfile=/var/run/tinyerp/tinyerp.pid
+	start-stop-daemon --start --quiet --background --chuid terp:terp --startas /usr/bin/tinyerp-server --exec /usr/bin/python -- ${SERVER_OPTS} --pidfile=/var/run/tinyerp/tinyerp.pid --logfile=/var/log/tinyerp/tinyerp.log
 	eend $?
 }
 

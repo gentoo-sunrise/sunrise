@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Nov 2006; Cedric Krier <ced@ced.homedns.org>
+  tinyerp-server-3.4.2.ebuild, +tinyerp-server-3.5.0.ebuild,
+  +files/tinyerp-server-3.5.0-setup.patch, files/tinyerp-init.d:
+  Version bump
+
   18 Oct 2006; Cedric Krier <ced@ced.homedns.org>
   +tinyerp-server-3.4.2.ebuild, +files/tinyerp-conf.d,
   +files/tinyerp-init.d, +metadata.xml:

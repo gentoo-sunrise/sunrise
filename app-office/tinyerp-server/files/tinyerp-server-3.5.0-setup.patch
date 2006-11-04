@@ -1,0 +1,18 @@
+--- tinyerp-server-3.5.0~/setup.py	2006-11-04 20:16:08.000000000 +0100
++++ tinyerp-server-3.5.0/setup.py	2006-11-04 20:43:30.000000000 +0100
+@@ -78,6 +78,7 @@
+         pathfiles = [(opj('lib', 'python%s' % py_short_version, 'site-packages', 
+                           add_path.replace('bin', 'tinyerp-server', 1)),
+                       glob.glob(opj(add_path, '*xml')) +
++                      glob.glob(opj(add_path, '*csv')) +
+                       glob.glob(opj(add_path, '*sql'))),
+                      (opj('lib', 'python%s' % py_short_version, 'site-packages',
+                           add_path.replace('bin', 'tinyerp-server', 1), 'data'),
+@@ -133,6 +134,7 @@
+                           'tinyerp-server.report.render',
+                           'tinyerp-server.report.render.rml2pdf',
+                           'tinyerp-server.report.render.rml2html',
++                          'tinyerp-server.report.printscreen',
+                           'tinyerp-server.wizard', 'tinyerp-server.workflow'] + \
+                          list(find_addons()),
+       package_dir      = {'tinyerp-server': 'bin'},

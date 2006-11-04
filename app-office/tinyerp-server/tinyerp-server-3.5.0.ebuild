@@ -41,6 +41,12 @@ pkg_setup() {
 		die "${PN} requires dev-libs/libxslt with USE=python"
 	fi
 }
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	epatch "${FILESDIR}/${P}-setup.patch"
+}
 
 src_install() {
 	distutils_src_install
@@ -49,10 +55,10 @@ src_install() {
 	newconfd "${FILESDIR}"/tinyerp-conf.d tinyerp
 
 	keepdir /var/run/tinyerp
-	fowners ${TINYERP_USER} ${TINYERP_GROUP} /var/run/tinyerp
+	fowners ${TINYERP_USER}:${TINYERP_GROUP} /var/run/tinyerp
 
 	keepdir /var/log/tinyerp
-	fowners ${TINYERP_USER} ${TINYERP_GROUP} /var/log/tinyerp
+	fowners ${TINYERP_USER}:${TINYERP_GROUP} /var/log/tinyerp
 }
 
 pkg_postinst() {
