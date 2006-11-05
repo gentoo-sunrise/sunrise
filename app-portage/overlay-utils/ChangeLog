@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
+  +overlay-utils-0.2.ebuild:
+  Updated to work with the changed =~ operator semantics in Bash 3.2, at least
+  until upstream changes them again.
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   overlay-utils-0.1.ebuild:
   added trailing slash to HOMEPAGE URL
