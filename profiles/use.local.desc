@@ -12,6 +12,7 @@ app-misc/emelfm2:fam - Use FAM for file-change monitoring
 app-misc/emelfm2:unicode - Forces conversion of filenames to Unicode
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
+dev-util/ktigcc:no-completion-data - Do not install completion data for the TIGCCLIB system headers
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
