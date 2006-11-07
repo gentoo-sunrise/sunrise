@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
+  +youtranslate-1.1.9.ebuild:
+  Revbump to 1.1.9; only change is removal of patching phase
+
   04 Nov 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
   youtranslate-1.1.8.ebuild:
   Adding ~amd64 keyword per user request.
