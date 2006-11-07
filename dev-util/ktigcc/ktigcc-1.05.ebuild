@@ -5,7 +5,7 @@
 inherit qt3 eutils fdo-mime
 
 DESCRIPTION="An IDE for tigcc"
-HOMEPAGE="http://tigcc.ticalc.org"
+HOMEPAGE="http://tigcc.ticalc.org/"
 SRC_URI="mirror://sourceforge/tigcc-linux/${P}.tar.bz2"
 
 LICENSE="GPL-2"

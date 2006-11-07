@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2006; Christian Faulhammer <opfer@gentoo.org> ktigcc-1.05.ebuild:
+  it's an obsession of me: Added trailing slash to HOMEPAGE URL
+
   06 Nov 2006; Christian Helbling <helch@gmx.ch> +ktigcc-1.05.ebuild,
   +files/ktigcc.desktop, +files/ktigcc.xml, +files/x-tigcc-project.desktop,
   +metadata.xml:
