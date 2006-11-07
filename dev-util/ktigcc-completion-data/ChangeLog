@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2006; Christian Faulhammer <opfer@gentoo.org>
+  ktigcc-completion-data-0.96_beta7.ebuild:
+  added trailing slash to HOMEPAGE's URL, added quotes around variable
+
   06 Nov 2006; Christian Helbling <helch@gmx.ch>
   +ktigcc-completion-data-0.96_beta7.ebuild, +metadata.xml:
   New Ebuild for bug 146032
