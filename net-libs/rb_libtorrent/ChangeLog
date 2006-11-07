@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  +rb_libtorrent-0.11_rc2.ebuild:
+  version bump
+
   16 Oct 2006; Raul Porcel (armin76) <armin76@gmail.com>
   rb_libtorrent-0.10.ebuild, +rb_libtorrent-0.11_rc1.ebuild:
   net-libs/rb_libtorrent: Version bump && change HOMEPAGE
