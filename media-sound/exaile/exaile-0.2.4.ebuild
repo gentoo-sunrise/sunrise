@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}
 		mp3? ( >=media-plugins/gst-plugins-mad-0.10 )
 		trayicon? ( dev-python/gnome-python-extras )
 		ipod? ( >=media-libs/libgpod-0.3.2-r1
-				>=media-plugins/gst-plugins-faac )"
+				media-plugins/gst-plugins-faac )"
 
 S=${WORKDIR}/${MY_P}
 
