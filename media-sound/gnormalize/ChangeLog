@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  gnormalize-0.51.ebuild:
+  Add ~amd64 keyword
+
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -gnormalize-0.50.ebuild:
   drop old
