@@ -10,7 +10,7 @@ SRC_URI="http://www.dbmail.org/download/2.1/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE="ssl postgres mysql sqlite3 sieve"
 
 DEPEND="ssl? ( dev-libs/openssl )
