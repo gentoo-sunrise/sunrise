@@ -28,7 +28,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	./configure --prefix=/usr || die "configure failed"
+	./configure --prefix=/usr --qtdir=/usr || die "configure failed"
 	emake || die "emake failed"
 }
 
