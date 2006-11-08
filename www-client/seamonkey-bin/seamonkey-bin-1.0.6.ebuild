@@ -72,7 +72,7 @@ pkg_preinst() {
 pkg_postinst() {
 	if use amd64; then
 		echo
-		einfo "NB: You just installed a 32-bit seamonkeyx"
+		einfo "NB: You just installed a 32-bit seamonkey"
 	fi
 
 	update_mozilla_launcher_symlinks

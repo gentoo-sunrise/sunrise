@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -seamonkey-bin-1.0.5.ebuild, +seamonkey-bin-1.0.6.ebuild:
+  version bump, security bug 154449
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   seamonkey-bin-1.0.5.ebuild:
   added trailing slash to HOMEPAGE URL
