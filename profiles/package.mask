@@ -25,10 +25,6 @@
 # svn version should be masked
 =media-video/ttcut-9999
 
-# Markus Ullmann <jokey@gentoo.org> (05 Oct 2006)
-# using package.mask instead of -*
-www-client/seamonkey-bin
-
 # Jakub Moc <jakub@gentoo.org> (09 Aug 2006)
 # masked as the built_with_use checks are broken
 # and I don't understand what it checks for to fix it
