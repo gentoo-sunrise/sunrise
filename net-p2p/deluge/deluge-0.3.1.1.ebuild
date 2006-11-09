@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-S=${WORKDIR}/${PN}-0.3
+S="${WORKDIR}/${PN}-0.3"
 
 DEPEND="net-libs/rb_libtorrent
 	>dev-lang/python-2.3
