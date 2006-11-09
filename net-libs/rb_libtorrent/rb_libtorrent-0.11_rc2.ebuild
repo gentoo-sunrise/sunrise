@@ -12,7 +12,7 @@ SRC_URI="http://www.rasterbar.com/products/libtorrent/libtorrent-0.11-rc2.tar.gz
 
 MY_PN="${PN/rb_/}"
 MY_PV="${PV/_rc2/}"
-S=${WORKDIR}/${MY_PN}-${MY_PV}
+S="${WORKDIR}/${MY_PN}-${MY_PV}"
 
 LICENSE="GPL-2"
 SLOT="0"
