@@ -25,6 +25,7 @@ RDEPEND="${DEPEND}
 		>=media-libs/mutagen-1.6
 		>=media-plugins/gst-plugins-gconf-0.10
 		sys-apps/dbus
+		dev-python/elementtree
 		fam? ( app-admin/gamin )
 		mp3? ( >=media-plugins/gst-plugins-mad-0.10 )
 		flac? ( >=media-plugins/gst-plugins-flac-0.10 )
