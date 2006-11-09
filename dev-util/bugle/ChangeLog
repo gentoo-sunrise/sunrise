@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Nov 2006; Wolfgang Frisch (xororand) <xororand@frexx.de>
+  +files/digest-bugle-0.0.20061109, Manifest:
+  Updated Manifest
+
+  09 Nov 2006; Wolfgang Frisch (xororand) <xororand@frexx.de>
   +bugle-0.0.20061109.ebuild, +files/bugle-0.0.20061109-makefile-typo.patch:
   Version bump, corrected gtk+ dependency + new patch
 
