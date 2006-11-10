@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Nov 2006; Christian Helbling <helch@gmx.ch>
+  +files/60-libticables.perms, libticables2-20060723.ebuild,
+  +files/60-libticables.rules:
+  Added pam_console use flag
+
   11 Sep 2006; Stefan Schweizer <genstef@gentoo.org>
   libticables2-20060723.ebuild:
   useflags only work when it is possible to disable linking while compiling
