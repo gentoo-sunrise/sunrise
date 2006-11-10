@@ -47,8 +47,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc AUTHORS BUGS ChangeLog README README.* \
-		INSTALL* NEWS THANKS TODO
+	dodoc AUTHORS BUGS ChangeLog README* INSTALL* NEWS THANKS 
 	dodoc sql/mysql/*
 	dodoc sql/postgresql/*
 	dodoc sql/sqlite/*
@@ -73,7 +72,7 @@ src_install() {
 
 pkg_postinst() {
 	elog "If you update from 2.1.7 please apply 2_1_7-2_2_0.<YOUR_DB>.gz"
-	elog "to your dbmail database."
+	elog "to your dbmail database and run dbmail-util -by ."
 	einfo
 	elog "Please read /usr/share/doc/${PF}/INSTALL.gz"
 	elog "for remaining instructions on setting up dbmail users and "
