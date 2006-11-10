@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Christian Faulhammer <opfer@gentoo.org> (10 Nov 2006)
+# svn version should be masked
+=app-portage/gatt-svn-9999
+
 # David Shakaryan <omp@gentoo.org> (18 Oct 2006)
 # svn version should be masked
 =media-video/ttcut-9999
@@ -40,7 +44,7 @@ sci-mathematics/alberta
 games-fps/unreal-tournament-operationnapali
 
 # Cedric Krier <ced@ced.homedns.org> (28 Jun 2006)
-# Has dependencias that are masked
+# Has dependencies that are masked
 dev-util/nsis
 
 # Jakub Moc <jakub@gentoo.org> (09 Jun 2006)
