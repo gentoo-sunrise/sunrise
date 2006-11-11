@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Nov 2006; Cedric Krier <ced@ced.homedns.org> nufw-2.0.10.ebuild,
+  files/nufw-conf.d:
+  Add certificates
+
   28 Oct 2006; Cedric Krier <ced@ced.homedns.org> -nufw-2.0.4.ebuild,
   -files/nufw-2.0.4-configure.patch, -nufw-2.0.7.ebuild,
   -files/nufw-2.0.7-configure_ac.patch, -nufw-2.0.8.ebuild,

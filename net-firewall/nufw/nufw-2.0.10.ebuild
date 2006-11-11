@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit ssl-cert
+
 DESCRIPTION="An enterprise grade authenticating firewall based on netfilter"
 HOMEPAGE="http://www.nufw.org/"
 SRC_URI="http://www.nufw.org/download/${PN}/${P}-1.tar.bz2"
@@ -28,6 +30,15 @@ DEPEND=">=dev-libs/glib-2
 		net-firewall/libnetfilter_queue )
 	nfconntrack? ( net-firewall/libnetfilter_conntrack )"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -i \
+		-e "s/nuauth-key.pem/nuauth.key/" \
+		-e "s/nuauth-cert.pem/nuauth.pem/" \
+		conf/nuauth.conf || die "sed failed"
+}
 
 src_compile() {
 	econf \
@@ -62,13 +73,13 @@ src_install() {
 
 	insinto /etc/nufw
 	doins conf/nuauth.conf
+	docert nufw
+	docert nuauth
 	keepdir /var/run/nuauth
 
 	dodoc AUTHORS ChangeLog NEWS README TODO
 	docinto scripts
 	dodoc scripts/*
 	docinto conf
-	dodoc conf/*
-	docinto conf/certs
-	dodoc conf/certs/*
+	dodoc conf/*.{nufw,schema,conf,dump,xml}
 }
