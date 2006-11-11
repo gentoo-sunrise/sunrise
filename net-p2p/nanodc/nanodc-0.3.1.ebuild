@@ -11,14 +11,15 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~ppc"
 IUSE=""
-DEPEND="app-arch/bzip2
+RDEPEND="app-arch/bzip2
 	sys-libs/ncurses
-	dev-util/pkgconfig
-	dev-util/scons
 	sys-libs/zlib
 	>=dev-libs/libsigc++-2.0.0
 	>=dev-libs/glib-2.0.0"
-RDEPEND=${DEPEND}
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig
+	dev-util/scons"
+	
 BIGVERSION=nanodc-$(get_version_component_range 1-2 )
 
 pkg_setup() {
