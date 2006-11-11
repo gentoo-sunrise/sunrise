@@ -19,7 +19,7 @@ RDEPEND="app-arch/bzip2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	dev-util/scons"
-	
+
 BIGVERSION=nanodc-$(get_version_component_range 1-2 )
 
 pkg_setup() {
