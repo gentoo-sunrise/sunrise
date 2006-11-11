@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Nov 2006; Jakub Moc <jakub@gentoo.org> bugle-0.0.20061022.ebuild,
+  bugle-0.0.20061109.ebuild:
+  Add missing autotools dependencies, fix digest.
+
   09 Nov 2006; Wolfgang Frisch (xororand) <xororand@frexx.de>
   +files/digest-bugle-0.0.20061109, Manifest:
   Updated Manifest

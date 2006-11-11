@@ -3,6 +3,9 @@
 # $Header: $
 # Wolfgang Frisch <xororand@frexx.de>
 
+WANT_AUTOMAKE="latest"
+WANT_AUTOCONF="latest"
+
 inherit autotools toolchain-funcs
 
 DESCRIPTION="A tool for OpenGL debugging"
