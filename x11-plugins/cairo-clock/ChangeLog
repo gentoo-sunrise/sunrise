@@ -1,9 +1,0 @@
-# ChangeLog for x11-plugins/cairo-clock
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  11 Jun 2006; Stefan Schweizer <genstef@gentoo.org>
-  cairo-clock-0.3.2.ebuild:
-  Fix some minor whitespacing/quoting issues, this ebuild was importet from
-  bug 126181
-
