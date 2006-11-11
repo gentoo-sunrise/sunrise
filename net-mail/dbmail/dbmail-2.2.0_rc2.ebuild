@@ -47,7 +47,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc AUTHORS BUGS ChangeLog README* INSTALL* NEWS THANKS 
+	dodoc AUTHORS BUGS ChangeLog README* INSTALL* NEWS THANKS
 	dodoc sql/mysql/*
 	dodoc sql/postgresql/*
 	dodoc sql/sqlite/*
