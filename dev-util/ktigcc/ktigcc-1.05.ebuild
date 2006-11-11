@@ -34,18 +34,18 @@ src_install() {
 	dodoc NEWS
 
 	# mime-type registration for project files
-	newicon ${S}/images/ktigcc.png application-x-tigcc-project.png
+	newicon "${S}"/images/ktigcc.png application-x-tigcc-project.png
 
 	insinto /usr/share/mimelnk/application
-	doins ${FILESDIR}/x-tigcc-project.desktop
+	doins "${FILESDIR}"/x-tigcc-project.desktop
 
 	insinto /usr/share/mime/packages
-	doins ${FILESDIR}/ktigcc.xml
+	doins "${FILESDIR}"/ktigcc.xml
 
 	# menu entry
 	# can't use make_desktop_entry here, because I need mime-type association
-	newicon ${S}/images/icon.png ktigcc.png
-	domenu ${FILESDIR}/ktigcc.desktop
+	newicon "${S}"/images/icon.png ${PN}.png
+	domenu "${FILESDIR}"/ktigcc.desktop
 
 	# ktigcc wants to call ctags and not exuberant-ctags
 	dosym exuberant-ctags /usr/bin/ctags
