@@ -65,9 +65,9 @@ pkg_postinst() {
 	enewgroup ${TINYERP_GROUP}
 	enewuser ${TINYERP_USER} -1 -1 -1 ${TINYERP_GROUP}
 
-	einfo "In order to setup the initial database, run:"
-	einfo "  emerge --config =${CATEGORY}/${PF}"
-	einfo "Be sure the database is started before"
+	elog "In order to setup the initial database, run:"
+	elog "  emerge --config =${CATEGORY}/${PF}"
+	elog "Be sure the database is started before"
 }
 
 pquery() {
