@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright 2006 David Shakaryan <d@ompty.org>
+# Copyright 2006 David Shakaryan <omp@gentoo.org>
 # Distributed under the terms of the GNU General Public License v2
 
 # Change portage tree directory if you have it elsewhere.
@@ -12,8 +12,8 @@ if [ $1 ]; then
 fi
 
 # Checking, displaying, etc.
-for PACKAGE in *-*/*; do
-	if [[ -d ${PORTDIR}/${PACKAGE} ]] && [[ $(basename ${PACKAGE}) != "CVS" ]] && echo ${PACKAGE} | grep -qv ${PORTDIR}/profiles/categories; then
+for PACKAGE in */*; do
+	if [[ -d ${PORTDIR}/${PACKAGE} ]] && [[ $(basename ${PACKAGE}) != "CVS" ]] && grep -q $(dirname ${PACKAGE}) ${PORTDIR}/profiles/categories; then
 		# Reset versions from last package checked.
 		PORTPACK_VERS=""
 		OVERPACK_VERS=""
