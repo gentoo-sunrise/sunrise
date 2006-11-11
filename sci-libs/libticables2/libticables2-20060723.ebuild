@@ -17,8 +17,10 @@ DEPEND=">=dev-libs/glib-2
 	dev-libs/libusb
 	nls? ( sys-devel/gettext )"
 
-RDEPEND="${DEPEND}
-	pam_console? ( || ( sys-auth/pam_console <sys-libs/pam-0.99 ) )"
+RDEPEND=">=dev-libs/glib-2
+	dev-libs/libusb
+	pam_console? ( || ( sys-auth/pam_console <sys-libs/pam-0.99 ) )
+	nls? ( virtual/libintl )"
 
 S=${WORKDIR}/libticables
 
@@ -41,14 +43,13 @@ src_install() {
 	dohtml docs/html/*
 	if use pam_console; then
 		insinto /etc/udev/rules.d
-		doins ${FILESDIR}/60-libticables.rules
+		doins "${FILESDIR}"/60-libticables.rules
 		insinto /etc/security/console.perms.d
-		doins ${FILESDIR}/60-libticables.perms
+		doins "${FILESDIR}"/60-libticables.perms
 	fi
 }
 
 pkg_postinst() {
-	einfo "Please read the file:"
-	einfo "\"/usr/share/doc/${PF}/README.gz\""
-	einfo "if you encounter any problem with a link cable"
+	elog "Please read /usr/share/doc/${PF}/README.gz"
+	elog "if you encounter any problem with a link cable"
 }

@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Nov 2006; Jakub Moc <jakub@gentoo.org> libticables2-20060723.ebuild:
+  Quoting, fix RDEPEND on gettext, cosmetics
+
   10 Nov 2006; Christian Helbling <helch@gmx.ch>
   +files/60-libticables.perms, libticables2-20060723.ebuild,
   +files/60-libticables.rules:
