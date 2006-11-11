@@ -22,13 +22,14 @@ RDEPEND="x11-libs/libXrender
 	x86? (
 		>=sys-libs/lib-compat-1.0-r2
 		>=x11-libs/gtk+-2.2
+		=virtual/libstdc++-3.3
 	)
 	amd64? (
 		>=app-emulation/emul-linux-x86-baselibs-1.0
 		>=app-emulation/emul-linux-x86-gtklibs-1.0
+		app-emulation/emul-linux-x86-compat
 	)
 	>=www-client/mozilla-launcher-1.41
-	=virtual/libstdc++-3.3
 	virtual/libc"
 
 S=${WORKDIR}/seamonkey

@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Nov 2006; Jakub Moc <jakub@gentoo.org> seamonkey-bin-1.0.6.ebuild:
+  Don't force virtual/libstdc++-3.3 on amd64, not useful at all.
+
   08 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -seamonkey-bin-1.0.5.ebuild, +seamonkey-bin-1.0.6.ebuild:
   version bump, security bug 154449
