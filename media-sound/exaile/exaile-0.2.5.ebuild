@@ -4,7 +4,7 @@
 
 inherit eutils toolchain-funcs
 
-MY_P="${PN}_0.2.5b"
+MY_P="${PN}_${PV}"
 
 DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for GTK"
 HOMEPAGE="http://www.exaile.org/"
@@ -25,7 +25,6 @@ RDEPEND="${DEPEND}
 		>=media-libs/mutagen-1.6
 		>=media-plugins/gst-plugins-gconf-0.10
 		sys-apps/dbus
-		dev-python/elementtree
 		fam? ( app-admin/gamin )
 		mp3? ( >=media-plugins/gst-plugins-mad-0.10 )
 		flac? ( >=media-plugins/gst-plugins-flac-0.10 )
