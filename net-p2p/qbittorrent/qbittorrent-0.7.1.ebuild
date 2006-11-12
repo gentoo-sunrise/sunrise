@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=net-libs/rb_libtorrent-0.11_rc1
+DEPEND=">=net-libs/rb_libtorrent-0.11
 	>=x11-libs/qt-4.1
 	>dev-lang/python-2.3
 	dev-libs/boost
