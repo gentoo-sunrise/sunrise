@@ -4,7 +4,7 @@
 
 inherit eutils toolchain-funcs
 
-MY_P="${PN}_${PV}"
+MY_P=${PN}_${PV}
 
 DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for GTK"
 HOMEPAGE="http://www.exaile.org/"
@@ -33,7 +33,7 @@ RDEPEND="${DEPEND}
 		ipod? ( >=media-libs/libgpod-0.3.2-r1
 				>=media-plugins/gst-plugins-faac-0.10 )"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	if ! built_with_use sys-apps/dbus python; then

@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Nov 2006; Tiziano Müller <dev-zero@gentoo.org> -exaile-0.2.4.ebuild,
+  exaile-0.2.5.ebuild:
+  Cosmetics. Old version removed.
+
   12 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   -exaile-0.2.5_beta.ebuild, +exaile-0.2.5.ebuild:
   Version bump, remove old beta version. Keep old version just in case for
