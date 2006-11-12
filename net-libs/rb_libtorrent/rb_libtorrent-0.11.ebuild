@@ -6,13 +6,12 @@ WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 inherit eutils autotools
 
+MY_P="${P/rb_/}"
+S=${WORKDIR}/${MY_P}
+
 DESCRIPTION="BitTorrent library written in C++ for *nix."
 HOMEPAGE="http://www.rasterbar.com/products/libtorrent/"
-SRC_URI="http://www.rasterbar.com/products/libtorrent/libtorrent-0.11-rc2.tar.gz"
-
-MY_PN="${PN/rb_/}"
-MY_PV="${PV/_rc2/}"
-S="${WORKDIR}/${MY_PN}-${MY_PV}"
+SRC_URI="mirror://sourceforge/libtorrent/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
