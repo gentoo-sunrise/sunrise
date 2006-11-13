@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  overlay-utils-0.2.ebuild:
+  Add ~amd64.
+
   05 Nov 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
   +overlay-utils-0.2.ebuild:
   Updated to work with the changed =~ operator semantics in Bash 3.2, at least
