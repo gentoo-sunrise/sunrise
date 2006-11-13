@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Nov 2006; Christian Faulhammer <opfer@gentoo.org>
+  +files/digest-blocksshd-1.0, Manifest:
+  recreate Manifest
+
   02 Nov 2006; Markus Ullmann <jokey@gentoo.org> -blocksshd-0.6.ebuild,
   -files/blocksshd-0.6.conf-dir-change.patch,
   -files/blocksshd-0.6.etc-dir-change.patch, -blocksshd-0.7.ebuild,
