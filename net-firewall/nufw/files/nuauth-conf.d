@@ -1,2 +1,0 @@
-
-NUAUTH_OPTIONS=""
