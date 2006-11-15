@@ -16,20 +16,12 @@ IUSE="arts"
 
 need-kde 3.3
 
-DEPEND="
-	arts? ( kde-base/arts )
-	"
+DEPEND="arts? ( kde-base/arts )"
 RDEPEND="${DEPEND}"
 
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-}
-
 src_compile() {
-	local myconf="
-		$(use_with arts) \
-	"
+	local myconf="${myconf} \
+		$(use_with arts)"
+
 	kde_src_compile || die "kde_src_compile failed"
 }
