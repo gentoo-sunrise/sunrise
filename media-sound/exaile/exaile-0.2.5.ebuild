@@ -39,7 +39,7 @@ RDEPEND="${DEPEND}
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	if has_version "<sys-apps/dbus-0.94" ; then
+	if has_version "<sys-apps/dbus-0.90" ; then
 		if ! built_with_use sys-apps/dbus python; then
 			eerror "dbus has to be built with python support"
 			die "dbus python use-flag not set"
