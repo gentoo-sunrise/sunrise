@@ -25,7 +25,8 @@ RDEPEND="${DEPEND}
 		>=media-libs/mutagen-1.6
 		>=media-plugins/gst-plugins-gconf-0.10
 		dev-python/elementtree
-		sys-apps/dbus
+		|| ( >=dev-python/dbus-python-0.71
+			( <sys-apps/dbus-0.90 >=sys-apps/dbus-0.34 ) )
 		fam? ( app-admin/gamin )
 		mp3? ( >=media-plugins/gst-plugins-mad-0.10 )
 		flac? ( >=media-plugins/gst-plugins-flac-0.10 )
@@ -38,9 +39,11 @@ RDEPEND="${DEPEND}
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	if ! built_with_use sys-apps/dbus python; then
-		eerror "dbus has to be built with python support"
-		die "dbus python use-flag not set"
+	if has_version "<sys-apps/dbus-0.94" ; then
+		if ! built_with_use sys-apps/dbus python; then
+			eerror "dbus has to be built with python support"
+			die "dbus python use-flag not set"
+		fi
 	fi
 
 	if use ipod && ! built_with_use media-libs/libgpod python ; then

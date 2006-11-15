@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Nov 2006; Jakub Moc <jakub@gentoo.org> exaile-0.2.5.ebuild:
+  dbus-1.0 porting
+
   13 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   exaile-0.2.5.ebuild:
   Fixed dependecies, new USE flag for Musepack support
