@@ -19,7 +19,7 @@ RDEPEND=">=perl-core/Sys-Syslog-0.16
 	>=dev-perl/Sys-Hostname-Long-1.2
 	>=dev-perl/File-Tail-0.99.1
 	>=dev-perl/Net-DNS-0.53-r1
-	>=Net-Subnets-0.21
+	>=dev-perl/Net-Subnets-0.21
 	>=perl-core/Getopt-Long-2.34
 	>=net-firewall/iptables-1.3.5-r1"
 
