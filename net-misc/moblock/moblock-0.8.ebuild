@@ -15,8 +15,8 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=net-firewall/libnetfilter_queue-0.0.11
-		>=net-firewall/libnfnetlink-0.0.14"
+DEPEND=">=net-libs/libnetfilter_queue-0.0.11
+		>=net-libs/libnfnetlink-0.0.14"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
