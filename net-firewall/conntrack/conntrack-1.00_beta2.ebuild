@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="net-firewall/libnfnetlink
-	net-firewall/libnetfilter_conntrack"
+DEPEND="net-libs/libnfnetlink
+	net-libs/libnetfilter_conntrack"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
