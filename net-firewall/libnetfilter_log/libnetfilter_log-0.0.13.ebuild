@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="net-firewall/libnfnetlink"
+DEPEND="net-libs/libnfnetlink"
 RDEPEND="${DEPEND}"
 
 CONFIG_CHECK="NETFILTER_NETLINK_LOG"
