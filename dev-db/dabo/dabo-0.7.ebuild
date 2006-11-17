@@ -12,10 +12,14 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 S=${WORKDIR}/${PN}
+RESTRICT="mirror"
 
 DEPEND=">=dev-python/setuptools-0.6_alpha9"
 
-RDEPEND=">=dev-python/wxpython-2.5.2.8
+RDEPEND=">=dev-python/wxpython-2.6.1.1
+	!>=dev-python/wxpython-2.7
+	>=dev-db/sqlite-3.0
+	>=dev-python/pysqlite-2.0
 	${DEPEND}"
 
 src_install() {
