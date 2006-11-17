@@ -4,8 +4,8 @@
 
 inherit eutils
 
-DESCRIPTION="Powerful text searches on Linux using regular expressions"
-HOMEPAGE="http://searchmonkey.sourceforge.net/index.php/Main_Page"
+DESCRIPTION="Powerful text searches using regular expressions"
+HOMEPAGE="http://searchmonkey.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -14,11 +14,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.6"
-
 DEPEND=${RDEPEND}
 
 src_install() {
-	make DESTDIR=${D} install || die "make install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS ChangeLog INSTALL NEWS README
 	make_desktop_entry searchmonkey searchmonkey /usr/share/searchmonkey/pixmaps/searchmonkey-32x32.png
 }
