@@ -1,0 +1,9 @@
+# ChangeLog for app-text/searchmonkey
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  +searchmonkey-0.7.2.ebuild, +metadata.xml:
+  New ebuild from bug 147669, thanks to ryszard <ryszardzonk at yahoo.com> for
+  the initial ebuild
+
