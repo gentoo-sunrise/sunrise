@@ -49,15 +49,15 @@ src_install() {
 	newconfd "${FILESDIR}"/tinyerp-conf.d tinyerp
 
 	keepdir /var/run/tinyerp
-	fowners ${TINYERP_USER} ${TINYERP_GROUP} /var/run/tinyerp
-
 	keepdir /var/log/tinyerp
-	fowners ${TINYERP_USER} ${TINYERP_GROUP} /var/log/tinyerp
 }
 
 pkg_postinst() {
 	enewgroup ${TINYERP_GROUP}
 	enewuser ${TINYERP_USER} -1 -1 -1 ${TINYERP_GROUP}
+
+	fowners ${TINYERP_USER} ${TINYERP_GROUP} /var/run/tinyerp
+	fowners ${TINYERP_USER} ${TINYERP_GROUP} /var/log/tinyerp
 
 	elog "In order to setup the initial database, run:"
 	elog "  emerge --config =${CATEGORY}/${PF}"
