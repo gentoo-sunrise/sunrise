@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="A mail storage and retrieval daemon that uses MySQL or PostgreSQL as its data store"
 HOMEPAGE="http://www.dbmail.org/"
-SRC_URI="http://gentoo.fh-luh.de/files/dbmail/${P}.tar.gz"
+SRC_URI="http://www.dbmail.org/download/2.2/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
