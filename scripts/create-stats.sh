@@ -9,7 +9,6 @@ ebuilds=$(ls *-*/* -d)
 #	ebuilds[$a]=${i}
 #	a=$[ $a+1 ];
 #done
-
 # second loop
 #a=0
 #for i in ${bugsin}; do
