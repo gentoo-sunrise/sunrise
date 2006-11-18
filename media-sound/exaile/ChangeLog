@@ -3,6 +3,10 @@
 # $Header: $
 
   18 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  -exaile-0.2.5.ebuild:
+  Removing old version
+
+  18 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   +exaile-0.2.6.ebuild:
   Version bump
 
