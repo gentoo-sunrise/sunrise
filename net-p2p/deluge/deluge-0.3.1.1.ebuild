@@ -27,7 +27,7 @@ src_install() {
 	doins -r *.py po glade pixmaps po
 
 	newicon pixmaps/deluge-32.png deluge.png
-	make_wrapper ${PN} "/usr/bin/python /usr/lib/${PN}/deluge.py"
+	make_wrapper ${PN} "/usr/bin/python /usr/$(get_libdir)/${PN}/deluge.py"
 	make_desktop_entry ${PN} deluge
 
 	dodoc ChangeLog README
