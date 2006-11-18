@@ -58,13 +58,15 @@ src_install() {
 	keepdir /var/log/tinyerp
 }
 
-pkg_postinst() {
+pkg_preinst() {
 	enewgroup ${TINYERP_GROUP}
 	enewuser ${TINYERP_USER} -1 -1 -1 ${TINYERP_GROUP}
 
 	fowners ${TINYERP_USER}:${TINYERP_GROUP} /var/run/tinyerp
 	fowners ${TINYERP_USER}:${TINYERP_GROUP} /var/log/tinyerp
+}
 
+pkg_postinst() {
 	elog "In order to setup the initial database, run:"
 	elog "  emerge --config =${CATEGORY}/${PF}"
 	elog "Be sure the database is started before"
