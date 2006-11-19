@@ -15,7 +15,6 @@ IUSE=""
 S=${WORKDIR}/${PN}
 
 RDEPEND=">=dev-lang/python-2.3
-		net-libs/rb_libtorrent
 		dev-libs/boost"
 DEPEND="${RDEPEND}"
 
