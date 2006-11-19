@@ -13,8 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="offensive"
 
-DEPEND=">=x11-libs/gtk+-2.0
-	media-libs/gdk-pixbuf"
+DEPEND=">=x11-libs/gtk+-2.0"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
