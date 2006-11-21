@@ -5,7 +5,7 @@
 inherit kde
 
 DESCRIPTION="A simple KDE network monitor that show rx/tx LEDs or numeric information about the transfer rate of any network interface in a system tray."
-HOMEPAGE="http://knetstats.sourceforge.net"
+HOMEPAGE="http://knetstats.sourceforge.net/"
 SRC_URI="mirror://sourceforge/knetstats/${P}.tar.bz2"
 
 LICENSE="GPL-2"
