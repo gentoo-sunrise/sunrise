@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Nov 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
+  dev-db/daboide: version bump
+  +daboide-0.7
+
   23 Jun 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
   Initial import, bug 109393
 
