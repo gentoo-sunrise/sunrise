@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Nov 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
+  dev-db/dabo: version bump
+  +dabo-0.7.1
+
   17 Nov 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
   dabo: Version bump
   +dabo-0.7
