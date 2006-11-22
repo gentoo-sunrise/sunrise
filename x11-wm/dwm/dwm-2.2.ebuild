@@ -14,8 +14,7 @@ KEYWORDS="~x86"
 IUSE="savedconfig"
 
 DEPEND="x11-libs/libX11"
-RDEPEND="${DEPEND}
-	sys-apps/coreutils"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
