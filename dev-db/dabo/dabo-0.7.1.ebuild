@@ -21,11 +21,10 @@ RDEPEND=">=dev-python/wxpython-2.6.1.1
 		${DEPEND}"
 
 RESTRICT="mirror"
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 src_install() {
 	${python} setup.py install --root=${D} --no-compile \
 		--single-version-externally-managed || die "setup.py install failed"
-
 	dodoc ANNOUNCE AUTHORS ChangeLog README TODO
 }
