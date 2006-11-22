@@ -4,20 +4,21 @@
 
 DESCRIPTION="SLiM (Simple Login Manager) themes pack"
 HOMEPAGE="http://slim.berlios.de/"
-SRC_URI="http://download.berlios.de/slim/slim-lunar-0.4.tar.bz2
-	http://download.berlios.de/slim/slim-archlinux.tar.gz
-	http://download.berlios.de/slim/slim-zenwalk.tar.gz
-	http://download.berlios.de/slim/slim-parallel-dimensions.tar.gz
-	http://download.berlios.de/slim/slim-capernoited.tar.gz
-	http://download.berlios.de/slim/slim-mindlock.tar.gz
-	http://download.berlios.de/slim/slim-flower2.tar.gz"
+SRC_URI="mirror://berlios/slim/slim-lunar-0.4.tar.bz2
+	mirror://berlios/slim/slim-archlinux.tar.gz
+	mirror://berlios/slim/slim-zenwalk.tar.gz
+	mirror://berlios/slim/slim-parallel-dimensions.tar.gz
+	mirror://berlios/slim/slim-capernoited.tar.gz
+	mirror://berlios/slim/slim-mindlock.tar.gz
+	mirror://berlios/slim/slim-flower2.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-DEPEND="x11-misc/slim"
-RDEPEND=""
-RESTRICT="strip binchecks"
+
+DEPEND=""
+RDEPEND="x11-misc/slim"
 
 S=${WORKDIR}
 
