@@ -3,22 +3,23 @@
 # $Header: $
 
 DESCRIPTION="Multiuser IRC proxy with ssl support"
-SRC_URI="http://download.berlios.de/bip/${P}.tar.bz2"
+SRC_URI="mirror://berlios/bip/${P}.tar.bz2"
 HOMEPAGE="http://bip.berlios.de/"
 
-SLOT="0"
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~x86"
 IUSE="ssl"
 
 DEPEND="ssl? ( dev-libs/openssl )"
+RDEPEND="$DEPEND"
 
 src_compile() {
 	local myconf=""
 	use ssl || myconf="--disable-ssl"
 
 	econf ${myconf} || die "econf failed"
-	make || die "make failed"
+	emake || die "make failed"
 }
 
 src_install() {
