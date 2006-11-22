@@ -12,7 +12,7 @@ S=${WORKDIR}/${MY_P}
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~x86 ~amd64"
 
 DEPEND="dev-lang/perl
 	>=dev-perl/perl-tk-804.025

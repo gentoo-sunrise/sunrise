@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Nov 2006; Christian Berendt (lhunephel) <christian@suppentopf.net>
+  mapivi-0.9.1.ebuild:
+  removed the ppc keyword.
+
+  22 Nov 2006; Christian Berendt (lhunephel) <christian@suppentopf.net>
   +mapivi-0.9.1.ebuild:
   Rewritten ebuild for bug 133333, thanks to genstef for reviewing
 
