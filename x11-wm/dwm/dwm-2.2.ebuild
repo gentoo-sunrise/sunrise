@@ -4,8 +4,8 @@
 
 inherit toolchain-funcs
 
-DESCRIPTION="a dynamic window manager for X11"
-HOMEPAGE="http://suckless.org/view/dynamic+window+manager"
+DESCRIPTION="A dynamic window manager for X11"
+HOMEPAGE="http://dwm.suckless.org/"
 SRC_URI="http://suckless.org/download/${P}.tar.gz"
 
 LICENSE="MIT"
@@ -14,8 +14,7 @@ KEYWORDS="~x86"
 IUSE="savedconfig"
 
 DEPEND="x11-libs/libX11"
-RDEPEND="${DEPEND}
-	sys-apps/coreutils"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
