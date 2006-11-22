@@ -2,48 +2,44 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils qt4
+inherit eutils
 
 DESCRIPTION="Tool for removing advertisements from recorded MPEG files"
 HOMEPAGE="http://ttcut.tritime.org/"
-SRC_URI="mirror://berlios/${PN}/${P/_/-}.tar.gz"
+SRC_URI="http://download.berlios.de/${PN}/${P/_/-}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE="ttmpeg2"
 
-DEPEND="$(qt_min_version 4.1)
-		>=media-libs/libmpeg2-0.4.0"
+DEPEND=">=media-libs/libmpeg2-0.4.0
+	>=x11-libs/qt-4.1.0"
 
 RDEPEND="${DEPEND}
-		media-video/mplayer
-		media-video/dvdauthor
-		media-video/transcode
-		media-video/ffmpeg"
+	media-video/mplayer
+	media-video/dvdauthor
+	media-video/transcode
+	media-video/ffmpeg"
 
 S=${WORKDIR}/${PN}
 
 src_compile() {
 	if use ttmpeg2 ; then
-		qmake ttmpeg2.pro -o Makefile.ttmpeg2 || \
-			die "configuring ttpmeg2 failed"
-		make -f Makefile.ttmpeg2 || die "emake ttmpeg2 failed"
+		qmake ttmpeg2.pro -o Makefile.ttmpeg2
+		make -f Makefile.ttmpeg2
 	fi
 
-	qmake ttcut.pro -o Makefile.ttcut || \
-		die "configuring ttcut failed"
-	emake -f Makefile.ttcut || die "emake failed"
+	qmake ttcut.pro -o Makefile.ttcut
+	make -f Makefile.ttcut
 }
 
 src_install() {
 	if use ttmpeg2 ; then
-		dobin ttmpeg2 || die "Couldn't install ttmpeg2"
-		make_desktop_entry ttmpeg2 Ttmpeg2 "" AudioVideoEditing || \
-			die "Could make ttmpeg2 desktop entry"
+		dobin ttmpeg2
+		make_desktop_entry ttmpeg2 Ttmpeg2 "" AudioVideoEditing
 	fi
 
-	dobin ttcut || die "Couldn't install ttcut"
-	make_desktop_entry ttcut Ttcut "" AudioVideoEditing || \
-		die "Could make ttcut desktop entry"
+	dobin ttcut
+	make_desktop_entry ttcut Ttcut "" AudioVideoEditing
 }

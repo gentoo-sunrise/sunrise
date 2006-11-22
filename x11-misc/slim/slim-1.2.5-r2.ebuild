@@ -6,7 +6,7 @@ inherit eutils toolchain-funcs
 
 DESCRIPTION="SLiM - Simple Login Manager"
 HOMEPAGE="http://slim.berlios.de/"
-SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
+SRC_URI="http://download.berlios.de/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -14,13 +14,14 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="|| ( ( x11-proto/xproto
-			x11-libs/libXmu
-			x11-libs/libX11
-			x11-libs/libXpm
-			x11-libs/libXft )
-			<virtual/x11-7	)
-		media-libs/libpng
-		media-libs/jpeg"
+		x11-libs/libXmu
+		x11-libs/libX11
+		x11-libs/libXpm
+		x11-libs/libXft )
+		<virtual/x11-7
+	)
+	media-libs/libpng
+	media-libs/jpeg"
 RDEPEND="${DEPEND}
 	media-fonts/corefonts"
 

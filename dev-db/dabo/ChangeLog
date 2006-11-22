@@ -2,15 +2,6 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  22 Nov 2006; Charlie Shepherd <masterdriverz@gmail.com> ChangeLog,
-  Manifest, dabo-0.7.1.ebuild:
-  Stylistic change: remove $@ in src_install, indent RDEPEND properly and
-  reorder variable definitions at the start
-
-  22 Nov 2006; Charlie Shepherd <masterdriverz@gmail.com> Manifest:
-  Stylistic change: remove $@ in src_install, indent RDEPEND properly and
-  reorder variable definitions at the start
-
   21 Nov 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
   dev-db/dabo: version bump
   +dabo-0.7.1

@@ -4,7 +4,7 @@
 
 DESCRIPTION="Media Tag Tools - a mp3/ogg/flac tagger"
 HOMEPAGE="http://mediatagtools.berlios.de"
-SRC_URI="mirror://berlios/mediatagtools/mediatagtools-0.2.tar.bz2"
+SRC_URI="mirror:/berlios/mediatagtools/mediatagtools-0.2.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
