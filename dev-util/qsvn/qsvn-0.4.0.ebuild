@@ -6,7 +6,7 @@ inherit qt4
 
 DESCRIPTION="GUI frontend to the Subversion revision system"
 HOMEPAGE="http://ar.oszine.de/projects/qsvn/"
-SRC_URI="http://download.berlios.de/${PN}/${P}-src.tar.gz"
+SRC_URI="mirror://berlios/${PN}/${P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -14,8 +14,8 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="$(qt4_min_version 4)
-	dev-util/subversion
-	dev-libs/apr"
+		dev-util/subversion
+		dev-libs/apr"
 RDEPEND="${DEPEND}"
 
 src_compile() {
