@@ -4,15 +4,15 @@
 
 inherit eutils toolchain-funcs
 
-KEYWORDS="~x86"
-
 MY_P=${P/mob/MoB}
 
 DESCRIPTION="A linux console application that blocks connections from/to hosts listed in a file in peerguardian format using iptables."
 HOMEPAGE="http://moblock.berlios.de/"
 SRC_URI="http://download.berlios.de/${PN}/${MY_P}-i586.tar.bz2"
+
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=net-libs/libnetfilter_queue-0.0.11
