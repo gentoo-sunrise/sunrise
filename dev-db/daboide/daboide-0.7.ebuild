@@ -14,10 +14,9 @@ IUSE=""
 S=${WORKDIR}/${PN}
 RESTRICT="mirror"
 
-DEPEND=""
+DEPEND="!<=dev-db/daboide-0.5.6"
 
-RDEPEND="!<=dev-db/daboide-0.5.6
-	>=dev-python/wxpython-2.6.1.1
+RDEPEND=">=dev-python/wxpython-2.6.1.1
 	>=dev-db/dabo-0.7
 	dev-python/imaging
 	dev-python/reportlab
@@ -37,7 +36,7 @@ src_install() {
 	doins -r *
 
 	# pick out those files which should be executable
-	for EFIL in $(grep -RI '^#!' * | cut -d : -f 1 | grep -iv '.txt$')
+	for EFIL in $(grep -RI '^#!' * | cut -d : -f 1 | grep -iv '\.txt$')
 	do
 		# and if there are any - install them
 		exeinto ${INS}/${EFIL%%$(basename ${EFIL})}
