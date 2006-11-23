@@ -3,6 +3,10 @@
 # $Header: $
 
   23 Nov 2006; Robert Buchholz (rbu) <rob@thetruth.de>
+  -libspiff-0.5.1.ebuild:
+  removing old version
+
+  23 Nov 2006; Robert Buchholz (rbu) <rob@thetruth.de>
   +libspiff-0.5.2.ebuild:
   version bump
 
