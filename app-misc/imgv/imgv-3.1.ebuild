@@ -26,13 +26,13 @@ src_install() {
 	INST_DIR="/usr/lib/python${PYVER}/site-packages/${PN}"
 
 	insinto ${INST_DIR}
-	cd ${S}
+	cd "${S}"
 	doins -r *.py
 	insinto ${INST_DIR}/data
-	cd ${S}/data
+	cd "${S}/data"
 	doins -r *
 
-	cd ${S}
+	cd "${S}"
 	echo "IMGV_HOME=${INST_DIR}" >> 90imgv
 	insinto /etc/env.d
 	doins 90imgv
