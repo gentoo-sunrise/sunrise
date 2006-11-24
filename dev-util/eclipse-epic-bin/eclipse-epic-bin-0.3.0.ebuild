@@ -19,7 +19,7 @@ S=${WORKDIR}/org.epic.updatesite
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	for jar in `find . -iname *.jar`; do
 		unzip ${jar} -d ${jar%.jar}
