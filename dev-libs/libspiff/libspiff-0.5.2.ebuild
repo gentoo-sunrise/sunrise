@@ -21,7 +21,7 @@ src_compile() {
 
 	if use doc; then
 		ebegin "Creating documentation"
-		cd ${S}/doc
+		cd "${S}/doc"
 		doxygen Doxyfile
 		eend 0
 	fi
@@ -29,7 +29,7 @@ src_compile() {
 
 
 src_install() {
-	emake DESTDIR=${D} install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 	dodoc README AUTHORS ChangeLog
 
 	if use doc; then
