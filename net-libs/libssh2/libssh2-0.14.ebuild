@@ -17,7 +17,7 @@ DEPEND="dev-libs/openssl
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	epatch "${FILESDIR}/${P}-configure.patch"
 	epatch "${FILESDIR}/${P}-banner-wait.patch"
@@ -27,6 +27,5 @@ src_unpack() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-
 	dodoc README
 }
