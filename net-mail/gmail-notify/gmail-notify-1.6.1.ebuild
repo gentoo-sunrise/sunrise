@@ -26,7 +26,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-conf-perms.patch"
 	epatch "${FILESDIR}/${PN}-trayicon.patch"
 	epatch "${FILESDIR}/${PN}-ubuntu-patches.patch"
-	cd ${S}
+	cd "${S}"
 	sed -i -e "s/GENTOO_PYVER/${PYVER}/g" notifier.py || die "Sed broke!"
 	sed -i -e "s/GENTOO_PYVER/${PYVER}/g" GmailConfig.py || die "Sed broke!"
 }
