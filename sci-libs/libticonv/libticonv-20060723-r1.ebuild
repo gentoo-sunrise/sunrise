@@ -24,8 +24,8 @@ S=${WORKDIR}/${PN}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${PATCHES}
+	cd "${S}"
+	epatch "${PATCHES}"
 }
 
 src_compile() {
