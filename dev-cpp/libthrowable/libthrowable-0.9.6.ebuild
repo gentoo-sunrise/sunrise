@@ -36,7 +36,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "installing ${PF} failed"
+	emake DESTDIR="${D}" install || die "installing ${PF} failed"
 	dodoc README NEWS AUTHORS
 
 	if use examples; then
