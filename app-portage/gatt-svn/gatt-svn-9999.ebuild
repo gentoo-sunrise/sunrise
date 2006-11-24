@@ -34,7 +34,7 @@ pkg_setup() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "installing ${PF} failed"
+	emake DESTDIR="${D}" install || die "installing ${PF} failed"
 	dodoc README NEWS AUTHORS ChangeLog
 	newdoc .todo TODO
 }
