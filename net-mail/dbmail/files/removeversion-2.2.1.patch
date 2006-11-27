@@ -1,0 +1,38 @@
+diff -ru dbmail-2.2.1.orig/imap4.c dbmail-2.2.1/imap4.c
+--- dbmail-2.2.1.orig/imap4.c	2006-11-16 12:21:49.000000000 +0100
++++ dbmail-2.2.1/imap4.c	2006-11-22 08:21:49.000000000 +0100
+@@ -117,8 +117,8 @@
+ 
+ 	/* greet user */
+ 	if (dbmail_imap_session_printf(session,
+-		     "* OK dbmail imap (protocol version 4r1) server %s "
+-		     "ready to run\r\n", IMAP_SERVER_VERSION) < 0) {
++		     "* OK imap (protocol version 4r1) server "
++		     "ready \r\n", IMAP_SERVER_VERSION) < 0) {
+ 		dbmail_imap_session_delete(session);
+ 		return EOF;
+ 	}
+diff -ru dbmail-2.2.1.orig/lmtp.c dbmail-2.2.1/lmtp.c
+--- dbmail-2.2.1.orig/lmtp.c	2006-11-06 09:32:31.000000000 +0100
++++ dbmail-2.2.1/lmtp.c	2006-11-22 08:22:06.000000000 +0100
+@@ -134,7 +134,7 @@
+ 
+ 	if (ci->tx) {
+ 		/* sending greeting */
+-		ci_write(ci->tx, "220 %s DBMail LMTP service ready to rock\r\n", myhostname);
++		ci_write(ci->tx, "220 %s LMTP service ready\r\n", myhostname);
+ 		fflush(ci->tx);
+ 	} else {
+ 		TRACE(TRACE_MESSAGE, "TX stream is null!");
+diff -ru dbmail-2.2.1.orig/pop3.c dbmail-2.2.1/pop3.c
+--- dbmail-2.2.1.orig/pop3.c	2006-11-06 09:32:31.000000000 +0100
++++ dbmail-2.2.1/pop3.c	2006-11-22 08:22:20.000000000 +0100
+@@ -97,7 +97,7 @@
+ 
+ 	if (ci->tx) {
+ 		/* sending greeting */
+-		fprintf(ci->tx, "+OK DBMAIL pop3 server ready to rock %s\r\n",
++		fprintf(ci->tx, "+OK pop3 server ready\r\n",
+ 			session.apop_stamp);
+ 		fflush(ci->tx);
+ 	} else {

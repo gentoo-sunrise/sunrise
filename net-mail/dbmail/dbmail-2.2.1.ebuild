@@ -22,7 +22,7 @@ DEPEND="ssl? ( dev-libs/openssl )
 	app-text/xmlto
 	sys-libs/zlib
 	>=dev-libs/gmime-2.1
-	>=dev-libs/glib-2.6"
+	>=dev-libs/glib-2.8"
 
 pkg_setup() {
 	enewgroup dbmail
@@ -30,6 +30,8 @@ pkg_setup() {
 }
 
 src_compile() {
+	epatch ${FILESDIR}/removeversion-${PV}.patch
+
 	use sqlite3 && myconf="--with-sqlite"
 	use ldap && myconf=${myconf}" --with-auth-ldap"
 
