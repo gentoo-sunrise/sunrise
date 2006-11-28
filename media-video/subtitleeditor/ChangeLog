@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
+  -subtitleeditor-0.9.1.ebuild:
+  remove obsolete old ebuilds, thanks pcheck
+
   01 Nov 2006; Markus Ullmann <jokey@gentoo.org>
   subtitleeditor-0.11.1.ebuild:
   Fix DEPEND
