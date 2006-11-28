@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Markus Ullmann <jokey@gentoo.org> emelfm2-0.3.ebuild:
+  EmptyLine
+
   04 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
   -files/emelfm2-gzip-manpage.patch, emelfm2-0.3.ebuild:
   remove patch, add comments to the ebuild
