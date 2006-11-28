@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Stefan Schweizer <genstef@gentoo.org> -daboide-0.5.6.ebuild:
+  remove obsolete old ebuilds, thanks pcheck
+
   21 Nov 2006; Geoff Clements <geoff@electron.me.uk> ChangeLog:
   dev-db/daboide: version bump
   +daboide-0.7
