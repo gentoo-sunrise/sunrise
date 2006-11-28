@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
+  -gnome-schedule-1.0.0.ebuild:
+  remove obsolete old ebuilds, thanks pcheck
+
   20 Nov 2006; Luca Marturana (luca89) <lucamarturana@gmail.com>
   +gnome-schedule-1.1.0.ebuild:
   Version bump
