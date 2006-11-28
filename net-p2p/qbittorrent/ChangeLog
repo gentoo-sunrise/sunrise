@@ -3,6 +3,10 @@
 # $Header: $
 
   28 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -qbittorrent-0.7.1.ebuild:
+  drop old
+
+  28 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   +qbittorrent-0.8.0.ebuild:
   Version bump
 
