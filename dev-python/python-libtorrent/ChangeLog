@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -python-libtorrent-0.3.0.ebuild, +python-libtorrent-0.4.0.ebuild:
+  version bump
+
   19 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   python-libtorrent-0.3.0.ebuild:
   remove unneeded dep

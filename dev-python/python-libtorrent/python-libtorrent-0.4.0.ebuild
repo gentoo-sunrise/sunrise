@@ -5,15 +5,15 @@
 inherit distutils
 
 DESCRIPTION="Python bindings for rb_libtorrent"
-HOMEPAGE="http://code.google.com/p/python-libtorrent/"
-SRC_URI="http://zachtib.googlepages.com/${PN}_${PV}.tar.gz"
+HOMEPAGE="http://deluge-torrent.org"
+SRC_URI="http://deluge.mynimalistic.net/downloads/${PN}_${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
-RDEPEND=">=dev-lang/python-2.3
+DEPEND=">=dev-lang/python-2.3
 		dev-libs/boost"
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
