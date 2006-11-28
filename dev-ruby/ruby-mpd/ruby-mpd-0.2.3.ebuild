@@ -13,6 +13,6 @@ SRC_URI="http://www.andsoforth.com/downloads/mpd-rb/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="|| ( media-sound/mpd media-sound/mpd-svn )"
+RDEPEND="media-sound/mpd"
 
 S=${WORKDIR}/${MY_P}
