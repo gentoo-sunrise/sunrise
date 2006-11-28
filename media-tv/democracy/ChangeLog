@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
+  -democracy-0.9.1.ebuild:
+  remove obsolete old ebuilds, thanks pcheck
+
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -democracy-0.9.0.2.ebuild:
   drop old
