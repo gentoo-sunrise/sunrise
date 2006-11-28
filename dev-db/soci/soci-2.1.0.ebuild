@@ -15,7 +15,7 @@ IUSE="mysql postgres sqlite3 static"
 
 DEPEND="mysql? ( dev-db/mysql )
 		postgres? ( dev-db/libpq )
-		sqlit3? ( =dev-db/sqlite-3* )"
+		sqlite3? ( =dev-db/sqlite-3* )"
 RDEPEND=""
 
 src_compile() {
@@ -39,7 +39,6 @@ src_compile() {
 		fi
 	done
 }
-
 
 src_install() {
 	dohtml doc/*
