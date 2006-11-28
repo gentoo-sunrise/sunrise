@@ -21,4 +21,3 @@ DEPEND=">=gnome-base/gnome-panel-2.6
 RDEPEND="${DEPEND}"
 
 DOCS="AUTHORS Changelog NEWS README"
-

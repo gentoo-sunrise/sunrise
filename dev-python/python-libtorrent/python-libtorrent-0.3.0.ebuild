@@ -17,4 +17,3 @@ S=${WORKDIR}/${PN}
 RDEPEND=">=dev-lang/python-2.3
 		dev-libs/boost"
 DEPEND="${RDEPEND}"
-

@@ -330,4 +330,3 @@ pkg_postinst() {
 		cp /etc/MailScanner/MailScanner.conf.sample /etc/MailScanner/MailScanner.conf
 	fi
 }
-

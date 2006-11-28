@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Markus Ullmann <jokey@gentoo.org> Manifest:
+  Fix digest
+
   18 Oct 2006; Daniel Pielmeier (billie) <daniel.pielmeier@googlemail.com>
   +ttcut-9999.ebuild:
   Added a version which uses the svn-source of ttcut

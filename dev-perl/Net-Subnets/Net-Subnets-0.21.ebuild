@@ -15,4 +15,3 @@ IUSE=""
 
 SRC_TEST="do"
 mydoc="README Changes"
-

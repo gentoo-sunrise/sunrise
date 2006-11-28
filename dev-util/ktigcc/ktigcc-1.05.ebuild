@@ -26,7 +26,6 @@ DEPEND="$(qt_min_version 3.1)
 RDEPEND="${DEPEND}
 	!no-completion-data? ( dev-util/ktigcc-completion-data )"
 
-
 S=${WORKDIR}/${PN}
 
 src_install() {

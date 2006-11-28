@@ -21,4 +21,3 @@ src_install() {
 	dodoc AUTHORS ChangeLog INSTALL NEWS README
 	make_desktop_entry searchmonkey searchmonkey /usr/share/searchmonkey/pixmaps/searchmonkey-32x32.png
 }
-
