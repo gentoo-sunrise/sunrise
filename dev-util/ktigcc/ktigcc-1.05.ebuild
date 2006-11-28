@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="no-completion-data"
 
-DEPEND="$(qt_min_version 3.1)
+DEPEND="$(qt_min_version 3.3)
 	>=kde-base/kdelibs-3.5.2
 	dev-util/ctags
 	dev-util/pkgconfig
