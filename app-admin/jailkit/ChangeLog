@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Stefan Schweizer <genstef@gentoo.org> -jailkit-2.0.ebuild,
+  -files/jailkit-2.0-gentoo-sandbox.patch:
+  remove obsolete old ebuilds, thanks pcheck
+
   12 Nov 2006; Stephen Tallowitz (geta2) <dev@tallowitz.ch>
   +jailkit-2.1.ebuild, +files/jailkit-2.1-gentoo-sandbox.patch:
   New version of jailkit. Thanks to #gentoo-sunrise - especially shillelagh -
