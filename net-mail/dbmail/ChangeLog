@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
+  -dbmail-2.1.7-r1.ebuild:
+  remove obsolete old ebuilds, thanks pcheck
+
   27 Nov 2006; Martin Hierling <mad@cc.fh-luh.de> dbmail-2.2.1.ebuild:
   changed deps to glib-2.8
   added a patch to remove the version strings (security reason)
