@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2006; Markus Ullmann <jokey@gentoo.org> searchmonkey-0.7.2.ebuild:
+  EmptyLine
+
   17 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   searchmonkey-0.7.2.ebuild:
   Clean up ebuild
