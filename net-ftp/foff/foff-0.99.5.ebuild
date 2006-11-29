@@ -19,6 +19,7 @@ DEPEND=">=dev-lang/python-2.3
 RDEPEND="${DEPEND}"
 
 src_install() {
+	# Copying.txt is needed by the about window
 	dodir "/usr/$(get_libdir)/${PN}"
 	insinto "/usr/$(get_libdir)/${PN}"
 	doins *.py foff_logo00.png *.glade *.gladep Copying.txt
