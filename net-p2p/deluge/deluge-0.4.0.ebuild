@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils multilib
+inherit eutils python multilib
 
 DESCRIPTION="BitTorrent client in Python and PyGTK."
 HOMEPAGE="http://deluge-torrent.org/"
@@ -12,9 +12,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
-DEPEND=">dev-lang/python-2.3
+DEPEND=">=dev-lang/python-2.3
 	dev-libs/boost
 	>=dev-python/pygtk-2
 	=dev-python/python-libtorrent-${PV}
@@ -37,4 +37,11 @@ src_install() {
 	make_desktop_entry ${PN} ${PN}
 
 	dodoc Changelog README
+}
+pkg_postinst() {
+	python_mod_optimize "${ROOT}usr/$(get_libdir)/${PN}"
+}
+
+pkg_postrm() {
+	python_mod_cleanup "${ROOT}usr/$(get_libdir)/${PN}"
 }
