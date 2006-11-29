@@ -49,4 +49,3 @@ pkg_postinst() {
 		ewarn "cairo support is not finished, use at your own risk!"
 	fi
 }
-
