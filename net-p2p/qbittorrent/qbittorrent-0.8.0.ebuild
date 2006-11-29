@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils qt4
 
 DESCRIPTION="BitTorrent client in C++ and Qt."
 HOMEPAGE="http://www.qbittorrent.org/"
@@ -14,8 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=net-libs/rb_libtorrent-0.11
-	>=x11-libs/qt-4.1
-	>dev-lang/python-2.3
+	$(qt4_min_version 4.1)
+	>=dev-lang/python-2.3
 	dev-libs/boost
 	net-misc/curl"
 RDEPEND="${DEPEND}"
@@ -28,6 +28,7 @@ pkg_setup() {
 }
 
 src_compile() {
+	# econf fails, since this uses qconf
 	./configure --prefix=/usr --qtdir=/usr || die "configure failed"
 	emake || die "emake failed"
 }
