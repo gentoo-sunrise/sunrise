@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Nov 2006; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
+  +cryptmount-1.2.ebuild:
+  New upstream version, no ebuild changes
+
   16 Sep 2006; Stefan Schweizer <genstef@gentoo.org> cryptmount-1.1.ebuild:
   CONFIG_CHECK and emake install
 
