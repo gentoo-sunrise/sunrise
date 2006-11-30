@@ -18,4 +18,3 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 need-kde 3.5
-
