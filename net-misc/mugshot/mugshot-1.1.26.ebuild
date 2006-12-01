@@ -26,18 +26,18 @@ DEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
-	epatch ${FILESDIR}/${PN}-1.1.22-as-needed.patch
-	epatch ${FILESDIR}/${PN}-1.1.24-use-firefox.patch
+	epatch "${FILESDIR}/${PN}-1.1.22-as-needed.patch"
+	epatch "${FILESDIR}/${PN}-1.1.24-use-firefox.patch"
 	eautoreconf
-	use firefox && \
-		cp ${FILESDIR}/${PN}-1.1.22-firefox-update.sh ${S}/firefox-update.sh
+	use firefox && sed -e "s:GET_LIBDIR:$(get_libdir):" \
+		"${FILESDIR}/${P}-firefox-update.sh" > "${S}/firefox-update.sh"
 }
 
 src_compile() {
-	econf $(use_enable firefox ) \
+	econf $(use_enable firefox) \
 		--with-gecko-sdk=/usr/$(get_libdir)/mozilla-firefox/ || die "./configure failed"
 	emake || die "emake failed"
 }
@@ -54,7 +54,7 @@ pkg_postinst () {
 	if use firefox ; then
 		einfo "Installing firefox extension. "
 		einfo "Please restart firefox in order to use the mugshot extension."
-		${S}/firefox-update.sh install
+		"${S}/firefox-update.sh" install
 	fi
 }
 
@@ -65,4 +65,3 @@ pkg_prerm () {
 		/usr/share/mugshot/firefox-update.sh remove
 	fi
 }
-
