@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Dec 2006; Cedric Krier <cedk@gentoo.org> -dwm-2.3.ebuild,
+  +dwm-2.4.ebuild:
+  Version bump
+
   24 Nov 2006; Cedric Krier <cedk@gentoo.org> -dwm-2.2.ebuild,
   +dwm-2.3.ebuild:
   Version bump
