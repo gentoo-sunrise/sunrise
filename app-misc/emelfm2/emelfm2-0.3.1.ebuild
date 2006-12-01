@@ -52,3 +52,4 @@ src_install() {
 
 	prepalldocs
 }
+
