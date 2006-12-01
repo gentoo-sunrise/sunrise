@@ -1,0 +1,13 @@
+# ChangeLog for net-misc/mugshot
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Dec 2006; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  +files/mugshot-1.1.22-as-needed.patch,
+  +files/mugshot-1.1.22-firefox-update.sh,
+  +files/mugshot-1.1.24-use-firefox.patch, +mugshot-1.1.26.ebuild,
+  +metadata.xml:
+  New ebuild for bug 135524. Also thanks to Bobby Ryan Newberry
+  <brnewber@gmail.com>, John Patterson <gentoo_j@ninecats.org>, and Sebi
+  Ryffel <sryffel@ee.ethz.ch>.
+
