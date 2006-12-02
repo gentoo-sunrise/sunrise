@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Dec 2006; Christian Helbling <helch@gmx.ch> +ktigcc-1.06.ebuild:
+  Version bump
+
   28 Nov 2006; Tiziano Müller <dev-zero@gentoo.org> ktigcc-1.05.ebuild:
   Setting qt_min_version to 3.3
 
