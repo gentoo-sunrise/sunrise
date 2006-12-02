@@ -4,7 +4,7 @@
 
 inherit kde-functions
 
-MY_P_KDE="QtCurve-KDE3-${PV}" 
+MY_P_KDE="QtCurve-KDE3-${PV}"
 MY_P_GTK2="QtCurve-Gtk2-${PV}"
 MY_P_GTK1="QtCurve-Gtk1-0.42.2"
 
@@ -43,7 +43,7 @@ src_compile() {
 	cd ${S}/${MY_P_GTK1}
 	econf || die "econf failed"
 	emake || die "emake failed"
-    fi 
+    fi
 }
 
 src_install () {
@@ -55,4 +55,30 @@ src_install () {
 	    dodoc ChangeLog README TODO
 	fi
     done
+}
+
+pkg_postinst(){
+    echo
+    einfo "For GTK1:"
+    einfo " Copy"
+    echo  "     /usr/share/themes/QtCurve/gtk/gtkrc"
+    einfo " to either"
+    echo  "     /etc/gtk/gtkrc        To enable this theme for *all* users"
+    einfo " or"
+    echo  "     ~/.gtkrc              To enable for just yourself."
+    einfo " "
+    einfo " Alternatively, edit ~/.gtkrc so that it looks like:"
+    echo  "     include \"/usr/share/themes/QtCurve/gtk/gtkrc\""
+    einfo " "
+    einfo "For GTK2:"
+    einfo " edit ~/.gtkrc-2.0 so that it for example looks like:"
+    echo  "     include \"/usr/share/themes/QtCurve/gtk-2.0/gtkrc\""
+    echo  "     style \"user-font\""
+    echo  "     {"
+    echo  "         font_name=\"Helvetica 9\""
+    echo  "     }"
+    echo  "     widget_class \"*\" style \"user-font\""
+    echo  "     gtk-theme-name=\"QtCurve\""
+    echo  "     gtk-font-name=\"Helvetica 9\""
+    echo  " "
 }
