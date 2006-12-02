@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Dec 2006; Christian Helbling <helch@gmx.ch> +libticonv-20061030.ebuild:
+  Version bump
+
   04 Sep 2006; Christian Helbling <helch@gmx.ch>
   +libticonv-20060723-r1.ebuild,
   +files/libticonv-20060723-bugfixes-20060807.diff, +metadata.xml:
