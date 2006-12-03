@@ -34,7 +34,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${P}.tar.bz2" 
+	unpack "${P}.tar.bz2"
 	cd ${S}
 	[[ $(tc-arch) == "amd64" ]] && epatch "${DISTDIR}"/${P}-64bit.diff
 }

@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Dec 2006; Stefan Schweizer <genstef@gentoo.org>
+  -libticables2-20060723.ebuild, libticables2-20061030.ebuild:
+  fix whitespace, remove old
+
   02 Dec 2006; Christian Helbling <helch@gmx.ch>
   +libticables2-20061030.ebuild:
   Version bump
