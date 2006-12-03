@@ -83,6 +83,7 @@ net-misc/open-xchange:webdav - Enable WebDAV access to user accounts
 net-nds/lat:avahi - Enable support for avahi
 net-p2p/murmur:trayicon - Enable support for tray icon
 net-p2p/museek+:qsa - Enable QSA scripting for museeq.
+net-p2p/museek+:trayicon - Enable support for tray icon
 sci-libs/libticables2:pam_console - Adds support for pam console from PAM
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
