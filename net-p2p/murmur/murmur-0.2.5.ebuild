@@ -18,20 +18,20 @@ RDEPEND="${DEPEND}
 	>=dev-python/pygtk-2.6.1
 	>=net-p2p/museek+-0.1.12"
 
-src_compile(){
+src_compile() {
 	distutils_src_compile
 	if use trayicon ; then
 		cd "${S}/trayicon"
 		./autogen.py || die "./autogen.py trayicon failed"
-		make || die "make trayicon failed"
+		emake || die "emake trayicon failed"
 		cd "${S}"
 	fi
 }
 
-src_install(){
+src_install() {
 	distutils_src_install
 	if use trayicon ; then
 		cd "${S}/trayicon"
-		make DESTDIR="${D}" install || die "make trayicon failed"
+		emake DESTDIR="${D}" install || die "emake trayicon failed"
 	fi
 }
