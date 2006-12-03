@@ -3,6 +3,14 @@
 # $Header: $
 
   03 Dec 2006; Santiago M. Mola <cooldwind@gmail.com>
+  -museek+-0.1.11.ebuild, -files/museek+-0.1.11-SConstruct.patch,
+  -files/museek+-0.1.11-defaults.py.patch, museek+-0.1.12.ebuild,
+  -files/conf.d-mulog, -files/conf.d-museekd, -files/init.d-mulog,
+  -files/init.d-museekd, +files/museek:
+  Using upstream ebuild thanks to Xero. Features trayicon USE flag, and launch
+  script.
+
+  03 Dec 2006; Santiago M. Mola <cooldwind@gmail.com>
   +museek+-0.1.12.ebuild:
   Version bump 0.1.12.
 

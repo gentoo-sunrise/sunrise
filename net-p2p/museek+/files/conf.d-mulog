@@ -1,9 +1,0 @@
-#MULOG_USER=<user>
-#MULOG_PASS=<pass>
-MULOG_HOST=localhost
-MULOG_PORT=2240
-
-# MULOG_PATH
-#
-# MULOG_PATH=/home/jimmy/.mulog/
-# MULOG_PATH=/var/log/mulog/

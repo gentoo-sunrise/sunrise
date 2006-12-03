@@ -1,0 +1,47 @@
+#!/bin/bash
+MULOG=0
+PIDPATH="$HOME/.museekd"
+
+while getopts ckmqrsh name
+do
+  case $name in
+    c) close=1;;
+    k) kill=1;;
+    m) mucous=1;;
+    q) museeq=1;;
+    r) restart=1;;
+    s) scan=1;;
+    h|?) help=1;;
+  esac
+done
+
+if [ $help ]; then
+  echo -e "Usage: `basename $0` [OPTIONS]"
+  echo -e "This will start museekd by default. The following can be done in addition:"
+  echo -e "  -r restart museekd"
+  echo -e "  -s rescan shares"
+  echo -e "  -q start museeq"
+  echo -e "  -m start mucous"
+  echo -e "  -c kill museekd when mucous closes"
+  echo -e "  -k kill museekd and exit"
+  echo -e "  -h display this help and exit"
+  exit 0
+elif [ "$kill" -o "$restart" ]; then
+  killall museekd
+  [ $kill ] && exit
+fi
+
+if [ ! -d  "/proc/`cat $PIDPATH/museekd.pid`" ]; then
+  exec museekd &
+  echo $! > $PIDPATH/museekd.pid
+fi
+
+if [ $MULOG != 0 -a $MULOG -a ! -d "/proc/`cat $PIDPATH/mulog.pid`" ]; then
+  exec mulog &
+  echo $! > $PIDPATH/mulog.pid
+fi
+
+[ $scan ] && muscan -r >/dev/null 2>&1 && killall -q -HUP museekd &
+[ $museeq ] && exec museeq >/dev/null 2>&1 &
+[ $mucous ] && mucous; [ $close ] && killall -q museekd
+

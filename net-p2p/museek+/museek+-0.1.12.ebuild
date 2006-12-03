@@ -2,16 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit qt3 eutils flag-o-matic
+inherit qt3 eutils
 
-DESCRIPTION="a SoulSeek client which uses a daemon and multiple gui clients."
-HOMEPAGE="http://museek-plus.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN/+/-plus}/${P}.tar.bz2"
+DESCRIPTION="A SoulSeek client which uses a daemon and multiple gui clients."
+HOMEPAGE="http://www.museek-plus.org"
+SRC_URI="mirror://sourceforge/museek-plus/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="debug gtk ncurses qsa qt3 vorbis"
+IUSE="debug gtk ncurses qsa qt3 trayicon vorbis"
 
 LANGS="fr de es it pl ru pt_BR ja zh sk he ar cs"
 
@@ -27,12 +27,12 @@ RDEPEND="dev-lang/python
 		vorbis? ( media-libs/libvorbis
 				media-libs/libogg )"
 DEPEND="${RDEPEND}
-		=dev-util/scons-0.96*
+		>=dev-util/scons-0.96
 		dev-lang/swig"
 
 pkg_setup() {
 	if use ncurses && ! built_with_use dev-lang/python ncurses ; then
-		eerror "In order to build Mucose (museek ncurses client)"
+		eerror "In order to build Mucous (museek ncurses client)"
 		eerror "you need dev-lang/python built with ncurses USE flag enabled."
 		die "no ncurses support in Python"
 	fi
@@ -51,7 +51,8 @@ src_compile() {
 	use gtk || myconf="${myconf} MUSETUPGTK=no"
 	use ncurses || myconf="${myconf} MUCOUS=no"
 	use vorbis || myconf="${myconf} VORBIS=no"
-	use debug && myconf="${myconf} MULOG=cycle,debug"
+	use trayicon || myconf="${myconf} MUSEEQTRAYICON=no"
+	use debug || myconf="${myconf} RELEASE=yes MULOG=none"
 
 	local mylinguas=""
 	for X in ${LANGS} ; do
@@ -68,23 +69,15 @@ src_compile() {
 src_install() {
 	scons DESTDIR="${D}" install || die "scons install failed"
 	dodoc README
+	exeinto /usr/bin
+	doexe ${FILESDIR}/museek
 
 	if use qt3 ; then
 		doicon "icons/museeq-circle2.png"
-		make_desktop_entry ${PN/k+/q} "Museeq" museeq-circle2.png \
-		"Qt;Network;P2P"
+		make_desktop_entry museeq "Museeq" museeq-circle2.png "Qt;Network;P2P"
 	fi
-
-	# conf.d and init.d scripts by SeeSchloss
-	#newinitd "${FILESDIR}/init.d-mulog" mulog
-	newinitd "${FILESDIR}/init.d-museekd" museekd
-
-	#newconfd "${FILESDIR}"/conf.d-mulog mulog
-	newconfd "${FILESDIR}/conf.d-museekd" museekd
 }
 
 pkg_postinst() {
-	elog "Look at /etc/conf.d/museekd and configure all options"
-	elog "before starting it. When you are done,"
-	elog "configure all settings with musetup or musetup-gtk."
+	einfo "Use museek to launch the daemon."
 }
