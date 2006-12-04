@@ -20,12 +20,12 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	# Copying.txt is needed by the about window
-	insinto "/usr/$(get_libdir)/${PN}"
+	insinto "${ROOT}usr/$(get_libdir)/${PN}"
 	doins *.py foff_logo00.png *.glade *.gladep Copying.txt
 
 	# The app needs to be executed from the installed dir
-	echo -e "#!/bin/bash \ncd "/usr/$(get_libdir)/${PN}" \n\
-/usr/bin/python ${PN}.py" >> foff
+	echo -e "#!/bin/bash \ncd "${ROOT}usr/$(get_libdir)/${PN}" \n\
+${ROOT}usr/bin/python ${PN}.py" >> foff
 
 	dobin foff
 	dodoc Readme.txt ChangeLog.txt

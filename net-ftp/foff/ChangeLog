@@ -3,6 +3,9 @@
 # $Header: $
 
   04 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com> foff-0.99.5.ebuild:
+  more fixes
+
+  04 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com> foff-0.99.5.ebuild:
   Remove dodir
 
   29 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com> foff-0.99.5.ebuild:
