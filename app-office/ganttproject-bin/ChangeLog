@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Nothing executable here
+
   02 Nov 2006; Markus Ullmann <jokey@gentoo.org>
   -ganttproject-bin-2.0.1.ebuild:
   Drop old
