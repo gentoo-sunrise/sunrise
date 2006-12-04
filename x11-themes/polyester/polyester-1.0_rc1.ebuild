@@ -16,4 +16,4 @@ IUSE=""
 
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )"
 
-need-kde 3.2
+need-kde 3.4
