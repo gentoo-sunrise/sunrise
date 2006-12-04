@@ -24,4 +24,3 @@ pkg_setup() {
 		die "Missing threads USE-flag for dev-libs/boost"
 	fi
 }
-
