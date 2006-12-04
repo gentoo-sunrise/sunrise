@@ -16,7 +16,7 @@ KEYWORDS="~x86"
 IUSE="apache2 mysql postgres ldap"
 
 DEPEND="dev-libs/apr
-	mysql? ( dev-db/mysql )
+	mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql )
 	ldap? ( net-nds/openldap )"
 RDEPEND=""

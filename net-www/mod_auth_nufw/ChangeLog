@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2006; Jakub Moc <jakub@gentoo.org> mod_auth_nufw-2.2.0.ebuild:
+  Migration to virtual/mysql
+
   05 Oct 2006; Jakub Moc <jakub@gentoo.org> mod_auth_nufw-2.2.0.ebuild:
   Fix SRC_URI, fix digest, add missing autoconf/automake dependencies
 
