@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2006; Markus Ullmann <jokey@gentoo.org>
+  -libticalcs2-20060723.ebuild:
+  Remove old
+
   02 Dec 2006; Christian Helbling <helch@gmx.ch>
   +libticalcs2-20061030.ebuild:
   Version bump
