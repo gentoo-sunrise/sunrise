@@ -13,7 +13,7 @@ LICENSE="Boost-1.0"
 SLOT="0"
 IUSE="mysql postgres sqlite3 static"
 
-DEPEND="mysql? ( dev-db/mysql )
+DEPEND="mysql? ( virtual/mysql )
 		postgres? ( dev-db/libpq )
 		sqlite3? ( =dev-db/sqlite-3* )"
 RDEPEND=""
