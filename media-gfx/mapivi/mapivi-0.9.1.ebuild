@@ -22,15 +22,18 @@ DEPEND="dev-lang/perl
 	media-libs/jpeg
 	dev-perl/Image-MetaData-JPEG"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -i -e 's:$configdir/PlugIns:/usr/share/mapivi/plugins:' mapivi
+}
+
 src_install() {
-	into ${ROOT}/usr/bin
 	dobin mapivi
 
-	into ${ROOT}/usr/share/mapivi/plugins
-	dobin PlugIns/Channel-Separator PlugIns/Join-RGB PlugIns/checkDir-plugin\
-			PlugIns/filelist-plugin PlugIns/test-plugin
-	dodoc Changes.txt FAQ README Tips.txt
-	sed -i 's:$configdir\/PlugIns:\/usr\/share\/mapivi\/plugins:g' mapivi
+	exeinto /usr/share/mapivi/plugins
+	doexe PlugIns/{Channel-Separator,Join-RGB,checkDir-plugin,filelist-plugin,test-plugin}
+	dodoc Changes.txt FAQ README Tips.txt ToDo
 }
 
 pkg_postinst() {
