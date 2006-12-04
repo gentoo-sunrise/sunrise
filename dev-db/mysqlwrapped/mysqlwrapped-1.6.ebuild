@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND="dev-db/mysql
+DEPEND="virtual/mysql
 		sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
