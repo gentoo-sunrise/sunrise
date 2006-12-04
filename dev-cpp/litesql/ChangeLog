@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2006; Jakub Moc <jakub@gentoo.org> litesql-0.3.2.ebuild:
+  Migration to virtual/mysql
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   litesql-0.3.2.ebuild:
   added trailing slash to HOMEPAGE URL

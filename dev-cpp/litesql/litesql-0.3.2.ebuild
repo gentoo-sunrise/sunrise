@@ -16,7 +16,7 @@ SLOT="0"
 IUSE="doc examples mysql postgres sqlite"
 
 DEPEND="doc? ( app-doc/doxygen )
-		mysql? ( dev-db/mysql )
+		mysql? ( virtual/mysql )
 		postgres? ( dev-db/libpq )
 		sqlite? ( =dev-db/sqlite-3* )
 		!mysql? ( !postgres? ( =dev-db/sqlite-3* ) )"
