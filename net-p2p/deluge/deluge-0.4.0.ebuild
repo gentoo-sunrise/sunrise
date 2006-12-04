@@ -28,11 +28,11 @@ src_unpack() {
 }
 
 src_install() {
-	insinto "${ROOT}usr/$(get_libdir)/${PN}"
+	insinto "/usr/$(get_libdir)/${PN}"
 	doins -r *.py po/ glade/ pixmaps/ plugins/
 
 	newicon pixmaps/${PN}-32.png ${PN}.png
-	make_wrapper ${PN} "${ROOT}usr/bin/python ${ROOT}usr/$(get_libdir)/${PN}/${PN}.py"
+	make_wrapper ${PN} "/usr/bin/python /usr/$(get_libdir)/${PN}/${PN}.py"
 	make_desktop_entry ${PN} ${PN}
 
 	dodoc Changelog README
