@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com> foff-0.99.5.ebuild:
+  Remove dodir
+
   29 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com> foff-0.99.5.ebuild:
   Comment why Copying.txt is needed at the install dir
 
