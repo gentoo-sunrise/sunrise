@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  nothing executable here
+
   13 Aug 2006; Tiziano Müller <gentoo@dev-zero.ch> +moblock-0.8.ebuild,
   +files/moblock-0.8-makefile.patch, +files/confd, +files/initd,
   +metadata.xml:
