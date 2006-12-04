@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2006; Markus Ullmann <jokey@gentoo.org> -ktigcc-1.05.ebuild:
+  Remove old
+
   02 Dec 2006; Christian Helbling <helch@gmx.ch> +ktigcc-1.06.ebuild:
   Version bump
 
