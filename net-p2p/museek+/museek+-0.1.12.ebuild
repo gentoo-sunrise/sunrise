@@ -79,5 +79,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Use museek to launch the daemon."
+	elog "Use museek to manage start/restart/stop of the daemon,"
+	elog "you can use it to launch museek applications too."
 }
