@@ -10,7 +10,7 @@ SRC_URI="http://fraqtive.mimec.org/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 # opengl useflag removed because fraqtive does not build without it
 IUSE="arts"
 
