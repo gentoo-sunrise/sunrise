@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  deluge-0.4.0.ebuild:
+  Move to python site-packages, thanks genstef
+
   04 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
   deluge-0.4.0.ebuild:
   Fix paths && remove dodir
