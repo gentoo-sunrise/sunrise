@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Dec 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
+  -subtitleeditor-0.12.2.ebuild, +subtitleeditor-0.12.2-r1.ebuild:
+  Removing sandbox-violating 0.12.2 revision, adding -r1 with fix.
+
   29 Nov 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   +subtitleeditor-0.12.2.ebuild:
   Version bump
