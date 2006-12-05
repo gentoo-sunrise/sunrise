@@ -1,0 +1,10 @@
+# ChangeLog for media-sound/songbird-bin
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Dec 2006; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
+  +songbird-bin-0.2.1.ebuild, +metadata.xml:
+  fixed a lot of stuff around gstreamer, please read the ebuild if you want to
+  help out see r2123 for name change original bug #139019, thanks to Christian
+  Faulhammer for the initial ebuild
+
