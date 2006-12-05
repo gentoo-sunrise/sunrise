@@ -29,21 +29,21 @@ src_unpack() {
 
 src_install() {
 	python_version
-	insinto "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 	doins -r *.py po/ glade/ pixmaps/ plugins/
 
 	newicon pixmaps/${PN}-32.png ${PN}.png
-	make_wrapper ${PN} "${ROOT}usr/bin/python ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/${PN}.py"
+	make_wrapper ${PN} "/usr/bin/python /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/${PN}.py"
 	make_desktop_entry ${PN} ${PN}
 
 	dodoc Changelog README
 }
 pkg_postinst() {
 	python_version
-	python_mod_optimize "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	python_mod_optimize "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 }
 
 pkg_postrm() {
 	python_version
-	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	python_mod_cleanup "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 }
