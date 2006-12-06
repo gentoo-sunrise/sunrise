@@ -17,8 +17,3 @@ need-kde 3
 
 DEPEND=""
 RDEPEND=""
-
-src_compile() {
-	myconf="$(use_enable kdeenablefinal final)"
-	kde_src_compile
-}
