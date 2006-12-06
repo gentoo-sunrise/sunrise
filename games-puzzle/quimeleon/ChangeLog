@@ -3,6 +3,10 @@
 # $Header: $
 
   06 Dec 2006; Nuno J. Silva (njsg) <nunojsg@gmail.com>
+  quimeleon-0.9.3.1.ebuild:
+  QA: Whiteline and executable fix
+
+  06 Dec 2006; Nuno J. Silva (njsg) <nunojsg@gmail.com>
   +quimeleon-0.9.3.1.ebuild, +metadata.xml:
   New ebuild for bug 157334.
 
