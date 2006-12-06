@@ -12,7 +12,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-S=${WORKDIR}/${PN}
 
 DEPEND=">=dev-lang/python-2.3
 	dev-libs/boost
@@ -21,11 +20,7 @@ DEPEND=">=dev-lang/python-2.3
 	dev-python/pyxdg"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack ${A} && cd "${S}"
-	# remove .svn dirs
-	rm -rf */.svn
-}
+S=${WORKDIR}/${PN}
 
 src_install() {
 	python_version

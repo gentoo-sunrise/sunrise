@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Dec 2006; Markus Ullmann <jokey@gentoo.org> deluge-0.4.0.ebuild:
+  src_unpack not needed
+
   05 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
   deluge-0.4.0.ebuild:
   add ROOT only when really needed
