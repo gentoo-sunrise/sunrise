@@ -13,7 +13,7 @@ SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="fam mp3 flac aac musepack trayicon ipod"
+IUSE="fam mp3 flac aac musepack trayicon ipod cdaudio"
 
 DEPEND=">=dev-lang/python-2.4
 		>=dev-python/pygtk-2.0"
@@ -34,7 +34,8 @@ RDEPEND="${DEPEND}
 		musepack? ( >=media-plugins/gst-plugins-musepack-0.10 )
 		trayicon? ( dev-python/gnome-python-extras )
 		ipod? ( >=media-libs/libgpod-0.3.2-r1
-				>=media-plugins/gst-plugins-faac-0.10 )"
+				>=media-plugins/gst-plugins-faac-0.10 )
+		cdaudio? ( dev-python/cddb-py )"
 
 S=${WORKDIR}/${MY_P}
 
