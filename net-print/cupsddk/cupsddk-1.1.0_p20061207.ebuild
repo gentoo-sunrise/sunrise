@@ -24,4 +24,3 @@ src_compile() {
 src_install() {
 	emake BUILDROOT="${D}" install || die "emake install failed"
 }
-

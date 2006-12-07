@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2006; Markus Ullmann <jokey@gentoo.org>
+  cupsddk-1.1.0_p20061207.ebuild:
+  Whitespaces
+
   07 Dec 2006; jakobdettner <gentoo@dettner.de>
   cupsddk-1.1.0_p20061207.ebuild:
   removed inherit
