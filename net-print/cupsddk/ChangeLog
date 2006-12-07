@@ -3,6 +3,10 @@
 # $Header: $
 
   07 Dec 2006; jakobdettner <gentoo@dettner.de>
+  cupsddk-1.1.0_p20061207.ebuild:
+  removed inherit
+
+  07 Dec 2006; jakobdettner <gentoo@dettner.de>
   +cupsddk-1.1.0_p20061207.ebuild, +metadata.xml:
   New Ebuild for bug 157300 thanks.
 

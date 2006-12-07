@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="Provides a suite of standard drivers, a PPD file compiler, and other utilities that can be used to develop printer drivers for CUPS and other printing environments."
 HOMEPAGE="http://www.cups.org/ddk/index.php"
 SRC_URI="http://jdettner.free.fr/gentoo/cupsddk/${P}.tar.bz2"
