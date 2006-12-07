@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2006; Cedric Krier <cedk@gentoo.org> dmenu-1.6.ebuild:
+  Add use flag savedconfig
+
   07 Dec 2006; Cedric Krier <cedk@gentoo.org> -dmenu-1.5.ebuild,
   +dmenu-1.6.ebuild:
   Version bump

@@ -11,7 +11,7 @@ SRC_URI="http://suckless.org/download/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="savedconfig"
 
 DEPEND="x11-libs/libX11"
 RDEPEND=${DEPEND}
@@ -28,14 +28,51 @@ src_unpack() {
 		-e "s/CFLAGS = -Os/CFLAGS +=/" \
 		-e "s/LDFLAGS =/LDFLAGS +=/" \
 		config.mk || die "sed failed"
+
+	if use savedconfig; then
+		local conf root
+		for conf in ${PF} ${P} ${PN}; do
+			for root in "${PORTAGE_CONFIGROOT}" "${ROOT}" /; do
+				configfile=${root}etc/portage/savedconfig/${conf}.config.h
+				if [[ -r ${configfile} ]]; then
+					elog "Found your ${configfile} and using it."
+					cp -f ${configfile} "${S}"/${PN}.h
+					return 0
+				fi
+			done
+		done
+		ewarn "Could not locate user configfile, so we will save a default one."
+	fi
 }
 
 src_compile() {
-	emake CC=$(tc-getCC) || die "emake failed"
+	local msg
+	use savedconfig && msg=", please check the configfile"
+	emake CC=$(tc-getCC) || die "emake failed${msg}"
 }
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
 
+	insinto /usr/share/${PN}
+	newins ${PN}.h ${PF}.config.h
+
 	dodoc README
+}
+
+pkg_preinst() {
+	mv "${D}"/usr/share/${PN}/${PF}.config.h "${T}"/
+}
+
+pkg_postinst() {
+	if use savedconfig; then
+		local config_dir="${PORTAGE_CONFIGROOT:-${ROOT}}/etc/portage/savedconfig"
+		elog "Saving this build config to ${config_dir}/${PF}.config.h"
+		einfo "Read this ebuild for more info on how to take advantage of this option."
+		mkdir -p "${config_dir}"
+		cp "${T}"/${PF}.config.h "${config_dir}"/${PF}.config.h
+	fi
+	einfo "This ebuild has support for user defined configs"
+	einfo "Please read this ebuild for more details and re-emerge as needed"
+	einfo "if you want to add or remove functionality for ${PN}"
 }
