@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2006; Cedric Krier <cedk@gentoo.org> cultivation-6.ebuild:
+  Remove append-flags
+
   06 Dec 2006; Cedric Krier <cedk@gentoo.org> -cultivation-3.ebuild,
   -files/cultivation-3-compile.patch, +cultivation-6.ebuild,
   +files/cultivation-6-compile.patch:

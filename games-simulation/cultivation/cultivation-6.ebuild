@@ -36,7 +36,6 @@ src_unpack() {
 }
 
 src_compile() {
-	append-flags "-fPIC"
 	cd "${S}"/game2
 	# don't use econf as it is not an autotools configure
 	./configure
