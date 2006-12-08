@@ -4,7 +4,7 @@
 
   08 Dec 2006; Jakub Moc <jakub@gentoo.org> cupsddk-1.1.0_p20061207.ebuild,
   +files/cupsddk-fltk-automagic.patch:
-  Fix automatick fltk dependency and add fltk use flag, require cups-1.2
+  Fix automatic fltk dependency and add fltk use flag, require cups-1.2
 
   08 Dec 2006; Jakub Moc <jakub@gentoo.org> cupsddk-1.1.0_p20061207.ebuild:
   Add missing cups dependency, fix prestripped binaries, fix docs location,

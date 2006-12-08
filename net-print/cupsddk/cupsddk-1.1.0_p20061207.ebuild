@@ -17,7 +17,7 @@ IUSE="fltk"
 
 DEPEND=">=net-print/cups-1.2
 	fltk? ( =x11-libs/fltk-1.1* )"
-DEPEND="${DEPEND}"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"
 
