@@ -49,7 +49,7 @@ src_install() {
 	# FIXME!!! This thing would collide with a directory installed by cups
 	# no idea why is it installed there
 	mv ${D}/usr/libexec/cups/driver ${D}/usr/bin/cupsddk-driver
-	
+
 	rm -f LICENSE.* doc/Makefile
 	dodoc *.txt
 	dohtml -r doc/*
