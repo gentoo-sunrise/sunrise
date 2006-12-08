@@ -14,7 +14,7 @@ SRC_URI="x86? ( http://download.songbirdnest.com/installer/linux/i686/${MY_PN}_$
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE="ffmpeg dvd flac mad mpeg ogg theora vorbis"
 
 #gstreamer deps are a mix of
@@ -56,9 +56,7 @@ RDEPEND="x11-libs/libXdmcp
 	>=media-libs/gst-plugins-good-0.10
 	>=media-plugins/gst-plugins-pango-0.10
 	>=media-libs/gst-plugins-ugly-0.10
-	!sparc? (
-		ffmpeg? ( >=media-plugins/gst-plugins-ffmpeg-0.10 )
-	)
+	ffmpeg? ( >=media-plugins/gst-plugins-ffmpeg-0.10 )
 	mpeg? ( >=media-plugins/gst-plugins-mpeg2dec-0.10 )
 	flac? ( >=media-plugins/gst-plugins-flac-0.10 )
 	mad? ( >=media-plugins/gst-plugins-mad-0.10 )
