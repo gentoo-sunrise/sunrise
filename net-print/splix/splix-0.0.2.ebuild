@@ -8,7 +8,7 @@ DESCRIPTION="A set of CUPS printer drivers for SPL (Samsung Printer Language) pr
 HOMEPAGE="http://splix.sourceforge.net/"
 SRC_URI="http://heanet.dl.sourceforge.net/sourceforge/splix/${P}.tar.bz2"
 
-LICENSE="GPL-1"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
