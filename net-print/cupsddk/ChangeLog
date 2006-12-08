@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2006; Jakub Moc <jakub@gentoo.org> cupsddk-1.1.0_p20061207.ebuild:
+  Add missing cups dependency, fix prestripped binaries, fix docs location,
+  install HTML docs and others, hack to avoid a stupid collision with cups
+  directory.
+
   07 Dec 2006; Markus Ullmann <jokey@gentoo.org>
   cupsddk-1.1.0_p20061207.ebuild:
   Whitespaces
