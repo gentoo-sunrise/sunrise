@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="~net-print/cupsddk-1.1.0_p20061207"
+DEPEND="net-print/cups"
 RDEPEND="${DEPEND}"
 
 src_unpack() {

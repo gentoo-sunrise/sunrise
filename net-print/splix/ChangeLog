@@ -3,6 +3,9 @@
 # $Header: $
 
   08 Dec 2006; Jakub Moc <jakub@gentoo.org> splix-0.0.2.ebuild:
+  Fix bogus dependency
+
+  08 Dec 2006; Jakub Moc <jakub@gentoo.org> splix-0.0.2.ebuild:
   License is GPL-2, not GPL-1
 
   08 Dec 2006; Jakub Moc <jakub@gentoo.org> splix-0.0.2.ebuild,
