@@ -16,7 +16,6 @@ IUSE=""
 DEPEND="~net-print/cupsddk-1.1.0_p20061207"
 RDEPEND="${DEPEND}"
 
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
@@ -24,7 +23,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake CXX="$(tc-getCXX)"|| die "emake failed"
+	emake CXX="$(tc-getCXX)" || die "emake failed"
 }
 
 src_install() {
