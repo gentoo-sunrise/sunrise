@@ -2,6 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOCONF="latest"
+
+inherit autotools eutils
+
 DESCRIPTION="A suite of standard drivers, a PPD file compiler, and other utilities to develop printer drivers for CUPS and other printing environments."
 HOMEPAGE="http://www.cups.org/ddk/index.php"
 SRC_URI="http://jdettner.free.fr/gentoo/cupsddk/${P}.tar.bz2"
@@ -9,24 +13,31 @@ SRC_URI="http://jdettner.free.fr/gentoo/cupsddk/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="fltk"
 
-RDEPEND="net-print/cups"
-DEPEND="${RDEPEND}"
+DEPEND=">=net-print/cups-1.2
+	fltk? ( =x11-libs/fltk-1.1* )"
+DEPEND="${DEPEND}"
 
 S="${WORKDIR}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
 	# fix prestripped binaries, nuke SVN dirs
 	sed -i -e "/INSTALL_BIN/s/-s//" Makedefs.in || die "sed failed"
 	find . -type d -name '.svn' -print0 | xargs -0 rm -rf
+
+	# fix automagic fltk dependency
+	epatch "${FILESDIR}"/${PN}-fltk-automagic.patch
+	eautoconf
 }
 
 src_compile() {
 	econf BUILDROOT="${D}" \
 		--with-docdir=/usr/share/doc/${PF} \
+		$(use_with fltk) \
 		|| die "econf failed"
 	emake BUILDROOT="${D}" || die "emake failed"
 }
