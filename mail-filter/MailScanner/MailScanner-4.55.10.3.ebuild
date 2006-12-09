@@ -34,11 +34,11 @@ RDEPEND="${DEPEND}
 	dev-perl/TimeDate
 	dev-perl/Sys-Hostname-Long
 	>=net-mail/tnef-1.4.3
-	perl-core/File-Spec
-	perl-core/File-Temp
-	perl-core/Getopt-Long
-	>=perl-core/Sys-Syslog-0.18
-	>=perl-core/MIME-Base64-3.05
+	virtual/perl-File-Spec
+	virtual/perl-File-Temp
+	virtual/perl-Getopt-Long
+	>=virtual/perl-Sys-Syslog-0.18
+	>=virtual/perl-MIME-Base64-3.05
 	virtual/cron
 	|| (
 		sendmail? ( mail-mta/sendmail )
