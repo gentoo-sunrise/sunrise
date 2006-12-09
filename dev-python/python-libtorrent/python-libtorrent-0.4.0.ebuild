@@ -24,3 +24,13 @@ pkg_setup() {
 		die "Missing threads USE-flag for dev-libs/boost"
 	fi
 }
+
+src_unpack() {
+	unpack ${A}
+
+	cd ${S}
+	# Adding boost libraries suffix, see
+	# http://deluge-torrent.org/trac/ticket/62
+	# for details
+	sed -i -e "s:\('boost_[^']*\):\1-mt:g" setup.py
+}
