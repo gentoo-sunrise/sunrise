@@ -14,10 +14,10 @@
 -	CXXFLAGS="`$FLTKCONFIG --cflags` $CXXFLAGS"
 -	GUILIBS="`$FLTKCONFIG --use-images --ldstaticflags`"
 +if test "x$with_fltk" == "xyes"; then
++	AC_PATH_PROG(FLTKCONFIG,fltk-config)
 +	if test "x$FLTKCONFIG" = x; then
 +		AC_MSG_ERROR([Sorry, the CUPS DDK GUI requires FLTK 1.1.x.])
 +	else
-+		AC_PATH_PROG(FLTKCONFIG,fltk-config)
 +		CXXFLAGS="`$FLTKCONFIG --cflags` $CXXFLAGS"
 +		GUILIBS="`$FLTKCONFIG --use-images --ldstaticflags`"
 +	fi
