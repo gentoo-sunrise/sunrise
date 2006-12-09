@@ -1,0 +1,5 @@
+# Note that this requires portage-2.1.1+ so if you need this functionality,
+# make sure your package forces a new-enough portage.
+
+# mask for pending app-antivirus/vlnx removal
+mail-filter/MailScanner vlnx
