@@ -12,7 +12,6 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~ppc ~amd64 ~sparc"
 IUSE=""
-RESTRICT="nomirror"
 
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )
 	!x11-themes/serenity-decoration
