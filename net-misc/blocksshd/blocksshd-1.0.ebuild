@@ -20,7 +20,7 @@ RDEPEND=">=virtual/perl-Sys-Syslog-0.16
 	>=dev-perl/File-Tail-0.99.1
 	>=dev-perl/Net-DNS-0.53-r1
 	>=dev-perl/Net-Subnets-0.21
-	>=perl-core/Getopt-Long-2.34
+	>=virtual/perl-Getopt-Long-2.34
 	>=net-firewall/iptables-1.3.5-r1"
 
 src_unpack() {
