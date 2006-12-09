@@ -15,7 +15,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND=">=perl-core/Sys-Syslog-0.16
+RDEPEND=">=virtual/perl-Sys-Syslog-0.16
 	>=dev-perl/Sys-Hostname-Long-1.2
 	>=dev-perl/File-Tail-0.99.1
 	>=dev-perl/Net-DNS-0.53-r1
