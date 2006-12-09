@@ -27,8 +27,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-
-	cd ${S}
+	cd "${S}"
 	# Adding boost libraries suffix, see
 	# http://deluge-torrent.org/trac/ticket/62
 	# for details
