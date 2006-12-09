@@ -15,8 +15,8 @@ IUSE="ipv6 ssl"
 
 DEPEND="dev-lang/perl
 	app-text/uudeview
-	perl-core/Time-HiRes
-	perl-core/Getopt-Long
+	virtual/perl-Time-HiRes
+	virtual/perl-Getopt-Long
 	dev-perl/TermReadKey
 	dev-perl/Term-ANSIColor
 	dev-perl/XML-DOM
