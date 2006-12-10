@@ -43,7 +43,6 @@ RDEPEND="x11-libs/libXdmcp
 	x11-libs/libXext
 	x11-libs/libX11
 	x11-libs/pango
-	>=sys-libs/glibc-2.3.2
 	>=x11-libs/gtk+-2.0.0
 	>=virtual/xft-7.0
 	>=virtual/libstdc++-3.3

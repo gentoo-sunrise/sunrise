@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> songbird-bin-0.2.1.ebuild:
+  Remove pointless sys-libs/glibc RDEPEND
+
   08 Dec 2006; Jakub Moc <jakub@gentoo.org> songbird-bin-0.2.1.ebuild:
   QA - add -* into keywords, this is binary stuff only available for x86 and
   amd64, remove bogus !sparc? from RDEPEND.
