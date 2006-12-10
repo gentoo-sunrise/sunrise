@@ -7,7 +7,6 @@ inherit kde
 DESCRIPTION="Widget style + kwin decoration both aimed to be a good balance between eye candy and simplicity."
 HOMEPAGE="http://www.kde-look.org/content/show.php?content=27968"
 SRC_URI="http://www.notmart.org/files/polyester-1.0_rc1.tar.bz2"
-RESTRICT=nomirror
 
 SLOT="0"
 LICENSE="LGPL-2"
