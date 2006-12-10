@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> slock-0.3.ebuild,
+  slock-9999.ebuild:
+  QA: Remove sys-libs/glibc dependency, fix nonsensical keywords
+
   03 Nov 2006; Cedric Krier <ced@ced.homedns.org> -slock-0.2.ebuild,
   +slock-0.3.ebuild:
   Version bump

@@ -13,8 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="sys-libs/glibc
-	x11-libs/libX11"
+DEPEND="x11-libs/libX11"
 RDEPEND=${DEPEND}
 
 src_unpack() {
