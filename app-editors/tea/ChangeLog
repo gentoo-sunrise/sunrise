@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> tea-14.2.4.ebuild:
+  Fix make_desktop_entry; cosmetics
+
   04 Nov 2006; Peter Weller (welp) <welp@01welp.co.uk> tea-14.2.4.ebuild:
   Added ~x86 keyword thanks to armin76
 

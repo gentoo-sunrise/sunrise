@@ -25,7 +25,7 @@ src_compile() {
 	$(use_enable !gnome legacy ) \
 	|| die "Configure failed!"
 
-	emake || die "Make failed!"
+	emake || die "emake failed!"
 }
 
 src_install() {
@@ -33,5 +33,5 @@ src_install() {
 
 	doicon ${FILESDIR}/tea.png
 #	domenu ${FILESDIR}/tea.desktop
-	make_desktop_entry tea Tea tea Office
+	make_desktop_entry ${PN} "${PN} (Text Editor)" ${PN}.png "Office;TextEditor;GTK"
 }
