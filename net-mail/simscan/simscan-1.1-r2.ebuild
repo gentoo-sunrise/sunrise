@@ -20,8 +20,6 @@ DEPEND="clamav? ( app-antivirus/clamav )
 RDEPEND="${DEPEND}
 	virtual/qmail"
 
-RESTRICT="strip"
-
 pkg_setup() {
 	enewgroup clamav
 	enewuser clamav -1 -1 /dev/null clamav
