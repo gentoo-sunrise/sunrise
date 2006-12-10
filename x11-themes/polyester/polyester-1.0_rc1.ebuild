@@ -10,7 +10,7 @@ SRC_URI="http://www.notmart.org/files/polyester-1.0_rc1.tar.bz2"
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="x86 amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )"
