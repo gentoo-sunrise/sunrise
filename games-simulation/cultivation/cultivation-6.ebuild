@@ -22,8 +22,7 @@ DEPEND="virtual/opengl
 	x11-libs/libX11
 	x11-libs/libXi
 	x11-libs/libXext
-	x11-libs/libXmu
-	sys-libs/glibc"
+	x11-libs/libXmu"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_PN}_${PV}_UnixSource

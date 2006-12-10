@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> cultivation-6.ebuild:
+  QA: Remove sys-libs/glibc dependency
+
   07 Dec 2006; Cedric Krier <cedk@gentoo.org> cultivation-6.ebuild:
   Remove append-flags
 
