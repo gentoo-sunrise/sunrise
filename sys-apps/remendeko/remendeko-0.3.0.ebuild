@@ -13,7 +13,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk"
-RESTRICT="strip"
 
 RDEPEND="gtk? ( >=x11-libs/gtk+-2.4.0 )"
 
