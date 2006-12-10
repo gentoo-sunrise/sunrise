@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> lsw-9999.ebuild:
+  Fix nonsensical KEYWORDS
+
   13 Oct 2006; Cedric Krier <ced@ced.homedns.org> +lsw-0.1.ebuild,
   lsw-9999.ebuild:
   Version bump
