@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> +imgv-3.1.5.ebuild:
+  Version bump
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   imgv-3.1.ebuild:
   take a different HOMEPAGE, it is nicer
