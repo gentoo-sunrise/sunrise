@@ -11,7 +11,7 @@ EHG_REPO_URI=http://suckless.org/cgi-bin/hgwebdir.cgi/${PN}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="-x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
