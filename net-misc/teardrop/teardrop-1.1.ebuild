@@ -17,7 +17,6 @@ DEPEND="virtual/libiconv
 	dev-libs/libxml2
 	net-misc/curl
 	dev-libs/libpcre
-	sys-libs/glibc
 	>=x11-libs/wxGTK-2.6"
 RDEPEND=${DEPEND}
 
