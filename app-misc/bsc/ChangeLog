@@ -3,7 +3,7 @@
 # $Header: $
 
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> +bsc-2.27.ebuild,
-  -bsc-2.23.ebuild:
+  -bsc-2.26.ebuild:
   Version bump; remove old version.
 
   02 Nov 2006; Markus Ullmann <jokey@gentoo.org> -bsc-2.23.ebuild:
