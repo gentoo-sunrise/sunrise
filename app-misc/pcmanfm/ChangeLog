@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> +pcmanfm-0.3.2.2.ebuild:
+  Version bump, makes fam support optional and inotify is used instead when
+  fam is disabled. Optional support for HAL.
+
   28 Nov 2006; Stefan Schweizer <genstef@gentoo.org> -pcmanfm-0.2.4.ebuild:
   remove obsolete old ebuilds, thanks pcheck
 
