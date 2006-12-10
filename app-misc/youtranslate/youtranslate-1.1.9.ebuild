@@ -25,5 +25,5 @@ src_compile() {
 src_install() {
 	dobin youtranslate.exe "${FILESDIR}/youtranslate"
 	doicon yTicon.png
-	make_desktop_entry "${PN}" "YouTranslate!" "yTicon" "Utility"
+	make_desktop_entry "${PN}" "YouTranslate!" yTicon.png "Utility;Office;Dictionary"
 }
