@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> kwin-decor-suse2-0.4.ebuild:
+  Remove pointless RESTRICT
+
   28 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
   -kwin-decor-suse2-0.3.5.ebuild:
   remove obsolete old ebuilds, thanks pcheck
