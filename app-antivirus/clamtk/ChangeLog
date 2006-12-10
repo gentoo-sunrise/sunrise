@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> +clamtk-2.26.ebuild:
+  Version bump
+
   02 Nov 2006; Markus Ullmann <jokey@gentoo.org> -clamtk-2.20.ebuild:
   drop old
 
