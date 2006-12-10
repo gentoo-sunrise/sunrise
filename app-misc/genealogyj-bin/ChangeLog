@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> -genealogyj-bin-2.4.2-r2.ebuild,
+  +genealogyj-bin-2.4.2-r3.ebuild:
+  Change LINGUAS handling to something less awful and always install English
+  resources.
+
   24 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   genealogyj-bin-2.4.2-r2.ebuild:
   corrected RDEPEND and DEPEND
