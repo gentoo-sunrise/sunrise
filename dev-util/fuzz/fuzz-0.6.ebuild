@@ -13,8 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=sys-libs/readline-4.3
-	>=sys-libs/glibc-2.3.2"
+DEPEND=">=sys-libs/readline-4.3"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
