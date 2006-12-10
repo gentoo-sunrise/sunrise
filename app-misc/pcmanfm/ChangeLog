@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> pcmanfm-0.3.2.2.ebuild:
+  fam support is now optional, so change pkg_postinst message accordingly
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> +pcmanfm-0.3.2.2.ebuild:
   Version bump, makes fam support optional and inotify is used instead when
   fam is disabled. Optional support for HAL.

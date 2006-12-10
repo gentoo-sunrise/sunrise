@@ -45,7 +45,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	if has_version app-admin/fam ; then
+	if use fam && has_version app-admin/fam ; then
 		elog "You are using fam as your file alteration monitor,"
 		elog "so you must have famd started before running pcmanfm."
 		elog
