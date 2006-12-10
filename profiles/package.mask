@@ -23,6 +23,10 @@
 
 # Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
 # svn version should be masked
+=x11-misc/swarp-9999
+
+# Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
+# svn version should be masked
 =app-misc/ssid-9999
 
 # Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
