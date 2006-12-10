@@ -12,7 +12,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="alsa debug flac jack ladspa oss samplerate sdl vorbis"
-RESTRICT="strip"
 
 DEPEND="=x11-libs/qt-3.3*
 	vorbis? ( media-libs/libvorbis )

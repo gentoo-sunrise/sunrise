@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> lmms-0.2.1.ebuild,
+  lmms-0.2.1-r1.ebuild:
+  Remove RESTRICT="strip"
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   lmms-0.2.1.ebuild, lmms-0.2.1-r1.ebuild:
   added trailing slash to HOMEPAGE URL
