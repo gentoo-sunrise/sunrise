@@ -3,11 +3,10 @@
 # $Header: $
 
 MY_P="${PN}091"
-DESCRIPTION="Open-source and cross-platform (UNIX, Mac OS X and Windows) picture manager / organizer written in Perl/Tk"
+DESCRIPTION="picture manager / organizer written in Perl/Tk"
 HOMEPAGE="http://mapivi.sourceforge.net/mapivi.shtml"
 SRC_URI="mirror://sourceforge/mapivi/${MY_P}.tgz"
 
-S=${WORKDIR}/${MY_P}
 
 IUSE=""
 LICENSE="GPL-2"
@@ -21,6 +20,8 @@ DEPEND="dev-lang/perl
 	media-gfx/imagemagick
 	media-libs/jpeg
 	dev-perl/Image-MetaData-JPEG"
+
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
