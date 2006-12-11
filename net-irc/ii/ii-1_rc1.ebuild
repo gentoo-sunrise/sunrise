@@ -3,7 +3,7 @@
 # $Header: $
 
 MY_P=${P/_/-}
-DESCRIPTION="ii is a minimalist FIFO and filesystem-based IRC client"
+DESCRIPTION="A minimalist FIFO and filesystem-based IRC client"
 HOMEPAGE="http://irc.suckless.org/"
 SRC_URI="http://suckless.org/download/${MY_P}.tar.gz"
 
@@ -15,7 +15,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_compile() {
 	emake || die "Compilation failed"
