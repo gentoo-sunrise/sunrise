@@ -23,6 +23,6 @@ src_compile() {
 
 src_install() {
 	dobin ii
-	dodoc README FAQ LICENSE
+	dodoc README FAQ
 	doman *.1
 }
