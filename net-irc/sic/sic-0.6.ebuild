@@ -5,9 +5,9 @@
 inherit toolchain-funcs
 
 DESCRIPTION="an extremly simple IRC client"
-HOMEPAGE="http://suckless.org"
+HOMEPAGE="http://irc.suckless.org/view.sh/simple+irc+client"
 SRC_URI="http://suckless.org/download/${P}.tar.gz"
-	
+
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -21,13 +21,13 @@ src_unpack() {
 	cd "${S}"
 
 	sed -i \
-	-e "s/.*strip.*//" \
-	Makefile || die "sed failed"
+		-e "s/.*strip.*//" \
+		Makefile || die "sed failed"
 
 	sed -i \
-	-e "s/CFLAGS = -Os/CFLAGS +=/" \
-	-e "s/LDFLAGS =/LDFLAGS +=/" \
-	config.mk || die "sed failed"
+		-e "s/CFLAGS = -Os/CFLAGS +=/" \
+		-e "s/LDFLAGS =/LDFLAGS +=/" \
+		config.mk || die "sed failed"
 }
 
 src_compile() {
@@ -35,8 +35,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install ||
-	"emake install failed"
+	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
 
 	dodoc README
 }
