@@ -8,7 +8,7 @@ inherit autotools eutils
 
 DESCRIPTION="A suite of standard drivers, a PPD file compiler, and other utilities to develop printer drivers for CUPS and other printing environments."
 HOMEPAGE="http://www.cups.org/ddk/index.php"
-SRC_URI="http://jdettner.free.fr/gentoo/cupsddk/${P}.tar.bz2"
+SRC_URI="http://dev.gentooexperimental.org/~jdettner/gentoo/cupsddk/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
