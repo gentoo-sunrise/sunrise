@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs flag-o-matic
+inherit toolchain-funcs
 
 DESCRIPTION="Arpstar dockapp for alert visualization"
 HOMEPAGE="http://arpstar.sourceforge.net"
@@ -19,13 +19,14 @@ DEPEND="virtual/logger
 	x11-proto/xextproto"
 RDEPEND="${DEPEND}
 	net-misc/arpstar"
+
 S="${WORKDIR}/${PN}_wa_alpha1"
 
 src_compile() {
 	sed -i \
 	    -e "/^CXX=/s:c++:$(tc-getCXX):" \
 	    Makefile
-	append-flags ${CXXFLAGS}
+
 	emake || die "emake failed"
 }
 
@@ -35,8 +36,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "You have to change your system logger's configuration"
-	einfo "to make wmarpstar work.Have a look at"
-	einfo "/usr/share/doc/${PF}/ for a sample configuration for syslog-ng."
+	elog "You have to change your system logger's configuration"
+	elog "to make wmarpstar work. Have a look at"
+	elog "/usr/share/doc/${PF}/ for a sample configuration for syslog-ng."
 }
-
