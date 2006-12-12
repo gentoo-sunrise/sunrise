@@ -9,10 +9,11 @@ RESTRICT="nomirror"
 
 inherit versionator
 
-MY_P="`expr substr ${PV} 1 4`-`expr substr ${PV} 5 2`-`expr substr ${PV} 7 2`"
+MY_P=$(replace_all_version_separators '-' ${PV})
 SRC_URI="http://www.gene.com/share/gmap/src/gmap-${MY_P}.tar.gz"
 S="${WORKDIR}/${PN}-${MY_P}"
 
 src_install() {
 	make install DESTDIR=${D} || die
+	dodoc AUTHORS ChangeLog README
 }
