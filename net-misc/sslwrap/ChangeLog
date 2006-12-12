@@ -1,8 +1,0 @@
-# ChangeLog for net-misc/sslwrap
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  12 Dec 2006; Ali Polatel (hawking) <polatel@nerdshack.com>
-  +files/2.0.6-openssl-0.9.7.patch, +sslwrap-2.0.6.ebuild, +metadata.xml:
-  Updated ebuid for net-misc/sslwrap , fixing bug 146828
-
