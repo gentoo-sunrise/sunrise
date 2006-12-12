@@ -3,6 +3,10 @@
 # $Header: $
 
   12 Dec 2006; Andrei K. (azazello) <gentoo@horizon.ath.cx>
+  tgi-tools-0.1.ebuild:
+  add pvm use flag, install docs
+
+  12 Dec 2006; Andrei K. (azazello) <gentoo@horizon.ath.cx>
   +tgi-tools-0.1.ebuild, +metadata.xml:
   New ebuild, see http://bugs.gentoo.org/show_bug.cgi?id=157827
 

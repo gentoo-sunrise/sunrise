@@ -8,7 +8,7 @@ DESCRIPTION="The Gene Index Project utilities for genomic data processing: seqcl
 LICENSE="Artistic"
 HOMEPAGE="http://compbio.dfci.harvard.edu/tgi/software/"
 SLOT="0"
-IUSE=""
+IUSE="pvm"
 KEYWORDS="~x86"
 
 for i in seqclean/{seqclean,mdust,trimpoly} cdbfasta/cdbfasta tgicl/{psx,pvmsx,zmsort,tclust,sclust,nrcl,tgi_cpp_library}; do
@@ -17,7 +17,7 @@ done
 
 RESTRICT="nomirror"
 
-DEPEND=""
+DEPEND="pvm? ( sys-cluster/pvm )"
 RDEPEND=${DEPEND}
 S=${WORKDIR}
 
@@ -31,8 +31,8 @@ src_unpack() {
 src_compile() {
 	sed -i 's/use Mailer;/#use Mailer;/' ${S}/seqclean/seqclean
 	sed -i 's/-V\t\tverbose/-V\t\tverbose\\/' ${S}/zmsort/zmsort.cpp
-	# TODO: fix errors in nrcl, pvmsx
-	for i in cdbfasta mdust psx sclust tclust trimpoly zmsort; do
+	# TODO: fix error in nrcl
+	for i in cdbfasta mdust psx sclust tclust trimpoly zmsort `use pvm && echo pvmsx`; do
 		sed -i 's/CFLAGS[ ]*=/CFLAGS :=/; s/-D_REENTRANT/-D_REENTRANT \${CFLAGS}/; s/CFLAGS[ ]*:=[ ]*-O2$//' ${S}/${i}/Makefile
 		(cd ${S}/${i}; emake) || die
 	done
@@ -40,5 +40,6 @@ src_compile() {
 
 src_install() {
 	dobin cdbfasta/{cdbfasta,cdbyank} seqclean/{seqclean,cln2qual,bin/seqclean.psx}
-	for i in mdust psx sclust tclust trimpoly zmsort; do dobin ${i}/${i}; done
+	for i in mdust psx sclust tclust trimpoly zmsort `use pvm && echo pvmsx`; do dobin ${i}/${i}; done
+	for i in cdbfasta seqclean; do newdoc ${i}/README README.${i}; done
 }
