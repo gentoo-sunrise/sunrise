@@ -24,7 +24,6 @@ mail-filter/MailScanner:f-prot - Enable usage of fprot virus scanner
 mail-filter/MailScanner:postfix - Set postfix to used MTA
 mail-filter/MailScanner:sendmail - Set sendmail to used MTA
 mail-filter/MailScanner:spamassassin - Enable usage of spamassassin for spam detection
-mail-filter/MailScanner:vlnx - Enable usage of vnlx virus scanner
 media-gfx/openscenegraph:introspection - Compile osgIntrospection
 media-gfx/openscenegraph:producer - Compile osgProducer
 media-gfx/openscenegraph:gdal - Compile gdal plugin
