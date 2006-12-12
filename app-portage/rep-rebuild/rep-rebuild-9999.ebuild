@@ -22,7 +22,7 @@ DEPEND=""
 S="${WORKDIR}/${ECVS_MODULE}"
 
 src_install() {
-        dobin bin/rep-rebuild || die
-        doman man/rep-rebuild.1
+	dobin bin/rep-rebuild || die "dobin failed"
+	doman man/rep-rebuild.1
 	dodoc doc/{README,CREDITS}
 }
