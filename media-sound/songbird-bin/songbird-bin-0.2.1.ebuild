@@ -14,7 +14,7 @@ SRC_URI="x86? ( http://download.songbirdnest.com/installer/linux/i686/${MY_PN}_$
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="ffmpeg dvd flac mad mpeg ogg theora vorbis"
 
 #gstreamer deps are a mix of

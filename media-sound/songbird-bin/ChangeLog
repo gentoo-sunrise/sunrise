@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2006; Markus Ullmann <jokey@gentoo.org> songbird-bin-0.2.1.ebuild:
+  QA: no stupid -*
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> songbird-bin-0.2.1.ebuild:
   Remove pointless sys-libs/glibc RDEPEND
 
