@@ -1,3 +1,7 @@
+# Copyright 1999-2006 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
 DESCRIPTION="A Genomic Mapping and Alignment Program for mRNA and EST Sequences"
 LICENSE="gmap"
 HOMEPAGE="http://www.gene.com/share/gmap/"
@@ -14,6 +18,6 @@ SRC_URI="http://www.gene.com/share/gmap/src/gmap-${MY_P}.tar.gz"
 S="${WORKDIR}/${PN}-${MY_P}"
 
 src_install() {
-	make install DESTDIR=${D} || die
+	emake install DESTDIR=${D} || die
 	dodoc AUTHORS ChangeLog README
 }
