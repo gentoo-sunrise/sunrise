@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2006; Jakub Moc <jakub@gentoo.org> -keep-0.3.0.ebuild,
+  +keep-0.4.0.ebuild:
+  Version bump, remove old
+
   22 Jun 2006; DrChandra <gentooperson@yahoo.com> ChangeLog:
   New Ebuild for bug 135362 thanks to Mike Pagano
 
