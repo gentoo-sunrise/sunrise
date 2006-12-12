@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2006; Markus Ullmann <jokey@gentoo.org> +files/digest-bsc-2.27:
+  Missing digest
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> +bsc-2.27.ebuild,
   -bsc-2.26.ebuild:
   Version bump; remove old version.
