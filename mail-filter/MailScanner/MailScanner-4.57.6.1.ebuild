@@ -14,7 +14,7 @@ SRC_URI="http://www.mailscanner.info/files/4/tar/${PN}-install-${MY_PVR}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="bitdefender clamav doc exim f-prot postfix sendmail spamassassin vlnx"
+IUSE="bitdefender clamav doc exim f-prot postfix sendmail spamassassin"
 
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
@@ -49,8 +49,7 @@ RDEPEND="${DEPEND}
 	bitdefender? ( app-antivirus/bitdefender-console )
 	clamav? ( >=app-antivirus/clamav-0.88.4 )
 	f-prot? ( app-antivirus/f-prot )
-	spamassassin? ( >=mail-filter/spamassassin-3.1.5 )
-	vlnx? ( app-antivirus/vlnx )"
+	spamassassin? ( >=mail-filter/spamassassin-3.1.5 )"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 BASE="/usr"
@@ -100,7 +99,6 @@ src_compile() {
 	use bitdefender && VIRUS_SCANNERS="bitdefender ${VIRUS_SCANNERS}"
 	use clamav && VIRUS_SCANNERS="clamav ${VIRUS_SCANNERS}"
 	use f-prot && VIRUS_SCANNERS="f-prot ${VIRUS_SCANNERS}"
-	use vlnx && VIRUS_SCANNERS="mcafee ${VIRUS_SCANNERS}"
 
 	if [ "$VIRUS_SCANNERS" == "" ]; then
 		VIRUS_SCANNERS="none"
@@ -187,13 +185,9 @@ src_compile() {
 		-e "s#^\(Incoming Work Permissions[ \t]*=\).*#\1 ${WORKPERM}#" \
 		"${S}/etc/MailScanner.conf"
 
-	# net-mail/vlnx net-mail/clamav net-mail/f-prot package compatibility
-	sed -i \
-		-e "s#PREFIX=/usr/local/uvscan#PREFIX=/opt/vlnx#" \
-		"${S}/lib/mcafee-autoupdate"
+	# net-mail/clamav net-mail/f-prot package compatibility
 	sed -i \
 		-e "s#/opt/MailScanner/lib#/usr/lib/MailScanner#" \
-		-e 's#^\(mcafee.*\)/usr/local/uvscan$#\1/opt/vlnx#' \
 		-e 's#^\(clamav\t.*/usr\)/local$#\1#' \
 		-e 's#^\(f-prot.*\)/usr/local/f-prot$#\1/opt/f-prot#' \
 		"${S}/etc/virus.scanners.conf"
