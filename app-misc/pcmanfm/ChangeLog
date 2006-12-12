@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2006; Markus Ullmann <jokey@gentoo.org>
+  -pcmanfm-0.3.1_beta2.ebuild:
+  Remove old
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> pcmanfm-0.3.2.2.ebuild:
   fam support is now optional, so change pkg_postinst message accordingly
 
