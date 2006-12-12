@@ -7,7 +7,6 @@ DESCRIPTION="picture manager / organizer written in Perl/Tk"
 HOMEPAGE="http://mapivi.sourceforge.net/mapivi.shtml"
 SRC_URI="mirror://sourceforge/mapivi/${MY_P}.tgz"
 
-
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
