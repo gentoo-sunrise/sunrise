@@ -15,8 +15,7 @@ KEYWORDS="~x86"
 IUSE_LINGUAS="linguas_de linguas_en linguas_es linguas_fr linguas_it linguas_pl linguas_pt_BR"
 IUSE="${IUSE_LINGUAS} debug"
 
-DEPEND=">=x11-libs/gtk+-2
-	>=dev-libs/glib-2
+DEPEND=">=x11-libs/gtk+-2.4
 	>=app-antivirus/f-prot-4.6.0-r2"
 RDEPEND="${DEPEND}"
 
@@ -46,7 +45,6 @@ src_compile() {
 	./configure \
 	--autodetect \
 	--with-install-dir="${D}/usr" \
-	--with-gtk2 \
 	${myconf} \
 	$(use_with debug) || die "configure failed"
 	emake || die "emake failed"
