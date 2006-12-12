@@ -15,5 +15,5 @@
 
   12 Dec 2006; Andrei K. (azazello) <gentoo@horizon.ath.cx>
   +gmap-20060421.ebuild, +metadata.xml:
-  New ebuild, see http://bugs.gentoo.org/show_bug.cgi?id=135103
+  New ebuild, see Bug 135103
 
