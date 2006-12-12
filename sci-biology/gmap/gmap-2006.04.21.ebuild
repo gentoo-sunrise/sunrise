@@ -9,7 +9,7 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
 
-RESTRICT="nomirror"
+RESTRICT="mirror"
 
 inherit versionator
 
@@ -18,6 +18,6 @@ SRC_URI="http://www.gene.com/share/gmap/src/gmap-${MY_P}.tar.gz"
 S="${WORKDIR}/${PN}-${MY_P}"
 
 src_install() {
-	emake install DESTDIR=${D} || die
+	emake install DESTDIR=${D} || die "emake install failed"
 	dodoc AUTHORS ChangeLog README
 }
