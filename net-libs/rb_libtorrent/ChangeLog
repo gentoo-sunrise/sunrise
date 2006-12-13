@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  rb_libtorrent-0.11.ebuild:
+  make blocker of net-libs/libtorrent since they collide
+
   28 Nov 2006; Stefan Schweizer <genstef@gentoo.org>
   -rb_libtorrent-0.10.ebuild:
   remove obsolete old ebuilds, thanks pcheck
