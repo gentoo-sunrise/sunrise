@@ -3,20 +3,22 @@
 # $Header: $
 
 DESCRIPTION="The Gene Index Project utilities for genomic data processing: seqclean, cdbfasta, psx"
-LICENSE="Artistic"
 HOMEPAGE="http://compbio.dfci.harvard.edu/tgi/software/"
-SLOT="0"
-IUSE="pvm"
-KEYWORDS="~x86"
 
 for i in seqclean/{seqclean,mdust,trimpoly} cdbfasta/cdbfasta tgicl/{psx,pvmsx,zmsort,tclust,sclust,nrcl,tgi_cpp_library}; do
 	SRC_URI="${SRC_URI} ftp://occams.dfci.harvard.edu/pub/bio/tgi/software/${i}.tar.gz"
 done
 
-RESTRICT="mirror"
+LICENSE="Artistic"
+SLOT="0"
+IUSE="pvm"
+KEYWORDS="~x86"
 
 DEPEND="pvm? ( sys-cluster/pvm )"
 RDEPEND=${DEPEND}
+
+RESTRICT="mirror"
+
 S=${WORKDIR}
 
 src_unpack() {
@@ -41,10 +43,10 @@ src_compile() {
 
 src_install() {
 	dobin cdbfasta/{cdbfasta,cdbyank} seqclean/{seqclean,cln2qual,bin/seqclean.psx}
-	for i in mdust psx sclust tclust trimpoly zmsort $(use pvm && echo pvmsx); do 
+	for i in mdust psx sclust tclust trimpoly zmsort $(use pvm && echo pvmsx); do
 		dobin ${i}/${i}
 	done
-	for i in cdbfasta seqclean; do 
+	for i in cdbfasta seqclean; do
 		newdoc ${i}/README README.${i}
 	done
 }
