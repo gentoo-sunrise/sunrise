@@ -11,7 +11,7 @@ SRC_URI="http://michaelsen.kicks-ass.net/Members/bjoern/etcproposals/downloads/$
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=sys-apps/portage-2.1"
 

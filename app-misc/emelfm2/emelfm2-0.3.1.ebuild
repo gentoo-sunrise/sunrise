@@ -10,7 +10,7 @@ SRC_URI="http://emelfm2.net/rel/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="unicode fam"
 
 DEPEND=">=x11-libs/gtk+-2.6

@@ -11,7 +11,7 @@ SRC_URI="http://kitone.free.fr/${PN}/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="cairo debug spell"
 
 # pcre needs to support utf8; current version in portage forces it, fortunately

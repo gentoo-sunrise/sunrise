@@ -11,7 +11,7 @@ SRC_URI="http://maxilys.awardspace.com/archives/${P}.tar.bz2
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~amd64 ~sparc"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )

@@ -10,7 +10,7 @@ SRC_URI="http://ndansmith.net/software/poddy/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~ppc ~x86"
 IUSE=""
 
 DEPEND="dev-python/feedparser"

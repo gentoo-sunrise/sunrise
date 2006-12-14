@@ -10,6 +10,6 @@ HOMEPAGE="http://search.cpan.org/~bettelli/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 SRC_TEST="do"

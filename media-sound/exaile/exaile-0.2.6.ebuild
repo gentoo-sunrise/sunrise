@@ -12,7 +12,7 @@ SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="fam mp3 flac aac musepack trayicon ipod cdaudio"
 
 DEPEND=">=dev-lang/python-2.4
