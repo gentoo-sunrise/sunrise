@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Dec 2006; Markus Ullmann <jokey@gentoo.org> gmap-2006.04.21.ebuild:
+  QA cleanup
+
   12 Dec 2006; Jakub Moc <jakub@gentoo.org> gmap-2006.04.21.ebuild:
   Fix deprecated restrict; add die message.
 
