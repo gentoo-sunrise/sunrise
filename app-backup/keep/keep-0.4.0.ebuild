@@ -3,7 +3,6 @@
 # $Header: $
 
 inherit kde
-need-kde 3.5.2
 
 DESCRIPTION="A simple backup system for KDE"
 HOMEPAGE="http://jr.falleri.free.fr/keep/wiki/Home"
@@ -16,6 +15,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=">=app-backup/rdiff-backup-1.0.1-r1"
+
+need-kde 3.5.2
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
