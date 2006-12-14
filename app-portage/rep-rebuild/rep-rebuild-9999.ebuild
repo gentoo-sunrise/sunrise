@@ -2,11 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="A tool to rebuild SVN/CVS packages taking care of dependencies ordering"
 ECVS_SERVER="rep-rebuild.cvs.sourceforge.net:/cvsroot/rep-rebuild"
 ECVS_MODULE=${PN}
 ECVS_TOP_DIR="${DISTDIR}/cvs-src/${PN}"
 inherit cvs
+
+DESCRIPTION="A tool to rebuild SVN/CVS packages taking care of dependencies ordering"
 HOMEPAGE="http://sourceforge.net/projects/rep-rebuild/"
 
 LICENSE="LGPL-2"
