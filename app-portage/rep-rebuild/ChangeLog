@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Dec 2006; Markus Ullmann <jokey@gentoo.org>
+  rep-rebuild-0.1_alpha3.ebuild:
+  Whitespace fix
+
   12 Dec 2006; Jakub Moc <jakub@gentoo.org> +rep-rebuild-9999.ebuild:
   Add CVS version as well
 
