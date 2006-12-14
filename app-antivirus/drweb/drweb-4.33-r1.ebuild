@@ -5,11 +5,11 @@
 inherit eutils
 
 MY_P="drweb-${PV}"
-S="${WORKDIR}/${P}-glibc2.4"
 
 DESCRIPTION="DrWeb virus scaner for Linux"
 HOMEPAGE="http://www.drweb.com/"
-SRC_URI="http://download.drweb.com/files/unix/Linux/Generic/${MY_P}-glibc2.4.tar.gz
+SRC_URI="glibc23? ( http://download.drweb.com/files/unix/Linux/Generic/${MY_P}-glibc2.3.tar.gz )
+	!glibc23? ( http://download.drweb.com/files/unix/Linux/Generic/${MY_P}-glibc2.4.tar.gz )
 	doc? ( linguas_ru? ( ftp://ftp.drweb.com/pub/drweb/unix/doc/${PN}-${PV/./}-unix-ru-pdf.zip ) )
 	doc? ( ftp://ftp.drweb.com/pub/drweb/unix/doc/${PN}-${PV/./}-unix-en-pdf.zip )"
 RESTRICT="mirror strip"
@@ -17,22 +17,25 @@ RESTRICT="mirror strip"
 SLOT="0"
 LICENSE="DRWEB"
 KEYWORDS="~x86"
-IUSE="doc linguas_ru logrotate"
+IUSE="doc glibc23 linguas_ru logrotate"
 
 DEPEND="app-arch/unzip"
 RDEPEND="${DEPEND}
 	dev-perl/libwww-perl
 	virtual/cron
 	logrotate? ( app-admin/logrotate )
-	=sys-libs/glibc-2.4*
+	glibc23? ( =sys-libs/glibc-2.3* )
+	!glibc23? ( =sys-libs/glibc-2.4* )
 	!=sys-libs/glibc-2.5*"
 
 PROVIDE="virtual/antivirus"
+use glibc23 && S="${WORKDIR}/${P}-glibc2.3"
+use glibc23 || S="${WORKDIR}/${P}-glibc2.4"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${PF}-gentoo.patch"
+	epatch "${FILESDIR}/${P}-gentoo.patch"
 }
 
 pkg_setup() {
