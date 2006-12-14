@@ -1,3 +1,4 @@
+app-antivirus/drweb:glibc23 - use binary package for glibc-2.3
 app-antivirus/drweb:logrotate - Use logrotate for rotating logs
 app-cdr/bonfire:beagle - Enable support for beagle
 app-cdr/bonfire:totem - Enable support for totem
