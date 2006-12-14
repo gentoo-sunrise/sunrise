@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Dec 2006; Christian Berendt (lhunephel) <christian@suppentopf.net>
+  homebank-3.2.1.ebuild:
+  added amd64-flag
+
   12 Dec 2006; Jakub Moc <jakub@gentoo.org> -homebank-3.2.ebuild,
   +homebank-3.2.1.ebuild:
   Version bump, remove old, add missing dependencies
