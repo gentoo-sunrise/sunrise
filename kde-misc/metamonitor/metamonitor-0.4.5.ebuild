@@ -7,7 +7,7 @@ inherit kde
 DESCRIPTION="Log monitoring tool for KDE."
 SRC_URI="mirror://sourceforge/metamonitor/${P}.tar.bz2"
 HOMEPAGE="http://metamonitor.sourceforge.net"
-LICENSE="GPL-1"
+LICENSE="GPL-2"
 
 KEYWORDS="~ppc ~x86"
 
