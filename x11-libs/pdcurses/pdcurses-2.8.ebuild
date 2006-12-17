@@ -33,7 +33,7 @@ S=${WORKDIR}/${MY_P}
 pkg_setup() {
 	if use Xaw3d && use nextaw ; then
 		elog "You have both Xaw3d and nextaw USE-flags set,"
-		elog "the package will choose one of them to link against."
+		elog "Xaw3d will be used."
 	fi
 }
 
