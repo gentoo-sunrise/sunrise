@@ -27,8 +27,7 @@ src_unpack() {
 }
 
 src_compile() {
-	#emake CXX=$(tc-getCXX) PREFIX="/usr" all || die "emake failed"
-	emake PREFIX="/usr" all || die "emake failed"
+	emake CXX=$(tc-getCXX) PREFIX="/usr" all || die "emake failed"
 }
 
 src_install() {
