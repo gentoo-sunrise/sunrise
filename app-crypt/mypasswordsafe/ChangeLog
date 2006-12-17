@@ -3,6 +3,11 @@
 # $Header: $
 
   17 Dec 2006; Santiago M. Mola <cooldwind@gmail.com>
+  -mypasswordsafe-20060326.ebuild,
+  -files/mypasswordsafe-20060326-gentoo.patch:
+  Removing old version.
+
+  17 Dec 2006; Santiago M. Mola <cooldwind@gmail.com>
   +mypasswordsafe-20061216.ebuild,
   +files/mypasswordsafe-20061216-qtdir.patch:
   Version bump to 20061216.
