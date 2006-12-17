@@ -27,13 +27,13 @@ src_unpack() {
 
 src_compile() {
 	# Just in case... It comes with a x86 precompiled binary!
-	rm -f shell-fm
+	rm -f ${PN}
 	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
 src_install() {
-	dobin shell-fm
-	dodoc shell-fm.rc-example
+	dobin ${PN}
+	dodoc ${PN}.rc-example
 }
 
 pkg_postinst() {
