@@ -19,7 +19,7 @@ ZPROD_LIST="ccPublisher"
 DEPEND=">=dev-python/wxpython-2.6.3.2
 	>=x11-libs/wxGTK-2.6.3.3
 	zope? ( net-zope/zope )
-	|| ( dev-python/elementtree >=dev-lang/python-2.5 )"
+	|| ( ( dev-python/elementtree =dev-lang/python-2.4* ) >=dev-lang/python-2.5 )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
