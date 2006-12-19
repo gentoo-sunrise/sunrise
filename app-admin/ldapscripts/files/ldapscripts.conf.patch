@@ -1,0 +1,23 @@
+--- ldapscripts.conf.org	2005-12-31 18:01:29.000000000 +0200
++++ ldapscripts.conf	2006-12-18 14:07:03.000000000 +0200
+@@ -35,10 +35,19 @@
+ # User properties
+ USHELL="/bin/sh"
+ UHOMES="/home/%u" # You may use %u for username here
+-CREATEHOMES="no" # Create home directories and set rights ?
++CREATEHOMES="no"  # Create home directories and set rights ?
++ASK_GECOS="no"    # ask user for gecos (full name)? prevents scripting, so the default is no.
++
++# Home directories
++# This is useful if you want to have a roaming home directory
++# that would be available on all clients your users login.
++CREATEHOMES="yes"        # Should the script create home directories?
++SRV_HOMES="/homes/%u"    # Where the user's home directory is located on the NFS server?
++HOME_SKEL="/etc/skel/"   # Where is the skeleton home located? (If not defined, home is left empty)
+ 
+ # User passwords generation
+ # Command-line used to generate a (random ?) password for the users (you may use %u for username here)
++# !! Note that this is eval'd, and what command you place here, will be run .. 
+ PASSWORDGEN="head -c8 /dev/random | uuencode -m - | sed -n -e '2s|=*$||;2p' | sed -e 's|+||g' -e 's|/||g'"
+ #PASSWORDGEN="echo changeme"
+ #PASSWORDGEN="echo %u"
