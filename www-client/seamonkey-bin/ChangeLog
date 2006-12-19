@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  -seamonkey-bin-1.0.6.ebuild, +seamonkey-bin-1.0.7.ebuild:
+  Version bump && remove old
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> seamonkey-bin-1.0.6.ebuild:
   Fix deprecated restrict
 

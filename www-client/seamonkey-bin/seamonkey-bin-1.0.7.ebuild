@@ -53,7 +53,7 @@ src_install() {
 
 	# Install icon and .desktop for menu entry
 	insinto /usr/share/pixmaps
-	doins "${FILESDIR}/icon/seamonkey-bin-icon.png"
+	doins "${FILESDIR}/icon/seamonkey-bin.png"
 	insinto /usr/share/applications
 	doins "${FILESDIR}/icon/seamonkey-bin.desktop"
 
