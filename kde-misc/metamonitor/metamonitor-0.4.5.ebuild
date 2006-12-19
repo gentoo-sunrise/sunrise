@@ -12,4 +12,3 @@ LICENSE="GPL-2"
 KEYWORDS="~ppc ~x86"
 
 need-kde 3
-
