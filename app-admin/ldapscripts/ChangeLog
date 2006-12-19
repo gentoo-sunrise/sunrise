@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  ldapscripts-1.4.ebuild:
+  Fix TrailingEmptyLine
+
   19 Dec 2006; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
   +ldapscripts-1.4.ebuild, +files/ldapadduser.patch,
   +files/ldapscripts.conf.patch, +metadata.xml:

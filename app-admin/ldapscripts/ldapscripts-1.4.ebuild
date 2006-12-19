@@ -55,4 +55,3 @@ src_install() {
 	dodoc CHANGELOG README TODO VERSION
 
 }
-
