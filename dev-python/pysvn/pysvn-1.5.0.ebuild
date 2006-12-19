@@ -24,7 +24,7 @@ src_unpack() {
 
 	# no kerberos linkage
 	epatch "${FILESDIR}/${P}-nokrb.patch"
-	
+
 	python setup.py configure
 
 	# we want our CFLAGS as well and don't need krb linkage
