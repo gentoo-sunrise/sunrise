@@ -14,7 +14,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="net-nds/openldap
-		 dev-libs/uulib"
+	 dev-libs/uulib"
 
 RUNTIMEDIR="/var/run/${PN}"
 RUNTIMEFILE="runtime"
