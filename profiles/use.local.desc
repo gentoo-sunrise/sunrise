@@ -95,3 +95,4 @@ x11-misc/dmenu:savedconfig - Add support to user defined configs
 x11-themes/gtk-engines-murrine:animation - Enable animations support
 x11-themes/qtcurve:gtk1 - Adds support for x11-libs/gtk+ (The GIMP Toolkit) version 1.x
 x11-wm/dwm:savedconfig - Add support to user defined configs
+app-misc/ccpublisher:zope - install zope stuff
