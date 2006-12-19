@@ -1,8 +1,0 @@
-# ChangeLog for app-misc/ccPublisher
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  19 Dec 2006; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
-  +ccPublisher-2.2.1.ebuild, +metadata.xml:
-  Ebuild for bug 157494
-
