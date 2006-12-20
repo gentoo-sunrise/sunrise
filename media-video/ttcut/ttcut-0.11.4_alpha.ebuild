@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="Tool for removing advertisements from recorded MPEG files"
 HOMEPAGE="http://ttcut.tritime.org/"
-SRC_URI="http://download.berlios.de/${PN}/${P/_/-}.tar.gz"
+SRC_URI="mirror://berlios/${PN}/${P/_/-}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
