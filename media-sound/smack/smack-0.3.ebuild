@@ -4,8 +4,7 @@
 
 DESCRIPTION="Drum synth, 100% sample free"
 HOMEPAGE="http://smack.berlios.de/"
-SRC_URI="http://download.berlios.de/${PN}/${P}.tar.gz
-		http://download2.berlios.de/${PN}/${P}.tar.gz"
+SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
 
 IUSE=""
 LICENSE="GPL-2"
