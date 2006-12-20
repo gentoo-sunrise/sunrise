@@ -5,9 +5,11 @@
 inherit eutils zproduct python
 
 MY_PN="ccPublisher"
+MY_P="${MY_PN}-${PV}"
+
 DESCRIPTION="Tool to tag and upload CC-licensed media files"
 HOMEPAGE="http://wiki.creativecommons.org/CcPublisher"
-SRC_URI="http://download.berlios.de/cctools/${MY_PN}-${PV}.tar.gz"
+SRC_URI="http://download.berlios.de/cctools/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -15,14 +17,13 @@ KEYWORDS="~x86"
 IUSE="zope"
 
 ZPROD_LIST="${MY_PN}"
-S="${WORKDIR}/${MY_PN}-${PV}"
+S="${WORKDIR}/${MY_P}"
 
 DEPEND=""
-RDEPEND=">=dev-lang/python-2.4
-	>=dev-python/wxpython-2.6.3.2
+RDEPEND=">=dev-python/wxpython-2.6.3.2
 	>=x11-libs/wxGTK-2.6.3.3
 	zope? ( net-zope/zope )
-	|| ( dev-python/elementtree >=dev-lang/python-2.5 )"
+	|| ( ( dev-python/elementtree >=dev-lang/python-2.4 ) >=dev-lang/python-2.5 )"
 	# wxGTK and wxpython have to be the same x.y.z version
 
 src_install() {
