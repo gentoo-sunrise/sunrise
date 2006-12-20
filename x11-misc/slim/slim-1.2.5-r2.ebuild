@@ -6,7 +6,7 @@ inherit eutils toolchain-funcs
 
 DESCRIPTION="SLiM - Simple Login Manager"
 HOMEPAGE="http://slim.berlios.de/"
-SRC_URI="http://download.berlios.de/${PN}/${P}.tar.gz"
+SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
