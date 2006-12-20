@@ -1,0 +1,8 @@
+# ChangeLog for net-zope/diyplonestyle
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Dec 2006; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
+  +diyplonestyle-2.1.3.ebuild, +metadata.xml:
+  ebuild for bug 158630
+
