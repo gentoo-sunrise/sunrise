@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="Multiuser IRC proxy with ssl support"
-SRC_URI="http://download.berlios.de/bip/${P}.tar.bz2"
+SRC_URI="mirror://berlios/bip/${P}.tar.bz2"
 HOMEPAGE="http://bip.berlios.de/"
 
 SLOT="0"
