@@ -9,7 +9,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Tool to tag and upload CC-licensed media files"
 HOMEPAGE="http://wiki.creativecommons.org/CcPublisher"
-SRC_URI="http://download.berlios.de/cctools/${MY_P}.tar.gz"
+SRC_URI="mirror://berlios/cctools/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
