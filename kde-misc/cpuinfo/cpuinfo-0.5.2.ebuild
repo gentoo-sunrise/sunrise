@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="kdeenablefinal"
 
-need-kde 3
-
 DEPEND=""
 RDEPEND=""
+
+need-kde 3
