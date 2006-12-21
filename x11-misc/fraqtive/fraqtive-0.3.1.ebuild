@@ -15,10 +15,3 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 need-kde 3.3
-
-src_compile() {
-	local myconf="${myconf} \
-		$(use_with arts)"
-
-	kde_src_compile || die "kde_src_compile failed"
-}
