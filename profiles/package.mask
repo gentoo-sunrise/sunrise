@@ -22,12 +22,6 @@
 ##
 
 # Jakub Moc <jakub@gentoo.org> (21 Dec 2006)
-# mask because of bad app-text/ghostscript-esp dependency.
-# If it works with virtual/ghostscript, unmask after you
-# have fixed the ebuild
-app-text/ps2eps
-
-# Jakub Moc <jakub@gentoo.org> (21 Dec 2006)
 # depends on non-existant net-zope/archetypes version
 net-zope/externalstorage
 
