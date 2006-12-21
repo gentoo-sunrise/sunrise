@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Jakub Moc <jakub@gentoo.org> (21 Dec 2006)
+# depends on non-existant net-zope/archetypes version
+net-zope/externalstorage
+
 # Jakub Moc <jakub@gentoo.org> (12 Dec 2006)
 # cvs version should be masked
 =x11-misc/rep-rebuild-9999
