@@ -1,0 +1,8 @@
+# ChangeLog for sci-electronics/gspiceui
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Dec 2006; Markus Ullmann <jokey@gentoo.org> +gspiceui-0.8.90.ebuild,
+  +metadata.xml:
+  Import for bug #74201
+
