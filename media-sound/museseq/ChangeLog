@@ -1,8 +1,0 @@
-# ChangeLog for media-sound/museseq
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  21 Dec 2006; Joachim Schiele (qknight) <js@lastlog.de>
-  +museseq-0.9_pre1.ebuild, +metadata.xml:
-  New Ebuild for bug 158692, thanks to Charlie Shepherd
-
