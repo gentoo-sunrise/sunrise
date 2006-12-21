@@ -88,9 +88,3 @@ dev-util/nsis
 # Jakub Moc <jakub@gentoo.org> (09 Jun 2006)
 # This is for testing only, upstream not active ATM
 =app-misc/mc-mp-4.1.40_pre9
-
-# Jakub Moc <jakub@gentoo.org> (08 Jun 2006)
-# May be vulnerable to SQL injection - see
-# http://bugs.gentoo.org/show_bug.cgi?id=34517#c3 and
-# http://pgfoundry.org/frs/shownotes.php?release_id=230
-=sys-auth/pam_pgsql-0.6.3
