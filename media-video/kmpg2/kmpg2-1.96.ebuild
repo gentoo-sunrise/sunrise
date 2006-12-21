@@ -15,8 +15,6 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-need-kde 3.5
-
 DEPEND=""
 RDEPEND="|| ( kde-base/kommander kde-base/kdewebdev )
 	media-video/ffmpeg
@@ -24,6 +22,8 @@ RDEPEND="|| ( kde-base/kommander kde-base/kdewebdev )
 	media-sound/sox
 	media-video/y4mscaler
 	>=media-video/mjpegtools-1.8.0"
+
+need-kde 3.5
 
 S=${WORKDIR}/${MY_P}
 
