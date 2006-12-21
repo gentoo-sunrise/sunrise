@@ -17,7 +17,7 @@ IUSE=""
 DEPEND=""
 
 RDEPEND="dev-lang/perl
-	     app-text/ghostscript-esp"
+	     virtual/ghostscript"
 
 S=$WORKDIR/${PN}
 
