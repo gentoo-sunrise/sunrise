@@ -38,7 +38,11 @@ src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
 
 	# collision with net-dialup/lrzsz
-	mv "${D}"/usr/bin/lsx "${D}"/usr/bin/lsx-suckless
+	mv "${D}/usr/bin/${PN}" "${D}/usr/bin/${PN}-suckless"
 
 	dodoc README
+}
+
+pkg_postinst() {
+	einfo "Run ${PN} with ${PN}-suckless"
 }

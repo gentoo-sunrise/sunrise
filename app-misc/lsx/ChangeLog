@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2006; Santiago M. Mola <cooldwind@gmail.com> lsx-0.1.ebuild,
+  lsx-9999.ebuild:
+  Added einfo about binary rename, and use more ${PN}
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> lsx-9999.ebuild:
   Fix nonsensical KEYWORDS
 
