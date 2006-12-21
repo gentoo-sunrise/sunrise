@@ -18,11 +18,11 @@ IUSE="firefox"
 
 RDEPEND=">=dev-libs/glib-2.6
 	>=x11-libs/gtk+-2.6
-	|| ( >=dev-libs/dbus-glib-0.71 ( >=sys-apps/dbus-0.61 <sys-apps/dbus-0.90 ) )
+	|| ( >=dev-libs/dbus-glib-0.71 ( >=sys-apps/dbus-0.60 <sys-apps/dbus-0.90 ) )
 	>=net-libs/loudmouth-1
 	>=gnome-base/gconf-2
 	>=net-misc/curl-7.13.1
-	firefox? ( >=www-client/mozilla-firefox-1.5 <www-client/mozilla-firefox-2.1 )
+	firefox? ( >=www-client/mozilla-firefox-1.5 <www-client/mozilla-firefox-2.0.1 )
 	x11-libs/libXScrnSaver"
 
 DEPEND="${RDEPEND}"
@@ -33,7 +33,7 @@ src_unpack() {
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
 	epatch "${FILESDIR}/${PN}-1.1.22-as-needed.patch"
-	epatch "${FILESDIR}/${PN}-1.1.24-use-firefox.patch"
+	epatch "${FILESDIR}/${P}-use-firefox.patch"
 	eautoreconf
 	use firefox && sed -e "s:GET_LIBDIR:$(get_libdir):" \
 		"${FILESDIR}/${PN}-1.1.26-firefox-update.sh" > "${S}/firefox-update.sh"

@@ -2,6 +2,11 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2006; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -files/mugshot-1.1.24-use-firefox.patch, -mugshot-1.1.28.ebuild,
+  +mugshot-1.1.30.ebuild, +files/mugshot-1.1.30-use-firefox.patch:
+  Version bump, tiny updates to dependencies and the firefox patch
+
   07 Dec 2006; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   +mugshot-1.1.28.ebuild:
   Version bump, new-style dbus dependencies, added WANT_AUTOCONF and
