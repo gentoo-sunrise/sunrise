@@ -3,13 +3,16 @@
 # $Header: $
 
 MY_P="PTLensDB"
+
 DESCRIPTION="PTLens profiles for lens calibration to use with clens"
 SRC_URI="mirror://sourceforge/hugin/${MY_P}_${PV//./-}.zip"
 HOMEPAGE="http://hugin.sf.net/"
+
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+
 DEPEND="app-arch/unzip"
 RDEPEND=""
 
