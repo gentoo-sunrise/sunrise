@@ -12,6 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 # opengl useflag removed because fraqtive does not build without it
+IUSE=""
 
 need-kde 3.3
 
