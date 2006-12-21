@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2006; Santiago M. Mola <cooldwind@gmail.com>
+  libinstrudeo-0.1.3.ebuild:
+  Remove inherit eutils
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   libinstrudeo-0.1.2.ebuild:
   added trailing slash to HOMEPAGE URL
