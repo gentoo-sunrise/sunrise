@@ -1,0 +1,8 @@
+# ChangeLog for app-dicts/words-bin
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Dec 2006; Pavel Sanda (ps) <ps at twin.jikos.cz>
+  +words-bin-1.97.ebuild, +files/words_dir.patch, +metadata.xml:
+  app-dict/words-bin: new Ebuild for bug 142046.
+

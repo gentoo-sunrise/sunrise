@@ -1,0 +1,9 @@
+--- latin	2006-12-21 00:39:41.000000000 +0100
++++ latin.patch	2006-07-29 03:23:43.000000000 +0200
+@@ -1,5 +1,5 @@
+ #! /bin/bash
+ 
+-WORDSPATH=/usr/local/words-1.97
++WORDSPATH=/opt/words-1.97
+ 
+ ( cd $WORDSPATH ; ./words $* )
