@@ -8,7 +8,7 @@ MY_PV="${PV/_beta/b}"
 MY_PN="${PN/-/_}"
 MY_P="${MY_PN}-${MY_PV}"
 
-DESCRIPTION="suite of Python packages and data for natural language processing"
+DESCRIPTION="A suite of Python packages and data for natural language processing"
 HOMEPAGE="http://nltk.sourceforge.net/"
 SRC_URI="mirror://sourceforge/nltk/${MY_P}.tar.gz
 	!lite? ( mirror://sourceforge/nltk/${MY_PN}-corpora-${MY_PV}.zip )
@@ -54,8 +54,8 @@ src_install() {
 
 pkg_postinst() {
 	if use lite ; then
-		elog "You installed ${PN} with 'lite' USE flag enabled,"
-		elog "that doesn't install the corpora which may be needed for"
-		elog "the examples and the apps developed using ${PN}."
+		elog "${PN} has been installed with the 'lite' USE flag enabled"
+		elog "This means corpora hasn't been installed, which may be needed"
+		elog "for the examples and apps developed using ${PN}."
 	fi
 }
