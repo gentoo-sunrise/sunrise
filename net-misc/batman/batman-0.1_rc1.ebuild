@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="virtual/libc"
-RDEPEND=${DEPEND}
+DEPEND=""
+RDEPEND=""
 
 S=${WORKDIR}/${MY_PN}-${MY_PV}
 
