@@ -36,6 +36,19 @@ which_patch() {
 	fi
 }
 
+collision_check() {
+	if has collision_protect ${FEATURES}; then
+		ewarn "Collisions are expected as this patches kernel code. Disable"
+		ewarn "FEATURES=collision-protect before use"
+		die 'incompatible FEATURES=collision-protect'
+	fi
+}
+
+pkg_setup() {
+	linux-info_pkg_setup
+	collision_check
+}
+
 src_unpack() {
 	which_patch
 
@@ -76,7 +89,11 @@ src_install() {
 	doinitd gentoo/etc/init.d/undervolt
 	doconfd gentoo/etc/conf.d/undervolt
 	cd "${S}/utils/measurefreq"
-	emake DESTDIR=${D} install || die "emake failed"
+	emake DESTDIR="${D}" install || die "emake failed"
+}
+
+pkg_preinst() {
+	collision_check
 }
 
 pkg_postinst() {
@@ -85,13 +102,6 @@ pkg_postinst() {
 	ewarn "Edit /etc/conf.d/undervolt before using the initscript"
 }
 
-pkg_preinst() {
-	if has collision_protect ${FEATURES}; then
-		ewarn "Collisions are expected as this patches kernel code. Disable"
-		ewarn "FEATURES=collision-protect before use"
-		die 'incompatible FEATURES=collision-protect'
-	fi
-}
 
 pkg_postrm() {
 	ewarn "Unmerging this ebuild won't revert the patches in your kernel"
