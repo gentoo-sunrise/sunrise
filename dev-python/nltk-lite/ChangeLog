@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/nltk-lite
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Dec 2006; Santiago M. Mola <cooldwind@gmail.com> +files/99nltk-lite,
+  +nltk-lite-0.7_beta1.ebuild, +metadata.xml:
+  Initial ebuild for bug #86696
+
