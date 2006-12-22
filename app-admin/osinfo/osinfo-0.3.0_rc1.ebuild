@@ -46,5 +46,5 @@ pkg_postinst() {
 	elog
 	elog "You can freely add more modules to osinfo. Check the source"
 	elog "code inside the tarball. Thank you for interest."
-	elog 
+	elog
 }
