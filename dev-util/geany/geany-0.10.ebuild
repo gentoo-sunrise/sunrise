@@ -11,19 +11,16 @@ HOMEPAGE="http://geany.uvena.de/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
 	http://files.uvena.de/${PN}/${P}.tar.bz2"
 
-LICENSE="GPL-2
-	Scintilla"
+LICENSE="GPL-2 Scintilla"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE=""
 
 DEPEND=">=dev-libs/atk-1.9.0
 	>=dev-libs/expat-1.95.8
 	>=media-libs/fontconfig-2.2.3
 	>=media-libs/freetype-2.1.9-r1
 	>=media-libs/libpng-1.2.8
-	sys-libs/zlib
-	virtual/libc
 	>=x11-libs/gtk+-2.6.0
 	>=x11-libs/pango-1.10.2
 	x11-libs/libX11
@@ -70,9 +67,9 @@ src_install() {
 
 	# Shuffle docs
 	local docdir="${D}/usr/share/doc/${PN}"
-	rm "${docdir/\/doc}"/GPL-2
-	rm "${docdir}"/{COPYING,ScintillaLicense.txt}
-	use doc || rm -r "${docdir}/html"
+	rm -f "${docdir/\/doc}"/GPL-2
+	rm -f "${docdir}"/{COPYING,ScintillaLicense.txt}
+	dohtml "${docdir}"/html/* || die "dohtml failed"
 	dodoc "${docdir}"/* || die "dodoc failed"
-	rm -r "${docdir}"
+	rm -rf "${docdir}"
 }
