@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="osinfo lists system information available to the OS"
+DESCRIPTION="lists system information available to the OS"
 HOMEPAGE="http://osinfo.berlios.de"
 SRC_URI="ftp://ftp.berlios.de/pub/${PN}/${P}.tar.bz2"
 
