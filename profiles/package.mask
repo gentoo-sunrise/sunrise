@@ -22,6 +22,11 @@
 ##
 
 # Jakub Moc <jakub@gentoo.org> (22 Dec 2006)
+# upstream now distributes an RPM-only version
+# so the ebuild needs a major work :(
+app-antivirus/kav4fileservers
+
+# Jakub Moc <jakub@gentoo.org> (22 Dec 2006)
 # cannot fetch the damned thing
 app-dicts/words-bin
 
