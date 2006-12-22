@@ -33,7 +33,7 @@ DEPEND=">=dev-libs/atk-1.9.0
 	x11-libs/libXrandr
 	x11-libs/libXrender"
 
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
