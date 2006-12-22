@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Jakub Moc <jakub@gentoo.org> (22 Dec 2006)
+# cannot fetch the damned thing
+app-dicts/words-bin
+
 # Jakub Moc <jakub@gentoo.org> (21 Dec 2006)
 # depends on non-existant net-zope/archetypes version
 net-zope/externalstorage
