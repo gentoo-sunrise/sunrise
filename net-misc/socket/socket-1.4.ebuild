@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="virtual/libc"
+DEPEND=""
 
 src_compile() {
 	emake || die "emake failed"
@@ -21,6 +21,6 @@ src_install() {
 	dobin socket
 	doman socket.1
 	dodoc BLURB CHANGES README
-	insinto /usr/share/doc/${PF}/example-scripts
-	doins scripts/*
+	docinto example-scripts
+	dodoc scripts/*
 }
