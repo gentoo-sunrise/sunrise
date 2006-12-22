@@ -1,6 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: Contact: Pavel Sanda,  ps at twin.jikos.cz; $
+# $Header: $
+
+# Contact: Pavel Sanda,  ps at twin.jikos.cz; 
 
 inherit toolchain-funcs
 
@@ -15,20 +17,17 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
-
 RDEPEND="dev-lang/perl
-	     virtual/ghostscript"
+	virtual/ghostscript"
 
-S=$WORKDIR/${PN}
+S=${WORKDIR}/${PN}
 
 src_compile(){
-	$(tc-getCC) $CFLAGS $LDFLAGS src/C/bbox.c -o bbox || die
+	$(tc-getCC) ${CFLAGS} ${LDFLAGS} src/C/bbox.c -o bbox || die "compile failed"
 }
 
 src_install() {
-	dobin bin/ps2eps
-	dobin bbox
-	doman doc/man/man1/bbox.1
-	doman doc/man/man1/ps2eps.1
+	dobin bbox bin/ps2eps
+	doman doc/man/man1/{bbox.1,ps2eps.1}
 	dodoc README.txt
 }
