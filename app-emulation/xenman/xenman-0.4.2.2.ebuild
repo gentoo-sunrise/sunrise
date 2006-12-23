@@ -17,8 +17,8 @@ DEPEND=""
 RDEPEND=">=app-emulation/xen-3.0.2
 		>=app-emulation/xen-tools-3.0.2
 		>=app-arch/rpm-4.4.6
-	 	>=dev-python/pygtk-2.8.6
-	 	>=x11-libs/vte-0.12.2
+		>=dev-python/pygtk-2.8.6
+		>=x11-libs/vte-0.12.2
 		lvm2? ( sys-fs/lvm2 )
 		dev-lang/python"
 

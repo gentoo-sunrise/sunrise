@@ -14,7 +14,7 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE="examples nojoyevents"
-S="${WORKDIR}"/ois
+S="${WORKDIR}/${PN}"
 
 RDEPEND="x11-libs/libXaw
 	x11-libs/libX11"
