@@ -20,7 +20,7 @@ DEPEND=""
 
 RDEPEND="${DEPEND}
 	dev-lang/perl
-	gs? ( virtual/ghostscript )"
+	virtual/ghostscript"
 
 src_install() {
 	dodir /usr/$(get_libdir)/syracuse/app/jps2ps/{pps,package}
