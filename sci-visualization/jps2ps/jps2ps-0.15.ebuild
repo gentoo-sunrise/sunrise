@@ -8,7 +8,7 @@ DESCRIPTION="A small perl script for the creation of mathematic images in
 PostScript."
 HOMEPAGE="http://syracuse.eu.org/syracuse/bbgraf/"
 
-SRC_URI="http://syracuse.eu.org/syracuse/bbgraf/archives/${PN}.tgz"
+SRC_URI="http://syracuse.eu.org/syracuse/bbgraf/archives/${PN}-0-15.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
