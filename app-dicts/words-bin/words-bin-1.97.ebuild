@@ -8,7 +8,9 @@ MY_P="${P/-bin}"
 
 DESCRIPTION="Latin-English dictionary."
 HOMEPAGE="http://users.erols.com/whitaker/words.htm"
-SRC_URI="ftp://petrus.thomasaquinas.edu/pub/linux/words/${MY_P}-linux.tar.gz"
+SRC_URI="http://atrey.karlin.mff.cuni.cz/~sanda/mirror/${MY_P}-linux.tar.gz"
+#SRC_URI="ftp://petrus.thomasaquinas.edu/pub/linux/words/${MY_P}-linux.tar.gz"
+#Reported problems with downloading
 
 SLOT="0"
 LICENSE="words"
