@@ -1,0 +1,66 @@
+--- src/gui/pdfeditrc	2006-09-14 01:43:27.000000000 +0200
++++ ../../pdfedit-0.2.3/src/gui/pdfeditrc	2006-09-17 14:24:35.000000000 +0200
+@@ -52,8 +52,8 @@
+   #View submenu
+   showmenu		= list &View,firstpage,prevpage,nextpage,lastpage,-,zoom_in,zoom_out,-,hideCmd,hideProp,hideTree,hideStatus,-,searchText
+     firstpage		= item First Page			, PageSpace.firstPage()		, Ctrl+Home	, first.png 		,need_page
+-    prevpage		= item Prev Page			, PageSpace.prevPage()		, Ctrl+PgUp	, prev.png 		,need_page
+-    nextpage		= item Next Page			, PageSpace.nextPage()		, Ctrl+PgDown	, next.png 		,need_page
++    prevpage		= item Prev Page			, PageSpace.prevPage()		, PgUp	, prev.png 		,need_page
++    nextpage		= item Next Page			, PageSpace.nextPage()		, PgDown	, next.png 		,need_page
+     lastpage		= item Last Page			, PageSpace.lastPage()		, Ctrl+End	, last.png 		,need_page
+     zoom_in		= item Zoom &in				, PageSpace.zoomIn()		, Ctrl++	, zoom_in.png		,need_page
+     zoom_out		= item Zoom &out			, PageSpace.zoomOut()		, Ctrl+-	, zoom_out.png		,need_page
+@@ -69,7 +69,7 @@
+   #Page submenu
+   pagemenu		= list &Page,savepage,reloadpage,pagetext,-,rot-90,rot90,-,editPageMediaBox,addSystemFont,setpagetm,-,drawlinee,drawrecte,addtext,striketrough,highlightingtext
+     savepage		= item Save page as image...	, savePageImage(false)	,	, save_page_as_image.png,need_page
+-    reloadpage		= item Reload Page		, go()			, F5	, reload.png		,need_page
++    reloadpage		= item Reload Page (show changes)		, go()			, F5	, reload.png		,need_page
+     pagetext		= item Extract text from page	, viewPageText()	,	, page_text.png		,need_page
+     rot-90		= item Rotate page 270 degrees	, rotatePage(-90)	,Ctrl+[	, page_rotate_-90.png	,need_page
+     rot90		= item Rotate page 90 degrees	, rotatePage(90)	,Ctrl+]	, page_rotate_90.png	,need_page
+@@ -220,3 +220,7 @@
+ [operatorhint]
+ 	  # Operator hinter configuration file (database) First file that is found is used and the rest is ignored
+ config	= $HOME/.pdfedit/operator.hint.$LANG;$PDFEDIT_DATA/operator.hint.$LANG;$PDFEDIT_BIN/operator.hint.$LANG;$HOME/.pdfedit/operator.hint;$PDFEDIT_DATA/operator.hint;$PDFEDIT_BIN/operator.hint
++
++[editor]
++edit_readonly=1
++show_hidden=1
+--- src/gui/pdfedit.pro	2006-09-15 05:42:37.000000000 +0200
++++ ../../pdfedit-0.2.3/src/gui/pdfedit.pro	2006-09-17 14:31:26.000000000 +0200
+@@ -95,10 +95,10 @@
+ QMAKE_CXXFLAGS += -DQT_CLEAN_NAMESPACE
+ 
+ 
+-QMAKE_CXXFLAGS_DEBUG += -O0 
++QMAKE_CXXFLAGS_DEBUG += -O2 
+ 
+ #debug information
+-QMAKE_CXXFLAGS += -g
++QMAKE_CXXFLAGS += -O2
+ 
+ #Dialogs
+ HEADERS += additemdialog.h  aboutwindow.h  option.h  optionwindow.h  dialog.h
+--- src/kernel/kernel.pro	2006-09-04 21:36:14.000000000 +0200
++++ ../../pdfedit-0.2.3/src/kernel/kernel.pro	2006-09-17 14:27:37.000000000 +0200
+@@ -61,7 +61,7 @@
+ #
+ #QMAKE_CXXFLAGS += -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wuninitialized -ansi -pedantic -Wno-unused-variable -finline-limit=10000 --param inline-unit-growth=1000 --param large-function-growth=1000
+ #QMAKE_CXXFLAGS_DEBUG += -W -Wall -Wconversion -Wcast-qual -Wwrite-strings  -ansi -pedantic -Wno-unused-variable -O0 -Wunused-function
+-QMAKE_CXXFLAGS_DEBUG += -W -Wall -Wconversion -Wwrite-strings  -ansi -pedantic -Wno-unused-variable -O0 -Wunused-function -Wwrite-strings -Wunused-macros 
++QMAKE_CXXFLAGS_DEBUG += -O2 -W -Wall -Wconversion -Wwrite-strings  -ansi -pedantic -Wno-unused-variable -Wunused-function -Wwrite-strings -Wunused-macros 
+ 
+ #
+ # Static lib
+--- src/kernel/kernel-obj.pro	2006-12-23 17:16:09.000000000 +0100
++++ patch	2006-12-23 17:15:48.000000000 +0100
+@@ -27,6 +27,7 @@
+ 		include( ../config_xpdf_variables )
+ 		LIBS += $$config_xpdf_t1_LIBS
+ 		LIBS += $$config_xpdf_freetype2_LIBS
++		LIBS += $$config_xpdf_libpaper_LIBS
+ 	}else{
+ 		error( "You do not have ../config_xpdf_variables created from ../xpdf/config.status" )
+ 	}
