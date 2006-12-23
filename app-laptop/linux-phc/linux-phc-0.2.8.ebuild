@@ -102,7 +102,6 @@ pkg_postinst() {
 	ewarn "Edit /etc/conf.d/undervolt before using the initscript"
 }
 
-
 pkg_postrm() {
 	ewarn "Unmerging this ebuild won't revert the patches in your kernel"
 	ewarn "Reemerge your kernel if you want that."

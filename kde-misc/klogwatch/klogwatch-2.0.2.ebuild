@@ -4,13 +4,13 @@
 
 inherit kde
 
-KEYWORDS="~x86"
-
 DESCRIPTION="A firewall log monitor for KDE."
 HOMEPAGE="http://klogwatch.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
