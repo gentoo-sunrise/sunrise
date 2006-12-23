@@ -10,10 +10,10 @@ SRC_URI="http://pdfedit.petricek.net/dl/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 IUSE=""
-RDEPEND="$(qt_min_version 3.1)"
+RDEPEND="$(qt_min_version 3.3)"
 DEPEND="${RDEPEND}
 	dev-libs/boost"
 

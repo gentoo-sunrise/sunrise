@@ -10,7 +10,7 @@ SRC_URI="http://pysvn.tigris.org/files/documents/1233/34994/${P}.tar.gz"
 
 LICENSE="Apache-1.1"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc"
 
 DEPEND=">=dev-util/subversion-1.2.0"
