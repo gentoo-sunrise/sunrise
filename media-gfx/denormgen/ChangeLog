@@ -2,7 +2,7 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  22 Dec 2006; Pl�ss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
+  22 Dec 2006; PlÃ¼ss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
   +denormgen-1.5.ebuild:
   added support to use edge creasing in the high resolution mesh, fixed a bug
   in the generation process, replaced TGA support with PNG support, added
@@ -15,7 +15,7 @@
   Simplfy DEPEND, quote S and D vars, fix whitespace error, fix non-UTF8
   character in ChangeLog.
 
-  29 Jul 2006; Plüss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
+  29 Jul 2006; PlÃ¼ss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
   +denormgen-1.4.ebuild, +metadata.xml:
   New Ebuild for bug 134456 thanks to Stefan Schweizer
 
