@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-# Contact: Pavel Sanda,  ps at twin.jikos.cz; 
+# Contact: Pavel Sanda,  ps at twin.jikos.cz;
 
 inherit toolchain-funcs
 
 DESCRIPTION="Tool for generating Encapsulated Postscript Format (EPS,EPSF) files from one-page Postscript documents"
 HOMEPAGE="http://www.tm.uka.de/~bless/ps2eps"
-SRC_URI="http://www.tm.uka.de/~bless/$P.tar.gz"
+SRC_URI="http://www.tm.uka.de/~bless/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
