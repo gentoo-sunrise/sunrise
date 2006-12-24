@@ -1,0 +1,8 @@
+# ChangeLog for games-engines/dagii
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Dec 2006; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  +dagii-0.2.ebuild, +files/dagii.xpm, +metadata.xml:
+  New ebuild for 159032
+
