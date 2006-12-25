@@ -26,13 +26,6 @@
 # so the ebuild needs a major work :(
 app-antivirus/kav4fileservers
 
-# Jakub Moc <jakub@gentoo.org> (22 Dec 2006)
-# cannot fetch the damned thing
-# Pavel Sanda <ps at twin.jikos.cz> (24 Dec 2006)
-# strange.. it downloads without problem for me.
-# however i changed a mirror. does this work for you ?
-# app-dicts/words-bin
-
 # Jakub Moc <jakub@gentoo.org> (21 Dec 2006)
 # depends on non-existant net-zope/archetypes version
 net-zope/externalstorage
