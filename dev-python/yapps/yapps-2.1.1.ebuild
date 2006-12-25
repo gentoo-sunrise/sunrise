@@ -14,10 +14,10 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="virtual/python"
-RDEPEND="${DEPEND}"
+DEPEND=""
+RDEPEND=""
 
-S="${WORKDIR}/Yapps-${PV}"
+S=${WORKDIR}/Yapps-${PV}
 
 src_install() {
 	distutils_src_install
