@@ -69,7 +69,7 @@ src_install() {
 	local docdir="${D}/usr/share/doc/${PN}"
 	rm -f "${docdir/\/doc}"/GPL-2
 	rm -f "${docdir}"/{COPYING,ScintillaLicense.txt}
-	dohtml "${docdir}"/html/* || die "dohtml failed"
+	dohtml -r "${docdir}"/html/* || die "dohtml failed"
 	dodoc "${docdir}"/* || die "dodoc failed"
 	rm -rf "${docdir}"
 }
