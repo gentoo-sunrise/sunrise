@@ -33,16 +33,14 @@ src_install() {
 	java-pkg_dojar dist/JavaNNS.jar
 
 	java-pkg_dolauncher ${MY_PN}
-	
+
 	dodoc COPYRIGHT.txt
 	dohtml manual/*
 }
 
 pkg_postinst() {
-	echo
-	einfo "In order to be able to use the User Manual from within the"
-	einfo "simulator, you may have to adjust some of the JavaNNS properties."
-	einfo "Use View/Properties menu in JavaNNS and consult the User Manual for"
-	einfo "further details."
-	echo
+	elog "In order to be able to use the User Manual from within the"
+	elog "simulator, you may have to adjust some of the JavaNNS properties."
+	elog "Use View/Properties menu in JavaNNS and consult the User Manual for"
+	elog "further details."
 }
