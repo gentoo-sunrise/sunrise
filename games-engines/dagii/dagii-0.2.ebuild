@@ -26,16 +26,14 @@ src_install() {
 	dogamesbin src/${PN}
 	dodoc README.txt
 	doicon "${FILESDIR}/${PN}.xpm"
-	make_desktop_entry dagii dagii dagii.xpm "Game;AdventureGame"
+	make_desktop_entry ${PN} ${PN} ${PN}.xpm "Game;AdventureGame"
 	prepgamesdirs
 }
 
 pkg_postinst() {
-	echo
-	einfo "Dagii looks for games either in the user's current directory"
-	einfo "or in a location passed as a path in the command line"
-	einfo "For example: \"$ dagii /usr/share/games/kq3\""
-	einfo "Also, dagii can play games which are stored in .zip archives."
-	echo
+	elog "Dagii looks for games either in the user's current directory"
+	elog "or in a location passed as a path in the command line"
+	elog "For example: \"$ dagii /usr/share/games/kq3\""
+	elog "Also, dagii can play games which are stored in .zip archives."
 	games_pkg_postinst
 }
