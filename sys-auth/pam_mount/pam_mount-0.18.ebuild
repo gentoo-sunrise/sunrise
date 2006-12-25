@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/pam-mount/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="crypt"
 
 DEPEND=">=sys-libs/pam-0.78-r3
@@ -37,7 +37,7 @@ src_unpack() {
 src_compile() {
 	econf \
 	    --libdir=/$(get_libdir) \
-	    --with-slibdir=$(getpam_mod_dir) || die "econf failed"
+	    --with-slibdir=/$(get_libdir) || die "econf failed"
 	emake || die "emake failed"
 }
 
