@@ -30,12 +30,11 @@ src_unpack() {
 	# locations, in scripts/(u)mount.crypt and adds gentoo specific
 	# comments to pam_mount.conf
 	epatch "${FILESDIR}/${PN}-gentoo-paths-and-examples.patch"
+
+	eautoreconf
 }
 
 src_compile() {
-	# fixes the sanity check failure
-	_elibtoolize --copy --force
-
 	econf \
 	    --libdir=/$(get_libdir) \
 		--with-pam-dir=$(getpam_mod_dir) || die "econf failed"

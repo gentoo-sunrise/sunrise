@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Dec 2006; Jakub Moc <jakub@gentoo.org> pam_mount-0.18.ebuild:
+  Force full eautoreconf
+
   23 Dec 2006; Markus Ullmann <jokey@gentoo.org> -pam_mount-0.17.ebuild:
   Drop old
 
