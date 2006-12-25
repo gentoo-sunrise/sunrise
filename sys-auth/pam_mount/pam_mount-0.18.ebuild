@@ -37,8 +37,7 @@ src_unpack() {
 src_compile() {
 	econf \
 	    --libdir=/$(get_libdir) \
-	    --with-slibdir=/$(get_libdir) \
-	    --with-pam-dir=$(getpam_mod_dir) || die "econf failed"
+	    --with-slibdir=$(getpam_mod_dir) || die "econf failed"
 	emake || die "emake failed"
 }
 
