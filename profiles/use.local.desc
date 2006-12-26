@@ -72,6 +72,7 @@ net-firewall/nufw:ident - Add support ident users authentication
 net-firewall/nufw:nfconntrack - Use netfilter_conntrack
 net-firewall/nufw:nfqueue - Use NFQUEUE instead of QUEUE
 net-firewall/nufw:pam_nuauth - Add support for pam nufw from PAM
+net-im/gizmo:avahi - Use avahi mdns daemon
 net-im/psi:xscreensaver - Enables detection of xscreensaver
 net-im/pyaim-t:web - Enables optional web interface
 net-im/pyicq-t:web - Enables optional web interface

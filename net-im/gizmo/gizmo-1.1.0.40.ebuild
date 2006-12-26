@@ -13,7 +13,7 @@ SRC_URI="http://download.gizmoproject.com/GizmoDownload/${MY_P}.tar.gz"
 LICENSE="gizmoproject-eula"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="avahi"
 
 RESTRICT="mirror strip"
 
@@ -24,7 +24,8 @@ RDEPEND="dev-libs/atk
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/pango
-	sys-libs/zlib"
+	sys-libs/zlib
+	avahi? ( net-misc/mDNSResponder )"
 
 S=${WORKDIR}/${MY_P}
 

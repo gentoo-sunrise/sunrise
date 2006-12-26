@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Dec 2006; Markus Ullmann <jokey@gentoo.org> -gizmo-1.1.0.39.ebuild,
+  +gizmo-1.1.0.40.ebuild:
+  Version bump
+
   04 Oct 2006; Stefan Schweizer <genstef@gentoo.org> -gizmo-1.0.0.18.ebuild,
   +gizmo-1.1.0.39.ebuild:
   version bump
