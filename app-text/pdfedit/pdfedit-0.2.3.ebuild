@@ -18,9 +18,9 @@ DEPEND="${RDEPEND}
 	dev-libs/boost"
 
 src_unpack(){
-	 unpack ${A}
-	 cd "${S}"
-	 epatch "${FILESDIR}/${P}-build-fix.patch"
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-build-fix.patch"
 }
 
 src_compile(){

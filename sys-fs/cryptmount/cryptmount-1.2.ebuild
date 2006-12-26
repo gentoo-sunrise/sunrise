@@ -21,9 +21,9 @@ RDEPEND="${DEPEND}"
 CONFIG_CHECK="BLK_DEV_DM"
 ERROR_BLK_DEV_DM="Please enable Device mapper support in your kernel config
 	-> Device Drivers
-	  -> Multi-device support (RAID and LVM)
-	    -> Multiple devices driver support (RAID and LVM) (MD)
-		  <M> Device mapper support"
+		-> Multi-device support (RAID and LVM)
+			-> Multiple devices driver support (RAID and LVM) (MD)
+				<M> Device mapper support"
 
 src_compile() {
 	# recommended for setXid, dynamically linked biraries

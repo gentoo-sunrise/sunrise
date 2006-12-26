@@ -23,9 +23,9 @@ RDEPEND="dev-libs/atk
 	x11-libs/pango
 	sys-libs/zlib
 	amd64? ( >=app-emulation/emul-linux-x86-baselibs-2.4.1
-		 >=app-emulation/emul-linux-x86-xlibs-2.2.2
-		 >=app-emulation/emul-linux-x86-compat-1.0-r1
-		 >=app-emulation/emul-linux-x86-gtklibs-2.3 )"
+		>=app-emulation/emul-linux-x86-xlibs-2.2.2
+		>=app-emulation/emul-linux-x86-compat-1.0-r1
+		>=app-emulation/emul-linux-x86-gtklibs-2.3 )"
 
 S=${WORKDIR}/xten-xlite
 

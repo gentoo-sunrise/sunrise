@@ -12,7 +12,7 @@ RESTRICT="strip"
 DESCRIPTION="Scratchbox is a cross-compilation toolkit designed to make embedded Linux application development easier."
 HOMEPAGE="http://www.scratchbox.org/"
 SRC_URI="http://scratchbox.org/download/files/sbox-releases/${MAJOR_VERSION}/tarball/scratchbox-core-${PV}.tar.gz
-	 http://scratchbox.org/download/files/sbox-releases/${MAJOR_VERSION}/tarball/scratchbox-libs-${PV}.tar.gz"
+	http://scratchbox.org/download/files/sbox-releases/${MAJOR_VERSION}/tarball/scratchbox-libs-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

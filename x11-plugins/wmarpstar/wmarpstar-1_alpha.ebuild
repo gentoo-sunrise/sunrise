@@ -24,8 +24,8 @@ S="${WORKDIR}/${PN}_wa_alpha1"
 
 src_compile() {
 	sed -i \
-	    -e "/^CXX=/s:c++:$(tc-getCXX):" \
-	    Makefile
+		-e "/^CXX=/s:c++:$(tc-getCXX):" \
+		Makefile
 
 	emake || die "emake failed"
 }
