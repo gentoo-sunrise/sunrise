@@ -12,7 +12,7 @@ if [ $1 ]; then
 fi
 
 # Checking, displaying, etc.
-for PACKAGE in *-*/*; do
+for PACKAGE in */*; do
 	if [[ -d ${PORTDIR}/${PACKAGE} ]] && [[ $(basename ${PACKAGE}) != "CVS" ]] && grep -q $(dirname ${PACKAGE}) ${PORTDIR}/profiles/categories; then
 		# Reset versions from last package checked.
 		PORTPACK_VERS=""
