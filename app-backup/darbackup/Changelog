@@ -4,9 +4,4 @@
 
   27 Dec 2006; Eduard Warkentin <eduard.warkentin@gmx.de> :  Initial import.
   Ebuild submitted by Eduard Warkentin <eduard.warkentin@gmx.de>.
-  Note that the "changed_file" listing is optional if you are simply bumping
-  the rev of the ebuild and are only making changes to the .ebuild file
-  itself.  Also note that we now have a single unified paragraph rather than
-  having the first line separated from the rest by a newline.  Everything
-  should be in one block like this. (note by drobbins, 16 Jul 2002)
 
