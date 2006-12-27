@@ -1,0 +1,177 @@
+--- Makefile.old	2006-12-27 20:03:49.000000000 +0100
++++ Makefile	2006-12-27 20:06:00.000000000 +0100
+@@ -15,7 +15,7 @@
+ archive=atol-$(VERSION)_src
+ 
+ #define plugin install path
+-plugin_dir=$(DESTDIR)$(prefix)/local/lib/atol
++plugin_dir=$(DESTDIR)$(prefix)/lib/atol
+ #comment this to remove gnome-vfs support
+ HAVE_GNOME_VFS=1
+ 
+@@ -32,7 +32,7 @@
+ #DEBUG=-g -D_DEBUG
+ 
+ CXX=g++ 
+-CFLAGS=-Wall 
++CFLAGS+=-Wall 
+ FLAGS=$(CFLAGS)
+ BIN=./bin
+ OBJ=./bin
+@@ -47,7 +47,7 @@
+ 
+ # define compile/link command line with flags
+ CC=$(QC) $(CXX) $(DEBUG) $(PROFILE) -pthread -DENABLE_NLS
+-LD=$(QL) $(CXX) $(DEBUG) $(PROFILE) -ldl -export-dynamic -pthread $(LOPTIMIZE) 
++LD=$(QL) $(CXX) $(DEBUG) $(PROFILE) -ldl -export-dynamic -pthread
+ 
+ LIBS=gtk+-2.0 gdk-2.0 glib-2.0 gthread-2.0 libssl
+ ifdef HAVE_GNOME_VFS
+--- plugins/src/ArjLib/Makefile.old	2006-12-27 20:42:47.000000000 +0100
++++ plugins/src/ArjLib/Makefile	2006-12-27 20:48:51.000000000 +0100
+@@ -13,11 +13,11 @@
+ 
+ #DEBUG=-g
+ CXX=gcc
+-CFLAGS= -I ../
++CFLAGS+= -I ../
+ FLAGS= $(CFLAGS)
+ 
+ # define compile/link command line with flags
+-CC=$(CXX) $(DEBUG) -fPIC -O2 -MMD -pthread -Wall -D_REENTRANT
++CC=$(CXX) $(DEBUG) -fPIC -pthread -Wall -D_REENTRANT
+ LD=$(CXX) $(DEBUG) -fPIC
+ 
+ #
+--- plugins/src/Bz2Lib/Makefile.old	2006-12-27 20:43:02.000000000 +0100
++++ plugins/src/Bz2Lib/Makefile	2006-12-27 20:49:11.000000000 +0100
+@@ -13,11 +13,11 @@
+ 
+ #DEBUG=-g
+ CXX=gcc
+-CFLAGS= -I ../
++CFLAGS+= -I ../
+ FLAGS= $(CFLAGS)
+ 
+ # define compile/link command line with flags
+-CC=$(CXX) $(DEBUG) -fPIC -O2 -MMD -pthread -Wall -D_REENTRANT
++CC=$(CXX) $(DEBUG) -fPIC -pthread -Wall -D_REENTRANT
+ LD=$(CXX) $(DEBUG) -fPIC
+ 
+ #
+--- plugins/src/GzLib/Makefile.old	2006-12-27 20:43:12.000000000 +0100
++++ plugins/src/GzLib/Makefile	2006-12-27 20:49:27.000000000 +0100
+@@ -13,11 +13,11 @@
+ 
+ #DEBUG=-g
+ CXX=gcc
+-CFLAGS= -I ../
++CFLAGS+= -I ../
+ FLAGS= $(CFLAGS)
+ 
+ # define compile/link command line with flags
+-CC=$(CXX) $(DEBUG) -fPIC -O2 -MMD -pthread -Wall -D_REENTRANT
++CC=$(CXX) $(DEBUG) -fPIC -pthread -Wall -D_REENTRANT
+ LD=$(CXX) $(DEBUG) -fPIC
+ 
+ #
+--- plugins/src/LstLib/Makefile.old	2006-12-27 20:43:18.000000000 +0100
++++ plugins/src/LstLib/Makefile	2006-12-27 20:49:44.000000000 +0100
+@@ -13,11 +13,11 @@
+ 
+ #DEBUG=-g
+ CXX=gcc
+-CFLAGS= -I ../
++CFLAGS+= -I ../
+ FLAGS= $(CFLAGS)
+ 
+ # define compile/link command line with flags
+-CC=$(CXX) $(DEBUG) -fPIC -O2 -MMD -pthread -Wall -D_REENTRANT
++CC=$(CXX) $(DEBUG) -fPIC -pthread -Wall -D_REENTRANT
+ LD=$(CXX) $(DEBUG) -fPIC
+ 
+ #
+--- plugins/src/TarLib/Makefile.old	2006-12-27 20:44:04.000000000 +0100
++++ plugins/src/TarLib/Makefile	2006-12-27 20:50:16.000000000 +0100
+@@ -13,11 +13,11 @@
+ 
+ #DEBUG=-g
+ CXX=gcc
+-CFLAGS= -I ../
++CFLAGS+= -I ../
+ FLAGS= $(CFLAGS)
+ 
+ # define compile/link command line with flags
+-CC=$(CXX) $(DEBUG) -fPIC -O2 -MMD -pthread -Wall -D_REENTRANT
++CC=$(CXX) $(DEBUG) -fPIC -pthread -Wall -D_REENTRANT
+ LD=$(CXX) $(DEBUG) -fPIC
+ 
+ #
+--- plugins/src/ZLib/Makefile.old	2006-12-27 20:44:15.000000000 +0100
++++ plugins/src/ZLib/Makefile	2006-12-27 20:50:31.000000000 +0100
+@@ -13,11 +13,11 @@
+ 
+ #DEBUG=-g
+ CXX=gcc
+-CFLAGS= -I ../
++CFLAGS+= -I ../
+ FLAGS= $(CFLAGS)
+ 
+ # define compile/link command line with flags
+-CC=$(CXX) $(DEBUG) -fPIC -O2 -MMD -pthread -Wall -D_REENTRANT
++CC=$(CXX) $(DEBUG) -fPIC -pthread -Wall -D_REENTRANT
+ LD=$(CXX) $(DEBUG) -fPIC
+ 
+ #
+--- plugins/src/ZipLib/Makefile.old	2006-12-27 20:08:32.000000000 +0100
++++ plugins/src/ZipLib/Makefile	2006-12-27 20:08:54.000000000 +0100
+@@ -15,14 +15,14 @@
+ #compiler compatible to ZipArchive!
+ #CXX=g++
+ CXX=gcc
+-CFLAGS= -I../ -I./ZipArchive/stl -I./ZipArchive/Linux -I./ZipArchive/
++CFLAGS+= -I../ -I./ZipArchive/stl -I./ZipArchive/Linux -I./ZipArchive/
+ FLAGS= $(CFLAGS)
+ 
+ vpath %.h ./ZipArchive/stl:./ZipArchive/Linux
+ vpath %.cpp ./ZipArchive/stl:./ZipArchive/Linux
+ 
+ # define compile/link command line with flags
+-CC=$(CXX) $(DEBUG) -fPIC -O2 -MMD -pthread -Wall -D_REENTRANT
++CC=$(CXX) $(DEBUG) -fPIC -pthread -Wall -D_REENTRANT
+ LD=$(CXX) $(DEBUG) -fPIC
+ 
+ #
+--- plugins/src/ZipLib/ZipArchive/Makefile.old	2006-12-27 21:28:56.000000000 +0100
++++ plugins/src/ZipLib/ZipArchive/Makefile	2006-12-27 21:29:20.000000000 +0100
+@@ -11,7 +11,7 @@
+ CCC=cc
+ 
+ #CFLAGS = -g
+-CFLAGS=-fPIC 
++CFLAGS+=-fPIC 
+ 
+ ZIPARCHLIB = libziparch.a
+ 
+--- plugins/src/ZipLib/ZipArchive/zlib/Makefile.old	2006-12-27 21:30:55.000000000 +0100
++++ plugins/src/ZipLib/ZipArchive/zlib/Makefile	2006-12-27 21:31:24.000000000 +0100
+@@ -8,7 +8,7 @@
+ 
+ CC=cc
+ 
+-CFLAGS=-O -fPIC
++CFLAGS+=-fPIC
+ #CFLAGS=-O -DMAX_WBITS=14 -DMAX_MEM_LEVEL=7
+ #CFLAGS=-g -DDEBUG
+ #CFLAGS=-O3 -Wall -Wwrite-strings -Wpointer-arith -Wconversion \
+--- plugins/src/GzLib/zlib/Makefile.old	2006-12-27 21:32:44.000000000 +0100
++++ plugins/src/GzLib/zlib/Makefile	2006-12-27 21:33:15.000000000 +0100
+@@ -8,7 +8,7 @@
+ 
+ CC=cc
+ 
+-CFLAGS=-O -fPIC 
++CFLAGS+=-fPIC 
+ #CFLAGS=-O -DMAX_WBITS=14 -DMAX_MEM_LEVEL=7
+ #CFLAGS=-g -DDEBUG
+ #CFLAGS=-O3 -Wall -Wwrite-strings -Wpointer-arith -Wconversion \

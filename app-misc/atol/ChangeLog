@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/atol
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com> +atol-0.7.3.ebuild,
+  +files/atol-0.7.3-CFLAGS.patch, +metadata.xml:
+  New ebuild for bug 159239
+
