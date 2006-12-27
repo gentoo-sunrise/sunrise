@@ -13,9 +13,9 @@ IUSE=""
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
-RDEPEND=">=app-backup/dar-2.2.6 \
-|| ( dev-util/bdelta dev-util/xdelta ) \
-net-misc/openssh"
+RDEPEND=">=app-backup/dar-2.2.6
+	|| ( dev-util/bdelta dev-util/xdelta )
+	net-misc/openssh"
 DEPEND=">=app-shells/bash-3.0"
 
 src_install() {
