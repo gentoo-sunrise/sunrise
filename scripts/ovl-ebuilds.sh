@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright 2006 Piotr Jaroszyński <peper@aster.pl>
+# Copyright 2006 Piotr Jaroszyński <peper@gentoo.org>
 # Distributed under the terms of the GNU General Public License v2
 
 source /etc/make.globals
