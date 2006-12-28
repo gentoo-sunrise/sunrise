@@ -1,0 +1,8 @@
+# ChangeLog for dev-cpp/omnetpp
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Dec 2006; Jakob Dettner (jdettner) <gentoo@dettner.de>
+  +omnetpp-3.3.ebuild, +metadata.xml:
+  New Ebuild for bug 159300 thanks to Charlie Shepherd and #gentoo-sunrise
+
