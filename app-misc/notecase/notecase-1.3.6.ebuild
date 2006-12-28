@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="Hierarchical note manager written using GTK+ and C++"
 HOMEPAGE="http://notecase.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}_src.tar.gz"
@@ -29,10 +27,6 @@ src_unpack() {
 
 	# Respect CFLAGS and don't use --as-needed by default
 	epatch "${FILESDIR}/${P}-CFLAGS.patch"
-
-	# Fix multilib
-	sed -i -e "s#/lib/#/$(get_libdir)/#" "${S}/Makefile" \
-		|| die "multilib sed failed"
 
 	if ! use gnome; then
 		# Comment variable in the Makefile if we don't have gnome
