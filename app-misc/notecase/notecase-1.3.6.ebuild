@@ -4,8 +4,8 @@
 
 inherit eutils
 
-DESCRIPTION="File manager written using GTK+ and C++"
-HOMEPAGE="http://atol.sourceforge.net/"
+DESCRIPTION="Hierarchical note manager written using GTK+ and C++"
+HOMEPAGE="http://notecase.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}_src.tar.gz"
 
 LICENSE="BSD"
