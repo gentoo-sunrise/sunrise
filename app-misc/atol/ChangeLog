@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com> atol-0.7.3.ebuild:
+  add multilib
+
   28 Dec 2006; Piotr Jaroszyński <peper@gentoo.org> atol-0.7.3.ebuild:
   Restrict test, fix multilib and add ~amd64.
 
