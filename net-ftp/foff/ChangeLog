@@ -2,6 +2,9 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com> foff-0.99.5.ebuild:
+  eutils inherites multilib, so no need to inherit it again
+
   04 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com> foff-0.99.5.ebuild:
   more fixes
 
