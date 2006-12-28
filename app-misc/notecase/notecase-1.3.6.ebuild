@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="Hierarchical note manager written using GTK+ and C++"
 HOMEPAGE="http://notecase.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}_src.tar.gz"
