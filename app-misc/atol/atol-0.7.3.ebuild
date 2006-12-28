@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}_src.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome test"
+IUSE="gnome"
 
 RDEPEND=">=x11-libs/gtk+-2.6"
 DEPEND="${RDEPEND}
