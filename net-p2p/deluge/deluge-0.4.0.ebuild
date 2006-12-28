@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils python
+inherit eutils python multilib
 
 DESCRIPTION="BitTorrent client in Python and PyGTK."
 HOMEPAGE="http://deluge-torrent.org/"

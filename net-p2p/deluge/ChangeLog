@@ -4,6 +4,10 @@
 
   28 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
   deluge-0.4.0.ebuild:
+  revert multilib
+
+  28 Dec 2006; Raul Porcel (armin76) <armin76@gmail.com>
+  deluge-0.4.0.ebuild:
   remove multilib, eutils includes it
 
   06 Dec 2006; Markus Ullmann <jokey@gentoo.org> deluge-0.4.0.ebuild:
