@@ -12,7 +12,7 @@ KEYWORDS="~x86"
 IUSE="examples"
 
 DEPEND="=dev-lang/tcl-8.4*
-	dev-lang/tk
+	=dev-lang/tk-8.4*
 	app-doc/doxygen
 	sys-devel/bison
 	dev-lang/perl
@@ -27,7 +27,7 @@ src_compile() {
 	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${S}/lib"
 	export TCL_LIBRARY="$ROOT/usr/lib/tcl8.4"
 	econf || die 'econf failed'
-	emake || die 'error: emake failed'
+	emake || die 'emake failed'
 }
 
 src_install() {
@@ -35,13 +35,13 @@ src_install() {
 	dolib lib/*
 	dobin bin/*
 	dodoc doc/*
-	insinto "/usr/share/doc/${P}/bitmaps"
-	doins -r bitmaps/* || die "error: installing data failed"
+	insinto "/usr/share/doc/${PF}/bitmaps"
+	doins -r bitmaps/* || die "installing bitmaps failed"
 	if use examples ; then
-		insinto "/usr/share/doc/${P}/samples"
-		doins -r samples/* || die "error: installing data failed"
+		insinto "/usr/share/doc/${PF}/samples"
+		doins -r samples/* || die "installing samples failed"
 		for x in $(find ./samples -executable -type f); do
-			exeinto "/usr/share/doc/${P}/$(dirname ${x})"
+			exeinto "/usr/share/doc/${PF}/$(dirname ${x})"
 			doexe "${x}"
 		done;
 	fi
@@ -49,11 +49,9 @@ src_install() {
 
 pkg_postinst() {
 	if use examples ; then
-		echo ""
-		einfo "In order to provide the samples"
-		einfo "please copy them to a user home directory."
-		einfo "The samples are located in:"
-		einfo "   /usr/share/doc/${P}/samples"
-		echo ""
+		elog "In order to provide the samples"
+		elog "please copy them to a user home directory."
+		elog "The samples are located in:"
+		elog "   /usr/share/doc/${PF}/samples"
 	fi
 }
