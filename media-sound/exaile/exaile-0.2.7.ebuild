@@ -13,7 +13,7 @@ SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="fam mp3 flac aac musepack trayicon ipod cdaudio"
+IUSE="fam mp3 flac aac musepack trayicon ipod cdaudio serpentine streamripper"
 
 DEPEND=">=dev-lang/python-2.4
 		>=dev-python/pygtk-2.0"
@@ -21,6 +21,7 @@ RDEPEND="${DEPEND}
 		>=dev-python/pysqlite-2
 		>=media-libs/gstreamer-0.10
 		>=media-libs/gst-plugins-good-0.10
+		>=media-plugins/gst-plugins-gnomevfs-0.10
 		>=dev-python/gst-python-0.10
 		>=media-libs/mutagen-1.6
 		>=media-plugins/gst-plugins-gconf-0.10
@@ -35,9 +36,11 @@ RDEPEND="${DEPEND}
 		trayicon? ( dev-python/gnome-python-extras )
 		ipod? ( >=media-libs/libgpod-0.3.2-r1
 				>=media-plugins/gst-plugins-faac-0.10 )
-		cdaudio? ( dev-python/cddb-py )"
+		cdaudio? ( dev-python/cddb-py )
+		serpentine? ( app-cdr/serpentine )
+		streamripper? ( media-sound/streamripper )"
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${PV}
 
 pkg_setup() {
 	if has_version "<sys-apps/dbus-0.90" ; then
