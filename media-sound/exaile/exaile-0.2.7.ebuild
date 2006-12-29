@@ -64,6 +64,7 @@ src_unpack() {
 	sed -i \
 		-e '/mutagen/d' \
 		Makefile || die "sed failed"
+	epatch "${FILESDIR}/${P}-fix-status-icon.patch"
 }
 
 src_compile() {

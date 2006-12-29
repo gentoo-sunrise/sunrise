@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Dec 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  exaile-0.2.7.ebuild, +files/exaile-0.2.7-fix-status-icon.patch:
+  Add patch from upstream
+
+  29 Dec 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   -exaile-0.2.6.ebuild, +exaile-0.2.7.ebuild:
   Version bump
 
