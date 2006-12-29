@@ -1,0 +1,15 @@
+# ChangeLog for x11-misc/wbar
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Dec 2006; warlock <warlock.cc@gmail.com> +wbar-1.2.ebuild,
+  +metadata.xml:
+  wbar Initial commit
+
+  29 Dec 2006; warlock <warlock.cc@gmail.com> +wbar-1.2.ebuild,
+  +metadata.xml:
+  wbar Initial commit
+
+  29 Dec 2006; <warlock@gentoo.org> +wbar-1.2.ebuild:
+  Initial commit
+
