@@ -6,7 +6,7 @@ inherit eutils python multilib
 
 DESCRIPTION="BitTorrent client in Python and PyGTK."
 HOMEPAGE="http://deluge-torrent.org/"
-SRC_URI="http://deluge.mynimalistic.net/downloads/${PN}_${PV}.tar.gz"
+SRC_URI="http://deluge.mynimalistic.net/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,22 +16,20 @@ IUSE=""
 DEPEND=">=dev-lang/python-2.3
 	dev-libs/boost
 	>=dev-python/pygtk-2
-	=dev-python/python-libtorrent-${PV}
+	=dev-python/python-libtorrent-0.4.0
 	dev-python/pyxdg"
 RDEPEND="${DEPEND}"
-
-S=${WORKDIR}/${PN}
 
 src_install() {
 	python_version
 	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
-	doins -r *.py po/ glade/ pixmaps/ plugins/
+	doins -r *.py glade/ pixmaps/ plugins/
 
 	newicon pixmaps/${PN}-32.png ${PN}.png
 	make_wrapper ${PN} "/usr/bin/python /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/${PN}.py"
 	make_desktop_entry ${PN} ${PN}
 
-	dodoc Changelog README
+	dodoc README
 }
 pkg_postinst() {
 	python_version
