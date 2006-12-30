@@ -27,8 +27,8 @@ src_install() {
 
 	dodir /usr/share/wbar/
 	awk '{if($$1 ~ /i:/ || ($$1 ~ /t:/ && NR<4)) print $$1" /usr/share/wbar/"$$2; else
-	print $$0;}' dot.wbar > ${D}/usr/share/wbar/dot.wbar
+	print $$0;}' dot.wbar > "${D}/usr/share/wbar/dot.wbar"
 
-	cp -a wbar.icons ${D}/usr/share/wbar
+	cp -a wbar.icons "${D}/usr/share/wbar"
 	dobin wbar
 }
