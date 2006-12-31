@@ -32,6 +32,13 @@ src_unpack() {
 	rm TranslationHelper.txt
 }
 
+pkg_setup() {
+	if [ $(gcc-major-version) -ge 4 ]; then
+		einfo "${P} doesn't compile with gcc version >= 4"
+		die "${P} needs gcc version < 4"
+	fi
+}
+
 src_compile() {
 	export WX_GTK_VER=2.6
 	need-wxwidgets gtk2 || die
