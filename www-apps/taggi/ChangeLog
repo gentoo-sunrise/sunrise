@@ -1,6 +1,9 @@
 # ChangeLog for www-apps/taggi
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Jan 2007; Jakub Moc <jakub@gentoo.org> taggi-9999.ebuild:
+  Remove lots of redundant dependencies that are in system
 
   16 Oct 2006; Cedric Krier <ced@ced.homedns.org> +taggi-9999.ebuild,
   +files/taggi-sha1.sh, +metadata.xml:
