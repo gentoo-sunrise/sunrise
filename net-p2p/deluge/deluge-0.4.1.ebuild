@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ IUSE=""
 DEPEND=">=dev-lang/python-2.3
 	dev-libs/boost
 	>=dev-python/pygtk-2
-	=dev-python/python-libtorrent-0.4.0
+	~dev-python/python-libtorrent-0.4.0
 	dev-python/pyxdg"
 RDEPEND="${DEPEND}"
 
