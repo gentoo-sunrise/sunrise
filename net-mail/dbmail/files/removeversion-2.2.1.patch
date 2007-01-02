@@ -1,6 +1,6 @@
 diff -ru dbmail-2.2.1.orig/imap4.c dbmail-2.2.1/imap4.c
 --- dbmail-2.2.1.orig/imap4.c	2006-11-16 12:21:49.000000000 +0100
-+++ dbmail-2.2.1/imap4.c	2006-11-22 08:21:49.000000000 +0100
++++ dbmail-2.2.1/imap4.c	2007-01-02 20:44:50.000000000 +0100
 @@ -117,8 +117,8 @@
  
  	/* greet user */
@@ -12,9 +12,21 @@ diff -ru dbmail-2.2.1.orig/imap4.c dbmail-2.2.1/imap4.c
  		dbmail_imap_session_delete(session);
  		return EOF;
  	}
+diff -ru dbmail-2.2.1.orig/imapcommands.c dbmail-2.2.1/imapcommands.c
+--- dbmail-2.2.1.orig/imapcommands.c	2006-11-05 10:59:40.000000000 +0100
++++ dbmail-2.2.1/imapcommands.c	2007-01-02 20:45:20.000000000 +0100
+@@ -114,7 +114,7 @@
+ 	dbmail_imap_session_set_state(self,IMAPCS_LOGOUT);
+ 	TRACE(TRACE_MESSAGE, "user (id:%llu) logging out @ [%s]", ud->userid, timestring);
+ 
+-	dbmail_imap_session_printf(self, "* BYE dbmail imap server kisses you goodbye\r\n");
++	dbmail_imap_session_printf(self, "* BYE\r\n");
+ 
+ 	return 0;
+ }
 diff -ru dbmail-2.2.1.orig/lmtp.c dbmail-2.2.1/lmtp.c
 --- dbmail-2.2.1.orig/lmtp.c	2006-11-06 09:32:31.000000000 +0100
-+++ dbmail-2.2.1/lmtp.c	2006-11-22 08:22:06.000000000 +0100
++++ dbmail-2.2.1/lmtp.c	2007-01-02 20:44:50.000000000 +0100
 @@ -134,7 +134,7 @@
  
  	if (ci->tx) {
@@ -26,7 +38,7 @@ diff -ru dbmail-2.2.1.orig/lmtp.c dbmail-2.2.1/lmtp.c
  		TRACE(TRACE_MESSAGE, "TX stream is null!");
 diff -ru dbmail-2.2.1.orig/pop3.c dbmail-2.2.1/pop3.c
 --- dbmail-2.2.1.orig/pop3.c	2006-11-06 09:32:31.000000000 +0100
-+++ dbmail-2.2.1/pop3.c	2006-11-22 08:22:20.000000000 +0100
++++ dbmail-2.2.1/pop3.c	2007-01-02 20:45:07.000000000 +0100
 @@ -97,7 +97,7 @@
  
  	if (ci->tx) {
@@ -36,3 +48,12 @@ diff -ru dbmail-2.2.1.orig/pop3.c dbmail-2.2.1/pop3.c
  			session.apop_stamp);
  		fflush(ci->tx);
  	} else {
+@@ -329,7 +329,7 @@
+ 	switch (cmdtype) {
+ 		
+ 	case POP3_QUIT:
+-		fprintf((FILE *) stream, "+OK see ya later\r\n");
++		fprintf((FILE *) stream, "+OK bye\r\n");
+ 		return 0;
+ 		
+ 	case POP3_USER:
