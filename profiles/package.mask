@@ -32,7 +32,7 @@ net-zope/externalstorage
 
 # Jakub Moc <jakub@gentoo.org> (12 Dec 2006)
 # cvs version should be masked
-=x11-misc/rep-rebuild-9999
+=app-portage/rep-rebuild-9999
 
 # Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
 # svn version should be masked
