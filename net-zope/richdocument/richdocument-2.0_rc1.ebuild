@@ -7,7 +7,6 @@ inherit versionator zproduct
 MY_PV="$(delete_version_separator 2 )"
 MY_PN="RichDocument"
 MY_P="${MY_PN}-${MY_PV}"
-S="${WORKDIR}/${MY_PN}"
 
 DESCRIPTION="An extension of Plone's built-in Document/Page content type."
 HOMEPAGE="http://plone.org/products/richdocument"
@@ -21,13 +20,3 @@ DEPEND=">=net-zope/plone-2.1"
 RDEPEND="${DEPEND}"
 
 ZPROD_LIST="${MY_PN}"
-
-src_install() {
-	# zproduct requires a lower folder level,
-	# there has to be /usr/share/zproduct/$P/$MY_PN/,
-	# which has the contents from $WORKDIR/$MY_PN/$MY_PN/
-	dodir ${MY_PN}
-	mv * ${MY_PN} 2>/dev/null || die # can't move a folder into itself..
-
-	zproduct_src_install all || die
-}
