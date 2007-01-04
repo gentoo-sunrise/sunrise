@@ -15,6 +15,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 
-RDEPEND="net-zope/archetypes"
+RDEPEND="|| ( net-zope/archetypes >=net-zope/plone-2.5 )"
 
 ZPROD_LIST="$MY_PN"
