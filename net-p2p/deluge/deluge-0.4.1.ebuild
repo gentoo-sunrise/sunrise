@@ -6,7 +6,7 @@ inherit eutils python multilib
 
 DESCRIPTION="BitTorrent client in Python and PyGTK."
 HOMEPAGE="http://deluge-torrent.org/"
-SRC_URI="http://deluge.mynimalistic.net/downloads/${P}.tar.gz"
+SRC_URI="http://deluge-torrent.org/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
