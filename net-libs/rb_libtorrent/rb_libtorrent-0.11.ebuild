@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND="dev-libs/boost
-		!net-libs/rtorrent"
+	!net-libs/libtorrent"
 RDEPEND="${DEPEND}"
 
 src_compile() {
