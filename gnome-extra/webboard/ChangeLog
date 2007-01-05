@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/webboard
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Jan 2007; Luca Marturana (luca89) <lucamarturana@gmail.com>
+  +webboard-0.2.ebuild, +metadata.xml:
+  Initial import, see bug #160071
+
