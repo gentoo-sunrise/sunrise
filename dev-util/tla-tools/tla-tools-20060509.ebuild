@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WANT_AUTOCONF="2.1"
+WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 inherit tla autotools
 
@@ -20,11 +20,6 @@ RDEPEND="${DEPEND}"
 
 ETLA_VERSION="miles@gnu.org--2006/tla-tools--devo--0"
 ETLA_ARCHIVES="http://mirrors.sourcecontrol.net/miles@gnu.org--2006"
-
-src_unpack() {
-	tla_src_unpack
-	eautoreconf
-}
 
 src_compile() {
 	./configure \
