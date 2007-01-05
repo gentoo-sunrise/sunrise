@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 	sed -i -e 's:/usr/local:/usr:' demos/ogre/common/plugins.cfg || die "sed failed"
 }
 
