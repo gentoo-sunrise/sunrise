@@ -3,6 +3,7 @@
 # $Header: $
 
 WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
 
 inherit autotools eutils
 
