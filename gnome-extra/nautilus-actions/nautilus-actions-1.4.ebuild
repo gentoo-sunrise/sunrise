@@ -31,9 +31,9 @@ DOCS="AUTHORS ChangeLog MAINTAINERS README TODO"
 
 pkg_postinst() {
 	gnome2_pkg_postinst
-	einfo "Some functionality in this version will only be available under"
-	einfo ">=nautilus-2.16.0. See http://www.grumz.net/index.php?q=node/264 for more info."
-	einfo "If you want this functionality under =nautilus-2.14* you need to rebuild"
-	einfo "Nautilus first with the following patch:"
-	einfo "http://bugzilla.gnome.org/attachment.cgi?id=67484&action=view"
+	elog "Some functionality in this version will only be available under"
+	elog ">=nautilus-2.16.0. See http://www.grumz.net/index.php?q=node/264 for more info."
+	elog "If you want this functionality under =nautilus-2.14* you need to rebuild"
+	elog "Nautilus first with the following patch:"
+	elog "http://bugzilla.gnome.org/attachment.cgi?id=67484&action=view"
 }
