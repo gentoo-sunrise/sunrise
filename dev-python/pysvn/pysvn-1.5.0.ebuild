@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils python
+inherit eutils python toolchain-funcs
 
 DESCRIPTION="Object-oriented python bindings for subversion"
 HOMEPAGE="http://pysvn.tigris.org/"
@@ -11,7 +11,7 @@ SRC_URI="http://pysvn.tigris.org/files/documents/1233/34994/${P}.tar.gz"
 LICENSE="Apache-1.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="doc"
+IUSE=""
 
 DEPEND=">=dev-util/subversion-1.2.0"
 RDEPEND="${DEPEND}"
@@ -25,12 +25,15 @@ src_unpack() {
 	# no kerberos linkage
 	epatch "${FILESDIR}/${P}-nokrb.patch"
 
-	python setup.py configure
+	python setup.py configure || die "configure failed"
 
 	# we want our CFLAGS as well and don't need krb linkage
 	sed -e 's:^\(CCFLAGS=\)\(.*\):\1$(CFLAGS) \2:g' \
 		-e 's:^\(CCCFLAGS=\)\(.*\):\1$(CXXFLAGS) \2:g' \
-		-i ${S}/Source/Makefile
+		-e "/^CCC=/s:g++:$(tc-getCXX):" \
+		-e "/^CC=/s:gcc:$(tc-getCC):" \
+		-i Makefile \
+		|| die "sed failed in Makefile"
 }
 
 src_install() {
@@ -42,11 +45,8 @@ src_install() {
 	insinto /usr/lib/python${PYVER}/site-packages/pysvn
 	doins __init__.py
 
-	if use doc ; then
-		cd "${S}/../Docs"
-		dohtml *.html *.js
-	fi
-
+	cd "${S}/../Docs"
+	dohtml *.html *.js
 }
 
 pkg_postinst() {
