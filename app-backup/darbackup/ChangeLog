@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/darbackup
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jan 2007; Eduard Warkentin <eduard.warkentin@gmx.de> ChangeLog:
+  fixed the Makefile for creating the manpage properly
 
   27 Dec 2006; Eduard Warkentin <eduard.warkentin@gmx.de> +ChangeLog:
   +metadata.xml:
