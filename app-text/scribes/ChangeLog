@@ -1,0 +1,8 @@
+# ChangeLog for app-text/scribes
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Jan 2007; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
+  +scribes-0.3-r2.ebuild, +metadata.xml:
+  Added scribes to the tree thanks to Mystilleef for the original ebuild
+
