@@ -40,9 +40,9 @@ RDEPEND="${DEPEND}
 	>=virtual/perl-Sys-Syslog-0.18
 	>=virtual/perl-MIME-Base64-3.05
 	virtual/cron
-	!postfix? ( !exim? ( mail-mta/sendmail ) )
 	postfix? ( mail-mta/postfix )
-	exim? ( mail-mta/exim )
+	exim? ( !postfix? ( mail-mta/exim ) )
+	!postfix? ( !exim? ( mail-mta/sendmail ) )
 	bitdefender? ( app-antivirus/bitdefender-console )
 	clamav? ( >=app-antivirus/clamav-0.88.4 )
 	f-prot? ( app-antivirus/f-prot )
