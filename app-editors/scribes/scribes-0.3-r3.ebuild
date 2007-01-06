@@ -17,18 +17,14 @@ IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.10
 	>=gnome-base/gconf-2.12.0
-	>=dev-libs/dbus-glib-0.72
 	>=dev-python/dbus-python-0.71
 	>=dev-python/pygtk-2.10.0
 	>=dev-python/gnome-python-2.12.0
 	>=dev-python/gnome-python-desktop-2.12.0
 	>=dev-python/gnome-python-extras-2.12.0
-	>=gnome-extra/yelp-2.12.0
-	>=sys-apps/dbus-0.94"
+	>=gnome-extra/yelp-2.12.0"
 DEPEND="${RDEPEND}
 	app-text/scrollkeeper
 	>=dev-util/intltool-0.35"
-
-G2CONF="${G2CONF}"
 
 DOCS="AUTHORS README ChangeLog NEWS"
