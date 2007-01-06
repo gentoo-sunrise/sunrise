@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.mailscanner.info/files/4/tar/${PN}-install-${MY_PVR}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="bitdefender clamav doc exim f-prot postfix sendmail spamassassin"
+IUSE="bitdefender clamav doc exim f-prot postfix spamassassin"
 
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
@@ -40,12 +40,9 @@ RDEPEND="${DEPEND}
 	>=virtual/perl-Sys-Syslog-0.18
 	>=virtual/perl-MIME-Base64-3.05
 	virtual/cron
-	|| (
-		sendmail? ( mail-mta/sendmail )
-		postfix? ( mail-mta/postfix )
-		exim? ( mail-mta/exim )
-		mail-mta/sendmail
-	)
+	!postfix? ( !exim? ( mail-mta/sendmail ) )
+	postfix? ( mail-mta/postfix )
+	exim? ( mail-mta/exim )
 	bitdefender? ( app-antivirus/bitdefender-console )
 	clamav? ( >=app-antivirus/clamav-0.88.4 )
 	f-prot? ( app-antivirus/f-prot )
