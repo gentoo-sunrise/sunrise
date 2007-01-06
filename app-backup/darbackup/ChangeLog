@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jan 2007; Eduard Warkentin <eduard.warkentin@gmx.de>
+  darbackup-0.7-r1.ebuild:
+  Fixed the gentoo ebuild to enforce the use of dar32 || dar64 correctly
+
   06 Jan 2007; Eduard Warkentin <eduard.warkentin@gmx.de> ChangeLog:
   Fixed the gentoo ebuild to enforce the use of dar32 || dar64
 

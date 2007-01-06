@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,7 +25,6 @@ src_install() {
 
 pkg_setup() {
 	if ! built_with_use dar dar32 && ! built_with_use dar dar64; then
-		die 'You dont have neither dar32 nor dar64 set as USE. Please
-		correct it according to your arch.'
+		die 'You must have dar32 or dar64 useflags enabled.'
 	fi
 }
