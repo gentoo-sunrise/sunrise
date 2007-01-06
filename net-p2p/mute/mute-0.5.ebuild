@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="wxwindows"
 
-DEPEND="wxwindows? ( >=x11-libs/wxGTK-2.6 )"
+DEPEND="dev-libs/crypto++
+	wxwindows? ( >=x11-libs/wxGTK-2.6 )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
@@ -52,11 +53,12 @@ src_compile() {
 	# break the crypto at startup
 	filter-flags -fomit-frame-pointer
 
-	emake GXX=$(tc-getCXX) || die "emake failed"
+	emake GXX=$(tc-getCXX) CRYPTO_LIB="/usr/lib/libcrypto++.a" || die "emake failed"
 
 	if use wxwindows; then
 		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows"
-		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" || die "emake failed"
+		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" \
+			CRYPTO_LIB="/usr/lib/libcrypto++.a" || die "emake failed"
 	fi
 }
 
