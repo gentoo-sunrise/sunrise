@@ -3,6 +3,9 @@
 # $Header: $
 
   06 Jan 2007; Eduard Warkentin <eduard.warkentin@gmx.de> ChangeLog:
+  Fixed the gentoo ebuild to enforce the use of dar32 || dar64
+
+  06 Jan 2007; Eduard Warkentin <eduard.warkentin@gmx.de> ChangeLog:
   fixed the Makefile for creating the manpage properly
 
   27 Dec 2006; Eduard Warkentin <eduard.warkentin@gmx.de> +ChangeLog:
