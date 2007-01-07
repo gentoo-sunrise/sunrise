@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,12 +11,16 @@ SRC_URI="mirror://sourceforge/timerapplet/${PN}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="doc libnotify sounds"
+
+# Feel free to re-add libnotify once the dependency is not automagic
+# http://www.gentoo.org/proj/en/qa/automagic.xml
+IUSE="doc sounds" #libnotify
 
 DEPEND=">=gnome-base/gnome-panel-2.6
 	>=x11-libs/gtk+-2.8
 	sounds? ( gnome-extra/gnome-audio )
-	libnotify? ( >=x11-libs/libnotify-0.3 )"
+	>=x11-libs/libnotify-0.3 )"
+#	libnotify? ( >=x11-libs/libnotify-0.3 )"
 
 RDEPEND="${DEPEND}"
 
