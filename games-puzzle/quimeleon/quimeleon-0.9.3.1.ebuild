@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,9 +18,4 @@ DEPEND=">=dev-cpp/libxmlpp-2.6
 	>=gnome-base/librsvg-2.8.1
 	>=media-libs/libao-0.8.6
 	>=media-libs/libvorbis-1.1"
-
 RDEPEND="${DEPEND}"
-
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-}
