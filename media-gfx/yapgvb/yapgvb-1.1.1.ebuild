@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="Python bindings for Graphviz"
 HOMEPAGE="http://yapgvb.sourceforge.net/"
@@ -25,6 +25,5 @@ src_unpack() {
 
 src_install() {
 	distutils_src_install
-	insinto /etc/env.d
-	doins "${FILESDIR}"/90graphviz
+	doenvd "${FILESDIR}"/90graphviz
 }
