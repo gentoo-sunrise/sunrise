@@ -57,7 +57,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo "This ebuild does not install the GenealogyJ web applet"
-	einfo
+	elog
+	elog "This ebuild does not install the GenealogyJ web applet"
+	elog
 }
