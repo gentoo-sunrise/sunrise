@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils eutils
+inherit distutils eutils multilib
 
 DESCRIPTION="Medical software application"
 HOMEPAGE="http://www.gnumed.org/"
@@ -33,7 +33,7 @@ src_unpack() {
 src_compile() {
 	distutils_python_version
 	cd "${S}"
-	sed -i -e "s@usr/lib/python@usr/lib/python${PYVER}@g" client/usr/bin/gnumed
+	sed -i -e "s@usr/lib/python@usr/$(get_libdir)/python${PYVER}@g" client/usr/bin/gnumed
 }
 
 src_install() {
@@ -41,7 +41,7 @@ src_install() {
 	dobin client/usr/bin/gnumed
 	insinto /usr/share
 	doins -r client/usr/share/gnumed
-	insinto /usr/lib/python${PYVER}
+	insinto /usr/$(get_libdir)/python${PYVER}
 	doins -r client/usr/lib/python/site-packages
 
 	insinto /etc/gnumed

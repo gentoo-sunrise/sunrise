@@ -1,6 +1,9 @@
 # ChangeLog for app-misc/gnumed
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> gnumed-0.1.ebuild:
+  Make this multilib friendly
 
   17 Jul 2006; Cedric Krier <ced@ced.homedns.org> +gnumed-0.1.ebuild,
   +files/gnumed-0.1-gnumed.patch, +metadata.xml:
