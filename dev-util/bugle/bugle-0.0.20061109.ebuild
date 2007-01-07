@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 # Wolfgang Frisch <xororand@frexx.de>
@@ -17,8 +17,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="ffmpeg gtk readline"
 
-DEPEND="
-	ffmpeg? ( media-video/ffmpeg )
+DEPEND="ffmpeg? ( media-video/ffmpeg )
 	gtk? ( >=x11-libs/gtk+-2.4.0 >=x11-libs/gtkglext-1.0.0 )
 	readline? ( sys-libs/readline )
 	sys-libs/ncurses"
@@ -46,12 +45,12 @@ src_compile() {
 }
 
 src_install() {
-	dodoc README TODO TROUBLESHOOTING LICENSE FAQ doc/*.{txt,html}
+	dodoc README TODO TROUBLESHOOTING FAQ doc/*.{txt,html}
 	docinto examples
 	dodoc doc/examples/*
 	emake DESTDIR="${D}" install || die "emake install failed"
 }
 
 pkg_postinst() {
-	einfo "See man 3 bugle for an introduction to BuGLe."
+	elog "See man 3 bugle for an introduction to BuGLe."
 }
