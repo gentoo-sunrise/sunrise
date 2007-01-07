@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils python
+inherit eutils python multilib
 
 DESCRIPTION="Python based jabber transport for ICQ"
 HOMEPAGE="http://pyicq-t.blathersource.org/"
@@ -26,7 +26,7 @@ IUSE="web"
 
 src_install() {
 	python_version
-	insinto /usr/lib/python${PYVER}/site-packages/${PN}/
+	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/
 	doins -r tools src data
 	newins PyICQt.py ${PN}.py
 
