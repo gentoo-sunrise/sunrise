@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils python toolchain-funcs
+inherit eutils python toolchain-funcs multilib
 
 DESCRIPTION="Object-oriented python bindings for subversion"
 HOMEPAGE="http://pysvn.tigris.org/"
@@ -40,9 +40,9 @@ src_install() {
 	python_version
 
 	cd pysvn
-	exeinto /usr/lib/python${PYVER}/site-packages/pysvn
+	exeinto /usr/$(get_libdir)/python${PYVER}/site-packages/pysvn
 	doexe _pysvn.so
-	insinto /usr/lib/python${PYVER}/site-packages/pysvn
+	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/pysvn
 	doins __init__.py
 
 	cd "${S}/../Docs"
@@ -50,9 +50,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_mod_compile ${ROOT}usr/lib/python${PYVER}/site-packages
+	python_mod_compile ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages
 }
 
 pkg_postrm() {
-	python_mod_cleanup
+	python_mod_cleanup ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages
 }
