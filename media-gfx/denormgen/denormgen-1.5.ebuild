@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -43,8 +43,6 @@ src_install(){
 }
 
 pkg_postinst(){
-	einfo ""
-	einfo "The .dim file format changed with this version."
-	einfo "Old .dim files are no more compatible with this release."
-	einfo ""
+	elog "The .dim file format changed with this version."
+	elog "Old .dim files are no more compatible with this release."
 }

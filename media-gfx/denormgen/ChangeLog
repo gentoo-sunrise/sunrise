@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/denormgen
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> denormgen-1.5.ebuild:
+  einfo -> elog
 
   22 Dec 2006; PlÃ¼ss Roland (LordOfDragons) <roland@rptd.dnsalias.net>
   +denormgen-1.5.ebuild:
