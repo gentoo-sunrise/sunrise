@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,13 +19,13 @@ DEPEND="dev-lang/perl
 	virtual/perl-Time-HiRes
 	dev-perl/XML-Parser
 	dev-perl/XML-Simple
-	dev-perl/Archive-Tar
+	dev-perl/Archive-Tar"
+
+RDEPEND="${DEPEND}
 	md5? ( virtual/perl-Digest-MD5 )
 	mime? ( virtual/perl-MIME-Base64 )
 	zip? ( dev-perl/Archive-Zip )
 	zlib? ( dev-perl/Compress-Zlib )"
-
-RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${PN}
 
