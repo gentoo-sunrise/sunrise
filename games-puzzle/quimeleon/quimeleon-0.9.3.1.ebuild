@@ -19,3 +19,7 @@ DEPEND=">=dev-cpp/libxmlpp-2.6
 	>=media-libs/libao-0.8.6
 	>=media-libs/libvorbis-1.1"
 RDEPEND="${DEPEND}"
+
+src_install() {
+	emake DESTDIR="${D}" install || die "emake install failed"
+}
