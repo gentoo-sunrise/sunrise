@@ -19,7 +19,7 @@ IUSE="doc sounds" #libnotify
 DEPEND=">=gnome-base/gnome-panel-2.6
 	>=x11-libs/gtk+-2.8
 	sounds? ( gnome-extra/gnome-audio )
-	>=x11-libs/libnotify-0.3 )"
+	>=x11-libs/libnotify-0.3"
 #	libnotify? ( >=x11-libs/libnotify-0.3 )"
 
 RDEPEND="${DEPEND}"
