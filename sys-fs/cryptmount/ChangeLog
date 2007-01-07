@@ -1,6 +1,9 @@
 # ChangeLog for sys-fs/cryptmount
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> cryptmount-1.2.ebuild:
+  Fix gettext dependencies
 
   04 Dec 2006; Markus Ullmann <jokey@gentoo.org> -cryptmount-1.1.ebuild:
   Remove old

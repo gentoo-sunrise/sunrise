@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,11 +13,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nls ssl"
 
-DEPEND="sys-fs/device-mapper
+RDEPEND="sys-fs/device-mapper
 	>=dev-libs/libgcrypt-1.1.94
 	ssl? ( dev-libs/openssl )
+	nls? ( virtual/libintl )"
+DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
-RDEPEND="${DEPEND}"
+
 CONFIG_CHECK="BLK_DEV_DM"
 ERROR_BLK_DEV_DM="Please enable Device mapper support in your kernel config
 	-> Device Drivers
