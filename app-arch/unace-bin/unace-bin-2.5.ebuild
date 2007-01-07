@@ -30,6 +30,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "This version of UnAce is installed as unace-bin make possible to use both"
+	elog "This version of UnAce is installed as unace-bin to make possible to use both"
 	elog "source and binary packages at the same time"
 }
