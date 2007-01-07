@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,14 +11,14 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-DEPEND="app-arch/bzip2
-	sys-libs/ncurses
-	dev-util/pkgconfig
-	dev-util/scons
+RDEPEND="sys-libs/ncurses
 	sys-libs/zlib
 	>=dev-libs/libsigc++-2.0.0
 	>=dev-libs/glib-2.0.0"
-RDEPEND=${DEPEND}
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig
+	dev-util/scons"
+
 BIGVERSION=nanodc-$(get_version_component_range 1-2 )
 
 pkg_setup() {
