@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils eutils versionator
+inherit distutils eutils versionator multilib
 
 MY_P="Democracy-${PV}"
 DESCRIPTION="Democracy is a free and open internet TV platform."
@@ -36,10 +36,10 @@ pkg_setup() {
 		die "Please re-emerge python with berkdb USE flag ON"
 	fi
 
-	if ! grep -q compiler.find /usr/lib/python2.4/distutils/unixccompiler.py; then
+	if ! grep -q compiler.find /usr/$(get_libdir)/python2.4/distutils/unixccompiler.py; then
 		eerror "You need to apply a patch to make distutils use the correct RPATH."
 		eerror "To do this execute the following command as root:"
-		eerror "wget -q 'http://sourceforge.net/tracker/download.php?group_id=5470&atid=305470&file_id=144928&aid=1254718' -O -|patch -p1 -d /usr/lib/python2.4"
+		eerror "wget -q 'http://sourceforge.net/tracker/download.php?group_id=5470&atid=305470&file_id=144928&aid=1254718' -O -|patch -p1 -d /usr/$(get_libdir)/python2.4"
 		die "python version not patched"
 	fi
 }
