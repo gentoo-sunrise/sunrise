@@ -1,9 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_ARTS="no"
-
+ARTS_REQUIRED="never"
 inherit kde
 
 DESCRIPTION="An IDE/GUI for the R-project"
@@ -16,7 +15,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="dev-lang/R
-		dev-lang/php"
+	dev-lang/php"
 RDEPEND="${DEPEND}"
 
 src_install() {
