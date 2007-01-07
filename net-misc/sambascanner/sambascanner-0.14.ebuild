@@ -1,12 +1,13 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit eutils toolchain-funcs
 
+MY_P="SambaScanner-${PV}"
 DESCRIPTION="a tool to search a whole samba network for files"
 HOMEPAGE="http://www.johannes-bauer.com/sambascanner/"
-SRC_URI="http://www.johannes-bauer.com/${PN}/SambaScanner-${PV}.tar.bz2"
+SRC_URI="http://www.johannes-bauer.com/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -14,9 +15,9 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=net-fs/samba-3"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/SambaScanner-${PV}
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
