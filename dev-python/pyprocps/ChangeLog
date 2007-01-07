@@ -1,6 +1,9 @@
 # ChangeLog for dev-python/pyprocps
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> pyprocps-0.2.ebuild:
+  Remove redundant src_install
 
   19 Dec 2006; Ali Polatel (hawking) <polatel@nerdshack.com>
   +pyprocps-0.2.ebuild, +metadata.xml:

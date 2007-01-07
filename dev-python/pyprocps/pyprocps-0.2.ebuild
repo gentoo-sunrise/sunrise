@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,10 +12,3 @@ LICENSE="PSF-2.3"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-
-RDEPEND="${DEPEND}"
-
-src_install() {
-	distutils_src_install
-	dodoc Changelog PKG-INFO README
-}
