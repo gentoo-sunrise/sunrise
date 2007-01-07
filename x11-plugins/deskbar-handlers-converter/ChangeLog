@@ -1,6 +1,10 @@
 # ChangeLog for x11-plugins/deskbar-handlers-converter
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org>
+  deskbar-handlers-converter-1.05.ebuild:
+  Make this multilib friendly
 
   13 Sep 2006; Alex Tarkovsky <alextarkovsky@gmail.org>
   +deskbar-handlers-converter-1.05.ebuild, +metadata.xml:

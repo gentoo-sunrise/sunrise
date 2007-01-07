@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python
+inherit python multilib
 
 MY_PN=${PN/deskbar-handlers-/}
 
@@ -25,14 +25,14 @@ RDEPEND="${DEPEND}
 src_unpack() { :; }
 
 src_install() {
-	insinto /usr/lib/deskbar-applet/handlers
+	insinto /usr/$(get_libdir)/deskbar-applet/handlers
 	doins "${DISTDIR}/${MY_PN}.py"
 }
 
 pkg_postinst() {
-	python_mod_compile /usr/lib/deskbar-applet/handlers/${MY_PN}.py
+	python_mod_compile /usr/$(get_libdir)/deskbar-applet/handlers/${MY_PN}.py
 }
 
 pkg_postrm() {
-	python_mod_cleanup /usr/lib/deskbar-applet/handlers
+	python_mod_cleanup /usr/$(get_libdir)/deskbar-applet/handlers
 }
