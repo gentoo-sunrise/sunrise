@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -44,6 +44,7 @@ src_install() {
 	doins conf/pam_abl.conf
 	dobin tools/pam_abl
 	dodir /var/lib/abl
+	keepdir /var/lib/abl
 	dohtml doc/*.html doc/*.css
 }
 
