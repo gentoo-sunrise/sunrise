@@ -1,6 +1,9 @@
 # ChangeLog for x11-themes/qtcurve
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> qtcurve-0.46.ebuild:
+  Remove redundant inherit, fix DEPEND, fix pkg_postinst, quoting
 
   04 Dec 2006; Markus Ullmann <jokey@gentoo.org> -qtcurve-0.45.1.ebuild:
   Remove old

@@ -1,8 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-
-inherit kde-functions
 
 MY_P_GTK1="QtCurve-Gtk1-0.42.2"
 MY_P_GTK2="QtCurve-Gtk2-${PV}"
@@ -18,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="gtk1 gtk kde"
 DEPEND="gtk? ( >=x11-libs/gtk+-2.6 )
-	gtk1? ( >=x11-libs/gtk+-1.2 )
+	gtk1? ( =x11-libs/gtk+-1.2* )
 	kde? ( kde-base/kdelibs )"
 
 RDEPEND="${DEPEND}"
@@ -28,17 +26,17 @@ S="${WORKDIR}"
 src_compile() {
 	use kde || use gtk || use gtk1 || die "one of gtk, gtk1 or kde needs to be selected"
 	if use kde ; then
-		cd ${S}/${MY_P_KDE}
+		cd "${S}"/${MY_P_KDE}
 		econf --without-arts || die "econf failed"
 		emake || die "emake failed"
 	fi
 	if use gtk1 ; then
-		cd ${S}/${MY_P_GTK1}
+		cd "${S}"/${MY_P_GTK1}
 		econf || die "econf failed"
 		emake || die "emake failed"
 	fi
 	if use gtk ; then
-		cd ${S}/${MY_P_GTK2}
+		cd "${S}"/${MY_P_GTK2}
 		econf || die "econf failed"
 		emake || die "emake failed"
 	fi
@@ -46,37 +44,36 @@ src_compile() {
 
 src_install () {
 	for pkg in ${MY_P_GTK1} ${MY_P_GTK2} ${MY_P_KDE} ; do
-		if [[ -d ${S}/$pkg ]] ; then
-			cd ${S}/$pkg
+		if [[ -d "${S}"/${pkg} ]] ; then
+			cd "${S}"/${pkg}
 			emake DESTDIR="${D}" install || die "emake install failed"
-			docinto $pkg
+			docinto ${pkg}
 			dodoc ChangeLog README TODO
 		fi
 	done
 }
 
 pkg_postinst(){
-	echo
-	einfo "For GTK1:"
-	einfo " Copy"
-	echo  "     /usr/share/themes/QtCurve/gtk/gtkrc"
-	einfo " to either"
-	echo  "     /etc/gtk/gtkrc        To enable this theme for *all* users"
-	einfo " or"
-	echo  "     ~/.gtkrc              To enable for just yourself."
-	einfo " "
-	einfo " Alternatively, edit ~/.gtkrc so that it looks like:"
-	echo  "     include \"/usr/share/themes/QtCurve/gtk/gtkrc\""
-	einfo " "
-	einfo "For GTK2:"
-	einfo " edit ~/.gtkrc-2.0 so that it for example looks like:"
-	echo  "     include \"/usr/share/themes/QtCurve/gtk-2.0/gtkrc\""
-	echo  "     style \"user-font\""
-	echo  "     {"
-	echo  "         font_name=\"Helvetica 9\""
-	echo  "     }"
-	echo  "     widget_class \"*\" style \"user-font\""
-	echo  "     gtk-theme-name=\"QtCurve\""
-	echo  "     gtk-font-name=\"Helvetica 9\""
-	echo  " "
+	if use gtk1 ; then
+		elog "For GTK1 copy /usr/share/themes/QtCurve/gtk/gtkrc"
+		elog " to either"
+		elog "     /etc/gtk/gtkrc        To enable this theme for *all* users"
+		elog " or"
+		elog "     ~/.gtkrc              To enable for just yourself."
+		elog " Alternatively, edit ~/.gtkrc so that it looks like:"
+		elog "     include \"/usr/share/themes/QtCurve/gtk/gtkrc\""
+		elog ""
+	fi
+	if use gtk2 ; then
+		elog "For GTK2 edit ~/.gtkrc-2.0 so that it for example looks like:"
+		elog  "     include \"/usr/share/themes/QtCurve/gtk-2.0/gtkrc\""
+		elog  "     style \"user-font\""
+		elog  "     {"
+		elog  "         font_name=\"Helvetica 9\""
+		elog  "     }"
+		elog  "     widget_class \"*\" style \"user-font\""
+		elog  "     gtk-theme-name=\"QtCurve\""
+		elog  "     gtk-font-name=\"Helvetica 9\""
+		elog  " "
+	fi
 }
