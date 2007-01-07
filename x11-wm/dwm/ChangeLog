@@ -1,6 +1,10 @@
 # ChangeLog for x11-wm/dwm
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> dwm-2.8.ebuild:
+  einfo -> elog; save config in preinst instead of postinst to not create
+  orphaned files
 
   14 Dec 2006; Cedric Krier <cedk@gentoo.org> dwm-2.7.ebuild:
   Fix keywords

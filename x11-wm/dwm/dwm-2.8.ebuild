@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -66,23 +66,25 @@ src_install() {
 
 pkg_preinst() {
 	mv "${D}"/usr/share/${PN}/${PF}.config.h "${T}"/
-}
-
-pkg_postinst() {
 	if use savedconfig; then
 		local config_dir="${PORTAGE_CONFIGROOT:-${ROOT}}/etc/portage/savedconfig"
 		elog "Saving this build config to ${config_dir}/${PF}.config.h"
-		einfo "Read this ebuild for more info on how to take advantage of this option."
+		elog "Read this ebuild for more info on how to take advantage of this option."
 		mkdir -p "${config_dir}"
 		cp "${T}"/${PF}.config.h "${config_dir}"/${PF}.config.h
 	fi
-	einfo "This ebuild has support for user defined configs"
-	einfo "Please read this ebuild for more details and re-emerge as needed"
-	einfo "if you want to add or remove functionality for ${PN}"
+}
+
+pkg_postinst() {
+	elog "This ebuild has support for user defined configs"
+	elog "Please read this ebuild for more details and re-emerge as needed"
+	elog "if you want to add or remove functionality for ${PN}"
+
 	if ! has_version x11-misc/dmenu; then
 		elog "Installing ${PN} without x11-misc/dmenu"
-		einfo "To have a menu you can install x11-misc/dmenu"
+		elog "To have a menu you can install x11-misc/dmenu"
 	fi
-	einfo "You can custom status bar with a script in HOME/.dwm/dwmrc"
-	einfo "the ouput is redirected to the standard input of dwm"
+
+	elog "You can custom status bar with a script in HOME/.dwm/dwmrc"
+	elog "the ouput is redirected to the standard input of dwm"
 }
