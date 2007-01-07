@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,13 +13,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND="|| ( ( x11-proto/xproto
-		x11-libs/libXmu
-		x11-libs/libX11
-		x11-libs/libXpm
-		x11-libs/libXft )
-		<virtual/x11-7
-	)
+DEPEND="x11-proto/xproto
+	x11-libs/libXmu
+	x11-libs/libX11
+	x11-libs/libXpm
+	x11-libs/libXft
 	media-libs/libpng
 	media-libs/jpeg"
 RDEPEND="${DEPEND}

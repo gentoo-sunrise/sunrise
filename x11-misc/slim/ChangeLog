@@ -1,6 +1,9 @@
 # ChangeLog for x11-misc/slim
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> slim-1.2.5-r2.ebuild:
+  Drop support for monolithic X
 
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com> -slim-1.2.5.ebuild,
   -files/slim-cflags.patch:
