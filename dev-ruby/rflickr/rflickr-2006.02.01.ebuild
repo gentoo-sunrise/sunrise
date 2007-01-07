@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,11 +21,11 @@ RDEPEND="${DEPEND}
 	dev-ruby/rake"
 
 pkg_postinst() {
-	einfo "In order to use this library, you need to have:"
-	einfo
-	einfo "1. A Yahoo!/Flickr account."
-	einfo "2. A Flickr API Key."
-	einfo "3. A Shared Secret."
-	einfo
-	einfo "Visit http://www.flickr.com/services/api/ for more info."
+	elog "In order to use this library, you need to have:"
+	elog
+	elog "1. A Yahoo!/Flickr account."
+	elog "2. A Flickr API Key."
+	elog "3. A Shared Secret."
+	elog
+	elog "Visit http://www.flickr.com/services/api/ for more info."
 }
