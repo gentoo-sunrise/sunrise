@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+inherit distutils multilib
 
 DESCRIPTION="An Integrated Development Environment for dabo"
 HOMEPAGE="http://dabodev.com/"
@@ -28,7 +28,7 @@ src_compile() { :; }
 src_install() {
 	# Install daboide into site-packages
 	distutils_python_version
-	INS=/usr/lib/python${PYVER}/site-packages/${PN}
+	INS=/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 
 	dodoc ChangeLog
 
