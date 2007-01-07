@@ -16,7 +16,7 @@ KEYWORDS="~x86 ~amd64"
 RDEPEND=">=app-backup/dar-2.2.6
 	|| ( dev-util/bdelta dev-util/xdelta )
 	net-misc/openssh"
-DEPEND=">=app-shells/bash-3.0"
+DEPEND=""
 
 src_install() {
 	dobin darbackup
@@ -24,7 +24,7 @@ src_install() {
 }
 
 pkg_setup() {
-	if ! built_with_use dar dar32 && ! built_with_use dar dar64; then
+	if ! built_with_use app-backup/dar dar32 && ! built_with_use app-backup/dar dar64; then
 		die 'You must have dar32 or dar64 useflags enabled.'
 	fi
 }

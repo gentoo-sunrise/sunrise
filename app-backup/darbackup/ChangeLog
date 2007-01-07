@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> darbackup-0.7-r1.ebuild:
+  Fix built_with_use check; nuke pointless bash dependency
+
   06 Jan 2007; Eduard Warkentin <eduard.warkentin@gmx.de>
   darbackup-0.7-r1.ebuild:
   Fixed the gentoo ebuild to enforce the use of dar32 || dar64 correctly
