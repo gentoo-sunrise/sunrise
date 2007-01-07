@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 RDEPEND="dev-python/pyrex
-		>virtual/python-2.4
+		>=virtual/python-2.4
 		media-libs/xine-lib
 		dev-libs/boost
 		>=dev-python/pygtk-2.0
@@ -36,10 +36,11 @@ pkg_setup() {
 		die "Please re-emerge python with berkdb USE flag ON"
 	fi
 
-	if ! grep -q compiler.find /usr/$(get_libdir)/python2.4/distutils/unixccompiler.py; then
+	python_version
+	if ! grep -q compiler.find /usr/$(get_libdir)/python${PYVER}/distutils/unixccompiler.py; then
 		eerror "You need to apply a patch to make distutils use the correct RPATH."
 		eerror "To do this execute the following command as root:"
-		eerror "wget -q 'http://sourceforge.net/tracker/download.php?group_id=5470&atid=305470&file_id=144928&aid=1254718' -O -|patch -p1 -d /usr/$(get_libdir)/python2.4"
+		eerror "wget -q 'http://sourceforge.net/tracker/download.php?group_id=5470&atid=305470&file_id=144928&aid=1254718' -O -|patch -p1 -d /usr/$(get_libdir)/python${PYVER}"
 		die "python version not patched"
 	fi
 }
