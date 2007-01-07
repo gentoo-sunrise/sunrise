@@ -12,6 +12,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=dev-util/intltool-0.34"
 RDEPEND=">=dev-python/pygtk-2.6
 	dev-python/gnome-python-desktop"
+DEPEND="${RDEPEND}
+	>=dev-util/intltool-0.34"
