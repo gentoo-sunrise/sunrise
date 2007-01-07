@@ -1,6 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+inherit toolchain-funcs
 
 DESCRIPTION="Cromfs is a FUSE based compressed read-only filesystem for Linux."
 HOMEPAGE="http://bisqwit.iki.fi/source/cromfs.html"
@@ -14,18 +16,35 @@ IUSE="static"
 DEPEND=">=sys-fs/fuse-2.5.2"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -i -e '/upx/d' -e '/strip/d' Makefile \
+		|| die "sed failed in Makefile"
+	for i in Makefile util/Makefile ; do
+		sed -i -e "/^CXXFLAGS +=/s:-O3::" \
+			-e "/OPTIM +=/s:-O3::" ${i} \
+		|| die "sed failed in ${i}"
+	done
+	for i in Makefile.sets util/Makefile.sets ; do
+		sed -i -e "/^CC=/s:gcc:$(tc-getCC):" \
+			-e "/^CPP=/s:g++:$(tc-getCPP):" \
+			-e "/^CXX=/s:g++:$(tc-getCXX):" \
+			-e "/^CPPFLAGS=/s:-pipe -g::" \
+			-e "/^OPTIM/s:=.*:=${CXXFLAGS}:" \
+			-e "/^LDFLAGS/s:=.*:+=:" ${i} \
+		|| die "sed failed in ${i}"
+	done
+}
+
 src_compile() {
-	sed -i -e '/upx/d' -e '/strip/d' Makefile
-	emake -j1
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
-	exeinto /usr/bin
-	if use static; then
-		doexe cromfs-driver-static
-	fi
-	doexe cromfs-driver util/mkcromfs util/unmkcromfs util/cvcromfs
-	dodoc doc/*.txt doc/FORMAT doc/ChangeLog COPYING
-	insinto /usr/share/doc/${PF}
-	doins doc/*.html doc/*.png
+	use static && dobin cromfs-driver-static
+	dobin cromfs-driver util/{mkcromfs,unmkcromfs,cvcromfs}
+
+	dodoc doc/*.txt doc/{FORMAT,ChangeLog}
+	dohtml doc/*.{html,png}
 }
