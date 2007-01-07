@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,10 +12,10 @@ SRC_URI="http://fort.xdas.com/~kor/oss2jack/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~x86"
 SLOT="0"
-IUSE="doc udev"
+IUSE=""
 
 DEPEND="media-sound/jack-audio-connection-kit"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
@@ -45,12 +45,8 @@ src_install() {
 	doins *.h
 	insinto /etc/modules.d
 	newins "${FILESDIR}/fusd.modules" fusd
-	if use doc ; then
-		cd doc
-		dodoc fusd.pdf fusd.tex
-	fi
-	if use udev ; then
-		insinto /etc/udev/rules.d
-		doins "${FILESDIR}/49-fusd.rules"
-	fi
+	cd doc
+	dodoc fusd.pdf fusd.tex
+	insinto /etc/udev/rules.d
+	doins "${FILESDIR}/49-fusd.rules"
 }

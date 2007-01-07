@@ -1,6 +1,9 @@
 # ChangeLog for media-sound/fusd-kor
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> fusd-kor-1.10.11.ebuild:
+  Remove doc and udev use flags
 
   25 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
   Improved ebuild for bug #96449
