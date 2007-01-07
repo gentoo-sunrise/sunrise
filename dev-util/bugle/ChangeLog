@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> ChangeLog:
+  Remove redundant src_install
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> bugle-0.0.20061109.ebuild:
   einfo -> elog, cosmetics
 
