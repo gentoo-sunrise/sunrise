@@ -1,6 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+inherit multilib
 
 DESCRIPTION="A C++-based object-oriented discrete event simulation."
 HOMEPAGE="http://www.omnetpp.org/"
@@ -25,7 +27,7 @@ RDEPEND="${DEPEND}"
 src_compile() {
 	export PATH="${PATH}:${S}/bin"
 	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${S}/lib"
-	export TCL_LIBRARY="$ROOT/usr/lib/tcl8.4"
+	export TCL_LIBRARY="${ROOT}/usr/$(get_libdir)/tcl8.4"
 	econf || die 'econf failed'
 	emake || die 'emake failed'
 }
