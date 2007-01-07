@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,14 +15,14 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ruby-1.8.4"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 pkg_postinst() {
-	einfo "All the HTTP services supported and used by this library are"
-	einfo "offered for free by their respective owners. Please have a look at"
-	einfo "their websites to make sure you follow their terms of use."
-	einfo
-	einfo "http://www.random.org/"
-	einfo "http://www.fourmilab.ch/hotbits/"
-	einfo "http://random.hd.org/"
+	elog "All the HTTP services supported and used by this library are"
+	elog "offered for free by their respective owners. Please have a look at"
+	elog "their websites to make sure you follow their terms of use."
+	elog
+	elog "http://www.random.org/"
+	elog "http://www.fourmilab.ch/hotbits/"
+	elog "http://random.hd.org/"
 }
