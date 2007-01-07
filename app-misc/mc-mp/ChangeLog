@@ -1,6 +1,9 @@
 # ChangeLog for app-misc/mc-mp
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> mc-mp-4.1.40_pre9.ebuild:
+  Make this multilib friendly
 
   09 Jun 2006; Jakub Moc <jakub@gentoo.org> +mc-mp-4.1.40_pre9.ebuild:
   New ebuild, based on work of Dmitry S. Kulyabov. Bug 35032.

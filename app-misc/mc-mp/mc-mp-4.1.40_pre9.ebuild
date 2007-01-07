@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit flag-o-matic eutils pam
+inherit flag-o-matic eutils pam multilib
 
 MY_PN="mc"
 MY_P="${MY_PN}-${PV/_/-}"
@@ -88,25 +88,25 @@ src_compile() {
 }
 
 src_install() {
-	cat "${FILESDIR}/chdir.gentoo" > "${S}/lib/mc.sh"
+	cat "${FILESDIR}/chdir.gentoo" > "${S}/$(get_libdir)/mc.sh"
 	rm -f "${S}/README."{NT,OS2,QNX}
 
 	einstall || die
 
 	# install cons.saver setuid, to actually work
-	chmod u+s "${D}/usr/lib/mc/bin/cons.saver"
+	chmod u+s "${D}/usr/$(get_libdir)/mc/bin/cons.saver"
 
 	use pam && newpamd "${FILESDIR}/mcserv.pamd" mcserv
 	use pam && newinitd "${FILESDIR}/mcserv.rc" mcserv
 
-	exeinto /usr/lib/mc/bin
-	doexe "${S}/lib/mc.sh"
-	doexe "${S}/lib/mc.csh"
+	exeinto /usr/$(get_libdir)/mc/bin
+	doexe "${S}/$(get_libdir)/mc.sh"
+	doexe "${S}/$(get_libdir)/mc.csh"
 
-	insinto /usr/lib/mc
+	insinto /usr/$(get_libdir)/mc
 	doins "${FILESDIR}/mc."{gentoo,ini}
 
-	insinto /usr/lib/mc/syntax
+	insinto /usr/$(get_libdir)/mc/syntax
 	doins "${FILESDIR}/ebuild.syntax"
 
 	rm -rf "${D}/usr/man" "${D}/usr/share/man"
@@ -119,7 +119,7 @@ pkg_postinst() {
 	elog "allow mc to chdir to its latest working dir at exit"
 	elog
 	elog "# Midnight Commander chdir enhancement"
-	elog "if [ -f /usr/lib/mc/mc.gentoo ]; then"
-	elog ". /usr/lib/mc/mc.gentoo"
+	elog "if [ -f /usr/$(get_libdir)/mc/mc.gentoo ]; then"
+	elog ". /usr/$(get_libdir)/mc/mc.gentoo"
 	elog "fi"
 }
