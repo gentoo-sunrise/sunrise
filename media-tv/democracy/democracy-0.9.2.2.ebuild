@@ -20,7 +20,8 @@ RDEPEND="dev-python/pyrex
 		www-client/mozilla-firefox
 		x11-libs/libX11
 		dev-python/gst-python
-		x11-apps/xset"#see https://develop.participatoryculture.org/democracy/ticket/3067
+		x11-apps/xset"
+		# see https://develop.participatoryculture.org/democracy/ticket/3067
 
 DEPEND="${RDEPEND}
 		dev-util/pkgconfig"
