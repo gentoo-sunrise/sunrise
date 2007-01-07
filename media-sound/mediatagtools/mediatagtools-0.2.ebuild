@@ -13,7 +13,7 @@ IUSE=""
 
 DEPEND="=x11-libs/qt-3*
 		>=media-libs/taglib-1.4"
-RDEPEND="$DEPEND"
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	cd "${S}"
