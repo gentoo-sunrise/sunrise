@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python eutils
+inherit python eutils multilib
 
 DESCRIPTION="Gmail Notifier is a Linux alternative for the notifier program released by Google"
 HOMEPAGE="http://gmail-notify.sourceforge.net/"
@@ -33,7 +33,7 @@ src_unpack() {
 
 src_install() {
 	python_version
-	INST_DIR=/usr/lib/python${PYVER}/site-packages/${PN}
+	INST_DIR=/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 
 	dodoc README
 
@@ -45,7 +45,7 @@ src_install() {
 
 pkg_postinst() {
 	python_version
-	python_mod_optimize /usr/lib/python${PYVER}/site-packages/${PN}
+	python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 	elog "Run gmail-notify to start the program"
 	elog ""
 	elog "Warning: if you check the 'save username and password' option"
@@ -54,5 +54,5 @@ pkg_postinst() {
 
 pkg_postrm() {
 	python_version
-	python_mod_cleanup /usr/lib/python${PYVER}/site-packages/${PN}
+	python_mod_cleanup /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 }
