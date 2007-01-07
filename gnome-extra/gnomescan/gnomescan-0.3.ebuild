@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
 	dev-util/pkgconfig"
 
-DOCS="AUTHORS COPYING INSTALL NEWS README TODO"
+DOCS="AUTHORS NEWS README TODO"
 
 pkg_setup(){
 	G2CONF="${G2CONF} $(use_enable pdf)"
