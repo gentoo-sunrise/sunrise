@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils zproduct python
+inherit eutils zproduct python multilib
 
 MY_PN="ccPublisher"
 MY_P="${MY_PN}-${PV}"
@@ -30,7 +30,7 @@ src_install() {
 	cd "${S}"
 
 	# change directories, so that the python library is found
-	sed -i "s#\.:#/usr/lib/${P}:# ; s#ccp.py#/usr/lib/${P}/ccp.py#" \
+	sed -i "s#\.:#/usr/$(get_libdir)/${P}:# ; s#ccp.py#/usr/$(get_libdir)/${P}/ccp.py#" \
 		ccPublisher.sh
 
 	newbin ccPublisher.sh ccPublisher
@@ -42,11 +42,11 @@ src_install() {
 	# zope libraries. zope libs will be installed if USE="zope"
 	rm ccPublisher.sh README.txt -f
 	mv "zope" "${WORKDIR}"
-	insinto /usr/lib/${P}
+	insinto /usr/$(get_libdir)/${P}
 	doins -r *
 
 	# optimize python by compiling it
-	python_mod_optimize /usr/lib/${P}
+	python_mod_optimize /usr/$(get_libdir)/${P}
 
 	# copy the zope Product folder
 	if use zope; then
@@ -65,7 +65,7 @@ src_install() {
 }
 
 pkg_postrm() {
-	python_mod_cleanup /usr/lib/${P}
+	python_mod_cleanup /usr/$(get_libdir)/${P}
 }
 
 pkg_postinst() {
