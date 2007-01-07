@@ -2,9 +2,6 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  07 Jan 2007; Jakub Moc <jakub@gentoo.org> ChangeLog:
-  The optional stuff clearly is not DEPEND
-
   10 Sep 2006; Jakub Moc <jakub@gentoo.org> sndpeek-1.1.ebuild:
   Monolithic X is not supported any more
 
