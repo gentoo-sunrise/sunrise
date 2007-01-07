@@ -1,6 +1,9 @@
 # ChangeLog for www-client/ttb
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> ttb-0.9.4.ebuild:
+  Fix dependencies
 
   18 Nov 2006; Dick Marinus <dick.marinus@chello.nl> +ttb-0.9.4.ebuild,
   +files/ttb-0.9.4-nodisplay.patch, +metadata.xml:
