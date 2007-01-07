@@ -1,6 +1,9 @@
 # ChangeLog for x11-apps/amlc
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> amlc-0.5.1.ebuild:
+  Add die and quoting
 
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   amlc-0.5.1.ebuild:

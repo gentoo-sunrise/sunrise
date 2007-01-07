@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,13 +14,13 @@ IUSE=""
 S=${WORKDIR}
 
 src_unpack() {
-	cp ${DISTDIR}/${P}.cpp ${S}
+	cp "${DISTDIR}"/${P}.cpp "${S}"
 }
 
 src_compile() {
-	$(tc-getCXX) ${CXXFLAGS} ${LDFLAGS} ${S}/${P}.cpp -o amlc
+	$(tc-getCXX) ${CXXFLAGS} ${LDFLAGS} "${S}"/${P}.cpp -o amlc || die "compile failed"
 }
 
 src_install() {
-	dobin amlc
+	dobin amlc || die "install failed"
 }
