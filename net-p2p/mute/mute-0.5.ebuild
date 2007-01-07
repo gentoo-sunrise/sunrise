@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs wxwidgets flag-o-matic
+inherit eutils toolchain-funcs wxwidgets flag-o-matic multilib
 
 MY_P="MUTE_fileSharing-${PV}_UnixSource"
 
@@ -53,12 +53,12 @@ src_compile() {
 	# break the crypto at startup
 	filter-flags -fomit-frame-pointer
 
-	emake GXX=$(tc-getCXX) CRYPTO_LIB="/usr/lib/libcrypto++.a" || die "emake failed"
+	emake GXX=$(tc-getCXX) CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
 
 	if use wxwindows; then
 		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows"
 		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" \
-			CRYPTO_LIB="/usr/lib/libcrypto++.a" || die "emake failed"
+			CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
 	fi
 }
 

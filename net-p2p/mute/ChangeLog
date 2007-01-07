@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jan 2007; Jakub Moc <jakub@gentoo.org> mute-0.5.ebuild:
+  Make this multilib friendly; package.masked until someone patches this for
+  gcc-4.x
+
   05 Jan 2007; Jakub Moc <jakub@gentoo.org> mute-0.5.ebuild:
   Fix broken wxwidgets handling, add die to configure call, cosmetics
 
