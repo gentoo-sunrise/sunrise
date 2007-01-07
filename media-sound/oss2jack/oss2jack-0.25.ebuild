@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,11 +22,11 @@ src_compile() {
 }
 
 src_install() {
-	dobin "${S}/src/oss2jack/oss2jack"
+	dobin "${S}"/src/oss2jack/oss2jack
 	dodoc README
 }
 
 pkg_postinst() {
-	einfo "To use oss2jack you need to first start jackd"
-	einfo "and then run oss2jack to create the dsp device"
+	elog "To use oss2jack you need to first start jackd"
+	elog "and then run oss2jack to create the dsp device"
 }
