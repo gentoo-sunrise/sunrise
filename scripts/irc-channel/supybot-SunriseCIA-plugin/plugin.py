@@ -40,7 +40,7 @@ import supybot.callbacks as callbacks
 import SunriseCIAParser
 import os
 
-DIRCHECK="/var/www/sunrise.gentooexperimental.org/commitwatch"
+DIRCHECK="/path/to/commitwatch"
 ANNOUNCEINCHANNEL="#gentoo-sunrise"
 
 class SunriseCIA(callbacks.Plugin):
@@ -55,24 +55,35 @@ class SunriseCIA(callbacks.Plugin):
 		self.watchactive = 0
 
 	def parsestart(self, irc, msg, args):
-		if self.watchactive == 0:
+		if not self.ParseActive():
+			self.GetFileList()
+			if len(self.filelist) > 2:
+				irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,"Found too many pending announcements, killing them now, see Timeline please"))
+		                while (len(self.filelist) > 0):
+            				file = self.filelist.pop()
+		                	os.remove(file) 	
+			elif len(self.filelist) > 0:
+				irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,"Found %s pending announcement(s), queueing them"))
+			
 			self.watchactive = 1
 			self.t = threading.Thread(target=self.Parseit, name="ParserWatcher",args=(irc,msg,args))
 			self.t.setDaemon(True)
 			self.t.start()
-	
-	parsestart = wrap(parsestart, [('checkCapability', ANNOUNCEINCHANNEL+',op')])
+	        else:
+			irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,"SunriseCIA already started"))
+
+	parsestart = wrap(parsestart)
 
 	def parsestop(self,irc,msg,args):
 		self.watchactive = 0
 
-	parsestop = wrap(parsestop, [('checkCapability', ANNOUNCEINCHANNEL+',op')])
+	parsestop = wrap(parsestop, [('checkCapability',ANNOUNCEINCHANNEL+',op')])
 
 	def parsestatus(self, irc, msg, args):
-		if self.watchactive == 1 and self.t.isAlive():
-			irc.reply("SunriseCIA CommitWatch active")
+		if self.ParseActive():
+			irc.reply("SunriseCIA active")
 		else:
-			irc.reply("SunriseCIA CommitWatch disabled")
+			irc.reply("SunriseCIA disabled")
 
 	parsestatus = wrap(parsestatus)
 	
@@ -82,30 +93,32 @@ class SunriseCIA(callbacks.Plugin):
 				self.filelist.append(os.path.join(root,name))
 
 	def Parseit(self, irc, msg, args):
-		#irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,"SunriseCIA CommitWatch started"))
+		irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,"SunriseCIA started"))
 		while(self.watchactive):
 			self.GetFileList()
-			if len(self.filelist) > 0:
-				while (1):
-					try:
-						file = self.filelist.pop()
-					except:
-						break;
-					self.log.debug("Found new file: %s",file)
-					parser = SunriseCIAParser.CommitParser( )
-					parser.filename = file
-					parser.doit()
-					tempstr = parser.logmessage.strip()
-					temppos = tempstr.find(":")
-					if temppos > 0:
-						tempstr = tempstr[(tempstr.find(":")+1):].strip()
-					s = "3%s * 10r%s %s: %s < %s >" % (parser.author,parser.revision,parser.pathline,tempstr,"http://gentoo-sunrise.org/cgi-bin/trac.cgi/changeset/" + parser.revision)
-					irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,s))
-					os.remove(file) 	
-			time.sleep(2)
-		#irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,"SunriseCIA CommitWatch stopped"))
-		
-Class = SunriseCIA
+	                while (len(self.filelist) > 0):
+    	            		file = self.filelist.pop()
+	    			parser = SunriseCIAParser.CommitParser( )
+	                	parser.filename = file
+        			parser.doit()
+	                	tempstr = parser.logmessage.strip()
+        			temppos = tempstr.find(":")
+	                	if temppos > 0:
+        		        	tempstr = tempstr[(temppos+1):].strip()
+	                	s = "3%s * 10r%s %s: %s < %s >" % (parser.author,parser.revision,parser.pathline,tempstr,"http://gentoo-sunrise.org/cgi-bin/trac.cgi/changeset/" + parser.revision)
+	                	irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,s))
+	                	os.remove(file) 	
+        			time.sleep(2)
+			time.sleep(5)
+		irc.queueMsg(ircmsgs.privmsg(ANNOUNCEINCHANNEL,"SunriseCIA stopped"))
 
+	def ParseActive(self):
+    		if self.watchactive == 1 and self.t.isAlive():
+	                return True
+	        else:
+    	    		self.watchactive == 0
+	        	return False
+
+Class = SunriseCIA
 
 # vim:set shiftwidth=4 tabstop=4 expandtab textwidth=79:
