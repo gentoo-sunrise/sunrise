@@ -1,6 +1,10 @@
 # ChangeLog for sci-mathematics/javanns
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Jan 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  javanns-1.1.ebuild:
+  Upstream changed sourcefile name.
 
   23 Dec 2006; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   +javanns-1.1.ebuild, +files/target.def, +metadata.xml:

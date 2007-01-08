@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ inherit java-pkg-2
 
 DESCRIPTION="an efficient universal simulator of neural networks"
 HOMEPAGE="http://www-ra.informatik.uni-tuebingen.de/software/JavaNNS/welcome_e.html"
-SRC_URI="http://ndansmith.net/software/${PN}/${P}.zip"
+SRC_URI="http://www-ra.informatik.uni-tuebingen.de/downloads/JavaNNS/${P}-src.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
