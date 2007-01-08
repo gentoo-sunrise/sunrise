@@ -1,0 +1,11 @@
+--- SimplePortlet/skins/SimplePortlet/portlet_topicportlet_macros.pt	2006-08-08 14:37:22.000000000 +0300
++++ SimplePortlet/skins/SimplePortlet/portlet_topicportlet_macros.pt	2007-01-08 11:01:21.000000000 +0200
+@@ -18,7 +18,7 @@
+           </dd>
+           <tal:topic tal:define="topic portlet/getTopic;
+                                  max_size portlet/getMaxResults;"
+-                     tal:condition="topic">
++                     tal:condition="exists:topic">
+             <tal:block 
+                     define="data topic/queryCatalog;
+                             total python:len(data);">
