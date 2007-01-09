@@ -27,7 +27,6 @@ dev-util/ktigcc:no-completion-data - Do not install completion data for the TIGC
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
-gnome-extra/timer-applet:libnotify - Enable libinotify support for system notifications.
 gnome-extra/timer-applet:sounds - Installs optional sound data
 mail-filter/MailScanner:bitdefender - Enable usage of bitdefender virus scanner
 mail-filter/MailScanner:exim - Set exim to used MTA
