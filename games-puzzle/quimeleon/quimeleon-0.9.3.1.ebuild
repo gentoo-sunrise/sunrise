@@ -4,13 +4,11 @@
 
 DESCRIPTION="Game engine for quiz shows based upon multiple choice questions."
 HOMEPAGE="http://quimeleon.sourceforge.net/"
-
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-
 IUSE=""
 
 DEPEND=">=dev-cpp/libxmlpp-2.6
