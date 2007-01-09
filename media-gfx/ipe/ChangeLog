@@ -3,6 +3,9 @@
 # $Header: $
 
   09 Jan 2007; Markus Ullmann <jokey@gentoo.org> ipe-6.0_pre28.ebuild:
+  Quotation
+
+  09 Jan 2007; Markus Ullmann <jokey@gentoo.org> ipe-6.0_pre28.ebuild:
   QA Whitespace
 
   08 Jan 2007; Christian Schlotter (schlotter) <again@gmx.de>

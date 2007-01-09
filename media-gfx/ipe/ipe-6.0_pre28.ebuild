@@ -36,6 +36,7 @@ search_urw_fonts() {
 			return 0
 		fi
 	done
+
 	return 1
 }
 
@@ -55,17 +56,20 @@ src_compile() {
 	# use firefox && myconf="IPEBROWSER=firefox"
 	use firefox && \
 		sed -i -e "s/IPEBROWSER = mozilla/IPEBROWSER = firefox/" config.pri
+
 	qmake \
 		"IPEPREFIX=/usr" \
 		"IPEDOCDIR=/usr/share/doc/${PF}" \
 		${myconf} \
 		main.pro || die "qmake failed"
+
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake install "INSTALL_ROOT=${D}" || die "emake install failed"
-	cd ${WORKDIR}/${MY_P}
+
+	cd "${WORKDIR}"/${MY_P}
 	local fontmapdir=/usr/share/${PN}/${MY_P/${PN}-/}
 	if [ -n ${URWFONTDIR} ]; then
 		einfo "Creating fontmap ..."
@@ -73,5 +77,6 @@ src_install() {
 			tetex-fontmap.xml > ${D}/${fontmapdir}/fontmap.xml
 		eend $?
 	fi
+
 	dodoc install.txt news.txt readme.txt
 }
