@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,6 +14,7 @@ SRC_URI="http://plone.org/products/relations/releases/${PV}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 RDEPEND="|| ( net-zope/archetypes >=net-zope/plone-2.5 )"
 

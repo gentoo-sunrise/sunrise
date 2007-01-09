@@ -1,6 +1,9 @@
 # ChangeLog for net-zope/relations
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jan 2007; Markus Ullmann <jokey@gentoo.org> relations-0.6b.ebuild:
+  IUSE required
 
   19 Dec 2006; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
   +relations-0.6b.ebuild, +metadata.xml:
