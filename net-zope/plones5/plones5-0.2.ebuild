@@ -14,6 +14,7 @@ SRC_URI="http://plone.org/products/s5/releases/${PV}/${MY_P}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND=">=net-zope/plone-2.1
 		app-arch/unzip"
