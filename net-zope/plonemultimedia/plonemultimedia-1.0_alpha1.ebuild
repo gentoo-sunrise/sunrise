@@ -7,7 +7,6 @@ inherit versionator zproduct
 MY_PV="$(replace_all_version_separators '-' )"
 MY_PN="PloneMultimediaBundle"
 MY_P="${PN}-${MY_PV}"
-S="${WORKDIR}/${MY_PN}"
 
 DESCRIPTION="A package containing products to improve Plone's support for multimedia such as audio, video and photos."
 HOMEPAGE="http://plone.org/products/plonemultimedia"
@@ -21,6 +20,8 @@ DEPEND=">=net-zope/plone-2.1
 	>=net-zope/zope-2.8"
 RDEPEND="${DEPEND}
 	dev-python/mmpython"
+
+S="${WORKDIR}/${MY_PN}"
 
 ZPROD_LIST="ATAudio
 	ATMediaFile
