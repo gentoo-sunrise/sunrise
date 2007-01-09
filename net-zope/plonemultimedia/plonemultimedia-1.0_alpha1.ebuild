@@ -8,7 +8,7 @@ MY_PV="$(replace_all_version_separators '-' )"
 MY_PN="PloneMultimediaBundle"
 MY_P="${PN}-${MY_PV}"
 
-DESCRIPTION="A package containing products to improve Plone's support for multimedia such as audio, video and photos."
+DESCRIPTION="Products to improve Plone's support for multimedia such as audio, video and photos."
 HOMEPAGE="http://plone.org/products/plonemultimedia"
 SRC_URI="http://plone.org/products/plonemultimedia/releases/${PV:0:3}/${MY_P}-tar.gz"
 
