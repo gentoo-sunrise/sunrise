@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jan 2007; Markus Ullmann <jokey@gentoo.org> ipe-6.0_pre28.ebuild:
+  QA Whitespace
+
   08 Jan 2007; Christian Schlotter (schlotter) <again@gmx.de>
   +ipe-6.0_pre28.ebuild, +metadata.xml:
   New ebuild for bug 80448.

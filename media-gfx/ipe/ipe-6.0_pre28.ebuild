@@ -23,14 +23,13 @@ RDEPEND="${DEPEND}
 	firefox? ( || ( www-client/mozilla-firefox
 		www-client/mozilla-firefox-bin ) )"
 
-
 S="${WORKDIR}/${MY_P}/src"
 
 search_urw_fonts() {
 	local texmfdist="$(kpsewhich -var-value=TEXMFDIST)" # colon-separated
 														# list of paths
-	local urwdir=fonts/type1/urw # according to TeX directory structure
-	IFS="${IFS}:"				 # add colon as field separator
+	local urwdir=fonts/type1/urw	# according to TeX directory structure
+	IFS="${IFS}:"					# add colon as field separator
 	for dir in ${texmfdist}; do
 		if [[ -d "${dir}/${urwdir}" ]]; then
 			URWFONTDIR="${dir}/${urwdir}"
