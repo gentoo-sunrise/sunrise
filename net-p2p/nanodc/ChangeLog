@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jan 2007; Toni Takarautio (secretz) <thtaka@utu.fi>
+  +nanodc-0.3.3.ebuild:
+  Version bump.
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> nanodc-0.3.2.ebuild:
   pkgconfig and scons is not RDEPEND, no need to depend on bzip2
 
