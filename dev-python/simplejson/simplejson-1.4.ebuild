@@ -15,4 +15,3 @@ IUSE=""
 
 DEPEND=">=dev-lang/python-2.3
 	dev-python/setuptools"
-
