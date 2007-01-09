@@ -15,6 +15,7 @@ SRC_URI="http://plone.org/products/simplecartitem/releases/${MY_PV}/${MY_PN}.tar
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND=">=net-zope/plone-2.1"
 RDEPEND="${DEPEND}
