@@ -7,6 +7,7 @@ inherit gnome2 distutils
 DESCRIPTION="Copy and paste to a public pastebin server"
 HOMEPAGE="http://gnomefiles.org/app.php/WebBoard"
 SRC_URI="http://pimpzkru.de/sebi/${PN}/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"

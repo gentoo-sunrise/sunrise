@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jan 2007; Markus Ullmann <jokey@gentoo.org> webboard-0.2.ebuild:
+  QA Whitespace
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> webboard-0.2.ebuild:
   Fix dependencies
 
