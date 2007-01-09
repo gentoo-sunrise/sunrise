@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jan 2007; Markus Ullmann <jokey@gentoo.org> -moreutils-0.19.ebuild:
+  Drop old
+
   03 Jan 2007; Jorge Vargas (elpargo) <jorge.vargas@gmail.com>
   +moreutils-0.20.ebuild:
   version bump
