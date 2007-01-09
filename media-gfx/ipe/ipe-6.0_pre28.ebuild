@@ -27,16 +27,19 @@ S="${WORKDIR}/${MY_P}/src"
 
 search_urw_fonts() {
 	local texmfdist="$(kpsewhich -var-value=TEXMFDIST)" # colon-separated
-														# list of paths
+								# list of paths
 	local urwdir=fonts/type1/urw	# according to TeX directory structure
-	IFS="${IFS}:"					# add colon as field separator
+	local OLDIFS="$IFS"
+	IFS="${IFS}:"			# add colon as field separator
 	for dir in ${texmfdist}; do
 		if [[ -d "${dir}/${urwdir}" ]]; then
 			URWFONTDIR="${dir}/${urwdir}"
+			IFS="${OLDIFS}"
 			return 0
 		fi
 	done
 
+	IFS="${OLDIFS}"
 	return 1
 }
 
