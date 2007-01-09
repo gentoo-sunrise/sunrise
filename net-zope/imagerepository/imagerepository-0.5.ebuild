@@ -18,6 +18,6 @@ IUSE="kupu"
 
 DEPEND="net-zope/plone"
 RDEPEND="${DEPEND}
-		kupu? ( net-zope/kupu )"
+	kupu? ( net-zope/kupu )"
 
 ZPROD_LIST="${MY_PN}"
