@@ -1,6 +1,10 @@
 # ChangeLog for net-zope/richdocument
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jan 2007; Markus Ullmann <jokey@gentoo.org>
+  richdocument-2.0_rc1.ebuild:
+  IUSE required
 
   21 Dec 2006; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
   +richdocument-2.0_rc1.ebuild, +metadata.xml:
