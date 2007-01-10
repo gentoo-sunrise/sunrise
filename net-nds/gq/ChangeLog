@@ -1,0 +1,8 @@
+# ChangeLog for net-nds/gq
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Jan 2007; Markus Rennings (mren) <bugs@rennings.net> +gq-1.2.2.ebuild,
+  +metadata.xml:
+  Initial commit.
+
