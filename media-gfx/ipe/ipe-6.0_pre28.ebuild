@@ -6,9 +6,8 @@ inherit qt4
 
 MY_P="${P/_/}"
 DESCRIPTION="An extensible drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
-HOMEPAGE="http://ipe.compgeom.org/"
-SRC_URI="http://ipe.compgeom.org/${MY_P}-src.tar.gz
-	http://tclab.kaist.ac.kr/ipe/${MY_P}-src.tar.gz"
+HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
+SRC_URI="http://tclab.kaist.ac.kr/ipe/${MY_P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
