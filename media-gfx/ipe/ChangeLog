@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jan 2007; Jakub Moc <jakub@gentoo.org> ipe-6.0_pre28.ebuild:
+  Fix src_compile; cosmetics
+
   11 Jan 2007; Christian Schlotter (schlotter) <again@gmx.de>
   ipe-6.0_pre28.ebuild:
   correct HOMEPAGE variable (see http://tinyurl.com/yl4rcj for announcement of
