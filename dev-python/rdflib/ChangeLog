@@ -3,6 +3,10 @@
 # $Header: $
 
   11 Jan 2007; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
+  +rdflib-2.2.1.ebuild:
+  added version 2.2.1
+
+  11 Jan 2007; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
   +rdflib-2.3.3.ebuild, +metadata.xml:
   ebuild for bug #161492
 
