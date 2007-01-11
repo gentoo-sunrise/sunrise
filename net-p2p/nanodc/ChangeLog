@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jan 2007; Jakub Moc <jakub@gentoo.org> -nanodc-0.3.2.ebuild,
+  nanodc-0.3.3.ebuild:
+  Nuke old and re-fix the dependencies again; stop breaking it!
+
   09 Jan 2007; Toni Takarautio (secretz) <thtaka@utu.fi>
   +nanodc-0.3.3.ebuild:
   Version bump.
