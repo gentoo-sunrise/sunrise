@@ -21,13 +21,6 @@ DEPEND=">=dev-lang/python-2.3
 	gnome? ( dev-python/notify-python )"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-        unpack ${A}
-        cd "${S}"
-        
-        use amd64 && epatch "${FILESDIR}"/${P}-64bit.patch
-}
-
 src_install() {
 	python_version
 	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
