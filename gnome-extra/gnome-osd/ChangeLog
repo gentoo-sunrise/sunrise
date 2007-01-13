@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/gnome-osd
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Jan 2007; Christian Schlotter (schlotter) <again@gmx.de>
+  +gnome-osd-0.11.3.ebuild, +metadata.xml:
+  new ebuild for bug 80770. Thanks to Yaakov S and Will
+
