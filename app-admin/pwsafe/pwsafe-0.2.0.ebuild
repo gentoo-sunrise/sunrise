@@ -4,13 +4,13 @@
 
 inherit flag-o-matic
 
-DESCRIPTION="Manages encrypted password databases (compatible with Counterpane's Password Safe)."
+DESCRIPTION="Commandline program that manages encrypted password databases (compatible with Counterpane's Password Safe)"
 HOMEPAGE="http://nsd.dyndns.org/pwsafe/"
 SRC_URI="http://nsd.dyndns.org/pwsafe/releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
@@ -24,7 +24,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README ChangeLog AUTHORS TODO
+	dodoc README ChangeLog AUTHORS TODO NEWS
 	chmod +s "${D}/usr/bin/pwsafe"
 }
 
