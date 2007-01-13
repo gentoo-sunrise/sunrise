@@ -25,7 +25,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README ChangeLog AUTHORS TODO NEWS
-	chmod +s "${D}/usr/bin/pwsafe"
+	fperms +s /usr/bin/pwsafe
 }
 
 pkg_postinst() {
