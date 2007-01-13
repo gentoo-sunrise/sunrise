@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit gnome2
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="none"
+
+inherit gnome2 autotools
 
 DESCRIPTION="Gnome OSD notification system"
 HOMEPAGE="http://www.gnomefiles.org/app.php?soft_id=350"
@@ -19,10 +22,9 @@ RDEPEND=">=dev-lang/python-2.3.0
 	dbus? ( dev-python/dbus-python )"
 
 DEPEND="${RDEPEND}
-	>=sys-devel/autoconf-2.53
 	>=dev-util/pkgconfig-0.9.0"
 
-DOCS="AUTHORS COPYING ChangeLog NEWS README"
+DOCS="AUTHORS ChangeLog NEWS README"
 
 pkg_postinst() {
 	gnome2_pkg_postinst
