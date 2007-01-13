@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	|| ( app-emacs/w3 >=app-editors/emacs-cvs-22 >=app-editors/emacs-22 )"
 
 SITEFILE="${FILESDIR}/50doxymacs-gentoo.el"
-DOCS="AUTHORS ChangeLog COPYING INSTALL NEWS README TODO"
+DOCS="AUTHORS ChangeLog NEWS README TODO"
 
 src_compile() {
 	econf \

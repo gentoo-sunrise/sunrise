@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jan 2007; Jakub Moc <jakub@gentoo.org> doxymacs-1.7.0.ebuild:
+  No need to dodoc COPYING and INSTALL
+
   13 Jan 2007; Christian Schlotter (schlotter) <again@gmx.de>
   +files/50doxymacs-gentoo.el, +doxymacs-1.7.0.ebuild, +metadata.xml:
   new ebuild for bug 110083
