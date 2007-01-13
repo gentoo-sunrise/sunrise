@@ -1,6 +1,10 @@
 # ChangeLog for app-admin/pwsafe
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2007; Lars Tobias Borsting (larstobi)
+  <lars.tobias.borsting@ntnu.no> pwsafe-0.2.0.ebuild:
+  added ~amd64, dodoc NEWS, updated DESCRIPTION
 
   06 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr> Manifest:
   Updated Manifest.

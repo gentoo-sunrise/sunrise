@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit flag-o-matic
+inherit eutils flag-o-matic
 
 DESCRIPTION="Commandline program that manages encrypted password databases (compatible with Counterpane's Password Safe)"
 HOMEPAGE="http://nsd.dyndns.org/pwsafe/"
