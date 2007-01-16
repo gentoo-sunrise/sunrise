@@ -4,7 +4,7 @@
 
 inherit toolchain-funcs
 
-DESCRIPTION="SLiM - Simple Login Manager"
+DESCRIPTION="Simple Login Manager"
 HOMEPAGE="http://slim.berlios.de/"
 SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
 
