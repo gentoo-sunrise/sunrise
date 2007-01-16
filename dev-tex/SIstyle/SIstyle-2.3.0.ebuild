@@ -4,7 +4,7 @@
 
 inherit latex-package
 
-DESCRIPTION="Package to typeset SI units, numbers and angles."
+DESCRIPTION="LaTeX package to typeset SI units, numbers and angles."
 HOMEPAGE="http://www.ctan.org/tex-archive/macros/latex/contrib/SIstyle/"
 SRC_URI="http://www.rennings.net/gentoo/distfiles/${P}.zip"
 
@@ -16,7 +16,7 @@ IUSE=""
 DEPEND="app-arch/unzip"
 RDEPEND=""
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 src_unpack() {
 
@@ -33,10 +33,10 @@ src_install() {
 	latex-package_src_install
 
 	cd "${S}/source/latex/SIstyle"
-	insinto ${TEXMF}/source/latex/SIstyle
+	insinto "${TEXMF}/source/latex/SIstyle"
 	doins sistyle.dtx sistyle.ins
 	doins figs/fig{1,2}.*ps
 	cd figs/graphs_scr
-	insinto ${TEXMF}/source/latex/SIstyle/graphs_src
+	insinto "${TEXMF}/source/latex/SIstyle/graphs_src"
 	doins *.mp MPfig.bat readme_figs.txt *.m
 }
