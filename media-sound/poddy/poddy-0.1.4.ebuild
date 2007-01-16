@@ -1,20 +1,21 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit distutils
 
-DESCRIPTION="PoddY is a command line tool for downloading podcasts"
+DESCRIPTION="a lightweight command-line podcast client"
 HOMEPAGE="http://ndansmith.net/poddy.php"
-SRC_URI="http://ndansmith.net/software/poddy/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/poddy/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc ~x86"
 IUSE=""
 
-DEPEND="dev-python/feedparser"
+DEPEND="dev-python/feedparser
+	dev-python/urlgrabber"
 
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"

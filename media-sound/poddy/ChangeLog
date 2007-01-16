@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/poddy
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Jan 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  -poddy-0.1.3.ebuild, +poddy-0.1.4.ebuild:
+  Version bump, news deps, moved to sourceforge
 
   19 Dec 2006; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   -poddy-0.1.2.ebuild, +poddy-0.1.3.ebuild:
