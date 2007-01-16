@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /mnt/back/repository/c/wbar/ebuild/wbar-1.2.ebuild,v 1.3 2006/12/29 02:39:34 warlock Exp $
 
@@ -27,8 +27,8 @@ src_install() {
 
 	dodir /usr/share/wbar/
 	awk '{if($$1 ~ /i:/ || ($$1 ~ /t:/ && NR<4)) print $$1" /usr/share/wbar/"$$2; else
-	print $$0;}' dot.wbar > ${D}/usr/share/wbar/dot.wbar
+	print $$0;}' dot.wbar > "${D}/usr/share/wbar/dot.wbar"
 
-	cp -a wbar.icons ${D}/usr/share/wbar
+	cp -a wbar.icons "${D}/usr/share/wbar"
 	dobin wbar
 }
