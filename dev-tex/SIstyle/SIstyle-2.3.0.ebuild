@@ -14,7 +14,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
+RDEPEND="virtual/tetex"
 
 S="${WORKDIR}/${PN}"
 

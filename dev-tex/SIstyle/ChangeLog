@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jan 2007; Markus Rennings (mren) <mren@mrmx.de> SIstyle-2.3.0.ebuild:
+  added RDEPEND
+
   16 Jan 2007; Christian Faulhammer <opfer@gentoo.org> SIstyle-2.3.0.ebuild:
   add some quotes, adjust DESCRIPTION a bit
 
