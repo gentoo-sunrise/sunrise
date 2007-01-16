@@ -17,12 +17,12 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	cp ${DISTDIR}/pyq ${WORKDIR}
+	cp "${DISTDIR}"/pyq "${WORKDIR}"
 }
 
 src_install() {
 	python_version
-	cd ${WORKDIR}
+	cd "${WORKDIR}"
 	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/
 	newins pyq pyq.py
 	make_wrapper pyq "python /usr/${get_libdir}/python${PYVER}/site-packages/pyq.py"
