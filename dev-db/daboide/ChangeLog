@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jan 2007; Geoff Clements <geoff@electron.me.uk> ChangeLog:
+  dev-db/daboide: version bump
+  +daboide-7.1
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> daboide-0.7.ebuild:
   Make this multilib friendly
 
