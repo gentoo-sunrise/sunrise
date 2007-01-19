@@ -7,20 +7,22 @@ inherit distutils multilib
 DESCRIPTION="An Integrated Development Environment for dabo"
 HOMEPAGE="http://dabodev.com/"
 SRC_URI="ftp://dabodev.com/dabo/${P}-mac-nix.tar.gz"
+
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-S=${WORKDIR}/${PN}
-RESTRICT="mirror"
 
 DEPEND=""
-
 RDEPEND=">=dev-python/wxpython-2.6.1.1
 	>=dev-db/dabo-0.7.2
 	dev-python/imaging
 	dev-python/reportlab
 	${DEPEND}"
+
+S=${WORKDIR}/${PN}
+
+RESTRICT="mirror"
 
 # Prevent inherited method from trying to run setup.py
 src_compile() { :; }
