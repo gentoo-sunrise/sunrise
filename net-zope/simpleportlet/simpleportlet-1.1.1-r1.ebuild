@@ -24,6 +24,6 @@ ZPROD_LIST="${MY_PN}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/fix-recursion-error.patch
+	cd "${S}"
+	epatch "${FILESDIR}/fix-recursion-error.patch"
 }
