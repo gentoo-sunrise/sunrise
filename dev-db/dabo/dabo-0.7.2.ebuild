@@ -16,7 +16,6 @@ IUSE=""
 DEPEND=">=dev-python/setuptools-0.6_alpha9"
 
 RDEPEND=">=dev-python/wxpython-2.6.1.1
-	!>=dev-python/wxpython-2.7
 	>=dev-db/sqlite-3.0
 	>=dev-python/pysqlite-2.0
 	${DEPEND}"
