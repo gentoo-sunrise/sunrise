@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/libticalcs
 
 src_unpack() {
-	unpack "${P}.tar.bz2"
+	unpack ${A}
 	cd "${S}"
 	[[ $(tc-arch) == "amd64" ]] && epatch "${DISTDIR}"/${P}-64bit.diff
 }
