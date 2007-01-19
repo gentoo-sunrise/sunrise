@@ -4,7 +4,6 @@
 
 inherit latex-package
 
-
 DESCRIPTION="This package enables to generate multilingual bibliographies in cooperation with babel."
 HOMEPAGE="http://tug.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib/"
 #As it seems that CTAN has no versioned packages I mirrored it on my private webspace
@@ -17,14 +16,11 @@ IUSE=""
 
 S=${WORKDIR}/${PN}
 
-
 src_compile() {
-
 	emake || die "emake failed"
 }
 
 src_install() {
-
 	latex-package_src_doinstall sty
 	latex-package_src_doinstall bst
 	latex-package_src_doinstall bdf
@@ -38,5 +34,5 @@ src_install() {
 	dodoc README ChangeLog babelbibtest.tex babelbibtest.bib
 
 	insinto /usr/share/doc/${PF}
-		doins *.pdf
+	doins *.pdf
 }
