@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jan 2007; Markus Ullmann <jokey@gentoo.org> -rdflib-2.2.1.ebuild:
+  Cleanup
+
   11 Jan 2007; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
   +rdflib-2.2.1.ebuild:
   added version 2.2.1
