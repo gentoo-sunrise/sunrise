@@ -9,7 +9,6 @@ SRC_URI="mirror://sourceforge/gqclient/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 # Feel free to make conditional once it is not automagic
 # http://www.gentoo.org/proj/en/qa/automagic.xml
 IUSE="kerberos" # sasl ssl
@@ -23,10 +22,8 @@ RDEPEND=">=x11-libs/gtk+-2
 	x11-libs/pango
 	dev-libs/cyrus-sasl
 	>=gnome-base/gnome-keyring-0.4.4"
-
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
-
 
 src_compile() {
 	local myconf="--enable-browser-dnd --enable-cache --disable-update-mimedb"
@@ -37,7 +34,7 @@ src_compile() {
 }
 
 src_install() {
-	rm -f ${D}/usr/share/locale/locale.alias
-	emake DESTDIR="${D}" install || die "emake failed"
+	rm -f "${D}"/usr/share/locale/locale.alias
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README* TODO
 }
