@@ -2,6 +2,10 @@
 # Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jan 2007; Maarten Maathuis <madman2003@gmail.com>
+  -emelfm2-0.3.1.ebuild, +emelfm2-0.3.2.ebuild:
+  Version bump
+
   04 Dec 2006; Markus Ullmann <jokey@gentoo.org> emelfm2-0.3.1.ebuild:
   QA fix
 
