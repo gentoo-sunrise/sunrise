@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-S="${WORKDIR}"
-
 DESCRIPTION="Panda Antivirus for Linux"
 HOMEPAGE="http://www.pandasoftware.com/download/linux/linux.asp"
 SRC_URI="http://shareware.pandasoftware.com/shareware/pavcl_linux.tgz"
@@ -19,6 +17,7 @@ PROVIDE="virtual/antivirus"
 
 RESTRICT="mirror strip"
 QA_TEXTRELS_x86="opt/pavcl/usr/lib/libPsk*.so.*"
+S="${WORKDIR}"
 
 src_install() {
 	cd "${S}"
