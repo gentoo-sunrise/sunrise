@@ -30,10 +30,6 @@ net-p2p/mute
 # so the ebuild needs a major work :(
 app-antivirus/kav4fileservers
 
-# Jakub Moc <jakub@gentoo.org> (21 Dec 2006)
-# depends on non-existant net-zope/archetypes version
-net-zope/externalstorage
-
 # Jakub Moc <jakub@gentoo.org> (12 Dec 2006)
 # cvs version should be masked
 =app-portage/rep-rebuild-9999
@@ -54,14 +50,6 @@ net-zope/externalstorage
 # svn version should be masked
 =app-misc/ssid-9999
 
-# Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
-# svn version should be masked
-=app-misc/lsx-9999
-
-# Jakub Moc <jakub@gentoo.org> (10 Dec 2006)
-# svn version should be masked
-=x11-misc/slock-9999
-
 # David Shakaryan <omp@gentoo.org> (18 Oct 2006)
 # svn version should be masked
 =media-video/ttcut-9999
@@ -79,10 +67,6 @@ sci-mathematics/alberta
 # Patrick Zimmermann <patrick@zakweb.de> (28 Jun 2006)
 # Has dependencies that are masked
 games-fps/unreal-tournament-operationnapali
-
-# Cedric Krier <ced@ced.homedns.org> (28 Jun 2006)
-# Has dependencies that are masked
-dev-util/nsis
 
 # Jakub Moc <jakub@gentoo.org> (09 Jun 2006)
 # This is for testing only, upstream not active ATM
