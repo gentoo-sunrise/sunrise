@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
+  words-bin-1.97.ebuild:
+  adjusted DESCRIPTION and added some a pair of quotes; changed elog to einfo
+
   22 Dec 2006; Jakub Moc <jakub@gentoo.org> words-bin-1.97.ebuild:
   Multiple QA fixes
 

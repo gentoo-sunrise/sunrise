@@ -6,7 +6,7 @@ inherit eutils
 
 MY_P="${P/-bin}"
 
-DESCRIPTION="Latin-English dictionary."
+DESCRIPTION="Latin--English dictionary."
 HOMEPAGE="http://users.erols.com/whitaker/words.htm"
 SRC_URI="http://atrey.karlin.mff.cuni.cz/~sanda/mirror/${MY_P}-linux.tar.gz"
 #SRC_URI="ftp://petrus.thomasaquinas.edu/pub/linux/words/${MY_P}-linux.tar.gz"
@@ -20,7 +20,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_unpack(){
 	unpack ${A}
@@ -39,5 +39,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Dictionary is launched through 'latin' command"
+	einfo "Dictionary is launched through 'latin' command"
 }
