@@ -18,7 +18,7 @@ IUSE=""
 DEPEND="$(qt_min_version 3.3)"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
