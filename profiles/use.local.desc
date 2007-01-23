@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation.
+# Copyright 1999-2007 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,8 +9,6 @@
 
 app-antivirus/drweb:glibc23 - use binary package for glibc-2.3
 app-antivirus/drweb:logrotate - Use logrotate for rotating logs
-app-cdr/bonfire:beagle - Enable support for beagle
-app-cdr/bonfire:totem - Enable support for totem
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
@@ -67,13 +65,7 @@ net-dns/nsd:dnssec - Enable DNSSEC support
 net-dns/nsd:plugins - Enable plugin support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:tsig - Enable TSIG support
-net-firewall/apf:dshieldpy - Add dshieldpy support
-net-firewall/nufw:ident - Add support ident users authentication
-net-firewall/nufw:nfconntrack - Use netfilter_conntrack
-net-firewall/nufw:nfqueue - Use NFQUEUE instead of QUEUE
-net-firewall/nufw:pam_nuauth - Add support for pam nufw from PAM
 net-im/gizmo:avahi - Use avahi mdns daemon
-net-im/psi:xscreensaver - Enables detection of xscreensaver
 net-im/pyaim-t:web - Enables optional web interface
 net-im/pyicq-t:web - Enables optional web interface
 net-mail/dbmail:sieve - Add support for sieve mail filtering
@@ -86,13 +78,7 @@ net-mail/simscan:quarantine - Enable the detected spam/virus to be stored in qua
 net-mail/simscan:received - Enable the add of a Received line in scanned messages
 net-mail/simscan:regex - Enable regex attachment filename checking
 net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
-net-misc/aria2:ares - Enable support for asynchronous DNS using the c-ares library
-net-misc/aria2:bittorrent - Enable support for the bittorrent protocol
-net-misc/aria2:metalink - Enable support for metalink
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
-net-misc/open-xchange:sieve - Add support for imap server-side email filtering
-net-misc/open-xchange:webdav - Enable WebDAV access to user accounts
-net-nds/lat:avahi - Enable support for avahi
 net-p2p/murmur:trayicon - Enable support for tray icon
 net-p2p/museek+:qsa - Enable QSA scripting for museeq.
 net-p2p/museek+:trayicon - Enable support for tray icon
@@ -103,7 +89,5 @@ sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/wbar:animation - Patch for animation support
-x11-themes/gtk-engines-murrine:animation - Enable animations support
 x11-themes/qtcurve:gtk1 - Adds support for x11-libs/gtk+ (The GIMP Toolkit) version 1.x
-x11-wm/dwm:savedconfig - Add support to user defined configs
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
