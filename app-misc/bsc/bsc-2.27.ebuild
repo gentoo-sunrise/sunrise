@@ -4,7 +4,7 @@
 
 inherit eutils qt3
 
-DESCRIPTION="BSCommander is a QT based file manager"
+DESCRIPTION="BSCommander is a Qt based file manager"
 HOMEPAGE="http://www.beesoft.org/bsc.html"
 SRC_URI="http://www.beesoft.org/download/${PN}_${PV}_src.tar.gz"
 
