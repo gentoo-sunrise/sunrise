@@ -54,7 +54,7 @@ src_install() {
 	doins kav4unix/kav4unix.conf
 
 	# TODO: provide a gentooified initscript
-	doinitd ${S}/init.d/kavmonitor
+	doinitd "${S}/init.d/kavmonitor"
 
 	dodoc kav4unix/ChangeLog
 	doman man8/*.8
