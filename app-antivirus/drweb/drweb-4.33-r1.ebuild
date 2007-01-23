@@ -80,8 +80,8 @@ src_install() {
 	rm -f "${D}"/etc/init.d/drwebd
 
 	local docdir="${D}/opt/drweb/doc"
-	for doc in ${docdir}/{ChangeLog,FAQ,readme.{eicar,license}} \
-	${docdir}/{daemon/readme.daemon,scanner/readme.scanner,update/readme.update}
+	for doc in "${docdir}"/{ChangeLog,FAQ,readme.{eicar,license}} \
+	"${docdir}"/{daemon/readme.daemon,scanner/readme.scanner,update/readme.update}
 	do
 		dodoc ${doc} && rm -f ${doc}
 		if use linguas_ru; then
@@ -91,10 +91,10 @@ src_install() {
 	dodoc "${D}"/opt/drweb/getkey.HOWTO
 	use linguas_ru && dodoc "${D}"/opt/drweb/getkey.rus.HOWTO
 
-	rm -rf ${docdir} && rm -f "${D}"/opt/drweb/getkey.*
+	rm -rf "${docdir}" && rm -f "${D}"/opt/drweb/getkey.*
 
-	use doc && dodoc ${WORKDIR}/drwunxen.pdf
-	use doc && use linguas_ru && dodoc ${WORKDIR}/drwunxru.pdf
+	use doc && dodoc "${WORKDIR}/drwunxen.pdf"
+	use doc && use linguas_ru && dodoc "${WORKDIR}/drwunxru.pdf"
 }
 
 pkg_postinst() {
