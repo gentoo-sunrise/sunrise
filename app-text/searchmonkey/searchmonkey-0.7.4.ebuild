@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS ChangeLog INSTALL NEWS README
-	cd ${D}/usr/share/pixmaps
+	cd "${D}/usr/share/pixmaps"
 	mv ${PN}-32x32.png .
 	make_desktop_entry ${PN} ${PN} ${PN}.png "Utility;GTK"
 }
