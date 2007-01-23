@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jan 2007; Christian Faulhammer <opfer@gentoo.org> emelfm2-0.3.2.ebuild:
+  add some quotes
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   -files/digest-emelfm2-0.3.1, files/digest-emelfm2-0.3.2, Manifest:
   remove stray digest

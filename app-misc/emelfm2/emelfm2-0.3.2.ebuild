@@ -15,7 +15,7 @@ IUSE="unicode fam"
 
 DEPEND=">=x11-libs/gtk+-2.6
 		fam? ( virtual/fam )"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	local myconf
