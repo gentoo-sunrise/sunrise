@@ -6,7 +6,7 @@ inherit python eutils multilib
 
 MY_P="${P}-src"
 
-DESCRIPTION="imgv is a unique and feature rich image viewer using Python"
+DESCRIPTION="A unique and feature rich image viewer using Python"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 HOMEPAGE="http://imgv.sourceforge.net/"
 SLOT="0"
@@ -25,10 +25,10 @@ src_install() {
 	python_version
 	INST_DIR="/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 
-	insinto ${INST_DIR}
+	insinto "${INST_DIR}"
 	cd "${S}"
 	doins -r *.py
-	insinto ${INST_DIR}/data
+	insinto "${INST_DIR}/data"
 	cd "${S}/data"
 	doins -r *
 
