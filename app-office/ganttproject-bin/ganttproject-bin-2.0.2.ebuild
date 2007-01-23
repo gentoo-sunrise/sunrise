@@ -19,7 +19,7 @@ DEPEND="app-arch/unzip
 		virtual/jdk"
 RDEPEND="virtual/jre"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_install() {
 	cd "${S}"
