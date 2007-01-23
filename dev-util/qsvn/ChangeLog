@@ -1,6 +1,9 @@
 # ChangeLog for dev-util/qsvn
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Jan 2007; Christian Faulhammer <opfer@gentoo.org> qsvn-0.4.0.ebuild:
+  corrected header
 
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   qsvn-0.4.0.ebuild:
