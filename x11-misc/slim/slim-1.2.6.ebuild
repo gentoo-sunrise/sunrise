@@ -27,7 +27,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# respect C[XX]FLAGS, fix crosscompile, 
+	# respect C[XX]FLAGS, fix crosscompile,
 	# fix linking order for --as-needed"
 	sed -i -e "s:^CXX=.*:CXX=$(tc-getCXX) ${CXXFLAGS}:" \
 		-e "s:^CC=.*:CC=$(tc-getCC) ${CFLAGS}:" \
