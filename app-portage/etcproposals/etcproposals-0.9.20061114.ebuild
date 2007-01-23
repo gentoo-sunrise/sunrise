@@ -1,4 +1,4 @@
-# Copyright 2006 Gentoo Foundation
+# Copyright 2007-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,8 +12,6 @@ IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
-RDEPEND=">=sys-apps/portage-2.1"
 
 src_install(){
 	distutils_src_install
