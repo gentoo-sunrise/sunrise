@@ -6,7 +6,7 @@ WANT_AUTOCONF=2.5
 WANT_AUTOMAKE=1.9
 inherit linux-info eutils autotools
 
-DESCRIPTION="linux-phc is a kernel patch to change the voltage/frequency pairs of processors from userspace."
+DESCRIPTION="A kernel patch to change the voltage/frequency pairs of processors from userspace."
 HOMEPAGE="https://www.dedigentoo.org/trac/linux-phc/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
@@ -32,7 +32,7 @@ which_patch() {
 	then
 		PATCH="kernel-patch/${P}-kernel-vanilla-2.6.15.patch"
 	else
-		die "No ${PN} patch for kernel version ${KV_FULL} - sorry not supported"
+		die "No ${PN} patch for kernel version ${KV_FULL} -- sorry not supported"
 	fi
 }
 
