@@ -5,7 +5,7 @@
 inherit distutils eutils versionator multilib
 
 MY_P="Democracy-${PV}"
-DESCRIPTION="Democracy is a free and open internet TV platform."
+DESCRIPTION="A free and open internet TV platform."
 HOMEPAGE="http://www.getdemocracy.com"
 SRC_URI="ftp://ftp.osuosl.org/pub/pculture.org/democracy/src/${MY_P}.tar.gz"
 LICENSE="GPL-2"
@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 
 DOCS="README"
 
-S=${WORKDIR}/${MY_P}/platform/gtk-x11
+S="${WORKDIR}/${MY_P}/platform/gtk-x11"
 
 pkg_setup() {
 	if ! built_with_use python berkdb; then
