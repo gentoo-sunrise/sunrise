@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jan 2007; Christian Faulhammer <opfer@gentoo.org> cddetect-2.0.ebuild:
+  add some quotes
+
   31 Jul 2006; Jakub Moc <jakub@gentoo.org> cddetect-2.0.ebuild:
   Move to app-cdr, fix CC
 
