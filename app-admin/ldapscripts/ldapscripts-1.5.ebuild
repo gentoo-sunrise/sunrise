@@ -33,11 +33,11 @@ src_install() {
 	dobin bin/*
 	doman man/man1/*
 
-	insinto ${RUNTIMEDIR}
-	doins etc/${RUNTIMEFILE}
+	insinto "${RUNTIMEDIR}"
+	doins "etc/${RUNTIMEFILE}"
 
-	insinto ${ETCDIR}
-	doins etc/${ETCFILE}
+	insinto "${ETCDIR}"
+	doins "etc/${ETCFILE}"
 
 	dodoc CHANGELOG README TODO VERSION
 }

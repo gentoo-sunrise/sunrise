@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
+  ldapscripts-1.5.ebuild:
+  add some quotes
+
   11 Jan 2007; Jakub Moc <jakub@gentoo.org> ldapscripts-1.5.ebuild:
   No need to inherit eutils any more
 
