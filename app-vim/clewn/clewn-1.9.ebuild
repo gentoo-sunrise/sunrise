@@ -15,8 +15,8 @@ IUSE=""
 
 DEPEND=">=app-editors/gvim-7.0
 	sys-libs/readline"
-RDEPEND=${RDEPEND}
-S=${WORKDIR}/${PN}
+RDEPEND="${RDEPEND}"
+S="${WORKDIR}/${PN}"
 
 pkg_setup() {
 	if ! built_with_use app-editors/gvim netbeans ; then
@@ -30,7 +30,7 @@ src_install() {
 	dodoc README.txt CHANGELOG
 	dobin clewn
 	dodir /usr/share/vim/vimfiles
-	tar -xzf ${S}/runtime/clewn_runtime.tgz -C ${D}/usr/share/vim/vimfiles
+	tar -xzf "${S}/runtime/clewn_runtime.tgz" -C "${D}/usr/share/vim/vimfiles"
 }
 
 pkg_postinst() {
