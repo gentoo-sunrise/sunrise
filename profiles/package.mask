@@ -62,10 +62,6 @@ net-zope/externalstorage
 # svn version should be masked
 =x11-misc/slock-9999
 
-# Christian Faulhammer <opfer@gentoo.org> (10 Nov 2006)
-# svn version should be masked
-=app-portage/gatt-svn-9999
-
 # David Shakaryan <omp@gentoo.org> (18 Oct 2006)
 # svn version should be masked
 =media-video/ttcut-9999
