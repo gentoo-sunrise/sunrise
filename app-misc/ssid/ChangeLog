@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jan 2007; Christian Faulhammer <opfer@gentoo.org> ssid-9999.ebuild:
+  add some quotes
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> ssid-9999.ebuild:
   Fix nonsensical KEYWORDS
 

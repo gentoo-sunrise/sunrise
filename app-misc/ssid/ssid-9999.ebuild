@@ -17,7 +17,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	mercurial_src_unpack
