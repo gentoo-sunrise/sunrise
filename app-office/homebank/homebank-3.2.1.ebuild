@@ -7,7 +7,7 @@ WANT_AUTOCONF="latest"
 
 inherit autotools
 
-DESCRIPTION="HomeBank is the free software you have always wanted to manage your personal accounts at home"
+DESCRIPTION="The free software you have always wanted to manage your personal accounts at home"
 HOMEPAGE="http://homebank.free.fr/index.php"
 SRC_URI="http://homebank.free.fr/public/${P}.tar.gz"
 
