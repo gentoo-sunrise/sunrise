@@ -14,7 +14,7 @@ RDEPEND="dev-lang/perl
 	dev-perl/libwww-perl
 	dev-perl/AppConfig"
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 src_install() {
 	dobin ${PN}
