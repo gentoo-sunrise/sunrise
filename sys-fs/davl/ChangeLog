@@ -1,5 +1,5 @@
 # ChangeLog for sys-fs/davl
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
   26 Oct 2006; Raul Porcel (armin76) <armin76@gmail.com> +davl-1.2.1.ebuild,

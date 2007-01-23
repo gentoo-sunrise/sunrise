@@ -1,5 +1,5 @@
 # ChangeLog for net-news/feed2imap
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
   23 Jun 2006; David Shakaryan <d@ompty.org> +feed2imap-0.7.ebuild:

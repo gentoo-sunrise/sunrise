@@ -1,5 +1,5 @@
 # ChangeLog for x11-misc/obtuner
-# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
   03 Sep 2006; David Shakaryan <d@ompty.org> +obtuner-0.3.ebuild:
