@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="Python bindings for rb_libtorrent"
 HOMEPAGE="http://deluge-torrent.org"
-SRC_URI="http://deluge-torrent.org/files/${PN}_${PV}.tar.gz"
+SRC_URI="http://deluge-torrent.org/downloads/${PN}_${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 

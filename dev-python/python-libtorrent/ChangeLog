@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jan 2007; Magnus Ahlberg (agnitio) <magnus.ahlberg@gmail.com>
+  python-libtorrent-0.4.0.ebuild:
+  Updated dev-python/python-libtorrent-0.4.0.ebuild to point to the correct
+  source file.
+
   04 Jan 2007; Raul Porcel (armin76) <armin76@gmail.com>
   python-libtorrent-0.4.0.ebuild:
   Fix SRC_URI
