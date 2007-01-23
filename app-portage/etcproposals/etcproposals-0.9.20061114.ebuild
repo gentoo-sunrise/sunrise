@@ -21,7 +21,7 @@ src_install(){
 }
 
 pkg_postinst() {
-	elog "The configuration file has been installed to /etc/etc-proposals.conf"
+	einfo "The configuration file has been installed to /etc/etc-proposals.conf"
 	ewarn "A full backup of /etc and other files managed by CONFIG_PROTECT"
 	ewarn "is highly advised before testing this tool!"
 }

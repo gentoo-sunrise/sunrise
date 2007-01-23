@@ -4,6 +4,10 @@
 
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   etcproposals-0.9.20061114.ebuild:
+  change from elog to einfo
+
+  23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
+  etcproposals-0.9.20061114.ebuild:
   corrected header; don't depend on sys packages as Portage
 
   19 Nov 2006; Jakub Moc <jakub@gentoo.org> ChangeLog:
