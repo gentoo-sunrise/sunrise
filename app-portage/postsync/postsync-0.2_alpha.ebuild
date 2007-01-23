@@ -12,9 +12,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
-DEPEND=">=virtual/python-2.3"
+DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
@@ -27,13 +27,13 @@ src_install() {
 	exeinto /usr/sbin
 	doexe postsync
 
-	exeinto ${PORTCFG}/bin
+	exeinto "${PORTCFG}/bin"
 	doexe post_sync
 
-	exeinto ${PSBIN}
+	exeinto "${PSBIN}"
 	doexe bin/*
 
-	dodir ${PSETC}
+	dodir "${PSETC}"
 
 	dodoc README ChangeLog doc/*
 }
@@ -43,7 +43,7 @@ pkg_postinst() {
 	PORTCFG=$(python -c 'import portage; print portage.USER_CONFIG_PATH,')
 	if [ -f ${PORTCFG}/package.warnme ]
 	then
-		mv ${PORTCFG}/package.warnme /usr/$(get_libdir)/postsync.d/etc
+		mv "${PORTCFG}/package.warnme" /usr/$(get_libdir)/postsync.d/etc
 	fi
 	eend
 
