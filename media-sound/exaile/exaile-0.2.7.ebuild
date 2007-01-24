@@ -6,14 +6,14 @@ inherit eutils toolchain-funcs
 
 MY_P=${PN}_${PV}
 
-DESCRIPTION="Exaile is a media player aiming to be similar to KDE's AmaroK, but for GTK"
+DESCRIPTION="a media player aiming to be similar to KDE's AmaroK, but for GTK"
 HOMEPAGE="http://www.exaile.org/"
 SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="fam mp3 flac aac musepack trayicon ipod cdaudio serpentine streamripper"
+IUSE="aac cdaudio fam flac ipod mp3 musepack serpentine streamripper trayicon"
 
 DEPEND=">=dev-lang/python-2.4
 		>=dev-python/pygtk-2.0"
@@ -54,7 +54,6 @@ pkg_setup() {
 		eerror "libgpod has to be built with python support"
 		die "libgpod python use-flag not set"
 	fi
-
 }
 
 src_unpack() {
