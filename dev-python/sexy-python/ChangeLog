@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jan 2007; Santiago M. Mola <cooldwind@gmail.com>
+  sexy-python-0.1.9.ebuild:
+  Keyword for ~amd64
+
   17 Oct 2006; Tiziano Müller <dev-zero@gentoo.org>
   -sexy-python-0.1.8.ebuild, +sexy-python-0.1.9.ebuild:
   Version bump. dodoc correction. Dependency correction.

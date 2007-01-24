@@ -8,7 +8,7 @@ SRC_URI="http://releases.chipx86.com/libsexy/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=x11-libs/libsexy-${PV}
