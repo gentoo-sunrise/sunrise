@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jan 2007; Santiago M. Mola <cooldwind@gmail.com> +exaile-0.2.8.ebuild:
+  Version bump, new dependencies, misc fixes and ~amd64 removed because of
+  sexy-python.
+
   29 Dec 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   exaile-0.2.7.ebuild, +files/exaile-0.2.7-fix-status-icon.patch:
   Add patch from upstream
