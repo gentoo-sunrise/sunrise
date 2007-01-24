@@ -30,7 +30,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake CXX=$(tc-getCXX) || die "emake failed"
+	emake CXX="$(tc-getCXX)" || die "emake failed"
 }
 
 src_install() {

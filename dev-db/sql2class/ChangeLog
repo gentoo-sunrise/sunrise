@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
+  sql2class-1.9.2.ebuild:
+  add some quotes
+
   02 Nov 2006; Markus Ullmann <jokey@gentoo.org> -sql2class-1.9.1.ebuild,
   -files/sql2class-1.9.1-extra_qualifiers.patch:
   Drop old
