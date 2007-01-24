@@ -14,6 +14,9 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
+DEPEND="app-arch/unzip"
+RDEPEND=""
+
 S=${WORKDIR}/${PN}
 
 src_compile() {
