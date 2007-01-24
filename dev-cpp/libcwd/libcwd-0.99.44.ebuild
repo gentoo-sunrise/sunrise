@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Libcwd is a library to support C++ developers with debugging their applications"
+DESCRIPTION="A library to support C++ developers with debugging their applications"
 HOMEPAGE="http://libcwd.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
