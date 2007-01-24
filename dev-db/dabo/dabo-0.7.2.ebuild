@@ -20,7 +20,7 @@ RDEPEND=">=dev-python/wxpython-2.6.1.1
 	>=dev-python/pysqlite-2.0
 	${DEPEND}"
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 RESTRICT="mirror"
 
