@@ -44,7 +44,6 @@ media-sound/exaile:libsexy - Enable libsexy support
 media-sound/exaile:musepack - Enables support for the musepack audio codec
 media-sound/exaile:serpentine - Add cd-burning support using serpentine 
 media-sound/exaile:streamripper - Add streamripper support for stream recording
-media-sound/exaile:trayicon - Enable support for a trayicon
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
 media-sound/gnormalize:musepack - Enables support for the musepack audio codec
 media-sound/gnormalize:normalize - Enable the normalize front-end
