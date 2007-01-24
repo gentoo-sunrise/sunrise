@@ -11,14 +11,14 @@ SRC_URI="http://deluge-torrent.org/downloads/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome"
+IUSE="libnotify"
 
 DEPEND=">=dev-lang/python-2.3
 	dev-libs/boost
 	>=dev-python/pygtk-2
 	~dev-python/python-libtorrent-0.4.0
 	dev-python/pyxdg
-	gnome? ( dev-python/notify-python )"
+	libnotify? ( dev-python/notify-python )"
 RDEPEND="${DEPEND}"
 
 src_install() {
