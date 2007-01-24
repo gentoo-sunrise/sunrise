@@ -12,7 +12,7 @@ SRC_URI="http://www.exaile.org/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="aac cdaudio fam flac gnome ipod libnotify libsexy mp3 musepack serpentine streamripper"
 
 DEPEND=">=dev-lang/python-2.4
