@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jan 2007; Christian Faulhammer <opfer@gentoo.org> libyaml-0.0.1.ebuild:
+  add some quotes, even if Jokey does not like them
+
   05 Oct 2006; Jakub Moc <jakub@gentoo.org> libyaml-0.0.1.ebuild:
   Add missing autoconf/automake dependencies
 

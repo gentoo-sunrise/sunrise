@@ -20,7 +20,7 @@ IUSE="examples"
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
