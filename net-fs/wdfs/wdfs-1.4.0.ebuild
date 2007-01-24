@@ -12,7 +12,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=net-misc/neon-0.26.1
-	>=sys-fs/fuse-2.3"
+	>=sys-fs/fuse-2.6.1"
 RDEPEND="${DEPEND}"
 
 src_install() {
