@@ -20,7 +20,7 @@ RDEPEND=">=dev-python/wxpython-2.6.1.1
 	dev-python/reportlab
 	${DEPEND}"
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 RESTRICT="mirror"
 
@@ -41,8 +41,8 @@ src_install() {
 	for EFIL in $(grep -RI '^#!' * | cut -d : -f 1 | grep -iv '\.txt$')
 	do
 		# and if there are any - install them
-		exeinto ${INS}/${EFIL%%$(basename ${EFIL})}
-		doexe ${EFIL}
+		exeinto "${INS}/${EFIL%%$(basename ${EFIL})}"
+		doexe "${EFIL}"
 	done
 
 	# Create executable
