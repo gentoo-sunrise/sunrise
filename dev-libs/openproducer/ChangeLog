@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
+  openproducer-1.1.0.ebuild:
+  add some quotes
+
   02 Nov 2006; Cedric Krier <ced@ced.homedns.org>
   -openproducer-1.0.1.ebuild, -files/openproducer-1.0.1-build.patch,
   -openproducer-1.0.2.ebuild, -files/openproducer-1.0.2-build.patch:

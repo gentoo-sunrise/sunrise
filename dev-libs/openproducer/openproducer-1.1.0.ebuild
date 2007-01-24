@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	app-arch/unzip
 	doc? ( app-doc/doxygen )"
 
-S="${WORKDIR}"/OSG_OP_OT-${OSG_V}/${MY_PN}
+S="${WORKDIR}/OSG_OP_OT-${OSG_V}/${MY_PN}"
 
 src_unpack() {
 	unpack ${A}
@@ -34,7 +34,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake CXX=$(tc-getCXX) || die "emake failed"
+	emake CXX="$(tc-getCXX)" || die "emake failed"
 
 	if use doc; then
 		cd docs
