@@ -6,7 +6,7 @@ WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 inherit eutils autotools
 
-DESCRIPTION="Object-oriented Input System - A cross-platform C++ input handling library"
+DESCRIPTION="Object-oriented Input System -- A cross-platform C++ input handling library"
 HOMEPAGE="http://www.wreckedgames.com/wiki/index.php/WreckedLibs:OIS"
 SRC_URI="mirror://sourceforge/wgois/${PN}-${PV//./-}.tar.gz"
 
