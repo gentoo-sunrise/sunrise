@@ -1,0 +1,8 @@
+# ChangeLog for www-misc/surl
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Jan 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  +surl-0.3.ebuild, +metadata.xml:
+  Changed name from turl to surl due to conflict with some similar software
+
