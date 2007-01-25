@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,17 +14,17 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 RDEPEND=">=app-backup/dar-2.2.6
-        || ( dev-util/bdelta dev-util/xdelta )
-        net-misc/openssh"
-DEPEND=">=app-shells/bash-3.0"
+	|| ( dev-util/bdelta dev-util/xdelta )
+	net-misc/openssh"
+DEPEND=""
 
 src_install() {
-        dobin darbackup
-        doman darbackup.1
+	dobin darbackup
+	doman darbackup.1
 }
 
 pkg_setup() {
-        if ! built_with_use dar dar32 && ! built_with_use dar dar64; then
-                die 'You must have dar32 or dar64 useflags enabled.'
-        fi
+	if ! built_with_use app-backup/dar dar32 && ! built_with_use app-backup/dar dar64; then
+		die 'You must have dar32 or dar64 useflags enabled.'
+	fi
 }
