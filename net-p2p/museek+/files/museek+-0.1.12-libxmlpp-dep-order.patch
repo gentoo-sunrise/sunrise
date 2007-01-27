@@ -1,0 +1,16 @@
+--- Muhelp/SConscript.old	2007-01-27 22:06:19.000000000 +0100
++++ Muhelp/SConscript	2007-01-27 22:06:40.000000000 +0100
+@@ -17,10 +17,10 @@
+ sys.stdout.flush()
+ 
+ libxmlpp = None
+-if not os.spawnlpe(os.P_WAIT, 'pkg-config', 'pkg-config', '--exists', 'libxml++-1.0', os.environ):
+-    libxmlpp = 'libxml++-1.0'
+-elif not os.spawnlpe(os.P_WAIT, 'pkg-config', 'pkg-config', '--exists', 'libxml++-2.6', os.environ):
++if not os.spawnlpe(os.P_WAIT, 'pkg-config', 'pkg-config', '--exists', 'libxml++-2.6', os.environ):
+     libxmlpp = 'libxml++-2.6'
++elif not os.spawnlpe(os.P_WAIT, 'pkg-config', 'pkg-config', '--exists', 'libxml++-1.0', os.environ):
++    libxmlpp = 'libxml++-1.0'
+ 
+ if libxmlpp is None:
+     print

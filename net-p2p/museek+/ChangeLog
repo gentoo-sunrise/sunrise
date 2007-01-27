@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jan 2007; Santiago M. Mola <cooldwind@gmail.com> museek+-0.1.12.ebuild,
+  +files/museek+-0.1.12-libxmlpp-dep-order.patch:
+  priority for libxml++-2.6 added.
+
   04 Dec 2006; Santiago M. Mola <cooldwind@gmail.com> museek+-0.1.12.ebuild:
   s/einfo/elog and a clearer postinst message.
 

@@ -44,6 +44,12 @@ pkg_setup() {
 	fi
 }
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-libxmlpp-dep-order.patch"
+}
+
 src_compile() {
 	local myconf=""
 	use qt3 || myconf="${myconf} MUSEEQ=no"
