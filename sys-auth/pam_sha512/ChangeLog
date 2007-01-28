@@ -1,0 +1,8 @@
+# ChangeLog for sys-auth/pam_sha512
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Jan 2007; Ali Polatel (hawking) <polatel@nerdshack.com>
+  +pam_sha512-0.1.2.ebuild, +metadata.xml:
+  New ebuild for bug 102113 thanks to neuron
+
