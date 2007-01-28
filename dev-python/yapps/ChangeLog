@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jan 2007; Ali Polatel (hawking) <polatel@nerdshack.com>
+  yapps-2.1.1.ebuild:
+  Added examples use flag
+
   25 Dec 2006; Tiziano Müller <dev-zero@gentoo.org> yapps-2.1.1.ebuild:
   Corrected dependencies, some cosmetics
 

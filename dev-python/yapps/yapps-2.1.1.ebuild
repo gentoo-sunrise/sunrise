@@ -12,16 +12,18 @@ SRC_URI="http://www-cs-students.stanford.edu/~amitp/yapps/${MY_P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="examples"
 
-DEPEND=""
-RDEPEND=""
+DEPEND="virtual/python"
+RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/Yapps-${PV}
+S="${WORKDIR}/Yapps-${PV}"
 
 src_install() {
 	distutils_src_install
 
-	insinto /usr/share/doc/${PN}/examples
-	doins examples/*
+	if use examples; then
+		insinto /usr/share/doc/${PF}/examples
+		doins -r examples
+	fi
 }
