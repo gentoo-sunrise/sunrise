@@ -19,8 +19,8 @@ RDEPEND="${DEPEND}
 
 src_compile() {
 	append-flags "-fPIC -c -Wall -Wformat-security"
-	emake CC=$(tc-getCC) \
-		  LD=$(tc-getLD) \
+	emake CC="$(tc-getCC)" \
+		  LD="$(tc-getLD)" \
 		  CFLAGS="${CFLAGS}" || die "emake failed"
 		  # CFLAGS="${CFLAGS}" is required
 }
