@@ -19,8 +19,7 @@ for X in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${X}"
 done
 
-RDEPEND="dev-lang/python
-		>=dev-cpp/libxmlpp-1.0.2
+RDEPEND=">=dev-cpp/libxmlpp-1.0.2
 		gtk? ( >=dev-python/pygtk-2.6.1 )
 		qsa? ( >=dev-libs/qsa-1.1.1 )
 		qt3? ( $(qt_min_version 3.3) )
@@ -76,7 +75,7 @@ src_install() {
 	scons DESTDIR="${D}" install || die "scons install failed"
 	dodoc README
 	exeinto /usr/bin
-	doexe ${FILESDIR}/museek
+	doexe "${FILESDIR}/museek"
 
 	if use qt3 ; then
 		doicon "icons/museeq-circle2.png"
