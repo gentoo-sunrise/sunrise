@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2007; Christian Faulhammer <opfer@gentoo.org> exaile-0.2.8.ebuild:
+  added quotes
+
   24 Jan 2007; Santiago M. Mola <cooldwind@gmail.com> -exaile-0.2.7.ebuild,
   -files/exaile-0.2.7-fix-status-icon.patch, exaile-0.2.8.ebuild:
   Re-add ~amd64 and remove old versions.
