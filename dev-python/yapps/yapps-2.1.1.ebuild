@@ -5,7 +5,7 @@
 inherit distutils versionator
 
 MY_P="${PN}$(delete_version_separator '-')"
-DESCRIPTION="Yapps is an easy to use parser generator."
+DESCRIPTION="An easy to use parser generator."
 HOMEPAGE="http://theory.stanford.edu/~amitp/yapps/"
 SRC_URI="http://www-cs-students.stanford.edu/~amitp/yapps/${MY_P}.tar.gz"
 
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="examples"
 
-DEPEND="virtual/python"
+DEPEND=""
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/Yapps-${PV}"
