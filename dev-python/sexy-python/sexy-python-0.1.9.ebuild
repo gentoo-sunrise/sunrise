@@ -11,8 +11,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=x11-libs/libsexy-${PV}
-		>=dev-lang/python-2.4"
+DEPEND=">=x11-libs/libsexy-${PV}"
+
 RDEPEND="${DEPEND}"
 
 src_install() {

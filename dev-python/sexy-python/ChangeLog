@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
+  sexy-python-0.1.9.ebuild:
+  don't depend on base packages
+
   24 Jan 2007; Santiago M. Mola <cooldwind@gmail.com>
   sexy-python-0.1.9.ebuild:
   Keyword for ~amd64
