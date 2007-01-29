@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
+  babelbib-1.20.0.ebuild:
+  added quotes
+
   24 Jan 2007; Markus Rennings (mren) <mren@mrmx.de> babelbib-1.20.0.ebuild:
   added DEPEND and RDEPEND
 

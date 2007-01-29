@@ -17,7 +17,7 @@ IUSE=""
 DEPEND="app-arch/unzip"
 RDEPEND=""
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 src_compile() {
 	emake || die "emake failed"
@@ -28,7 +28,7 @@ src_install() {
 	latex-package_src_doinstall bst
 	latex-package_src_doinstall bdf
 
-	insinto ${TEXMF}/tex/latex/${PN}
+	insinto "${TEXMF}/tex/latex/${PN}"
 	for i in $(find . -maxdepth 1 -type f -name "*.bdf")
 	do
 		doins $i || die "doins $i failed"
