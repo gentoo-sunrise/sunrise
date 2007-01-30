@@ -1,0 +1,8 @@
+# ChangeLog for net-nntp/xpn
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Jan 2007; Markus Rennings (mren) <mren@mrmx.de> +xpn-0.7.0.ebuild,
+  +metadata.xml:
+  initial commit, bug 164465
+
