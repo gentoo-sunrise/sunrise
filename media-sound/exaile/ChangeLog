@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jan 2007; Santiago M. Mola <cooldwind@gmail.com> exaile-0.2.8.ebuild:
+  faac -> faac and gst-plugins-* added to RDEPEND
+
   29 Jan 2007; Christian Faulhammer <opfer@gentoo.org> exaile-0.2.8.ebuild:
   added quotes
 
