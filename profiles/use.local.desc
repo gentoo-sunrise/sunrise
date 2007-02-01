@@ -26,6 +26,7 @@ dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
 gnome-extra/timer-applet:sounds - Installs optional sound data
+kde-misc/kcpufreq:noicon - Remove icon for a smaller text only applet
 mail-filter/MailScanner:bitdefender - Enable usage of bitdefender virus scanner
 mail-filter/MailScanner:exim - Set exim to used MTA
 mail-filter/MailScanner:f-prot - Enable usage of fprot virus scanner
