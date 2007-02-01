@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Feb 2007; Martin Hierling <mad@cc.fh-luh.de> +dbmail-2.2.2.ebuild,
+  +files/removeversion-2.2.2.patch:
+  Version Bump to 2.2.2
+
   02 Jan 2007; Martin Hierling <mad@cc.fh-luh.de>
   files/removeversion-2.2.1.patch:
   removed some verbose server ident strings Removed some verbose server ident

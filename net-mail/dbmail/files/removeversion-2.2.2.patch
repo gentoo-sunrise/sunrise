@@ -1,0 +1,62 @@
+diff -ru dbmail-2.2.2.orig/imap4.c dbmail-2.2.2/imap4.c
+--- dbmail-2.2.2.orig/imap4.c	2007-01-10 09:17:20.000000000 +0100
++++ dbmail-2.2.2/imap4.c	2007-02-01 18:31:11.000000000 +0100
+@@ -116,8 +116,8 @@
+ 
+ 	/* greet user */
+ 	if (dbmail_imap_session_printf(session,
+-		     "* OK dbmail imap (protocol version 4r1) server %s "
+-		     "ready to run\r\n", IMAP_SERVER_VERSION) < 0) {
++		     "* OK imap (protocol version 4r1) server "
++		     "ready \r\n", IMAP_SERVER_VERSION) < 0) {
+ 		dbmail_imap_session_delete(session);
+ 		return EOF;
+ 	}
+Only in dbmail-2.2.2: imap4.c.orig
+diff -ru dbmail-2.2.2.orig/imapcommands.c dbmail-2.2.2/imapcommands.c
+--- dbmail-2.2.2.orig/imapcommands.c	2006-12-10 22:36:03.000000000 +0100
++++ dbmail-2.2.2/imapcommands.c	2007-02-01 18:31:11.000000000 +0100
+@@ -111,7 +111,7 @@
+ 	dbmail_imap_session_set_state(self,IMAPCS_LOGOUT);
+ 	TRACE(TRACE_MESSAGE, "user (id:%llu) logging out @ [%s]", ud->userid, timestring);
+ 
+-	dbmail_imap_session_printf(self, "* BYE dbmail imap server kisses you goodbye\r\n");
++	dbmail_imap_session_printf(self, "* BYE\r\n");
+ 
+ 	return 0;
+ }
+Only in dbmail-2.2.2: imapcommands.c.orig
+diff -ru dbmail-2.2.2.orig/lmtp.c dbmail-2.2.2/lmtp.c
+--- dbmail-2.2.2.orig/lmtp.c	2006-11-06 09:32:31.000000000 +0100
++++ dbmail-2.2.2/lmtp.c	2007-02-01 18:31:11.000000000 +0100
+@@ -134,7 +134,7 @@
+ 
+ 	if (ci->tx) {
+ 		/* sending greeting */
+-		ci_write(ci->tx, "220 %s DBMail LMTP service ready to rock\r\n", myhostname);
++		ci_write(ci->tx, "220 %s LMTP service ready\r\n", myhostname);
+ 		fflush(ci->tx);
+ 	} else {
+ 		TRACE(TRACE_MESSAGE, "TX stream is null!");
+diff -ru dbmail-2.2.2.orig/pop3.c dbmail-2.2.2/pop3.c
+--- dbmail-2.2.2.orig/pop3.c	2007-01-20 09:43:22.000000000 +0100
++++ dbmail-2.2.2/pop3.c	2007-02-01 18:32:11.000000000 +0100
+@@ -97,7 +97,7 @@
+ 
+ 	if (ci->tx) {
+ 		/* sending greeting */
+-		fprintf(ci->tx, "+OK DBMAIL pop3 server ready to rock %s\r\n",
++		fprintf(ci->tx, "+OK pop3 server ready\r\n",
+ 			session.apop_stamp);
+ 		fflush(ci->tx);
+ 	} else {
+@@ -177,7 +177,7 @@
+ 
+ 			/* if everything went well, write down everything and do a cleanup */
+ 			db_update_pop(&session);
+-			fprintf(ci->tx, "+OK see ya later\r\n");
++			fprintf(ci->tx, "+OK bye\r\n");
+ 			fflush(ci->tx);
+ 			break;
+ 
+Only in dbmail-2.2.2: pop3.c.orig
