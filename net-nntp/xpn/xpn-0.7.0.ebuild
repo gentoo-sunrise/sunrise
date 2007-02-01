@@ -14,8 +14,7 @@ KEYWORDS="~x86"
 IUSE="linguas_de linguas_fr linguas_it"
 
 DEPEND=""
-RDEPEND=">=dev-lang/python-2.4
-		 >=dev-python/pygtk-2.8
+RDEPEND=">=dev-python/pygtk-2.8
 		 >=x11-libs/gtk+-2.8"
 
 
