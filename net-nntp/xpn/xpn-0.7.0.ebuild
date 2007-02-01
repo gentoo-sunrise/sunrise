@@ -15,8 +15,7 @@ IUSE="linguas_de linguas_fr linguas_it"
 
 DEPEND=""
 RDEPEND=">=dev-python/pygtk-2.8
-		 >=x11-libs/gtk+-2.8"
-
+		>=x11-libs/gtk+-2.8"
 
 src_install() {
 
@@ -53,4 +52,3 @@ pkg_postrm() {
 	python_version
 	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 }
-
