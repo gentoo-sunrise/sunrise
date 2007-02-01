@@ -4,7 +4,7 @@
 
 inherit kde
 
-DESCRIPTION="kcpufreq is a small KDE 3.x panel applet that displays the current CPU frequency. It is similar in look and functionality to the GNOME cpufreq applet"
+DESCRIPTION="A small KDE 3.x panel applet that displays the current CPU frequency. It is similar in look and functionality to the GNOME cpufreq applet"
 SRC_URI="http://www.schaffert.eu/download/kcpufreq/kcpufreq-${PV}.tar.gz"
 HOMEPAGE="http://www.schaffert.eu/projects_html"
 LICENSE="GPL-2"
@@ -20,7 +20,7 @@ need-kde 3
 S="${WORKDIR}/kcpufreq"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 	use noicon && epatch "${FILESDIR}"/noicon.patch
 }
