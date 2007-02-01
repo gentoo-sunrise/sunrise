@@ -41,7 +41,7 @@ RDEPEND="${DEPEND}
 		gnome? ( dev-python/gnome-python-extras )
 		ipod? ( >=media-libs/libgpod-0.3.2-r1
 				>=media-plugins/gst-plugins-faad-0.10 )
-		cdaudio? ( >=media-plugins/gst-plugins-cdparanoia
+		cdaudio? ( media-plugins/gst-plugins-cdparanoia
 			dev-python/cddb-py )
 		serpentine? ( app-cdr/serpentine )
 		streamripper? ( media-sound/streamripper )"
