@@ -30,7 +30,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	epatch "${FILESDIR}/removeversion-${PV}.patch"
+	epatch "${FILESDIR}/${P}-removeversion.patch"
 
 	use sqlite3 && myconf="--with-sqlite"
 	use ldap && myconf=${myconf}" --with-auth-ldap"
