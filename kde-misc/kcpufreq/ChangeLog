@@ -4,6 +4,10 @@
 
   01 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
   kcpufreq-0.3-r2.ebuild:
+  correct header
+
+  01 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
+  kcpufreq-0.3-r2.ebuild:
   remove a pair of quotes and adjust DESCRIPTION
 
   01 Feb 2007; Michael Jackson (Triffid_Hunter)
