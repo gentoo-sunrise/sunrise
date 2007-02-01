@@ -15,7 +15,7 @@ IUSE="noicon"
 
 DEPEND=">=sys-power/cpufrequtils-0.3-r1"
 
-need-kde 3
+need-kde 3.3
 
 S="${WORKDIR}/kcpufreq"
 
