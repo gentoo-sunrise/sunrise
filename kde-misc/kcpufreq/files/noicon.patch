@@ -1,0 +1,231 @@
+diff -ru kcpufreq/kcpufreq/kcpufreq.cpp kcpufreq-edited/kcpufreq/kcpufreq.cpp
+--- kcpufreq/kcpufreq/kcpufreq.cpp	2004-11-12 22:44:46.000000000 +1000
++++ kcpufreq-edited/kcpufreq/kcpufreq.cpp	2006-01-07 22:12:37.000000000 +1000
+@@ -59,14 +59,6 @@
+   // Get the current application configuration handle
+   ksConfig = config();
+ 
+-  // initialise pixmaps
+-  pixmaps[0]=KGlobal::iconLoader()->loadIcon(PIXMAP_NA,KIcon::Panel);
+-  pixmaps[1]=KGlobal::iconLoader()->loadIcon(PIXMAP_25,KIcon::Panel);
+-  pixmaps[2]=KGlobal::iconLoader()->loadIcon(PIXMAP_50,KIcon::Panel);
+-  pixmaps[3]=KGlobal::iconLoader()->loadIcon(PIXMAP_75,KIcon::Panel);
+-  pixmaps[4]=KGlobal::iconLoader()->loadIcon(PIXMAP_100,KIcon::Panel);
+-
+-
+   mainView = new myview(this);   
+   mainView->show();
+   
+@@ -97,15 +89,24 @@
+   }
+ */
+ 
++int min(int a, int b)
++{
++  return (a > b)?b:a;
++}
++
++int max(int a, int b)
++{
++  return (a > b)?a:b;
++}
+ 
+ int Kcpufreq::widthForHeight( int height ) const
+ {
+-  return 26 + (height * 2);
++  return min(max(height * 3,mainView->minimumWidth()),mainView->maximumWidth());
+ }
+ 
+ int Kcpufreq::heightForWidth( int width ) const
+ {
+-  return (width-26) / 2;
++  return min(max(width / 3,mainView->minimumHeight() * 1),mainView->maximumHeight() * 1);
+ }
+ 
+ /**
+@@ -166,15 +167,14 @@
+      freq_max != this->previous_freq_max) {
+     QString qs;
+     if(freq_cur >= 1000000) {
+-      qs = QString::number((double)freq_cur / 1000000,'f',2) + " GHz";
++      qs = QString::number((double)freq_cur / 1000000,'f',2) + "GHz";
+     } else if(freq_cur > 0) {
+-      qs = QString::number(freq_cur / 1000) + " MHz";
++      qs = QString::number(freq_cur / 1000) + "MHz";
+     } else {
+       qs = "n/a";
+     }
+ 	
+     mainView->freqLabel->setText(qs);
+-    mainView->freqIcon->setPixmap(pixmaps[ratio/25]);
+     mainView->update();
+ 
+     // save new frequency so that we can detect changes
+Only in kcpufreq-edited/kcpufreq: kcpufreq.cpp~
+diff -ru kcpufreq/kcpufreq/kcpufreq.h kcpufreq-edited/kcpufreq/kcpufreq.h
+--- kcpufreq/kcpufreq/kcpufreq.h	2004-11-12 21:44:22.000000000 +1000
++++ kcpufreq-edited/kcpufreq/kcpufreq.h	2006-01-07 22:11:20.000000000 +1000
+@@ -32,12 +32,8 @@
+ #define FREQ_CUR "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"
+ #define FREQ_MAX "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq"
+ 
+-#define PIXMAP_NA "cpufreq_na"
+-#define PIXMAP_25 "cpufreq_25"
+-#define PIXMAP_50 "cpufreq_50"
+-#define PIXMAP_75 "cpufreq_75"
+-#define PIXMAP_100 "cpufreq_100"
+-
++int min( int, int);
++int max( int, int);
+ 
+ class Kcpufreq : public KPanelApplet
+ {
+@@ -131,7 +127,7 @@
+   myview *mainView;
+   
+   // stores the five different pixmaps indicating the CPU frequency
+-  QPixmap pixmaps[5];
++  //QPixmap pixmaps[5];
+ 
+   // used to detect changes in the frequency.
+   unsigned long previous_freq_cur, previous_freq_max;
+Only in kcpufreq-edited/kcpufreq: kcpufreq.h~
+diff -ru kcpufreq/kcpufreq/myview.ui kcpufreq-edited/kcpufreq/myview.ui
+--- kcpufreq/kcpufreq/myview.ui	2004-10-30 05:54:50.000000000 +1000
++++ kcpufreq-edited/kcpufreq/myview.ui	2006-01-07 22:43:56.000000000 +1000
+@@ -6,30 +6,42 @@
+     </property>
+     <property name="geometry">
+         <rect>
+-            <x>1</x>
++            <x>0</x>
+             <y>0</y>
+-            <width>122</width>
+-            <height>48</height>
++            <width>124</width>
++            <height>18</height>
+         </rect>
+     </property>
+     <property name="sizePolicy">
+         <sizepolicy>
+-            <hsizetype>5</hsizetype>
+-            <vsizetype>5</vsizetype>
+-            <horstretch>0</horstretch>
+-            <verstretch>0</verstretch>
++            <hsizetype>3</hsizetype>
++            <vsizetype>3</vsizetype>
++            <horstretch>1</horstretch>
++            <verstretch>1</verstretch>
+         </sizepolicy>
+     </property>
+     <property name="minimumSize">
+         <size>
+-            <width>40</width>
+-            <height>0</height>
++            <width>32</width>
++            <height>18</height>
+         </size>
+     </property>
+     <property name="maximumSize">
+         <size>
+-            <width>122</width>
+-            <height>48</height>
++            <width>32767</width>
++            <height>32767</height>
++        </size>
++    </property>
++    <property name="sizeIncrement">
++        <size>
++            <width>1</width>
++            <height>1</height>
++        </size>
++    </property>
++    <property name="baseSize">
++        <size>
++            <width>32</width>
++            <height>18</height>
+         </size>
+     </property>
+     <property name="caption">
+@@ -37,53 +49,49 @@
+     </property>
+     <widget class="QLabel">
+         <property name="name">
+-            <cstring>freqIcon</cstring>
+-        </property>
+-        <property name="geometry">
+-            <rect>
+-                <x>0</x>
+-                <y>0</y>
+-                <width>24</width>
+-                <height>24</height>
+-            </rect>
+-        </property>
+-        <property name="pixmap">
+-            <pixmap>image0</pixmap>
+-        </property>
+-        <property name="scaledContents">
+-            <bool>true</bool>
+-        </property>
+-    </widget>
+-    <widget class="QLabel">
+-        <property name="name">
+             <cstring>freqLabel</cstring>
+         </property>
+         <property name="geometry">
+             <rect>
+-                <x>26</x>
++                <x>0</x>
+                 <y>0</y>
+                 <width>50</width>
+-                <height>24</height>
++                <height>18</height>
+             </rect>
+         </property>
+-        <property name="maximumSize">
++        <property name="sizePolicy">
++            <sizepolicy>
++                <hsizetype>3</hsizetype>
++                <vsizetype>3</vsizetype>
++                <horstretch>1</horstretch>
++                <verstretch>1</verstretch>
++            </sizepolicy>
++        </property>
++        <property name="minimumSize">
+             <size>
+-                <width>96</width>
+-                <height>48</height>
++                <width>32</width>
++                <height>18</height>
+             </size>
+         </property>
++        <property name="font">
++            <font>
++                <family>Andale Mono</family>
++                <pointsize>8</pointsize>
++            </font>
++        </property>
+         <property name="text">
+-            <string>0 MHz</string>
++            <string>2000MHz</string>
++        </property>
++        <property name="scaledContents">
++            <bool>true</bool>
+         </property>
+         <property name="alignment">
+             <set>AlignVCenter</set>
+         </property>
++        <property name="indent">
++            <number>0</number>
++        </property>
+     </widget>
+ </widget>
+-<images>
+-    <image name="image0">
+-        <data format="PNG" length="986">89504e470d0a1a0a0000000d4948445200000018000000180806000000e0773df8000003a1494441544889bd95b16f1c4514c67f7b37216fb02ded120bee3ace72c16151248114f00744584a24d2ba704145c51f40055668a8901c216869a990a0a301894848c8058a5c44e22211380b3bdc06cecc736eeca19899bd5b0b84681869351aedccf7bef7bdefcdc0ff388a7ff9df495fb1f3ee4e2784509cfb4c08c19cc32bfe113484d0cd9b8090c0f3dc3947a80b2c0106f80d70455104a09b3765a0b3afbefc2ccccf09a0fc9775b9da5f13230f37ae6ccc00733e25c4087bf71f2008139d60b14c748220a84630f5f3591014a55c2e79f5952157af5dbd0d6c254c9f0304e074f1d0b81e834f60066aad23a8c6353e1e9cf848a2a6468c003c93f02069c6bd3b12ac29412ac62632c747303189b99f33cfaa385c9cbdc37a4bc42aaf8306bb3c606d7b7f3566604a9c11aa6ad84a1f12739f40b038ef52f239d642506301c54a0f567ac0fe0706c04a8554039072ae7566ecc1a96b316eb4cf19f9546f03b61c822d91e53e4d91d7b6f7d7617f478c2c7ff1f9e60d94264806cfb5c8cc6b5fb7335145802b6f8fbeab8fea29700c9ce522ff09bcaf5e9f13233772da2df005ed9b751e3eba0f03f5517d027c0adc07c63940a2c345f58a4e95c974d22e6c669ae599295c006620365a95e8a227c021f018d00e736e07c00f622416d2cf65fa5b70405d7b9ee7c38fc0cfc02f8b8d0630cb856d0a3d6bcb51fbba5560255ab99129f6d3ef4995226710801042b8d8f2fd6cc1b28b41137863d9f6e85e7ef9f22463a6462b0328a34ffae860b79d7e02cb1dbb086a8d8d8298b8df1ab87747aec3e898b79e67e3cd074b9d66b3f4a01a20a6425551af73ab2e349935760e6e1a5962c10d5823202555f522c0c7b1d1ca01acf411e9010e75da583483391c5622782555d4de4ab3475d7491933ed5ca001501e8c646dbda5b87bd1d60e9fbafb76ee65b330fe7e7e0120f52dab2059e33d9d8deff16f61db1d14eb38b26c06de059859bcdc9058f6579d4a70bd0c53ec8b512234894ef18b843745263d3c7c31786b35b6fdc9a9522ecbcf74eb25ed33c58038ea4f14270c1a280a4f5707dd8191f8c0feb69fd0878d4701cbe343cd97c7dd36d5c7bed12f0512a5b377d01e88a910243478c148aa2533d4dff027046f4d413e057e2d3f9477e32bb00bb1fee9a5ebf578e7e1a85bbdfdcbd347e38eecbb278c05465352b574a53ad564ca693a7f104550df561ada3839177b53b39383870ead50147c014e60f7741fb51ef123bf2a9b40608bdd55e21a5142817d46b47a71a140d3ad5bc3f5f2c67c00c087f0107460d494d8c11f40000000049454e44ae426082</data>
+-    </image>
+-</images>
+-<layoutdefaults spacing="6" margin="11"/>
++<layoutdefaults spacing="5" margin="5"/>
+ </UI>
+Only in kcpufreq-edited/kcpufreq: myview.ui~
