@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Feb 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  -dagii-0.2.ebuild, +dagii-0.4.ebuild:
+  Version bump.
+
   24 Dec 2006; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   +dagii-0.2.ebuild, +files/dagii.xpm, +metadata.xml:
   New ebuild for 159032
