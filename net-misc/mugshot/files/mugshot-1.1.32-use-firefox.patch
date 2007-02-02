@@ -17,18 +17,18 @@ diff -ru mugshot-1.1.32.orig/configure.ac mugshot-1.1.32/configure.ac
  AC_ARG_WITH(gecko_sdk, 
  	AC_HELP_STRING([--with-gecko-sdk=DIR],
  		       [Path to Gecko SDK]))
-@@ -370,6 +379,8 @@
- have_full_gecko=false
- sdk_includes_nspr=false
+@@ -372,6 +381,8 @@
+ sdk_includes_xpcom_core=false
+ sdk_includes_xpcom=false
  
 +if test "x$firefox" = xtrue ; then
 +
  if test "x$with_gecko_sdk" != x -a "x$with_gecko_sdk" != xyes -a "x$with_gecko_sdk" != xno ; then
     GECKO_IDLDIR="$with_gecko_sdk/idl"
     GECKO_INCLUDEDIR="$with_gecko_sdk/include"
-@@ -493,6 +504,10 @@
+@@ -520,6 +531,10 @@
  # we use some private interfaces
- LIBHIPPOFIREFOX_LIBS="$LIBHIPPOFIREFOX_LIBS $NSPR_LIBS"
+ LIBHIPPOFIREFOX_LIBS="$LIBHIPPOFIREFOX_LIBS $NSPR_LIBS $XPCOM_LIBS"
  
 +else
 +    AM_CONDITIONAL(HAVE_FULL_GECKO, false)
@@ -37,7 +37,7 @@ diff -ru mugshot-1.1.32.orig/configure.ac mugshot-1.1.32/configure.ac
  #### define absolute path to srcdir for debugging-only code
  ABSOLUTE_TOP_SRCDIR=`cd ${srcdir} && pwd`
  AC_DEFINE_UNQUOTED(ABSOLUTE_TOP_SRCDIR, "$ABSOLUTE_TOP_SRCDIR", [full path to srcdir])
-@@ -506,14 +521,15 @@
+@@ -533,14 +548,15 @@
  echo "
  
          Mugshot $VERSION

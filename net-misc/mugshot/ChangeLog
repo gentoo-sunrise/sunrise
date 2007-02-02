@@ -3,6 +3,11 @@
 # $Header: $
 
   02 Feb 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  mugshot-1.1.32.ebuild, +files/mugshot-1.1.32-libxpcom.patch,
+  files/mugshot-1.1.32-use-firefox.patch:
+  Patch to prevent browser crashes
+
+  02 Feb 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -mugshot-1.1.30.ebuild, -files/mugshot-1.1.30-use-firefox.patch,
   +mugshot-1.1.32.ebuild, +files/mugshot-1.1.32-use-firefox.patch:
   Version bump
