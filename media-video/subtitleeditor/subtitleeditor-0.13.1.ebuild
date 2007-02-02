@@ -19,6 +19,7 @@ DEPEND=">=dev-cpp/gtkmm-2.6
 	>=dev-cpp/libglademm-2.4
 	dev-libs/libpcre
 	>=media-libs/gstreamer-0.10
+	>=media-libs/gst-plugins-good-0.10
 	>=x11-libs/gtk+-2.6
 	cairo? ( x11-libs/cairo )
 	spell? ( >=app-text/enchant-1.1.0 )"
@@ -28,8 +29,8 @@ S="${WORKDIR}/${MY_P}"
 
 src_compile() {
 	export GST_REGISTRY="${T}/home/registry.cache.xml"
-	addpredict "${ROOT}/root/.gconf"
-	addpredict "${ROOT}/root/.gconfd"
+	addpredict "${ROOT}root/.gconf"
+	addpredict "${ROOT}root/.gconfd"
 	econf \
 		$(use_enable cairo) \
 		$(use_enable debug) \

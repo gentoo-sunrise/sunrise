@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Feb 2007; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
+  -subtitleeditor-0.12.4.ebuild, +subtitleeditor-0.13.1.ebuild:
+  Version bump
+
   15 Dec 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   -subtitleeditor-0.12.2.ebuild, +subtitleeditor-0.12.4.ebuild:
   Version bump
