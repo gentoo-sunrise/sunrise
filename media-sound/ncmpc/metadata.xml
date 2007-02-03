@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd></herd>
+	<maintainer>
+		<email>pylon@gentoo.org</email>
+		<name>Lars Weiler</name>
+	</maintainer>
+	<longdescription lang="en">
+		svn-version for the ncurses musicplayer-daemon client as long as the
+		upstream maintainers refuse to release a new version with all the shiny
+		advantages.
+	</longdescription>
+</pkgmetadata>
+
