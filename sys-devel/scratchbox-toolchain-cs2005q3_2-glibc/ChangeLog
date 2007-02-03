@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Feb 2007; Lars Weiler <pylon@gentoo.org>
+  +scratchbox-toolchain-cs2005q3_2-glibc-1.0.5.ebuild:
+  Version bump.
+
   01 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   New ebuild for bug 94225
 
