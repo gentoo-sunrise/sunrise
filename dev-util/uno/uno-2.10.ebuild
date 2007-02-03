@@ -2,16 +2,19 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
-DESCRIPTION="A simple tool for source code analysis"
+DESCRIPTION="A tool for analyzing the source code of programs written in ANSI-C"
 HOMEPAGE="http://spinroot.com/uno/"
 SRC_URI="http://spinroot.com/${PN}/${PN}_v${PV/./}.tar.gz"
 
 LICENSE="public-domain GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="doc"
+
+DEPEND=""
+RDEPEND=""
 
 S="${WORKDIR}/${PN}"
 
@@ -22,14 +25,18 @@ src_unpack() {
 
 src_compile() {
 	cd "${S}/src"
-	emake || die "emake failed"
+	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
 src_install() {
 	dobin src/uno src/uno_local src/uno_global
 	doman doc/uno.1
-	insinto "/usr/share/doc/${PF}"
-	doins doc/uno_long.pdf doc/uno_short.pdf
+
 	insinto "/usr/share/${PN}"
 	doins -r prop
+
+	if use doc ; then
+		insinto "/usr/share/doc/${PF}"
+		doins doc/*.pdf
+	fi
 }
