@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Feb 2007; Lars Weiler <pylon@gentoo.org> +scratchbox-1.0.7.ebuild:
+  Version bump.
+
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -scratchbox-0.9.8.7.ebuild:
   drop old
