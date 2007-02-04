@@ -1,0 +1,9 @@
+# ChangeLog for x11-themes/mandriva-galaxy
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Feb 2007; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  +files/remove-gtk1.patch, +mandriva-galaxy-1.0.4.ebuild,
+  +files/remove-kde.patch, +metadata.xml:
+  New ebuild for bug 158715 thanks to David Leverton for its patches
+
