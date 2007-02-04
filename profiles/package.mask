@@ -21,10 +21,6 @@
 ##   End example
 ##
 
-# Jakub Moc <jakub@gentoo.org> (07 Jan 2007)
-# does not compile with gcc-4*
-net-p2p/mute
-
 # Jakub Moc <jakub@gentoo.org> (22 Dec 2006)
 # upstream now distributes an RPM-only version
 # so the ebuild needs a major work :(
