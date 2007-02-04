@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_P="${P/-bin}"
+MY_P="${P/-bin}Ed"
 
 DESCRIPTION="Latin--English dictionary."
 HOMEPAGE="http://users.erols.com/whitaker/words.htm"
@@ -30,7 +30,6 @@ src_unpack(){
 
 src_install() {
 	insinto /opt/${MY_P}
-	dodir /usr/bin
 	dodoc wordsdoc*
 	rm wordsdoc*
 	doins *
