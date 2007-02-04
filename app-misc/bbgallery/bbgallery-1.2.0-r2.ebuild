@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/bbgallery/bbgallery-1.2.0.ebuild,v 1.9 2005/01/01 14:52:12 eradicator Exp $
+# $Header: $
 
 inherit eutils
 
@@ -14,14 +14,13 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="dev-lang/perl
-	 media-gfx/imagemagick
-	 dev-perl/URI
-	 dev-perl/libwww-perl
-	 dev-perl/HTML-Template
-	 dev-perl/HTML-Parser"
+	media-gfx/imagemagick
+	dev-perl/URI
+	dev-perl/libwww-perl
+	dev-perl/HTML-Template
+	dev-perl/HTML-Parser"
 
 DEPEND=""
-
 
 src_unpack() {
 	unpack ${A}
