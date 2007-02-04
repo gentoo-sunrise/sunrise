@@ -18,21 +18,9 @@ IUSE="wxwindows"
 
 DEPEND="dev-libs/crypto++
 	wxwindows? ( >=x11-libs/wxGTK-2.6 )"
-RDEPEND="${DEPEND}"
+RDEPEND=$DEPEND
 
 S=${WORKDIR}/${MY_P}
-
-pkg_setup() {
-	if use wxwindows ; then
-		WX_GTK_VER=2.6
-		need-wxwidgets gtk2
-	fi
-
-	if [ $(gcc-major-version) -ge 4 ]; then
-		einfo "${P} doesn't compile with gcc version >= 4"
-		die "${P} needs gcc version < 4"
-	fi
-}
 
 src_unpack() {
 	unpack ${A}
@@ -40,12 +28,15 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-configure.patch"
 	epatch "${FILESDIR}/${P}-makefile.patch"
 
-	cd "${S}"/MUTE/otherApps/fileSharing/userInterface/languages/
+	cd "${S}/MUTE/otherApps/fileSharing/userInterface/languages/"
 	mv Espa?ol.txt Espanol.txt
 	rm TranslationHelper.txt
 }
 
 src_compile() {
+	export WX_GTK_VER=2.6
+	need-wxwidgets gtk2 || die
+
 	# not an autotools configure
 	cd "${S}/MUTE"
 	./configure >/dev/null || die "configure failed"
