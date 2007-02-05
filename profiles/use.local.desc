@@ -51,8 +51,8 @@ media-sound/gnormalize:normalize - Enable the normalize front-end
 media-sound/lmms:ladspa - Enables support for LADSPA plugins
 media-sound/lmms:samplerate - Enable support for libsamplerate
 media-sound/lmms:vst - Enable support for VST plugins
-media-sound/ncmpc/ncmpc-9999.ebuild:artist-screen - local USE flag for this software, please describe
-media-sound/ncmpc/ncmpc-9999.ebuild:lyrics-screen - local USE flag for this software, please describe
+media-sound/ncmpc:artist-screen - local USE flag for this software, please describe
+media-sound/ncmpc:lyrics-screen - local USE flag for this software, please describe
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:ladspa - Enables support for LADSPA plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
