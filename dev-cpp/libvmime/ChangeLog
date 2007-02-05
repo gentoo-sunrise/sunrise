@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> -libvmime-0.8.0.ebuild,
+  -files/libvmime-0.8.0-gnutls_ssl-detection.patch, +libvmime-0.8.1.ebuild,
+  +files/libvmime-0.8.1-gnutls_ssl-detection.patch:
+  Version bump.
+
   23 Sep 2006; Tiziano Müller <gentoo@dev-zero.ch>
   files/libvmime-0.8.0-gnutls_ssl-detection.patch:
   Made the patch smaller.

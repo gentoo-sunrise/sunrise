@@ -11,7 +11,7 @@ HOMEPAGE="http://www.vmime.org/"
 SRC_URI="mirror://sourceforge/vmime/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="debug doc sasl ssl"
+IUSE="debug doc examples sasl ssl"
 
 CDEPEND="sasl? ( net-libs/libgsasl )
 		ssl? ( net-libs/gnutls )
@@ -23,7 +23,10 @@ RDEPEND="${CDEPEND}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-gnutls_ssl-detection.patch"
+	sed -i \
+		-e "s|doc/\${PACKAGE_TARNAME}|doc/${PF}|" \
+		-e "s|doc/\$(GENERIC_LIBRARY_NAME)|doc/${PF}|" \
+		configure Makefile.in || die "sed failed"
 }
 
 src_compile() {
@@ -50,7 +53,7 @@ src_install() {
 	if use doc ; then
 		dohtml doc/html/*
 	fi
-	insinto /usr/share/${PN}
-	doins -r examples
 
+	insinto /usr/share/doc/${PF}
+	use examples && doins -r examples
 }
