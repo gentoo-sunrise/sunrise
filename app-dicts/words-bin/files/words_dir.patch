@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  #! /bin/bash
  
--WORDSPATH=/usr/local/words-1.97
-+WORDSPATH=/opt/words-1.97
+-WORDSPATH=/usr/local/words-1.97Ed
++WORDSPATH=/opt/words-1.97Ed
  
  ( cd $WORDSPATH ; ./words $* )
