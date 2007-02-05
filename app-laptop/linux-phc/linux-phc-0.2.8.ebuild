@@ -16,19 +16,19 @@ KEYWORDS="~x86"
 IUSE=""
 
 which_patch() {
-	if kernel_is ge 2 6 19
+	if kernel_is 2 6 19
 	then
 		PATCH="kernel-patch/${P}-kernel-vanilla-2.6.19.patch"
-	elif kernel_is ge 2 6 18
+	elif kernel_is 2 6 18
 	then
 		PATCH="kernel-patch/${P}-kernel-vanilla-2.6.18.patch"
-	elif kernel_is ge 2 6 17
+	elif kernel_is 2 6 17
 	then
 		PATCH="kernel-patch/${P}-kernel-vanilla-2.6.17.patch"
-	elif kernel_is ge 2 6 16
+	elif kernel_is 2 6 16
 	then
 		PATCH="kernel-patch/${P}-kernel-vanilla-2.6.16.patch"
-	elif kernel_is ge 2 6 15
+	elif kernel_is 2 6 15
 	then
 		PATCH="kernel-patch/${P}-kernel-vanilla-2.6.15.patch"
 	else

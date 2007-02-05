@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Feb 2007; Konrad Korzec <korzec@gmail.com> linux-phc-0.2.8.ebuild:
+  removed 'ge' after kernel_is to make it install with more kernels
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   linux-phc-0.2.8.ebuild:
   adjusted DESCRIPTION
