@@ -3,6 +3,10 @@
 # $Header: $
 
   06 Feb 2007; Luca Marturana (luca89) <lucamarturana@gmail.com>
+  pygtk-shell-0.9.1.ebuild:
+  Corrected DEPEND variable
+
+  06 Feb 2007; Luca Marturana (luca89) <lucamarturana@gmail.com>
   +pygtk-shell-0.9.1.ebuild, +metadata.xml:
   Initial import, see bug #165023
 

@@ -11,9 +11,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-DEPEND=">=dev-lang/python-2.4"
-RDEPEND="${DEPEND}
-	>=dev-python/pygtk-2.8
+DEPEND=""
+RDEPEND=">=dev-python/pygtk-2.8
 	dev-python/pycairo"
 
 src_install() {
