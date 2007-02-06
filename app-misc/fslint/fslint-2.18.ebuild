@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Technologies, Inc.
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ RDEPEND=">=dev-python/pygtk-2.0"
 src_install() {
 	cd "${S}"
 	dodir /usr/share/${PN}
-	cp -R ${PN}/ ${D}/usr/share/${PN}
+	cp -R ${PN}/ "${D}"/usr/share/${PN}
 
 	insinto /usr/share/${PN}
 	doins ${PN}{.glade,.gladep,_icon.png} || die "doins failed"
@@ -36,11 +36,11 @@ src_install() {
 	domenu ${PN}.desktop
 
 	dodoc doc/*
-	doman man/*	
+	doman man/*
 
 	if use nls ; then
-		cd ${S}/po
-		emake DESTDIR=${D}/usr DATADIR=share install || die "locales install failed"
+		cd "${S}"/po
+		emake DESTDIR="${D}"/usr DATADIR=share install || die "locales install failed"
 	fi
 }
 
