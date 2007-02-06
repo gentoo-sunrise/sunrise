@@ -17,8 +17,7 @@ DEPEND="net-libs/libpcap"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	chmod +x setup.py
-	./setup.py config
+	python setup.py config
 	distutils_src_compile
 }
 
