@@ -1,0 +1,28 @@
+--- packetgarden.orig	2007-02-06 01:51:24.000000000 +0100
++++ packetgarden	2007-02-06 01:56:38.000000000 +0100
+@@ -6,20 +6,20 @@
+     if [ "$1" = "-local" ]; then {
+       export EXECDIR=.
+   } else {
+-      export EXECDIR=/usr/share/games/packetgarden/
++      export EXECDIR=/usr/share/packetgarden/
+   }
+   fi
+   if ls $HOME/.packetgarden; then {
+       echo "user directory already exists"
+-      $EXECDIR/pg_garden.py
++      python $EXECDIR/pg_garden.py
+   } else {
+-      echo "first run.. copying game data from /usr/share/games/packetgarden to ~/.packetgarden.."
++      echo "first run.. copying data from /usr/share/packetgarden to ~/.packetgarden.."
+       mkdir $HOME/.packetgarden
+       if [ "$1" = "-local" ]; then {
+         cp -r config data guide logs labels stats $HOME/.packetgarden/
+     } else {
+-        cd /usr/share/games/packetgarden/ ; cp -r config data guide logs labels stats  $HOME/.packetgarden/
++        cd /usr/share/packetgarden/ ; cp -r config data guide logs labels stats  $HOME/.packetgarden/
+     } fi
+-    $EXECDIR/pg_garden.py
++    python $EXECDIR/pg_garden.py
+   } fi
+ } fi

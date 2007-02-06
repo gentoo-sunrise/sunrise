@@ -1,0 +1,40 @@
+--- pg_garden.py.orig	2007-02-06 20:33:04.000000000 +0100
++++ pg_garden.py	2007-02-06 20:47:43.000000000 +0100
+@@ -331,7 +331,7 @@
+       os.execl('pg_garden.exe')
+     else:
+       try:
+-        os.execl('/usr/share/games/packetgarden/pg_garden.py')
++        os.execl('/usr/share/packetgarden/pg_garden.py')
+       except:
+         os.execl('python ./pg_garden.py')
+ 
+@@ -1297,7 +1297,7 @@
+       self.send.visible = 0
+       self.send_label.visible = 0
+       try:
+-        cap = subprocess.Popen("gksudo --message='Packet Garden needs permission to read information from your network card.' python /usr/share/games/packetgarden/pg_packet.py " +self.device +" " +PG_DIR, shell=True)
++        cap = subprocess.Popen("gksudo --message='Packet Garden needs permission to read information from your network card.' python /usr/share/packetgarden/pg_packet.py " +self.device +" " +PG_DIR, shell=True)
+       except:
+         cap = subprocess.Popen("gksudo --message='Packet Garden needs permission to read information from your network card.' python ./pg_packet.py " +self.device +" " +PG_DIR, shell=True)
+       menu_toggle(1)
+@@ -1320,7 +1320,7 @@
+       except:
+         pass
+       try:
+-        subprocess.Popen("gksudo --message='Packet Garden needs permission to stop the capture process.' /usr/share/games/packetgarden/stop_capture", shell=True)
++        subprocess.Popen("gksudo --message='Packet Garden needs permission to stop the capture process.' /usr/share/packetgarden/stop_capture", shell=True)
+       except:
+         subprocess.Popen("gksudo --message='Packet Garden needs permission to stop the capture process.' ./stop_capture", shell=True)
+     menu_toggle(1)
+--- pg_player.py.orig	2007-01-29 08:25:32.000000000 +0100
++++ pg_player.py	2007-02-06 20:48:10.000000000 +0100
+@@ -86,7 +86,7 @@
+             os.execl('pg_garden.exe')
+           else: # defaults to Linux
+             try:
+-              os.execl('/usr/share/games/packetgarden/pg_garden.py')
++              os.execl('/usr/share/packetgarden/pg_garden.py')
+             except:
+               os.execl('python ./pg_garden.py')
+         elif self.event[1] == sdlconst.K_LEFT:  self.left_key_down  = 1

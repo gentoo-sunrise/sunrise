@@ -1,0 +1,9 @@
+# ChangeLog for net-analyzer/packetgarden
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Feb 2007; Santiago M. Mola <cooldwind@gmail.com>
+  +packetgarden-1.0.ebuild, +files/packetgarden-1.0-games-path.patch,
+  +files/packetgarden-1.0-launcher.patch, +metadata.xml:
+  Initial ebuild for bug #162593
+
