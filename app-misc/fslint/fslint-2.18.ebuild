@@ -44,7 +44,7 @@ src_install() {
 	fi
 }
 
-pkg_preinst() {
+pkg_postinst() {
 	python_mod_optimize ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 }
 
