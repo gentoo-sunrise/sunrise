@@ -21,6 +21,7 @@ app-misc/genealogyj-bin:skins - Installs some skins
 app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
+dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
 dev-util/ktigcc:no-completion-data - Do not install completion data for the TIGCCLIB system headers
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
