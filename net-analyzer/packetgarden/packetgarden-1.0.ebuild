@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils python
 
 MY_P="${P/-/_}_all"
 
@@ -46,9 +46,17 @@ src_install() {
 	insinto /usr/share/${PN}
 	doins -r config data guide labels logs stats pg_*.py
 	dodoc README_LINUX.txt
+	dodir /usr/share/${PN}/data/images/screenshots
 }
 
 pkg_postinst() {
+	python_mod_optimize "${ROOT}/usr/share/${PN}"
+	elog
 	elog "In order to get a good performance it is very recomended"
 	elog "to install dev-python/psyco"
+	elog
+}
+
+pkg_postrm() {
+	python_mod_cleanup "${ROOT}/usr/share/${PN}"
 }
