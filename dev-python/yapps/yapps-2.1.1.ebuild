@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.2
+
 inherit distutils versionator
 
 MY_P="${PN}$(delete_version_separator '-')"
@@ -15,15 +17,15 @@ KEYWORDS="~x86"
 IUSE="examples"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
-S="${WORKDIR}/Yapps-${PV}"
+S=${WORKDIR}/Yapps-${PV}
 
 src_install() {
 	distutils_src_install
 
 	if use examples; then
-		insinto /usr/share/doc/${PF}/examples
+		insinto /usr/share/doc/${PF}
 		doins -r examples
 	fi
 }
