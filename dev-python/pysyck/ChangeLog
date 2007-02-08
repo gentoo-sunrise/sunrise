@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Feb 2007; Santiago M. Mola <cooldwind@gmail.com> pysyck-0.61.2.ebuild:
+  DESCRIPTION and other lines length fixed. eerror output and die clearer.
+
   08 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> pysyck-0.61.2.ebuild:
   Added NEED_PYTHON and PYTHON_MODNAME. Updated src_test.
 
