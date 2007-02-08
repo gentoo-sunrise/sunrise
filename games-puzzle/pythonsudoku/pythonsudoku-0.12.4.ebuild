@@ -4,16 +4,16 @@
 
 inherit games distutils
 
-KEYWORDS="~x86"
-
 DESCRIPTION="A graphical and text-based sudoku game"
 HOMEPAGE="http://pythonsudoku.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
+
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="app-arch/unzip"
 RDEPEND="dev-python/pygtk
 	dev-python/reportlab
 	dev-python/imaging"
