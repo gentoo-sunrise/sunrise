@@ -3,8 +3,7 @@
 # Copyright 2006 David Shakaryan <omp@gentoo.org>
 # Distributed under the terms of the GNU General Public License v2
 
-# Change portage tree directory if you have it elsewhere.
-PORTDIR="/usr/portage"
+PORTDIR="$(portageq envvar PORTDIR)"
 
 # If an argument is present, use it as the overlay directory.
 if [ $1 ]; then
