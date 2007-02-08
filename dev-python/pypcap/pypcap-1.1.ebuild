@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="examples"
 
-DEPEND="net-libs/libpcap"
+DEPEND="net-libs/libpcap
+	!dev-python/pylibpcap"
 RDEPEND="${DEPEND}"
 
 src_compile() {
