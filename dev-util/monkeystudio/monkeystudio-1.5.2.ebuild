@@ -4,19 +4,20 @@
 
 inherit qt4
 
-KEYWORDS="~x86"
-
 MY_PN="${PN}-src"
 
 DESCRIPTION="Monkey Studio is a cross platform Qt 4 IDE"
 HOMEPAGE="http://monkeystudio.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_PN}-${PV}.zip"
+
+KEYWORDS="~x86"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="doc"
 
-DEPEND="$(qt4_min_version 4)"
-RDEPEND="${DEPEND}"
+RDEPEND="$(qt4_min_version 4)"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
 
 S=${WORKDIR}/${MY_PN}-${PV}
 
