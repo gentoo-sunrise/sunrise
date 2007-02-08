@@ -29,9 +29,15 @@ pkg_setup() {
 	enewuser dbmail -1 -1  /var/lib/dbmail dbmail
 }
 
-src_compile() {
-	epatch "${FILESDIR}/${P}-removeversion.patch"
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 
+	epatch "${FILESDIR}/${P}-removeversion.patch"
+	epatch "${FILESDIR}/${P}-messages.patch"
+}
+
+src_compile() {
 	use sqlite3 && myconf="--with-sqlite"
 	use ldap && myconf=${myconf}" --with-auth-ldap"
 
