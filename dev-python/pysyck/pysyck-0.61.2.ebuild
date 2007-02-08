@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.3
+
 inherit distutils eutils
 
-MY_P=${P/pysyck/PySyck}
+MY_P=PySyck-${PV}
 
 DESCRIPTION="PySyck is aimed to update the current Python bindings for Syck. The new bindings provide a wrapper for the Syck emitter and give access to YAML representation graphs."
 HOMEPAGE="http://pyyaml.org/"
@@ -18,6 +20,8 @@ IUSE=""
 DEPEND=">=dev-libs/syck-0.55"
 RDEPEND="${DEPEND}"
 
+PYTHON_MODNAME="syck"
+
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
@@ -28,7 +32,6 @@ pkg_setup() {
 }
 
 src_test() {
-	cd "${S}/tests"
-	python test_syck.py
+	PYTHONPATH=./lib/ "${python}" tests/test_syck.py
 	einfo "Some tests may have failed due to pending bugs in dev-libs/syck"
 }
