@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.3
+
 inherit distutils
 
 MY_P=PyRSS2Gen-${PV}
@@ -16,6 +18,6 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND=${DEPEND}
+RDEPEND=""
 
 S=${WORKDIR}/${MY_P}
