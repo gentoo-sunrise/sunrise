@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> dbmail-2.2.2-r1.ebuild:
+  The option to activate postgresql-support is --with-pgsql not --with-postgres
+
   08 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> -dbmail-2.2.2.ebuild,
   +dbmail-2.2.2-r1.ebuild, +files/dbmail-2.2.2-messages.patch:
   Added patch to fix an issue with postgresql:

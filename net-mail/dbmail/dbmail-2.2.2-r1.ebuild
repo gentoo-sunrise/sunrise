@@ -47,7 +47,7 @@ src_compile() {
 		$(use_enable static) \
 		$(use_with sieve) \
 		$(use_with ssl) \
-		$(use_with postgres) \
+		$(use_with postgres pgsql) \
 		$(use_with mysql) || die "econf failed"
 	emake || die "emake failed"
 }
