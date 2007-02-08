@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="app-arch/unzip"
 RDEPEND=">=dev-lang/perl-5.6.0
 	virtual/perl-Digest-MD5"
 
