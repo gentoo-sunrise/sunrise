@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="app-arch/unzip"
 RDEPEND=">=dev-python/pygame-1.6.2
 	>=dev-python/wxpython-2.6.1.0
 	>=dev-python/numeric-23.7

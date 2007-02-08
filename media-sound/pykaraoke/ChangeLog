@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Feb 2007; Santiago M. Mola <cooldwind@gmail.com> pykaraoke-0.5.ebuild:
+  app-arch/unzip added to DEPEND
+
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -pykaraoke-0.4.1.ebuild:
   drop old
