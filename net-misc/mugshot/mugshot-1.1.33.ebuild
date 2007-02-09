@@ -33,8 +33,8 @@ src_unpack() {
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
 	epatch "${FILESDIR}/${PN}-1.1.22-as-needed.patch"
-	epatch "${FILESDIR}/${P}-libxpcom.patch"
-	epatch "${FILESDIR}/${P}-use-firefox.patch"
+	epatch "${FILESDIR}/${PN}-1.1.32-libxpcom.patch"
+	epatch "${FILESDIR}/${PN}-1.1.32-use-firefox.patch"
 	eautoreconf
 	use firefox && sed -e "s:GET_LIBDIR:$(get_libdir):" \
 		"${FILESDIR}/${PN}-1.1.26-firefox-update.sh" > "${S}/firefox-update.sh"
