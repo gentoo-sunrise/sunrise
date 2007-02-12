@@ -4,7 +4,8 @@
 
 inherit eutils
 
-DESCRIPTION="Palantir is a Linux-based streaming system designed to transmit live video, audio and data over a TCP/IP network, as well as to control remote devices."
+DESCRIPTION="streaming system designed to transmit live video, audio and data
+over a TCP/IP network, as well as to control remote devices."
 HOMEPAGE="http://www.fastpath.it/products/palantir/index.php"
 SRC_URI="http://www.fastpath.it/products/${PN}/pub/${P}.tgz"
 
