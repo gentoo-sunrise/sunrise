@@ -6,10 +6,6 @@
   <doctorzoidberg@stronzi.org> dbmail-2.2.2-r1.ebuild:
   Added ~amd64 keyword
 
-  12 Feb 2007; Giuseppe Iannello (doctorzoidberg)
-  <doctorzoidberg@stronzi.org> +dbmail-2.2.2-r2.ebuild:
-  Added ~amd64 keyword
-
   08 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> dbmail-2.2.2-r1.ebuild:
   The option to activate postgresql-support is --with-pgsql not --with-postgres
 
