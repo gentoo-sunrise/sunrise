@@ -16,7 +16,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-games/guichan
-	>=dev-lang/python-2.3.5
 	media-libs/libpng
 	media-libs/libsdl
 	>=media-libs/sdl-image-1.2.4
