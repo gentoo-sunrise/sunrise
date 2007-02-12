@@ -5,8 +5,8 @@
 inherit distutils
 
 DESCRIPTION="a command-line interface to http://metamark.net/"
-HOMEPAGE="http://ndansmith.net/surl.php"
-SRC_URI="http://ndansmith.net/software/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://sourceforge.net/projects/surl"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
