@@ -6,11 +6,12 @@ inherit eutils linux-mod
 
 DESCRIPTION="Another Unionfs is an entirely re-designed and re-implemented Unionfs."
 HOMEPAGE="http://aufs.sourceforge.net/"
-SRC_URI="www.fh-kl.de/~torsten.kockler/gentoo/${P}.tar.bz2"
+SRC_URI="http://www.fh-kl.de/~torsten.kockler/gentoo/${P}.tar.bz2"
+
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
-IUSE="ksize nfs"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="ksize nfs"
 
 MODULE_NAMES="aufs(addon/fs/${PN}:)"
 BUILD_PARAMS="KDIR=${ROOT}/lib/modules/${KV_FULL}/build -f local.mk"
