@@ -18,4 +18,3 @@ DEPEND="|| ( kde-base/kwin kde-base/kdebase )
 	!x11-themes/serenity-style"
 
 need-kde 3.4
-
