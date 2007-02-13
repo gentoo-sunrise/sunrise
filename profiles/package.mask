@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Charlie Shepherd <masterdriverz@gentoo.org> (13 February 2007)
+# Depends on app-emacs/w3 which is hard-masked in gentoo-x86
+app-emacs/doxymacs
+
 # Christian Faulhammer <opfer@gentoo.org> (05 Feb 2007)
 # live ebuilds should be masked
 ~media-sound/ncmpc-9999
