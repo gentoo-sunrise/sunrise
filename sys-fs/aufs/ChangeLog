@@ -1,0 +1,8 @@
+# ChangeLog for sys-fs/aufs
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Feb 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
+  +aufs-20070212.ebuild, +metadata.xml:
+  New Ebuild for bug 160065
+
