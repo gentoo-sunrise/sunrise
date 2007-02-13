@@ -26,6 +26,3 @@ src_install() {
 	insinto /usr/share/doc/${PF}/examples
 	doins examples/*
 }
-
-
-
