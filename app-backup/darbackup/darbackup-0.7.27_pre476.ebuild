@@ -16,13 +16,13 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 RDEPEND=">=app-backup/dar-2.2.6
-        || ( dev-util/bdelta dev-util/xdelta )
-        net-misc/openssh"
+	|| ( dev-util/bdelta dev-util/xdelta )
+	net-misc/openssh"
 
 pkg_setup() {
-  if ! built_with_use dar dar32 && ! built_with_use dar dar64; then
-    die 'You must have dar32 or dar64 useflags for dar enabled.'
-  fi
+	if ! built_with_use dar dar32 && ! built_with_use dar dar64; then
+		die 'You must have dar32 or dar64 useflags for dar enabled.'
+	fi
 }
 
 src_install() {
@@ -33,4 +33,3 @@ src_install() {
 pkg_postinst() {
 	enewgroup backup
 }
-
