@@ -16,11 +16,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE="kde"
 
 DEPEND=">=x11-libs/gtk+-2.0
-	 kde? ( || ( kde-base/kwin kde-base/kdebase ) )"
+	kde? ( || ( kde-base/kwin kde-base/kdebase ) )"
 
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/galaxy-${PV}
+S="${WORKDIR}/galaxy-${PV}"
 
 src_unpack() {
 	rpm_src_unpack
@@ -39,5 +39,5 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS COPYING README ChangeLog
+	dodoc AUTHORS README ChangeLog
 }
