@@ -84,6 +84,7 @@ net-mail/simscan:regex - Enable regex attachment filename checking
 net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-p2p/murmur:trayicon - Enable support for tray icon
+net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-libs/libticables2:pam_console - Adds support for pam console from PAM
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
@@ -94,4 +95,3 @@ x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/wbar:animation - Patch for animation support
 x11-themes/qtcurve:gtk1 - Adds support for x11-libs/gtk+ (The GIMP Toolkit) version 1.x
-net-zope/imagerepository:kupu - Pulls in kupu as a dependency
