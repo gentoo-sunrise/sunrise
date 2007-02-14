@@ -75,3 +75,7 @@ games-fps/unreal-tournament-operationnapali
 # Jakub Moc <jakub@gentoo.org> (09 Jun 2006)
 # This is for testing only, upstream not active ATM
 =app-misc/mc-mp-4.1.40_pre9
+
+# Eduard Warkentin <eduard.warkentin@gmx.de> (14 Feb 2007)
+# This is a svn checkout based ebuild until further changes
+=app-backup/darbackup-0.7.27_pre485
