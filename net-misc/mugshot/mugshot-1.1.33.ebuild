@@ -18,7 +18,7 @@ IUSE="firefox"
 
 RDEPEND=">=dev-libs/glib-2.6
 	>=x11-libs/gtk+-2.6
-	|| ( >=dev-libs/dbus-glib-0.71 ( >=sys-apps/dbus-0.60 <sys-apps/dbus-0.90 ) )
+	>=dev-libs/dbus-glib-0.71
 	>=net-libs/loudmouth-1
 	>=gnome-base/gconf-2
 	>=net-misc/curl-7.13.1
