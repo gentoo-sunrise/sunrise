@@ -14,12 +14,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE="ksize nfs"
 
 MODULE_NAMES="aufs(addon/fs/${PN}:)"
-BUILD_PARAMS="KDIR=${ROOT}/lib/modules/${KV_FULL}/build -f local.mk"
+BUILD_PARAMS="KDIR=${KV_DIR} -f local.mk"
 BUILD_TARGETS="all"
 
 pkg_setup(){
 	# kernel version check
-	if ! kernel_is gt 2 6 16
+	if kernel_is lt 2 6 16
 	then
 		eerror
 		eerror "Aufs is being developed and tested on linux-2.6.16 and later."
@@ -45,7 +45,7 @@ pkg_postinst() {
 	if use ksize
 	then
 		# Check if Kernel is already patched
-		if grep -qs "EXPORT_SYMBOL(ksize);" "${KERNEL_DIR}/mm/slab.c"
+		if grep -qs "EXPORT_SYMBOL(ksize);" "${KV_DIR}/mm/slab.c"
 		then
 			einfo "Your kernel has already been patched for ksize"
 		else
@@ -63,7 +63,9 @@ pkg_postinst() {
 	if use nfs && kernel_is ge 2 6 19
 	then
 		# Check if kernel is already patched
-		if grep -qs "EXPORT_SYMBOL(__lookup_hash);" "${KERNEL_DIR}/fs/namei.c" || grep -qs "struct dentry * __lookup_hash(struct qstr *name, struct dentry * base, struct nameidata *nd);" "${KERNEL_DIR}/fs/namei.h"
+		if grep -qs "EXPORT_SYMBOL(__lookup_hash);" "${KV_DIR}/fs/namei.c" ||
+		grep -qs "struct dentry * __lookup_hash(struct qstr *name, struct dentry
+		* base, struct nameidata *nd);" "${KV_DIR}/fs/namei.h"
 		then
 			einfo "Your kernel has already been patched for lhash"
 		else

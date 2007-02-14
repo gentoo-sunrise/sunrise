@@ -4,6 +4,10 @@
 
   14 Feb 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
   aufs-20070212.ebuild:
+  Changed Variablename  to , changed ! kernel_is gt to kernel_is lt
+
+  14 Feb 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
+  aufs-20070212.ebuild:
   Deleted redundant functions src_compile src_unpack
 
   13 Feb 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
