@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Feb 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
+  aufs-20070212.ebuild:
+  Deleted redundant functions src_compile src_unpack
+
   13 Feb 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
   aufs-20070212.ebuild:
   Changed order of KEYWORDS, added http:// to SRC_URI and grouped variables

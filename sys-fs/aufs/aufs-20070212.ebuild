@@ -31,16 +31,6 @@ pkg_setup(){
 	linux-mod_pkg_setup
 }
 
-src_unpack() {
-	unpack ${A}
-}
-
-src_compile() {
-	cd "${S}"
-	unset ARCH
-	linux-mod_src_compile
-}
-
 src_install() {
 	exeinto /sbin
 	exeopts -m0500
