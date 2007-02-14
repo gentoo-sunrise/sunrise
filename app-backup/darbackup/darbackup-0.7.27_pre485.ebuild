@@ -16,8 +16,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=app-backup/dar-2.2.6
-        || ( dev-util/bdelta dev-util/xdelta )
-        net-misc/openssh"
+	|| ( dev-util/bdelta dev-util/xdelta )
+	net-misc/openssh"
 
 pkg_setup() {
 	if ! built_with_use app-backup/dar dar32 && ! built_with_use app-backup/dar dar64; then
