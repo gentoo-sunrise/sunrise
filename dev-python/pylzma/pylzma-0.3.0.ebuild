@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND=">=dev-lang/python-2.4"
 RDEPEND="${DEPEND}"
 
 DOCS="doc/usage.txt readme.txt"
