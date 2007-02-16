@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.4
+
 inherit distutils
 
 DESCRIPTION="Python bindings for the LZMA compression library."
@@ -13,18 +15,19 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/python-2.4"
-RDEPEND="${DEPEND}"
+DEPEND=""
+RDEPEND=""
 
 DOCS="doc/usage.txt readme.txt"
 
 src_test() {
 	einfo "Testing 7zfiles"
-	${python} tests/test_7zfiles.py || die "7zfiles test failed"
+	export PYTHONPATH="$(ls -d build/lib.*)"
+	"${python}" tests/test_7zfiles.py || die "7zfiles test failed"
 	einfo "Testing compatibility"
-	${python} tests/test_compatibility.py || die "Compatibility test failed"
+	"${python}" tests/test_compatibility.py || die "Compatibility test failed"
 	einfo "Testing pylzma"
-	${python} tests/test_pylzma.py || die "pylzma test failed"
+	"${python}" tests/test_pylzma.py || die "pylzma test failed"
 	einfo "Testing usage"
-	${python} tests/test_usage.py || die "usage test failed"
+	"${python}" tests/test_usage.py || die "usage test failed"
 }
