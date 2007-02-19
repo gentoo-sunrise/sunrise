@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Feb 2007; David Grant (dgrant) <davidgrant@gmail.com> pyq-0.5.ebuild:
+  fixed small bracket problem
+
   16 Jan 2007; Christian Faulhammer <opfer@gentoo.org> pyq-0.5.ebuild:
   add some quotes
 

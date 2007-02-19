@@ -25,5 +25,5 @@ src_install() {
 	cd "${WORKDIR}"
 	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/
 	newins pyq pyq.py
-	make_wrapper pyq "python /usr/${get_libdir}/python${PYVER}/site-packages/pyq.py"
+	make_wrapper pyq "python /usr/$(get_libdir)/python${PYVER}/site-packages/pyq.py"
 }
