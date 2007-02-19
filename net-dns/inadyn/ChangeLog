@@ -1,0 +1,8 @@
+# ChangeLog for net-dns/inadyn
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Feb 2007; Chris Carlin (volkris) <carlin@jlab.org> +inadyn-1.96.ebuild,
+  +files/inadyn.conf, +files/inadyn.initd, +metadata.xml:
+  New Ebuild for bug 167619
+
