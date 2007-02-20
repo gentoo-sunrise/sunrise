@@ -8,27 +8,27 @@ SRC_URI="mirror://sourceforge/ripoffc/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="vorbis mp3 flac"
+IUSE="flac mp3 vorbis"
 
 RDEPEND=">=x11-libs/gtk+-2.6
-		dev-libs/libcdio
-		media-libs/libcddb
-		vorbis? ( media-libs/libvorbis )
-		mp3? ( media-sound/lame )
-		flac? ( media-libs/flac )"
+	dev-libs/libcdio
+	media-libs/libcddb
+	vorbis? ( media-libs/libvorbis )
+	mp3? ( media-sound/lame )
+	flac? ( media-libs/flac )"
 DEPEND="${RDEPEND}"
 
 src_compile() {
 	econf \
 		$(use_enable vorbis) \
 		$(use_enable mp3) \
-				$(use_enable flac) \
-				|| die "econf failed"
+		$(use_enable flac) \
+		|| die "econf failed"
 
-		emake || die "emake failed"
+	emake || die "emake failed"
 }
 
-src_install () {
-		make DESTDIR="${D}" install || die "make install failed"
-		dodoc AUTHORS ChangeLog README TODO
+src_install() {
+	emake DESTDIR="${D}" install || die "make install failed"
+	dodoc AUTHORS ChangeLog README TODO
 }
