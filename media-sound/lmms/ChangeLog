@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Feb 2007; Markus Ullmann <jokey@gentoo.org> -lmms-0.2.1.ebuild:
+  Drop old
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> lmms-0.2.1.ebuild,
   lmms-0.2.1-r1.ebuild:
   Remove RESTRICT="strip"
