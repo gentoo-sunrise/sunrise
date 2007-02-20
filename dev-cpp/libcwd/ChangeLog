@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> -libcwd-0.99.44.ebuild,
+  +libcwd-0.99.45.ebuild, +files/libcwd-0.99.45-getenv.patch:
+  Version bump.
+
   24 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   libcwd-0.99.44.ebuild:
   adjusted DESCRIPTION

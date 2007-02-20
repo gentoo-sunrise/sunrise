@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="A library to support C++ developers with debugging their applications"
 HOMEPAGE="http://libcwd.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
@@ -9,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="QPL"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="doc examples"
+IUSE="debug doc examples pch"
 
 DEPEND="doc? ( app-doc/doxygen )"
 RDEPEND=""
@@ -17,13 +19,23 @@ RDEPEND=""
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
+	epatch "${FILESDIR}/${P}-getenv.patch"
+
+	sed -i \
+		-e 's/-O3//' \
+		configure || die "sed failed"
+
 	# Clean-out possibly old docs
 	rm -f  documentation/doxygen.config
 	rm -rf documentation/html/*
 }
 
 src_compile() {
-	econf || die "econf failed"
+	econf \
+		$(use_enable pch) \
+		$(use_enable debug) \
+		|| die "econf failed"
 	emake || die "emake failed"
 
 	if use doc; then
