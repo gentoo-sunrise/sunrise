@@ -5,7 +5,7 @@
 inherit distutils
 
 DESCRIPTION="a set of tools for updating gentoo config files"
-HOMEPAGE="http://michaelsen.kicks-ass.net/users/bjoern/etcproposals"
+HOMEPAGE="http://michaelsen.kicks-ass.net/Members/bjoern/etcproposals/"
 SRC_URI="http://michaelsen.kicks-ass.net/Members/bjoern/etcproposals/downloads/${P}.tar.gz"
 
 IUSE=""

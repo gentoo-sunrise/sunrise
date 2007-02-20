@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Feb 2007; Markus Ullmann <jokey@gentoo.org>
+  etcproposals-0.9.20061114.ebuild:
+  New HOMEPAGE and SRC_URI
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   etcproposals-0.9.20061114.ebuild:
   change from elog to einfo
