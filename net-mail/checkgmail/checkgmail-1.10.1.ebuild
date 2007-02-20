@@ -21,5 +21,5 @@ DEPEND=">=dev-perl/gtk2-perl-1.100
 
 src_install() {
 	dobin checkgmail || die "dobin failed"
-	dodoc COPYING ChangeLog README TODO
+	dodoc ChangeLog README TODO
 }
