@@ -33,4 +33,3 @@ src_install() {
 pkg_postinst() {
 	enewgroup backup
 }
-
