@@ -18,8 +18,7 @@ RDEPEND=""
 
 S=${WORKDIR}/${PN}
 
-pkg_setup()
-{
+pkg_setup() {
 	enewuser inadyn -1 -1 -1
 }
 
@@ -28,10 +27,10 @@ src_install() {
 	doman man/*
 	dohtml readme.html
 
-	newinitd ${FILESDIR}/inadyn.initd inadyn
+	newinitd "${FILESDIR}"/inadyn.initd inadyn
 
 	insinto /etc
-	doins ${FILESDIR}/inadyn.conf
+	doins "${FILESDIR}"/inadyn.conf
 }
 
 pkg_postinst() {
@@ -39,4 +38,3 @@ pkg_postinst() {
 	elog "running inadyn for the firt time. The file is basically"
 	elog "command line options; see inadyn and inayn.conf manpages."
 }
-
