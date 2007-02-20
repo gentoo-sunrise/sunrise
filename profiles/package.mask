@@ -21,11 +21,6 @@
 ##   End example
 ##
 
-# Jakub Moc <jakub@gentoo.org> (20 Feb 2006)
-# Depends on dev-python/dpkt (Bug 165530) which is
-# neither in sunrise nor in the official tree
-net-analyzer/packetgarden
-
 # Charlie Shepherd <masterdriverz@gentoo.org> (13 February 2007)
 # Depends on app-emacs/w3 which is hard-masked in gentoo-x86
 app-emacs/doxymacs
