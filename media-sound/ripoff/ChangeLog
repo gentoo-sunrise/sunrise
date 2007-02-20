@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Feb 2007; Jakub Moc <jakub@gentoo.org> ChangeLog:
+  Drop old.
+
   20 Feb 2007; Jakub Moc <jakub@gentoo.org> ripoff-0.8.2.ebuild:
   Use emake for install, sanitize formatting
 
