@@ -16,7 +16,7 @@ SLOT="0"
 IUSE=""
 
 DEPEND="$(qt4_min_version 4.2)"
-RDEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 
