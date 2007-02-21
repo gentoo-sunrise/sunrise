@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
+  +genealogyj-bin-2.4.3.ebuild:
+  version bump
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   genealogyj-bin-2.4.2-r3.ebuild:
   change from elog to einfo
