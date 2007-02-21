@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> polyester-1.0.ebuild:
+  need-kde newer version to fix non-existing atoms
+
   04 Feb 2007; Jakub Moc <jakub@gentoo.org> ChangeLog:
   Drop old.
 
