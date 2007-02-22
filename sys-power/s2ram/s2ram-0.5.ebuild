@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_P}
 
 CONFIG_CHECK="SOFTWARE_SUSPEND"
 ERROR_SOFTWARE_SUSPEND="The kernel has to be configured to support software suspend.
-    Set CONFIG_SOFTWARE_SUSPEND=y and recompile your kernel."
+Set CONFIG_SOFTWARE_SUSPEND=y and recompile your kernel."
 
 src_unpack() {
 	unpack ${A}
@@ -57,6 +57,6 @@ pkg_postinst() {
 		elog "To control backlight on suspend with ATI Radeon Mobility graphics cards,"
 		elog "you will need to emerge app-laptop/radeontool"
 	fi
-	
+
 	elog "See README in /usr/share/doc/${PF} and ${PN} -h for quick usage instructions."
 }
