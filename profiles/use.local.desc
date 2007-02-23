@@ -19,6 +19,7 @@ app-misc/emelfm2:unicode - Forces conversion of filenames to Unicode
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
 app-misc/mc-mp:7zip - Add support for 7zip archives
+dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
 dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
