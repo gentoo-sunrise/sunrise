@@ -43,6 +43,11 @@ pkg_setup() {
 		eerror "wget -q 'http://sourceforge.net/tracker/download.php?group_id=5470&atid=305470&file_id=144928&aid=1254718' -O -|patch -p1 -d /usr/$(get_libdir)/python${PYVER}"
 		die "python version not patched"
 	fi
+
+	if ! built_with_use gnome-python-extras seamonkey firefox; then
+		eerror "You must build gnome-python-extras with seamonkey or firefox support"
+		die "Please re-emerge gnome-python-extras with seamonkey or firefox USE flag ON"
+	fi
 }
 
 src_unpack() {
