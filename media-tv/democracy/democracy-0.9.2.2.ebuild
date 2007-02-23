@@ -44,7 +44,7 @@ pkg_setup() {
 		die "python version not patched"
 	fi
 
-	if ! built_with_use gnome-python-extras seamonkey firefox; then
+	if ! built_with_use -o gnome-python-extras seamonkey firefox; then
 		eerror "You must build gnome-python-extras with seamonkey or firefox support"
 		die "Please re-emerge gnome-python-extras with seamonkey or firefox USE flag ON"
 	fi
