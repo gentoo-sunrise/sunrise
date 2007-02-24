@@ -20,10 +20,6 @@ RDEPEND=""
 CONFIG_CHECK="INOTIFY"
 ERROR_INOTIFY="Recompile your kernel with inotify support - CONFIG_INOTIFY"
 
-pkg_setup() {
-	linux-info_pkg_setup
-}
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
