@@ -1,0 +1,8 @@
+# ChangeLog for games-board/OpenYahtzee
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Feb 2007; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
+  +OpenYahtzee-1.7.ebuild, +metadata.xml:
+  New Ebuild for bug #137555
+
