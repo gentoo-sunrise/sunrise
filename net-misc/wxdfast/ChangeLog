@@ -1,0 +1,9 @@
+# ChangeLog for net-misc/wxdfast
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Feb 2007; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
+  +wxdfast-0.5.4.ebuild, +metadata.xml:
+  New Ebuild for bug 167946. Thanks to Paul Bredbury <brebs@sent.com> and
+  k0001 <gnuk0001@gmail.com>
+
