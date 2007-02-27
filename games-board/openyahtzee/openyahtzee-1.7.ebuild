@@ -7,7 +7,7 @@ inherit games wxwidgets
 MY_PN="OpenYahtzee"
 
 DESCRIPTION="A full-featured wxWidgets version of the classic dice game Yahtzee"
-HOMEPAGE="http://openyahtzee.sourceforge.net"
+HOMEPAGE="http://openyahtzee.sourceforge.net/"
 SRC_URI="mirror://sourceforge/openyahtzee/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"

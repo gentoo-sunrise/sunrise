@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
+  openyahtzee-1.7.ebuild:
+  added trailing slash to HOMEPAGE URI
+
   24 Feb 2007; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
   +openyahtzee-1.7.ebuild, +metadata.xml:
   New Ebuild for bug #137555
