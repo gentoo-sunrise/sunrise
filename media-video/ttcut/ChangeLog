@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Feb 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
+  ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
+  added lost changes again
+
   28 Nov 2006; Markus Ullmann <jokey@gentoo.org> Manifest:
   Fix digest
 
