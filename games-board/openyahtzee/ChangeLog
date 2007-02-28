@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Feb 2007; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
+  openyahtzee-1.7.ebuild:
+  replaced set-wxconfig with need-wxwidgets and added unicode as use flag
+
   27 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
   openyahtzee-1.7.ebuild:
   added trailing slash to HOMEPAGE URI
