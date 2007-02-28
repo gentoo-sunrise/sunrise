@@ -93,6 +93,7 @@ sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for 
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
 sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module run more efficiently
 sys-fs/aufs:nfs - Patch for lhash support
+sys-power/acpi-support:laptop-mode - Support for laptop-mode utils
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/wbar:animation - Patch for animation support
