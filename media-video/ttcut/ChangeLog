@@ -4,6 +4,10 @@
 
   28 Feb 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
+  fixed problem with qt4.eclass
+
+  28 Feb 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
+  ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
   added lost changes again
 
   28 Nov 2006; Markus Ullmann <jokey@gentoo.org> Manifest:

@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="ttmpeg2"
 
-DEPEND="$(qt_min_version 4.1)
+DEPEND="$(qt4_min_version 4.1)
 		>=media-libs/libmpeg2-0.4.0"
 
 RDEPEND="${DEPEND}
