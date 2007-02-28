@@ -34,7 +34,6 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${P}-removeversion.patch"
-	epatch "${FILESDIR}/${P}-messages.patch"
 }
 
 src_compile() {
