@@ -1,0 +1,8 @@
+# ChangeLog for sys-power/acpi-support
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Feb 2007; AK (gentoo@horizon.ath.cx) +acpi-support-0.91.ebuild,
+  +files/acpi-support-0.91-gentoo.patch, +metadata.xml:
+  New package: sys-power/acpi-support (port from ubuntu)
+
