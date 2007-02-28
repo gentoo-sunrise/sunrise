@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
+  ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
+  use flag -> USE flag
+
   28 Feb 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
   added check for qt3support in x11-libs/qt in order to make ttmpeg2 compile

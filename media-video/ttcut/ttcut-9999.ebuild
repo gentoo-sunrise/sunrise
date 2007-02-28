@@ -29,8 +29,8 @@ src_compile() {
 		if ! (built_with_use x11-libs/qt qt3support); then
 			eerror "In order to compile ttmpeg2"
 			eerror "you will need to recompile qt4 with"
-			eerror "qt3support use flag enabled."
-			die "Recompile qt4 with qt3support use flag enabled"
+			eerror "qt3support USE flag enabled."
+			die "Recompile qt4 with qt3support USE flag enabled"
 		fi
 
 		qmake ttmpeg2.pro -o Makefile.ttmpeg2 || \
