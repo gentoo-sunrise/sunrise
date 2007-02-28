@@ -26,6 +26,13 @@ S=${WORKDIR}/${PN}
 
 src_compile() {
 	if use ttmpeg2 ; then
+		if ! (built_with_use x11-libs/qt qt3support); then
+			eerror "In order to compile ttmpeg2"
+			eerror "you will need to recompile qt4 with"
+			eerror "qt3support use flag enabled."
+			die "Recompile qt4 with qt3support use flag enabled"
+		fi
+
 		qmake ttmpeg2.pro -o Makefile.ttmpeg2 || \
 			die "configuring ttpmeg2 failed"
 		make -f Makefile.ttmpeg2 || die "emake ttmpeg2 failed"

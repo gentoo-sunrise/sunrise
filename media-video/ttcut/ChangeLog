@@ -4,6 +4,10 @@
 
   28 Feb 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
+  added check for qt3support in x11-libs/qt in order to make ttmpeg2 compile
+
+  28 Feb 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
+  ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
   fixed problem with qt4.eclass
 
   28 Feb 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
