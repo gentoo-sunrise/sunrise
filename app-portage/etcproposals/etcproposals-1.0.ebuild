@@ -8,10 +8,13 @@ DESCRIPTION="a set of tools for updating gentoo config files"
 HOMEPAGE="http://michaelsen.kicks-ass.net/Members/bjoern/etcproposals/"
 SRC_URI="http://michaelsen.kicks-ass.net/Members/bjoern/etcproposals/downloads/${P}.tar.gz"
 
-IUSE=""
+IUSE="gtk"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
+DEPEND="gtk? ( >=dev-python/pygtk-2.10 )"
+RDEPEND="${DEPEND}"
 
 src_install(){
 	distutils_src_install
