@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Mar 2007; Charlie Shepherd <masterdriverz@gentoo.org>
+  -etcproposals-0.9.20061114.ebuild, +etcproposals-1.0.ebuild:
+  Bump to 1.0
+
   20 Feb 2007; Markus Ullmann <jokey@gentoo.org>
   etcproposals-0.9.20061114.ebuild:
   New HOMEPAGE and SRC_URI
