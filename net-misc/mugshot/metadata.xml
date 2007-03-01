@@ -2,4 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>maintainer-wanted</herd>
+<longdescription lang="en">
+Mugshot works with the server at mugshot.org to extend the panel, web browser,
+music player and other parts of the desktop with a "live social experience"
+and interoperation with online services you and your friends use. It's fun
+and easy.
+</longdescription>
 </pkgmetadata>

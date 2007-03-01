@@ -7,7 +7,7 @@ WANT_AUTOMAKE="latest"
 
 inherit autotools eutils gnome2 multilib
 
-DESCRIPTION="Program to facilitate social networking"
+DESCRIPTION="Companion software for mugshot.org"
 HOMEPAGE="http://www.mugshot.org"
 SRC_URI="http://download.mugshot.org/client/sources/linux/${P}.tar.gz"
 
@@ -19,6 +19,7 @@ IUSE="firefox"
 RDEPEND=">=dev-libs/glib-2.6
 	>=x11-libs/gtk+-2.6
 	>=dev-libs/dbus-glib-0.71
+	>=dev-libs/libpcre-6.3
 	>=net-libs/loudmouth-1
 	>=gnome-base/gconf-2
 	>=net-misc/curl-7.13.1
@@ -44,11 +45,6 @@ src_compile() {
 	econf $(use_enable firefox) \
 		--with-gecko-sdk=/usr/$(get_libdir)/mozilla-firefox/ || die "./configure failed"
 	emake || die "emake failed"
-}
-
-src_install () {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog README
 }
 
 pkg_postinst () {
