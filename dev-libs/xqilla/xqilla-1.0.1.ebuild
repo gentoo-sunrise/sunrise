@@ -5,7 +5,7 @@
 inherit eutils
 
 MY_P=XQilla-${PV}
-DESCRIPTION="XQilla is an XQuery and XPath 2 library and command line utility written in C++."
+DESCRIPTION="An XQuery and XPath 2 library and command line utility written in C++."
 HOMEPAGE="http://xqilla.sourceforge.net/HomePage"
 SRC_URI="mirror://apache/xml/xerces-c/source/xerces-c-src_2_7_0.tar.gz
 	mirror://sourceforge/xqilla/${MY_P}.tar.gz"
