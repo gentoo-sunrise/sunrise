@@ -1,0 +1,10 @@
+DIST dvd-slideshow-0.8.0-1.tar.gz 126102 RMD160 23687110db9eb807a55804c88c544eecbc9e6297 SHA1 23ecaeca464cdb39f18b64883e8cc78eafb9aba4 SHA256 c75455a9e434c7c5ec05c015d022e62d8a1be2f17cab96eef7deb1ca81d31978
+DIST dvd-slideshow-examples-0.8.0-1.tar.gz 1397782 RMD160 0243715ac1307332e1a4f041cc496af59d9a3544 SHA1 0b20b210b4c7e55a00318564cd530efbdc43e274 SHA256 9c732552cfca22fe5315a2197028621620474e9adfe7c265ddae56b46c4081fe
+DIST dvd-slideshow-themes-0.8.0-1.tar.gz 1224977 RMD160 1bceb0fc1618be16619c7cdd31b9befafddb1af6 SHA1 11d77e52aeb74c98dbd5027b75ac032a7ab7f9a4 SHA256 56c13c272eb6e850b98f4182acd3c5e90ba378a6ec7fc37e4c47af70b6e25cb5
+EBUILD dvd-slideshow-0.8.0.ebuild 1301 RMD160 275637c4976a0f3a99e35e636a1f7f539fa4be17 SHA1 1b0ee9b1bf5ccfcef9bb7fff57b1d5ca5d177c08 SHA256 83dbc511090af547bf079fed3ada188cb797a0bef7dc14e70c3e281d15cd7856
+MD5 651a0fb1fb8f70aabfd02b95bd8dbbb3 dvd-slideshow-0.8.0.ebuild 1301
+RMD160 275637c4976a0f3a99e35e636a1f7f539fa4be17 dvd-slideshow-0.8.0.ebuild 1301
+SHA256 83dbc511090af547bf079fed3ada188cb797a0bef7dc14e70c3e281d15cd7856 dvd-slideshow-0.8.0.ebuild 1301
+MD5 23e8c0087500b3f823003ae53d85de6f files/digest-dvd-slideshow-0.8.0 849
+RMD160 a770b7954c37a13741e42938ba03b774831ef7be files/digest-dvd-slideshow-0.8.0 849
+SHA256 4dd5283517303ca4fe781c6b53edda7f6ef5ad7efcdb5771eeb3c91910e27df2 files/digest-dvd-slideshow-0.8.0 849
