@@ -63,6 +63,7 @@ media-sound/peapod:id3 - Support ID3 in the player
 media-video/gcstar:md5 - Enables generation of md5 checksums
 media-video/gcstar:zip - Enables support for zip files
 media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
+media-video/dvd-slideshow:themes - Enable theme support
 net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
 net-dns/nsd:checking - Enable internal runtime checks
