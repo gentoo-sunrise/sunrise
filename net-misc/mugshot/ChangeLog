@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Mar 2007; Christian Faulhammer <opfer@gentoo.org>
+  mugshot-1.1.37.ebuild:
+  added trailing slash to HOMEPAGE URI
+
   01 Mar 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -mugshot-1.1.33.ebuild, +mugshot-1.1.37.ebuild, metadata.xml:
   Version bump, update description and dependencies

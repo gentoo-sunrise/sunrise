@@ -8,7 +8,7 @@ WANT_AUTOMAKE="latest"
 inherit autotools eutils gnome2 multilib
 
 DESCRIPTION="Companion software for mugshot.org"
-HOMEPAGE="http://www.mugshot.org"
+HOMEPAGE="http://www.mugshot.org/"
 SRC_URI="http://download.mugshot.org/client/sources/linux/${P}.tar.gz"
 
 LICENSE="GPL-2"
