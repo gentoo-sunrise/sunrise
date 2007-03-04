@@ -17,6 +17,7 @@ IUSE="doc"
 
 DEPEND="=dev-libs/xerces-c-2.7.0-r1
 	doc? ( app-doc/doxygen )"
+RDEPEND="=dev-libs/xerces-c-2.7.0-r1"
 
 S="${WORKDIR}"/${MY_P}
 
