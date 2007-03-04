@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Mar 2007; Thibaut Fernagut (blokkie) <blokkie@h0m3.be>
+  dvd-slideshow-0.8.0.ebuild:
+  fixed theme and example path
+
   04 Mar 2007; Thibaut Fernagut (blokkie) <blokkie@h0m3.be> +metadata.xml:
   added metadata
 

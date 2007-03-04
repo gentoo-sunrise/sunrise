@@ -32,7 +32,6 @@ S="${WORKDIR}/${MY_P}"
 
 #  using install.sh provided by dvd-slideshow can cause a sandbox violation
 src_install() {
-	cd "${S}"
 	dobin dvd-slideshow dvd-menu gallery1-to-slideshow jigl2slideshow dir2slideshow
 	dodoc TODO.txt
 	dohtml *.html
@@ -40,11 +39,12 @@ src_install() {
 
 	if use examples ; then
 		insinto /usr/share/doc/${PF}/examples
-		doins -r examples/*
+		doins -r ${WORKDIR}/dvd-slideshow-examples-${PV}-1/*
 	fi
 	
 	if use themes ; then
 		insinto /usr/share/themes/${PF}/
-		doins -r themes/*
+		doins -r ${WORKDIR}/dvd-slideshow-themes-${PV}-1/*
+		 rm ${D}/usr/share/themes/dvd-slideshow-${PV}/themes.readme.txt
 	fi
 }
