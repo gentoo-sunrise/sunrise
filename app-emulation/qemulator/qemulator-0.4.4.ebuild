@@ -30,7 +30,6 @@ src_unpack(){
 }
 
 src_install() {
-	einfo "Installing Qemulator..."
 	dobin usr/local/bin/*
 	insinto /usr
 	doins -r usr/local/{lib,share}
