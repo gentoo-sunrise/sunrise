@@ -34,7 +34,7 @@ S="${WORKDIR}/${MY_P}"
 src_install() {
 	cd "${S}"
 	dobin dvd-slideshow dvd-menu gallery1-to-slideshow jigl2slideshow dir2slideshow
-	dodoc BUGS.txt TODO.txt
+	dodoc TODO.txt
 	dohtml *.html
 	doman man/*
 
@@ -47,6 +47,4 @@ src_install() {
 		insinto /usr/share/themes/${PF}/
 		doins -r themes/*
 	fi
-	
-	make_desktop_entry dvd-slideshow Application
 }
