@@ -27,7 +27,6 @@ RDEPEND="media-sound/sox
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-
 S="${WORKDIR}/${MY_P}"
 
 #  using install.sh provided by dvd-slideshow can cause a sandbox violation
@@ -41,10 +40,10 @@ src_install() {
 		insinto /usr/share/doc/${PF}/examples
 		doins -r ${WORKDIR}/dvd-slideshow-examples-${PV}-1/*
 	fi
-	
+
 	if use themes ; then
 		insinto /usr/share/themes/${PF}/
 		doins -r ${WORKDIR}/dvd-slideshow-themes-${PV}-1/*
-		 rm ${D}/usr/share/themes/dvd-slideshow-${PV}/themes.readme.txt
+		rm ${D}/usr/share/themes/dvd-slideshow-${PV}/themes.readme.txt
 	fi
 }
