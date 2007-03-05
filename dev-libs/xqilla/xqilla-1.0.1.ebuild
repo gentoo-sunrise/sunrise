@@ -29,7 +29,6 @@ src_unpack() {
 	sed -i -e 's:-R$(xerces_lib)::' Makefile.in || die "Sed failed!"
 }
 
-
 src_compile() {
 	einfo "compiling temporary copy of xerces-c"
 	export XERCESCROOT="${WORKDIR}"/xerces-c-src
