@@ -4,17 +4,16 @@
 
 inherit kde
 
-KEYWORDS="~x86"
-
 DESCRIPTION="KDE implementation of ssh-askpass with Kwallet integration."
 HOMEPAGE="http://hanz.nl/p/program"
 SRC_URI="http://hanz.nl/download/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
 IUSE="kdeenablefinal"
-
-need-kde 3.5
 
 DEPEND=""
 RDEPEND="net-misc/openssh"
 
+need-kde 3.5
