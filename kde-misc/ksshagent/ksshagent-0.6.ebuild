@@ -18,4 +18,3 @@ need-kde 3.5
 DEPEND=""
 RDEPEND="net-misc/openssh
 	kde-misc/ksshaskpass"
-
