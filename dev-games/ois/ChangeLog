@@ -3,6 +3,10 @@
 # $Header: $
 
   06 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  -ois-0.7.2.ebuild:
+  /-ois-0.7.2.ebuild: remove old version
+
+  06 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   +ois-1.0_rc1.ebuild:
   bump to version 1.0 and some cleanup
 
