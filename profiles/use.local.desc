@@ -99,4 +99,29 @@ sys-power/acpi-support:laptop-mode - Support for laptop-mode utils
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/wbar:animation - Patch for animation support
+x11-plugins/gaim-plugin_pack:autorejoin - Enable the auto-rejoin plugin
+x11-plugins/gaim-plugin_pack:awaynotify - Enable the away-state-notification plugin
+x11-plugins/gaim-plugin_pack:bashorg - Enable the plugin to pull bash.org quotes
+x11-plugins/gaim-plugin_pack:bit - Enable the buddy icon tools plugin
+x11-plugins/gaim-plugin_pack:blistops - Enable the buddy list options plugin
+x11-plugins/gaim-plugin_pack:dice - Enable the dice plugin
+x11-plugins/gaim-plugin_pack:difftopic - Enable the DiffTopic plugin
+x11-plugins/gaim-plugin_pack:eight_ball - Enable the magic 8ball plugin
+x11-plugins/gaim-plugin_pack:flip - Enable the coin-flip plugin
+x11-plugins/gaim-plugin_pack:gRIM - Enable the gRIM plugin
+x11-plugins/gaim-plugin_pack:groupmsg - Enable the group message plugin
+x11-plugins/gaim-plugin_pack:irssi - Enable the irssi features plugin
+x11-plugins/gaim-plugin_pack:lastseen - Enable the last-seen plugin
+x11-plugins/gaim-plugin_pack:listhandler - Enable the list handler plugin
+x11-plugins/gaim-plugin_pack:mystatusbox - Enable the mystatusbox plugin
+x11-plugins/gaim-plugin_pack:nicksaid - Enable the nicksaid plugin
+x11-plugins/gaim-plugin_pack:oldlogger - Enable the plugin implementing gaim's old logging system
+x11-plugins/gaim-plugin_pack:plonkers - Enable the plonkers plugin
+x11-plugins/gaim-plugin_pack:sepandtab - Enable the Separate and Tab plugin
+x11-plugins/gaim-plugin_pack:showoffline - Enable the plugin that allows showing offline contacts
+x11-plugins/gaim-plugin_pack:simfix - Enable the sim-fixes plugin
+x11-plugins/gaim-plugin_pack:slashexec - Enable the slashexec plugin that offers /exec for gaim conversations
+x11-plugins/gaim-plugin_pack:sslinfo - Enable the sslinfo plugin showing inforamtion about the currently used SSL version
+x11-plugins/gaim-plugin_pack:talkfilters - Enable the GNU talkfilters plugin
+x11-plugins/gaim-plugin_pack:xchat-chats - Enable the plugin offering xchat-style chats
 x11-themes/qtcurve:gtk1 - Adds support for x11-libs/gtk+ (The GIMP Toolkit) version 1.x
