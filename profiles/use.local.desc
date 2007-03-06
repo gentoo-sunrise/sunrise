@@ -41,6 +41,7 @@ media-gfx/openscenegraph:introspection - Compile osgIntrospection
 media-gfx/openscenegraph:inventor - Compile inventor plugin
 media-gfx/openscenegraph:jasper - Compile jasper plugin
 media-gfx/openscenegraph:producer - Compile osgProducer
+media-libs/freeimage:plus - Compile FreeImagePlus
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/exaile:cdaudio - Enable cd audio playback support
 media-sound/exaile:ipod - Enable support for ipod
