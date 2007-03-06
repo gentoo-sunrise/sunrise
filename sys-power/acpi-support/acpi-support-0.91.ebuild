@@ -11,7 +11,7 @@ SRC_URI="http://archive.ubuntu.com/ubuntu/pool/main/a/acpi-support/acpi-support_
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="kde laptop-mode video_cards_radeon"
+IUSE="kde laptop-mode pcmcia video_cards_radeon"
 
 DEPEND=""
 RDEPEND="sys-power/acpid
@@ -19,21 +19,17 @@ RDEPEND="sys-power/acpid
 	sys-apps/dmidecode
 	sys-apps/vbetool
 	sys-power/powermgmt-base
+	x11-apps/xset
 	kde? ( =kde-base/kdelibs-3.5* )
 	laptop-mode? ( =app-laptop/laptop-mode-tools-1.32 )
-	video_cards_radeon? ( app-laptop/radeontool )"
-#	sys-power/hibernate-script
-#	sys-apps/ethtool
+	video_cards_radeon? ( app-laptop/radeontool )
+	pcmcia? ( >=sys-apps/pcmciautils-013 )"
 
 src_unpack() {
 	unpack ${A}
 	use video_cards_radeon && sed -i 's/# RADEON_LIGHT=true/RADEON_LIGHT=true/' "${S}/acpi-support"
 	sed -i 's!/etc/default/acpi-support!/etc/conf.d/acpi-support!' "${S}"/*.sh "${S}/vbesave"
-	sed -i 's!/usr/bin/dcop!/usr/kde/3.5/bin/dcop!' "${S}/lib/policy-funcs"
-	sed -i 's!finger!who!' "${S}/lib/power-funcs"
-
 	epatch "${FILESDIR}/${P}-gentoo.patch"
-	# TODO: fix acpi_fakekey, vbesave, integrate hibernate-script, ethtool, resume.d/*-855-resolution-set.sh: . /etc/default/855resolution
 }
 
 src_compile() {
@@ -60,21 +56,22 @@ src_install() {
 }
 
 pkg_postinst() {
-#	[ -e /etc/acpi/actions/startup.d/10-save-dmidecode.sh ] \
-#		&& /etc/acpi/actions/startup.d/10-save-dmidecode.sh
-	einfo
 	elog "You may wish to read the Gentoo Linux Power Management Guide,"
 	elog "which can be found online at:"
-	einfo
+	elog
 	elog "http://www.gentoo.org/doc/en/power-management-guide.xml"
-	einfo
+	elog
 	elog "The following packages provide additional functionality:"
 	elog "sys-power/powersave"
 	elog "sys-power/kpowersave"
 	elog "app-laptop/laptop-mode-tools"
-	einfo
+	elog
 	elog "To initialize power management options for your devices at"
 	elog "system startup, please run the following:"
-	einfo
+	elog
 	elog "rc-update add acpi-support default"
+	elog
+	elog "This package will not work until you restart acpid. Please run the following:"
+	elog
+	elog "/etc/init.d/acpid restart"
 }

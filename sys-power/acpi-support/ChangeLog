@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Mar 2007; AK <gentoo@horizon.ath.cx> acpi-support-0.91.ebuild,
+  files/acpi-support-0.91-gentoo.patch:
+  Fixes, cleanups, more patching
+
   05 Mar 2007; Markus Ullmann <jokey@gentoo.org> acpi-support-0.91.ebuild:
   Whiteys and elog
 
