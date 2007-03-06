@@ -53,7 +53,7 @@ src_compile() {
 		myconf="${myconf}bash,"
 	fi
 
-	for flag in $FLAGS ; do 
+	for flag in $FLAGS ; do
 		if use $flag ; then
 			myconf="${myconf}${flag},"
 		fi
