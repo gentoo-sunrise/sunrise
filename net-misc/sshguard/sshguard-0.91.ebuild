@@ -15,7 +15,7 @@ DEPEND=""
 RDEPEND="net-firewall/iptables"
 
 src_compile() {
-	econf --with-firewall=iptables
+	econf --with-firewall=iptables || die "econf failed"
 	emake CFLAGS="${CFLAGS}" || die "emake failed"
 }
 
