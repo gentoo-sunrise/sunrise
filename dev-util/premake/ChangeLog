@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/premake
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  +premake-3.2.ebuild, +metadata.xml:
+  New Ebuild for bug 60960 thanks to Martin Honermeyer and Radek Podgorny
+
