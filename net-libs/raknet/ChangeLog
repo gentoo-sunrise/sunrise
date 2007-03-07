@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Mar 2007; Jakub Moc <jakub@gentoo.org> raknet-2.521.ebuild:
+  Remove USE=doc, quoting
+
   06 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   +raknet-2.521.ebuild, +files/raknet-2.521-gentoo.diff, +metadata.xml:
   New ebuild for bug 164721 thanks to Renaud Chaput
