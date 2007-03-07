@@ -17,16 +17,16 @@ gRIM groupmsg irssi lastseen listhandler mystatusbox nicksaid oldlogger \
 plonkers sepandtab showoffline simfix slashexec sslinfo talkfilters xchat-chats"
 IUSE="${FLAGS} bashorg debug"
 
-DEPEND="=net-im/gaim-2.0.0_beta6
+DEPEND="~net-im/gaim-2.0.0_beta6
 	talkfilters? ( app-text/talkfilters )"
 
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-	local myconf
 	einfo "The plugins that are to be built are configured via use flags."
 	einfo "If none of the optional use flags is set _ALL_ plugins are built,"
 	einfo "so adjusting /etc/portage/package.use might be a good idea before merging."
+
 	# XMMS Remote is disabled due to XMMS being masked
 	#
 	# Disabled due to non-working status:
@@ -44,25 +44,22 @@ src_compile() {
 	# New Line
 	# Offline Message
 
-	myconf="--with-plugins="
+	local myconf="--with-plugins="
 
 	# bashorg has to add "bash" to the configure
-	if use bashorg ; then
-		myconf="${myconf}bash,"
-	fi
+	use bashorg && myconf="${myconf}bash,"
 
 	for flag in $FLAGS ; do
-		if use $flag ; then
+		if use ${flag} ; then
 			myconf="${myconf}${flag},"
 		fi
 	done
 
-	econf ${myconf} $(use_enable debug)|| die "Configuration failed with the configuration $myconf"
-	emake -j1 || die "Make failed"
-
+	econf "${myconf}" $(use_enable debug) || die "Configuration failed with the configuration $myconf"
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO VERSION
 }
