@@ -30,7 +30,7 @@ src_compile() {
 }
 
 src_install () {
-	insinto /usr/include
+	insinto /usr/include/ticpp
 	doins ticpp.h ticpprc.h || die "installing headers failed"
 
 	if use debug ; then

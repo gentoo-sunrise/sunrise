@@ -3,6 +3,10 @@
 # $Header: $
 
   07 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  ticpp-9999.ebuild:
+  Small correction, now installs into /usr/include/ticpp
+
+  07 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   +ticpp-9999.ebuild, +metadata.xml:
   New ebuild for bug 169802
 
