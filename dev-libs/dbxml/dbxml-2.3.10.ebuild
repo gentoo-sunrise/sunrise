@@ -16,9 +16,9 @@ KEYWORDS="~x86"
 IUSE="doc"
 
 DEPEND=">=sys-libs/db-4.3.28
-	=dev-libs/xerces-c-2.7.0*
+	~dev-libs/xerces-c-2.7.0
 	>=dev-libs/xqilla-1.0.1"
-RDEPEND=$DEPEND
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P}/dbxml"
 
@@ -38,13 +38,13 @@ src_compile() {
 	ECONF_SOURCE=../dist
 	econf --with-berkeleydb=/usr --with-xqilla=/usr --with-xerces=/usr
 
-	emake -j1 || die "make failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
 	cd build_unix
 	#Install fails with emake
-	einstall || die
+	einstall || die "einstall failed"
 
 	db_src_install_doc
 }
