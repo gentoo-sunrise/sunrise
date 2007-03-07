@@ -12,15 +12,13 @@ SRC_URI="http://downloads.guifications.org/gaim-plugins/Plugin%20Pack/${MY_P}.ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-FLAGS="autorejoin awaynotify bit blistops dice difftopic eight_ball flip
-       gRIM groupmsg irssi lastseen listhandler mystatusbox nicksaid oldlogger
-       plonkers sepandtab showoffline simfix slashexec sslinfo talkfilters
-       xchat-chats"
+FLAGS="autorejoin awaynotify bit blistops dice difftopic eight_ball flip \
+gRIM groupmsg irssi lastseen listhandler mystatusbox nicksaid oldlogger \
+plonkers sepandtab showoffline simfix slashexec sslinfo talkfilters xchat-chats"
 IUSE="${FLAGS} bashorg debug"
 
 DEPEND="=net-im/gaim-2.0.0_beta6
-        talkfilters? ( app-text/talkfilters )
-"
+	talkfilters? ( app-text/talkfilters )"
 
 S="${WORKDIR}/${MY_P}"
 
