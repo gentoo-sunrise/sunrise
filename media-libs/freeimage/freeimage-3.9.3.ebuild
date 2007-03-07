@@ -25,7 +25,7 @@ S="${WORKDIR}/${MY_PN}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	epatch "${FILESDIR}"/freeimage-3.9.3-make.patch
 }
 
@@ -34,21 +34,19 @@ src_compile() {
 		 CFLAGS="${CFLAGS} -DPNG_NO_ASSEMBLER_CODE -DPNG_NO_MMX_CODE"
 		 CXXFLAGS="${CXXFLAGS} -DPNG_NO_ASSEMBLER_CODE -DPNG_NO_MMX_CODE"
 	fi
-	emake || die
+
+	emake || die "emake failed"
+
 	if use plus; then
-		emake -f Makefile.fip || die
+		emake -f Makefile.fip || die "emake plus failed"
 	fi
 }
 
 src_install() {
 	dodoc README.* Whatsnew.txt
+	use doc && dodoc ${WORKDIR}/${MY_P}.pdf
+	use plus && dodoc Wrapper/FreeImagePlus/WhatsNew_FIP.txt
 
-	if use doc; then
-		dodoc ${WORKDIR}/${MY_P}.pdf
-	fi
-	if use plus; then
-		dodoc Wrapper/FreeImagePlus/WhatsNew_FIP.txt
-	fi
 	dolib.so Dist/*.so
 	dolib.a Dist/*.a
 	dosym /usr/$(get_libdir)/libfreeimage-${PV}.so /usr/$(get_libdir)/libfreeimage.so
