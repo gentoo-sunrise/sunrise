@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/ticpp
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  +ticpp-9999.ebuild, +metadata.xml:
+  New ebuild for bug 169802
+
