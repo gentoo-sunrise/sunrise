@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Mar 2007; AK <gentoo@horizon.ath.cx> mummer-3.19.ebuild:
+  Remove private lib from global PERL5LIB - probably wasn't a good idea
+
   07 Mar 2007; AK <gentoo@horizon.ath.cx> +mummer-3.19.ebuild,
   +metadata.xml:
   New package, Bug 169793

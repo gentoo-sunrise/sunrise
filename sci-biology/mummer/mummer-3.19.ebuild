@@ -25,6 +25,7 @@ src_compile() {
 		-e 's|\($SCRIPT_DIR = "\).*"|\1/usr/share/'${PN}'/lib"|' \
 		-e 's|\(set bindir = \).*|\1/usr/bin|' \
 		-e 's|\(set scriptdir = \).*|\1/usr/share/'${PN}'/scripts|' \
+		-e 's|\(use lib "\).*"|\1/usr/share/'${PN}'/lib"|' \
 		scripts/* exact-tandems mapview mummerplot nucmer promer run-mummer{1,3} || die "Failed to replace paths"
 	sed -i 's|$bindir/annotate|$bindir/mummer-annotate|' run-mummer1 scripts/run-mummer1.csh
 }
@@ -40,12 +41,6 @@ src_install() {
 	doins scripts/{*.awk,*.csh,*.pl}
 	insinto /usr/share/${PN}/lib
 	doins scripts/Foundation.pm
-
-	cat > 99${PN} <<EOF
-COLON_SEPARATED=PERL5LIB
-PERL5LIB="/usr/share/${PN}/lib"
-EOF
-	doenvd 99${PN}
 
 	dodoc ACKNOWLEDGEMENTS ChangeLog README
 	insinto /usr/share/doc/${PF}
