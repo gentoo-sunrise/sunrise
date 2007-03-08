@@ -25,13 +25,13 @@ src_compile() {
 }
 
 src_install() {
+	insinto /usr
 	doins -r bin include lib || die "copying files failed"
 	dodoc HISTORY README || die "copying documentation failed"
 
 	if use doc ; then
 		insinto /usr/share/doc/${PF}
-		doins doc/{squirrel2.pdf,sqstdlib2.pdf} || die "copying documentation
-		failed"
+		doins doc/{squirrel2.pdf,sqstdlib2.pdf} || die "copying documentation failed"
 	fi
 
 	if use examples ; then

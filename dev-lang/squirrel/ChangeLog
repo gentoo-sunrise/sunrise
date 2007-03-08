@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  squirrel-2.1.1.ebuild:
+  Now correctly installs into /usr
+
   06 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   +squirrel-2.1.1.ebuild, +metadata.xml:
   New ebuild for bug 169051
