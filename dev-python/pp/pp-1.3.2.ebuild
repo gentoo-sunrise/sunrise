@@ -5,7 +5,7 @@
 inherit distutils
 
 DESCRIPTION="Parallel and distributed programming for Python"
-HOMEPAGE="http://www.parallelpython.com"
+HOMEPAGE="http://www.parallelpython.com/"
 SRC_URI="http://www.parallelpython.com/downloads/${PN}/${P}.tar.gz
 	examples? ( http://www.parallelpython.com/downloads/${PN}/ppexamples.tar.gz )"
 
