@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Mar 2007; Christian Faulhammer <opfer@gentoo.org> nsd-3.0.4.ebuild:
+  remove trailing whitespace
+
   07 Mar 2007; Martin Hierling <mad@cc.fh-luh.de> +nsd-3.0.4.ebuild:
   version bump
 

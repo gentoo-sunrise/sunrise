@@ -53,7 +53,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc doc/* 
+	dodoc doc/*
 	dodoc contrib/nsd.zones2nsd.conf
 
 	dobin nsdc.sh
