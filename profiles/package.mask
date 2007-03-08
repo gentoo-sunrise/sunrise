@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Christian Faulhammer <opfer@gentoo.org> (08 Mar 2007)
+# live ebuilds should be masked
+~dev-util/ticpp-9999
+
 # Charlie Shepherd <masterdriverz@gentoo.org> (13 February 2007)
 # Depends on app-emacs/w3 which is hard-masked in gentoo-x86
 app-emacs/doxymacs
