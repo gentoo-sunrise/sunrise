@@ -1,0 +1,8 @@
+# ChangeLog for games-strategy/hedgewars
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Mar 2007; Displacer <disinbox@gmail.com> +hedgewars-0.9.0.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 155872 thanks to jokey and sinrise team
+
