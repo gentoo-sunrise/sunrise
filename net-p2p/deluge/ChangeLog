@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Mar 2007; Peter Weller <welp@gentoo.org> deluge-0.4.1.ebuild:
+  Keyworded ~x86-fbsd
+
   24 Jan 2007; Santiago M. Mola <cooldwind@gmail.com> deluge-0.4.1.ebuild:
   gnome USE flag renamed to libnotify
 
