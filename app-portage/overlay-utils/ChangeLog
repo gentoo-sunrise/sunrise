@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Mar 2007; Peter Weller <welp@gentoo.org> overlay-utils-0.2.ebuild:
+  Keyworded ~x86-fbsd
+
   13 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
   overlay-utils-0.2.ebuild:
   Add ~amd64.
