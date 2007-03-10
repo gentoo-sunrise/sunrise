@@ -35,6 +35,15 @@ pkg_setup() {
 		eerror "2.6.17 or higher kernel is required to use ${PN}"
 		die "This will only work with recent 2.6 kernels"
 	fi
+
+	if has_version =sys-apps/pciutils-2.2.4* ; then
+		if built_with_use --missing true =sys-apps/pciutils-2.2.4* zlib ; then
+			eerror "Compile will fail with =sys-apps/pciutils-2.2.4* emerge with USE=zlib"
+			eerror "If you dislike this, then attach a patch to Bug 128468"
+			die "You MUST build pciutils without the zlib USE flag"
+		fi
+	fi
+
 	linux-info_pkg_setup
 }
 
