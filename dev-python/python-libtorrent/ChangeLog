@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Mar 2007; Peter Weller <welp@gentoo.org>
+  python-libtorrent-0.4.0.ebuild:
+  Keyword ~x86-fbsd
+
   07 Feb 2007; Tiziano Müller <dev-zero@gentoo.org>
   python-libtorrent-0.4.0.ebuild:
   Added NEED_PYTHON instead of dev-lang/python in DEPEND
