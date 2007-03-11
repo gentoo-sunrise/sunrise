@@ -27,3 +27,13 @@ src_install() {
 	newins pyq pyq.py
 	make_wrapper pyq "python /usr/$(get_libdir)/python${PYVER}/site-packages/pyq.py"
 }
+
+pkg_postinst() {
+	python_version
+	python_mod_optimize ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages
+}
+
+pkg_postrm() {
+	python_version
+	python_mod_cleanup ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages
+}
