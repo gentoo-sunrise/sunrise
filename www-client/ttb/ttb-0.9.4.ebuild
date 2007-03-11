@@ -3,7 +3,7 @@
 # $Header: $
 
 NEED_PYTHON="2.2.0"
-inherit python distutils
+inherit eutils distutils
 
 DESCRIPTION="TeleText Browser for Dutch teletext pages from NOS"
 HOMEPAGE="http://www.djcbsoftware.nl/code/ttb/"
