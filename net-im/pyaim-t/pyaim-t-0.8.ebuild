@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.3
+
 inherit eutils python multilib
 
 DESCRIPTION="Python based jabber transport for AIM"
@@ -21,8 +23,6 @@ RDEPEND="${DEPEND}
 	>=dev-python/twisted-web-0.5.0
 	web? ( >=dev-python/nevow-0.4.1 )
 	>=dev-python/imaging-1.1"
-
-NEED_PYTHON=2.3
 
 src_install() {
 	local inspath
@@ -49,6 +49,14 @@ src_install() {
 }
 
 pkg_postinst() {
+	python_version
+	python_mod_optimize ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+
 	elog "A sample configuration file has been installed in /etc/jabber/${PN}.xml."
 	elog "Please edit it and the configuration of your Jabber server to match."
+}
+
+pkg_postrm() {
+	python_version
+	python_mod_cleanup ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 }
