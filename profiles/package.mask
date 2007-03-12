@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Nathan Smith <ndansmith@gmail.com> (12 March 2007)
+# This is broken and will most likely not build until patches
+# arrive from upstream
+=games-engines/dagii-0.4
+
 # Christian Faulhammer <opfer@gentoo.org> (08 Mar 2007)
 # live ebuilds should be masked
 ~dev-util/ticpp-9999
