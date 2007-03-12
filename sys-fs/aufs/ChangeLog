@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Mar 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
+  aufs-20070212.ebuild, +files/aufs-20070212-ksize.patch,
+  +files/aufs-20070212-lhash.patch:
+  Fixed a bug using the lhash and ksize kernel patch
+
   14 Feb 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
   aufs-20070212.ebuild:
   Changed Variablename  to , changed ! kernel_is gt to kernel_is lt

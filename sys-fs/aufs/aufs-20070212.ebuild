@@ -4,7 +4,7 @@
 
 inherit eutils linux-mod
 
-DESCRIPTION="Another Unionfs is an entirely re-designed and re-implemented Unionfs."
+DESCRIPTION="An entirely re-designed and re-implemented Unionfs."
 HOMEPAGE="http://aufs.sourceforge.net/"
 SRC_URI="http://www.fh-kl.de/~torsten.kockler/gentoo/${P}.tar.bz2"
 
@@ -17,18 +17,75 @@ MODULE_NAMES="aufs(addon/fs/${PN}:)"
 BUILD_PARAMS="KDIR=${KV_DIR} -f local.mk"
 BUILD_TARGETS="all"
 
-pkg_setup(){
+check_patch() {
+	get_version
+
+	# Check if ksize Patch has to be applied
+	if use ksize ; then
+		APPLY_KSIZE_PATCH="n"
+		# If ksize patch is not applied 
+		if ! grep -qs "EXPORT_SYMBOL(ksize);" "${KV_DIR}/mm/slab.c" ; then
+			APPLY_KSIZE_PATCH="y"
+		fi
+	fi
+	
+	# Check if lhash Patch has to be applied
+	if use nfs && kernel_is ge 2 6 19 ; then
+		APPLY_LHASH_PATCH="n"
+		# If lhash patch is not applied
+		if ! grep -qs "EXPORT_SYMBOL(__lookup_hash);" "${KV_DIR}/fs/namei.c" \
+		&& ! grep -qs "struct dentry * __lookup_hash(struct qstr *name, struct dentry
+		* base, struct nameidata *nd);" "${KV_DIR}/fs/namei.h" ; then
+			APPLY_LHASH_PATCH="y"
+		fi
+	fi
+}
+
+pkg_setup() {
 	# kernel version check
-	if kernel_is lt 2 6 16
-	then
-		eerror
-		eerror "Aufs is being developed and tested on linux-2.6.16 and later."
+	if kernel_is lt 2 6 16 ; then
+		eerror "${PN} is being developed and tested on linux-2.6.16 and later."
 		eerror "Make sure you have a proper kernel version!"
-		eerror
 		die "Wrong kernel version"
 	fi
 
+	check_patch
+
+	# If a patch has to be applied
+	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] || [[ ${APPLY_LHASH_PATCH} == "y" ]] ; then
+		ewarn "Patching your kernel..."
+		cd ${KV_DIR}
+	fi
+	
+	# If the ksize patch has to be applied
+	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] ; then
+		epatch "${FILESDIR}"/${P}-ksize.patch
+	fi
+
+	# If the lhash patch has to be applied
+	if [[ ${APPLY_LHASH_PATCH} == "y" ]] ; then
+		epatch "${FILESDIR}"/${P}-lhash.patch
+	fi
+
 	linux-mod_pkg_setup
+}
+
+src_unpack(){
+	unpack ${A}
+	cd "${S}"
+
+	# Enable ksize Patch in local.mk
+	if use ksize
+	then
+		sed -i -e 's/^#CONFIG_AUFS_KSIZE_PATCH/CONFIG_AUFS_KSIZE_PATCH/g' local.mk || die "Sed failed!"
+	fi
+	
+	# Enable lhash Patch in local.mk
+	if use nfs && kernel_is ge 2 6 19
+	then
+		sed -i -e 's/^#CONFIG_AUFS_LHASH_PATCH/CONFIG_AUFS_LHASH_PATCH/g' local.mk || die "Sed failed!"
+	fi
+
 }
 
 src_install() {
@@ -40,51 +97,32 @@ src_install() {
 }
 
 pkg_postinst() {
-
-	# ksize Patch
-	if use ksize
-	then
-		# Check if Kernel is already patched
-		if grep -qs "EXPORT_SYMBOL(ksize);" "${KV_DIR}/mm/slab.c"
-		then
-			einfo "Your kernel has already been patched for ksize"
-		else
-			# Patch kernel
-			cd "${KV_DIR}"
-			epatch "${S}/ksize.patch"
-			ewarn
-			ewarn
-			ewarn "You have to recompile your kernel to make ksize work"
-			ewarn
-		fi
-	fi
-
-	# lhash Patch
-	if use nfs && kernel_is ge 2 6 19
-	then
-		# Check if kernel is already patched
-		if grep -qs "EXPORT_SYMBOL(__lookup_hash);" "${KV_DIR}/fs/namei.c" ||
-		grep -qs "struct dentry * __lookup_hash(struct qstr *name, struct dentry
-		* base, struct nameidata *nd);" "${KV_DIR}/fs/namei.h"
-		then
-			einfo "Your kernel has already been patched for lhash"
-		else
-			# Patch kernel
-			cd "${KV_DIR}"
-			epatch "${S}/lhash.patch"
-			ewarn
-			ewarn
-			ewarn "You have to recompile your kernel to make the lhash patch for nfs-support work"
-			ewarn
-		fi
-	fi
+	elog "To be able to use aufs, you have to load the kernel module by typing:"
+	elog "modprobe aufs"
+	elog "For further information refer to the aufs man page"
 
 	linux-mod_pkg_postinst
+}
 
-	einfo
-	einfo "To be able to use aufs, you have to load the kernel module by typing:"
-	einfo "modprobe aufs"
-	einfo
-	einfo "For further information refer to the aufs man page"
-	einfo
+pkg_postrm() {
+	check_patch
+
+	# Tell the user that his kernel has already been patched
+	if [[ ${APPLY_KSIZE_PATCH} == "n" ]] || [[ ${APPLY_LHASH_PATCH} == "n" ]]
+	then
+		ewarn "Your kernel has been patched previously by this ebuild."
+		ewarn "You can undo the patches by executing the following:"
+		echo
+		ewarn "cd ${KV_DIR}; make mrproper and re-emerge your kernel - ${KV_FULL}"
+	fi
+
+	# Tell the user to recompile his kernel
+	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] || [[ ${APPLY_LHASH_PATCH} == "y" ]]
+	then
+		echo
+		ewarn "Remember to re-compile your kernel to make the patch(es) work"
+		ewarn
+	fi
+
+	linux-mod_pkg_postrm
 }
