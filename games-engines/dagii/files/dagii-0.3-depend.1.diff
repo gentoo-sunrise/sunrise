@@ -1,0 +1,8 @@
+--- src/depend.1
+--- src/depend.1
+38,39c38,39
+< sshot.o: sshot.cc config.h /sw/include/libpng12/png.h \
+<   /sw/include/libpng12/pngconf.h Canvas.h types.h dagii.h debug.h \
+---
+> sshot.o: sshot.cc config.h /usr/include/libpng12/png.h \
+>   /usr/include/libpng12/pngconf.h Canvas.h types.h dagii.h debug.h \

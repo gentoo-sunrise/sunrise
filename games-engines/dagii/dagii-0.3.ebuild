@@ -10,12 +10,18 @@ SRC_URI="http://www.dagii.org/dist/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~ppc"
 IUSE="png"
 
 DEPEND="png? ( media-libs/libpng )
 	media-libs/libsdl"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-depend.1.diff"
+}
 
 src_compile() {
 	egamesconf $(use_enable png libpng ) || die "econf failed"
