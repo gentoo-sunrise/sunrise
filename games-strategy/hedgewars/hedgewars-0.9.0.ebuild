@@ -5,16 +5,15 @@
 inherit qt4 games
 
 DESCRIPTION="Free Worms-like turn based strategy game"
+HOMEPAGE="http://hedgewars.org/"
 SRC_URI="http://hedgewars.org/download/${PN}-src-${PV}.tar.bz2"
 
-HOMEPAGE="http://hedgewars.org/"
-
-KEYWORDS="~amd64 ~x86"
-SLOT="0"
 LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-util/cmake-2.4.0 
+DEPEND=">=dev-util/cmake-2.4.0
 	$(qt4_min_version 4.2)
 	>=dev-lang/fpc-1.9.4
 	media-libs/libsdl
@@ -22,7 +21,6 @@ DEPEND=">=dev-util/cmake-2.4.0
 	media-libs/sdl-mixer
 	media-libs/sdl-image
 	media-libs/sdl-net"
-
 RDEPEND="${DEPEND}"
 
 src_compile() {
