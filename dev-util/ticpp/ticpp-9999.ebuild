@@ -13,12 +13,13 @@ SRC_URI=""
 LICENSE="GPL-2"
 KEYWORDS="~x86"
 SLOT="0"
-IUSE="debug examples"
+IUSE="debug doc"
 
-DEPEND="dev-util/premake"
+DEPEND="dev-util/premake
+	doc? ( app-doc/doxygen sys-apps/sed )"
 RDEPEND=""
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_compile() {
 	premake --target gnu || die "creating Makefile failed"
@@ -26,6 +27,10 @@ src_compile() {
 		emake || die "emake failed"
 	else
 		emake CONFIG=Release || die "emake failed"
+	fi
+	if use doc ; then
+		sed -i -e '/GENERATE_HTMLHELP/s:YES:NO:' dox || die "sed failed"
+		doxygen dox || die "doxygen failed"
 	fi
 }
 
@@ -40,11 +45,8 @@ src_install () {
 	fi
 
 	dodoc {changes,readme,tutorial_gettingStarted,tutorial_ticpp}.txt
-	dohtml docs/* || die "installing docs failed"
 
-	if use examples ; then
-		rm TiCppTut/TiCppTut{.cbp,.dsp,.dsw,_vc7.vcproj,.vcproj}
-		insinto /usr/share/doc/${PF}/samples
-		doins TiCppTut/* || die "installing examples"
+	if use doc ; then
+		dohtml docs/* || die "installing docs failed"
 	fi
 }

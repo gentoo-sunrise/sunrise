@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  ticpp-9999.ebuild:
+  make the ebuild fit the new svn structure
+
   07 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   ticpp-9999.ebuild:
   Small correction, now installs into /usr/include/ticpp
