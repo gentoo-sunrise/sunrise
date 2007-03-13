@@ -15,8 +15,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="perl-core/Sys-Syslog
-	 dev-perl/Net-DNS
-	 >=mail-mta/postfix-2.1"
+	dev-perl/Net-DNS
+	>=mail-mta/postfix-2.1"
 
 pkg_setup() {
 	enewgroup 'polw'
@@ -24,7 +24,7 @@ pkg_setup() {
 }
 
 src_install() {
-#Makefile does not install. Performing manual install
+	#Makefile does not install. Performing manual install
 	exeinto /usr/lib/postfix
 	doexe policyd-weight
 	fowners root:wheel /usr/lib/postfix/policyd-weight
