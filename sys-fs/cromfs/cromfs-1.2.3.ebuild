@@ -4,11 +4,11 @@
 
 inherit toolchain-funcs
 
-DESCRIPTION="Cromfs is a FUSE based compressed read-only filesystem for Linux."
+DESCRIPTION="a FUSE-based compressed read-only filesystem"
 HOMEPAGE="http://bisqwit.iki.fi/source/cromfs.html"
-SRC_URI="http://bisqwit.iki.fi/src/arch/cromfs-1.2.3.tar.bz2"
+SRC_URI="http://bisqwit.iki.fi/src/arch/${P}.tar.bz2"
 
-LICENSE="GPL-1"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE="static"
