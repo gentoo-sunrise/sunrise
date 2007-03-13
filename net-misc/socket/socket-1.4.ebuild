@@ -12,10 +12,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
-
-src_compile() {
-	emake || die "emake failed"
-}
+RDEPEND=""
 
 src_install() {
 	dobin socket

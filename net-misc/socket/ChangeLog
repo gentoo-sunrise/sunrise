@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2007; Santiago M. Mola <cooldwind@gmail.com> socket-1.4.ebuild:
+  Set RDEPEND and remove redundant src_compile()
+
   22 Dec 2006; Jakub Moc <jakub@gentoo.org> socket-1.4.ebuild:
   nuke redundant DEPEND, use docinto instead of doins
 
