@@ -12,15 +12,16 @@ SRC_URI="http://downloads.guifications.org/gaim-plugins/Plugin%20Pack/${MY_P}.ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-FLAGS="autorejoin awaynotify bit blistops dice difftopic eight_ball flip \
-gRIM groupmsg irssi lastseen listhandler mystatusbox nicksaid oldlogger \
+PLUGINS="autorejoin awaynotify bashorg bit blistops dice difftopic eight_ball
+flip gRIM groupmsg irssi lastseen listhandler mystatusbox nicksaid oldlogger
 plonkers sepandtab showoffline simfix slashexec sslinfo talkfilters xchat-chats"
-IUSE="${FLAGS} bashorg debug"
+IUSE="${PLUGINS} debug"
 
 DEPEND="~net-im/gaim-2.0.0_beta6
 	talkfilters? ( app-text/talkfilters )"
+RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_compile() {
 	einfo "The plugins that are to be built are configured via use flags."
@@ -44,22 +45,24 @@ src_compile() {
 	# New Line
 	# Offline Message
 
-	local myconf="--with-plugins="
+	local myconf=""
+	local plugins=${PLUGINS/bashorg/bash}
+	local myplugins=""
 
-	# bashorg has to add "bash" to the configure
-	use bashorg && myconf="${myconf}bash,"
-
-	for flag in $FLAGS ; do
-		if use ${flag} ; then
-			myconf="${myconf}${flag},"
-		fi
+	for plugin in ${plugins} ; do
+		use ${plugin} && myplugins="${myplugins}${plugin},"
 	done
+	if [ ! -z ${myplugins} ] ; then
+		myconf="--with-plugins=${myplugins}"
+	else
+		myconf="--with-plugins=${plugins}"
+	fi
 
-	econf "${myconf}" $(use_enable debug) || die "Configuration failed with the configuration $myconf"
+	econf "${myconf}" $(use_enable debug) || die "econf failed with ${myconf}"
 	emake -j1 || die "emake failed"
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO VERSION
 }

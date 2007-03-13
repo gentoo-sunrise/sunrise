@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2007; Santiago M. Mola <cooldwind@gmail.com>
+  gaim-plugin_pack-1.0_beta6.ebuild:
+  Fix plugin selection and general fixing
+
   07 Mar 2007; Jakub Moc <jakub@gentoo.org>
   gaim-plugin_pack-1.0_beta6.ebuild:
   Fix DEPEND, cosmetics
