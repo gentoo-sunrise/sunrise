@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2007; Martin Hierling <mad@cc.fh-luh.de> -dbmail-2.2.3.ebuild,
+  -files/dbmail-2.2.3-removeversion.patch, +dbmail-2.2.4.ebuild,
+  +files/dbmail-2.2.4-removeversion.patch:
+  version bump
+
   28 Feb 2007; Martin Hierling <mad@cc.fh-luh.de> -dbmail-2.2.2-r1.ebuild,
   -files/dbmail-2.2.2-messages.patch,
   -files/dbmail-2.2.2-removeversion.patch, +dbmail-2.2.3.ebuild,
