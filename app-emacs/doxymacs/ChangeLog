@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2007; Christian Schlotter (schlotter) <again@gmx.de>
+  doxymacs-1.7.0.ebuild:
+  Remove dependency on app-emacs/w3, as it was removed from the tree. Thanks
+  to Santiago M. Mola Velasco in bug #110083.
+
   13 Jan 2007; Jakub Moc <jakub@gentoo.org> doxymacs-1.7.0.ebuild:
   No need to dodoc COPYING and INSTALL
 

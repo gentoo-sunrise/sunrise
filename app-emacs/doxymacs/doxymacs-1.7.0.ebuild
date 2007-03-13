@@ -17,7 +17,7 @@ DEPEND="virtual/emacs
 	>=dev-libs/libxml2-2.6.13"
 # w3 is only needed for older emacsen, as URL package is part of >=emacs-22
 RDEPEND="${DEPEND}
-	|| ( app-emacs/w3 >=app-editors/emacs-cvs-22 >=app-editors/emacs-22 )"
+	|| ( >=app-editors/emacs-cvs-22 >=app-editors/emacs-22 )"
 
 SITEFILE="${FILESDIR}/50doxymacs-gentoo.el"
 DOCS="AUTHORS ChangeLog NEWS README TODO"
