@@ -84,7 +84,7 @@ src_compile() {
 
 src_install() {
 	insinto "$(/bin/readlink -f ${KV_DIR})"
-	doins -r arch/*
+	doins -r arch
 	dodoc README
 	doinitd gentoo/etc/init.d/undervolt
 	doconfd gentoo/etc/conf.d/undervolt

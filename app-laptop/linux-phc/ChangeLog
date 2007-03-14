@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Mar 2007; Konrad Korzec <korzec@gmail.com> linux-phc-0.2.8.ebuild:
+  adjusted copying back to kernel tree, now it works
+
   05 Feb 2007; Konrad Korzec <korzec@gmail.com> linux-phc-0.2.8.ebuild:
   removed 'ge' after kernel_is to make it install with more kernels
 
