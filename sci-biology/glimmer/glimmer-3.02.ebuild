@@ -29,7 +29,8 @@ src_compile() {
 }
 
 src_install() {
-	dobin bin/{anomaly,build-icm,entropy-score,glimmer3,multi-extract,start-codon-distrib,uncovered,build-fixed,entropy-profile,extract,long-orfs,score-fixed,window-acgt}
+	rm bin/test
+	dobin bin/*
 
 	dodir /usr/share/${PN}/scripts
 	insinto /usr/share/${PN}/scripts

@@ -3,6 +3,9 @@
 # $Header: $
 
   14 Mar 2007; AK <gentoo@horizon.ath.cx> glimmer-3.02.ebuild:
+  simplify src_install a bit
+
+  14 Mar 2007; AK <gentoo@horizon.ath.cx> glimmer-3.02.ebuild:
   aiieeee, syntax terror!
 
   14 Mar 2007; AK <gentoo@horizon.ath.cx> +glimmer-3.02.ebuild,
