@@ -22,8 +22,8 @@ RDEPEND=""
 S=${WORKDIR}/${MY_P}
 
 src_compile() {
-	sed -i -e 's|\(set awkpath =\).*|\1 /usr/share/'${PN}'/scripts' \
-		-e 's|\(set glimmerpath =\).*|\1 /usr/bin' scripts/*
+	sed -i -e 's|\(set awkpath =\).*|\1 /usr/share/'${PN}'/scripts|' \
+		-e 's|\(set glimmerpath =\).*|\1 /usr/bin|' scripts/* || die "failed to rewrite paths"
 	cd src
 	emake || die "emake failed"
 }
