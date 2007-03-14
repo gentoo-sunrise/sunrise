@@ -4,14 +4,13 @@
 
 inherit versionator
 
-MY_P=${PN}${PV}
 MY_PV=$(delete_all_version_separators)
 
 DESCRIPTION="An HMM-based microbial gene finding system from TIGR"
 HOMEPAGE="http://www.cbcb.umd.edu/software/glimmer/"
 SRC_URI="http://www.cbcb.umd.edu/software/${PN}/${PN}${MY_PV}.tar.gz"
 
-LICENSE="glimmer"
+LICENSE="Artistic"
 SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
@@ -19,7 +18,7 @@ KEYWORDS="~x86"
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${PN}${PV}
 
 src_compile() {
 	sed -i -e 's|\(set awkpath =\).*|\1 /usr/share/'${PN}'/scripts|' \
