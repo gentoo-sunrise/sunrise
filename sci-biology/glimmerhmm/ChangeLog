@@ -1,0 +1,8 @@
+# ChangeLog for sci-biology/glimmerhmm
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Mar 2007; AK <gentoo@horizon.ath.cx> +glimmerhmm-3.0.1.ebuild,
+  +metadata.xml:
+  new package sci-biology/glimmerhmm (bug 170964)
+
