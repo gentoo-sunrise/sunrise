@@ -51,7 +51,7 @@ src_install() {
 pkg_postinst() {
 	python_version
 	python_mod_optimize ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
-	
+
 	elog "A sample configuration file has been installed in /etc/jabber/${PN}.xml."
 	elog "Please edit it and the configuration of your Jabber server to match."
 }
