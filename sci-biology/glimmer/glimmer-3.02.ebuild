@@ -4,12 +4,12 @@
 
 inherit versionator
 
-MY_P=glimmer${PV}
+MY_P=${PN}${PV}
 MY_PV=$(delete_all_version_separators)
 
 DESCRIPTION="An HMM-based microbial gene finding system from TIGR"
 HOMEPAGE="http://www.cbcb.umd.edu/software/glimmer/"
-SRC_URI="http://www.cbcb.umd.edu/software/glimmer/glimmer${MY_PV}.tar.gz"
+SRC_URI="http://www.cbcb.umd.edu/software/${PN}/${PN}${MY_PV}.tar.gz"
 
 LICENSE="glimmer"
 SLOT="0"
