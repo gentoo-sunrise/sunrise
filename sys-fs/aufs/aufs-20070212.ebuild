@@ -28,7 +28,7 @@ check_patch() {
 			APPLY_KSIZE_PATCH="y"
 		fi
 	fi
-	
+
 	# Check if lhash Patch has to be applied
 	if use nfs && kernel_is ge 2 6 19 ; then
 		APPLY_LHASH_PATCH="n"
@@ -56,7 +56,7 @@ pkg_setup() {
 		ewarn "Patching your kernel..."
 		cd ${KV_DIR}
 	fi
-	
+
 	# If the ksize patch has to be applied
 	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] ; then
 		epatch "${FILESDIR}"/${P}-ksize.patch
@@ -79,7 +79,7 @@ src_unpack(){
 	then
 		sed -i -e 's/^#CONFIG_AUFS_KSIZE_PATCH/CONFIG_AUFS_KSIZE_PATCH/g' local.mk || die "Sed failed!"
 	fi
-	
+
 	# Enable lhash Patch in local.mk
 	if use nfs && kernel_is ge 2 6 19
 	then
@@ -121,7 +121,7 @@ pkg_postrm() {
 	if [[ DO_CHECK == "y" ]] ; then
 		check_patch
 		if [[ ${APPLY_KSIZE_PATCH} == "n" ]] || [[ ${APPLY_LHASH_PATCH} == "n" ]] ; then
-    			ewarn "Your kernel has been patched previously by this ebuild."
+			ewarn "Your kernel has been patched previously by this ebuild."
 			ewarn "You can undo the patches by executing the following:"
 			echo
 			ewarn "cd ${KV_DIR}; make mrproper, re-emerge and re-compile your kernel - ${KV_FULL}"
