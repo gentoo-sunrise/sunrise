@@ -4,7 +4,7 @@
 
 MY_P=GlimmerHMM
 
-DESCRIPTION="A eukaryotic gene finding system from TIGR"
+DESCRIPTION="An eukaryotic gene finding system from TIGR"
 HOMEPAGE="http://www.cbcb.umd.edu/software/GlimmerHMM/"
 SRC_URI="ftp://ftp.cbcb.umd.edu/pub/software/glimmerhmm/${MY_P}-${PV}.tar.gz"
 
