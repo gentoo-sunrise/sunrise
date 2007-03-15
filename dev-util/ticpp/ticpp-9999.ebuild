@@ -23,11 +23,10 @@ S=${WORKDIR}/${PN}
 
 src_compile() {
 	premake --target gnu || die "creating Makefile failed"
-	if use debug ; then
-		emake || die "emake failed"
-	else
-		emake CONFIG=Release || die "emake failed"
+	if use !debug ; then
+		myconf="CONFIG=Release"
 	fi
+	emake ${myconf} || die "emake failed"
 	if use doc ; then
 		sed -i -e '/GENERATE_HTMLHELP/s:YES:NO:' dox || die "sed failed"
 		doxygen dox || die "doxygen failed"
@@ -36,7 +35,7 @@ src_compile() {
 
 src_install () {
 	insinto /usr/include/ticpp
-	doins ticpp.h ticpprc.h || die "installing headers failed"
+	doins *.h || die "installing headers failed"
 
 	if use debug ; then
 		dolib libticppd.a || die "installing library failed"

@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  ticpp-9999.ebuild:
+  ticpp is a fork of tinyxml and not a plain wrapper that builds on top of it
+
   13 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   ticpp-9999.ebuild:
   make the ebuild fit the new svn structure
