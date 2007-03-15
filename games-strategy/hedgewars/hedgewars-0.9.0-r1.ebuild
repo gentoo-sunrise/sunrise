@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-util/cmake-2.4.0
+DEPEND=">=dev-util/cmake-2.4.4
 	$(qt4_min_version 4.2)
 	>=dev-lang/fpc-1.9.4
 	media-libs/libsdl
@@ -28,6 +28,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${WORKDIR}/${PF}.patch"
+	epatch "${FILESDIR}"/cmake_req_version.patch
 }
 
 src_compile() {
