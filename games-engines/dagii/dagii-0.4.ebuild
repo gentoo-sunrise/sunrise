@@ -19,6 +19,7 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 	egamesconf $(use_enable png libpng ) || die "econf failed"
+	emake dep || die "emake dep failed"
 	emake || die "emake failed"
 }
 
@@ -35,5 +36,6 @@ pkg_postinst() {
 	elog "or in a location passed as a path in the command line"
 	elog "For example: \"$ dagii /usr/share/games/kq3\""
 	elog "Also, dagii can play games which are stored in .zip archives."
+	echo
 	games_pkg_postinst
 }
