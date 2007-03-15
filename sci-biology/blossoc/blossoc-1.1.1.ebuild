@@ -15,5 +15,5 @@ DEPEND="sci-libs/gsl"
 RDEPEND="${DEPEND}"
 
 src_install() {
-	emake install DESTDIR=${D} || die "emake install failed"
+	emake install DESTDIR="${D}" || die "emake install failed"
 }
