@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Mar 2007; Ali Polatel (hawking) <polatel@nerdshack.com>
+  +sshguard-0.91-r1.ebuild, +files/sshguard-0.91-pam.patch:
+  added patch to add support for PAM auth messages
+
   08 Mar 2007; Christian Faulhammer <opfer@gentoo.org> sshguard-0.91.ebuild:
   added trailing slash to HOMEPAGE URI
 
