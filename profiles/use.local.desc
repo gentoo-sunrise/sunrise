@@ -90,6 +90,8 @@ net-mail/simscan:received - Enable the add of a Received line in scanned message
 net-mail/simscan:regex - Enable regex attachment filename checking
 net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
+net-p2p/btg:cppunit - Enable building unittests.
+net-p2p/btg:session-saving - Enable saving sessions (daemon).
 net-p2p/murmur:trayicon - Enable support for tray icon
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
