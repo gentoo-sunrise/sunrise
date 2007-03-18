@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="protects hosts from brute force attacks against ssh"
-HOMEPAGE="http://sshguard.sourceforge.net"
+HOMEPAGE="http://sshguard.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
