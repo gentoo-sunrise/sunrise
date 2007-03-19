@@ -28,7 +28,7 @@ src_unpack() {
 	cd "${S}"
 
 	# Respect CFLAGS and don't use --as-needed by default
-	epatch "${FILESDIR}/${P}-CFLAGS.patch"
+	epatch "${FILESDIR}/notecase-1.3.6-CFLAGS.patch"
 
 	if ! use gnome; then
 		# Comment variable in the Makefile if we don't have gnome
