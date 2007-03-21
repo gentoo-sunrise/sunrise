@@ -28,7 +28,7 @@ src_unpack() {
 	#Tell the configure script where our db version is
 	db_version="$(db_findver sys-libs/db)" || die "Couldn't find db"
 	sed -i -e "s:db_version=.*:db_version=${db_version}:" "${S}/dist/configure" \
-	    || die "Couldn't set db_version with sed"
+		|| die "Couldn't set db_version with sed"
 }
 
 src_compile() {
