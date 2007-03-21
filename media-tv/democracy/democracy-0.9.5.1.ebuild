@@ -25,7 +25,7 @@ RDEPEND="dev-python/pyrex
 		x11-apps/xset
 		=dev-python/dbus-python-0.71"
 		# dbus-python versions >0.80 changed the api so democracyplayer does
-		# not work with them, therefore depending on the 0.71 version in portage 
+		# not work with them, therefore depending on the 0.71 version in portage
 		# see https://develop.participatoryculture.org/democracy/ticket/3067
 
 DEPEND="${RDEPEND}
