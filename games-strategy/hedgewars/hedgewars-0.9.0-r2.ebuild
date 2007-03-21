@@ -14,15 +14,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-util/cmake-2.4.4
-	$(qt4_min_version 4.2)
+RDEPEND="$(qt4_min_version 4.2)
 	>=dev-lang/fpc-1.9.4
 	media-libs/libsdl
 	media-libs/sdl-ttf
 	media-libs/sdl-mixer
 	media-libs/sdl-image
 	media-libs/sdl-net"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	>=dev-util/cmake-2.4.4"
 
 src_unpack() {
 	unpack ${A}
