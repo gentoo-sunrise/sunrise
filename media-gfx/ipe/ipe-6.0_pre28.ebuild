@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit qt4
+inherit qt4 eutils
 
 MY_P="${P/_/}"
 DESCRIPTION="An extensible drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
@@ -39,6 +39,13 @@ search_urw_fonts() {
 }
 
 pkg_setup() {
+	if has_version ">=x11-libs/qt-4.2.2" && ! built_with_use x11-libs/qt qt3support; then
+		eerror
+		eerror "You need to rebuild x11-libs/qt with USE=qt3support enabled"
+		eerror
+		die "please rebuild x11-libs/qt with USE=qt3support"
+	fi
+
 	search_urw_fonts
 	if [ $? -eq 0 ]; then
 		einfo "URW fonts found in ${URWFONTDIR}."

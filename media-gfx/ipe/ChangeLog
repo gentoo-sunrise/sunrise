@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2007; Christian Faulhammer <opfer@gentoo.org> ipe-6.0_pre28.ebuild:
+  add a check for USE=qt3support with x11-libs/qt-4.2 and later
+
   11 Jan 2007; Jakub Moc <jakub@gentoo.org> ipe-6.0_pre28.ebuild:
   Fix src_compile; cosmetics
 
