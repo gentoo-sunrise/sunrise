@@ -35,6 +35,7 @@ mail-filter/MailScanner:exim - Set exim to used MTA
 mail-filter/MailScanner:f-prot - Enable usage of fprot virus scanner
 mail-filter/MailScanner:postfix - Set postfix to used MTA
 mail-filter/MailScanner:spamassassin - Enable usage of spamassassin for spam detection
+media-gfx/fyre:cluster - Add support for cluster rendering
 media-gfx/openscenegraph:coin - Compile coin plugin
 media-gfx/openscenegraph:gdal - Compile gdal plugin
 media-gfx/openscenegraph:introspection - Compile osgIntrospection

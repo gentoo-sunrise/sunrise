@@ -1,0 +1,11 @@
+# ChangeLog for media-gfx/fyre
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Mar 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  +fyre-1.0.1.ebuild, +files/fyre-1.0.1-conf, +files/fyre-1.0.1-init,
+  +metadata.xml:
+  New ebuild for bug 58239. Thanks to Aaron Walker (ka0ttic), Ben Anderson
+  <roothorick@new.rr.com>, Cory Maccarrone <darkstar6262@cwazy.co.uk>, Micah
+  Dowty <micah@navi.cx>, and Ed Catmur <ed@catmur.co.uk>
+

@@ -1,0 +1,20 @@
+#!/sbin/runscript
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting fyre cluster daemon"
+	start-stop-daemon --start --quiet --nicelevel ${FYRE_NICE} \
+		--pidfile /var/run/fyre.pid \
+		--startas /usr/bin/fyre -- \
+		-r --pidfile /var/run/fyre.pid ${FYRE_OPTS}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping fyre cluster daemon"
+	start-stop-daemon --stop --quiet --pidfile /var/run/fyre.pid
+	eend $?
+}

@@ -1,0 +1,9 @@
+# /etc/conf.d/fyre : config file for /etc/init.d/fyre
+
+# Set this option to run fyre cluster daemon with extra parameters,
+# for example, FYRE_OPTS="--port 7931 --hidden"
+# See "fyre -h" for more information
+FYRE_OPTS=""
+
+# Set this for niceness
+FYRE_NICE="19"
