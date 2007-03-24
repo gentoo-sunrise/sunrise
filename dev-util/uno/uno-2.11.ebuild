@@ -16,7 +16,7 @@ IUSE="doc"
 DEPEND=""
 RDEPEND=""
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_unpack() {
 	unpack ${A}
@@ -32,11 +32,11 @@ src_install() {
 	dobin src/uno src/uno_local src/uno_global
 	doman doc/uno.1
 
-	insinto "/usr/share/${PN}"
+	insinto /usr/share/${PN}
 	doins -r prop
 
 	if use doc ; then
-		insinto "/usr/share/doc/${PF}"
+		insinto /usr/share/doc/${PF}
 		doins doc/*.pdf
 	fi
 }

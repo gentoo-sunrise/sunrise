@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Mar 2007; Tiziano Müller <dev-zero@gentoo.org>
+  -files/2.10-makefile.patch, -uno-2.10.ebuild, +files/2.11-makefile.patch,
+  +uno-2.11.ebuild:
+  Version bump.
+
   03 Feb 2007; Tiziano Müller <dev-zero@gentoo.org>
   -files/2.9-makefile.patch, -uno-2.9.ebuild, +files/2.10-makefile.patch,
   +uno-2.10.ebuild:
