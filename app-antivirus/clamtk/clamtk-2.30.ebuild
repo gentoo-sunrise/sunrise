@@ -18,13 +18,14 @@ for i in ${LANGS}; do
 	IUSE="${IUSE} linguas_${i}"
 done
 
-DEPEND="dev-perl/gtk2-perl
+DEPEND=""
+RDEPEND="dev-perl/gtk2-perl
 	dev-perl/File-Find-Rule
 	dev-perl/libwww-perl
 	dev-perl/Date-Calc
-	app-antivirus/clamav"
+	app-antivirus/clamav
+	nls? ( dev-perl/Locale-gettext )"
 
-RDEPEND="${DEPEND}"
 
 src_install() {
 	dobin clamtk
