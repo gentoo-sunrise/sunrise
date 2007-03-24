@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Mar 2007; Jakub Moc <jakub@gentoo.org> -xfprot-1.18.ebuild,
+  +xfprot-1.19.ebuild:
+  Version bump, nuke old
+
   13 Feb 2007; Markus Ullmann <jokey@gentoo.org> -xfprot-1.17.ebuild:
   Drop old
 
