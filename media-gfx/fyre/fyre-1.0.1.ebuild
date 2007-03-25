@@ -16,7 +16,9 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 IUSE="cluster openexr"
 
-RDEPEND=">=gnome-base/libglade-2.4
+RDEPEND=">=dev-libs/glib-2.0
+	>=gnome-base/libglade-2.4
+	>=x11-libs/gtk+-2.0
 	cluster? ( >=net-libs/gnet-2.0 )
 	openexr? ( media-libs/openexr )"
 

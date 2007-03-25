@@ -6,7 +6,7 @@ depend() {
 
 start() {
 	ebegin "Starting fyre cluster daemon"
-	start-stop-daemon --start --quiet --nicelevel ${FYRE_NICE} \
+	start-stop-daemon --start --quiet --nicelevel ${FYRE_NICE:-19} \
 		--pidfile /var/run/fyre.pid \
 		--startas /usr/bin/fyre -- \
 		-r --pidfile /var/run/fyre.pid ${FYRE_OPTS}
