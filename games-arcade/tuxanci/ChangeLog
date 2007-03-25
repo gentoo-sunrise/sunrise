@@ -4,5 +4,5 @@
 
   25 Mar 2007; Jakub Moc <jakub@gentoo.org> +tuxanci-0.07.ebuild,
   +metadata.xml:
-  New ebuild, created by myself
+  New ebuild, created by myself. Bug 172153
 
