@@ -12,11 +12,11 @@ KEYWORDS="~x86"
 LICENSE="GPL-2"
 SLOT="0"
 
-RDEPEND="media-libs/libsdl
+DEPEND="media-libs/libsdl
 	media-libs/sdl-ttf
 	media-libs/sdl-image
 	media-libs/sdl-mixer"
-
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
