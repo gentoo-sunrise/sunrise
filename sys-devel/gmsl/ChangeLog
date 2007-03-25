@@ -1,0 +1,8 @@
+# ChangeLog for sys-devel/gmsl
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Mar 2007; Kevin Fullerton (kfullert)
+  <kevin.fullerton@shotgun-suicide.co.uk> +gmsl-1.0.7.ebuild, +metadata.xml:
+  New Ebuild for bug 172187
+
