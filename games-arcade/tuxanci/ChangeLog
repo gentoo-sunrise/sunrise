@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2007; Christian Faulhammer <opfer@gentoo.org> tuxanci-0.07.ebuild:
+  fix CVS header to stop repoman from complaining
+
   25 Mar 2007; Jakub Moc <jakub@gentoo.org> +tuxanci-0.07.ebuild,
   +metadata.xml:
   New ebuild, created by myself. Bug 172153
