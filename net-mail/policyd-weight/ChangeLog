@@ -1,9 +1,0 @@
-# ChangeLog for net-mail/policyd-weight
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  12 Mar 2007; Brian Evans (grknight) <grknight@scent-team.com>
-  +policyd-weight-0.1.14.3.ebuild, +files/policyd-weight.init.d,
-  +metadata.xml:
-  New Ebuild for bug 169646
-
