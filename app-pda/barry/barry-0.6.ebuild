@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Barry is an Open Source Linux application that will allow synchronization, backup, restore and program management for BlackBerry devices"
+DESCRIPTION="An application that will allow synchronization, backup, restore and program management for BlackBerry devices"
 HOMEPAGE="http://www.netdirect.ca/software/packages/barry/"
 SRC_URI="mirror://sourceforge/barry/${P}.tar.gz"
 
