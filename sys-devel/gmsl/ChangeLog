@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2007; Christian Faulhammer <opfer@gentoo.org> gmsl-1.0.7.ebuild:
+  add a trailing slash to HOMEPAGE URI
+
   25 Mar 2007; Kevin Fullerton (kfullert)
   <kevin.fullerton@shotgun-suicide.co.uk> +gmsl-1.0.7.ebuild, +metadata.xml:
   New Ebuild for bug 172187

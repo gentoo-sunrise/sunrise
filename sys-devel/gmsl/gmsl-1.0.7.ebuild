@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="GNU Make Standard Library"
-HOMEPAGE="http://gmsl.sourceforge.net"
+HOMEPAGE="http://gmsl.sourceforge.net/"
 SRC_URI="mirror://sourceforge/gmsl/${P}.tar.gz"
 
 LICENSE="BSD"
