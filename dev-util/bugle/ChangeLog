@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2007; Wolfgang Frisch (xororand) <xororand@frexx.de>
+  +bugle-0.0.20070325.ebuild:
+  New ebuild for BuGLe (Bug #143835)
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> bugle-0.0.20061109.ebuild:
   einfo -> elog, cosmetics
 
