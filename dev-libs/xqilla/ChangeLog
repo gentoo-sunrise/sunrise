@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Mar 2007; Chris Carlin (volkris) <carlin@jlab.org>
+  +xqilla-1.0.1-r1.ebuild:
+  Applied two upstream patches.
+
   04 Mar 2007; Chris Carlin (volkris) <carlin@jlab.org> xqilla-1.0.1.ebuild:
   Added RDEPEND line
 
