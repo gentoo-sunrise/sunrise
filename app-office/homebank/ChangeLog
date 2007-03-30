@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Mar 2007; Tiziano Müller <dev-zero@gentoo.org> -homebank-3.2.1.ebuild,
+  +homebank-3.3.ebuild, +files/homebank-3.3-libofx.patch:
+  Version bump. Dropped old version.
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   homebank-3.2.1.ebuild:
   adjusted DESCRIPTION
