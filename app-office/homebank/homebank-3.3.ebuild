@@ -4,8 +4,6 @@
 
 inherit eutils
 
-KEYWORDS="~amd64 ~x86"
-
 MY_P=${P}_unstable
 
 DESCRIPTION="The free software you have always wanted to manage your personal accounts at home"
@@ -14,6 +12,7 @@ SRC_URI="http://homebank.free.fr/public/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="ofx"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=x11-libs/gtk+-2.0
 	ofx? ( >=dev-libs/libofx-0.7 )"
