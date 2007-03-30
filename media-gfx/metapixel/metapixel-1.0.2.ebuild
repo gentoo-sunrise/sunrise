@@ -17,7 +17,7 @@ DEPEND="media-libs/giflib
 RDEPEND="${DEPEND}
 	dev-lang/perl"
 
-src_install () {
+src_install() {
 	dodir /usr/share/man/man1
 	emake PREFIX="${D}/usr" install || die "emake install failed"
 	dodoc NEWS README
