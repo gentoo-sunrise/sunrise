@@ -1,0 +1,385 @@
+# ChangeLog for net-wireless/bluez-utils
+# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-utils/ChangeLog,v 1.84 2007/02/13 12:55:59 cryos Exp $
+
+  01 Apr 2007; Dick Marinus <dm@chello.nl>
+  +files/bluez-utils-2.24-udev.rules, +files/bluez-utils-2.24-udev.script,
+  +files/bluez-utils-2.25-init.d, +bluez-utils-3.9.ebuild, +metadata.xml:
+  updated ebuild for bug 143154
+
+  13 Feb 2007; Marcus D. Hanwell <cryos@gentoo.org>
+  bluez-utils-2.25-r1.ebuild:
+  Stable on amd64.
+
+  10 Feb 2007; <genstef@gentoo.org> bluez-utils-2.24.ebuild,
+  bluez-utils-2.25-r1.ebuild:
+  Remove udev useflag, bug 158114
+
+  15 Jan 2007; Olivier Crête <tester@gentoo.org>
+  +files/bluez-utils-2.25-dinovo-mdl.patch, bluez-utils-2.25-r1.ebuild:
+  Add patch for newer logitech BT equipement, fixes bug #144547
+
+  28 Aug 2006; Gustavo Zacarias <gustavoz@gentoo.org>
+  bluez-utils-2.25-r1.ebuild:
+  Stable on hppa
+
+  22 Aug 2006; Alastair Tse <liquidx@gentoo.org> -bluez-utils-2.25.ebuild:
+  removing older ebuilds
+
+  22 Aug 2006; Alastair Tse <liquidx@gentoo.org> -files/2.10-r1/pin,
+  -files/2.10-r1/pin-helper.sh, -files/2.15-bluepin.patch,
+  -files/bluez-utils-2.3-bluepin.patch, -files/2.16/bluetooth.rc,
+  -files/bluez-utils-2.3-bluepin-gtk2.patch,
+  -files/bluez-utils-2.3-rfcomm_fflush.patch,
+  -files/bluez-utils-2.10-handsfree.patch, -files/2.10-r1/bluetooth.rc:
+  cleaning out files/
+
+  18 Jul 2006; Michael Hanselmann <hansmi@gentoo.org>
+  bluez-utils-2.25-r1.ebuild:
+  Stable on ppc.
+
+  26 Jun 2006; Gustavo Zacarias <gustavoz@gentoo.org>
+  bluez-utils-2.25-r1.ebuild:
+  Stable on sparc
+
+  25 Jun 2006; Alin Nastac <mrness@gentoo.org> bluez-utils-2.25-r1.ebuild:
+  Stable on x86 (#122262).
+
+  19 Jun 2006; Henrik Brix Andersen <brix@gentoo.org>
+  -files/bluez-utils-2.21-init.d, -files/bluez-utils-2.21-pin,
+  -files/bluez-utils-2.21-pin-helper.sh, -bluez-utils-2.19.ebuild,
+  -bluez-utils-2.21.ebuild, -bluez-utils-2.22.ebuild:
+  Removed old versions, bug #137084.
+
+  14 Jun 2006; Stefan Schweizer <genstef@gentoo.org>
+  bluez-utils-2.25-r1.ebuild:
+  Fix cups-1.2 thanks to gentoo user tomaw
+
+*bluez-utils-2.25-r1 (15 May 2006)
+
+  15 May 2006; Roy Marples <uberlord@gentoo.org>
+  +bluez-utils-2.25-r1.ebuild:
+  Modify bluetooth init script to need dbus when compiled with dbus support.
+
+  14 Mar 2006; Gustavo Zacarias <gustavoz@gentoo.org>
+  bluez-utils-2.24.ebuild:
+  Stable on hppa
+
+  27 Feb 2006; Gustavo Zacarias <gustavoz@gentoo.org>
+  bluez-utils-2.24.ebuild:
+  Stable on sparc
+
+  26 Feb 2006; Tobias Scherbaum <dertobi123@gentoo.org>
+  bluez-utils-2.24.ebuild:
+  ppc stable, bug #122323
+
+  25 Feb 2006; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.24.ebuild:
+  stable bump for x86
+
+*bluez-utils-2.25 (07 Feb 2006)
+
+  07 Feb 2006; Alastair Tse <liquidx@gentoo.org>
+  +files/bluez-utils-2.25-init.d, +bluez-utils-2.25.ebuild:
+  version bump. added comment about net-dialup/ppp needed for dund. made
+  bluetooth run after dbus has started to take advantage of dbus if available.
+  (#118786) (#120759)
+
+  23 Jan 2006; Chris Gianelloni <wolf31o2@gentoo.org>
+  bluez-utils-2.22-r1.ebuild:
+  Stable on amd64/x86 wrt bug #113826.
+
+  23 Jan 2006; Chris Gianelloni <wolf31o2@gentoo.org> ChangeLog:
+  Stable on x86 wrt bug #113826.
+
+  22 Jan 2006; Tobias Scherbaum <dertobi123@gentoo.org>
+  bluez-utils-2.22-r1.ebuild:
+  ppc stable, bug #113826
+
+  20 Jan 2006; Gustavo Zacarias <gustavoz@gentoo.org>
+  bluez-utils-2.22-r1.ebuild:
+  Stable on sparc wrt #113826
+
+*bluez-utils-2.24 (17 Jan 2006)
+
+  17 Jan 2006; Henrik Brix Andersen <brix@gentoo.org>
+  +files/bluez-utils-2.24-init.d, +files/bluez-utils-2.24-pin,
+  +files/bluez-utils-2.24-pin-helper.sh, +files/bluez-utils-2.24-udev.rules,
+  +files/bluez-utils-2.24-udev.script, +bluez-utils-2.24.ebuild:
+  Version bump. Added udev helper, bug #84431.
+
+*bluez-utils-2.22-r1 (04 Jan 2006)
+
+  04 Jan 2006; Saleem Abdulrasool <compnerd@gentoo.org>
+  +files/bluez-utils-2.22-dbus-0.60.patch, +bluez-utils-2.22-r1.ebuild:
+  Adding revbump for dbus-0.60 patch.  Resolves bug #114460.
+
+  02 Jan 2006; Saleem Abdulrasool <compnerd@gentoo.org>
+  -bluez-utils-2.10-r1.ebuild, -bluez-utils-2.15.ebuild,
+  -bluez-utils-2.16-r1.ebuild, -bluez-utils-2.17-r1.ebuild,
+  -bluez-utils-2.18.ebuild, bluez-utils-2.19.ebuild,
+  bluez-utils-2.21.ebuild, bluez-utils-2.22.ebuild:
+  Pruning old ebuilds; Masking dbus 0.60 as Cardoe is unmasking
+
+  17 Dec 2005; Guy Martin <gmsoft@gentoo.org> bluez-utils-2.22.ebuild:
+  Stable on hppa.
+
+*bluez-utils-2.22 (03 Nov 2005)
+
+  03 Nov 2005; Henrik Brix Andersen <brix@gentoo.org>
+  +files/bluez-utils-2.22-init.d, +files/bluez-utils-2.22-pin,
+  +files/bluez-utils-2.22-pin-helper.sh, +bluez-utils-2.22.ebuild:
+  Version bump.
+
+*bluez-utils-2.21 (23 Oct 2005)
+
+  23 Oct 2005; Henrik Brix Andersen <brix@gentoo.org>
+  +files/bluez-utils-2.21-init.d, +files/bluez-utils-2.21-pin,
+  +files/bluez-utils-2.21-pin-helper.sh, +bluez-utils-2.21.ebuild:
+  Version bump, bug #105886. Also fixes bug #94562, bug #103498 and bug #108823.
+
+  17 Aug 2005; Gustavo Zacarias <gustavoz@gentoo.org>
+  bluez-utils-2.19.ebuild:
+  Stable on sparc wrt #101557
+
+  13 Aug 2005; Michael Hanselmann <hansmi@gentoo.org>
+  bluez-utils-2.19.ebuild:
+  Stable on hppa.
+
+  12 Aug 2005; Carlos Silva <r3pek@gentoo.org> bluez-utils-2.19.ebuild:
+  Marked stable amd64
+
+  10 Aug 2005; Tobias Scherbaum <dertobi123@gentoo.org>
+  bluez-utils-2.19.ebuild:
+  ppc stable, bug #101557
+
+  10 Aug 2005; Henrik Brix Andersen <brix@gentoo.org>
+  bluez-utils-2.19.ebuild:
+  Stable on x86, bug #101557.
+
+*bluez-utils-2.19 (09 Aug 2005)
+
+  09 Aug 2005; Henrik Brix Andersen <brix@gentoo.org>
+  +bluez-utils-2.19.ebuild:
+  Version bump.
+
+  29 Jul 2005; Guy Martin <gmsoft@gentoo.org> bluez-utils-2.17-r1.ebuild:
+  Stable on hppa.
+
+  17 Jul 2005; Tobias Scherbaum <dertobi123@gentoo.org>
+  bluez-utils-2.17-r1.ebuild:
+  ppc stable
+
+  08 Jul 2005; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.15.ebuild,
+  bluez-utils-2.17-r1.ebuild, bluez-utils-2.18.ebuild:
+  virtual/pcmcia dep replacement
+
+*bluez-utils-2.18 (06 Jul 2005)
+
+  06 Jul 2005; Alastair Tse <liquidx@gentoo.org> +bluez-utils-2.18.ebuild:
+  version bump. added CSR-specific development tools (pskey,bccmd,dfutool).
+  changed dbus dependency.
+
+  26 Jun 2005; <brix@gentoo.org> bluez-utils-2.17.ebuild,
+  bluez-utils-2.17-r1.ebuild:
+  Added missing '|| die' statement to econf call, bug #97029.
+
+*bluez-utils-2.17-r1 (24 Jun 2005)
+
+  24 Jun 2005; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.17.ebuild,
+  +bluez-utils-2.17-r1.ebuild:
+  fix localstatedir to point to /var/lib/bluetooth rather than
+  /var/lib/lib/bluetooth (#95990)
+
+  17 Jun 2005; Michael Hanselmann <hansmi@gentoo.org>
+  bluez-utils-2.16-r1.ebuild:
+  Stable on ppc.
+
+  29 May 2005; Marcus D. Hanwell <marcus@gentoo.org>
+  bluez-utils-2.16-r1.ebuild:
+  Stable on amd64.
+
+*bluez-utils-2.17 (25 May 2005)
+
+  25 May 2005; Alastair Tse <liquidx@gentoo.org> -bluez-utils-2.7.ebuild,
+  -bluez-utils-2.10.ebuild, bluez-utils-2.16-r1.ebuild,
+  +bluez-utils-2.17.ebuild:
+  version bump (#93231)
+
+  14 May 2005; Guy Martin <gmsoft@gentoo.org> bluez-utils-2.15.ebuild:
+  Stable on hppa.
+
+  12 May 2005; Tobias Scherbaum <dertobi123@gentoo.org>
+  bluez-utils-2.15.ebuild:
+  Stable on ppc.
+
+  09 May 2005; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.16.ebuild,
+  bluez-utils-2.16-r1.ebuild:
+  fix dbus dep (#91916)
+
+*bluez-utils-2.16-r1 (27 Apr 2005)
+
+  27 Apr 2005; Alastair Tse <liquidx@gentoo.org> files/2.16/bluetooth.rc,
+  +bluez-utils-2.16-r1.ebuild:
+  dummy upgrade for people who installed 2.16 but with a botched hid2hci init
+  script patch (#75255)
+
+*bluez-utils-2.16 (26 Apr 2005)
+
+  26 Apr 2005; Alastair Tse <liquidx@gentoo.org>
+  +files/2.15-bluepin.patch,
+  +files/2.16/bluetooth.rc, -bluez-utils-2.7.ebuild,
+  -bluez-utils-2.12.ebuild, -bluez-utils-2.15.ebuild,
+  +bluez-utils-2.16.ebuild:
+  version bump. incorporated fixes for pcmcia (#86492), hid2hci (#75255),
+  bluepin (#66255) and dbus support.
+
+  20 Apr 2005; Michael Hanselmann <hansmi@gentoo.org>
+  bluez-utils-2.10-r1.ebuild:
+  Stable on ppc.
+
+*bluez-utils-2.15 (08 Mar 2005)
+
+  08 Mar 2005; Alastair Tse <liquidx@gentoo.org> +bluez-utils-2.15.ebuild:
+  version bump
+
+*bluez-utils-2.12 (20 Dec 2004)
+
+  20 Dec 2004; Alastair Tse <liquidx@gentoo.org> +bluez-utils-2.12.ebuild:
+  version bump (#72230)
+
+  11 Nov 2004; Jeremy Huddleston <eradicator@gentoo.org>
+  bluez-utils-2.10-r1.ebuild:
+  Stable amd64, sparc.
+
+  22 Oct 2004; Alastair Tse <liquidx@gentoo.org> files/2.10-r1/bluetooth.rc:
+  fix restart command in init script (#68727)
+
+  16 Oct 2004; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.10-r1.ebuild:
+  disable hidd/hid2hci by default, fix pin-helper installation.
+
+  03 Oct 2004; Karol Wojtaszek <sekretarz@gentoo.org>
+  bluez-utils-2.10.ebuild, bluez-utils-2.7.ebuild:
+  Fix typos in ebuilds, Bug #63519
+
+  26 Sep 2004; Travis Tilley <lv@gentoo.org> bluez-utils-2.10.ebuild:
+  stable on amd64
+
+  24 Sep 2004; Alastair Tse <liquidx@gentoo.org>
+  +files/bluez-utils-2.10-handsfree.patch, files/2.10-r1/bluetooth.rc,
+  bluez-utils-2.10-r1.ebuild:
+  adding handsfree profile descriptions
+
+*bluez-utils-2.10-r1 (22 Sep 2004)
+
+  22 Sep 2004; Alastair Tse <liquidx@gentoo.org> files/bluetooth.rc,
+  +files/2.10-r1/bluetooth.rc, +files/2.10-r1/pin,
+  +files/2.10-r1/pin-helper.sh, +bluez-utils-2.10-r1.ebuild:
+  changes to init scripts (added dund,pand support, added conf.d defaults)
+  (#60304) thanks to Florian Ehrenthal, made pin number handling more compliant
+  with upstream (#56173), upped pygtk dep to 2.2 (#56157). versionised
+  init files.
+
+  19 Sep 2004; Douglas Russell,,, <puggy@gentoo.org> bluez-utils-2.10.ebuild:
+  Bumping x86 and ppc stable
+
+  21 Aug 2004; Douglas Russell,,, <puggy@gentoo.org> -bluez-utils-2.5.ebuild,
+  bluez-utils-2.7.ebuild:
+  Bump 2.7 to stable as it's been trouble free for a while. Remove old and fast
+  becoming useless versions. TODO: Bump 2.10 to stable as soon as 2.6.8 kernel
+  reaches stable
+
+*bluez-utils-2.10 (21 Aug 2004)
+
+  21 Aug 2004; Douglas Russell,,, <puggy@gentoo.org> +bluez-utils-2.10.ebuild:
+  Bumping to new version
+  Now depends on libusb
+
+  26 Jun 2004; Alastair Tse <liquidx@gentoo.org> :
+  fix DEPEND
+
+  16 Jun 2004; Jeremy Huddleston <eradicator@gentoo.org>
+  bluez-utils-2.7.ebuild:
+  Readding ~amd64.
+
+  14 Jun 2004; Aron Griffis <agriffis@gentoo.org> bluez-utils-2.3-r1.ebuild,
+  bluez-utils-2.3-r2.ebuild, bluez-utils-2.3.ebuild, bluez-utils-2.5.ebuild,
+  bluez-utils-2.7.ebuild:
+  Fix use invocation
+
+*bluez-utils-2.7 (27 May 2004)
+
+  27 May 2004; Douglas Russell <puggy@gentoo.org> bluez-utils-2.7.ebuild,
+  bluez-utils-2.7.ebuild:
+  Bump to 2.7, blocks bluez-pan as incorporated in utils. #50620
+
+  26 Apr 2004; Aron Griffis <agriffis@gentoo.org> bluez-utils-2.3-r1.ebuild,
+  bluez-utils-2.3-r2.ebuild, bluez-utils-2.5.ebuild:
+  Add die following econf for bug 48950
+
+*bluez-utils-2.5 (29 Mar 2004)
+
+  29 Mar 2004; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.5.ebuild:
+  version bump (#44589). removed gtk1 option as bluepin has been revamped
+
+  15 Feb 2004; David Holm <dholm@gentoo.org> bluez-utils-2.3-r2.ebuild:
+  Added to ~ppc.
+
+  12 Feb 2004; Ciaran McCreesh <ciaranm@gentoo.org> bluez-utils-2.3-r2.ebuild:
+  Adding ~sparc (works with some kernels, see bug #39710)
+
+  30 Jan 2004; Peter Johanson <latexer@gentoo.org> bluez-utils-2.3-r1.ebuild,
+  bluez-utils-2.3-r2.ebuild, bluez-utils-2.3.ebuild, metadata.xml:
+  Fix for wireless->mobile herd change, and header dates
+
+*bluez-utils-2.3-r2 (09 Jan 2004)
+
+  09 Jan 2004; Alastair Tse <liquidx@gentoo.org>:
+  files/bluez-utils-2.3-bluepin-gtk2.patch bluez-utils-2.3-r2.ebuild
+  new revision bump. added gtk2 patch to /usr/bin/bluepin (#35987).
+  changed default pin_helper to /usr/bin/bluepin.
+
+  07 Jan 2004; Alastair Tse <liquidx@gentoo.org> files/bluetooth.rc:
+  added 'after hotplug' in rc script (#36762)
+
+  22 Nov 2003; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.3-r1.ebuild,
+  files/bluez-utils-2.3-rfcomm_fflush.patch:
+  added patch to flush output for rfcomm (#32719)
+
+  29 Sep 2003; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.3-r1.ebuild:
+  fix exec perms on init script
+
+  19 Sep 2003; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.3-r1.ebuild:
+  really fix the bluetooth pin stuff in hcid.conf
+
+  19 Sep 2003; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.3-r1.ebuild,
+  files/pin.sample:
+  added sample pin script
+
+*bluez-utils-2.3-r1 (19 Sep 2003)
+
+  19 Sep 2003; Alastair Tse <liquidx@gentoo.org> bluez-utils-2.1.ebuild,
+  bluez-utils-2.2.ebuild, bluez-utils-2.3-r1.ebuild, metadata.xml:
+  added patch for bluepin, fixed ref to bluepin in hcid.conf, added init
+  scipt, removed mknod for rfcomm (not needed for devfs)
+
+  21 May 2003; Peter Johanson <latexer@gentoo.org> bluez-utils-2.3.ebuild:
+  Add gtk USE flag for pygtk dependancy. bug #21129
+
+  09 May 2003; Peter Johanson <latexer@gentoo.org> bluez-utils-2.1.ebuild, bluez-utils-2.2.ebuild,
+  bluez-utils-2.3.ebuild:
+  Marked stable now that gentoo-sources-2.4.20-r4 is released
+
+*bluez-utils-2.3 (27 Apr 2003)
+
+  27 Apr 2003; Peter Johanson <latexer@gentoo.org> bluez-utils-2.3.ebuild:
+  Bump. Bug #18571. Thanks to Loke <faune@broadpark.no>
+
+*bluez-utils-2.2 (20 Feb 2003)
+
+  20 Feb 2003; Peter Johanson <latexer@gentoo.org> bluez-utils-2.2.ebuild files/digest-bluez-utils-2.2 :
+  Version bump. Thanks to Patrik Kullman <patrik.kullman@netsafe.se>
+
+*bluez-utils-2.1 (08 Nov 2002)
+
+  08 Nov 2002; J Robert Ray <jrray@gentoo.org> :
+  New ebuild.
