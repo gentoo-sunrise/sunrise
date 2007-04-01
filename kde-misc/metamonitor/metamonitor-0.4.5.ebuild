@@ -10,7 +10,7 @@ HOMEPAGE="http://metamonitor.sourceforge.net"
 
 LICENSE="GPL-2"
 SLOT=""
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND=""
