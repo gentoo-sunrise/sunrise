@@ -18,7 +18,6 @@ DEPEND="$(qt4_min_version 4.1)
 
 RDEPEND="${DEPEND}
 		media-video/mplayer
-		media-video/dvdauthor
 		media-video/transcode
 		media-video/ffmpeg"
 
