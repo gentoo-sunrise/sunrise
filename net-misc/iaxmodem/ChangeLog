@@ -1,0 +1,9 @@
+# ChangeLog for net-misc/iaxmodem
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Apr 2007; Kevin Fullerton (kfullert)
+  <kevin.fullerton@shotgun-suicide.co.uk> +iaxmodem-0.2.1.ebuild,
+  +files/iaxmodem.init.d, +metadata.xml:
+  Ebuild for bug 169151 - thanks to Christope Perez for testing
+
