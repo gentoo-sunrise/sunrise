@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Apr 2007; Markus Ullmann <jokey@gentoo.org>
+  -miniaudicle-0.1.3.6.ebuild, miniaudicle-0.1.3.7.ebuild:
+  Drop old and ebuild fixes
+
   24 Mar 2007; Cedric Krier <cedk@gentoo.org> +miniaudicle-0.1.3.7.ebuild:
   Version bump
 

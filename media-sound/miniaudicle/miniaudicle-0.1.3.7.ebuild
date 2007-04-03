@@ -41,9 +41,9 @@ pkg_setup() {
 src_compile() {
 	export WX_GTK_VER=2.6
 	if use unicode; then
-		need-wxwidgets unicode || die
+		need-wxwidgets unicode || die "You need to install wxGTK with unicode support."
 	else
-		need-wxwidgets gtk2 || die
+		need-wxwidgets gtk2 || die "You need to install wxGTK with gtk2 support."
 	fi
 
 	local backend
@@ -62,7 +62,7 @@ src_compile() {
 	#   SAFE_DELETE_ARRAY( stack );
 	replace-cpu-flags athlon athlon-xp i686
 
-	cd "${S}/chuck/src"
+	cd "${S}"/chuck/src
 	emake -f "makefile.${backend}" CC=$(tc-getCC) CXX=$(tc-getCXX) || die "emake failed"
 
 	cd "${S}"
@@ -71,6 +71,5 @@ src_compile() {
 
 src_install() {
 	dobin wxw/miniAudicle
-
 	dodoc BUGS README.linux VERSIONS
 }
