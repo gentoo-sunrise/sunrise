@@ -4,12 +4,13 @@
 
 inherit flag-o-matic db db-use distutils
 
+PATCHVER="2.3.10.3"
 DESCRIPTION="BerkeleyDB XML, a native XML database from the BerkeleyDB team"
 HOMEPAGE="http://www.oracle.com/database/berkeley-db/xml/index.html"
 SRC_URI="http://download-east.oracle.com/berkeley-db/${P}.tar.gz
 	http://download-west.oracle.com/berkeley-db/${P}.tar.gz
 	http://download-uk.oracle.com/berkeley-db/${P}.tar.gz
-	http://www.oracle.com/technology/products/berkeley-db/xml/update/2.3.10/patch.2.3.10.3"
+	http://www.oracle.com/technology/products/berkeley-db/xml/update/2.3.10/patch.${PATCHVER}"
 
 LICENSE="Apache-1.1"
 SLOT="0"
@@ -27,13 +28,13 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${P}/dbxml"
 
 src_unpack() {
-	unpack ${P}.tar.gz
+	unpack ${A}
+	cd "${S}"
 
-	cd ${P}
-	epatch "${DISTDIR}/patch.2.3.10.3"
-	epatch "${FILESDIR}/dbxml-pythonfixes.patch"
+	EPATCH_OPTS="-p2 -d ${S}"
+	epatch "${DISTDIR}"/patch.${PATCHVER}
+	epatch "${FILESDIR}"/${PN}-pythonfixes.patch
 
-	cd ${S}
 	#Tell the configure script where our db version is
 	db_version="$(db_findver sys-libs/db)" || die "Couldn't find db"
 	db_incpath="$(db_includedir)"          || die "Couldn't find db include path"
@@ -44,21 +45,23 @@ src_unpack() {
 }
 
 src_compile() {
-	cd build_unix
+	cd "${S}"/build_unix
 
-	append-flags -I$(db_includedir) #Needed despite db_version stuff above
+	#Needed despite db_version stuff above
+	append-flags -I$(db_includedir)
+
 	ECONF_SOURCE=../dist
-	econf --with-berkeleydb=/usr --with-xqilla=/usr --with-xerces=/usr
+	econf --with-berkeleydb=/usr --with-xqilla=/usr --with-xerces=/usr || die "econf failed"
 	emake -j1 || die "emake failed"
 	if use python ; then
 		einfo "Compiling python extension"
-		cd ${S}/src/python
+		cd "${S}"/src/python
 		distutils_src_compile
 	fi
 }
 
 src_install() {
-	cd build_unix
+	cd "${S}"/build_unix
 
 	#Install fails with emake
 	einstall || die "einstall failed"
@@ -66,7 +69,7 @@ src_install() {
 
 	if use python ; then
 		einfo "Installing python extension"
-		cd ${S}/src/python
+		cd "${S}"/src/python
 		distutils_src_install
 	fi
 }
