@@ -25,7 +25,7 @@ src_install() {
 	doins *.py foff_logo00.png *.glade *.gladep Copying.txt
 
 	make_wrapper foff "/usr/bin/python /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/${PN}.py" \
-		 /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+		/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 
 	dodoc Readme.txt ChangeLog.txt
 }
