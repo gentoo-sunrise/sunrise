@@ -10,7 +10,7 @@ SRC_URI="http://www.notmart.org/files/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="~x86 ~amd64 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )"

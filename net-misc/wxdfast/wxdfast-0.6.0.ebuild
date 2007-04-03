@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/dfast/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND=">=x11-libs/wxGTK-2.6"
