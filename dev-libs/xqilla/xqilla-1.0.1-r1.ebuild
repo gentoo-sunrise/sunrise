@@ -31,29 +31,28 @@ src_unpack() {
 	epatch "${DISTDIR}/patch.2.3.10.2"
 
 	#Remove the cause of a bad rpath
-	sed -i -e 's:-R$(xerces_lib)::' Makefile.in || die "Sed failed!"
+	sed -i -e 's:-R$(xerces_lib)::' Makefile.in || die "sed failed!"
 }
 
 src_compile() {
 	einfo "compiling temporary copy of xerces-c"
-	export XERCESCROOT="${WORKDIR}"/xerces-c-src
+	XERCESCROOT="${WORKDIR}"/xerces-c-src
 	cd "${XERCESCROOT}"/src/xercesc
-	./runConfigure -plinux -P/usr ${EXTRA_ECONF} || die
-	emake -j1 || die
+	./runConfigure -plinux -P/usr ${EXTRA_ECONF} || die "configure of xerces failed"
+	emake -j1 || die "emake xerces failed"
 
 	einfo "compiling xqilla"
 	cd "${S}"
-	econf --with-xerces="${XERCESCROOT}" || die
-	emake || die
-	einfo "xqilla compiled"
+	econf --with-xerces="${XERCESCROOT}" || die "econf failed"
+	emake || die "emake failed"
 
 	if use doc; then
-		emake docs || die
+		emake docs || die "emake docs failed"
 	fi
 }
 
 src_install () {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die "emake docs failed"
 
 	if use doc; then
 		cd docs
