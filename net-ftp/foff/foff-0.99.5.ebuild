@@ -6,7 +6,7 @@ inherit eutils python multilib
 
 DESCRIPTION="FTP client in Python and GTK."
 HOMEPAGE="http://foff.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/foff/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,11 +21,11 @@ DEPEND="${RDEPEND}"
 src_install() {
 	python_version
 	# Copying.txt is needed by the about window
-	insinto "${ROOT}/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 	doins *.py foff_logo00.png *.glade *.gladep Copying.txt
 
-	make_wrapper foff "/usr/bin/python ${ROOT}/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/${PN}.py" \
-		 ${ROOT}/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+	make_wrapper foff "/usr/bin/python /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/${PN}.py" \
+		 /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 
 	dodoc Readme.txt ChangeLog.txt
 }
