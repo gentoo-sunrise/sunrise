@@ -24,7 +24,7 @@ S="${WORKDIR}/${MY_P}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-fix-sandbox.patch"
+	epatch "${FILESDIR}"/${P}-fix-sandbox.patch
 	eautoreconf
 }
 
@@ -32,7 +32,7 @@ src_compile() {
 	econf \
 		$(use_with mysql) \
 		$(use_with postgres) \
-		$(use_with debug)
+		$(use_with debug) || die "econf failed"
 
 	emake || die "emake failed"
 }
