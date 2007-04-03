@@ -1,8 +1,0 @@
-# ChangeLog for net-wireless/bluez-gnome
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  01 Apr 2007; Dick Marinus <dm@chello.nl> +bluez-gnome-0.6.ebuild,
-  +metadata.xml:
-  New ebuild for bug 173013
-

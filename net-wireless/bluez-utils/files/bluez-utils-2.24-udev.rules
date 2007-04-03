@@ -1,3 +1,0 @@
-# Bluetooth devices:
-#
-KERNEL=="hci[0-9]*", RUN+="/lib/udev/bluetooth.sh"
