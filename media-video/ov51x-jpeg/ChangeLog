@@ -1,0 +1,9 @@
+# ChangeLog for media-video/ov51x-jpeg
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Apr 2007; Kevin Fullerton (kfullert)
+  <kevin.fullerton@shotgun-suicide.co.uk> +ov51x-jpeg-1.0.0.ebuild,
+  +metadata.xml:
+  Ebuild for bug 170508
+
