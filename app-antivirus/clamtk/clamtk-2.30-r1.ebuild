@@ -4,12 +4,11 @@
 
 inherit eutils
 
+CLAMTK_KDEVER="0.05"
 DESCRIPTION="A frontend for ClamAV using Gtk2-perl."
 HOMEPAGE="http://clamtk.sourceforge.net/"
-
-CLAMTK_KDEVER="0.05"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
-	kde? ( mirror://sourceforge/${PN}/${PN}-kde-${CLAMTK_KDEVER}.tar.gz )"
+SRC_URI="mirror://sourceforge/clamtk/${P}.tar.gz
+	kde? ( mirror://sourceforge/clamtk/clamtk-kde-${CLAMTK_KDEVER}.tar.gz )"
 
 LICENSE="Artistic GPL-2"
 SLOT="0"
@@ -30,15 +29,14 @@ RDEPEND="dev-perl/gtk2-perl
 	nls? ( dev-perl/Locale-gettext )
 	kde? ( || ( kde-base/konqueror kde-base/kdebase ) )"
 
-
 src_install() {
 	dobin clamtk
 
-	doicon ${PN}.png
-	domenu ${PN}.desktop
+	doicon clamtk.png
+	domenu clamtk.desktop
 
 	dodoc CHANGES DISCLAIMER README
-	doman ${PN}.1.gz
+	doman clamtk.1.gz
 
 	if use nls ; then
 		cd po/
@@ -46,13 +44,13 @@ src_install() {
 		for n in *.mo ; do
 			if use linguas_${n/.mo} ; then
 				insinto /usr/share/locale/${n/.mo}/LC_MESSAGES
-				newins ${n} ${PN}.mo
+				newins ${n} clamtk.mo
 			fi
 		done
 	fi
 
 	if use kde ; then
-		cd ${WORKDIR}/${PN}-kde-${CLAMTK_KDEVER}
+		cd "${WORKDIR}"/${PN}-kde-${CLAMTK_KDEVER}
 		doicon ${PN}-kde.xpm
 		doman ${PN}-kde.1.gz
 		docinto KDE
