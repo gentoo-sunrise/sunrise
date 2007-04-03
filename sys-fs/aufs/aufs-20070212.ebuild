@@ -23,7 +23,7 @@ check_patch() {
 	# Check if ksize Patch has to be applied
 	if use ksize ; then
 		APPLY_KSIZE_PATCH="n"
-		# If ksize patch is not applied 
+		# If ksize patch is not applied
 		if ! grep -qs "EXPORT_SYMBOL(ksize);" "${KV_DIR}/mm/slab.c" ; then
 			APPLY_KSIZE_PATCH="y"
 		fi
@@ -114,7 +114,6 @@ pkg_postinst() {
 pkg_prerm() {
 	built_with_use -o =${CATEGORY}/${PF} ksize nfs && DO_CHECK="y"
 }
-
 
 pkg_postrm() {
 	# Tell the user that his kernel has already been patched
