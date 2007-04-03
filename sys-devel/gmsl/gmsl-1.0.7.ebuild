@@ -20,4 +20,3 @@ src_install() {
 	doins gmsl-tests
 	dodoc README
 }
-
