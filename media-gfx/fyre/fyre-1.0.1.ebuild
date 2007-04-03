@@ -8,7 +8,7 @@ SCROLLKEEPER_UPDATE="no"
 inherit gnome2
 
 DESCRIPTION="Fyre renders and animates Peter de Jong maps"
-SRC_URI="http://flapjack.navi.cx/releases/${PN}/${P}.tar.bz2"
+SRC_URI="http://flapjack.navi.cx/releases/fyre/${P}.tar.bz2"
 HOMEPAGE="http://fyre.navi.cx/"
 
 SLOT="0"
@@ -21,7 +21,6 @@ RDEPEND=">=dev-libs/glib-2.0
 	>=x11-libs/gtk+-2.0
 	cluster? ( >=net-libs/gnet-2.0 )
 	openexr? ( media-libs/openexr )"
-
 DEPEND="${RDEPEND}
 	dev-util/desktop-file-utils
 	>=dev-util/pkgconfig-0.9
@@ -32,7 +31,7 @@ pkg_setup() {
 }
 
 src_install() {
-	#...=/bin/true prevents the makefile from updating mime and .desktop 
+	#...=/bin/true prevents the makefile from updating mime and .desktop
 	# databases on its own
 	emake DESTDIR="${D}" \
 		update_xdgmime=/bin/true update_fdodesktop=/bin/true \
@@ -40,7 +39,7 @@ src_install() {
 	dodoc AUTHORS ChangeLog README TODO
 
 	if use cluster; then
-		newconfd "${FILESDIR}/${P}-conf" fyre
-		newinitd "${FILESDIR}/${P}-init" fyre
+		newconfd "${FILESDIR}/"${P}-conf fyre
+		newinitd "${FILESDIR}/"${P}-init fyre
 	fi
 }
