@@ -7,6 +7,7 @@
 
 # Keep it sorted.
 
+app-admin/vlogger:dbi - enable support for DBI
 app-antivirus/drweb:glibc23 - use binary package for glibc-2.3
 app-antivirus/drweb:logrotate - Use logrotate for rotating logs
 app-dicts/ktranslator:festival - Enable festival support
