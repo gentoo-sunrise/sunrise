@@ -38,6 +38,6 @@ src_install() {
 	dodoc ChangeLog README.TXT
 
 	make_wrapper ${PN} ./${PN}-run /opt/${PN} . || die "make_wrapper failed"
-	doicon share/gizmo/pixmaps/icons/gizmo-icon-48.png
-	make_desktop_entry ${PN} "Gizmo Project" gizmo-icon-48.png
+	newicon share/gizmo/pixmaps/icons/gizmo-icon-48.png ${PN}.png
+	make_desktop_entry ${PN} "Gizmo Project" ${PN}.png "Network;Telephony;P2P"
 }
