@@ -41,8 +41,8 @@ src_install() {
 	dodir /opt/bin
 	dosym ${dir}/xtensoftphone /opt/bin/xtensoftphone
 
-	make_desktop_entry xtensoftphone X-Lite
 	doicon "${FILESDIR}/x-lite.png"
+	make_desktop_entry xtensoftphone X-Lite ${PN}.png "Network;Telephony"
 
 	dodoc README
 }
