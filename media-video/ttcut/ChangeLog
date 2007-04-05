@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2007; Jakub Moc <jakub@gentoo.org> ttcut-0.11.4_alpha.ebuild,
+  ttcut-9999.ebuild:
+  Fix built_with_use check and make desktop entries FDO-compliant
+
   02 Apr 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
   media-video/ttcut: removed dvdauthor as RDEPEND because it is not needed at
