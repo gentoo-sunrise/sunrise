@@ -42,5 +42,5 @@ src_install() {
 	insinto /usr/share/doc/${P}/html
 	dohtml html/*.html html/*.css html/*.jpeg
 	newicon src/icons/gspiceui-48x48.xpm gspiceui.xpm
-	make_desktop_entry gspiceui "GNU Spice GUI" gspiceui.xpm Electronics
+	make_desktop_entry gspiceui "GNU Spice GUI" gspiceui.xpm "Education;Science;Electronics"
 }
