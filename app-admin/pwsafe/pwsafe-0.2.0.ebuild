@@ -17,7 +17,7 @@ DEPEND=""
 RDEPEND=""
 
 src_compile() {
-	append-ldflags -Wl,-z,now
+	append-ldflags $(bindnow-flags)
 	econf || die "econf failed"
 	emake || die "emake failed"
 }
