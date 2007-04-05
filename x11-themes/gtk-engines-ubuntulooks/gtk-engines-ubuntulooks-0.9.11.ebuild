@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+GCONF_DEBUG="no"
 inherit eutils gnome2
 
 MY_P="ubuntulooks_${PV}"
