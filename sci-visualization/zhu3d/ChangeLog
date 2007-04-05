@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2007; Jakub Moc <jakub@gentoo.org> zhu3d-2.3.ebuild:
+  Fix desktop entry
+
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com> -zhu3d-2.2.ebuild:
   drop old
 
