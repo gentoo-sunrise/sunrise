@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils flag-o-matic
 
 DESCRIPTION="Simscan is a simple program that enables qmail-smtpd to reject viruses, spam, and block attachments during the SMTP conversation"
 HOMEPAGE="http://www.inter7.com/?page=simscan"
@@ -66,7 +66,7 @@ src_compile() {
 	fi
 
 	econf ${myconf} || die "econf failed"
-	emake simscan_LDFLAGS=-Wl,-z,now || die "emake failed"
+	emake simscan_LDFLAGS=$(bindnow-flags) || die "emake failed"
 }
 
 src_install() {

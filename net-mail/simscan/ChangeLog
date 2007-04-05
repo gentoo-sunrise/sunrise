@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2007; Jakub Moc <jakub@gentoo.org> simscan-1.1-r2.ebuild:
+  Use bindnow-flags properly
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> simscan-1.1-r2.ebuild:
   Remove RESTRICT="strip"
 
