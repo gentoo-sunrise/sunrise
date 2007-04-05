@@ -11,7 +11,7 @@ HOMEPAGE="http://www.kde-look.org/content/show.php?content=23579"
 SRC_URI="http://www.gerdfleischer.de/kwin-decor-suse2/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-SLOT="$KDEMAJORVER.$KDEMINORVER"
+SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 PATCHES="${FILESDIR}/kwin-decor-suse2-disabletitlebarlogo.patch"
