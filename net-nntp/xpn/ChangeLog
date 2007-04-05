@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2007; Jakub Moc <jakub@gentoo.org> xpn-0.7.0.ebuild:
+  Fix desktop entry
+
   01 Feb 2007; Christian Faulhammer <opfer@gentoo.org> xpn-0.7.0.ebuild:
   don't depend on base packages; removed python from DEPEND
 

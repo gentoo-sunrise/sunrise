@@ -35,7 +35,7 @@ src_install() {
 	doins xpn_src/*
 
 	newicon pixmaps/xpn-icon.png "${PN}.png"
-	make_desktop_entry "${PN} -d" "${PN}" "${PN}.png" "Network"
+	make_desktop_entry "${PN} -d" "${PN}" "${PN}.png" "Network;News"
 
 	dodoc AUTHORS ChangeLog README
 	dohtml xpn.html
