@@ -46,7 +46,7 @@ src_install() {
 	doins -r animations
 
 	doicon icons/${PN}.png
-	make_desktop_entry ${PN}
+	make_desktop_entry ${PN} ${PN} ${PN}.png "AudioVideo;Audio;AudioVideoEditing"
 
 	doman ${PN}.1
 	dodoc README

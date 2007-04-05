@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2007; Jakub Moc <jakub@gentoo.org> gnormalize-0.52.ebuild:
+  Fix desktop entry
+
   03 Dec 2006; Juan Aguado (juantxorena) <juantxorena666@gmail.com>
   -gnormalize-0.51.ebuild, +gnormalize-0.52.ebuild:
   Version bump
