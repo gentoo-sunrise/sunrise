@@ -29,7 +29,7 @@ ERROR_BLK_DEV_DM="Please enable Device mapper support in your kernel config
 
 src_compile() {
 	# recommended for setXid, dynamically linked biraries
-	append-ldflags -Wl,-z,now
+	append-ldflags $(bindnow-flags)
 
 	econf \
 		--with-gnu-ld \
