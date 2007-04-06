@@ -6,8 +6,8 @@ inherit gst-plugins-bad
 
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=media-libs/ladspa-sdk-1.12-r2
-		>=media-libs/gst-plugins-base-0.10.10.1
-			>=media-libs/gstreamer-0.10.10"
+DEPEND=">=media-libs/ladspa-sdk-1.12-r2
+	>=media-libs/gst-plugins-base-0.10.10.1
+	>=media-libs/gstreamer-0.10.10"
 
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
