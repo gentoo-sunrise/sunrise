@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  bloboats-1.0.1.ebuild:
+  Added ~ppc keyword
+
   13 Aug 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
   Added ~amd64 keyword. Added missing dep. Respect CXX and CXXFLAGS
 
