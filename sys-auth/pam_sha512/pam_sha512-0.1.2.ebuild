@@ -10,7 +10,7 @@ SRC_URI="http://hollowtube.mine.nu/releases/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="sys-libs/pam"
@@ -18,7 +18,8 @@ RDEPEND="${DEPEND}
 	app-crypt/hashalot"
 
 src_compile() {
-	append-flags "-fPIC -c -Wall -Wformat-security"
+	# fix strict aliasing problems, using -fno-strict-aliasing
+	append-flags "-fPIC -c -Wall -Wformat-security -fno-strict-aliasing"
 	emake CC="$(tc-getCC)" \
 		LD="$(tc-getLD)" \
 		CFLAGS="${CFLAGS}" || die "emake failed"
@@ -29,4 +30,9 @@ src_install() {
 	dopammod pam_sha512.so
 	dodoc README
 	dosbin hashpass
+}
+
+pkg_postinst() {
+	elog "See /usr/share/doc/${PF}/README.bz2 for configuration info"
+	elog ""
 }

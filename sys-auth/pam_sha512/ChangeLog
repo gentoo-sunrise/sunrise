@@ -4,6 +4,10 @@
 
   07 Apr 2007; Alessio Cassibba (X-Drum) <swapon@gmail.com>
   pam_sha512-0.1.2.ebuild:
+  fixed strict aliasing problems, added message in pkg_postinst
+
+  07 Apr 2007; Alessio Cassibba (X-Drum) <swapon@gmail.com>
+  pam_sha512-0.1.2.ebuild:
   added amd64 keyword
 
   29 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
