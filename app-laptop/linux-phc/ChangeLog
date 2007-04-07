@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  +linux-phc-0.2.9.ebuild, +files/linux-phc-0.2.9-msr_h-fix.patch:
+  version bump adding support for kernel-2.6.20
+
   14 Mar 2007; Konrad Korzec <korzec@gmail.com> linux-phc-0.2.8.ebuild:
   adjusted copying back to kernel tree, now it works
 
