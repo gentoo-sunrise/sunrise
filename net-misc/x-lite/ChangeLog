@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Apr 2007; Alessio Cassibba (X-Drum) <swapon@gmail.com>
+  x-lite-2.0.1105d.ebuild:
+  removed amd64 keyword (due missing libglade-2.0 in emul-linux-x86-*), added
+  new dependencies
+
   05 Apr 2007; Jakub Moc <jakub@gentoo.org> x-lite-2.0.1105d.ebuild:
   Fix desktop entry
 

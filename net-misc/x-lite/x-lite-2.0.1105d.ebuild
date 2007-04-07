@@ -18,14 +18,23 @@ RDEPEND="dev-libs/atk
 	dev-libs/glib
 	dev-libs/libxml2
 	gnome-base/libglade
-	x11-libs/gtk+
-	x11-libs/libX11
+	=x11-libs/gtk+-2*
 	x11-libs/pango
+	x11-libs/cairo
 	sys-libs/zlib
-	amd64? ( >=app-emulation/emul-linux-x86-baselibs-2.4.1
-		>=app-emulation/emul-linux-x86-xlibs-2.2.2
-		>=app-emulation/emul-linux-x86-compat-1.0-r1
-		>=app-emulation/emul-linux-x86-gtklibs-2.3 )"
+	media-libs/libpng
+	=media-libs/freetype-2*
+	x11-libs/libX11
+	x11-libs/libXfixes
+	x11-libs/libXext
+	x11-libs/libXrender
+	x11-libs/libXi
+	x11-libs/libXrandr
+	x11-libs/libXcursor
+	x11-libs/libXft
+	x11-libs/libXau
+	x11-libs/libXdmcp
+	=virtual/libstdc++-3.3"
 
 S=${WORKDIR}/xten-xlite
 
