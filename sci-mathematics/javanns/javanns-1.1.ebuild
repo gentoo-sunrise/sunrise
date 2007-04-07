@@ -16,6 +16,7 @@ IUSE=""
 RDEPEND=">=virtual/jre-1.4"
 DEPEND="${RDEPEND}
 	>=virtual/jdk-1.4
+	app-arch/unzip
 	dev-java/ant"
 
 MY_PN="JavaNNS"
