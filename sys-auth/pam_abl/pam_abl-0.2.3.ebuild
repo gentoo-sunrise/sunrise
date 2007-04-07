@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit pam toolchain-funcs
+inherit flag-o-matic pam toolchain-funcs
 
 DESCRIPTION="Provides auto blacklisting of hosts and users responsible for repeated failed authentication attempts"
 HOMEPAGE="http://www.hexten.net/pam_abl/"
@@ -25,7 +25,7 @@ src_unpack() {
 	cd "${S}"
 
 	# fix hardcoded values in Makefile
-	sed -i -e "s:-Wall -fPIC:${CFLAGS} -Wall -fPIC:" \
+	sed -i -e "s:-Wall -fPIC:${CFLAGS} -Wall:" \
 		-e "s:/lib/security:$(getpam_mod_dir):" \
 		-e "s:cc:$(tc-getCC):" \
 		-e "s:ld -:$(tc-getLD) -:" Makefile || die "sed failed in Makefile"
@@ -35,6 +35,15 @@ src_unpack() {
 	# comment out default configuration
 	sed -i -e "s:host:#host:" \
 		-e "s:user:#user:" conf/pam_abl.conf || die "sed failed in conf/pam_abl.conf"
+}
+
+src_compile() {
+	# fix strict aliasing problems, using -fno-strict-aliasing
+	append-flags "-fPIC -fno-strict-aliasing"
+
+	emake CC="$(tc-getCC)" \
+	    LD="$(tc-getLD)" \
+	    CFLAGS="${CFLAGS}" || die "emake failed"
 }
 
 src_install() {

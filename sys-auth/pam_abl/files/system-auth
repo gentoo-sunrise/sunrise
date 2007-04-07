@@ -12,5 +12,4 @@ password    sufficient    pam_unix.so nullok md5 shadow use_authtok
 password    required      pam_deny.so
 
 session     required      pam_limits.so
-session     required      pam_abl.so
 session     required      pam_unix.so

@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Apr 2007; Alessio Cassibba (X-Drum) <swapon@gmail.com>
+  pam_abl-0.2.3.ebuild, files/system-auth:
+  fixed strict aliasing problems, removed "session required pam_abl.so" in
+  system-auth to avoid unknown Module error
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> pam_abl-0.2.3.ebuild:
   Add keepdir
 
