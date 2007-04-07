@@ -9,11 +9,8 @@ SRC_URI="mirror://sourceforge/metamonitor/${P}.tar.bz2"
 HOMEPAGE="http://metamonitor.sourceforge.net"
 
 LICENSE="GPL-2"
-SLOT=""
+SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-
-DEPEND=""
-RDEPEND=""
 
 need-kde 3.3
