@@ -8,7 +8,7 @@ MY_P=gizmo-project-${PV}
 
 DESCRIPTION="Gizmo is a P2P-VoiceIP client"
 HOMEPAGE="http://www.gizmoproject.com/"
-SRC_URI="http://download.gizmoproject.com/GizmoDownload/${MY_P}.tar.gz"
+SRC_URI="http://download.gizmoproject.com/jasmine/gtk-gizmo-${PV}/${MY_P}.tar.gz"
 
 LICENSE="gizmoproject-eula"
 SLOT="0"
@@ -30,14 +30,16 @@ RDEPEND="dev-libs/atk
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	insinto /opt/gizmo
-	doins -r share
+	insinto /opt
+	doins -r share/gizmo
 	exeinto /opt/gizmo
-	doexe gizmo{,-run} libsipphoneapi.so{,.1.5.06}
+	doexe gizmo libsipphoneapi.s*
+	sed -i -e "s:CURDIR=.*:CURDIR=/opt/gizmo:" -e "s:share/gizmo::" gizmo-run
+	exeinto /opt/bin
+	newexe gizmo-run gizmo
 
 	dodoc ChangeLog README.TXT
 
-	make_wrapper ${PN} ./${PN}-run /opt/${PN} . || die "make_wrapper failed"
 	newicon share/gizmo/pixmaps/icons/gizmo-icon-48.png ${PN}.png
 	make_desktop_entry ${PN} "Gizmo Project" ${PN}.png "Network;Telephony;P2P"
 }

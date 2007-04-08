@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Apr 2007; Stefan Schweizer <genstef@gentoo.org> -gizmo-1.1.0.40.ebuild,
+  +gizmo-3.0.0.66.ebuild:
+  version bump
+
   05 Apr 2007; Jakub Moc <jakub@gentoo.org> gizmo-1.1.0.40.ebuild:
   Fix desktop entry
 
