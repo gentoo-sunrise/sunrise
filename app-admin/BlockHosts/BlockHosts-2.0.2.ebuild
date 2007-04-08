@@ -2,6 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.3
+
+inherit distutils
+
 DESCRIPTION="Blocks abusive IP hosts which probe your services (such as sshd, proftpd)"
 HOMEPAGE="http://www.aczoom.com/cms/blockhosts/"
 SRC_URI="http://www.aczoom.com/tools/blockhosts/${P}.tar.gz"
@@ -9,20 +13,51 @@ SRC_URI="http://www.aczoom.com/tools/blockhosts/${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="doc logrotate"
+
+DEPEND=""
+RDEPEND="logrotate? ( app-admin/logrotate )"
+
+DOCS="CHANGES"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	# don't let setup.py install bhrss.py to /usr/bin
+	sed -i \
+		-e "s/,.*bhrss\.py'//" \
+		setup.py || die "sed failed"
+
+	# remove logrotate check if not in IUSE
+	if ! use logrotate; then
+		sed -i \
+			-e "/^if/d" \
+			-e "/DATA_FILES\./d" \
+			setup.py || die "sed failed"
+	fi
+}
 
 src_install() {
-	dobin bhrss.py blockhosts.py || die "installation failed"
-	dodoc CHANGES INSTALL README
-	dohtml *.html
-	
-	insinto /etc
-	doins blockhosts.cfg
+	distutils_src_install
+
+	insinto /usr/share/${PN}
+	doins bhrss.py
+
+	if use doc; then
+		insinto /usr/share/${PF}/html
+		dohtml *.html
+	fi
 }
 
 pkg_postinst() {
 	echo
 	elog "This package isn't configured properly."
 	elog "Please refer to the homepage to do this!"
+	echo
+	elog "bhrss.py cgi script is under /usr/share/${PN}"
+	elog "If you want to use it, put it in your cgi-bin"
+	elog "emerge dev-python/pyxml and copy blockhosts.py"
+	elog "into your python module directory"
 	echo
 }
