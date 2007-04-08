@@ -1,0 +1,8 @@
+# ChangeLog for app-admin/BlockHosts
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Apr 2007; Kevin Funk <krf@gmx.de> +BlockHosts-2.0.2.ebuild,
+  +metadata.xml:
+  Initial ebuild for bug #173631. Thanks to genstef for support.
+
