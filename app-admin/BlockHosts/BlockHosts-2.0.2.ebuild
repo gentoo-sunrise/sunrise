@@ -44,10 +44,7 @@ src_install() {
 	insinto /usr/share/${PN}
 	doins bhrss.py
 
-	if use doc; then
-		insinto /usr/share/${PF}/html
-		dohtml *.html
-	fi
+	use doc && dohtml *.html
 }
 
 pkg_postinst() {
