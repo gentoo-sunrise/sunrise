@@ -4,7 +4,7 @@
 
 NEED_PYTHON=2.4
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="Python bindings for the LZMA compression library."
 HOMEPAGE="http://www.joachim-bauch.de/projects/python/pylzma/"
@@ -12,13 +12,20 @@ SRC_URI="http://www.joachim-bauch.de/projects/python/${PN}/releases/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=""
 RDEPEND=""
 
 DOCS="doc/usage.txt readme.txt"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	use x86-fbsd && epatch "${FILESDIR}/${P}-fbsd.patch"
+}
 
 src_test() {
 	einfo "Testing 7zfiles"
