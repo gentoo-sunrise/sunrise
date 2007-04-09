@@ -1,0 +1,100 @@
+--- Makefile.orig	2004-12-23 18:17:54.000000000 +0100
++++ Makefile	2007-04-09 21:37:35.000000000 +0200
+@@ -1,13 +1,13 @@
+ # Makefile for zgsmplay
+ #
+ # You need an ANSI C compiler; gcc is fine.
+-CC=gcc
++CC := gcc
+ 
+ # Set to where you have the GSM source (this should be ok as-is).
+ GSMROOT=./gsm-1.0-pl10
+ 
+ # Optimisation flags.
+-OPTOPT=-O
++OPTOPT +=
+ 
+ # Debug options, comment out if not using gcc.
+ DEBUGOPT=-Wall
+@@ -52,9 +52,9 @@
+ 
+ # Change these if needed - they're used by `make install'
+ #
+-PREFIX=/usr/local
++PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+-MANDIR=$(PREFIX)/man/man1
++MANDIR=$(PREFIX)/share/man/man1
+ 
+ # You shouldn't need to edit below this line.
+ #--------------------------------------------------------
+@@ -75,11 +75,11 @@
+ 	make -C $(GSMROOT) lib/libgsm.a
+ 
+ installdirs:
+-	/bin/sh ./mkinstalldirs $(BINDIR) $(MANDIR)
++	/bin/sh ./mkinstalldirs $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)
+ 
+ install: zgsmplay installdirs
+-	install -s -m 755 zgsmplay $(BINDIR)
+-	install -m 644 zgsmplay.1 $(MANDIR)
++	install -m 755 zgsmplay $(DESTDIR)$(BINDIR)
++	install -m 644 zgsmplay.1 $(DESTDIR)$(MANDIR)
+ 
+ # explicitly does /usr/bin to catch pre-1.2 installations
+ uninstall:
+--- gsm-1.0-pl10/Makefile.orig	1999-07-02 14:08:50.000000000 +0200
++++ gsm-1.0-pl10/Makefile	2007-04-09 21:51:57.000000000 +0200
+@@ -45,13 +45,13 @@
+ # CC		= /usr/lang/acc
+ # CCFLAGS 	= -c -O
+ 
+-CC		= gcc -ansi -pedantic
+-CCFLAGS 	= -c -O2 -DNeedFunctionPrototypes=1
++CC		:= gcc -ansi -pedantic
++CCFLAGS 	+= -ansi -pedantic -c -O2 -DNeedFunctionPrototypes=1
+ 
+-LD 		= $(CC)
++LD 		+= $(CC)
+ 
+ # LD		= gcc
+-# LDFLAGS 	=
++LDFLAGS 	+=
+ 
+ 
+ # If your compiler needs additional flags/libraries, regardless of
+@@ -73,7 +73,7 @@
+ # Leave INSTALL_ROOT empty (or just don't execute "make install") to
+ # not install gsm and toast outside of this directory.
+ 
+-INSTALL_ROOT	= /usr/local
++INSTALL_ROOT	= /usr
+ 
+ # Where do you want to install the gsm library, header file, and manpages?
+ #
+@@ -100,14 +100,14 @@
+ SHELL		= /bin/sh
+ LN		= ln
+ BASENAME 	= basename
+-AR		= ar
++AR		+= ar
+ ARFLAGS		= cr
+ RMFLAGS		=
+ FIND		= find
+ COMPRESS 	= compress
+ COMPRESSFLAGS 	= 
+ # RANLIB 	= true
+-RANLIB	 	= ranlib
++RANLIB	 	+= ranlib
+ 
+ #
+ #    You shouldn't have to configure below this line if you're porting.
+@@ -302,7 +302,6 @@
+ # The basic API: libgsm
+ 
+ $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
+-		-rm $(RMFLAGS) $(LIBGSM)
+ 		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
+ 		$(RANLIB) $(LIBGSM)
+ 
+
