@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  surl-0.3.ebuild:
+  Added ~x86-fbsd keyword
+
   12 Feb 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   surl-0.3.ebuild:
   Project moved to SourceForge
