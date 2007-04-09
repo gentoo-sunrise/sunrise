@@ -34,8 +34,7 @@ src_install() {
 
 	cd "${S}"
 	echo "IMGV_HOME=${INST_DIR}" >> 90imgv
-	insinto /etc/env.d
-	doins 90imgv
+	doenvd 90imgv
 
 	make_wrapper imgv "/usr/bin/python ${INST_DIR}/imgv.py"
 }
