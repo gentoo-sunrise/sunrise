@@ -55,3 +55,8 @@ pkg_config() {
 	einfo "The vocabulary database is in:"
 	einfo "  /usr/share/${PN}"
 }
+
+pkg_postrm() {
+	# do not leave orphaned cruft behind
+	[[ -e /usr/share/${PN} ]] && rm -rf /usr/share/${PN}
+}
