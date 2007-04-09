@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Apr 2007; Jakub Moc <jakub@gentoo.org> linux-phc-0.2.8.ebuild,
+  linux-phc-0.2.9.ebuild:
+  Fix broken collision-protect check
+
   07 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   +linux-phc-0.2.9.ebuild, +files/linux-phc-0.2.9-msr_h-fix.patch:
   version bump adding support for kernel-2.6.20

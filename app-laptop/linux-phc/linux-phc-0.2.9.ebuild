@@ -40,7 +40,7 @@ which_patch() {
 }
 
 collision_check() {
-	if has collision_protect ${FEATURES}; then
+	if has collision-protect ${FEATURES}; then
 		ewarn "Collisions are expected as this patches kernel code. Disable"
 		ewarn "FEATURES=collision-protect before use"
 		die 'incompatible FEATURES=collision-protect'
