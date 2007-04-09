@@ -10,7 +10,7 @@ SRC_URI="http://www.dagii.org/dist/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc"
+KEYWORDS="~ppc ~x86-fbsd"
 IUSE="png"
 
 DEPEND="png? ( media-libs/libpng )

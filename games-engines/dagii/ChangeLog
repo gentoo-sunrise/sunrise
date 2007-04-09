@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  dagii-0.3.ebuild:
+  Added ~x86-fbsd keyword
+
   15 Mar 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com
   dagii-0.3.ebuild, -files/dagii-0.3-depend.1.diff, dagii-0.4.ebuild:
   Addition of make dep target; removal of now-unneeded patch; tidying elog
