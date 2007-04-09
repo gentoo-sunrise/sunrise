@@ -6,19 +6,21 @@ NEED_PYTHON=2.3
 
 inherit distutils
 
+MY_P="BlockHosts-${PV}"
 DESCRIPTION="Blocks abusive IP hosts which probe your services (such as sshd, proftpd)"
 HOMEPAGE="http://www.aczoom.com/cms/blockhosts/"
-SRC_URI="http://www.aczoom.com/tools/blockhosts/${P}.tar.gz"
+SRC_URI="http://www.aczoom.com/tools/blockhosts/${MY_P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="doc logrotate"
+IUSE="logrotate"
 
 DEPEND=""
 RDEPEND="logrotate? ( app-admin/logrotate )"
 
 DOCS="CHANGES"
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
@@ -44,7 +46,7 @@ src_install() {
 	insinto /usr/share/${PN}
 	doins bhrss.py
 
-	use doc && dohtml *.html
+	dohtml *.html
 }
 
 pkg_postinst() {

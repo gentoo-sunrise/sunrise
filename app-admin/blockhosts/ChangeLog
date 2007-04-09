@@ -1,4 +1,4 @@
-# ChangeLog for app-admin/BlockHosts
+# ChangeLog for app-admin/blockhosts
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
@@ -11,7 +11,7 @@
   use distutils,added logrotate use flag,install bhrss.py to
   /usr/share/BlockHosts
 
-  08 Apr 2007; Kevin Funk <krf@gmx.de> +BlockHosts-2.0.2.ebuild,
+  08 Apr 2007; Kevin Funk <krf@gmx.de> +blockhosts-2.0.2.ebuild,
   +metadata.xml:
   Initial ebuild for bug #173631. Thanks to genstef for support.
 
