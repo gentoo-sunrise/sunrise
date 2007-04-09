@@ -54,9 +54,9 @@ pkg_postinst() {
 	elog "This package isn't configured properly."
 	elog "Please refer to the homepage to do this!"
 	echo
-	elog "bhrss.py cgi script is under /usr/share/${PN}"
-	elog "If you want to use it, put it in your cgi-bin"
+	elog "bhrss.py cgi-script is in /usr/share/${PN}."
+	elog "If you want to use it, put it in your cgi-bin,"
 	elog "emerge dev-python/pyxml and copy blockhosts.py"
-	elog "into your python module directory"
+	elog "into your python module directory."
 	echo
 }

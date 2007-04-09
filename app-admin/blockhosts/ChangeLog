@@ -7,11 +7,11 @@
 
   09 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   blockhosts-2.0.2.ebuild:
-  removed redundant insinto
+  Removed redundant insinto
 
   08 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   blockhosts-2.0.2.ebuild:
-  use distutils,added logrotate use flag,install bhrss.py to
+  Use distutils, added logrotate use flag, install bhrss.py to
   /usr/share/blockhosts
 
   08 Apr 2007; Kevin Funk <krf@gmx.de> +blockhosts-2.0.2.ebuild,
