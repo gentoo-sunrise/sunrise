@@ -6,7 +6,7 @@ inherit eutils vim-doc
 
 DESCRIPTION="A small utility which allows debugging from within vim"
 HOMEPAGE="http://clewn.sourceforge.net/"
-SRC_URI="mirror://sourceforge/clewn/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -15,7 +15,7 @@ IUSE=""
 
 DEPEND=">=app-editors/gvim-7.0
 	sys-libs/readline"
-RDEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
 S="${WORKDIR}/${PN}"
 
 pkg_setup() {
