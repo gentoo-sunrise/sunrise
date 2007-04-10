@@ -8,7 +8,7 @@ DESCRIPTION="First Cushion Shooter! A remake of well-known Czech game Bulanci."
 SRC_URI="http://tuxanci.tuxportal.cz/releases/${P}.tar.bz2"
 HOMEPAGE="http://tuxanci.tuxportal.cz"
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~x86-fbsd"
 LICENSE="GPL-2"
 SLOT="0"
 
