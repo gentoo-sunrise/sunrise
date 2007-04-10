@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> -clewn-1.9.ebuild,
+  +clewn-1.10.ebuild:
+  Version bump
+
   10 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> clewn-1.9.ebuild:
   Fix RDEPEND, cosmetics
 

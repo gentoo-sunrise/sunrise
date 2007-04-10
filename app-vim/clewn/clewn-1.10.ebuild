@@ -11,12 +11,12 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="debug"
 
 DEPEND=">=app-editors/gvim-7.0
 	sys-libs/readline"
-RDEPEND="${DEPEND}"
-S="${WORKDIR}/${PN}"
+RDEPEND="${DEPEND}
+	sys-devel/gdb"
 
 pkg_setup() {
 	if ! built_with_use app-editors/gvim netbeans ; then
@@ -26,11 +26,14 @@ pkg_setup() {
 	fi
 }
 
+src_compile() {
+	vimdir=/usr/share/vim/vimfiles econf $(use_enable debug)
+	emake || die "emake failed"
+}
+
 src_install() {
-	dodoc README.txt CHANGELOG
-	dobin clewn
-	dodir /usr/share/vim/vimfiles
-	tar -xzf "${S}/runtime/clewn_runtime.tgz" -C "${D}/usr/share/vim/vimfiles"
+	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc ChangeLog README
 }
 
 pkg_postinst() {
