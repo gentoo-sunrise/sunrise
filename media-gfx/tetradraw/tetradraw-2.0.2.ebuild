@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~x86-fbsd"
 
 DESCRIPTION="A fully featured ANSI art editor for *nix operating systems."
 HOMEPAGE="http://tetradraw.sourceforge.net/"
