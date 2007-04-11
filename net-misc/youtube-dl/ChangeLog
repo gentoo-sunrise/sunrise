@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2007; Santiago M. Mola <gentoo@coldwind.org>
+  -youtube-dl-2007.02.18.ebuild, +youtube-dl-2007.03.27.ebuild:
+  Version bump.
+
   11 Mar 2007; Santiago M. Mola <cooldwind@gmail.com>
   -youtube-dl-2007.01.19.ebuild, +youtube-dl-2007.02.18.ebuild:
   Version bump.
