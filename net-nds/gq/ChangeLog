@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Apr 2007; Markus Rennings (mren) <mren@mrmx.de> gq-1.2.2.ebuild:
+  fixed dependencies, and added dep for libglade (thanks to Azamat H. Hackimov
+  on bugzilla)
+
   19 Jan 2007; Markus Ullmann <jokey@gentoo.org> gq-1.2.2.ebuild:
   cosmetics
 
