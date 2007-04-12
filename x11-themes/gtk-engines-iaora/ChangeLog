@@ -1,0 +1,8 @@
+# ChangeLog for x11-themes/gtk-engines-iaora
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Apr 2007; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  +gtk-engines-iaora-1.0.11.ebuild, +metadata.xml:
+  New ebuild for bug 170321
+
