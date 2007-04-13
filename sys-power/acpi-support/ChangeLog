@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2007; AK <gentoo@horizon.ath.cx> +acpi-support-0.95.ebuild,
+  +files/acpi-support-0.95-gentoo.patch:
+  Version bump and some fixes
+
   06 Mar 2007; AK <gentoo@horizon.ath.cx> acpi-support-0.91.ebuild,
   files/acpi-support-0.91-gentoo.patch:
   Fixes, cleanups, more patching
