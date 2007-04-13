@@ -18,8 +18,9 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 	WX_GTK_VER=2.6
-	need-wxconfig unicode || die "please rebuild wxGTK with unicode useflag"
-	econf $(use_enable debug) || die "econf failed"
+	need-wxwidgets unicode || die "please rebuild wxGTK with unicode useflag"
+	#we had to pass the "wx-config" because sometimes it won't work otherwise
+	econf $(use_enable debug) --with-wx-config="wx-config"|| die "econf failed"
 	emake || die "emake failed"
 }
 

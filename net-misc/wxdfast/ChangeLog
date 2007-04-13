@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2007; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
+  wxdfast-0.6.0.ebuild:
+  Fixed some configuration issues
+
   03 Apr 2007; Markus Ullmann <jokey@gentoo.org> -wxdfast-0.5.4.ebuild,
   wxdfast-0.6.0.ebuild:
   Drop old and cosmetics
