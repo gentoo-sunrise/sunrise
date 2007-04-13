@@ -26,7 +26,7 @@ RDEPEND="sys-power/acpid
 	laptop-mode? ( app-laptop/laptop-mode-tools )
 	video_cards_radeon? ( app-laptop/radeontool )
 	pcmcia? ( >=sys-apps/pcmciautils-013 )
-	i855? ( sys-apps/855resolution )"
+	intel-855? ( sys-apps/855resolution )"
 
 # Say thanks to whoever packaged this...
 S=${WORKDIR}/${PN}-0.94

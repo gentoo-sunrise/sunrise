@@ -3,6 +3,9 @@
 # $Header: $
 
   13 Apr 2007; AK <gentoo@horizon.ath.cx> acpi-support-0.95.ebuild:
+  typo
+
+  13 Apr 2007; AK <gentoo@horizon.ath.cx> acpi-support-0.95.ebuild:
   Add X use flag and rename i855->intel-855 for clarity
 
   13 Apr 2007; AK <gentoo@horizon.ath.cx> +acpi-support-0.95.ebuild,
