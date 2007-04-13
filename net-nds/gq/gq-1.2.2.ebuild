@@ -9,13 +9,11 @@ SRC_URI="mirror://sourceforge/gqclient/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-# Feel free to make conditional once it is not automagic
-# http://www.gentoo.org/proj/en/qa/automagic.xml
-IUSE="kerberos" # sasl ssl
+IUSE="kerberos"
 
 RDEPEND=">=x11-libs/gtk+-2.6
 	>=net-nds/openldap-2
-	kerberos? ( app-crypt/mit-krb5 )
+	kerberos? ( virtual/krb5 )
 	dev-libs/openssl
 	dev-libs/libxml2
 	>=dev-libs/glib-2.6

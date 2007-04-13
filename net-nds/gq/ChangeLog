@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2007; Markus Rennings (mren) <mren@mrmx.de> gq-1.2.2.ebuild:
+  changed krb5-dep to virtual/krb5. Thanks to Azamat H. Hackimov on bugzilla
+  again.
+
   12 Apr 2007; Markus Rennings (mren) <mren@mrmx.de> gq-1.2.2.ebuild:
   fixed dependencies, and added dep for libglade (thanks to Azamat H. Hackimov
   on bugzilla)
