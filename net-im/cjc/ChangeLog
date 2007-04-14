@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2007; Michael Pagano <mpagano@gmail.com> cjc-1.0.0.ebuild:
+  Homepage and SRC_URI change.
+
   10 Aug 2006; Michael Pagano (mpagano) mpagano@gmail.com cjc-1.0.0.ebuild:
   Corrected typo in HOMEPAGE
 
