@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2007; Michael Pagano <mpagano@gmail.com> -pyxmpp-1.0.0.ebuild:
+  Removed broken ebuild.
+
   14 Apr 2007; Michael Pagano <mpagano@gmail.com> +pyxmpp-1.0.0-r1.ebuild:
   Fixed broken make file and corrected SRC_URI and HOMEPAGE as it moved.
 
