@@ -11,7 +11,7 @@ SRC_URI="http://archive.ubuntu.com/ubuntu/pool/main/a/acpi-support/acpi-support_
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="kde laptop-mode pcmcia toshiba intel-855 X video_cards_radeon"
+IUSE="hibernate-script intel-855 kde laptop-mode pcmcia toshiba X video_cards_radeon"
 
 DEPEND=""
 RDEPEND="sys-power/acpid
@@ -20,23 +20,25 @@ RDEPEND="sys-power/acpid
 	sys-apps/vbetool
 	sys-apps/ethtool
 	sys-power/powermgmt-base
-	X? ( x11-apps/xset )
-	kde? ( =kde-base/kdelibs-3.5* )
-	toshiba? ( app-laptop/toshset )
+	hibernate-script? ( sys-power/hibernate-script )
+	intel-855? ( sys-apps/855resolution )
 	laptop-mode? ( app-laptop/laptop-mode-tools )
-	video_cards_radeon? ( app-laptop/radeontool )
+	kde? ( =kde-base/kdelibs-3.5* )
 	pcmcia? ( >=sys-apps/pcmciautils-013 )
-	intel-855? ( sys-apps/855resolution )"
+	toshiba? ( app-laptop/toshset )
+	X? ( x11-apps/xset )
+	video_cards_radeon? ( app-laptop/radeontool )"
 
 # Say thanks to whoever packaged this...
 S=${WORKDIR}/${PN}-0.94
 
 src_unpack() {
 	unpack ${A}
-	use video_cards_radeon && sed -i '/RADEON_LIGHT=true/ s/# //' "${S}/acpi-support" || die "sed failed"
-	use X || sed -i '/xset/ s/\(.*\)/#\1/' "${S}/"{lid.sh,lib/screenblank} || die "sed failed"
-	sed -i "s!/etc/default/acpi-support!/etc/conf.d/${PN}!" "${S}/"{*.sh,vbesave} || die "sed failed"
 	epatch "${FILESDIR}/${P}-gentoo.patch"
+	use hibernate-script && sed -i '/USE_HIBERNATE_SCRIPT=true/ s/# //' "${S}/acpi-support"
+	use video_cards_radeon && sed -i '/RADEON_LIGHT=true/ s/# //' "${S}/acpi-support"
+	use X || sed -i '/xset/ s/\(.*\)/#\1/' "${S}/"{lid.sh,lib/screenblank}
+	sed -i "s!/etc/default/acpi-support!/etc/conf.d/${PN}!" "${S}/"{*.sh,vbesave} || die "sed failed"
 }
 
 src_compile() {
