@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
+  +aufs-20070402.ebuild, +files/aufs-20070402-ksize.patch,
+  +files/aufs-20070402-lhash.patch:
+  New aufs (Another Union FS) ebuild
+
   12 Mar 2007; Jakub Moc <jakub@gentoo.org> aufs-20070212.ebuild:
   Fix up the postinst/postrm checks a bit
 
