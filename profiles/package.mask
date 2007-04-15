@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Ali Polatel <polatel@gmail.com> (15 April 2007)
+# live ebuilds should be masked
+=app-vim/clewn-9999
+
 # Nathan Smith <ndansmith@gmail.com> (12 March 2007)
 # This is broken and will most likely not build until patches
 # arrive from upstream
