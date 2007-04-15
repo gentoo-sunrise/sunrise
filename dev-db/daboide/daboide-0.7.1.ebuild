@@ -22,8 +22,6 @@ RDEPEND=">=dev-python/wxpython-2.6.1.1
 
 S="${WORKDIR}/${PN}"
 
-RESTRICT="mirror"
-
 # Prevent inherited method from trying to run setup.py
 src_compile() { :; }
 
