@@ -17,8 +17,6 @@ KEYWORDS="~x86"
 DEPEND="pvm? ( sys-cluster/pvm )"
 RDEPEND=${DEPEND}
 
-RESTRICT="mirror"
-
 S=${WORKDIR}
 
 src_unpack() {
