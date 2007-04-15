@@ -3,6 +3,10 @@
 # $Header: $
 
   15 Apr 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
+  ttcut-0.11.4_alpha.ebuild:
+  fixed syntax
+
+  15 Apr 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   ttcut-0.11.4_alpha.ebuild, ttcut-9999.ebuild:
   updated qt3support usage for both ebuilds
 

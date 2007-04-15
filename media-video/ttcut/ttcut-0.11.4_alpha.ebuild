@@ -28,12 +28,8 @@ src_compile() {
 		eerror "In order to compile ttmpeg2 you need to recompile qt4 with"
 		eerror "qt3support USE flag enabled."
 		die "Recompile qt4 with qt3support USE flag enabled"
-
+	fi
 		if use ttmpeg2 ; then
-			eerror "In order to compile ttmpeg2 you need to recompile qt4 with"
-			eerror "qt3support USE flag enabled."
-			die "Recompile qt4 with qt3support USE flag enabled"
-		fi
 
 			qmake ttmpeg2.pro -o Makefile.ttmpeg2 || \
 				die "configuring ttpmeg2 failed"
