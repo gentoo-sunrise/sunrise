@@ -19,10 +19,8 @@ DEPEND=""
 RDEPEND=""
 need-kde 3.5
 
-S=${WORKDIR}/ia_ora-kde
+S=${WORKDIR}/${PN}
 
-src_unpack() {
-	rpm_src_unpack
-	cd "${S}"
+src_compile() {
 	emake -f admin/Makefile.common cvs || die "emake failed"
 }
