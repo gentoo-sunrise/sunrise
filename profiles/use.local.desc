@@ -107,9 +107,6 @@ sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module r
 sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
-sys-power/acpi-support:intel-855 - Use sys-apps/855resolution for Intel 855 chipset BIOS screen resolution fix
-sys-power/acpi-support:laptop-mode - Support for laptop-mode utils
-sys-power/acpi-support:toshiba - Use app-laptop/toshset for some features
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/wbar:animation - Patch for animation support
