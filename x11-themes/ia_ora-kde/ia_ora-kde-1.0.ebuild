@@ -22,7 +22,7 @@ need-kde 3.5
 S=${WORKDIR}/ia_ora-kde
 
 src_unpack() {
-        rpm_src_unpack
-        cd "${S}"
+	rpm_src_unpack
+	cd "${S}"
 	emake -f admin/Makefile.common cvs || die "emake failed"
 }
