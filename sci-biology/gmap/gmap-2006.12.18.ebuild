@@ -18,8 +18,6 @@ KEYWORDS="~x86"
 DEPEND=""
 RDEPEND=""
 
-RESTRICT="mirror"
-
 S="${WORKDIR}/gmap-${MY_PV}"
 
 src_install() {
