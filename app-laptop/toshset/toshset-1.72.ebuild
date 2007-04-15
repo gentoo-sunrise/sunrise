@@ -16,8 +16,6 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-RESTRICT="mirror"
-
 src_unpack() {
 	unpack ${A}
 #	epatch "${DISTDIR}/toshset_${PV}-2ubuntu1.diff"
@@ -25,6 +23,6 @@ src_unpack() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README
 }
