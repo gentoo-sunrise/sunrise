@@ -29,16 +29,17 @@ src_compile() {
 		eerror "qt3support USE flag enabled."
 		die "Recompile qt4 with qt3support USE flag enabled"
 	fi
-		if use ttmpeg2 ; then
 
-			qmake ttmpeg2.pro -o Makefile.ttmpeg2 || \
-				die "configuring ttpmeg2 failed"
-			make -f Makefile.ttmpeg2 || die "emake ttmpeg2 failed"
-		fi
+	if use ttmpeg2 ; then
 
-		qmake ttcut.pro -o Makefile.ttcut || \
-			die "configuring ttcut failed"
-		emake -f Makefile.ttcut || die "emake failed"
+		qmake ttmpeg2.pro -o Makefile.ttmpeg2 || \
+			die "configuring ttpmeg2 failed"
+		make -f Makefile.ttmpeg2 || die "emake ttmpeg2 failed"
+	fi
+
+	qmake ttcut.pro -o Makefile.ttcut || \
+		die "configuring ttcut failed"
+	emake -f Makefile.ttcut || die "emake failed"
 }
 
 src_install() {
