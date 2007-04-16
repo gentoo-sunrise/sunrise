@@ -5,8 +5,8 @@
 inherit distutils
 
 DESCRIPTION="a set of tools for updating gentoo config files"
-HOMEPAGE="http://michaelsen.kicks-ass.net/Members/bjoern/etcproposals/"
-SRC_URI="http://michaelsen.kicks-ass.net/Members/bjoern/etcproposals/downloads/${P}.tar.gz"
+HOMEPAGE="http://developer.berlios.de/projects/etc-proposals/"
+SRC_URI="mirror://berlios/etc-proposals/${P}.tar.gz"
 
 IUSE="gtk"
 LICENSE="GPL-2"

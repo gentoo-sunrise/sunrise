@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2007; Bjoern Michaelsen (Sweetshark) <bjoern.michaelsen@gmail.com>
+  etcproposals-1.1.ebuild:
+  Fixing SRC_URI and HOMEPAGE for etcproposals because old server is unavailable
+
   01 Mar 2007; Christian Faulhammer <opfer@gentoo.org>
   etcproposals-1.0.ebuild:
   add gtk USE flag as in the revised ebuild from bug 155546
