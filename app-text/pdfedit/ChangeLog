@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2007; Pavel Sanda (ps) <ps at twin.jikos.cz> +pdfedit-0.2.5.ebuild:
+  app-text/pdfedit 0.3.0 version bump
+  
   12 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
   -pdfedit-0.2.3.ebuild:
   removed stray digest and old ebuild
