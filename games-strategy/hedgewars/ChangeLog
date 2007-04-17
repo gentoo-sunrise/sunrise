@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  hedgewars-0.9.0-r2.ebuild:
+  Revert mistaken addition of ~ppc keyword while adding media-radio
+
   21 Mar 2007; Displacer <disinbox@gmail.com> hedgewars-0.9.0-r2.ebuild:
   remove dev-lang/fpc from RDEPEND
 
