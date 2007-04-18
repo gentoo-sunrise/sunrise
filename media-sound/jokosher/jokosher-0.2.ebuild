@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/python-2.4
-	|| ( dev-python/dbus-python ( >=sys-apps/dbus-0.60 <sys-apps/dbus-0.90 ) )
+	dev-python/dbus-python
 	dev-python/gnome-python
 	>=dev-python/gst-python-0.10.6
 	dev-python/pycairo
@@ -34,8 +34,6 @@ RDEPEND=">=dev-lang/python-2.4
 
 DEPEND="${RDEPEND}"
 
-IPATH="/usr/share/${PN}"
-
 pkg_setup() {
 	# warn if dbus python bindings are not available (in case of <dbus-0.90)
 	if ! has_version dev-python/dbus-python && ! built_with_use sys-apps/dbus python
@@ -53,15 +51,16 @@ pkg_setup() {
 }
 
 src_install() {
-	dobin "${FILESDIR}/${PN}"
+
+	dobin "${FILESDIR}"/jokosher
 
 	cd "${WORKDIR}"
 	dodoc AUTHORS README
 
-	insinto "${IPATH}"
+	insinto /usr/share/jokosher
 	doins -r extensions images Instruments
 	doins Jokosher/*
-	fperms 755 "${IPATH}/Jokosher" "${IPATH}/JokosherApp.py"
+	fperms 755 /usr/share/jokosher/{Jokosher,JokosherApp.py}
 	doicon images/jokosher-icon.png
 	domenu jokosher.desktop
 
@@ -71,12 +70,12 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_mod_optimize "${IPATH}"
+	python_mod_optimize ${ROOT}usr/share/jokosher
 	echo
 	einfo "Use /usr/bin/jokosher to run Jokosher ${PV}"
 	echo
 }
 
 pkg_postrm() {
-	python_mod_cleanup "${IPATH}"
+	python_mod_cleanup ${ROOT}usr/share/jokosher
 }
