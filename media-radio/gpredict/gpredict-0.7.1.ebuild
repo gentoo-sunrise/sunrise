@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/groundstation/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc"
+KEYWORDS="~ppc ~x86-fbsd"
 IUSE=""
 
 DEPEND=">=dev-libs/glib-2.10.0
