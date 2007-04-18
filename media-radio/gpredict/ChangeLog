@@ -4,6 +4,10 @@
 
   18 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   gpredict-0.7.1.ebuild:
+  Added ~x86 keyword
+
+  18 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  gpredict-0.7.1.ebuild:
   Added ~x86-fbsd keyword
 
   18 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com
