@@ -11,12 +11,10 @@ SRC_URI="http://pyxmpp.jajcus.net/downloads/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~x86"
-
 IUSE=""
 
 DEPEND=">=dev-lang/python-2.3
 	>=dev-libs/libxml2-2.6.23"
-
 RDEPEND=">=dev-python/dnspython-1.3.2
 	>=dev-python/m2crypto-0.13.1"
 

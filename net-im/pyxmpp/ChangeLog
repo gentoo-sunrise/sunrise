@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Cosmetics and don't make ebuilds executables
+
   14 Apr 2007; Michael Pagano <mpagano@gmail.com> -pyxmpp-1.0.0.ebuild:
   Removed broken ebuild.
 
