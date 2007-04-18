@@ -44,14 +44,7 @@ media-gfx/openscenegraph:introspection - Compile osgIntrospection
 media-gfx/openscenegraph:inventor - Compile inventor plugin
 media-gfx/openscenegraph:jasper - Compile jasper plugin
 media-gfx/openscenegraph:producer - Compile osgProducer
-media-libs/freeimage:plus - Compile FreeImagePlus
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
-media-sound/exaile:cdaudio - Enable cd audio playback support
-media-sound/exaile:ipod - Enable support for ipod
-media-sound/exaile:libsexy - Enable libsexy support
-media-sound/exaile:musepack - Enables support for the musepack audio codec
-media-sound/exaile:serpentine - Add cd-burning support using serpentine 
-media-sound/exaile:streamripper - Add streamripper support for stream recording
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
 media-sound/gnormalize:musepack - Enables support for the musepack audio codec
 media-sound/gnormalize:normalize - Enable the normalize front-end
@@ -65,7 +58,6 @@ media-sound/om:ladspa - Enables support for LADSPA plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
-media-video/dvd-slideshow:themes - Enable theme support
 media-video/gcstar:md5 - Enables generation of md5 checksums
 media-video/gcstar:zip - Enables support for zip files
 media-video/ttcut:ttmpeg2 - Enable ttmpeg2 a MPEG file analyser
@@ -82,7 +74,6 @@ net-im/gizmo:avahi - Use avahi mdns daemon
 net-im/pyaim-t:web - Enables optional web interface
 net-im/pyicq-t:web - Enables optional web interface
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
-net-mail/dbmail:sieve - Add support for sieve mail filtering
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
 net-mail/simscan:dropmsg - Enable dropping message contains virus/spam
@@ -135,4 +126,3 @@ x11-plugins/gaim-plugin_pack:slashexec - Enable the slashexec plugin that offers
 x11-plugins/gaim-plugin_pack:sslinfo - Enable the sslinfo plugin showing inforamtion about the currently used SSL version
 x11-plugins/gaim-plugin_pack:talkfilters - Enable the GNU talkfilters plugin
 x11-plugins/gaim-plugin_pack:xchat-chats - Enable the plugin offering xchat-style chats
-x11-themes/qtcurve:gtk1 - Adds support for x11-libs/gtk+ (The GIMP Toolkit) version 1.x
