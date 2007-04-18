@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2007; Markus Ullmann <jokey@gentoo.org> -aufs-20070212.ebuild,
+  aufs-20070402.ebuild:
+  Drop old and some cosmetics
+
   14 Apr 2007; Torsten Kockler (conbart) <torsten.kockler@fh-kl.de>
   +aufs-20070402.ebuild, +files/aufs-20070402-ksize.patch,
   +files/aufs-20070402-lhash.patch:
