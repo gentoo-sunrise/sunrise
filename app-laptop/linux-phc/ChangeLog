@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2007; Markus Ullmann <jokey@gentoo.org> -linux-phc-0.2.8.ebuild,
+  linux-phc-0.2.9.ebuild:
+  Drop old and some cosmetics
+
   09 Apr 2007; Jakub Moc <jakub@gentoo.org> linux-phc-0.2.8.ebuild,
   linux-phc-0.2.9.ebuild:
   Fix broken collision-protect check

@@ -56,7 +56,7 @@ src_unpack() {
 	which_patch
 
 	if egrep -q 'linux-phc' \
-		${KV_DIR}/arch/i386/kernel/cpu/cpufreq/speedstep-centrino.c
+		"${KV_DIR}"/arch/i386/kernel/cpu/cpufreq/speedstep-centrino.c
 	then
 		ewarn "already installed ${PN} for kernel ${KV_FULL}"
 		ewarn "If this is an upgrade attempt, reemerge your kernel sources"
@@ -71,22 +71,22 @@ src_unpack() {
 	epatch "${FILESDIR}"/${P}-msr_h-fix.patch || die "epatch failed"
 
 	local mydir="arch/i386/kernel/cpu/cpufreq"
-	mkdir -p "${S}/${mydir}"
+	mkdir -p "${S}"/${mydir}
 
-	cp -P "${KV_DIR}/${mydir}/Kconfig" "${S}/${mydir}/"
-	cp -P "${KV_DIR}/${mydir}/Makefile" "${S}/${mydir}/"
-	cp -P "${KV_DIR}/${mydir}/speedstep-centrino.c" "${S}/${mydir}/"
+	cp -P "${KV_DIR}"/${mydir}/Kconfig "${S}"/${mydir}/
+	cp -P "${KV_DIR}"/${mydir}/Makefile "${S}"/${mydir}/
+	cp -P "${KV_DIR}"/${mydir}/speedstep-centrino.c "${S}"/${mydir}/
 
-	epatch "${S}/${PATCH}" || die "epatch failed"
+	epatch "${S}"/${PATCH}
 }
 
 src_compile() {
-	einfo 'Compiling measurefreq'
-	cd "${S}/utils/measurefreq"
+	einfo "Compiling measurefreq"
+	cd "${S}"/utils/measurefreq
 	eautoconf
 	eautomake
-	econf || die 'econf failed'
-	emake || die 'emake failed'
+	econf || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
@@ -95,7 +95,7 @@ src_install() {
 	dodoc README
 	doinitd gentoo/etc/init.d/undervolt
 	doconfd gentoo/etc/conf.d/undervolt
-	cd "${S}/utils/measurefreq"
+	cd "${S}"/utils/measurefreq
 	emake DESTDIR="${D}" install || die "emake failed"
 }
 
