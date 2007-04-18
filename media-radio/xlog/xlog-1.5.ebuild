@@ -8,7 +8,7 @@ SRC_URI="http://pg4i.chronos.org.uk/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc"
+KEYWORDS="~ppc ~x86"
 IUSE=""
 
 DEPEND="dev-util/pkgconfig
