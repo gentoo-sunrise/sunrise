@@ -11,14 +11,12 @@ SRC_URI="mirror://sourceforge/timerapplet/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-
 IUSE="doc sounds libnotify"
 
 DEPEND=">=gnome-base/gnome-panel-2.6
 	>=x11-libs/gtk+-2.8
 	sounds? ( gnome-extra/gnome-audio )
 	libnotify? ( >=x11-libs/libnotify-0.3 )"
-
 RDEPEND="${DEPEND}"
 
 DOCS="AUTHORS Changelog NEWS README"
