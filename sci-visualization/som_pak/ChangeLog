@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2007; Markus Ullmann <jokey@gentoo.org> som_pak-3.1.ebuild:
+  cosmetics
+
   07 Apr 2007; Eddy Mulyono (eddyMul) <eddymul@gmail.com>
   +som_pak-3.1.ebuild, +files/som_pak-3.1_makefile_qa.diff, +metadata.xml:
   New Ebuild for bug 172841 thanks to jakub and Opfer
