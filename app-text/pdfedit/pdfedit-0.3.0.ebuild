@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils qt3
+inherit qt3
 
 DESCRIPTION="Editor for manipulating PDF documents. GUI and commandline interface."
 HOMEPAGE="http://pdfedit.petricek.net"
