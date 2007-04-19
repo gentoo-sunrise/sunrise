@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Whole-genome shotgun assembler from TIGR"
+DESCRIPTION="A whole-genome shotgun assembler from TIGR"
 HOMEPAGE="http://www.tigr.org/software/assembler/"
 SRC_URI="ftp://ftp.tigr.org/pub/software/assembler/TIGR_Assembler_v2.tar.gz"
 
@@ -17,7 +17,7 @@ RDEPEND=""
 S="${WORKDIR}/TIGR_Assembler_v2"
 
 src_compile() {
-	sed -i 's/CFLAGS  = -O/CFLAGS := -O ${CFLAGS}/' "${S}/src/Makefile"
+	sed -i 's/CFLAGS.*= -O/CFLAGS := -O ${CFLAGS}/' "${S}/src/Makefile" || die "sed failed"
 	cd "${S}/src"
 	emake || die "emake failed"
 }
