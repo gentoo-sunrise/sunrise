@@ -18,11 +18,11 @@ RDEPEND="${DEPEND}
 	sci-biology/mummer"
 
 src_compile() {
-	econf
+	econf || die "econf failed"
 	# TODO: fix parallel make. Notified upstream
 	emake -j1 || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "install failed"
 }
