@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Apr 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
+  -ttcut-0.11.4_alpha.ebuild:
+  Remove ttcut-0.11.4_alpha.ebuild
+
+  21 Apr 2007; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   Manifest:
   Version 0.11.4_alpha now in portage
 
