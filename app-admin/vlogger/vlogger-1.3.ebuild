@@ -4,7 +4,7 @@
 
 DESCRIPTION="Virtual web logfile rotater/parser, similar to cronolog and httplog"
 HOMEPAGE="http://n0rp.chemlab.org/vlogger/"
-SRC_URI="http://n0rp.chemlab.org/vlogger/${P}.tar.gz"
+SRC_URI="http://n0rp.chemlab.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
