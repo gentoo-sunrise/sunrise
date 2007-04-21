@@ -1,0 +1,70 @@
+diff -ur jailkit-2.3/Makefile.in jailkit-2.3-destdir/Makefile.in
+--- jailkit-2.3/Makefile.in	2006-12-24 16:26:10.000000000 +0200
++++ jailkit-2.3-gentoo/Makefile.in	2007-04-21 21:01:19.000000000 +0300
+@@ -28,8 +28,8 @@
+ #POSSIBILITY OF SUCH DAMAGE.
+ #
+ INSTALL = @INSTALL@
+-prefix = @prefix@
+-sysconfdir = @sysconfdir@
++prefix = $(DESTDIR)@prefix@
++sysconfdir = $(DESTDIR)@sysconfdir@
+ iniprefix = ${sysconfdir}/jailkit
+ PACKAGE = @PACKAGE@
+ 
+@@ -72,8 +72,8 @@
+ 	# test if the jk_chrootsh is already in /etc/shells
+ 	# this previously had @echo but that fails on FreeBSD
+ 	if ! grep ${prefix}/sbin/jk_chrootsh /etc/shells ; then \
+-		echo "appending ${prefix}/sbin/jk_chroots to /etc/shells";\
+-		echo ${prefix}/sbin/jk_chrootsh >> /etc/shells ;\
++		echo "appending ${prefix}/sbin/jk_chrootsh to $(DESTDIR)/etc/shells";\
++		echo ${prefix}/sbin/jk_chrootsh >> $(DESTDIR)/etc/shells ;\
+ 	fi
+ 
+ 
+diff -ur jailkit-2.3/man/Makefile.in jailkit-2.3-destdir/man/Makefile.in
+--- jailkit-2.3/man/Makefile.in	2006-12-20 01:25:18.000000000 +0200
++++ jailkit-2.3-gentoo/man/Makefile.in	2007-04-21 21:01:36.000000000 +0300
+@@ -1,5 +1,5 @@
+ INSTALL = @INSTALL@
+-prefix = @prefix@
++prefix = $(DESTDIR)@prefix@
+ 
+ SRCS = jailkit.8 jk_chrootsh.8 jk_lsh.8 jk_socketd.8 jk_init.8 jk_check.8 jk_cp.8 jk_chrootlaunch.8 jk_procmailwrapper.8 jk_addjailuser.8 jk_jailuser.8 jk_list.8 jk_update.8
+ OBJS = $(SRCS:.8=.8.gz)
+diff -ur jailkit-2.3/py/Makefile.in jailkit-2.3-destdir/py/Makefile.in
+--- jailkit-2.3/py/Makefile.in	2006-12-28 11:48:12.000000000 +0200
++++ jailkit-2.3-gentoo/py/Makefile.in	2007-04-21 21:02:00.000000000 +0300
+@@ -30,8 +30,8 @@
+ 
+ INSTALL = @INSTALL@
+ PACKAGE = @PACKAGE@
+-prefix = @prefix@
+-sysconfdir = @sysconfdir@
++prefix = $(DESTDIR)@prefix@
++sysconfdir = $(DESTDIR)@sysconfdir@
+ INIPREFIX = ${sysconfdir}/jailkit
+ PREFIX = ${prefix}
+ PYTHONINTERPRETER = @PYTHONINTERPRETER@
+diff -ur jailkit-2.3/src/Makefile.in jailkit-2.3-destdir/src/Makefile.in
+--- jailkit-2.3/src/Makefile.in	2006-11-16 22:10:56.000000000 +0200
++++ jailkit-2.3-gentoo/src/Makefile.in	2007-04-21 21:02:27.000000000 +0300
+@@ -28,8 +28,8 @@
+ #POSSIBILITY OF SUCH DAMAGE.
+ #
+ 
+-prefix = @prefix@
+-sysconfdir = @sysconfdir@
++prefix = $(DESTDIR)@prefix@
++sysconfdir = $(DESTDIR)@sysconfdir@
+ iniprefix = ${sysconfdir}/jailkit
+ INSTALL = @INSTALL@
+ CC = @CC@
+@@ -95,4 +95,4 @@
+ iniparsertester: iniparser.o iniparsertester.o jk_lib.o
+ 	$(CC) $(DEFS) -o iniparsertester iniparsertester.o iniparser.o jk_lib.o $(LDFLAGS) $(LIBS)
+ 
+-	
+\ No newline at end of file
++	

@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2007-04-21 20:51:08.000000000 +0300
++++ src/Makefile.in	2007-04-21 20:57:09.000000000 +0300
+@@ -77,12 +77,12 @@
+ install: ${BINARIES}
+ 	${INSTALL} -d -m 755 ${prefix}
+ 	${INSTALL} -d -m 755 ${prefix}/sbin
+-	${INSTALL} -g 0 -o 0 -s -m 0755 jk_socketd ${prefix}/sbin/
+-	${INSTALL} -g 0 -o 0 -s -m 0755 jk_chrootlaunch ${prefix}/sbin/
+-	${INSTALL} -g 0 -o 0 -s -m 0755 jk_lsh  ${prefix}/sbin/
+-	${INSTALL} -g 0 -o 0 -s -m 4755 jk_chrootsh  ${prefix}/sbin/
++	${INSTALL} -g 0 -o 0 -m 0755 jk_socketd ${prefix}/sbin/
++	${INSTALL} -g 0 -o 0 -m 0755 jk_chrootlaunch ${prefix}/sbin/
++	${INSTALL} -g 0 -o 0 -m 0755 jk_lsh  ${prefix}/sbin/
++	${INSTALL} -g 0 -o 0 -m 4755 jk_chrootsh  ${prefix}/sbin/
+ 	if [ ${HAVEPROCMAIL} -eq "1" ]; then \
+-		${INSTALL} -g 0 -o root -s -m 4755 jk_procmailwrapper  ${prefix}/sbin/ ;\
++		${INSTALL} -g 0 -o root -m 4755 jk_procmailwrapper  ${prefix}/sbin/ ;\
+ 	fi
+ 	
+ uninstall:

@@ -2,6 +2,12 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  -files/jailkit-2.0-destdir.patch, -jailkit-2.1.ebuild,
+  -files/jailkit-2.1-gentoo-sandbox.patch, +jailkit-2.3.ebuild,
+  +files/jailkit-2.3-destdir.patch, +files/jailkit-2.3-nostrip.patch:
+  Version bump
+
   28 Nov 2006; Stefan Schweizer <genstef@gentoo.org> -jailkit-2.0.ebuild,
   -files/jailkit-2.0-gentoo-sandbox.patch:
   remove obsolete old ebuilds, thanks pcheck
