@@ -10,7 +10,7 @@ DESCRIPTION="Multiple alignment of protein sequences with repeated and shuffled 
 HOMEPAGE="http://proda.stanford.edu/"
 SRC_URI="http://proda.stanford.edu/proda_${MY_PV}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="public-domain"
 SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
