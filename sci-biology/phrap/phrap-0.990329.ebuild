@@ -21,7 +21,7 @@ RESTRICT="fetch"
 pkg_nofetch() {
 	einfo "Please visit http://www.phrap.org/phredphrapconsed.html and obtain the file"
 	einfo '"distrib.tar.Z", then rename it to "phrap-distrib.tar.Z" and put it in'
-	einfo ${DISTDIR}
+	einfo "${DISTDIR}"
 }
 
 src_compile() {
@@ -32,5 +32,7 @@ src_compile() {
 
 src_install() {
 	dobin cluster cross_match loco phrap phrapview swat
-	for i in {general,phrap,swat}.doc; do newdoc $i $i.txt; done
+	for i in {general,phrap,swat}.doc ; do 
+		newdoc ${i} ${i}.txt
+	done
 }
