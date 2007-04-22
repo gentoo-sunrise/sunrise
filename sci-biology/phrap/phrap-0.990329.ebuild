@@ -6,7 +6,7 @@ DESCRIPTION="Phrap, swat, cross_match: Shotgun assembly and alignment utilities"
 HOMEPAGE="http://www.phrap.org/"
 SRC_URI="phrap-distrib.tar.Z"
 
-LICENSE="as-is"
+LICENSE="phrap"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
