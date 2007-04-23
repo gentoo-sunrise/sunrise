@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  -pyprocps-0.2.ebuild, +pyprocps-0.4.ebuild:
+  version bump
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> pyprocps-0.2.ebuild:
   Remove redundant src_install
 

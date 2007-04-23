@@ -5,7 +5,7 @@
 inherit distutils
 
 DESCRIPTION="This module parses the information in /proc on Linux systems and presents it."
-HOMEPAGE="http://eli.criffield.net/pyprocps"
+HOMEPAGE="http://eli.criffield.net/pyprocps/"
 SRC_URI="http://eli.criffield.net/${PN}/${P}.tar.gz"
 
 LICENSE="PSF-2.3"
