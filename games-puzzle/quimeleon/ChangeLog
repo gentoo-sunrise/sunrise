@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Apr 2007; Nuno J. Silva (njsg) <nunojsg@gmail.com>
+  quimeleon-0.9.3.1.ebuild:
+  ebuild now uses the games eclass
+
   09 Jan 2007; Markus Ullmann <jokey@gentoo.org> quimeleon-0.9.3.1.ebuild:
   QA Whitespace
 

@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit games
+
 DESCRIPTION="Game engine for quiz shows based upon multiple choice questions."
 HOMEPAGE="http://quimeleon.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
