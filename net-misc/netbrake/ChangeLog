@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  netbrake-0.2.ebuild:
+  cosmetics
+
   02 Sep 2006; Michael Pagano <mpagano@gmail.com> +netbrake-0.2.ebuild,
   +files/netbrake-0.2-fix-compiler-and-flags.patch,
   +files/netbrake-0.2-fix-path-and-httpfs.patch, +metadata.xml:

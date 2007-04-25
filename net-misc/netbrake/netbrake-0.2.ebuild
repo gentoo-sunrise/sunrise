@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="A utility to limit the bandwidth used by a process."
 HOMEPAGE="http://www.hping.org/netbrake/"
-SRC_URI="http://www.hping.org/netbrake/${P}.tar.gz"
+SRC_URI="http://www.hping.org/${PN}/${P}.tar.gz"
 
 LICENSE="X11"
 SLOT="0"
