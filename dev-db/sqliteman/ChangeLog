@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Apr 2007; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
+  +sqliteman-0.99_pre20070421.ebuild:
+  Version bump, bug #173637
+
   07 Apr 2007; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
   +sqliteman-0.99_pre20070403.ebuild, +metadata.xml:
   New Ebuild for bug #173637
