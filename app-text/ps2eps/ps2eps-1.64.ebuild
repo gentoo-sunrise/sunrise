@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-# Contact: Pavel Sanda,  ps at twin.jikos.cz;
-
 inherit toolchain-funcs
 
 DESCRIPTION="Tool for generating Encapsulated Postscript Format (EPS,EPSF) files from one-page Postscript documents"
@@ -29,5 +27,5 @@ src_compile(){
 src_install() {
 	dobin bbox bin/ps2eps
 	doman doc/man/man1/{bbox.1,ps2eps.1}
-	dodoc README.txt
+	dodoc Changes.txt README.txt
 }
