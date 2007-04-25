@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}"
 src_unpack() {
 	unpack ${A}
 	cd "${WORKDIR}/${P}"
-	sed -i 's_themeroot = ./themes_themeroot=/usr/share/davemp/themes_' "davemp.conf" 
+	sed -i 's_themeroot = ./themes_themeroot=/usr/share/davemp/themes_' "davemp.conf"
 	sed -i "s_use lib './lib'_use lib '/usr/lib/davemp/'_" "davempd.pl"
 }
 
@@ -38,7 +38,7 @@ src_install() {
 	insinto /etc
 	newins davemp.conf davemp.conf
 	dobin davempd.pl
-	dodoc README Changelog 
+	dodoc README Changelog
 }
 
 
