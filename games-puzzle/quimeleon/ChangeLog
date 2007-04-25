@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Apr 2007; Nuno J. Silva (njsg) <nunojsg@gmail.com>
+  quimeleon-0.9.3.1.ebuild:
+  ebuild fix: prepgamesdir added
+
   24 Apr 2007; Nuno J. Silva (njsg) <nunojsg@gmail.com>
   quimeleon-0.9.3.1.ebuild:
   ebuild now uses the games eclass
