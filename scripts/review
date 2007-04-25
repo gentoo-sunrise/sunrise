@@ -2,7 +2,7 @@
 # review - Move a certain revision from sunrise/ to reviewed/
 # Released into the public domain
 
-source /sbin/functions.sh
+source /etc/init.d/functions.sh
 
 BLUE=$BRACKET
 BOLD=$'\e[0;01m'
