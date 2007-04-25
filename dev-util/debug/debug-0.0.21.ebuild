@@ -6,8 +6,7 @@ inherit toolchain-funcs
 
 KEYWORDS="~x86"
 
-DESCRIPTION="A debugger that disassembles executables, has breakpoints, steps
-into and trace over, including a builtin single line assembler."
+DESCRIPTION="Assembly level debugger"
 HOMEPAGE="http://www.modest-proposals.com/Furball.htm"
 SRC_URI="http://www.modest-proposals.com/binary/${P}.tgz"
 LICENSE="GPL-2"
