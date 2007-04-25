@@ -37,4 +37,3 @@ src_install() {
 	dobin davempd.pl
 	dodoc README Changelog
 }
-

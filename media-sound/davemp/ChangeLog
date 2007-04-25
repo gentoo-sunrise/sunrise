@@ -3,6 +3,9 @@
 # $Header: $
 
   25 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> davemp-1.23.ebuild:
+  removed trailing blank line
+
+  25 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> davemp-1.23.ebuild:
   removed unneeded empty lines
 
   25 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> davemp-1.23.ebuild:
