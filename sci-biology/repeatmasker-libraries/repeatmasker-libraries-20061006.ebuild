@@ -26,7 +26,6 @@ pkg_nofetch() {
 }
 
 src_install() {
-	dodir /usr/share/repeatmasker/Libraries
 	insinto /usr/share/repeatmasker/Libraries
-	doins "${S}/"*
+	doins *
 }
