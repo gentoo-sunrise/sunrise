@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  iaxmodem-0.2.1.ebuild:
+  cosmetics
+
   02 Apr 2007; Kevin Fullerton (kfullert)
   <kevin.fullerton@shotgun-suicide.co.uk> +iaxmodem-0.2.1.ebuild,
   +files/iaxmodem.init.d, +metadata.xml:
