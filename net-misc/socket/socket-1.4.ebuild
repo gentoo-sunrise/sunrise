@@ -4,7 +4,7 @@
 
 DESCRIPTION="A shell-level interface to TCP sockets"
 HOMEPAGE="http://www.jnickelsen.de/socket/"
-SRC_URI="http://www.jnickelsen.de/socket/${P}.tar.gz"
+SRC_URI="http://www.jnickelsen.de/${PN}/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
