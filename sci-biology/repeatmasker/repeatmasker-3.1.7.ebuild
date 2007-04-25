@@ -39,7 +39,6 @@ END
 src_install() {
 	dobin DateRepeats ProcessRepeats RepeatMasker
 
-	dodir /usr/share/${PN}/lib
 	insinto /usr/share/${PN}/lib
 	doins "${S}"/*.pm
 

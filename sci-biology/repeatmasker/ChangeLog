@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Apr 2007; Stefan Schweizer <genstef@gentoo.org>
+  repeatmasker-3.1.7.ebuild:
+  dodir is not needed because insinto creates the dir
+
   20 Apr 2007; AK <gentoo@horizon.ath.cx> +repeatmasker-3.1.7.ebuild,
   +metadata.xml:
   new package (bug 114096)
