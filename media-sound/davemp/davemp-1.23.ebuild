@@ -12,7 +12,6 @@ LICENSE="CCPL-Attribution-NonCommercial-ShareAlike-2.5"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-
 DEPEND="dev-perl/JSON-XS
 	dev-perl/HTTP-Server-Simple
 	dev-perl/Class-Accessor
@@ -27,8 +26,6 @@ src_unpack() {
 	sed -i "s_use lib './lib'_use lib '/usr/lib/davemp/'_" "davempd.pl"
 }
 
-
-
 src_install() {
 	doinitd ${FILESDIR}/davemp
 	insinto /usr/share/${PN}/
@@ -40,5 +37,4 @@ src_install() {
 	dobin davempd.pl
 	dodoc README Changelog
 }
-
 
