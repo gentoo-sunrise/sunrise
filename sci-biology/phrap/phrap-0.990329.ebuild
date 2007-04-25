@@ -32,7 +32,7 @@ src_compile() {
 
 src_install() {
 	dobin cluster cross_match loco phrap phrapview swat
-	for i in {general,phrap,swat}.doc ; do 
+	for i in {general,phrap,swat}.doc ; do
 		newdoc ${i} ${i}.txt
 	done
 }
