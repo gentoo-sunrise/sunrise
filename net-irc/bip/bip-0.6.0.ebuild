@@ -31,8 +31,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf $(use_enable oidentd) \
-		$(use_enable ssl) || die "econf failed"
+	econf $(use_enable ssl) || die "econf failed"
 	emake CFLAGS="${CFLAGS}" || die "emake failed"
 }
 
