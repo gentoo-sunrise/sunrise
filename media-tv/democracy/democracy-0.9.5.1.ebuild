@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils eutils versionator multilib
+inherit distutils eutils multilib
 
 MY_P="Democracy-${PV}"
 DESCRIPTION="A free and open internet TV platform."

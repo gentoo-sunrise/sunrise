@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  democracy-0.9.5.1.ebuild:
+  Remove inherit versionator
+
   21 Mar 2007; Markus Ullmann <jokey@gentoo.org> -democracy-0.9.2.2.ebuild,
   democracy-0.9.5.1.ebuild:
   cosmetics and drop old
