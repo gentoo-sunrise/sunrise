@@ -6,7 +6,7 @@ inherit linux-mod
 
 DESCRIPTION="Driver for the RaLink RT73/2571 wireless chipsets"
 HOMEPAGE="http://www.ralink.com.tw/"
-SRC_URI="http://www.ralink.com.tw/drivers/Linux/RT73_Linux_STA_Drv${PV}.tar.gz"
+SRC_URI="http://ralink.com.tw/data/RT73_Linux_STA_Drv${PV}.tar.gz"
 
 MY_P=RT73_Linux_STA_Drv${PV}
 
@@ -16,10 +16,10 @@ LICENSE="GPL-2"
 KEYWORDS="~x86"
 IUSE="debug"
 
+S=${WORKDIR}/${MY_P}
+
 RDEPEND="net-wireless/wireless-tools"
 MODULE_NAMES="rt73(net:${S}/Module)"
-
-S=${WORKDIR}/${MY_P}
 
 CONFIG_CHECK="NET_RADIO"
 ERROR_NET_RADIO="${P} requires support for Wireless LAN drivers (non-hamradio) & Wireless Extensions (CONFIG_NET_RADIO)."
