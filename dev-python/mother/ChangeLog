@@ -3,6 +3,10 @@
 # $Header: $
 
   26 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  -mother-0.4.6.ebuild, +mother-0.5.2.ebuild:
+  version bump
+
+  26 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   mother-0.4.6.ebuild:
   Remove inherit eutils
 
