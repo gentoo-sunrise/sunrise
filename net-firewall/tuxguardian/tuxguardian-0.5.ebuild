@@ -3,13 +3,16 @@
 # $Header: $
 
 inherit eutils linux-mod qt3
-DESCRIPTION="Tuxguardian is an appliction based firewall for Linux"
+
+DESCRIPTION="An application based firewall for Linux"
 HOMEPAGE="http://tuxguardian.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-SLOT="0"
+
 DEPEND="$(qt_min_version 3.1)"
 RDEPEND="${DEPEND}"
 
@@ -45,7 +48,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "einstall failed"
 	newinitd "${FILESDIR}"/tuxguardian.init tuxguardian
 	linux-mod_pkg_preinst
-	dodoc README COPYING AUTHORS  
+	dodoc README COPYING AUTHORS
 }
 
 pkg_postinst() {
