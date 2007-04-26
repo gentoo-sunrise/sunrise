@@ -2,23 +2,27 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.3
+
 inherit distutils
 
-KEYWORDS="~x86"
-
-DESCRIPTION="buzhug is a fast, pure-Python database engine, using a syntax that Python programmers should find very intuitive"
+DESCRIPTION="A fast, pure-Python database engine, using a syntax that Python programmers should find very intuitive"
 HOMEPAGE="http://buzhug.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
+
 LICENSE="BSD"
 SLOT="0"
-IUSE=""
+KEYWORDS="~x86"
+IUSE="doc"
 
 DEPEND=">=app-arch/unzip-5"
 RDEPEND=""
 
 src_install() {
 	distutils_src_install
-	cd "${S}/buzhug/doc"
-	dodoc README.txt
-	dohtml *.html *.css
+	if use doc; then
+		cd "${S}/${PN}/doc"
+		dohtml *.html *.css
+	fi
 }
+
