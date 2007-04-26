@@ -1,0 +1,155 @@
+diff -udNr tuxguardian-0.5/daemon/Makefile tuxguardian-0.5-gentoo/daemon/Makefile
+--- tuxguardian-0.5/daemon/Makefile	2006-04-09 01:28:18.000000000 +0200
++++ tuxguardian-0.5-gentoo/daemon/Makefile	2007-04-26 20:33:32.000000000 +0200
+@@ -1,4 +1,4 @@
+-bindir=/usr/local/bin
++bindir=/usr/sbin
+ 
+ 
+ all:	daemon
+@@ -7,8 +7,10 @@
+ 	gcc -pthread daemon.c pblhash.c pbl.c md5.c -o tg-daemon
+ 
+ install:
+-	@install -m 0700 -o root -g root tg-daemon $(bindir) && \
+-	touch /etc/daemon.conf && \
++	/bin/mkdir -p ${DESTDIR}$(bindir)
++	@install -m 0700 -o root -g root tg-daemon ${DESTDIR}$(bindir) && \
++	/bin/mkdir ${DESTDIR}/etc
++	touch ${DESTDIR}/etc/daemon.conf && \
+ 	echo Done.;
+ 
+ uninstall:
+diff -udNr tuxguardian-0.5/frontend/tg-frontend.pro tuxguardian-0.5-gentoo/frontend/tg-frontend.pro
+--- tuxguardian-0.5/frontend/tg-frontend.pro	2006-04-09 00:14:12.000000000 +0200
++++ tuxguardian-0.5-gentoo/frontend/tg-frontend.pro	2007-04-26 20:40:41.000000000 +0200
+@@ -13,5 +13,5 @@
+ TEMPLATE	=app
+ CONFIG	+= qt warn_on release
+ LANGUAGE	= C++
+-DESTDIR = /usr/local/bin
++DESTDIR =./
+ QMAKE_CXXFLAGS_WARN_ON = -Wno-non-virtual-dtor
+diff -udNr tuxguardian-0.5/Makefile tuxguardian-0.5-gentoo/Makefile
+--- tuxguardian-0.5/Makefile	2006-04-09 01:37:31.000000000 +0200
++++ tuxguardian-0.5-gentoo/Makefile	2007-04-26 20:47:16.000000000 +0200
+@@ -5,31 +5,15 @@
+ ifeq ($(IS_ROOT), yes)
+ all:
+ 	@echo -e "\n\nCompiling and installing the frontend\n------------------------------------------------"; \
+-	cd frontend; qmake tg-frontend.pro; make; cd ..;
++	cd frontend; /usr/qt/3/bin/qmake tg-frontend.pro; make;cd ..;
+ 
+ 	@echo -e "\n\nCompiling the daemon\n------------------------------------------------"; \
+ 	cd daemon; make; 
+-	@echo -e "\n\nInstalling the daemon\n------------------------------------------------"; \
+-	cd daemon; make install; 
+-
+-	@echo -e "\n\nCompiling the module\n------------------------------------------------"; \
+-	cd module; make; 
+-	@echo -e "\n\nInstalling the module\n------------------------------------------------"; \
+-	cd module; make install;
+-
+-	@echo -e "\n\n\n\nSuccess! To start TuxGuardian:"
+-	@echo -e "---------------------------------"
+-	@echo -e "            (for more information, please visit tuxguardian.sf.net)\n"
+-	@echo -e "\t$$ su"
+-	@echo -e "\t   <enter root password>"
+-	@echo -e "\t$$ tg-daemon &"
+-	@echo -e "\t$$ modprobe tuxg"
+-	@echo -e "\t$$ tg-frontend &\n"
+-
++#	@echo -e "\n\nCompiling the module\n------------------------------------------------"; \
++#	cd module; make; 
+ clean:
+-	@for i in $(PARTS); do \
+ 	echo -e "\n\nCleaning the "$$i"\n------------------------------------------------"; \
+-	cd $$i; make clean; cd ..; \
++	cd daemon; make clean; cd ..; \
+ 	done
+ uninstall: 
+ 	@echo -e "\n\nUninstalling the frontend\n------------------------------------------------"; \
+@@ -39,9 +23,12 @@
+ 	cd daemon; make uninstall; cd ..;
+ 
+ 	@echo -e "\n\nUninstalling the module\n------------------------------------------------"; \
+-	cd module; make uninstall;
++#	cd module; make uninstall;
+ install:
+-	@echo -e "No need to 'make install'. Just type 'make'"
++#	cd module; make install DESTDIR="${DESTDIR}"; cd ..;
++	cd daemon; make install DESTDIR="${DESTDIR}"; cd ..;
++	cd frontend; cp tg-frontend ${DESTDIR}usr/sbin/; cd ..;
++
+ else
+ all:
+ 	@echo "You must be root to compile and install!"
+@@ -49,8 +36,6 @@
+ clean:
+ 	@echo "You must be root to clear!"
+ 	@exit 1
+-install:
+-	@echo -e "No need to 'make install'. Just type 'make'"
+ uninstall:
+ 	@echo "You must be root to uninstall!"
+ 	@exit 1
+diff -udNr tuxguardian-0.5/module/Makefile tuxguardian-0.5-gentoo/module/Makefile
+--- tuxguardian-0.5/module/Makefile	2006-04-09 00:12:59.000000000 +0200
++++ tuxguardian-0.5-gentoo/module/Makefile	2007-04-26 20:33:32.000000000 +0200
+@@ -1,40 +1,31 @@
+-KERNELDIR := /lib/modules/$(shell uname -r)/build
+-KERNEL_SOURCES := $(KERNDIR)
++MODULES_DIR := /lib/modules/$(shell uname -r)
++KERNEL_DIR  := ${MODULES_DIR}/build
++KERNEL_SOURCES := $(KERNEL_DIR)
++
+ KERNEL_HEADERS := -I$(KERNEL_SOURCES)/include
+ 
+-obj-m := tuxg.o
++
++obj-m += tuxg.o
+ tuxg-objs := tg-defs.o tg.o
+ EXTRA_CFLAGS += -Os 
++.PHONY: all modules modules_install install clean
+ 
+ MODULE_NAME := tuxg
+ 
+ 
+-# checks if the user is running kernel 2.6.12 or above
+-MINOR=$(shell uname -r | cut -c3)
+-VERSION=$(shell uname -r | sed -n 's/[[:digit:]]\.[[:digit:]]\.\([[:digit:]]*\).*/\1/p')
+-CORRECT_VERSION=$(shell if [ $(VERSION) -ge 12 -a $(MINOR) -ge 6 ]; then echo yes; else echo no; fi)
+-ifeq ($(CORRECT_VERSION),yes)
+-all:
+-	make -C /lib/modules/$(shell uname -r)/build/ SUBDIRS=$(shell pwd) modules
+-else
+-all:
+-	@echo "You need kernel 2.6.12 or above!"
+-	@exit 1
+-endif
+-
+-
+ 
++all: module
++	
+ 
+-install:
+-	@install -m 0700 -o root -g root tuxg.ko /lib/modules/$(shell uname -r)
+-	@/sbin/depmod -ae
+-	@echo "Done."
++module:
++	make ${KERNEL_HEADERS} -C ${KERNEL_DIR} M=$$PWD modules;
+ 
+-uninstall:
+-	@rm -f /lib/modules/$(shell uname -r)/tuxg.ko
+-	@depmod -ae
+-	@echo "Done."
++install: module_install
++	
++modules_install:
++	make -C ${KERNEL_DIR} M=$$PWD modules_install;
+ 
+ clean:
+ 	@rm -rf *.o *.ko *.mod.? .t* *~
+ 	@echo "Done."
++

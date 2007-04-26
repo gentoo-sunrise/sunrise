@@ -1,0 +1,9 @@
+# ChangeLog for net-firewall/tuxguardian
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Apr 2007; Bjoern Thorwirth (Moonstruxx) <moonstruxx at gmx.de>)
+  +tuxguardian-0.5.ebuild, +files/Makefile-gentoo-0.5.patch,
+  +files/tuxguardian.init, +metadata.xml:
+  New Ebuild for bug 105990
+

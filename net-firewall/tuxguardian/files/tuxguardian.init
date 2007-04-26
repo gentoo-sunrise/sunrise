@@ -1,0 +1,28 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: 
+
+
+PID=/var/run/tuxguardian.pid
+
+depend() {
+	after net
+}
+
+
+
+start() {
+	ebegin "Starting tuxguardian"
+	start-stop-daemon --start --quiet --background --pidfile ${PID} \
+		--exec /usr/sbin/tg-daemon
+	/sbin/modprobe tuxg	
+	eend ${?}
+}
+
+stop() {
+	ebegin "Stopping fancontrol"
+	start-stop-daemon --stop --pidfile ${PID}
+	/sbin/modprobe -rf tuxg
+	eend ${?}
+}
