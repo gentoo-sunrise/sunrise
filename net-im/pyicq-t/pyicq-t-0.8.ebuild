@@ -4,7 +4,7 @@
 
 NEED_PYTHON=2.3
 
-inherit eutils python multilib
+inherit python multilib
 
 DESCRIPTION="Python based jabber transport for ICQ"
 HOMEPAGE="http://pyicq-t.blathersource.org/"
