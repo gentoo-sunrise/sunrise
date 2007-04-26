@@ -4,7 +4,7 @@
 
 NEED_PYTHON="2.4"
 
-inherit eutils distutils
+inherit distutils
 
 DESCRIPTION="A python PostgreSQL introspective ORM"
 HOMEPAGE="http://www.dbmother.org"
