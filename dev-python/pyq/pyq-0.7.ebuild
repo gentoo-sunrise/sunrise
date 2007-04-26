@@ -4,17 +4,17 @@
 
 inherit python eutils
 
-SRC_URI="http://rimonbarr.com/repository/${PN}/code/${PN}"
 DESCRIPTION="fast, efficient, command-line utility for downloading quotes from Yahoo."
 HOMEPAGE="http://rimonbarr.com/repository/pyq/index.html"
-LICENSE="GPL-2"
+SRC_URI="http://rimonbarr.com/repository/${PN}/code/${PN}"
 
+LICENSE="GPL-2"
 SLOT="0"
-IUSE=""
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 src_unpack() {
 	cp "${DISTDIR}"/pyq "${WORKDIR}"
