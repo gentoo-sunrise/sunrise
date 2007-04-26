@@ -15,12 +15,12 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="doc examples mysql postgres sqlite"
 
-DEPEND="doc? ( app-doc/doxygen )
-		mysql? ( virtual/mysql )
+RDEPEND="mysql? ( virtual/mysql )
 		postgres? ( dev-db/libpq )
 		sqlite? ( =dev-db/sqlite-3* )
 		!mysql? ( !postgres? ( =dev-db/sqlite-3* ) )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	doc? ( app-doc/doxygen )"
 
 pkg_setup() {
 	if ! ( use mysql || use postgres || use sqlite ) ; then
