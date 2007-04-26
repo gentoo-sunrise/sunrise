@@ -27,7 +27,8 @@ pkg_setup() {
 		eerror "${P} needs \"Default Linux Capabilities\" build as module"
 		die "Kernel config not suitable"
 	fi
-	MODULE_NAMES="tuxg(extra:${S}/module)"	
+	MODULE_NAMES="tuxg(extra:${S}/module)"
+	BUILD_PARAMS="KERNEL_SRC=${KERNEL_DIR}"
 }
 src_unpack() {
 	unpack ${A}
@@ -41,21 +42,19 @@ src_compile() {
 
 src_install() {
 	linux-mod_src_install
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "einstall failed"
 	newinitd "${FILESDIR}"/tuxguardian.init tuxguardian
 	linux-mod_pkg_preinst
-	dodoc README COPYING AUTHORS
-    
+	dodoc README COPYING AUTHORS  
 }
 
 pkg_postinst() {
-	elog "Inint script installed. use:"
+	elog "Init script installed. use:"
 	elog "rc-update add tuxguardian {runlevel} (runlevel e.g. boot)"
 	elog "Toubleshooting:"
 	elog "Sometimes it occures, that the module freezes.. Use:"
 	elog "\"etc/init.d/tuxguardian restart\" to solve this"
-	elog "tg-frontend is the frontend to tuxguardian. Unfortunatly it needs superuser rights to run,"
-	elog "so you should use visudo to add a rule to your sudoers file. "
+	elog "tg-frontend is the frontend to tuxguardian. Unfortunatly it needs superuser rights to run."
 	elog "Notice: if you decide not to use the tg-frontend please refer to the documentation, how to"
 	elog "edit \"/etc/daemon.conf\""
 }
