@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  ov51x-jpeg-1.0.0.ebuild:
+  Removed redundant S=${WORKDIR}/${P}
+
   03 Apr 2007; Kevin Fullerton (kfullert)
   <kevin.fullerton@shotgun-suicide.co.uk> +ov51x-jpeg-1.0.0.ebuild,
   +metadata.xml:

@@ -16,7 +16,6 @@ IUSE=""
 DEPEND="sys-kernel/linux-headers"
 RDEPEND=""
 
-S="${WORKDIR}/${P}"
 BUILD_TARGETS="all"
 BUILD_PARAMS="KDIR=${KV_DIR}"
 MODULE_NAMES="ov51x-jpeg(media/video:)"
