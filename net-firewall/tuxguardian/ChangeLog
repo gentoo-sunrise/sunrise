@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> Manifest:
+  nothing executable here
+
   26 Apr 2007; B. Thorwirth (Moonstruxx) <Moonstruxx at gmx.de>
   tuxguardian-0.5.ebuild:
   Initial ebuild fixes, thanks to genstefan
