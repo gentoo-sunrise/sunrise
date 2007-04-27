@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="firefox xulrunner"
 
 RDEPEND=">=dev-libs/glib-2.6
-	>=x11-libs/gtk+-2.6
 	>=dev-libs/dbus-glib-0.71
 	>=dev-libs/libpcre-6.3
 	media-libs/jpeg
@@ -27,7 +26,10 @@ RDEPEND=">=dev-libs/glib-2.6
 	>=gnome-base/gnome-vfs-2
 	>=net-libs/loudmouth-1
 	>=net-misc/curl-7.13.1
+	x11-libs/cairo
+	>=x11-libs/gtk+-2.6
 	x11-libs/libXScrnSaver
+	x11-libs/pango
 	firefox? ( !xulrunner? (
 		>=www-client/mozilla-firefox-1.5 <www-client/mozilla-firefox-2.0.1 ) )
 	xulrunner? ( net-libs/xulrunner )"
@@ -41,7 +43,7 @@ src_unpack() {
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
 	epatch "${FILESDIR}/${PN}-1.1.22-as-needed.patch"
-	epatch "${FILESDIR}/${PN}-1.1.32-libxpcom.patch"
+	epatch "${FILESDIR}/${P}-libxpcom.patch"
 	epatch "${FILESDIR}/${PN}-1.1.32-use-firefox.patch"
 	eautoreconf
 	if use firefox || use xulrunner ; then

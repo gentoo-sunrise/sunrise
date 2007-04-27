@@ -1,16 +1,16 @@
-diff -ru mugshot-1.1.32.orig/configure.ac mugshot-1.1.32/configure.ac
---- mugshot-1.1.32.orig/configure.ac	2007-02-01 19:09:36.000000000 -0500
-+++ mugshot-1.1.32/configure.ac	2007-02-02 15:28:19.800967622 -0500
-@@ -369,6 +369,8 @@
- 
+diff -ru mugshot-1.1.42.as-needed/configure.ac mugshot-1.1.42/configure.ac
+--- mugshot-1.1.42.as-needed/configure.ac	2007-04-26 12:40:17.000000000 -0400
++++ mugshot-1.1.42/configure.ac	2007-04-26 21:48:50.601567010 -0400
+@@ -417,6 +417,8 @@
  have_full_gecko=false
  sdk_includes_nspr=false
+ need_separate_js=false
 +sdk_includes_xpcom_core=false
 +sdk_includes_xpcom=false
  
  if test "x$with_gecko_sdk" != x -a "x$with_gecko_sdk" != xyes -a "x$with_gecko_sdk" != xno ; then
     GECKO_IDLDIR="$with_gecko_sdk/idl"
-@@ -378,6 +380,14 @@
+@@ -426,6 +428,14 @@
     if test -f "$GECKO_INCLUDEDIR/nspr.h" ; then
         sdk_includes_nspr=true
     fi
@@ -25,11 +25,11 @@ diff -ru mugshot-1.1.32.orig/configure.ac mugshot-1.1.32/configure.ac
  fi
  
  if test "x$with_gecko_idl" != x -a "x$with_gecko_idl" != xyes -a "x$with_gecko_idl" != xno ; then
-@@ -486,12 +496,29 @@
+@@ -557,12 +567,29 @@
      fi
  fi
  
--PKG_CHECK_MODULES(LIBHIPPOFIREFOX, gobject-2.0 dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_REQUIRED $NSPR_PACKAGES gtk+-2.0)
+-PKG_CHECK_MODULES(LIBHIPPOFIREFOX, gobject-2.0 dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_REQUIRED $NSPR_PACKAGES $JS_PACKAGES gtk+-2.0)
 +if $sdk_includes_xpcom ; then
 +    if $sdk_includes_xpcom_core ; then
 +        XPCOM_LIBS="-L $with_gecko_sdk/lib -xpcom_core"
@@ -47,7 +47,7 @@ diff -ru mugshot-1.1.32.orig/configure.ac mugshot-1.1.32/configure.ac
 +    fi
 +fi
 +
-+PKG_CHECK_MODULES(LIBHIPPOFIREFOX, gobject-2.0 dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_REQUIRED $NSPR_PACKAGES $XPCOM_PACKAGES gtk+-2.0)
++PKG_CHECK_MODULES(LIBHIPPOFIREFOX, gobject-2.0 dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_REQUIRED $NSPR_PACKAGES $JS_PACKAGES $XPCOM_PACKAGES gtk+-2.0)
  
  # Should have -lxpcom here, but that upsets libtool for unknown reasons. Or
  # should we use -lxpcomglue instead? We don't actually link to anything private, though
