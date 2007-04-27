@@ -25,4 +25,3 @@ src_install() {
 		dohtml *.html *.css
 	fi
 }
-
