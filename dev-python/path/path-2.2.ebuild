@@ -29,4 +29,3 @@ src_unpack() {
 		-e "s/, 'test_path'//" \
 		setup.py || die "sed failed"
 }
-
