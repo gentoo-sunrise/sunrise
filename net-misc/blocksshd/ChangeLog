@@ -3,6 +3,10 @@
 # $Header: $
 
   28 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  blocksshd-1.1.ebuild:
+  added trailing slash to HOMEPAGE URI,cosmeics
+
+  28 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   -blocksshd-1.0.1.ebuild:
   Removed old ebuild
 

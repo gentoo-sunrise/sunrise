@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="Protects computers from SSH brute force attacks by dynamically blocking IP addresses by adding iptables rules."
-HOMEPAGE="http://sourceforge.net/projects/blocksshd"
+HOMEPAGE="http://sourceforge.net/projects/blocksshd/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -31,8 +31,8 @@ src_unpack() {
 	edos2unix blocksshd blocksshd.conf
 
 	#apply patches
-	epatch "${FILESDIR}"/blocksshd-${PV}.conf-dir-change.patch
-	epatch "${FILESDIR}"/blocksshd-${PV}.etc-dir-change.patch
+	epatch "${FILESDIR}"/${P}.conf-dir-change.patch
+	epatch "${FILESDIR}"/${P}.etc-dir-change.patch
 }
 
 src_install() {
