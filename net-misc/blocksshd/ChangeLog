@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Apr 2007; Michael Pagano <mpagano@gmail.com> +blocksshd-1.1.ebuild,
+  +files/blocksshd-1.1.conf-dir-change.patch,
+  +files/blocksshd-1.1.etc-dir-change.patch:
+  Version bump
+
   07 Mar 2007; Michael Pagano <mpagano@gmail.com> -blocksshd-1.0.ebuild,
   -files/blocksshd-1.0.conf-dir-change.patch,
   -files/blocksshd-1.0.etc-dir-change.patch:

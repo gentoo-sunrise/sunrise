@@ -1,0 +1,23 @@
+--- blocksshd.conf.orig	2007-04-27 20:25:57.000000000 -0400
++++ blocksshd.conf	2007-04-27 20:27:16.000000000 -0400
+@@ -3,16 +3,16 @@
+ $cfg = {
+     os              => 'linux',                       # Target OS - either linux or bsd
+     chain           => 'blocksshd',                   # Name of iptables or pf chain
+-    logfile         => '/var/log/secure',             # Log file to monitor
++    logfile         => '/var/log/messages',             # Log file to monitor
+     logcheck        => '10',                          # How often to check the log file
+     max_attempts    => '4',                           # Max number of failures
+     timeout         => '360',                         # Reset IP count if no activity after time out in seconds
+-    unblock         => '1',                           # Enable unblocking
++    unblock         => '0',                           # Enable unblocking
+     unblock_timeout => '43200',                       # Time in seconds after which to unblock a blocked IP address
+     restore_blocked => '0',                           # Turn on checking for previously blocked IPs
+-    log_ips         => '/usr/local/etc/blocksshd.list', # Log file for blocked IPs
++    log_ips         => '/etc/blocksshd/blocksshd.list', # Log file for blocked IPs
+     pid_file        => '/var/run/blocksshd.pid',      # Location of PID file
+-    send_email      => '1',                           # Enable the sending of email notifications
++    send_email      => '0',                           # Enable the sending of email notifications
+     email           => 'root',                        # Email address to send notifications
+     mail            => '/bin/mail',                   # Location of mail binary
+     email_whois_lookup => '1',                        # enable whois lookup of the blocked ip addres in the sent email
