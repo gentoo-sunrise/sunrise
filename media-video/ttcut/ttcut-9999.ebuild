@@ -14,7 +14,8 @@ KEYWORDS="~x86"
 IUSE="ttmpeg2"
 
 DEPEND="$(qt4_min_version 4.1)
-		>=media-libs/libmpeg2-0.4.0"
+		>=media-libs/libmpeg2-0.4.0
+		virtual/opengl"
 
 RDEPEND="${DEPEND}
 		media-video/mplayer
@@ -44,4 +45,5 @@ src_install() {
 	dobin ttcut || die "Couldn't install ttcut"
 	make_desktop_entry ttcut TTCut "" "AudioVideo;Video;AudioVideoEditing" || \
 		die "Couldn't make ttcut desktop entry"
+	dodoc AUTHORS BUGS CHANGELOG COPYING INSTALL README TODO || die "Couldn't install documentation"
 }
