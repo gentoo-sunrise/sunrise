@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 May 2007; Pavel Sanda (ps) <ps at twin.jikos.cz> -pdfedit-0.3.0.ebuild,
+  +pdfedit-0.3.1.ebuild:
+  app-text/pdfedit 0.3.1 version bump
+
   18 Apr 2007; Markus Ullmann <jokey@gentoo.org>
   -files/pdfedit-0.2.3-build-fix.patch, -pdfedit-0.2.5.ebuild,
   pdfedit-0.3.0.ebuild:
