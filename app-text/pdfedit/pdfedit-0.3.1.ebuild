@@ -5,8 +5,8 @@
 inherit qt3
 
 DESCRIPTION="Editor for manipulating PDF documents. GUI and commandline interface."
-HOMEPAGE="http://pdfedit.petricek.net"
-SRC_URI="http://downloads.sourceforge.net/pdfedit/${P}.tar.gz"
+HOMEPAGE="http://pdfedit.petricek.net/"
+SRC_URI="http://downloads.sourceforge.net/${PN}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
