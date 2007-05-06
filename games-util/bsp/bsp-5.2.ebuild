@@ -5,7 +5,7 @@
 inherit autotools eutils flag-o-matic games
 
 DESCRIPTION="BSP nodebuilder for DooM engine games."
-HOMEPAGE="http://games.moria.org.uk/doom/bsp"
+HOMEPAGE="http://games.moria.org.uk/doom/bsp/"
 SRC_URI="http://games.moria.org.uk/doom/bsp/download/${P}.tar.bz2"
 
 LICENSE="GPL-2"
