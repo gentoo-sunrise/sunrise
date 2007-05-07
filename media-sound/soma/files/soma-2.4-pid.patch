@@ -1,0 +1,21 @@
+--- soma/daemon/main.c	2007/02/18 15:39:51	1.9
++++ soma/daemon/main.c	2007/05/03 09:13:17	1.10
+@@ -401,9 +401,6 @@ main (int argc, char *argv[], char **arg
+   /* Check other somads */
+   check_pid ();
+ 
+-  /* Write the somad.pid */
+-  write_pid ();
+-
+   /**************** BUILDS THE TREES **********************/
+   build_data ();
+   build_palinsesto ();
+@@ -421,6 +418,9 @@ main (int argc, char *argv[], char **arg
+   else
+     signal_small_off ();
+ 
++  /* Write the somad.pid */
++  write_pid ();
++
+   /* ffmpeg init */
+   soma_stat_init ();
