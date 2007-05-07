@@ -12,7 +12,8 @@ KEYWORDS="~x86"
 
 IUSE=""
 
-RDEPEND="sys-fs/fuse"
+DEPEND="sys-fs/fuse"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}
 
