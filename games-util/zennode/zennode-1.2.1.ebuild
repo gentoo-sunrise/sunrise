@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit games
+
 DESCRIPTION="A nodebuilder and REJECT builder for DooM engine games"
 HOMEPAGE="http://www.mrousseau.org/programs/ZenNode/"
 SRC_URI="http://www.mrousseau.org/programs/ZenNode/archives/${P}.zip"
@@ -13,8 +15,6 @@ IUSE=""
 
 DEPEND="app-arch/zip"
 RDEPEND=""
-
-inherit games
 
 S=${WORKDIR}/ZenNode-${PV}/src/ZenNode
 

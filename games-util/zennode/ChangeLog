@@ -3,6 +3,10 @@
 # $Header: $
 
   07 May 2007; Jack Kelly (hashendgame) <weldingmaskman@hotmail.com>
+  zennode-1.2.1.ebuild:
+  Moved inherit line to top of the ebuild.
+
+  07 May 2007; Jack Kelly (hashendgame) <weldingmaskman@hotmail.com>
   +zennode-1.2.1.ebuild, +metadata.xml:
   New ebuild for bug 177406.
 
