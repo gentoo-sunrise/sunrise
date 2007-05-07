@@ -14,6 +14,7 @@ KEYWORDS="~x86"
 IUSE="debug dmalloc profile"
 
 DEPEND="dmalloc? ( dev-libs/dmalloc )"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
