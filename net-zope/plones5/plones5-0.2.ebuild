@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=net-zope/plone-2.1
-		app-arch/unzip"
-RDEPEND="${DEPEND}"
+RDEPEND=">=net-zope/plone-2.1"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
 
 ZPROD_LIST="${MY_PN}"
