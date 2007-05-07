@@ -47,7 +47,7 @@ src_install () {
 	emake DESTDIR="${D}" install || die "make install failed"
 
 	doicon icons/somax.png
-	make_desktop_entry somax SomaX somax.png AudioVideo 
+	make_desktop_entry somax SomaX somax.png AudioVideo
 
 	dodoc AUTHORS ChangeLog ABOUT-NLS README README.modules README.plugins README.library
 }
