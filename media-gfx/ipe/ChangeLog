@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 May 2007; Christian Schlotter (schlotter) <again@gmx.de>
+  ipe-6.0_pre28.ebuild:
+  Set HOMEPAGE and SRC_URI variable to current homepage.
+
   03 Apr 2007; Christian Schlotter (schlotter) <again@gmx.de>
   ipe-6.0_pre28.ebuild:
   Keyworded ~amd64. Thanks to Christoph Lange in bug #80448.

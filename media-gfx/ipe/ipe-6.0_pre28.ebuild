@@ -6,8 +6,8 @@ inherit qt4 eutils
 
 MY_P="${P/_/}"
 DESCRIPTION="An extensible drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
-HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
-SRC_URI="http://tclab.kaist.ac.kr/ipe/${MY_P}-src.tar.gz"
+HOMEPAGE="http://ipe.airpost.net/"
+SRC_URI="http://ipe.airpost.net/${MY_P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
