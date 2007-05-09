@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_PV=${PV/_beta/beta}
-MY_P="$PN-${MY_PV}"
+MY_P="$PN-${PV}"
 
 DESCRIPTION="A package with many different plugins for pidgin and libpurple"
 HOMEPAGE="http://plugins.guifications.org"
@@ -17,7 +16,7 @@ flip gRIM groupmsg irssi lastseen listhandler mystatusbox nicksaid oldlogger
 plonkers sepandtab showoffline simfix slashexec sslinfo talkfilters xchat-chats"
 IUSE="${PLUGINS} debug"
 
-DEPEND="~net-im/pidgin-2.0.0_beta7
+DEPEND=">=net-im/pidgin-2.0.0
 	talkfilters? ( app-text/talkfilters )"
 RDEPEND="${DEPEND}"
 
@@ -31,12 +30,11 @@ src_compile() {
 	# XMMS Remote is disabled due to XMMS being masked
 	#
 	# Disabled due to non-working status:
-	# Gaim Schedule (http://gaim.guifications.org/trac/wiki/GaimSchedule)
 	# buddytime
 	# chronic
-	# Stocker (http://gaim.guifications.org/trac/wiki/stocker)
+	# Stocker (http://plugins.guifications.org/trac/wiki/stocker)
 	#
-	# Disabled due to being included in current gaim release:
+	# Disabled due to being included in current pidgin release:
 	# Auto Accept
 	# Auto Reply
 	# Buddy Note
