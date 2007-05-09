@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils 
+inherit eutils
 
 DESCRIPTION="Input event scripting utility that has special support for fancy keyboards and mice, USB dials, LIRC and USB remotes, and more."
 HOMEPAGE="http://gizmod.sourceforge.net"
@@ -12,12 +12,12 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="libvisual"
 RDEPEND="x11-libs/libX11
-        dev-lang/python
-        media-libs/alsa-lib
-        dev-libs/boost
-        libvisual? ( >=media-libs/libvisual-0.4.0 )"
+	dev-lang/python
+	media-libs/alsa-lib
+	dev-libs/boost
+	libvisual? ( >=media-libs/libvisual-0.4.0 )"
 DEPEND="${RDEPEND}
-        x11-proto/xproto"
+	x11-proto/xproto"
 
 pkg_setup() {
 	if ! built_with_use  dev-libs/boost threads ; then
@@ -29,10 +29,10 @@ pkg_setup() {
 }
 
 src_compile() {
-        econf --with-boost $(use_enable libvisual visplugin) || die "econf failed."
-        emake || die "emake failed."
+	econf --with-boost $(use_enable libvisual visplugin) || die "econf failed."
+	emake || die "emake failed."
 }
-  
+
 src_install() {
-        emake DESTDIR="${D}" install || die "emake install failed."
+	emake DESTDIR="${D}" install || die "emake install failed."
 }
