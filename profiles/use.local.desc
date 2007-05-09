@@ -20,6 +20,7 @@ app-misc/emelfm2:fam - Use FAM for file-change monitoring
 app-misc/emelfm2:unicode - Forces conversion of filenames to Unicode
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
+app-misc/gizmod:libvisual - Enable the libvisual (Amarok) plugin
 app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
