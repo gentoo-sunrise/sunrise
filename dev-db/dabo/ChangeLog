@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 May 2007; Geoff Clements <geoff@electron.me.uk> +dabo-0.8.ebuild:
+  Version bump: dabo-0.8
+
   15 Apr 2007; Stefan Schweizer <genstef@gentoo.org> dabo-0.7.2.ebuild:
   Remove RESTRICT=mirror, MIT license allows redistribution
 
