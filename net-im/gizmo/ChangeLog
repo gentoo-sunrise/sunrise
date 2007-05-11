@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 May 2007; Stefan Schweizer <genstef@gentoo.org> -gizmo-3.0.0.67.ebuild,
+  +gizmo-3.0.1.68.ebuild:
+  version bump
+
   09 May 2007; Stefan Schweizer <genstef@gentoo.org> -gizmo-3.0.0.66.ebuild,
   +gizmo-3.0.0.67.ebuild:
   version bump thanks to Coran

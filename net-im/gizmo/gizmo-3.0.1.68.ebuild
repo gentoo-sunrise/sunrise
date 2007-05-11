@@ -24,8 +24,7 @@ RDEPEND="dev-libs/atk
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/pango
-	sys-libs/zlib
-	avahi? ( net-misc/mDNSResponder )"
+	sys-libs/zlib"
 
 S=${WORKDIR}/${MY_P}
 
