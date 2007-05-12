@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/tigcc-linux/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="no-completion-data"
+IUSE="minimal"
 
 DEPEND="$(qt_min_version 3.3)
 	>=kde-base/kdelibs-3.5.2
