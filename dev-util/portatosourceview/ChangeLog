@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/portatosourceview
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 May 2007; René Neumann (Necoro) <necoro@necoro.net>
+  +portatosourceview-2.16.0.ebuild, +metadata.xml:
+  New ebuild for bug #156545
+
