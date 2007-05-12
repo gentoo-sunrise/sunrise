@@ -24,7 +24,7 @@ DEPEND="$(qt_min_version 3.3)
 	>=sci-libs/libticalcs2-20060723"
 
 RDEPEND="${DEPEND}
-	!no-completion-data? ( dev-util/ktigcc-completion-data )"
+	!minimal? ( dev-util/ktigcc-completion-data )"
 
 S=${WORKDIR}/${PN}
 
