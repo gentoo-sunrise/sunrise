@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 May 2007; Stefan Schweizer <genstef@gentoo.org> mac80211-7.1.0.ebuild:
+  Use KV_DIR and put it after pkg_setup
+
   13 May 2007; Aryix (aryixb) <aryixb@gmail.com> +metadata.xml:
   add mac80211-7.1.0 (again)
 

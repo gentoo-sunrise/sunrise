@@ -21,11 +21,14 @@ S="${WORKDIR}/${MOD}/compatible/net"
 MODULE_NAMES="mac80211(net/mac80211:${S}/mac80211)
 	rc80211_simple(net/mac80211:${S}/mac80211)
 	cfg80211(net/wireless:${S}/wireless)"
-BUILD_PARAMS="CONFIG_MAC80211_LEDS=y CONFIG_MAC80211=m CONFIG_CFG80211=m
-	-C ${KERNEL_DIR} M=\${PWD}"
 BUILD_TARGETS="modules"
 CONFIG_CHECK="NET_SCHED WIRELESS_EXT LEDS_TRIGGERS"
 
+pkg_setup() {
+	linux-mod_pkg_setup
+	BUILD_PARAMS="CONFIG_MAC80211_LEDS=y CONFIG_MAC80211=m CONFIG_CFG80211=m
+		-C ${KV_DIR} M=\${PWD}"
+}
 
 src_unpack() {
 	unpack ${A}
