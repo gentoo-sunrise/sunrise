@@ -3,6 +3,9 @@
 # $Header: $
 
   13 May 2007; Stefan Schweizer <genstef@gentoo.org> mac80211-7.1.0.ebuild:
+  linux-sources DEPEND already covered by the eclass
+
+  13 May 2007; Stefan Schweizer <genstef@gentoo.org> mac80211-7.1.0.ebuild:
   Use KV_DIR and put it after pkg_setup
 
   13 May 2007; Aryix (aryixb) <aryixb@gmail.com> +metadata.xml:

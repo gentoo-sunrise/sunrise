@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE=""
 
-DEPEND="kernel_linux? ( virtual/linux-sources )"
+DEPEND=""
 RDEPEND=""
 
 S="${WORKDIR}/${MOD}/compatible/net"
