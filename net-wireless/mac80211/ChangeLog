@@ -1,0 +1,13 @@
+# ChangeLog for net-wireless/mac80211
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 May 2007; Aryix (aryixb) <aryixb@gmail.com> +metadata.xml:
+  add mac80211-7.1.0 (again)
+
+  13 May 2007; Aryix (aryixb) <aryixb@gmail.com> +metadata.xml:
+  add mac80211-7.1.0
+
+  13 May 2007; Aryix (aryixb) <aryixb@gmail.com> +metadata.xml:
+  add mac80211
+
