@@ -1,5 +1,0 @@
-# Bluetooth configuraton file
-
-# Arguments to hidd
-HIDD_OPTIONS="--encrypt"
-
