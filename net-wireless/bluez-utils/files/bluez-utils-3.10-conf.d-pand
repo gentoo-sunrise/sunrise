@@ -1,0 +1,4 @@
+# Bluetooth configuraton file
+
+# Arguments to pand
+PAND_OPTIONS="--listen --role NAP"

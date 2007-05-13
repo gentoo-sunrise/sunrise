@@ -1,0 +1,26 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need hcid
+}
+
+start() {
+	if [ -n "${PAND_OPTIONS}" ]; then
+		ebegin "Starting pand"
+		start-stop-daemon --start --quiet \
+			--exec /usr/bin/pand -- ${PAND_OPTIONS}
+		eend $?
+	else
+		eerror "Not starting pand because PAND_OPTIONS not defined."
+	fi
+}
+
+stop() {
+	ebegin "Stopping pand"
+	start-stop-daemon --stop --quiet --exec /usr/bin/pand
+	eend $?
+}
+

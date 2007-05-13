@@ -1,0 +1,5 @@
+# Bluetooth configuraton file
+
+# Arguments to dund
+DUND_OPTIONS="--listen --persist"
+

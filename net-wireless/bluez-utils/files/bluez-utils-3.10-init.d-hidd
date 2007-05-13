@@ -1,0 +1,23 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need hcid
+}
+
+start() {
+	ebegin "Starting hidd"
+	start-stop-daemon --start --quiet \
+		--exec /usr/bin/hidd -- ${HIDD_OPTIONS} --server
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping hidd"
+	hidd --killall
+	start-stop-daemon --stop --quiet --exec /usr/bin/hidd
+	eend $?
+}
+

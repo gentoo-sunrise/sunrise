@@ -1,0 +1,26 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need hcid
+}
+
+start() {
+	if [ -n "${DUND_OPTIONS}" ]; then
+		ebegin "Starting dund"
+		start-stop-daemon --start --quiet \
+			--exec /usr/bin/dund -- ${DUND_OPTIONS}
+		eend $?
+	else
+		eerror "Not starting dund because DUND_OPTIONS not defined."
+	fi
+}
+
+stop() {
+	ebegin "Stopping dund"
+	start-stop-daemon --stop --quiet --exec /usr/bin/dund
+	eend $?
+}
+

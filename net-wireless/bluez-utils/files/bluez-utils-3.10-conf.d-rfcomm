@@ -1,0 +1,5 @@
+# Bluetooth configuraton file
+
+# Config file for rfcomm
+RFCOMM_CONFIG="/etc/bluetooth/rfcomm.conf"
+

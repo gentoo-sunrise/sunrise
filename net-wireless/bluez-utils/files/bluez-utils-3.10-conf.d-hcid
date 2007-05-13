@@ -1,0 +1,8 @@
+# Bluetooth configuraton file
+
+# Config file for hcid
+HCID_CONFIG="/etc/bluetooth/hcid.conf"
+
+# Run hid2hci (allowed values are "true" and "false")
+HID2HCI_ENABLE=true
+
