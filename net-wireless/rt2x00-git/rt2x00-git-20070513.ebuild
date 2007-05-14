@@ -75,12 +75,12 @@ pkg_setup() {
 		MODULE_NAMES="${MODULE_NAMES} rt2x00usb(net/wireless/mac80211/rt2x00/)"
 		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_RT2X00_LIB_USB=m"
 		CONFIG_CHECK="${CONFIG_CHECK} USB"
-		ERROR_FW_LOADER="${P} requires support for Firmware module loading (CONFIG_FW_LOADER)."
 	fi
 
 	if use rt61pci || use rt73usb ; then
 		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_RT2X00_LIB_FIRMWARE=m"
 		CONFIG_CHECK="${CONFIG_CHECK} FW_LOADER"
+		ERROR_FW_LOADER="${P} requires support for Firmware module loading (CONFIG_FW_LOADER)."
 	fi
 
 	linux-mod_pkg_setup
