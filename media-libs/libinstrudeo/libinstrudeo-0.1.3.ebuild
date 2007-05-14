@@ -39,6 +39,12 @@ src_unpack() {
 		|| die "sed failed"
 }
 
+src_compile() {
+	CXXFLAGS="${CXXFLAGS} -D__STDC_CONSTANT_MACROS" econf || die "econf failed"
+	emake || die "emake failed"
+
+}
+
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README

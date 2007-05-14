@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 May 2007; Santiago M. Mola <gentoo@coldwind.org>
+  libinstrudeo-0.1.3.ebuild:
+  Fixed compilation with recent ffmpeg versions. Thanks to ebfe on #173692.
+
   21 Dec 2006; Santiago M. Mola <cooldwind@gmail.com>
   libinstrudeo-0.1.3.ebuild:
   Remove inherit eutils
