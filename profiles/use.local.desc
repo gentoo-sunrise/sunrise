@@ -93,6 +93,11 @@ net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-p2p/btg:cppunit - Enable building unittests.
 net-p2p/btg:session-saving - Enable saving sessions (daemon).
 net-p2p/murmur:trayicon - Enable support for tray icon
+net-wireless/rt2x00-git:rt2400pci - Build rt2400pci driver
+net-wireless/rt2x00-git:rt2500pci - Build rt2500pci driver
+net-wireless/rt2x00-git:rt2500usb - Build rt2500usb driver
+net-wireless/rt2x00-git:rt61pci - Build rt61pci driver
+net-wireless/rt2x00-git:rt73usb - Build rt73usb driver
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-libs/libticables2:pam_console - Adds support for pam console from PAM
