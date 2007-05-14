@@ -7,7 +7,7 @@ inherit linux-mod
 DESCRIPTION="mac80211 subsystem"
 HOMEPAGE="http://intellinuxwireless.org/?p=mac80211"
 SRC_URI="http://intellinuxwireless.org/${PN}/downloads/${P}-ht.tgz"
-MOD="${P}-ht"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~ppc"
@@ -16,6 +16,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
+MOD="${P}-ht"
 S="${WORKDIR}/${MOD}/compatible/net"
 
 MODULE_NAMES="mac80211(net/mac80211:${S}/mac80211)
@@ -33,16 +34,16 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 
-	cd ${WORKDIR}/${MOD} ; make unmodified KSRC=${KV_DIR} ||
-		die "make unmodified failed"
-	for i in ${S}/mac80211 ${S}/wireless ; do
+	cd "${WORKDIR}"/${MOD}
+	make unmodified KSRC="${KV_DIR}" || die "make unmodified failed"
+	for i in "${S}"/mac80211 "${S}"/wireless ; do
 		echo "CFLAGS += -I${WORKDIR}/${MOD}/compatible/include" \
 			"-DCONFIG_MAC80211_LEDS=y" >> $i/Makefile
 	done
 }
 
 src_install() {
-	cd ${WORKDIR}/${MOD}/compatible
+	cd "${WORKDIR}"/${MOD}/compatible
 	for i in include/net include/linux ; do
 		insinto /usr/include/${i/include/mac80211}
 		doins $i/*.h
