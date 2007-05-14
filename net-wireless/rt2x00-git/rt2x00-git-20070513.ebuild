@@ -19,8 +19,10 @@ for x in ${RT2X00_DEVICES} ; do
 	IUSE="${IUSE} ${x}"
 done
 
-DEPEND="net-wireless/mac80211"
-RDEPEND="rt2400pci? ( net-wireless/eeprom_93cx6 )
+DEPEND="net-wireless/mac80211
+	!net-wireless/rt2x00"
+RDEPEND="${DEPEND}
+	rt2400pci? ( net-wireless/eeprom_93cx6 )
 	rt2500pci? ( net-wireless/eeprom_93cx6 )
 	rt61pci? ( net-wireless/eeprom_93cx6 net-wireless/crc-itu-t )
 	rt73usb? ( net-wireless/crc-itu-t )"
