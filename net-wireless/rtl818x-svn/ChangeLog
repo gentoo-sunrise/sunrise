@@ -1,0 +1,8 @@
+# ChangeLog for net-wireless/rtl818x-svn
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 May 2007; Aryix (aryixb) <aryixb@gmail.com>
+  +rtl818x-svn-20070514.ebuild, +metadata.xml:
+  add net-wireless/rtl818x-svn
+
