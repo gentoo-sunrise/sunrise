@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 May 2007; Aryix (aryixb) <aryixb@gmail.com>
+  +rtl818x-svn-20070516.ebuild:
+  updated svn to 20070516
+
   16 May 2007; Stefan Schweizer <genstef@gentoo.org>
   rtl818x-svn-20070514.ebuild:
   Correct linux-mod eclass usage - simplify the ebuild more
