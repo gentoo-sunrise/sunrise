@@ -54,8 +54,8 @@ pkg_setup() {
 		die "Add one or more of ${RT2X00_DEVICES} to your USE flags and try again."
 	fi
 
-	CONFIG_CHECK="NET_RADIO"
-	ERROR_NET_RADIO="${P} requires support for Wireless LAN drivers (non-hamradio) & Wireless Extensions (CONFIG_NET_RADIO)."
+	CONFIG_CHECK="WIRELESS_EXT"
+	ERROR_WIRELESS_EXT="${P} requires support for Wireless LAN drivers (non-hamradio) & Wireless Extensions (CONFIG_NET_RADIO)."
 
 	MODULE_NAMES="rt2x00lib(net/wireless/mac80211/rt2x00/)"
 	BUILD_PARAMS="CONFIG_RT2X00=m CONFIG_RT2X00_LIB=m"
