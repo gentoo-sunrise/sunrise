@@ -21,8 +21,8 @@ S=${WORKDIR}/${MY_P}
 RDEPEND="net-wireless/wireless-tools"
 MODULE_NAMES="rt73(net:${S}/Module)"
 
-CONFIG_CHECK="NET_RADIO"
-ERROR_NET_RADIO="${P} requires support for Wireless LAN drivers (non-hamradio) & Wireless Extensions (CONFIG_NET_RADIO)."
+CONFIG_CHECK="WIRELESS_EXT"
+ERROR_WIRELESS_EXT="${P} requires support for Wireless LAN drivers (non-hamradio) & Wireless Extensions (CONFIG_NET_RADIO)."
 MODULESD_RT73_ALIASES=('usbra? rt73')
 
 pkg_setup() {
