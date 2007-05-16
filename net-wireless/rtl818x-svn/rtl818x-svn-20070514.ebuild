@@ -30,7 +30,7 @@ pkg_setup() {
 		die "No kernel >=2.6 detected!"
 	fi
 
-	# Needs NET_RADIO in kernel, for wireless_send_event
+	# Needs WIRELESS_EXT in kernel, for wireless_send_event
 	local CONFIG_CHECK="WIRELESS_EXT CRYPTO CRYPTO_ARC4 CRC32 !IEEE80211"
 	local ERROR_IEEE80211="${P} requires the in-kernel version of the IEEE802.11 subsystem to be disabled (CONFIG_IEEE80211)"
 	linux-mod_pkg_setup
