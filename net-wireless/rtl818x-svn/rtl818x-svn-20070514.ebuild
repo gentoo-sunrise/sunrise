@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils linux-info linux-mod
+inherit eutils linux-mod
 
 DESCRIPTION="Experimental driver for RTL8187 and RTL818x wireless chipsets"
 HOMEPAGE="http://rtl-wifi.sourceforge.net/"
-SRC_URI="http://father.lugmen.org.ar/~aryix/distfiles/${PN}-${PV}.tar.gz"
+SRC_URI="http://father.lugmen.org.ar/~aryix/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -14,16 +14,14 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
-MY_PN="${WORKDIR}/${PN}-${PV}"
-S=${WORKDIR}
+RDEPEND=""
 
-
-MODULE_NAMES="ieee80211_crypt-rtl(net:${MY_PN}/ieee80211)
-	ieee80211_crypt_wep-rtl(net:${MY_PN}/ieee80211)
-	ieee80211_crypt_tkip-rtl(net:${MY_PN}/ieee80211)
-	ieee80211_crypt_ccmp-rtl(net:${MY_PN}/ieee80211)
-	ieee80211-rtl(net:${MY_PN}/ieee80211)
-	r8180(net:${MY_PN}/rtl818x-newstack)"
+MODULE_NAMES="ieee80211_crypt-rtl(net:ieee80211)
+	ieee80211_crypt_wep-rtl(net:ieee80211)
+	ieee80211_crypt_tkip-rtl(net:ieee80211)
+	ieee80211_crypt_ccmp-rtl(net:ieee80211)
+	ieee80211-rtl(net:ieee80211)
+	r8180(net:rtl818x-newstack)"
 BUILD_TARGETS="all"
 
 pkg_setup() {
@@ -32,13 +30,10 @@ pkg_setup() {
 		die "No kernel >=2.6 detected!"
 	fi
 
-	linux-info_pkg_setup
-	linux-mod_pkg_setup
-
 	# Needs NET_RADIO in kernel, for wireless_send_event
-	local CONFIG_CHECK="NET_RADIO CRYPTO CRYPTO_ARC4 CRC32 !IEEE80211"
+	local CONFIG_CHECK="WIRELESS_EXT CRYPTO CRYPTO_ARC4 CRC32 !IEEE80211"
 	local ERROR_IEEE80211="${P} requires the in-kernel version of the IEEE802.11 subsystem to be disabled (CONFIG_IEEE80211)"
-	check_extra_config
+	linux-mod_pkg_setup
 }
 
 src_install() {
