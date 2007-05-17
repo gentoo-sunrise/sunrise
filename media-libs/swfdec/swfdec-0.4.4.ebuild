@@ -14,6 +14,8 @@ KEYWORDS="~x86 ~amd64 ~ppc"
 
 IUSE="ffmpeg gstreamer gnome mad"
 
+RESTRICT="test"
+
 RDEPEND=">=dev-libs/glib-2
 	>=dev-libs/liboil-0.3.10-r1
 	x11-libs/pango
@@ -57,7 +59,7 @@ src_compile() {
 		$(use_enable ffmpeg) \
 		$(use_enable mad) \
 		$(use_enable gnome gnome-vfs) \
-	    ${myconf} || die "configure failed" 
+		${myconf} || die "configure failed"
 
 	# parallel build doesn't work, so specify -j1
 	emake -j1 || die "emake failed"
