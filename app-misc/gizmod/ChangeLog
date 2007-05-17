@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 May 2007; Tim Burrell <tim.burrell@gmail.com> -gizmod-3.0.ebuild,
+  +gizmod-3.1.ebuild:
+  New Ebuild for bug 134016
+
   09 May 2007; Your Name (flithm) <tim@timburrell.net> +gizmod-3.0.ebuild,
   +metadata.xml:
   New Ebuild for bug 134016
