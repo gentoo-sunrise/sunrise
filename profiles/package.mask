@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Ali Polatel <jakub@gentoo.org> (18 May 2007)
+# missing required dependency
+net-wireless/iwlwifi
+
 # Ali Polatel <polatel@gmail.com> (15 April 2007)
 # live ebuilds should be masked
 =app-vim/clewn-9999
