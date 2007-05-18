@@ -56,7 +56,3 @@ src_install() {
 	insinto /usr/share/applications
 	doins usr/share/applications/zattoo_player.desktop
 }
-
-pkg_postinst() {
-	ldconfig /usr/lib/zattoo
-}
