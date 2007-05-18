@@ -91,7 +91,9 @@ net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/mugshot:xulrunner - Compile browser extension using xulrunner
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-p2p/btg:cppunit - Enable building unittests.
+net-p2p/btg:event-callback - Enable executing scripts for certain events (daemon).
 net-p2p/btg:session-saving - Enable saving sessions (daemon).
+net-p2p/btg:web - Enable installing WWW client.
 net-p2p/murmur:trayicon - Enable support for tray icon
 net-wireless/rt2x00-git:rt2400pci - Build rt2400pci driver
 net-wireless/rt2x00-git:rt2500pci - Build rt2500pci driver
