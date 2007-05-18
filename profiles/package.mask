@@ -21,7 +21,7 @@
 ##   End example
 ##
 
-# Ali Polatel <jakub@gentoo.org> (18 May 2007)
+# Jakub Moc <jakub@gentoo.org> (18 May 2007)
 # missing required dependency
 net-wireless/iwlwifi
 
