@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2007; Santiago M. Mola <gentoo@coldwind.org> lmms-0.2.1-r1.ebuild:
+  Drop ~amd64.
+
   05 Apr 2007; Jakub Moc <jakub@gentoo.org> lmms-0.2.1-r1.ebuild:
   Fix desktop entry
 

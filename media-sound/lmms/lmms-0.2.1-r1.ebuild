@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE="alsa debug flac jack ladspa oss samplerate sdl vorbis vst"
 
 DEPEND="=x11-libs/qt-3.3*
