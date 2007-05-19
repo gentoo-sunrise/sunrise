@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2007; Ali Polatel (hawking) <polatel@gmail.com> -btg-0.9.0.ebuild:
+  Nuke old
+
   18 May 2007; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
   +btg-0.9.5.ebuild, +files/btgd.confd, +files/btgd.initd:
   Updated ebuild for bug 170925 : 0.9.5
