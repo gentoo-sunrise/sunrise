@@ -8,7 +8,7 @@ MY_P="sqliteman-0.99"
 
 DESCRIPTION="simple but powerfull Sqlite3 GUI database manager"
 HOMEPAGE="http://sqliteman.sourceforge.net/"
-SRC_URI="mirror://sourceforge/sqliteman/${P/_pre/-}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P/_pre/-}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,7 +18,6 @@ RDEPEND=">=x11-libs/qt-4.2
 		>=dev-db/sqlite-3.0"
 DEPEND="${RDEPEND}
 		dev-util/cmake"
-
 
 S=${WORKDIR}/${MY_P}
 

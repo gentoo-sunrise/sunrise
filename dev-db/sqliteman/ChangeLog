@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  sqliteman-0.99_pre20070509.ebuild:
+  cosmetics
+
   12 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
   -sqliteman-0.99_pre20070403.ebuild, -sqliteman-0.99_pre20070421.ebuild:
   Nuke old
