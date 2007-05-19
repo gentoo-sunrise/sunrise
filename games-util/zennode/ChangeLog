@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  zennode-1.2.1.ebuild:
+  Changed app-arch/zip to app-arch/unzip in DEPEND
+
   07 May 2007; Jack Kelly (hashendgame) <weldingmaskman@hotmail.com>
   zennode-1.2.1.ebuild:
   Moved inherit line to top of the ebuild.

@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="app-arch/zip"
+DEPEND="app-arch/unzip"
 RDEPEND=""
 
 S=${WORKDIR}/ZenNode-${PV}/src/ZenNode
