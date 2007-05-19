@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  etcproposals-1.2.1.ebuild:
+  Remove whitespace in indentation, make pcheck happy
+
   09 May 2007; Björn Michaelsen (Sweetshark) <bjoern.michaelsen@gmail.com>
   -etcproposals-1.2.ebuild, +etcproposals-1.2.1.ebuild:
   etc-proposals version 1.2.1 bugfix release

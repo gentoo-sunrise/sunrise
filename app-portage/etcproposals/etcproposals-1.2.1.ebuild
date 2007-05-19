@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND="gtk? ( >=dev-python/pygtk-2.10 )
 		qt4? ( >=dev-python/PyQt4-4.1.1
-			   >=kde-base/kdelibs-3.5 )"
+			>=kde-base/kdelibs-3.5 )"
 RDEPEND="${DEPEND}"
 
 src_install(){
