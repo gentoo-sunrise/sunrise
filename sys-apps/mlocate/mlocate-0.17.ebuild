@@ -10,12 +10,10 @@ SRC_URI="http://people.redhat.com/mitr/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="sys-apps/shadow"
-RDEPEND="${DEPEND}
-	!sys-apps/slocate
+RDEPEND="!sys-apps/slocate
 	!sys-apps/rlocate"
 
 pkg_setup() {
@@ -23,7 +21,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	econf || die
+	econf
 	emake groupname=locate || die "emake failed"
 }
 
@@ -39,16 +37,15 @@ src_install() {
 	newins "${FILESDIR}/mlocate.cron" mlocate
 	fperms 0755 /etc/cron.daily/mlocate
 
-	fowners root:locate /usr/bin/locate
+	fowners 0:locate /usr/bin/locate
 	fperms go-r,g+s /usr/bin/locate
 
-	chown -R root:locate "${D}/var/lib/mlocate"
+	chown -R 0:locate "${D}/var/lib/mlocate"
 	fperms 0750 /var/lib/mlocate
-
-	touch "${D}/var/lib/mlocate/mlocate.db"
+	keepdir /var/lib/mlocate
 }
 
 pkg_postinst() {
-	einfo "Note that the /etc/updatedb.conf file is generic"
-	einfo "Please customize it to your system requirements"
+	elog "Note that the /etc/updatedb.conf file is generic"
+	elog "Please customize it to your system requirements"
 }
