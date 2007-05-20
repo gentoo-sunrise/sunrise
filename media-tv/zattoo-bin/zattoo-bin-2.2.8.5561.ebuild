@@ -17,8 +17,8 @@ KEYWORDS="~x86"
 IUSE=""
 
 #NOTE: As there is no real documentation, I don't know
-#      exactly what dependancies are needed.
-#      These are just the ones I came across:
+#	   exactly what dependancies are needed.
+#	   These are just the ones I came across:
 DEPEND=""
 RDEPEND=">=sys-libs/glibc-2.4
 	x11-libs/gtkglext
@@ -42,6 +42,6 @@ src_install() {
 	doins -r usr/share/zattoo_player/*
 	insinto /usr/share/applications
 	doins usr/share/applications/zattoo_player.desktop
-	doenvd ${FILESDIR}/77zattoo-bin
+	doenvd "${FILESDIR}/77zattoo-bin"
 }
 

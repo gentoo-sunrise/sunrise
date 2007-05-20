@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 May 2007; Christian Faulhammer <opfer@gentoo.org>
+  zattoo-bin-2.2.8.5561.ebuild:
+  added some quotes around variable
+
   19 May 2007; Christian Helbling <helch@gmx.ch> +files/77zattoo-bin,
   +zattoo-bin-2.2.8.5561.ebuild, +metadata.xml:
   Re-adding ebuild for bug 178918. This time without fetch restriction.
