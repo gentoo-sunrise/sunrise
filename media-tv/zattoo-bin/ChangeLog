@@ -1,0 +1,8 @@
+# ChangeLog for media-tv/zattoo-bin
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 May 2007; Christian Helbling <helch@gmx.ch> +files/77zattoo-bin,
+  +zattoo-bin-2.2.8.5561.ebuild, +metadata.xml:
+  Readding ebuild for bug #178918
+
