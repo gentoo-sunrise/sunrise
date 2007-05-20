@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/devkitarm-bin
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 May 2007; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
+  +files/99devkitpro, +devkitarm-bin-20.ebuild, +metadata.xml:
+  New ebuild for bug 179209. Thanks to helch, jakub and armin76 for there help.
+
