@@ -57,7 +57,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die 'install failed'
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	newinitd "${FILESDIR}/btgd.initd" btgd
 	newconfd "${FILESDIR}/btgd.confd" btgd
