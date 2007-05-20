@@ -1,0 +1,8 @@
+# ChangeLog for net-www/swfdec-mozilla
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 May 2007; Aryix (aryixb) <aryixb@gmail.com>
+  +swfdec-mozilla-0.4.4.ebuild, +metadata.xml:
+  Initial commit
+
