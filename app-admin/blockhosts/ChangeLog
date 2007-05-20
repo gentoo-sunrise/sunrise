@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 May 2007; Christian Faulhammer <opfer@gentoo.org>
+  blockhosts-2.0.3.ebuild:
+  removed a weird character which gives weird output
+
   19 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
   -blockhosts-2.0.2.ebuild:
   Nuke old
