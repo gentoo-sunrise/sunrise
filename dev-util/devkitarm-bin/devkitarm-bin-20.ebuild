@@ -28,6 +28,7 @@ src_install() {
 	local INSTDIR=${DEVKITPRO}/devkitARM
 
 	insinto ${INSTDIR}
+	insopts -m0755
 	doins -r *
 
 	doenvd ${FILESDIR}/99devkitpro
