@@ -24,13 +24,9 @@ QA_EXECSTACK="${dir:1}/lib/gcc/arm-eabi/4.1.1/thumb/*.o
 	${dir:1}/arm-eabi/lib/*.o"
 
 src_install() {
-	local DEVKITPRO=/opt/devkitpro
-	local INSTDIR=${DEVKITPRO}/devkitARM
-
-	insinto ${INSTDIR}
+	insinto /opt/devkitpro/devkitARM
 	insopts -m0755
 	doins -r *
 
 	doenvd ${FILESDIR}/99devkitpro
 }
-
