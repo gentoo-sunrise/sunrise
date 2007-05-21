@@ -28,5 +28,5 @@ src_install() {
 	insopts -m0755
 	doins -r *
 
-	doenvd ${FILESDIR}/99devkitpro
+	doenvd "${FILESDIR}/99devkitpro"
 }
