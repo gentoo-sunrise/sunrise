@@ -4,7 +4,7 @@
 
 inherit eutils nsplugins
 
-DESCRIPTION="Swfdec-mozilla is a decoder/renderer netscape style plugin for Macromedia Flash animations."
+DESCRIPTION="A decoder/renderer netscape style plugin for Macromedia Flash animations."
 HOMEPAGE="http://swfdec.freedesktop.org/"
 SRC_URI="http://swfdec.freedesktop.org/download/${PN}/${PV:0:3}/${P}.tar.gz"
 LICENSE="GPL-2"
@@ -28,5 +28,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Remember to report bugs to: https://bugzilla.freedesktop.org"
+	einfo "Remember to report bugs to: https://bugzilla.freedesktop.org/"
 }
