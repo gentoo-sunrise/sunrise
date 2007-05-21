@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 May 2007; Jakub Moc <jakub@gentoo.org> drweb-4.33-r1.ebuild:
+  Block glibc-2.6 as well
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org> drweb-4.33-r1.ebuild:
   add some quotes
 

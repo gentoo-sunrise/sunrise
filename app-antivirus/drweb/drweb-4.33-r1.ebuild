@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 	logrotate? ( app-admin/logrotate )
 	glibc23? ( =sys-libs/glibc-2.3* )
 	!glibc23? ( =sys-libs/glibc-2.4* )
-	!=sys-libs/glibc-2.5*"
+	!>=sys-libs/glibc-2.5"
 
 PROVIDE="virtual/antivirus"
 use glibc23 && S="${WORKDIR}/${P}-glibc2.3"
