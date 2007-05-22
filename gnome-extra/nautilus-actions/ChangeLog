@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 May 2007; Alex Tarkovsky <alextarkovsky@gmail.org>
+  +nautilus-actions-1.4.1.ebuild:
+  Bump to 1.4.1; adding ~amd64
+
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -nautilus-actions-1.2.ebuild, -files/nautilus-actions-1.2-as-needed.patch:
   drop old
