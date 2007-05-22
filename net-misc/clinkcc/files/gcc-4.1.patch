@@ -1,0 +1,50 @@
+diff -Naur include/cybergarage/upnp/xml/ServiceData.h include/cybergarage/upnp/xml/ServiceData.h
+--- include/cybergarage/upnp/xml/ServiceData.h	1970-01-01 01:14:18.000000000 +0100
++++ include/cybergarage/upnp/xml/ServiceData.h	2007-02-08 16:08:18.000000000 +0100
+@@ -58,7 +58,7 @@
+ 
+ public:
+ 
+-	void ServiceData::setService(Service *serv)
++	void setService(Service *serv)
+ 	{
+ 		service = serv;
+ 	}
+diff -Naur src/cybergarage/xml/XML.cpp src/cybergarage/xml/XML.cpp
+--- src/cybergarage/xml/XML.cpp	1970-01-01 02:02:17.000000000 +0100
++++ src/cybergarage/xml/XML.cpp	2007-02-08 16:00:26.000000000 +0100
+@@ -123,7 +123,7 @@
+ 	char *cpbuf = strdup(str);
+ 	if (cpbuf == NULL)
+ 		return NULL;
+-	const char *inbuf = cpbuf;
++	char *inbuf = cpbuf;
+ 	size_t inbyteleft = strlen(str);
+ 	size_t outbufSize = inbyteleft * sizeof(UnicodeStr) * 4;
+ 	UnicodeStr *outbuf = new UnicodeStr[outbufSize + 1];
+--- src/cybergarage/xml/libxml2/Libxml2Parser.cpp	1970-01-01 01:14:46.000000000 +0100
++++ src/cybergarage/xml/libxml2/Libxml2Parser.cpp	2007-02-08 17:12:02.000000000 +0100
+@@ -124,7 +124,7 @@
+     xmlNodePtr child = cur->xmlChildrenNode;
+     while ( child != NULL ) {
+ 
+-      Node *newChildNode = convertToCLinkFormat( doc, child, depth  1 );
++      Node *newChildNode = convertToCLinkFormat( doc, child, depth + 1 );
+       if ( newChildNode ) {
+ 	newNode->addNode( newChildNode );
+       }
+diff -Naur sample/media/server/unix/MediaGateMain.cpp sample/media/server/unix/MediaGateMain.cpp
+--- sample/media/server/unix/MediaGateMain.cpp	1970-01-01 01:14:34.000000000 +0100
++++ sample/media/server/unix/MediaGateMain.cpp	2007-02-08 18:16:36.000000000 +0100
+@@ -67,9 +67,9 @@
+ 	for (n=1; n<argc; n++) {
+ #ifdef SUPPORT_MYTHTV
+ 		if (strcmp(MediaGate::MYTHTV_OPT_STRING, argv[n]) == 0)
+-			mode = MediaGate::MYTHTV_MODE;
++			option = MediaGate::MYTHTV_MODE;
+ 		if (strcmp(MediaGate::MYTHTV_OPT_STRING_OLD, argv[n]) == 0)
+-			mode = MediaGate::MYTHTV_MODE;
++			option = MediaGate::MYTHTV_MODE;
+ #endif
+ 		if (strcmp(VERBOSE_ARG, argv[n]) == 0)
+ 			Debug::on();
