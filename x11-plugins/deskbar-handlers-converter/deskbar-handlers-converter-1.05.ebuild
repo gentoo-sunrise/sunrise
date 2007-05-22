@@ -12,7 +12,7 @@ SRC_URI="http://svn.kryogenix.org/svn/deskbar-plugins/tags/${PV}/${MY_PN}.py"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/python-2.3
