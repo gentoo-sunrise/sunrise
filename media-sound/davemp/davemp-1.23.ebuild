@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils multilib
 
 DESCRIPTION="lightweight low-dependency web interface to mpd"
 HOMEPAGE="http://ion0.com/davemp/"
@@ -27,13 +27,13 @@ src_unpack() {
 }
 
 src_install() {
-	doinitd ${FILESDIR}/davemp
-	insinto /usr/share/${PN}/
+	doinitd "${FILESDIR}"/davemp
+	insinto /usr/share/${PN}
 	doins -r themes
-	insinto /usr/lib/${PN}/
+	insinto /usr/$(get_libdir)/${PN}
 	doins -r lib/*
 	insinto /etc
-	newins davemp.conf davemp.conf
+	doins davemp.conf
 	dobin davempd.pl
 	dodoc README Changelog
 }
