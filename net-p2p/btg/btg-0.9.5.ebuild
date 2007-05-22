@@ -11,10 +11,7 @@ SRC_URI="mirror://berlios/btg/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cppunit debug doc event-callback gtk ncurses session-saving web"
-
-# NB : upnp use flag add clinkcc dependency but clinkcc is not in portage tree
-# so this use flag is disabled.
+IUSE="cppunit debug doc event-callback gtk ncurses session-saving upnp web"
 
 RDEPEND=">=net-libs/rb_libtorrent-0.11
 		>=dev-libs/boost-1.33
@@ -24,8 +21,8 @@ RDEPEND=">=net-libs/rb_libtorrent-0.11
 		ncurses? ( >=sys-libs/ncurses-5 )
 		gtk? ( >=dev-cpp/gtkmm-2.4 )
 		web? ( >=dev-lang/php-5 )
-		cppunit? ( dev-util/cppunit )"
-
+		cppunit? ( dev-util/cppunit )
+		upnp? ( net-misc/clinkcc )"
 DEPEND="${RDEPEND}
 		doc? ( app-doc/doxygen )"
 
@@ -45,7 +42,7 @@ src_compile() {
 		$(use_enable event-callback) \
 		$(use_enable gtk gui) \
 		$(use_enable ncurses cli) \
-		$(use_enable web www) \
+		$(use_enable upnp) \
 		$(use_enable web www) \
 		${BOOST_LIBS} || die "econf failed"
 
