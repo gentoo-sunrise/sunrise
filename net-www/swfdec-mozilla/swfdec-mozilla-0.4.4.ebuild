@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils nsplugins
+inherit multilib
 
 DESCRIPTION="A decoder/renderer netscape style plugin for Macromedia Flash animations."
 HOMEPAGE="http://swfdec.freedesktop.org/"
@@ -17,13 +17,11 @@ DEPEND=">=media-libs/swfdec-0.4.4
 RDEPEND=""
 
 src_install() {
-	exeinto /usr/lib/nsbrowser/plugins
+	exeinto /usr/$(get_libdir)/nsbrowser/plugins
 	doexe src/.libs/libswfdecmozilla.so || die "libswfdecmozilla.so failed"
-	#inst_plugin /usr/lib/nsbrowser/plugins/libswfdecmozilla.so
 
-	insinto /usr/lib/nsbrowser/plugins
+	insinto /usr/$(get_libdir)/nsbrowser/plugins
 	doins src/libswfdecmozilla.la
-	#inst_plugin /usr/lib/nsbrowser/plugins/libswfdecmozilla.la
 }
 
 pkg_postinst() {
