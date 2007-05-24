@@ -12,12 +12,12 @@ SRC_URI="mirror://sourceforge/${PN}/clinkcc${MY_PV}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="expat libxml2 mythtv"
+IUSE="expat xml mythtv"
 
 DEPEND="
 	|| (
 		expat? ( >=dev-libs/expat-1.95 )
-		libxml2? ( >=dev-libs/libxml2-2.6.20 )
+		xml? ( >=dev-libs/libxml2-2.6.20 )
 		>=dev-libs/xerces-c-2.3
 	)
 	mythtv? virtual/mysql
@@ -36,7 +36,7 @@ src_unpack() {
 
 src_compile() {
 	econf	$(use_enable expat) \
-			$(use_enable libxml2) \
+			$(use_enable xml libxml2) \
 			$(use_enable mythtv) \
 	|| die "econf failed"
 
