@@ -32,7 +32,7 @@ src_compile() {
 
 src_install() {
 	# manual install to avoid sandbox violation and installing useless .la file
-	dopammod "${S}"/src/.libs/pam_blue.so
+	dopammod src/.libs/pam_blue.so
 	newpamsecurity . data/sample.conf bluesscan.conf.sample
 
 	dodoc AUTHORS NEWS README ChangeLog
