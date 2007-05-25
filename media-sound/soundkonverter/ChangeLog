@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/soundkonverter
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 May 2007; Ely Levy (nakee) <nakeee@gmail.com>
+  +soundkonverter-0.3.3.ebuild, +metadata.xml:
+  New build for 107189 thanks for the guys at #gentoo-sunrise for all the help
+
