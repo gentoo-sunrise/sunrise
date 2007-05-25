@@ -1,5 +1,4 @@
-# Copyright 2003-2007 SabayonLinux
-# Copyright 2007-2007 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,21 +11,20 @@ LICENSE="GPL-2"
 SLOT="0"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="lame vorbis flac ffmpeg musepack kdeenablefinal arts aac"
+IUSE="vorbis flac ffmpeg musepack kdeenablefinal arts aac"
 
 DEPEND=">=media-libs/taglib-1.4
 	>=media-sound/cdparanoia-3.9.8-r5
 	>=x11-libs/qt-3.3.4
-        aac? ( media-libs/libmp4v2 )
-       "
+	aac? ( media-libs/libmp4v2 )
+	"
 
 RDEPEND="${DEPEND}
-        lame? ( >=media-sound/lame-3.96 )
-        vorbis? ( >=media-sound/vorbis-tools-1.0 )
-        flac? ( >=media-libs/flac-1.1.1 )
-        ffmpeg? ( >=media-video/ffmpeg-0.4.8 )
-        musepack? ( >=media-sound/musepack-tools-1.15u )
-        "
+	vorbis? ( >=media-sound/vorbis-tools-1.0 )
+	flac? ( >=media-libs/flac-1.1.1 )
+	ffmpeg? ( >=media-video/ffmpeg-0.4.8 )
+	musepack? ( >=media-sound/musepack-tools-1.15u )
+	"
 
 need-kde 3.5
 
@@ -44,14 +42,14 @@ src_compile() {
 
 src_install() {
 	kde_src_install || die "Installation failed"
-        mv "${D}"/usr/share/doc/HTML "${D}"/usr/share/doc/${PF}/html
+	mv "${D}"/usr/share/doc/HTML "${D}"/usr/share/doc/${PF}/html
 }
 
 pkg_postinst() {
-	echo 
+	echo
 	elog "  The audio USE flags are for your convience, but are not required."
 	elog "	For AmaroK users there is a script included with this package."
 	elog "	You can enable it with the Script Manager tool in Amarok."
-	echo 
+	elog "  You can use the program with lame if you have it installed."
+	echo
 }
-
