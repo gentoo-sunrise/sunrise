@@ -20,7 +20,7 @@ DEPEND="
 		xml? ( >=dev-libs/libxml2-2.6.20 )
 		>=dev-libs/xerces-c-2.3
 	)
-	mythtv? virtual/mysql
+	mythtv? ( virtual/mysql )
 	virtual/libiconv
 	virtual/libc "
 RDEPEND="${DEPEND}"
