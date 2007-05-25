@@ -40,4 +40,3 @@ src_install() {
 	insinto "${INSTDIR}"
 	doins "libnds_license.txt"
 }
-
