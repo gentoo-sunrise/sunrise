@@ -37,4 +37,3 @@ src_install() {
 	insinto "${INSTDIR}"
 	doins -r include/
 }
-
