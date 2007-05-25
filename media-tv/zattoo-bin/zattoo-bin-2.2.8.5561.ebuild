@@ -4,8 +4,8 @@
 
 inherit rpm
 
-MY_PV="${PV}-1"
-MY_P="${PN/-bin}-${MY_PV}"
+MY_PV=${PV}-1
+MY_P=${PN/-bin}-${MY_PV}
 
 DESCRIPTION="live TV on your PC (Switzerland and Denmark only)"
 HOMEPAGE="http://zattoo.com/"
@@ -42,6 +42,5 @@ src_install() {
 	doins -r usr/share/zattoo_player/*
 	insinto /usr/share/applications
 	doins usr/share/applications/zattoo_player.desktop
-	doenvd ${FILESDIR}/77zattoo-bin
+	doenvd "${FILESDIR}"/77zattoo-bin
 }
-
