@@ -12,7 +12,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="dev-util/devkitarm-bin"
-RDEPEND="${DEPEND}"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}
 RESTRICT="strip"
