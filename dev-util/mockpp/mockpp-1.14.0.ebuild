@@ -18,7 +18,7 @@ IUSE="boost cppunit doc"
 RDEPEND="cppunit? ( dev-util/cppunit )
 	boost? ( dev-libs/boost )"
 DEPEND="${RDEPEND}
-	doc? ( 	app-doc/doxygen
+	doc? ( app-doc/doxygen
 		app-text/docbook-xml-dtd
 		dev-java/fop )"
 
