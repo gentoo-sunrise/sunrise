@@ -21,7 +21,6 @@ S="${WORKDIR}/${P}/compatible"
 MODULE_NAMES="iwl3945(net/wireless)"
 BUILD_TARGETS="modules"
 
-
 pkg_setup() {
 	linux-mod_pkg_setup
 	BUILD_PARAMS="-C ${KV_DIR} M=${S} CONFIG_IWL3945=m"
@@ -33,7 +32,7 @@ src_unpack() {
 	sed -i -e 's/\(.*chmod\)/#\1/' Makefile
 	make compatible/kversion KSRC="${KV_DIR}" \
 		MAC80211_INC=/usr/include/mac80211/net/ || die "make unmodified failed"
-	sed -i -e 's%\.\./\(net/mac80211/\)%\1%' ${S}/*.c ${S}/*.h
+	sed -i -e 's%\.\./\(net/mac80211/\)%\1%' "${S}"/*.c "${S}"/*.h
 	echo "CFLAGS += -I/usr/include/mac80211 -DCONFIG_IWLWIFI_DEBUG=y" \
-		"-DCONFIG_IWLWIFI_SPECTRUM_MEASUREMENT=y" >> ${S}/Makefile
+		"-DCONFIG_IWLWIFI_SPECTRUM_MEASUREMENT=y" >> "${S}"/Makefile
 }
