@@ -61,4 +61,3 @@ pkg_postinst() {
 	elog "Notice: if you decide not to use the tg-frontend please refer to the documentation, how to"
 	elog "edit \"/etc/daemon.conf\""
 }
-
