@@ -11,7 +11,7 @@ LICENSE="GPL-2"
 SLOT="0"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="vorbis flac ffmpeg musepack kdeenablefinal arts aac"
+IUSE="kdeenablefinal arts aac"
 
 DEPEND=">=media-libs/taglib-1.4
 	>=media-sound/cdparanoia-3.9.8-r5
@@ -19,21 +19,11 @@ DEPEND=">=media-libs/taglib-1.4
 	aac? ( media-libs/libmp4v2 )
 	"
 
-RDEPEND="${DEPEND}
-	vorbis? ( >=media-sound/vorbis-tools-1.0 )
-	flac? ( >=media-libs/flac-1.1.1 )
-	ffmpeg? ( >=media-video/ffmpeg-0.4.8 )
-	musepack? ( >=media-sound/musepack-tools-1.15u )
-	"
+RDEPEND="${DEPEND}"
 
 need-kde 3.5
 
-#src_unpack() {
-#	kde_src_unpack
-#}
-
 src_compile() {
-#	append-flags -fno-inline
 	local myconf="$(use_with aac mp4v2)
 			$(use_enable kdeenablefinal final)
 			$(use_with arts arts)"
@@ -47,9 +37,10 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	elog "  The audio USE flags are for your convience, but are not required."
 	elog "	For AmaroK users there is a script included with this package."
 	elog "	You can enable it with the Script Manager tool in Amarok."
-	elog "  You can use the program with lame if you have it installed."
+	elog "  This program supports various encoders and codecs. "
+	elog "  For example you might want to install lame, ffmpeg, vorbis, flac "
+	elog "  and/or musepack."
 	echo
 }
