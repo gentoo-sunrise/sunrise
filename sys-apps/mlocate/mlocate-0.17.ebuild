@@ -21,7 +21,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	econf
+	econf || die "econf failed"
 	emake groupname=locate || die "emake failed"
 }
 
