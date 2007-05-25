@@ -52,7 +52,7 @@ src_compile() {
 
 src_install() {
 	# install manually, make install produces stupid directory structure
-	newbin ${S}/xfprot-gtk xfprot
+	newbin "${S}"/xfprot-gtk xfprot
 
 	# Install the icons
 	insinto /usr/share/pixmaps
