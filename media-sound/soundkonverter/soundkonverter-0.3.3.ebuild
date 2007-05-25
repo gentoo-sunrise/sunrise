@@ -6,7 +6,7 @@ inherit kde eutils
 
 DESCRIPTION="a frontend to various audio converters for KDE"
 HOMEPAGE="http://kde-apps.org/content/show.php?content=29024"
-SRC_URI="http://hessijames.googlepages.com/soundkonverter-${PV}.tar.bz2"
+SRC_URI="http://hessijames.googlepages.com/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 
@@ -16,17 +16,16 @@ IUSE="kdeenablefinal arts aac"
 DEPEND=">=media-libs/taglib-1.4
 	>=media-sound/cdparanoia-3.9.8-r5
 	>=x11-libs/qt-3.3.4
-	aac? ( media-libs/libmp4v2 )
-	"
+	aac? ( media-libs/libmp4v2 )"
 
-RDEPEND="${DEPEND}"
+RDEPEND=${DEPEND}
 
 need-kde 3.5
 
 src_compile() {
 	local myconf="$(use_with aac mp4v2)
 			$(use_enable kdeenablefinal final)
-			$(use_with arts arts)"
+			$(use_with arts)"
 	kde_src_compile || die "Compile error"
 }
 
