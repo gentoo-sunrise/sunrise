@@ -61,4 +61,3 @@ src_install() {
 
 	dodoc AUTHORS ChangeLog README TODO
 }
-
