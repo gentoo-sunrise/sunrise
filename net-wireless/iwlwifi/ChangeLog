@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 May 2007; Stefan Schweizer <genstef@gentoo.org> iwlwifi-0.0.18.ebuild:
+  Let it depend on iwlwifi-3945-ucode
+
   18 May 2007; Jakub Moc <jakub@gentoo.org> +metadata.xml:
   New ebuild for Bug 174965; add metadata.xml and ChangeLog
 
