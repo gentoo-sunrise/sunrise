@@ -10,18 +10,21 @@ SRC_URI="http://father.lugmen.org.ar/~aryix/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="!net-wireless/ieee80211"
-RDEPEND="net-wireless/wireless-tools"
+RDEPEND="${DEPEND}
+		net-wireless/wireless-tools"
 
 MODULE_NAMES="ieee80211_crypt-rtl(net:ieee80211)
 	ieee80211_crypt_wep-rtl(net:ieee80211)
 	ieee80211_crypt_tkip-rtl(net:ieee80211)
 	ieee80211_crypt_ccmp-rtl(net:ieee80211)
 	ieee80211-rtl(net:ieee80211)
-	r8180(net:rtl818x-newstack)"
+	r8180(net:rtl818x-newstack)
+	r8187(net:rtl8187-newstack)"
+
 BUILD_TARGETS="all"
 
 pkg_setup() {
@@ -58,10 +61,11 @@ pkg_postinst() {
 	elog "You may want to add the following modules to"
 	elog "/etc/modules.autoload.d/kernel-2.6"
 	elog
-	elog "The module itself:	   r8180"
-	elog "WEP and WPA encryption:  ieee80211_crypt-rtl"
-	elog "WEP encryption:		   ieee80211_crypt_wep-rtl"
-	elog "WPA TKIP encryption:	   ieee80211_crypt_tkip-rtl"
-	elog "WPA CCMP encryption:	   ieee80211_crypt_ccmp-rtl"
-	elog "For the r8187 module:	   ieee80211-rtl"
+	elog "The r8180 module: 		r8180"
+	elog "The r8187 module:			r8187"
+	elog "WEP and WPA encryption:	ieee80211_crypt-rtl"
+	elog "WEP encryption:			ieee80211_crypt_wep-rtl"
+	elog "WPA TKIP encryption:		ieee80211_crypt_tkip-rtl"
+	elog "WPA CCMP encryption:		ieee80211_crypt_ccmp-rtl"
+	elog "For the r8187 module:		ieee80211-rtl"
 }

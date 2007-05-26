@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 May 2007; Jakub Moc <jakub@gentoo.org> rtl818x-svn-20070516.ebuild:
+  builds the real r8187 module (thanks to Philantrop)
+
   23 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
   -files/digest-rtl818x-svn-20070514, -files:
   Remove unused digest
