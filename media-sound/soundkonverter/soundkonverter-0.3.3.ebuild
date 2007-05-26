@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit kde eutils
+inherit kde eutils qt3
 
 DESCRIPTION="a frontend to various audio converters for KDE"
 HOMEPAGE="http://kde-apps.org/content/show.php?content=29024"
@@ -15,7 +15,7 @@ IUSE="kdeenablefinal arts aac"
 
 DEPEND=">=media-libs/taglib-1.4
 	>=media-sound/cdparanoia-3.9.8-r5
-	>=x11-libs/qt-3.3.4
+	$(qt_min_version 3.3.4)
 	aac? ( media-libs/libmp4v2 )"
 
 RDEPEND=${DEPEND}

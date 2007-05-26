@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 May 2007; Jakub Moc <jakub@gentoo.org> soundkonverter-0.3.3.ebuild:
+  Fix QT dependency
+
   25 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
   soundkonverter-0.3.3.ebuild:
   cosmetics, quotations
