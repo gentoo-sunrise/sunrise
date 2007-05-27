@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 May 2007; Jérôme Poulin (TiCPU) <jeromepoulin@gmail.com>
+  +cromfs-1.2.5.ebuild:
+  Updated to work with latest FUSE.
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> cromfs-1.2.3.ebuild:
   Complete ebuild rewrite
 
