@@ -61,7 +61,7 @@ pkg_postinst() {
 	elog "You may want to add the following modules to"
 	elog "/etc/modules.autoload.d/kernel-2.6"
 	elog
-	elog "The r8180 module: 		r8180"
+	elog "The r8188 module:			r8188"
 	elog "The r8187 module:			r8187"
 	elog "WEP and WPA encryption:	ieee80211_crypt-rtl"
 	elog "WEP encryption:			ieee80211_crypt_wep-rtl"
