@@ -1,0 +1,8 @@
+# ChangeLog for net-fs/mount-cifs
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 May 2007; Jakub Moc <jakub@gentoo.org> +mount-cifs-3.0.24.ebuild,
+  +metadata.xml:
+  Initial commit
+
