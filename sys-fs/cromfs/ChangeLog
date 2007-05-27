@@ -3,6 +3,10 @@
 # $Header: $
 
   27 May 2007; Jérôme Poulin (TiCPU) <jeromepoulin@gmail.com>
+  cromfs-1.2.5.ebuild:
+  Version bump from Jakub's version.
+
+  27 May 2007; Jérôme Poulin (TiCPU) <jeromepoulin@gmail.com>
   +cromfs-1.2.5.ebuild:
   Updated to work with latest FUSE.
 
