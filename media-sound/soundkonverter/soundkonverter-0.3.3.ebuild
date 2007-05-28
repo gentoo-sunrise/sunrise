@@ -7,11 +7,11 @@ inherit kde qt3
 DESCRIPTION="a frontend to various audio converters for KDE"
 HOMEPAGE="http://kde-apps.org/content/show.php?content=29024"
 SRC_URI="http://hessijames.googlepages.com/${P}.tar.bz2"
+
 LICENSE="GPL-2"
 SLOT="0"
-
-KEYWORDS="~x86 ~amd64"
-IUSE="kdeenablefinal arts aac"
+KEYWORDS="~amd64 ~x86"
+IUSE="aac arts kdeenablefinal"
 
 DEPEND=">=media-libs/taglib-1.4
 	>=media-sound/cdparanoia-3.9.8-r5
@@ -36,10 +36,10 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	elog "	For AmaroK users there is a script included with this package."
-	elog "	You can enable it with the Script Manager tool in Amarok."
-	elog "  This program supports various encoders and codecs. "
-	elog "  For example you might want to install lame, ffmpeg, vorbis, flac "
-	elog "  and/or musepack."
+	elog "For AmaroK users there is a script included with this package."
+	elog "You can enable it with the Script Manager tool in Amarok."
+	elog "This program supports various encoders and codecs."
+	elog "For example you might want to install lame, ffmpeg, vorbis, flac "
+	elog "and/or musepack."
 	echo
 }
