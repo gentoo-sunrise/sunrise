@@ -21,7 +21,8 @@ KEYWORDS="~x86"
 IUSE="doc examples linguas_pt_BR minimal"
 
 DEPEND="app-arch/unzip"
-RDEPEND="dev-python/numpy"
+RDEPEND="dev-python/numpy
+	dev-python/matplotlib"
 
 S="${WORKDIR}/${MY_P}"
 
