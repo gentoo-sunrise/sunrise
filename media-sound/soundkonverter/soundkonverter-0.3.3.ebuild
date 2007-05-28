@@ -11,12 +11,12 @@ SRC_URI="http://hessijames.googlepages.com/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="aac arts kdeenablefinal"
+IUSE="arts kdeenablefinal"
 
 DEPEND=">=media-libs/taglib-1.4
 	>=media-sound/cdparanoia-3.9.8-r5
-	$(qt_min_version 3.3.4)
-	aac? ( media-libs/libmp4v2 )"
+	$(qt_min_version 3.3.4)"
+#	aac? ( media-libs/libmp4v2 )"
 
 RDEPEND="${DEPEND}"
 
