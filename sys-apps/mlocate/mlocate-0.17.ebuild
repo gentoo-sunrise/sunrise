@@ -45,6 +45,14 @@ src_install() {
 	keepdir /var/lib/mlocate
 }
 
+src_test() {
+	if has userpriv ${FEATURES}; then
+		make check-local ||die "test suite failed"
+	else
+		ewarn "Activate FEATURES=userpriv to run testsuite."
+	fi
+}
+
 pkg_postinst() {
 	elog "Note that the /etc/updatedb.conf file is generic"
 	elog "Please customize it to your system requirements"
