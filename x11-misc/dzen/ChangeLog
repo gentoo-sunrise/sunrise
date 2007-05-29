@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 May 2007; Christian Faulhammer <opfer@gentoo.org> +metadata.xml:
+  added missing metadata.xml
+
   28 May 2007; Santiago M. Mola <gentoo@coldwind.org> +dzen-0.2.4.ebuild:
   Initial ebuild for bug #167915
 
