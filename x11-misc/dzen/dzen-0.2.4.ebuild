@@ -26,8 +26,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	sed -e "s:/usr/local:/usr:g" -e "s/-Os/${CFLAGS}/g" \
-		-e "s/CC =.*/CC = $(tc-getCC | sed -e 's:/:\\\/:g')/g" \
-		-e "s/LD =.*/LD = $(tc-getCC | sed -e 's:/:\\\/:g')/g" \
+		-e "/CC/s:cc:$(tc-getCC):" \
 		-i config.mk || die "sed failed"
 }
 
