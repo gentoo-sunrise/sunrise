@@ -4,9 +4,9 @@
 
 inherit flag-o-matic kde qt3
 
-DESCRIPTION="SoundKonverter: a frontend to various audio converters for KDE"
+DESCRIPTION="A frontend to various audio converters for KDE"
 HOMEPAGE="http://kde-apps.org/content/show.php?content=29024"
-SRC_URI="http://hessijames.googlepages.com/soundkonverter-${PV}.tar.bz2"
+SRC_URI="http://hessijames.googlepages.com/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
