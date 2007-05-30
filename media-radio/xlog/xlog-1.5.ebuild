@@ -11,20 +11,20 @@ SLOT="0"
 KEYWORDS="~ppc ~x86"
 IUSE=""
 
-DEPEND="dev-util/pkgconfig
-	media-libs/hamlib
+RDEPEND="media-libs/hamlib
 	>=x11-libs/gtk+-2.6.0
 	dev-libs/libxml2
 	gnome-base/libgnomeprint"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_compile() {
 	# mime-update causes file collisions if enabled
-	econf --enable-mime-update=no
-	emake || die "emake failed!"
+	econf --enable-mime-update=no || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
-	emake install DESTDIR=${D} || die "emake install failed!"
-	dodoc "${S}/README"
+	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc AUTHORS BUGS ChangeLog NEWS README
 }
