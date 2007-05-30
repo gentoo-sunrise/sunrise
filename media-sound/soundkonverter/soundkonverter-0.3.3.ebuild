@@ -23,9 +23,7 @@ RDEPEND="${DEPEND}"
 need-kde 3.5
 
 src_compile() {
-	local myconf="$(use_with aac mp4v2)
-			$(use_enable kdeenablefinal final)
-			$(use_with arts)"
+	local myconf="$(use_enable kdeenablefinal final) $(use_with arts)"
 	kde_src_compile || die "Compile error"
 }
 
