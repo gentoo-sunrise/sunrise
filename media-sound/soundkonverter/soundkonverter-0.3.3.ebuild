@@ -1,43 +1,55 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 2003-2007 SabayonLinux
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit kde qt3
+inherit kde eutils qt3
 
-DESCRIPTION="a frontend to various audio converters for KDE"
+DESCRIPTION="SoundKonverter: a frontend to various audio converters for KDE"
 HOMEPAGE="http://kde-apps.org/content/show.php?content=29024"
-SRC_URI="http://hessijames.googlepages.com/${P}.tar.bz2"
-
-LICENSE="GPL-2"
+SRC_URI="http://hessijames.googlepages.com/soundkonverter-${PV}.tar.bz2"
+LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="arts kdeenablefinal"
+RESTRICT="nomirror"
+
+KEYWORDS="~x86 ~amd64"
+IUSE="kdeenablefinal arts"
+
+# This line should be added to "DEPEND" when the aac-mp4v2 gets fixed (see
+# bug #107189):
+# aac?      ( media-libs/libmp4v2 )
 
 DEPEND=">=media-libs/taglib-1.4
 	>=media-sound/cdparanoia-3.9.8-r5
 	$(qt_min_version 3.3.4)"
-#	aac? ( media-libs/libmp4v2 )"
 
 RDEPEND="${DEPEND}"
 
 need-kde 3.5
 
+# This line should be added to "local myconf" when the aac-mp4v2 gets fixed (see
+# bug #107189):
+# $(use_with aac mp4v2)
+
 src_compile() {
-	local myconf="$(use_enable kdeenablefinal final) $(use_with arts)"
-	kde_src_compile || die "Compile error"
+	append-flags -fno-inline
+	local myconf="$(use_enable kdeenablefinal final)
+			$(use_with arts)"
+	kde_src_compile
 }
 
 src_install() {
 	kde_src_install || die "Installation failed"
-	mv "${D}"/usr/share/doc/HTML "${D}"/usr/share/doc/${PF}/html
+	mv "${D}"/usr/share/doc/HTML "${D}"/usr/share/doc/${PF}
 }
 
 pkg_postinst() {
-	echo
-	elog "For AmaroK users there is a script included with this package."
-	elog "You can enable it with the Script Manager tool in Amarok."
-	elog "This program supports various encoders and codecs."
-	elog "For example you might want to install lame, ffmpeg, vorbis, flac "
-	elog "and/or musepack."
-	echo
+	elog
+	elog "  The audio USE flags are for your convience, but are not required."
+	elog "	For AmaroK users there is a script included with this package."
+	elog "	You can enable it with the Script Manager tool in Amarok."
+	elog "  This program supports various encoders and codecs."
+	elog "  For example you might want to install lame, ffmpeg, vorbis, flac,"
+	elog "  timidity and/or musepack."
+	elog
 }
+
