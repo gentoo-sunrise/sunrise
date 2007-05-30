@@ -1,0 +1,9 @@
+# ChangeLog for games-arcade/whichwayisup
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 May 2007; Santiago M. Mola <gentoo@coldwind.org>
+  +whichwayisup-0.7.0.ebuild, +files/whichwayisup-32.png,
+  +files/whichwayisup-48.png, +files/whichwayisup-64.png:
+  Initial ebuild by Denilson <denilsonsa at gmail.com> on bug #180187
+
