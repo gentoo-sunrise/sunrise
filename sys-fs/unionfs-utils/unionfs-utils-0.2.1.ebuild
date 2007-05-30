@@ -21,7 +21,7 @@ src_compile() {
 	# livecd and initrd want these in /sbin static or not,
 	# whereas the package puts them in /usr/bin.
 	local myconf="--bindir=/sbin --sbindir=/sbin"
-	
+
 	econf ${myconf} || die "econf failed"
 	emake || die "emake failed"
 }
