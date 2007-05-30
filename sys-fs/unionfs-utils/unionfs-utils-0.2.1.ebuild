@@ -9,7 +9,7 @@ SRC_URI="ftp://ftp.fsl.cs.sunysb.edu/pub/unionfs/unionfs-utils-0.x/${P/-/_}.tar.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="static"
+IUSE=""
 
 DEPEND=""
 RDEPEND=""
@@ -21,12 +21,8 @@ src_compile() {
 	# livecd and initrd want these in /sbin static or not,
 	# whereas the package puts them in /usr/bin.
 	local myconf="--bindir=/sbin --sbindir=/sbin"
-
-	use static && myconf="--disable-shared --enable-static ${myconf}"
+	
 	econf ${myconf} || die "econf failed"
-
-	# bundled configure and libtool are not smart enough for static
-	use static && sed -i -e "s:^LDFLAGS =\(.*\):LDFLAGS = -all-static \1:g" Makefile
 	emake || die "emake failed"
 }
 

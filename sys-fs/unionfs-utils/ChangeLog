@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 May 2007; Jakub Moc <jakub@gentoo.org> unionfs-utils-0.2.1.ebuild:
+  Remove invalid usage of USE=static for libs; see Bug 165629
+
   27 May 2007; devsk <funtoos at yahoo dot com> +unionfs-utils-0.2.1.ebuild,
   +metadata.xml:
   New Ebuild for bug 179130.
