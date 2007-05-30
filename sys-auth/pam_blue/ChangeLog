@@ -4,5 +4,5 @@
 
   25 May 2007; Jakub Moc <jakub@gentoo.org> +pam_blue-0.9.0.ebuild,
   +metadata.xml:
-  New ebuild for KingTaco
+  New ebuild for KingTaco. Bug 180325.
 
