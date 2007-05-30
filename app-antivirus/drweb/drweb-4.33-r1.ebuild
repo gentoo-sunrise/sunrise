@@ -18,8 +18,7 @@ KEYWORDS="~x86"
 IUSE="doc glibc23 linguas_ru logrotate"
 
 DEPEND="app-arch/unzip"
-RDEPEND="${DEPEND}
-	dev-perl/libwww-perl
+RDEPEND="dev-perl/libwww-perl
 	virtual/cron
 	logrotate? ( app-admin/logrotate )
 	glibc23? ( =sys-libs/glibc-2.3* )
