@@ -47,7 +47,7 @@ src_install() {
 
 src_test() {
 	if has userpriv ${FEATURES}; then
-		make check-local ||die "test suite failed"
+		make check-local || die "test suite failed"
 	else
 		ewarn "Activate FEATURES=userpriv to run testsuite."
 	fi
