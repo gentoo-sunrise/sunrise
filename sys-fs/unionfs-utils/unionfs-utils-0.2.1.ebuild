@@ -28,5 +28,5 @@ src_compile() {
 
 src_install () {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ChangeLog INSTALL NEWS README
+	dodoc ChangeLog NEWS README
 }
