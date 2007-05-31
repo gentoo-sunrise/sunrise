@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/ivritex/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 
 RDEPEND=">=app-text/tetex-3.0"
 DEPEND="${RDEPEND}
