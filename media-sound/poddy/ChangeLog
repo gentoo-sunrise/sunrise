@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 May 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  -poddy-0.1.4.ebuild, +poddy-0.5.ebuild:
+  Version bump
+
   16 Jan 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   -poddy-0.1.3.ebuild, +poddy-0.1.4.ebuild:
   Version bump, news deps, moved to sourceforge
