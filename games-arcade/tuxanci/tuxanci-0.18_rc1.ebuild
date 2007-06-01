@@ -18,8 +18,8 @@ DEPEND=">=media-libs/libsdl-1.2.7
 	media-libs/sdl-ttf
 	media-libs/sdl-image
 	media-libs/sdl-mixer
-	media-libs/sdl-net
-	media-libs/sdl-ttf"
+	media-libs/sdl-net"
+
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
@@ -34,7 +34,7 @@ pkg_setup() {
 	fi
 
 	if ! built_with_use media-libs/sdl-mixer vorbis ; then
-		eerror "media-libs/sdl-mixer is missing png support."
+		eerror "media-libs/sdl-mixer is missing vorbis support."
 		die "Recompile media-libs/sdl-mixer with USE=\"vorbis\""
 	fi
 }
