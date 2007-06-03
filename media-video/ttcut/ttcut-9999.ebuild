@@ -11,7 +11,7 @@ ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/ttcut/trunk"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="ttmpeg2"
+IUSE=""
 
 DEPEND="$(qt4_min_version 4.1)
 		>=media-libs/libmpeg2-0.4.0
@@ -19,31 +19,29 @@ DEPEND="$(qt4_min_version 4.1)
 
 RDEPEND="${DEPEND}
 		media-video/mplayer
-		media-video/transcode
-		media-video/ffmpeg"
+		media-video/transcode"
 
 S=${WORKDIR}/${PN}
 
-src_compile() {
-	if use ttmpeg2 ; then
-		qmake ttmpeg2.pro -o Makefile.ttmpeg2 || \
-			die "configuring ttpmeg2 failed"
-		make -f Makefile.ttmpeg2 || die "emake ttmpeg2 failed"
+pkg_setup() {
+	if ! built_with_use media-video/transcode mjpeg ; then
+		eerror "In order to have encoding mode working with ttcut"
+		eerror "you need to recompile transcode with mjpeg USE flag enabled."
+		die "Recompile transcode with mjpeg USE flag enabled"
 	fi
-		qmake ttcut.pro -o Makefile.ttcut || \
-			die "configuring ttcut failed"
-		emake -f Makefile.ttcut || die "emake failed"
+}
+
+src_compile() {
+	qmake ttcut.pro -o Makefile.ttcut || \
+		die "configuring ttcut failed"
+	emake -f Makefile.ttcut || die "emake failed"
 }
 
 src_install() {
-	if use ttmpeg2 ; then
-		dobin ttmpeg2 || die "Couldn't install ttmpeg2"
-		make_desktop_entry ttmpeg2 TTMpeg2 "" "AudioVideo;Video;AudioVideoEditing" || \
-			die "Couldn't make ttmpeg2 desktop entry"
-	fi
-
 	dobin ttcut || die "Couldn't install ttcut"
 	make_desktop_entry ttcut TTCut "" "AudioVideo;Video;AudioVideoEditing" || \
 		die "Couldn't make ttcut desktop entry"
-	dodoc AUTHORS BUGS CHANGELOG COPYING INSTALL README TODO || die "Couldn't install documentation"
+
+	dodoc AUTHORS BUGS CHANGELOG \
+		README.DE README.EN TODO || die "Couldn't install documentation"
 }
