@@ -3,6 +3,10 @@
 # $Header: $
 
   03 Jun 2007; Santiago M. Mola <gentoo@coldwind.org>
+  qemulator-0.4.4.ebuild, files/qemulator-0.4.4-basedir.patch:
+  Modify basedir patch for multilib support.
+
+  03 Jun 2007; Santiago M. Mola <gentoo@coldwind.org>
   qemulator-0.4.4.ebuild:
   Use {multilib,python}.eclass
 

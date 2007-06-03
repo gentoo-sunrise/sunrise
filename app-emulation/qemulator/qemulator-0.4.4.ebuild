@@ -26,7 +26,8 @@ src_unpack(){
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-basedir.patch"
-
+	sed -i -e "s:@GENTOO_LIBDIR@:$(get_libdir):" \
+		usr/local/lib/${PN}/${PN}.py || die "sed failed"
 }
 
 src_install() {
