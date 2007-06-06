@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2007; Markus Ullmann <jokey@gentoo.org> -iwlwifi-0.0.18.ebuild,
+  +iwlwifi-0.0.24.ebuild:
+  Version bump, thanks to EisNerd on irc for notify
+
   25 May 2007; Markus Ullmann <jokey@gentoo.org> btg-0.9.5, iwlwifi-0.0.18:
   quotations
 
