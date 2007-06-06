@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  -tuxanci-0.07.ebuild:
+  Drop old
+
   01 Jun 2007; Jakub Moc <jakub@gentoo.org> tuxanci-0.18_rc1.ebuild:
   Fix dependencies, add ~amd64 keyword
 
