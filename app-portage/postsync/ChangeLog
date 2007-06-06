@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2007; Geoff Clements <geoff@electron.me.uk>
+  postsync-0.2_alpha.ebuild:
+  Updated SRC_URI to point to new location
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   postsync-0.2_alpha.ebuild:
   add some quotes, don't depend on base packages

@@ -6,7 +6,7 @@ inherit multilib
 
 DESCRIPTION="Package for controlling post emerge --sync operations"
 HOMEPAGE="http://www.electron.me.uk/postsync.html"
-SRC_URI="http://www.electron.me.uk/files/${P}.tar.bz2"
+SRC_URI="ftp://ftp.electron.me.uk/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
