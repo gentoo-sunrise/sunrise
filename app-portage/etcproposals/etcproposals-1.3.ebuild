@@ -27,6 +27,9 @@ src_install(){
 
 pkg_postinst() {
 	einfo "The configuration file has been installed to /etc/etc-proposals.conf"
+	einfo "If you are installing etc-proposals for the first time or updating"
+	einfo "from a version < 1.3 you should run the following command once:"
+	einfo "etc-proposals --init-db"
 	ewarn "A full backup of /etc and other files managed by CONFIG_PROTECT"
 	ewarn "is highly advised before testing this tool!"
 }
