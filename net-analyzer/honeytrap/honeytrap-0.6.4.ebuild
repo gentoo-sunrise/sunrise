@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Honeytrap is a network security tool for observing network services via low-interactive honeypot"
-HOMEPAGE="http://honeytrap.mwcollect.org"
-SRC_URI="mirror://sourceforge/honeytrap/${P}.tar.bz2"
+DESCRIPTION="Network security tool for observing network services via low-interactive honeypot"
+HOMEPAGE="http://honeytrap.mwcollect.org/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 inherit eutils
 
@@ -70,7 +70,7 @@ src_install() {
 	rm "${D}"/etc/honeytrap/honeytrap.conf*
 
 	mv "${D}"/etc/honeytrap/ports.conf.dist "${D}"/etc/honeytrap/ports.conf
-        dodoc README NEWS TODO ChangeLog
+	dodoc README NEWS TODO ChangeLog
 
 	newinitd "${FILESDIR}"/${PN}.initd ${PN} || die "newinitd failed"
 	newconfd "${FILESDIR}"/${PN}.confd ${PN} || die "newconfd failed"

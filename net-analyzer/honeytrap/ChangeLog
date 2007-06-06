@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  honeytrap-0.6.4.ebuild:
+  Fix trailing whitespace, add trailing slash to SRC_URI, shorten DESCRIPTION
+
   06 Jun 2007; Markus Ullmann <jokey@gentoo.org> +honeytrap.conf,
   +honeytrap.confd, +honeytrap.initd, +metadata.xml:
   Initial add for bug #179013
