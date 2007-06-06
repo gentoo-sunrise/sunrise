@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2007; Markus Ullmann <jokey@gentoo.org> -mac80211-7.1.0.ebuild,
+  +mac80211-7.1.2.ebuild:
+  Version bump thanks to EisNerd on irc
+
   14 May 2007; Jakub Moc <jakub@gentoo.org> mac80211-7.1.0.ebuild:
   Fix quoting, cosmetics
 
