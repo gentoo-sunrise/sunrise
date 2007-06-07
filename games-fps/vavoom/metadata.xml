@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd></herd>
+  <longdescription lang="en">
+    Vavoom is a source port based on sources of Doom, Heretic, Hexen and a
+	little bit from Quake
+</longdescription>
+</pkgmetadata>
+

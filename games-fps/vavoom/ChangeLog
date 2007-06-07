@@ -1,0 +1,8 @@
+# ChangeLog for games-fps/vavoom
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +vavoom-1.23.1.ebuild, +metadata.xml:
+  New ebuild for bug 132055, thanks to Paul Bredbury and #gentoo-sunrise guys
+
