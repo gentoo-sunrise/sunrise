@@ -196,10 +196,6 @@ src_install() {
 	use opengl && de_cmd="${PN} -opengl"
 	make_desktop_entry "${de_cmd}" "Vavoom"
 
-	#if use dedicated ; then
-	#	dogamesbin ${PN}-ded || die "dogamesbin ${PN}-ded failed"
-	#fi
-
 	dodoc docs/${PN}.txt || die "dodoc vavoom.txt failed"
 
 	if use tools; then
