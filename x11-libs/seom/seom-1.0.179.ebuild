@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="dev-lang/yasm"
+DEPEND=">=dev-lang/yasm-0.6.0"
 RDEPEND=""
 
 src_unpack() {
