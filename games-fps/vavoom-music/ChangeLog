@@ -1,0 +1,8 @@
+# ChangeLog for games-fps/vavoom-music
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +vavoom-music-1.0.ebuild, +metadata.xml:
+  New Ebuild for bug 148427, thanks to Paul Bredbury.
+
