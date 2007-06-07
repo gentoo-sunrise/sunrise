@@ -33,6 +33,12 @@ dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
 dev-util/ktigcc:minimal - Do not install completion data for the TIGCCLIB system headers
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+games-fps/vavoom:allegro - Adds support for Allegro (media library)
+games-fps/vavoom:external-glbsp - Use external library provided from games-util/glbsp
+games-fps/vavoom:models - Install enhanced 3D models
+games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
+games-fps/vavoom:tools - Enable compilation of mod-developing tools
+games-fps/vavoom:textures - Install enhanced hi-res textures
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
 gnome-extra/timer-applet:sounds - Installs optional sound data
