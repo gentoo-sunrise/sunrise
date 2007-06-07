@@ -7,9 +7,9 @@ inherit games
 DESCRIPTION="Enhanced graphics and textures for Vavoom"
 HOMEPAGE="http://www.vavoom-engine.com/"
 
-SRC_URI="doom1? (	mirror://sourceforge/vavoom/vtextures-doom-${PV}.zip
+SRC_URI="doom1? ( mirror://sourceforge/vavoom/vtextures-doom-${PV}.zip
 					mirror://sourceforge/vavoom/vtextures-doom1-${PV}.zip )
-	doom2? ( 	mirror://sourceforge/vavoom/vtextures-doom-${PV}.zip
+	doom2? ( mirror://sourceforge/vavoom/vtextures-doom-${PV}.zip
 				mirror://sourceforge/vavoom/vtextures-doom2-${PV}.zip )
 	heretic? ( mirror://sourceforge/vavoom/vtextures-heretic-${PV}.zip )
 	hexen? ( mirror://sourceforge/vavoom/vtextures-hexen-${PV}.zip )
