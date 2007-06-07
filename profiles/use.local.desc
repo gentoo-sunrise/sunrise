@@ -49,6 +49,12 @@ games-fps/vavoom-music:heretic - Install Heretic resources"
 games-fps/vavoom-music:hexen - Install Hexen resources"
 games-fps/vavoom-music:plutonia - Install 'The Plutonia Experiment' resources"
 games-fps/vavoom-music:tnt - Install 'TNT: Evilution' resources"
+games-fps/vavoom-textures:doom1 - Install Doom 1 resources"
+games-fps/vavoom-textures:doom2 - Install Doom 2 resources"
+games-fps/vavoom-textures:heretic - Install Heretic resources"
+games-fps/vavoom-textures:hexen - Install Hexen resources"
+games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources"
+games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources"
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
 gnome-extra/timer-applet:sounds - Installs optional sound data
