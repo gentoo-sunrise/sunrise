@@ -39,6 +39,10 @@ games-fps/vavoom:models - Install enhanced 3D models
 games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
 games-fps/vavoom:tools - Enable compilation of mod-developing tools
 games-fps/vavoom:textures - Install enhanced hi-res textures
+games-fps/vavoom-models:doom - Install Doom resources"
+games-fps/vavoom-models:heretic - Install Heretic resources"
+games-fps/vavoom-models:hexen - Install Hexen resources"
+games-fps/vavoom-models:strife - Install Strife resources"
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
 gnome-extra/timer-applet:sounds - Installs optional sound data
