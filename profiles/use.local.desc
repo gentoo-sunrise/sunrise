@@ -87,6 +87,9 @@ media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
 media-video/gcstar:md5 - Enables generation of md5 checksums
 media-video/gcstar:zip - Enables support for zip files
+net-analyzer/honeytrap:efence - Electronic fence malloc debugger
+net-analyzer/honeytrap:ipq-mon - IP queue based monitor
+net-analyzer/honeytrap:pcap-mon - pcap based monitor
 net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
 net-dns/nsd:checking - Enable internal runtime checks
