@@ -4,7 +4,7 @@
 
   06 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
   honeytrap-0.6.4.ebuild:
-  Fix trailing whitespace, add trailing slash to SRC_URI, shorten DESCRIPTION
+  Fix trailing whitespace, add trailing slash to HOMEPAGE, shorten DESCRIPTION
 
   06 Jun 2007; Markus Ullmann <jokey@gentoo.org> +honeytrap.conf,
   +honeytrap.confd, +honeytrap.initd, +metadata.xml:
