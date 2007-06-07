@@ -7,7 +7,7 @@ inherit versionator toolchain-funcs multilib
 RESTRICT="multilib-pkg-force"
 
 DESCRIPTION="OpenGL video capturing framework"
-HOMEPAGE="http://neopsis.com/projects/yukon"
+HOMEPAGE="http://neopsis.com/projects/yukon/"
 
 MY_PV="$(replace_version_separator 2 '-')"
 SRC_URI="http://dbservice.com/ftpdir/tom/yukon/trunk/yukon-${MY_PV}.tar.bz2"
@@ -44,4 +44,3 @@ src_install() {
 		cp sysconf "${D}/etc/yukon/system/${ABI}"
 	done
 }
-
