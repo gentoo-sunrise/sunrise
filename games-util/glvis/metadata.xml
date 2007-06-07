@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd></herd>
+  <longdescription lang="en">
+    glVIS is a PVS (Potentially Visible Set) builder specially designed to be
+	used with OpenGL ports of the DOOM game engine.
+</longdescription>
+</pkgmetadata>
+
