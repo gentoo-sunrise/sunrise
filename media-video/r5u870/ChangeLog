@@ -1,0 +1,8 @@
+# ChangeLog for media-video/r5u870
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jun 2007; Simon Cooper (TheCoop) <thecoop@runbox.com>
+  +r5u870-0.10.0.ebuild, +metadata.xml:
+  New ebuild for r5u870 Ricoh webcams, bug #176824
+
