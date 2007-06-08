@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-mod 
+inherit linux-mod
 
 DESCRIPTION="Ricoh R5U870 usb webcam drivers"
 HOMEPAGE="http://lsb.blogdns.net/ry5u870/"
