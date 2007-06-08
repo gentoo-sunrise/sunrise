@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jun 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-1.23.1.ebuild,
+  vavoom-9999.ebuild:
+  Fixed installation of binary executables (previous behaviour was broken)
+
   07 Jun 2007; Davide Cendron (scen) <scen@gentoo.org> +vavoom-9999.ebuild:
   Added also SVN 'live' ebuild
 

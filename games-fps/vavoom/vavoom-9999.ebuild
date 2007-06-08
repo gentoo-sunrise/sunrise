@@ -189,6 +189,9 @@ src_install() {
 
 	emake DESTDIR="${D}" install || die "emake install failed"
 
+	# Remove unwanted wrapper scripts
+	rm -f "${D}/${GAMES_BINDIR}/${PN}*"
+
 	# Remove unneeded icon
 	rm -f "${D}/${dir}/${PN}.png"
 
@@ -196,7 +199,14 @@ src_install() {
 
 	# Enable OpenGL in desktop entry, if relevant USE flag is enabled
 	use opengl && de_cmd="${PN} -opengl"
+	# Install properly main game binary exe
+	dogamesbin ${PN} || die "dogamesbin ${PN} failed"
 	make_desktop_entry "${de_cmd}" "Vavoom"
+
+	if use dedicated ; then
+		# Install properly dedicated server binary exe
+		dogamesbin ${PN}-ded || die "dogamesbin ${PN}-ded failed"
+	fi
 
 	dodoc docs/${PN}.txt || die "dodoc vavoom.txt failed"
 
