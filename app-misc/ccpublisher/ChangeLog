@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  ccpublisher-2.2.1.ebuild:
+  removed unused inherit eutils
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> ccpublisher-2.2.1.ebuild:
   Make this multilib friendly
 

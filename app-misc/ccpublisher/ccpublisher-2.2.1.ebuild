@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils zproduct python multilib
+inherit zproduct python multilib
 
 MY_PN="ccPublisher"
 MY_P="${MY_PN}-${PV}"
