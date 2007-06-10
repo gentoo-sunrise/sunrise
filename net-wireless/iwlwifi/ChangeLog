@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jun 2007; Stefan Schweizer <genstef@gentoo.org>
+  -files/digest-iwlwifi-0.0.25:
+  remove filesdir
+
   10 Jun 2007; EisNerd <FlorianManschwetus@gmx.de> -iwlwifi-0.0.24.ebuild,
   +iwlwifi-0.0.25.ebuild:
   bump, by simple rename
