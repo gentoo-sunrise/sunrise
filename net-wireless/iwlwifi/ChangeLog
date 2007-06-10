@@ -2,6 +2,17 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  -files/digest-iwlwifi-0.0.18, -files:
+  removed unused digest
+
+  07 Jun 2007; Christian Faulhammer <opfer@gentoo.org> ChangeLog:
+  regenerate Manifest
+
+  06 Jun 2007; Markus Ullmann <jokey@gentoo.org> -iwlwifi-0.0.18.ebuild,
+  +iwlwifi-0.0.24.ebuild:
+  Version bump, thanks to EisNerd on irc for notify
+
   25 May 2007; Markus Ullmann <jokey@gentoo.org> btg-0.9.5, iwlwifi-0.0.18:
   quotations
 
