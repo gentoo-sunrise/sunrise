@@ -2,6 +2,17 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  -files/digest-mac80211-7.1.0, -files:
+  removed unused digest
+
+  07 Jun 2007; Christian Faulhammer <opfer@gentoo.org> ChangeLog:
+  regenerate Manifest
+
+  06 Jun 2007; Markus Ullmann <jokey@gentoo.org> -mac80211-7.1.0.ebuild,
+  +mac80211-7.1.2.ebuild:
+  Version bump thanks to EisNerd on irc
+
   14 May 2007; Jakub Moc <jakub@gentoo.org> mac80211-7.1.0.ebuild:
   Fix quoting, cosmetics
 
