@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jun 2007; Stefan Schweizer <genstef@gentoo.org>
+  -files/digest-mac80211-8.0.1:
+  remove filesdir and superfluous digest
+
   10 Jun 2007; EisNerd <FlorianManschwetus@gmx.de> -mac80211-7.1.2.ebuild,
   +mac80211-8.0.1.ebuild:
   bumped and removed -ht afix from ebuild
