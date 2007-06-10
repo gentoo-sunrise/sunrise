@@ -6,7 +6,7 @@ inherit linux-mod
 
 DESCRIPTION="mac80211 subsystem"
 HOMEPAGE="http://intellinuxwireless.org/?p=mac80211"
-SRC_URI="http://intellinuxwireless.org/${PN}/downloads/${P}-ht.tgz"
+SRC_URI="http://intellinuxwireless.org/${PN}/downloads/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,7 +16,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-MOD="${P}-ht"
+MOD="${P}"
 S="${WORKDIR}/${MOD}/compatible/net"
 
 MODULE_NAMES="mac80211(net/mac80211:${S}/mac80211)
