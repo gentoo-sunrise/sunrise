@@ -19,19 +19,19 @@ RDEPEND=""
 CONFIG_CHECK="VIDEO_DEV USB"
 
 src_unpack() {
-    unpack ${A}
-    cd "${S}"
-    epatch "${FILESDIR}"/${P}-destdir.patch
-    epatch "${FILESDIR}"/${P}-kbuild.patch
-    set_arch_to_kernel
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-destdir.patch
+	epatch "${FILESDIR}"/${P}-kbuild.patch
+	set_arch_to_kernel
 }
 
 src_compile() {
-    emake clean || die "emake clean failed"
-    emake modules || die "emake modules failed"
+	emake clean || die "emake clean failed"
+	emake modules || die "emake modules failed"
 }
 
 src_install() {
-    emake DESTDIR="${D}" install || die "emake install failed"
-    dodoc ChangeLog sn9c102.txt || die "installing docs faild"
+	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc ChangeLog sn9c102.txt || die "installing docs faild"
 }

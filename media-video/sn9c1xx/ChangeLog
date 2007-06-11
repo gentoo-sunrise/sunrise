@@ -3,6 +3,11 @@
 # $Header: $
 
   11 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
+  -sn9c1xx-1.45.ebuild, +sn9c1xx-1.47.ebuild:
+  Update for media-video/sn9c1xx, this should be the latest. 1.45 is out of
+  date and cannot be installed because the tarball was removed from the server
+
+  11 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
   +sn9c1xx-1.45.ebuild, +files/sn9c1xx-1.45-destdir.patch,
   +files/sn9c1xx-1.45-kbuild.patch, +metadata.xml:
   New Ebuild for bug 180853 thanks to shillelagh and DrEevil
