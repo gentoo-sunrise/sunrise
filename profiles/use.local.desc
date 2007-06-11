@@ -33,6 +33,16 @@ dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
 dev-util/ktigcc:minimal - Do not install completion data for the TIGCCLIB system headers
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+games-fps/uhexen2:cdaudio - Enable cd audio playback support
+games-fps/uhexen2:demo - Install the demo files (hexen2-demodata) and configure for use
+games-fps/uhexen2:dynamic - Link to the opengl libraries at compile time
+games-fps/uhexen2:hexenworld - Build support for HexenWorld
+games-fps/uhexen2:lights - Install and setup the updated light maps
+games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
+games-fps/uhexen2:sdlaudio - Enable SDL Audio
+games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
+games-fps/uhexen2:timidity - Build with Timidity++ (MIDI sequencer) support
+games-fps/uhexen2:tools - Enable compilation of various useful tools
 games-fps/vavoom:allegro - Adds support for Allegro (media library)
 games-fps/vavoom:external-glbsp - Use external library provided from games-util/glbsp
 games-fps/vavoom:models - Install enhanced 3D models
