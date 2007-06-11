@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2007; Markus Ullmann <jokey@gentoo.org> -digest-mlocate-0.17:
+  nuke digest
+
   01 Jun 2007; Christian Faulhammer <opfer@gentoo.org> mlocate-0.17.ebuild:
   added a check for yet another FEATURE that is neeed to run testsuite
 
