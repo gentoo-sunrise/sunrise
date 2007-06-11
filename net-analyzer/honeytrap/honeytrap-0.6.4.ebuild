@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="Network security tool for observing network services via low-interactive honeypot"
 HOMEPAGE="http://honeytrap.mwcollect.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
-
-inherit eutils
 
 LICENSE="GPL-2"
 SLOT="0"
