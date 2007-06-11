@@ -1,0 +1,9 @@
+# ChangeLog for games-fps/uhexen2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +uhexen2-1.4.2_rc1.ebuild,
+  +files/uhexen2-1.4.2_rc1-h2launcher_improvements.diff, +metadata.xml:
+  New Ebuild for bug 105780 thanks to Paul Bredbury and #gentoo-sunrise guys
+
