@@ -127,9 +127,11 @@ src_unpack() {
 			-e "/game_basedir\[0\]/d" \
 			launcher/config_file.c || die "sed config_file.c failed"
 		# Tweak the default name for binary executables,if DEMO version is enabled
-		use demo && sed -i \
-			-e "/BINARY_NAME/s:\"$:-demo\":" \
-			launcher/games.h || die "sed games.g failed"
+		if use demo ; then
+			sed -i \
+				-e "/BINARY_NAME/s:\"$:-demo\":" \
+				launcher/games.h || die "sed games.g failed"
+		fi
 	fi
 
 	rm -rf docs/{activision,COMPILE,COPYING,LICENSE,README.win32}
