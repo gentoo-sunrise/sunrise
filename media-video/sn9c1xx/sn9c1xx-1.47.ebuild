@@ -6,7 +6,7 @@ inherit eutils linux-info
 
 DESCRIPTION="A driver for sn9c1xx (webcam) devices, like the Sweex Mini cam"
 HOMEPAGE="http://www.linux-projects.org/modules/mydownloads/viewcat.php?op=&cid=2"
-SRC_URI="http://www.linux-projects.org/downloads/${P}.tar.gz"
+SRC_URI="http://dev.gentooexperimental.org/~dreeevil/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

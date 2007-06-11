@@ -3,6 +3,11 @@
 # $Header: $
 
   11 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
+  sn9c1xx-1.47.ebuild, files/sn9c1xx-1.47-destdir.patch:
+  =media-video/sn9c1xx-1.47 is now hosted by DrEeevil, thx! (still
+  corresponding with the maker too look for options)
+
+  11 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
   +files/sn9c1xx-1.47-destdir.patch, +files/sn9c1xx-1.47-kbuild.patch:
   Ebuild updated. 1.45 seems to be outdated and did not work when I uploaded
   the ebuild. This is 1.47, I am corresponding with the maker to see if more
