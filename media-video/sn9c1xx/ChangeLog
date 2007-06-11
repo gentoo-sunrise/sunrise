@@ -1,0 +1,9 @@
+# ChangeLog for media-video/sn9c1xx
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
+  +sn9c1xx-1.45.ebuild, +files/sn9c1xx-1.45-destdir.patch,
+  +files/sn9c1xx-1.45-kbuild.patch, +metadata.xml:
+  New Ebuild for bug 180853 thanks to shillelagh and DrEevil
+
