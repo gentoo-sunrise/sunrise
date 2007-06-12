@@ -90,3 +90,7 @@ games-fps/unreal-tournament-operationnapali
 # Davide Cendron <scen@gentoo.org> (07 Jun 2007)
 # svn version should be masked
 =games-fps/vavoom-9999
+
+# Davide Cendron <scen@gentoo.org> (12 Jun 2007)
+# cvs (snapshot) version should be masked
+games-fps/uhexen2-cvs
