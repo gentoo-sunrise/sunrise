@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
+  +sn9c1xx-1.48.ebuild, +files/sn9c1xx-1.48-kbuild.patch:
+  Ebuild update 1.47 -> 1.48
+
   11 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
   sn9c1xx-1.47.ebuild, files/sn9c1xx-1.47-destdir.patch:
   =media-video/sn9c1xx-1.47 is now hosted by DrEeevil, thx! (still
