@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jun 2007; Maximilian Gass (mgass) <mgass@lavabit.com>
+  pwsafe-0.2.0.ebuild:
+  Add missing dependencies, USE flags for X and suid
+
   05 Apr 2007; Jakub Moc <jakub@gentoo.org> pwsafe-0.2.0.ebuild:
   Use bindnow-flags properly
 

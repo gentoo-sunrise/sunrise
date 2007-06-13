@@ -11,24 +11,40 @@ SRC_URI="http://nsd.dyndns.org/pwsafe/releases/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="suid X"
 
-DEPEND=""
-RDEPEND=""
+RDEPEND="X? ( x11-libs/libX11
+	x11-libs/libXmu
+	x11-libs/libSM
+	x11-libs/libICE
+	x11-libs/libXt
+	x11-libs/libXext
+	x11-libs/libXau
+	x11-libs/libXdmcp )
+	dev-libs/openssl
+	sys-libs/readline
+	sys-libs/ncurses"
+DEPEND="${RDEPEND} X? ( x11-proto/xproto )"
 
 src_compile() {
-	append-ldflags $(bindnow-flags)
-	econf || die "econf failed"
+	if use suid; then
+		append-ldflags $(bindnow-flags)
+	fi
+	econf $(use_with X x) || die "econf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README ChangeLog AUTHORS TODO NEWS
-	fperms +s /usr/bin/pwsafe
+	if use suid; then
+		fperms +s /usr/bin/pwsafe
+	fi
 }
 
 pkg_postinst() {
-	einfo "For the secure memory allocation to work, pwsafe has been installed"
-	einfo "as suid root."
+	if use suid; then
+		einfo "For the secure memory allocation to work, pwsafe has been installed"
+		einfo "as suid root."
+	fi
 }
