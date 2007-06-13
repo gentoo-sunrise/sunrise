@@ -132,6 +132,17 @@ src_compile() {
 	yesno() { useq $1 && echo yes || echo no ; }
 
 	local h2bin="h2" hwbin="hw" link_gl_libs="no" opts
+	local \
+		h2bin="h2" hwbin="hw" \
+		ALSA="no" \
+		CDAUDIO="no" \
+		LINK_GL_LIBS="no" \
+		MIDI="no" \
+		OPT_EXTRA="no" \
+		OSS="no" \
+		SDLCD="no" \
+		X86_ASM="no" \
+		opts
 
 	if use opengl ; then
 		if use amd64 ; then
@@ -142,11 +153,19 @@ src_compile() {
 			h2bin="${h2bin} gl${h2bin}"
 			hwbin="${hwbin} gl${hwbin}"
 		fi
-		link_gl_libs=$(yesno dynamic)
+		use dynamic && LINK_GL_LIBS="yes"
 	fi
 
 	use debug && opts="${opts} DEBUG=1"
 	use demo && opts="${opts} DEMO=1"
+
+	use alsa && ALSA="yes"
+	use cdaudio && CDAUDIO="yes"
+	use optimize-cflags && OPT_EXTRA="yes"
+	use oss && OSS="yes"
+	use sdlcd && SDLCD="yes"
+	use timidity && MIDI="yes"
+	use x86 && X86_ASM="yes"
 
 	if use gtk ; then
 	# Build launcher
@@ -181,7 +200,7 @@ src_compile() {
 		einfo "Compiling Dedicated Server"
 		emake \
 			${opts} \
-			OPT_EXTRA=$(yesno optimize-cflags) \
+			OPT_EXTRA=${OPT_EXTRA} \
 			CPUFLAGS="${CFLAGS}" \
 			CC="$(tc-getCC)" \
 			-f Makefile.sv \
@@ -228,15 +247,15 @@ src_compile() {
 			emake -C Client clean
 			emake \
 				${opts} \
-				USE_ALSA=$(yesno alsa) \
-				USE_OSS=$(yesno oss) \
-				USE_CDAUDIO=$(yesno cdaudio) \
-				USE_MIDI=$(yesno timidity) \
-				USE_SDLAUDIO=$(yesno sdlaudio) \
-				USE_SDLCD=$(yesno sdlcd) \
-				USE_X86_ASM=$(yesno x86) \
-				OPT_EXTRA=$(yesno optimize-cflags) \
-				LINK_GL_LIBS=${link_gl_libs} \
+				USE_ALSA=${ALSA} \
+				USE_OSS=${OSS} \
+				USE_CDAUDIO=${CDAUDIO} \
+				USE_MIDI=${MIDI} \
+				USE_SDLAUDIO=${SDLAUDIO} \
+				USE_SDLCD=${SDLCD} \
+				USE_X86_ASM=${X86_ASM} \
+				OPT_EXTRA=${OPT_EXTRA} \
+				LINK_GL_LIBS=${LINK_GL_LIBS} \
 				CPUFLAGS="${CFLAGS}" \
 				CC="$(tc-getCC)" \
 				${m} \
@@ -254,15 +273,15 @@ src_compile() {
 		emake clean
 		emake \
 			${opts} \
-			USE_ALSA=$(yesno alsa) \
-			USE_OSS=$(yesno oss) \
-			USE_CDAUDIO=$(yesno cdaudio) \
-			USE_MIDI=$(yesno timidity) \
-			USE_SDLAUDIO=$(yesno sdlaudio) \
-			USE_SDLCD=$(yesno sdlcd) \
-			USE_X86_ASM=$(yesno x86) \
-			OPT_EXTRA=$(yesno optimize-cflags) \
-			LINK_GL_LIBS=${link_gl_libs} \
+			USE_ALSA=${ALSA} \
+			USE_OSS=${OSS} \
+			USE_CDAUDIO=${CDAUDIO} \
+			USE_MIDI=${MIDI} \
+			USE_SDLAUDIO=${SDLAUDIO} \
+			USE_SDLCD=${SDLCD} \
+			USE_X86_ASM=${X86_ASM} \
+			OPT_EXTRA=${OPT_EXTRA} \
+			LINK_GL_LIBS=${LINK_GL_LIBS} \
 			CPUFLAGS="${CFLAGS}" \
 			CC="$(tc-getCC)" \
 			${m} \

@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  uhexen2-cvs-20070609.ebuild:
+  Get rid of yesno() function
+
   12 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   +uhexen2-cvs-20070609.ebuild, +metadata.xml:
   New Ebuild for bug 181824
