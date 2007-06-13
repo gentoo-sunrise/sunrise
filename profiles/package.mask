@@ -94,3 +94,7 @@ games-fps/unreal-tournament-operationnapali
 # Davide Cendron <scen@gentoo.org> (12 Jun 2007)
 # cvs (snapshot) version should be masked
 games-fps/uhexen2-cvs
+
+# Davide Cendron <scen@gentoo.org> (13 Jun 2007)
+# svn version should be masked
+=games-fps/chocolate-doom-9999
