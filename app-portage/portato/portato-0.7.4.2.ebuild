@@ -11,15 +11,13 @@ SRC_URI="mirror://sourceforge/portato/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="gtk qt4 syntax userpriv etcproposals"
+IUSE="gtk qt4 userpriv etcproposals"
 
 GTKDEPS=">=dev-python/pygtk-2.8.6
 	>=x11-libs/vte-0.12.2
 	>=gnome-base/libglade-2.5.1
 	!userpriv? ( >=x11-libs/gksu-2.0.0 )
-	syntax? (
-		>=dev-util/portatosourceview-2.16.0
-	)"
+	>=dev-util/portatosourceview-2.16.0"
 
 RDEPEND="=sys-apps/portage-2.1.2*
 	gtk? ( ${GTKDEPS} )
