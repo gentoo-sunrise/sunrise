@@ -51,8 +51,8 @@ DEPEND="${UIDEPEND}
 	${LNCHDEPEND}
 	x86? ( >=dev-lang/nasm-0.98.38 )"
 
-#S=${WORKDIR}/hexen2source-${MY_PV}
-dir=${GAMES_DATADIR}/${MY_PN}
+S="${WORKDIR}/uhexen-src-${PV}"
+dir="${GAMES_DATADIR}/${MY_PN}"
 
 pkg_setup() {
 	games_pkg_setup

@@ -3,6 +3,10 @@
 # $Header: $
 
   14 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  uhexen2-cvs-20070612.ebuild:
+  Fixed Portage working dir  path
+
+  14 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   +uhexen2-cvs-20070612.ebuild:
   Version bump
 
