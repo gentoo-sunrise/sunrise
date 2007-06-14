@@ -24,7 +24,6 @@ app-misc/genealogyj-bin:skins - Installs some skins
 app-misc/gizmod:libvisual - Enable the libvisual (Amarok) plugin
 app-misc/mc-mp:7zip - Add support for 7zip archives
 app-portage/portato:etcproposals - Add support for etcproposals.
-app-portage/portato:syntax - Enable syntax highlighting for ebuild window for the GTK frontend.
 app-portage/portato:userpriv - Allow emerge processes as normal user.
 dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
