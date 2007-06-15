@@ -18,10 +18,10 @@ DEPEND="$(qt_min_version 3.3)
 	dev-util/ctags
 	dev-util/pkgconfig
 	dev-embedded/tigcc
-	>=sci-libs/libticables2-20060723
-	>=sci-libs/libticonv-20060723-r1
-	>=sci-libs/libtifiles2-20060723
-	>=sci-libs/libticalcs2-20060723"
+	>=sci-libs/libticables2-0.1.3
+	>=sci-libs/libticonv-0.0.1
+	>=sci-libs/libtifiles2-0.0.9
+	>=sci-libs/libticalcs2-0.2.4"
 
 RDEPEND="${DEPEND}
 	!minimal? ( dev-util/ktigcc-completion-data )"

@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2007; Christian Helbling <helch@gmx.ch> ktigcc-1.07.ebuild:
+  Adjusting version numbers of dependencies
+
   12 May 2007; Jakub Moc <jakub@gentoo.org> ktigcc-1.07.ebuild:
   Replace no-completion-data use flag with USE=minimal
 
