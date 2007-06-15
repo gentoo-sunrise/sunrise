@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=net-wireless/mac80211-8.0.1"
+DEPEND="net-wireless/mac80211"
 RDEPEND="net-wireless/iwlwifi-ucode"
 
 S="${WORKDIR}/${P}/compatible"
