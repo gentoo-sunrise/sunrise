@@ -18,7 +18,7 @@ DEPEND=">=dev-libs/glib-2
 
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/${P}
 
 src_compile() {
 	econf $(use_enable nls) || die "econf failed"
