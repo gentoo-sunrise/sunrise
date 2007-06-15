@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  -uhexen2-cvs-20070609.ebuild:
+  Drop old
+
   14 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   uhexen2-cvs-20070612.ebuild:
   Fixed Portage working dir  path
