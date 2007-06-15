@@ -1,0 +1,8 @@
+# ChangeLog for sci-calculators/tilp2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Jun 2007; Christian Helbling <helch@gmx.ch> +tilp2-1.03.ebuild,
+  +metadata.xml:
+  New ebuild for bug 109220 thanks to Henning Schild
+
