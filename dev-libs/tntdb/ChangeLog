@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
+  +tntdb-0.9.1-r1.ebuild:
+  DEPEND and RDEPEND fixed, tntdb should actually not depend on tntnet
+
   11 Jun 2007; Auke Booij (tulcod) <auke.booij@gmail.com>
   +tntdb-0.9.1.ebuild, +metadata.xml:
   New Ebuild for bug 181641 thanks to DrEevil, shillelagh and me :)
