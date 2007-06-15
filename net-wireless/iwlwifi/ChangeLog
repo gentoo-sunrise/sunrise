@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2007; Florian Manschwetus <FlorianManschwetus@gmx.de> ChangeLog:
+  just a bump
+
   10 Jun 2007; Stefan Schweizer <genstef@gentoo.org>
   -files/digest-iwlwifi-0.0.25:
   remove filesdir
