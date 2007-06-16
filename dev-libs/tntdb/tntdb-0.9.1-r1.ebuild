@@ -15,7 +15,7 @@ RDEPEND="mysql? ( >=dev-db/mysql-3 )
 	postgres? ( >=dev-db/postgresql-7 )
 	sqlite? ( >=dev-db/sqlite-3 )
 	>=dev-libs/cxxtools-1.4.3"
-DEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
 
 src_compile() {
 	econf ${myconf} \
