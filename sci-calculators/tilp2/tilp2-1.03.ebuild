@@ -22,5 +22,5 @@ DEPEND=">=sci-libs/libticalcs2-1.0.4
 RDEPEND="${DEPEND}"
 
 src_install() {
-	emake install DESTDIR=${D} || die "emake install failed"
+	emake install DESTDIR="${D}" || die "emake install failed"
 }
