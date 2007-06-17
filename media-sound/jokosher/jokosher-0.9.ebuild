@@ -10,7 +10,7 @@ DESCRIPTION="A simple yet powerful multi-track studio"
 HOMEPAGE="http://www.jokosher.org/"
 SRC_URI="http://www.jokosher.org/downloads/source/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2-jokosher"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

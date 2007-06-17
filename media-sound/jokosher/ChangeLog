@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Jun 2007; Santiago M. Mola <gentoo@coldwind.org> ChangeLog:
+  LICENSE changed.
+
   17 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
   jokosher-0.9.ebuild:
   Removed dev-lang/python from RDEPEND, don't dodoc license
