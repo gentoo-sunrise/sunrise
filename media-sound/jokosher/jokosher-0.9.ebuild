@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/python-2.4
-	dev-python/dbus-python
+RDEPEND="dev-python/dbus-python
 	dev-python/gnome-python
 	>=dev-python/gst-python-0.10.6
 	dev-python/pycairo
@@ -39,7 +38,7 @@ RDEPEND=">=dev-lang/python-2.4
 DEPEND="${RDEPEND}"
 
 PYTHON_MODNAME=Jokosher
-DOCS="AUTHORS README COPYING COPYING-DOCS"
+DOCS="AUTHORS README"
 
 src_unpack() {
 	gnome2_src_unpack
