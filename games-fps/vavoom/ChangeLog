@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jun 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
+  Updated ESVN_REPO_URI (like explained in Sourceforge instructions)
+
   15 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
   -vavoom-1.23.1.ebuild:
   Drop old

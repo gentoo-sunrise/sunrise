@@ -6,7 +6,7 @@ inherit autotools eutils flag-o-matic subversion games
 
 DESCRIPTION="Advanced source port for Doom/Heretic/Hexen/Strife"
 HOMEPAGE="http://www.vavoom-engine.com/"
-ESVN_REPO_URI="https://svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
+ESVN_REPO_URI="https://vavoom.svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
 
 LICENSE="GPL-2"
 SLOT="0"
