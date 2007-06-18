@@ -51,7 +51,7 @@ DEPEND="${UIDEPEND}
 	${LNCHDEPEND}
 	x86? ( >=dev-lang/nasm-0.98.38 )"
 
-S="${WORKDIR}/uhexen-src-${PV}"
+S="${WORKDIR}/uhexen2-cvs-${PV}"
 dir="${GAMES_DATADIR}/${MY_PN}"
 
 pkg_setup() {
@@ -129,7 +129,6 @@ src_unpack() {
 }
 
 src_compile() {
-	yesno() { useq $1 && echo yes || echo no ; }
 
 	local h2bin="h2" hwbin="hw" link_gl_libs="no" opts
 	local \
@@ -145,14 +144,8 @@ src_compile() {
 		opts
 
 	if use opengl ; then
-		if use amd64 ; then
-			# On AMD64 can be built only OpenGL binaries
-			h2bin="gl${h2bin}"
-			hwbin="gl${hwbin}"
-		else
-			h2bin="${h2bin} gl${h2bin}"
-			hwbin="${hwbin} gl${hwbin}"
-		fi
+		h2bin="${h2bin} gl${h2bin}"
+		hwbin="${hwbin} gl${hwbin}"
 		use dynamic && LINK_GL_LIBS="yes"
 	fi
 
@@ -242,7 +235,6 @@ src_compile() {
 
 		# Hexenworld client
 		einfo "Compiling Hexenworld client(s)"
-		use amd64 && ewarn "On AMD64 only GL Hexenworld client version is built"
 		for m in ${hwbin} ; do
 			emake -C Client clean
 			emake \
@@ -268,7 +260,6 @@ src_compile() {
 	cd "${S}/${MY_PN}"
 
 	einfo "Compiling UHexen2 game executable(s)"
-	use amd64 && ewarn "On AMD64 only GL game binary version is built"
 	for m in ${h2bin} ; do
 		emake clean
 		emake \
@@ -295,12 +286,12 @@ src_install() {
 	use demo && demo="-demo" && demo_title=" (Demo)" && demo_suffix="demo"
 
 	newicon hexen2/icons/h2_32x32x4.png ${PN}.png || die
-	if ! use amd64 ; then
-		make_desktop_entry "${MY_PN}${demo}" "Hexen 2${demo_title}" ${PN}.png
-		newgamesbin "${MY_PN}/${MY_PN}" "${MY_PN}${demo}" \
-			|| die "newgamesbin ${MY_PN} failed"
-	fi
-	if use opengl || use amd64 ; then
+
+	make_desktop_entry "${MY_PN}${demo}" "Hexen 2${demo_title}" ${PN}.png
+	newgamesbin "${MY_PN}/${MY_PN}" "${MY_PN}${demo}" \
+		|| die "newgamesbin ${MY_PN} failed"
+
+	if use opengl ; then
 		make_desktop_entry "gl${MY_PN}${demo}" "GLHexen 2${demo_title}" ${PN}.png
 		newgamesbin "${MY_PN}/gl${MY_PN}" "gl${MY_PN}${demo}" \
 			|| die "newgamesbin gl${MY_PN} failed"
@@ -331,13 +322,13 @@ src_install() {
 
 		# HexenWorld client(s)
 		newicon hexenworld/icons/hw2_32x32x8.png hwcl.png || die
-		if ! use amd64 ; then
-			make_desktop_entry \
-				"hwcl${demo}" "Hexen 2${demo_title} Hexenworld Client" hwcl.png
-			newgamesbin "hexenworld/Client/hwcl" "hwcl${demo}" \
-				|| die "newgamesbin hwcl failed"
-		fi
-		if use opengl || use amd64; then
+
+		make_desktop_entry \
+			"hwcl${demo}" "Hexen 2${demo_title} Hexenworld Client" hwcl.png
+		newgamesbin "hexenworld/Client/hwcl" "hwcl${demo}" \
+			|| die "newgamesbin hwcl failed"
+
+		if use opengl ; then
 			make_desktop_entry \
 				"glhwcl${demo}" "GLHexen 2${demo_title} Hexenworld Client" hwcl.png
 			newgamesbin "hexenworld/Client/glhwcl" "glhwcl${demo}" \
