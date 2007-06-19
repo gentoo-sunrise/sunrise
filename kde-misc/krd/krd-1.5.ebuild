@@ -11,12 +11,9 @@ SRC_URI="mirror://sourceforge/krdm/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="vnc rdesktop"
+IUSE=""
 
-RDEPEND="|| (
-			vnc? ( >=net-misc/tightvnc-1.2.9-r3 )
-			rdesktop? ( >=net-misc/rdesktop-1.4.1 )
-		)"
+RDEPEND="|| ( >=net-misc/tightvnc-1.2.9-r3 >=net-misc/rdesktop-1.4.1 )"
 DEPEND=""
 
 S="${WORKDIR}/${PN}"
