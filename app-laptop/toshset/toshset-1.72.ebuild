@@ -3,8 +3,8 @@
 # $Header: $
 
 DESCRIPTION="Utility to modify HCI/SCI controls on Toshiba Laptops"
-HOMEPAGE="http://www.schwieters.org/toshset"
-SRC_URI="mirror://debian/pool/main/t/toshset/toshset_${PV}.orig.tar.gz"
+HOMEPAGE="http://www.schwieters.org/toshset/"
+SRC_URI="mirror://debian/pool/main/t/${PN}/${PN}_${PV}.orig.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
