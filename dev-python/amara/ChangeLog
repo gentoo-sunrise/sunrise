@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
+  amara-1.2.0.1.ebuild:
+  corrected HOMEPAGE
+
   06 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> amara-1.2.0.1.ebuild:
   Fixed various stuff.
 
