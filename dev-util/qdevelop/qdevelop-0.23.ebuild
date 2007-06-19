@@ -6,25 +6,25 @@ inherit eutils qt4 toolchain-funcs
 
 KEYWORDS="~x86"
 
-MY_P=QDevelop-${PV}
+MY_P=QDevelop-${PV}-1
 
 DESCRIPTION="A development environment entirely dedicated to Qt4."
 HOMEPAGE="http://qdevelop.org/"
-SRC_URI="http://qdevelop.org/download/${MY_P}-unstable.zip"
+SRC_URI="http://qdevelop.org/download/${MY_P}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-RDEPEND="$(qt4_min_version 4.1)"
+RDEPEND="$(qt4_min_version 4.2)"
 DEPEND="app-arch/unzip
 		${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	if ! built_with_use =x11-libs/qt-4* sqlite; then
-		eerror "x11-libs/qt has to be built with sqlite support"
-		die "qt sqlite use-flag not set"
+	if ! built_with_use =x11-libs/qt-4* sqlite3; then
+		eerror "x11-libs/qt has to be built with sqlite3 support"
+		die "qt sqlite3 use-flag not set"
 	fi
 }
 
