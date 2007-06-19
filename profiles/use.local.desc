@@ -44,16 +44,18 @@ games-fps/uhexen2:sdlaudio - Enable SDL Audio
 games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
 games-fps/uhexen2:timidity - Build with Timidity++ (MIDI sequencer) support
 games-fps/uhexen2:tools - Enable compilation of various useful tools
+games-fps/uhexen2-cvs:3dfx - Enable 3dfx glide hacks for native hardware gamma for the old Voodoo Graphics and Voodoo2 cards
+games-fps/uhexen2-cvs:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2-cvs:cdaudio - Enable cd audio playback support
 games-fps/uhexen2-cvs:demo - Install the demo files (hexen2-demodata) and configure for use
 games-fps/uhexen2-cvs:dynamic - Link to the opengl libraries at compile time
 games-fps/uhexen2-cvs:hexenworld - Build support for HexenWorld
 games-fps/uhexen2-cvs:lights - Install and setup the updated light maps
+games-fps/uhexen2-cvs:midi - Include MIDI music support
 games-fps/uhexen2-cvs:optimize-cflags - Build with more optimized CFLAGS
 games-fps/uhexen2-cvs:sdlaudio - Enable SDL Audio
 games-fps/uhexen2-cvs:sdlcd - Enable cd audio playback support through SDL
-games-fps/uhexen2-cvs:timidity - Build with Timidity++ (MIDI sequencer) support
-games-fps/uhexen2-cvs:tools - Enable compilation of various useful tools
+games-fps/uhexen2-cvs:tools - Install various useful tools
 games-fps/vavoom:allegro - Adds support for Allegro (media library)
 games-fps/vavoom:external-glbsp - Use external library provided from games-util/glbsp
 games-fps/vavoom:models - Install enhanced 3D models
