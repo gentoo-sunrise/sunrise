@@ -18,8 +18,8 @@ SRC_URI="http://uhexen2.sourceforge.net/devel/cvs_latest/${P}.tgz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa cdaudio debug dedicated demo dynamic hexenworld gtk lights opengl
-optimize-cflags oss sdlaudio sdlcd timidity tools"
+IUSE="3dfx alsa asm cdaudio debug dedicated demo dynamic hexenworld gtk lights
+midi opengl optimize-cflags oss sdlaudio sdlcd tools"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
 	${GAMES_BINDIR:1}/glhexen2
@@ -32,9 +32,10 @@ QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
 
 UIDEPEND=">=media-libs/libsdl-1.2.7
 	>=media-libs/sdl-mixer-1.2.5
+	3dfx? ( media-libs/glide-v3 )
 	alsa? ( >=media-libs/alsa-lib-1.0.7 )
 	opengl? ( virtual/opengl )
-	timidity? ( media-sound/timidity++ )
+	midi? ( media-sound/timidity++ )
 	amd64? ( virtual/opengl )"
 
 # Launcher depends from GTK+ libs
@@ -57,16 +58,18 @@ dir="${GAMES_DATADIR}/${MY_PN}"
 pkg_setup() {
 	games_pkg_setup
 
-	if use timidity ; then
+	if use midi ; then
 		if ! built_with_use "media-libs/sdl-mixer" timidity ; then
 			eerror "Recompile media-libs/sdl-mixer with 'timidity' USE flag."
 			die "sdl-mixer without timidity support detected"
 		fi
 		if use sdlaudio ; then
-			ewarn "timidity (midi music) does not work with sdlaudio."
+			ewarn "MIDI music does not work with sdlaudio."
 		fi
 	else
-		ewarn "timidity is needed if midi music is desired."
+		ewarn "MIDI support disabled! The music won't be played at all."
+		ewarn "If you want to hear MIDI music, recompile this package"
+		ewarn "with \"midi\" USE flag enabled."
 	fi
 
 	! use alsa && ewarn "alsa is the recommended sound driver."
@@ -133,14 +136,15 @@ src_compile() {
 	local h2bin="h2" hwbin="hw" link_gl_libs="no" opts
 	local \
 		h2bin="h2" hwbin="hw" \
-		ALSA="no" \
-		CDAUDIO="no" \
+		USE_ALSA="no" \
+		USE_CDAUDIO="no" \
 		LINK_GL_LIBS="no" \
-		MIDI="no" \
+		USE_MIDI="no" \
 		OPT_EXTRA="no" \
-		OSS="no" \
-		SDLCD="no" \
+		USE_OSS="no" \
+		USE_SDLCD="no" \
 		X86_ASM="no" \
+		USE_3DFX="no" \
 		opts
 
 	if use opengl ; then
@@ -152,13 +156,14 @@ src_compile() {
 	use debug && opts="${opts} DEBUG=1"
 	use demo && opts="${opts} DEMO=1"
 
-	use alsa && ALSA="yes"
-	use cdaudio && CDAUDIO="yes"
+	use alsa && USE_ALSA="yes"
+	use cdaudio && USE_CDAUDIO="yes"
 	use optimize-cflags && OPT_EXTRA="yes"
-	use oss && OSS="yes"
-	use sdlcd && SDLCD="yes"
-	use timidity && MIDI="yes"
-	use x86 && X86_ASM="yes"
+	use oss && USE_OSS="yes"
+	use sdlcd && USE_SDLCD="yes"
+	use midi && USE_MIDI="yes"
+	use asm && X86_ASM="yes"
+	use 3dfx && USE_3DFX="yes"
 
 	if use gtk ; then
 	# Build launcher
@@ -239,15 +244,16 @@ src_compile() {
 			emake -C Client clean
 			emake \
 				${opts} \
-				USE_ALSA=${ALSA} \
-				USE_OSS=${OSS} \
-				USE_CDAUDIO=${CDAUDIO} \
-				USE_MIDI=${MIDI} \
-				USE_SDLAUDIO=${SDLAUDIO} \
-				USE_SDLCD=${SDLCD} \
+				USE_ALSA=${USE_ALSA} \
+				USE_OSS=${USE_OSS} \
+				USE_CDAUDIO=${USE_CDAUDIO} \
+				USE_MIDI=${USE_MIDI} \
+				USE_SDLAUDIO=${USE_SDLAUDIO} \
+				USE_SDLCD=${USE_SDLCD} \
 				USE_X86_ASM=${X86_ASM} \
 				OPT_EXTRA=${OPT_EXTRA} \
 				LINK_GL_LIBS=${LINK_GL_LIBS} \
+				USE_3DFXGAMMA="${USE_3DFX}" \
 				CPUFLAGS="${CFLAGS}" \
 				CC="$(tc-getCC)" \
 				${m} \
@@ -264,15 +270,16 @@ src_compile() {
 		emake clean
 		emake \
 			${opts} \
-			USE_ALSA=${ALSA} \
-			USE_OSS=${OSS} \
-			USE_CDAUDIO=${CDAUDIO} \
-			USE_MIDI=${MIDI} \
-			USE_SDLAUDIO=${SDLAUDIO} \
-			USE_SDLCD=${SDLCD} \
+			USE_ALSA=${USE_ALSA} \
+			USE_OSS=${USE_OSS} \
+			USE_CDAUDIO=${USE_CDAUDIO} \
+			USE_MIDI=${USE_MIDI} \
+			USE_SDLAUDIO=${USE_SDLAUDIO} \
+			USE_SDLCD=${USE_SDLCD} \
 			USE_X86_ASM=${X86_ASM} \
 			OPT_EXTRA=${OPT_EXTRA} \
 			LINK_GL_LIBS=${LINK_GL_LIBS} \
+			USE_3DFXGAMMA=${USE_3DFX} \
 			CPUFLAGS="${CFLAGS}" \
 			CC="$(tc-getCC)" \
 			${m} \
@@ -387,11 +394,6 @@ src_install() {
 
 pkg_postinst() {
 	games_pkg_postinst
-
-	if ! use timidity ; then
-		elog "MIDI music requires the 'timidity' USE flag."
-		echo
-	fi
 
 	if use demo ; then
 		elog "uhexen2 has been compiled specifically to play the demo maps."
