@@ -22,4 +22,3 @@ DEPEND=""
 S="${WORKDIR}/${PN}"
 
 need-kde 3.4
-
