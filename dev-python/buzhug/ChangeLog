@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com> -buzhug-0.7.ebuild,
+  +buzhug-0.8.ebuild:
+  version bump
+
   27 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> buzhug-0.7.ebuild:
   Remove trailing blank line, make pcheck happy
 
