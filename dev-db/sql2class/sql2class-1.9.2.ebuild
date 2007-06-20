@@ -14,8 +14,7 @@ SLOT="0"
 IUSE="mysql sqlite"
 
 DEPEND=""
-RDEPEND="mysql? ( dev-db/mysqlwrapped )
-		sqlite? ( dev-db/sqlitewrapped )"
+RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
