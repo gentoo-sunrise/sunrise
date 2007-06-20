@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto"
 
 pkg_setup() {
-	if ! built_with_use  dev-libs/boost threads ; then
+	if has_version "<dev-libs/boost-1.34" && ! built_with_use dev-libs/boost threads ; then
 		eerror "boost was not merged with the threads"
 		eerror "USE flag.  Gizmo Daemon requires boost be"
 		eerror "built with this flag"
