@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jun 2007; Jakub Moc <jakub@gentoo.org> words-bin-1.97.ebuild:
+  Do not use ${D} in dosym, einfo -> elog, cosmetics
+
   05 Feb 2007; Pavel Sanda (ps) <ps at twin.jikos.cz> files/words_dir.patch:
   app-dicts/words-bin: patch
 
