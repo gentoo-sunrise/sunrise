@@ -21,7 +21,7 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
 pkg_setup() {
-	if ! built_with_use dev-libs/boost threads ; then
+	if has_version "<dev-libs/boost-1.34" && ! built_with_use dev-libs/boost threads ; then
 		eerror "dev-libs/boost has to be compiled with 'threads' USE-flag enabled."
 		die "Needed USE-flag for dev-libs/boost not found."
 	fi
