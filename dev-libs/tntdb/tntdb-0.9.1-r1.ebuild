@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="mysql postgres sqlite"
 
-RDEPEND="mysql? ( >=dev-db/mysql-3 )
+RDEPEND="mysql? ( virtual/mysql )
 	postgres? ( >=dev-db/postgresql-7 )
 	sqlite? ( >=dev-db/sqlite-3 )
 	>=dev-libs/cxxtools-1.4.3"

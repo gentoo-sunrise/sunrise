@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jun 2007; Jakub Moc <jakub@gentoo.org> tntdb-0.9.1-r1.ebuild:
+  Fix mysql dependency
+
   16 Jun 2007; Jakub Moc <jakub@gentoo.org> ChangeLog:
   Remove old ebuild with broken deps
 
