@@ -22,8 +22,8 @@ S=${WORKDIR}/${PN}
 
 pkg_setup() {
 	if ! built_with_use =x11-libs/qt-4* sqlite3 ; then
-		eerror "Qt has to be built with sqlite3 support"
-		die "Missing sqlite3 USE-flag for x11-libs/qt"
+		eerror "Qt4 has to be built with sqlite3 support"
+		die "Missing sqlite3 USE-flag for x11-libs/qt-4"
 	fi
 }
 
