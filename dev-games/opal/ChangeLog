@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jun 2007; Jakub Moc <jakub@gentoo.org> opal-0.4.0.ebuild:
+  Fix dependencies
+
   07 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> opal-0.4.0.ebuild:
   Added app-arch/unzip to DEPEND
 

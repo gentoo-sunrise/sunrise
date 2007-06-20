@@ -13,10 +13,10 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="debug double-precision examples"
 
-DEPEND="app-arch/unzip
-	dev-util/scons
-	dev-games/ode"
-RDEPEND="${DEPEND}"
+RDEPEND="dev-games/ode"
+DEPEND="${RDEPEND}
+	app-arch/unzip
+	dev-util/scons"
 
 S="${WORKDIR}/${P}-src"
 
