@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
 
-DEPEND="=dev-libs/xerces-c-2.7.0-r1
+RDEPEND="~dev-libs/xerces-c-2.7.0"
+DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
-RDEPEND="=dev-libs/xerces-c-2.7.0-r1"
 
 S="${WORKDIR}"/${MY_P}
 
