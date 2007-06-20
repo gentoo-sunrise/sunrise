@@ -20,16 +20,15 @@ RDEPEND="${DEPEND}"
 
 src_install(){
 	distutils_src_install
-	dodir /usr/sbin
 	dosbin "${D}"/usr/bin/etc-proposals
 	rm -rf "${D}"/usr/{bin,share}
 }
 
 pkg_postinst() {
-	einfo "The configuration file has been installed to /etc/etc-proposals.conf"
-	einfo "If you are installing etc-proposals for the first time or updating"
-	einfo "from a version < 1.3 you should run the following command once:"
-	einfo "etc-proposals --init-db"
+	elog "The configuration file has been installed to /etc/etc-proposals.conf"
+	elog "If you are installing etc-proposals for the first time or updating"
+	elog "from a version < 1.3 you should run the following command once:"
+	elog "etc-proposals --init-db"
 	ewarn "A full backup of /etc and other files managed by CONFIG_PROTECT"
 	ewarn "is highly advised before testing this tool!"
 }
