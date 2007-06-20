@@ -13,16 +13,16 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="examples"
 
-DEPEND="=dev-lang/tcl-8.4*
+RDEPEND="=dev-lang/tcl-8.4*
 	=dev-lang/tk-8.4*
-	app-doc/doxygen
-	sys-devel/bison
 	dev-lang/perl
 	dev-libs/libxslt
 	virtual/ghostscript
 	media-gfx/imagemagick
 	media-gfx/graphviz"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	app-doc/doxygen
+	sys-devel/bison"
 
 src_compile() {
 	export PATH="${PATH}:${S}/bin"

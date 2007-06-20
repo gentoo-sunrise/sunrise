@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jun 2007; Jakub Moc <jakub@gentoo.org> omnetpp-3.3.ebuild:
+  Fix dependencies
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> omnetpp-3.3.ebuild:
   Make this multilib friendly
 
