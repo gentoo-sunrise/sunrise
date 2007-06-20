@@ -43,7 +43,7 @@ src_unpack() {
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
 	epatch "${FILESDIR}/${PN}-1.1.22-as-needed.patch"
-	epatch "${FILESDIR}/${P}-libxpcom.patch"
+	epatch "${FILESDIR}/${PN}-1.1.42-libxpcom.patch"
 	epatch "${FILESDIR}/${PN}-1.1.32-use-firefox.patch"
 	eautoreconf
 	if use firefox || use xulrunner ; then
