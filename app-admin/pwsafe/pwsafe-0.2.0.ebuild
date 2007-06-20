@@ -24,7 +24,8 @@ RDEPEND="X? ( x11-libs/libX11
 	dev-libs/openssl
 	sys-libs/readline
 	sys-libs/ncurses"
-DEPEND="${RDEPEND} X? ( x11-proto/xproto )"
+DEPEND="${RDEPEND}
+	X? ( x11-proto/xproto )"
 
 src_compile() {
 	if use suid; then
