@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jun 2007; Jakub Moc <jakub@gentoo.org> btg-0.9.5.ebuild:
+  Fix built_with_use check for newer boost versions
+
   22 May 2007; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
   btg-0.9.5.ebuild:
   Updated btg ebuild : add upnp use and depend to clinkcc that is on sunrise.
