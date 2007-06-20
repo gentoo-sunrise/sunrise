@@ -16,14 +16,14 @@ SLOT="0"
 IUSE="doc examples mysql postgres sqlite"
 
 RDEPEND="mysql? ( virtual/mysql )
-		postgres? ( dev-db/libpq )
-		sqlite? ( =dev-db/sqlite-3* )
-		!mysql? ( !postgres? ( =dev-db/sqlite-3* ) )"
+	postgres? ( dev-db/libpq )
+	sqlite? ( =dev-db/sqlite-3* )
+	!mysql? ( !postgres? ( !sqlite? ( =dev-db/sqlite-3* ) ) )"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
 pkg_setup() {
-	if ! ( use mysql || use postgres || use sqlite ) ; then
+	if ! use mysql && ! use postgres && ! use sqlite ; then
 		ewarn "You have to specify at least one of the following  USE-flags:"
 		ewarn "'mysql postgresq sqlite'"
 		ewarn "None specified: support for sqlite automatically activated."
@@ -46,10 +46,14 @@ src_unpack() {
 }
 
 src_compile() {
+	if ! use mysql && ! use postgres && ! use sqlite ; then
+		myconf="--with-sqlite3"
+	fi
 	econf \
 		$(use_with mysql) \
 		$(use_with postgres pgsql) \
 		$(use_with sqlite sqlite3) \
+		${myconf} \
 		|| die "econf failed"
 	emake || die "emake failed"
 
