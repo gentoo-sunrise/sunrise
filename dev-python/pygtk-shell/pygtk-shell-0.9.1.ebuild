@@ -17,5 +17,6 @@ RDEPEND=">=dev-python/pygtk-2.8
 
 src_install() {
 	distutils_src_install
-	make_desktop_entry pygtk_shell.py "PyGTK Shell"
+	make_desktop_entry pygtk_shell.py "PyGTK Shell" " " "System;Shell"
+	echo "OnlyShowIn=GNOME;KDE;XFCE;" >> "${D}"/usr/share/applications/*.desktop
 }
