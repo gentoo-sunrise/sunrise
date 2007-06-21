@@ -25,12 +25,23 @@ IUSE="doom heretic hexen strife"
 DEPEND="app-arch/unzip"
 RDEPEND="games-fps/vavoom"
 
-RESTRICT="nomirror"
-
 S=${WORKDIR}
 
+src_unpack() {
+	unpack ${A}
+
+	cd "${S}"
+	# Move docs outside of basev dir
+	for x in $(ls -1 basev) ; do
+		mv basev/${x}/xmodels.txt ${x}-models.txt
+	done
+}
+
 src_install() {
-	insinto "${GAMES_DATADIR}/vavoom/"
+	dodoc *.txt || die "dodoc failed"
+
+	cd basev
+	insinto "${GAMES_DATADIR}/vavoom/basev/"
 	doins -r * || die "doins failed"
 
 	prepgamesdirs
