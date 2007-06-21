@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -vavoom-textures-1.0.ebuild, +vavoom-textures-1.1.ebuild:
+  Version bump (and removed old version)
+
   07 Jun 2007; Christian Faulhammer <opfer@gentoo.org>
   vavoom-textures-1.0.ebuild:
   fix some whitespaces
