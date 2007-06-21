@@ -46,7 +46,7 @@ DEPEND="media-libs/libpng
 	external-glbsp? ( games-util/glbsp )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
-PDEPEND="models? ( >=games-fps/vavoom-models-1.4 )
+PDEPEND="models? ( >=games-fps/vavoom-models-1.4.1 )
 	music? ( games-fps/vavoom-music )
 	textures? ( games-fps/vavoom-textures )"
 

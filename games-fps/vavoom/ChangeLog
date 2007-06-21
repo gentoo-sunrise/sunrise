@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Jun 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-1.24.ebuild,
+  vavoom-9999.ebuild:
+  Fixed optional dependency to vavoom-models: now version >=1.4.1 is required
+
+  21 Jun 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-1.24.ebuild,
   vavoom-9999.ebuild, +files/vavoom-makefile_nowrapper.patch:
   Added patch to get rid of executable wrappers, added 'asm' USE flag
 
