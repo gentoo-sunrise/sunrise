@@ -19,7 +19,7 @@ GTKDEPS=">=dev-python/pygtk-2.8.6
 	!userpriv? ( >=x11-libs/gksu-2.0.0 )
 	>=dev-util/portatosourceview-2.16.0"
 
-RDEPEND="=sys-apps/portage-2.1.2*
+RDEPEND=">=sys-apps/portage-2.1.2
 	gtk? ( ${GTKDEPS} )
 	qt4? (
 		>=dev-python/PyQt4-4.1.1

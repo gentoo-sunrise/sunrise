@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jun 2007; René Neumann (Necoro) <necoro@necoro.net>
+  portato-0.7.4.2.ebuild:
+  Allowed portage-2.1.3
+
   14 Jun 2007; René Neumann (Necoro) <necoro@necoro.net>
   portato-0.7.4.2.ebuild:
   Removed syntax useflag and made the portatosourceview mandatory
