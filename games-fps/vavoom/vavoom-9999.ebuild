@@ -11,7 +11,7 @@ ESVN_REPO_URI="https://vavoom.svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro debug dedicated external-glbsp flac mad mikmod models music
+IUSE="allegro asm debug dedicated external-glbsp flac mad mikmod models music
 openal opengl sdl textures tools vorbis"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
@@ -132,6 +132,9 @@ src_unpack() {
 
 	./autogen.sh
 
+	# Patch Makefiles to get rid of executable wrappers
+	epatch ${FILESDIR}/${PN}-makefile_nowrapper.patch || die "epatch failed"
+
 	# Set shared directory
 	sed -i \
 		-e "s:fl_basedir = \".\":fl_basedir = \"${dir}\":" \
@@ -173,6 +176,7 @@ src_compile() {
 		$(use_with mad libmad) \
 		$(use_with mikmod) \
 		$(use_with flac) \
+		$(use_enable asm) \
 		$(use_enable dedicated server) \
 		$(use_enable debug) \
 		$(use_enable debug zone-debug) \
@@ -180,17 +184,15 @@ src_compile() {
 		--disable-dependency-tracking \
 		|| die "egamesconf failed"
 
-	# Parallel compiling doesn't work for now :(
-	emake -j1 || die "emake failed"
+	# Parallel compiling seems to work (tested on 1.24)
+	# I hope it would be true :P (in case i'll re-enable it later)
+	emake || die "emake failed"
 }
 
 src_install() {
 	local de_cmd="${PN}"
 
 	emake DESTDIR="${D}" install || die "emake install failed"
-
-	# Remove unwanted wrapper scripts
-	rm -f "${D}/${GAMES_BINDIR}/${PN}*"
 
 	# Remove unneeded icon
 	rm -f "${D}/${dir}/${PN}.png"
@@ -199,14 +201,7 @@ src_install() {
 
 	# Enable OpenGL in desktop entry, if relevant USE flag is enabled
 	use opengl && de_cmd="${PN} -opengl"
-	# Install properly main game binary exe
-	dogamesbin ${PN} || die "dogamesbin ${PN} failed"
 	make_desktop_entry "${de_cmd}" "Vavoom"
-
-	if use dedicated ; then
-		# Install properly dedicated server binary exe
-		dogamesbin ${PN}-ded || die "dogamesbin ${PN}-ded failed"
-	fi
 
 	dodoc docs/${PN}.txt || die "dodoc vavoom.txt failed"
 

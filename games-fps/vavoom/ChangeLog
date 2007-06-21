@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jun 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-1.24.ebuild,
+  vavoom-9999.ebuild, +files/vavoom-makefile_nowrapper.patch:
+  Added patch to get rid of executable wrappers, added 'asm' USE flag
+
   18 Jun 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
   Updated ESVN_REPO_URI (like explained in Sourceforge instructions)
 
