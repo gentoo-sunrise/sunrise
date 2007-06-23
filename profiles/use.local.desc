@@ -95,6 +95,8 @@ media-gfx/openscenegraph:introspection - Compile osgIntrospection
 media-gfx/openscenegraph:inventor - Compile inventor plugin
 media-gfx/openscenegraph:jasper - Compile jasper plugin
 media-gfx/openscenegraph:producer - Compile osgProducer
+media-gfx/synfig:fontconfig - Support for managing custom fonts via fontconfig
+media-gfx/synfig-studio:fmod - Enables support for using mod files for audio support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
 media-sound/gnormalize:musepack - Enables support for the musepack audio codec
