@@ -4,7 +4,7 @@
 
 inherit linux-mod
 
-MY_P=${PN/ati-/}-${PV}
+MY_P="${PN/ati-/}-${PV}"
 S=${WORKDIR}
 
 DESCRIPTION="Generic V4L2 driver for ATI Mach64-based tv cards (All-in-Wonder, etc)"
@@ -29,13 +29,12 @@ pkg_setup() {
 	linux-mod_pkg_setup
 
 	MODULE_NAMES="genericv4l(v4l:${S}/v4l2)"
-
 	BUILD_PARAMS="KDIR=${KV_OUT_DIR}"
 }
 
 src_compile() {
 	# assists in debugging
-#	emake KERNELPATH=${KV_OUT_DIR} info || die "emake info failed"
+	# emake KERNELPATH=${KV_OUT_DIR} info || die "emake info failed"
 
 	linux-mod_src_compile
 }
@@ -47,20 +46,19 @@ src_install() {
 }
 
 pkg_postinst() {
-	local moddir="${ROOT}/lib/modules/${KV_FULL}/v4l/"
-
-	einfo "Removing old modules (just in case)"
-	[[ -f "${moddir}/genericv4l.${KV_OBJ}" ]] && rm "${moddir}/genericv4l.${KV_OBJ}"
+	# what's the purpose of this???
+	# einfo "Removing old modules (just in case)"
+	# local moddir="${ROOT}/lib/modules/${KV_FULL}/v4l/"
+	# [[ -f "${moddir}/genericv4l.${KV_OBJ}" ]] && rm "${moddir}/genericv4l.${KV_OBJ}"
 
 	linux-mod_pkg_postinst
 
-	einfo
-	einfo "NOTE: if you load the module and Tuner is not found"
-	einfo "(look in dmesg) you can try to specify the tuner with the tunertype parameter"
-	einfo "If you have a SECAM tuner you MUST specify tunertype=2"
-	einfo
+	elog
+	elog "NOTE: if you load the module and Tuner is not found"
+	elog "(look in dmesg) you can try to specify the tuner with the tunertype parameter"
+	elog "If you have a SECAM tuner you MUST specify tunertype=2"
+	elog
 	ewarn "If you are using GATOS as well, keep in mind that you cannot use"
 	ewarn "both at the same time (you CANNOT watch tv in overlay mode and use"
 	ewarn "my driver to capture video at the same time)"
-	einfo
 }
