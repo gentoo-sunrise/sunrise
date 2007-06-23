@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jun 2007; Jakub Moc <jakub@gentoo.org> democracy-0.9.5.1.ebuild:
+  Use valid atoms in built_with_use checks (!!!); also make pkg_postinst
+  non-fatal in case a use flag vanishes, cosmetics
+
   26 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   democracy-0.9.5.1.ebuild:
   Remove inherit versionator
