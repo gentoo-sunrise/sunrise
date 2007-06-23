@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jun 2007; Jakub Moc <jakub@gentoo.org> dzen-0.5.0.ebuild:
+  Fix xinerama dependencies, do not dodoc LICENSE
+
   23 Jun 2007; Santiago M. Mola <gentoo@coldwind.org> -dzen-0.4.0.ebuild,
   +dzen-0.5.0.ebuild:
   Version bump, with xinerama support.

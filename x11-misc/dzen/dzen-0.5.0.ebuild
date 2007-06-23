@@ -16,9 +16,10 @@ LICENSE="MIT"
 KEYWORDS="~x86"
 IUSE="xinerama"
 
-RDEPEND="x11-libs/libX11"
+RDEPEND="x11-libs/libX11
+	xinerama? ( x11-libs/libXinerama )"
 DEPEND="${RDEPEND}
-	x11-proto/xineramaproto"
+	xinerama? ( x11-proto/xineramaproto )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -38,5 +39,5 @@ src_unpack() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README LICENSE
+	dodoc README
 }
