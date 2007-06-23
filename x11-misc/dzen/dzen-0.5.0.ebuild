@@ -14,7 +14,7 @@ SRC_URI="http://gotmor.googlepages.com/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="xinerama"
 
 RDEPEND="x11-libs/libX11"
 DEPEND="${RDEPEND}
@@ -25,9 +25,15 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	sed -e "s:/usr/local:/usr:g" -e "s/-Os/${CFLAGS}/g" \
+	sed -e "s:/usr/local:/usr:g" \
+		-e "s/-Os/${CFLAGS}/g" \
 		-e "/CC/s:cc:$(tc-getCC):" \
 		-i config.mk || die "sed failed"
+	if use xinerama ; then
+		sed -e "/^LIBS/s/$/\ -lXinerama/" \
+			-e "/^CFLAGS/s/$/\ -DDZEN_XINERAMA/" \
+			-i config.mk || die "sed failed"
+	fi
 }
 
 src_install() {
