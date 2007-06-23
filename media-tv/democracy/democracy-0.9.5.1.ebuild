@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON="2.4"
+
 inherit distutils eutils multilib
 
 MY_P="Democracy-${PV}"
@@ -13,23 +15,22 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 KEYWORDS="~amd64 ~ppc ~x86"
-RDEPEND="dev-python/pyrex
-		>=virtual/python-2.4
-		media-libs/xine-lib
-		dev-libs/boost
-		>=dev-python/pygtk-2.0
-		dev-python/gnome-python-extras
-		www-client/mozilla-firefox
-		x11-libs/libX11
-		dev-python/gst-python
-		x11-apps/xset
-		~dev-python/dbus-python-0.71"
-		# dbus-python versions >0.80 changed the api so democracyplayer does
-		# not work with them, therefore depending on the 0.71 version in portage
-		# see https://develop.participatoryculture.org/democracy/ticket/3067
+RDEPEND="dev-libs/boost
+	dev-python/gnome-python-extras
+	dev-python/gst-python
+	>=dev-python/pygtk-2.0
+	dev-python/pyrex
+	media-libs/xine-lib
+	www-client/mozilla-firefox
+	x11-apps/xset
+	x11-libs/libX11
+	~dev-python/dbus-python-0.71"
+	# dbus-python versions >0.80 changed the api so democracyplayer does
+	# not work with them, therefore depending on the 0.71 version in portage
+	# see https://develop.participatoryculture.org/democracy/ticket/3067
 
 DEPEND="${RDEPEND}
-		dev-util/pkgconfig"
+	dev-util/pkgconfig"
 
 DOCS="README"
 
