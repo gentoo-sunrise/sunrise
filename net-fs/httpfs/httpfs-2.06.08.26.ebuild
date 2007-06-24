@@ -32,5 +32,5 @@ src_compile() {
 
 src_install() {
 	dobin httpfs
-	dodoc readme.2
+	newdoc readme.2 readme
 }
