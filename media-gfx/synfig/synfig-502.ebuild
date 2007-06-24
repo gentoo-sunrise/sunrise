@@ -9,9 +9,9 @@ SRC_URI="mirror://gentoo/$PF.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc dv tiff jpeg png truetype imagemagick fontconfig openexr ffmpeg debug"
+IUSE="debug doc dv ffmpeg fontconfig imagemagick jpeg png tiff truetype openexr"
 
-DEPEND=">=dev-cpp/ETL-$PV
+DEPEND=">=dev-cpp/ETL-${PV}
 	>=dev-libs/libsigc++-2.0.0
 	>=dev-cpp/libxmlpp-2.6.1
 	sys-devel/libtool
@@ -39,18 +39,19 @@ src_compile() {
 		$(use_with debug) \
 		|| die 'Configure failed.'
 	emake || die 'Make failed.'
-	if use doc; then emake docs || ewarn '"Make docs" failed.'; fi
+	if use doc; then 
+		emake docs || die "make docs failed."
+	fi
 }
 
 src_install() {
-	emake DESTDIR="$D" install || die 'Install failed!'
+	emake DESTDIR="${D}" install || die 'Install failed!'
 	dodoc doc/*.txt
 	if use doc; then
-		insinto "/usr/share/doc/$PF"
 		dohtml doc/html/*
 	fi
-	insinto "/usr/share/$PN/examples"
+	insinto "/usr/share/${PN}/examples"
 	doins examples/*.sif
-	insinto "/usr/share/$PN/examples/walk"
+	insinto "/usr/share/${PN}/examples/walk"
 	doins examples/walk/*
 }
