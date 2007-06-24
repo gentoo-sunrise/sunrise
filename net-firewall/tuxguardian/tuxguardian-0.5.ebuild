@@ -45,19 +45,19 @@ src_compile() {
 
 src_install() {
 	linux-mod_src_install
-	emake DESTDIR="${D}" install || die "einstall failed"
+	emake DESTDIR="${D}" install || die "install failed"
 	newinitd "${FILESDIR}"/tuxguardian.init tuxguardian
 	linux-mod_pkg_preinst
-	dodoc README COPYING AUTHORS
+	dodoc README AUTHORS
 }
 
 pkg_postinst() {
-	elog "Init script installed. use:"
-	elog "rc-update add tuxguardian {runlevel} (runlevel e.g. boot)"
-	elog "Toubleshooting:"
-	elog "Sometimes it occures, that the module freezes.. Use:"
-	elog "\"etc/init.d/tuxguardian restart\" to solve this"
-	elog "tg-frontend is the frontend to tuxguardian. Unfortunatly it needs superuser rights to run."
-	elog "Notice: if you decide not to use the tg-frontend please refer to the documentation, how to"
-	elog "edit \"/etc/daemon.conf\""
+	elog "Run rc-update add tuxguardian {runlevel} to start this automatically at boot"
+	elog
+	elog "Sometimes the module freezes; to solve this, just run"
+	elog "/etc/init.d/tuxguardian restart"
+	elog
+	elog "tg-frontend frontend unfortunately needs superuser priviledges to run."
+	elog "If you decide not to use the tg-frontend, please refer to the documentation"
+	elog "and edit /etc/daemon.conf accordingly."
 }
