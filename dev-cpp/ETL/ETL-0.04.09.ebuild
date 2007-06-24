@@ -8,7 +8,7 @@ inherit autotools
 
 DESCRIPTION="VoriaETL is a multiplatform class and template library designed to complement and supplement the C++ STL."
 HOMEPAGE="http://www.synfig.com/"
-SRC_URI="http://www.bridgetone.com/voria/files/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

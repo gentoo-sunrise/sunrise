@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jun 2007; Jakub Moc <jakub@gentoo.org> -ETL-0.04.08.ebuild,
+  +ETL-0.04.09.ebuild:
+  version bump, nuke old
+
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> +ETL-0.04.08.ebuild,
   -ETL-502.ebuild:
   Fix invalid version and invalid SRC_URI
