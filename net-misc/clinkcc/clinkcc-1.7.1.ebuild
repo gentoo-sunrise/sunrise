@@ -14,12 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="expat xml mythtv"
 
-DEPEND="
-	|| (
-		expat? ( >=dev-libs/expat-1.95 )
-		xml? ( >=dev-libs/libxml2-2.6.20 )
-		>=dev-libs/xerces-c-2.3
-	)
+DEPEND="expat? ( >=dev-libs/expat-1.95 )
+	xml? ( >=dev-libs/libxml2-2.6.20 )
+	!expat? ( !xml? ( >=dev-libs/xerces-c-2.3 ) )
 	mythtv? ( virtual/mysql )
 	virtual/libiconv
 	virtual/libc "
@@ -35,10 +32,9 @@ src_unpack() {
 }
 
 src_compile() {
-	econf	$(use_enable expat) \
-			$(use_enable xml libxml2) \
-			$(use_enable mythtv) \
-	|| die "econf failed"
+	econf $(use_enable expat) \
+		$(use_enable xml libxml2) \
+		$(use_enable mythtv) \
 
 	emake || die "emake failed"
 }
