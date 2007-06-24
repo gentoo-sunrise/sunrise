@@ -13,10 +13,6 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="debug"
 
-src_unpack() {
-	unpack ${A}
-}
-
 src_compile() {
 	econf $(use_enable debug) || die "configure failed"
 	emake || die "emake failed"
