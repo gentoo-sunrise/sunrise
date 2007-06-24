@@ -21,7 +21,7 @@ src_compile() {
 	./bootstrap || die 'Bootstrap failed.'
 	econf || die 'Configure failed.'
 	emake || die 'Make failed.'
-	if use doc; then 
+	if use doc; then
 		emake docs || die "make docs failed."
 	fi
 }
