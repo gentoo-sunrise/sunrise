@@ -22,7 +22,7 @@
 ##
 
 # Jakub Moc <jakub@gentoo.org> (14 June 2007)
-# this needs to be portage to pidgin or die
+# this needs to be ported to net-im/pidgin or die
 net-im/chix-gaim
 met-im/gaim-album
 
