@@ -37,7 +37,6 @@ src_install() {
 
 pkg_postinst() {
 	elog
-	elog "  The audio USE flags are for your convience, but are not required."
 	elog "	For AmaroK users there is a script included with this package."
 	elog "	You can enable it with the Script Manager tool in Amarok."
 	elog "  This program supports various encoders and codecs."
