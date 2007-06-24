@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 MY_PV="${PV//_/-}"
 MY_P="${PN}-${MY_PV}"
 
@@ -14,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cairo debug spell"
 
-# pcre needs to support utf8; current version in portage forces it, fortunately
 DEPEND=">=dev-cpp/gtkmm-2.6
 	>=dev-cpp/libglademm-2.4
 	dev-libs/libpcre
@@ -26,6 +27,14 @@ DEPEND=">=dev-cpp/gtkmm-2.6
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
+
+pkg_setup() {
+	# pcre needs to support utf8; only <libpcre-7.0 forces it
+	if ! built_with_use --missing true dev-libs/libpcre unicode ; then
+		eerror "${PN} requires dev-libs/libpcre with unicode support"
+		die "Recompile dev-libs/libpcre with USE=\"unicode\" first."
+	fi
+}
 
 src_compile() {
 	export GST_REGISTRY="${T}/home/registry.cache.xml"
