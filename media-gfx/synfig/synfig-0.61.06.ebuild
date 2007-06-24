@@ -4,7 +4,7 @@
 
 DESCRIPTION="Film-Quality Vector Animation (core engine)"
 HOMEPAGE="http://www.synfig.com/"
-SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -39,7 +39,7 @@ src_compile() {
 		$(use_with debug) \
 		|| die 'Configure failed.'
 	emake || die 'Make failed.'
-	if use doc; then 
+	if use doc; then
 		emake docs || die "make docs failed."
 	fi
 }
