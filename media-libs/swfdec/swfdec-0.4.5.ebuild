@@ -30,28 +30,16 @@ RDEPEND=">=dev-libs/glib-2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	#epatch "${FILESDIR}/ffmpeg-fix.patch"
-}
-
 pkg_setup() {
-
-	# Check for USE flag deps
-	ewarn "Checking USE flags of dependencies .. this may take a moment"
-
 	if use !gnome ; then
 		ewarn
 		ewarn "In order to compile libswfdec-gtk with Gnome-VFS"
 		ewarn "support you must have 'gnome' USE flag enabled"
 		ewarn
 	fi
-
 }
 
 src_compile() {
-
 	local myconf
 
 	econf \
@@ -67,5 +55,5 @@ src_compile() {
 
 src_install() {
 	emake install DESTDIR=${D} || die "emake install failed"
-	dodoc AUTHORS COPYING ChangeLog INSTALL README
+	dodoc AUTHORS ChangeLog README
 }
