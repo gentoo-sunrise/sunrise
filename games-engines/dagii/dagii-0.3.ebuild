@@ -10,11 +10,12 @@ SRC_URI="http://www.dagii.org/dist/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~x86-fbsd"
+KEYWORDS="~ppc ~x86 ~x86-fbsd"
 IUSE="png"
 
-DEPEND="png? ( media-libs/libpng )
-	media-libs/libsdl"
+DEPEND="png? ( >=media-libs/libpng-1.2.8 )
+	>=media-libs/libsdl-1.2.9
+	>=sys-libs/zlib-1.2.0"
 RDEPEND="${DEPEND}"
 
 src_compile() {
