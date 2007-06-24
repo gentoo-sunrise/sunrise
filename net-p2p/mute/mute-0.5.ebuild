@@ -34,9 +34,6 @@ src_unpack() {
 }
 
 src_compile() {
-	export WX_GTK_VER=2.6
-	need-wxwidgets gtk2 || die
-
 	# not an autotools configure
 	cd "${S}/MUTE"
 	./configure >/dev/null || die "configure failed"
@@ -47,6 +44,8 @@ src_compile() {
 	emake GXX=$(tc-getCXX) CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
 
 	if use wxwindows; then
+		export WX_GTK_VER=2.6
+		need-wxwidgets gtk2 || die
 		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows"
 		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" \
 			CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
