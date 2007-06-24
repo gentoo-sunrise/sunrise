@@ -21,9 +21,9 @@ RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	cd "${WORKDIR}/${P}"
-	sed -i 's_themeroot = ./themes_themeroot=/usr/share/davemp/themes_' "davemp.conf"
-	sed -i "s_use lib './lib'_use lib '/usr/lib/davemp/'_" "davempd.pl"
+	cd "${S}"
+	sed -i -e 's@themeroot = ./themes@themeroot=/usr/share/davemp/themes@' davemp.conf || die "sed failed"
+	sed -i -e "s@use lib './lib'@use lib '/usr/$(get_libdir)/davemp/'@" davempd.pl || die "sed failed"
 }
 
 src_install() {
