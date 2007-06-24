@@ -4,14 +4,14 @@
 
 DESCRIPTION="Film-Quality Vector Animation (core engine)"
 HOMEPAGE="http://www.synfig.com/"
-SRC_URI="mirror://gentoo/$PF.tar.bz2"
+SRC_URI="http://www.bridgetone.com/voria/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc dv ffmpeg fontconfig imagemagick jpeg png tiff truetype openexr"
 
-DEPEND=">=dev-cpp/ETL-${PV}
+DEPEND=">=dev-cpp/ETL-0.04.08
 	>=dev-libs/libsigc++-2.0.0
 	>=dev-cpp/libxmlpp-2.6.1
 	sys-devel/libtool
