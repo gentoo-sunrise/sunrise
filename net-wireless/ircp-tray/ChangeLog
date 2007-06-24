@@ -1,0 +1,8 @@
+# ChangeLog for net-wireless/ircp-tray
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Jun 2007; Marcello Magaldi (magowiz) <magowiz@gmail.com>
+  +ircp-tray-0.7.2.1.ebuild, +metadata.xml:
+  New Ebuild for bug 102217 thanks to genstef,ColdWind,jakub
+
