@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jun 2007; Jakub Moc <jakub@gentoo.org> timer-applet-1.3.3.ebuild:
+  Add missing dev-libs/libxml2 dependency
+
   18 Apr 2007; Markus Ullmann <jokey@gentoo.org> -timer-applet-1.3.1.ebuild,
   timer-applet-1.3.3.ebuild:
   Drop old and some cosmetics
