@@ -6,8 +6,7 @@ inherit eutils python
 
 MY_P="${P/-/_}_all"
 
-DESCRIPTION="captures information about how you use the internet and use it to
-grow a private world"
+DESCRIPTION="captures information about how you use the internet and use it to grow a private world"
 HOMEPAGE="http://www.packetgarden.com/"
 SRC_URI="http://selectparks.net/~julian/pg/dists/${MY_P}.tar.gz"
 
@@ -27,7 +26,7 @@ RDEPEND="dev-python/dpkt
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	if !built_with_use dev-python/soya openal ; then
+	if ! built_with_use dev-python/soya openal ; then
 		eerror "${PN} needs dev-python/soya built with openal USE flag enabled."
 		die "dev-python/soya without openal"
 	fi
@@ -38,15 +37,15 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-launcher.patch"
 	epatch "${FILESDIR}/${P}-games-path.patch"
-	mv stop_capture packetgarden-stop
 }
 
 src_install() {
-	dobin packetgarden packetgarden-stop
+	newbin stop_capture packetgarden-stop
+	dobin packetgarden
 	insinto /usr/share/${PN}
 	doins -r config data guide labels logs stats pg_*.py
 	dodoc README_LINUX.txt
-	dodir /usr/share/${PN}/data/images/screenshots
+	keepdir /usr/share/${PN}/data/images/screenshots
 }
 
 pkg_postinst() {
