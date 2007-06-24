@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jun 2007; Jakub Moc <jakub@gentoo.org> uno-2.11.ebuild:
+  Fix LICENSE
+
   24 Mar 2007; Tiziano Müller <dev-zero@gentoo.org>
   -files/2.10-makefile.patch, -uno-2.10.ebuild, +files/2.11-makefile.patch,
   +uno-2.11.ebuild:

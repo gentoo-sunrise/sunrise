@@ -8,7 +8,7 @@ DESCRIPTION="A tool for analyzing the source code of programs written in ANSI-C"
 HOMEPAGE="http://spinroot.com/uno/"
 SRC_URI="http://spinroot.com/${PN}/${PN}_v${PV/./}.tar.gz"
 
-LICENSE="public-domain GPL-2"
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
