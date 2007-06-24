@@ -43,7 +43,7 @@ pkg_setup() {
 
 src_compile() {
 	local myconf
-	if use ipq-mon ; then 
+	if use ipq-mon ; then
 		myconf="${myconf} --with-libipq-includes=/usr/include/libipq"
 	elif ! use pcap-mon && ! use ipq-mon ; then
 		myconf="${myconf} --with-libipq-includes=/usr/include/libipq"
