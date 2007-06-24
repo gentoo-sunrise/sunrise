@@ -4,7 +4,7 @@
 
 DESCRIPTION="Film-Quality Vector Animation (core engine)"
 HOMEPAGE="http://www.synfig.com/"
-SRC_URI="http://www.bridgetone.com/voria/files/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
