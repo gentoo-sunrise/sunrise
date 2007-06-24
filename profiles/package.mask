@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Jakub Moc <jakub@gentoo.org> (14 June 2007)
+# this needs to be portage to pidgin or die
+net-im/chix-gaim
+
 # Jakub Moc <jakub@gentoo.org> (18 May 2007)
 # missing required dependency
 net-wireless/iwlwifi
