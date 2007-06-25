@@ -29,14 +29,14 @@ src_unpack() {
 	# don't let setup.py install bhrss.py to /usr/bin
 	sed -i \
 		-e "s/,.*bhrss\.py'//" \
-		setup.py
+		setup.py || die "sed failed"
 
 	# remove logrotate check if not in IUSE
 	if ! use logrotate; then
 		sed -i \
 			-e "/^if/d" \
 			-e "/DATA_FILES\./d" \
-			setup.py
+			setup.py || die "sed failed"
 	fi
 }
 
@@ -44,7 +44,9 @@ src_install() {
 	distutils_src_install
 
 	insinto /usr/share/${PN}
-	doins bhrss.py
+	doins bhrss.py 
+	# keep the test script
+	doins test_blockhosts.py
 
 	dohtml *.html
 }

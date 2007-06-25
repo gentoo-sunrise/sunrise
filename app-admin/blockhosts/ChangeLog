@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Jun 2007; Kevin Funk <krf@gmx.de> -blockhosts-2.0.4.ebuild,
+  +blockhosts-2.0.5.ebuild:
+  Version bump, drop old
+
   09 Jun 2007; Kevin Funk <krf@gmx.de> +blockhosts-2.0.4.ebuild:
   Version bump, drop old
 
