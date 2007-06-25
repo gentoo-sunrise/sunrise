@@ -3,6 +3,11 @@
 # $Header: $
 
   25 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-cvs-20070624.ebuild, +uhexen2-cvs-20070625.ebuild:
+  Version bump (and drop old version); maintaining 20070616 because tarball is
+  still available
+
+  25 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   +uhexen2-cvs-20070624.ebuild:
   Version bump
 
