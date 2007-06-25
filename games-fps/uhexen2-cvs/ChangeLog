@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +uhexen2-cvs-20070624.ebuild:
+  Version bump
+
   19 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   uhexen2-cvs-20070616.ebuild:
   Added '3dfx' and 'asm' USE flags, 'timidity' replaced by 'midi', done some
