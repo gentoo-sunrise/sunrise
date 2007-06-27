@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jun 2007; Tim Burrell <tim.burrell@gmail.com> +gizmod-3.3.ebuild:
+  New Ebuild for bug 134016
+
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> gizmod-3.2.ebuild:
   Fix built_with_use check for newer boost versions
 
