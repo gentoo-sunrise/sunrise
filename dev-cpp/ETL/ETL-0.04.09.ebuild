@@ -16,7 +16,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 DEPEND="doc? ( app-doc/doxygen )"
 
-
 src_compile() {
 	./bootstrap || die 'Bootstrap failed.'
 	econf || die 'Configure failed.'

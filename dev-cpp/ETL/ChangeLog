@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jun 2007; Ali Polatel <hawking@gentoo.org> ETL-0.04.09.ebuild:
+  removed unneeded empty line
+
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> -ETL-0.04.08.ebuild,
   +ETL-0.04.09.ebuild:
   version bump, nuke old
