@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jun 2007; Ali Polatel <hawking@gentoo.org> -dagii-0.3.ebuild:
+  drop old
+
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> +dagii-0.4.1.ebuild:
   Version bump
 
