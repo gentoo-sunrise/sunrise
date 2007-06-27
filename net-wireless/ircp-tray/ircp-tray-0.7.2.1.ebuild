@@ -6,9 +6,7 @@ inherit gnome2
 
 DESCRIPTION="A Gnome tray app for wireless OBEX file transfer using IRDA or Bluetooth"
 HOMEPAGE="http://gro.clinux.org/projects/ircp-tray/"
-# download directory varies release by release
-SRC_URI="http://gro.clinux.org/frs/download.php/2011/ircp-tray-0.7.2.1.tar.gz"
-
+SRC_URI="http://download.gro.clinux.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
