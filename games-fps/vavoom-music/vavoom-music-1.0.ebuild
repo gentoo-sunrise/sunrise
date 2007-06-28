@@ -35,35 +35,22 @@ DEPEND="app-arch/unzip"
 
 S=${WORKDIR}
 
-use_none() {
-	# Returns true if no USE flags have been chosen
-	for u in ${IUSE} ; do
-		if use "${u}" ; then
-			# A USE flag has been chosen
-			return 1
-		fi
-	done
-	return 0
-}
-
 src_unpack() {
+	local game
+
 	unpack ${A}
 
-	cd "${S}"
-	for u in doom1 doom2 heretic hexen tnt ; do
-		if use "${u}" || use_none ; then
-			mv "basev/${u}/xmusic.txt" "${u}.txt" || die "mv failed"
-		fi
+	for x in `find basev/ -name "xmusic.txt" -print` ; do
+		game=$(echo ${x} | awk -F '/' {'print $2'})
+		mv ${x} ${game}.txt || die "mv ${game}.txt failed"
 	done
 }
 
 src_install() {
-	cd "${S}/basev"
-	insinto "${GAMES_DATADIR}/vavoom/basev/"
-	doins -r * || die "doins failed"
-
-	cd "${S}"
 	dodoc *.txt || die "dodoc failed"
+
+	insinto "${GAMES_DATADIR}/vavoom/"
+	doins -r basev || die "doins failed"
 
 	prepgamesdirs
 }
