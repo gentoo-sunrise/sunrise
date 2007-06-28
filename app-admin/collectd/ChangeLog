@@ -1,0 +1,9 @@
+# ChangeLog for app-admin/collectd
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Jun 2007; Wolfgang Frisch (xororand) <xororand@frexx.de>
+  +collectd-4.0.4.ebuild, +files/collectd-4.0.4.confd,
+  +files/collectd-4.0.4.initd, +metadata.xml:
+  New ebuild for bug 107076
+
