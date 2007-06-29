@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Jun 2007; Florian Manschwetus <FlorianManschwetus@gmx.de>
+  -files/digest-iwlwifi-0.0.34:
+  files cleanup
+
+  29 Jun 2007; Florian Manschwetus <FlorianManschwetus@gmx.de>
   -iwlwifi-0.0.30.ebuild, +iwlwifi-0.0.34.ebuild:
   Another Version bump
 
