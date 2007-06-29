@@ -70,7 +70,7 @@ pkg_setup() {
 		ewarn "timidity is needed if midi music is desired."
 	fi
 
-	! use alsa && ewarn "alsa is the recommended sound driver."
+	use alsa || ewarn "alsa is the recommended sound driver."
 }
 
 src_unpack() {
