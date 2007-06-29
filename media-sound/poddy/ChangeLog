@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Jun 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  -poddy-0.5.ebuild, +poddy-0.5.1.ebuild:
+  Changed license to GNU GPL v.3, minor version bump
+
+  29 Jun 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   poddy-0.5.ebuild:
   Added ~x86-fbsd keyword
 

@@ -8,7 +8,7 @@ DESCRIPTION="a lightweight command-line podcast client"
 HOMEPAGE="http://ndansmith.net/poddy.php"
 SRC_URI="mirror://sourceforge/poddy/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~ppc ~x86 ~x86-fbsd"
 IUSE=""
