@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  -surl-0.3.ebuild, +surl-0.3.1.ebuild:
+  Changed license to GNU GPL v.3, minor version bump
+
   09 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   surl-0.3.ebuild:
   Added ~x86-fbsd keyword
