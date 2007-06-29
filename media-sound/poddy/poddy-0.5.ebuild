@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/poddy/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~ppc ~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=">=dev-python/feedparser-4.1

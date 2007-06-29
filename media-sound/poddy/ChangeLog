@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  poddy-0.5.ebuild:
+  Added ~x86-fbsd keyword
+
   31 May 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   -poddy-0.1.4.ebuild, +poddy-0.5.ebuild:
   Version bump
