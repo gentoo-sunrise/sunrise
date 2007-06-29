@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Jun 2007; Christian Faulhammer <opfer@gentoo.org>
+  otrdecoder-bin-446.ebuild:
+  eutils not needed
+
+  29 Jun 2007; Christian Faulhammer <opfer@gentoo.org>
   +otrdecoder-bin-446.ebuild, +metadata.xml:
   new ebuild for the decoder of onlinetvrecorder.com (German)
 

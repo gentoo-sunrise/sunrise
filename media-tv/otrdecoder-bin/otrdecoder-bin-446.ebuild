@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 MY_PV=446
 
 DESCRIPTION="Decoder for onlinetvrecorder.com (German)"
