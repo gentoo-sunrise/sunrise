@@ -23,12 +23,12 @@ BUILD_TARGETS="modules"
 
 pkg_setup() {
 	linux-mod_pkg_setup
-	BUILD_PARAMS="-C ${KV_DIR} M=${S} CONFIG_IWL3945=m"
+	BUILD_PARAMS="-C "${KV_DIR}" M="${S}" CONFIG_IWL3945=m"
 }
 
 src_unpack() {
 	unpack ${A}
-	cd ${P}
+	cd "${P}"
 	sed -i -e 's/\(.*chmod\)/#\1/' Makefile
 	make compatible/kversion KSRC="${KV_DIR}" \
 		MAC80211_INC=/usr/include/mac80211/net/ || die "make unmodified failed"

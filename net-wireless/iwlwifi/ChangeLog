@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2007; Christian Faulhammer <opfer@gentoo.org>
+  iwlwifi-0.0.34.ebuild:
+  add some quotes
+
   29 Jun 2007; Florian Manschwetus <FlorianManschwetus@gmx.de>
   -files/digest-iwlwifi-0.0.34:
   files cleanup
