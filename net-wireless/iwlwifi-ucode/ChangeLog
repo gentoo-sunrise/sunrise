@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Jun 2007; Florian Manschwetus <FlorianManschwetus@gmx.de>
+  -files/digest-iwlwifi-ucode-2.14.4:
+  files cleanup
+
+  29 Jun 2007; Florian Manschwetus <FlorianManschwetus@gmx.de>
   -iwlwifi-ucode-2.14.3.ebuild, +iwlwifi-ucode-2.14.4.ebuild:
   Just a bump (needed for latest iwlwifi)
 
