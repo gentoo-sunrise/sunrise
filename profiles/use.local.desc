@@ -8,6 +8,7 @@
 # Keep it sorted.
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
+app-admin/collectd:hddtemp - Enable monitoring of disk temperatures (app-admin/hddtemp)
 app-admin/pwsafe:suid - Enable suid root binary
 app-admin/vlogger:dbi - enable support for DBI
 app-antivirus/drweb:glibc23 - use binary package for glibc-2.3
