@@ -1,0 +1,8 @@
+# ChangeLog for media-tv/otrdecoder-bin
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jun 2007; Christian Faulhammer <opfer@gentoo.org>
+  +otrdecoder-bin-446.ebuild, +metadata.xml:
+  new ebuild for the decoder of onlinetvrecorder.com (German)
+
