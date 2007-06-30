@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P=MUMmer${PV}
+MY_P="MUMmer${PV}"
 DESCRIPTION="A rapid whole genome aligner"
 HOMEPAGE="http://mummer.sourceforge.net/"
 SRC_URI="mirror://sourceforge/mummer/${MY_P}.tar.gz"
@@ -36,7 +36,6 @@ src_install() {
 		show-tiling mgaps nucmer mummerplot delta-filter combineMUMs aux_bin/*
 	newbin annotate mummer-annotate
 
-	dodir /usr/share/${PN}/{lib,scripts}
 	insinto /usr/share/${PN}/scripts
 	doins scripts/{*.awk,*.csh,*.pl}
 	insinto /usr/share/${PN}/lib
