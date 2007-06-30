@@ -11,15 +11,16 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
 
-SRC_URI="http://www.soe.ucsc.edu/~kent/src/${PN}Src${PV}.zip"
-S="${WORKDIR}/${PN}Src"
+MY_PN="${PN}Src"
+SRC_URI="http://www.soe.ucsc.edu/~kent/src/${MY_PN}${PV}.zip"
+S="${WORKDIR}/${MY_PN}"
 
 DEPEND="app-arch/unzip"
 RDEPEND=""
 
 src_compile() {
 	MACHTYPE=$(tc-arch)
-	if [[ $MACHTYPE == "x86" ]]; then MACHTYPE="i386"; fi
+	[[ ${MACHTYPE} == "x86" ]] && MACHTYPE="i386"
 	sed -i 's/-Werror//; s/CFLAGS=//;' "${S}/inc/common.mk"
 	sed -i 's/\(${STRIP} \)/#\1/' "${S}"/{*/makefile,utils/*/makefile,*/*.mk}
 	mkdir -p "${S}/bin/${MACHTYPE}"
@@ -28,6 +29,6 @@ src_compile() {
 
 src_install() {
 	MACHTYPE=$(tc-arch)
-	if [[ $MACHTYPE == "x86" ]]; then MACHTYPE="i386"; fi
+	[[ ${MACHTYPE} == "x86" ]] && MACHTYPE="i386"
 	dobin "${S}/bin/${MACHTYPE}/"*
 }
