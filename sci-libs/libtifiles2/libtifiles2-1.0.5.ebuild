@@ -11,12 +11,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
-DEPEND=">=dev-libs/glib-2
+RDEPEND=">=dev-libs/glib-2
 	sci-libs/libticables2
 	sci-libs/libticonv
-	nls? ( sys-devel/gettext )"
+	nls? ( virtual/libintl )"
 
-RDEPEND="${DEPEND}"
+RDEPEND="${RDEPEND}
+	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${P}
 
