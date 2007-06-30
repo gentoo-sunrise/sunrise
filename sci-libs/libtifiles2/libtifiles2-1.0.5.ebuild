@@ -16,7 +16,7 @@ RDEPEND=">=dev-libs/glib-2
 	sci-libs/libticonv
 	nls? ( virtual/libintl )"
 
-RDEPEND="${RDEPEND}
+DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${P}
