@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT="usersandbox"
+# RESTRICT="usersandbox"
 RDEPEND="!sys-apps/slocate
 	!sys-apps/rlocate"
 
