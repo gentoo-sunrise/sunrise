@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P=GlimmerHMM
+MY_PN="GlimmerHMM"
 
 DESCRIPTION="An eukaryotic gene finding system from TIGR"
 HOMEPAGE="http://www.cbcb.umd.edu/software/GlimmerHMM/"
-SRC_URI="ftp://ftp.cbcb.umd.edu/pub/software/glimmerhmm/${MY_P}-${PV}.tar.gz"
+SRC_URI="ftp://ftp.cbcb.umd.edu/pub/software/glimmerhmm/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
@@ -16,7 +16,7 @@ KEYWORDS="~x86"
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${MY_PN}
 
 src_compile() {
 	sed -i -e 's|\(my $scriptdir=\)$FindBin::Bin|\1"/usr/share/'${PN}'/training_utils"|' \
@@ -32,7 +32,6 @@ src_compile() {
 src_install() {
 	dobin sources/glimmerhmm train/trainGlimmerHMM
 
-	dodir /usr/share/${PN}/{lib,models,training_utils}
 	insinto /usr/share/${PN}/lib
 	doins train/*.pm
 	insinto /usr/share/${PN}/models
