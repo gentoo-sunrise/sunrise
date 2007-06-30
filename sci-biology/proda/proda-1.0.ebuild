@@ -8,7 +8,7 @@ MY_PV=$(replace_all_version_separators '_')
 
 DESCRIPTION="Multiple alignment of protein sequences with repeated and shuffled elements"
 HOMEPAGE="http://proda.stanford.edu/"
-SRC_URI="http://proda.stanford.edu/proda_${MY_PV}.tar.gz"
+SRC_URI="http://proda.stanford.edu/${PN}_${MY_PV}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
