@@ -15,7 +15,7 @@ IUSE="pvm"
 KEYWORDS="~x86"
 
 DEPEND="pvm? ( sys-cluster/pvm )"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}
 
