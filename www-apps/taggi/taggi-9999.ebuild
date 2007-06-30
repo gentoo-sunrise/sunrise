@@ -66,6 +66,6 @@ src_install() {
 pkg_postinst() {
 	webapp_pkg_postinst
 
-	einfo "Edit taggi.conf in cgi-bin dir to configure ${PN}"
-	einfo "And open the URL http://<your-host>/cgi-bin/view.sh"
+	elog "Edit taggi.conf in cgi-bin dir to configure ${PN}"
+	elog "And open the URL http://<your-host>/cgi-bin/view.sh"
 }
