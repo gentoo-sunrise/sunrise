@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jun 2007; Christian Helbling <helch@gmx.ch> ChangeLog:
+  sci-libs/libtifiles2: correcting digest
+
   30 Jun 2007; Jakub Moc <jakub@gentoo.org> libtifiles2-1.0.5.ebuild:
   Fix up gettext dependencies
 
