@@ -5,10 +5,10 @@
 inherit versionator
 
 MY_PV=$(delete_all_version_separators)
-
+MY_P="${PN}${MY_PV}"
 DESCRIPTION="An HMM-based microbial gene finding system from TIGR"
 HOMEPAGE="http://www.cbcb.umd.edu/software/glimmer/"
-SRC_URI="http://www.cbcb.umd.edu/software/${PN}/${PN}${MY_PV}.tar.gz"
+SRC_URI="http://www.cbcb.umd.edu/software/${PN}/${MY_P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
@@ -18,7 +18,7 @@ KEYWORDS="~x86"
 DEPEND=""
 RDEPEND=""
 
-S=${WORKDIR}/${PN}${PV}
+S=${WORKDIR}/${MY_P}
 
 src_compile() {
 	sed -i -e 's|\(set awkpath =\).*|\1 /usr/share/'${PN}'/scripts|' \
@@ -28,10 +28,9 @@ src_compile() {
 }
 
 src_install() {
-	rm bin/test
+	rm -f bin/test
 	dobin bin/*
 
-	dodir /usr/share/${PN}/scripts
 	insinto /usr/share/${PN}/scripts
 	doins scripts/*
 
