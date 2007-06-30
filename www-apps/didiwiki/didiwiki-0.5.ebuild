@@ -20,7 +20,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "If upgrading from an earlier version, it is a good idea to delete"
-	einfo "~/.didiwiki/DidiHelp before running DidiWiki to get the latest version"
-	einfo "of the help file."
+	elog "If upgrading from an earlier version, it is a good idea to delete"
+	elog "~/.didiwiki/DidiHelp before running DidiWiki to get the latest version"
+	elog "of the help file."
 }
