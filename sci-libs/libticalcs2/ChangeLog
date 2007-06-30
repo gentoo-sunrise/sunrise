@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jun 2007; Jakub Moc <jakub@gentoo.org> libticalcs2-1.0.6.ebuild:
+  Fix up gettext dependencies
+
   15 Jun 2007; Christian Helbling <helch@gmx.ch> +libticalcs2-1.0.6.ebuild,
   -libticalcs2-20061030.ebuild:
   Version bump. Better version numbers.
