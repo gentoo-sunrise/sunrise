@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Jul 2007; Jakub Moc <jakub@gentoo.org> qdevelop-0.23.ebuild:
+  Use full path to qmake
+
   19 Jun 2007; Kalev Lember (kalev) <kalev@smartlink.ee>
   -qdevelop-0.20.ebuild, +qdevelop-0.23.ebuild:
   Version bump. Use sqlite3 USE flag instead of sqlite.
