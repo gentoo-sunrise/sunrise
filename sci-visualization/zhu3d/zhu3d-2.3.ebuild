@@ -25,7 +25,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	qmake SYSDIR="/usr/share/${PN}/system" DOCDIR="/usr/share/doc/${P}/html" || die "qmake failed"
+	/usr/bin/qmake SYSDIR="/usr/share/${PN}/system" DOCDIR="/usr/share/doc/${P}/html" || die "qmake failed"
 	emake CXX=$(tc-getCXX) || die "emake failed"
 }
 
