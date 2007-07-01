@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Jul 2007; Jakub Moc <jakub@gentoo.org> mediatagtools-0.2.ebuild:
+  Use qt3 eclass properly
+
   17 Dec 2006; Santiago M. Mola <cooldwind@gmail.com>
   mediatagtools-0.2.ebuild:
   Use ${P} and ${PN} in SRC_URI
