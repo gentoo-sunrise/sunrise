@@ -28,7 +28,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	qmake \
+	/usr/bin/qmake \
 		QMAKE_CC="$(tc-getCC)" \
 		QMAKE_CXX="$(tc-getCXX)" \
 		QMAKE_CFLAGS="${CFLAGS}" \
@@ -58,5 +58,5 @@ pkg_config() {
 
 pkg_postrm() {
 	# do not leave orphaned cruft behind
-	[[ -e /usr/share/${PN} ]] && rm -rf /usr/share/${PN}
+	[[ -e ${ROOT}/usr/share/${PN} ]] && rm -rf /usr/share/${PN}
 }
