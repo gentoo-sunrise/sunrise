@@ -19,7 +19,7 @@ RDEPEND="${DEPEND}"
 src_compile() {
 	# configure script is broken/bad
 	export BINDIR="/usr/bin" DATADIR="/usr/share/${PN}" DOCDIR="/usr/share/doc/${P}"
-	qmake || die "qmake failed"
+	/usr/bin/qmake || die "qmake failed"
 	emake || die "emake failed"
 }
 
