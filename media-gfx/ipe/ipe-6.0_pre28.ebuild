@@ -62,7 +62,7 @@ src_compile() {
 	use firefox && \
 		sed -i -e "s/IPEBROWSER = mozilla/IPEBROWSER = firefox/" config.pri
 
-	qmake \
+	/usr/bin/qmake \
 		"IPEPREFIX=/usr" \
 		"IPEDOCDIR=/usr/share/doc/${PF}" \
 		${myconf} \
