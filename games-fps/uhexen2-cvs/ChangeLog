@@ -3,6 +3,10 @@
 # $Header: $
 
   02 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
+  uhexen2-cvs-20070701.ebuild:
+  Fixed an installation issue, due to a vanished text doc
+
+  02 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
   -uhexen2-cvs-20070627.ebuild, +uhexen2-cvs-20070701.ebuild:
   Version bump (and drop old)
 

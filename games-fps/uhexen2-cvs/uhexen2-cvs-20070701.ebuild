@@ -379,7 +379,6 @@ src_install() {
 		newbin utils/hcc_old/hcc hcc_old || die "newbin hcc_old failed"
 		docinto utils
 		dodoc utils/README || die "dodoc README failed"
-		dodoc utils/bin/hcc.txt || die "dodoc hcc.txt failed"
 		newdoc utils/dcc/README README.dcc || die "newdoc dcc.txt failed"
 		dodoc utils/dcc/dcc.txt || die "dodoc dcc.txt failed"
 		newdoc utils/hcc_old/README hcc_old.txt || die "newdoc hcc_old failed"
