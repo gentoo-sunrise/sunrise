@@ -7,11 +7,10 @@ inherit eutils linux-info toolchain-funcs
 DESCRIPTION="INotify based cron daemon"
 HOMEPAGE="http://incron.aiken.cz/"
 SRC_URI="http://inotify.aiken.cz/download/incron/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
-
-KEYWORDS="~amd64"
-
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
