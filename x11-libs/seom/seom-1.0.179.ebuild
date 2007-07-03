@@ -4,7 +4,7 @@
 
 inherit versionator toolchain-funcs multilib
 
-RESTRICT="multilib-pkg-force"
+EMULTILIB_PKG="true"
 
 DESCRIPTION="OpenGL video capturing library"
 HOMEPAGE="http://neopsis.com/projects/seom"

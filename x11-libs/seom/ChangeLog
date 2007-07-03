@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Jul 2007; Jakub Moc <jakub@gentoo.org> seom-1.0.179.ebuild:
+  Nuke invalid RESTRICT; use EMULTILIB_PKG=true instead
+
   07 Jun 2007; Tomas Carnecky (wereHamster) <tom@dbservice.com>
   seom-1.0.179.ebuild:
   Update DEPEND as seom depends on a masked version of yasm
