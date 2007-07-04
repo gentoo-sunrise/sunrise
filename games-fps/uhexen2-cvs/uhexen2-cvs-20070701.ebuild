@@ -17,7 +17,7 @@ SRC_URI="http://uhexen2.sourceforge.net/devel/cvs_latest/${P}.tgz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="3dfx alsa asm cdaudio debug dedicated demo dynamic hexenworld gtk lights
 midi opengl optimize-cflags oss sdlaudio sdlcd tools"
 
@@ -34,9 +34,8 @@ UIDEPEND=">=media-libs/libsdl-1.2.7
 	>=media-libs/sdl-mixer-1.2.5
 	3dfx? ( media-libs/glide-v3 )
 	alsa? ( >=media-libs/alsa-lib-1.0.7 )
-	opengl? ( virtual/opengl )
 	midi? ( media-sound/timidity++ )
-	amd64? ( virtual/opengl )"
+	opengl? ( virtual/opengl )"
 
 # Launcher depends from GTK+ libs
 LNCHDEPEND="gtk? ( =x11-libs/gtk+-2* )"
@@ -63,16 +62,14 @@ pkg_setup() {
 			eerror "Recompile media-libs/sdl-mixer with 'timidity' USE flag."
 			die "sdl-mixer without timidity support detected"
 		fi
-		if use sdlaudio ; then
-			ewarn "MIDI music does not work with sdlaudio."
-		fi
+		use sdlaudio && ewarn "MIDI music does not work with sdlaudio."
 	else
-		ewarn "MIDI support disabled! The music won't be played at all."
-		ewarn "If you want to hear MIDI music, recompile this package"
+		ewarn "MIDI support disabled! MIDI music won't be played at all."
+		ewarn "If you want to hear it, recompile this package"
 		ewarn "with \"midi\" USE flag enabled."
 	fi
 
-	! use alsa && ewarn "alsa is the recommended sound driver."
+	use alsa || ewarn "alsa is the recommended sound driver."
 }
 
 src_unpack() {
@@ -181,7 +178,7 @@ src_compile() {
 		# Build Hexen2 utils
 		cd "${S}/utils"
 		einfo "Compiling utils"
-		local utils_list="hcc maputils genmodel qfiles dcc jsh2color hcc_old"
+		local utils_list="hcc maputils genmodel qfiles dcc jsh2color hcc_old texutils/bsp2wal texutils/lmp2pcx"
 		for x in ${utils_list}
 		do
 			emake -C ${x} \
@@ -374,13 +371,17 @@ src_install() {
 
 	if use tools ; then
 		dobin \
-		utils/bin/{bspinfo,dhcc,genmodel,hcc,jsh2colour,light,qbsp,qfiles,vis} \
-			|| die "dobin utils failed"
+			utils/bin/{bsp2wal,bspinfo,dhcc,genmodel,hcc} \
+			|| die "dobin utils part 1 failed"
+		dobin \
+			utils/bin/{jsh2colour,light,lmp2pcx,qbsp,qfiles,vis} \
+			|| die "dobin utils part 2 failed"
 		newbin utils/hcc_old/hcc hcc_old || die "newbin hcc_old failed"
 		docinto utils
 		dodoc utils/README || die "dodoc README failed"
-		newdoc utils/dcc/README README.dcc || die "newdoc dcc.txt failed"
+		newdoc utils/dcc/README README.dcc || die "newdoc dcc failed"
 		dodoc utils/dcc/dcc.txt || die "dodoc dcc.txt failed"
+		newdoc utils/hcc/README README.hcc || die "newdoc hcc failed"
 		newdoc utils/hcc_old/README hcc_old.txt || die "newdoc hcc_old failed"
 		newdoc utils/jsh2color/README README.jsh2color \
 			|| die "newdoc README.jsh2color failed"
@@ -439,13 +440,15 @@ pkg_postinst() {
 		elog "You've also installed some Hexen2 utility"
 		elog "(useful for mod developing)"
 		elog
-		elog " - dhcc (old progs.dat compiler/decompiler"
-		elog " - genmodel (3-D model grabber"
+		elog " - dhcc (old progs.dat compiler/decompiler)"
+		elog " - genmodel (3-D model grabber)"
 		elog " - hcc (HexenC compiler)"
 		elog " - hcc_old (old version of HexenC compiler)"
 		elog " - jsh2color (light colouring utility)"
 		elog " - maputils (Map compiling tools: bspinfo, light, qbsp, vis)"
 		elog " - qfiles (build pak files and regenerate bsp models)"
+		elog " - bsp2wal (extract all textures from a bsp file)"
+		elog " - lmp2pcx (convert hexen2 texture data into pcx and tga)"
 		elog
 		elog "See relevant documentation for further informations"
 		echo
