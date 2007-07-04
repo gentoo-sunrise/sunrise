@@ -3,6 +3,9 @@
 # $Header: $
 
   04 Jul 2007; Jakub Moc <jakub@gentoo.org> cheese-0.1.3.ebuild:
+  Add missing pkgconfig dependency
+
+  04 Jul 2007; Jakub Moc <jakub@gentoo.org> cheese-0.1.3.ebuild:
   Nuke FILESDIR; mirror this manually due to retarded SRC_URI
 
   03 Jul 2007; Mikel Olasagasti (Hey_neken) <hey_neken@mundurat.net>

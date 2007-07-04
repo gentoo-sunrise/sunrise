@@ -7,7 +7,7 @@ inherit gnome2
 DESCRIPTION="A cheesy program to take pictures and videos from your webcam"
 HOMEPAGE="http://live.gnome.org/Cheese"
 
-# mirror the manually due to retarded SRC_URI
+# mirror this manually due to retarded SRC_URI
 # SRC_URI="http://live.gnome.org/Cheese/Releases?action=AttachFile&do=get&target=${P}.tar.gz"
 SRC_URI="http://dev.gentooexperimental.org/~jakub/distfiles/${P}.tar.gz"
 
@@ -21,6 +21,7 @@ RDEPEND=">=dev-libs/glib-2.12
 	>=gnome-base/libglade-2.0.0
 	>=media-libs/gstreamer-0.10.12"
 
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 DOCS="AUTHORS ChangeLog README TODO"
