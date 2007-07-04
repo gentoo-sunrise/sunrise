@@ -14,14 +14,19 @@ SRC_URI="http://dev.gentooexperimental.org/~jakub/distfiles/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="nls"
 
 RDEPEND=">=dev-libs/glib-2.12
-	>=x11-libs/gtk+-2.10.0
+	dev-libs/dbus-glib
+	dev-python/pygobject
+	>=gnome-base/gnome-vfs-2.0
 	>=gnome-base/libglade-2.0.0
-	>=media-libs/gstreamer-0.10.12"
+	>=media-libs/gst-plugins-base-0.10.12
+	>=x11-libs/gtk+-2.10.0
+	x11-libs/cairo"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	sys-devel/gettext"
 
 DOCS="AUTHORS ChangeLog README TODO"
