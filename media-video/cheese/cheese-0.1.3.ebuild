@@ -6,7 +6,10 @@ inherit gnome2
 
 DESCRIPTION="A cheesy program to take pictures and videos from your webcam"
 HOMEPAGE="http://live.gnome.org/Cheese"
-SRC_URI="http://live.gnome.org/Cheese/Releases?action=AttachFile&do=get&target=${P}.tar.gz"
+
+# mirror the manually due to retarded SRC_URI
+# SRC_URI="http://live.gnome.org/Cheese/Releases?action=AttachFile&do=get&target=${P}.tar.gz"
+SRC_URI="http://dev.gentooexperimental.org/~jakub/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
