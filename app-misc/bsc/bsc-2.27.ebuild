@@ -11,7 +11,7 @@ SRC_URI="http://www.beesoft.org/download/${PN}_${PV}_src.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DEPEND="$(qt_min_version 3.3)
 	x11-libs/libX11
