@@ -3,6 +3,9 @@
 # $Header: $
 
   04 Jul 2007; Jakub Moc <jakub@gentoo.org> cheese-0.1.3.ebuild:
+  Add an ugly hack to honor LINGUAS
+
+  04 Jul 2007; Jakub Moc <jakub@gentoo.org> cheese-0.1.3.ebuild:
   Fix dependencies.
 
   04 Jul 2007; Jakub Moc <jakub@gentoo.org> cheese-0.1.3.ebuild:

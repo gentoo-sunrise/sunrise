@@ -16,6 +16,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="nls"
 
+LANGS="cs de es fr gl it nl pt"
+for x in ${LANGS} ; do
+	IUSE="${IUSE} linguas_${x}"
+done
+
 RDEPEND=">=dev-libs/glib-2.12
 	dev-libs/dbus-glib
 	dev-python/pygobject
@@ -27,6 +32,17 @@ RDEPEND=">=dev-libs/glib-2.12
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	sys-devel/gettext"
+	nls? ( sys-devel/gettext )"
 
 DOCS="AUTHORS ChangeLog README TODO"
+
+src_unpack() {
+	gnome2_src_unpack
+	if ! use nls ; then
+		sed -i -e "s/src po data/src data/" Makefile || die "sed failed"
+	else
+		for x in ${LANGS} ; do
+			use linguas_${x} || sed -i -e "/^LANGS/s:${x}::" po/Makefile
+		done
+	fi
+}
