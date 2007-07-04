@@ -127,8 +127,6 @@ net-dns/nsd:plugins - Enable plugin support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:tsig - Enable TSIG support
 net-im/gizmo:avahi - Use avahi mdns daemon
-net-im/pyaim-t:web - Enables optional web interface
-net-im/pyicq-t:web - Enables optional web interface
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
