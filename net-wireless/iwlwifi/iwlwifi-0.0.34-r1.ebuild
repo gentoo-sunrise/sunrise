@@ -28,7 +28,7 @@ BUILD_TARGETS="modules"
 
 pkg_setup() {
 	linux-mod_pkg_setup
-	BUILD_PARAMS="-C "${KV_DIR}" M="${S}" CONFIG_IWL3945=m"
+	BUILD_PARAMS="-C '${KV_DIR}' M='${S}' CONFIG_IWL3945=m"
 
 	if kernel_is lt 2 6 22; then
 		MY_INCLUDE="/usr/include/mac80211"
@@ -50,8 +50,7 @@ src_unpack() {
 		"-DCONFIG_IWLWIFI_SPECTRUM_MEASUREMENT=y" >> "${S}"/Makefile
 }
 
-pkg_postinst()
-{
+pkg_postinst() {
 	linux-mod_pkg_postinst
 	elog
 	elog "As for kernel version 2.6.22, iwlwifi uses the in-kernel"
