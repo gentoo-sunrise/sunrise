@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jul 2007; Jakub Moc <jakub@gentoo.org> mac80211-8.0.1.ebuild:
+  Bail out on kernels which have MAC80211 already built-in
+
   10 Jun 2007; Stefan Schweizer <genstef@gentoo.org>
   -files/digest-mac80211-8.0.1:
   remove filesdir and superfluous digest

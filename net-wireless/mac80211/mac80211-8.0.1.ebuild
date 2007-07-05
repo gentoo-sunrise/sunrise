@@ -26,6 +26,11 @@ BUILD_TARGETS="modules"
 CONFIG_CHECK="NET_SCHED WIRELESS_EXT LEDS_TRIGGERS"
 
 pkg_setup() {
+	if kernel_is ge 2 6 22 ; then
+		CONFIG_CHECK="${CONFIG_CHECK} !MAC80211"
+		ERROR_MAC80211="MAC80211 support already enabled in kernel. You do not need this ebuild."
+	fi
+
 	linux-mod_pkg_setup
 	BUILD_PARAMS="CONFIG_MAC80211_LEDS=y CONFIG_MAC80211=m CONFIG_CFG80211=m
 		-C ${KV_DIR} M=\${PWD}"
