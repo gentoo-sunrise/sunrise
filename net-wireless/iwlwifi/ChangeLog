@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jul 2007; Jakub Moc <jakub@gentoo.org> iwlwifi-0.0.34-r1.ebuild:
+  Remove kernel_is check and metadata cache breaking dependencies hack from
+  global scope. Do not ever do this again!!!
+
   05 Jul 2007; Stefan Schweizer <genstef@gentoo.org> -iwlwifi-0.0.34.ebuild,
   iwlwifi-0.0.34-r1.ebuild:
   minor fixes, remove old
