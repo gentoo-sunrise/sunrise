@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jul 2007; Renato Caldas (seventhguardian) <seventhguardian@gmail.com>
+  +mac80211-8.0.2.ebuild:
+  New version
+
   05 Jul 2007; Jakub Moc <jakub@gentoo.org> mac80211-8.0.1.ebuild:
   Bail out on kernels which have MAC80211 already built-in
 
