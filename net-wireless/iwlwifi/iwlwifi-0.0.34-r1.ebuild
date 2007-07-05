@@ -34,11 +34,9 @@ pkg_setup() {
 			MY_INCLUDE="/usr/src/linux/"
 			MY_HEADERS=""
 		fi
-	elif kernel_is lt 2 6 22 ; then
-		if has_version net-wireless/mac80211 ; then
+	elif has_version net-wireless/mac80211 ; then
 			MY_INCLUDE="/usr/include/mac80211"
 			MY_HEADERS="MAC80211_INC=/usr/include/mac80211/net/"
-		fi
 	else
 			eerror "This ebuild requires kernel >=2.6.22_rc1."
 			die "Set your /usr/src/linux symlink accordingly."
