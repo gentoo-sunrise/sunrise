@@ -3,6 +3,9 @@
 # $Header: $
 
   05 Jul 2007; Jakub Moc <jakub@gentoo.org> iwlwifi-0.0.34-r1.ebuild:
+  Another attempt on solving the built-it/external MAC80211 mess
+
+  05 Jul 2007; Jakub Moc <jakub@gentoo.org> iwlwifi-0.0.34-r1.ebuild:
   Remove kernel_is check and metadata cache breaking dependencies hack from
   global scope. Do not ever do this again!!!
 

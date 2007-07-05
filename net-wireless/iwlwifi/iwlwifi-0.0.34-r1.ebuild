@@ -22,13 +22,26 @@ MODULE_NAMES="iwl3945(net/wireless)"
 BUILD_TARGETS="modules"
 
 pkg_setup() {
-	if kernel_is ge 2 6 22; then
-		CONFIG_CHECK="MAC80211"
-		MY_INCLUDE="/usr/src/linux/"
-		MY_HEADERS=""
+	if kernel_is ge 2 6 22 ; then
+		if has_version net-wireless/mac80211 ; then
+			CONFIG_CHECK="!MAC80211"
+			ERROR_MAC80211="MAC80211 support already enabled in kernel. Unmerge net-wireless/mac80211 or disable MAC80211 in kernel."
+			MY_INCLUDE="/usr/include/mac80211"
+			MY_HEADERS="MAC80211_INC=/usr/include/mac80211/net/"
+		else
+			CONFIG_CHECK="MAC80211"
+			ERROR_MAC80211="MAC80211 support disabled in kernel. Emerge net-wireless/mac80211 or enable MAC80211 in kernel."
+			MY_INCLUDE="/usr/src/linux/"
+			MY_HEADERS=""
+		fi
+	elif kernel_is lt 2 6 22 ; then
+		if has_version net-wireless/mac80211 ; then
+			MY_INCLUDE="/usr/include/mac80211"
+			MY_HEADERS="MAC80211_INC=/usr/include/mac80211/net/"
+		fi
 	else
-		MY_INCLUDE="/usr/include/mac80211"
-		MY_HEADERS="MAC80211_INC=/usr/include/mac80211/net/"
+			eerror "This ebuild requires kernel >=2.6.22_rc1."
+			die "Set your /usr/src/linux symlink accordingly."
 	fi
 
 	linux-mod_pkg_setup
@@ -48,8 +61,10 @@ src_unpack() {
 
 pkg_postinst() {
 	linux-mod_pkg_postinst
-	elog
-	elog "As for kernel version 2.6.22, iwlwifi uses the in-kernel"
-	elog "version of mac80211"
-	elog
+	if has_version net-wireless/mac80211 && has_version >=virtual/linux-sources-2.6.22_rc1 ; then
+		elog
+		elog "As of kernel version 2.6.22, iwlwifi can use the in-kernel"
+		elog "version of mac80211"
+		elog
+	fi
 }
