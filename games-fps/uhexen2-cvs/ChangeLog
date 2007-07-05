@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-cvs-20070701.ebuild, +uhexen2-cvs-20070704.ebuild:
+  Version bump (and removed old)
+
   04 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
   uhexen2-cvs-20070701.ebuild:
   Some fixes/additions from upstream (thanks to sezero); added ~ppc keyword,
