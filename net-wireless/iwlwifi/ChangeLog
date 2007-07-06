@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2007; Renato Caldas (seventhguardian) <seventhguardian@gmail.com>
+  +iwlwifi-0.0.35.ebuild:
+  New version
+
   05 Jul 2007; Jakub Moc <jakub@gentoo.org> iwlwifi-0.0.34-r1.ebuild:
   Another attempt on solving the built-it/external MAC80211 mess
 
