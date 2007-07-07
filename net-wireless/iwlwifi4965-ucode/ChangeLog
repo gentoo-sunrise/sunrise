@@ -3,6 +3,10 @@
 # $Header: $
 
   07 Jul 2007; Florian Manschwetus <florianmanschwetus@gmx.de>
+  +metadata.xml:
+  added metadata.xml
+
+  07 Jul 2007; Florian Manschwetus <florianmanschwetus@gmx.de>
   +iwlwifi4965-ucode-4.44.15.ebuild:
   add to support iwl4965
 
