@@ -3,6 +3,10 @@
 # $Header: $
 
   07 Jul 2007; Florian Manschwetus <florianmanschwetus@gmx.de>
+  iwlwifi-0.0.35-r1.ebuild:
+  removed whitepsaces
+
+  07 Jul 2007; Florian Manschwetus <florianmanschwetus@gmx.de>
   -files/digest-iwlwifi-0.0.35-r1, -files:
   removed the debug echos (sorry missed it before)
 

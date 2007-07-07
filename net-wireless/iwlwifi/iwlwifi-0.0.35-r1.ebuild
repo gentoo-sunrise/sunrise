@@ -56,14 +56,13 @@ pkg_setup() {
 	fi
 
 	linux-mod_pkg_setup
-
 	BUILD_PARAMS="-C ${KV_DIR} M=${S}"
 	if use iwl3945; then
 		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_IWL3945=m"
-        fi
-        if use iwl4965; then
+	fi
+	if use iwl4965; then
 		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_IWL4965=m"
-        fi
+	fi
 	if ! use iwl3945 && ! use iwl4965; then
 		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_IWL3945=m CONFIG_IWL4965=m"
 	fi
