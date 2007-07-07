@@ -1,0 +1,28 @@
+--- xorg-edit/xorgedit/Makefile.orig	2007-07-06 20:21:51.000000000 -0400
++++ xorg-edit/xorgedit/Makefile	2007-07-06 20:44:32.000000000 -0400
+@@ -17,21 +17,21 @@
+ INCLUDES = -I../
+ 
+ # C++ compiler flags (-g -O2 -Wall)
+-CXXFLAGS = `wx-config --cxxflags`
++CXXFLAGS += `wx-config --cxxflags`
+ 
+ # compiler
+-CXX = `wx-config --cxx`
++CXX ?= `wx-config --cxx`
+ 
+ # library paths
+ LIBS = -L../ -lm -lxorgedit
+ 
+ # compile flags
+-LDFLAGS = `wx-config --libs`
++LDFLAGS += `wx-config --libs`
+ 
+ # implementation
+ 
+ all: $(OUTPUT)
+-	rm -f $(OBJECTS) $(OUTPUT) 
++	rm -f $(OBJECTS)
+ 
+ $(OUTPUT): $(OBJECTS)
+ 	$(CXX) -o $(OUTPUT) $(OBJECTS) $(LIBS) $(LDFLAGS)
