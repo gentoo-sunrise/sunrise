@@ -35,5 +35,14 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc README INSTALL
-	newpamd "${FILESDIR}/pam_skey-system-auth.pam.d" system-auth
+}
+
+pkg_postinst() {
+	elog "To use this, you need to add something like"
+	elog
+	elog "auth       [success=done ignore=ignore auth_err=die default=bad] pam_skey.so"
+	elog "auth       sufficient   pam_unix.so likeauth nullok try_first_pass"
+	elog
+	elog "to appropriate place in /etc/pam.d/system-auth"
+	elog "Consult the documentation for instructions."
 }
