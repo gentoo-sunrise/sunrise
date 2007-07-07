@@ -21,10 +21,6 @@
 ##   End example
 ##
 
-# Markus Ullmann <jokey@gentoo.org> (07 July 2007)
-# mask as it screwes with system-auth, a no-go
-sys-auth/pam_skey
-
 # Jakub Moc <jakub@gentoo.org> (05 July 2007)
 # I do not have time to play with this mac80211 frenzy.
 # If you dislike it, fix it yourself.
