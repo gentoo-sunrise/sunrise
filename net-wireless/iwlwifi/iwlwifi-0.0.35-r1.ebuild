@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-mod
+inherit eutils linux-mod
 
 DESCRIPTION="Intel (R) PRO/Wireless 3945ABG Network Connection"
 HOMEPAGE="http://intellinuxwireless.org/?p=iwlwifi"
@@ -11,14 +11,16 @@ SRC_URI="http://intellinuxwireless.org/${PN}/downloads/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="iwl3945 iwl4965"
 
 DEPEND="|| ( >=virtual/linux-sources-2.6.22_rc1 net-wireless/mac80211 )"
-RDEPEND="net-wireless/iwlwifi-ucode"
+RDEPEND="iwl3945? ( net-wireless/iwlwifi3945-ucode )
+	iwl4965? ( net-wireless/iwlwifi4965-ucode )
+	!iwl3945? ( !iwl4965? ( net-wireless/iwlwifi3945-ucode net-wireless/iwlwifi4965-ucode ) )"
 
 S="${WORKDIR}/${P}/compatible"
 
-MODULE_NAMES="iwl3945(net/wireless)"
+#MODULE_NAMES="iwl3945(net/wireless)"
 BUILD_TARGETS="modules"
 
 pkg_setup() {
@@ -42,8 +44,30 @@ pkg_setup() {
 			die "Set your /usr/src/linux symlink accordingly."
 	fi
 
+	MODULE_NAMES=""
+	if use iwl3945; then
+		MODULE_NAMES="iwl3945(net/wireless)"
+	fi
+	if use iwl4965; then
+		MODULE_NAMES="${MODULE_NAMES} iwl4965(net/wireless)"
+	fi
+	if ! use iwl3945 && ! use iwl4965; then
+		MODULE_NAMES="iwl3945(net/wireless) iwl4965(net/wireless)"
+	fi
+	echo ${MODULE_NAMES}
+
 	linux-mod_pkg_setup
-	BUILD_PARAMS="-C ${KV_DIR} M=${S} CONFIG_IWL3945=m"
+	BUILD_PARAMS="-C ${KV_DIR} M=${S}"
+	if use iwl3945; then
+		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_IWL3945=m"
+        fi
+        if use iwl4965; then
+		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_IWL4965=m"
+        fi
+	if ! use iwl3945 && ! use iwl4965; then
+		BUILD_PARAMS="${BUILD_PARAMS} CONFIG_IWL3945=m CONFIG_IWL4965=m"
+	fi
+	echo ${BUILD_PARAMS}
 }
 
 src_unpack() {

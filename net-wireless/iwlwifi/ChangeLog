@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jul 2007; Florian Manschwetus <florianmanschwetus@gmx.de>
+  -iwlwifi-0.0.35.ebuild, +iwlwifi-0.0.35-r1.ebuild:
+  changed ebuild and added useflags iwl3945 and iwl4965 to support both
+
   06 Jul 2007; Jakub Moc <jakub@gentoo.org> -iwlwifi-0.0.34-r1.ebuild:
   Nuke old
 
