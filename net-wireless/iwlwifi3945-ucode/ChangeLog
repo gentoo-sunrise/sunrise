@@ -1,6 +1,9 @@
-# ChangeLog for net-wireless/iwlwifi-ucode
+# ChangeLog for net-wireless/iwlwifi3945-ucode
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jul 2007; Florian Manschwetus <florianmanschwetus@gmx.de> ChangeLog:
+  finishing rename to support iwl4965
 
   29 Jun 2007; Florian Manschwetus <FlorianManschwetus@gmx.de>
   -files/digest-iwlwifi-ucode-2.14.4:
