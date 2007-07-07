@@ -1,0 +1,8 @@
+# ChangeLog for net-wireless/iwlwifi4965-ucode
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Jul 2007; Florian Manschwetus <florianmanschwetus@gmx.de>
+  +iwlwifi4965-ucode-4.44.15.ebuild:
+  add to support iwl4965
+
