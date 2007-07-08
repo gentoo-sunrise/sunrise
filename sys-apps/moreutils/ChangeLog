@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jul 2007; Mike Pagano <mpagano@gmail.com> -moreutils-0.20.ebuild,
+  +moreutils-0.22.ebuild:
+  Version bump. Remove old versions
+
   09 Jan 2007; Markus Ullmann <jokey@gentoo.org> -moreutils-0.19.ebuild:
   Drop old
 
