@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jul 2007; Mike Pagano <mpagano@gmail.com> -teardrop-1.1.ebuild,
+  +teardrop-1.1.1.ebuild:
+  Version bump. Remove old version.
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> teardrop-1.1.ebuild:
   QA: Remove sys-libs/glibc dependency
 
