@@ -33,7 +33,11 @@ src_install() {
 
 pkg_postinst() {
 	distutils_pkg_postinst
-	ewarn "This version is uber-alpha, so make sure you know how to use your revision"
-	ewarn "control client's revert features before you use Pusher. ;)"
+	ewarn "This is an alpha version, so make sure you know how to use your Subversion"
+	ewarn "client's revert feature before you use Pusher. Better make backups too. ;)"
+	einfo
 	einfo "Plug-ins for CVS, Git, Qualudis and Pcheck aren't implemented in this version."
+	einfo
+	einfo "Don't forget to set appropriate values for each echangelogUser key in"
+	einfo "/etc/pusher/pusher.conf."
 }

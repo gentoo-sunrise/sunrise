@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jul 2007; Alex Tarkovsky <alextarkovsky@gmail.com>
+  -pusher-0.1_alpha1.ebuild, +pusher-0.1_alpha2.ebuild:
+  Bump to alpha2 with major bugfixes
+
   05 Jul 2007; Alex Tarkovsky <alextarkovsky@gmail.com> +metadata.xml,
   +pusher-0.1_alpha1.ebuild:
   Initial alpha commit of replacement for sunrise-commit
