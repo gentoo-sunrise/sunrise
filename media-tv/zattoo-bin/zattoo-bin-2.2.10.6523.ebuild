@@ -4,7 +4,7 @@
 
 MY_P=${PN/-bin}-${PV}
 
-DESCRIPTION="live TV on your PC (Switzerland and Denmark only)"
+DESCRIPTION="live TV via Internet"
 HOMEPAGE="http://zattoo.com/"
 SRC_URI="http://download.zattoo.com/${MY_P}-i386.tgz"
 
@@ -54,5 +54,4 @@ src_install() {
 
 	dosym /opt/netscape/plugins/flashplayer.xpt /usr/lib/zattoo/flashplayer.xpt
 	dosym /opt/netscape/plugins/libflashplayer.so /usr/lib/zattoo/libflashplayer.so
-
 }

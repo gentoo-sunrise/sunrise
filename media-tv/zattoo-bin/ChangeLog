@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jul 2007; Santiago M. Mola <coldwind@gentoo.org>
+  zattoo-bin-2.2.10.6523.ebuild:
+  Change DESCRIPTION.
+
   23 Jun 2007; Christian Helbling <helch@gmx.ch>
   -zattoo-bin-2.2.9.6023.ebuild, +zattoo-bin-2.2.10.6523.ebuild:
   Version bump
