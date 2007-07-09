@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jul 2007; Markus Ullmann <jokey@gentoo.org>
+  thinking-rock-bin-2.0_pre2.ebuild:
+  Quotation and doins fixes
+
   09 Jul 2007; Diego Zamboni (zzamboni) <diego-gentoo@zzamboni.org>
   +thinking-rock-bin-2.0_pre2.ebuild, +files/thinking-rock-2.0.desktop,
   +metadata.xml:

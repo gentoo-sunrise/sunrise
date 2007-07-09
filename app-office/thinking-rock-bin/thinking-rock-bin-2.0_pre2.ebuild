@@ -22,16 +22,16 @@ S=${WORKDIR}/tr-2.0.epsilon
 src_install() {
 	local installDir=/opt/thinking-rock-2.0epsilon
 
-	dodir /opt
-	cp -a "${S}" "${D}${installDir}"
-	fperms a+rx "${installDir}/bin/thinkingrock" "${installDir}/bin/xdg-email" "${installDir}/bin/xdg-open"
+	insinto /opt
+	doins -r "${S}"
+	fperms a+rx ${installDir}/bin/thinkingrock ${installDir}/bin/xdg-email ${installDir}/bin/xdg-open
 	# Symlink the wrapper script
-	dosym "${installDir}/bin/thinkingrock" /usr/bin/thinkingrock
+	dosym ${installDir}/bin/thinkingrock /usr/bin/thinkingrock
 	# Symlink the directory and the jar to have them without version number
-	dosym "${installDir}" "/opt/${PN}"
-	dodir /usr/share/pixmaps
-	cp "${S}/thinkingrock/resource/images/logo.png" "${D}/usr/share/pixmaps/thinking-rock.png"
-	dodir /usr/share/applications
-	cp "${FILESDIR}/thinking-rock-2.0.desktop" "${D}/usr/share/applications/thinking-rock.desktop"
+	dosym ${installDir} /opt/${PN}
+	insinto /usr/share/pixmaps
+	newins thinkingrock/resource/images/logo.png thinking-rock.png
+	insinto /usr/share/applications
+	newins "${FILESDIR}"/thinking-rock-2.0.desktop thinking-rock.desktop
 }
 
