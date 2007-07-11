@@ -30,8 +30,7 @@ src_install() {
 	dosym ${installDir}/bin/thinkingrock /usr/bin/thinkingrock
 	# Symlink the directory and the jar to have them without version number
 	dosym ${installDir} /opt/${PN}
-	insinto /usr/share/pixmaps
-	newins thinkingrock/resource/images/logo.png thinking-rock.png
-	insinto /usr/share/applications
-	newins "${FILESDIR}"/thinking-rock-2.0.desktop thinking-rock.desktop
+
+	newicon thinkingrock/resource/images/logo.png thinking-rock.png
+	newmenu "${FILESDIR}"/thinking-rock-2.0.desktop thinking-rock.desktop
 }

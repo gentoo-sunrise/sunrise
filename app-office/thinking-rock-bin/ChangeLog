@@ -3,6 +3,10 @@
 # $Header: $
 
   11 Jul 2007; Jakub Moc <jakub@gentoo.org>
+  thinking-rock-bin-2.0_pre2-r2.ebuild:
+  Use eutils.eclass wrappers for desktop/icon
+
+  11 Jul 2007; Jakub Moc <jakub@gentoo.org>
   -thinking-rock-bin-2.0_pre2-r1.ebuild,
   +thinking-rock-bin-2.0_pre2-r2.ebuild:
   Use ${MY_P} instead of basename; nuke old
