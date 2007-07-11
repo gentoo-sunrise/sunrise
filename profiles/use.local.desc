@@ -31,7 +31,6 @@ dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
 dev-games/opal:double-precision - more precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
-dev-python/kaa-metadata:css - Enables ripping/reading of encrypted dvds
 dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
 dev-util/ktigcc:minimal - Do not install completion data for the TIGCCLIB system headers
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
@@ -116,8 +115,6 @@ media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
 media-video/gcstar:md5 - Enables generation of md5 checksums
 media-video/gcstar:zip - Enables support for zip files
-media-tv/freevo:mixer - Enables support for aumix
-media-tv/freevo:tv - Enables support for tv guide
 net-analyzer/honeytrap:efence - Electronic fence malloc debugger
 net-analyzer/honeytrap:ipq-mon - IP queue based monitor
 net-analyzer/honeytrap:pcap-mon - pcap based monitor
