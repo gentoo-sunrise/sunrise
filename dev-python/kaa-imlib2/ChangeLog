@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/kaa-imlib2
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Jul 2007; Ian Stakenvicius (_AxS_) <ian@syndicated-productions.com>
+  +kaa-imlib2-0.2.1.ebuild, +metadata.xml:
+  initial commit of ebuild for freevo dependency (see bug 156497)
+
