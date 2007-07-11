@@ -26,7 +26,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf --libdir="/$(get_libdir)/security"
+	econf --libdir="$(getpam_mod_dir)"
 	emake || die "emake failed"
 }
 
