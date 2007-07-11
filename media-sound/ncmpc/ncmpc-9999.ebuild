@@ -16,9 +16,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="sys-libs/ncurses
-	dev-util/subversion
-	dev-libs/popt
-	>=dev-libs/glib-2.4"
+	>=dev-libs/glib-2.4
+	net-misc/curl
+	dev-libs/expat"
+
+	# FIXME: curl and expat are only needed for lyrics-screen
+	# Unfortunately, they are linked to whenever found
+	# lyrics-screen? ( net-misc/curl dev-libs/expat )"
+
+DEPEND="${RDEPEND}
+	nls? ( sys-devel/gettext )"
 
 src_unpack() {
 	subversion_fetch     || die "${ESVN}: unknown problem occurred in subversion_fetch."
@@ -47,7 +54,7 @@ src_compile() {
 }
 
 src_install() {
-	make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
+	make install DESTDIR="${D}" docdir=/usr/share/doc/${PF} \
 		|| die "install failed"
 
 	prepalldocs
