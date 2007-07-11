@@ -99,3 +99,7 @@ games-fps/uhexen2-cvs
 # Davide Cendron <scen@gentoo.org> (13 Jun 2007)
 # svn version should be masked
 =games-fps/chocolate-doom-9999
+
+# Santiago M. Mola <coldwind@gentoo.org> (11 Jul 2007)
+# Broken license. Asked upstream to address it.
+media-tv/zattoo-bin
