@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jul 2007; David Shakaryan <omp@gentoo.org> ncmpc-9999.ebuild:
+  Add ~amd64 keyword.
+
   03 Feb 2007; Lars Weiler <pylon@gentoo.org> +ncmpc-9999.ebuild,
   +metadata.xml:
   svn version for ncmpc with a lot of new features. Thanks to Marcel Klein for

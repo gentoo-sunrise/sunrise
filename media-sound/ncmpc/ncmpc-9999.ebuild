@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 IUSE="artist-screen clock-screen debug key-screen lyrics-screen mouse nls raw-mode search-screen"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="sys-libs/ncurses
 	dev-util/subversion
