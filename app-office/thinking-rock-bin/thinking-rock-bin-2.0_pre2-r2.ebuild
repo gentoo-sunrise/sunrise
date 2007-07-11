@@ -4,9 +4,10 @@
 
 inherit eutils
 
+MY_P="tr-2.0.epsilon"
 DESCRIPTION="Java-based Getting Things Done (GTD) application"
 HOMEPAGE="http://thinkingrock.com.au/"
-SRC_URI="http://mesh.dl.sourceforge.net/sourceforge/thinkingrock/tr-2.0.epsilon.zip"
+SRC_URI="http://mesh.dl.sourceforge.net/sourceforge/thinkingrock/${MY_P}.zip"
 
 LICENSE="CDDL"
 SLOT="0"
@@ -17,10 +18,10 @@ RDEPEND=">=virtual/jre-1.5.0"
 DEPEND="${DEPEND}
 	app-arch/unzip"
 
-S=${WORKDIR}/tr-2.0.epsilon
+S=${WORKDIR}/${MY_P}
 
 src_install() {
-	local installDir=/opt/`basename ${S}`
+	local installDir=/opt/${MY_P}
 
 	insinto /opt
 	doins -r "${S}"
@@ -34,4 +35,3 @@ src_install() {
 	insinto /usr/share/applications
 	newins "${FILESDIR}"/thinking-rock-2.0.desktop thinking-rock.desktop
 }
-

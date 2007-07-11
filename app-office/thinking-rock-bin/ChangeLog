@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jul 2007; Jakub Moc <jakub@gentoo.org>
+  -thinking-rock-bin-2.0_pre2-r1.ebuild,
+  +thinking-rock-bin-2.0_pre2-r2.ebuild:
+  Use ${MY_P} instead of basename; nuke old
+
   10 Jul 2007; Diego Zamboni (zzamboni) <diego-gentoo@zzamboni.org>
   +thinking-rock-bin-2.0_pre2-r1.ebuild:
   New ebuild version to fix installDir value, which got broken when changing
