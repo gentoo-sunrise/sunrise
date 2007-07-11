@@ -24,6 +24,15 @@ BUILD_PARAMS="CONFIG_CRC_ITU_T=m
 BUILD_TARGETS="modules"
 MODULE_NAMES="crc-itu-t()"
 
+pkg_setup() {
+	if kernel_is ge 2 6 22 ; then
+		CONFIG_CHECK="${CONFIG_CHECK} !CRC_ITU_T"
+		ERROR_CRC_ITU_T="CRC_ITU_T support already enabled in kernel. You do not need this ebuild."
+	fi
+
+        linux-mod_pkg_setup
+}
+
 src_unpack() {
 	unpack ${A}
 	echo 'obj-$(CONFIG_CRC_ITU_T) += crc-itu-t.o' > ${S}/Makefile
