@@ -29,7 +29,7 @@ RDEPEND=">=sys-libs/glibc-2.4
 	dev-libs/nspr
 	dev-libs/openssl"
 
-RESTRICT="strip"
+RESTRICT="fetch mirror strip"
 QA_TEXTRELS="usr/lib/zattoo/*"
 
 S=${WORKDIR}/dist
