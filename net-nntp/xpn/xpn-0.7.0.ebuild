@@ -15,32 +15,31 @@ IUSE="linguas_de linguas_fr linguas_it"
 
 DEPEND=""
 RDEPEND=">=dev-python/pygtk-2.8
-		>=x11-libs/gtk+-2.8"
+	>=x11-libs/gtk+-2.8"
 
 src_install() {
-
 	python_version
-	exeinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
-	doexe "${PN}.py"
+	exeinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+	doexe ${PN}.py
 
-	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/lang/"
+	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/lang
 	use linguas_de && doins -r lang/de
 	use linguas_fr && doins -r lang/fr
 	use linguas_it && doins -r lang/it
 
-	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/pixmaps"
+	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/pixmaps
 	doins pixmaps/*
 
-	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/xpn_src"
+	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/xpn_src
 	doins xpn_src/*
 
-	newicon pixmaps/xpn-icon.png "${PN}.png"
-	make_desktop_entry "${PN} -d" "${PN}" "${PN}.png" "Network;News"
+	newicon pixmaps/xpn-icon.png ${PN}.png
+	make_desktop_entry "${PN} -d" ${PN} ${PN}.png "Network;News"
 
 	dodoc AUTHORS ChangeLog README
 	dohtml xpn.html
 
-	make_wrapper "${PN}" "./${PN}.py" "/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	make_wrapper ${PN} ./${PN}.py /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 }
 
 pkg_postinst() {
