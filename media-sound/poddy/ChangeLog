@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2007; David Shakaryan <omp@gentoo.org> poddy-0.5.1.ebuild:
+  Use $PN in SRC_URI; no need for quotes when assigning.
+
   29 Jun 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   -poddy-0.5.ebuild, +poddy-0.5.1.ebuild:
   Changed license to GNU GPL v.3, minor version bump

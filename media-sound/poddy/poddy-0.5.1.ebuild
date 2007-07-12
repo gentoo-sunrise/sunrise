@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="a lightweight command-line podcast client"
 HOMEPAGE="http://ndansmith.net/poddy.php"
-SRC_URI="mirror://sourceforge/poddy/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,4 +19,4 @@ DEPEND=">=dev-python/feedparser-4.1
 
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
