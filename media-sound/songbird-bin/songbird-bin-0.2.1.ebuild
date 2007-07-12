@@ -69,7 +69,7 @@ RDEPEND="x11-libs/libXdmcp
 		>=media-plugins/gst-plugins-vorbis-0.10
 	)"
 
-S="${WORKDIR}/${MY_PN}"
+S=${WORKDIR}/${MY_PN}
 
 RESTRICT="strip"
 
@@ -81,6 +81,6 @@ src_install() {
 	fperms 755 /opt/songbird/xulrunner/xulrunner-bin
 	dosym /opt/songbird/Songbird /opt/bin/songbird-bin
 
-	newicon ${S}/chrome/icons/default/default.xpm ${PN}.xpm
+	newicon "${S}/chrome/icons/default/default.xpm" ${PN}.xpm
 	make_desktop_entry ${PN} ${PN} ${PN}.xpm "AudioVideo;Player"
 }
