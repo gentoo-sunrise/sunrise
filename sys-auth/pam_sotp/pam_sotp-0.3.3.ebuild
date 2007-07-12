@@ -32,7 +32,7 @@ src_install() {
 	dopammod src/pam/${PN}.so
 	diropts -m0770 -o root -g shadow
 	keepdir /etc/sotp
-	
+
 	dobin src/utils/otppasswd
 	fowners root:shadow /usr/bin/otppasswd
 	fperms 2755 /usr/bin/otppasswd
