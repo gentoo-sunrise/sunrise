@@ -40,3 +40,8 @@ src_install() {
 	dodoc AUTHORS ChangeLog NEWS README
 	dohtml doc/manual/html/*
 }
+
+pkg_postinst() {
+	elog "See manual.html in /usr/share/doc/${PF}/html and otppasswd -h"
+	elog "for configuration hints."
+}
