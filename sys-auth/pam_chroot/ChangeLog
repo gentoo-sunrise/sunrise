@@ -1,8 +1,0 @@
-# ChangeLog for sys-auth/pam_chroot
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  07 Jan 2007; Ali Polatel (hawking) <polatel@nerdshack.com>
-  +pam_chroot-0.9.1.ebuild, +metadata.xml:
-  New ebuild for bug 160755
-
