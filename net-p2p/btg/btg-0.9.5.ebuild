@@ -13,18 +13,18 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cppunit debug doc event-callback gtk ncurses session-saving upnp web"
 
-RDEPEND=">=net-libs/rb_libtorrent-0.11
-		>=dev-libs/boost-1.33
-		>=dev-libs/libsigc++-2
-		>=net-libs/gnutls-1.0
-		dev-util/dialog
-		ncurses? ( >=sys-libs/ncurses-5 )
-		gtk? ( >=dev-cpp/gtkmm-2.4 )
-		web? ( >=dev-lang/php-5 )
-		cppunit? ( dev-util/cppunit )
-		upnp? ( net-misc/clinkcc )"
+RDEPEND=">=dev-libs/boost-1.33
+	>=dev-libs/libsigc++-2
+	dev-util/dialog
+	>=net-libs/gnutls-1.0
+	>=net-libs/rb_libtorrent-0.11
+	cppunit? ( dev-util/cppunit )
+	gtk? ( >=dev-cpp/gtkmm-2.4 )
+	ncurses? ( >=sys-libs/ncurses-5 )
+	upnp? ( net-misc/clinkcc )
+	web? ( >=dev-lang/php-5 )"
 DEPEND="${RDEPEND}
-		doc? ( app-doc/doxygen )"
+	doc? ( app-doc/doxygen )"
 
 src_compile() {
 	if built_with_use --missing true "dev-libs/boost" threads || \
