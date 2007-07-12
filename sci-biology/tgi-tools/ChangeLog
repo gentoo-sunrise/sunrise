@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2007; David Shakaryan <omp@gentoo.org> tgi-tools-0.1.ebuild:
+  Place $S in quotes.
+
   15 Apr 2007; Stefan Schweizer <genstef@gentoo.org> tgi-tools-0.1.ebuild:
   Remove RESTRICT=mirror, Artistic license allows redistribution
 
