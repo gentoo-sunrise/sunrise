@@ -3,6 +3,11 @@
 # $Header: $
 
   12 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-cvs-20070711.ebuild, +uhexen2-cvs-20070712.ebuild:
+  Version bump (and drop old 20070711, but keep 20070704 because snapshot is
+  still available)
+
+  12 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
   -uhexen2-cvs-20070709.ebuild, +uhexen2-cvs-20070711.ebuild:
   Version bump (snd drop old 20070709, but keep 20070704 because snapshot is
   still available)
