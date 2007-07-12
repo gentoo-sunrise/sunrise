@@ -4,5 +4,5 @@
 
   12 Jul 2007; Jakub Moc <jakub@gentoo.org> +metadata.xml,
   +pam_sotp-0.3.3.ebuild:
-  Initial ebuild, Bug 17926
+  Initial ebuild, Bug 174926
 
