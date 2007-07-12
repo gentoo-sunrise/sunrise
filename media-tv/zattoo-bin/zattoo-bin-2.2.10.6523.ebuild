@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 MY_P=${PN/-bin}-${PV}
 
 DESCRIPTION="live TV via Internet"
@@ -40,8 +42,7 @@ src_install() {
 	doins usr/lib/zattoo/*
 	insinto /usr/share/zattoo_player
 	doins -r usr/share/zattoo_player/*
-	insinto /usr/share/applications
-	doins usr/share/applications/zattoo_player.desktop
+	domenu usr/share/applications/zattoo_player.desktop
 	doenvd "${FILESDIR}"/77zattoo-bin
 
 	dosym /usr/lib/xulrunner/libgtkembedmoz.so /usr/lib/zattoo/libgtkembedmoz.so.0d
