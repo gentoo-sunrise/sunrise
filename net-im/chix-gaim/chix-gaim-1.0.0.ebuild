@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="chix_gaim-${PV}"
+MY_P=${P/-/_}
 
 DESCRIPTION="a chikka gaim plugin"
 HOMEPAGE="http://chix.sourceforge.net"
@@ -17,7 +17,7 @@ DEPEND=""
 RDEPEND=">=net-im/gaim-1.2.1
 	=net-libs/chix-1.0.0"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_install () {
 	emake DESTDIR="${D}" install || die "emake install failed"
