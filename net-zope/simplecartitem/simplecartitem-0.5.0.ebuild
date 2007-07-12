@@ -19,8 +19,8 @@ IUSE=""
 
 DEPEND=">=net-zope/plone-2.1"
 RDEPEND="${DEPEND}
-		>=net-zope/datagridfield-1.5.0"
-		# the docs say that >=net-zope/datagridfield-1.5.2_rc2 is required, but
-		# such a release cannot be found; the latest is 1.5.0.
+	>=net-zope/datagridfield-1.5.0"
+	# the docs say that >=net-zope/datagridfield-1.5.2_rc2 is required, but
+	# such a release cannot be found; the latest is 1.5.0.
 
 ZPROD_LIST="${MY_PN}"
