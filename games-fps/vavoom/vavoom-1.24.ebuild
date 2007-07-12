@@ -131,7 +131,7 @@ src_unpack() {
 	cd "${S}"
 
 	# Patch Makefiles to get rid of executable wrappers
-	epatch ${FILESDIR}/${PN}-makefile_nowrapper.patch || die "epatch failed"
+	epatch "${FILESDIR}/${PN}-makefile_nowrapper.patch"
 
 	# Set shared directory
 	sed -i \

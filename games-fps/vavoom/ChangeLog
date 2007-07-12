@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2007; David Shakaryan <omp@gentoo.org> vavoom-1.24.ebuild,
+  vavoom-9999.ebuild:
+  Place $FILESDIR in quotes; remove die on epatch.
+
   22 Jun 2007; Charlie Shepherd <masterdriverz@gentoo.org>
   vavoom-9999.ebuild:
   Don't die on epatch failure (it dies itself)

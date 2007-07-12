@@ -133,7 +133,7 @@ src_unpack() {
 	./autogen.sh
 
 	# Patch Makefiles to get rid of executable wrappers
-	epatch ${FILESDIR}/${PN}-makefile_nowrapper.patch
+	epatch "${FILESDIR}/${PN}-makefile_nowrapper.patch"
 
 	# Set shared directory
 	sed -i \
