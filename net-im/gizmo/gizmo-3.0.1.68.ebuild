@@ -8,7 +8,7 @@ MY_P=gizmo-project-${PV}
 
 DESCRIPTION="Gizmo is a P2P-VoiceIP client"
 HOMEPAGE="http://www.gizmoproject.com/"
-SRC_URI="http://download.gizmoproject.com/jasmine/gtk-gizmo-${PV}/${MY_P}.tar.gz"
+SRC_URI="http://download.gizmoproject.com/jasmine/gtk-${P}/${MY_P}.tar.gz"
 
 LICENSE="gizmoproject-eula"
 SLOT="0"

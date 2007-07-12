@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2007; David Shakaryan <omp@gentoo.org> gizmo-3.0.1.68.ebuild:
+  Use $P in SRC_URI.
+
   11 May 2007; Stefan Schweizer <genstef@gentoo.org> -gizmo-3.0.0.67.ebuild,
   +gizmo-3.0.1.68.ebuild:
   version bump
