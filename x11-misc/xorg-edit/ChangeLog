@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2007; David Shakaryan <omp@gentoo.org> xorg-edit-07.06.15.ebuild:
+  Use $PN in SRC_URI.
+
   07 Jul 2007; Mike Pagano <mpagano@gmail.com> ChangeLog:
   Remove old version
 

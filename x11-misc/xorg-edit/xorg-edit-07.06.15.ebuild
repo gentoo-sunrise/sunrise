@@ -6,7 +6,7 @@ inherit eutils toolchain-funcs
 
 DESCRIPTION="GUI to edit XServer-file xorg.conf easily"
 HOMEPAGE="http://www.deesaster.org/progxorg.php"
-SRC_URI="mirror://sourceforge/xorg-edit/${PN}_${PV}_src.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}_src.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
