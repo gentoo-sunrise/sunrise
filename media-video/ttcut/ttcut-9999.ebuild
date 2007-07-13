@@ -14,12 +14,12 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="$(qt4_min_version 4.1)
-		>=media-libs/libmpeg2-0.4.0
-		virtual/opengl"
+	>=media-libs/libmpeg2-0.4.0
+	virtual/opengl"
 
 RDEPEND="${DEPEND}
-		media-video/mplayer
-		media-video/transcode"
+	media-video/mplayer
+	media-video/transcode"
 
 S=${WORKDIR}/${PN}
 
