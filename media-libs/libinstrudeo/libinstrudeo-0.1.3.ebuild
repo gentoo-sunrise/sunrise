@@ -12,20 +12,20 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=dev-cpp/libxmlpp-2.10.0
-		>=media-libs/freetype-2.1.9
-		>=dev-libs/glib-2.10.0
-		>=dev-cpp/glibmm-2.8.4
-		media-libs/libvorbis
-		=media-libs/libdc1394-1*
-		media-libs/libdts
-		media-libs/libtheora
-		media-libs/ftgl
-		media-video/ffmpeg
-		media-sound/gsm
-		net-misc/curl
-		dev-libs/openssl
-		sys-libs/zlib
-		virtual/glut"
+	>=media-libs/freetype-2.1.9
+	>=dev-libs/glib-2.10.0
+	>=dev-cpp/glibmm-2.8.4
+	media-libs/libvorbis
+	=media-libs/libdc1394-1*
+	media-libs/libdts
+	media-libs/libtheora
+	media-libs/ftgl
+	media-video/ffmpeg
+	media-sound/gsm
+	net-misc/curl
+	dev-libs/openssl
+	sys-libs/zlib
+	virtual/glut"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
