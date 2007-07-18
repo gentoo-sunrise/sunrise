@@ -15,21 +15,21 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=app-text/tesseract-1.04b
-		 app-text/aspell
-		 media-libs/tiff
-		 media-libs/libpng
-		 media-libs/jpeg"
+	app-text/aspell
+	media-libs/tiff
+	media-libs/libpng
+	media-libs/jpeg"
 DEPEND="${RDEPEND}
-		dev-util/jam"
+	dev-util/jam"
 
 src_compile() {
-	econf --with-tesseract=/usr
-	emake
+	econf --with-tesseract=/usr || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_test() {
 	cd "${S}/testing"
-	./test-compile
+	./test-compile || die "Tests failed to compile"
 	./test-run || die "At least one test failed"
 }
 
@@ -37,5 +37,3 @@ src_install() {
 	dobin ocropus-cmd/ocropus
 	dodoc README DIRS
 }
-
-
