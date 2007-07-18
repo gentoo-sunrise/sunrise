@@ -1,0 +1,8 @@
+# ChangeLog for app-text/ocropus-svn
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jul 2007; Bradford Folkens (mobilfunk) <bfolkens@gmail.com>
+  +metadata.xml, +ocropus-svn-9999.ebuild:
+  Bug 185810 - Created new ebuild for OCRopus system at Google Code
+
