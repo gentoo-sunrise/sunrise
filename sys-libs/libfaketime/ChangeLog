@@ -1,0 +1,8 @@
+# ChangeLog for sys-libs/libfaketime
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jul 2007; Pavel Sanda (ps) <ps at twin.jikos.cz>
+  +libfaketime-0.5.ebuild, +metadata.xml:
+  New Ebuild for bug 185753 thanks to Thomas Holder
+
