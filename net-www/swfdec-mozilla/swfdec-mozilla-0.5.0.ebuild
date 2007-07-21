@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils nsplugins
-
 DESCRIPTION="Swfdec-mozilla is a decoder/renderer netscape style plugin for Macromedia Flash animations."
 HOMEPAGE="http://swfdec.freedesktop.org/"
 SRC_URI="http://swfdec.freedesktop.org/download/${PN}/${PV:0:3}/${P}.tar.gz"
@@ -17,10 +15,10 @@ DEPEND=">=media-libs/swfdec-0.5.0
 RDEPEND=""
 
 src_install() {
-    exeinto /usr/lib/nsbrowser/plugins
+	exeinto /usr/lib/nsbrowser/plugins
 	doexe src/.libs/libswfdecmozilla.so || die "libswfdecmozilla.so failed"
 	insinto /usr/lib/nsbrowser/plugins
-    doins src/libswfdecmozilla.la
+	doins src/libswfdecmozilla.la
 }
 
 pkg_postinst() {
