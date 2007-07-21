@@ -36,7 +36,8 @@ src_install() {
 	doexe gimp_scale.pl || die "doexe failed"
 	insinto "${INSPATH}"
 	doins -r template/
-	dosym "${INSPATH}"/template/monochrome "${INSPATH}"/template/default  || die "dosym failed"
+	dosym "${INSPATH}"/template/monochrome "${INSPATH}"/template/default \
+		|| die "dosym failed"
 	dodoc CHANGELOG CREDITS README
 	dohtml doc/*.html
 }
