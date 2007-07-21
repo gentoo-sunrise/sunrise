@@ -28,7 +28,6 @@ app-portage/portato:etcproposals - Add support for etcproposals.
 app-portage/portato:userpriv - Allow emerge processes as normal user.
 app-portage/pusher:subversion - Enable support for Subversion.
 dev-cpp/libcwd:pch - Add support for precompiled headers
-dev-games/ois:nojoyevents - Uses /dev/input/jsX instead of /dev/input/eventX
 dev-games/opal:double-precision - more precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
 dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
