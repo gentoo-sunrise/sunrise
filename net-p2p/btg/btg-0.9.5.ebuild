@@ -29,11 +29,11 @@ DEPEND="${RDEPEND}
 src_compile() {
 	if built_with_use --missing true "dev-libs/boost" threads || \
 		built_with_use --missing true "dev-libs/boost" threads-only ; then
-			    BOOST_LIBS="--with-boost-iostreams=boost_iostreams-mt \
-					--with-boost-filesystem=boost_filesystem-mt \
-					--with-boost-thread=boost_thread-mt \
-					--with-boost-date-time=boost_date_time-mt \
-					--with-boost-program_options=boost_program_options-mt"
+			BOOST_LIBS="--with-boost-iostreams=boost_iostreams-mt \
+				--with-boost-filesystem=boost_filesystem-mt \
+				--with-boost-thread=boost_thread-mt \
+				--with-boost-date-time=boost_date_time-mt \
+				--with-boost-program_options=boost_program_options-mt"
 		einfo "Using threaded Boost libraries"
 	fi
 
