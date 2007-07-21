@@ -30,7 +30,7 @@ pkg_setup() {
 		ERROR_CRC_ITU_T="CRC_ITU_T support already enabled in kernel. You do not need this ebuild."
 	fi
 
-        linux-mod_pkg_setup
+	linux-mod_pkg_setup
 }
 
 src_unpack() {
