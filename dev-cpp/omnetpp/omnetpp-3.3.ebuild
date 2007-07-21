@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 src_compile() {
 	export PATH="${PATH}:${S}/bin"
 	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${S}/lib"
-	export TCL_LIBRARY="${ROOT}/usr/$(get_libdir)/tcl8.4"
+	export TCL_LIBRARY="/usr/$(get_libdir)/tcl8.4"
 	econf || die 'econf failed'
 	emake || die 'emake failed'
 }
