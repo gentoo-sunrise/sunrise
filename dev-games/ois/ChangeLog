@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Jul 2007; Renato Caldas (seventhguardian) <seventhguardian@gmail.com>
+  ChangeLog:
+  Removed unused 'nojoyevents' use flag
+
+  21 Jul 2007; Renato Caldas (seventhguardian) <seventhguardian@gmail.com>
   -ois-1.0_rc1.ebuild, +ois-1.0.ebuild:
   Bumped to final 1.0
 
