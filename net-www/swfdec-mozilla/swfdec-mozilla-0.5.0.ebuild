@@ -22,5 +22,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Remember to report bugs to: https://bugzilla.freedesktop.org"
+	elog "Remember to report bugs to: https://bugzilla.freedesktop.org"
 }
