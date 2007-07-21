@@ -18,7 +18,7 @@ DEPEND="x11-libs/libXaw
 	x11-libs/libX11"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	unpack ${A}
@@ -27,7 +27,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf $(use_enable !nojoyevents joyevents) --disable-ogre || die "econf failed"
+	econf $(use_enable !nojoyevents joyevents) || die "econf failed"
 
 	emake || die "emake failed"
 }
