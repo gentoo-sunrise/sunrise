@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd></herd>
-  <longdescription lang="en">
-    Chocolate Doom is a Doom source port which aims to reproduce the behavior of
-	'Vanilla' Doom as closely as possible.
-</longdescription>
+	<herd></herd>
+	<longdescription lang="en">
+		Chocolate Doom is a Doom source port which aims to reproduce the
+		behaviour of 'Vanilla' Doom as closely as possible.
+	</longdescription>
 </pkgmetadata>
 
