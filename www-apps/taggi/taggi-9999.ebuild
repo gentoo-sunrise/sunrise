@@ -33,7 +33,7 @@ src_unpack() {
 	for i in edit.sh save.sh view.sh; do
 		sed -i \
 			-e "s%\(SCRIPTHOST\)/\(edit\|save\|view\).sh%\1/cgi-bin/\2.sh%g" \
-			${i} || die  "sed ${i} failed"
+			${i} || die "sed ${i} failed"
 	done
 
 	# fix vhost menu
