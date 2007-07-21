@@ -28,7 +28,7 @@ src_unpack(){
 }
 
 src_install() {
-#	latex-package_src_doinstall generally uses different 
+#	latex-package_src_doinstall generally uses different
 #	directories than this package expects
 #	cd ${S}
 #	latex-package_src_doinstall all
