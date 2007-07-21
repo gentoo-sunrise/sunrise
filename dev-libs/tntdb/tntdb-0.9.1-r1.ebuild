@@ -19,10 +19,10 @@ DEPEND="${RDEPEND}"
 
 src_compile() {
 	econf ${myconf} \
-	  $(use_with mysql) \
-	  $(use_with postgres postgresql) \
-	  $(use_with sqlite) \
-	  || die "econf failed"
+		$(use_with mysql) \
+		$(use_with postgres postgresql) \
+		$(use_with sqlite) \
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 
