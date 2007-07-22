@@ -21,9 +21,25 @@
 ##   End example
 ##
 
+# Santiago M. Mola <coldwind@gentoo.org> (11 Jul 2007)
+# Broken license. Asked upstream to address it.
+media-tv/zattoo-bin
+
 # Jakub Moc <jakub@gentoo.org> (14 June 2007)
 # this needs to be ported to net-im/pidgin or die
 net-im/chix-gaim
+
+# Davide Cendron <scen@gentoo.org> (13 Jun 2007)
+# svn version should be masked
+=games-fps/chocolate-doom-9999
+
+# Davide Cendron <scen@gentoo.org> (12 Jun 2007)
+# cvs (snapshot) version should be masked
+games-fps/uhexen2-cvs
+
+# Davide Cendron <scen@gentoo.org> (07 Jun 2007)
+# svn version should be masked
+=games-fps/vavoom-9999
 
 # Ali Polatel <polatel@gmail.com> (15 April 2007)
 # live ebuilds should be masked
@@ -32,6 +48,10 @@ net-im/chix-gaim
 # Christian Faulhammer <opfer@gentoo.org> (08 Mar 2007)
 # live ebuilds should be masked
 ~dev-util/ticpp-9999
+
+# Eduard Warkentin <eduard.warkentin@gmx.de> (14 Feb 2007)
+# This is a svn checkout based ebuild until further changes
+=app-backup/darbackup-0.7.27_pre485
 
 # Christian Faulhammer <opfer@gentoo.org> (05 Feb 2007)
 # live ebuilds should be masked
@@ -78,23 +98,3 @@ games-fps/unreal-tournament-operationnapali
 # Jakub Moc <jakub@gentoo.org> (09 Jun 2006)
 # This is for testing only, upstream not active ATM
 =app-misc/mc-mp-4.1.40_pre9
-
-# Eduard Warkentin <eduard.warkentin@gmx.de> (14 Feb 2007)
-# This is a svn checkout based ebuild until further changes
-=app-backup/darbackup-0.7.27_pre485
-
-# Davide Cendron <scen@gentoo.org> (07 Jun 2007)
-# svn version should be masked
-=games-fps/vavoom-9999
-
-# Davide Cendron <scen@gentoo.org> (12 Jun 2007)
-# cvs (snapshot) version should be masked
-games-fps/uhexen2-cvs
-
-# Davide Cendron <scen@gentoo.org> (13 Jun 2007)
-# svn version should be masked
-=games-fps/chocolate-doom-9999
-
-# Santiago M. Mola <coldwind@gentoo.org> (11 Jul 2007)
-# Broken license. Asked upstream to address it.
-media-tv/zattoo-bin
