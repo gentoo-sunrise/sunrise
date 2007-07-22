@@ -21,11 +21,6 @@
 ##   End example
 ##
 
-# Jakub Moc <jakub@gentoo.org> (05 July 2007)
-# I do not have time to play with this mac80211 frenzy.
-# If you dislike it, fix it yourself.
-net-wireless/iwlwifi
-
 # Jakub Moc <jakub@gentoo.org> (14 June 2007)
 # this needs to be ported to net-im/pidgin or die
 net-im/chix-gaim
