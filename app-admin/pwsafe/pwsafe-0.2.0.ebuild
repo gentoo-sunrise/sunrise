@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils flag-o-matic
+inherit eutils
 
 DESCRIPTION="Commandline program that manages encrypted password databases (compatible with Counterpane's Password Safe)"
 HOMEPAGE="http://nsd.dyndns.org/pwsafe/"
@@ -28,9 +28,6 @@ DEPEND="${RDEPEND}
 	X? ( x11-proto/xproto )"
 
 src_compile() {
-	if use suid; then
-		append-ldflags $(bindnow-flags)
-	fi
 	econf $(use_with X x) || die "econf failed"
 	emake || die "emake failed"
 }
