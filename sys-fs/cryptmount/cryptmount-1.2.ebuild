@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit flag-o-matic linux-info
+inherit linux-info
 
 DESCRIPTION="A utility for management and user-mode mounting of encrypted filesystems"
 HOMEPAGE="http://cryptmount.sourceforge.net/"
@@ -28,9 +28,6 @@ ERROR_BLK_DEV_DM="Please enable Device mapper support in your kernel config
 				<M> Device mapper support"
 
 src_compile() {
-	# recommended for setXid, dynamically linked biraries
-	append-ldflags $(bindnow-flags)
-
 	econf \
 		--with-gnu-ld \
 		--with-libgcrypt \
