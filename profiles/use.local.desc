@@ -126,6 +126,7 @@ net-dns/nsd:nsid - Enable NSID support
 net-dns/nsd:plugins - Enable plugin support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:tsig - Enable TSIG support
+net-ftp/cmdftp:largefile - Enable largefile support
 net-im/gizmo:avahi - Use avahi mdns daemon
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
 net-mail/simscan:attachment - Enable attachment filtering
