@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-1.4.2_rc1.ebuild, +uhexen2-1.4.2_rc2.ebuild:
+  Version bump, including some fixes/enhancements (and drop old)
+
   29 Jun 2007; Christian Faulhammer <opfer@gentoo.org>
   uhexen2-1.4.2_rc1.ebuild:
   a different solution to a negated USE check

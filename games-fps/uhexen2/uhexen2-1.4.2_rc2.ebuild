@@ -4,7 +4,7 @@
 
 inherit eutils flag-o-matic toolchain-funcs versionator games
 
-DATA_PV="1.19-rc1"
+DATA_PV="1.19-rc2"
 HW_PV="0.15"
 MY_PN="hexen2"
 MY_PV=$(replace_version_separator 3 '-')
@@ -18,9 +18,9 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN}source-${MY_PV}.tgz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="alsa cdaudio debug dedicated demo dynamic hexenworld gtk lights opengl
-optimize-cflags oss sdlaudio sdlcd timidity tools"
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="3dfx alsa asm cdaudio debug dedicated demo dynamic hexenworld gtk lights
+midi opengl optimize-cflags oss sdlaudio sdlcd tools"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
 	${GAMES_BINDIR:1}/glhexen2
@@ -33,10 +33,10 @@ QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
 
 UIDEPEND=">=media-libs/libsdl-1.2.7
 	>=media-libs/sdl-mixer-1.2.5
+	3dfx? ( media-libs/glide-v3 )
 	alsa? ( >=media-libs/alsa-lib-1.0.7 )
-	opengl? ( virtual/opengl )
-	timidity? ( media-sound/timidity++ )
-	amd64? ( virtual/opengl )"
+	midi? ( media-sound/timidity++ )
+	opengl? ( virtual/opengl )"
 
 # Launcher depends from GTK+ libs
 LNCHDEPEND="gtk? ( =x11-libs/gtk+-2* )"
@@ -50,24 +50,24 @@ RDEPEND="!games-fps/uhexen2-cvs
 	>=dev-util/xdelta-1.1.3-r1"
 DEPEND="${UIDEPEND}
 	${LNCHDEPEND}
-	x86? ( >=dev-lang/nasm-0.98.38 )"
+	asm? ( >=dev-lang/nasm-0.98.38 )"
 
 S=${WORKDIR}/hexen2source-${MY_PV}
-dir=${GAMES_DATADIR}/${MY_PN}
+dir="${GAMES_DATADIR}/${MY_PN}"
 
 pkg_setup() {
 	games_pkg_setup
 
-	if use timidity ; then
+	if use midi ; then
 		if ! built_with_use "media-libs/sdl-mixer" timidity ; then
 			eerror "Recompile media-libs/sdl-mixer with 'timidity' USE flag."
 			die "sdl-mixer without timidity support detected"
 		fi
-		if use sdlaudio ; then
-			ewarn "timidity (midi music) does not work with sdlaudio."
-		fi
+		use sdlaudio && ewarn "MIDI music does not work with sdlaudio."
 	else
-		ewarn "timidity is needed if midi music is desired."
+		ewarn "MIDI support disabled! MIDI music won't be played at all."
+		ewarn "If you want to hear it, recompile this package"
+		ewarn "with \"midi\" USE flag enabled."
 	fi
 
 	use alsa || ewarn "alsa is the recommended sound driver."
@@ -77,16 +77,9 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-h2launcher_improvements.diff"
 	cd hexen2
 	epatch "${S}/00_Patches/external-music-file-support.diff"
 	cd ..
-
-	# Fix a little bug in cd_null.c
-	sed -i \
-		-e "/\#endif/d" \
-		{hexen2,hexenworld/Client}/cd_null.c \
-		|| die "sed cd_null.c failed"
 
 	# Whether to use the demo directory
 	local demo
@@ -112,6 +105,14 @@ src_unpack() {
 		-e "s:./xdelta113:xdelta": \
 		"${WORKDIR}"/update_xdelta.sh || die "sed update_xdelta.sh failed"
 
+	# Honour Portage CFLAGS also when debuggins is enabled
+	use debug && append-flags "-g2"
+	for u in `grep -lr '\-g \-Wall' *`; do
+		sed -i \
+		-e "s/^CFLAGS \:\= \-g \-Wall/CFLAGS \:\= ${CFLAGS}/" \
+		${u} || die "sed ${u} failed"
+	done
+
 	if use demo ; then
 		# Allow lightmaps in demo
 		sed -i \
@@ -122,7 +123,6 @@ src_unpack() {
 	if use gtk ; then
 		# Tweak the default games data dir for graphical launcher
 		sed -i \
-			-e "/char game_basedir/s:;: = \"${dir}${demo}\";:" \
 			-e "/int basedir_nonstd/s:= 0:= 1:" \
 			-e "/game_basedir\[0\]/d" \
 			launcher/config_file.c || die "sed config_file.c failed"
@@ -130,54 +130,51 @@ src_unpack() {
 		if use demo ; then
 			sed -i \
 				-e "/BINARY_NAME/s:\"$:-demo\":" \
-				launcher/games.h || die "sed games.g failed"
+				launcher/games.h || die "sed games.h failed"
 		fi
 	fi
 
-	rm -rf docs/{activision,COMPILE,COPYING,LICENSE,README.win32}
+	rm -rf docs/{COMPILE,COPYING,README.win32}
 }
 
 src_compile() {
 
+	local h2bin="h2" hwbin="hw" link_gl_libs="no" opts
 	local \
 		h2bin="h2" hwbin="hw" \
-		ALSA="no" \
-		CDAUDIO="no" \
+		USE_ALSA="no" \
+		USE_CDAUDIO="no" \
 		LINK_GL_LIBS="no" \
-		MIDI="no" \
+		USE_MIDI="no" \
 		OPT_EXTRA="no" \
-		OSS="no" \
-		SDLCD="no" \
+		USE_OSS="no" \
+		USE_SDLCD="no" \
 		X86_ASM="no" \
+		USE_3DFX="no" \
 		opts
 
 	if use opengl ; then
-		if use amd64 ; then
-			# On AMD64 can be built only OpenGL binaries
-			h2bin="gl${h2bin}"
-			hwbin="gl${hwbin}"
-		else
-			h2bin="${h2bin} gl${h2bin}"
-			hwbin="${hwbin} gl${hwbin}"
-		fi
+		h2bin="${h2bin} gl${h2bin}"
+		hwbin="${hwbin} gl${hwbin}"
 		use dynamic && LINK_GL_LIBS="yes"
 	fi
-
-	use alsa && ALSA="yes"
-	use cdaudio && CDAUDIO="yes"
-	use optimize-cflags && OPT_EXTRA="yes"
-	use oss && OSS="yes"
-	use sdlcd && SDLCD="yes"
-	use timidity && MIDI="yes"
-	use x86 && X86_ASM="yes"
 
 	use debug && opts="${opts} DEBUG=1"
 	use demo && opts="${opts} DEMO=1"
 
+	use alsa && USE_ALSA="yes"
+	use cdaudio && USE_CDAUDIO="yes"
+	use optimize-cflags && OPT_EXTRA="yes"
+	use oss && USE_OSS="yes"
+	use sdlcd && USE_SDLCD="yes"
+	use midi && USE_MIDI="yes"
+	use asm && X86_ASM="yes"
+	use 3dfx && USE_3DFX="yes"
+
 	if use gtk ; then
 	# Build launcher
 		cd "${S}/launcher"
-		einfo "Compiling graphical launcher"
+		einfo "Building graphical launcher"
 		emake \
 			AUTOTOOLS=1 \
 			${opts} \
@@ -189,8 +186,8 @@ src_compile() {
 	if use tools ; then
 		# Build Hexen2 utils
 		cd "${S}/utils"
-		einfo "Compiling utils"
-		local utils_list="hcc maputils genmodel qfiles dcc jsh2color hcc_old"
+		einfo "Building utils"
+		local utils_list="hcc maputils genmodel qfiles dcc jsh2color hcc_old texutils/bsp2wal texutils/lmp2pcx"
 		for x in ${utils_list}
 		do
 			emake -C ${x} \
@@ -204,7 +201,7 @@ src_compile() {
 	if use dedicated ; then
 		# Dedicated Server
 		cd "${S}/${MY_PN}"
-		einfo "Compiling Dedicated Server"
+		einfo "Building Dedicated Server"
 		emake \
 			${opts} \
 			OPT_EXTRA=${OPT_EXTRA} \
@@ -218,7 +215,7 @@ src_compile() {
 		if use tools; then
 			# Hexenworld utils
 			local hw_utils="hwmquery hwrcon"
-			einfo "Compiling Hexenworld utils"
+			einfo "Building Hexenworld utils"
 			cd "${S}/hw_utils"
 			for x in ${hw_utils} ; do
 				emake \
@@ -231,7 +228,7 @@ src_compile() {
 		fi
 
 		# Hexenworld
-		einfo "Compiling Hexenworld servers"
+		einfo "Building Hexenworld servers"
 		cd "${S}"/hexenworld
 		# Hexenworld servers
 		emake \
@@ -248,21 +245,21 @@ src_compile() {
 			|| die "emake HexenWorld Master failed"
 
 		# Hexenworld client
-		einfo "Compiling Hexenworld client(s)"
-		use amd64 && ewarn "On AMD64 only GL Hexenworld client version is built"
+		einfo "Building Hexenworld client(s)"
 		for m in ${hwbin} ; do
 			emake -C Client clean
 			emake \
 				${opts} \
-				USE_ALSA=${ALSA} \
-				USE_OSS=${OSS} \
-				USE_CDAUDIO=${CDAUDIO} \
-				USE_MIDI=${MIDI} \
-				USE_SDLAUDIO=${SDLAUDIO} \
-				USE_SDLCD=${SDLCD} \
+				USE_ALSA=${USE_ALSA} \
+				USE_OSS=${USE_OSS} \
+				USE_CDAUDIO=${USE_CDAUDIO} \
+				USE_MIDI=${USE_MIDI} \
+				USE_SDLAUDIO=${USE_SDLAUDIO} \
+				USE_SDLCD=${USE_SDLCD} \
 				USE_X86_ASM=${X86_ASM} \
 				OPT_EXTRA=${OPT_EXTRA} \
 				LINK_GL_LIBS=${LINK_GL_LIBS} \
+				USE_3DFXGAMMA="${USE_3DFX}" \
 				CPUFLAGS="${CFLAGS}" \
 				CC="$(tc-getCC)" \
 				${m} \
@@ -274,21 +271,21 @@ src_compile() {
 	# Hexen 2 game executable
 	cd "${S}/${MY_PN}"
 
-	einfo "Compiling UHexen2 game executable(s)"
-	use amd64 && ewarn "On AMD64 only GL game binary version is built"
+	einfo "Building UHexen2 game executable(s)"
 	for m in ${h2bin} ; do
 		emake clean
 		emake \
 			${opts} \
-			USE_ALSA=${ALSA} \
-			USE_OSS=${OSS} \
-			USE_CDAUDIO=${CDAUDIO} \
-			USE_MIDI=${MIDI} \
-			USE_SDLAUDIO=${SDLAUDIO} \
-			USE_SDLCD=${SDLCD} \
+			USE_ALSA=${USE_ALSA} \
+			USE_OSS=${USE_OSS} \
+			USE_CDAUDIO=${USE_CDAUDIO} \
+			USE_MIDI=${USE_MIDI} \
+			USE_SDLAUDIO=${USE_SDLAUDIO} \
+			USE_SDLCD=${USE_SDLCD} \
 			USE_X86_ASM=${X86_ASM} \
 			OPT_EXTRA=${OPT_EXTRA} \
 			LINK_GL_LIBS=${LINK_GL_LIBS} \
+			USE_3DFXGAMMA=${USE_3DFX} \
 			CPUFLAGS="${CFLAGS}" \
 			CC="$(tc-getCC)" \
 			${m} \
@@ -302,12 +299,12 @@ src_install() {
 	use demo && demo="-demo" && demo_title=" (Demo)" && demo_suffix="demo"
 
 	newicon hexen2/icons/h2_32x32x4.png ${PN}.png || die
-	if ! use amd64 ; then
-		make_desktop_entry "${MY_PN}${demo}" "Hexen 2${demo_title}" ${PN}.png
-		newgamesbin "${MY_PN}/${MY_PN}" "${MY_PN}${demo}" \
-			|| die "newgamesbin ${MY_PN} failed"
-	fi
-	if use opengl || use amd64 ; then
+
+	make_desktop_entry "${MY_PN}${demo}" "Hexen 2${demo_title}" ${PN}.png
+	newgamesbin "${MY_PN}/${MY_PN}" "${MY_PN}${demo}" \
+		|| die "newgamesbin ${MY_PN} failed"
+
+	if use opengl ; then
 		make_desktop_entry "gl${MY_PN}${demo}" "GLHexen 2${demo_title}" ${PN}.png
 		newgamesbin "${MY_PN}/gl${MY_PN}" "gl${MY_PN}${demo}" \
 			|| die "newgamesbin gl${MY_PN} failed"
@@ -338,13 +335,13 @@ src_install() {
 
 		# HexenWorld client(s)
 		newicon hexenworld/icons/hw2_32x32x8.png hwcl.png || die
-		if ! use amd64 ; then
-			make_desktop_entry \
-				"hwcl${demo}" "Hexen 2${demo_title} Hexenworld Client" hwcl.png
-			newgamesbin "hexenworld/Client/hwcl" "hwcl${demo}" \
-				|| die "newgamesbin hwcl failed"
-		fi
-		if use opengl || use amd64; then
+
+		make_desktop_entry \
+			"hwcl${demo}" "Hexen 2${demo_title} Hexenworld Client" hwcl.png
+		newgamesbin "hexenworld/Client/hwcl" "hwcl${demo}" \
+			|| die "newgamesbin hwcl failed"
+
+		if use opengl ; then
 			make_desktop_entry \
 				"glhwcl${demo}" "GLHexen 2${demo_title} Hexenworld Client" hwcl.png
 			newgamesbin "hexenworld/Client/glhwcl" "glhwcl${demo}" \
@@ -383,14 +380,17 @@ src_install() {
 
 	if use tools ; then
 		dobin \
-		utils/bin/{bspinfo,dhcc,genmodel,hcc,jsh2colour,light,qbsp,qfiles,vis} \
-			|| die "dobin utils failed"
+			utils/bin/{bsp2wal,bspinfo,dhcc,genmodel,hcc} \
+			|| die "dobin utils part 1 failed"
+		dobin \
+			utils/bin/{jsh2colour,light,lmp2pcx,qbsp,qfiles,vis} \
+			|| die "dobin utils part 2 failed"
 		newbin utils/hcc_old/hcc hcc_old || die "newbin hcc_old failed"
 		docinto utils
 		dodoc utils/README || die "dodoc README failed"
-		dodoc utils/bin/hcc.txt || die "dodoc hcc.txt failed"
-		newdoc utils/dcc/README README.dcc || die "newdoc dcc.txt failed"
+		newdoc utils/dcc/README README.dcc || die "newdoc dcc failed"
 		dodoc utils/dcc/dcc.txt || die "dodoc dcc.txt failed"
+		newdoc utils/hcc/README README.hcc || die "newdoc hcc failed"
 		newdoc utils/hcc_old/README hcc_old.txt || die "newdoc hcc_old failed"
 		newdoc utils/jsh2color/README README.jsh2color \
 			|| die "newdoc README.jsh2color failed"
@@ -403,11 +403,6 @@ src_install() {
 
 pkg_postinst() {
 	games_pkg_postinst
-
-	if ! use timidity ; then
-		elog "MIDI music requires the 'timidity' USE flag."
-		echo
-	fi
 
 	if use demo ; then
 		elog "uhexen2 has been compiled specifically to play the demo maps."
@@ -454,13 +449,15 @@ pkg_postinst() {
 		elog "You've also installed some Hexen2 utility"
 		elog "(useful for mod developing)"
 		elog
-		elog " - dhcc (old progs.dat compiler/decompiler"
-		elog " - genmodel (3-D model grabber"
+		elog " - dhcc (old progs.dat compiler/decompiler)"
+		elog " - genmodel (3-D model grabber)"
 		elog " - hcc (HexenC compiler)"
 		elog " - hcc_old (old version of HexenC compiler)"
 		elog " - jsh2color (light colouring utility)"
 		elog " - maputils (Map compiling tools: bspinfo, light, qbsp, vis)"
 		elog " - qfiles (build pak files and regenerate bsp models)"
+		elog " - bsp2wal (extract all textures from a bsp file)"
+		elog " - lmp2pcx (convert hexen2 texture data into pcx and tga)"
 		elog
 		elog "See relevant documentation for further informations"
 		echo
