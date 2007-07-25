@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Jul 2007; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
+  +fuseiso-20070708.ebuild:
+  Version bump to 20070708
+
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -fuseiso-20060731.ebuild:
   drop old
