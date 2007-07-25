@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/uhexen2/hexen2demo-${PV}-linux-i586.tgz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND=""
