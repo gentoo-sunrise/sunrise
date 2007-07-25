@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/uhexen2/hexen2-lit_files.tgz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~ppc"
 IUSE=""
 
 DEPEND=""
