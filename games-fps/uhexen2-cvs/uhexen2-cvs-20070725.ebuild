@@ -4,7 +4,7 @@
 
 inherit eutils flag-o-matic toolchain-funcs versionator games
 
-DATA_PV="1.19-rc1"
+DATA_PV="1.19-rc2"
 HW_PV="0.15"
 MY_PN="hexen2"
 DEMO_PV="1.4.1"
@@ -49,7 +49,7 @@ RDEPEND="!games-fps/uhexen2
 	>=dev-util/xdelta-1.1.3-r1"
 DEPEND="${UIDEPEND}
 	${LNCHDEPEND}
-	x86? ( >=dev-lang/nasm-0.98.38 )"
+	asm? ( >=dev-lang/nasm-0.98.38 )"
 
 S="${WORKDIR}/uhexen2-cvs-${PV}"
 dir="${GAMES_DATADIR}/${MY_PN}"
@@ -104,6 +104,14 @@ src_unpack() {
 		-e "s:./xdelta113:xdelta": \
 		"${WORKDIR}"/update_xdelta.sh || die "sed update_xdelta.sh failed"
 
+	# Honour Portage CFLAGS also when debuggins is enabled
+	use debug && append-flags "-g2"
+	for u in `grep -lr '\-g \-Wall' *`; do
+		sed -i \
+			-e "s/^CFLAGS \:\= \-g \-Wall/CFLAGS \:\= ${CFLAGS}/" \
+			${u} || die "sed ${u} failed"
+	done
+
 	if use demo ; then
 		# Allow lightmaps in demo
 		sed -i \
@@ -125,7 +133,7 @@ src_unpack() {
 		fi
 	fi
 
-	rm -rf docs/{activision,COMPILE,COPYING,LICENSE,README.win32}
+	rm -rf docs/{COMPILE,COPYING,README.win32}
 }
 
 src_compile() {
@@ -165,7 +173,7 @@ src_compile() {
 	if use gtk ; then
 	# Build launcher
 		cd "${S}/launcher"
-		einfo "Compiling graphical launcher"
+		einfo "Building graphical launcher"
 		emake \
 			AUTOTOOLS=1 \
 			${opts} \
@@ -177,7 +185,7 @@ src_compile() {
 	if use tools ; then
 		# Build Hexen2 utils
 		cd "${S}/utils"
-		einfo "Compiling utils"
+		einfo "Building utils"
 		local utils_list="hcc maputils genmodel qfiles dcc jsh2color hcc_old texutils/bsp2wal texutils/lmp2pcx"
 		for x in ${utils_list}
 		do
@@ -192,7 +200,7 @@ src_compile() {
 	if use dedicated ; then
 		# Dedicated Server
 		cd "${S}/${MY_PN}"
-		einfo "Compiling Dedicated Server"
+		einfo "Building Dedicated Server"
 		emake \
 			${opts} \
 			OPT_EXTRA=${OPT_EXTRA} \
@@ -206,7 +214,7 @@ src_compile() {
 		if use tools; then
 			# Hexenworld utils
 			local hw_utils="hwmquery hwrcon"
-			einfo "Compiling Hexenworld utils"
+			einfo "Building Hexenworld utils"
 			cd "${S}/hw_utils"
 			for x in ${hw_utils} ; do
 				emake \
@@ -219,7 +227,7 @@ src_compile() {
 		fi
 
 		# Hexenworld
-		einfo "Compiling Hexenworld servers"
+		einfo "Building Hexenworld servers"
 		cd "${S}"/hexenworld
 		# Hexenworld servers
 		emake \
@@ -236,7 +244,7 @@ src_compile() {
 			|| die "emake HexenWorld Master failed"
 
 		# Hexenworld client
-		einfo "Compiling Hexenworld client(s)"
+		einfo "Building Hexenworld client(s)"
 		for m in ${hwbin} ; do
 			emake -C Client clean
 			emake \
@@ -262,7 +270,7 @@ src_compile() {
 	# Hexen 2 game executable
 	cd "${S}/${MY_PN}"
 
-	einfo "Compiling UHexen2 game executable(s)"
+	einfo "Building UHexen2 game executable(s)"
 	for m in ${h2bin} ; do
 		emake clean
 		emake \
