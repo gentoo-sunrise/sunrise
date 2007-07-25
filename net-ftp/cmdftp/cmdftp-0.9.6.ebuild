@@ -10,17 +10,17 @@ SRC_URI="http://download.savannah.nongnu.org/releases/${PN}/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+largefile"
+IUSE="onlysmall"
 
 DEPEND=""
 RDEPEND=""
 
 src_compile() {
-	econf $(use_enable largefile) || die "econf failed"
+	econf $(use_enable !onlysmall largefile) || die "econf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc NEWS README AUTHORS 
+	dodoc NEWS README AUTHORS
 }
