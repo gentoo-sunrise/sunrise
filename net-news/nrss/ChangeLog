@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jul 2007; Jack Miller (TheMoken) <jjm2n4@umr.edu>
+  +nrss-0.3.0_beta2.ebuild:
+  Version bump for NRSS
+
   21 Jun 2007; Jack Miller (TheMoken) <jjm2n4@umr.edu> +nrss-0.2.1.ebuild,
   +metadata.xml:
   New ebuild for bug 170831 -- nrss
