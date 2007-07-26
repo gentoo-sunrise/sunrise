@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Jul 2007; David Shakaryan <omp@gentoo.org> +metadata.xml:
+  Add metadata.
+
   26 Jul 2007; Nathan Smith (ndansmith) <ndansmith@gmail.org>
   +grig-0.7.2.ebuild:
   New package for bug 186176
