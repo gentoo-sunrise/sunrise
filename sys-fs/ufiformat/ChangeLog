@@ -1,0 +1,8 @@
+# ChangeLog for sys-fs/ufiformat
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jul 2007; Christian Schmidt (twnqx) <gentoo@digadd.de> +metadata.xml,
+  +ufiformat-0.9.3.ebuild:
+  New Ebuild as requested in bug 156300
+
