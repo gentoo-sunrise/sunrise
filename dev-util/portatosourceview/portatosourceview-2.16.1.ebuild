@@ -21,7 +21,8 @@ DEPEND="${RDEPEND}
 
 DOCS="AUTHORS ChangeLog NEWS README"
 
-src_install() {
+src_install()
+{
 	gnome2_src_install
 
 	# install plugins
@@ -33,12 +34,14 @@ src_install() {
 	doins gentoo.lang
 }
 
-pkg_postinst() {
+pkg_postinst()
+{
 	python_version
 	python_mod_optimize ${ROOT}/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 }
 
-pkg_postrm() {
+pkg_postrm()
+{
 	python_version
 	python_mod_cleanup
 }
