@@ -5,7 +5,7 @@
 inherit versionator eutils
 MY_PV=$(replace_version_separator 3 '')
 MY_P=${PN}-${MY_PV}
-S="$WORKDIR/$MY_P"-src/src
+S="${WORKDIR}/${MY_P}"-src/src
 DESCRIPTION="RSStool is a tool to read, parse, merge, and write RSS (and Atom) feeds."
 HOMEPAGE="http://rsstool.y7.ath.cx/"
 SRC_URI="http://download.berlios.de/${PN}/${MY_P}-src.tar.gz"
