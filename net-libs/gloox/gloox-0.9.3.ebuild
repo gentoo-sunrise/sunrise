@@ -12,9 +12,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="debug gnutls idn ssl zlib"
 
-RDEPEND="
-	virtual/libc
-	idn? ( >=net-dns/libidn-0.5.0 )
+RDEPEND="idn? ( >=net-dns/libidn-0.5.0 )
 	gnutls? ( >=net-libs/gnutls-1.2.0 )
 	ssl? ( >=dev-libs/openssl-0.9.7 )
 	zlib? ( sys-libs/zlib )"
@@ -28,10 +26,10 @@ src_compile() {
 		$(use_with gnutls gnutls) \
 		$(use_with ssl openssl) \
 		$(use_with zlib zlib) \
-		|| die "./configure failed"
+		|| die "configure failed"
 	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 }
