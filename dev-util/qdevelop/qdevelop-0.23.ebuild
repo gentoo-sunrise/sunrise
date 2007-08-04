@@ -29,7 +29,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	/usr/bin/qmake || die "qmake failed"
+	eqmake4 || die "qmake failed"
 	emake CXX=$(tc-getCXX) || die "emake failed"
 }
 
