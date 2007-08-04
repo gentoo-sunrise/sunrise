@@ -32,8 +32,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	eqmake4 ttcut.pro -o Makefile.ttcut || \
-		die "configuring ttcut failed"
+	eqmake4 ttcut.pro -o Makefile.ttcut
 	emake -f Makefile.ttcut || die "emake failed"
 }
 
