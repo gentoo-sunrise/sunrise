@@ -25,7 +25,7 @@ src_unpack() {
 }
 
 src_compile() {
-	eqmake3 ${PN}.pro -o Makefile || die "qmake failed"
+	eqmake3 ${PN}.pro -o Makefile
 	emake || die "emake failed"
 }
 
