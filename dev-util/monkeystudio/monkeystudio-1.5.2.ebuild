@@ -29,7 +29,7 @@ src_unpack() {
 }
 
 src_compile() {
-	/usr/bin/qmake || die "qmake failed"
+	eqmake4 || die "qmake failed"
 	emake || die "emake failed"
 }
 
