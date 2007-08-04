@@ -8,7 +8,7 @@ KEYWORDS="~x86"
 
 DESCRIPTION="View and animate up to three functions in 3D-space in a completely interactive manner."
 HOMEPAGE="http://www.kde-apps.org/content/show.php?content=43071"
-SRC_URI="http://www.kde-apps.org/content/files/43071-zhu3d-${PV}.tar.gz"
+SRC_URI="http://www.kde-apps.org/CONTENT/content-files/43071-zhu3d-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
@@ -16,16 +16,10 @@ IUSE=""
 DEPEND="$(qt4_min_version 4.0)
 		virtual/glu"
 RDEPEND="${DEPEND}"
-
-pkg_setup() {
-	if ! built_with_use ">=x11-libs/qt-4.0" opengl; then
-		eerror "x11-libs/qt-4* has to be built with opengl support"
-		die "Missing opengl USE flag for x11-libs/qt"
-	fi
-}
+QT4_BUILT_WITH_USE_CHECK="opengl"
 
 src_compile() {
-	/usr/bin/qmake SYSDIR="/usr/share/${PN}/system" DOCDIR="/usr/share/doc/${P}/html" || die "qmake failed"
+	eqmake4 ${PN}.pro SYSDIR="/usr/share/${PN}/system" DOCDIR="/usr/share/doc/${P}/html"
 	emake CXX=$(tc-getCXX) || die "emake failed"
 }
 
@@ -33,7 +27,6 @@ src_install() {
 	dobin zhu3d
 
 	dodoc readme.txt
-
 	dohtml doc/*
 
 	insinto /usr/share/${PN}
