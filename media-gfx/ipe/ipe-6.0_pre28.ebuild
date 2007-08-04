@@ -22,6 +22,7 @@ RDEPEND="${DEPEND}
 	firefox? ( || ( www-client/mozilla-firefox
 		www-client/mozilla-firefox-bin ) )"
 
+
 S="${WORKDIR}/${MY_P}/src"
 
 search_urw_fonts() {
@@ -39,11 +40,9 @@ search_urw_fonts() {
 }
 
 pkg_setup() {
-	if has_version ">=x11-libs/qt-4.2.2" && ! built_with_use x11-libs/qt qt3support; then
-		eerror
-		eerror "You need to rebuild x11-libs/qt with USE=qt3support enabled"
-		eerror
-		die "please rebuild x11-libs/qt with USE=qt3support"
+	if has_version ">=x11-libs/qt-4.2.2" ; then 
+		QT4_BUILT_WITH_USE_CHECK="qt3support"
+		qt4_pkg_setup
 	fi
 
 	search_urw_fonts
@@ -62,12 +61,9 @@ src_compile() {
 	use firefox && \
 		sed -i -e "s/IPEBROWSER = mozilla/IPEBROWSER = firefox/" config.pri
 
-	eqmake4 \
+	eqmake4 main.pro \
 		"IPEPREFIX=/usr" \
-		"IPEDOCDIR=/usr/share/doc/${PF}" \
-		${myconf} \
-		main.pro || die "qmake failed"
-
+		"IPEDOCDIR=/usr/share/doc/${PF}"
 	emake || die "emake failed"
 }
 

@@ -3,6 +3,9 @@
 # $Header: $
 
   04 Aug 2007; Jakub Moc <jakub@gentoo.org> ipe-6.0_pre28.ebuild:
+  Drop redundant die, use pkg_setup from qt4 eclass for built_with_use check
+
+  04 Aug 2007; Jakub Moc <jakub@gentoo.org> ipe-6.0_pre28.ebuild:
   Use eqmake4 from qt4 eclass
 
   01 Jul 2007; Jakub Moc <jakub@gentoo.org> ipe-6.0_pre28.ebuild:
