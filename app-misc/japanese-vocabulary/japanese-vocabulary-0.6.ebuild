@@ -28,14 +28,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	/usr/bin/qmake \
-		QMAKE_CC="$(tc-getCC)" \
-		QMAKE_CXX="$(tc-getCXX)" \
-		QMAKE_CFLAGS="${CFLAGS}" \
-		QMAKE_CXXFLAGS="${CXXFLAGS}" \
-		QMAKE_LINK="$(tc-getCXX)" \
-		QMAKE_LFLAGS="${LDFLAGS}" \
-		|| die "qmake failed"
+	eqmake4
 	emake || die "emake failed"
 }
 
