@@ -18,14 +18,8 @@ IUSE=""
 DEPEND="$(qt4_min_version 4.2)"
 RDEPEND="${DEPEND}"
 
+QT4_BUILT_WITH_USE_CHECK="sqlite3"
 S=${WORKDIR}/${PN}
-
-pkg_setup() {
-	if ! built_with_use =x11-libs/qt-4* sqlite3 ; then
-		eerror "Qt4 has to be built with sqlite3 support"
-		die "Missing sqlite3 USE-flag for x11-libs/qt-4"
-	fi
-}
 
 src_compile() {
 	eqmake4
