@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2007; Jakub Moc <jakub@gentoo.org> bsc-2.27.ebuild:
+  Use eqmake3 from qt3 eclass
+
   04 Jul 2007; Jakub Moc <jakub@gentoo.org> bsc-2.27.ebuild:
   Add ~amd64 keyword
 

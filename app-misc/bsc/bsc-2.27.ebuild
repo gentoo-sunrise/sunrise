@@ -21,11 +21,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${PN}"
 
 src_compile() {
-	${QTDIR}/bin/qmake -o Makefile bsc.pro \
-		QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
-		QMAKE_RPATH= \
-		|| die "qmake failed"
-
+	eqmake3 bsc.pro -o Makefile
 	emake || die "make failed"
 }
 
