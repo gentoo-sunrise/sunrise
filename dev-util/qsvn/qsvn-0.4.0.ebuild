@@ -14,12 +14,11 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="$(qt4_min_version 4)
-	dev-util/subversion
-	dev-libs/apr"
+	dev-util/subversion"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	eqmake4 || die "qmake failed"
+	eqmake4
 	emake || die "emake failed"
 }
 
