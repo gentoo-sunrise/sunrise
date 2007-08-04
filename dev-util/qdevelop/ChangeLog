@@ -3,6 +3,9 @@
 # $Header: $
 
   04 Aug 2007; Jakub Moc <jakub@gentoo.org> qdevelop-0.23.ebuild:
+  Use pkg_setup from qt4 eclass for built_with_use check
+
+  04 Aug 2007; Jakub Moc <jakub@gentoo.org> qdevelop-0.23.ebuild:
   Use eqmake4 from qt4 eclass
 
   01 Jul 2007; Jakub Moc <jakub@gentoo.org> qdevelop-0.23.ebuild:

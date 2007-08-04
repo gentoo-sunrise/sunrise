@@ -19,14 +19,8 @@ RDEPEND="$(qt4_min_version 4.2)"
 DEPEND="app-arch/unzip
 		${RDEPEND}"
 
+QT4_BUILT_WITH_USE_CHECK="sqlite3"
 S=${WORKDIR}/${MY_P}
-
-pkg_setup() {
-	if ! built_with_use =x11-libs/qt-4* sqlite3; then
-		eerror "x11-libs/qt has to be built with sqlite3 support"
-		die "qt sqlite3 use-flag not set"
-	fi
-}
 
 src_compile() {
 	eqmake4
