@@ -40,7 +40,7 @@ search_urw_fonts() {
 }
 
 pkg_setup() {
-	if has_version ">=x11-libs/qt-4.2.2" ; then 
+	if has_version ">=x11-libs/qt-4.2.2" ; then
 		QT4_BUILT_WITH_USE_CHECK="qt3support"
 		qt4_pkg_setup
 	fi
