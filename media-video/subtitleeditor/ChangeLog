@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Aug 2007; Juan Aguado (juantxorena) <juantxorena@gmail.com>
+  subtitleeditor-0.13.6.ebuild:
+  Fix dependencies
+
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> subtitleeditor-0.13.6.ebuild:
   Check for unicode support in libpcre when needed
 

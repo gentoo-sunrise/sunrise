@@ -24,7 +24,8 @@ DEPEND=">=dev-cpp/gtkmm-2.6
 	>=x11-libs/gtk+-2.6
 	cairo? ( x11-libs/cairo )
 	spell? ( >=app-text/enchant-1.1.0 )"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	>=media-plugins/gst-plugins-ffmpeg-0.10"
 
 S="${WORKDIR}/${MY_P}"
 
