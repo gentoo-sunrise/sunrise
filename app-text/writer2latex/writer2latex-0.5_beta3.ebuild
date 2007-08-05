@@ -52,7 +52,7 @@ src_install() {
 		dohtml -r doc
 		cp doc/*.pdf "${D}"/usr/share/doc/${PF} || die "Failed to copy .pdfs"
 		cp doc/*.odt "${D}"/usr/share/doc/${PF} || die "Failed to copy .odts"
-	
+
 		java-pkg_dojavadoc target/javadoc
 
 	fi
