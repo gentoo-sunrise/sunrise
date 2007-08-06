@@ -2,14 +2,6 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  18 Jul 2007; Jaime Martin (el_salmon) <jaime.martin@uc3m.es>
-  +swfdec-0.5.0.ebuild:
-  Version bump and a little cleaning for bug 105823
-
-  24 Jun 2007; Jakub Moc <jakub@gentoo.org> swfdec-0.4.5.ebuild:
-  Nuke redundant src_unpack, pointless blurb in pkg_setup and do not dodoc
-  COPYING INSTALL
-
   18 May 2007; Jakub Moc <jakub@gentoo.org> swfdec-0.4.4.ebuild:
   Nuke redundant einfo, do not dodoc INSTALL COPYING
 
