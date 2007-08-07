@@ -7,17 +7,15 @@ HOMEPAGE="http://camaya.net/gloox"
 SRC_URI="http://camaya.net/download/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug gnutls idn ssl zlib"
 
-RDEPEND="idn? ( >=net-dns/libidn-0.5.0 )
+DEPEND="idn? ( >=net-dns/libidn-0.5.0 )
 	gnutls? ( >=net-libs/gnutls-1.2.0 )
 	ssl? ( >=dev-libs/openssl-0.9.7 )
 	zlib? ( sys-libs/zlib )"
-
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	econf \
