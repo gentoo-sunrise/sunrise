@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools eutils flag-o-matic subversion games
+inherit autotools eutils flag-o-matic subversion wxwidgets games
 
 DESCRIPTION="Advanced source port for Doom/Heretic/Hexen/Strife"
 HOMEPAGE="http://www.vavoom-engine.com/"
@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="allegro asm debug dedicated external-glbsp flac mad mikmod models music
-openal opengl sdl textures tools vorbis"
+openal opengl sdl textures tools vorbis wxwindows"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
 
@@ -43,7 +43,8 @@ DEPEND="media-libs/libpng
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	openal? ( media-libs/openal )
-	external-glbsp? ( games-util/glbsp )"
+	external-glbsp? ( games-util/glbsp )
+	wxwindows? ( =x11-libs/wxGTK-2.6* )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
 PDEPEND="models? ( >=games-fps/vavoom-models-1.4.1 )
@@ -156,6 +157,9 @@ src_compile() {
 		allegro="--without-allegro" \
 		sdl="--without-sdl"
 
+	export WX_GTK_VER="2.6"
+	need-wxwidgets gtk2
+
 	# Sdl is the default, unless sdl=off & allegro=on
 	if ! use sdl && use allegro ; then
 		allegro="--with-allegro"
@@ -180,8 +184,11 @@ src_compile() {
 		$(use_enable dedicated server) \
 		$(use_enable debug) \
 		$(use_enable debug zone-debug) \
+		$(use_enable wxwindows launcher) \
+		--with-wx-config=${WX_CONFIG} \
 		--with-iwaddir="${dir}" \
 		--disable-dependency-tracking \
+		--disable-maintainer-mode \
 		|| die "egamesconf failed"
 
 	# Parallel compiling seems to work (tested on 1.24)
@@ -205,10 +212,16 @@ src_install() {
 
 	dodoc docs/${PN}.txt || die "dodoc vavoom.txt failed"
 
-	if use tools; then
+	if use tools ; then
 		# The tools are always built
 		dobin utils/bin/{acc,fixmd2,vcc,vlumpy} || die "dobin utils failed"
 		dodoc utils/vcc/vcc.txt || die "dodoc vcc.txt failed"
+	fi
+
+	if use wxwindows ; then
+		# Install graphical launcher
+		dogamesbin utils/bin/vlaunch || die "dogamesbin vlaunch failed"
+		make_desktop_entry "vlaunch" "Vavoom Launcher"
 	fi
 
 	prepgamesdirs
@@ -227,6 +240,15 @@ pkg_postinst() {
 	elog "   vavoom -doom -opengl"
 	elog
 	elog "See documentation for further details."
+
+	if use wxwindows ; then
+		echo
+		elog "You've also installed a nice graphical launcher. Simply run:"
+		elog
+		elog "   vlaunch"
+		elog
+		elog "to enjoy it :)"
+	fi
 
 	if use tools; then
 		echo
