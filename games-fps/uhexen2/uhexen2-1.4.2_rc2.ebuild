@@ -50,7 +50,7 @@ RDEPEND="!games-fps/uhexen2-cvs
 	>=dev-util/xdelta-1.1.3-r1"
 DEPEND="${UIDEPEND}
 	${LNCHDEPEND}
-	asm? ( >=dev-lang/nasm-0.98.38 )"
+	x86? ( asm? ( >=dev-lang/nasm-0.98.38 ) )"
 
 S=${WORKDIR}/hexen2source-${MY_PV}
 dir="${GAMES_DATADIR}/${MY_PN}"
@@ -168,7 +168,7 @@ src_compile() {
 	use oss && USE_OSS="yes"
 	use sdlcd && USE_SDLCD="yes"
 	use midi && USE_MIDI="yes"
-	use asm && X86_ASM="yes"
+	use x86 && use asm && X86_ASM="yes"
 	use 3dfx && USE_3DFX="yes"
 
 	if use gtk ; then
