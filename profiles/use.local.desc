@@ -33,11 +33,13 @@ dev-util/ktigcc:minimal - Do not install completion data for the TIGCCLIB system
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 games-fps/chocolate-doom:server - Enable installation of server
+games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2:cdaudio - Enable cd audio playback support
 games-fps/uhexen2:demo - Install the demo files (hexen2-demodata) and configure for use
 games-fps/uhexen2:dynamic - Link to the opengl libraries at compile time
 games-fps/uhexen2:hexenworld - Build support for HexenWorld
 games-fps/uhexen2:lights - Install and setup the updated light maps
+games-fps/uhexen2:midi - Include MIDI music support
 games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
 games-fps/uhexen2:sdlaudio - Enable SDL Audio
 games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
