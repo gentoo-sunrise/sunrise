@@ -49,7 +49,7 @@ src_compile() {
 		$(use_enable gstreamer) \
 		$(use_enable ffmpeg) \
 		$(use_enable mad) \
-		$(use_enable gnome gnome-vfs) 
+		$(use_enable gnome gnome-vfs)
 	# parallel build doesn't work, so specify -j1
 	emake -j1 || die "emake failed"
 }
