@@ -42,6 +42,7 @@ src_compile() {
 		$(use_enable png) \
 		$(use_enable tiff) \
 		$(use_enable screen) \
+		--enable-fimrc \
 		--with-docdir="/usr/share/doc/${PF}"
 
 	# parallel make fails
