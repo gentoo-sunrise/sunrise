@@ -41,7 +41,8 @@ src_compile() {
 		$(use_enable jpeg) \
 		$(use_enable png) \
 		$(use_enable tiff) \
-		$(use_enable screen)
+		$(use_enable screen) \
+		--with-docdir="/usr/share/doc/${PF}"
 
 	# parallel make fails
 	emake -j1 || die "emake failed for ${P}"
