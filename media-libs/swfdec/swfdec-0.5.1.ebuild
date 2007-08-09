@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="Macromedia Flash decoding library"
 HOMEPAGE="http://swfdec.freedesktop.org"
-SRC_URI="http://swfdec.freedesktop.org/download/${PN}/${PV:0:3}/${P}.tar.gz"
+SRC_URI="http://swfdec.freedesktop.org/download/${PN}/0.5/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -23,7 +23,7 @@ RDEPEND=">=dev-libs/glib-2
 	>=x11-libs/cairo-1.2
 	>=x11-libs/gtk+-2.0
 	>=media-libs/alsa-lib-1.0.12
-	ffmpeg? ( >=media-video/ffmpeg-0.4.9_p20070330)
+	ffmpeg? ( >=media-video/ffmpeg-0.4.9_p20070330 )
 	mad? ( >=media-libs/libmad-0.15.1b )
 	gstreamer? ( >=media-libs/gstreamer-0.10.11 )
 	gnome? ( gnome-base/gnome-vfs )"
