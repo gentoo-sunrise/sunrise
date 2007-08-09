@@ -76,6 +76,9 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
+	# Clean CVS stuff
+	for x in `find . -name CVS -print`; do rm -frv ${x}; done
+
 	cd hexen2
 	epatch "${S}/00_Patches/external-music-file-support.diff"
 	cd ..
@@ -133,7 +136,7 @@ src_unpack() {
 		fi
 	fi
 
-	rm -rf docs/{COMPILE,COPYING,README.win32}
+	rm -rf docs/{activision,COMPILE,COPYING,LICENSE,README.win32}
 }
 
 src_compile() {
