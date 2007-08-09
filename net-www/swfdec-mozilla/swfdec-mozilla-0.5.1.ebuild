@@ -4,7 +4,7 @@
 
 DESCRIPTION="Swfdec-mozilla is a decoder/renderer netscape style plugin for Macromedia Flash animations."
 HOMEPAGE="http://swfdec.freedesktop.org/"
-SRC_URI="http://swfdec.freedesktop.org/download/${PN}/${PV:0:3}/${P}.tar.gz"
+SRC_URI="http://swfdec.freedesktop.org/download/${PN}/0.5/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"

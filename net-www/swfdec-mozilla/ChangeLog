@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Aug 2007; Jakub Moc <jakub@gentoo.org> -swfdec-mozilla-0.5.0.ebuild,
+  swfdec-mozilla-0.5.1.ebuild:
+  Fix invalid SRC_URI, nuke filesdir
+
   06 Aug 2007; Jaime Martin (el_salmon) <jaime.martin@uc3m.es> ChangeLog:
   Version bump. Changelog fixed
 
