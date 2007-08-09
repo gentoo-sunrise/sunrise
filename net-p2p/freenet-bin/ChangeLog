@@ -1,0 +1,8 @@
+# ChangeLog for net-p2p/freenet-bin
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Aug 2007; Thomas Sachau (Tommy[D] thomas.sachau@gmx.de +metadata.xml,
+  +freenet-bin-0.7.1052.ebuild:
+  New ebuild for bug 128783 thanks to people at #gentoo-sunrise
+
