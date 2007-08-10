@@ -5,7 +5,7 @@
 inherit distutils
 
 DESCRIPTION="a lightweight command-line podcast client"
-HOMEPAGE="http://ndansmith.net/poddy.php"
+HOMEPAGE="http://ndan.ath.cx/poddy"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
