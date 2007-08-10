@@ -5,7 +5,7 @@
 inherit distutils
 
 DESCRIPTION="a command-line interface to http://metamark.net/"
-HOMEPAGE="http://sourceforge.net/projects/surl"
+HOMEPAGE="http://ndan.ath.cx/surl"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
