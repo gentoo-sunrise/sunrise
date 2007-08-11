@@ -84,6 +84,7 @@ games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/eiciel:xattr - if you want extended attributes support enabled
 gnome-extra/timer-applet:sounds - Installs optional sound data
 kde-misc/kcpufreq:noicon - Remove icon for a smaller text only applet
+kde-misc/kio-sysinfo:branding - Enable a custom gentoo branded background
 mail-filter/MailScanner:bitdefender - Enable usage of bitdefender virus scanner
 mail-filter/MailScanner:exim - Set exim to used MTA
 mail-filter/MailScanner:f-prot - Enable usage of fprot virus scanner
