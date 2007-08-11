@@ -20,7 +20,8 @@ RDEPEND=">=sys-apps/portage-2.1.2
 		>=gnome-base/libglade-2.5.1
 		>=dev-util/portatosourceview-2.16.1
 		!kde? ( !userpriv? ( >=x11-libs/gksu-2.0.0 ) )
-		kde? ( !userpriv? ( >=kde-base/kdesu-3.5.5 ) )
+		kde? ( !userpriv? ( || ( >=kde-base/kdesu-3.5.5 >=kde-base/kdebase-3.5.5
+		) ) )
 		etcproposals? ( >=app-portage/etcproposals-1.0 )"
 
 S="${WORKDIR}/${PN}"
