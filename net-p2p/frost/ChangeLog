@@ -1,0 +1,8 @@
+# ChangeLog for net-p2p/frost
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Aug 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de +metadata.xml,
+  +frost-2007.07.19.ebuild:
+  New ebuild for bug 143893 thanks to helch in #gentoo-sunrise for hints
+
