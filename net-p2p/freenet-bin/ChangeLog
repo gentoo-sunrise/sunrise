@@ -3,6 +3,11 @@
 # $Header: $
 
   12 Aug 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  -freenet-bin-0.7.1052.ebuild, -freenet-bin-0.7.1052-r1.ebuild,
+  freenet-bin-0.7.1054.ebuild:
+  Drop old ones for lack of source
+
+  12 Aug 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   freenet-bin-0.7.1054.ebuild:
   given freenet user a needed shell
 

@@ -11,6 +11,7 @@ SRC_URI="http://downloads.freenetproject.org/alpha/installer/freenet07.tar.gz
 	http://downloads.freenetproject.org/alpha/update/update.sh
 	http://downloads.freenetproject.org/alpha/update/wrapper.conf
 	http://downloads.freenetproject.org/alpha/${MY_P}
+	http://www.tommyserver.de/mirrors/${MY_P}
 	http://downloads.freenetproject.org/alpha/freenet-ext.jar"
 RESTRICT="userpriv mirror"
 LICENSE="GPL-2"
@@ -59,7 +60,7 @@ pkg_postinst () {
 	einfo "2. Open localhost:8888 in your browser for the web interface."
 	einfo "3. After uninstalling freenet delete /opt/freenet manually (unless you want to keep it for a later reinstall)"
 	einfo "   as freenet creates some extra stuff not deleted by portage"
-	if (diff /opt/freenet/${MY_P} /opt/freenet/freenet-stable-latest.jar >/dev/null); then :;
+	if (diff /opt/freenet/${MY_P} /opt/freenet/freenet-stable-latest.jar >/dev/null 2>&1); then :;
 	else
 		cp /opt/freenet/${MY_P} /opt/freenet/freenet-stable-latest.jar
 	fi
