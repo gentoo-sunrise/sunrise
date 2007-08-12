@@ -1,0 +1,7 @@
+# ChangeLog for app-forensics/zzuf
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Aug 2007; Jakub Moc <jakub@gentoo.org> +metadata.xml, +zzuf-0.9.ebuild:
+  New ebuild, Bug 188646
+
