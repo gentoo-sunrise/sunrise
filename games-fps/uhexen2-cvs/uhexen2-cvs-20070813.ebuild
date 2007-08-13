@@ -77,7 +77,7 @@ src_unpack() {
 	cd "${S}"
 
 	# Clean CVS stuff
-	for x in `find . -name CVS -print`; do rm -frv ${x}; done
+	for x in `find . -name CVS -print`; do rm -fr ${x}; done
 
 	cd hexen2
 	epatch "${S}/00_Patches/external-music-file-support.diff"
