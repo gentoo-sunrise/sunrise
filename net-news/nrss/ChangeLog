@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2007; Markus Ullmann <jokey@gentoo.org> nrss-0.2.1,
+  nrss-0.3.0_beta2:
+  Drop old
+
   06 Aug 2007; Jack Miller (TheMoken) <jjm2n4@umr.edu> +nrss-0.3.0.ebuild:
   Version Bump
 
