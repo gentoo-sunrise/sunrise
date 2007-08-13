@@ -4,10 +4,9 @@
 
 DESCRIPTION="A helper program for maintaining the package.keyword and package.unmask files"
 HOMEPAGE="http://www.mpagano.com/blog/?page_id=3"
-
 SRC_URI="http://www.mpagano.com/downloads/${P}.tar.gz"
-LICENSE="GPL-2"
 
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
