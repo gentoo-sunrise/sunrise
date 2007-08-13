@@ -22,7 +22,6 @@ RDEPEND="${DEPEND}
 	firefox? ( || ( www-client/mozilla-firefox
 		www-client/mozilla-firefox-bin ) )"
 
-
 S="${WORKDIR}/${MY_P}/src"
 
 search_urw_fonts() {
