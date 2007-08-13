@@ -3,11 +3,10 @@
 # $Header: $
 
 inherit eutils latex-package java-pkg-2 java-ant-2
+
 MY_PV=${PV//./}
 MY_PV=${MY_PV/_/}
 MY_P=${PN}${MY_PV}
-
-S=${WORKDIR}/${PN}05
 
 DESCRIPTION="Writer2Latex (w2l) - converter from OpenDocument .odt format"
 HOMEPAGE="http://www.hj-gym.dk/~hj/writer2latex"
@@ -17,12 +16,13 @@ SRC_URI="http://www.hj-gym.dk/~hj/${PN}/${MY_P}.zip
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86"
-
 IUSE="doc examples"
+
 DEPEND="=virtual/jdk-1.4*
 	virtual/tetex"
-
 RDEPEND=">=virtual/jre-1.4"
+
+S=${WORKDIR}/${PN}05
 
 src_unpack(){
 	unpack ${A}
@@ -62,4 +62,3 @@ src_install() {
 
 	dodoc History.txt Readme.txt changelog05.txt
 }
-

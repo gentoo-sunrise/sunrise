@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2007; Markus Ullmann <jokey@gentoo.org> writer2latex-0.5_beta3:
+  minor cosmetics
+
   02 Aug 2007; Pavel Sanda (ps) <ps at twin.jikos.cz>
   +writer2latex-0.5_beta3.ebuild, +metadata.xml:
   New Ebuild for bug 181283 thanks to D. Kulyabov
