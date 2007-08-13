@@ -13,7 +13,7 @@ CONFIG_CHECK="TUN"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~x86 ~sparc ~amd64 ~ia64"
-IUSE=""
+IUSE="test"
 
 DEPEND="sys-libs/zlib
 	test? ( dev-libs/check )"
@@ -27,6 +27,4 @@ src_install() {
 	newinitd "${FILESDIR}"/iodined.init iodined
 	newconfd "${FILESDIR}"/iodined.conf iodined
 	keepdir /var/empty
-
 }
-
