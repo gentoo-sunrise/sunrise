@@ -38,7 +38,7 @@ apply_sed ()
 	local std="gtk"
 	local frontends="[\"$std\"]"
 
-	sed -i 	-e "s;^\(VERSION\s*=\s*\).*;\1\"${PV}\";" \
+	sed -i -e "s;^\(VERSION\s*=\s*\).*;\1\"${PV}\";" \
 			-e "s;^\(CONFIG_DIR\s*=\s*\).*;\1\"${CONFIG_DIR}\";" \
 			-e "s;^\(DATA_DIR\s*=\s*\).*;\1\"${DATA_DIR}\";" \
 			-e "s;^\(ICON_DIR\s*=\s*\).*;\1\"${ICON_DIR}\";" \
