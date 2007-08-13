@@ -1,0 +1,8 @@
+# ChangeLog for app-portage/elog-list
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Aug 2007; Mike Pagano <mpagano@gmail.com> +elog-list-0.0.6.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 126370. Reviewed by Jokey.
+
