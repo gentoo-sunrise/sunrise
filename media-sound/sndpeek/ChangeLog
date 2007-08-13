@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2007; Markus Ullmann <jokey@gentoo.org>
+  -sndpeek-1.1-makefile.patch:
+  Drop old
+
   10 Sep 2006; Jakub Moc <jakub@gentoo.org> sndpeek-1.1.ebuild:
   Monolithic X is not supported any more
 
