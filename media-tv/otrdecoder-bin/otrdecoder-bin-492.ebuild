@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_PV=446
+MY_PV=492
 
 DESCRIPTION="Decoder for onlinetvrecorder.com (German)"
 HOMEPAGE="http://www.onlinetvrecorder.com/"
@@ -19,9 +19,10 @@ RDEPEND="X? ( gnome-base/libglade
 DEPEND=""
 
 RESTRICT="strip"
-S="${WORKDIR}/${PN}-linux-v${MY_PV}"
+S="${WORKDIR}/otrdecoder-bin-linux-Ubuntu_gutsy_(development_branch)-v${MY_PV}"
 
 src_install() {
+	echo ${S}
 	dobin otrdecoder
 	if use X; then
 		insinto /usr/share/${P}
