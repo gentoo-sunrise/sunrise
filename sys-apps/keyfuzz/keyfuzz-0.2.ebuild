@@ -7,7 +7,7 @@ keyboard drivers"
 HOMEPAGE="http://0pointer.de/lennart/projects/keyfuzz/"
 SRC_URI="http://0pointer.de/lennart/projects/${PN}/${P}.tar.gz"
 
-LICENSE="GPL-3"
+LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
@@ -17,6 +17,6 @@ RDEPEND=""
 
 src_install() {
 	dobin src/keyfuzz
-	dodoc README LICENSE
+	dodoc README
 	doman man/*
 }
