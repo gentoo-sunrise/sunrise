@@ -26,6 +26,7 @@ RDEPEND=">=sys-libs/glibc-2.4
 	gnome-base/libgnome
 	gnome-base/libgnomeui
 	media-libs/alsa-lib
+	net-dns/libidn
 	net-libs/xulrunner
 	net-www/netscape-flash
 	dev-libs/nspr
