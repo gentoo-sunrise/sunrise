@@ -204,10 +204,9 @@ src_install() {
 	# Remove unneeded icon
 	rm -f "${D}/${dir}/${PN}.png"
 
-	doicon source/${PN}.png || die "doicon failed"
-
 	# Enable OpenGL in desktop entry, if relevant USE flag is enabled
 	use opengl && de_cmd="${PN} -opengl"
+	doicon source/${PN}.png || die "doicon ${PN}.png failed"
 	make_desktop_entry "${de_cmd}" "Vavoom"
 
 	dodoc docs/${PN}.txt || die "dodoc vavoom.txt failed"
@@ -220,8 +219,9 @@ src_install() {
 
 	if use wxwindows ; then
 		# Install graphical launcher
+		doicon utils/vlaunch/vlaunch.xpm || die "doicon vlaunch.xpm failed"
 		dogamesbin utils/bin/vlaunch || die "dogamesbin vlaunch failed"
-		make_desktop_entry "vlaunch" "Vavoom Launcher"
+		make_desktop_entry "vlaunch" "Vavoom Launcher" "vlaunch.xpm"
 	fi
 
 	prepgamesdirs

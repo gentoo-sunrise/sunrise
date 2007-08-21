@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Aug 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
+  Install also proper graphical launcher icon
+
   08 Aug 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
   Added 'wxwindows' USE flag, to enable installation of graphical launcher,
   based on WxWidgets toolkit
