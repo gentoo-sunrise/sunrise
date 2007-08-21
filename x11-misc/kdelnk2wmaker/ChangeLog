@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/kdelnk2wmaker
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Aug 2007; Federico Ferri (federico__) <mescalinum@gmail.com>
+  +metadata.xml, +kdelnk2wmaker-0.06.ebuild:
+  New Ebuild for bug 188402
+
