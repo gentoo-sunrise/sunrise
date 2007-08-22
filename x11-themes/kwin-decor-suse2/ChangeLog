@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Aug 2007; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
+  +kwin-decor-suse2-0.4.1.ebuild:
+  version bump to 0.4.1
+
   05 Apr 2007; Jakub Moc <jakub@gentoo.org> kwin-decor-suse2-0.4.ebuild:
   Fix nonsensical slotting
 
