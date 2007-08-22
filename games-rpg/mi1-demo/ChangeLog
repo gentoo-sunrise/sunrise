@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Aug 2007; Nathan Egge (unlord) <nathanegge@yahoo.com>
+  mi1-demo-1.ebuild:
+  Renaming application to match games-rpg/mi3-demo
+
+  22 Aug 2007; Nathan Egge (unlord) <nathanegge@yahoo.com>
   +files/mi1-demo.png, +metadata.xml, +mi1-demo-1.ebuild:
   New ebuild for bug 142673
 

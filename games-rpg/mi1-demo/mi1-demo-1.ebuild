@@ -26,7 +26,7 @@ src_install() {
 
 	games_make_wrapper ${PN} "scummvm -f -p \"${dir}\" monkey"
 	doicon "${FILESDIR}/${PN}.png" || die "newicon failed"
-	make_desktop_entry ${PN} "Secret of Monkey Island (Demo)" ${PN}.png
+	make_desktop_entry ${PN} "Monkey Island 1 (Demo)" ${PN}.png
 
 	prepgamesdirs
 }
