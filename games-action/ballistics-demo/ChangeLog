@@ -1,0 +1,8 @@
+# ChangeLog for games-action/ballistics-demo
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Aug 2007; Federico Ferri (federico__) <mescalinum@gmail.com>
+  +metadata.xml, +ballistics-demo-1.ebuild:
+  New Ebuild for bug 181418
+
