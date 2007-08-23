@@ -4,7 +4,7 @@
 
 inherit eutils
 
-CLAMTK_KDEVER="0.05"
+CLAMTK_KDEVER="0.06"
 DESCRIPTION="A frontend for ClamAV using Gtk2-perl."
 HOMEPAGE="http://clamtk.sourceforge.net/"
 SRC_URI="mirror://sourceforge/clamtk/${P}.tar.gz
