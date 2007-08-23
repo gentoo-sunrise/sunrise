@@ -4,7 +4,7 @@
 
 inherit games
 
-DESCRIPTION="Simon the Sorcerer (interactive demo)"
+DESCRIPTION="Simon the Sorcerer 2 (interactive demo)"
 HOMEPAGE="http://www.adventuresoft.com/gs2.html"
 SRC_URI="http://gentooexperimental.org/~unlord/simon2demo.zip"
 
