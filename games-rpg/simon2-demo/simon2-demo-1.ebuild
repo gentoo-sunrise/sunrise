@@ -6,7 +6,8 @@ inherit games
 
 DESCRIPTION="Simon the Sorcerer 2 (interactive demo)"
 HOMEPAGE="http://www.adventuresoft.com/gs2.html"
-SRC_URI="http://gentooexperimental.org/~unlord/simon2demo.zip"
+SRC_URI="http://quick.mixnmojo.com/demos/simon2demo.zip
+	http://gentooexperimental.org/~unlord/simon2demo.zip"
 
 LICENSE="freedist"
 SLOT="0"

@@ -4,6 +4,10 @@
 
   23 Aug 2007; Nathan Egge (unlord) <nathanegge@yahoo.com>
   simon2-demo-1.ebuild:
+  Added redundant SRC_URI
+
+  23 Aug 2007; Nathan Egge (unlord) <nathanegge@yahoo.com>
+  simon2-demo-1.ebuild:
   Using correct DESCRIPTION now
 
   23 Aug 2007; Jakub Moc <jakub@gentoo.org> simon2-demo-1.ebuild:
