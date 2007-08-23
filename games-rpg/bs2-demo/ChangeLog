@@ -1,0 +1,8 @@
+# ChangeLog for games-rpg/bs2-demo
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Aug 2007; Nathan Egge (unlord) <nathanegge@yahoo.com>
+  +files/bs2-demo.png, +metadata.xml, +bs2-demo-1.ebuild:
+  New ebuild for bug 142430
+
