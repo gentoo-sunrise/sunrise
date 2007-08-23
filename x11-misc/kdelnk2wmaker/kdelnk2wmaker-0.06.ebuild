@@ -15,6 +15,6 @@ DEPEND=""
 RDEPEND=""
 
 src_install() {
-	dodoc AUTHORS BUGS INSTALL README TODO
+	dodoc AUTHORS BUGS README TODO
 	dobin ${PN}
 }
