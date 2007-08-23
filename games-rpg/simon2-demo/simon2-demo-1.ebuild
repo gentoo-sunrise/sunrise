@@ -15,9 +15,7 @@ IUSE=""
 RESTRICT="strip"
 
 RDEPEND=">=games-engines/scummvm-0.8.2"
-DEPEND="|| (
-	app-arch/unrar
-	app-arch/rar )"
+DEPEND="app-arch/unzip"
 
 S=${WORKDIR}/simon2demo
 dir=${GAMES_DATADIR}/${PN}
