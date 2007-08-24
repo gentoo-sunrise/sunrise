@@ -16,7 +16,7 @@ IUSE="kde userpriv etcproposals"
 RDEPEND=">=sys-apps/portage-2.1.2
 		>=dev-python/lxml-1.3.2
 		>=dev-python/pygtk-2.10.4
-		>=x11-libs/vte-0.12.2 <x11-libs/vte-0.16.8
+		>=x11-libs/vte-0.12.2
 		>=gnome-base/libglade-2.5.1
 		>=dev-util/portatosourceview-2.16.1
 		!kde? ( !userpriv? ( >=x11-libs/gksu-2.0.0 ) )
