@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  freenet-bin-0.7.1054.ebuild, +freenet-bin-0.7.1056.ebuild:
+  New upstream release
+
   12 Aug 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   -freenet-bin-0.7.1052.ebuild, -freenet-bin-0.7.1052-r1.ebuild,
   freenet-bin-0.7.1054.ebuild:

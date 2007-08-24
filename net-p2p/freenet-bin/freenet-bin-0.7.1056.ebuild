@@ -5,13 +5,13 @@
 inherit eutils
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
-MY_V="r14628"
+MY_V="r14871"
 MY_P="${PN/-bin/}-${MY_V}-snapshot.jar"
 SRC_URI="http://downloads.freenetproject.org/alpha/installer/freenet07.tar.gz
 	http://downloads.freenetproject.org/alpha/update/update.sh
 	http://downloads.freenetproject.org/alpha/update/wrapper.conf
 	http://downloads.freenetproject.org/alpha/${MY_P}
-	http://www.tommyserver.de/mirrors/${MY_P} )
+	http://www.tommyserver.de/mirrors/${MY_P}
 	http://downloads.freenetproject.org/alpha/freenet-ext.jar"
 RESTRICT="userpriv mirror"
 LICENSE="GPL-2"
