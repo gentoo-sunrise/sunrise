@@ -1,0 +1,8 @@
+# ChangeLog for games-rpg/bs1
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Aug 2007; Nathan Egge (unlord) <nathanegge@yahoo.com> +files/bs1.png,
+  +metadata.xml, +bs1-1.ebuild:
+  New ebuild for bug 190031
+
