@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/portato/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~ppc"
 
 RDEPEND="virtual/python
 	>=x11-libs/gtksourceview-1.1.90"
