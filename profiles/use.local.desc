@@ -18,6 +18,7 @@ app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/ccpublisher:zope - Install zope stuff
 app-misc/emelfm2:fam - Use FAM for file-change monitoring
 app-misc/emelfm2:unicode - Forces conversion of filenames to Unicode
+app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
 app-misc/gizmod:libvisual - Enable the libvisual (Amarok) plugin
@@ -114,8 +115,6 @@ media-sound/om:ladspa - Enables support for LADSPA plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
-media-video/gcstar:md5 - Enables generation of md5 checksums
-media-video/gcstar:zip - Enables support for zip files
 net-analyzer/honeytrap:efence - Electronic fence malloc debugger
 net-analyzer/honeytrap:ipq-mon - IP queue based monitor
 net-analyzer/honeytrap:pcap-mon - pcap based monitor

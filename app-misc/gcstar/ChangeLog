@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Aug 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -gcstar-0.4.1.ebuild, +gcstar-1.1.1.ebuild:
+  Major version bump. Move from media-video to app-misc.
+
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> gcstar-0.4.1.ebuild:
   The optional stuff clearly is not DEPEND
 
