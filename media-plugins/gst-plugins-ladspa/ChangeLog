@@ -1,8 +1,0 @@
-# ChangeLog for media-plugins/gst-plugins-ladspa
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  06 Apr 2007; Zeth Green (zeth) <theology@gmail.org>
-  +gst-plugins-ladspa-0.10.4.ebuild, +metadata.xml:
-  New Ebuild for bug 167183, will be dependency for the Jokosher audio editor
-
