@@ -3,8 +3,8 @@
 # $Header: $
 
 DESCRIPTION="Multiuser IRC proxy with ssl support"
-HOMEPAGE="http://bip.berlios.de/"
-SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://bip.t1r.net/"
+SRC_URI="http://bip.t1r.net/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -53,5 +53,5 @@ src_install() {
 pkg_postinst() {
 	elog 'Default configuration file is "~/.bip/bip.conf"'
 	elog "You can find a sample configuration file in"
-	elog "/usr/share/doc/${PF}/bip.conf.sample"
+	elog "/usr/share/doc/bip-0.6.1/bip.conf.sample.bz2"
 }

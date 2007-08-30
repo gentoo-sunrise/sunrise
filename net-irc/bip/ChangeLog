@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Aug 2007; Mike Pagano <mpagano@gmail.com> -bip-0.6.0.ebuild,
+  +bip-0.6.1.ebuild:
+  Version bump. Remove old version
+
   25 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> bip-0.6.0.ebuild:
   fixed econf
 
