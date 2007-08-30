@@ -28,8 +28,7 @@ RDEPEND="dev-lang/perl
 		virtual/perl-File-Spec
 		virtual/perl-File-Temp
 		virtual/perl-libnet
-		mp3? ( dev-perl/MP3-Info 
-			dev-perl/MP3-Tag )
+		mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
 		tellico? ( dev-perl/Archive-Zip
 			virtual/perl-Digest-MD5
 			virtual/perl-MIME-Base64 )
