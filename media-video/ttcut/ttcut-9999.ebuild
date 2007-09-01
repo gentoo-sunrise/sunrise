@@ -6,7 +6,7 @@ inherit eutils qt4 subversion
 
 DESCRIPTION="Tool for removing advertisements from recorded MPEG files"
 HOMEPAGE="http://ttcut.tritime.org/"
-ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/ttcut/trunk"
+ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/ttcut/branches/work"
 
 LICENSE="GPL-2"
 SLOT="0"
