@@ -1,0 +1,2 @@
+[global]
+ssl-authority-files = /usr/local/portage/net-p2p/freenet/files/freenet.pem

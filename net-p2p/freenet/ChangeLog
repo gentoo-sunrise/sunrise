@@ -1,0 +1,9 @@
+# ChangeLog for net-p2p/freenet
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  +files/freenet.pem, +files/servers, +metadata.xml,
+  +freenet-0.7.1056.ebuild:
+  New source ebuild for bug 128783
+
