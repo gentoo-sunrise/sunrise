@@ -1,0 +1,9 @@
+# ChangeLog for x11-libs/hippo-canvas
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  +files/hippo-canvas-0.2.23-use-python.patch, +metadata.xml,
+  +hippo-canvas-0.2.23.ebuild:
+  New ebuild for bug 190836
+
