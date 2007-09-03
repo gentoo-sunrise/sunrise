@@ -28,6 +28,7 @@ RDEPEND=">=dev-libs/glib-2.6
 	>=net-misc/curl-7.13.1
 	x11-libs/cairo
 	>=x11-libs/gtk+-2.6
+	x11-libs/hippo-canvas
 	x11-libs/libXScrnSaver
 	x11-libs/pango
 	firefox? ( !xulrunner? (
@@ -42,7 +43,7 @@ src_unpack() {
 	cd "${S}"
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
-	epatch "${FILESDIR}/${PN}-1.1.22-as-needed.patch"
+	epatch "${FILESDIR}/${P}-as-needed.patch"
 	epatch "${FILESDIR}/${PN}-1.1.42-libxpcom.patch"
 	epatch "${FILESDIR}/${PN}-1.1.32-use-firefox.patch"
 	eautoreconf
@@ -62,6 +63,7 @@ src_unpack() {
 	else
 		G2CONF="--disable-firefox"
 	fi
+	G2CONF="${G2CONF} --without-included-canvas"
 }
 
 pkg_postinst () {
