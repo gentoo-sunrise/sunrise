@@ -14,9 +14,9 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~x86"
 
-DEPEND="app-arch/unzip
-	>=app-text/tetex-3.0"
-RDEPEND=""
+RDEPEND=">=app-text/tetex-3.0"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
 
 S=${WORKDIR}/${PN}
 SUPPLIER="public"
@@ -28,7 +28,7 @@ src_compile() {
 }
 
 src_install() {
-	cd ${S}
+	cd "${S}"
 	latex-package_src_doinstall sty
 	dodoc *pdf README
 }
