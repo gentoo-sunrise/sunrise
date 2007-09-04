@@ -1,6 +1,6 @@
---- po/de/kio_sysinfo.po.orig	2007-06-09 14:27:51.000000000 +0200
-+++ po/de/kio_sysinfo.po	2007-06-11 15:56:07.000000000 +0200
-@@ -1,15 +1,17 @@
+--- po/de/kio_sysinfo.po.orig	2007-09-03 16:06:28.000000000 +0200
++++ po/de/kio_sysinfo.po	2007-09-03 16:37:54.000000000 +0200
+@@ -1,15 +1,16 @@
 -# translation of kio_sysinfo.po to Deutsch
 +# translation of kio_sysinfo.po to German
  # This file is put in the public domain.
@@ -21,7 +21,7 @@
  "MIME-Version: 1.0\n"
  "Content-Type: text/plain; charset=UTF-8\n"
  "Content-Transfer-Encoding: 8bit\n"
-@@ -42,19 +44,19 @@
+@@ -42,11 +43,11 @@
  
  #: sysinfo.cpp:108
  msgid "Looking for disk information..."
@@ -29,9 +29,13 @@
 +msgstr "Es wird nach Laufwerksinformationen gesucht..."
  
  #: sysinfo.cpp:109
- msgid "Disk Information"
+ msgid "Disks Information"
 -msgstr "Diskettenlaufwerkinformation"
-+msgstr "Laufwerksinformationen"
++msgstr "Laufwerksinformation"
+ 
+ msgid "Total"
+ msgstr "Gesamter"
+@@ -56,11 +57,11 @@
  
  #: sysinfo.cpp:113
  msgid "OS Information"
@@ -41,11 +45,11 @@
  #: sysinfo.cpp:115
  msgid "OS:"
 -msgstr "BS:"
-+msgstr "Betriebssystem:"
++msgstr "Betriebssystem"
  
  #: sysinfo.cpp:116
  msgid "Current user:"
-@@ -70,7 +72,7 @@
+@@ -76,7 +77,7 @@
  
  #: sysinfo.cpp:124
  msgid "Display Info"
@@ -54,7 +58,7 @@
  
  #: sysinfo.cpp:126
  msgid "Vendor:"
-@@ -86,7 +88,7 @@
+@@ -92,17 +93,17 @@
  
  #: sysinfo.cpp:136
  msgid "Getting OS information...."
@@ -62,8 +66,11 @@
 +msgstr "Informationen über das Betriebsystem werden abgerufen..."
  
  msgid "Case Temperature"
- msgstr "Interne Temperatur "
-@@ -96,7 +98,7 @@
+-msgstr "Interne Temperatur "
++msgstr "Gehäusetemperatur"
+ 
+ msgid "Temperature:"
+ msgstr "Temperatur:"
  
  #: sysinfo.cpp:139
  msgid "Common Folders"
@@ -72,7 +79,7 @@
  
  #: sysinfo.cpp:143
  msgid "My Home Folder"
-@@ -104,7 +106,7 @@
+@@ -110,7 +111,7 @@
  
  #: sysinfo.cpp:144
  msgid "Root Folder"
@@ -81,7 +88,7 @@
  
  #: sysinfo.cpp:145
  msgid "Network Folders"
-@@ -120,11 +122,11 @@
+@@ -126,11 +127,11 @@
  
  #: sysinfo.cpp:159
  msgid "Looking for CPU information..."
@@ -95,7 +102,7 @@
  
  #: sysinfo.cpp:165
  msgid "Processor (CPU):"
-@@ -168,19 +170,19 @@
+@@ -174,27 +175,27 @@
  
  #: sysinfo.cpp:184
  msgid "Looking for hardware information..."
@@ -117,18 +124,43 @@
 -msgstr "Bios Version:"
 +msgstr "BIOS-Version:"
  
+ #: sysinfo.cpp:209
+ msgid "Total Swap:"
+-msgstr "Total Swap:"
++msgstr "Gesamter Swap:"
+ 
+ #: sysinfo.cpp:210
+ msgid " Free Swap:"
+-msgstr " Freies Swap:"
++msgstr " Freier Swap:"
+ 
  #: sysinfo.cpp:256
  msgid "%1 (+ %2 Caches)"
-@@ -204,7 +206,7 @@
+@@ -218,19 +219,19 @@
  
  #: sysinfo.cpp:295
  msgid "Press the right mouse button for more options like Mount or Eject"
 -msgstr "Klicken Sie die rechte Maustaste für weitere Optionen, wie Mounten oder Auswerfen"
-+msgstr "Klicken Sie die rechte Maustaste für weitere Optionen, wie Einbinden oder Auswerfen"
++msgstr "Benutzen Sie die rechte Maustaste für weitere Optionen, wie Einbinden oder Auswerfen"
  
  #: sysinfo.cpp:478
  msgid "%1 (3D Support)"
-@@ -228,7 +230,7 @@
+-msgstr "%1 (3D Unterstützung)"
++msgstr "%1 (3D-Unterstützung)"
+ 
+ #: sysinfo.cpp:480
+ msgid "%1 (No 3D Support)"
+-msgstr "%1 (Keine 3D Unterstützung)"
++msgstr "%1 (Keine 3D-Unterstützung)"
+ 
+ #: sysinfo.cpp:491
+ msgid "Network is <strong>unreachable</strong>"
+-msgstr "Netzwerk ist  <strong>nicht erreichbar</strong>"
++msgstr "Netzwerk ist <strong>nicht erreichbar</strong>"
+ 
+ #: sysinfo.cpp:493
+ msgid "You are <strong>offline</strong>"
+@@ -242,7 +243,7 @@
  
  #: sysinfo.cpp:497
  msgid "<strong>Establishing</strong> connection to the network"

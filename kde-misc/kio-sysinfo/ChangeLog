@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Sep 2007; Kevin Funk <krf@gmx.de>
+  files/kio-sysinfo-1.5-de-translation.patch, +kio-sysinfo-1.8.2.ebuild,
+  +files/kio-sysinfo-1.8.2-de-translation.patch:
+  Version bump, fix old patches
+
   11 Aug 2007; Kevin Funk <krf@gmx.de> +kio-sysinfo-1.5.ebuild,
   +files/kio-sysinfo-1.5-de-translation.patch, +metadata.xml:
   New ebuild for bug 139837. Thanks to Tommy[D] and genstef for support
