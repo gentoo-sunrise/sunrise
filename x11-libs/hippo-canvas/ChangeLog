@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Sep 2007; Jakub Moc <jakub@gentoo.org> hippo-canvas-0.2.23.ebuild:
+  Use gnome2 eclass properly, clean up ebuild, remove USE=doc until
+  eautoreconf does not fail without gtk-doc installed
+
   02 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   +files/hippo-canvas-0.2.23-use-python.patch, +metadata.xml,
   +hippo-canvas-0.2.23.ebuild:
