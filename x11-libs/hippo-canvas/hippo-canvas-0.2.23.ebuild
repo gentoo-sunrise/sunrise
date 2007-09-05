@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+GCONF_DEBUG="no"
 inherit autotools gnome2 eutils
 
 DESCRIPTION="A canvas library based on GTK+-2, Cairo, and Pango"
