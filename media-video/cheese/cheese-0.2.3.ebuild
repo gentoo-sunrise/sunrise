@@ -40,7 +40,8 @@ RDEPEND="dev-libs/dbus-glib
 	x11-libs/libXxf86vm"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	nls? ( sys-devel/gettext )"
 
 DOCS="AUTHORS ChangeLog README TODO"
 
