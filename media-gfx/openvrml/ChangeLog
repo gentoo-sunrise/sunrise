@@ -1,0 +1,48 @@
+# ChangeLog for media-gfx/openvrml
+# Copyright 2002-2005 Gentoo Foundation; Distributed under the GPL v2
+
+  06 Sep 2007; Sebastiaan Breedveld <s.breedveld@erasmusmc.nl> openvrml-0.16.6.ebuild
+  Updated ebuild to 0.16.6, added dependencies.
+
+*openvrml-0.16.6
+
+  23 Mar 2005; Seemant Kulleen <seemant@gentoo.org> openvrml-0.14.3.ebuild:
+  change dep from net-www/mozilla to www-client/mozilla
+
+  06 Nov 2004; <heino@gentoo.org> openvrml-0.14.3.ebuild:
+  fix compilation of java stuff
+
+  25 Aug 2004; Sven Wegener <swegener@gentoo.org> openvrml-0.11.2.ebuild,
+  openvrml-0.14.3.ebuild:
+  Changed SRC_URI to use mirror:// syntax.
+
+  02 Aug 2004; Heinrich Wendel <lanius@gentoo.org> openvrml-0.14.3.ebuild:
+  replace text useflag by truetype
+
+  09 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org> openvrml-0.14.1.ebuild:
+  clean older ebuild
+
+  30 Mar 2004; Daniel Ahlberg <aliz@gentoo.org> openvrml-0.14.3.ebuild:
+  Adding amd64 keyword. Closing #44419.
+
+*openvrml-0.14.3 (22 Nov 2003)
+
+  22 Nov 2003; Heinrich Wendel <lanius@gentoo.org> openvrml-0.14.3.ebuild:
+  bump
+
+  22 Oct 2003; Brandy Westcott <brandy@gentoo.org> openvrml-0.14.1.ebuild:
+  An OpenVRML overhaul. Optional functionality can now be specified through USE
+  flags; added required dependencies. Closes #31634.
+
+*openvrml-0.14.1 (18 Oct 2003)
+
+  18 Oct 2003; Heinrich Wendel <lanius@gentoo.org> openvrml-0.14.1.ebuild:
+  bump
+
+  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
+ 
+*openvrml-0.11.2 (4 May 2002)
+
+  4 May 2002; Dan Armak <danarmak@gentoo.org>
+  Initial ebuild.
+
