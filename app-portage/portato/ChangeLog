@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2007; René Neumann (Necoro) <necoro@necoro.net>
+  portato-0.8.5.ebuild:
+  Ebuild beautifying
+
   26 Aug 2007; René Neumann (Necoro) <necoro@necoro.net>
   -portato-0.8.1.ebuild, +portato-0.8.5.ebuild:
   Version bump to 0.8.5

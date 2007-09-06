@@ -19,11 +19,16 @@ RDEPEND=">=sys-apps/portage-2.1.2
 		>=x11-libs/vte-0.12.2
 		>=gnome-base/libglade-2.5.1
 		>=dev-util/portatosourceview-2.16.1
-		!kde? ( !userpriv? ( >=x11-libs/gksu-2.0.0 ) )
-		kde? ( !userpriv? ( || ( >=kde-base/kdesu-3.5.5 >=kde-base/kdebase-3.5.5
-		) ) )
-		nls? ( virtual/libintl )
-		libnotify? ( >=dev-python/notify-python-0.1.1 )"
+
+		!userpriv? (
+			kde? ( || ( >=kde-base/kdesu-3.5.5 >=kde-base/kdebase-3.5.5	) )
+			!kde? ( >=x11-libs/gksu-2.0.0 ) )
+
+		libnotify? ( >=dev-python/notify-python-0.1.1 )
+		nls? ( virtual/libintl )"
+
+DEPEND="${RDEPEND}
+		nls? ( sys-devel/gettext )"
 
 S="${WORKDIR}/${PN}"
 CONFIG_DIR="/etc/${PN}/"
