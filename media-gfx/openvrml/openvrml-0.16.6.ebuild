@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools
-
 IUSE="imagetexture javascript nsplugin opengl truetype truetype zlib" # java
 
 DESCRIPTION="VRML97 library"
@@ -30,13 +28,6 @@ DEPEND="${RDEPEND}
 	# java? ( virtual/jdk )
 
 # TODO: add support for java via libmozjs (http://www.mozilla.org/js/spidermonkey/)
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	eautoreconf
-}
-
 
 pkg_setup() {
 	ewarn "Java is currently unsupported in this version!"
