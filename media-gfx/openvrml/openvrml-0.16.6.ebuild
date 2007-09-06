@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-IUSE="imagetexture javascript nsplugin opengl truetype truetype zlib" # java
+IUSE="imagetexture javascript nsplugin opengl truetype zlib" # java
 
 DESCRIPTION="VRML97 library"
 SRC_URI="mirror://sourceforge/openvrml/${P}.tar.gz"
