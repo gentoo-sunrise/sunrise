@@ -35,27 +35,25 @@ pkg_setup() {
 }
 
 src_compile() {
-	local myconf=""
-
-	# Java is currently unsupported
-	myconf="${myconf} --with-x --disable-script-node-java \
+	local myconf="--with-x \
 		    $(use_enable zlib gzip) \
 		    $(use_enable imagetexture imagetexture-node) \
 		    $(use_enable truetype text-node) \
 		    $(use_enable javascript script-node-javascript) \
 		    $(use_enable opengl gl-renderer) \
 		    $(use_enable opengl lookat) \
-		    $(use_enable nsplugin mozilla-plugin)"
+		    $(use_enable nsplugin mozilla-plugin) \
+		    --disable-script-node-java"
+		    # Java is currently unsupported
 		    # $(use_enable java script-node-java)
+		    # use java && myconf="${myconf} --with-jdk=`java-config -O`"
 
-#	use java && myconf="${myconf} --with-jdk=`java-config -O`"
-	./configure --prefix=/usr ${myconf} || die "configure failed"
-
-	make || die "make failed"
+	econf --prefix=/usr ${myconf}
+	emake || die "make failed"
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 
 	dodoc AUTHORS ChangeLog NEWS README THANKS
 }
