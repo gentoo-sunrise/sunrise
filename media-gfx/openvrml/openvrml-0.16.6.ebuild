@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/openvrml/${P}.tar.gz"
 HOMEPAGE="http://openvrml.org"
 
 SLOT="0"
-LICENSE="LGPL-2.1 GPL-2"
+LICENSE="BSD GPL-2 LGPL-2.1 public-domain"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="gnome-base/libgnomeui
