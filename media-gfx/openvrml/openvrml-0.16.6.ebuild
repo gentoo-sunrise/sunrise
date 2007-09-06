@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils autotools
+inherit autotools
 
 IUSE="imagetexture javascript nsplugin opengl truetype truetype zlib" # java
 
