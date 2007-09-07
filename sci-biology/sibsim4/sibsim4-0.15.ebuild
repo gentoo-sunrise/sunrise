@@ -18,7 +18,7 @@ S="${WORKDIR}/SIBsim4-${PV}"
 
 src_unpack() {
 	unpack ${A}
-	sed -i 's/CFLAGS = \(.*\)/CFLAGS := \1 ${CFLAGS}/' ${S}/Makefile
+	sed -i 's/CFLAGS = \(.*\)/CFLAGS := \1 ${CFLAGS}/' ${S}/Makefile || die "sed failed"
 }
 
 src_install() {
