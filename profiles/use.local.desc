@@ -131,6 +131,7 @@ net-dns/nsd:tsig - Enable TSIG support
 net-ftp/cmdftp:onlysmall - Disable largefile support
 net-im/gizmo:avahi - Use avahi mdns daemon
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
+net-mail/fdm:tdb - Enable the Trivial Database (xdb) backend
 net-mail/simscan:attachment - Enable attachment filtering
 net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
 net-mail/simscan:dropmsg - Enable dropping message contains virus/spam
