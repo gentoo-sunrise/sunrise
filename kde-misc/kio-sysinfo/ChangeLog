@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2007; Markus Ullmann <jokey@gentoo.org> kio-sysinfo-1.8.2.ebuild:
+  Don't format with whitespaces but tabs
+
   04 Sep 2007; Kevin Funk <krf@gmx.de>
   files/kio-sysinfo-1.5-de-translation.patch, +kio-sysinfo-1.8.2.ebuild,
   +files/kio-sysinfo-1.8.2-de-translation.patch:
