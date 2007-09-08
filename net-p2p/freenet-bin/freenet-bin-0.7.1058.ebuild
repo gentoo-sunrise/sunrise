@@ -3,30 +3,35 @@
 # $Header: $
 
 inherit eutils
+
+MY_SVN_V="r14996"
+MY_P="${PN/-bin/}-${MY_SVN_V}-snapshot.jar"
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
-MY_V="r14996"
-MY_P="${PN/-bin/}-${MY_V}-snapshot.jar"
 SRC_URI="http://downloads.freenetproject.org/alpha/installer/freenet07.tar.gz
 	http://downloads.freenetproject.org/alpha/update/update.sh
 	http://downloads.freenetproject.org/alpha/update/wrapper.conf
 	http://downloads.freenetproject.org/alpha/${MY_P}
 	http://www.tommyserver.de/mirrors/${MY_P}
 	http://downloads.freenetproject.org/alpha/freenet-ext.jar"
-RESTRICT="userpriv mirror"
+
 LICENSE="GPL-2"
 IUSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RDEPEND="( >=virtual/jre-1.4 )"
+
+DEPEND=""
+RDEPEND=">=virtual/jre-1.4"
+
 S="${WORKDIR}/${PN/-bin/}"
 
+RESTRICT="userpriv mirror"
+
 QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
-#	opt/freenet/lib/libwrapper-linux-x86-64.so"
 
 pkg_setup() {
-enewgroup freenet
-enewuser freenet -1 /bin/sh /opt/freenet freenet
+	enewgroup freenet
+	enewuser freenet -1 /bin/sh /opt/freenet freenet
 }
 
 src_unpack() {
@@ -35,20 +40,23 @@ src_unpack() {
 	cd "${S}"
 	rm bin/wrapper-macosx* bin/wrapper-linux-ppc-* lib/libwrapper-macosx*.* \
 	lib/libwrapper*ppc-*.so update stun mdns librarian bin/1run.sh bin/*jar
-}
-
-src_compile() {
+	
 	sed -ie 's:./bin/wrapper:/opt/freenet/bin/wrapper:g' run.sh
 	sed -ie 's:./wrapper.conf:/opt/freenet/wrapper.conf:g' run.sh
 	sed -ie 's:PIDDIR=".":PIDDIR="/opt/freenet/":g' run.sh
 	sed -ie 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' run.sh
 }
 
+src_compile() {
+	einfo "Nothing to compile"
+}
+
 src_install() {
 	newinitd "${S}/run.sh" freenet
 	rm ${S}/run.sh
+
 	into /opt/freenet
-	cp -r ${S} ${D}/opt/
+	doins -r ${S}
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
 	fowners freenet:freenet /opt/freenet/ -R
 }
@@ -58,8 +66,4 @@ pkg_postinst () {
 	einfo "2. Open localhost:8888 in your browser for the web interface."
 	einfo "3. After uninstalling freenet delete /opt/freenet manually (unless you want to keep it for a later reinstall)"
 	einfo "   as freenet creates some extra stuff not deleted by portage"
-	if (diff /opt/freenet/${MY_P} /opt/freenet/freenet-stable-latest.jar >/dev/null 2>&1); then :;
-	else
-		cp /opt/freenet/${MY_P} /opt/freenet/freenet-stable-latest.jar
-	fi
 }
