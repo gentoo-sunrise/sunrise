@@ -70,4 +70,3 @@ pkg_postinst () {
 	einfo "3. Open localhost:8888 in your browser for the web interface."
 	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/*
 }
-
