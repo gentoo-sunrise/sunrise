@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2007; Markus Ullmann <jokey@gentoo.org> -gmap-2007.05.25.ebuild:
+  Drop old
+
   06 Sep 2007; azazello <gentoo@horizon.ath.cx> +gmap-2007.07.16.ebuild:
   version bump
 
