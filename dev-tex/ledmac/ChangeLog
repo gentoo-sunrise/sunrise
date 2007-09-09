@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Sep 2007; Pavel Sanda (ps) <ps at twin.jikos.cz> ledmac-2005.ebuild:
+  Change download URI
+
   03 Sep 2007; Pavel Sanda (ps) <ps at twin.jikos.cz> +ledmac-2005.ebuild,
   +metadata.xml:
   New Ebuild for bug 191150

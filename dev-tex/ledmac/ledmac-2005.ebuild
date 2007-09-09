@@ -5,8 +5,7 @@
 inherit latex-package
 
 DESCRIPTION="LaTeX styles for (bilingual) critical editions typesetting."
-#SRC_URI="http://dev.gentooexperimental.org/~dreeevil/${MY_PN}-${PV}.zip"
-SRC_URI="http://195.113.31.123/~sanda/${P}.zip"
+SRC_URI="http://dev.gentooexperimental.org/~patrick/${P}.zip"
 HOMEPAGE="http://www.ctan.org/tex-archive/macros/latex/contrib/ledmac/"
 LICENSE="LPPL-1.3c"
 
