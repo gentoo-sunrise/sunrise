@@ -3,6 +3,10 @@
 # $Header: $
 
   10 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  -freenet-0.7.1060.ebuild, +freenet-0.7.1060-r1.ebuild:
+  Reformatted
+
+  10 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   -freenet-0.7.1058.ebuild, +freenet-0.7.1060.ebuild:
   New upstream release
 
