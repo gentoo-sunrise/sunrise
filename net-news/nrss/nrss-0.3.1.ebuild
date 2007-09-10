@@ -14,7 +14,8 @@ IUSE=""
 DEPEND="dev-libs/expat
 	sys-libs/ncurses"
 
-RDEPEND="net-misc/wget"
+RDEPEND="${DEPEND}
+	net-misc/wget"
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
