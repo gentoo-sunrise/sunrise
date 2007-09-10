@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Sep 2007; Christian Schlotter (schlotter) <again@gmx.de>
+  ipe-6.0_pre28.ebuild:
+  Fix compilation with GCC 4.2. Thanks to James Cloos in bug #80448.
+
   04 Aug 2007; Jakub Moc <jakub@gentoo.org> ipe-6.0_pre28.ebuild:
   Drop redundant die, use pkg_setup from qt4 eclass for built_with_use check
 
