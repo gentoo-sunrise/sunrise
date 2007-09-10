@@ -17,6 +17,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+RESTRICT="userpriv mirror"
 
 DEPEND="!net-p2p/freenet-bin
 	dev-java/sun-jdk
@@ -24,7 +25,6 @@ DEPEND="!net-p2p/freenet-bin
 RDEPEND="virtual/jre"
 
 S="${WORKDIR}/${PN}"
-RESTRICT="userpriv mirror"
 
 QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
