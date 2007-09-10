@@ -4,14 +4,14 @@
 
 inherit eutils versionator
 
-MY_V="$(get_version_component_range 3)"
+MY_PV="$(get_version_component_range 3)"
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://downloads.freenetproject.org/alpha/installer/${PN}07.tar.gz
 	http://downloads.freenetproject.org/alpha/update/update.sh
 	http://downloads.freenetproject.org/alpha/update/wrapper.conf
-	http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_V}.tar.bz2
-	http://www.tommyserver.de/mirrors/${PN}-sources-v${MY_V}.tar.bz2"
+	http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_PV}.tar.bz2
+	http://www.tommyserver.de/mirrors/${PN}-sources-v${MY_PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -39,7 +39,7 @@ src_unpack() {
 	rm bin/wrapper-macosx* bin/wrapper-linux-ppc-* lib/libwrapper-macosx*.* \
 	lib/libwrapper*ppc-*.so update stun mdns librarian bin/1run.sh bin/*jar \
 	welcome.html INSTALL README
-	unpack ${PN}-sources-v${MY_V}.tar.bz2
+	unpack ${PN}-sources-v${MY_PV}.tar.bz2
 }
 
 src_compile() {
