@@ -56,7 +56,7 @@ pkg_setup() {
 src_compile() {
 	# Ipe bug #240, Gentoo bug #80448#c8: allow Ipe to be built with GCC 4.2
 	sed -i -e "s/-Werror/-Wno-error/" \
-		src/config.pri src/figtoipe/figtoipe.pro src/ipe5toxml/ipe5toxml.pro
+		config.pri figtoipe/figtoipe.pro ipe5toxml/ipe5toxml.pro
 
 	# until Ipe bug #206 is resolved...
 	# local myconf

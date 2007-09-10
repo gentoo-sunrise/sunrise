@@ -4,6 +4,10 @@
 
   10 Sep 2007; Christian Schlotter (schlotter) <again@gmx.de>
   ipe-6.0_pre28.ebuild:
+  Correct last commit which included wrong paths to configuration files.
+
+  10 Sep 2007; Christian Schlotter (schlotter) <again@gmx.de>
+  ipe-6.0_pre28.ebuild:
   Fix compilation with GCC 4.2. Thanks to James Cloos in bug #80448.
 
   04 Aug 2007; Jakub Moc <jakub@gentoo.org> ipe-6.0_pre28.ebuild:
