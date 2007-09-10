@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  -freenet-0.7.1058.ebuild, +freenet-0.7.1060.ebuild:
+  New upstream release
+
   07 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   +freenet-0.7.1058.ebuild:
   New upstream release

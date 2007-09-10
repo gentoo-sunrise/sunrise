@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="dev-java/sun-jdk
+DEPEND="!net-p2p/freenet-bin
+	dev-java/sun-jdk
 	dev-java/ant"
 RDEPEND="virtual/jre"
 
@@ -34,10 +35,10 @@ enewuser freenet -1 /bin/sh /opt/freenet freenet
 
 src_unpack() {
 	unpack ${PN}07.tar.gz
-	cp "${DISTDIR}"/update.sh "${DISTDIR}"/wrapper.conf "${S}"/
 	cd "${S}"
 	rm bin/wrapper-macosx* bin/wrapper-linux-ppc-* lib/libwrapper-macosx*.* \
-	lib/libwrapper*ppc-*.so update stun mdns librarian bin/1run.sh bin/*jar
+	lib/libwrapper*ppc-*.so update stun mdns librarian bin/1run.sh bin/*jar \
+	welcome.html INSTALL README
 	unpack ${PN}-sources-v${MY_V}.tar.bz2
 }
 
@@ -59,8 +60,9 @@ src_compile() {
 src_install() {
 	newinitd "${S}/run.sh" freenet1
 	rm "${S}"/run.sh
-	into /opt/freenet
-	cp -R "${S}" "${D}/opt"
+	insinto /opt/freenet
+	doins -r bin freenet-cvs-snapshot.jar freenet-ext.jar lib license ${DISTDIR}/update.sh ${DISTDIR}/wrapper.conf
+	fperms 755 /opt/freenet/bin/wrapper-linux-x86-{32,64}
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
 	fowners freenet:freenet /opt/freenet/ -R
 }
@@ -70,3 +72,4 @@ pkg_postinst () {
 	einfo "3. Open localhost:8888 in your browser for the web interface."
 	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/*
 }
+
