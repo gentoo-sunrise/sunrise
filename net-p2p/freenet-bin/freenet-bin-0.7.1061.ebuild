@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r15074"
+MY_JAR_REV="r15122"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
@@ -58,7 +58,7 @@ src_install() {
 
 	insinto /opt/freenet
 	doins ${DISTDIR}/freenet-ext.jar ${DISTDIR}/${MY_JAR_FILE}
-	doins ${DISTDIR}/update.sh ${DISTDIR}/wrapper.conf
+	doins ${DISTDIR}/update.sh ${DISTDIR}/wrapper.conf 
 	doins -r update.sh bin lib
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
 	fperms 755 /opt/freenet/bin/wrapper-linux-x86-{32,64}
@@ -66,10 +66,10 @@ src_install() {
 }
 
 pkg_postinst () {
-	elog "1. Start freenet with /etc/init.d/freenet start"
-	elog "2. Open localhost:8888 in your browser for the web interface."
-	elog "3. After uninstalling freenet delete /opt/freenet manually (unless you want to keep it for a later reinstall)"
-	elog "   as freenet creates some extra stuff not deleted by portage"
+	einfo "1. Start freenet with /etc/init.d/freenet start"
+	einfo "2. Open localhost:8888 in your browser for the web interface."
+	einfo "3. After uninstalling freenet delete /opt/freenet manually (unless you want to keep it for a later reinstall)"
+	einfo "   as freenet creates some extra stuff not deleted by portage"
 	if (diff /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar >/dev/null 2>&1); then :;
 	else
 		cp /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar
