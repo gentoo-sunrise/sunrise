@@ -64,7 +64,7 @@ src_install() {
 
 	dodoc license/README license/LICENSE.Mantissa license/LICENSE.Freenet
 	dobin bin/wrapper-linux-x86-{32,64}
-	dolib.so lib/libwrapper-linux-x86-{32,64}.so 
+	dolib.so lib/libwrapper-linux-x86-{32,64}.so
 	doins ${DISTDIR}/update.sh ${DISTDIR}/wrapper.conf freenet/lib/freenet-{cvs-snapshot,ext}.jar
 
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar

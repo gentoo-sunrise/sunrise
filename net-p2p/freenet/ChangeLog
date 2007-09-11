@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2007; Christian Faulhammer <opfer@gentoo.org>
+  freenet-0.7.1061.ebuild:
+  remove trailing whitespace
+
   11 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   -freenet-0.7.1060-r1.ebuild, +freenet-0.7.1061.ebuild:
   New Upstream release
