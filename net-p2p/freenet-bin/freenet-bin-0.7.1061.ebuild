@@ -57,8 +57,8 @@ src_install() {
 	newinitd run.sh freenet
 
 	insinto /opt/freenet
-	doins ${DISTDIR}/freenet-ext.jar ${DISTDIR}/${MY_JAR_FILE}
-	doins ${DISTDIR}/update.sh ${DISTDIR}/wrapper.conf 
+	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}"
+	doins "${DISTDIR}/update.sh" "${DISTDIR}/wrapper.conf"
 	doins -r update.sh bin lib
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
 	fperms 755 /opt/freenet/bin/wrapper-linux-x86-{32,64}
