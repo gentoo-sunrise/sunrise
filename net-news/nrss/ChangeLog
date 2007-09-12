@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Sep 2007; Jack Miller (themoken) <jjm2n4@umr.edu> -nrss-0.3.1.ebuild,
+  +nrss-0.3.2.ebuild:
+  Version bump to 0.3.2
+
   10 Sep 2007; Jakub Moc <jakub@gentoo.org> -nrss-0.3.0.ebuild,
   nrss-0.3.1.ebuild:
   Delete old, fix RDEPEND
