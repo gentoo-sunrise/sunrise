@@ -1,0 +1,8 @@
+# ChangeLog for app-portage/kuroolito
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Sep 2007; Karim Ryde info@kuroo.org +metadata.xml,
+  +kuroolito-0.10.1.ebuild:
+  New Ebuild for bug 192007 thanks to karye
+
