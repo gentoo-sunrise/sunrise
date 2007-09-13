@@ -20,10 +20,6 @@
 ##
 ##   End example
 ##
-# Jakub Moc <jakub@gentoo.org> (11 Sep 2007)
-# Mask until someone fixes the ugly ebuild
-net-p2p/freenet
-
 # Santiago M. Mola <coldwind@gentoo.org> (11 Jul 2007)
 # Broken license. Asked upstream to address it.
 media-tv/zattoo-bin
