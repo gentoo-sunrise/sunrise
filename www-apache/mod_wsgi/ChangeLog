@@ -1,8 +1,0 @@
-# ChangeLog for www-apache/mod_wsgi
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  07 Sep 2007; Dirkjan Ochtman (djc) <mail@manuzhai.nl> +metadata.xml,
-  +mod_wsgi-1.0.ebuild:
-  New ebuild for bug 189209; thanks to Adrian Perez, jokey and mpagano_.
-
