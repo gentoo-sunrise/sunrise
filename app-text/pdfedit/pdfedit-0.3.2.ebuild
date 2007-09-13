@@ -8,16 +8,17 @@ DESCRIPTION="Editor for manipulating PDF documents. GUI and commandline interfac
 HOMEPAGE="http://pdfedit.petricek.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
-SLOT="0"
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 IUSE=""
-RDEPEND="$(qt_min_version 3.3)"
+
+RDEPEND="=x11-libs/qt-3*"
 DEPEND="${RDEPEND}
 	dev-libs/boost"
 
 src_compile(){
+	export QTDIR=/usr/qt/3
 	econf || die "econf failed"
 	emake src || die "emake failed"
 }
