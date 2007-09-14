@@ -72,7 +72,7 @@ pkg_postinst () {
 	elog "3. After uninstalling freenet delete /opt/freenet manually (unless you want to keep it for a later reinstall)"
 	elog "   as freenet creates some extra stuff not deleted by portage"
 
-	if (diff /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar >/dev/null 2>&1) ; then 
+	if (diff /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar >/dev/null 2>&1) ; then
 		:;
 	else
 		cp /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar
