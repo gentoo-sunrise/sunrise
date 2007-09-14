@@ -4,6 +4,10 @@
 
   14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   freenet-bin-0.7.1061-r1.ebuild:
+  Revert emerge command and delete useless groupdel
+
+  14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  freenet-bin-0.7.1061-r1.ebuild:
   Use eerror instead of error and change user command
 
   14 Sep 2007; Jakub Moc <jakub@gentoo.org> -freenet-bin-0.7.1061.ebuild,
