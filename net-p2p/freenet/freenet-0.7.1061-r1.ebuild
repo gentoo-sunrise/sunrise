@@ -32,8 +32,8 @@ pkg_setup() {
 	# previous versions created a passwordless login for freenet user
 	if has_version "<${CATEGORY}/${PN}-0.7.1061-r1" ; then
 		error "Previous versions created user account with a passwordless login shell."
-		error "You must unmerge the old versions first and delete that user account."
-		error "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r1; userdel freenet, groudel freenet"
+		error "You must unmerge the old version first and delete that user account."
+		error "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r1; userdel freenet, groupdel freenet"
 		die "Insecure version installed!"
 	fi
 
