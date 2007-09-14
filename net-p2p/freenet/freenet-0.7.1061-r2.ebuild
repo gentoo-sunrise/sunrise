@@ -30,16 +30,15 @@ QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
 pkg_setup() {
 	# previous versions created a passwordless login for freenet user
-	if has_version "<${CATEGORY}/${PN}-0.7.1061-r1" ; then
+	if has_version "<${CATEGORY}/${PN}-0.7.1061-r2" ; then
 		eerror "Previous versions created user account with a passwordless login shell."
 		eerror "You must unmerge the old version first and delete that user account."
-		eerror "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r1; userdel freenet"
+		eerror "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r2; userdel freenet"
 		die "Insecure version installed!"
 	fi
 
-	local PASSWD=$(printf "%04hX%04hX%04hX%04hX\n" ${RANDOM} ${RANDOM} ${RANDOM} ${RANDOM})
 	enewgroup freenet
-	enewuser freenet -1 /bin/sh /opt/freenet freenet -p ${PASSWD}
+	enewuser freenet -1 -1 /opt/freenet freenet
 }
 
 src_unpack() {
@@ -66,17 +65,17 @@ src_compile() {
 }
 
 src_install() {
-	newinitd run.sh freenet
-	rm -f run.sh
+	doinitd "${FILESDIR}"/freenet
 	insinto /opt/freenet
 	into /opt/freenet
 
 	dodoc license/README license/LICENSE.Mantissa license/LICENSE.Freenet
 	dobin bin/wrapper-linux-x86-{32,64}
 	dolib.so lib/libwrapper-linux-x86-{32,64}.so
-	doins ${DISTDIR}/update.sh ${DISTDIR}/wrapper.conf freenet/lib/freenet-{cvs-snapshot,ext}.jar
+	doins run.sh ${DISTDIR}/update.sh ${DISTDIR}/wrapper.conf freenet/lib/freenet-{cvs-snapshot,ext}.jar
 
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
+	fperms 755 /opt/freenet/{update,run}.sh
 	fowners freenet:freenet /opt/freenet/ -R
 }
 
