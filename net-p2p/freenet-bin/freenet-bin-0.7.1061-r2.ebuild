@@ -33,16 +33,15 @@ QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
 pkg_setup() {
 	# previous versions created a passwordless login for freenet user
-	if has_version "<${CATEGORY}/${PN}-0.7.1061-r1" ; then
+	if has_version "<${CATEGORY}/${PN}-0.7.1061-r2" ; then
 		eerror "Previous versions created user account with a passwordless login shell."
 		eerror "You must unmerge the old version first and delete that user account."
-		eerror "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r1; userdel freenet"
+		eerror "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r2; userdel freenet"
 		die "Insecure version installed!"
 	fi
 
-	local PASSWD=$(printf "%04hX%04hX%04hX%04hX\n" ${RANDOM} ${RANDOM} ${RANDOM} ${RANDOM})
 	enewgroup freenet
-	enewuser freenet -1 /bin/sh /opt/freenet freenet -p ${PASSWD}
+	enewuser freenet -1 -1 /opt/freenet freenet
 }
 
 src_unpack() {
@@ -64,14 +63,15 @@ src_compile() {
 
 src_install() {
 	cd "${S}"
-	newinitd run.sh freenet
+	doinitd "${FILESDIR}"/freenet
 
 	insinto /opt/freenet
 	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}"
 	doins "${DISTDIR}/update.sh" "${DISTDIR}/wrapper.conf"
-	doins -r update.sh bin lib
+	doins -r update.sh run.sh bin lib
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
 	fperms 755 /opt/freenet/bin/wrapper-linux-x86-{32,64}
+	fperms 755 /opt/freenet/{update,run}.sh
 	fowners -R freenet:freenet /opt/freenet/
 }
 
@@ -85,5 +85,6 @@ pkg_postinst () {
 		:;
 	else
 		cp /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar
+		chown freenet:freenet /opt/freenet/*jar
 	fi
 }
