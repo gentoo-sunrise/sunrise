@@ -32,6 +32,14 @@ RESTRICT="userpriv"
 QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
 pkg_setup() {
+	# previous versions created a passwordless login for freenet user
+	if has_version "<${CATEGORY}/${PN}-0.7.1061-r1" ; then
+		error "Previous versions created user account with a passwordless login shell."
+		error "You must unmerge the old version first and delete that user account."
+		error "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r1; userdel freenet, groudel freenet"
+		die "Insecure version installed!"
+	fi
+
 	local PASSWD=$(printf "%04hX%04hX%04hX%04hX\n" ${RANDOM} ${RANDOM} ${RANDOM} ${RANDOM})
 	enewgroup freenet
 	enewuser freenet -1 /bin/sh /opt/freenet freenet -p ${PASSWD}
