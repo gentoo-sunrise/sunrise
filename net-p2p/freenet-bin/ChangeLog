@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Sep 2007; Jakub Moc <jakub@gentoo.org> freenet-bin-0.7.1061.ebuild:
+  Remove useless RESTRICT; einfo -> elog; clean up formatting
+
   11 Sep 2007; Christian Faulhammer <opfer@gentoo.org>
   freenet-bin-0.7.1061.ebuild:
   remove trailing whitespace and add some quotes around variables
