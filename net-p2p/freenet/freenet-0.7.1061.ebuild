@@ -24,7 +24,7 @@ DEPEND="!net-p2p/freenet-bin
 RDEPEND="virtual/jre"
 
 S="${WORKDIR}/${PN}"
-RESTRICT="userpriv mirror"
+RESTRICT="userpriv"
 
 QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
@@ -51,14 +51,14 @@ src_compile() {
 	ant || die "freenet-stable-latest failed"
 
 	sed -i -e 's:./bin/wrapper:/opt/freenet/bin/wrapper:g' \
-	-e 's:./wrapper.conf:/opt/freenet/wrapper.conf:g' \
-	-e 's:PIDDIR=".":PIDDIR="/opt/freenet/":g' \
-	-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' "${S}"/run.sh
+		-e 's:./wrapper.conf:/opt/freenet/wrapper.conf:g' \
+		-e 's:PIDDIR=".":PIDDIR="/opt/freenet/":g' \
+		-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' "${S}"/run.sh || die "sed failed"
 }
 
 src_install() {
-	newinitd "${S}/run.sh" freenet
-	rm "${S}"/run.sh
+	newinitd run.sh freenet
+	rm -f run.sh
 	insinto /opt/freenet
 	into /opt/freenet
 
@@ -72,8 +72,7 @@ src_install() {
 }
 
 pkg_postinst () {
-	einfo "2. Start freenet with /etc/init.d/freenet start"
-	einfo "3. Open localhost:8888 in your browser for the web interface."
+	elog "1. Start freenet with /etc/init.d/freenet start"
+	elog "2. Open localhost:8888 in your browser for the web interface."
 	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/*
 }
-
