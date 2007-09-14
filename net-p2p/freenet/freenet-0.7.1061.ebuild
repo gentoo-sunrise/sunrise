@@ -30,7 +30,7 @@ QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
 pkg_setup() {
 	enewgroup freenet
-	enewuser freenet -1 /bin/sh /opt/freenet freenet
+	enewuser freenet -1 /bin/sh /opt/freenet freenet -p `dd if=/dev/urandom bs=10 count=1 2>/dev/null`
 }
 
 src_unpack() {
