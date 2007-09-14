@@ -32,8 +32,9 @@ RESTRICT="userpriv"
 QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
 pkg_setup() {
+	local PASSWD=$(printf "%04hX%04hX%04hX%04hX\n" ${RANDOM} ${RANDOM} ${RANDOM} ${RANDOM})
 	enewgroup freenet
-	enewuser freenet -1 /bin/sh /opt/freenet freenet -p `dd if=/dev/urandom bs=10 count=1 2>/dev/null`
+	enewuser freenet -1 /bin/sh /opt/freenet freenet -p ${PASSWD}
 }
 
 src_unpack() {

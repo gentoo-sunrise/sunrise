@@ -3,6 +3,9 @@
 # $Header: $
 
   14 Sep 2007; Jakub Moc <jakub@gentoo.org> freenet-bin-0.7.1061.ebuild:
+  Use $RANDOM bash built-in instead of the dd hack
+
+  14 Sep 2007; Jakub Moc <jakub@gentoo.org> freenet-bin-0.7.1061.ebuild:
   Remove useless RESTRICT; einfo -> elog; clean up formatting
 
   11 Sep 2007; Christian Faulhammer <opfer@gentoo.org>
