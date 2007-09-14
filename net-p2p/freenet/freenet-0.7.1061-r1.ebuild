@@ -31,9 +31,9 @@ QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 pkg_setup() {
 	# previous versions created a passwordless login for freenet user
 	if has_version "<${CATEGORY}/${PN}-0.7.1061-r1" ; then
-		error "Previous versions created user account with a passwordless login shell."
-		error "You must unmerge the old version first and delete that user account."
-		error "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r1; userdel freenet, groupdel freenet"
+		eerror "Previous versions created user account with a passwordless login shell."
+		eerror "You must unmerge the old version first and delete that user account."
+		eerror "emerge -C \\<${CATEGORY}/${PN}-0.7.1061-r1; userdel freenet"
 		die "Insecure version installed!"
 	fi
 
