@@ -3,6 +3,10 @@
 # $Header: $
 
   14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  -freenet-bin-0.7.1061-r2.ebuild, +freenet-bin-0.7.1062.ebuild:
+  New upstream release
+
+  14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   -freenet-bin-0.7.1061-r1.ebuild, +freenet-bin-0.7.1061-r2.ebuild:
   Added wrapper init script, so login shell not longer needed
 
