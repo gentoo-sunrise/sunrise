@@ -20,12 +20,6 @@
 ##
 ##   End example
 ##
-# Jakub Moc <jakub@gentoo.org> (14 Sep 2007)
-# Mask because the ebuild creates a user account with
-# passwordless login
-net-p2p/freenet
-net-p2p/freenet-bin
-
 # Santiago M. Mola <coldwind@gentoo.org> (11 Jul 2007)
 # Broken license. Asked upstream to address it.
 media-tv/zattoo-bin
