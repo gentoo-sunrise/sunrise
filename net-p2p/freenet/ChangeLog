@@ -7,6 +7,10 @@
   New upstream release
 
   14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  -freenet-0.7.1061-r1.ebuild, +freenet-0.7.1061-r2.ebuild:
+  Added wrapper init script, so login shell not longer needed
+
+  14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
   freenet-0.7.1061-r1.ebuild:
   Use eerror instead of error and delete useless groupdel
 
