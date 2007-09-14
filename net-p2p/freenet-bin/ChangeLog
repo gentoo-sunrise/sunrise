@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  freenet-bin-0.7.1061-r1.ebuild:
+  Use eerror instead of error and change user command
+
   14 Sep 2007; Jakub Moc <jakub@gentoo.org> -freenet-bin-0.7.1061.ebuild,
   +freenet-bin-0.7.1061-r1.ebuild:
   Revbump this and make users fix up the previous screw-up
