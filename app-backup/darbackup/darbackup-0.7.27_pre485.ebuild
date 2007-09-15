@@ -8,7 +8,6 @@ ESVN_REPO_URI="https://faracvs.cs.uni-magdeburg.de/svn/christsc/${PN}/${PN}/bran
 
 DESCRIPTION="a wrapper script for creating backups using dar"
 HOMEPAGE="https://faracvs.cs.uni-magdeburg.de/projects/christsc-darbackup/"
-SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
