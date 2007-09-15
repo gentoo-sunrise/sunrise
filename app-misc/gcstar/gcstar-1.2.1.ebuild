@@ -21,6 +21,7 @@ RDEPEND="dev-lang/perl
 		dev-perl/HTML-Parser
 		dev-perl/libwww-perl
 		dev-perl/URI
+		dev-perl/XML-LibXML
 		dev-perl/XML-Parser
 		dev-perl/XML-Simple
 		dev-perl/Archive-Tar
