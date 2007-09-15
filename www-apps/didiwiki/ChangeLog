@@ -1,8 +1,0 @@
-# ChangeLog for www-apps/didiwiki
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  14 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
-  +didiwiki-0.5.ebuild, +metadata.xml:
-  New ebuild for bug 143927.
-
