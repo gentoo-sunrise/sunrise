@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Sep 2007; Jakub Moc <jakub@gentoo.org> zattoo-bin-2.2.10.6523.ebuild:
+  Replace removed app-crypt/libgssapi with net-libs/libgssglue; if it does not
+  work, your thanks go to vapier
+
   21 Aug 2007; Santiago M. Mola <coldwind@gentoo.org>
   zattoo-bin-2.2.10.6523.ebuild:
   Add net-dns/libidn, thanks to Matthias Kuhn.

@@ -21,7 +21,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=">=sys-libs/glibc-2.4
 	x11-libs/gtkglext
-	app-crypt/libgssapi
+	net-libs/libgssglue
 	app-crypt/mit-krb5
 	gnome-base/libgnome
 	gnome-base/libgnomeui
