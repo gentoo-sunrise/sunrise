@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -files/cheese-0.2.3-video-v4l.patch, -cheese-0.2.3.ebuild,
+  +cheese-0.2.4.ebuild:
+  Version bump
+
   05 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   +files/cheese-0.2.3-video-v4l.patch, -cheese-0.1.3.ebuild,
   +cheese-0.2.3.ebuild:

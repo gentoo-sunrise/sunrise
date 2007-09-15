@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils gnome2
+inherit gnome2
 
 DESCRIPTION="A cheesy program to take pictures and videos from your webcam"
 HOMEPAGE="http://live.gnome.org/Cheese"
@@ -29,7 +29,7 @@ RDEPEND="dev-libs/dbus-glib
 	>=media-libs/gst-plugins-base-0.10.12
 	>=media-plugins/gst-plugins-gconf-0.10
 	>=media-plugins/gst-plugins-ogg-0.10
-	>=media-plugins/gst-plugins-pango-0.10
+	>=media-plugins/gst-plugins-pango-0.10.12
 	>=media-plugins/gst-plugins-theora-0.10
 	>=media-plugins/gst-plugins-v4l-0.10
 	>=media-plugins/gst-plugins-v4l2-0.10
@@ -47,7 +47,6 @@ DOCS="AUTHORS ChangeLog README TODO"
 
 src_unpack() {
 	gnome2_src_unpack
-	epatch "${FILESDIR}/${P}-video-v4l.patch"
 	if ! use nls ; then
 		sed -i -e "s/src po data/src data/" Makefile || die "sed failed"
 	else
