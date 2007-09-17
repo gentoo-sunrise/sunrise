@@ -4,14 +4,19 @@
 
 inherit eutils
 
-DESCRIPTION="GCstar is a free open source application for managing your collections."
+DESCRIPTION="GCstar is a personal collections manager."
 HOMEPAGE="http://www.gcstar.org/"
 SRC_URI="http://download.gna.org/gcstar/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="mp3 tellico vorbis"
+IUSE="mp3 nls tellico vorbis"
+
+LANGS="ar bg ca cs de en es fr id it pl pt ro ru sr sv tr"
+for x in ${LANGS} ; do
+	IUSE="${IUSE} linguas_${x}"
+done
 
 RDEPEND="dev-lang/perl
 		dev-perl/Archive-Tar
@@ -38,6 +43,24 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}/lib/gcstar/GCLang"
+	mkdir tmp || die
+	mv ?? tmp
+	if ! use nls ; then
+		mv tmp/EN . || die
+	else
+		for x in ${LANGS} ; do
+			# GCstar uses upper-case language names
+			if use linguas_${x} ; then
+				mv tmp/`echo ${x} | tr 'a-z' 'A-Z'` . || die
+			fi
+		done
+	fi
+	rm -r tmp || die
+}
+
 src_install() {
 	# otherwise man pages would get installed in /usr/man
 	mv man share
@@ -45,5 +68,6 @@ src_install() {
 	domenu share/applications/gcstar.desktop
 	newicon share/gcstar/icons/gcstar_64x64.png gcstar.png
 	dodoc CHANGELOG README
+	use linguas_fr && dodoc CHANGELOG.fr README.fr
 	doman share/man/gcstar.1
 }

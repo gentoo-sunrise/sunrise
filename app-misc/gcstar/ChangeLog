@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  metadata.xml, -gcstar-1.2.1.ebuild, +gcstar-1.2.2.ebuild:
+  Version bump and add LINGUAS support
+
   15 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -gcstar-1.1.1.ebuild, +gcstar-1.2.1.ebuild:
   Version bump
