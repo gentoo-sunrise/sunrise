@@ -129,6 +129,7 @@ net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:tsig - Enable TSIG support
 net-ftp/cmdftp:onlysmall - Disable largefile support
 net-im/gizmo:avahi - Use avahi mdns daemon
+net-mail/checkgmail::clickurl - Add support to click urls in the popup notification
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
 net-mail/fdm:tdb - Enable the Trivial Database (xdb) backend
 net-mail/simscan:attachment - Enable attachment filtering
