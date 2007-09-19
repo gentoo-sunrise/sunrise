@@ -1,0 +1,8 @@
+# ChangeLog for app-text/unac
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  +metadata.xml, +unac-1.8.0.ebuild:
+  New ebuild for bug 134732. Thanks to Vieri <rentorbuy@yahoo.com>
+
