@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="GCstar is a personal collections manager."
 HOMEPAGE="http://www.gcstar.org/"
 SRC_URI="http://download.gna.org/gcstar/${P}.tar.gz"
@@ -11,8 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="mp3 tellico vorbis"
 
-LANGS="ar bg ca cs de en es fr id it pl pt ro ru sr sv tr"
-for x in "${LANGS}" ; do
+LANGS="ar bg ca cs de es fr id it pl pt ro ru sr sv tr"
+for x in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${x}"
 done
 
@@ -44,11 +46,10 @@ S="${WORKDIR}/${PN}"
 src_install() {
 	cd "${S}"/lib/gcstar/GCLang
 
-	# English version should be always available so we will keep it
 	mkdir tmp
-	for i in {AR,BG,CA,CS,DE,ES,FR,ID,IT,PL,PT,RO,RU,SR,SV,TR}; do
-		mv ${i} tmp/
-	done
+	mv ?? tmp
+	# English version should be always available so we will keep it
+	mv tmp/EN .
 
 	for x in ${LANGS}; do
 		# GCstar uses upper-case language names
@@ -65,13 +66,13 @@ src_install() {
 
 	./install --prefix="${D}/usr" \
 		--noclean --nomenu || die "install script failed"
-	
+
 	domenu share/applications/gcstar.desktop
 	newicon share/gcstar/icons/gcstar_64x64.png gcstar.png
-	
+
 	dodoc CHANGELOG README
-	
-	if use linguas_fr; then 
+
+	if use linguas_fr; then
 		dodoc CHANGELOG.fr README.fr
 	fi
 

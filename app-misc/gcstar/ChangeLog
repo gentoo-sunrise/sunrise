@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  gcstar-1.2.2.ebuild:
+  Fixed brokenness in previous commit
+
   19 Sep 2007; <cla@gentoo.org> gcstar-1.2.2.ebuild:
   Fixed coding standards, removed useless inherit eclass
 
