@@ -19,7 +19,7 @@ DEPEND=">=dev-perl/gtk2-perl-1.100
 	>=dev-perl/Crypt-SSLeay-0.49
 	>=dev-perl/XML-Simple-2.12
 	>=x11-libs/gtk+-2.6
-	clickurl? ( >=x11-libs/libsexy-0.1.10
+	clickurl? ( >=x11-libs/libsexy-0.1.11
 			>=dev-perl/Gtk2-Sexy-0.02 )
 	savepwd? ( >=dev-perl/Crypt-Simple-0.06 )"
 RDEPEND="${DEPEND}"

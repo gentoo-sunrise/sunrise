@@ -4,6 +4,10 @@
 
   20 Sep 2007; Joel Cunningham (slithy) <uber.leoj@gmail.com>
   checkgmail-1.12.ebuild:
+  Updated libsexy dep to include version without serious bug
+
+  20 Sep 2007; Joel Cunningham (slithy) <uber.leoj@gmail.com>
+  checkgmail-1.12.ebuild:
   Updated ebuild for version 1.12
 
   19 Feb 2007; David Grant (dgrant) <davidgrant@gmail.com>
