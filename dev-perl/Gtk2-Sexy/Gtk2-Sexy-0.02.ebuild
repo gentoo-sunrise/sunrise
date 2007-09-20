@@ -4,7 +4,7 @@
 
 inherit perl-module
 
-DESCRIPTION="No description available"
+DESCRIPTION="Perl interface to the sexy widget collection"
 HOMEPAGE="http://search.cpan.org/search?query=Gtk2-Sexy&mode=dist"
 SRC_URI="mirror://cpan/authors/id/F/FL/FLORA/${P}.tar.gz"
 
