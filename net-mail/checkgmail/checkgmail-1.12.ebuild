@@ -20,16 +20,16 @@ DEPEND=">=dev-perl/gtk2-perl-1.100
 	>=dev-perl/XML-Simple-2.12
 	>=x11-libs/gtk+-2.6
 	clickurl? ( >=x11-libs/libsexy-0.1.10
-				>=dev-perl/Gtk2-Sexy-0.02 )
-	savepwd? ( >=dev-perl/Crypt-Simple-0.06 )" 
+			>=dev-perl/Gtk2-Sexy-0.02 )
+	savepwd? ( >=dev-perl/Crypt-Simple-0.06 )"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	if ! built_with_use dev-lang/perl ithreads ; then
 		eerror "Please (re)emerge perl with the ithreads USE flag on before "
-        eerror "emerging checkgmail"
-        die "please (re)emerge net-mail/checkgmail with USE='ithreads'"
-    fi
+		eerror "emerging checkgmail"
+		die "please (re)emerge net-mail/checkgmail with USE='ithreads'"
+	fi
 }
 
 src_install() {
