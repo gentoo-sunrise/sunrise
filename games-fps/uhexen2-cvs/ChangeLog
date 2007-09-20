@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Sep 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-cvs-20070915.ebuild, +uhexen2-cvs-20070920.ebuild:
+  Version bump
+
   17 Sep 2007; Davide Cendron (scen) <scen@gentoo.org>
   -uhexen2-cvs-20070909.ebuild, +uhexen2-cvs-20070915.ebuild:
   Version bump
