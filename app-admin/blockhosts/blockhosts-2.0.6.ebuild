@@ -44,7 +44,7 @@ src_install() {
 	distutils_src_install
 
 	insinto /usr/share/${PN}
-	doins bhrss.py
+	doins bhrss.py 
 	# keep the test script
 	doins test_blockhosts.py
 

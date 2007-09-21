@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Sep 2007; Kevin Funk <krf@electrostorm.net> -blockhosts-2.0.5.ebuild,
+  +blockhosts-2.0.6.ebuild:
+  New upstream release, drop old
+
   27 Jun 2007; Ali Polatel <hawking@gentoo.org> blockhosts-2.0.5.ebuild:
   removed trailing whitespace
 
