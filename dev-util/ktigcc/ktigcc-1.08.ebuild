@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="minimal"
 
 DEPEND="$(qt_min_version 3.3)
-	>=kde-base/kdelibs-3.5.2
+	>=kde-base/kdelibs-3.5.7
 	dev-util/ctags
 	dev-util/pkgconfig
 	dev-embedded/tigcc
@@ -27,6 +27,12 @@ RDEPEND="${DEPEND}
 	!minimal? ( dev-util/ktigcc-completion-data )"
 
 S=${WORKDIR}/${PN}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -e 's/^qmake/${QTDIR}\/bin\/qmake/g' -i configure
+}
 
 src_install() {
 	dobin ktigcc
