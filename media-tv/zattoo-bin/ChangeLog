@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Sep 2007; Christian Helbling <helch@gmx.ch>
+  -zattoo-bin-2.2.10.6523.ebuild:
+  drop old
+
+  22 Sep 2007; Christian Helbling <helch@gmx.ch>
   +zattoo-bin-3.0.5.8208.ebuild:
   version bump
 
