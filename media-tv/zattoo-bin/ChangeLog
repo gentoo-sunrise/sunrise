@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Sep 2007; Christian Helbling <helch@gmx.ch>
+  +zattoo-bin-3.0.5.8208.ebuild:
+  version bump
+
   15 Sep 2007; Jakub Moc <jakub@gentoo.org> zattoo-bin-2.2.10.6523.ebuild:
   Replace removed app-crypt/libgssapi with net-libs/libgssglue; if it does not
   work, your thanks go to vapier
