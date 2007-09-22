@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Sep 2007; Christian Helbling <helch@gmx.ch> -libticonv-1.0.2.ebuild,
+  +libticonv-1.0.4.ebuild:
+  version bump
+
   30 Jun 2007; Jakub Moc <jakub@gentoo.org> libticonv-1.0.2.ebuild:
   Fix up gettext dependencies
 

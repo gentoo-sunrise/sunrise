@@ -11,18 +11,19 @@ SRC_URI="mirror://sourceforge/gtktiemu/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nls"
+IUSE="iconv nls"
 
-RDEPEND=">=dev-libs/glib-2
+RDEPEND=">=dev-libs/glib-2.6.0
 	nls? ( virtual/libintl )"
 
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
-S=${WORKDIR}/${P}
-
 src_compile() {
-	econf $(use_enable nls) || die "econf failed"
+	econf \
+		$(use_enable nls) \
+		$(use_enable iconv) \
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 
