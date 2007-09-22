@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Sep 2007; Christian Helbling <helch@gmx.ch> -tilp2-1.03.ebuild,
+  +tilp2-1.07.ebuild:
+  version bump
+
   15 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com> tilp2-1.03.ebuild:
   removed trailing blank line
 
