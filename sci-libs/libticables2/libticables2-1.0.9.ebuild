@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nls pam_console"
 
-DEPEND=">=dev-libs/glib-2
+DEPEND=">=dev-libs/glib-2.4.0
 	dev-libs/libusb
 	nls? ( sys-devel/gettext )"
 
@@ -21,8 +21,6 @@ RDEPEND=">=dev-libs/glib-2
 	dev-libs/libusb
 	pam_console? ( || ( sys-auth/pam_console <sys-libs/pam-0.99 ) )
 	nls? ( virtual/libintl )"
-
-S=${WORKDIR}/${P}
 
 pkg_setup() {
 	if use pam_console && has_version "<sys-libs/pam-0.99" && ! built_with_use sys-libs/pam pam_console ; then
