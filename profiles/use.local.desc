@@ -159,6 +159,7 @@ net-wireless/rt2x00-git:rt73usb - Build rt73usb driver
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-libs/libticables2:pam_console - Adds support for pam console from PAM
+sci-libs/sympy:xslt - Adds MathML printing support
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
