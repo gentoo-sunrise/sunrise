@@ -5,8 +5,8 @@
 inherit mono eutils
 
 DESCRIPTION="Gtk# frontend for Internet translation services"
-HOMEPAGE="http://laas.altervista.org/youtranslate/ytindex.php"
-SRC_URI="http://laas.altervista.org/${PN}/${P}_src.tar.gz"
+HOMEPAGE="http://www.laas02.org/youtranslate"
+SRC_URI="http://www.laas02.org/res/yt/${P}_src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,6 +18,12 @@ DEPEND=">=dev-lang/mono-1.0
 	>=dev-dotnet/glade-sharp-2.4"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-makefile-depend-bump.patch"
+}
+
 src_compile() {
 	emake -f Makefile.solution.youtranslate || die "emake failed"
 }
@@ -25,5 +31,5 @@ src_compile() {
 src_install() {
 	dobin youtranslate.exe "${FILESDIR}/youtranslate"
 	doicon yTicon.png
-	make_desktop_entry "${PN}" "YouTranslate!" yTicon.png "Utility;Office;Dictionary"
+	make_desktop_entry "${PN}" "YouTranslate!" yTicon.png "Office;Dictionary"
 }

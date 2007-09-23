@@ -1,0 +1,13 @@
+--- youtranslate-1.1.10-orig/Makefile.youtranslate	2007-09-23 06:09:50.000000000 +0000
++++ youtranslate-1.1.10/Makefile.youtranslate	2007-09-23 06:12:22.000000000 +0000
+@@ -35,8 +35,8 @@
+ RESOURCES_BUILD = $(foreach res,$(RESOURCES), $(addprefix -resource:,$(res)),$(notdir $(res)))
+ 
+ PKG_REFERENCES = \
+-gtk-sharp \
+-glade-sharp 
++gtk-sharp-2.0 \
++glade-sharp-2.0
+ 
+ PKG_REFERENCES_BUILD = $(addprefix -pkg:, $(PKG_REFERENCES))
+ 
