@@ -19,6 +19,7 @@ IUSE=""
 DEPEND="$(qt4_min_version 4.2.3)
 	>=dev-libs/boost-1.33
 	>=dev-libs/openssl-0.9.7
+	media-libs/libmikmod
 	media-libs/libsdl
 	media-libs/sdl-mixer"
 RDEPEND="${DEPEND}"

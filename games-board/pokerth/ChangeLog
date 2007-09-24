@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Sep 2007; Thomas Pani (thpani) <thomas.pani@gmail.com>
+  pokerth-0.5.ebuild:
+  Added media-libs/libmikmod dependency. Thanks to Tobias Kral <tobias@kral.ws>.
+
   18 Aug 2007; Thomas Pani (thpani) <thomas.pani@gmail.com> +metadata.xml,
   +pokerth-0.5.ebuild:
   New Ebuild for bug 169238, reviewed by jsin and shillelagh
