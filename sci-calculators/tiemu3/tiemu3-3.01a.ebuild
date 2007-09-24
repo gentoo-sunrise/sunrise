@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nls kde debug dbus"
+IUSE="debug dbus kde nls"
 
 DEPEND=">=sci-libs/libticables2-1.0.0
 		>=sci-libs/libticalcs2-1.0.7
@@ -32,7 +32,7 @@ S="${WORKDIR}/${PN}-${BASE_PV}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	epatch "${WORKDIR}/${P}.diff"
 }
 
