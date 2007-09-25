@@ -25,24 +25,18 @@ DEPEND="$(qt4_min_version 4.2.3)
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
-	if ! built_with_use "x11-libs/qt" qt3support ; then
-		eerror "x11-libs/qt has to be compiled with 'qt3support'"
-		eerror "USE-flag enabled."
-		die "Needed USE-flag for x11-libs/qt not found."
+	if ! built_with_use "=x11-libs/qt-4*" qt3support ; then
+		eerror "x11-libs/qt has to be compiled with USE=qt3support"
+		die "Needed USE-flag for QT4 not found."
 	fi
 
-	if has_version "<dev-libs/boost-1.34" && \
-		! built_with_use "dev-libs/boost" threads
-	then
-		eerror "dev-libs/boost has to be compiled with 'threads'"
-		eerror "USE-flag enabled."
+	if has_version "<dev-libs/boost-1.34" && ! built_with_use "dev-libs/boost" threads ; then
+		eerror "dev-libs/boost has to be compiled with USE=threads"
 		die "Needed USE-flag for dev-libs/boost not found."
 	fi
 
 	# Qt bug #171858, fixed in 4.3.2 and 4.4.0
-	if has_version "~x11-libs/qt-4.3.0" || \
-		has_version "~x11-libs/qt-4.3.1"
-	then
+	if has_version "~x11-libs/qt-4.3.0" || 	has_version "~x11-libs/qt-4.3.1" ; then
 		ewarn "x11-libs/qt versions 4.3.0 and 4.3.1 are known to break"
 		ewarn "stylesheet support for buttons (game is still playable)."
 	fi
@@ -51,7 +45,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	qmake || die "qmake failed."
+	eqmake4
 	emake || die "emake failed."
 }
 
