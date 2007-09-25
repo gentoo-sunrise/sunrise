@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="kde xinerama"
 
-DEPEND=">=sci-libs/libticalcs2-1.0.7
+RDEPEND=">=sci-libs/libticalcs2-1.0.7
 	>=sci-libs/libticables2-1.0.8
 	>=sci-libs/libtifiles2-1.0.7
 	>=sci-libs/libticonv-1.0.4
@@ -21,10 +21,10 @@ DEPEND=">=sci-libs/libticalcs2-1.0.7
 	>=dev-libs/glib-2.6.0
 	>=gnome-base/libglade-2
 	kde? ( kde-base/kdelibs )
-	xinerama? ( x11-proto/xineramaproto )"
-
-RDEPEND="${DEPEND}
 	xinerama? ( x11-libs/libXinerama )"
+
+DEPEND="${RDEPEND}
+	xinerama? ( x11-proto/xineramaproto )"
 
 src_compile() {
 	econf \
