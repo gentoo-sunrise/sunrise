@@ -10,8 +10,7 @@ HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://downloads.freenetproject.org/alpha/installer/${PN}07.tar.gz
 	http://downloads.freenetproject.org/alpha/update/update.sh
 	http://downloads.freenetproject.org/alpha/update/wrapper.conf
-	http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_PV}.tar.bz2
-	http://www.tommyserver.de/mirrors/${PN}-sources-v${MY_PV}.tar.bz2"
+	http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
