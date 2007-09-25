@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Sep 2007; Jakub Moc <jakub@gentoo.org> tiemu3-3.01a.ebuild:
+  Remove bogus USE=debug
+
   24 Sep 2007; Christian Faulhammer <opfer@gentoo.org> tiemu3-3.01a.ebuild:
   reordered IUSE alphabetically; added quotes around
 

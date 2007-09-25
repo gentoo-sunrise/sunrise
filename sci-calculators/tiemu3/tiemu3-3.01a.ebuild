@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug dbus kde nls"
+IUSE="dbus kde nls"
 
 DEPEND=">=sci-libs/libticables2-1.0.0
 		>=sci-libs/libticalcs2-1.0.7
@@ -39,15 +39,11 @@ src_unpack() {
 src_compile() {
 	use kde && set-kdedir 3
 
-	if use debug; then
-		export CFLAGS="$(CFLAGS) -g"
-	fi
-
 	econf \
 		$(use_enable nls) \
 		$(use_with kde) \
-		$(use_enable dbus) \
-		|| die "econf failed"
+		$(use_enable dbus)
+
 	emake || die "emake failed"
 }
 
@@ -55,4 +51,3 @@ src_install() {
 	emake -j1 DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS NEWS README README.linux RELEASE THANKS TODO
 }
-
