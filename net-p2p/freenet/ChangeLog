@@ -2,23 +2,26 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  26 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  27 Sep 2007; Dawid Węgliński <cla@gentoo.org> freenet-0.7.1065.ebuild:
+  Fix doins arguments and eerror message
+
+  26 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   -freenet-0.7.1064.ebuild, +freenet-0.7.1065.ebuild:
   New upstream release
 
-  25 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  25 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   -freenet-0.7.1062.ebuild, +freenet-0.7.1064.ebuild:
   New upstream release
 
-  14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  14 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   -freenet-0.7.1061-r2.ebuild, +freenet-0.7.1062.ebuild:
   New upstream release
 
-  14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  14 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   -freenet-0.7.1061-r1.ebuild, +freenet-0.7.1061-r2.ebuild:
   Added wrapper init script, so login shell not longer needed
 
-  14 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  14 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   freenet-0.7.1061-r1.ebuild:
   Use eerror instead of error and delete useless groupdel
 
@@ -36,24 +39,23 @@
   freenet-0.7.1061.ebuild:
   remove trailing whitespace
 
-  11 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  11 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   -freenet-0.7.1060-r1.ebuild, +freenet-0.7.1061.ebuild:
   New Upstream release
 
-  10 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  10 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   -freenet-0.7.1060.ebuild, +freenet-0.7.1060-r1.ebuild:
   Reformatted
 
-  10 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  10 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   -freenet-0.7.1058.ebuild, +freenet-0.7.1060.ebuild:
   New upstream release
 
-  07 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  07 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   +freenet-0.7.1058.ebuild:
   New upstream release
 
-  02 Sep 2007; Thomas Sachau (Tommy[D]) thomas.sachau@gmx.de
+  02 Sep 2007; Thomas Sachau (Tommy[D]) <thomas.sachau@gmx.de>
   +files/freenet.pem, +files/servers, +metadata.xml,
   +freenet-0.7.1056.ebuild:
   New source ebuild for bug 128783
-
