@@ -94,10 +94,10 @@ src_unpack() {
 		{hexen2,hexen2/server,hexenworld/{Client,Server}}/sys_unix.c \
 		|| die "sed sys_unix.c failed"
 
-	# Change default sndspeed from 11025 to 44100,
+	# Change default sndspeed from 22050 to 44100,
 	# to improve the quality/reliability.
 	sed -i \
-		-e "s:desired_speed = 11025:desired_speed = 44100:" \
+		-e "s:desired_speed = 22050:desired_speed = 44100:" \
 		{hexen2,hexenworld/Client}/snd_dma.c || die "sed snd_dma.c failed"
 
 	# Change patch script to be suitable
