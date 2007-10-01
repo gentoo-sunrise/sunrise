@@ -2,6 +2,12 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Oct 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +files/1.24-vulnerabilities.patch, -vavoom-1.24.ebuild,
+  +vavoom-1.24-r1.ebuild:
+  Revision bump for security fixes (thanks to Robert Buchholz <rbu at gentoo
+  dot org> for reporting)
+
   21 Aug 2007; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
   Install also proper graphical launcher icon
 

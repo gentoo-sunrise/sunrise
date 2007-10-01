@@ -1,0 +1,172 @@
+--- trunk/vavoom/source/p_acs.cpp	2007/08/29 22:11:13	2684
++++ trunk/vavoom/source/p_acs.cpp	2007/08/31 16:30:40	2685
+@@ -2486,7 +2486,7 @@
+ 			}
+ 			else
+ 			{
+-				BroadcastCentrePrintf(*PrintStr);
++				BroadcastCentrePrint(*PrintStr);
+ 			}
+ 			ACSVM_BREAK;
+ 
+@@ -2649,7 +2649,7 @@
+ 		ACSVM_CASE(PCD_EndPrintBold)
+ 			//FIXME yellow message
+ 			PrintStr = PrintStr.EvalEscapeSequences();
+-			BroadcastCentrePrintf(*PrintStr);
++			BroadcastCentrePrint(*PrintStr);
+ 			ACSVM_BREAK;
+ 
+ 		//	Extended P-Code commands.
+@@ -2974,7 +2974,7 @@
+ 			}
+ 			else
+ 			{
+-				BroadcastCentrePrintf(*PrintStr);
++				BroadcastCentrePrint(*PrintStr);
+ 			}
+ 			sp = optstart - 6;
+ 			ACSVM_BREAK;
+--- trunk/vavoom/source/p_thinker.cpp	2007/08/29 22:11:13	2684
++++ trunk/vavoom/source/p_thinker.cpp	2007/08/31 16:30:40	2685
+@@ -294,6 +294,21 @@
+ 
+ //==========================================================================
+ //
++//	VThinker::BroadcastPrint
++//
++//==========================================================================
++
++void VThinker::BroadcastPrint(const char *s)
++{
++	guard(VThinker::BroadcastPrint);
++	for (int i = 0; i < svs.max_clients; i++)
++		if (Level->Game->Players[i])
++			Level->Game->Players[i]->eventClientPrint(s);
++	unguard;
++}
++
++//==========================================================================
++//
+ //	VThinker::BroadcastPrintf
+ //
+ //==========================================================================
+@@ -308,9 +323,22 @@
+ 	vsprintf(buf, s, v);
+ 	va_end(v);
+ 
++	BroadcastPrint(buf);
++	unguard;
++}
++
++//==========================================================================
++//
++//	VThinker::BroadcastCentrePrint
++//
++//==========================================================================
++
++void VThinker::BroadcastCentrePrint(const char *s)
++{
++	guard(VThinker::BroadcastCentrePrint);
+ 	for (int i = 0; i < svs.max_clients; i++)
+ 		if (Level->Game->Players[i])
+-			Level->Game->Players[i]->eventClientPrint(buf);
++			Level->Game->Players[i]->eventClientCentrePrint(s);
+ 	unguard;
+ }
+ 
+@@ -330,9 +358,7 @@
+ 	vsprintf(buf, s, v);
+ 	va_end(v);
+ 
+-	for (int i = 0; i < svs.max_clients; i++)
+-		if (Level->Game->Players[i])
+-			Level->Game->Players[i]->eventClientCentrePrint(buf);
++	BroadcastCentrePrint(buf);
+ 	unguard;
+ }
+ 
+@@ -444,7 +470,7 @@
+ {
+ 	VStr Msg = PF_FormatString();
+ 	P_GET_SELF;
+-	Self->BroadcastPrintf(*Msg);
++	Self->BroadcastPrint(*Msg);
+ }
+ 
+ IMPLEMENT_FUNCTION(VThinker, AllocDlight)
+--- trunk/vavoom/source/p_thinker.h	2007/08/29 22:11:13	2684
++++ trunk/vavoom/source/p_thinker.h	2007/08/31 16:30:40	2685
+@@ -76,7 +76,9 @@
+ 	void AddSoundSequenceChoice(vint32, VName);
+ 	void StopSoundSequence(vint32);
+ 
++	void BroadcastPrint(const char*);
+ 	void BroadcastPrintf(const char*, ...);
++	void BroadcastCentrePrint(const char*);
+ 	void BroadcastCentrePrintf(const char*, ...);
+ 
+ 	DECLARE_FUNCTION(Spawn)
+--- trunk/vavoom/source/screen.cpp	2007/08/29 19:43:24	2683
++++ trunk/vavoom/source/screen.cpp	2007/08/29 22:11:13	2684
+@@ -203,6 +203,12 @@
+ 	void	*data;
+ 	char	filename[128];
+ 
++	if (strlen(screenshot_type) > 8)
++	{
++		GCon->Log("Screenshot extension too long");
++		return;
++	}
++
+ 	//	Find a file name to save it to
+ 	VStr BaseDir = (fl_savedir ? fl_savedir : fl_basedir) + "/" + fl_gamedir;
+ 	for (i = 0; i <= 9999; i++)
+--- trunk/vavoom/source/str.h	2007/08/31 16:30:40	2685
++++ trunk/vavoom/source/str.h	2007/08/31 17:25:55	2686
+@@ -345,6 +345,8 @@
+ 		{
+ 			vint32 Len;
+ 			Strm << STRM_INDEX(Len);
++			if (Len < 0)
++				Len = 0;
+ 			S.Resize(Len);
+ 			if (Len)
+ 				Strm.Serialise(S.Str, Len + 1);
+--- trunk/vavoom/source/sv_main.cpp	2007/08/15 20:47:29	2647
++++ trunk/vavoom/source/sv_main.cpp	2007/08/31 16:30:40	2685
+@@ -1431,14 +1431,14 @@
+ COMMAND(Map)
+ {
+ 	guard(COMMAND Map);
+-	char	mapname[12];
++	VStr	mapname;
+ 
+ 	if (Args.Num() != 2)
+ 	{
+ 		GCon->Log("map <mapname> : change level");
+ 		return;
+ 	}
+-	VStr::Cpy(mapname, *Args[1]);
++	mapname = Args[1];
+ 
+ 	SV_ShutdownServer(false);
+ #ifdef CLIENT
+@@ -1461,7 +1461,7 @@
+ 	GGameInfo->netgame = svs.max_clients > 1;
+ 	GGameInfo->eventInitNewGame(gameskill);
+ 
+-	SV_SpawnServer(mapname, true);
++	SV_SpawnServer(*mapname, true);
+ #ifdef CLIENT
+ 	if (cls.state != ca_dedicated)
+ 		GCmdBuf << "Connect local\n";
+@@ -1624,7 +1624,7 @@
+ 		Text += " ";
+ 		Text += Args[i];
+ 	}
+-	GLevelInfo->BroadcastPrintf(*Text);
++	GLevelInfo->BroadcastPrint(*Text);
+ 	GLevelInfo->StartSound(TVec(0, 0, 0), 0,
+ 		GSoundManager->GetSoundID("misc/chat"), 0, 1.0, 0);
+ 	unguard;
