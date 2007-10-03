@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/shm
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Oct 2007; René Neumann (Necoro) <necoro@necoro.net> +metadata.xml,
+  +shm-1.1.1.ebuild:
+  Adding dev-python/shm
+
