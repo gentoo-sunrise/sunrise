@@ -4,5 +4,5 @@
 
   03 Oct 2007; René Neumann (Necoro) <necoro@necoro.net> +metadata.xml,
   +shm-1.1.1.ebuild:
-  Adding dev-python/shm
+  Adding dev-python/shm as per bug 194591
 
