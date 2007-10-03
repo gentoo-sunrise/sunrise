@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Oct 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -files/uhexen2-1.4.2_rc1-h2launcher_improvements.diff,
+  +uhexen2-1.4.2.ebuild:
+  Version bump (and drop old)
+
   25 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
   -uhexen2-1.4.2_rc1.ebuild, +uhexen2-1.4.2_rc2.ebuild:
   Version bump, including some fixes/enhancements (and drop old)
