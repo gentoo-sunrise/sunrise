@@ -3,6 +3,10 @@
 # $Header: $
 
   03 Oct 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-1.4.2_rc2.ebuild:
+  Drop old (2nd attempt) :P
+
+  03 Oct 2007; Davide Cendron (scen) <scen@gentoo.org>
   -files/uhexen2-1.4.2_rc1-h2launcher_improvements.diff,
   +uhexen2-1.4.2.ebuild:
   Version bump (and drop old)
