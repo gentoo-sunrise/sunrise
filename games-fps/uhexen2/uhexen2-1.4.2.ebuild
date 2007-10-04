@@ -7,7 +7,7 @@ inherit eutils flag-o-matic toolchain-funcs versionator games
 DATA_PV="1.19"
 HW_PV="0.15"
 MY_PN="hexen2"
-DEMO_PV="1.4.1"
+DEMO_PV="1.4.2"
 
 DESCRIPTION="Hexen 2 port - Hammer of Thyrion (CVS snapshot)"
 HOMEPAGE="http://uhexen2.sourceforge.net/"
