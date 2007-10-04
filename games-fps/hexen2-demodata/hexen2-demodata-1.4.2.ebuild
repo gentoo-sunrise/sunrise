@@ -24,9 +24,6 @@ src_install() {
 	insinto "${dir}"/demo
 	doins -r data1 || die "doins data1 failed"
 
-	# Have an icon, so might as well install it.
-	newicon hexen2.png ${PN}.png
-
 	# All the docs are regarding uhexen2, rather than the demo data.
 
 	prepgamesdirs
