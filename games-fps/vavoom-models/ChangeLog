@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Oct 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -vavoom-models-1.4.1.ebuild, +vavoom-models-1.4.2.ebuild:
+  Version bump
+
   21 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   -vavoom-models-1.4.ebuild, +vavoom-models-1.4.1.ebuild:
   Version bump (and drop old); fixed also installation of docs.
