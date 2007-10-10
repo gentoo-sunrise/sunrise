@@ -1,0 +1,8 @@
+# ChangeLog for sys-cluster/clusterit
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Oct 2007; azazello <gentoo@horizon.ath.cx> +clusterit-2.4.ebuild,
+  +metadata.xml:
+  new package, bug 195394
+
