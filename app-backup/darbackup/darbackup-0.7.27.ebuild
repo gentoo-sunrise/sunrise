@@ -19,8 +19,8 @@ RDEPEND=">=app-backup/dar-2.2.6
 	net-misc/openssh"
 
 pkg_setup() {
-	if ! built_with_use app-backup/dar dar32 && ! built_with_use app-backup/dar dar64; then
-		die 'You must have dar32 or dar64 useflags for app-backup/dar enabled.'
+	if ! built_with_use -o app-backup/dar dar32 dar64; then
+		die 'You must have either dar32 or dar64 useflags for app-backup/dar enabled.'
 	fi
 
 	enewgroup backup
