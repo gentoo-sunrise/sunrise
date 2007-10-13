@@ -1,0 +1,8 @@
+# ChangeLog for games-emulation/sdlmame
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Oct 2007; Tiago Pierezan Camargo (camargo) <tcamargo@gmail.com>
+  +metadata.xml, +sdlmame-0.119_p4.ebuild:
+  New Ebuild for bug 145023
+
