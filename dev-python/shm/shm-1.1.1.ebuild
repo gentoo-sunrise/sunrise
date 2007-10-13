@@ -13,12 +13,9 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-# $S is set to $WORKDIR/$P by default 
-# this is not correct here
 S="${WORKDIR}"
 
-src_install()
-{
+src_install() {
 	python_version
 	distutils_src_install
 
