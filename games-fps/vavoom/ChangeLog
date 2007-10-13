@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Oct 2007; Jakub Moc <jakub@gentoo.org> vavoom-1.25.ebuild:
+  Sanitize built_with_use checks so that we do not die too many times. Remove
+  redundant vorbis USE flag as well.
+
   08 Oct 2007; Davide Cendron (scen) <scen@gentoo.org>
   -files/1.24-vulnerabilities.patch, -vavoom-1.24-r1.ebuild,
   +vavoom-1.25.ebuild, vavoom-9999.ebuild:
