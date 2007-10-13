@@ -16,8 +16,6 @@ SLOT=0
 KEYWORDS="~amd64 ~x86"
 IUSE="7zip gpm nls ncurses pam slang"
 
-PROVIDE="virtual/editor"
-
 RDEPEND="kernel_linux? ( >=sys-fs/e2fsprogs-1.19 )
 	ncurses? ( >=sys-libs/ncurses-5.2-r5 )
 	pam? ( >=sys-libs/pam-0.78-r3 net-nds/portmap )

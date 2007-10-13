@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Oct 2007; Jakub Moc <jakub@gentoo.org> mc-mp-4.1.40_pre9.ebuild:
+  Remove PROVIDE for new-style virtual/editor
+
   08 Feb 2007; Jakub Moc <jakub@gentoo.org> mc-mp-4.1.40_pre9.ebuild:
   restrict slang dependency to slang-1.4* wrt Bug #141947
 
