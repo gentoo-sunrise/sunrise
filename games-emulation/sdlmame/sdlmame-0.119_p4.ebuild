@@ -31,7 +31,7 @@ DEPEND=">=media-libs/libsdl-1.2.10
 
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 RESTRICT="fetch strip"
 
 pkg_nofetch() {
