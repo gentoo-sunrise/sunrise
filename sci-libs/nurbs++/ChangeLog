@@ -3,6 +3,9 @@
 # $Header: $
 
   14 Oct 2007; Oliver Borm (oli) <oli.borm@web.de> nurbs++-3.0.11.ebuild:
+  Ebuild without X Flag
+
+  14 Oct 2007; Oliver Borm (oli) <oli.borm@web.de> nurbs++-3.0.11.ebuild:
   Fixed nurbs++-3.0.11.ebuild
 
   14 Oct 2007; Oliver Borm (oli) <oli.borm@web.de>
