@@ -1,0 +1,9 @@
+# ChangeLog for sci-libs/nurbs++
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Oct 2007; Oliver Borm (oli) <oli.borm@web.de>
+  +files/nurbs++-3.0.11-gcc-4.1.patch, +metadata.xml,
+  +nurbs++-3.0.11.ebuild:
+  New patched ebuild for the nurbs++-3.0.11 library. Posted also at bug 195773
+
