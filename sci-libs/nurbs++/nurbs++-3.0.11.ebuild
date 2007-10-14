@@ -7,7 +7,6 @@ inherit libtool eutils
 DESCRIPTION="NURBS library for cpp"
 HOMEPAGE="http://libnurbs.sourceforge.net/"
 SRC_URI="mirror://sourceforge/libnurbs/${P}.tar.bz2"
-#           mirror://sourceforge/${P}-gcc-4.1.patch" # can't get that patch directly from SF.net
 
 LICENSE="LGPL-2"
 SLOT="0"
@@ -16,8 +15,6 @@ IUSE="X debug" #opengl
 
 DEPEND="dev-lang/perl
 	X? ( x11-base/xorg-x11 )"
-	#media-gfx/imagemagick # doesn't work yet either
-	# opengl? ( virtual/opengl ) # doesn't work yet
 
 src_unpack() {
 	unpack ${A}
@@ -27,24 +24,13 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf=""
-	#use opengl \
-	#	&& myconf="${myconf} --with-opengl=/usr" \
-	#	|| myconf="${myconf} --without-opengl"
-
-	if use X ; then
-		myconf="${myconf} --with-x"
-	else
-		myconf="${myconf} --without-x"
-	fi
-
-	./configure \
-		${myconf} \
+	econf \
+		$(use_with X x) \
 		--prefix=/usr \
-		`use_enable debug` \
-		`use_enable debug verbose-exception` \
-		|| die
-	make || die
+		$(use_enable debug) \
+		$(use_enable debug verbose-exception) \
+		|| die "Error: econf failed!"
+	emake || die "Error: emake failed!"
 }
 
 src_install() {
