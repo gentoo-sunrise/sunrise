@@ -1,0 +1,9 @@
+# ChangeLog for sys-auth/openafs-kstart
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Oct 2007; Oliver Borm (boroli) <oli.borm@web.de> +metadata.xml,
+  +openafs-kstart-3.10.ebuild:
+  Advanced ebuild with some USE Flags for the kstart bug 174594, don't confuse
+  it with the kde-base/kstart package.
+
