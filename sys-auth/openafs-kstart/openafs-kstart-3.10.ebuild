@@ -19,9 +19,6 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/kstart-${PV}"
 
 src_compile() {
-	einfo ${S}
-	cd "${S}"
-
 	econf \
 		$(use_enable krb4 k4start) \
 		$(use_with kerberos) \
@@ -32,8 +29,8 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "could not install"
 	dobin k5start krenew
-	if use krb4; then 
-	dobin k4start 
+	if use krb4; then
+		dobin k4start
 	fi
 	dodoc README NEWS
 }
