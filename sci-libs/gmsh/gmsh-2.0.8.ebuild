@@ -9,26 +9,27 @@ SRC_URI="http://www.geuz.org/gmsh/src/${P}-source.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc jpeg zlib png X metis cgns"
+IUSE="X cgns doc jpeg metis png zlib"
 
-DEPEND="x11-libs/fltk
-	sci-libs/gsl
-	doc? ( app-text/tetex )
-	png? ( media-libs/libpng )
+RDEPEND="sci-libs/gsl
+	x11-libs/fltk
 	jpeg? ( media-libs/jpeg )
+	png? ( media-libs/libpng )
 	zlib? ( sys-libs/zlib )"
 
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	doc? ( app-text/tetex )"
 
 src_compile() {
 	econf \
 		--disable-netgen \
-		$(use_enable jpeg) \
-		$(use_enable zlib) \
-		$(use_enable png) \
-		$(use_enable metis) \
+		$(use_enable X gui) \
 		$(use_enable cgns) \
-		$(use_enable X gui)  || die "could not configure"
+		$(use_enable jpeg) \
+		$(use_enable metis) \
+		$(use_enable png) \
+		$(use_enable zlib)
+
 	emake -j1 || die "emake failed"
 
 	if use doc ; then
