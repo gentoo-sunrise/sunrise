@@ -17,7 +17,7 @@ DEPEND=">=dev-cpp/libxmlpp-2.10.0
 	>=dev-cpp/glibmm-2.8.4
 	media-libs/libvorbis
 	=media-libs/libdc1394-1*
-	media-libs/libdts
+	|| ( media-libs/libdca media-libs/libdts )
 	media-libs/libtheora
 	media-libs/ftgl
 	media-video/ffmpeg
