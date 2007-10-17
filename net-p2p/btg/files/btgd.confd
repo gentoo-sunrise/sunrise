@@ -1,8 +1,0 @@
-# Copyright 1999-2007 Gentoo Foundation
-# # Distributed under the terms of the GNU General Public License v2
-# # $Header:
-
-# You are not able to start btgd as root
-# Please give a dedicated user
-#BTG_USER="p2p"
-
