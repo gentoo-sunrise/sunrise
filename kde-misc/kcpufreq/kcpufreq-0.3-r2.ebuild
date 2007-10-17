@@ -12,7 +12,8 @@ HOMEPAGE="http://www.schaffert.eu/projects_html"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="noicon"
+EAPI="1"
+IUSE="+icon"
 
 DEPEND=">=sys-power/cpufrequtils-0.3-r1"
 
@@ -23,5 +24,5 @@ S=${WORKDIR}/${PN}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	use noicon && epatch "${FILESDIR}"/noicon.patch
+	use icon || epatch "${FILESDIR}"/noicon.patch
 }
