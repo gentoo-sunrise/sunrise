@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Oct 2007; Alex Tarkovsky <alextarkovsky@gmail.com> -nrss-0.3.3.ebuild,
+  +nrss-0.3.6.ebuild:
+  Bump to 0.3.6
+
   13 Sep 2007; Jack Miller (themoken) <jjm2n4@umr.edu> -nrss-0.3.2.ebuild,
   +nrss-0.3.3.ebuild:
   Another version bump.

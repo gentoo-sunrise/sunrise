@@ -8,12 +8,11 @@ SRC_URI="http://ncurses-rss.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~ppc64 ~amd64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
 DEPEND="dev-libs/expat
 	sys-libs/ncurses"
-
 RDEPEND="${DEPEND}
 	net-misc/wget"
 
