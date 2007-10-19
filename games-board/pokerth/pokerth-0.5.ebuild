@@ -36,7 +36,7 @@ pkg_setup() {
 	fi
 
 	# Qt bug #171858, fixed in 4.3.2 and 4.4.0
-	if has_version "~x11-libs/qt-4.3.0" || 	has_version "~x11-libs/qt-4.3.1" ; then
+	if has_version "~x11-libs/qt-4.3.0" || has_version "~x11-libs/qt-4.3.1" ; then
 		ewarn "x11-libs/qt versions 4.3.0 and 4.3.1 are known to break"
 		ewarn "stylesheet support for buttons (game is still playable)."
 	fi
