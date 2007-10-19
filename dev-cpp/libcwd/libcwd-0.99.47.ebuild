@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="QPL"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="debug doc examples pch"
 
 DEPEND="doc? ( app-doc/doxygen )"
@@ -19,8 +19,6 @@ RDEPEND=""
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-getenv.patch"
 
 	sed -i \
 		-e 's/-O3//' \
@@ -51,12 +49,12 @@ src_install() {
 
 	if use doc; then
 		dohtml -r documentation/reference-manual/*
-		insinto /usr/share/${PN}
+		insinto /usr/share/doc/${PF}
 		doins -r documentation/tutorial
 	fi
 
 	if use examples; then
-		insinto /usr/share/${PN}
+		insinto /usr/share/doc/${PF}
 		doins -r example-project
 	fi
 }
