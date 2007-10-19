@@ -1,6 +1,0 @@
-#!/bin/sh
-IPATH=/usr/share/jokosher
-export JOKOSHER_DATA_PATH="${IPATH}"
-export JOKOSHER_IMAGE_PATH="${IPATH}/images"
-export JOKOSHER_LOCALE_PATH="/usr/share/locale"
-exec /usr/share/jokosher/Jokosher "$@"
