@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Oct 2007; Markus Ullmann <jokey@gentoo.org> uhexen2-1.4.2:
+  Don't have an ebuild block itself
+
   04 Oct 2007; Davide Cendron (scen) <scen@gentoo.org> uhexen2-1.4.2.ebuild:
   Version bump for demodata dependency
 
