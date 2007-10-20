@@ -26,9 +26,9 @@ RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	if ! built_with_use dev-lang/perl ithreads ; then
-		eerror "Please (re)emerge perl with the ithreads USE flag on before "
-		eerror "emerging checkgmail"
-		die "please (re)emerge net-mail/checkgmail with USE='ithreads'"
+		local msg="Please (re)emerge dev-lang/perl with the ithreads USE flag on"
+		eerror "${msg}"
+		die "${msg}"
 	fi
 }
 
