@@ -65,11 +65,10 @@ src_install() {
 		for f in $MY_PICS; do
 			doins examples/${f}
 		done
-		
+
 		exeinto /usr/share/doc/${PF}/examples
 		for f in $MY_EXAMPLES; do
 			dobin examples/${f}
 		done
 	fi
 }
-
