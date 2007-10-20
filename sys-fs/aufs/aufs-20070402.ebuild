@@ -21,8 +21,7 @@ check_patch() {
 	get_version
 
 	# Check if ksize Patch has to be applied
-	if use ksize
-	then
+	if use ksize ; then
 		APPLY_KSIZE_PATCH="n"
 		# If ksize patch is not applied
 		if ! grep -qs "EXPORT_SYMBOL(ksize);" "${KV_DIR}/mm/slab.c" ; then
@@ -31,8 +30,7 @@ check_patch() {
 	fi
 
 	# Check if lhash Patch has to be applied
-	if use nfs && kernel_is ge 2 6 19
-	then
+	if use nfs && kernel_is ge 2 6 19 ; then
 		APPLY_LHASH_PATCH="n"
 		# If lhash patch is not applied
 		if ! grep -qs "EXPORT_SYMBOL(__lookup_hash);" "${KV_DIR}/fs/namei.c" \
@@ -45,8 +43,7 @@ check_patch() {
 
 pkg_setup() {
 	# kernel version check
-	if kernel_is lt 2 6 16
-	then
+	if kernel_is lt 2 6 16 ; then
 		eerror "${PN} is being developed and tested on linux-2.6.16 and later."
 		eerror "Make sure you have a proper kernel version!"
 		die "Wrong kernel version"
@@ -55,8 +52,7 @@ pkg_setup() {
 	check_patch
 
 	# If a patch has to be applied
-	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] || [[ ${APPLY_LHASH_PATCH} == "y" ]]
-	then
+	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] || [[ ${APPLY_LHASH_PATCH} == "y" ]] ; then
 		ewarn "Patching your kernel..."
 		cd ${KV_DIR}
 	fi
@@ -79,38 +75,32 @@ src_unpack(){
 	cd "${S}"
 
 	# Enable ksize Patch in priv_def.mk
-	if use ksize
-	then
+	if use ksize ; then
 		echo "CONFIG_AUFS_KSIZE_PATCH = y" >> priv_def.mk || die "setting ksize in priv_def.mk failed!"
 	fi
 
 	# Enable lhash Patch in priv_def.mk
-	if use nfs && kernel_is ge 2 6 19
-	then
+	if use nfs && kernel_is ge 2 6 19 ; then
 		echo "CONFIG_AUFS_LHASH_PATCH = y" >> priv_def.mk || die "setting lhash in priv_def.mk failed!"
 	fi
 
 	# Enable hinotify in priv_def.mk
-	if use hinotify && kernel_is ge 2 6 18
-	then
+	if use hinotify && kernel_is ge 2 6 18 ; then
 		echo "CONFIG_AUFS_HINOTIFY = y" >> priv_def.mk || die "setting hinotify in priv_def.mk failed!"
 	fi
 
 	# Enable nfsexport in priv_def.mk
-	if use nfsexport && kernel_is ge 2 6 18
-	then
+	if use nfsexport && kernel_is ge 2 6 18 ; then
 		echo "CONFIG_AUFS_EXPORT = y" >> priv_def.mk || die "setting nfsexport in priv_def.mk failed!"
 	fi
 
 	# Disable SYSAUFS for kernel less than 2.6.18
-	if kernel_is lt 2 6 18
-	then
+	if kernel_is lt 2 6 18 ; then
 		echo "CONFIG_AUFS_SYSAUFS = " >> priv_def.mk || die "unsetting sysaufs in priv_def.mk failed!"
 	fi
 
 	# Check if a vserver-kernel is installed
-	if [ -e ${KV_DIR}/include/linux/vserver ]
-	then
+	if [[ -e ${KV_DIR}/include/linux/vserver ]] ; then
 		einfo "vserver kernel seems to be installed"
 		einfo "using vserver patch"
 		echo "AUFS_DEF_CONFIG = -DVSERVER" >> priv_def.mk || die "setting vserver in priv_def.mk failed!"
