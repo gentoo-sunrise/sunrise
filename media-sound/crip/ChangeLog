@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Oct 2007; Jack Kelly (hashendgame) <weldingmaskman@hotmail.com> ++,
+  -crip-3.8.ebuild:
+  Bump media-sound/crip from version 3.8 to 3.9.
+
   26 Dec 2006; Tiziano Müller <dev-zero@gentoo.org> +crip-3.8.ebuild,
   +metadata.xml:
   New ebuild for bug #158863
