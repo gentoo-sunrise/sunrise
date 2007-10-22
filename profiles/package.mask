@@ -20,6 +20,10 @@
 ##
 ##   End example
 ##
+# Felix Bechstein <f@ub0r.de> (22 Oct 207)
+# svn version should be masked
+=media-sound/mtag-9999
+
 # Santiago M. Mola <coldwind@gentoo.org> (11 Jul 2007)
 # Broken license. Asked upstream to address it.
 media-tv/zattoo-bin
