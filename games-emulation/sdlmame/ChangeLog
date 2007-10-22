@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2007; Markus Ullmann <jokey@gentoo.org> sdlmame-0.120a:
+  Fix quotes
+
   22 Oct 2007; Tiago Pierezan Camargo (camargo) <tcamargo@gmail.com>
   -files/0.120a/inpview12-120.patch, ++, ++, ++,
   -files/0.120a/dipports113.patch, -files/0.120a/wolf120.patch,

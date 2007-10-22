@@ -56,7 +56,7 @@ enable_feature() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	# Don't compile zlib and expat
 	einfo "Disabling embedded libraries: zlib and expat"
 	$(disable_feature BUILD_ZLIB)
@@ -70,7 +70,7 @@ src_unpack() {
 
 		x86)	einfo "Optimizing build for $(get-flag march)"
 				case $(get-flag march) in
-					pentium3)	$(enable_feature  PM);;
+					pentium3)	$(enable_feature PM);;
 					pentium-m)	$(enable_feature PM);;
 					pentium4)   $(enable_feature P4);;
 					athlon)		$(enable_feature ATHLON);;
@@ -93,9 +93,9 @@ src_unpack() {
 
 	einfo "Applying WolfMAME patches"
 	cd "${S}"
-	epatch "${FILESDIR}/${MY_V}"/dipports.patch
-	epatch "${FILESDIR}/${MY_V}"/inpview.patch
-	epatch "${FILESDIR}/${MY_V}"/wolf.patch
+	epatch "${FILESDIR}"/${MY_V}/dipports.patch
+	epatch "${FILESDIR}"/${MY_V}/inpview.patch
+	epatch "${FILESDIR}"/${MY_V}/wolf.patch
 }
 
 src_compile() {
@@ -105,14 +105,14 @@ src_compile() {
 	fi
 
 	emake \
-		NAME="${PN}" \
+		NAME=${PN} \
 		SUFFIX="" \
 		${make_opts} \
 		|| die "emake failed"
 }
 
 src_install() {
-	dogamesbin "${PN}" || die "dogamesbin ${PN} failed"
+	dogamesbin ${PN} || die "dogamesbin ${PN} failed"
 
 	# Follows xmame ebuild, avoiding collision on /usr/games/bin/jedutil
 	exeinto $(games_get_libdir)/${PN}
