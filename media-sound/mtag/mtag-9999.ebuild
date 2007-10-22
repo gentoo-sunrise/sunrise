@@ -30,7 +30,7 @@ src_compile() {
 
 src_install() {
 	dobin mtag
-	dodoc README COPYING ChangeLog AUTHORS
+	dodoc README ChangeLog AUTHORS
 	if use doc; then
 		dohtml html/*
 	fi
