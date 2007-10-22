@@ -93,9 +93,9 @@ src_unpack() {
 
 	einfo "Applying WolfMAME patches"
 	cd "${S}"
-	epatch "${FILESDIR}/${MY_V}"/dipports113.patch
-	epatch "${FILESDIR}/${MY_V}"/inpview12-120.patch
-	epatch "${FILESDIR}/${MY_V}"/wolf120.patch
+	epatch "${FILESDIR}/${MY_V}"/dipports.patch
+	epatch "${FILESDIR}/${MY_V}"/inpview.patch
+	epatch "${FILESDIR}/${MY_V}"/wolf.patch
 }
 
 src_compile() {
