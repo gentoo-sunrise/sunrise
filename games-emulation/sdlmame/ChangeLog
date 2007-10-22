@@ -2,11 +2,14 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
+  Fix Changelog
+
   22 Oct 2007; Markus Ullmann <jokey@gentoo.org> sdlmame-0.120a:
   Fix quotes
 
   22 Oct 2007; Tiago Pierezan Camargo (camargo) <tcamargo@gmail.com>
-  -files/0.120a/inpview12-120.patch, ++, ++, ++,
+  -files/0.120a/inpview12-120.patch,
   -files/0.120a/dipports113.patch, -files/0.120a/wolf120.patch,
   sdlmame-0.120a.ebuild:
   Removed version information from patches names.
@@ -15,7 +18,7 @@
   +sdlmame-0.120a.ebuild:
   Version bump, Applying Wolfmame patches.
 
-  13 Oct 2007; Dawid Węgliński <cla@gentoo.org> sdlmame-0.119_p4.ebuild:
+  13 Oct 2007; Dawid WÄgliÅski <cla@gentoo.org> sdlmame-0.119_p4.ebuild:
   Quotes
 
   13 Oct 2007; Tiago Pierezan Camargo (camargo) <tcamargo@gmail.com>
