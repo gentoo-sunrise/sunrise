@@ -14,14 +14,13 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="doc"
 
+RDEPEND="media-libs/taglib
+	>=dev-db/sqlite-3.3.12"
 DEPEND="dev-util/cmake
 	${RDEPEND}"
 
-RDEPEND="media-libs/taglib
-	>=dev-db/sqlite-3.3.12"
-
 src_compile() {
-	cmake ${S} || die "compile failed!"
+	cmake "${S}" || die "compile failed!"
 	emake || die "compile failed!"
 }
 
