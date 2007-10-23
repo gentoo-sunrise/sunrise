@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Oct 2007; Felix Bechstein (flx\) <f@ub0r.de> mtag-1.ebuild:
+  use mirror:// style SRC_URI
+
   22 Oct 2007; Markus Ullmann <jokey@gentoo.org> mtag-1, mtag-9999:
   Don't install COPYING
 
