@@ -11,7 +11,8 @@
   22 Oct 2007; Tiago Pierezan Camargo (camargo) <tcamargo@gmail.com>
   -files/0.120a/inpview12-120.patch,
   -files/0.120a/dipports113.patch, -files/0.120a/wolf120.patch,
-  sdlmame-0.120a.ebuild:
+  +files/0.120a/inpview.patch, +files/0.120a/dipports.patch,
+  +files/0.120a/wolf.patch, sdlmame-0.120a.ebuild:
   Removed version information from patches names.
 
   21 Oct 2007; Tiago Pierezan Camargo (camargo) <tcamargo@gmail.com>
