@@ -25,7 +25,7 @@ src_compile() {
 
 src_install() {
 	dobin mtag
-	dodoc README
+	dodoc README ChangeLog AUTHORS
 	if use doc; then
 		dohtml html/*
 	fi
