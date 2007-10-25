@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Oct 2007; Davide Cendron (scen) <scen@gentoo.org> uhexen2-1.4.2.ebuild:
+  Rollback (partially) previous change: uhexen2 and uhexen2-cvs cannot coexist
+
   19 Oct 2007; Markus Ullmann <jokey@gentoo.org> uhexen2-1.4.2:
   Don't have an ebuild block itself
 

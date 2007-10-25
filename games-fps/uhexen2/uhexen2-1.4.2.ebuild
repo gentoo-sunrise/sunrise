@@ -41,7 +41,8 @@ UIDEPEND=">=media-libs/libsdl-1.2.7
 LNCHDEPEND="gtk? ( =x11-libs/gtk+-2* )"
 
 # xdelta is needed to manually run the patch script
-RDEPEND="${UIDEPEND}
+RDEPEND="!games-fps/uhexen2-cvs
+	${UIDEPEND}
 	${LNCHDEPEND}
 	demo? ( >=games-fps/hexen2-demodata-${DEMO_PV} )
 	lights? ( games-fps/hexen2-lights )
