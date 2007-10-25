@@ -10,7 +10,7 @@ SRC_URI="http://intellinuxwireless.org/${PN}/downloads/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND=""

@@ -12,7 +12,7 @@ CONFIG_CHECK="TUN"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~amd64 ~ia64"
+KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
 IUSE="test"
 
 DEPEND="sys-libs/zlib

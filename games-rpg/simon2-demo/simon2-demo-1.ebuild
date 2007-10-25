@@ -11,7 +11,7 @@ SRC_URI="http://quick.mixnmojo.com/demos/simon2demo.zip
 
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="strip"
 

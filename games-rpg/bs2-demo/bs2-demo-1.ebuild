@@ -14,7 +14,7 @@ SRC_URI="http://files.5star-network.com/Games/${PN}.zip
 
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="strip"
 

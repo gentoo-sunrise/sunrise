@@ -19,7 +19,7 @@ SRC_URI="http://rbelmont.mameworld.info/${MY_P}.zip"
 # Same as xmame. Should it be renamed to MAME?
 LICENSE="XMAME"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="minimal debug"
 
 DEPEND=">=media-libs/libsdl-1.2.10

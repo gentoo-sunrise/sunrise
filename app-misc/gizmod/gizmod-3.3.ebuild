@@ -9,7 +9,7 @@ HOMEPAGE="http://gizmod.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="libvisual"
 RDEPEND="x11-libs/libX11
 	dev-lang/python
