@@ -11,7 +11,7 @@ ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/mtag/trunk/mtag"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 RDEPEND="media-libs/taglib

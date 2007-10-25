@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Oct 2007; Felix Bechstein (flx\) <f@ub0r.de> mtag-1.ebuild,
+  mtag-9999.ebuild:
+  KEYWORDS sorted alphabeticaly
+
   23 Oct 2007; Felix Bechstein (flx\) <f@ub0r.de> mtag-1.ebuild:
   use mirror:// style SRC_URI
 
