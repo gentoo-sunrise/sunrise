@@ -15,7 +15,6 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	cd "${S}"
 	dobin ${PN} || die "dobin failed"
 	doman *.[0-9]
 }
