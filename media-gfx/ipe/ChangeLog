@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Oct 2007; Charlie Shepherd <masterdriverz@gentoo.org>
+  ipe-6.0_pre28.ebuild:
+  Update SRC_URI, quote $D and call a function in an if clause instead of
+  testing $? after calling it.
+
   10 Sep 2007; Christian Schlotter (schlotter) <again@gmx.de>
   ipe-6.0_pre28.ebuild:
   Correct last commit which included wrong paths to configuration files.

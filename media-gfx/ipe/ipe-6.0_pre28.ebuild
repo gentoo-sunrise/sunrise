@@ -4,10 +4,10 @@
 
 inherit qt4 eutils
 
-MY_P="${P/_/}"
+MY_P="${P/_/}-patch1"
 DESCRIPTION="An extensible drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
 HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
-SRC_URI="http://tclab.kaist.ac.kr/ipe/${MY_P}-src.tar.gz"
+SRC_URI="http://luaforge.net/frs/download.php/2639/${MY_P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -44,8 +44,7 @@ pkg_setup() {
 		qt4_pkg_setup
 	fi
 
-	search_urw_fonts
-	if [ $? -eq 0 ]; then
+	if search_urw_fonts; then
 		einfo "URW fonts found in ${URWFONTDIR}."
 	else
 		ewarn "Could not find directory containing URW fonts.  Ipe will not"
@@ -78,7 +77,7 @@ src_install() {
 	if [ -n ${URWFONTDIR} ]; then
 		einfo "Creating fontmap ..."
 		sed -e "s:/usr/share/texmf/type1/urw:${URWFONTDIR}:" \
-			tetex-fontmap.xml > ${D}/${fontmapdir}/fontmap.xml
+			tetex-fontmap.xml > "${D}/${fontmapdir}/fontmap.xml"
 		eend $?
 	fi
 
