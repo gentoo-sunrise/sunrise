@@ -15,12 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="x11-themes/gnome-icon-theme"
-
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/ia_ora-gnome-${PV}
+S="${WORKDIR}/ia_ora-gnome-${PV}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS COPYING README ChangeLog
+	dodoc AUTHORS README ChangeLog
 }

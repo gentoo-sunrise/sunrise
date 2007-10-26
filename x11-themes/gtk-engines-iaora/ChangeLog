@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Oct 2007; Charlie Shepherd <masterdriverz@gentoo.org>
+  gtk-engines-iaora-1.0.11.ebuild:
+  Various style fixes: Don't install COPYING, quote WORKDIR and remove an
+  extra blank line.
+
   12 Apr 2007; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
   +gtk-engines-iaora-1.0.11.ebuild, +metadata.xml:
   New ebuild for bug 170321
