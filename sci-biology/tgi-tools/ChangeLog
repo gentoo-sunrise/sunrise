@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Oct 2007; Charlie Shepherd <masterdriverz@gentoo.org>
+  tgi-tools-0.1.ebuild:
+  Remove extraneous $S from paths in src_compile to shut up repoman.
+
   12 Jul 2007; David Shakaryan <omp@gentoo.org> tgi-tools-0.1.ebuild:
   Place $S in quotes.
 

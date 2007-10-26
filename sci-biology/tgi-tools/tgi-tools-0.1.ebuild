@@ -29,11 +29,12 @@ src_unpack() {
 }
 
 src_compile() {
-	sed -i 's/use Mailer;/#use Mailer;/' ${S}/seqclean/seqclean
-	sed -i 's/-V\t\tverbose/-V\t\tverbose\\/' ${S}/zmsort/zmsort.cpp
+	sed -i 's/use Mailer;/#use Mailer;/' seqclean/seqclean
+	sed -i 's/-V\t\tverbose/-V\t\tverbose\\/' zmsort/zmsort.cpp
 	# TODO: fix error in nrcl
 	for i in cdbfasta mdust psx sclust tclust trimpoly zmsort $(use pvm && echo pvmsx); do
-		sed -i 's/CFLAGS[ ]*=/CFLAGS :=/; s/-D_REENTRANT/-D_REENTRANT \${CFLAGS}/; s/CFLAGS[ ]*:=[ ]*-O2$//' ${S}/${i}/Makefile
+		sed -i 's/CFLAGS[ ]*=/CFLAGS :=/; s/-D_REENTRANT/-D_REENTRANT \${CFLAGS}/; s/CFLAGS[ ]*:=[ ]*-O2$//' \
+			${i}/Makefile
 		cd "${S}/${i}" || die "cd ${i} failed"
 		emake || die "emake failed in ${i}"
 	done
