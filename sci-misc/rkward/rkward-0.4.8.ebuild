@@ -20,6 +20,6 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	kde_src_install
-	rm ${D}/usr/lib/R/library/R.css
-	mv ${D}/share ${D}/usr/
+	rm "${D}/usr/lib/R/library/R.css"
+	mv "${D}/share" "${D}/usr/"
 }
