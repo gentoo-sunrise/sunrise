@@ -33,10 +33,6 @@ media-tv/zattoo-bin
 # svn version should be masked
 =media-sound/mtag-9999
 
-# Jakub Moc <jakub@gentoo.org> (14 June 2007)
-# this needs to be ported to net-im/pidgin or die
-net-im/chix-gaim
-
 # Davide Cendron <scen@gentoo.org> (13 Jun 2007)
 # svn version should be masked
 =games-fps/chocolate-doom-9999
