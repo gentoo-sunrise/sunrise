@@ -22,7 +22,6 @@ RDEPEND="virtual/jre"
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-	cd "${S}"
 	insinto /usr/share/${PN}
 	doins -r eclipsito.jar plugins/
 

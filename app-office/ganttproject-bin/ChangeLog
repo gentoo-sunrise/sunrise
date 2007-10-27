@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Oct 2007; (Tommy[D]) tommy100@gmx.de ++,
+  -ganttproject-bin-2.0.2.ebuild:
+  Version bump to v2.0.5 + delete useless line
+
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   ganttproject-bin-2.0.2.ebuild:
   add some quotes
