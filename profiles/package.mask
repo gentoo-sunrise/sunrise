@@ -20,7 +20,12 @@
 ##
 ##   End example
 ##
-# Felix Bechstein <f@ub0r.de> (22 Oct 207)
+# Jakub Moc <jakub@gentoo.org> (27 Oct 2007)
+# Breaks media-video/ffmpeg (bug #197037)
+# because it installs precompiled junk to /usr/lib
+media-tv/zattoo-bin
+
+# Felix Bechstein <f@ub0r.de> (22 Oct 2007)
 # svn version should be masked
 =media-sound/mtag-9999
 
