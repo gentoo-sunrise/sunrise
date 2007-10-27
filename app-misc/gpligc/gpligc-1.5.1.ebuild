@@ -52,20 +52,20 @@ src_install() {
 	# install binaries and scripts
 	dobin GPLIGC/{GPLIGC.pl,gpsp2igc.pl} \
 		openGLIGCexplorer/{openGLIGCexplorer,createworld,etopo2merger,optimizer}
-    	    
+
 	# install perl modules and icons/pics and example configuration    
 	insinto /usr/share/${PN}
 	doins GPLIGC/{GPLIGCfunctions.pm,GPLIGCwaypoints.pm,gpligc.xbm,icon.png,logo.jpg,logos.gif,logos.jpg} \
 		openGLIGCexplorer/.openGLIGCexplorerrc
 
-	dodoc doc/CHANGES 
+	dodoc doc/CHANGES
 
 	# at least this pdf is supposed to be used often, so its better left uncompressed
 	insinto /usr/share/doc/${P}
 	doins doc/GPLIGC_Manual.pdf
 
 	# paths to perl modules have to be set in scripts/modules
-        dosed "s:PREFIX:/usr:g" /usr/share/${PN}/.openGLIGCexplorerrc
+	dosed "s:PREFIX:/usr:g" /usr/share/${PN}/.openGLIGCexplorerrc
 	dosed "s:zzLIBDIRzz:/usr/share/${PN}/:g" /usr/bin/GPLIGC.pl
 	dosed "s:zzLIBDIRzz:/usr/share/${PN}/:g" /usr/share/${PN}/GPLIGCwaypoints.pm
 
@@ -75,12 +75,12 @@ src_install() {
 }
 
 pkg_postinst() {
-        echo
-        elog "Information about using and configuring GPLIGC and" 
+	echo
+        elog "Information about using and configuring GPLIGC and"
         elog "openGLIGCexplorer (ogie) can be found in the provided manual:"
-	elog "/usr/share/doc/${P}/GPLIGC_Manual.pdf" 
-        elog "Users should copy ogie's example configuration file from"
-        elog "/usr/share/${PN}/.openGLIGCexplorerrc to the own HOME directory"
-        elog "and edit it according to their needs."
-        echo
+	elog "/usr/share/doc/${P}/GPLIGC_Manual.pdf"
+	elog "Users should copy ogie's example configuration file from"
+	elog "/usr/share/${PN}/.openGLIGCexplorerrc to the own HOME directory"
+	elog "and edit it according to their needs."
+	echo
 }
