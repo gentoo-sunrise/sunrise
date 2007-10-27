@@ -76,8 +76,8 @@ src_install() {
 
 pkg_postinst() {
 	echo
-        elog "Information about using and configuring GPLIGC and"
-        elog "openGLIGCexplorer (ogie) can be found in the provided manual:"
+	elog "Information about using and configuring GPLIGC and"
+	elog "openGLIGCexplorer (ogie) can be found in the provided manual:"
 	elog "/usr/share/doc/${P}/GPLIGC_Manual.pdf"
 	elog "Users should copy ogie's example configuration file from"
 	elog "/usr/share/${PN}/.openGLIGCexplorerrc to the own HOME directory"
