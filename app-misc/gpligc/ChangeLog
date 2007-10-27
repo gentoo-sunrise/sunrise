@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Oct 2007; Jakub Moc <jakub@gentoo.org> gpligc-1.5.1.ebuild:
+  Use keepdir on empty dirs, einfo -> elog, cosmetics
+
   27 Oct 2007; Srebrodolskite <Hannes.Krueger@uibk.ac.at> +metadata.xml,
   +gpligc-1.5.1.ebuild:
   New Ebuild for bug 64020 thanks to mario, gregoire, helch, shillelagh and jokey
