@@ -13,10 +13,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 DEPEND="virtual/tetex"
-S=${WORKDIR}
+S="${WORKDIR}"
 
 src_unpack() {
-	cp ${DISTDIR}/${PN}.tex ${S}
+	cp "${DISTDIR}/${PN}.tex" "${S}"
 }
 
 src_install() {
