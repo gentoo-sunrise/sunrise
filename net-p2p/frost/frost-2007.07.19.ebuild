@@ -42,7 +42,7 @@ src_compile() {
 
 src_install() {
 	into /opt/frost
-	cp -R ${S}/build/dist/* ${D}/opt/frost/
+	cp -R "${S}"/build/dist/* "${D}"/opt/frost/
 	fowners :frost /opt/frost /opt/frost/config /opt/frost/downloads /opt/frost/store /opt/frost/exec
 }
 
