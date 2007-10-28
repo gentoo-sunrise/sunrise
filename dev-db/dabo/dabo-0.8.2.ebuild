@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+inherit distutils multilib
 
 DESCRIPTION="A 3-tier, cross-platform application development framework written in Python atop the wxPython GUI toolkit"
 HOMEPAGE="http://dabodev.com/"
@@ -23,8 +23,11 @@ RDEPEND=">=dev-python/wxpython-2.6.1.1
 S="${WORKDIR}/${PN}"
 
 src_install() {
+	distutils_python_version
 	${python} setup.py install --root=${D} --no-compile \
-		--single-version-externally-managed "$@" || die "setup.py install failed"
+		--single-version-externally-managed "$@" \
+		--install-data="/usr/$(get_libdir)/python${PYVER}/site-packages/" \
+		|| die "setup.py install failed"
 
 	dodoc ANNOUNCE AUTHORS ChangeLog README TODO
 }

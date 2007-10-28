@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Oct 2007; Geoff Clements <geoff@electron.me.uk> -dabo-0.8.ebuild,
+  +dabo-0.8.2.ebuild:
+  dabo-8.2: Version bump
+
   10 May 2007; Ali Polatel (hawking) <polatel@gmail.com> -dabo-0.7.2.ebuild:
   Nuke old
 
