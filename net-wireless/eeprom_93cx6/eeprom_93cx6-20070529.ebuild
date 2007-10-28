@@ -25,7 +25,7 @@ MODULE_NAMES="eeprom_93cx6()"
 
 src_unpack() {
 	unpack ${A}
-	echo "CFLAGS += -I${WORKDIR}/include" >> ${S}/Makefile
+	echo "CFLAGS += -I"${WORKDIR}"/include" >> "${S}"/Makefile
 }
 
 src_install() {
