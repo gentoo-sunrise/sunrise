@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Oct 2007; Charlie Shepherd <masterdriverz@gentoo.org>
+  fslint-2.18.ebuild:
+  Style: fix erroneous tab, add quotes around $ROOT and remove unnecessary
+  usage of $S.
+
   06 Feb 2007; Jakub Moc <jakub@gentoo.org> +fslint-2.18.ebuild,
   +metadata.xml:
   Initial ebuild for Bug 33341

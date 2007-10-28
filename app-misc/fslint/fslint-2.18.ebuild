@@ -17,7 +17,6 @@ DEPEND="nls? ( sys-devel/gettext )"
 RDEPEND=">=dev-python/pygtk-2.0"
 
 src_install() {
-	cd "${S}"
 	dodir /usr/share/${PN}
 	cp -R ${PN}/ "${D}"/usr/share/${PN}
 
@@ -25,7 +24,7 @@ src_install() {
 	doins ${PN}{.glade,.gladep,_icon.png} || die "doins failed"
 
 	exeinto /usr/bin
-	doexe ${PN}-gui	|| die "doexe failed"
+	doexe ${PN}-gui || die "doexe failed"
 
 	python_version
 	local pydir="/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
@@ -39,16 +38,16 @@ src_install() {
 	doman man/*
 
 	if use nls ; then
-		cd "${S}"/po
+		cd po
 		emake DESTDIR="${D}"/usr DATADIR=share install || die "locales install failed"
 	fi
 }
 
 pkg_postinst() {
-	python_mod_optimize ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+	python_mod_optimize "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 }
 
 pkg_postrm() {
 	python_version
-	python_mod_cleanup ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 }
