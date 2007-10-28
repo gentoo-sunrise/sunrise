@@ -19,8 +19,7 @@ RDEPEND=""
 
 S="${WORKDIR}/lib"
 
-BUILD_PARAMS="CONFIG_CRC_ITU_T=m
-	-C ${KERNEL_DIR} M=${S}"
+BUILD_PARAMS="CONFIG_CRC_ITU_T=m -C ${KERNEL_DIR} M=${S}"
 BUILD_TARGETS="modules"
 MODULE_NAMES="crc-itu-t()"
 
@@ -35,8 +34,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	echo 'obj-$(CONFIG_CRC_ITU_T) += crc-itu-t.o' > ${S}/Makefile
-	echo "CFLAGS += -I${WORKDIR}/include" >> ${S}/Makefile
+	echo 'obj-$(CONFIG_CRC_ITU_T) += crc-itu-t.o' > "${S}"/Makefile
+	echo "CFLAGS += -I"${WORKDIR}"/include" >> "${S}"/Makefile
 }
 
 src_install() {
