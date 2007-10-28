@@ -14,10 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT="fetch"
-
 DEPEND="app-arch/unzip"
 RDEPEND=""
+
+RESTRICT="fetch"
 
 pkg_nofetch() {
 	einfo "You need to fetch VST Plug-Ins SDK ${PV}"
@@ -32,7 +32,7 @@ src_unpack() {
 }
 
 src_install() {
-	cd ${WORKDIR}/${MY_P2}
+	cd "${WORKDIR}"/${MY_P2}
 	insinto /usr/include/vst
 	doins source/common/AEffect.h
 	doins source/common/aeffectx.h
