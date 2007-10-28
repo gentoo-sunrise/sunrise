@@ -24,7 +24,7 @@ S="${WORKDIR}/${PN}"
 
 src_install() {
 	distutils_python_version
-	${python} setup.py install --root=${D} --no-compile \
+	${python} setup.py install --root="${D}" --no-compile \
 		--single-version-externally-managed "$@" \
 		--install-data="/usr/$(get_libdir)/python${PYVER}/site-packages/" \
 		|| die "setup.py install failed"
