@@ -19,9 +19,7 @@ RDEPEND=""
 MOD="${P}"
 S="${WORKDIR}/${MOD}/compatible/net"
 
-MODULE_NAMES="mac80211(net/mac80211:${S}/mac80211)
-	rc80211_simple(net/mac80211:${S}/mac80211)
-	cfg80211(net/wireless:${S}/wireless)"
+MODULE_NAMES="mac80211(net/mac80211:${S}/mac80211) rc80211_simple(net/mac80211:${S}/mac80211) cfg80211(net/wireless:${S}/wireless)"
 BUILD_TARGETS="modules"
 CONFIG_CHECK="NET_SCHED WIRELESS_EXT LEDS_TRIGGERS"
 
