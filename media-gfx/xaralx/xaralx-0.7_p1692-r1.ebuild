@@ -75,9 +75,9 @@ src_install() {
 	doins Mime/mime-storage/gnome/xaralx.{keys,mime}
 
 	doman doc/xaralx.1
-	dodoc AUTHORS ChangeLog LICENSE NEWS README \
+	dodoc AUTHORS ChangeLog NEWS README \
 		doc/{gifutil.txt,mtrand.txt,XSVG.txt}
 	newdoc doc/en/LICENSE LICENSE-docs
 	dodir /usr/share/doc/${PF}/html
-	tar xzf doc/en/xaralxHelp.tar.gz -C ${D}/usr/share/doc/${PF}/html
+	tar xzf doc/en/xaralxHelp.tar.gz -C "${D}"/usr/share/doc/${PF}/html
 }
