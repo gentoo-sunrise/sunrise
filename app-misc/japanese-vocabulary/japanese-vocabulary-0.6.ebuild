@@ -37,7 +37,7 @@ pkg_postinst() {
 }
 
 pkg_config() {
-	cd ${ROOT}usr/share/${PN}
+	cd "${ROOT}usr/share/${PN}"
 	wget "http://japanese-vocabulary.googlecode.com/files/jlpt.vocab"
 	einfo "The vocabulary database is in:"
 	einfo "  /usr/share/${PN}"
