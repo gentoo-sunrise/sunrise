@@ -22,7 +22,6 @@ RESTRICT="strip"
 S="${WORKDIR}/otrdecoder-bin-linux-Ubuntu_gutsy_(development_branch)-v${MY_PV}"
 
 src_install() {
-	echo ${S}
 	dobin otrdecoder
 	if use X; then
 		insinto /usr/share/${P}
