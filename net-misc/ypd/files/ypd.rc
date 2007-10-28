@@ -1,0 +1,16 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+start(){
+	ebegin "Starting ypd"
+	start-stop-daemon --start --background --make-pidfile --pidfile /var/run/ypd.pid  --quiet --exec /usr/bin/ypd
+	eend $?
+}
+
+stop(){
+	ebegin "Stopping ypd"
+	start-stop-daemon --stop --quiet --exec /usr/bin/ypd
+	eend $?
+}

@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/ypd
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Oct 2007; Felix Bechstein (flx\) <f@ub0r.de> +files/ypd.conf,
+  +files/ypd.rc, +metadata.xml, +ypd-1.ebuild, +ypd-9999.ebuild:
+  New Ebuild for bug 197315, thx to jokey and tommy
+
