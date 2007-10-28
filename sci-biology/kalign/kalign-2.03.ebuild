@@ -18,7 +18,7 @@ S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	unpack ${A}
-	sed -i 's/^CFLAGS.*= -O9/CFLAGS := ${CFLAGS} -O3/' ${S}/Makefile.in
+	sed -i 's/^CFLAGS.*= -O9/CFLAGS := ${CFLAGS} -O3/' "${S}"/Makefile.in
 }
 
 src_install() {
