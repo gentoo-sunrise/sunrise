@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Oct 2007; Charlie Shepherd <masterdriverz@gentoo.org>
+  ptlens-profiles-06.02.08.ebuild:
+  Quote $WORKDIR.
+
   21 Dec 2006; Markus Ullmann <jokey@gentoo.org>
   -ptlens-profiles-0.2.ebuild, ptlens-profiles-06.02.08.ebuild:
   Remove old

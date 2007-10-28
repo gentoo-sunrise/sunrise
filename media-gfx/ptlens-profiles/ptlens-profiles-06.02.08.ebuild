@@ -19,5 +19,5 @@ RDEPEND=""
 src_install() {
 	dodir /usr/share/ptlens/profiles
 	insinto /usr/share/ptlens/profiles
-	doins ${WORKDIR}/*
+	doins "${WORKDIR}"/*
 }
