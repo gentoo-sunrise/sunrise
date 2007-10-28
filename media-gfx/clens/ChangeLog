@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Oct 2007; Markus Ullmann <jokey@gentoo.org> clens-0.3.1:
+  Fix quoting
+
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   clens-0.3.1.ebuild:
   added trailing slash to HOMEPAGE URL

@@ -36,5 +36,5 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodir /etc/env.d
-	echo "CLENS_PROFILE=\"${PTLENS_PROFILES}\"" > ${D}/etc/env.d/99clens
+	echo "CLENS_PROFILE=\"${PTLENS_PROFILES}\"" > "${D}"/etc/env.d/99clens
 }
