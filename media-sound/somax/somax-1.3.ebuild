@@ -48,7 +48,7 @@ src_install() {
 	doicon icons/somax.png
 	make_desktop_entry ${PN} SomaX ${PN}.png AudioVideo;GTK
 
-	dodoc AUTHORS ChangeLog ABOUT-NLS README README.{modules,plugins,library}
+	dodoc AUTHORS ChangeLog README README.{modules,plugins,library}
 }
 
 pkg_postinst() {
