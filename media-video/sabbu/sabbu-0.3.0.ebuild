@@ -38,5 +38,5 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ABOUT-NLS AUTHORS ChangeLog NEWS README
+	dodoc AUTHORS ChangeLog NEWS README
 }
