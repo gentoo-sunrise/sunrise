@@ -50,9 +50,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_mod_compile ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages
+	python_mod_compile "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages"
 }
 
 pkg_postrm() {
-	python_mod_cleanup ${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages
+	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages"
 }
