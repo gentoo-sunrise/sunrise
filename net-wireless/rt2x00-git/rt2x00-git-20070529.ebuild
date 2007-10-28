@@ -33,10 +33,10 @@ src_unpack() {
 	unpack ${A}
 	if use rt61pci || use rt73usb ; then
 		echo "CFLAGS += -I/usr/include/mac80211 -I/usr/include/crc-itu-t" \
-			"-I/usr/include/eeprom_93cx6 -D CONFIG_RT2X00_LIB_FIRMWARE" >> ${S}/Makefile
+			"-I/usr/include/eeprom_93cx6 -D CONFIG_RT2X00_LIB_FIRMWARE" >> "${S}"/Makefile
 	else
 		echo "CFLAGS += -I/usr/include/mac80211 -I/usr/include/crc-itu-t" \
-			"-I/usr/include/eeprom_93cx6" >> ${S}/Makefile
+			"-I/usr/include/eeprom_93cx6" >> "${S}"/Makefile
 	fi
 }
 
