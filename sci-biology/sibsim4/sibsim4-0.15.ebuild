@@ -19,7 +19,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
-	sed -i 's/CFLAGS = \(.*\)/CFLAGS := \1 ${CFLAGS}/' ${S}/Makefile || die "sed failed"
+	sed -i 's/CFLAGS = \(.*\)/CFLAGS := \1 ${CFLAGS}/' "${S}"/Makefile
 }
 
 src_install() {
