@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Markus Ullmann <jokey@gentoo.org> (29 Oct 2007)
+# mask wrt broken java support
+=dev-libs/dbxml-2.3.10-r2
+
 # Felix Bechstein <f@ub0r.de> (28 Oct 2007)
 # svn version should be masked
 =net-misc/ypd-9999
