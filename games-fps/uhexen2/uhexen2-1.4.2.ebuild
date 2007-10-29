@@ -9,7 +9,7 @@ HW_PV="0.15"
 MY_PN="hexen2"
 DEMO_PV="1.4.2"
 
-DESCRIPTION="Hexen 2 port - Hammer of Thyrion (CVS snapshot)"
+DESCRIPTION="Hexen 2 port - Hammer of Thyrion"
 HOMEPAGE="http://uhexen2.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_PN}source-${PV}.tgz
 	mirror://sourceforge/u${MY_PN}/gamedata-all-${DATA_PV}.tgz
