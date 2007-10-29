@@ -9,14 +9,14 @@ SCROLLKEEPER_UPDATE="no"
 
 inherit autotools eutils gnome2 multilib
 
-DESCRIPTION="Companion software for mugshot.org"
+DESCRIPTION="Companion software for mugshot.org; also includes the ddm library"
 HOMEPAGE="http://www.mugshot.org/"
 SRC_URI="http://download.mugshot.org/client/sources/linux/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="firefox xulrunner"
+IUSE="firefox sqlite xulrunner"
 
 RDEPEND=">=dev-libs/glib-2.6
 	>=dev-libs/dbus-glib-0.71
@@ -33,9 +33,11 @@ RDEPEND=">=dev-libs/glib-2.6
 	x11-libs/pango
 	firefox? ( !xulrunner? (
 		>=www-client/mozilla-firefox-1.5 <www-client/mozilla-firefox-2.0.1 ) )
+	sqlite? ( >=dev-db/sqlite-3.3 )
 	xulrunner? ( net-libs/xulrunner )"
 
-DEPEND=">=gnome-base/gconf-2
+DEPEND=">=dev-util/pkgconfig-0.19
+	>=gnome-base/gconf-2
 	${RDEPEND}"
 
 src_unpack() {
@@ -43,9 +45,8 @@ src_unpack() {
 	cd "${S}"
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
-	epatch "${FILESDIR}/${P}-as-needed.patch"
-	epatch "${FILESDIR}/${PN}-1.1.42-libxpcom.patch"
-	epatch "${FILESDIR}/${PN}-1.1.32-use-firefox.patch"
+	epatch "${FILESDIR}/${PN}-1.1.42-libxpcom.patch" || die "epatch failed"
+	epatch "${FILESDIR}/${P}-use-firefox.patch" || die "epatch failed"
 	eautoreconf
 	if use firefox || use xulrunner ; then
 		G2CONF="--enable-firefox"
@@ -63,7 +64,7 @@ src_unpack() {
 	else
 		G2CONF="--disable-firefox"
 	fi
-	G2CONF="${G2CONF} --without-included-canvas"
+	G2CONF="${G2CONF} $(use_with sqlite) --without-included-canvas"
 }
 
 pkg_postinst () {
