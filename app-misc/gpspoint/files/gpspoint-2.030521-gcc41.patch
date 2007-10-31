@@ -1,0 +1,68 @@
+diff -Naur gpspoint-2.030521/src/constants.h gpspoint-2.030521-hk/src/constants.h
+--- gpspoint-2.030521/src/constants.h	2003-04-14 18:23:32.000000000 +0200
++++ gpspoint-2.030521-hk/src/constants.h	2006-11-20 10:38:22.000000000 +0100
+@@ -30,7 +30,7 @@
+ class Constants
+ {
+    public:
+-      Constants::Constants(void);
++      Constants(void);
+ 
+    protected:
+       static const g_byte
+diff -Naur gpspoint-2.030521/src/newsymbols.h gpspoint-2.030521-hk/src/newsymbols.h
+--- gpspoint-2.030521/src/newsymbols.h	2003-05-20 11:54:34.000000000 +0200
++++ gpspoint-2.030521-hk/src/newsymbols.h	2006-11-20 10:40:44.000000000 +0100
+@@ -28,7 +28,7 @@
+ struct NewSymbols
+ {
+         public: 
+-                NewSymbols::NewSymbols(void);   
++                NewSymbols(void);   
+ 
+         protected:
+                 string number2symbol(g_int) const;     
+diff -Naur gpspoint-2.030521/src/oldsymbols.h gpspoint-2.030521-hk/src/oldsymbols.h
+--- gpspoint-2.030521/src/oldsymbols.h	2003-05-20 11:54:34.000000000 +0200
++++ gpspoint-2.030521-hk/src/oldsymbols.h	2006-11-20 10:40:27.000000000 +0100
+@@ -29,7 +29,7 @@
+ struct OldSymbols
+ {
+ 	public: 
+-		OldSymbols::OldSymbols(void);	
++		OldSymbols(void);	
+ 
+ 	protected:
+ 		/// returns symbol as a string given a symbol ID
+diff -Naur gpspoint-2.030521/src/records_type.h gpspoint-2.030521-hk/src/records_type.h
+--- gpspoint-2.030521/src/records_type.h	2003-04-14 18:23:33.000000000 +0200
++++ gpspoint-2.030521-hk/src/records_type.h	2006-11-20 10:41:16.000000000 +0100
+@@ -41,10 +41,10 @@
+    public: 
+ 
+    /// constructor 
+-   Records_Type::Records_Type(void);
++   Records_Type(void);
+ 
+    /// calls set with the given Packet
+-   Records_Type::Records_Type(Packet);
++   Records_Type(Packet);
+ 
+    /// resets internal data
+    void clear(void);
+diff -Naur gpspoint-2.030521/src/wpt_type.h gpspoint-2.030521-hk/src/wpt_type.h
+--- gpspoint-2.030521/src/wpt_type.h	2003-05-20 11:54:34.000000000 +0200
++++ gpspoint-2.030521-hk/src/wpt_type.h	2006-11-20 10:39:51.000000000 +0100
+@@ -99,10 +99,10 @@
+  protected:
+ 
+    /// semicircle to double 
+-   double Wpt_Type::s2d(g_long sc);
++   double s2d(g_long sc);
+ 
+    /// double to semicicle 
+-   g_long Wpt_Type::d2s(double deg);
++   g_long d2s(double deg);
+ 
+    string   name;
+    string   comment;

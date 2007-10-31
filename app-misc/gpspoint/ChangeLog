@@ -1,0 +1,9 @@
+# ChangeLog for app-misc/gpspoint
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  31 Oct 2007; Srebrodolskite <Hannes.Krueger@uibk.ac.at>
+  +files/gpspoint-2.030521-gcc41.patch, +metadata.xml,
+  +gpspoint-2.030521.ebuild:
+  New Ebuild for bug 62464 thanks to Mike Smith, Charles Mauch
+
