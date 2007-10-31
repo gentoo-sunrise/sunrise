@@ -54,7 +54,7 @@ src_compile() {
 	if use java; then
 		CONF=" --enable-java=yes"
 	fi
- 
+
 	ECONF_SOURCE=../dist
 	econf --with-berkeleydb=/usr --with-xqilla=/usr --with-xerces=/usr ${CONF}|| die "econf failed"
 
