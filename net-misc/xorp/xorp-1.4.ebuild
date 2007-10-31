@@ -16,7 +16,7 @@ IUSE="static debug ipv6 snmp"
 DEPEND=">=dev-lang/python-2.0
 	dev-libs/openssl
 	sys-libs/ncurses
-	net-analyzer/net-snmp"
+	snmp? ( net-analyzer/net-snmp )"
 RDEPEND="${DEPEND}
 	net-analyzer/traceroute"
 
