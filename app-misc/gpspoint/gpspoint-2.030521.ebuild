@@ -22,14 +22,9 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-gcc41.patch"
 }
 
-src_compile() {
-	econf || die "econf failed"
-	emake || die "compile failed"
-}
-
 src_install() {
 	make DESTDIR="${D}" install || die "installation failed"
-	dodoc AUTHORS COPYRIGHT INSTALL NEWS README TODO
+	dodoc AUTHORS NEWS README TODO
 }
 
 pkg_postinst() {

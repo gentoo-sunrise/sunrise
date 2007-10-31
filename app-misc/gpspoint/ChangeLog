@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Oct 2007; Jakub Moc <jakub@gentoo.org> gpspoint-2.030521.ebuild:
+  Remove default src_compile, do not dodoc INSTALL COPYING
+
   31 Oct 2007; Srebrodolskite <Hannes.Krueger@uibk.ac.at>
   +files/gpspoint-2.030521-gcc41.patch, +metadata.xml,
   +gpspoint-2.030521.ebuild:
