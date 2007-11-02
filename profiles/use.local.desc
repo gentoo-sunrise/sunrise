@@ -162,6 +162,7 @@ sci-libs/libticables2:pam_console - Adds support for pam console from PAM
 sci-libs/sympy:xslt - Adds MathML printing support
 sci-libs/gmsh:cgns - Enables cgns output support
 sci-libs/gmsh:metis - Enables metis support
+sci-libs/openfoam:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam:mico - Enables systemwide mico installation instead a local which comes with OF
