@@ -162,6 +162,10 @@ sci-libs/libticables2:pam_console - Adds support for pam console from PAM
 sci-libs/sympy:xslt - Adds MathML printing support
 sci-libs/gmsh:cgns - Enables cgns output support
 sci-libs/gmsh:metis - Enables metis support
+sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
+sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
+sci-libs/openfoam:mico - Enables systemwide mico installation instead a local which comes with OF
+sci-libs/openfoam:parafoam - Enables the building of the vtkFoam and PVFoamReader libraries
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
