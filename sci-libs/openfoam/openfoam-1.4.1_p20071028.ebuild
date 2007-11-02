@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-inherit eutils java-pkg-2 versionator python
+inherit eutils java-pkg-2 versionator python multilib toolchain-funcs
 
 MY_PN="OpenFOAM"
 MY_PV=$(get_version_component_range 1-3 ${PV})
@@ -19,12 +19,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples lam mico mpich parafoam hdf5 mpi python threads"
 
-RDEPEND="app-arch/gzip
-	app-arch/tar
-	dev-java/sun-java3d-bin
+RDEPEND="dev-java/sun-java3d-bin
 	net-misc/openssh
 	mico? ( net-misc/mico )
-	sys-devel/m4
 	sys-libs/readline
 	sys-libs/zlib
 	<virtual/jdk-1.5
@@ -36,16 +33,16 @@ RDEPEND="app-arch/gzip
 	!parafoam? ( sci-visualization/paraview )"
 
 DEPEND="${RDEPEND}
-	>=sys-devel/gcc-4.1
-	sys-devel/flex
-	sys-apps/sed
-	parafoam? ( dev-util/cmake
-	dev-libs/expat )"
+	parafoam? ( dev-util/cmake dev-libs/expat )"
 
 PVSOURCEDIR="${WORKDIR}/paraview-${MY_PARA_PV}"
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
+	if [[ $(gcc-major-version) -lt 4 && $(gcc-minor-version) -lt 1 ]] ; then
+		die "${PN} requires >=sys-devel/gcc-4.1 to compile."
+	fi
+
 	if use parafoam ; then
 		ewarn
 		ewarn " You are building OpenFOAM with parafoam enabled, this means "
@@ -65,7 +62,7 @@ pkg_setup() {
 		ewarn
 	fi
 
-	if use !mico ; then
+	if ! use mico ; then
 		ewarn
 		ewarn " You are building OpenFOAM without the mico USE-Flag, that means "
 		ewarn " you build against the mico that is shipped with OpenFOAM. "
@@ -80,8 +77,8 @@ pkg_setup() {
 }
 
 src_unpack() {
-
-	ln -s "${DISTDIR}/${MY_P}.General.gtgz" "${MY_P}.General.tgz" && unpack ./"${MY_P}".General.tgz
+	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
+	unpack ./${MY_P}.General.tgz
 
 	if use parafoam ; then
 		unpack ParaView-${MY_PARA_PV}.tar.gz
@@ -91,10 +88,10 @@ src_unpack() {
 	fi
 
 	cd "${S}"
-	epatch "${FILESDIR}"/"${P}".patch || die "could not patch"
-	epatch "${FILESDIR}"/compile-"${MY_PV}".patch || die "could not patch"
+	epatch "${FILESDIR}"/${P}.patch || die "could not patch"
+	epatch "${FILESDIR}"/compile-${MY_PV}.patch || die "could not patch"
 
-	use mico && epatch "${FILESDIR}"/mico-"${MY_PV}".patch
+	use mico && epatch "${FILESDIR}"/mico-${MY_PV}.patch
 }
 
 src_compile() {
@@ -165,48 +162,48 @@ src_compile() {
 	fi
 
 	sed -i -e "s|[^#]export WM_MPLIB| #export WM_MPLIB|"	\
-	-e "s|#export WM_MPLIB=OPENMPI|export WM_MPLIB="${WM_MPLIB}"|"	\
-	"${S}"/."${MY_P}"/bashrc || die "could not replace bashrc"
+		-e "s|#export WM_MPLIB=OPENMPI|export WM_MPLIB="${WM_MPLIB}"|"	\
+		"${S}"/.${MY_P}/bashrc || die "could not replace bashrc"
 
 	sed -i -e "s|[^#]setenv WM_MPLIB| #setenv WM_MPLIB|"	\
-	-e "s|#setenv WM_MPLIB OPENMPI|setenv WM_MPLIB "${WM_MPLIB}"|"	\
-	"${S}"/."${MY_P}"/cshrc || die "could not replace cshrc"
+		-e "s|#setenv WM_MPLIB OPENMPI|setenv WM_MPLIB "${WM_MPLIB}"|"	\
+		"${S}"/.${MY_P}/cshrc || die "could not replace cshrc"
 
-	cp "${S}"/."${MY_P}"/bashrc "${S}"/."${MY_P}"/bashrc.bak
+	cp "${S}"/.${MY_P}/bashrc "${S}"/.${MY_P}/bashrc.bak
 
 	sed -i -e "s|WM_PROJECT_INST_DIR=/usr/lib/\$WM_PROJECT|WM_PROJECT_INST_DIR="${WORKDIR}"|"		\
-	-e "s|WM_PROJECT_DIR=\$WM_PROJECT_INST_DIR/\$WM_PROJECT-\$WM_PROJECT_VERSION|WM_PROJECT_DIR="${S}"|"	\
-	"${S}"/."${MY_P}"/bashrc.bak	\
-	|| die "could not replace source options"
+		-e "s|WM_PROJECT_DIR=\$WM_PROJECT_INST_DIR/\$WM_PROJECT-\$WM_PROJECT_VERSION|WM_PROJECT_DIR="${S}"|"	\
+		"${S}"/.${MY_P}/bashrc.bak	\
+		|| die "could not replace source options"
 
 	if use parafoam ; then
 		sed -i -e "s|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview/bashrc|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview/bashrc.bak|"	\
-		"${S}"/."${MY_P}"/bashrc.bak	\
+		"${S}"/.${MY_P}/bashrc.bak	\
 		|| die "could not replace source options"
 
 		sed -i -e "s|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview|"	\
-		"${S}"/."${MY_P}"/bashrc	\
+		"${S}"/.${MY_P}/bashrc	\
 		|| die "could not replace source options"
 
-		cp "${S}"/."${MY_P}"/apps/paraview/bashrc "${S}"/."${MY_P}"/apps/paraview/bashrc.bak
+		cp "${S}"/.${MY_P}/apps/paraview/bashrc "${S}"/.${MY_P}/apps/paraview/bashrc.bak
 
 		sed -i -e "s|ParaView_DIR=\$ParaView_INST_DIR/lib/ParaView-2.6|ParaView_DIR="${WORKDIR}"/paraview-${MY_PARA_PV}-obj|"	\
-		"${S}"/."${MY_P}"/apps/paraview/bashrc.bak	\
+		"${S}"/.${MY_P}/apps/paraview/bashrc.bak	\
 		|| die "could not replace source options"
 	fi
 
-	. "${S}"/."${MY_P}"/bashrc.bak
+	. "${S}"/.${MY_P}/bashrc.bak
 
 	cd "${S}"/wmake/rules
-	ln -sf ${WM_ARCH}Gcc $WM_ARCH${WM_COMPILER}  || die "dosym wmake linux64 failed"
+	ln -sf ${WM_ARCH}Gcc $WM_ARCH${WM_COMPILER} || die "dosym wmake linux64 failed"
 
 	cd "${S}"
 	./Allwmake || die "could not build"
 
 	use !parafoam && rm "${S}"/bin/paraFoam*
 
-	rm ."${MY_P}"/bashrc.bak
-	use parafoam && rm ."${MY_P}"/apps/paraview/bashrc.bak
+	rm .${MY_P}/bashrc.bak
+	use parafoam && rm .${MY_P}/apps/paraview/bashrc.bak
 
 	sed -i -e "s|/\$WM_OPTIONS||" "${S}"/.bashrc || die "could not delete \$WM_OPTIONS in .bashrc"
 	sed -i -e "s|/\$WM_OPTIONS||" "${S}"/.cshrc || die "could not delete \$WM_OPTIONS in .cshrc"
@@ -222,32 +219,34 @@ src_test() {
 }
 
 src_install() {
-	insinto /usr/lib/"${MY_PN}"/"${MY_P}"
-	doins -r .bashrc .cshrc ."${MY_P}"|| die "could not install hidden files and directories "
+	insinto /usr/$(get_libdir)/"${MY_PN}"/${MY_P}
+	doins -r .bashrc .cshrc .${MY_P} || die "could not install hidden files and directories"
 
-	use examples && doins -r tutorials || die "could not install examples"
+	if use examples ; then
+		doins -r tutorials || die "could not install examples"
+	fi
 
 	insopts -m0755
 	doins -r bin || die "could not install binaries"
-	insinto /usr/lib/"${MY_PN}"/"${MY_P}"/applications/bin
-	doins -r applications/bin/"${WM_OPTIONS}"/* || die "could not install applications"
+	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications/bin
+	doins -r applications/bin/${WM_OPTIONS}/* || die "could not install applications"
 
-	insinto /usr/lib/"${MY_PN}"/"${MY_P}"/lib
-	doins -r lib/"${WM_OPTIONS}"/* || die "could not install libraries"
+	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/lib
+	doins -r lib/${WM_OPTIONS}/* || die "could not install libraries"
 
-	insinto /usr/lib/"${MY_PN}"/"${MY_P}"/wmake
+	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/wmake
 	doins -r wmake/* || die "could not install wmake"
 
 	insopts -m0644
 	find "${S}"/applications -type d \( -name "${WM_OPTIONS}" -o -name linuxDebug -o -name linuxOpt \)  | xargs rm -rf
 
-	insinto /usr/lib/"${MY_PN}"/"${MY_P}"/applications
+	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications
 	doins -r applications/solvers applications/test applications/utilities || die "could not install applications"
 
 	if use doc ; then
-		insinto /usr/share/"${MY_PN}"/"${MY_P}"/doc
-		doins -r README doc/Guides-a4 doc/Guides-usletter || die "could not install doc's"
+		insinto /usr/share/${MY_PN}/${MY_P}/doc
+		doins -r README doc/Guides-a4 doc/Guides-usletter || die "could not install docs"
 	fi
 
-	dosym /usr/lib/"${MY_PN}"/"${MY_P}"/."${MY_P}"/bashrc /usr/lib/"${MY_PN}"/bashrc || die "could not make symlink"
+	dosym /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/bashrc /usr/$(get_libdir)/${MY_PN}/bashrc || die "could not make symlink"
 }
