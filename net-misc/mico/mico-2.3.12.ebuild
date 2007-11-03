@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils flag-o-matic 
+inherit eutils flag-o-matic
 # qt3
 
 DESCRIPTION="A freely available and fully compliant implementation of the CORBA standard"
@@ -41,7 +41,7 @@ src_compile() {
 		$(use_with gtk gtk /usr) \
 		$(use_with postgres pgsql /usr)
 		# $(use_with qt3 qt ${QTDIR}
-	
+
 	# Rather not emake here, as is a memory hog
 	make || die "make failed"
 }
