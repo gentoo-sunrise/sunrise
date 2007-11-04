@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}"
 
 PTLENS_PROFILES="/usr/share/ptlens/profiles/profile.txt"
 
-S=${WORKDIR}/${ECVS_MODULE}
+S="${WORKDIR}/${ECVS_MODULE}"
 
 src_compile() {
 	./bootstrap || die "bootstrap failed"
@@ -35,6 +35,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodir /etc/env.d
-	echo "CLENS_PROFILE=\"${PTLENS_PROFILES}\"" > "${D}"/etc/env.d/99clens
+	echo "CLENS_PROFILE=\"${PTLENS_PROFILES}\"" > 99clens
+	doenvd 99clens
 }
