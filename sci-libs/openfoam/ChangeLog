@@ -2,6 +2,12 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2007; Oliver Borm (boroli) <oli.borm@web.de>
+  files/mico-1.4.1.patch, files/compile-1.4.1.patch,
+  openfoam-1.4.1_p20071028.ebuild:
+  This ebuild enables metis support and is more dynamically against version
+  numbers.
+
   02 Nov 2007; Jakub Moc <jakub@gentoo.org> openfoam-1.4.1_p20071028.ebuild:
   Multilib fixes, nuke excessive quoting, remove implicit system dependencies.
 

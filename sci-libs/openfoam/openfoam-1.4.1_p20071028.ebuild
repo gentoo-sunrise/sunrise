@@ -8,16 +8,18 @@ MY_PN="OpenFOAM"
 MY_PV=$(get_version_component_range 1-3 ${PV})
 MY_P="${MY_PN}-${MY_PV}"
 MY_PARA_PV="2.6.2"
+MY_PARA_PV_SHORT=$(get_version_component_range 1-2 ${MY_PARA_PV})
+#MY_PARA_PV_SHORT="2.6"
 
 DESCRIPTION="Open Field Operation and Manipulation - CFD Simulation Toolbox"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
-	parafoam? ( http://www.paraview.org/files/v2.6/ParaView-${MY_PARA_PV}.tar.gz )"
+	parafoam? ( http://www.paraview.org/files/v${MY_PARA_PV_SHORT}/ParaView-${MY_PARA_PV}.tar.gz )"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples lam mico mpich parafoam hdf5 mpi python threads"
+IUSE="doc examples lam mico mpich metis parafoam hdf5 mpi python threads"
 
 RDEPEND="dev-java/sun-java3d-bin
 	net-misc/openssh
@@ -28,6 +30,8 @@ RDEPEND="dev-java/sun-java3d-bin
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
 	mpich? ( sys-cluster/mpich2 )
+	metis? ( sci-libs/metis
+		sci-libs/parmetis )
 	parafoam? ( sci-libs/vtk
 		=sci-visualization/paraview-${MY_PARA_PV} )
 	!parafoam? ( sci-visualization/paraview )"
@@ -95,9 +99,7 @@ src_unpack() {
 }
 
 src_compile() {
-	if use amd64 ; then
-		export WM_64="on"
-	fi
+	use amd64 && export WM_64="on"
 
 	if use parafoam ; then
 		cd "${WORKDIR}"/paraview-${MY_PARA_PV}-obj
@@ -151,6 +153,19 @@ src_compile() {
 		cp /usr/lib/ParaView-2.6/{libvtkClientServer.*,libverdict112.*,libvtkGraphicsCS.*,libvtkFilteringCS.*,libvtkCommonCS.*} bin/. || die "could not copy"
 
 		emake vtkWrapClientServer
+
+		sed -i -e "s|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview|"	\
+		"${S}"/.${MY_P}/bashrc	\
+		|| die "could not replace source options"
+
+		sed -i -e "s|/include|/include/vtk-5.0|"	\
+			"${S}"/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/Make/options
+
+		cp "${S}"/.${MY_P}/apps/paraview/bashrc "${S}"/.${MY_P}/apps/paraview/bashrc.bak
+
+		sed -i -e "s|ParaView_DIR=\$ParaView_INST_DIR/lib/ParaView-2.6|ParaView_DIR="${WORKDIR}"/paraview-${MY_PARA_PV}-obj|"	\
+		"${S}"/.${MY_P}/apps/paraview/bashrc.bak	\
+		|| die "could not replace source options"
 	fi
 
 	if use lam ; then
@@ -161,13 +176,120 @@ src_compile() {
 		export WM_MPLIB=OPENMPI
 	fi
 
-	sed -i -e "s|[^#]export WM_MPLIB| #export WM_MPLIB|"	\
-		-e "s|#export WM_MPLIB=OPENMPI|export WM_MPLIB="${WM_MPLIB}"|"	\
-		"${S}"/.${MY_P}/bashrc || die "could not replace bashrc"
+	sed -i -e "s|WM_PROJECT_VERSION=|WM_PROJECT_VERSION=${MY_PV} #|"	\
+		-e "s|[^#]export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|# export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|"	\
+		-e "s|#export WM_PROJECT_INST_DIR=/usr/local/\$WM_PROJECT|export WM_PROJECT_INST_DIR=/usr/lib/\$WM_PROJECT|"	\
+		-e "s|WM_COMPILER=Gcc|WM_COMPILER=|"	\
+		-e "s|[^#]export WM_MPLIB=| #export WM_MPLIB=|"	\
+		-e "s|#export WM_MPLIB=$|export WM_MPLIB="${WM_MPLIB}"|" \
+		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
+			"${S}"/.${MY_P}/bashrc
 
-	sed -i -e "s|[^#]setenv WM_MPLIB| #setenv WM_MPLIB|"	\
-		-e "s|#setenv WM_MPLIB OPENMPI|setenv WM_MPLIB "${WM_MPLIB}"|"	\
-		"${S}"/.${MY_P}/cshrc || die "could not replace cshrc"
+	sed -i -e "s|WM_PROJECT_VERSION |WM_PROJECT_VERSION ${MY_PV} #|"	\
+		-e "s|[^#]setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|# setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|"	\
+		-e "s|#setenv WM_PROJECT_INST_DIR /usr/local/\$WM_PROJECT|setenv WM_PROJECT_INST_DIR /usr/lib/\$WM_PROJECT|"	\
+		-e "s|WM_COMPILER Gcc|WM_COMPILER |"	\
+		-e "s|[^#]setenv WM_MPLIB | #setenv WM_MPLIB |"	\
+		-e "s|#setenv WM_MPLIB $|setenv WM_MPLIB "${WM_MPLIB}"|" \
+		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
+			"${S}"/.${MY_P}/cshrc
+
+	sed -i -e "s|FOAM_JOB_DIR=\$WM_PROJECT_INST_DIR/jobControl|FOAM_JOB_DIR=\$HOME/\$WM_PROJECT/jobControl|"	\
+		-e "s|WM_COMPILER_DIR=|WM_COMPILER_DIR=/usr # |"	\
+		-e 's|JAVA_HOME=|JAVA_HOME=${JAVA_HOME} # |'	\
+		-e 's@OPENMPI_VERSION=@OPENMPI_VERSION=`/usr/bin/ompi_info --version ompi full --parsable | grep ompi:version:full | cut -d: -f4-` # @'	\
+		-e 's|[^#]export OPENMPI_HOME=|# export OPENMPI_HOME=|'	\
+		-e 's|OPENMPI_ARCH_PATH=|OPENMPI_ARCH_PATH=/usr # |'	\
+		-e 's@LAM_VERSION=@LAM_VERSION=`/usr/bin/laminfo -version lam full | awk ''{print \$\$2}''` # @'	\
+		-e 's|[^#]export LAMHOME=|# export LAMHOME=|'	\
+		-e 's|LAM_ARCH_PATH=|LAM_ARCH_PATH=/usr # |'	\
+		-e 's|MPICH_VERSION=|MPICH_VERSION=`/usr/bin/mpich2version --version` # |'	\
+		-e 's|[^#]export MPICH_PATH=|# export MPICH_PATH=|'	\
+		-e 's|MPICH_ARCH_PATH=|MPICH_ARCH_PATH=/usr # |'	\
+			"${S}"/.bashrc
+
+	sed -i -e "s|FOAM_JOB_DIR \$WM_PROJECT_INST_DIR/jobControl|FOAM_JOB_DIR \$HOME/\$WM_PROJECT/jobControl|"	\
+		-e "s|WM_COMPILER_DIR |WM_COMPILER_DIR /usr # |"	\
+		-e 's|JAVA_HOME |JAVA_HOME ${JAVA_HOME} # |'	\
+		-e 's@OPENMPI_VERSION @OPENMPI_VERSION `/usr/bin/ompi_info --version ompi full --parsable | grep ompi:version:full | cut -d: -f4-` # @'	\
+		-e 's|[^#]setenv OPENMPI_HOME|# setenv OPENMPI_HOME|'	\
+		-e 's|OPENMPI_ARCH_PATH |OPENMPI_ARCH_PATH /usr # |'	\
+		-e 's@LAM_VERSION @LAM_VERSION `/usr/bin/laminfo -version lam full | awk ''{print \$\$2}''` # @'	\
+		-e 's|[^#]setenv LAMHOME|# setenv LAMHOME|'	\
+		-e 's|LAM_ARCH_PATH |LAM_ARCH_PATH /usr # |'	\
+		-e 's|MPICH_VERSION |MPICH_VERSION `/usr/bin/mpich2version --version` # |'	\
+		-e 's|[^#]setenv MPICH_PATH |# setenv MPICH_PATH |'	\
+		-e 's|MPICH_ARCH_PATH |MPICH_ARCH_PATH /usr # |'	\
+			"${S}"/.cshrc
+
+	sed -i -e "s|/lib/j3d-org.jar|/lib/j3d-org.jar:/usr/share/sun-java3d-bin/lib/vecmath.jar:/usr/share/sun-java3d-bin/lib/j3dutils.jar:/usr/share/sun-java3d-bin/lib/j3dcore.jar|"	\
+		"${S}"/applications/utilities/mesh/manipulation/patchTool/Java/Allwmake
+
+	sed -i -e "s|:../lib/j3d-org.jar|:../lib/j3d-org.jar:/usr/share/sun-java3d-bin/lib/vecmath.jar:/usr/share/sun-java3d-bin/lib/j3dutils.jar:/usr/share/sun-java3d-bin/lib/j3dcore.jar|"	\
+		"${S}"/applications/utilities/mesh/manipulation/patchTool/Java/Make/options
+
+	index=`grep -n "CMAKE_HOME/bin:" "${S}"/."${MY_P}"/apps/paraview/bashrc | cut -d ':' -f 1,1`
+	index1=$((${index}-1))
+	index2=$((${index}+1))
+	sed -i -e "s|CMAKE_HOME=|CMAKE_HOME=/usr # |"	\
+		-e "${index1}{s|[^#]|# i|}"	\
+		-e "${index2}{s|[^#]|# f|}"	\
+		-e "s|[^#]export PATH=\$CMAKE_HOME/|# export PATH=\$CMAKE_HOME/|"	\
+		-e "s|ParaView_VERSION=|ParaView_VERSION=${MY_PARA_PV} # |"	\
+		-e "s|ParaView_INST_DIR=\$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION=/usr|"	\
+		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
+		-e "s|[^#]export PATH=\$ParaView_INST_DIR|# export PATH=\$ParaView_INST_DIR|"	\
+		-e "s|[^#]export LD_LIBRARY_PATH=|# export LD_LIBRARY_PATH=|"	\
+			"${S}"/."${MY_P}"/apps/paraview/bashrc
+
+	index=`grep -n "CMAKE_HOME/bin" "${S}"/."${MY_P}"/apps/paraview/cshrc | cut -d ':' -f 1,1`
+	index1=$((${index}-1))
+	index2=$((${index}+1))
+	sed -i -e "s|CMAKE_HOME |CMAKE_HOME /usr # |"	\
+		-e "${index1}{s|[^#]|# i|}"	\
+		-e "${index2}{s|[^#]|# f|}"	\
+		-e "s|[^#]set path=(\$CMAKE_HOME/|# set path=(\$CMAKE_HOME/|"	\
+		-e "s|ParaView_VERSION |ParaView_VERSION ${MY_PARA_PV} # |"	\
+		-e "s|ParaView_INST_DIR \$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION /usr|"	\
+		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
+		-e "s|[^#]set path=(\$ParaView_INST_DIR|# set path=(\$ParaView_INST_DIR|"	\
+		-e "s|[^#]setenv LD_LIBRARY_PATH|# setenv LD_LIBRARY_PATH|"	\
+			"${S}"/."${MY_P}"/apps/paraview/cshrc
+
+	if use mico ; then
+		sed -i -e 's|MICO_VERSION=|MICO_VERSION=`/usr/bin/mico-config --version` # |'	\
+			-e "s|[^#]export MICO_PATH=|# export MICO_PATH=|"	\
+			-e "s|MICO_ARCH_PATH=|MICO_ARCH_PATH=/usr # |"	\
+			"${S}"/.bashrc
+
+		sed -i -e 's|MICO_VERSION |MICO_VERSION `/usr/bin/mico-config --version` # |'	\
+			-e "s|[^#]MICO_PATH |# MICO_PATH |"	\
+			-e "s|MICO_ARCH_PATH |MICO_ARCH_PATH /usr # |"	\
+			"${S}"/.cshrc
+	fi
+
+	if use metis ; then
+		sed -i -e 's|-lmetis \\|-L/usr/lib -lmetis|'	\
+		-e 's|../metis-5.0pre2/include|/usr/include/ -I/usr/include/metis/ -I/usr/include/parmetis/|'	\
+		-e 's|-lGKlib||'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethods/Make/options	\
+		|| die "could not replace metis options"
+
+		sed -i -e 's|[^#]wmake libso metis|# wmake libso metis|'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/Allwmake	\
+		|| die "could not replace metis options"
+
+		sed -i -e 's|[^#]wmake libso ParMetis|# wmake libso ParMetis|'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Allwmake	\
+		|| die "could not replace metis options"
+
+		sed -i -e 's|parMetisDecomp/ParMetis-3.1/ParMETISLib|/usr/include/parmetis|'	\
+		-e 's|parMetisDecomp/ParMetis-3.1/|/usr/include/|'	\
+		-e 's|-lmetis|-L/usr/lib -lmetis|'	\
+		-e 's|-lparmetis|-L/usr/lib -lparmetis|'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Make/options	\
+		|| die "could not replace metis options"
+	fi
 
 	cp "${S}"/.${MY_P}/bashrc "${S}"/.${MY_P}/bashrc.bak
 
@@ -175,22 +297,6 @@ src_compile() {
 		-e "s|WM_PROJECT_DIR=\$WM_PROJECT_INST_DIR/\$WM_PROJECT-\$WM_PROJECT_VERSION|WM_PROJECT_DIR="${S}"|"	\
 		"${S}"/.${MY_P}/bashrc.bak	\
 		|| die "could not replace source options"
-
-	if use parafoam ; then
-		sed -i -e "s|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview/bashrc|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview/bashrc.bak|"	\
-		"${S}"/.${MY_P}/bashrc.bak	\
-		|| die "could not replace source options"
-
-		sed -i -e "s|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview|"	\
-		"${S}"/.${MY_P}/bashrc	\
-		|| die "could not replace source options"
-
-		cp "${S}"/.${MY_P}/apps/paraview/bashrc "${S}"/.${MY_P}/apps/paraview/bashrc.bak
-
-		sed -i -e "s|ParaView_DIR=\$ParaView_INST_DIR/lib/ParaView-2.6|ParaView_DIR="${WORKDIR}"/paraview-${MY_PARA_PV}-obj|"	\
-		"${S}"/.${MY_P}/apps/paraview/bashrc.bak	\
-		|| die "could not replace source options"
-	fi
 
 	. "${S}"/.${MY_P}/bashrc.bak
 
@@ -220,33 +326,31 @@ src_test() {
 
 src_install() {
 	insinto /usr/$(get_libdir)/"${MY_PN}"/${MY_P}
-	doins -r .bashrc .cshrc .${MY_P} || die "could not install hidden files and directories"
+	doins -r .bashrc .cshrc .${MY_P}
 
-	if use examples ; then
-		doins -r tutorials || die "could not install examples"
-	fi
+	use examples && doins -r tutorials
 
 	insopts -m0755
-	doins -r bin || die "could not install binaries"
+	doins -r bin
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications/bin
-	doins -r applications/bin/${WM_OPTIONS}/* || die "could not install applications"
+	doins -r applications/bin/${WM_OPTIONS}/*
 
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/lib
-	doins -r lib/${WM_OPTIONS}/* || die "could not install libraries"
+	doins -r lib/${WM_OPTIONS}/*
 
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/wmake
-	doins -r wmake/* || die "could not install wmake"
+	doins -r wmake/*
 
 	insopts -m0644
 	find "${S}"/applications -type d \( -name "${WM_OPTIONS}" -o -name linuxDebug -o -name linuxOpt \)  | xargs rm -rf
 
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications
-	doins -r applications/solvers applications/test applications/utilities || die "could not install applications"
+	doins -r applications/solvers applications/test applications/utilities
 
 	if use doc ; then
 		insinto /usr/share/${MY_PN}/${MY_P}/doc
-		doins -r README doc/Guides-a4 doc/Guides-usletter || die "could not install docs"
+		doins -r README doc/Guides-a4 doc/Guides-usletter
 	fi
 
-	dosym /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/bashrc /usr/$(get_libdir)/${MY_PN}/bashrc || die "could not make symlink"
+	dosym /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/bashrc /usr/$(get_libdir)/${MY_PN}/bashrc
 }
