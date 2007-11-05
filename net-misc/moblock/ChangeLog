@@ -2,6 +2,31 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2007; Daniel Santos (javamonger) <daniel.santos@pobox.com>
+  +files/0.8-r1/confd, +files/0.8-r1/initd, +files/0.8-r1/moblock-stats,
+  +files/0.8-r1/moblock-update, +moblock-0.8-r1.ebuild:
+  Addresses issues in bug #143535
+  * Added update script (credit also to Jonathan Schroeder & Peter Avramucz)
+  * Fixed bugs in init.d as per comment #7
+    - changed PID to PIDFILE
+    - removed call to modprobe
+  * Added script to extract stats from MoBlock daemon
+  * Updated conf.d file, added blocklist servers and the lists with
+    descriptions
+  * ebuild now checks for needed kernel options and iptables (thanks Nathan
+    Caldwell)
+  * Moved some files and directories around to better adhere to FHS
+    (http://www.pathname.com/fhs/pub/fhs-2.3.html)
+    - Moved compiled blocklist file from /etc/moblock to /var/db/moblock
+    - Downloaded blocklist files now go in /var/cache/moblock
+    - Removed /etc/moblock dir
+  * Added ~amd64 KEYWORD
+  TODO list:
+  * Downloaded lists in /var/cache/moblock not deleted when unmerged.  If we
+    do delete them, this will force them to re-download when upgrading.
+  * Should log files be removed when unmerging? -- currently commented out.
+  * Is exclusions list being handled correctly?
+
   04 Dec 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
   nothing executable here
 
