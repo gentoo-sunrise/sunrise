@@ -111,7 +111,7 @@ src_compile() {
 
 	sed -i -e "s|WM_PROJECT_VERSION=|WM_PROJECT_VERSION=${MY_PV} #|"	\
 		-e "s|export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|# export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|"	\
-		-e "s|#export WM_PROJECT_INST_DIR=/usr/local/\$WM_PROJECT|export WM_PROJECT_INST_DIR=/usr/lib/\$WM_PROJECT|"	\
+		-e "s|#export WM_PROJECT_INST_DIR=/usr/local/\$WM_PROJECT|export WM_PROJECT_INST_DIR=/usr/$(get_libdir)/\$WM_PROJECT|"	\
 		-e "s|WM_COMPILER=Gcc|WM_COMPILER=|"	\
 		-e "s|[^#]export WM_MPLIB=| #export WM_MPLIB=|"	\
 		-e "s|#export WM_MPLIB=$|export WM_MPLIB="${WM_MPLIB}"|" \
@@ -120,7 +120,7 @@ src_compile() {
 
 	sed -i -e "s|WM_PROJECT_VERSION |WM_PROJECT_VERSION ${MY_PV} #|"	\
 		-e "s|setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|# setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|"	\
-		-e "s|#setenv WM_PROJECT_INST_DIR /usr/local/\$WM_PROJECT|setenv WM_PROJECT_INST_DIR /usr/lib/\$WM_PROJECT|"	\
+		-e "s|#setenv WM_PROJECT_INST_DIR /usr/local/\$WM_PROJECT|setenv WM_PROJECT_INST_DIR /usr/$(get_libdir)/\$WM_PROJECT|"	\
 		-e "s|WM_COMPILER Gcc|WM_COMPILER |"	\
 		-e "s|[^#]setenv WM_MPLIB | #setenv WM_MPLIB |"	\
 		-e "s|#setenv WM_MPLIB OPENMPI$|setenv WM_MPLIB "${WM_MPLIB}"|" \
@@ -202,7 +202,7 @@ src_compile() {
 	fi
 
 	if use metis ; then
-		sed -i -e 's|-lmetis \\|-L/usr/lib -lmetis|'	\
+		sed -i -e 's|-lmetis \\|-L/usr/$(get_libdir) -lmetis|'	\
 		-e 's|../metis-5.0pre2/include|/usr/include/ -I/usr/include/metis/ -I/usr/include/parmetis/|'	\
 		-e 's|-lGKlib||'	\
 		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethods/Make/options	\
@@ -218,8 +218,8 @@ src_compile() {
 
 		sed -i -e 's|parMetisDecomp/ParMetis-3.1/ParMETISLib|/usr/include/parmetis|'	\
 		-e 's|parMetisDecomp/ParMetis-3.1/|/usr/include/|'	\
-		-e 's|-lmetis|-L/usr/lib -lmetis|'	\
-		-e 's|-lparmetis|-L/usr/lib -lparmetis|'	\
+		-e 's|-lmetis|-L/usr/$(get_libdir) -lmetis|'	\
+		-e 's|-lparmetis|-L/usr/$(get_libdir) -lparmetis|'	\
 		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Make/options	\
 		|| die "could not replace metis options"
 	fi
