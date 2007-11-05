@@ -23,7 +23,8 @@ S=${WORKDIR}/ParMetis-${PV}
 
 src_unpack() {
 	unpack "${A}"
-	epatch "${FILESDIR}"/"${P}".patch || die "cannot patch the sources"
+	cd "${S}"
+	epatch "${FILESDIR}"/"${P}".patch
 }
 
 src_compile() {

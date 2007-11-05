@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2007; Christian Faulhammer <opfer@gentoo.org> parmetis-3.1.ebuild:
+  add a directory change to S and remove unecessary die statement
+
   05 Nov 2007; Oliver Borm (boroli) <oli.borm@web.de>
   +files/parmetis-3.1.patch, parmetis-3.1.ebuild:
   This patched ebuild builds also shared libraries
