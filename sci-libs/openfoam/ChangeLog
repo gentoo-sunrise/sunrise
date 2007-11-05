@@ -3,6 +3,10 @@
 # $Header: $
 
   05 Nov 2007; Oliver Borm (boroli) <oli.borm@web.de>
+  openfoam-1.4.1_p20071028.ebuild:
+  This improved ebuild corrects some minor bugs.
+
+  05 Nov 2007; Oliver Borm (boroli) <oli.borm@web.de>
   files/mico-1.4.1.patch, files/compile-1.4.1.patch,
   openfoam-1.4.1_p20071028.ebuild:
   This ebuild enables metis support and is more dynamically against version

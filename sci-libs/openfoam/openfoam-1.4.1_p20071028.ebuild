@@ -101,6 +101,129 @@ src_unpack() {
 src_compile() {
 	use amd64 && export WM_64="on"
 
+	if use lam ; then
+		export WM_MPLIB=LAM
+	elif use mpich ; then
+		export WM_MPLIB=MPICH
+	else
+		export WM_MPLIB=OPENMPI
+	fi
+
+	sed -i -e "s|WM_PROJECT_VERSION=|WM_PROJECT_VERSION=${MY_PV} #|"	\
+		-e "s|export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|# export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|"	\
+		-e "s|#export WM_PROJECT_INST_DIR=/usr/local/\$WM_PROJECT|export WM_PROJECT_INST_DIR=/usr/lib/\$WM_PROJECT|"	\
+		-e "s|WM_COMPILER=Gcc|WM_COMPILER=|"	\
+		-e "s|[^#]export WM_MPLIB=| #export WM_MPLIB=|"	\
+		-e "s|#export WM_MPLIB=$|export WM_MPLIB="${WM_MPLIB}"|" \
+		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
+			"${S}"/.${MY_P}/bashrc
+
+	sed -i -e "s|WM_PROJECT_VERSION |WM_PROJECT_VERSION ${MY_PV} #|"	\
+		-e "s|setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|# setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|"	\
+		-e "s|#setenv WM_PROJECT_INST_DIR /usr/local/\$WM_PROJECT|setenv WM_PROJECT_INST_DIR /usr/lib/\$WM_PROJECT|"	\
+		-e "s|WM_COMPILER Gcc|WM_COMPILER |"	\
+		-e "s|[^#]setenv WM_MPLIB | #setenv WM_MPLIB |"	\
+		-e "s|#setenv WM_MPLIB OPENMPI$|setenv WM_MPLIB "${WM_MPLIB}"|" \
+		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
+			"${S}"/.${MY_P}/cshrc
+
+	sed -i -e "s|FOAM_JOB_DIR=\$WM_PROJECT_INST_DIR/jobControl|FOAM_JOB_DIR=\$HOME/\$WM_PROJECT/jobControl|"	\
+		-e "s|WM_COMPILER_DIR=|WM_COMPILER_DIR=/usr # |"	\
+		-e 's|JAVA_HOME=|JAVA_HOME=${JAVA_HOME} # |'	\
+		-e 's@OPENMPI_VERSION=@OPENMPI_VERSION=`/usr/bin/ompi_info --version ompi full --parsable | grep ompi:version:full | cut -d: -f4-` # @'	\
+		-e 's|[^#]export OPENMPI_HOME=|# export OPENMPI_HOME=|'	\
+		-e 's|OPENMPI_ARCH_PATH=|OPENMPI_ARCH_PATH=/usr # |'	\
+		-e 's@LAM_VERSION=@LAM_VERSION=`/usr/bin/laminfo -version lam full | awk ''{print \$\$2}''` # @'	\
+		-e 's|[^#]export LAMHOME=|# export LAMHOME=|'	\
+		-e 's|LAM_ARCH_PATH=|LAM_ARCH_PATH=/usr # |'	\
+		-e 's|MPICH_VERSION=|MPICH_VERSION=`/usr/bin/mpich2version --version` # |'	\
+		-e 's|[^#]export MPICH_PATH=$FOAM_SRC|# export MPICH_PATH=$FOAM_SRC|'	\
+		-e 's|MPICH_ARCH_PATH=|MPICH_ARCH_PATH=/usr # |'	\
+			"${S}"/.bashrc
+
+	sed -i -e "s|FOAM_JOB_DIR \$WM_PROJECT_INST_DIR/jobControl|FOAM_JOB_DIR \$HOME/\$WM_PROJECT/jobControl|"	\
+		-e "s|WM_COMPILER_DIR |WM_COMPILER_DIR /usr # |"	\
+		-e 's|JAVA_HOME |JAVA_HOME ${JAVA_HOME} # |'	\
+		-e 's@OPENMPI_VERSION @OPENMPI_VERSION `/usr/bin/ompi_info --version ompi full --parsable | grep ompi:version:full | cut -d: -f4-` # @'	\
+		-e 's|[^#]setenv OPENMPI_HOME|# setenv OPENMPI_HOME|'	\
+		-e 's|OPENMPI_ARCH_PATH |OPENMPI_ARCH_PATH /usr # |'	\
+		-e 's@LAM_VERSION @LAM_VERSION `/usr/bin/laminfo -version lam full | awk ''{print \$\$2}''` # @'	\
+		-e 's|[^#]setenv LAMHOME|# setenv LAMHOME|'	\
+		-e 's|LAM_ARCH_PATH |LAM_ARCH_PATH /usr # |'	\
+		-e 's|MPICH_VERSION |MPICH_VERSION `/usr/bin/mpich2version --version` # |'	\
+		-e 's|[^#]setenv MPICH_PATH $FOAM_SRC|# setenv MPICH_PATH $FOAM_SRC|'	\
+		-e 's|MPICH_ARCH_PATH |MPICH_ARCH_PATH /usr # |'	\
+			"${S}"/.cshrc
+
+	sed -i -e "s|/lib/j3d-org.jar|/lib/j3d-org.jar:/usr/share/sun-java3d-bin/lib/vecmath.jar:/usr/share/sun-java3d-bin/lib/j3dutils.jar:/usr/share/sun-java3d-bin/lib/j3dcore.jar|"	\
+		"${S}"/applications/utilities/mesh/manipulation/patchTool/Java/Allwmake
+
+	sed -i -e "s|:../lib/j3d-org.jar|:../lib/j3d-org.jar:/usr/share/sun-java3d-bin/lib/vecmath.jar:/usr/share/sun-java3d-bin/lib/j3dutils.jar:/usr/share/sun-java3d-bin/lib/j3dcore.jar|"	\
+		"${S}"/applications/utilities/mesh/manipulation/patchTool/Java/Make/options
+
+	index=`grep -n "CMAKE_HOME/bin:" "${S}"/."${MY_P}"/apps/paraview/bashrc | cut -d ':' -f 1,1`
+	index1=$((${index}-1))
+	index2=$((${index}+1))
+	sed -i -e "s|CMAKE_HOME=|CMAKE_HOME=/usr # |"	\
+		-e "${index1}{s|[^#]|# i|}"	\
+		-e "${index2}{s|[^#]|# f|}"	\
+		-e "s|[^#]export PATH=\$CMAKE_HOME/|# export PATH=\$CMAKE_HOME/|"	\
+		-e "s|ParaView_VERSION=|ParaView_VERSION=${MY_PARA_PV} # |"	\
+		-e "s|ParaView_INST_DIR=\$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION=/usr|"	\
+		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
+		-e "s|[^#]export PATH=\$ParaView_INST_DIR|# export PATH=\$ParaView_INST_DIR|"	\
+		-e "s|[^#]export LD_LIBRARY_PATH=|# export LD_LIBRARY_PATH=|"	\
+			"${S}"/."${MY_P}"/apps/paraview/bashrc
+
+	index=`grep -n "CMAKE_HOME/bin" "${S}"/."${MY_P}"/apps/paraview/cshrc | cut -d ':' -f 1,1`
+	index1=$((${index}-1))
+	index2=$((${index}+1))
+	sed -i -e "s|CMAKE_HOME |CMAKE_HOME /usr # |"	\
+		-e "${index1}{s|[^#]|# i|}"	\
+		-e "${index2}{s|[^#]|# f|}"	\
+		-e "s|[^#]set path=(\$CMAKE_HOME/|# set path=(\$CMAKE_HOME/|"	\
+		-e "s|ParaView_VERSION |ParaView_VERSION ${MY_PARA_PV} # |"	\
+		-e "s|ParaView_INST_DIR \$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION /usr|"	\
+		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
+		-e "s|[^#]set path=(\$ParaView_INST_DIR|# set path=(\$ParaView_INST_DIR|"	\
+		-e "s|[^#]setenv LD_LIBRARY_PATH|# setenv LD_LIBRARY_PATH|"	\
+			"${S}"/."${MY_P}"/apps/paraview/cshrc
+
+	if use mico ; then
+		sed -i -e 's|MICO_VERSION=|MICO_VERSION=`/usr/bin/mico-config --version` # |'	\
+			-e "s|[^#]export MICO_PATH=|# export MICO_PATH=|"	\
+			-e "s|MICO_ARCH_PATH=|MICO_ARCH_PATH=/usr # |"	\
+			"${S}"/.bashrc
+
+		sed -i -e 's|MICO_VERSION |MICO_VERSION `/usr/bin/mico-config --version` # |'	\
+			-e "s|[^#]setenv MICO_PATH |# setenv MICO_PATH |"	\
+			-e "s|MICO_ARCH_PATH |MICO_ARCH_PATH /usr # |"	\
+			"${S}"/.cshrc
+	fi
+
+	if use metis ; then
+		sed -i -e 's|-lmetis \\|-L/usr/lib -lmetis|'	\
+		-e 's|../metis-5.0pre2/include|/usr/include/ -I/usr/include/metis/ -I/usr/include/parmetis/|'	\
+		-e 's|-lGKlib||'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethods/Make/options	\
+		|| die "could not replace metis options"
+
+		sed -i -e 's|[^#]wmake libso metis|# wmake libso metis|'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/Allwmake	\
+		|| die "could not replace metis options"
+
+		sed -i -e 's|[^#]wmake libso ParMetis|# wmake libso ParMetis|'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Allwmake	\
+		|| die "could not replace metis options"
+
+		sed -i -e 's|parMetisDecomp/ParMetis-3.1/ParMETISLib|/usr/include/parmetis|'	\
+		-e 's|parMetisDecomp/ParMetis-3.1/|/usr/include/|'	\
+		-e 's|-lmetis|-L/usr/lib -lmetis|'	\
+		-e 's|-lparmetis|-L/usr/lib -lparmetis|'	\
+		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Make/options	\
+		|| die "could not replace metis options"
+	fi
+
 	if use parafoam ; then
 		cd "${WORKDIR}"/paraview-${MY_PARA_PV}-obj
 
@@ -166,129 +289,6 @@ src_compile() {
 		sed -i -e "s|ParaView_DIR=\$ParaView_INST_DIR/lib/ParaView-2.6|ParaView_DIR="${WORKDIR}"/paraview-${MY_PARA_PV}-obj|"	\
 		"${S}"/.${MY_P}/apps/paraview/bashrc.bak	\
 		|| die "could not replace source options"
-	fi
-
-	if use lam ; then
-		export WM_MPLIB=LAM
-	elif use mpich ; then
-		export WM_MPLIB=MPICH
-	else
-		export WM_MPLIB=OPENMPI
-	fi
-
-	sed -i -e "s|WM_PROJECT_VERSION=|WM_PROJECT_VERSION=${MY_PV} #|"	\
-		-e "s|[^#]export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|# export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|"	\
-		-e "s|#export WM_PROJECT_INST_DIR=/usr/local/\$WM_PROJECT|export WM_PROJECT_INST_DIR=/usr/lib/\$WM_PROJECT|"	\
-		-e "s|WM_COMPILER=Gcc|WM_COMPILER=|"	\
-		-e "s|[^#]export WM_MPLIB=| #export WM_MPLIB=|"	\
-		-e "s|#export WM_MPLIB=$|export WM_MPLIB="${WM_MPLIB}"|" \
-		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
-			"${S}"/.${MY_P}/bashrc
-
-	sed -i -e "s|WM_PROJECT_VERSION |WM_PROJECT_VERSION ${MY_PV} #|"	\
-		-e "s|[^#]setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|# setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|"	\
-		-e "s|#setenv WM_PROJECT_INST_DIR /usr/local/\$WM_PROJECT|setenv WM_PROJECT_INST_DIR /usr/lib/\$WM_PROJECT|"	\
-		-e "s|WM_COMPILER Gcc|WM_COMPILER |"	\
-		-e "s|[^#]setenv WM_MPLIB | #setenv WM_MPLIB |"	\
-		-e "s|#setenv WM_MPLIB $|setenv WM_MPLIB "${WM_MPLIB}"|" \
-		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
-			"${S}"/.${MY_P}/cshrc
-
-	sed -i -e "s|FOAM_JOB_DIR=\$WM_PROJECT_INST_DIR/jobControl|FOAM_JOB_DIR=\$HOME/\$WM_PROJECT/jobControl|"	\
-		-e "s|WM_COMPILER_DIR=|WM_COMPILER_DIR=/usr # |"	\
-		-e 's|JAVA_HOME=|JAVA_HOME=${JAVA_HOME} # |'	\
-		-e 's@OPENMPI_VERSION=@OPENMPI_VERSION=`/usr/bin/ompi_info --version ompi full --parsable | grep ompi:version:full | cut -d: -f4-` # @'	\
-		-e 's|[^#]export OPENMPI_HOME=|# export OPENMPI_HOME=|'	\
-		-e 's|OPENMPI_ARCH_PATH=|OPENMPI_ARCH_PATH=/usr # |'	\
-		-e 's@LAM_VERSION=@LAM_VERSION=`/usr/bin/laminfo -version lam full | awk ''{print \$\$2}''` # @'	\
-		-e 's|[^#]export LAMHOME=|# export LAMHOME=|'	\
-		-e 's|LAM_ARCH_PATH=|LAM_ARCH_PATH=/usr # |'	\
-		-e 's|MPICH_VERSION=|MPICH_VERSION=`/usr/bin/mpich2version --version` # |'	\
-		-e 's|[^#]export MPICH_PATH=|# export MPICH_PATH=|'	\
-		-e 's|MPICH_ARCH_PATH=|MPICH_ARCH_PATH=/usr # |'	\
-			"${S}"/.bashrc
-
-	sed -i -e "s|FOAM_JOB_DIR \$WM_PROJECT_INST_DIR/jobControl|FOAM_JOB_DIR \$HOME/\$WM_PROJECT/jobControl|"	\
-		-e "s|WM_COMPILER_DIR |WM_COMPILER_DIR /usr # |"	\
-		-e 's|JAVA_HOME |JAVA_HOME ${JAVA_HOME} # |'	\
-		-e 's@OPENMPI_VERSION @OPENMPI_VERSION `/usr/bin/ompi_info --version ompi full --parsable | grep ompi:version:full | cut -d: -f4-` # @'	\
-		-e 's|[^#]setenv OPENMPI_HOME|# setenv OPENMPI_HOME|'	\
-		-e 's|OPENMPI_ARCH_PATH |OPENMPI_ARCH_PATH /usr # |'	\
-		-e 's@LAM_VERSION @LAM_VERSION `/usr/bin/laminfo -version lam full | awk ''{print \$\$2}''` # @'	\
-		-e 's|[^#]setenv LAMHOME|# setenv LAMHOME|'	\
-		-e 's|LAM_ARCH_PATH |LAM_ARCH_PATH /usr # |'	\
-		-e 's|MPICH_VERSION |MPICH_VERSION `/usr/bin/mpich2version --version` # |'	\
-		-e 's|[^#]setenv MPICH_PATH |# setenv MPICH_PATH |'	\
-		-e 's|MPICH_ARCH_PATH |MPICH_ARCH_PATH /usr # |'	\
-			"${S}"/.cshrc
-
-	sed -i -e "s|/lib/j3d-org.jar|/lib/j3d-org.jar:/usr/share/sun-java3d-bin/lib/vecmath.jar:/usr/share/sun-java3d-bin/lib/j3dutils.jar:/usr/share/sun-java3d-bin/lib/j3dcore.jar|"	\
-		"${S}"/applications/utilities/mesh/manipulation/patchTool/Java/Allwmake
-
-	sed -i -e "s|:../lib/j3d-org.jar|:../lib/j3d-org.jar:/usr/share/sun-java3d-bin/lib/vecmath.jar:/usr/share/sun-java3d-bin/lib/j3dutils.jar:/usr/share/sun-java3d-bin/lib/j3dcore.jar|"	\
-		"${S}"/applications/utilities/mesh/manipulation/patchTool/Java/Make/options
-
-	index=`grep -n "CMAKE_HOME/bin:" "${S}"/."${MY_P}"/apps/paraview/bashrc | cut -d ':' -f 1,1`
-	index1=$((${index}-1))
-	index2=$((${index}+1))
-	sed -i -e "s|CMAKE_HOME=|CMAKE_HOME=/usr # |"	\
-		-e "${index1}{s|[^#]|# i|}"	\
-		-e "${index2}{s|[^#]|# f|}"	\
-		-e "s|[^#]export PATH=\$CMAKE_HOME/|# export PATH=\$CMAKE_HOME/|"	\
-		-e "s|ParaView_VERSION=|ParaView_VERSION=${MY_PARA_PV} # |"	\
-		-e "s|ParaView_INST_DIR=\$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION=/usr|"	\
-		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
-		-e "s|[^#]export PATH=\$ParaView_INST_DIR|# export PATH=\$ParaView_INST_DIR|"	\
-		-e "s|[^#]export LD_LIBRARY_PATH=|# export LD_LIBRARY_PATH=|"	\
-			"${S}"/."${MY_P}"/apps/paraview/bashrc
-
-	index=`grep -n "CMAKE_HOME/bin" "${S}"/."${MY_P}"/apps/paraview/cshrc | cut -d ':' -f 1,1`
-	index1=$((${index}-1))
-	index2=$((${index}+1))
-	sed -i -e "s|CMAKE_HOME |CMAKE_HOME /usr # |"	\
-		-e "${index1}{s|[^#]|# i|}"	\
-		-e "${index2}{s|[^#]|# f|}"	\
-		-e "s|[^#]set path=(\$CMAKE_HOME/|# set path=(\$CMAKE_HOME/|"	\
-		-e "s|ParaView_VERSION |ParaView_VERSION ${MY_PARA_PV} # |"	\
-		-e "s|ParaView_INST_DIR \$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION /usr|"	\
-		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
-		-e "s|[^#]set path=(\$ParaView_INST_DIR|# set path=(\$ParaView_INST_DIR|"	\
-		-e "s|[^#]setenv LD_LIBRARY_PATH|# setenv LD_LIBRARY_PATH|"	\
-			"${S}"/."${MY_P}"/apps/paraview/cshrc
-
-	if use mico ; then
-		sed -i -e 's|MICO_VERSION=|MICO_VERSION=`/usr/bin/mico-config --version` # |'	\
-			-e "s|[^#]export MICO_PATH=|# export MICO_PATH=|"	\
-			-e "s|MICO_ARCH_PATH=|MICO_ARCH_PATH=/usr # |"	\
-			"${S}"/.bashrc
-
-		sed -i -e 's|MICO_VERSION |MICO_VERSION `/usr/bin/mico-config --version` # |'	\
-			-e "s|[^#]MICO_PATH |# MICO_PATH |"	\
-			-e "s|MICO_ARCH_PATH |MICO_ARCH_PATH /usr # |"	\
-			"${S}"/.cshrc
-	fi
-
-	if use metis ; then
-		sed -i -e 's|-lmetis \\|-L/usr/lib -lmetis|'	\
-		-e 's|../metis-5.0pre2/include|/usr/include/ -I/usr/include/metis/ -I/usr/include/parmetis/|'	\
-		-e 's|-lGKlib||'	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethods/Make/options	\
-		|| die "could not replace metis options"
-
-		sed -i -e 's|[^#]wmake libso metis|# wmake libso metis|'	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/Allwmake	\
-		|| die "could not replace metis options"
-
-		sed -i -e 's|[^#]wmake libso ParMetis|# wmake libso ParMetis|'	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Allwmake	\
-		|| die "could not replace metis options"
-
-		sed -i -e 's|parMetisDecomp/ParMetis-3.1/ParMETISLib|/usr/include/parmetis|'	\
-		-e 's|parMetisDecomp/ParMetis-3.1/|/usr/include/|'	\
-		-e 's|-lmetis|-L/usr/lib -lmetis|'	\
-		-e 's|-lparmetis|-L/usr/lib -lparmetis|'	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Make/options	\
-		|| die "could not replace metis options"
 	fi
 
 	cp "${S}"/.${MY_P}/bashrc "${S}"/.${MY_P}/bashrc.bak
