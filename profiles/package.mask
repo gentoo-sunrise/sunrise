@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Christian Faulhammer <opfer@gentoo.org> (05 Nov 2007)
+# sci-libs/metis is not available, neither official tree nor Sunrise
+sci-libs/openfoamk
+
 # Jakub Moc <jakub@gentoo.org> (31 Oct 2007)
 # svn version should be masked
 =app-misc/freeme2-9999
