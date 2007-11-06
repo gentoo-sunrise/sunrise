@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Nov 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  mimetex-20070331.ebuild:
+  Added ~amd64 keyword (proxy for drac)
+
   03 Apr 2007; Markus Ullmann <jokey@gentoo.org> +mimetex-20070331.ebuild,
   +metadata.xml:
   Import for bug #172901
