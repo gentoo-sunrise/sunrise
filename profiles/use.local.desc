@@ -119,6 +119,7 @@ media-sound/peapod:id3 - Support ID3 in the player
 net-analyzer/honeytrap:efence - Electronic fence malloc debugger
 net-analyzer/honeytrap:ipq-mon - IP queue based monitor
 net-analyzer/honeytrap:pcap-mon - pcap based monitor
+net-dialup/iwar:iax2 - Enable iax2 protocol support
 net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
 net-dns/nsd:checking - Enable internal runtime checks
