@@ -12,15 +12,15 @@ KEYWORDS="~ppc ~x86"
 IUSE=""
 
 RDEPEND="media-libs/hamlib
-	>=x11-libs/gtk+-2.6.0
-	dev-libs/libxml2
-	gnome-base/libgnomeprint"
+	=dev-libs/glib-2*
+	>=x11-libs/gtk+-2.12
+	>=gnome-base/libgnomeprint-2.2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_compile() {
 	# mime-update causes file collisions if enabled
-	econf --enable-mime-update=no || die "econf failed"
+	econf || die "econf failed"
 	emake || die "emake failed"
 }
 

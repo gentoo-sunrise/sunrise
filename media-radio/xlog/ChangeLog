@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Nov 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  -xlog-1.5.ebuild, +xlog-1.6.ebuild:
+  Version bump
+
   30 May 2007; Santiago M. Mola <gentoo@coldwind.org> xlog-1.5.ebuild:
   Fix DEPEND, quotes, cosmetics, etc.
 
