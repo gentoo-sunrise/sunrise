@@ -13,9 +13,9 @@ SLOT="0"
 KEYWORDS="~ppc"
 IUSE=""
 
-DEPEND=">=dev-libs/glib-2.10.0
-	>=x11-libs/gtk+-2.8
-	>=media-libs/hamlib-1.2.4"
+DEPEND=">=dev-libs/glib-2.6
+	>=x11-libs/gtk+-2.6
+	>=media-libs/hamlib-1.2.5"
 RDEPEND="${DEPEND}"
 
 src_install() {
