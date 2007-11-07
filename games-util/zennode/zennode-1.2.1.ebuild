@@ -25,12 +25,10 @@ src_unpack() {
 }
 
 src_compile() {
-	cd "${S}"
 	emake || die "emake failed"
 }
 
 src_install() {
-	cd "${S}"
 	dogamesbin ZenNode bspdiff bspinfo compare
 	cd ../../doc
 	dohtml Custom.html History.html Overview.html README.html RMB.html \
