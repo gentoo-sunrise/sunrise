@@ -27,7 +27,6 @@ src_compile() {
 }
 
 src_install() {
-	cd "${S}"
 	latex-package_src_doinstall sty
 	dodoc *pdf README
 }
