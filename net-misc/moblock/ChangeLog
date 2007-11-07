@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2007; Jakub Moc <jakub@gentoo.org> -files/confd, -files/initd,
+  -moblock-0.8.ebuild, moblock-0.8-r1.ebuild:
+  Remove redundant check_kernel_config function, linux-info eclass handles
+  this in pkg_setup. Ebuild cleanup
+
   05 Nov 2007; Daniel Santos (javamonger) <daniel.santos@pobox.com>
   +files/0.8-r1/confd, +files/0.8-r1/initd, +files/0.8-r1/moblock-stats,
   +files/0.8-r1/moblock-update, +moblock-0.8-r1.ebuild:

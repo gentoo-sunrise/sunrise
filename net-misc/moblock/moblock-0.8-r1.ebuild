@@ -22,26 +22,9 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
-check_kernel_config() {
-	if !(linux_chkconfig_present NETFILTER \
-			&& linux_chkconfig_present NETFILTER_XTABLES \
-			&& linux_chkconfig_present NETFILTER_XT_TARGET_NFQUEUE \
-			&& linux_chkconfig_present IP_NF_IPTABLES \
-			&& linux_chkconfig_present IP_NF_FILTER); then
-		eerror
-		eerror "${P} requires the following kernel options:"
-		eerror "    CONFIG_NETFILTER"
-		eerror "    CONFIG_NETFILTER_XTABLES"
-		eerror "    CONFIG_NETFILTER_XT_TARGET_NFQUEUE"
-		eerror "    CONFIG_IP_NF_IPTABLES"
-		eerror "    CONFIG_IP_NF_FILTER"
-		eerror
-		die "Missing kernel components"
-	fi
-}
+CONFIG_CHECK="NETFILTER NETFILTER_XTABLES NETFILTER_XT_TARGET_NFQUEUE IP_NF_IPTABLES IP_NF_FILTER"
 
 src_unpack() {
-	check_kernel_config
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-makefile.patch"
@@ -51,9 +34,6 @@ src_compile() {
 	emake CC=$(tc-getCC) || die "emake failed"
 }
 
-
-# TODO: Should we be doing touch on the blocklist and log files?  This causes
-# them to be deleted when unmerged.
 src_install() {
 	dosbin moblock
 	dosbin "${FILESDIR}/${PVR}/moblock-update"
@@ -63,20 +43,9 @@ src_install() {
 	newinitd "${FILESDIR}/${PVR}/initd" moblock
 
 	dodir /var/db/moblock
-	touch "${D}/var/db/moblock/p2p.p2p" \
-		|| die "touch ${D}/var/db/moblock/p2p.p2p"
+	touch "${D}/var/db/moblock/p2p.p2p"
 
 	keepdir /var/cache/moblock
-
-	#dodir /var/log
-	#touch "${D}/var/log/moblock.log" \
-	#	|| die "touch ${D}/var/log/moblock.log"
-
-	#touch "${D}/var/log/moblock-update.log" \
-	#	|| die "touch ${D}/var/log/moblock-update.log"
-
-	#touch "${D}/var/log/MoBlock.stats" \
-	#	|| die "touch ${D}/var/log/MoBlock.stats"
 
 	dodoc Changelog README
 }
@@ -89,8 +58,9 @@ pkg_postinst() {
 	elog "  ln -s /usr/sbin/moblock-update /etc/cron.weekly/moblock-update"
 }
 
-# TODO: Should we remove downloaded/cached files?
-#pkg_postrm() {
-#	rm -rf /var/cache/moblock
-#	return
-#}
+pkg_postrm() {
+	if [[ -d /var/cache/moblock ]] ; then
+		einfo "Removing leftover cache..."
+		rm -rf /var/cache/moblock
+	fi
+}
