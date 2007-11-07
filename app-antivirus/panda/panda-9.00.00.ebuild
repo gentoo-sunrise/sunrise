@@ -20,7 +20,6 @@ QA_TEXTRELS_x86="opt/pavcl/usr/lib/libPsk*.so.*"
 S="${WORKDIR}"
 
 src_install() {
-	cd "${S}"
 	cp -r . "${D}"
 
 	dodir /etc/env.d
