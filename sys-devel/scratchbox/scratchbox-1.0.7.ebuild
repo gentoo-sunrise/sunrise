@@ -27,7 +27,6 @@ TARGET_DIR="/opt/scratchbox"
 S=${WORKDIR}/${PN}
 
 src_install() {
-	cd "${S}"
 	dodir ${TARGET_DIR}
 	# doins doesn't work with symlinks, getting "file not found" with doins
 	cp -pRP ./* "${D}/${TARGET_DIR}"
