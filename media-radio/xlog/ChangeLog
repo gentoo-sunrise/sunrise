@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
+  +files/xlog-1.6-desktop-update.patch, xlog-1.6.ebuild:
+  Let portage update the mime and desktop databases
+
   06 Nov 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   -xlog-1.5.ebuild, +xlog-1.6.ebuild:
   Version bump
