@@ -27,8 +27,6 @@ RDEPEND=">=dev-python/wxpython-2.6.3.2
 	# wxGTK and wxpython have to be the same x.y.z version
 
 src_install() {
-	cd "${S}"
-
 	# change directories, so that the python library is found
 	sed -i "s#\.:#/usr/$(get_libdir)/${P}:# ; s#ccp.py#/usr/$(get_libdir)/${P}/ccp.py#" \
 		ccPublisher.sh
