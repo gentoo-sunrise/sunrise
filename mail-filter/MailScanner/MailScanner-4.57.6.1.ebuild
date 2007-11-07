@@ -57,7 +57,6 @@ src_unpack() {
 }
 
 src_compile() {
-	cd "${S}"
 	# setup MTA
 	if use postfix ; then
 		RUNASUSER='postfix'
@@ -206,7 +205,6 @@ src_compile() {
 }
 
 src_install() {
-	cd "${S}"
 	exeinto ${BASE}/sbin
 	#newexe	bin/check_mailscanner.linux check_MailScanner
 	newexe	bin/check_mailscanner check_MailScanner
