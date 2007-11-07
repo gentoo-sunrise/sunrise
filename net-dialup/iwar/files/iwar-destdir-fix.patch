@@ -1,0 +1,15 @@
+--- Makefile.am	2006-01-14 23:19:05.000000000 +0000
++++ Makefile.am.new	2007-10-16 14:11:45.000000000 +0000
+@@ -11,8 +11,8 @@ AM_CFLAGS = -D_POSIX
+ # Install BFD include file, and others that it needs.
+ install-data-local: 
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(sysconfdir)
+-	$(INSTALL_DATA) iwar.conf $(sysconfdir)/iwar.conf
+-	$(INSTALL_DATA) banners.txt $(sysconfdir)/banners.txt
+-	$(INSTALL_DATA) iwar-blacklist.txt $(sysconfdir)/iwar-blacklist.txt
++	$(mkinstalldirs) $(DESTDIR)/$(sysconfdir)
++	$(INSTALL_DATA) iwar.conf $(DESTDIR)/$(sysconfdir)/iwar/iwar.conf
++	$(INSTALL_DATA) banners.txt $(DESTDIR)/$(sysconfdir)/iwar/banners.txt
++	$(INSTALL_DATA) iwar-blacklist.txt $(DESTDIR)/$(sysconfdir)/iwar/iwar-blacklist.txt
+ 

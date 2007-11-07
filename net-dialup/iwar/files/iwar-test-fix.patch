@@ -1,0 +1,18 @@
+--- iwar-engine.c	2006-01-17 01:56:52.000000000 +0000
++++ iwar-engine.c.new	2007-11-05 15:20:47.000000000 +0000
+@@ -1394,13 +1394,13 @@ if (bannercheck==1 && !voipdial)
+ 	    /* Simple test to see if the banner lines are correct,  under */
+ 	    /* Cygwin and possibly Mac OSX,  if the banner file is        */
+ 	    /* incomplete (missing a |),  it causes a seg. fault          */
+-
++/*
+ 	    if (!strstr(bannerbuf, "|"))
+ 	       {
+                fprintf(stderr, "ERROR: %s is incomplete/corrupt (missing |)\n\n", BANNER_FILE_PATH);
+ 	       exit(1);
+ 	       }
+-
++*/
+ 	    tmp3 = strtok(bannerbuf, "|");
+ 	    snprintf(bannercfg[bannercount].search_string, sizeof(bannercfg[bannercount].search_string), "%s", tmp3);
+ 	    tmp3 = strtok(NULL, "|");

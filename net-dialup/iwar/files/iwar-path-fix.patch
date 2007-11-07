@@ -1,0 +1,15 @@
+--- iwar-engine.c	2006-01-17 01:56:52.000000000 +0000
++++ iwar-engine.c.new	2007-10-16 13:29:54.000000000 +0000
+@@ -922,9 +922,9 @@ int main(int argc,  char **argv)
+ 	time_t t;
+ 	struct tm *now;
+ 
+-	char bannerfile[MAXPATH]=BANNER_FILE_PATH;
+-	char iwarconf[MAXPATH]=CONFIG_FILE_PATH;
+-	char blacklistfile[MAXPATH]=BLACKLIST_FILE_PATH;
++	char bannerfile[MAXPATH]="/etc/iwar/banners.txt";
++	char iwarconf[MAXPATH]="/etc/iwar/iwar.conf";
++	char blacklistfile[MAXPATH]="/etc/iwar/iwar-blacklist.txt";
+ 	char statefile[MAXPATH]="";
+ 	char tmpscanbuf[128]="";
+ 	char scanbuf[128]="";

@@ -1,0 +1,17 @@
+--- iwar.conf	2006-01-17 02:09:49.000000000 +0000
++++ iwar.conf.new	2007-10-16 14:14:04.000000000 +0000
+@@ -98,12 +98,12 @@ plushangupsleep 4
+ # Banner file.   Banners are used to attempt to figure out what the remote
+ # system is.
+ 
+-banner_file /usr/local/etc/banners.txt
++banner_file /etc/iwar/banners.txt
+ 
+ # Blacklist file.  This file contains phone number that should never be called
+ # (for example, '911')
+ 
+-blacklistfile /usr/local/etc/iwar-blacklist.txt
++blacklistfile /etc/iwar/iwar-blacklist.txt
+ 
+ # Serial connection timeout (in seconds).    This is used to detect when 
+ # the modem doesn't return a result code.   In that event,  we'll 

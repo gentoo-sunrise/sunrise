@@ -1,0 +1,20 @@
+--- iwar-engine.c	2006-01-17 01:56:52.000000000 +0000
++++ iwar-engine.c.new	2007-09-03 16:40:20.000000000 +0000
+@@ -805,7 +805,7 @@ mainscreen();
+ 	 {
+ 	 move(2,20); printw("%lld - %lld [%d]", userlistnum[0], userlistnum[userlistcount-1], userlistcount);
+ 	 } else {
+-	 move(2,20); printw("%lld - %lld [%d]", ss, es, es-ss);
++	 move(2,20); printw("%lld - %lld [%d]", ss, es, (es-ss)+1);
+ 	 }
+ 							                     
+      if (!strcmp(predial, ""))
+@@ -1598,7 +1598,7 @@ if (strcmp(numbersfile, ""))
+ {
+ fprintf(outfd, "= Start of scan: %lld | End of scan: %lld (Total Numbers: %d)\n", userlistnum[0], userlistnum[userlistcount-1], userlistcount);
+ } else {
+-fprintf(outfd, "= Start of scan: %lld | End of scan: %lld (Total Numbers: %lld)\n", ss,es,es-ss);
++fprintf(outfd, "= Start of scan: %lld | End of scan: %lld (Total Numbers: %lld)\n", ss,es,(es-ss)+1);
+ }
+ 
+ if (!strcmp(predial, "")) 

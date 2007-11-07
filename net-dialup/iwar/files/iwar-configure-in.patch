@@ -1,0 +1,15 @@
+--- configure.in	2006-01-14 23:19:05.000000000 +0000
++++ configure.in.new	2007-10-16 13:00:24.000000000 +0000
+@@ -82,9 +82,9 @@ AC_FUNC_STRFTIME
+ AC_CHECK_FUNCS([select strstr])
+ 
+ test "x$prefix" = x. || test "x$prefix" = xNONE && prefix=/usr/local
+-AC_DEFINE_UNQUOTED(CONFIG_FILE_PATH, "`eval echo "${prefix}/etc/iwar.conf"`") 
+-AC_DEFINE_UNQUOTED(BANNER_FILE_PATH, "`eval echo "${prefix}/etc/banners.txt"`")
+-AC_DEFINE_UNQUOTED(BLACKLIST_FILE_PATH, "`eval echo "${prefix}/etc/iwar-blacklist.txt"`") 
++AC_DEFINE_UNQUOTED(CONFIG_FILE_PATH, "`eval echo "/etc/iwar/iwar.conf"`") 
++AC_DEFINE_UNQUOTED(BANNER_FILE_PATH, "`eval echo "/etc/iwar/banners.txt"`")
++AC_DEFINE_UNQUOTED(BLACKLIST_FILE_PATH, "`eval echo "/etc/iwar/iwar-blacklist.txt"`") 
+ 
+ AC_DEFINE([CONFIG_FILE_PATH], [], [iWar configuration file])
+ AC_DEFINE([BANNER_FILE_PATH], [], [iWar banner file])
