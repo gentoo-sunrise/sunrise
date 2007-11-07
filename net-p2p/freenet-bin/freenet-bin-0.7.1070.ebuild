@@ -54,7 +54,6 @@ src_compile() {
 }
 
 src_install() {
-	cd "${S}"
 	doinitd "${FILESDIR}"/freenet
 
 	insinto /opt/freenet
