@@ -19,14 +19,12 @@ RDEPEND=""
 S="${WORKDIR}/${PN}"
 
 src_compile() {
-	cd "${S}"
 	latex-package_src_compile
 	cd contrib
 	latex-package_src_compile
 }
 
 src_install() {
-	cd "${S}"
 	latex-package_src_install
 	cd contrib
 	latex-package_src_install
