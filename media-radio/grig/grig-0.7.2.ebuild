@@ -11,7 +11,8 @@ SRC_URI="mirror://sourceforge/groundstation/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc"
-IUSE="coverage nohardware"
+EAPI="1"
+IUSE="coverage +hardware"
 
 DEPEND=">=dev-libs/glib-2.6
 	>=x11-libs/gtk+-2.6
@@ -20,8 +21,8 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 	local myconf
-	use nohardware && myconf="${myconf} --disable-hardware"
-	econf $(use_enable coverage ) $myconf || die "econf failed!"
+	use hardware || myconf="${myconf} --disable-hardware"
+	econf $(use_enable coverage ) ${myconf}
 	emake || die "emake failed!"
 }
 
