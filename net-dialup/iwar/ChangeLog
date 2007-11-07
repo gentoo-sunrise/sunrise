@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2007; Antti Järvinen (netfiniitti) <netfiniitti@kapsi.fi>
+  iwar-0.071.ebuild:
+  Fix the trailing whitespace (line 23).
+
   06 Nov 2007; Ignacio Arque-Latour (TS1k) <ts1k@telephreak.org>
   +files/iwar.1, +files/iwar-conf.patch, +files/iwar-configure-in.patch,
   +files/iwar-destdir-fix.patch, +files/iwar-path-fix.patch,

@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-		EPATCH_SOURCE="${FILESDIR}" EPATCH_SUFFIX="patch" 
+		EPATCH_SOURCE="${FILESDIR}" EPATCH_SUFFIX="patch"
 		EPATCH_FORCE="yes" epatch
 }
 
