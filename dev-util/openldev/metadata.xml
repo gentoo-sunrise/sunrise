@@ -2,4 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>maintainer-wanted</herd>
+<longdescription>
+OpenLDev is a graphical front-end to various Linux development tools
+such as gcc, autotools and make. Most Integrated Development
+Environments (IDE), are cumbersome and confusing to use, but
+OpenLDev strives to provide an easy-to-use interface that is both
+productive for experts and simple for beginners.
+</longdescription>
 </pkgmetadata>

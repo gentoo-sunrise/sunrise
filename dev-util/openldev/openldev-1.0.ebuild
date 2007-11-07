@@ -5,8 +5,7 @@
 DESCRIPTION="Graphical front-end to various Development tools such as gcc."
 
 HOMEPAGE="http://www.openldev.org/"
-#SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
-SRC_URI="http://kent.dl.sourceforge.net/sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 SLOT="0"
 KEYWORDS="~x86"
@@ -29,15 +28,4 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	 emake  DESTDIR="${D}" install || die
-}
-
-pkg_postinst() {
-	einfo
-	einfo "                  OpenLDev - ${HOMEPAGE}"
-	einfo "OpenLDev is a graphical front-end to various Linux development tools"
-	einfo "such as gcc, autotools and make. Most Integrated Development "
-	einfo "Environments (IDE), are cumbersome and confusing to use, but "
-	einfo "OpenLDev strives to provide an easy-to-use interface that is both"
-	einfo "productive for experts and simple for beginners."
-	einfo
 }
