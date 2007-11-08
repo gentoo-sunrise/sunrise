@@ -1,6 +1,10 @@
 
 
   08 Nov 2007; Florian Manschwetus (EisNerd) <florianmanschwetus@gmx.de>
+  thinkpad-sources-2.6.23-r1.ebuild:
+  corrected the ebuild header
+
+  08 Nov 2007; Florian Manschwetus (EisNerd) <florianmanschwetus@gmx.de>
   +files/2.6.23, +files/2.6.23/linux-phc-0.3.1-for-2.6.23.patch,
   +thinkpad-sources-2.6.23-r1.ebuild,
   +files/2.6.23/combined-2.6.23-cph.patch,

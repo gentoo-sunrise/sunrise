@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: sys-kernel/thinkpad-sources/thinkpad-sources-2.6.20.ebuild 2007 04 12
+# $Header: sys-kernel/thinkpad-sources/thinkpad-sources-2.6.23-r1.ebuild 2007 11 08
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
