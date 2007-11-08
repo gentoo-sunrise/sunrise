@@ -181,6 +181,7 @@ sys-fs/aufs:hinotify - Add support for aufs inotify
 sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module run more efficiently
 sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
+sys-kernel/thinkpad-sources:sco_flowcontrol - Adds sco_flowcontrol patch from bluez cvs
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
