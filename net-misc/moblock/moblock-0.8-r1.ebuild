@@ -43,7 +43,7 @@ src_install() {
 	newinitd "${FILESDIR}/${PVR}/initd" moblock
 
 	dodir /var/db/moblock
-	touch "${D}/var/db/moblock/p2p.p2p"
+	touch "${D}/var/db/moblock/guarding.p2p"
 
 	keepdir /var/cache/moblock
 
