@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Nov 2007; Davide Cendron (scen) <scen@gentoo.org> ChangeLog:
+  Update manifest (hexenworld-pakfiles tarball has been updated some time ago)
+
   29 Oct 2007; Davide Cendron (scen) <scen@gentoo.org> uhexen2-1.4.2.ebuild:
   Fixed DESCRIPTION
 
