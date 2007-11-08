@@ -1,0 +1,11 @@
+
+
+  08 Nov 2007; Florian Manschwetus (EisNerd) <florianmanschwetus@gmx.de>
+  +files/2.6.23, +files/2.6.23/linux-phc-0.3.1-for-2.6.23.patch,
+  +thinkpad-sources-2.6.23-r1.ebuild,
+  +files/2.6.23/combined-2.6.23-cph.patch,
+  +files/2.6.23/disk-protect-for-2.6.23.patch,
+  +files/2.6.23/input-unknown_keycodes-for-2.6.23.patch, +files/config,
+  +metadata.xml:
+  New Ebuild for bug 136231 just test it on other centrinos
+
