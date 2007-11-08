@@ -1,6 +1,10 @@
 
 
   08 Nov 2007; Florian Manschwetus (EisNerd) <florianmanschwetus@gmx.de>
+  -files/config:
+  deleted files/config
+
+  08 Nov 2007; Florian Manschwetus (EisNerd) <florianmanschwetus@gmx.de>
   +files/configs, +files/configs/config-for-core-or-core2:
   made extra config dir in files
 
