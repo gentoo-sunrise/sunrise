@@ -1,6 +1,10 @@
 
 
   08 Nov 2007; Florian Manschwetus (EisNerd) <florianmanschwetus@gmx.de>
+  +files/configs, +files/configs/config-for-core-or-core2:
+  made extra config dir in files
+
+  08 Nov 2007; Florian Manschwetus (EisNerd) <florianmanschwetus@gmx.de>
   thinkpad-sources-2.6.23-r1.ebuild:
   corrected the ebuild header
 
