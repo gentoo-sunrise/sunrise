@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2007; Jakub Moc <jakub@gentoo.org> -amos-2.0.2.ebuild:
+  Nuke old.
+
   09 Nov 2007; azazello <gentoo@horizon.ath.cx> +amos-2.0.4.ebuild:
   version bump
 
