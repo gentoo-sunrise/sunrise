@@ -1,0 +1,19 @@
+# Config file for /etc/init.d/daemonlogger.
+# Note that you can run daemonlogger as a non-daemon without the init script.
+
+# Set the listening interface.
+IFACE="eth0"
+
+# Set the output interface for tapping.
+# Note that this disables the logging option below.
+#TAP="eth1"
+
+# The directory to which logged pcap-files are stored.
+LOGDIR="/var/log/daemonlogger"
+
+# The user/group to which the program drops privileges.
+# Note that if you change this, please adjust the permissions of LOGDIR accordingly.
+USER="daemonlogger"
+
+# This gathers the above options.
+DAEMONLOGGER_OPTS="-d -i $IFACE -u $USER -g $USER -l $LOGDIR"
