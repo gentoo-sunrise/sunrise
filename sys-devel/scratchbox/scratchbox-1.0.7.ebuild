@@ -41,7 +41,7 @@ src_install() {
 
 pkg_preinst() {
 	einfo "Creating group sbox"
-	enewgroup "${SBOX_GROUP}" || die "adding group '${SBOX_GROUP}' failed"
+	enewgroup "${SBOX_GROUP}"
 }
 
 pkg_postinst() {
