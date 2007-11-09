@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2007; Jakub Moc <jakub@gentoo.org> -daemonlogger-0.91.ebuild:
+  Remove old.
+
   09 Nov 2007; Jukka Ruohonen <drear@iki.fi>
   +files/daemonlogger-1.0-version.patch, +daemonlogger-1.0.ebuild:
   Version bump.
