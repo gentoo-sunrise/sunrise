@@ -27,7 +27,7 @@ sys-kernel/thinkpad-sources
 
 # Christian Faulhammer <opfer@gentoo.org> (05 Nov 2007)
 # sci-libs/metis is not available, neither official tree nor Sunrise
-sci-libs/openfoamk
+sci-libs/openfoam
 
 # Jakub Moc <jakub@gentoo.org> (31 Oct 2007)
 # svn version should be masked
