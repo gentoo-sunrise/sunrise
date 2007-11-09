@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: sys-kernel/thinkpad-sources/thinkpad-sources-2.6.23-r1.ebuild 2007 11 08
+# $Header: $
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
@@ -45,7 +45,7 @@ THINKPAD_ACPI_URI="mirror://sourceforge/ibm-acpi/${THINKPAD_ACPI_SRC}"
 UNIPATCH_LIST=""
 
 if use sco_flowcontrol; then
-                UNIPATCH_LIST="${UNIPATCH_LIST} ${DISTDIR}/${SCO_FLOWCONTROL_SRC}.diff"
+	UNIPATCH_LIST="${UNIPATCH_LIST} ${DISTDIR}/${SCO_FLOWCONTROL_SRC}.diff"
 fi
 UNIPATCH_LIST="${UNIPATCH_LIST}
 	${FILESDIR}/2.6.23/disk-protect-for-2.6.23.patch
