@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2007; Jukka Ruohonen <drear@iki.fi> daemonlogger-0.91.ebuild:
+  Corrected the homepage.
+
   30 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   +daemonlogger-0.91.ebuild, +metadata.xml:
   new ebuild for bug 174128 thanks to Jukka Ruohonen

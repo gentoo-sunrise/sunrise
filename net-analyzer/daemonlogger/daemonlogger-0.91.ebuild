@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="Simple packet logger & soft tap"
-HOMEPAGE="http://www.snort.org/users/roesch/Site/Daemonlogger.html"
+HOMEPAGE="http://www.snort.org/users/roesch/Site/Daemonlogger/Daemonlogger.html"
 SRC_URI="http://www.snort.org/dl/${PN}/${P}.tar.gz
 	http://www.snort.org/users/roesch/code/${P}.tar.gz"
 
