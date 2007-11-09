@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Jakub Moc <jakub@gentoo.org> (09 Nov 2007)
+# This is unsupported in any way, use at your own risk!
+sys-kernel/thinkpad-sources
+
 # Christian Faulhammer <opfer@gentoo.org> (05 Nov 2007)
 # sci-libs/metis is not available, neither official tree nor Sunrise
 sci-libs/openfoamk
