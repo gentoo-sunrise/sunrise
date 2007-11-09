@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Nov 2007; Davide Cendron (scen) <scen@gentoo.org>
+  ov51x-jpeg-1.0.0.ebuild:
+  Fixed SRC_URI for previous 1.0.0 version
+
+  09 Nov 2007; Davide Cendron (scen) <scen@gentoo.org>
   +ov51x-jpeg-1.5.3.ebuild:
   Version bump
 
