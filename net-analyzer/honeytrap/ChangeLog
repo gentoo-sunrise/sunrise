@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Nov 2007; Jukka Ruohonen <drear@iki.fi> -honeytrap-0.6.4.ebuild:
+  Remove old.
+
   10 Nov 2007; Jukka Ruohonen <drear@iki.fi>
   +files/honeytrap-1.0.0-autoconf.patch, files/honeytrap.conf,
   files/honeytrap.initd, +honeytrap-1.0.0.ebuild:
