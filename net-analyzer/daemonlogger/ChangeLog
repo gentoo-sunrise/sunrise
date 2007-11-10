@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Nov 2007; Jukka Ruohonen <drear@iki.fi> +daemonlogger-1.0.1.ebuild:
+  Version bump.
+
   09 Nov 2007; Jukka Ruohonen <drear@iki.fi> +files/daemonlogger-confd,
   +files/daemonlogger-initd, +daemonlogger-1.0-r1.ebuild:
   Added init scripts and modified the ebuild accordingly.
