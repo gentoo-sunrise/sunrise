@@ -23,7 +23,6 @@ DEPEND="!net-p2p/freenet-bin
 RDEPEND="virtual/jre"
 
 S="${WORKDIR}/${PN}"
-RESTRICT="userpriv"
 
 QA_TEXTRELS="opt/freenet/lib/libwrapper-linux-x86-32.so"
 
