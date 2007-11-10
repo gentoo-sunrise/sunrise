@@ -3,7 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-if [[ -n "${TAP}" ]] ; then
+if [ -n "${TAP}" ] ; then
 	DAEMONLOGGER_OPTS="${DAEMONLOGGER_OPTS} -o ${TAP}"
 fi
 
