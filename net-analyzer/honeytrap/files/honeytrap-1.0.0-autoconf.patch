@@ -1,0 +1,74 @@
+diff -ur honeytrap-1.0.0/configure.in honeytrap-1.0.0.new/configure.in
+--- honeytrap-1.0.0/configure.in	2007-10-27 14:22:14.000000000 +0300
++++ honeytrap-1.0.0.new/configure.in	2007-11-10 14:40:27.000000000 +0200
+@@ -76,35 +76,41 @@
+       CFLAGS="$CFLAGS -Wall"
+ fi
+ 
+-AC_ARG_ENABLE(debug,
+-[  --enable-debug          enable debugging options (bugreports and developers only)],
+-                [ if test -n "$GCC"; then
+-                    CFLAGS="-O0 -DDEBUG -g"
+-                  else
+-                    CFLAGS="$CFLAGS -DDEBUG"
+-                  fi      
+-		  enable_debug="X"
+-                ], enable_debug=" ")
+-
+-AC_ARG_ENABLE(profile,
+-[  --enable-profile        enable profiling options (developers only)],
+-        [ if test -n "$GCC"; then
+-            CFLAGS="$CFLAGS -DPROFILE -pg"
+-          else
+-            CFLAGS="$CFLAGS -DPROFILE"
+-          fi
+-	  enable_profile="X"
+-        ], enable_profile=" ")
+-AC_ARG_ENABLE(devmodules,
+-[  --enable-devmodules     enable unstable modules (not recommended for production setups)],
+-                [ if test -n "$GCC"; then
+-                    CFLAGS="-O0 -DDEBUG -g"
+-                  else
+-                    CFLAGS="$CFLAGS -DDEBUG"
+-                  fi      
+-		  enable_devmodules="X"
+-                ], enable_devmodules=" ")
+-
++if test "${enable_debug}" = "yes" ; then
++  AC_ARG_ENABLE(debug,
++  [  --enable-debug          enable debugging options (bugreports and developers only)],
++                  [ if test -n "$GCC"; then
++                      CFLAGS="-O0 -DDEBUG -g"
++                    else
++                      CFLAGS="$CFLAGS -DDEBUG"
++                    fi      
++		    enable_debug="X"
++                  ], enable_debug=" ")
++fi
++
++if test "${enable_profile}" = "yes" ; then
++  AC_ARG_ENABLE(profile,
++  [  --enable-profile        enable profiling options (developers only)],
++          [ if test -n "$GCC"; then
++              CFLAGS="$CFLAGS -DPROFILE -pg"
++            else
++              CFLAGS="$CFLAGS -DPROFILE"
++            fi
++	    enable_profile="X"
++          ], enable_profile=" ")
++fi
++
++if test "${enable_devmodules}" = "yes" ; then
++  AC_ARG_ENABLE(devmodules,
++  [  --enable-devmodules     enable unstable modules (not recommended for production setups)],
++                  [ if test -n "$GCC"; then
++                      CFLAGS="-O0 -DDEBUG -g"
++                    else
++                      CFLAGS="$CFLAGS -DDEBUG"
++                    fi      
++		    enable_devmodules="X"
++                  ], enable_devmodules=" ")
++fi
+ 
+ #AC_CANONICAL_HOST
+ linux=no
