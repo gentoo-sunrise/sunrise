@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r15726"
+MY_JAR_REV="r15753"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
@@ -13,7 +13,6 @@ SRC_URI="http://downloads.freenetproject.org/alpha/installer/freenet07.tar.gz
 	http://downloads.freenetproject.org/alpha/update/update.sh
 	http://downloads.freenetproject.org/alpha/update/wrapper.conf
 	http://downloads.freenetproject.org/alpha/${MY_JAR_FILE}
-	http://dev.gentooexperimental.org/~tommy$/${MY_JAR_FILE}
 	http://downloads.freenetproject.org/alpha/freenet-ext.jar"
 
 LICENSE="GPL-2"
@@ -65,17 +64,6 @@ src_install() {
 }
 
 pkg_postinst () {
-	#workaround for a bug in actual version
-	if [ -f /opt/freenet/freenet.ini ];then
-		:;
-	else
-		elog "If you do a fresh install and freenet does not start the webinterface/write freenet.ini,"
-		elog "install the previous version (emerge =freenet-bin-0.7.1070), start it,"
-		elog "update freenet (emerge -u freenet-bin) and restart freenet (/etc/init.d/freenet restart)"
-		elog "(workaround for bug in 1071)"
-		elog " "
-	fi
-	#end workaround
 	elog "1. Start freenet with /etc/init.d/freenet start"
 	elog "2. Open localhost:8888 in your browser for the web interface."
 	elog "3. After uninstalling freenet delete /opt/freenet manually (unless you want to keep it for a later reinstall)"
