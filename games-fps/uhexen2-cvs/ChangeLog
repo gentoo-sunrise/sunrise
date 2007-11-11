@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Nov 2007; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-cvs-20071107.ebuild, +uhexen2-cvs-20071111.ebuild:
+  Version bump
+
   08 Nov 2007; Davide Cendron (scen) <scen@gentoo.org> ChangeLog:
   Update manifest (hexenworld-pakfiles tarball has been updated some time ago)
 
