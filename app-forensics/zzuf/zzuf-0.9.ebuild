@@ -8,7 +8,7 @@ SRC_URI="http://sam.zoy.org/zzuf/${P}.tar.gz"
 
 LICENSE="WTFPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 src_install() {
