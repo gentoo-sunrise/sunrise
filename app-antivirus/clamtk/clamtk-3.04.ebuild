@@ -4,7 +4,7 @@
 
 inherit eutils
 
-CLAMTK_KDEVER="0.06"
+CLAMTK_KDEVER="0.07"
 DESCRIPTION="A frontend for ClamAV using Gtk2-perl."
 HOMEPAGE="http://clamtk.sourceforge.net/"
 SRC_URI="mirror://sourceforge/clamtk/${P}.tar.gz
@@ -14,18 +14,18 @@ LICENSE="Artistic GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 
-LANGS="cs da de es fr it pl pt_BR ru zh_CN"
+LANGS="cs da de es fr gl it pl pt_BR ru sv zh_CN"
 IUSE="nls kde"
 for i in ${LANGS}; do
 	IUSE="${IUSE} linguas_${i}"
 done
 
 DEPEND=""
-RDEPEND="dev-perl/gtk2-perl
+RDEPEND=">=dev-perl/gtk2-perl-1.140
 	dev-perl/File-Find-Rule
 	dev-perl/libwww-perl
 	dev-perl/Date-Calc
-	app-antivirus/clamav
+	>=app-antivirus/clamav-0.83
 	nls? ( dev-perl/Locale-gettext )
 	kde? ( || ( kde-base/konqueror kde-base/kdebase ) )"
 
