@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Nov 2007; Jakub Moc <jakub@gentoo.org>
+  -files/acpi-support-0.95-gentoo.patch, -acpi-support-0.95.ebuild:
+  Nuke old.
+
   09 Nov 2007; azazello <gentoo@horizon.ath.cx>
   files/acpi-support-0.103-gentoo.patch:
   tweak patch
