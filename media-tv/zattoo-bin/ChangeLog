@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Nov 2007; Felix Bechstein (flx\) <f@ub0r.de> ++,
+  -zattoo-bin-3.0.5.8208.ebuild:
+  bump
+
   22 Sep 2007; Christian Helbling <helch@gmx.ch>
   -zattoo-bin-2.2.10.6523.ebuild:
   drop old
