@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Nov 2007; Jakub Moc <jakub@gentoo.org> ov51x-jpeg-1.0.0.ebuild,
+  ov51x-jpeg-1.5.3.ebuild:
+  linux-headers is part of system, no need for the dependency
+
   09 Nov 2007; Davide Cendron (scen) <scen@gentoo.org>
   ov51x-jpeg-1.0.0.ebuild:
   Fixed SRC_URI for previous 1.0.0 version

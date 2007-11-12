@@ -13,9 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="sys-kernel/linux-headers"
-RDEPEND=""
-
 BUILD_TARGETS="all"
 BUILD_PARAMS="KDIR=${KV_DIR}"
 MODULE_NAMES="ov51x-jpeg(media/video:)"
