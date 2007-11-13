@@ -20,10 +20,6 @@ RDEPEND=""
 
 S=${WORKDIR}/${MY_P}
 
-CONFIG_CHECK="SOFTWARE_SUSPEND"
-ERROR_SOFTWARE_SUSPEND="The kernel has to be configured to support software suspend.
-Set CONFIG_SOFTWARE_SUSPEND=y and recompile your kernel."
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
@@ -42,6 +38,12 @@ pkg_setup() {
 			eerror "If you dislike this, then attach a patch to Bug 128468"
 			die "You MUST build pciutils without the zlib USE flag"
 		fi
+	fi
+	
+	if kernel_is lt 2 6 23 ; then
+		CONFIG_CHECK="SOFTWARE_SUSPEND"
+	else
+		CONFIG_CHECK="HIBERNATION"
 	fi
 
 	linux-info_pkg_setup

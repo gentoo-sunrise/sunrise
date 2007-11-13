@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Nov 2007; Jakub Moc <jakub@gentoo.org> s2ram-0.5.ebuild:
+  Fix CONFIG_CHECK for 2.6.23+ kernels
+
   10 Mar 2007; Jakub Moc <jakub@gentoo.org> s2ram-0.5.ebuild:
   Another thing broken by the retarded pciutils zlib USE flag
 
