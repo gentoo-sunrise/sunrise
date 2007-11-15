@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	enewgroup honeytrap
-	enewuser honeytrap -1 -1 /sbin/nologin honeytrap
+	enewuser honeytrap -1 -1 -1 honeytrap
 
 	if ! use pcap-mon && ! use ipq-mon && ! use nfq-mon ; then
 		ewarn "You did not choose any connection monitor."
