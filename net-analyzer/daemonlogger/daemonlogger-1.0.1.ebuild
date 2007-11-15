@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	enewgroup daemonlogger
-	enewuser daemonlogger -1 -1 /sbin/nologin daemonlogger
+	enewuser daemonlogger -1 -1 -1 daemonlogger
 }
 
 src_install() {
