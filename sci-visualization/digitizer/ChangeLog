@@ -1,0 +1,8 @@
+# ChangeLog for sci-visualization/digitizer
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Nov 2007; Oliver Borm (boroli) <oli.borm@web.de> +metadata.xml,
+  +digitizer-4.1.ebuild:
+  New ebuild for bug 117812. Thanks to Mathias Weigt.
+
