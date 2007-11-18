@@ -30,8 +30,7 @@ RDEPEND="dev-java/sun-java3d-bin
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
 	mpich? ( sys-cluster/mpich2 )
-	metis? ( sci-libs/metis
-		sci-libs/parmetis )
+	metis? ( sci-libs/metis sci-libs/metis sci-libs/parmetis )
 	parafoam? ( sci-libs/vtk
 		=sci-visualization/paraview-${MY_PARA_PV} )
 	!parafoam? ( sci-visualization/paraview )"
@@ -58,7 +57,7 @@ pkg_setup() {
 		ewarn
 	else
 		ewarn
-		ewarn " You are building with parafoam enabled, this means "
+		ewarn " You are building with parafoam disabled, this means "
 		ewarn " that paraFoam will not be installed. "
 		ewarn " You have to use instead the native OpenFOAM support in ParaView-${MY_PARA_PV}: "
 		ewarn " You have to open the controlDict file of each case and "
@@ -75,6 +74,19 @@ pkg_setup() {
 		ewarn " At the moment there is no mico ebuild in the official portage tree, "
 		ewarn " but Bug 122141 provides an working ebuild. "
 		ewarn
+	fi
+
+	if use amd64 ; then
+		einfo
+		einfo "In order to use OpenFOAM you should add the following lines to ~/.bashrc :"
+		einfo 'WM_64="on"'
+		einfo "source /usr/$(get_libdir)/OpenFOAM/bashrc"
+		einfo
+	else
+		einfo
+		einfo "In order to use OpenFOAM you should add the following line to ~/.bashrc :"
+		einfo "source /usr/$(get_libdir)/OpenFOAM/bashrc"
+		einfo
 	fi
 
 	java-pkg-2_pkg_setup
@@ -169,7 +181,7 @@ src_compile() {
 		-e "${index2}{s|[^#]|# f|}"	\
 		-e "s|[^#]export PATH=\$CMAKE_HOME/|# export PATH=\$CMAKE_HOME/|"	\
 		-e "s|ParaView_VERSION=|ParaView_VERSION=${MY_PARA_PV} # |"	\
-		-e "s|ParaView_INST_DIR=\$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION=/usr|"	\
+		-e "s|ParaView_INST_DIR=\$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_INST_DIR=/usr|"	\
 		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
 		-e "s|[^#]export PATH=\$ParaView_INST_DIR|# export PATH=\$ParaView_INST_DIR|"	\
 		-e "s|[^#]export LD_LIBRARY_PATH=|# export LD_LIBRARY_PATH=|"	\
@@ -183,7 +195,7 @@ src_compile() {
 		-e "${index2}{s|[^#]|# f|}"	\
 		-e "s|[^#]set path=(\$CMAKE_HOME/|# set path=(\$CMAKE_HOME/|"	\
 		-e "s|ParaView_VERSION |ParaView_VERSION ${MY_PARA_PV} # |"	\
-		-e "s|ParaView_INST_DIR \$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_VERSION /usr|"	\
+		-e "s|ParaView_INST_DIR \$WM_PROJECT_INST_DIR/\$WM_ARCH/paraview-\$ParaView_VERSION|ParaView_INST_DIR /usr|"	\
 		-e "s|\$ParaView_INST_DIR/lib/paraview-2.4|\$ParaView_INST_DIR/lib/ParaView-${MY_PARA_PV_SHORT}|"	\
 		-e "s|[^#]set path=(\$ParaView_INST_DIR|# set path=(\$ParaView_INST_DIR|"	\
 		-e "s|[^#]setenv LD_LIBRARY_PATH|# setenv LD_LIBRARY_PATH|"	\
@@ -202,27 +214,34 @@ src_compile() {
 	fi
 
 	if use metis ; then
-		sed -i -e 's|-lmetis \\|-L/usr/$(get_libdir) -lmetis|'	\
-		-e 's|../metis-5.0pre2/include|/usr/include/ -I/usr/include/metis/ -I/usr/include/parmetis/|'	\
+		sed -i -e "s|-lmetis \\\|-L/usr/$(get_libdir) -lmetis|"	\
+		-e 's|../metis-5.0pre2/include|/usr/include|'	\
 		-e 's|-lGKlib||'	\
 		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethods/Make/options	\
 		|| die "could not replace metis options"
 
-		sed -i -e 's|[^#]wmake libso metis|# wmake libso metis|'	\
+		sed -i -e 's|wmake libso metis|# wmake libso metis|'	\
 		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/Allwmake	\
 		|| die "could not replace metis options"
 
-		sed -i -e 's|[^#]wmake libso ParMetis|# wmake libso ParMetis|'	\
+		sed -i -e 's|wmake libso ParMetis|# wmake libso ParMetis|'	\
 		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Allwmake	\
 		|| die "could not replace metis options"
 
 		sed -i -e 's|parMetisDecomp/ParMetis-3.1/ParMETISLib|/usr/include/parmetis|'	\
-		-e 's|parMetisDecomp/ParMetis-3.1/|/usr/include/|'	\
-		-e 's|-lmetis|-L/usr/$(get_libdir) -lmetis|'	\
-		-e 's|-lparmetis|-L/usr/$(get_libdir) -lparmetis|'	\
+		-e 's|parMetisDecomp/ParMetis-3.1|/usr/include|'	\
+		-e "s|-lmetis|-L/usr/$(get_libdir) -lMETIS -lmetis|"	\
+		-e "s|-lparmetis|-L/usr/$(get_libdir) -lparmetis|"	\
 		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Make/options	\
 		|| die "could not replace metis options"
 	fi
+
+	cp "${S}"/.${MY_P}/bashrc "${S}"/.${MY_P}/bashrc.bak
+
+	sed -i -e "s|WM_PROJECT_INST_DIR=/usr/lib/\$WM_PROJECT|WM_PROJECT_INST_DIR="${WORKDIR}"|"		\
+		-e "s|WM_PROJECT_DIR=\$WM_PROJECT_INST_DIR/\$WM_PROJECT-\$WM_PROJECT_VERSION|WM_PROJECT_DIR="${S}"|"	\
+		"${S}"/.${MY_P}/bashrc.bak	\
+		|| die "could not replace source options"
 
 	if use parafoam ; then
 		cd "${WORKDIR}"/paraview-${MY_PARA_PV}-obj
@@ -281,6 +300,10 @@ src_compile() {
 		"${S}"/.${MY_P}/bashrc	\
 		|| die "could not replace source options"
 
+		sed -i -e "s|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview/bashrc|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps/paraview/bashrc.bak|"	\
+		"${S}"/.${MY_P}/bashrc.bak	\
+		|| die "could not replace source options"
+
 		sed -i -e "s|/include|/include/vtk-5.0|"	\
 			"${S}"/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/Make/options
 
@@ -290,13 +313,6 @@ src_compile() {
 		"${S}"/.${MY_P}/apps/paraview/bashrc.bak	\
 		|| die "could not replace source options"
 	fi
-
-	cp "${S}"/.${MY_P}/bashrc "${S}"/.${MY_P}/bashrc.bak
-
-	sed -i -e "s|WM_PROJECT_INST_DIR=/usr/lib/\$WM_PROJECT|WM_PROJECT_INST_DIR="${WORKDIR}"|"		\
-		-e "s|WM_PROJECT_DIR=\$WM_PROJECT_INST_DIR/\$WM_PROJECT-\$WM_PROJECT_VERSION|WM_PROJECT_DIR="${S}"|"	\
-		"${S}"/.${MY_P}/bashrc.bak	\
-		|| die "could not replace source options"
 
 	. "${S}"/.${MY_P}/bashrc.bak
 
@@ -353,4 +369,5 @@ src_install() {
 	fi
 
 	dosym /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/bashrc /usr/$(get_libdir)/${MY_PN}/bashrc
+	dosym /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/cshrc /usr/$(get_libdir)/${MY_PN}/cshrc
 }
