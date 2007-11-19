@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
+  -ETL-0.04.09.ebuild, +ETL-0.04.10.ebuild:
+  Updating ebuild for ETL, bug 111277, thanks to Ali Sabil, Luc Stepniewski,
+  jebas, Steve L and Alexander Kazarin
+
   27 Jun 2007; Ali Polatel <hawking@gentoo.org> ETL-0.04.09.ebuild:
   removed unneeded empty line
 
