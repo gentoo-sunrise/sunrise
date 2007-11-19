@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
+  ChangeLog:
+  Updating ETL, bug 111277, removing empty files dir
+
+  19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
   -ETL-0.04.09.ebuild, +ETL-0.04.10.ebuild:
   Updating ebuild for ETL, bug 111277, thanks to Ali Sabil, Luc Stepniewski,
   jebas, Steve L and Alexander Kazarin
