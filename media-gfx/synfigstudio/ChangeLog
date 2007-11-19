@@ -1,0 +1,9 @@
+# ChangeLog for media-gfx/synfigstudio
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
+  +metadata.xml, +synfigstudio-0.61.07.ebuild:
+  Adding ebuild for synfigstudio bug 111279, thanks to Ali Sabil, Luc
+  Stepniewski, jebas, Steve L, oninoshiko and Alexander Kazarin
+
