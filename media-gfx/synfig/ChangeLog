@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
+  ChangeLog:
+  Updating synfig, bug 111278, removing files dir
+
+  19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
   -synfig-0.61.06.ebuild, +synfig-0.61.07.ebuild:
   Updating ebuild for synfig, bug 111278, thanks to Ali Sabil, Luc
   Stepniewski, jebas, James Le Cuirot, Steve L, oninoshiko and Alexander
