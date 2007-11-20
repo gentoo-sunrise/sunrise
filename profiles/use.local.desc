@@ -165,10 +165,11 @@ net-wireless/rt2x00-git:rt61pci - Build rt61pci driver
 net-wireless/rt2x00-git:rt73usb - Build rt73usb driver
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
-sci-libs/libticables2:pam_console - Adds support for pam console from PAM
-sci-libs/sympy:xslt - Adds MathML printing support
+sci-libs/cgnslib:hdf5 - Adds support for the Hierarchical Data Format v5
+sci-libs/cgnstools:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/gmsh:cgns - Enables cgns output support
 sci-libs/gmsh:metis - Enables metis support
+sci-libs/libticables2:pam_console - Adds support for pam console from PAM
 sci-libs/openfoam:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam:metis - Enables the use of the systemwide metis/parmetis installation
@@ -177,6 +178,7 @@ sci-libs/openfoam:mico - Enables systemwide mico installation instead a local wh
 sci-libs/openfoam:parafoam - Enables the building of the vtkFoam and PVFoamReader libraries
 sci-libs/parmetis:lam - Defines lam-mpi as default mpi implementation
 sci-libs/parmetis:mpich - Defines mpich as default mpi implementation
+sci-libs/sympy:xslt - Adds MathML printing support
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
