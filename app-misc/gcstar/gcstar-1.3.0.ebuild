@@ -11,7 +11,7 @@ SRC_URI="http://download.gna.org/gcstar/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="mp3 tellico vorbis"
+IUSE="mp3 spell tellico vorbis"
 
 LANGS="ar bg ca cs de es fr id it pl pt ro ru sr sv tr"
 for x in ${LANGS} ; do
@@ -31,10 +31,12 @@ DEPEND="dev-lang/perl
 		dev-perl/XML-Simple
 		dev-perl/Archive-Tar
 		dev-perl/Compress-Zlib
+		dev-perl/Time-Piece
 		virtual/perl-File-Spec
 		virtual/perl-File-Temp
 		virtual/perl-libnet
 		mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
+		spell? ( dev-perl/gtk2-spell )
 		tellico? ( dev-perl/Archive-Zip
 			virtual/perl-Digest-MD5
 			virtual/perl-MIME-Base64 )
