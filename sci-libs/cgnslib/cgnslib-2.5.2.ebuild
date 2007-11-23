@@ -30,17 +30,15 @@ src_compile() {
 
 	sed -i -e "s|@STRIP@|true|" "${S}"/make.defs.in
 
-	local myconf
+	local myconf="--enable-gcc --enable-lfs --enable-shared"
 	use amd64 && myconf="${myconf} --enable-64bit"
-	myconf="${myconf} --enable-gcc --enable-lfs --enable-shared"
 
 	econf \
 		${myconf} \
 		$(use_with fortran) \
 		$(use_with hdf5) \
 		$(use_with zlib) \
-		$(use_with szip) \
-		|| die "econf failed"
+		$(use_with szip)
 
 	emake || die "emake failed"
 }
