@@ -22,9 +22,9 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/ParMetis-${PV}
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/"${P}".patch
+	epatch "${FILESDIR}"/${P}.patch
 }
 
 src_compile() {
@@ -32,17 +32,15 @@ src_compile() {
 }
 
 src_install() {
-	dolib *.a *.so *.so."${PV}"
+	dolib *.a *.so *.so.${PV}
+
 	insinto /usr/include
 	doins parmetis.h
-	dodir /usr/include/{metis,parmetis}
 	insinto /usr/include/metis
-	cd ./METISLib
-	doins *.h
-	cd ../ParMETISLib
+	doins METISLib/*.h
 	insinto /usr/include/parmetis
-	doins *.h
-	cd ../Manual
-	insinto /usr/share/doc/"${P}"
-	newins manual.pdf ParMetis.pdf
+	doins ParMETISLib/*.h
+
+	insinto /usr/share/doc/${PF}
+	newins Manual/manual.pdf ParMetis.pdf
 }
