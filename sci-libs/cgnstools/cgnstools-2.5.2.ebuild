@@ -58,14 +58,14 @@ src_compile() {
 
 	myconf="${myconf} --with-cgns=${WORKDIR}/${MY_LIB_SHORT_P} --bindir=${D}/usr/bin --datadir=${D}/usr/share/${PN}"
 
-        if use tcl ; then
-                TCLVER="$(echo 'puts [info tclversion]' | $(type -P tclsh))"
-                myconf="${myconf} $(use_with tcl tcl /usr/$(get_libdir)/tcl${TCLVER})"
+	if use tcl ; then
+		TCLVER="$(echo 'puts [info tclversion]' | $(type -P tclsh))"
+		myconf="${myconf} $(use_with tcl tcl /usr/$(get_libdir)/tcl${TCLVER})"
 	fi
 
-        if use tk ; then
-                TKVER="$(echo 'puts [info tkversion]' | $(type -P wish))"
-                myconf="${myconf} $(use_with tk tk /usr/$(get_libdir)/tk${TKVER})"
+	if use tk ; then
+		TKVER="$(echo 'puts [info tkversion]' | $(type -P wish))"
+		myconf="${myconf} $(use_with tk tk /usr/$(get_libdir)/tk${TKVER})"
 	fi
 
 	econf \
