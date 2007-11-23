@@ -88,7 +88,10 @@ app-antivirus/kav4fileservers
 
 # Jakub Moc <jakub@gentoo.org> (12 Dec 2006)
 # cvs version should be masked
-=app-portage/rep-rebuild-9999
+# Jakub Moc <jakub@gentoo.org> (23 Nov 2007)
+# mask the whole thing as it really does not work
+# ATM and upstream activity ceased - see Bug 156736
+app-portage/rep-rebuild
 
 # Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
 # svn version should be masked
