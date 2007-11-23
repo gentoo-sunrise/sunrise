@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Nov 2007; Jakub Moc <jakub@gentoo.org> kstart-krenew-3.10.ebuild:
+  epatch and econf die on their own with a useful message
+
   18 Nov 2007; Oliver Borm (boroli) <oli.borm@web.de>
   +files/kstart-3.10-happy-tickets.patch, +metadata.xml,
   +kstart-krenew-3.10.ebuild:

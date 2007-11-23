@@ -24,14 +24,14 @@ src_unpack() {
 	unpack "${A}"
 	cd "${S}"
 
-	epatch "${FILESDIR}"/kstart-"${PV}"-happy-tickets.patch || die "could not configure"
+	epatch "${FILESDIR}"/kstart-"${PV}"-happy-tickets.patch
 }
 
 src_compile() {
 	econf \
 		$(use_enable krb4 k4start) \
 		$(use_with kerberos) \
-		$(use_with afs aklog /usr/bin/aklog) || die "could not configure"
+		$(use_with afs aklog /usr/bin/aklog)
 	emake || die "emake failed"
 }
 
