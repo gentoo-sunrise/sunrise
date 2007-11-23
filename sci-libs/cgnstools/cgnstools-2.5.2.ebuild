@@ -64,7 +64,8 @@ src_compile() {
 	fi
 
 	if use tk ; then
-		TKVER="$(echo 'puts [info tkversion]' | $(type -P wish))"
+		# no, there's no tkversion, and type -P wish requires running X
+		TKVER="$(echo 'puts [info tclversion]' | $(type -P tclsh))"
 		myconf="${myconf} $(use_with tk tk /usr/$(get_libdir)/tk${TKVER})"
 	fi
 
