@@ -48,13 +48,13 @@ if use sco_flowcontrol; then
 	UNIPATCH_LIST="${UNIPATCH_LIST} ${DISTDIR}/${SCO_FLOWCONTROL_SRC}.diff"
 fi
 UNIPATCH_LIST="${UNIPATCH_LIST}
-	${FILESDIR}/2.6.23/disk-protect-for-2.6.23.patch
+	'${FILESDIR}'/2.6.23/disk-protect-for-2.6.23.patch
 	${DISTDIR}/${THINKPAD_ACPI_SRC}
 	${DISTDIR}/${IEEE80211_SRC}
-	${FILESDIR}/2.6.23/input-unknown_keycodes-for-2.6.23.patch
-	${FILESDIR}/2.6.23/linux-phc-0.3.1-for-2.6.23.patch
+	'${FILESDIR}'/2.6.23/input-unknown_keycodes-for-2.6.23.patch
+	'${FILESDIR}'/2.6.23/linux-phc-0.3.1-for-2.6.23.patch
 	${DISTDIR}/${TUXONICE_SRC}.patch.bz2
-	${FILESDIR}/2.6.23/combined-2.6.23-cph.patch
+	'${FILESDIR}'/2.6.23/combined-2.6.23-cph.patch
 	${DISTDIR}/${HRT_SRC}.patch.bz2"
 
 
