@@ -30,7 +30,7 @@ src_install() {
 	dohtml usermanual/*
 
 	if use examples ; then
-		insinto /usr/share/"${PN}"/samples
+		insinto /usr/share/${PN}/samples
 		doins samples/*
 	fi
 }
