@@ -1,0 +1,12 @@
+--- tuxguardian-05-orginal/module/tg.h	2006-04-03 04:56:25.000000000 +0200
++++ tuxguardian-0.5/module/tg.h	2007-11-23 13:47:30.000000000 +0100
+@@ -24,8 +24,7 @@
+ #ifndef __HAS_TG_H
+ #define __HAS_TG_H
+ 
+-
+-#include <linux/config.h>
++#include <linux/autoconf.h>
+ #include <linux/module.h>
+ #include <linux/kernel.h>
+ #include <linux/init.h>

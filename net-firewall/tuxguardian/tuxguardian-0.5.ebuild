@@ -16,28 +16,24 @@ IUSE=""
 DEPEND="$(qt_min_version 3.1)"
 RDEPEND="${DEPEND}"
 
+CONFIG_CHECK="SECURITY SECURITY_CAPABILITIES"
+
 pkg_setup() {
 	linux-mod_pkg_setup
 	if kernel_is lt 2 6 12; then
 		die "${P} needs a kernel >=2.6.12!"
 	fi
-	if ! linux_chkconfig_present SECURITY; then
-		eerror "${P} needs \"different security models\" in kernel enabled (SECURITY=Y)"
-		eerror "AND Default Linux Capabilities build as module (SECURITY_CAPABILITIES=M)"
-		die "Kernel config not suitable"
-	fi
-	if ! linux_chkconfig_module SECURITY_CAPABILITIES; then
-		eerror "${P} needs \"Default Linux Capabilities\" build as module"
-		die "Kernel config not suitable"
-	fi
 	MODULE_NAMES="tuxg(extra:${S}/module)"
 	BUILD_PARAMS="KERNEL_SRC=${KERNEL_DIR}"
 }
+
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/Makefile-gentoo-0.5.patch
+	epatch "${FILESDIR}"/${P}-makefile.patch
+	kernel_is gt 2 6 18 && epatch "${FILESDIR}"/${P}-config.h.patch
 }
+
 src_compile() {
 	linux-mod_src_compile
 	emake DESTDIR="${D}" || die "emake failed"
