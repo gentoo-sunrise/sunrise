@@ -4,11 +4,9 @@
 
 inherit eutils
 
-MY_P="sqliteman-0.99"
-
-DESCRIPTION="simple but powerfull Sqlite3 GUI database manager"
+DESCRIPTION="Simple but powerfull Sqlite3 GUI database manager"
 HOMEPAGE="http://sqliteman.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P/_pre/-}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,8 +16,6 @@ RDEPEND=">=x11-libs/qt-4.2
 		>=dev-db/sqlite-3.0"
 DEPEND="${RDEPEND}
 		dev-util/cmake"
-
-S=${WORKDIR}/${MY_P}
 
 src_compile() {
 	if  ! built_with_use ">=x11-libs/qt-4.2" sqlite3; then
@@ -31,11 +27,11 @@ src_compile() {
 		-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 		-DCMAKE_C_FLAGS="${CFLAGS}" \
 		|| die "cmake failed"
-	emake || die "Compile Failed!"
+	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Install Failed!"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS README
 

@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Nov 2007; Tiziano Müller <dev-zero@gentoo.org> ++,
+  -sqliteman-0.99_pre20070509.ebuild:
+  Version bump.
+
   19 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
   sqliteman-0.99_pre20070509.ebuild:
   cosmetics
