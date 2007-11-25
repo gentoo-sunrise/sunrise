@@ -25,8 +25,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	AT_M4DIR="m4"
-	eautoreconf
+	AT_M4DIR="m4" eautoreconf
 }
 
 src_compile() {
@@ -38,8 +37,7 @@ src_compile() {
 		$(use_with postgres postgresql) \
 		$(use_with sqlite) \
 		--docdir=/usr/share/doc/${PF} \
-		--htmldir=/usr/share/doc/${PF}/html \
-		|| die "econf failed"
+		--htmldir=/usr/share/doc/${PF}/html
 	emake || die "emake failed"
 }
 
