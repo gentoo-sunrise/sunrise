@@ -1,0 +1,8 @@
+# ChangeLog for app-editors/celtx
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Nov 2007; Cillian de Róiste (goibhniu) <cillian.deroiste@gmail.com>
+  +metadata.xml, +celtx-0.9.9.6.ebuild:
+  New Ebuild for celtx, bug #123783, thanks to Rohan Visuvasam
+
