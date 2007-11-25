@@ -22,7 +22,7 @@ QT4_BUILT_WITH_USE_CHECK="sqlite3"
 S=${WORKDIR}/${PN}
 
 src_compile() {
-	eqmake4
+	eqmake4 ${MY_PN}.pro
 	emake || die "emake failed"
 }
 
