@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="afs kerberos krb4"
 
 DEPEND="afs? ( net-fs/openafs )
-	kerberos? ( app-crypt/mit-krb5 )"
+	kerberos? ( virtual/krb5 )"
 
 RDEPEND="${DEPEND}"
 
@@ -24,22 +24,23 @@ src_unpack() {
 	unpack "${A}"
 	cd "${S}"
 
-	epatch "${FILESDIR}"/kstart-"${PV}"-happy-tickets.patch
+	epatch "${FILESDIR}"/kstart-"${PV}"-happy-tickets.patch || die "could not configure"
 }
 
 src_compile() {
 	econf \
 		$(use_enable krb4 k4start) \
 		$(use_with kerberos) \
-		$(use_with afs aklog /usr/bin/aklog)
+		$(use_with afs aklog /usr/bin/aklog) || die "could not configure"
 	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "could not install"
 	dobin k5start krenew
 	if use krb4; then
 		dobin k4start
+		doman k4start.1
 	fi
+	doman k5start.1 krenew.1
 	dodoc README NEWS
 }

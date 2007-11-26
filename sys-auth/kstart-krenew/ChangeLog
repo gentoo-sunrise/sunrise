@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Nov 2007; Oliver Borm (boroli) oli.borm@web.de
+  kstart-krenew-3.10.ebuild:
+  Ebuild with heimdal support and man page installation, thanks to Roland
+  Hopferwieser.
+
   23 Nov 2007; Jakub Moc <jakub@gentoo.org> kstart-krenew-3.10.ebuild:
   epatch and econf die on their own with a useful message
 
