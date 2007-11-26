@@ -44,9 +44,15 @@ src_compile() {
 }
 
 src_install() {
-	dolib "${S}"/LINUX64/*.so
-	dobin "${S}"/LINUX64/hdf2adf
-	dobin "${S}"/LINUX64/adf2hdf
+	if use amd64 ; then
+		local machine=`${S}/cgsystem -64`
+	else
+		local machine=`${S}/cgsystem`
+	fi
+
+	dolib "${S}"/"${machine}"/*.so
+	dobin "${S}"/"${machine}"/hdf2adf
+	dobin "${S}"/"${machine}"/adf2hdf
 	insinto /usr/include
 	doins cgnslib.h cgnslib_f.h cgnswin_f.h
 }
