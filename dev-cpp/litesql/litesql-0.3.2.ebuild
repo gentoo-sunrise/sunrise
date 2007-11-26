@@ -6,7 +6,7 @@ WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 inherit autotools eutils
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="C++ library that integrates C++ objects tightly to relational database and thus provides an object persistence layer."
 HOMEPAGE="http://litesql.sourceforge.net/"
@@ -40,7 +40,7 @@ src_unpack() {
 	sed -i \
 		-e 's/docs//' \
 		-e 's/examples//' \
-		src/Makefile.am || die "sed failed"
+		Makefile.am || die "sed failed"
 
 	eautoreconf
 }
@@ -71,8 +71,8 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	if use examples ; then
-		rm "${S}/src/examples"/Makefile* "${S}/src/examples"/*.o
-		insinto /usr/share/${PN}
+		rm src/examples/Makefile* src/examples/*.o
+		insinto /usr/share/${PF}
 		doins -r src/examples
 	fi
 
