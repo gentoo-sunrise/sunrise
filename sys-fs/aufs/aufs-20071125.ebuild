@@ -6,7 +6,7 @@ inherit eutils linux-mod
 
 DESCRIPTION="An entirely re-designed and re-implemented Unionfs."
 HOMEPAGE="http://aufs.sourceforge.net/"
-SRC_URI="http://www.fh-kl.de/~torsten.kockler/gentoo/${P}.tar.bz2"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
