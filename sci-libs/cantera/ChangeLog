@@ -1,0 +1,8 @@
+# ChangeLog for sci-libs/cantera
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Nov 2007; Oliver Borm (boroli) oli.borm@web.de +metadata.xml,
+  +cantera-1.7.0.ebuild:
+  New ebuild for cantera from bug 200425.
+
