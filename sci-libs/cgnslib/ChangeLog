@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Nov 2007; Oliver Borm (boroli) oli.borm@web.de cgnslib-2.5.2.ebuild:
+  Added additional die commands to ebuild, thanks to Maxim Loginov.
+
   26 Nov 2007; Oliver Borm (boroli) oli.borm@web.de cgnslib-2.5.2.ebuild:
   Corrected some typos in the ebuild, thanks to Maxim Loginov.
 

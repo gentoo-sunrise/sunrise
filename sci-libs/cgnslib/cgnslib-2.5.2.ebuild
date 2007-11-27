@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit versionator
+inherit fortran versionator
 
 MY_P="${PN}_$(replace_version_separator 2 '-')"
 
@@ -21,11 +21,15 @@ RDEPEND="hdf5? ( sci-libs/hdf5 )
 DEPEND="${RDEPEND}"
 
 MY_S="${PN}_$(get_version_component_range 1-2)"
-S=${WORKDIR}/${MY_S}
+S="${WORKDIR}"/"${MY_S}"
 
 src_compile() {
-	sed -i -e "s| g77 | gfortran |" \
-	-e 's|-Wl,-rpath,$cgnsdir/\\$(SYSTEM)|-Wl,-soname,libcgns.so|' \
+	if use fortran ; then
+		need_fortran gfortran
+		sed -i -e "s| g77 | gfortran |" "${S}"/configure
+	fi
+
+	sed -i -e 's|-Wl,-rpath,$cgnsdir/\\$(SYSTEM)|-Wl,-soname,libcgns.so|' \
 	-e 's|-Wl,-R,$cgnsdir/\\$(SYSTEM)|-Wl,-soname,libcgns.so|' "${S}"/configure
 
 	sed -i -e "s|@STRIP@|true|" "${S}"/make.defs.in
@@ -50,9 +54,9 @@ src_install() {
 		local machine=`${S}/cgsystem`
 	fi
 
-	dolib "${S}"/"${machine}"/*.so
-	dobin "${S}"/"${machine}"/hdf2adf
-	dobin "${S}"/"${machine}"/adf2hdf
+	dolib "${S}"/"${machine}"/*.so || die "*.so install failed"
+	dobin "${S}"/"${machine}"/hdf2adf || die "hdf2adf install failed"
+	dobin "${S}"/"${machine}"/adf2hdf || die "adf2hdf install failed"
 	insinto /usr/include
 	doins cgnslib.h cgnslib_f.h cgnswin_f.h
 }
