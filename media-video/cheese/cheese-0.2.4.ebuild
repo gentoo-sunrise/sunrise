@@ -31,7 +31,6 @@ RDEPEND="dev-libs/dbus-glib
 	>=media-plugins/gst-plugins-ogg-0.10
 	>=media-plugins/gst-plugins-pango-0.10.12
 	>=media-plugins/gst-plugins-theora-0.10
-	>=media-plugins/gst-plugins-v4l-0.10
 	>=media-plugins/gst-plugins-v4l2-0.10
 	>=media-plugins/gst-plugins-vorbis-0.10
 	>=sys-apps/dbus-1

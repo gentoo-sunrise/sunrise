@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2007; Stefan Schweizer <genstef@gentoo.org> cheese-0.2.4.ebuild:
+  works without gstreamer v4l for me - only v4l2 is enough
+
   15 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -files/cheese-0.2.3-video-v4l.patch, -cheese-0.2.3.ebuild,
   +cheese-0.2.4.ebuild:
