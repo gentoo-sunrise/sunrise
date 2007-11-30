@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r15872"
+MY_JAR_REV="r16102"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
