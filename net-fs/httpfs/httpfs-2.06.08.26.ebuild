@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/${PN}/httpfs_with_static_binaries_${PV}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
