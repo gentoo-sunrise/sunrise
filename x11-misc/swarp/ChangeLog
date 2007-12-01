@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Dec 2007; Santiago M. Mola <coldwind@gentoo.org> swarp-0.1.ebuild:
+  Keyworded ~amd64.
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> swarp-9999.ebuild:
   Fix nonsensical KEYWORDS
 
