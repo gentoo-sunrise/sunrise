@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt3
 
 DESCRIPTION="A Modular, Open-Source whole genome assembler"
@@ -13,7 +14,7 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
 
-DEPEND="$(qt_min_version 3.3)"
+DEPEND=">=x11-libs/qt-3.3:3"
 RDEPEND="${DEPEND}
 	sci-biology/mummer"
 
