@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2007; Jakub Moc <jakub@gentoo.org> lsw-0.1.ebuild, lsw-9999.ebuild:
+  Add ~amd64 keyword
+
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> lsw-9999.ebuild:
   Fix nonsensical KEYWORDS
 
