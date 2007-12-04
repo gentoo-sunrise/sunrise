@@ -108,6 +108,8 @@ src_unpack() {
 
 	# Patch Makefiles to get rid of executable wrappers
 	epatch "${FILESDIR}/${PN}-makefile_nowrapper.patch"
+	# Patch for compiling issue against flac-1.2*
+	epatch "${FILESDIR}/${P}_flac-1.2_fix.patch"
 
 	# Set shared directory
 	sed -i \

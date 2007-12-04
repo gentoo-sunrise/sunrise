@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +files/vavoom-1.25_flac-1.2_fix.patch, vavoom-1.25.ebuild:
+  Added patch to fix compile failure with media-libs/flac-1.2*
+
   13 Oct 2007; Jakub Moc <jakub@gentoo.org> vavoom-1.25.ebuild,
   vavoom-9999.ebuild:
   Sanitize built_with_use checks so that we do not die too many times. Remove

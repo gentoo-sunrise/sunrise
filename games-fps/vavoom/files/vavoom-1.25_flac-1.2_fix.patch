@@ -1,0 +1,38 @@
+--- source/s_flac.cpp	2007/04/28 14:56:23	2210
++++ source/s_flac.cpp	2007/11/17 10:08:50	2809
+@@ -54,7 +54,7 @@
+ 	protected:
+ 		//	FLAC decoder callbacks.
+ 		::FLAC__StreamDecoderReadStatus read_callback(FLAC__byte buffer[],
+-			unsigned *bytes);
++			size_t *bytes);
+ 		::FLAC__StreamDecoderWriteStatus write_callback(
+ 			const ::FLAC__Frame *frame, const FLAC__int32 * const buffer[]);
+ 		void metadata_callback(const ::FLAC__StreamMetadata *metadata);
+@@ -92,7 +92,7 @@
+ 	protected:
+ 		//	FLAC decoder callbacks.
+ 		::FLAC__StreamDecoderReadStatus read_callback(FLAC__byte buffer[],
+-			unsigned *bytes);
++			size_t* bytes);
+ 		::FLAC__StreamDecoderWriteStatus write_callback(
+ 			const ::FLAC__Frame *frame, const FLAC__int32 * const buffer[]);
+ 		void metadata_callback(const ::FLAC__StreamMetadata *metadata);
+@@ -199,7 +199,7 @@
+ //==========================================================================
+ 
+ ::FLAC__StreamDecoderReadStatus VFlacSampleLoader::FStream::read_callback(
+-	FLAC__byte buffer[], unsigned* bytes)
++	FLAC__byte buffer[], size_t* bytes)
+ {
+ 	guard(VFlacSampleLoader::FStream::read_callback);
+ 	if (*bytes > 0)
+@@ -477,7 +477,7 @@
+ //==========================================================================
+ 
+ ::FLAC__StreamDecoderReadStatus VFlacAudioCodec::FStream::read_callback(
+-	FLAC__byte buffer[], unsigned* bytes)
++	FLAC__byte buffer[], size_t* bytes)
+ {
+ 	guard(VFlacAudioCodec::FStream::read_callback);
+ 	if (*bytes > 0)
