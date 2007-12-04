@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils games qt4
 
 MY_PN="PokerTH"
@@ -16,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="$(qt4_min_version 4.2.3)
+DEPEND=">=x11-libs/qt-4.2.3:4
 	>=dev-libs/boost-1.33
 	>=dev-libs/openssl-0.9.7
 	media-libs/libmikmod
