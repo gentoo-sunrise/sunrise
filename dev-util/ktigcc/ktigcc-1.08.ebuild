@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt3 eutils fdo-mime
 
 DESCRIPTION="An IDE for tigcc"
@@ -13,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="minimal"
 
-DEPEND="$(qt_min_version 3.3)
+DEPEND=">=x11-libs/qt-3.3:3
 	>=kde-base/kdelibs-3.5.7
 	dev-util/ctags
 	dev-util/pkgconfig
