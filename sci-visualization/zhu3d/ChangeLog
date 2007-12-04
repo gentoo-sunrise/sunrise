@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2007; Jakub Moc <jakub@gentoo.org> zhu3d-2.9.8.ebuild:
+  Switch to EAPI-1 and slotted deps
+
   04 Aug 2007; Jakub Moc <jakub@gentoo.org> +zhu3d-2.9.8.ebuild,
   -zhu3d-2.3.ebuild:
   Version bump; use eqmake4 and pkg_setup from qt4 eclass

@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils toolchain-funcs qt4
 
 KEYWORDS="~x86"
@@ -13,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND="$(qt4_min_version 4.0)
+DEPEND=">=x11-libs/qt-4.0:4
 		virtual/glu"
 RDEPEND="${DEPEND}"
 QT4_BUILT_WITH_USE_CHECK="opengl"
