@@ -1,0 +1,14 @@
+# ChangeLog for dev-util/fuzz
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Nov 2007; Jukka Ruohonen <drear@iki.fi> fuzz-0.6.ebuild:
+  Added ~amd64 keyword; compiles fine, runtime behavior tested.
+
+  10 Dec 2006; Jakub Moc <jakub@gentoo.org> fuzz-0.6.ebuild:
+  QA: Remove sys-libs/glibc dependency
+
+  22 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr> +fuzz-0.6.ebuild,
+  +files/fuzz-0.6-gentoo.diff, +metadata.xml:
+  New ebuild for bug 144749.
+

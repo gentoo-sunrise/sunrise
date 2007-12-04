@@ -2,13 +2,6 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  04 Dec 2007; Jakub Moc <jakub@gentoo.org> httpfs-2.06.08.26.ebuild:
-  Fix cross-compile
-
-  01 Dec 2007; Santiago M. Mola <coldwind@gentoo.org>
-  httpfs-2.06.08.26.ebuild:
-  Keyworded ~amd64.
-
   07 May 2007; Jack Kelly (hashendgame) <weldingmaskman@hotmail.com>
   httpfs-2.06.08.26.ebuild:
   Added explicit RDEPEND=${DEPEND}

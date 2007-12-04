@@ -1,0 +1,11 @@
+--- fuzz.c.orig	2000-08-09 17:48:26.000000000 +0300
++++ fuzz.c	2006-08-22 21:50:16.000000000 +0300
+@@ -812,7 +812,7 @@
+ 
+   execv(progname,arguments);
+   write(cpy_stderr,"Exec failed.\n",strlen("Exec failed.\n"));
+-  write(cpy_stderr,sys_errlist[errno],strlen(sys_errlist[errno]));
++  write(cpy_stderr,strerror(errno),strlen(strerror(errno)));
+   exit(CANT_FORK_EXIT);
+ }
+ 

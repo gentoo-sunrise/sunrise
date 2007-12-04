@@ -2,9 +2,6 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  01 Dec 2007; Erik Ekman (yarrick) <yarrick@kryo.se> +iodine-0.4.1.ebuild:
-  New version
-
   13 Aug 2007; Markus Ullmann <jokey@gentoo.org> -digest-iodine-0.4.0,
   iodine-0.4.0-r1, iodine-0.4.0:
   Drop old and fix IUSE
