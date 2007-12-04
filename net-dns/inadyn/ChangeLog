@@ -2,8 +2,8 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  06 Nov 2007; Antti Järvinen (netfiniitti) <netfiniitti@kapsi.fi> ++,
-  -inadyn-1.96.ebuild:
+  06 Nov 2007; Antti Järvinen (netfiniitti) <netfiniitti@kapsi.fi> -inadyn-1.96.ebuild,
+  +inadyn-1.96.2.ebuild:
   Version bump.
 
   19 Feb 2007; Chris Carlin (volkris) <carlin@jlab.org> +inadyn-1.96.ebuild,
