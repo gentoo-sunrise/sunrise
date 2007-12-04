@@ -1,0 +1,15 @@
+# ChangeLog for net-fs/httpfs
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Dec 2007; Jakub Moc <jakub@gentoo.org> httpfs-2.06.08.26.ebuild:
+  Add ~amd64 keyword, fix cross-compile
+
+  07 May 2007; Jack Kelly (hashendgame) <weldingmaskman@hotmail.com>
+  httpfs-2.06.08.26.ebuild:
+  Added explicit RDEPEND=${DEPEND}
+
+  06 May 2007; Jack Kelly (hashendgame) <weldingmaskman@hotmail.com>
+  +httpfs-2.06.08.26.ebuild, +metadata.xml:
+  New ebuild for bug 177376 thanks to 'ps'
+
