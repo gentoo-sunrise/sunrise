@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils linux-mod qt3
 
 DESCRIPTION="An application based firewall for Linux"
@@ -13,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="$(qt_min_version 3.1)"
+DEPEND=">=x11-libs/qt-3.1:3"
 RDEPEND="${DEPEND}"
 
 CONFIG_CHECK="SECURITY SECURITY_CAPABILITIES"
