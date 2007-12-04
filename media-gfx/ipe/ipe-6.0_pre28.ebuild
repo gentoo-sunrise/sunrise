@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt4 eutils
 
 MY_P="${P/_/}-patch1"
@@ -14,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="firefox"
 
-DEPEND="$(qt4_min_version 4.2)
+DEPEND=">=x11-libs/qt-4.2:4
 	>=media-libs/freetype-2.1.8"
 # The virtual/tetex dep is for pdfLaTeX and URW fonts.
 RDEPEND="${DEPEND}
