@@ -2,19 +2,8 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  20 Nov 2007; (Tommy[D]) tommy100@gmx.de ++, -freenet-0.7.1073.ebuild:
-  New upstream release
-
-  10 Nov 2007; (Tommy[D]) tommy100@gmx.de ++, -freenet-0.7.1071.ebuild:
-  New upstream release
-
-  10 Nov 2007; (Tommy[D]) tommy100@gmx.de ++, -freenet-0.7.1070.ebuild:
-  New upstream release
-
-  26 Oct 2007; (Tommy[D]) tommy100@gmx.de ++, -freenet-0.7.1069.ebuild:
-  New upstream release
-
-  24 Oct 2007; (Tommy[D]) tommy100@gmx.de ++, -freenet-0.7.1068.ebuild:
+  24 Oct 2007; (Tommy[D]) tommy100@gmx.de -freenet-0.7.1068.ebuild,
+  +freenet-0.7.1075.ebuild:
   New upstream release
 
   23 Oct 2007; (Tommy[D]) tommy100@gmx.de -freenet-0.7.1065.ebuild,
