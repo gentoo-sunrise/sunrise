@@ -1,65 +1,101 @@
-# ChangeLog for net-p2p/freenet
+# ChangeLog for net-p2p/freenet-bin
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  03 Dec 2007; (Tommy[D]) tommy100@gmx.de -freenet-0.7.1085.ebuild,
-  +freenet-0.7.1086.ebuild:
+  03 Dec 2007; (Tommy[D]) tommy100@gmx.de -freenet-bin-0.7.1085.ebuild,
+  +freenet-bin-0.7.1086.ebuild:
   New upstream release
 
-  27 Sep 2007; Dawid Węgliński <cla@gentoo.org> freenet-0.7.1065.ebuild:
-  Fix doins arguments and eerror message
+  10 Nov 2007; (Tommy[D]) tommy100@gmx.de +freenet-bin-0.7.1071.ebuild:
+  New upstream release with a workaround, please leave 1070 in tree
+
+  26 Oct 2007; (Tommy[D]) tommy100@gmx.de -freenet-bin-0.7.1069.ebuild,
+  +freenet-bin-0.7.1070.ebuild:
+  New upstream release
+
+  24 Oct 2007; (Tommy[D]) tommy100@gmx.de -freenet-bin-0.7.1068.ebuild,
+  +freenet-bin-0.7.1069.ebuild:
+  New upstream release
+
+  23 Oct 2007; (Tommy[D]) tommy100@gmx.de -freenet-bin-0.7.1065.ebuild,
+  +freenet-bin-0.7.1068.ebuild:
+  New upstream release
 
   26 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  -freenet-0.7.1064.ebuild, +freenet-0.7.1065.ebuild:
+  -freenet-bin-0.7.1064.ebuild, +freenet-bin-0.7.1065.ebuild:
   New upstream release
 
-  25 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  -freenet-0.7.1062.ebuild, +freenet-0.7.1064.ebuild:
-  New upstream release
-
-  14 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  -freenet-0.7.1061-r2.ebuild, +freenet-0.7.1062.ebuild:
+  24 Sep 2007; Tommy[D] <tommy100@gmx.de>
+  -freenet-bin-0.7.1062.ebuild, +freenet-bin-0.7.1064.ebuild:
   New upstream release
 
   14 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  -freenet-0.7.1061-r1.ebuild, +freenet-0.7.1061-r2.ebuild:
+  -freenet-bin-0.7.1061-r2.ebuild, +freenet-bin-0.7.1062.ebuild:
+  New upstream release
+
+  14 Sep 2007; Tommy[D] <tommy100@gmx.de>
+  -freenet-bin-0.7.1061-r1.ebuild, +freenet-bin-0.7.1061-r2.ebuild:
   Added wrapper init script, so login shell not longer needed
 
   14 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  freenet-0.7.1061-r1.ebuild:
-  Use eerror instead of error and delete useless groupdel
+  freenet-bin-0.7.1061-r1.ebuild:
+  Revert emerge command and delete useless groupdel
 
-  14 Sep 2007; Jakub Moc <jakub@gentoo.org> -freenet-0.7.1061.ebuild,
-  +freenet-0.7.1061-r1.ebuild
-  Revbump this and make users fix up the previous screw-up
+  14 Sep 2007; Tommy[D] <tommy100@gmx.de>
+  freenet-bin-0.7.1061-r1.ebuild:
+  Use eerror instead of error and change user command
 
-  14 Sep 2007; Jakub Moc <jakub@gentoo.org> freenet-0.7.1061.ebuild:
-  Use $RANDOM bash built-in instead of the dd hack.
-
-  14 Sep 2007; Jakub Moc <jakub@gentoo.org> freenet-0.7.1061.ebuild:
-  Remove useless restrict, clean up formatting
+  14 Sep 2007; Jakub Moc <jakub@gentoo.org> freenet-bin-0.7.1061.ebuild:
+  Remove useless RESTRICT; einfo -> elog; clean up formatting
 
   11 Sep 2007; Christian Faulhammer <opfer@gentoo.org>
-  freenet-0.7.1061.ebuild:
-  remove trailing whitespace
+  freenet-bin-0.7.1061.ebuild:
+  remove trailing whitespace and add some quotes around variables
 
   11 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  -freenet-0.7.1060-r1.ebuild, +freenet-0.7.1061.ebuild:
-  New Upstream release
-
-  10 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  -freenet-0.7.1060.ebuild, +freenet-0.7.1060-r1.ebuild:
-  Reformatted
-
-  10 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  -freenet-0.7.1058.ebuild, +freenet-0.7.1060.ebuild:
+  -freenet-bin-0.7.1060.ebuild, +freenet-bin-0.7.1061.ebuild:
   New upstream release
+
+  10 Sep 2007; Tommy[D] <tommy100@gmx.de>
+  -freenet-bin-0.7.1058.ebuild, +freenet-bin-0.7.1060.ebuild:
+  New upstream release
+
+  08 Sep 2007; Markus Ullmann <jokey@gentoo.org> freenet-bin-0.7.1058:
+  unbreak it again
+
+  08 Sep 2007; Markus Ullmann <jokey@gentoo.org>
+  -freenet-bin-0.7.1054.ebuild, -freenet-bin-0.7.1056.ebuild:
+  Drop old
+
+  08 Sep 2007; Markus Ullmann <jokey@gentoo.org> freenet-bin-0.7.1058:
+  Fix total crap (who reviewed this in our irc channel?)
 
   07 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  +freenet-0.7.1058.ebuild:
+  +freenet-bin-0.7.1058.ebuild:
   New upstream release
 
-  02 Sep 2007; Tommy[D] <tommy100@gmx.de>
-  +files/freenet.pem, +files/servers, +metadata.xml,
-  +freenet-0.7.1056.ebuild:
-  New source ebuild for bug 128783
+  24 Aug 2007; Tommy[D] <tommy100@gmx.de>
+  freenet-bin-0.7.1054.ebuild, +freenet-bin-0.7.1056.ebuild:
+  New upstream release
+
+  12 Aug 2007; Tommy[D] <tommy100@gmx.de>
+  -freenet-bin-0.7.1052.ebuild, -freenet-bin-0.7.1052-r1.ebuild,
+  freenet-bin-0.7.1054.ebuild:
+  Drop old ones for lack of source
+
+  12 Aug 2007; Tommy[D] <tommy100@gmx.de>
+  freenet-bin-0.7.1054.ebuild:
+  given freenet user a needed shell
+
+  11 Aug 2007; Tommy[D] <tommy100@gmx.de>
+  +freenet-bin-0.7.1054.ebuild:
+  New upstream release
+
+  10 Aug 2007; Tommy[D] <tommy100@gmx.de>
+  +freenet-bin-0.7.1052-r1.ebuild:
+  added ~amd64-keyword and change for collision-protect
+
+  09 Aug 2007; Tommy[D] <tommy100@gmx.de> +metadata.xml,
+  +freenet-bin-0.7.1052.ebuild:
+  New ebuild for bug 128783 thanks to people at #gentoo-sunrise
+
