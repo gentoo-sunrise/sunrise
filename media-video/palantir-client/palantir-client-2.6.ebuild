@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils qt3
 
 MY_PN=${PN/-client/}
@@ -17,7 +18,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="$(qt_min_version 3.3)"
+DEPEND=">=x11-libs/qt-3.3:3"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}/clients/qt
