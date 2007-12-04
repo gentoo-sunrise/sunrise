@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt3
 
 DESCRIPTION="Media Tag Tools - a mp3/ogg/flac tagger"
@@ -13,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="$(qt_min_version 3)
+DEPEND=">=x11-libs/qt-3:3
 	>=media-libs/taglib-1.4"
 RDEPEND="${DEPEND}"
 
