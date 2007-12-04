@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2007; Jakub Moc <jakub@gentoo.org> japanese-vocabulary-0.6.ebuild:
+  Switch to EAPI-1 and slotted deps
+
   25 Nov 2007; Kyle Cavin (kcavin) <kyle.cavin@gmail.com>
   japanese-vocabulary-0.6.ebuild:
   corrected .pro filename in call to qmake
