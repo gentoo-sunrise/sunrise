@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2007; Jakub Moc <jakub@gentoo.org> flyhard-0.3.ebuild:
+  Add ~amd64 keyword
+
   15 Jan 2007; Santiago M. Mola <cooldwind@gmail.com> +flyhard-0.3.ebuild,
   +metadata.xml:
   Initial ebuild for bug #162240
