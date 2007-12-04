@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt4
 
 DESCRIPTION="Homebrewer's recipe calculator"
@@ -13,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="$(qt4_min_version 4.1)"
+DEPEND=">=x11-libs/qt-4.1:4"
 RDEPEND="${DEPEND}"
 
 src_compile() {
