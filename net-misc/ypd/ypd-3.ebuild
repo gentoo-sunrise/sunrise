@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="split tcp requests of different type to different servers"
-HOMEPAGE="http://ypd.berlios.de"
+HOMEPAGE="http://ypd.berlios.de/"
 SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"

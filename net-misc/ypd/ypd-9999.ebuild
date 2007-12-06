@@ -5,7 +5,7 @@
 inherit git
 
 DESCRIPTION="split tcp requests of different type to different servers"
-HOMEPAGE="http://ypd.berlios.de"
+HOMEPAGE="http://ypd.berlios.de/"
 SRC_URI=""
 EGIT_REPO_URI="git://repo.or.cz/ypd.git"
 

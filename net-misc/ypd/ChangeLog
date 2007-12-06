@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Dec 2007; Christian Faulhammer <opfer@gentoo.org> ypd-3.ebuild,
+  ypd-9999.ebuild:
+  add trailing slash to HOMEPAGE
+
   06 Dec 2007; Felix Bechstein (flx\) <f@ub0r.de> ++, files/ypd.conf,
   files/ypd.rc, -ypd-2.ebuild:
   bump
