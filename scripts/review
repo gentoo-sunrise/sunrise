@@ -4,13 +4,13 @@
 
 source /etc/init.d/functions.sh
 
-BLUE=$BRACKET
+BLUE=$'\033[34;01m'
 BOLD=$'\e[0;01m'
 DARKGREEN=$'\e[32m'
-GREEN=$GOOD
+GREEN=$'\e[32;01m'
 LIGHTBLUE=$HILITE
-RED=$BAD
-YELLOW=$WARN
+RED=$'\033[31;01m'
+YELLOW=$'\033[33;01m'
 opt_norepoman=0
 opt_noupdate=0
 opt_quiet=0
