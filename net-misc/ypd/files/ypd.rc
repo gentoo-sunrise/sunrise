@@ -5,6 +5,12 @@
 
 start(){
 	ebegin "Starting ypd"
+	export YPD_PORT
+	export YPD_HOST
+	export YPD_PORT_HTTPS
+	export YPD_PORT_SSH
+	export YPD_PORT_HSTOP3G
+
 	start-stop-daemon --start --background --make-pidfile --pidfile /var/run/ypd.pid  --quiet --exec /usr/bin/ypd
 	eend $?
 }

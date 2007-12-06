@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Dec 2007; Felix Bechstein (flx\) <f@ub0r.de> ++, files/ypd.conf,
+  files/ypd.rc, -ypd-2.ebuild:
+  bump
+
   05 Nov 2007; Christian Faulhammer <opfer@gentoo.org> -ypd-1.ebuild:
   remove old version
 
