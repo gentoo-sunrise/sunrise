@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI="1"
+inherit cmake-utils
 
 DESCRIPTION="GUI frontend to the Subversion revision system"
 HOMEPAGE="http://ar.oszine.de/projects/qsvn/"
@@ -18,33 +19,19 @@ RDEPEND="x11-libs/qt:4
 DEPEND="${DEPEND}
 	>=dev-util/cmake-2.4.0"
 
+S="${WORKDIR}/${P}/src"
+
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	sed -i -e 's/qmake-qt4/qmake/' src/CMakeLists.txt
-	sed -i -e 's/moc-qt4/moc/' src/CMakeLists.txt
-	sed -i -e 's/uic-qt4/uic/' src/CMakeLists.txt
-	sed -i -e 's/QT_INCLUDES/QT4_INCLUDES/' src/CMakeLists.txt
-}
-
-src_compile() {
-	local mycmakeargs
-	if use debug ; then
-		mycmakeargs='-D CMAKE_BUILD_TYPE="Debug"'
-	else
-		mycmakeargs='-D CMAKE_BUILD_TYPE="Release"'
-	fi
-	cd "${S}"
-	mkdir build
-	cd build
-	cmake "${mycmakeargs}" -D CMAKE_INSTALL_PREFIX="/usr" ../src || die "cmake failed"
-	emake || die "emake failed"
+	sed -i -e 's/qmake-qt4/qmake/' \
+		-e 's/moc-qt4/moc/' \
+		-e 's/uic-qt4/uic/' \
+		-e 's/QT_INCLUDES/QT4_INCLUDES/' CMakeLists.txt || die "sed failed"
 }
 
 src_install() {
-	cd build
-
-	emake DESTDIR="${D}" install || die "install failed"
-	dodoc ../ChangeLog
+	cmake-utils_src_install
+	dodoc ../{ChangeLog,README}
 }
