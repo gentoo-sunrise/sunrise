@@ -40,7 +40,7 @@ src_unpack() {
 src_install() {
 	dobin usr/bin/asoundconf
 	doman usr/share/man/man1/asoundconf.1.gz
-	
+
 	if use gtk ; then
 		cd gtk
 		dobin usr/bin/asoundconf-gtk
