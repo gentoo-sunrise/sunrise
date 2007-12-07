@@ -19,7 +19,7 @@ IUSE="gtk"
 
 RDEPEND="virtual/python
 	>=media-sound/alsa-utils-1.0.14
-	gtk? ( dev-python/pygtk 
+	gtk? ( dev-python/pygtk
 		x11-themes/gnome-icon-theme )" # needed for .desktop file
 
 S="${WORKDIR}"
