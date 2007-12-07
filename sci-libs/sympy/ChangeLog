@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2007; Thomas Pani (thpani) <thomas.pani@gmail.com>
+  +sympy-0.5.8.ebuild:
+  bump to 0.5.8
+
   23 Sep 2007; Thomas Pani (thpani) <thomas.pani@gmail.com> +metadata.xml,
   +sympy-0.5.3.ebuild:
   New Ebuild for bug 192785. Thanks to shillelagh and helch on #gentoo-sunrise
