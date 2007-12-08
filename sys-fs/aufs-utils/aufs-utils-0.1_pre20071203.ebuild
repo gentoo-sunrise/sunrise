@@ -11,7 +11,7 @@ SRC_URI=""
 ECVS_SERVER="aufs.cvs.sourceforge.net:/cvsroot/aufs"
 ECVS_MODULE="aufs"
 CVS_DATE="${PV/0.1_pre/}"
-ECVS_CO_OPTS="-D$CVS_DATE"
+ECVS_CO_OPTS="-D${CVS_DATE}"
 ECVS_UP_OPTS="-D${CVS_DATE} ${ECVS_UP_OPTS}"
 
 LICENSE="GPL-2"
