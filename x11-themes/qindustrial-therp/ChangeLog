@@ -1,0 +1,8 @@
+# ChangeLog for x11-themes/qindustrial-therp
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Dec 2007; Federico Ferri (federico__) <mescalinum@gmail.com>
+  +metadata.xml, +qindustrial-therp-0.0.2.ebuild:
+  New ebuild for bug 201704
+
