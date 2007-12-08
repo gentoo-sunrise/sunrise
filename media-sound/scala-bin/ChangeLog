@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/scala-bin
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Dec 2007; Jakub Moc <jakub@gentoo.org> +files/scala-bin.png,
+  +metadata.xml, +scala-bin-2.2.ebuild:
+  New ebuild, written by myself
+
