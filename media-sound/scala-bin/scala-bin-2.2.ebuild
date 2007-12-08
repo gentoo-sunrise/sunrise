@@ -21,7 +21,7 @@ RDEPEND="=virtual/gnat-4.1*
 	midi? ( media-sound/playmidi )"
 DEPEND=""
 
-RESTRICT="mirror strip"
+RESTRICT="mirror strip test"
 S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
