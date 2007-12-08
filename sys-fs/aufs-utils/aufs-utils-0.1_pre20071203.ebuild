@@ -7,27 +7,23 @@ inherit eutils cvs
 DESCRIPTION="Userspace utilities for aufs."
 HOMEPAGE="http://aufs.sourceforge.net/"
 SRC_URI=""
+
 ECVS_SERVER="aufs.cvs.sourceforge.net:/cvsroot/aufs"
 ECVS_MODULE="aufs"
+CVS_DATE="${PV/0.1_pre/}"
+ECVS_CO_OPTS="-D$CVS_DATE"
+ECVS_UP_OPTS="-D${CVS_DATE} ${ECVS_UP_OPTS}"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-S=${WORKDIR}/aufs
-
-src_unpack() {
-	CVS_DATE="$(echo $PV | sed -e 's/0.1_pre//g')"
-	ECVS_CO_OPTS="-D$CVS_DATE"
-	ECVS_UP_OPTS="-D$CVS_DATE -dP"
-	cvs_src_unpack
-}
+S="${WORKDIR}/aufs"
 
 src_compile() {
-	echo ${PV}
 	emake -j1 -f local.mk aufs.5 mount.aufs auplink aulchown umount.aufs \
-	|| die "emake failed"
+		|| die "emake failed"
 }
 
 src_install() {
