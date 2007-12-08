@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2007; Jakub Moc <jakub@gentoo.org> -sympy-0.5.3.ebuild:
+  Nuke old
+
   07 Dec 2007; Thomas Pani (thpani) <thomas.pani@gmail.com>
   +sympy-0.5.8.ebuild:
   bump to 0.5.8
