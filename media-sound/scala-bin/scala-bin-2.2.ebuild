@@ -42,7 +42,7 @@ src_install() {
 
 	insinto /opt/${PN}
 	doins *.{clv,gif,htm,html,kbm,par,scl,seq} scala.{ini,ico} scalarc || die "doins failed"
-	
+
 	exeinto /opt/${PN}/cmd
 	doexe cmd/* || die "doexe failed"
 	exeinto /opt/${PN}
@@ -75,7 +75,7 @@ pkg_postinst() {
 pkg_postrm() {
 	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
-	
+
 	if [[ -d ${ROOT}/opt/${PN}/scl ]] ; then
 		elog "Seems that you have installed custom scales to ${ROOT}/opt/${PN}/scl"
 		elog "You will have to delete this directory manually."
