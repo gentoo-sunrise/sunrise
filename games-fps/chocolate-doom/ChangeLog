@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +chocolate-doom-1.0.0.ebuild:
+  New stable version from upstream. Time to frag some imp! 8)
+
   18 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   chocolate-doom-9999.ebuild:
   Updated ESVN_REPO_URI (like explained in Sourceforge instructions)
