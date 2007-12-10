@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2007; Russell Harmon (eatnumber1) <eatnumber1@gmail.com>
+  +aufs-utils-0.1_pre20071210.ebuild:
+  Updated aufs ebuild to 20071210.
+
   08 Dec 2007; Jakub Moc <jakub@gentoo.org>
   aufs-utils-0.1_pre20071203.ebuild:
   Use bash substitution instead of sed; fix cvs eclass usage
