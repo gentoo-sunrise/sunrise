@@ -5,14 +5,12 @@
 EAPI="1"
 inherit eutils qt4 toolchain-funcs
 
-KEYWORDS="~x86"
-
-MY_P=QDevelop-${PV}-1
-
 DESCRIPTION="A development environment entirely dedicated to Qt4."
 HOMEPAGE="http://qdevelop.org/"
-SRC_URI="http://qdevelop.org/download/${MY_P}.zip"
+SRC_URI="http://qdevelop.free.fr/download/${PN}_${PV}.zip"
+
 LICENSE="GPL-2"
+KEYWORDS="~x86"
 SLOT="0"
 IUSE=""
 
@@ -21,10 +19,9 @@ DEPEND="app-arch/unzip
 		${RDEPEND}"
 
 QT4_BUILT_WITH_USE_CHECK="sqlite3"
-S=${WORKDIR}/${MY_P}
 
 src_compile() {
-	eqmake4
+	eqmake4 QDevelop.pro
 	emake CXX=$(tc-getCXX) || die "emake failed"
 }
 
