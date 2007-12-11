@@ -44,7 +44,6 @@ src_install() {
 	insinto /usr/share/zattoo_player
 	doins -r usr/share/zattoo_player/*
 	domenu usr/share/applications/zattoo_player.desktop
-	doenvd "${FILESDIR}"/77zattoo-bin
 
 	dosym /usr/lib/xulrunner/libgtkembedmoz.so /usr/lib/zattoo/libgtkembedmoz.so.0d
 	dosym /usr/lib/xulrunner/libmozjs.so /usr/lib/zattoo/libmozjs.so.0d
