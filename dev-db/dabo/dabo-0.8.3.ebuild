@@ -6,7 +6,7 @@ inherit distutils multilib
 
 DESCRIPTION="A 3-tier, cross-platform application development framework written in Python atop the wxPython GUI toolkit"
 HOMEPAGE="http://dabodev.com/"
-SRC_URI="ftp://dabodev.com/dabo/${P}-mac-nix.tar.gz"
+SRC_URI="ftp://dabodev.com/dabo/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
