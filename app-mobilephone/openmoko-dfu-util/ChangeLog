@@ -4,6 +4,10 @@
 
   14 Dec 2007; Christian Faulhammer <opfer@gentoo.org>
   openmoko-dfu-util-9999.ebuild:
+  correct leading spaces, watch your repoman output
+
+  14 Dec 2007; Christian Faulhammer <opfer@gentoo.org>
+  openmoko-dfu-util-9999.ebuild:
   no need to install COPYING file
 
   11 Dec 2007; Mikael Lammentausta <mikael.lammentausta at gmail.com >

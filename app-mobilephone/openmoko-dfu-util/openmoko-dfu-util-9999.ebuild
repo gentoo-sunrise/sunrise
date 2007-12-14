@@ -17,11 +17,11 @@ DEPEND="dev-libs/libusb"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-  eautoreconf || die "eautoreconf failed"
-  econf prefix=/usr || die "Configure failed"
-  emake || die "Make failed"
+	eautoreconf || die "eautoreconf failed"
+	econf prefix=/usr || die "Configure failed"
+	emake || die "Make failed"
 }
 
 src_install() {
-  emake DESTDIR="${D}" install || die "Make install failed"
+	emake DESTDIR="${D}" install || die "Make install failed"
 }
