@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Christian Faulhammer <opfer@gentoo.org> (14 Dec 2007)
+# SVN ebuilds need to be masked
+~app-mobilephone/openmoko-dfu-util-9999
+
 # Jakub Moc <jakub@gentoo.org> (09 Nov 2007)
 # This is unsupported in any way, use at your own risk!
 sys-kernel/thinkpad-sources
