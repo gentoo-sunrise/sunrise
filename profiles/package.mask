@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Tommy[D] <tommy100@gmx.de> (14 Dez 2007)
+# untested (cant compile myself)
+# version bump was on user request for kernel >=2.6.22
+=sys-fs/aufs-20071125
+
 # Christian Faulhammer <opfer@gentoo.org> (14 Dec 2007)
 # SVN ebuilds need to be masked
 ~app-mobilephone/openmoko-dfu-util-9999
