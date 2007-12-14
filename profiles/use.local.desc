@@ -9,7 +9,6 @@
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/collectd:hddtemp - Enable monitoring of disk temperatures (app-admin/hddtemp)
-app-admin/pwsafe:suid - Enable suid root binary
 app-admin/vlogger:dbi - enable support for DBI
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
@@ -17,7 +16,6 @@ app-dicts/ktranslator:ocr - Enable GOCR support
 app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/ccpublisher:zope - Install zope stuff
 app-misc/emelfm2:fam - Use FAM for file-change monitoring
-app-misc/emelfm2:unicode - Forces conversion of filenames to Unicode
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
@@ -29,7 +27,6 @@ dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-games/opal:double-precision - more precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
 dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
-dev-util/ktigcc:minimal - Do not install completion data for the TIGCCLIB system headers
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 games-fps/chocolate-doom:server - Enable installation of server
