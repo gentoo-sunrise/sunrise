@@ -27,5 +27,5 @@ src_compile() {
 
 src_install() {
 	dodoc ChangeLog.txt README.txt
-	dobin bin/QDevelop
+	dobin bin/qdevelop
 }
