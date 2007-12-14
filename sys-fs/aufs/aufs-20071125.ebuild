@@ -11,35 +11,11 @@ SRC_URI="http://dev.gentooexperimental.org/~tommy/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="hinotify ksize nfs nfsexport"
+IUSE="hinotify nfsexport"
 
 MODULE_NAMES="aufs(addon/fs/${PN}:)"
 BUILD_PARAMS="KDIR=${KV_DIR} -f local.mk"
 BUILD_TARGETS="all"
-
-check_patch() {
-	get_version
-
-	# Check if ksize Patch has to be applied
-	if use ksize ; then
-		APPLY_KSIZE_PATCH="n"
-		# If ksize patch is not applied
-		if ! grep -qs "EXPORT_SYMBOL(ksize);" "${KV_DIR}/mm/slab.c" ; then
-			APPLY_KSIZE_PATCH="y"
-		fi
-	fi
-
-	# Check if lhash Patch has to be applied
-	if use nfs && kernel_is ge 2 6 19 ; then
-		APPLY_LHASH_PATCH="n"
-		# If lhash patch is not applied
-		if ! grep -qs "EXPORT_SYMBOL(__lookup_hash);" "${KV_DIR}/fs/namei.c" \
-		&& ! grep -qs "struct dentry * __lookup_hash(struct qstr *name, struct dentry
-		* base, struct nameidata *nd);" "${KV_DIR}/fs/namei.h" ; then
-			APPLY_LHASH_PATCH="y"
-		fi
-	fi
-}
 
 pkg_setup() {
 	# kernel version check
@@ -49,40 +25,12 @@ pkg_setup() {
 		die "Wrong kernel version"
 	fi
 
-	check_patch
-
-	# If a patch has to be applied
-	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] || [[ ${APPLY_LHASH_PATCH} == "y" ]] ; then
-		ewarn "Patching your kernel..."
-		cd ${KV_DIR}
-	fi
-
-	# If the ksize patch has to be applied
-	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] ; then
-		epatch "${FILESDIR}"/${P}-ksize.patch
-	fi
-
-	# If the lhash patch has to be applied
-	if [[ ${APPLY_LHASH_PATCH} == "y" ]] ; then
-		epatch "${FILESDIR}"/${P}-lhash.patch
-	fi
-
 	linux-mod_pkg_setup
 }
 
 src_unpack(){
 	unpack ${A}
 	cd "${S}"
-
-	# Enable ksize Patch in priv_def.mk
-	if use ksize ; then
-		echo "CONFIG_AUFS_KSIZE_PATCH = y" >> priv_def.mk || die "setting ksize in priv_def.mk failed!"
-	fi
-
-	# Enable lhash Patch in priv_def.mk
-	if use nfs && kernel_is ge 2 6 19 ; then
-		echo "CONFIG_AUFS_LHASH_PATCH = y" >> priv_def.mk || die "setting lhash in priv_def.mk failed!"
-	fi
 
 	# Enable hinotify in priv_def.mk
 	if use hinotify && kernel_is ge 2 6 18 ; then
@@ -119,13 +67,6 @@ pkg_postinst() {
 	elog "To be able to use aufs, you have to load the kernel module by typing:"
 	elog "modprobe aufs"
 	elog "For further information refer to the aufs man page"
-
-	# Tell the user to recompile his kernel
-	if [[ ${APPLY_KSIZE_PATCH} == "y" ]] || [[ ${APPLY_LHASH_PATCH} == "y" ]] ; then
-		echo
-		ewarn "Remember to re-compile your kernel to make the patch(es) work"
-		ewarn
-	fi
 
 	linux-mod_pkg_postinst
 }
