@@ -24,5 +24,4 @@ src_compile() {
 
 src_install() {
   emake DESTDIR="${D}" install || die "Make install failed"
-  dodoc COPYING
 }

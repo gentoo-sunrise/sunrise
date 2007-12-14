@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Dec 2007; Christian Faulhammer <opfer@gentoo.org>
+  openmoko-dfu-util-9999.ebuild:
+  no need to install COPYING file
+
   11 Dec 2007; Mikael Lammentausta <mikael.lammentausta at gmail.com >
   +metadata.xml:
   Ebuild for dfu-util, bug #201920
