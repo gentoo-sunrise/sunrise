@@ -10,18 +10,17 @@ ESVN_REPO_URI="http://svn.openmoko.org/trunk/src/host/dfu-util/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="dev-libs/libusb"
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	eautoreconf || die "eautoreconf failed"
-	econf prefix=/usr || die "Configure failed"
-	emake || die "Make failed"
+src_unpack() {
+	subversion_src_unpack
+	eautoreconf
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 }
