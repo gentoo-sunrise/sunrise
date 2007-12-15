@@ -18,4 +18,3 @@ KEYWORDS="~x86 ~amd64"
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
 }
-
