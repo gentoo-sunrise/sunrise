@@ -7,10 +7,7 @@ inherit eutils versionator
 MY_PV="$(get_version_component_range 3)"
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
-SRC_URI="http://downloads.freenetproject.org/alpha/installer/${PN}07.tar.gz
-	http://downloads.freenetproject.org/alpha/update/update.sh
-	http://downloads.freenetproject.org/alpha/update/wrapper.conf
-	http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_PV}.tar.bz2"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -31,12 +28,6 @@ pkg_setup() {
 	enewuser freenet -1 -1 /opt/freenet freenet
 }
 
-src_unpack() {
-	unpack ${PN}07.tar.gz
-	cd "${S}"
-	unpack ${PN}-sources-v${MY_PV}.tar.bz2
-}
-
 src_compile() {
 	cd contrib
 	mkdir -p bdb/examples
@@ -47,11 +38,6 @@ src_compile() {
 	mkdir -p lib
 	cp "${S}"/contrib/freenet_ext/freenet-ext.jar lib/
 	ant || die "freenet-stable-latest failed"
-
-	sed -i -e 's:./bin/wrapper:/opt/freenet/bin/wrapper:g' \
-		-e 's:./wrapper.conf:/opt/freenet/wrapper.conf:g' \
-		-e 's:PIDDIR=".":PIDDIR="/opt/freenet/":g' \
-		-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' "${S}"/run.sh || die "sed failed"
 }
 
 src_install() {

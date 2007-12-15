@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r16228"
+MY_JAR_REV="r16458"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
@@ -54,11 +54,11 @@ src_install() {
 	doinitd "${FILESDIR}"/freenet
 
 	insinto /opt/freenet
-	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}"
-	doins "${DISTDIR}/update.sh" "${DISTDIR}/wrapper.conf"
-	doins -r update.sh run.sh bin lib
+	into /opt/freenet
+	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}" update.sh wrapper.conf run.sh
+	dobin bin/wrapper-linux-x86-{32,64}
+	dolib.so lib/libwrapper-linux-x86-{32,64}.so
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
-	fperms 755 /opt/freenet/bin/wrapper-linux-x86-{32,64}
 	fperms 755 /opt/freenet/{update,run}.sh
 	fowners -R freenet:freenet /opt/freenet/
 }
