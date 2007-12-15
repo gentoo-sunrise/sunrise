@@ -17,7 +17,6 @@ RDEPEND=">=x11-libs/qt-4.2
 DEPEND="${RDEPEND}
 		dev-util/cmake"
 
-
 pkg_setup() {
 	if  ! built_with_use ">=x11-libs/qt-4.2" sqlite3; then
 		eerror "sqliteman requires x11-libs/qt-4 compiled with sqlite3 support"
