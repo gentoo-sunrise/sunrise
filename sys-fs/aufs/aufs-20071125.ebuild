@@ -70,22 +70,3 @@ pkg_postinst() {
 
 	linux-mod_pkg_postinst
 }
-
-pkg_prerm() {
-	built_with_use -o =${CATEGORY}/${PF} ksize nfs && DO_CHECK="y"
-}
-
-pkg_postrm() {
-	# Tell the user that his kernel has already been patched
-	if [[ DO_CHECK == "y" ]] ; then
-		check_patch
-		if [[ ${APPLY_KSIZE_PATCH} == "n" ]] || [[ ${APPLY_LHASH_PATCH} == "n" ]] ; then
-			ewarn "Your kernel has been patched previously by this ebuild."
-			ewarn "You can undo the patches by executing the following:"
-			echo
-			ewarn "cd ${KV_DIR}; make mrproper, re-emerge and re-compile your kernel - ${KV_FULL}"
-		fi
-	fi
-
-	linux-mod_pkg_postrm
-}
