@@ -41,7 +41,6 @@ src_compile() {
 	emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" || die "Build failed"
 }
 
-
 src_install() {
 	# create openGLIGCexplorer data dirs
 	keepdir /usr/share/${PN}/data/map
@@ -53,7 +52,7 @@ src_install() {
 	dobin GPLIGC/{GPLIGC.pl,gpsp2igc.pl} \
 		openGLIGCexplorer/{openGLIGCexplorer,createworld,etopo2merger,optimizer}
 
-	# install perl modules and icons/pics and example configuration    
+	# install perl modules and icons/pics and example configuration
 	insinto /usr/share/${PN}
 	doins GPLIGC/{GPLIGCfunctions.pm,GPLIGCwaypoints.pm,gpligc.xbm,icon.png,logo.jpg,logos.gif,logos.jpg} \
 		openGLIGCexplorer/.openGLIGCexplorerrc
