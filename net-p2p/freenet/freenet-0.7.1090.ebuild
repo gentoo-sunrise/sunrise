@@ -60,3 +60,10 @@ pkg_postinst () {
 	elog "2. Open localhost:8888 in your browser for the web interface."
 	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/*
 }
+
+pkg_postrm() {
+	elog "If you dont want to use freenet any more"
+	elog "and dont want to keep your identity/other stuff"
+	elog "remember to do 'rm -rf /opt/freenet' do remove everything"
+}
+

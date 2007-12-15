@@ -10,8 +10,6 @@ MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://downloads.freenetproject.org/alpha/installer/freenet07.tar.gz
-	http://downloads.freenetproject.org/alpha/update/update.sh
-	http://downloads.freenetproject.org/alpha/update/wrapper.conf
 	http://downloads.freenetproject.org/alpha/${MY_JAR_FILE}
 	http://downloads.freenetproject.org/alpha/freenet-ext.jar"
 
@@ -66,8 +64,6 @@ src_install() {
 pkg_postinst () {
 	elog "1. Start freenet with /etc/init.d/freenet start"
 	elog "2. Open localhost:8888 in your browser for the web interface."
-	elog "3. After uninstalling freenet delete /opt/freenet manually (unless you want to keep it for a later reinstall)"
-	elog "   as freenet creates some extra stuff not deleted by portage"
 
 	if (diff /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar >/dev/null 2>&1) ; then
 		:;
@@ -76,3 +72,10 @@ pkg_postinst () {
 		chown freenet:freenet /opt/freenet/*jar
 	fi
 }
+
+pkg_postrm() {
+	elog "If you dont want to use freenet any more"
+	elog "and dont want to keep your identity/other stuff"
+	elog "remember to do 'rm -rf /opt/freenet' do remove everything"
+}
+
