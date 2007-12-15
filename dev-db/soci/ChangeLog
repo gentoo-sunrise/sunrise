@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Dec 2007; Tiziano Müller <dev-zero@gentoo.org>
+  +files/soci-2.2.0-sqlite_fix.patch, soci-2.2.0.ebuild:
+  Added patch to fix compilation problems with sqlite >=3.3.10 (thanks to
+  Nicolas Vigier, upstream-bug #1712232)
+
   07 Dec 2006; Tiziano Müller <dev-zero@gentoo.org> -soci-2.1.0.ebuild,
   +soci-2.2.0.ebuild:
   Version bump. Adjusted to new build system.

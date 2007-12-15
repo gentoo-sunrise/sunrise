@@ -1,0 +1,13 @@
+diff -ru soci-2.2.0/src/backends/sqlite3/statement.cpp soci-2.2.0.new/src/backends/sqlite3/statement.cpp
+--- soci-2.2.0/src/backends/sqlite3/statement.cpp	2006-11-08 15:01:51.000000000 +0100
++++ soci-2.2.0.new/src/backends/sqlite3/statement.cpp	2007-05-03 19:55:25.000000000 +0200
+@@ -183,6 +183,9 @@
+ StatementBackEnd::execFetchResult 
+ Sqlite3StatementBackEnd::bindAndExecute(int number)
+ {
++#if (SQLITE_VERSION_NUMBER > 3003009)
++    using sqlite_api::sqlite3_destructor_type;
++#endif
+     StatementBackEnd::execFetchResult retVal = eNoData;
+ 
+     int rows = static_cast<int>(useData_.size());

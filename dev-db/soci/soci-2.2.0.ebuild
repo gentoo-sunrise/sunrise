@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="A database access library for C++ that makes the illusion of embedding SQL queries in the regular C++ code."
@@ -17,6 +19,12 @@ RDEPEND="firebird? ( dev-db/firebird )
 		sqlite3? ( =dev-db/sqlite-3* )"
 DEPEND="${RDEPEND}
 		sys-devel/libtool"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-sqlite_fix.patch"
+}
 
 src_compile() {
 	local myconf
