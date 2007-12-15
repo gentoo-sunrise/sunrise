@@ -64,6 +64,6 @@ pkg_postinst () {
 pkg_postrm() {
 	elog "If you dont want to use freenet any more"
 	elog "and dont want to keep your identity/other stuff"
-	elog "remember to do 'rm -rf /opt/freenet' do remove everything"
+	elog "remember to do 'rm -rf /opt/freenet' to remove everything"
 }
 

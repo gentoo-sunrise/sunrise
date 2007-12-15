@@ -51,5 +51,5 @@ pkg_postinst() {
 pkg_postrm() {
 	elog "If you dont want to use frost any more"
 	elog "and dont want to keep your identities/other stuff"
-	elog "remember to do 'rm -rf /opt/frost' do remove everything"
+	elog "remember to do 'rm -rf /opt/frost' to remove everything"
 }
