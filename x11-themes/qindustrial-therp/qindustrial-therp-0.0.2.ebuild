@@ -15,4 +15,3 @@ DEPEND=""
 
 IUSE=""
 need-kde 3.5
-
