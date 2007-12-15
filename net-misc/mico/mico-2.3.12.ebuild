@@ -3,7 +3,6 @@
 # $Header: $
 
 inherit eutils flag-o-matic
-# qt3
 
 DESCRIPTION="A freely available and fully compliant implementation of the CORBA standard"
 HOMEPAGE="http://www.mico.org/"
@@ -12,14 +11,13 @@ SRC_URI="http://www.mico.org/${P}.tar.gz"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk postgres ssl tcl threads" # qt3
+IUSE="gtk postgres ssl tcl threads"
 
 DEPEND=">=sys-devel/flex-2.5.2
 	>=sys-devel/bison-1.22
 	ssl? ( dev-libs/openssl )
 	tcl? ( dev-lang/tcl )
 	postgres? ( dev-db/postgresql )"
-# 	qt3? ( x11-libs/qt )"
 
 S="${WORKDIR}/${PN}"
 
@@ -42,8 +40,8 @@ src_compile() {
 		$(use_with postgres pgsql /usr)
 		# $(use_with qt3 qt ${QTDIR}
 
-	# Rather not emake here, as is a memory hog
-	make || die "make failed"
+	# Hardlock to 1 as it is a memory hog
+	emake -j1 || die "make failed"
 }
 
 src_install() {
