@@ -14,7 +14,7 @@ SRC_URI="http://www.aczoom.com/tools/blockhosts/${MY_P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="logrotate"
+IUSE="logrotate logwatch"
 
 DEPEND=""
 RDEPEND="logrotate? ( app-admin/logrotate )"
@@ -49,6 +49,15 @@ src_install() {
 	doins test_blockhosts.py
 
 	dohtml *.html
+
+	# not tested, but should work
+	if use logwatch; then
+		insinto /etc/log.d/conf/services/
+		doins logwatch/blockhosts.conf
+
+		exeinto /etc/log.d/scripts/services/
+		doexe logwatch/blockhosts
+	fi
 }
 
 pkg_postinst() {
