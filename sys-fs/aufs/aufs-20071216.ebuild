@@ -17,6 +17,8 @@ MODULE_NAMES="aufs(addon/fs/${PN}:)"
 BUILD_PARAMS="KDIR=${KV_DIR} -f local.mk"
 BUILD_TARGETS="all"
 
+S="${WORKDIR}"/aufs
+
 pkg_setup() {
 	# kernel version check
 	if kernel_is lt 2 6 16 ; then
@@ -55,7 +57,13 @@ src_unpack(){
 	fi
 }
 
+src_compile() {
+	grep "ARCH=x86" ../../temp/environment >/dev/null 2>&1 && ARCH=i386
+	emake
+}
+
 src_install() {
+	cd util
 	exeinto /sbin
 	exeopts -m0500
 	doexe mount.aufs umount.aufs auplink aulchown
