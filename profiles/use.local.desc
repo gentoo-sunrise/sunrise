@@ -8,6 +8,7 @@
 # Keep it sorted.
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
+app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/collectd:hddtemp - Enable monitoring of disk temperatures (app-admin/hddtemp)
 app-admin/vlogger:dbi - enable support for DBI
 app-dicts/ktranslator:festival - Enable festival support
