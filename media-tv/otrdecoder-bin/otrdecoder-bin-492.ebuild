@@ -10,7 +10,7 @@ SRC_URI="http://www.onlinetvrecorder.com/downloads/${PN}-linux-v${MY_PV}.tar.bz2
 LICENSE="as-is"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 IUSE="X"
 
