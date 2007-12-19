@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Dec 2007; Davide Cendron (scen) <scen@gentoo.org>
+  +files/uhexen2-1.4.2_fix_huffman-vuln.patch, +uhexen2-1.4.2-r1.ebuild:
+  Security-Version bump. Fixes Secunia Advisory SA28124
+
   08 Nov 2007; Davide Cendron (scen) <scen@gentoo.org> ChangeLog:
   Update manifest (hexenworld-pakfiles tarball has been updated some time ago)
 

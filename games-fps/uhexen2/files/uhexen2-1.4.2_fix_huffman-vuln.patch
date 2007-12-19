@@ -1,0 +1,66 @@
+fix issue announced at http://secunia.com/advisories/28124/
+the fix is already in the CVS for quite some time and will
+be intergrated in the next release 1.4.3.
+
+diff -urNp hexen2source-1.4.2/hexenworld/Client/huffman.c hexen2source-1.4.2r1/hexenworld/Client/huffman.c
+--- hexen2source-1.4.2/hexenworld/Client/huffman.c	2007-10-02 12:36:27.000000000 +0300
++++ hexen2source-1.4.2r1/hexenworld/Client/huffman.c	2007-12-19 09:31:41.000000000 +0200
+@@ -226,15 +226,23 @@ void HuffDecode (unsigned char *in, unsi
+ 	int	bits, tbits;
+ 	huffnode_t	*tmp;
+ 
++	--inlen;
++	if (inlen < 0)
++	{
++		*outlen = 0;
++		return;
++	}
+ 	if (*in == 0xff)
+ 	{
+-		if (inlen > 1)
+-			memcpy (out, in+1, inlen-1);
+-		*outlen = inlen-1;
++		if (inlen > maxlen)
++			memcpy (out, in+1, maxlen);
++		else if (inlen)
++			memcpy (out, in+1, inlen);
++		*outlen = inlen;
+ 		return;
+ 	}
+ 
+-	tbits = (inlen-1)*8 - *in;
++	tbits = inlen*8 - *in;
+ 	bits = 0;
+ 	*outlen = 0;
+ 
+diff -urNp hexen2source-1.4.2/hw_utils/hwrcon/huffman.c hexen2source-1.4.2r1/hw_utils/hwrcon/huffman.c
+--- hexen2source-1.4.2/hw_utils/hwrcon/huffman.c	2007-10-02 12:36:29.000000000 +0300
++++ hexen2source-1.4.2r1/hw_utils/hwrcon/huffman.c	2007-12-19 09:32:07.000000000 +0200
+@@ -227,15 +227,23 @@ void HuffDecode (unsigned char *in, unsi
+ 	int	bits, tbits;
+ 	huffnode_t	*tmp;
+ 
++	--inlen;
++	if (inlen < 0)
++	{
++		*outlen = 0;
++		return;
++	}
+ 	if (*in == 0xff)
+ 	{
+-		if (inlen > 1)
+-			memcpy (out, in+1, inlen-1);
+-		*outlen = inlen-1;
++		if (inlen > maxlen)
++			memcpy (out, in+1, maxlen);
++		else if (inlen)
++			memcpy (out, in+1, inlen);
++		*outlen = inlen;
+ 		return;
+ 	}
+ 
+-	tbits = (inlen-1)*8 - *in;
++	tbits = inlen*8 - *in;
+ 	bits = 0;
+ 	*outlen = 0;
+ 
