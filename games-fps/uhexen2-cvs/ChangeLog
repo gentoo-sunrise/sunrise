@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Dec 2007; Davide Cendron (scen) <scen@gentoo.org>
+  uhexen2-cvs-20071215.ebuild:
+  Fixed SRC_URI, because 20071215 CVS tarball is available on SF mirrors
+
   18 Dec 2007; Davide Cendron (scen) <scen@gentoo.org>
   -uhexen2-cvs-20071125.ebuild, +uhexen2-cvs-20071215.ebuild:
   Version bump
