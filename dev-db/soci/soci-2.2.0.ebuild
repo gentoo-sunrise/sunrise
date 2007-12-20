@@ -13,12 +13,10 @@ LICENSE="Boost-1.0"
 SLOT="0"
 IUSE="debug firebird mysql postgres sqlite3 static"
 
-RDEPEND="firebird? ( dev-db/firebird )
+DEPEND="firebird? ( dev-db/firebird )
 		mysql? ( virtual/mysql )
 		postgres? ( dev-db/libpq )
 		sqlite3? ( =dev-db/sqlite-3* )"
-DEPEND="${RDEPEND}
-		sys-devel/libtool"
 
 src_unpack() {
 	unpack ${A}
