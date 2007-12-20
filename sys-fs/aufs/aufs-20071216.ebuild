@@ -58,7 +58,7 @@ src_unpack(){
 }
 
 src_compile() {
-	grep "ARCH=x86" ../../temp/environment >/dev/null 2>&1 && ARCH=i386
+	use x86 && ARCH=i386
 	emake
 }
 
