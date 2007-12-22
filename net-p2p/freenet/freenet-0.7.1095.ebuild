@@ -29,6 +29,7 @@ pkg_setup() {
 }
 
 src_compile() {
+	echo "node.updater.autoupdate=false" > freenet.ini
 	cd contrib
 	mkdir -p bdb/examples
 	cd freenet_ext
@@ -48,7 +49,8 @@ src_install() {
 	dodoc license/README license/LICENSE.Mantissa license/LICENSE.Freenet
 	dobin bin/wrapper-linux-x86-{32,64}
 	dolib.so lib/libwrapper-linux-x86-{32,64}.so
-	doins run.sh "${S}"/update.sh "${S}"/wrapper.conf freenet/lib/freenet-{cvs-snapshot,ext}.jar
+	doins seednodes.fref freenet.ini run.sh "${S}"/update.sh \
+		"${S}"/wrapper.conf freenet/lib/freenet-{cvs-snapshot,ext}.jar
 
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
 	fperms 755 /opt/freenet/{update,run}.sh
