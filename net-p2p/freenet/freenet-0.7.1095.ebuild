@@ -60,6 +60,9 @@ src_install() {
 pkg_postinst () {
 	elog "1. Start freenet with /etc/init.d/freenet start."
 	elog "2. Open localhost:8888 in your browser for the web interface."
+	elog " "
+	elog "If you dont know trusted people running freenet,"
+	elog "enable opennet ("insecure mode") on the config page to get started."
 	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/*
 }
 
