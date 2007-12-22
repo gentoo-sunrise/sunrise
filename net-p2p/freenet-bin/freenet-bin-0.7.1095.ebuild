@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r16593"
+MY_JAR_REV="r16777"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
@@ -34,14 +34,16 @@ pkg_setup() {
 src_unpack() {
 	unpack "freenet07.tar.gz"
 	cd "${S}"
-	rm bin/wrapper-macosx* bin/wrapper-linux-ppc-* lib/libwrapper-macosx*.* \
-		lib/libwrapper*ppc-*.so update stun mdns librarian bin/1run.sh bin/*jar \
-		welcome.html INSTALL README
 
 	sed -i -e 's:./bin/wrapper:/opt/freenet/bin/wrapper:g' \
 		-e 's:./wrapper.conf:/opt/freenet/wrapper.conf:g' \
 		-e 's:PIDDIR=".":PIDDIR="/opt/freenet/":g' \
 		-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' run.sh || die "sed failed"
+
+	head -n 12 run.sh >run1.sh
+	tail -n 556 run.sh >> run1.sh
+	mv run1.sh run.sh
+	echo "node.updater.autoupdate=false">freenet.ini
 }
 
 src_compile() {
@@ -53,11 +55,12 @@ src_install() {
 
 	insinto /opt/freenet
 	into /opt/freenet
-	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}" update.sh wrapper.conf run.sh
+	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}" \
+		wrapper.conf run.sh freenet.ini
 	dobin bin/wrapper-linux-x86-{32,64}
 	dolib.so lib/libwrapper-linux-x86-{32,64}.so
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
-	fperms 755 /opt/freenet/{update,run}.sh
+	fperms 755 /opt/freenet/run.sh
 	fowners -R freenet:freenet /opt/freenet/
 }
 
@@ -76,6 +79,6 @@ pkg_postinst () {
 pkg_postrm() {
 	elog "If you dont want to use freenet any more"
 	elog "and dont want to keep your identity/other stuff"
-	elog "remember to do 'rm -rf /opt/freenet' to remove everything"
+	elog "remember to do 'rm -rf /opt/freenet' do remove everything"
 }
 
