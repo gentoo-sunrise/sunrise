@@ -29,7 +29,6 @@ pkg_setup() {
 }
 
 src_compile() {
-	echo "node.updater.autoupdate=false" > freenet.ini
 	cd contrib
 	mkdir -p bdb/examples
 	cd freenet_ext
@@ -49,7 +48,7 @@ src_install() {
 	dodoc license/README license/LICENSE.Mantissa license/LICENSE.Freenet
 	dobin bin/wrapper-linux-x86-{32,64}
 	dolib.so lib/libwrapper-linux-x86-{32,64}.so
-	doins seednodes.fref freenet.ini run.sh "${S}"/update.sh \
+	doins seednodes.fref run.sh "${S}"/update.sh \
 		"${S}"/wrapper.conf freenet/lib/freenet-{cvs-snapshot,ext}.jar
 
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
@@ -63,6 +62,7 @@ pkg_postinst () {
 	elog " "
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet ("insecure mode") on the config page to get started."
+	elog " "
 	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/*
 }
 

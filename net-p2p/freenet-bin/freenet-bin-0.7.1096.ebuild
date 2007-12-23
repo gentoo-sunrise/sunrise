@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r16777"
+MY_JAR_REV="r16799"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
@@ -43,7 +43,6 @@ src_unpack() {
 	head -n 12 run.sh >run1.sh
 	tail -n 556 run.sh >> run1.sh
 	mv run1.sh run.sh
-	echo "node.updater.autoupdate=false">freenet.ini
 }
 
 src_compile() {
@@ -56,7 +55,7 @@ src_install() {
 	insinto /opt/freenet
 	into /opt/freenet
 	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}" \
-		wrapper.conf run.sh freenet.ini
+		wrapper.conf run.sh
 	dobin bin/wrapper-linux-x86-{32,64}
 	dolib.so lib/libwrapper-linux-x86-{32,64}.so
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
@@ -70,6 +69,7 @@ pkg_postinst () {
 	elog " "
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet ("insecure mode") on the config page to get started."
+	elog " "
 
 	if (diff /opt/freenet/${MY_JAR_FILE} /opt/freenet/freenet-stable-latest.jar >/dev/null 2>&1) ; then
 		:;
