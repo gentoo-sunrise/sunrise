@@ -11,7 +11,7 @@ DEMO_PV="1.4.2"
 
 DESCRIPTION="Hexen 2 port - Hammer of Thyrion (CVS snapshot)"
 HOMEPAGE="http://uhexen2.sourceforge.net/"
-SRC_URI="mirror://sourceforge/u${MY_PN}/${P}.tgz
+SRC_URI="http://uhexen2.sourceforge.net/devel/cvs_latest/${P}.tgz
 	mirror://sourceforge/u${MY_PN}/gamedata-all-${DATA_PV}.tgz
 	hexenworld? ( mirror://sourceforge/u${MY_PN}/hexenworld-pakfiles-${HW_PV}.tgz )"
 
