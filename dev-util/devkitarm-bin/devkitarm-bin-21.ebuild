@@ -19,8 +19,8 @@ RESTRICT="strip"
 
 dir=/opt/devkitpro/devkitARM
 
-QA_EXECSTACK="${dir:1}/lib/gcc/arm-eabi/4.1.1/thumb/*.o
-	${dir:1}/lib/gcc/arm-eabi/4.1.1/*.o
+QA_EXECSTACK="${dir:1}/lib/gcc/arm-eabi/4.1.2/thumb/*.o
+	${dir:1}/lib/gcc/arm-eabi/4.1.2/*.o
 	${dir:1}/arm-eabi/lib/*.o"
 
 src_install() {
@@ -30,3 +30,4 @@ src_install() {
 
 	doenvd "${FILESDIR}/99devkitpro"
 }
+
