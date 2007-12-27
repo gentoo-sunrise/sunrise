@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="dev-util/devkitarm-bin"
+DEPEND=">=dev-util/devkitarm-bin-21"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}
@@ -40,3 +40,4 @@ src_install() {
 	insinto "${INSTDIR}"
 	doins "libnds_license.txt"
 }
+
