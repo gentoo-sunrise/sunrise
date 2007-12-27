@@ -11,8 +11,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="dev-util/devkitarm-bin
-		dev-libs/libnds"
+DEPEND=">=dev-util/devkitarm-bin-21
+		>=dev-libs/libnds-20071023"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}
@@ -37,3 +37,4 @@ src_install() {
 	insinto "${INSTDIR}"
 	doins -r include/
 }
+
