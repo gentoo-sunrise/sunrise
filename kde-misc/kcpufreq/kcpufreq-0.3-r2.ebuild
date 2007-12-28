@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit kde
 
 DESCRIPTION="small KDE 3.x panel applet that displays the current CPU frequency
@@ -12,7 +13,6 @@ HOMEPAGE="http://www.schaffert.eu/projects_html"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-EAPI="1"
 IUSE="+icon"
 
 DEPEND=">=sys-power/cpufrequtils-0.3-r1"
