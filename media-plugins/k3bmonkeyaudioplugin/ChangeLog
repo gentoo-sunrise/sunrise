@@ -1,0 +1,12 @@
+# ChangeLog for media-plugins/k3bmonkeyaudioplugin
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Dec 2007; Bjoern Olausson (blubbi) <spamsuxx@gmail.com> +metadata.xml,
+  +k3bmonkeyaudioplugin-3.1.ebuild:
+  New Ebuild for bug 203579
+
+  28 Dec 2007; Bjoern Olausson (blubbi) <spamsuxx@gmail.com> +metadata.xml,
+  +k3bmonkeyaudioplugin-3.1.ebuild:
+  New Ebuild for bug 203579
+
