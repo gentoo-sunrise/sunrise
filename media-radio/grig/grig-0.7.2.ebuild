@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils
 
 DESCRIPTION="A tool for controlling amateur radios"
@@ -11,7 +12,6 @@ SRC_URI="mirror://sourceforge/groundstation/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc"
-EAPI="1"
 IUSE="coverage +hardware"
 
 DEPEND=">=dev-libs/glib-2.6
