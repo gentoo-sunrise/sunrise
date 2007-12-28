@@ -18,11 +18,8 @@ DEPEND="app-cdr/k3b
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
-	local fail="Re-emerge app-cdr/k3b with USE arts."
-
 	if use arts && ! built_with_use app-cdr/k3b arts; then
-		eerror "${fail}"
-		die "${fail}"
+		die "Re-emerge app-cdr/k3b with USE arts."
 	fi
 }
 
