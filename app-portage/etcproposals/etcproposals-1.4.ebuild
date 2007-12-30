@@ -14,14 +14,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="gtk? ( >=dev-python/pygtk-2.10 )
-		qt4? ( >=dev-python/PyQt4-4.1.1
-			>=kde-base/kdelibs-3.5 )"
+		qt4? ( >=dev-python/PyQt4-4.1.1 )"
 RDEPEND="${DEPEND}"
 
 src_install(){
 	distutils_src_install
 	dosbin "${D}"/usr/bin/etc-proposals
-	rm -rf "${D}"/usr/{bin,share}
+	rm -rf "${D}"/usr/bin
 }
 
 pkg_postinst() {

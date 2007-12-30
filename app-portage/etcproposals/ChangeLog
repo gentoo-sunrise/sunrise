@@ -2,6 +2,10 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Dec 2007; Björn Michaelsen (Sweetshark) <bjoern.michaelsen@gmail.com
+  ++, -etcproposals-1.3.ebuild:
+  Updated etcproposals to 1.4 release
+
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> etcproposals-1.3.ebuild:
   Nuke redundant dodir; einfo -> elog
 
