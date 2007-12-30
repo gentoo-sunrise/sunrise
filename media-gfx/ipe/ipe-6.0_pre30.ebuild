@@ -5,23 +5,25 @@
 EAPI="1"
 inherit qt4 eutils
 
-MY_P="${P/_/}-patch1"
+MY_P="${P/_/}"
 DESCRIPTION="An extensible drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
 HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
-SRC_URI="http://luaforge.net/frs/download.php/2639/${MY_P}-src.tar.gz"
+SRC_URI="http://luaforge.net/frs/download.php/2727/${MY_P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="firefox"
+IUSE="seamonkey"
 
 DEPEND=">=x11-libs/qt-4.2:4
 	>=media-libs/freetype-2.1.8"
 # The virtual/tetex dep is for pdfLaTeX and URW fonts.
 RDEPEND="${DEPEND}
 	virtual/tetex
-	firefox? ( || ( www-client/mozilla-firefox
-		www-client/mozilla-firefox-bin ) )"
+	!seamonkey? ( || ( www-client/mozilla-firefox
+		www-client/mozilla-firefox-bin ) )
+	seamonkey? ( || ( www-client/seamonkey
+		www-client/seamonkey-bin ) )"
 
 S="${WORKDIR}/${MY_P}/src"
 
@@ -58,13 +60,12 @@ src_compile() {
 	sed -i -e "s/-Werror/-Wno-error/" \
 		config.pri figtoipe/figtoipe.pro ipe5toxml/ipe5toxml.pro
 
-	# until Ipe bug #206 is resolved...
-	# local myconf
-	# use firefox && myconf="IPEBROWSER=firefox"
-	use firefox && \
-		sed -i -e "s/IPEBROWSER = mozilla/IPEBROWSER = firefox/" config.pri
+	# Ipe's default browser is Firefox
+	local myconf
+	use seamonkey && myconf="IPEBROWSER=seamonkey"
 
 	eqmake4 main.pro \
+		${myconf} \
 		"IPEPREFIX=/usr" \
 		"IPEDOCDIR=/usr/share/doc/${PF}"
 	emake || die "emake failed"
@@ -77,7 +78,7 @@ src_install() {
 	local fontmapdir=/usr/share/${PN}/${MY_P/${PN}-/}
 	if [ -n ${URWFONTDIR} ]; then
 		einfo "Creating fontmap ..."
-		sed -e "s:/usr/share/texmf/type1/urw:${URWFONTDIR}:" \
+		sed -e "s:/usr/share/texmf/fonts/type1/urw:${URWFONTDIR}:" \
 			tetex-fontmap.xml > "${D}/${fontmapdir}/fontmap.xml"
 		eend $?
 	fi
