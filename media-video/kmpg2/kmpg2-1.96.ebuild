@@ -36,9 +36,7 @@ src_unpack() {
 		-e "s#/\(Profiles\)#/../share/apps/${PN}/\1#" \
 		KmPg2.kmdr
 
-	sed -i \
-		-e "s|@VERSION@|${PV}|" \
-		-e "s|@KDEDIR@|${KDEDIR}|" \
+	sed -i -e "s|@KDEDIR@|${KDEDIR}|" \
 		kmpg2.desktop kmpg2profiler.desktop || die "sed failed"
 
 }
