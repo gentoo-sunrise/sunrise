@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: Exp $
 
@@ -8,14 +8,23 @@ DESCRIPTION="K3b Monkey's Audio Encoder and Decoder plugin"
 HOMEPAGE="http://www.k3b.org"
 SRC_URI="mirror://sourceforge/k3b/${P}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2 MonkeyAudio"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="arts"
+RESTRICT="fetch"
 
 DEPEND="app-cdr/k3b
 	arts? ( kde-base/arts )"
 RDEPEND="${DEPEND}"
+
+pkg_nofetch() {
+	einfo "The license for the bundled MonkeyAudio codec sucks."
+	einfo "You must download the tarball manually."
+	einfo
+	einfo "Please download k3bmonkeyaudioplugin-3.1.tar.bz2"
+	einfo "from ${HOMEPAGE} and place it to ${DISTDIR}."
+}
 
 pkg_setup() {
 	if use arts && ! built_with_use app-cdr/k3b arts; then
