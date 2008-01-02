@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -59,6 +59,7 @@ src_unpack(){
 
 src_compile() {
 	use x86 && ARCH=i386
+	use amd64 && ARCH=x86_64
 	emake
 }
 
