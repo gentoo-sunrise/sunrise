@@ -1,11 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
-Version=@VERSION@
+Version=1.0
 Name=KmPg2
 Type=Application
 Comment=A graphical MPEG2 encoder frontend, for producing 100% DVD compatible MPEG2 streams.
-Exec="kmdr-executor '@KDEDIR@/bin/KmPg2.kmdr'"
+Exec=kmdr-executor @KDEDIR@/bin/KmPg2.kmdr
 TryExec=kmdr-executor
-Path=
 Icon=dvd_unmount
-Categories=Application;Qt;KDE;AudioVideo;
+Categories=Qt;KDE;AudioVideo;
