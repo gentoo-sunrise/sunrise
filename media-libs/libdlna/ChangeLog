@@ -1,0 +1,7 @@
+# ChangeLog for media-libs/libdlna
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Jan 2008; Jakub Moc <jakub@gentoo.org> libdlna-0.2.3.ebuild:
+  New ebuild, Bug 204007
+

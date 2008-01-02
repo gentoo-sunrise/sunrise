@@ -27,4 +27,3 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."
 	dodoc README FAQ CHANGELOG
 }
-
