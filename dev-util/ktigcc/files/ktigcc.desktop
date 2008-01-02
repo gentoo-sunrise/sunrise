@@ -4,9 +4,9 @@ Version=1.0
 Name=KTIGCC
 Comment=KTIGCC - an IDE for TIGCC
 Exec=ktigcc
-Icon=ktigcc.png
+Icon=ktigcc
 Terminal=false
 Type=Application
-Categories=Application;Development
-MimeType=application/x-tigcc-project
+Categories=Application;Development;
+MimeType=application/x-tigcc-project;
 
