@@ -3,7 +3,7 @@
 # $Header: $
 
   02 Jan 2008; (Tommy[D]) tommy100@gmx.de fim-0.1_alpha.ebuild:
-  Changed location of homepage and source-uri as requested in bug 188287
+  Changed location of homepage and source-uri as requested in bug 188217
 
   09 Aug 2007; Jakub Moc <jakub@gentoo.org> fim-0.1_alpha.ebuild:
   Install docs to proper location
