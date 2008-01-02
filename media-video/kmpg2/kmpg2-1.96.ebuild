@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -37,8 +37,8 @@ src_unpack() {
 		KmPg2.kmdr
 
 	sed -i \
-		-e "s#%VERSION%#${PV}#" \
-		-e "s#%KDEDIR%#${KDEDIR}#" \
+		-e "s|@VERSION@|${PV}|" \
+		-e "s|@KDEDIR@|${KDEDIR}@" \
 		kmpg2.desktop kmpg2profiler.desktop || die "sed failed"
 
 }
@@ -51,7 +51,7 @@ src_install() {
 	insinto "${KDEDIR}/share/apps/${PN}"
 	doins -r Profiles
 
-	DESTTREE="${KDEDIR}"
+	into ${KDEDIR}
 	dobin KmPg2*.kmdr YUV*.sh
 
 	domenu kmpg2.desktop kmpg2profiler.desktop
