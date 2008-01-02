@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/${MY_P}
 
 src_unpack() {
-	if ! built_with_use sys-libs/glibc nptl; then
+	if ! built_with_use --missing true sys-libs/glibc nptl; then
 		die "Sambascanner requires an NPTL system"
 	fi
 	unpack ${A}
