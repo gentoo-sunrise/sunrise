@@ -38,7 +38,7 @@ src_unpack() {
 
 	sed -i \
 		-e "s|@VERSION@|${PV}|" \
-		-e "s|@KDEDIR@|${KDEDIR}@" \
+		-e "s|@KDEDIR@|${KDEDIR}|" \
 		kmpg2.desktop kmpg2profiler.desktop || die "sed failed"
 
 }
