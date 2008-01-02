@@ -1,10 +1,7 @@
 [Desktop Entry]
-Encoding=UTF-8
 Type=MimeType
 Name=KTIGCC
-MimeType=application/x-tigcc-project;
 Icon=application-x-tigcc-project
 Patterns=*.tpr;*.TPR;
 Comment=TIGCC Project
 DefaultApp=ktigcc
-
