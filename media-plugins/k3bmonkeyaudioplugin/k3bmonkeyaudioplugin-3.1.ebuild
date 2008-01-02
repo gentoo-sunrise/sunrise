@@ -33,11 +33,11 @@ pkg_setup() {
 }
 
 src_compile() {
-	econf $(use_with arts) || die "econf failed"
+	econf $(use_with arts)
 	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"	
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog README TODO
 }
