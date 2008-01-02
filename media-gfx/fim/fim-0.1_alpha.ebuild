@@ -1,12 +1,12 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit autotools
 
 DESCRIPTION="Fbi IMproved is a framebuffer image viewer based on Fbi and inspired from Vim"
-HOMEPAGE="http://www.autistici.org/dezperado/fim"
-SRC_URI="http://www.autistici.org/dezperado/fim/${PN}-${PV/_/-}.tar.gz"
+HOMEPAGE="http://savannah.nongnu.org/projects/fbi-improved"
+SRC_URI="http://download.savannah.nongnu.org/releases/fbi-improved/${PN}-${PV/_/-}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
