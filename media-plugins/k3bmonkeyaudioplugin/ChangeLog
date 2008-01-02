@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jan 2008; (Tommy[D]) tommy100@gmx.de k3bmonkeyaudioplugin-3.1.ebuild:
+  use  in einfo too
+
   02 Jan 2008; Jakub Moc <jakub@gentoo.org> k3bmonkeyaudioplugin-3.1.ebuild:
   Fix LICENSE and fetch-restrict this.
 

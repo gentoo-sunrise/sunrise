@@ -22,7 +22,7 @@ pkg_nofetch() {
 	einfo "The license for the bundled MonkeyAudio codec sucks."
 	einfo "You must download the tarball manually."
 	einfo
-	einfo "Please download k3bmonkeyaudioplugin-3.1.tar.bz2"
+	einfo "Please download ${P}.tar.bz2"
 	einfo "from ${HOMEPAGE} and place it to ${DISTDIR}."
 }
 
