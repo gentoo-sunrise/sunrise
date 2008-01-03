@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,9 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="dlna nls"
 
-DEPEND="dlna? ( media-libs/libdlna )"
+# add by jacques_h (4-JAN-2008)
+# update DEPEND value with 'net-libs/libupnp'
+DEPEND="dlna? ( media-libs/libdlna ) net-libs/libupnp"
 RDEPEND="${DEPEND}"
 
 src_compile() {
