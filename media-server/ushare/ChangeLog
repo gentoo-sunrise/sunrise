@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jan 2008; Jacques HULLU (jacques_h) <jhullu@gmail.com>
+  ushare-1.1a.ebuild:
+  add by jacques_h (4-JAN-2008) - update DEPEND value with 'net-libs/libupnp'
+
   02 Jan 2008; Jacques HULLU (jacques_h) <jhullu@gmail.com> +metadata.xml,
   +ushare-1.1a.ebuild:
   Adding new ebuild ushare - Bug ID=204010 -
