@@ -1,0 +1,8 @@
+# ChangeLog for media-video/luvcview
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Jan 2008; Bjoern Olausson (blubbi) <spamsuxx@gmail.com> +metadata.xml,
+  +luvcview-20070512.ebuild:
+  New Ebuild for bug 176767
+
