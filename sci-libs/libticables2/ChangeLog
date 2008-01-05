@@ -1,6 +1,9 @@
 # ChangeLog for sci-libs/libticables2
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Jan 2008; Jakub Moc <jakub@gentoo.org> libticables2-1.0.9.ebuild:
+  pam_console is dead and burried
 
   22 Sep 2007; Christian Helbling <helch@gmx.ch> -libticables2-1.0.5.ebuild,
   +libticables2-1.0.9.ebuild:
