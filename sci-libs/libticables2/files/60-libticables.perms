@@ -1,5 +1,0 @@
-# device classes -- these are shell-style globs
-<ticable>=/dev/ticable* /dev/usb/ticable*
-
-# permission definitions
-<console>  0600 <ticable>    0600 root

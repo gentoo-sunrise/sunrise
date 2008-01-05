@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2
 	nls? ( virtual/libintl )"
 
 src_compile() {
-	econf $(use_enable nls) || die "econf failed"
+	econf $(use_enable nls)
 	emake || die "emake failed"
 }
 
@@ -33,6 +33,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Please read /usr/share/doc/${PF}/README.gz"
+	elog "Please read README in /usr/share/doc/${PF}"
 	elog "if you encounter any problem with a link cable"
 }
