@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/uhexen2-cvs
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Jan 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-cvs-20071224.ebuild, +uhexen2-cvs-20080104.ebuild:
+  Version bump (and an happy new year :) )
 
   25 Dec 2007; Davide Cendron (scen) <scen@gentoo.org>
   -uhexen2-cvs-20071215.ebuild, +uhexen2-cvs-20071224.ebuild:
