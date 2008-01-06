@@ -1,6 +1,10 @@
 # ChangeLog for app-portage/overlay-utils
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jan 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  overlay-utils-0.2-r1.ebuild:
+  Added ~sparc keyword
 
   07 Nov 2007; Jakub Moc <jakub@gentoo.org> -overlay-utils-0.2.ebuild:
   Nuke old
