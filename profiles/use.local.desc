@@ -170,7 +170,6 @@ sci-libs/cgnslib:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/cgnstools:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/gmsh:cgns - Enables cgns output support
 sci-libs/gmsh:metis - Enables metis support
-sci-libs/libticables2:pam_console - Adds support for pam console from PAM
 sci-libs/openfoam:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam:metis - Enables the use of the systemwide metis/parmetis installation
