@@ -18,7 +18,7 @@ SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="doc examples lam mico mpich metis parafoam hdf5 mpi python threads"
 
 RDEPEND="dev-java/sun-java3d-bin
