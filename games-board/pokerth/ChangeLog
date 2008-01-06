@@ -1,6 +1,9 @@
 # ChangeLog for games-board/pokerth
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jan 2008; Markus Ullmann <jokey@gentoo.org> pokerth-0.5:
+  Drop old
 
   16 Dec 2007; Thomas Pani (thpani) <thomas.pani@gmail.com>
   +pokerth-0.6.ebuild:
