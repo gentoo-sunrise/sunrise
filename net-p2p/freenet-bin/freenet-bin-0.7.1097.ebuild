@@ -84,4 +84,3 @@ pkg_postrm() {
 	elog "and dont want to keep your identity/other stuff"
 	elog "remember to do 'rm -rf /opt/freenet' do remove everything"
 }
-
