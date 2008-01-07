@@ -7,7 +7,7 @@ inherit depend.php eutils webapp
 DESCRIPTION="A system monitor that can be used to obtain accurate and up to date information on the performance of a number of systems"
 HOMEPAGE="http://www.xs4all.nl/~wpd/symon/"
 SRC_URI="http://www.xs4all.nl/~wpd/symon/philes/${P}.tar.gz
-	syweb? ( http://www.xs4all.nl/~wpd/symon/philes/syweb-0.56.tar.gz )"
+	syweb? ( http://www.xs4all.nl/~wpd/symon/philes/syweb-0.57.tar.gz )"
 
 LICENSE="BSD-2"
 SLOT="0"
