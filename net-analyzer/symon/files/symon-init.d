@@ -7,16 +7,10 @@ start() {
         ebegin "Starting symon"
         start-stop-daemon --start --quiet --exec /usr/sbin/symon -- -u
         eend ${?}
-	ebegin "Starting symux"
-	start-stop-daemon --start --quiet --exec /usr/sbin/symux
-	eend ${?}
 }
 
 stop() {
         ebegin "Stopping symon"
         start-stop-daemon --stop --quiet --pidfile /var/run/symon.pid
-        eend ${?}
-	ebegin "Stopping symux"
-        start-stop-daemon --stop --quiet --pidfile /var/run/symux.pid
         eend ${?}
 }
