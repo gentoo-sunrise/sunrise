@@ -60,7 +60,7 @@ src_unpack(){
 src_compile() {
 	use x86 && ARCH=i386
 	use amd64 && ARCH=x86_64
-	emake
+	emake -j1 #aufs does not compile with 3 or more
 }
 
 src_install() {
