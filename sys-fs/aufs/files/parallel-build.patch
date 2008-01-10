@@ -1,0 +1,46 @@
+--- local.mk	2007-12-10 10:18:33.000000000 +0900
++++ local.mk	2008-01-09 12:18:32.000000000 +0900
+@@ -73,7 +73,8 @@ export
+ # fake top level make
+ 
+ KDIR = /lib/modules/$(shell uname -r)/build
+-Tgt = aufs.ko aufs.5 aufind.sh mount.aufs auplink aulchown umount.aufs
++TgtUtil = aufs.5 aufind.sh mount.aufs auplink aulchown umount.aufs
++Tgt = aufs.ko ${TgtUtil}
+ 
+ # the environment variables are not inherited since 2.6.23
+ MAKE += CONFIG_AUFS=${CONFIG_AUFS} \
+@@ -104,27 +105,15 @@ kconfig: fs/aufs/Kconfig
+ 
+ ########################################
+ 
+-clean: ${AufsVars}
++clean:
+ 	${MAKE} -C ${KDIR} M=${CURDIR}/fs/aufs $@
+ 	${MAKE} -C util $@
+-	${RM} ${Tgt} ${AufsVars}
++	${RM} ${Tgt}
+ 	find . -type f \( -name '*~' -o -name '.#*[0-9]' \) | xargs -r ${RM}
+ 
+-util/aufs.5: FORCE
+-util/%:
+-	${MAKE} -j1 -C util
+-aufind.sh: util/aufind.sh
+-	ln -s $< $@
+-aufs.5: util/aufs.5
+-	-ln -s $< $@
+-mount.aufs: util/mount.aufs
+-	test -x $< || chmod a+x $<
+-	ln -s $< $@
+-auplink: util/auplink
+-	-ln -s $< $@
+-aulchown: util/aulchown
+-	-ln -s $< $@
+-umount.aufs: util/umount.aufs
+-	-ln -s $< $@
++build_util:
++	${MAKE} -C util
++${TgtUtil}: build_util
++	ln -s util/$@ $@
+ 
+ -include priv.mk

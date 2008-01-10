@@ -33,6 +33,7 @@ pkg_setup() {
 src_unpack(){
 	unpack ${A}
 	cd "${S}"
+	epatch "${FILESDIR}"/parallel-build.patch
 
 	# Enable hinotify in priv_def.mk
 	if use hinotify && kernel_is ge 2 6 18 ; then
@@ -60,7 +61,7 @@ src_unpack(){
 src_compile() {
 	use x86 && ARCH=i386
 	use amd64 && ARCH=x86_64
-	emake -j1 #aufs does not compile with 3 or more
+	emake
 }
 
 src_install() {

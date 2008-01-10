@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jan 2008; (Tommy[D]) tommy100@gmx.de +files/parallel-build.patch,
+  aufs-20071216.ebuild:
+  adding upstream patch for parallel build
+
   09 Jan 2008; (Tommy[D]) tommy100@gmx.de aufs-20071216.ebuild:
   workaround for multijob error
 
