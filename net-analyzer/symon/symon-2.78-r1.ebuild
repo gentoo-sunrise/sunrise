@@ -47,6 +47,8 @@ src_unpack() {
 	# we've to sed the whole line because CC? means if the variable is not
 	# already defined
 	sed -i -e "s:^CC.*:CC=$(tc-getCC):" symon/Makefile.inc
+
+	sed -i -e "s:CFLAGS+=-Wall:CFLAGS=${CFLAGS}:" symon/Makefile.inc
 }
 
 src_compile() {
