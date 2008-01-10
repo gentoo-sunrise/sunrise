@@ -1,0 +1,8 @@
+# ChangeLog for dev-lang/syx
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Jan 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com> +metadata.xml,
+  +syx-0.1.6.ebuild:
+  New EBuild
+
