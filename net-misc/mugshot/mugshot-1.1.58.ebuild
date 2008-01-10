@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,11 +24,10 @@ RDEPEND=">=dev-libs/glib-2.6
 	media-libs/jpeg
 	>=gnome-base/gnome-desktop-2.10
 	>=gnome-base/gnome-vfs-2
-	>=net-libs/loudmouth-1
+	>=net-libs/loudmouth-1.2.2
 	>=net-misc/curl-7.13.1
 	x11-libs/cairo
 	>=x11-libs/gtk+-2.6
-	x11-libs/hippo-canvas
 	x11-libs/libXScrnSaver
 	x11-libs/pango
 	firefox? ( !xulrunner? (
@@ -40,13 +39,15 @@ DEPEND=">=dev-util/pkgconfig-0.19
 	>=gnome-base/gconf-2
 	${RDEPEND}"
 
+FIREDIRS="/usr/$(get_libdir)/mozilla-firefox"
+
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
 	epatch "${FILESDIR}/${PN}-1.1.42-libxpcom.patch" || die "epatch failed"
-	epatch "${FILESDIR}/${P}-use-firefox.patch" || die "epatch failed"
+	epatch "${FILESDIR}/${PN}-1.1.56-use-firefox.patch" || die "epatch failed"
 	eautoreconf
 	if use firefox || use xulrunner ; then
 		G2CONF="--enable-firefox"
@@ -56,32 +57,47 @@ src_unpack() {
 			G2CONF="${G2CONF} --with-gecko-sdk=/usr/$(get_libdir)/mozilla-firefox"
 		fi
 		sed -e "s:GET_LIBDIR:$(get_libdir):" \
-			"${FILESDIR}/${PN}-1.1.40-firefox-update.sh" > "${S}/firefox-update.sh"
+			"${FILESDIR}/${P}-firefox-update.sh" > "${S}/firefox-update.sh"
 		# support mozilla-firefox-bin if we are compiling for x86
 		if [ "${ARCH}" = "x86" -o "${ABI}" = "x86" ] ; then
-			sed -e 's:{firedir}:{firedir} /opt/firefox:' -i "${S}/firefox-update.sh"
+			FIREDIRS="${FIREDIRS} /opt/firefox"
 		fi
+		sed -e "s:FIREDIRS:${FIREDIRS}:" -i "${S}/firefox-update.sh"
 	else
 		G2CONF="--disable-firefox"
 	fi
-	G2CONF="${G2CONF} $(use_with sqlite) --without-included-canvas"
+	# external hippo-canvas seems to be deprecated now?
+	G2CONF="${G2CONF} $(use_with sqlite) --with-included-canvas"
+}
+
+src_install() {
+	gnome2_src_install
+
+	# this replaces the broken pkg_prerm logic we had before, which removed the 
+	# firefox extensions on every upgrade.
+	if use firefox || use xulrunner ; then
+		einfo "Installing firefox extension."
+		for d in ${FIREDIRS} ; do
+			if [ -e "$d/firefox-bin" -a -d "$d/extensions" ] ; then
+				dosym "/usr/$(get_libdir)/mugshot/firefox" "${d}/extensions/firefox@mugshot.org"
+			fi
+		done
+	fi
 }
 
 pkg_postinst () {
 	gnome2_pkg_postinst
 
-	# install firefox extension
 	if use firefox || use xulrunner ; then
-		einfo "Installing firefox extension. "
-		einfo "Please restart firefox in order to use the mugshot extension."
-		"${S}/firefox-update.sh" install
+		# pkg_prerm logic was broken in older ebuilds
+		elog
+		elog "If you are upgrading from <net-misc/mugshot-1.1.58 please run"
+		elog " /usr/share/firefox-update.sh install"
+		elog "to properly install the firefox extension."
+		elog
+		elog "Please restart firefox in order to use the mugshot extension."
 	fi
-}
-
-pkg_prerm () {
-	# remove firefox extension
-	if [ -x /usr/share/mugshot/firefox-update.sh ] ; then
-		einfo "Removed the mugshot firefox extension."
-		/usr/share/mugshot/firefox-update.sh remove
-	fi
+	elog
+	elog "net-misc/mugshot does not (yet) support logging in via mozilla-firefox-3"
+	elog "If you use firefox 3, try logging into mugshot.org using epiphany."
 }

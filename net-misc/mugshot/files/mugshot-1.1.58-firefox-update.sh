@@ -5,8 +5,7 @@
 # upgraded, as well as when our package is installed. 
 #
 
-firedir=/usr/GET_LIBDIR/mozilla-firefox
-firedirs="${firedir}"
+firedirs="FIREDIRS"
 
 if [ "$1" = "install" ] ; then
     for d in ${firedirs} ; do
