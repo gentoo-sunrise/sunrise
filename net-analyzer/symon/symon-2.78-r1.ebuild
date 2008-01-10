@@ -49,6 +49,10 @@ src_unpack() {
 	sed -i -e "s:^CC.*:CC=$(tc-getCC):" symon/Makefile.inc
 
 	sed -i -e "s:CFLAGS+=-Wall:CFLAGS=${CFLAGS}:" symon/Makefile.inc
+
+	# leave to portage stripping binaries
+	sed -i -e "/STRIP/d" symon/symon/Makefile
+	sed -i -e "/STRIP/d" symon/symux/Makefile
 }
 
 src_compile() {
