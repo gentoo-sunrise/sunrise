@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit depend.php eutils webapp
+inherit depend.php eutils toolchain-funcs webapp
 
 DESCRIPTION="A system monitor that can be used to obtain accurate and up to date information on the performance of a number of systems"
 HOMEPAGE="http://www.xs4all.nl/~wpd/symon/"
@@ -43,6 +43,10 @@ src_unpack() {
 		epatch "${FILESDIR}"/${PN}-syweb-setup.inc.patch
 		epatch "${FILESDIR}"/${PN}-syweb-total_firewall.layout.patch
 	fi
+
+	# we've to sed the whole line because CC? means if the variable is not
+	# already defined
+	sed -i -e "s:^CC.*:CC=$(tc-getCC):" symon/Makefile.inc
 }
 
 src_compile() {
