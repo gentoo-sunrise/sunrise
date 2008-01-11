@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: Exp $
+# $Header: $
 
 inherit toolchain-funcs
 
-DESCRIPTION="luvcview: Sdl video Usb Video Class grabber"
+DESCRIPTION="SDL video USB Video Class grabber"
 HOMEPAGE="http://linux-uvc.berlios.de"
 SRC_URI="http://mxhaard.free.fr/spca50x/Investigation/uvc/${P}.tar.gz"
 
@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="media-libs/libsdl media-video/mjpegtools"
+DEPEND="media-libs/libsdl"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
