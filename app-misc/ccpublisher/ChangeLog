@@ -1,6 +1,9 @@
 # ChangeLog for app-misc/ccpublisher
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; Jakub Moc <jakub@gentoo.org> ccpublisher-2.2.1.ebuild:
+  Fix wx* and python handling
 
   09 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
   ccpublisher-2.2.1.ebuild:

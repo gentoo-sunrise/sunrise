@@ -1,8 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit zproduct python multilib
+EAPI="1"
+WX_GTK_VER="2.6"
+inherit zproduct python multilib wxwidgets
 
 MY_PN="ccPublisher"
 MY_P="${MY_PN}-${PV}"
@@ -20,11 +22,10 @@ ZPROD_LIST="${MY_PN}"
 S="${WORKDIR}/${MY_P}"
 
 DEPEND=""
-RDEPEND=">=dev-python/wxpython-2.6.3.2
-	>=x11-libs/wxGTK-2.6.3.3
+RDEPEND=">=dev-python/wxpython-2.6.3.2:2.6
+	>=x11-libs/wxGTK-2.6.3.3:2.6
 	zope? ( net-zope/zope )
 	|| ( ( dev-python/elementtree >=dev-lang/python-2.4 ) >=dev-lang/python-2.5 )"
-	# wxGTK and wxpython have to be the same x.y.z version
 
 src_install() {
 	# change directories, so that the python library is found
@@ -67,12 +68,16 @@ pkg_postrm() {
 }
 
 pkg_postinst() {
+	python_version
+	python_mod_optimize ${ROOT}usr/$(get_libdir)/${P}
+
 	elog
 	elog "ccPublisher is now installed to /usr/bin/ccPublisher"
 	elog
 	elog "If you get python errors, check that both wxpython and"
 	elog "wxGTK are the same version."
 	elog
+
 	if use zope; then
 		elog "The Zope Product has been installed."
 		elog "Use \"zprod-manager add\" to activate it."
