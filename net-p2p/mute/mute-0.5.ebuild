@@ -7,7 +7,7 @@ inherit eutils toolchain-funcs wxwidgets flag-o-matic multilib
 
 MY_P="MUTE_fileSharing-${PV}_UnixSource"
 
-DESCRIPTION="peer-to-peer network that provides easy search-and-download
+DESCRIPTION="P2P network that provides easy search-and-download
 functionality while also protecting your privacy"
 HOMEPAGE="http://mute-net.sourceforge.net/"
 SRC_URI="mirror://sourceforge/mute-net/${MY_P}.tar.gz"
