@@ -69,7 +69,7 @@ pkg_postrm() {
 
 pkg_postinst() {
 	python_version
-	python_mod_optimize ${ROOT}usr/$(get_libdir)/${P}
+	python_mod_optimize "${ROOT}"usr/$(get_libdir)/${P}
 
 	elog
 	elog "ccPublisher is now installed to /usr/bin/ccPublisher"
