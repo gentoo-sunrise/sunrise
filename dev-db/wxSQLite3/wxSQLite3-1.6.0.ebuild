@@ -1,7 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WX_GTK_VER="2.6"
 inherit eutils wxwidgets
 
 DESCRIPTION="a C++ wrapper around the public domain SQLite 3.x database"
@@ -13,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="unicode"
 
-DEPEND=">=x11-libs/wxGTK-2.6
+DEPEND="=x11-libs/wxGTK-2.6*
 	=dev-db/sqlite-3*"
 RDEPEND="${DEPEND}"
 
@@ -26,12 +27,7 @@ src_unpack() {
 }
 
 src_compile() {
-	export WX_GTK_VER=2.6
-	if use unicode; then
-		need-wxwidgets unicode || die
-	else
-		need-wxwidgets gtk2 || die
-	fi
+	use unicode && need-wxwidgets unicode || need-wxwidgets gtk2
 
 	econf \
 		$(use_enable unicode) \
@@ -40,7 +36,6 @@ src_compile() {
 		--with-gtk \
 		--with-wxshared \
 		--with-sqlite3-prefix=/usr \
-		|| die "econf failed"
 
 	emake || die "emake failed"
 }
