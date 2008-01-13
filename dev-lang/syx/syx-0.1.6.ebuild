@@ -8,7 +8,7 @@ SRC_URI="http://syx.googlecode.com/files/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gmp readline gtk X debug profile iprofile"
+IUSE="gmp readline gtk X debug profile"
 
 RDEPEND="gmp? ( dev-libs/gmp )
 	readline? ( sys-libs/readline )
@@ -16,11 +16,10 @@ RDEPEND="gmp? ( dev-libs/gmp )
 	X? ( x11-libs/libX11 )"
 
 src_compile() {
-	local myconf="$(use_enable gtk) \
-			$(use_enable readline) \
+	local myconf="$(use_enable gtk)
+			$(use_enable readline)
 			$(use_enable X x11)
 			$(use_enable profile)
-			$(use_enable iprofile) \
 			$(use_with gmp)"
 
 	use debug && myconf="${myconf} --enable-debug=info"
