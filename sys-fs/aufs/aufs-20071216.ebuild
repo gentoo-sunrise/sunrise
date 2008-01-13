@@ -61,7 +61,7 @@ src_unpack(){
 src_compile() {
 	use x86 && ARCH=i386
 	use amd64 && ARCH=x86_64
-	emake
+	emake || die "emake failed"
 }
 
 src_install() {
