@@ -1,7 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WX_GTK_VER="2.6"
 inherit eutils toolchain-funcs wxwidgets flag-o-matic multilib
 
 MY_P="MUTE_fileSharing-${PV}_UnixSource"
@@ -17,8 +18,8 @@ KEYWORDS="~x86"
 IUSE="wxwindows"
 
 DEPEND="dev-libs/crypto++
-	wxwindows? ( >=x11-libs/wxGTK-2.6 )"
-RDEPEND=$DEPEND
+	wxwindows? ( =x11-libs/wxGTK-2.6* )"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
@@ -44,8 +45,7 @@ src_compile() {
 	emake GXX=$(tc-getCXX) CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
 
 	if use wxwindows; then
-		export WX_GTK_VER=2.6
-		need-wxwidgets gtk2 || die
+		need-wxwidgets gtk2
 		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows"
 		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" \
 			CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"

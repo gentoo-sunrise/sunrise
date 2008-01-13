@@ -1,6 +1,9 @@
 # ChangeLog for net-p2p/mute
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; Jakub Moc <jakub@gentoo.org> mute-0.5.ebuild:
+  Fix wxGTK handling
 
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> mute-0.5.ebuild:
   Fix broken USE=wxwindows handling
