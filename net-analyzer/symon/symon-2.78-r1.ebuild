@@ -115,11 +115,11 @@ pkg_postinst() {
 		webapp_pkg_postinst
 	fi
 
-	elog "You'll need to setup your ${ROOT}/etc/symon.conf and "
-	elog "${ROOT}/etc/symux.conf before running these daemons for "
+	elog "You'll need to setup your /etc/symon.conf and "
+	elog "/etc/symux.conf before running these daemons for "
 	elog "the first time."
-	elog "For an example configuration run ${ROOT}/usr/share/symon/c_config.sh"
-	elog "Then, you may run ${ROOT}/usr/share/symon/c_smrrds.sh all"
+	elog "For an example configuration run /usr/share/symon/c_config.sh"
+	elog "Then, you may run /usr/share/symon/c_smrrds.sh all"
 	elog "To test the configuration run sym{on,ux} -t"
 	elog "For details, please see their manpages."
 	elog "NOTE that symon won't chroot by default."
