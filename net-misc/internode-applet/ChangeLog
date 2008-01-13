@@ -2,37 +2,6 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  13 Jan 2008; Matthew Joiner <stupidape@hotmail.com> ChangeLog:
-  bug 205574
-
-  13 Jan 2008; Matthew Joiner <stupidape@hotmail.com>
-
-  +metadata.xml, +internode-applet-1.5.ebuild:
-  Internode applet for bug 205574
-
-  13 Jan 2008; Matthew Joiner <stupidape@hotmail.com>
-
-  +metadata.xml, +internode-applet-1.5.ebuild:
-  Internode applet for bug 205574
-
-  13 Jan 2008; Matthew Joiner <stupidape@hotmail.com>
-
-  +metadata.xml, +internode-applet-1.5.ebuild:
-  Internode applet for bug 205574
-
-  13 Jan 2008; Matthew Joiner <stupidape@hotmail.com>
-
-  +metadata.xml, +internode-applet-1.5.ebuild:
-  Internode applet for bug 205574
-
-  13 Jan 2008; Matthew Joiner <stupidape@hotmail.com> +metadata.xml,
-  +internode-applet-1.5.ebuild:
-  internode applet ebuild bug 205574
-
-  13 Jan 2008; Matthew Joiner <stupidape@hotmail.com> +metadata.xml,
-  +internode-applet-1.5.ebuild:
-  internode applet ebuild bug 205574
-
   13 Jan 2008; Matthew Joiner <stupidape@hotmail.com> +metadata.xml,
   +internode-applet-1.5.ebuild:
   New ebuild for bug 205574
