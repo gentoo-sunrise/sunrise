@@ -1,7 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WX_GTK_VER="2.6"
 inherit autotools eutils flag-o-matic wxwidgets games
 
 DESCRIPTION="Advanced source port for Doom/Heretic/Hexen/Strife"
@@ -131,9 +132,6 @@ src_compile() {
 	local \
 		allegro="--without-allegro" \
 		sdl="--without-sdl"
-
-	export WX_GTK_VER="2.6"
-	need-wxwidgets gtk2
 
 	# Sdl is the default, unless sdl=off & allegro=on
 	if ! use sdl && use allegro ; then

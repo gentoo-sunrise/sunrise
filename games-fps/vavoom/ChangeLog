@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/vavoom
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; Jakub Moc <jakub@gentoo.org> vavoom-1.25.ebuild,
+  vavoom-9999.ebuild:
+  Fix wxGTK handling
 
   04 Dec 2007; Davide Cendron (scen) <scen@gentoo.org>
   +files/vavoom-1.25_flac-1.2_fix.patch, vavoom-1.25.ebuild:
