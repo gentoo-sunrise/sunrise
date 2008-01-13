@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,10 +19,12 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	>=dev-libs/glib-2.6
 	x11-libs/pango
 	dev-libs/cyrus-sasl
-	>=gnome-base/gnome-keyring-0.4.4
-	>=gnome-base/libglade-2"
+	gnome-base/gnome-keyring
+	>=gnome-base/libglade-2
+	dev-libs/libgcrypt"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	dev-util/intltool"
 
 src_compile() {
 	local myconf="--enable-browser-dnd --enable-cache --disable-update-mimedb"

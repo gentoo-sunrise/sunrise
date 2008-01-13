@@ -1,6 +1,9 @@
 # ChangeLog for net-nds/gq
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; Markus Rennings (mren) <mren@mrmx.de> ++, -gq-1.2.2.ebuild:
+  Version bump.
 
   13 Apr 2007; Markus Rennings (mren) <mren@mrmx.de> gq-1.2.2.ebuild:
   changed krb5-dep to virtual/krb5. Thanks to Azamat H. Hackimov on bugzilla
