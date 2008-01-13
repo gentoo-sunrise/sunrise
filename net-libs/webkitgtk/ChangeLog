@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jan 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com>
+  +webkitgtk-29438.ebuild:
+  New EBuild for r29438 nightly build
+
   09 Jan 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com> +metadata.xml,
   +webkitgtk-29336.ebuild:
   New EBuild for bug 190347 thanks to Joonas, Dale, genstef and helch
