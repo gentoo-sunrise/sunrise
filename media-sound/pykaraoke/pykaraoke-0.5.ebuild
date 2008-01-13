@@ -1,7 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit distutils
 
 DESCRIPTION="Karaoke player for Linux"
@@ -15,9 +16,8 @@ IUSE=""
 
 DEPEND="app-arch/unzip"
 RDEPEND=">=dev-python/pygame-1.6.2
-	>=dev-python/wxpython-2.6.1.0
+	>=dev-python/wxpython-2.6.1.0:2.6
 	>=dev-python/numeric-23.7
-	>=x11-libs/wxGTK-2.6.2-r1
 	>=media-libs/libsdl-1.2.8-r1"
 
 src_install() {
