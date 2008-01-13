@@ -1,6 +1,9 @@
 # ChangeLog for x11-libs/pdcurses
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; (Tommy[D]) tommy100@gmx.de pdcurses-2.8.ebuild:
+  drop WANT_AUTO*
 
   17 Dec 2006; Santiago M. Mola <cooldwind@gmail.com> pdcurses-2.8.ebuild:
   Clearer message about Xaw3d and nextaw

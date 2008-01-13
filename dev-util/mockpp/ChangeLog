@@ -1,6 +1,9 @@
 # ChangeLog for dev-util/mockpp
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; (Tommy[D]) tommy100@gmx.de mockpp-1.14.0.ebuild:
+  drop WANT_AUTOCONF
 
   03 Nov 2006; Raul Porcel (armin76) <armin76@gmail.com>
   -files/1.13.0-boost_incdir_m4.patch, -files/1.13.0-destdir.patch:

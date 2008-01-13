@@ -1,6 +1,9 @@
 # ChangeLog for sys-auth/pam_skey
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; (Tommy[D]) tommy100@gmx.de pam_skey-1.1.4-r1.ebuild:
+  drop WANT_AUTO* and autotools.eclass
 
   07 Jul 2007; Jakub Moc <jakub@gentoo.org> -pam_skey-1.1.4.ebuild,
   +pam_skey-1.1.4-r1.ebuild, -files/pam_skey-system-auth.pam.d:

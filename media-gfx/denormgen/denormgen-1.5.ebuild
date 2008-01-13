@@ -1,10 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WANT_AUTOCONF="latest"
-WANT_AUTOMAKE="latest"
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="creates normal/height maps from high resolution meshes for games or 3d applications"
 HOMEPAGE="http://epsylon.rptd.dnsalias.net/denormgen.php"

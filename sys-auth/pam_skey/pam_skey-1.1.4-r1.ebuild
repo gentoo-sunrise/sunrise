@@ -1,9 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WANT_AUTOCONF="latest"
-inherit eutils pam autotools
+inherit eutils pam
 
 DESCRIPTION="pam interface to existing S/Key library/interface"
 HOMEPAGE="http://freshmeat.net/projects/pam_skey/"
