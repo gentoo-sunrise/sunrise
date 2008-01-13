@@ -1,8 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+WX_GTK_VER="2.6"
+inherit eutils wxwidgets
 
 MY_P="${PN}-v${PV}"
 DESCRIPTION="GUI frontend for Ngspice and Gnucap"
@@ -15,7 +16,7 @@ SLOT="0"
 KEYWORDS="~x86"
 
 DEPEND="=x11-libs/wxGTK-2.6*"
-RDEPEND="$DEPEND
+RDEPEND="${DEPEND}
 	|| ( sci-electronics/ng-spice-rework sci-electronics/gnucap )
 	sci-electronics/gwave
 	sci-electronics/geda"
@@ -27,9 +28,7 @@ src_unpack() {
 	cd "${S}"
 	sed -i \
 		-e "s:CXXFLAGS =-O -pipe:CXXFLAGS +=:" \
-		-e "s:WXCFG = wx-config:WXCFG = wx-config-2.6:" \
-		src/Makefile \
-		|| die "Patching src/Makefile failed"
+		src/Makefile || die "Patching src/Makefile failed"
 	sed -i \
 		-e "s:/share/gspiceui/html/gSpiceUI.html:/share/doc/${P}/html/gSpiceUI.html:" \
 		src/main/HelpTasks.cpp \
