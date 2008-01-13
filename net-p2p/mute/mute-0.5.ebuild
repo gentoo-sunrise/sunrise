@@ -45,7 +45,6 @@ src_compile() {
 	emake GXX=$(tc-getCXX) CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
 
 	if use wxwindows; then
-		need-wxwidgets gtk2
 		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows"
 		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" \
 			CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
