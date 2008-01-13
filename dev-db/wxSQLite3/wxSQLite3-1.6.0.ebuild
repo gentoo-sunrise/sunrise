@@ -35,7 +35,7 @@ src_compile() {
 		--with-wx-config="${WX_CONFIG}" \
 		--with-gtk \
 		--with-wxshared \
-		--with-sqlite3-prefix=/usr \
+		--with-sqlite3-prefix=/usr
 
 	emake || die "emake failed"
 }
