@@ -1,10 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit eutils
 
-DESCRIPTION="An object-oriented library, which represents simple XML-RPC solution both for client and server sides."
+DESCRIPTION="Object-oriented library which represents simple XML-RPC solution both for client and server sides."
 HOMEPAGE="http://libiqxmlrpc.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
