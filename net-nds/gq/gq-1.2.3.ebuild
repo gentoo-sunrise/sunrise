@@ -12,7 +12,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="kerberos"
 
 RDEPEND=">=x11-libs/gtk+-2.6
-	>=net-nds/openldap-2
+	net-nds/openldap
 	kerberos? ( virtual/krb5 )
 	dev-libs/openssl
 	dev-libs/libxml2
@@ -20,7 +20,7 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	x11-libs/pango
 	dev-libs/cyrus-sasl
 	gnome-base/gnome-keyring
-	>=gnome-base/libglade-2
+	gnome-base/libglade
 	dev-libs/libgcrypt"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig

@@ -2,7 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  13 Jan 2008; Markus Rennings (mren) <mren@mrmx.de> ++, -gq-1.2.2.ebuild:
+  13 Jan 2008; (Tommy[D]) tommy100@gmx.de gq-1.2.3.ebuild:
+  Fix ChangeLog and simplify deps
+
+  13 Jan 2008; Markus Rennings (mren) <mren@mrmx.de> +gq-1.2.3.ebuild, 
+  -gq-1.2.2.ebuild:
   Version bump.
 
   13 Apr 2007; Markus Rennings (mren) <mren@mrmx.de> gq-1.2.2.ebuild:
