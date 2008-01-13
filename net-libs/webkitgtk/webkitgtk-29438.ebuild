@@ -40,6 +40,7 @@ src_unpack() {
 	cd "${S}"
 
 	eautoreconf
+	# FIXME! do not call automake directly in ebuilds
 	automake --add-missing
 }
 

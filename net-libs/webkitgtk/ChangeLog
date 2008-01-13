@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jan 2008; Jakub Moc <jakub@gentoo.org> -webkitgtk-29336.ebuild,
+  webkitgtk-29438.ebuild:
+  Nuke old and add a comment on bad autotools usage
+
   13 Jan 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com>
   +webkitgtk-29438.ebuild:
   New EBuild for r29438 nightly build
