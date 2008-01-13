@@ -12,13 +12,3 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-
-S="${WORKDIR}"
-
-src_install() {
-	python_version
-	distutils_src_install
-
-	insinto "/usr/$(get_libdir)/python${PYVER}/site-packages"
-	doins "${S}/shm_wrapper.py"
-}
