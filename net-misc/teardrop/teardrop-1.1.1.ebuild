@@ -1,7 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WX_GTK_VER=2.6
 inherit wxwidgets
 
 DESCRIPTION="query multiple search engines at the same time"
@@ -17,21 +18,13 @@ DEPEND="virtual/libiconv
 	dev-libs/libxml2
 	net-misc/curl
 	dev-libs/libpcre
-	>=x11-libs/wxGTK-2.6"
-RDEPEND=${DEPEND}
+	=x11-libs/wxGTK-2.6*"
+RDEPEND="${DEPEND}"
 
 src_compile() {
-	export WX_GTK_VER=2.6
-	if use unicode; then
-		need-wxwidgets unicode || die
-	else
-		need-wxwidgets gtk2 || die
-	fi
+	use unicode && need-wxwidgets unicode || need-wxwidgets gtk2
 
-	econf \
-		--with-wx-config="${WX_CONFIG}" \
-		|| die "econf failed"
-
+	econf --with-wx-config="${WX_CONFIG}"
 	emake || die "emake failed"
 }
 

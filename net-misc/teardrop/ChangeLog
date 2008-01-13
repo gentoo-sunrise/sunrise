@@ -1,6 +1,9 @@
 # ChangeLog for net-misc/teardrop
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jan 2008; Jakub Moc <jakub@gentoo.org> teardrop-1.1.1.ebuild:
+  Fix wxGTK handling, ebuild cleanup
 
   08 Jul 2007; Mike Pagano <mpagano@gmail.com> -teardrop-1.1.ebuild,
   +teardrop-1.1.1.ebuild:
