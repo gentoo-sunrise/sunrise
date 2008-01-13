@@ -1,9 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="VoriaETL is a multiplatform class and template library designed to
-complement and supplement the C++ STL."
+DESCRIPTION="VoriaETL is a multiplatform class and template library which
+complements and supplements the C++ STL."
 
 # currently :
 # https://sourceforge.net/projects/synfig/
