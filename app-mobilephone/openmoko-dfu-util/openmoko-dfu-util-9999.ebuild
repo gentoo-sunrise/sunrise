@@ -1,10 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit subversion autotools
 
-DESCRIPTION="Implements the Host (PC) side of the USB DFU (Universal Serial Bus Device Firmware Upgrade) protocol."
+DESCRIPTION="Implements the Host (PC) side of USB DFU (Universal Serial Bus Device Firmware Upgrade) protocol."
 HOMEPAGE="http://wiki.openmoko.org/wiki/Dfu-util/"
 
 ESVN_REPO_URI="http://svn.openmoko.org/trunk/src/host/dfu-util/"
