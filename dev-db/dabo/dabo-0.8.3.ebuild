@@ -1,10 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit distutils multilib
 
-DESCRIPTION="A 3-tier, cross-platform application development framework written in Python atop the wxPython GUI toolkit"
+DESCRIPTION="A 3-tier, cross-platform application development framework written in Python/wxPython."
 HOMEPAGE="http://dabodev.com/"
 SRC_URI="ftp://dabodev.com/dabo/${P}.tar.gz"
 
