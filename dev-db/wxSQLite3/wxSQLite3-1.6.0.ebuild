@@ -27,7 +27,7 @@ src_unpack() {
 }
 
 src_compile() {
-	use unicode && need-wxwidgets unicode || need-wxwidgets gtk2
+	use unicode && need-wxwidgets unicode
 
 	econf \
 		$(use_enable unicode) \
