@@ -21,13 +21,17 @@
 ##   End example
 ##
 
+# Jakub Moc <jakub@gentoo.org> (13 Jan 2008)
+# masking this until the firefox/xulrunner mess is fixed
+# - dependencies on non-existant firefox version need to be dropped
+# - redundant firefox/xulrunner flags need to be dropped as well
+# - should use nsplugin use flag + proper eclass to install it 
+# instead of using some shell script hacks
+net-misc/mugshot
+
 # Christian Faulhammer <opfer@gentoo.org> (14 Dec 2007)
 # SVN ebuilds need to be masked
 ~app-mobilephone/openmoko-dfu-util-9999
-
-# Jakub Moc <jakub@gentoo.org> (09 Nov 2007)
-# This is unsupported in any way, use at your own risk!
-sys-kernel/thinkpad-sources
 
 # Christian Faulhammer <opfer@gentoo.org> (05 Nov 2007)
 # sci-libs/metis is not available in Sunrise...have a look at the
