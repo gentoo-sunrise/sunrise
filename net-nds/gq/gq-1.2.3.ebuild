@@ -28,9 +28,9 @@ DEPEND="${RDEPEND}
 
 src_compile() {
 	local myconf="--enable-browser-dnd --enable-cache --disable-update-mimedb"
-	use kerberos && myconf="${myconf} --with-kerberos-prefix=/usr"
 
-	econf ${myconf} || die "econf failed"
+	econf ${myconf} $(use_with kerberos kerberos-prefix /usr) \
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 

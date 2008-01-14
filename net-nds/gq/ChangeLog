@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jan 2008; Christian Faulhammer <opfer@gentoo.org> gq-1.2.3.ebuild:
+  use ebuild function for USE=kerberos handling in econf
+
   13 Jan 2008; (Tommy[D]) tommy100@gmx.de gq-1.2.3.ebuild:
   Fix ChangeLog and simplify deps
 
