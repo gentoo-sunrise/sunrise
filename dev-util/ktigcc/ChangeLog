@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/ktigcc
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2008; Christian Helbling <helch@gmx.ch> -ktigcc-1.08.ebuild,
+  +ktigcc-1.09.ebuild:
+  Version bump
 
   04 Dec 2007; Jakub Moc <jakub@gentoo.org> ktigcc-1.08.ebuild:
   Switch to EAPI-1 and slotted deps

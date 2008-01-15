@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -52,9 +52,6 @@ src_install() {
 	# can't use make_desktop_entry here, because I need mime-type association
 	newicon "${S}"/images/icon.png ${PN}.png
 	domenu "${FILESDIR}"/ktigcc.desktop
-
-	# ktigcc wants to call ctags and not exuberant-ctags
-	dosym exuberant-ctags /usr/bin/ctags
 }
 
 pkg_postinst() {
