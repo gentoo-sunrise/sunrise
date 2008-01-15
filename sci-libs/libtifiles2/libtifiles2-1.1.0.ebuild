@@ -13,10 +13,10 @@ IUSE="nls"
 
 RDEPEND=">=dev-libs/glib-2.6.0
 	sci-libs/libticables2
+	>=sci-libs/libticonv-1.1.0
 	nls? ( virtual/libintl )"
 
 DEPEND="${RDEPEND}
-	>=sci-libs/libticonv-1.1.0
 	nls? ( sys-devel/gettext )"
 
 src_compile() {
