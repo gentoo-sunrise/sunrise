@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,9 +14,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
 RDEPEND=">=dev-libs/glib-2.6.0
-	>=sci-libs/libticables2-1.0.6
-	>=sci-libs/libticonv-1.0.4
-	>=sci-libs/libtifiles2-1.0.7
+	>=sci-libs/libticables2-1.2.0
+	>=sci-libs/libticonv-1.1.0
+	>=sci-libs/libtifiles2-1.1.0
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
