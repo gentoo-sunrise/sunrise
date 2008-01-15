@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,10 +13,10 @@ IUSE="nls"
 
 RDEPEND=">=dev-libs/glib-2.6.0
 	sci-libs/libticables2
-	>=sci-libs/libticonv-1.0.4
 	nls? ( virtual/libintl )"
 
 DEPEND="${RDEPEND}
+	>=sci-libs/libticonv-1.1.0
 	nls? ( sys-devel/gettext )"
 
 src_compile() {

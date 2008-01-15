@@ -1,6 +1,10 @@
 # ChangeLog for sci-libs/libtifiles2
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2008; Christian Helbling <helch@gmx.ch> -libtifiles2-1.0.7.ebuild,
+  +libtifiles2-1.1.0.ebuild:
+  Version bump
 
   22 Sep 2007; Christian Helbling <helch@gmx.ch> -libtifiles2-1.0.5.ebuild,
   +libtifiles2-1.0.7.ebuild:
