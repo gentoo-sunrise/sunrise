@@ -1,0 +1,11 @@
+diff -ru exempi-1.99.7.orig/m4/boost.m4 exempi-1.99.7/m4/boost.m4
+--- exempi-1.99.7.orig/m4/boost.m4	2007-12-22 13:17:33.000000000 -0500
++++ exempi-1.99.7/m4/boost.m4	2008-01-14 17:57:20.475741830 -0500
+@@ -260,7 +260,6 @@
+     boost_$1$boost_tag_$boost_mt_$boost_rtopt_$boost_ver_ \
+     boost_$1$boost_tag_$boost_mt_$boost_ver_ \
+     boost_$1$boost_tag_$boost_rtopt_$boost_ver_ \
+-    boost_$1$boost_tag_$boost_mt_ \
+     boost_$1$boost_tag_$boost_ver_
+   do
+     # Avoid testing twice the same lib
