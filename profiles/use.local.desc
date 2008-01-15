@@ -153,6 +153,7 @@ net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/clinkcc:mythtv - Enable MythTV support
 net-misc/mugshot:xulrunner - Compile browser extension using xulrunner
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
+net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-news/rsstool:presets - Includes some preset searches for creating RSS feeds.
 net-p2p/btg:cppunit - Enable building unittests.
 net-p2p/btg:event-callback - Enable executing scripts for certain events (daemon).
