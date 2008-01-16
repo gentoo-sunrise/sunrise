@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,6 +20,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.7
 	>=gnome-base/gnome-vfs-2.16.0
 	>=gnome-base/libglade-2.6.0
 	>=gnome-base/libgnomeui-2.14.0
+	>=gnome-base/librsvg-2.18.0
 	>=gnome-extra/evolution-data-server-1.12
 	>=media-libs/gstreamer-0.10.15
 	>=media-libs/gst-plugins-base-0.10.15
@@ -34,6 +35,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.7
 	>=x11-libs/cairo-1.2.4
 	>=x11-libs/gtk+-2.10
 	x11-libs/libXxf86vm
+	>=x11-libs/pango-1.18.0
 	v4l? ( >=media-plugins/gst-plugins-v4l-0.10 )"
 
 DEPEND="${RDEPEND}
