@@ -1,0 +1,8 @@
+# ChangeLog for app-cdr/acetoneiso2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Jan 2008; Arne Janbu (Ampheus) <admin@ampheus.de> +metadata.xml,
+  +acetoneiso2-2.0-r1.ebuild:
+  New Ebuild for bug 197961
+
