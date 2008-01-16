@@ -4,11 +4,11 @@
 
 EAPI=1
 
-inherit eutils qt4
+inherit qt4
 
 DESCRIPTION="Extracting and browsing .iso files"
 HOMEPAGE="http://sourceforge.net/projects/acetoneiso2/"
-SRC_URI="mirror://sourceforge/acetoneiso2/acetoneiso2_${PV}-RC1.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV/_rc1/-RC1}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
