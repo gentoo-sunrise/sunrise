@@ -2,7 +2,8 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  15 Jan 2008; azazello <gentoo@horizon.ath.cx> ++, -mummer-3.19.ebuild:
+  15 Jan 2008; azazello <gentoo@horizon.ath.cx> -mummer-3.19.ebuild,
+  +mummer-3.20.ebuild:
   Version bump
 
   08 Mar 2007; AK <gentoo@horizon.ath.cx> mummer-3.19.ebuild:
