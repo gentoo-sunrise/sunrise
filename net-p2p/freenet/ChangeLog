@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jan 2008; (Tommy[D]) tommy100@gmx.de -freenet-0.7.1097.ebuild,
+  +freenet-0.7.1098.ebuild:
+  New upstream release + moved some stuff into a Makefile
+
   06 Jan 2008; (Tommy[D]) tommy100@gmx.de freenet-0.7.1097.ebuild:
   whitey
 

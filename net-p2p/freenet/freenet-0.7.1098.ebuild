@@ -28,32 +28,12 @@ pkg_setup() {
 	enewuser freenet -1 -1 /opt/freenet freenet
 }
 
-src_compile() {
-	cd contrib
-	mkdir -p bdb/examples
-	cd freenet_ext
-	ant || die "freenet-ext failed"
-
-	cd "${S}"/freenet
-	mkdir -p lib
-	cp "${S}"/contrib/freenet_ext/freenet-ext.jar lib/
-	ant || die "freenet-stable-latest failed"
-}
-
 src_install() {
+	emake install || die "emake install failed"
 	doinitd "${FILESDIR}"/freenet
-	insinto /opt/freenet
-	into /opt/freenet
-
 	dodoc license/README license/LICENSE.Mantissa license/LICENSE.Freenet
-	dobin bin/wrapper-linux-x86-{32,64}
-	dolib.so lib/libwrapper-linux-x86-{32,64}.so
-	doins seednodes.fref run.sh "${S}"/update.sh \
-		"${S}"/wrapper.conf freenet/lib/freenet-{cvs-snapshot,ext}.jar
 
-	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
-	fperms 755 /opt/freenet/{update,run}.sh
-	fowners freenet:freenet /opt/freenet/ -R
+	echo "End" >"$D"opt/freenet/freenet.ini
 }
 
 pkg_postinst () {
@@ -61,9 +41,9 @@ pkg_postinst () {
 	elog "2. Open localhost:8888 in your browser for the web interface."
 	elog " "
 	elog "If you dont know trusted people running freenet,"
-	elog "enable opennet ("insecure mode") on the config page to get started."
+	elog "enable opennet (\"insecure mode\") on the config page to get started."
 	elog " "
-	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/*
+	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/freenet-stable-latest.jar
 }
 
 pkg_postrm() {
