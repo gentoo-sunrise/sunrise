@@ -43,6 +43,9 @@ pkg_setup() {
 src_install() {
 	insinto /opt/rainlendar2
 	doins -r locale plugins resources scripts skins rainlendar2.htb
-	dobin rainlendar2
+	# the executable searches in . for the dirs above
+	exeinto /opt/rainlendar2
+	doexe rainlendar2
+	dosym /opt/rainlendar2/rainlendar2 /usr/bin/rainlendar2
 	dodoc Changes.txt
 }
