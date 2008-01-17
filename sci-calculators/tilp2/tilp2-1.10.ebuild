@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,17 +6,17 @@ inherit qt3
 
 DESCRIPTION="Program allowing a PC to communicate with a TI calculator."
 HOMEPAGE="http://lpg.ticalc.org/prj_tilp"
-SRC_URI="mirror://sourceforge/tilp/${P}.tar.gz"
+SRC_URI="http://www.helch.ch/gentoo/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="kde xinerama"
 
-RDEPEND=">=sci-libs/libticalcs2-1.0.7
-	>=sci-libs/libticables2-1.0.8
-	>=sci-libs/libtifiles2-1.0.7
-	>=sci-libs/libticonv-1.0.4
+RDEPEND=">=sci-libs/libticalcs2-1.1.0
+	>=sci-libs/libticables2-1.2.0
+	>=sci-libs/libtifiles2-1.1.0
+	>=sci-libs/libticonv-1.1.0
 	>=x11-libs/gtk+-2.6.0
 	>=dev-libs/glib-2.6.0
 	>=gnome-base/libglade-2
