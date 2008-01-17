@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r17050"
+MY_JAR_REV="r17104"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
@@ -86,3 +86,4 @@ pkg_postrm() {
 	elog "and dont want to keep your identity/other stuff"
 	elog "remember to do 'rm -rf /opt/freenet' do remove everything"
 }
+

@@ -32,8 +32,6 @@ src_install() {
 	emake install || die "emake install failed"
 	doinitd "${FILESDIR}"/freenet
 	dodoc license/README license/LICENSE.Mantissa license/LICENSE.Freenet
-
-	echo "End" >"$D"opt/freenet/freenet.ini
 }
 
 pkg_postinst () {
