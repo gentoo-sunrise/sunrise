@@ -1,0 +1,8 @@
+# ChangeLog for sci-biology/twinscan
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jan 2008; azazello <gentoo@horizon.ath.cx> +metadata.xml,
+  +twinscan-4.1.2.ebuild:
+  New package twinscan, bug 154939
+
