@@ -1,0 +1,9 @@
+# ChangeLog for sci-libs/openfoam-bin
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jan 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  +files/openfoam-bin-1.4.1_p20080118.patch, +files/compile-1.4.1.patch,
+  +metadata.xml, +openfoam-bin-1.4.1_p20080118.ebuild:
+  New ebuild for the binary version of OpenFOAM from bug 104257
+
