@@ -177,6 +177,9 @@ sci-libs/openfoam:metis - Enables the use of the systemwide metis/parmetis insta
 sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam:mico - Enables systemwide mico installation instead a local which comes with OF
 sci-libs/openfoam:parafoam - Enables the building of the vtkFoam and PVFoamReader libraries
+sci-libs/openfoam-bin:lam - Defines lam-mpi as default mpi implementation
+sci-libs/openfoam-bin:mpich - Defines mpich as default mpi implementation
+sci-libs/openfoam-bin:parafoam - Enables the building of the vtkFoam and PVFoamReader libraries
 sci-libs/parmetis:lam - Defines lam-mpi as default mpi implementation
 sci-libs/parmetis:mpich - Defines mpich as default mpi implementation
 sci-libs/sympy:xslt - Adds MathML printing support
