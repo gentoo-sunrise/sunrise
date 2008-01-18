@@ -22,7 +22,6 @@ app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
 app-misc/gizmod:libvisual - Enable the libvisual (Amarok) plugin
 app-misc/mc-mp:7zip - Add support for 7zip archives
-app-portage/portato:userpriv - Allow emerge processes as normal user.
 app-portage/pusher:subversion - Enable support for Subversion.
 dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-games/opal:double-precision - more precise calculations at the expense of speed
