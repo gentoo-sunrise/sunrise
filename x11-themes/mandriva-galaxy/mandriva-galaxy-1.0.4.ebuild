@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-themes/mandriva-galaxy/mandriva-galaxy-1.0.4.ebuild,v 1.17 2005/10/04 13:37:37 metalgod Exp $
 

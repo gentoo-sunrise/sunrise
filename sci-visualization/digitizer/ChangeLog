@@ -1,6 +1,9 @@
 # ChangeLog for sci-visualization/digitizer
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jan 2008; (Tommy[D]) tommy100@gmx.de digitizer-4.1.ebuild:
+  Reorder KEYWORDS
 
   23 Nov 2007; Jakub Moc <jakub@gentoo.org> digitizer-4.1.ebuild:
   Use qt3 eclass properly, add examples use flag, remove redundant stuff.
