@@ -1,6 +1,9 @@
 # ChangeLog for dev-cpp/libvmime
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jan 2008; (Tommy[D]) tommy100@gmx.de libvmime-0.8.1.ebuild:
+  Shorten DESCRIPTION
 
   05 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> -libvmime-0.8.0.ebuild,
   -files/libvmime-0.8.0-gnutls_ssl-detection.patch, +libvmime-0.8.1.ebuild,
