@@ -6,7 +6,7 @@ inherit qt3
 
 DESCRIPTION="Program allowing a PC to communicate with a TI calculator."
 HOMEPAGE="http://lpg.ticalc.org/prj_tilp"
-SRC_URI="http://www.helch.ch/gentoo/distfiles/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/tilp/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
