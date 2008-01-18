@@ -1,6 +1,9 @@
 # ChangeLog for dev-cpp/ETL
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jan 2008; (Tommy[D]) tommy100@gmx.de ETL-0.04.10.ebuild:
+  Shorten DESCRIPTION + reorder KEYWORDS
 
   19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
   ChangeLog:

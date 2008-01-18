@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="VoriaETL is a multiplatform class and template library which
-complements and supplements the C++ STL."
+complements and supplements the C++ STL"
 
 # currently :
 # https://sourceforge.net/projects/synfig/
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
