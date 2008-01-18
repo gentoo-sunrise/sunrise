@@ -1,10 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit eutils
 
-DESCRIPTION="Input event scripting utility that has special support for fancy keyboards and mice, USB dials, LIRC and USB remotes, and more."
+DESCRIPTION="Input event scripting utility that has special support for fancy keyboards, mice, USB dials and more"
 HOMEPAGE="http://gizmod.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="Apache-2.0"
