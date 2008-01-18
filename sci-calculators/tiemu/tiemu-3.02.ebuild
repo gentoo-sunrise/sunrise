@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils kde-functions 
+inherit kde-functions
 
 DESCRIPTION="TI89(ti)/92(+)/V200 emulator"
 HOMEPAGE="http://lpg.ticalc.org/prj_tiemu/"
