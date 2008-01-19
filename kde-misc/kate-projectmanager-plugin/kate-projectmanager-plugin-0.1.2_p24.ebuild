@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit kde
 
 KEYWORDS="~x86"
@@ -15,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND="|| ( kde-base/kate kde-base/kdebase )"
+DEPEND="|| ( kde-base/kate:3.5 kde-base/kdebase:3.5 )"
 RDEPEND="${DEPEND}"
 
 need-kde 3.5
