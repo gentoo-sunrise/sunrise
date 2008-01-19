@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils kde
 
 KEYWORDS="~x86"
@@ -16,7 +17,7 @@ SLOT="0"
 IUSE=""
 
 DEPEND=""
-RDEPEND="|| ( kde-base/kommander kde-base/kdewebdev )
+RDEPEND="|| ( kde-base/kommander:3.5 kde-base/kdewebdev:3.5 )
 	media-video/ffmpeg
 	media-video/transcode
 	media-sound/sox
