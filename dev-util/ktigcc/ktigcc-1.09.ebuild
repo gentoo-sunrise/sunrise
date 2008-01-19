@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="minimal"
 
 DEPEND=">=x11-libs/qt-3.3:3
-	>=kde-base/kdelibs-3.5.7
+	>=kde-base/kdelibs-3.5.7:3.5
 	dev-util/ctags
 	dev-util/pkgconfig
 	dev-embedded/tigcc
