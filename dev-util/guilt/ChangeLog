@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/guilt
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Jan 2008; Denis Cheng (raeLLL) <crquan@gmail.com> +metadata.xml,
+  +guilt-0.28.ebuild:
+  New Ebuild for bug #205931, thanks to Tommy[D]
+
