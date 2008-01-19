@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit kde
 
 DESCRIPTION="KDE style and native window decoration"
@@ -13,7 +14,7 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-DEPEND="|| ( kde-base/kwin kde-base/kdebase )
+DEPEND="|| ( kde-base/kwin:3.5 kde-base/kdebase:3.5 )
 	!x11-themes/serenity-decoration
 	!x11-themes/serenity-style"
 
