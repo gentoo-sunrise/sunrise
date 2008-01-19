@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils
 
 CLAMTK_KDEVER="0.07"
@@ -27,7 +28,7 @@ RDEPEND=">=dev-perl/gtk2-perl-1.140
 	dev-perl/Date-Calc
 	>=app-antivirus/clamav-0.83
 	nls? ( dev-perl/Locale-gettext )
-	kde? ( || ( kde-base/konqueror kde-base/kdebase ) )"
+	kde? ( || ( kde-base/konqueror:3.5 kde-base/kdebase:3.5 ) )"
 
 src_install() {
 	dobin clamtk
