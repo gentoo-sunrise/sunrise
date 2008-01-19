@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt3
 
 DESCRIPTION="Program allowing a PC to communicate with a TI calculator."
@@ -20,7 +21,7 @@ RDEPEND=">=sci-libs/libticalcs2-1.1.0
 	>=x11-libs/gtk+-2.6.0
 	>=dev-libs/glib-2.6.0
 	>=gnome-base/libglade-2
-	kde? ( kde-base/kdelibs )
+	kde? ( kde-base/kdelibs:3.5 )
 	xinerama? ( x11-libs/libXinerama )"
 
 DEPEND="${RDEPEND}
