@@ -28,8 +28,7 @@ RDEPEND=">=dev-libs/glib-2.6
 	>=x11-libs/gtk+-2.6
 	x11-libs/libXScrnSaver
 	x11-libs/pango
-	firefox? ( !xulrunner? (
-		>=www-client/mozilla-firefox-1.5 <www-client/mozilla-firefox-2.0.1 ) )
+	firefox? ( !xulrunner? ( =www-client/mozilla-firefox-2.0.0* ) )
 	sqlite? ( >=dev-db/sqlite-3.3 )
 	xulrunner? ( net-libs/xulrunner )"
 

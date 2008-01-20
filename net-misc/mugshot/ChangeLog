@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jan 2008; Jakub Moc <jakub@gentoo.org> mugshot-1.1.58.ebuild:
+  Fix mozilla-firefox dependency
+
   13 Jan 2008; (Tommy[D]) tommy100@gmx.de mugshot-1.1.58.ebuild:
   drop WANT_AUTO*
 
