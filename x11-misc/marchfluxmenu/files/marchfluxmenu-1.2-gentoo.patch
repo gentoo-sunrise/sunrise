@@ -1,0 +1,152 @@
+--- main.py.orig	2007-11-14 12:17:36.000000000 +0100
++++ main.py	2008-01-22 10:27:43.000000000 +0100
+@@ -50,7 +50,7 @@
+ 
+ 				
+ 	## Default icon for apps with no icons!	
+-	return '~/.marchfluxmenu/icons/application-default-icon.png'	
++	return '/usr/share/marchfluxmenu/icons/application-default-icon.png'	
+ 
+ class ExecMenuItem:
+ 	def __init__(self, label, command, icon, submenu):
+@@ -122,16 +122,16 @@
+ ## Variables Defined :
+ #############################
+ 
+-m8 = SubMenuItem('Sound & Video','~/.marchfluxmenu/icons/applications-multimedia.png',[])
+-m7 = SubMenuItem('Programming','~/.marchfluxmenu/icons/applications-development.png',[])
+-m1 = SubMenuItem('Education','~/.marchfluxmenu/icons/applications-education.png',[])
+-m2 = SubMenuItem('Games','~/.marchfluxmenu/icons/applications-games.png',[])
+-m3 = SubMenuItem('Graphics','~/.marchfluxmenu/icons/applications-graphics.png',[])
+-m4 = SubMenuItem('Internet','~/.marchfluxmenu/icons/applications-internet.png',[])
+-m5 = SubMenuItem('Office','~/.marchfluxmenu/icons/applications-office.png',[])
+-m9 = SubMenuItem('System Tools','~/.marchfluxmenu/icons/applications-system.png',[])
+-m0 = SubMenuItem('Accessories','~/.marchfluxmenu/icons/applications-accessories.png',[])
+-m6 = SubMenuItem('Others','~/.marchfluxmenu/icons/applications-other.png',[])
++m8 = SubMenuItem('Sound & Video','/usr/share/marchfluxmenu/icons/applications-multimedia.png',[])
++m7 = SubMenuItem('Programming','/usr/share/marchfluxmenu/icons/applications-development.png',[])
++m1 = SubMenuItem('Education','/usr/share/marchfluxmenu/icons/applications-education.png',[])
++m2 = SubMenuItem('Games','/usr/share/marchfluxmenu/icons/applications-games.png',[])
++m3 = SubMenuItem('Graphics','/usr/share/marchfluxmenu/icons/applications-graphics.png',[])
++m4 = SubMenuItem('Internet','/usr/share/marchfluxmenu/icons/applications-internet.png',[])
++m5 = SubMenuItem('Office','/usr/share/marchfluxmenu/icons/applications-office.png',[])
++m9 = SubMenuItem('System Tools','/usr/share/marchfluxmenu/icons/applications-system.png',[])
++m0 = SubMenuItem('Accessories','/usr/share/marchfluxmenu/icons/applications-accessories.png',[])
++m6 = SubMenuItem('Others','/usr/share/marchfluxmenu/icons/applications-other.png',[])
+ 
+ #submenu_list = [m0,m1,m2,m3,m4,m5,m7,m8,m9,m6]
+ 
+--- mfmdaemon.orig	2007-11-09 13:58:22.000000000 +0100
++++ mfmdaemon	2008-01-22 10:32:27.000000000 +0100
+@@ -2,7 +2,7 @@
+ 
+ ## Variables
+ DIRECTORY=/usr/share/applications/		# Directory to watch for changes
+-PROGRAM=~/.marchfluxmenu/trigger.py		# Initiation!
++PROGRAM=@@PYDIR@@/marchfluxmenu/trigger.py		# Initiation!
+ 
+ 
+ start_count=`ls $DIRECTORY | wc -l`
+@@ -19,7 +19,7 @@
+ 	if [ "$start_count" -gt "$count" ]	# Package Removed
+         then
+  		#sleep 1
+-                 exec python ~/.marchfluxmenu/onremove.py &
++                 exec python @@PYDIR@@/marchfluxmenu/onremove.py &
+ 		
+ 
+ 		start_count=$count
+@@ -29,7 +29,7 @@
+ 	if [ "$start_count" -lt "$count" ]	# Package Installed
+         then
+  		#sleep 1
+-                 exec python ~/.marchfluxmenu/onadd.py &
++                 exec python @@PYDIR@@/marchfluxmenu/onadd.py &
+ 		
+ 		
+ 		start_count=$count
+--- mfm_generate.py.orig	2007-11-11 19:58:01.000000000 +0100
++++ mfm_generate.py	2008-01-22 10:34:11.000000000 +0100
+@@ -24,7 +24,7 @@
+ string += ExecMenuItem('Web Browser', 'firefox', IconFind('firefox.png'), '').GenerateMenuLine()
+ string += ExecMenuItem('Terminal', 'xterm', IconFind('term.png'), '').GenerateMenuLine()
+ string +='''    [separator] (--------)
+- [submenu] (Settings) {settings} <~/.marchfluxmenu/icons/preferences-system.png>
++ [submenu] (Settings) {settings} </usr/share/marchfluxmenu/icons/preferences-system.png>
+ 		[config] (Fluxbox Menu)
+ 		[reconfig] (Reload Config)
+ 		[restart] (Restart Fluxbox)
+@@ -39,10 +39,10 @@
+ 		string += m.body
+ 		string += '\n'
+ 
+-string += '[separator] (tag end)\n' + '[exit] (Exit) <~/.marchfluxmenu/icons/exit.png>\n'+ '[end]\n'
++string += '[separator] (tag end)\n' + '[exit] (Exit) </usr/share/marchfluxmenu/icons/exit.png>\n'+ '[end]\n'
+ 
+ #print string
+-filename = os.path.expanduser('~/.fluxbox/menu')
++filename = os.path.expanduser('/usr/share/fluxbox/menu')
+ f = file(filename,'w')
+ f.write(string)
+ f.close()
+--- installer.orig	2007-11-11 20:16:35.000000000 +0100
++++ installer	2008-01-22 10:43:57.000000000 +0100
+@@ -17,33 +17,20 @@
+ 	echo '-----------------------------------'
+ 	echo 'This will rewrite your current fluxbox menu.'
+ 	echo 'You can find a backup called menu.mfm.bak under ~/.fluxbox'
+-	mkdir ~/.marchfluxmenu 2>/dev/null
+-	cp -R ../marchfluxmenu/. ~/.marchfluxmenu/ 2>/dev/null
+ 	mv ~/.fluxbox/menu ~/.fluxbox/menu.mfm.bak 2>/dev/null
+ 	touch ~/.fluxbox/menu 2>/dev/null
+-	exec python ~/.marchfluxmenu/mfm_generate.py & 2>/dev/null
+-	#sed '/bash/ i\~/.marchfluxmenu/./mfmdaemon &' ~/.fluxbox/startup > temp
+-	#mv temp ~/.fluxbox/startup
+-	~/.marchfluxmenu/./mfmdaemon & 2>/dev/null
++	exec python @@PYDIR@@/marchfluxmenu/mfm_generate.py & 2>/dev/null
+ 	
+ 	echo '-----------------------------------'
+ 	echo 'Installation Complete'
+ 	echo '-----------------------------------'
+-	echo 'Please add the line :'
+-	echo '    ~/.marchfluxmenu/./mfmdaemon & '
++	echo 'Please see mfmdaemon example script and'
++	echo 'put to somewhere under your $PATH and add the line'
++	echo '    mfmdaemon & '
+ 	echo 'to your fluxbox startup file if you want Marchfluxmenu'
+ 	echo 'to function everytime fluxbox starts (RECOMMENDED)'
+ 	echo '-----------------------------------'
+ 	
+ 	exit 1
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-fi
+\ No newline at end of file
++fi
+--- README.orig	2007-11-10 19:07:26.000000000 +0100
++++ README	2008-01-22 10:50:51.000000000 +0100
+@@ -12,13 +12,10 @@
+ --------------------
+ 
+ Marchfluxmenu is written in python, which you need to have in your system.
+-To run the GUI menu editor, fluxMenu, you'll also need pygtk.
+ 
+-Get the tarball, untar it and run the installer script there.
+-This will create a ~/.marchfluxmenu directory where the program will be 'installed'.The installer also generates a new fluxbox menu. The current menu will be backed up as ~/.fluxbox/menu.mfm.bak
+-The mfmdaemon is also started by the installer.
++Running marchfluxmenu generates a new fluxbox menu. The current menu will be backed up as ~/.fluxbox/menu.mfm.bak
+ You might want to add the 'daemon' to your fluxbox startup file as well, if you want it to run everytime fluxbox starts (Recommended!).
+-Just add the line 
+-		~/.marchfluxmenu/.mfmdaemon &
++Just copy the example script somewhere under $PATH and add the line 
++		mfmdaemon &
+ at the appropriate place of ~/.fluxbox/startup
+ 

@@ -1,0 +1,9 @@
+# ChangeLog for x11-misc/marchfluxmenu
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Jan 2008; Jakub Moc <jakub@gentoo.org>
+  +files/marchfluxmenu-1.2-gentoo.patch, +metadata.xml,
+  +marchfluxmenu-1.2.ebuild:
+  New ebuild, Bug 205838
+
