@@ -18,6 +18,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+DEPEND=""
+RDEPEND="!sys-fs/aufs ${DEPEND}"
 
 S="${WORKDIR}/aufs"
 
