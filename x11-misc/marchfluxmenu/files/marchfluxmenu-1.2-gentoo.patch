@@ -65,30 +65,6 @@
  		
  		
  		start_count=$count
---- mfm_generate.py.orig	2007-11-11 19:58:01.000000000 +0100
-+++ mfm_generate.py	2008-01-22 10:34:11.000000000 +0100
-@@ -24,7 +24,7 @@
- string += ExecMenuItem('Web Browser', 'firefox', IconFind('firefox.png'), '').GenerateMenuLine()
- string += ExecMenuItem('Terminal', 'xterm', IconFind('term.png'), '').GenerateMenuLine()
- string +='''    [separator] (--------)
-- [submenu] (Settings) {settings} <~/.marchfluxmenu/icons/preferences-system.png>
-+ [submenu] (Settings) {settings} </usr/share/marchfluxmenu/icons/preferences-system.png>
- 		[config] (Fluxbox Menu)
- 		[reconfig] (Reload Config)
- 		[restart] (Restart Fluxbox)
-@@ -39,10 +39,10 @@
- 		string += m.body
- 		string += '\n'
- 
--string += '[separator] (tag end)\n' + '[exit] (Exit) <~/.marchfluxmenu/icons/exit.png>\n'+ '[end]\n'
-+string += '[separator] (tag end)\n' + '[exit] (Exit) </usr/share/marchfluxmenu/icons/exit.png>\n'+ '[end]\n'
- 
- #print string
--filename = os.path.expanduser('~/.fluxbox/menu')
-+filename = os.path.expanduser('/usr/share/fluxbox/menu')
- f = file(filename,'w')
- f.write(string)
- f.close()
 --- installer.orig	2007-11-11 20:16:35.000000000 +0100
 +++ installer	2008-01-22 10:43:57.000000000 +0100
 @@ -17,33 +17,20 @@
@@ -150,3 +126,23 @@
 +		mfmdaemon &
  at the appropriate place of ~/.fluxbox/startup
  
+--- mfm_generate.py.orig	2007-11-11 19:58:01.000000000 +0100
++++ mfm_generate.py	2008-01-22 11:42:21.000000000 +0100
+@@ -24,7 +24,7 @@
+ string += ExecMenuItem('Web Browser', 'firefox', IconFind('firefox.png'), '').GenerateMenuLine()
+ string += ExecMenuItem('Terminal', 'xterm', IconFind('term.png'), '').GenerateMenuLine()
+ string +='''    [separator] (--------)
+- [submenu] (Settings) {settings} <~/.marchfluxmenu/icons/preferences-system.png>
++ [submenu] (Settings) {settings} </usr/share/marchfluxmenu/icons/preferences-system.png>
+ 		[config] (Fluxbox Menu)
+ 		[reconfig] (Reload Config)
+ 		[restart] (Restart Fluxbox)
+@@ -39,7 +39,7 @@
+ 		string += m.body
+ 		string += '\n'
+ 
+-string += '[separator] (tag end)\n' + '[exit] (Exit) <~/.marchfluxmenu/icons/exit.png>\n'+ '[end]\n'
++string += '[separator] (tag end)\n' + '[exit] (Exit) </usr/share/marchfluxmenu/icons/exit.png>\n'+ '[end]\n'
+ 
+ #print string
+ filename = os.path.expanduser('~/.fluxbox/menu')
