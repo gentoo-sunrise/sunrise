@@ -6,7 +6,7 @@ inherit eutils python multilib
 
 MY_PN="mfm"
 MY_P="${MY_PN}-${PV}"
-DESCRIPTION="An attempt to have the fluxbox menu emulate the Gnome (or XFCE) menu, in both looks and functionality."
+DESCRIPTION="An attempt to have the fluxbox menu emulate Gnome (or XFCE) menu, in both looks and functionality."
 HOMEPAGE="http://code.google.com/p/marchfluxmenu/"
 SRC_URI="http://marchfluxmenu.googlecode.com/files/${MY_P}.tar.gz"
 
