@@ -30,7 +30,9 @@ src_compile() {
 	# generate manuals default
 	emake man || die "Generating manuals failed"
 
-	use doc && ( emake html || die "Generating html docs failed" )
+	if use doc; then
+		emake html || die "Generating html docs failed"
+	fi
 }
 
 src_install() {
