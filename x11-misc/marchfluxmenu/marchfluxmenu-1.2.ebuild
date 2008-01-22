@@ -38,7 +38,7 @@ src_install() {
 
 	insinto /usr/share/${PN}
 	doins -r icons
-	
+
 	newbin installer ${PN}
 	rm -rf COPYING README icons installer main.pyc mfmdaemon
 
