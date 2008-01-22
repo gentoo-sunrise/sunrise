@@ -4,5 +4,5 @@
 
   22 Jan 2008; Jakub Moc <jakub@gentoo.org> +metadata.xml,
   +xfce-icons-gant-3.9.6.ebuild:
-  New ebuild
+  New ebuild by myself, Bug 207015.
 
