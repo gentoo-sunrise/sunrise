@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/acetoneiso2/acetoneiso2-2.0-r1.ebuild,v 1.0 2008/01/16 09:39:58 ampheus Exp $
+# $Header: $
 
 EAPI=1
 
 inherit qt4
 
-DESCRIPTION="Extracting and browsing .iso files"
+DESCRIPTION="Graphical tool to do a lot things with image files like extracting, mounting, encrypting."
 HOMEPAGE="http://sourceforge.net/projects/acetoneiso2/"
 SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV/_rc1/-RC1}.tar.gz"
 
