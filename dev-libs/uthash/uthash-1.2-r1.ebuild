@@ -11,9 +11,9 @@ SRC_URI="mirror://sourceforge/uthash/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc"
-IUSE=""
+IUSE="test"
 
-DEPEND=""
+DEPEND="test? ( dev-lang/perl )"
 RDEPEND=""
 
 src_test() {
@@ -26,7 +26,6 @@ src_install() {
 	insinto /usr/include
 	doins src/uthash.h
 
-	dohtml doc/html/userguide.html doc/html/tdh*.css
-
+	dodoc doc/txt/userguide.txt
 	doman doc/man/uthash.3
 }
