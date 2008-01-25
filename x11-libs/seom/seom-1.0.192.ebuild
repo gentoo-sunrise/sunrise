@@ -29,7 +29,7 @@ src_compile() {
 	for ABI in $(get_install_abis); do
 		cd "${WORKDIR}/${ABI}"
 
-		econf --prefix="/usr" || die "econf failed"
+		econf --arch="${ABI}" --prefix="/usr" || die "econf failed"
 		emake CC="$(tc-getCC)" $(get_abi_CFLAGS ${ABI}) || die "emake failed"
 	done
 }
