@@ -4,7 +4,8 @@
 
 inherit eutils versionator
 
-MY_PV="$(get_version_component_range 3)"
+#MY_PV="$(get_version_component_range 3)"
+MY_PV="${PV/0.7_alpha_pre/}"
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_PV}.tar.bz2"
