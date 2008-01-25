@@ -4,13 +4,13 @@
 
 inherit toolchain-funcs
 
-DESCRIPTION="This is a growing collection of the unix tools that nobody thought to write thirty years ago"
+DESCRIPTION="a growing collection of the unix tools that nobody thought to write thirty years ago"
 HOMEPAGE="http://www.kitenet.net/~joey/code/moreutils.html"
 SRC_URI="http://ftp.debian.org/debian/pool/main/m/moreutils/${P/-/_}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="doc? ( =app-text/docbook-xml-dtd-4.4*
@@ -27,23 +27,22 @@ src_unpack() {
 		-e 's/docbook2x-man $</docbook2man.pl $< >$@/g' \
 		"${S}/Makefile" || die "sed failed"
 
+	# Broken when $S has spaces.
 	if use doc; then
 		sed -i \
 			-e 's#file.*/xml/\(.*docbookx.dtd\)#\1#g' \
 			$(find "${S}" -iname *.docbook -printf '%p ') || die "sed failed"
-
 	else
 		sed -i \
 			-e 's/^MANS/#/' \
 			-e 's#install $(MANS) $(PREFIX)/usr/share/man/man1##' \
 			-e 's#mkdir -p $(PREFIX)/usr/share/man/man1##' \
 			"${S}/Makefile" || die "sed failed"
-
 	fi
 }
 
 src_compile() {
-	emake CC=$(tc-getCC) || die "emake failed"
+	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
 src_install() {

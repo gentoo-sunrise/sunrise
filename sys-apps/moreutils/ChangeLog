@@ -1,6 +1,10 @@
 # ChangeLog for sys-apps/moreutils
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  25 Jan 2008; Santiago M. Mola <coldwind@gentoo.org>
+  -moreutils-0.22.ebuild, +moreutils-0.26.ebuild:
+  Version bump, remove old, ~amd64 added.
 
   08 Jul 2007; Mike Pagano <mpagano@gmail.com> -moreutils-0.20.ebuild,
   +moreutils-0.22.ebuild:
