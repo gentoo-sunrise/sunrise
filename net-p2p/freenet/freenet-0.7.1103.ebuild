@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="!net-p2p/freenet-bin
-	dev-java/sun-jdk
+DEPEND="dev-java/sun-jdk
 	dev-java/ant"
 RDEPEND="virtual/jre"
 
