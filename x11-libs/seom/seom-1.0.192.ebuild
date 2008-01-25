@@ -9,8 +9,7 @@ EMULTILIB_PKG="true"
 DESCRIPTION="OpenGL video capturing library"
 HOMEPAGE="http://neopsis.com/projects/seom"
 
-MY_PV="$(replace_version_separator 2 '-')"
-SRC_URI="http://dbservice.com/ftpdir/tom/seom/trunk/seom-${MY_PV}.tar.bz2"
+SRC_URI="http://dbservice.com/ftpdir/tom/seom/trunk/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,7 +21,7 @@ RDEPEND=""
 src_unpack() {
 	for ABI in $(get_install_abis); do
 		unpack ${A}
-		mv "${PN}-${MY_PV}" "${ABI}"
+		mv "${P}" "${ABI}"
 	done
 }
 
@@ -31,7 +30,7 @@ src_compile() {
 		cd "${WORKDIR}/${ABI}"
 
 		econf --prefix="/usr" || die "econf failed"
-		emake CC="$(tc-getCC) $(get_abi_CFLAGS ${ABI})" || die "emake failed"
+		emake CC="$(tc-getCC)" $(get_abi_CFLAGS ${ABI}) || die "emake failed"
 	done
 }
 
