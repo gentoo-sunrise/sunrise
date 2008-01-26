@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools eutils flag-o-matic games
+inherit autotools eutils games
 
 DESCRIPTION="BSP nodebuilder for DooM engine games."
 HOMEPAGE="http://games.moria.org.uk/doom/bsp/"
@@ -32,14 +32,11 @@ src_unpack() {
 		-e '/^docdir =.*/d' \
 		-e '/^doc_DATA =.*/d' \
 		Makefile.am || die "sed Makefile.am failed"
-	eautoreconf || die "eautoreconf failed"
+
+	eautoreconf
 }
 
 src_compile() {
-	# gcc chokes if -g and -fomit-frame-pointer are given
-	use debug && filter-flags -fomit-frame-pointer
-	# gcc chokes if -pg and -fomit-frame-pointer are given
-	use profile && filter-flags -fomit-frame-pointer
 	egamesconf \
 		$(use_enable debug) \
 		$(use_enable dmalloc) \
