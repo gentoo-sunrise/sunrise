@@ -1,6 +1,9 @@
 # ChangeLog for app-laptop/linux-phc
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Jan 2008; Jakub Moc <jakub@gentoo.org> linux-phc-0.2.9.ebuild:
+  Fix autotools handling
 
   18 Apr 2007; Markus Ullmann <jokey@gentoo.org> -linux-phc-0.2.8.ebuild,
   linux-phc-0.2.9.ebuild:

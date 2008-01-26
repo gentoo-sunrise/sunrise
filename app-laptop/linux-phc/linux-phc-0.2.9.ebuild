@@ -78,14 +78,15 @@ src_unpack() {
 	cp -P "${KV_DIR}"/${mydir}/speedstep-centrino.c "${S}"/${mydir}/
 
 	epatch "${S}"/${PATCH}
-}
 
-src_compile() {
-	einfo "Compiling measurefreq"
 	cd "${S}"/utils/measurefreq
 	eautoconf
 	eautomake
-	econf || die "econf failed"
+}
+
+src_compile() {
+	cd "${S}"/utils/measurefreq
+	econf
 	emake || die "emake failed"
 }
 
