@@ -6,7 +6,7 @@ inherit eutils python toolchain-funcs multilib
 
 DESCRIPTION="Object-oriented python bindings for subversion"
 HOMEPAGE="http://pysvn.tigris.org/"
-SRC_URI="http://pysvn.tigris.org/files/documents/1233/34994/${P}.tar.gz"
+SRC_URI="http://pysvn.barrys-emacs.org/source_kits/${P}.tar.gz"
 
 LICENSE="Apache-1.1"
 SLOT="0"
@@ -27,7 +27,7 @@ src_unpack() {
 
 	python setup.py configure || die "configure failed"
 
-	# we want our CFLAGS as well and don't need krb linkage
+	# we want our CFLAGS as well
 	sed -e 's:^\(CCFLAGS=\)\(.*\):\1$(CFLAGS) \2:g' \
 		-e 's:^\(CCCFLAGS=\)\(.*\):\1$(CXXFLAGS) \2:g' \
 		-e "/^CCC=/s:g++:$(tc-getCXX):" \
@@ -40,9 +40,9 @@ src_install() {
 	python_version
 
 	cd pysvn
-	exeinto /usr/$(get_libdir)/python${PYVER}/site-packages/pysvn
-	doexe _pysvn.so
-	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/pysvn
+	exeinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+	doexe _pysvn_2_4.so
+	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 	doins __init__.py
 
 	cd "${S}/../Docs"
@@ -50,9 +50,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_mod_compile "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages"
+	python_mod_optimize "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 }
 
 pkg_postrm() {
-	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages"
+	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
 }
