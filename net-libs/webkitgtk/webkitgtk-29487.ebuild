@@ -43,13 +43,12 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf="$(use_enable sqlite database) \
-			$(use_enable sqlite icon-database) \
-			$(use_enable svg)
-			$(use_enable debug)
-			$(use_enable gstreamer video)"
-
-	econf ${myconf} || die "configure failed"
+	econf \
+		$(use_enable sqlite database) \
+		$(use_enable sqlite icon-database) \
+		$(use_enable svg)
+		$(use_enable debug)
+		$(use_enable gstreamer video)
 
 	emake || die "emake failed"
 }
