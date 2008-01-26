@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit games
+inherit games autotools
 
 DESCRIPTION="Doom port designed to act identically to the original game"
 HOMEPAGE="http://www.chocolate-doom.org/"
@@ -30,6 +30,8 @@ src_unpack() {
 	sed -i \
 		-e "s:^gamesdir =.*:gamesdir = ${GAMES_BINDIR}:" \
 		setup/Makefile.am || die "sed Makefile.am failed"
+
+	eautoreconf
 }
 
 src_compile() {

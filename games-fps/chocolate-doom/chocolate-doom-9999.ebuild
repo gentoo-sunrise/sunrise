@@ -30,12 +30,11 @@ src_unpack() {
 	sed -i \
 		-e "s:^gamesdir =.*:gamesdir = ${GAMES_BINDIR}:" \
 		setup/Makefile.am || die "sed Makefile.am failed"
+
+	eautoreconf
 }
 
 src_compile() {
-
-	eautoreconf
-
 	egamesconf \
 		--disable-sdltest \
 		--disable-dependency-tracking \
