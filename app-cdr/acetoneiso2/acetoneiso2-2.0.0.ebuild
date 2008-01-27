@@ -8,7 +8,7 @@ inherit qt4
 
 DESCRIPTION="Graphical tool to do a lot things with image files like extracting, mounting, encrypting."
 HOMEPAGE="http://sourceforge.net/projects/acetoneiso2/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV/_rc1/-RC1}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}-source.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
