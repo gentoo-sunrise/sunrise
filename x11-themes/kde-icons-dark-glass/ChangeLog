@@ -1,0 +1,8 @@
+# ChangeLog for x11-themes/kde-icons-dark-glass
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Jan 2008; Jakub Moc <jakub@gentoo.org> +metadata.xml,
+  +kde-icons-dark-glass-2.5.ebuild:
+  New ebuild
+
