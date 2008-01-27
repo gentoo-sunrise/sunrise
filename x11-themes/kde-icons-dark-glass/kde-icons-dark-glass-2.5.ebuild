@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit gnome2-utils eutils
+inherit eutils
 
 MY_PN="${PN/kde-icons-}"
 MY_P="${MY_PN}-${PV}"
@@ -36,12 +36,4 @@ src_compile() {
 src_install() {
 	insinto /usr/share/icons/${MY_PN}
 	doins -r "${S}"/*
-}
-
-pkg_postinst() {
-	gnome2_icon_cache_update
-}
-
-pkg_postrm() {
-	gnome2_icon_cache_update
 }
