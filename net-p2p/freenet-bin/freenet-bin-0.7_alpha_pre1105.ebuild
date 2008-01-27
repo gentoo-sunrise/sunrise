@@ -2,14 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_JAR_REV="r17298"
+inherit eutils
+
+MY_JAR_REV="r17311"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://downloads.freenetproject.org/alpha/installer/freenet07.tar.gz
 	http://downloads.freenetproject.org/alpha/${MY_JAR_FILE}
-	http://downloads.freenetproject.org/alpha/freenet-ext.jar"
+	http://downloads.freenetproject.org/alpha/freenet-ext.jar
+	http://downloads.freenetproject.org/alpha/opennet/seednodes.fref"
 
 LICENSE="GPL-2"
 IUSE=""
@@ -53,11 +56,10 @@ src_install() {
 	insinto /opt/freenet
 	into /opt/freenet
 	doins "${DISTDIR}/freenet-ext.jar" "${DISTDIR}/${MY_JAR_FILE}" \
-		wrapper.conf run.sh
+		"${DISTDIR}"/seednodes.fref wrapper.conf run.sh
 	dobin bin/wrapper-linux-x86-{32,64}
 	dolib.so lib/libwrapper-linux-x86-{32,64}.so
 
-	echo "End">"$D"opt/freenet/freenet.ini
 	dosym freenet-stable-latest.jar /opt/freenet/freenet.jar
 	fperms 755 /opt/freenet/run.sh
 	fowners -R freenet:freenet /opt/freenet/
