@@ -20,13 +20,16 @@ KEYWORDS="-* ~amd64 ~x86"
 IUSE="examples lam mpich"
 
 RDEPEND="!sci-libs/openfoam
+	!sci-libs/openfoam-kernel
+	!sci-libs/openfoam-meta
+	!sci-libs/openfoam-solvers
+	!sci-libs/openfoam-utilities
+	!sci-libs/openfoam-wmake
 	dev-java/sun-java3d-bin
 	net-misc/openssh
 	net-misc/mico
-	sys-libs/readline
-	sys-libs/zlib
 	<virtual/jdk-1.5
-	>=sci-visualization/paraview-3.0
+	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
 	mpich? ( sys-cluster/mpich2 )"
@@ -35,6 +38,10 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
+	if use lam && use mpich ; then
+		die "Please choose only one MPI implementation as default."
+	fi
+
 	if ! version_is_at_least 4.2 $(gcc-version) ; then
 		die "${MY_P} requires >=sys-devel/gcc-4.2 for execution."
 	fi
@@ -51,9 +58,9 @@ pkg_setup() {
 	fi
 
 	elog
-	elog " In order to get FoamX running, you have to do the following: "
-	elog " mkdir -p ~/.${MY_P}/apps "
-	elog " cp -r /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/apps/FoamX ~/.${MY_P}/apps "
+	elog "In order to get FoamX running, you have to do the following: "
+	elog "mkdir -p ~/.${MY_P}/apps "
+	elog "cp -r /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/apps/FoamX ~/.${MY_P}/apps "
 	elog
 
 	java-pkg-2_pkg_setup
@@ -152,6 +159,9 @@ src_compile() {
 		"${S}"/.${MY_P}/bashrc.bak	\
 		|| die "could not replace source options"
 
+	find "${S}"/wmake -name dirToString | xargs rm -rf
+	find "${S}"/wmake -name wmkdep | xargs rm -rf
+
 	source "${S}"/.${MY_P}/bashrc.bak
 	rm "${S}"/.${MY_P}/bashrc.bak
 
@@ -160,8 +170,6 @@ src_compile() {
 	sed -i -e "s|/\$WM_OPTIONS||" "${S}"/.bashrc || die "could not delete \$WM_OPTIONS in .bashrc"
 	sed -i -e "s|/\$WM_OPTIONS||" "${S}"/.cshrc || die "could not delete \$WM_OPTIONS in .cshrc"
 	rm "${S}"/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/config/{irix64_6.5-mips4,irix_6.5-mips3,sunos64_5.8-ultra,linux64_2.6-pwr4-glibc_2.3.3}/qmake
-	rm "${S}"/wmake/rules/{solarisGcc,sgi64Gcc,sgiN32Gcc}/dirToString
-	rm "${S}"/wmake/rules/{solarisGcc,linuxI64}/wmkdep
 }
 
 src_test() {
@@ -177,6 +185,7 @@ src_install() {
 
 	insopts -m0755
 	doins -r bin
+
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications/bin
 	doins -r applications/bin/${WM_OPTIONS}/*
 
