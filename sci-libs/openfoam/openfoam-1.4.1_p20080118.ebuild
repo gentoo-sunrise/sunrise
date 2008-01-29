@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-inherit eutils java-pkg-2 versionator python multilib toolchain-funcs
+inherit eutils java-pkg-2 versionator multilib toolchain-funcs
 
 MY_PN="OpenFOAM"
 MY_PV=$(get_version_component_range 1-3 ${PV})
@@ -18,11 +18,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples lam mpich metis"
 
 RDEPEND="!sci-libs/openfoam-bin
+	!sci-libs/openfoam-kernel
+	!sci-libs/openfoam-meta
+	!sci-libs/openfoam-solvers
+	!sci-libs/openfoam-utilities
+	!sci-libs/openfoam-wmake
 	dev-java/sun-java3d-bin
 	net-misc/openssh
 	net-misc/mico
-	sys-libs/readline
-	sys-libs/zlib
 	<virtual/jdk-1.5
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
@@ -34,6 +37,10 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
+	if use lam && use mpich ; then
+		die "Please choose only one MPI implementation as default."
+	fi
+
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
 		die "${PN} requires >=sys-devel/gcc-4.1 to compile."
 	fi
@@ -81,7 +88,6 @@ src_compile() {
 	sed -i -e "s|WM_PROJECT_VERSION=|WM_PROJECT_VERSION=${MY_PV} #|"	\
 		-e "s|export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|# export WM_PROJECT_INST_DIR=\$HOME/\$WM_PROJECT|"	\
 		-e "s|#export WM_PROJECT_INST_DIR=/usr/local/\$WM_PROJECT|export WM_PROJECT_INST_DIR=/usr/$(get_libdir)/\$WM_PROJECT|"	\
-		-e "s|WM_COMPILER=Gcc|WM_COMPILER=|"	\
 		-e "s|[^#]export WM_MPLIB=| #export WM_MPLIB=|"	\
 		-e "s|#export WM_MPLIB=$|export WM_MPLIB="${WM_MPLIB}"|" \
 		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
@@ -90,7 +96,6 @@ src_compile() {
 	sed -i -e "s|WM_PROJECT_VERSION |WM_PROJECT_VERSION ${MY_PV} #|"	\
 		-e "s|setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|# setenv WM_PROJECT_INST_DIR \$HOME/\$WM_PROJECT|"	\
 		-e "s|#setenv WM_PROJECT_INST_DIR /usr/local/\$WM_PROJECT|setenv WM_PROJECT_INST_DIR /usr/$(get_libdir)/\$WM_PROJECT|"	\
-		-e "s|WM_COMPILER Gcc|WM_COMPILER |"	\
 		-e "s|[^#]setenv WM_MPLIB | #setenv WM_MPLIB |"	\
 		-e "s|#setenv WM_MPLIB OPENMPI|setenv WM_MPLIB "${WM_MPLIB}"|" \
 		-e "s|SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|#SOURCE \$WM_PROJECT_DIR/\$FOAM_DOT_DIR/apps|"	\
@@ -186,9 +191,6 @@ src_compile() {
 
 	source "${S}"/.${MY_P}/bashrc.bak
 
-	cd "${S}"/wmake/rules
-	ln -sf ${WM_ARCH}Gcc $WM_ARCH${WM_COMPILER} || die "dosym wmake linuxXX failed"
-
 	find "${S}"/wmake -name dirToString | xargs rm -rf
 	find "${S}"/wmake -name wmkdep | xargs rm -rf
 
@@ -201,7 +203,6 @@ src_compile() {
 	sed -i -e "s|/\$WM_OPTIONS||" "${S}"/.bashrc || die "could not delete \$WM_OPTIONS in .bashrc"
 	sed -i -e "s|/\$WM_OPTIONS||" "${S}"/.cshrc || die "could not delete \$WM_OPTIONS in .cshrc"
 	rm "${S}"/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/config/{irix64_6.5-mips4,irix_6.5-mips3,sunos64_5.8-ultra,linux64_2.6-pwr4-glibc_2.3.3}/qmake
-	rm "${S}"/wmake/rules/$WM_ARCH${WM_COMPILER}
 }
 
 src_test() {
@@ -217,6 +218,7 @@ src_install() {
 
 	insopts -m0755
 	doins -r bin
+
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications/bin
 	doins -r applications/bin/${WM_OPTIONS}/*
 

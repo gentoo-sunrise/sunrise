@@ -9,7 +9,6 @@ MY_PV=$(get_version_component_range 1-3 ${PV})
 MY_P="${MY_PN}-${MY_PV}"
 MY_PARA_PV="2.6.2"
 MY_PARA_PV_SHORT=$(get_version_component_range 1-2 ${MY_PARA_PV})
-#MY_PARA_PV_SHORT="2.6"
 
 DESCRIPTION="Open Field Operation and Manipulation - CFD Simulation Toolbox"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
@@ -18,14 +17,18 @@ SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
-IUSE="doc examples lam mico mpich metis parafoam hdf5 mpi python threads"
+KEYWORDS="~amd64 ~x86"
+IUSE="doc examples lam mpich metis parafoam hdf5 mpi python threads"
 
-RDEPEND="dev-java/sun-java3d-bin
+RDEPEND="!sci-libs/openfoam-bin
+	!sci-libs/openfoam-kernel
+	!sci-libs/openfoam-meta
+	!sci-libs/openfoam-solvers
+	!sci-libs/openfoam-utilities
+	!sci-libs/openfoam-wmake
+	dev-java/sun-java3d-bin
 	net-misc/openssh
-	mico? ( net-misc/mico )
-	sys-libs/readline
-	sys-libs/zlib
+	net-misc/mico
 	<virtual/jdk-1.5
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
@@ -33,7 +36,7 @@ RDEPEND="dev-java/sun-java3d-bin
 	metis? ( sci-libs/metis sci-libs/metis sci-libs/parmetis )
 	parafoam? ( sci-libs/vtk
 		=sci-visualization/paraview-${MY_PARA_PV} )
-	!parafoam? ( sci-visualization/paraview )"
+	!parafoam? ( <sci-visualization/paraview-3.0 )"
 
 DEPEND="${RDEPEND}
 	parafoam? ( dev-util/cmake dev-libs/expat )"
@@ -42,52 +45,43 @@ PVSOURCEDIR="${WORKDIR}/paraview-${MY_PARA_PV}"
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	if [[ $(gcc-major-version) -lt 4 && $(gcc-minor-version) -lt 1 ]] ; then
+	if ! version_is_at_least 4.1 $(gcc-version) ; then
 		die "${PN} requires >=sys-devel/gcc-4.1 to compile."
 	fi
 
 	if use parafoam ; then
-		ewarn
-		ewarn " You are building OpenFOAM with parafoam enabled, this means "
-		ewarn " that you are only building the vtkFoam and PVFoamReader libraries. "
-		ewarn " It is highly recommended to *DISABLE* this USE-Flag and use instead "
-		ewarn " the native OpenFOAM support in ParaView-${MY_PARA_PV}: "
-		ewarn " You have to open the controlDict file of each case and "
-		ewarn " choose the OpenFOAM filter for the controlDict files. "
-		ewarn
+		elog
+		elog " You are building OpenFOAM with parafoam enabled, this means "
+		elog " that you are only building the vtkFoam and PVFoamReader libraries. "
+		elog " It is highly recommended to *DISABLE* this USE-Flag and use instead "
+		elog " the native OpenFOAM support in ParaView-${MY_PARA_PV}: "
+		elog " You have to open the controlDict file of each case and "
+		elog " choose the OpenFOAM filter for the controlDict files. "
 	else
-		ewarn
-		ewarn " You are building with parafoam disabled, this means "
-		ewarn " that paraFoam will not be installed. "
-		ewarn " You have to use instead the native OpenFOAM support in ParaView-${MY_PARA_PV}: "
-		ewarn " You have to open the controlDict file of each case and "
-		ewarn " choose the OpenFOAM filter for the controlDict files. "
-		ewarn
-	fi
-
-	if ! use mico ; then
-		ewarn
-		ewarn " You are building OpenFOAM without the mico USE-Flag, that means "
-		ewarn " you build against the mico that is shipped with OpenFOAM. "
-		ewarn " It is highly recommended to enable the mico USE-Flag and "
-		ewarn " build against a system wide mico. "
-		ewarn " At the moment there is no mico ebuild in the official portage tree, "
-		ewarn " but Bug 122141 provides an working ebuild. "
-		ewarn
+		elog
+		elog " You are building with parafoam disabled, this means "
+		elog " that paraFoam will not be installed. "
+		elog " You have to use instead the native OpenFOAM support in ParaView-${MY_PARA_PV}: "
+		elog " You have to open the controlDict file of each case and "
+		elog " choose the OpenFOAM filter for the controlDict files. "
 	fi
 
 	if use amd64 ; then
-		einfo
-		einfo "In order to use OpenFOAM you should add the following lines to ~/.bashrc :"
-		einfo 'WM_64="on"'
-		einfo "source /usr/$(get_libdir)/OpenFOAM/bashrc"
-		einfo
+		elog
+		elog " In order to use OpenFOAM you should add the following lines to ~/.bashrc :"
+		elog ' WM_64="on"'
+		elog " source /usr/$(get_libdir)/OpenFOAM/bashrc"
 	else
-		einfo
-		einfo "In order to use OpenFOAM you should add the following line to ~/.bashrc :"
-		einfo "source /usr/$(get_libdir)/OpenFOAM/bashrc"
-		einfo
+		elog
+		elog " In order to use OpenFOAM you should add the following line to ~/.bashrc :"
+		elog " source /usr/$(get_libdir)/OpenFOAM/bashrc"
 	fi
+
+	elog
+	elog " In order to get FoamX running, you have to do the following: "
+	elog " mkdir -p ~/.${MY_P}/apps "
+	elog " cp -r /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/apps/FoamX ~/.${MY_P}/apps "
+	elog
 
 	java-pkg-2_pkg_setup
 }
@@ -104,10 +98,9 @@ src_unpack() {
 	fi
 
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}.patch || die "could not patch"
-	epatch "${FILESDIR}"/compile-${MY_PV}.patch || die "could not patch"
-
-	use mico && epatch "${FILESDIR}"/mico-${MY_PV}.patch
+	epatch "${FILESDIR}"/${P}.patch
+	epatch "${FILESDIR}"/compile-${MY_PV}.patch
+	epatch "${FILESDIR}"/mico-${MY_PV}.patch
 }
 
 src_compile() {
@@ -201,17 +194,15 @@ src_compile() {
 		-e "s|[^#]setenv LD_LIBRARY_PATH|# setenv LD_LIBRARY_PATH|"	\
 			"${S}"/."${MY_P}"/apps/paraview/cshrc
 
-	if use mico ; then
-		sed -i -e 's|MICO_VERSION=|MICO_VERSION=`/usr/bin/mico-config --version` # |'	\
-			-e "s|[^#]export MICO_PATH=|# export MICO_PATH=|"	\
-			-e "s|MICO_ARCH_PATH=|MICO_ARCH_PATH=/usr # |"	\
-			"${S}"/.bashrc
+	sed -i -e 's|MICO_VERSION=|MICO_VERSION=`/usr/bin/mico-config --version` # |'	\
+		-e "s|[^#]export MICO_PATH=|# export MICO_PATH=|"	\
+		-e "s|MICO_ARCH_PATH=|MICO_ARCH_PATH=/usr # |"	\
+		"${S}"/.bashrc
 
-		sed -i -e 's|MICO_VERSION |MICO_VERSION `/usr/bin/mico-config --version` # |'	\
-			-e "s|[^#]setenv MICO_PATH |# setenv MICO_PATH |"	\
-			-e "s|MICO_ARCH_PATH |MICO_ARCH_PATH /usr # |"	\
-			"${S}"/.cshrc
-	fi
+	sed -i -e 's|MICO_VERSION |MICO_VERSION `/usr/bin/mico-config --version` # |'	\
+		-e "s|[^#]setenv MICO_PATH |# setenv MICO_PATH |"	\
+		-e "s|MICO_ARCH_PATH |MICO_ARCH_PATH /usr # |"	\
+		"${S}"/.cshrc
 
 	if use metis ; then
 		sed -i -e "s|-lmetis \\\|-L/usr/$(get_libdir) -lmetis|"	\
@@ -317,7 +308,7 @@ src_compile() {
 	. "${S}"/.${MY_P}/bashrc.bak
 
 	cd "${S}"/wmake/rules
-	ln -sf ${WM_ARCH}Gcc $WM_ARCH${WM_COMPILER} || die "dosym wmake linux64 failed"
+	ln -sf ${WM_ARCH}Gcc $WM_ARCH${WM_COMPILER} || die "dosym wmake linuxXX failed"
 
 	cd "${S}"
 	./Allwmake || die "could not build"
@@ -363,10 +354,8 @@ src_install() {
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications
 	doins -r applications/solvers applications/test applications/utilities
 
-	if use doc ; then
-		insinto /usr/share/${MY_PN}/${MY_P}/doc
-		doins -r README doc/Guides-a4 doc/Guides-usletter
-	fi
+	insinto /usr/share/${MY_PN}/${MY_P}/doc
+	doins -r README doc/Guides-a4 doc/Guides-usletter
 
 	dosym /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/bashrc /usr/$(get_libdir)/${MY_PN}/bashrc
 	dosym /usr/$(get_libdir)/${MY_PN}/${MY_P}/.${MY_P}/cshrc /usr/$(get_libdir)/${MY_PN}/cshrc
