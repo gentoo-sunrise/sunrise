@@ -84,9 +84,9 @@ src_unpack() {
 	fi
 
 	# update init script parameters for selected MTA
-        sed \
-                -e "s|^\(MTA=\).*|\1${MTA}|g" \
-                "${FILESDIR}/confd.mailscanner-mta" > "${S}/confd.mailscanner-mta"
+	sed \
+	-e "s|^\(MTA=\).*|\1${MTA}|g" \
+		"${FILESDIR}/confd.mailscanner-mta" > "${S}/confd.mailscanner-mta"
 
 	# setup virus scanner(s)
 	VIRUS_SCANNERS=""
@@ -134,12 +134,12 @@ src_unpack() {
 	sed -i \
 		-e "s#/opt/MailScanner/bin/check_mailscanner#/usr/sbin/check_MailScanner#g" \
 		"${S}/bin/cron/check_MailScanner.cron"
-        for cronfile in update_virus_scanners.cron update_{,bad_}phishing_sites.cron; do
+	for cronfile in update_virus_scanners.cron update_{,bad_}phishing_sites.cron; do
 	sed -i \
 		-e "s#/etc/sysconfig/MailScanner#/etc/conf.d/mailscanner#g" \
 		-e "s#/opt/MailScanner/bin#/usr/sbin#g" \
 		"${S}/bin/cron/${cronfile}"
-        done
+	done
 
 	# Determine some things that may need to be changed in conf file
 	# (need to arrive at sensible replacement for yoursite)
@@ -211,7 +211,7 @@ src_install() {
 	doexe	bin/d2mbox bin/df2mbox
 	doexe	bin/update_virus_scanners
 	doexe	bin/upgrade_MailScanner_conf
-        doexe   bin/update_bad_phishing_sites bin/update_phishing_sites
+	doexe   bin/update_bad_phishing_sites bin/update_phishing_sites
 	newexe	bin/Sophos.install.linux Sophos.install
 
 	insinto	/etc/MailScanner
@@ -255,16 +255,16 @@ src_install() {
 	#Set up cron jobs
 	exeinto /etc/cron.hourly
 	newexe "${S}/bin/cron/check_MailScanner.cron" check_MailScanner
-        for cronfile in update_{virus_scanners,{bad_,}phishing_sites}; do
-            newexe "${S}/bin/cron/${cronfile}.cron" ${cronfile}
-        done
+	for cronfile in update_{virus_scanners,{bad_,}phishing_sites}; do
+		newexe "${S}/bin/cron/${cronfile}.cron" ${cronfile}
+	done
 
 	exeinto /etc/cron.daily
 	newexe "${S}/bin/cron/clean.quarantine.cron" clean.quarantine
 
 	dodoc README
-        insinto /usr/share/doc/${PF}
-        doins MailScanner.conf.index.html
+	insinto /usr/share/doc/${PF}
+	doins MailScanner.conf.index.html
 
 	keepdir /var/spool/MailScanner/incoming
 	keepdir /var/spool/MailScanner/quarantine
