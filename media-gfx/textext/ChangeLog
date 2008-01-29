@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2008; Oliver Borm (boroli) <oli.borm@web.de> textext-0.3.3.ebuild:
+  Updated dependencies, thanks to Caster
+
   27 Jan 2008; Oliver Borm (oli) <oli.borm@web.de> +metadata.xml,
   +textext-0.3.3.ebuild:
   New Ebuild for bug 207690

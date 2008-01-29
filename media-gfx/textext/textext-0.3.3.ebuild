@@ -13,13 +13,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="media-gfx/inkscape"
+RDEPEND="|| ( media-gfx/pdf2svg media-gfx/pstoedit )"
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
-	if ! built_with_use media-gfx/inkscape postscript ; then
-		eerror "you need to emerge media-gfx/inkscape with postscript support."
-		die "remerge media-gfx/inkscape with USE=\"postscript\""
+	if ! has_version media-gfx/pdf2svg && ! built_with_use media-gfx/pstoedit plotutils ; then
+		eerror "you need to emerge eihter media-gfx/pstoedit with plotutils support or media-gfx/pdf2svg."
+		die "Either remerge media-gfx/pstoedit with USE=\"plotutils\" or emerge media-gfx/pdf2svg"
 	fi
 }
 
