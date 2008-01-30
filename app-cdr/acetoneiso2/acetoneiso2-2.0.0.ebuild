@@ -22,7 +22,8 @@ DEPEND="
 	app-arch/p7zip
 	|| ( kde-base/konqueror gnome-base/nautilus kde-base/kdebase )
 	crypt? ( >=app-crypt/gnupg-2 )
-	sys-fs/fuse"
+	sys-fs/fuse
+	sys-fs/fuseiso"
 
 RDEPEND=${DEPEND}
 

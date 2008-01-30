@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jan 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
+  acetoneiso2-2.0.0.ebuild:
+  Added sys-fs/fuseiso to DEPEND. Thanks to realmatrix.
+
   27 Jan 2008; Jakub Moc <jakub@gentoo.org> -acetoneiso2-2.0_rc1.ebuild,
   +acetoneiso2-2.0.0.ebuild:
   Version bump, remove old
