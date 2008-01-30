@@ -1,0 +1,10 @@
+# ChangeLog for sci-libs/openfoam-src
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Jan 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  +files/openfoam-src-compile-1.4.1_p20080118.patch,
+  +files/openfoam-src-1.4.1_p20080118.patch, +metadata.xml,
+  +openfoam-src-1.4.1_p20080118.ebuild:
+  New Ebuild for the OpenFOAM kernel sources
+
