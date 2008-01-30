@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source /etc/conf.d/moblock
-source /sbin/functions.sh
+source /etc/init.d/functions.sh
 
 log_file=/var/log/moblock-update.log
 tmp_dir=/tmp/moblock-update.$$ 

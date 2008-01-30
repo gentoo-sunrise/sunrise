@@ -10,7 +10,7 @@
 # It's screwy, but effective.
 
 source /etc/conf.d/moblock
-source /sbin/functions.sh
+source /etc/init.d/functions.sh
 
 moblock_pidfile=/var/run/moblock.pid
 stat_log_name=/var/log/MoBlock.stats
