@@ -1,0 +1,11 @@
+# ChangeLog for dev-lang/vala
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  31 Jan 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  +metadata.xml, +vala-0.1.6.ebuild:
+  New ebuild for bug 179971. Thanks to Zsombor G. <zombi@mailbox.hu>, Chris
+  Mayo <mayo@clara.co.uk>, Claes Mogren <cm@acc.umu.se>, Olivier Crete
+  <tester@gentoo.org>, Jean-François Wauthy <pollux@xfce.org>, Nguyen Thai
+  Ngoc Duy <pclouds@gentoo.org>, and Christoph Brill (egore) <egore@gmx.de>
+
