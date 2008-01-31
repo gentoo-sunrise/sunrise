@@ -1,6 +1,10 @@
 # ChangeLog for net-libs/raknet
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  31 Jan 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
+  +raknet-3.011.ebuild:
+  Ebuild for RakNet 3.011
 
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> raknet-2.521.ebuild:
   Fix multilib handling
