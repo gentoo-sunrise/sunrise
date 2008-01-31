@@ -53,9 +53,13 @@ src_unpack() {
 		else
 			G2CONF="${G2CONF} --with-gecko-sdk=/usr/$(get_libdir)/mozilla-firefox"
 		fi
+
+		# use the correct libdir in the firefox-update.sh script
 		sed -e "s:GET_LIBDIR:$(get_libdir):" \
 			"${FILESDIR}/${P}-firefox-update.sh" > "${S}/firefox-update.sh"
-		# support mozilla-firefox-bin if we are compiling for x86
+
+		# add support for (32-bit) mozilla-firefox-bin if our profile is
+		# x86 or amd64 with a 32-bit userland
 		if [ "${ARCH}" = "x86" -o "${ABI}" = "x86" ] ; then
 			FIREDIRS="${FIREDIRS} /opt/firefox"
 		fi

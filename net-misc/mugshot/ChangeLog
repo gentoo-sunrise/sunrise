@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jan 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  mugshot-1.1.58.ebuild:
+  Improved comments, as requested by jakub.
+
   20 Jan 2008; Jakub Moc <jakub@gentoo.org> mugshot-1.1.58.ebuild:
   Fix mozilla-firefox dependency
 
