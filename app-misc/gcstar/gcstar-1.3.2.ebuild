@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="mp3 spell tellico vorbis"
 
-LANGS="ar bg ca cs de es fr id it pl pt ro ru sr sv tr"
+LANGS="ar bg ca cs de es fr gl id it pl pt ro ru sr sv tr"
 for x in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${x}"
 done
@@ -45,6 +45,12 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch "${FILESDIR}/${P}-man.patch"
+}
+
 src_install() {
 	cd "${S}"/lib/gcstar/GCLang
 
@@ -63,9 +69,6 @@ src_install() {
 	rm -rf tmp
 
 	cd "${S}"
-	# otherwise man pages would get installed in /usr/man
-	mv man share
-
 	./install --prefix="${D}/usr" \
 		--noclean --nomenu || die "install script failed"
 
@@ -77,6 +80,4 @@ src_install() {
 	if use linguas_fr; then
 		dodoc CHANGELOG.fr README.fr
 	fi
-
-	doman share/man/gcstar.1
 }
