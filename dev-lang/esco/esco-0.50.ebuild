@@ -4,7 +4,7 @@
 
 DESCRIPTION="ESoteric COmbine -- interpreter of esoteric programing languages"
 HOMEPAGE="http://esco.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}-src-${PV}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${PN}-src-${PV}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,3 +18,4 @@ src_install() {
 	emake DESTDIR="${D}" install
 	dodoc README docs/README_RU.utf8 ChangeLog AUTHORS
 }
+
