@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jan 2008; Markus Ullmann <jokey@gentoo.org> -confd.mailscanner-mta,
+  initd.mailscanner, -initd.mailscanner-mta, MailScanner-4.66.5.3:
+  Mailscanner-mta is no longer needed
+
   27 Jan 2008; Markus Ullmann <jokey@gentoo.org> Manifest:
   Version bump -- try me first before killing old version
 

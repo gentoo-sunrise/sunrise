@@ -3,15 +3,12 @@
 opts="${opts} reload"
 
 depend() {
-	need net MailScanner-mta
+	need net mta
 	use logger dns
 }
 
 start() {
 	ebegin "Starting MailScanner"
-#	/sbin/start-stop-daemon --quiet \
-#		--start --startas /usr/sbin/check_MailScanner \
-#		--pidfile /var/run/mailscanner.pid
 	/usr/sbin/check_MailScanner >/dev/null
 	RETVAL=$?
 	[ ${RETVAL} -eq 0 ] && touch /var/lock/subsys/MailScanner
@@ -21,10 +18,8 @@ start() {
 
 stop() {
 	ebegin "Stopping MailScanner"
-#	start-stop-daemon -o --quiet --stop --pidfile /var/run/mailscanner.pid
 	killall -15 MailScanner
 	RETVAL=$?
-#	[ -f /var/run/mailscanner.pid ] && rm /var/run/mailscanner.pid
 	[ ${RETVAL} -eq 0 ] && rm -f /var/lock/subsys/MailScanner
 	[ ${RETVAL} -eq 0 ] && touch /var/lock/subsys/MailScanner.off
 	eend ${RETVAL}
@@ -47,5 +42,3 @@ restart() {
 	sleep ${RESTART_DELAY}
 	svc_start
 }
-
-

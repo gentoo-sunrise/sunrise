@@ -33,6 +33,7 @@ RDEPEND="${DEPEND}
 	dev-perl/Net-DNS
 	dev-perl/TimeDate
 	dev-perl/Sys-Hostname-Long
+	dev-perl/Filesys-Df
 	>=net-mail/tnef-1.4.3
 	virtual/perl-File-Spec
 	virtual/perl-File-Temp
@@ -82,11 +83,6 @@ src_unpack() {
 		SENDMAIL='/usr/lib/sendmail'
 		SENDMAIL2='/usr/lib/sendmail'
 	fi
-
-	# update init script parameters for selected MTA
-	sed \
-	-e "s|^\(MTA=\).*|\1${MTA}|g" \
-		"${FILESDIR}/confd.mailscanner-mta" > "${S}/confd.mailscanner-mta"
 
 	# setup virus scanner(s)
 	VIRUS_SCANNERS=""
@@ -206,51 +202,49 @@ src_unpack() {
 
 src_install() {
 	exeinto ${BASE}/sbin
-	doexe	bin/MailScanner
-	newexe	bin/check_mailscanner check_MailScanner
-	doexe	bin/d2mbox bin/df2mbox
-	doexe	bin/update_virus_scanners
-	doexe	bin/upgrade_MailScanner_conf
-	doexe   bin/update_bad_phishing_sites bin/update_phishing_sites
-	newexe	bin/Sophos.install.linux Sophos.install
+	doexe bin/MailScanner
+	newexe bin/check_mailscanner check_MailScanner
+	doexe bin/d2mbox bin/df2mbox
+	doexe bin/update_virus_scanners
+	doexe bin/upgrade_MailScanner_conf
+	doexe bin/update_bad_phishing_sites bin/update_phishing_sites
+	newexe bin/Sophos.install.linux Sophos.install
 
-	insinto	/etc/MailScanner
-	doins	etc/*.conf
-	doins	etc/mailscanner.conf.with.mcp
-	doins	etc/MailScanner.conf.${MY_PV}
-	doins	etc/MailScanner.conf.sample
+	insinto /etc/MailScanner
+	doins etc/*.conf
+	doins etc/mailscanner.conf.with.mcp
+	doins etc/MailScanner.conf.${MY_PV}
+	doins etc/MailScanner.conf.sample
 
-	insinto	/etc/MailScanner/rules
-	doins	etc/rules/*
-	insinto	/etc/MailScanner/mcp
-	doins	etc/mcp/*
+	insinto /etc/MailScanner/rules
+	doins etc/rules/*
+	insinto /etc/MailScanner/mcp
+	doins etc/mcp/*
 
 	insinto /etc/MailScanner
 	doins -r etc/reports
 
-	insinto	${BASE}/$(get_libdir)/MailScanner
-	doins	lib/*.prf
+	insinto ${BASE}/$(get_libdir)/MailScanner
+	doins lib/*.prf
 
 	exeinto ${BASE}/$(get_libdir)/MailScanner
-	doexe	lib/*-wrapper
-	doexe	lib/*-autoupdate
-	doexe	lib/*-autoupdate.old
-	doexe	lib/*.pm
+	doexe lib/*-wrapper
+	doexe lib/*-autoupdate
+	doexe lib/*-autoupdate.old
+	doexe lib/*.pm
 
-	exeinto	${BASE}/$(get_libdir)/MailScanner/MailScanner
-	doexe	lib/MailScanner/*.pm
-	doexe	lib/MailScanner/*.pl
+	exeinto ${BASE}/$(get_libdir)/MailScanner/MailScanner
+	doexe lib/MailScanner/*.pm
+	doexe lib/MailScanner/*.pl
 
-	insinto	${BASE}/$(get_libdir)/MailScanner/MailScanner
-	doins	lib/MailScanner/*.txt
+	insinto ${BASE}/$(get_libdir)/MailScanner/MailScanner
+	doins lib/MailScanner/*.txt
 
-	exeinto	${BASE}/$(get_libdir)/MailScanner/MailScanner/CustomFunctions
-	doexe	lib/MailScanner/CustomFunctions/MyExample.pm
+	exeinto ${BASE}/$(get_libdir)/MailScanner/MailScanner/CustomFunctions
+	doexe lib/MailScanner/CustomFunctions/MyExample.pm
 
 	newinitd "${FILESDIR}"/initd.mailscanner MailScanner
-	newinitd "${FILESDIR}"/initd.mailscanner-mta MailScanner-mta
 	newconfd "${FILESDIR}"/confd.mailscanner MailScanner
-	newconfd "${S}"/confd.mailscanner-mta MailScanner-mta
 
 	#Set up cron jobs
 	exeinto /etc/cron.hourly
@@ -282,18 +276,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [ -n "`grep -xE "[[:space:]]*provide[[:space:]]+(.*[[:space:]]+)*mta([[:space:]]+.*)*" /etc/init.d/${MTA}`" ]; then
-		ewarn
-		ewarn "Warning: your mta service startup script /etc/init.d/${MTA}"
-		ewarn "seems to provide 'mta', this may give problems with /etc/init.d/MailScanner-mta."
-		ewarn
-		ewarn "The Installation is *NOT* Completed Yet, You still need Filesystem::Df"
-		ewarn "Please use emerge g-cpan and run the following command"
-		ewarn
-		ewarn " # g-cpan -i Filesys::Df "
-		ewarn
-
-		echo
+	if use postfix; then
+		elog "Note that postfix 2.4 now supports HOLD of messages"
+		elog "and reinjection without second postfix instance"
+		elog "Inbound path is now ${ROOT}var/spool/postfix/hold"
 	fi
 
 	if [ -f "/etc/MailScanner/MailScanner.conf" ]; then
