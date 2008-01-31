@@ -280,6 +280,9 @@ pkg_postinst() {
 		elog "Note that postfix 2.4 now supports HOLD of messages"
 		elog "and reinjection without second postfix instance"
 		elog "Inbound path is now ${ROOT}var/spool/postfix/hold"
+		elog
+		elog "See http://mailscanner.info/postfix.html for details"
+		elog "or check (english) gentoo-wiki.com page which has been updated"
 	fi
 
 	if [ -f "/etc/MailScanner/MailScanner.conf" ]; then
