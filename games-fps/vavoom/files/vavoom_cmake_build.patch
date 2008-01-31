@@ -1,0 +1,92 @@
+--- CMakeLists.txt	2008-01-31 22:32:53.000000000 +0100
++++ CMakeLists.txt	2008-01-31 22:45:47.000000000 +0100
+@@ -16,7 +16,13 @@
+ 	add_definitions(-DHAVE_INTTYPES_H=1)
+ endif(INTTYPES_INCLUDE_DIR)
+ 
+-set(DATADIR share/vavoom)
++IF(NOT DEFINED DATADIR)
++	set(DATADIR share/vavoom)
++ENDIF(NOT DEFINED DATADIR)
++
++IF(NOT DEFINED BINDIR)
++	set(BINDIR bin)
++ENDIF(NOT DEFINED BINDIR)
+ 
+ add_subdirectory(utils)
+ add_subdirectory(source)
+--- source/CMakeLists.txt	2008-01-31 22:34:28.000000000 +0100
++++ source/CMakeLists.txt	2008-01-31 23:00:17.000000000 +0100
+@@ -845,8 +845,6 @@
+ 
+ add_executable(vavoom ${MAIN_SOURCES})
+ if(UNIX)
+-set_target_properties(vavoom PROPERTIES OUTPUT_NAME ../vavoom.i686)
+-else(UNIX)
+ set_target_properties(vavoom PROPERTIES OUTPUT_NAME ../vavoom)
+ endif(UNIX)
+ if (MAIN_COMPILE_FLAGS)
+@@ -855,21 +853,7 @@
+ target_link_libraries(vavoom ${MAIN_LIBS})
+ add_dependencies(vavoom timidity glbsp libglvis)
+ 
+-install(TARGETS vavoom DESTINATION bin)
+-
+-install(FILES vavoom.png DESTINATION ${DATADIR})
+-
+-if(UNIX)
+-	file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/vavoom
+-"#!/bin/sh
+-# Needed to make symlinks/shortcuts work.
+-# the binaries must run with correct working directory
+-cd \"${CMAKE_INSTALL_PREFIX}/${DATADIR}\"
+-\"${CMAKE_INSTALL_PREFIX}/bin/vavoom.i686\" $* ${IWADDIR}
+-exit $?
+-")
+-	install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vavoom DESTINATION bin)
+-endif(UNIX)
++install(TARGETS vavoom DESTINATION ${BINDIR})
+ 
+ endif(ENABLE_CLIENT)
+ 
+@@ -889,27 +873,13 @@
+ 
+ add_executable(vavoom-dedicated ${SERVER_SOURCES})
+ if(UNIX)
+-set_target_properties(vavoom-dedicated PROPERTIES OUTPUT_NAME ../vavoom-dedicated.i686)
+-else(UNIX)
+-set_target_properties(vavoom-dedicated PROPERTIES OUTPUT_NAME ../vavoom-dedicated)
++set_target_properties(vavoom-dedicated PROPERTIES OUTPUT_NAME ../vavoom-ded)
+ endif(UNIX)
+ set_target_properties(vavoom-dedicated PROPERTIES COMPILE_FLAGS -DSERVER)
+ target_link_libraries(vavoom-dedicated glbsp ${ZLIB_LIBRARY} ${NET_LIBRARIES})
+ add_dependencies(vavoom-dedicated glbsp)
+ 
+-install(TARGETS vavoom-dedicated DESTINATION bin)
+-
+-if(UNIX)
+-	file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/vavoom-dedicated
+-"#!/bin/sh
+-# Needed to make symlinks/shortcuts work.
+-# the binaries must run with correct working directory
+-cd \"${CMAKE_INSTALL_PREFIX}/${DATADIR}\"
+-\"${CMAKE_INSTALL_PREFIX}/bin/vavoom-dedicated.i686\" $* ${IWADDIR}
+-exit $?
+-")
+-	install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vavoom-dedicated DESTINATION bin)
+-endif(UNIX)
++install(TARGETS vavoom-dedicated DESTINATION ${BINDIR})
+ 
+ endif(ENABLE_SERVER)
+ 
+--- utils/vlaunch/CMakeLists.txt	2008-01-31 22:53:37.000000000 +0100
++++ utils/vlaunch/CMakeLists.txt	2008-01-31 22:53:56.000000000 +0100
+@@ -9,7 +9,7 @@
+ 	)
+ 	target_link_libraries(vlaunch ${wxWidgets_LIBRARIES})
+ 
+-	install(TARGETS vlaunch DESTINATION bin)
++	install(TARGETS vlaunch DESTINATION ${BINDIR})
+ 
+ #EXTRA_DIST = \
+ #	vavoom.xpm \
