@@ -8,7 +8,7 @@ SRC_URI="http://home.hccnet.nl/paul.schuurmans/linux/download/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=sys-libs/ncurses-5.3"
