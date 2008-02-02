@@ -35,7 +35,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-symon.conf.patch
 
 	# if the symux USE flag was not specified don't build the target
-	! use symux && sed -i -e 's|symux||' symon/Makefile
+	! use symux && sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile
 	use symux && epatch "${FILESDIR}"/${PN}-symux.conf.patch
 
 	if use syweb ; then

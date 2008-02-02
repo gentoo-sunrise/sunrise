@@ -4,6 +4,10 @@
 
   02 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   symon-2.78-r1.ebuild:
+  Do a safer pattern in sed when the user requested not to build the symux target
+
+  02 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  symon-2.78-r1.ebuild:
   Instead of using sed and avoiding pre-stripping in src_unpack, make the
   package use the STRIP variable from the portage environment in src_compile
 
