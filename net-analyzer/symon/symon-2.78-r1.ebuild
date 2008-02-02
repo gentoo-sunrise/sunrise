@@ -41,7 +41,9 @@ src_unpack() {
 		epatch "${FILESDIR}"/${PN}-syweb-total_firewall.layout.patch
 	fi
 
-	! use symux && sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile
+	if ! use symux ; then
+		sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile || die "sed failed."
+	fi
 }
 
 src_compile() {
