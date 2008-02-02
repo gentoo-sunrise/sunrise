@@ -15,7 +15,8 @@ ESVN_REPO_URI="https://vavoom.svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro asm debug dedicated flac mad mikmod models music openal opengl +sdl textures tools vorbis wxwindows"
+IUSE="allegro asm debug dedicated flac mad mikmod models music openal opengl
++sdl textures tools vorbis wxwindows"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
 
@@ -41,12 +42,11 @@ DEPEND="media-libs/libpng
 	!sdl? ( allegro? ( ${ALLEGDEPEND} ) )
 	!sdl? ( !allegro? ( !dedicated? ( ${OPENGLDEPEND} ) ) )
 	opengl? ( ${OPENGLDEPEND} )
-	music? ( media-libs/libvorbis )
+	vorbis? ( media-libs/libvorbis )
 	flac? ( media-libs/flac )
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	openal? ( media-libs/openal )
-	external-glbsp? ( games-util/glbsp )
 	wxwindows? ( =x11-libs/wxGTK-2.8* )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
@@ -143,7 +143,7 @@ src_compile() {
 	mycmakeargs="${mycmakeargs}
 					-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
 					-DCMAKE_CXX_FLAGS_DEBUG=-g2
-					-DDATADIR=${GAMES_DATADIR}/${PN}
+					-DDATADIR=${datadir}
 					-DBINDIR=${GAMES_BINDIR}
 					-DENABLE_CLIENT=ON
 					${with_allegro}

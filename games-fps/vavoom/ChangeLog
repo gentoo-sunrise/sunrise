@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Feb 2008; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
+  Fixed dependencies plus some tidyup
+
   02 Feb 2008; Davide Cendron (scen) <scen@gentoo.org>
   files/vavoom_cmake_build.patch, vavoom-1.26.ebuild, vavoom-9999.ebuild:
   Updated cmake patch to reflect upstream changes. Introduced use of EAPI, and
