@@ -4,6 +4,11 @@
 
   02 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   symon-2.78-r1.ebuild:
+  Instead of using sed and avoiding pre-stripping in src_unpack, make the
+  package use the STRIP variable from the portage environment in src_compile
+
+  02 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  symon-2.78-r1.ebuild:
   Instead of using sed and tc-getCC to call the correct gcc in src_unpack,
   make the package use the proper CC from the portage environment in
   src_compile

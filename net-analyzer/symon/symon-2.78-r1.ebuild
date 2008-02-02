@@ -45,14 +45,10 @@ src_unpack() {
 	fi
 
 	sed -i -e "s:CFLAGS+=-Wall:CFLAGS=${CFLAGS}:" symon/Makefile.inc
-
-	# leave to portage stripping binaries
-	sed -i -e "/STRIP/d" symon/symon/Makefile
-	sed -i -e "/STRIP/d" symon/symux/Makefile
 }
 
 src_compile() {
-	MAKE=pmake emake CC="$(tc-getCC)" || die "emake failed."
+	MAKE=pmake emake CC="$(tc-getCC)" STRIP=true || die "emake failed."
 }
 
 src_install() {
