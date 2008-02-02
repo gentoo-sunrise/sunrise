@@ -44,10 +44,6 @@ src_unpack() {
 		epatch "${FILESDIR}"/${PN}-syweb-total_firewall.layout.patch
 	fi
 
-	# we've to sed the whole line because CC? means if the variable is not
-	# already defined
-	sed -i -e "s:^CC.*:CC=$(tc-getCC):" symon/Makefile.inc
-
 	sed -i -e "s:CFLAGS+=-Wall:CFLAGS=${CFLAGS}:" symon/Makefile.inc
 
 	# leave to portage stripping binaries
@@ -56,7 +52,7 @@ src_unpack() {
 }
 
 src_compile() {
-	MAKE=pmake emake || die "emake failed."
+	MAKE=pmake emake CC="$(tc-getCC)" || die "emake failed."
 }
 
 src_install() {
