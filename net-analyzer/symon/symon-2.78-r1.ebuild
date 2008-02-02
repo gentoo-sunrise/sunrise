@@ -33,9 +33,6 @@ src_unpack() {
 	unpack ${A}
 
 	epatch "${FILESDIR}"/${PN}-symon.conf.patch
-
-	# if the symux USE flag was not specified don't build the target
-	! use symux && sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile
 	use symux && epatch "${FILESDIR}"/${PN}-symux.conf.patch
 
 	if use syweb ; then
@@ -44,7 +41,8 @@ src_unpack() {
 		epatch "${FILESDIR}"/${PN}-syweb-total_firewall.layout.patch
 	fi
 
-	sed -i -e "s:CFLAGS+=-Wall:CFLAGS=${CFLAGS}:" symon/Makefile.inc
+	! use symux && sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile
+	sed -i -e "s:CFLAGS+=-Wall:CFLAGS=${CFLAGS}:" "${S}"/Makefile.inc
 }
 
 src_compile() {
