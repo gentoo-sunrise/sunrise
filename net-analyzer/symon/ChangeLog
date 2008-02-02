@@ -4,6 +4,11 @@
 
   02 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   symon-2.78-r1.ebuild:
+  Append Gentoo CFLAGS in src_compile by using the CFLAGS variable from the
+  portage environment instead of doing it with sed in src_unpack
+
+  02 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  symon-2.78-r1.ebuild:
   Put sed calls after epatch ones to prevent breaking patches, and use "${S}"
   instead of hardcoding the directories
 

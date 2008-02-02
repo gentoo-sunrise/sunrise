@@ -42,11 +42,11 @@ src_unpack() {
 	fi
 
 	! use symux && sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile
-	sed -i -e "s:CFLAGS+=-Wall:CFLAGS=${CFLAGS}:" "${S}"/Makefile.inc
 }
 
 src_compile() {
-	MAKE=pmake emake CC="$(tc-getCC)" STRIP=true || die "emake failed."
+	MAKE=pmake emake CC="$(tc-getCC)" CFLAGS+="${CFLAGS}" \
+		STRIP=true || die "emake failed."
 }
 
 src_install() {
