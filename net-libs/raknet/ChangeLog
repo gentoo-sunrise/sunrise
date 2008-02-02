@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Feb 2008; (Tommy[D]) tommy100@gmx.de -raknet-2.521.ebuild,
+  raknet-3.011.ebuild:
+  Drop autotools.eclass, simplify SRC_URI and drop old version
+
   31 Jan 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
   +raknet-3.011.ebuild:
   Ebuild for RakNet 3.011

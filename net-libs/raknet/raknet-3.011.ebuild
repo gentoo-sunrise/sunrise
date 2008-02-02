@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools
-
 DESCRIPTION="Multiplayer game network engine"
 HOMEPAGE="http://www.rakkarsoft.com/"
-SRC_URI="mirror://sourceforge/raknetjenkinsso/raknet-${PV}.tar.gz"
+SRC_URI="mirror://sourceforge/raknetjenkinsso/${P}.tar.gz"
 LICENSE="CCPL-Attribution-NonCommercial-2.5"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
