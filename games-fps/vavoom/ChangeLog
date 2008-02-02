@@ -2,6 +2,14 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Feb 2008; Davide Cendron (scen) <scen@gentoo.org>
+  files/vavoom_cmake_build.patch, vavoom-1.26.ebuild, vavoom-9999.ebuild:
+  Updated cmake patch to reflect upstream changes. Introduced use of EAPI, and
+  enabling "sdl" USE flag by default. Readded "vorbis" USE flag in SVN live
+  ebuild, because a user would can enable Vorbis support, but not install the
+  enhanced music files (see previous change by jakub); if "music" is on, and
+  "vorbis" is off, Vorbis support is forcibly enabled.
+
   31 Jan 2008; Davide Cendron (scen) <scen@gentoo.org>
   +files/vavoom_cmake_build.patch, vavoom-9999.ebuild:
   Upstream has switched build system to CMake, so i've changed the SVN live

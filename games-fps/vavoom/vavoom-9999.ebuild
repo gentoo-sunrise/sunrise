@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
+
 WX_GTK_VER="2.8"
+
 inherit cmake-utils eutils subversion wxwidgets games
 
 DESCRIPTION="Advanced source port for Doom/Heretic/Hexen/Strife"
@@ -12,8 +15,7 @@ ESVN_REPO_URI="https://vavoom.svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro asm debug dedicated flac mad mikmod models music openal opengl
-sdl textures tools vorbis wxwindows"
+IUSE="allegro asm debug dedicated flac mad mikmod models music openal opengl +sdl textures tools vorbis wxwindows"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
 
@@ -52,7 +54,7 @@ PDEPEND="models? ( >=games-fps/vavoom-models-1.4.2 )
 	music? ( games-fps/vavoom-music )
 	textures? ( games-fps/vavoom-textures )"
 
-dir=${GAMES_DATADIR}/${PN}
+datadir=${GAMES_DATADIR}/${PN}
 
 pkg_setup() {
 	games_pkg_setup
@@ -109,13 +111,12 @@ src_unpack() {
 
 	# Patch CMakelists.txt to
 	# - get rid of executable wrappers
-	# - permit custom {bin,dat}dir
 	# - set custom binary names
 	epatch "${FILESDIR}/${PN}_cmake_build.patch"
 
-	# Set shared directory
+	# Set shared data directory
 	sed -i \
-		-e "s:fl_basedir = \".\":fl_basedir = \"${dir}\":" \
+		-e "s:fl_basedir = \".\":fl_basedir = \"${datadir}\":" \
 		source/files.cpp || die "sed files.cpp failed"
 }
 
@@ -194,11 +195,11 @@ src_install() {
 pkg_postinst() {
 	games_pkg_postinst
 
-	elog "Copy or link wad files into ${dir}"
+	elog "Copy or link wad files into ${datadir}"
 	elog "(the files must be readable by the 'games' group)."
 	elog
 	elog "Example setup:"
-	elog "ln -sn ${GAMES_DATADIR}/doom-data/doom.wad ${dir}/"
+	elog "ln -sn ${GAMES_DATADIR}/doom-data/doom.wad ${datadir}/"
 	elog
 	elog "Example command-line:"
 	elog "   vavoom -doom -opengl"

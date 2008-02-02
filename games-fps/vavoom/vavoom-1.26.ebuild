@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
+
 WX_GTK_VER="2.6"
+
 inherit autotools eutils flag-o-matic wxwidgets games
 
 DESCRIPTION="Advanced source port for Doom/Heretic/Hexen/Strife"
@@ -13,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="allegro asm debug dedicated external-glbsp flac mad mikmod models music
-openal opengl sdl textures tools wxwindows"
+openal opengl +sdl textures tools wxwindows"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
 
