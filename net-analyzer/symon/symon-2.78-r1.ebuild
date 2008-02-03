@@ -110,9 +110,7 @@ pkg_postinst() {
 	elog "You'll need to setup your /etc/symon.conf and "
 	elog "/etc/symux.conf before running these daemons for "
 	elog "the first time."
-	elog "For an example configuration run /usr/share/symon/c_config.sh"
-	elog "Then, you may run /usr/share/symon/c_smrrds.sh all"
 	elog "To test the configuration run sym{on,ux} -t"
-	elog "For details, please see their manpages."
+	elog "To create the RRDs run /usr/share/symon/c_smrrds.sh all"
 	elog "NOTE that symon won't chroot by default."
 }
