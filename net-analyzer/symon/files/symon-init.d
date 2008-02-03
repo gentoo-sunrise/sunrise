@@ -3,6 +3,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:
 
+depend() {
+	need net
+}
+
 start() {
         ebegin "Starting symon"
         start-stop-daemon --start --quiet --exec /usr/sbin/symon -- -u
