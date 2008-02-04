@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/kstart-${PV}"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 
 	epatch "${FILESDIR}"/kstart-"${PV}"-happy-tickets.patch
