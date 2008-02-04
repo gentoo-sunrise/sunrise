@@ -11,7 +11,6 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 IUSE="server"
 
 DEPEND=">=media-libs/libsdl-1.1.3
@@ -19,7 +18,7 @@ DEPEND=">=media-libs/libsdl-1.1.3
 	media-libs/sdl-net"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 
 	# Change default search path for IWAD
