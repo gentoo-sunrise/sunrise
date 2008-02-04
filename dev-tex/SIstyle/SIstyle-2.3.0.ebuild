@@ -19,11 +19,9 @@ RDEPEND="virtual/tetex"
 S="${WORKDIR}/${PN}"
 
 src_unpack() {
-
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}/source/latex/SIstyle/figs"
 	unpack ./graphs_scr.zip
-
 }
 
 src_install() {
