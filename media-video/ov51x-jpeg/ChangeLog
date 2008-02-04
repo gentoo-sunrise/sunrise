@@ -1,6 +1,10 @@
 # ChangeLog for media-video/ov51x-jpeg
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Feb 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -ov51x-jpeg-1.5.3.ebuild, +ov51x-jpeg-1.5.5.ebuild:
+  Version bump
 
   15 Dec 2007; Markus Ullmann <jokey@gentoo.org> ov51x-jpeg-1.0.0:
   Drop old
