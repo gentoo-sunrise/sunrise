@@ -21,4 +21,3 @@ RDEPEND="${RDEPEND}
 	dev-util/cmake"
 
 S="${WORKDIR}/${P}-Source/"
-
