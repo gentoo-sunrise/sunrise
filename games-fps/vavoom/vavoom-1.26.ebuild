@@ -107,7 +107,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 
 	# Patch Makefiles to get rid of executable wrappers
