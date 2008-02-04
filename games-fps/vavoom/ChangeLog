@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Feb 2008; Davide Cendron (scen) <scen@gentoo.org> vavoom-1.26.ebuild:
+  Removed unneeded patch that broke ebuild unpack process
+
   02 Feb 2008; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
   Fixed dependencies plus some tidyup
 
