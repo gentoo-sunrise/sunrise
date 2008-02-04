@@ -1,0 +1,11 @@
+# ChangeLog for app-misc/clex
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> +metadata.xml,
+  +clex-3.17.ebuild:
+  New Ebuild for bug 41601. Thanks to swegener since the ebuild is based on
+  his initial work, to armin76, jokey, drac, and Tommy[D] for the review, to
+  ZeRoX for testing on x86, Ampheus for the s/clex/${PN}/ changes on SRC_URI
+  and dohtml, and to und3f
+
