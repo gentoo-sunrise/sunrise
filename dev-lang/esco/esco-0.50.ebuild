@@ -18,4 +18,3 @@ src_install() {
 	emake DESTDIR="${D}" install
 	dodoc README docs/README_RU.utf8 ChangeLog AUTHORS
 }
-
