@@ -17,7 +17,7 @@ IUSE="cdr crypt"
 
 DEPEND="
 	x11-libs/qt:4
-	cdr? ( 	app-cdr/cdrtools
+	cdr? ( app-cdr/cdrtools
 		app-cdr/cdrdao )
 	app-arch/p7zip
 	|| ( kde-base/konqueror gnome-base/nautilus kde-base/kdebase )
