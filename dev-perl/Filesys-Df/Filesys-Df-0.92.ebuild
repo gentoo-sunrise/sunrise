@@ -13,4 +13,3 @@ IUSE=""
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
 KEYWORDS="~x86"
-
