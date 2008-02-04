@@ -16,7 +16,7 @@ DEPEND="app-text/asciidoc
 RDEPEND="dev-util/git"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 
 	sed -i \
