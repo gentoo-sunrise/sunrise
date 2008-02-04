@@ -19,7 +19,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-libs/boost-1.33.0 dev-util/valgrind )"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 	#don't waste time on autoreconf for those who don't want to run unit tests
 	if use test; then
