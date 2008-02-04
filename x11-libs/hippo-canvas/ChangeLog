@@ -1,6 +1,11 @@
 # ChangeLog for x11-libs/hippo-canvas
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Feb 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -files/hippo-canvas-0.2.23-use-python.patch, -hippo-canvas-0.2.23.ebuild,
+  +hippo-canvas-0.2.25.ebuild:
+  Version bump. Re-enabling USE=doc because eautoreconf is no longer needed.
 
   05 Sep 2007; Jakub Moc <jakub@gentoo.org> hippo-canvas-0.2.23.ebuild:
   Get rid of unwanted debug USE flag
