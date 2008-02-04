@@ -39,4 +39,3 @@ pkg_postinst() {
 	elog ""
 	!use libpcap && elog "The kernel module \"af_packet\" is needed for this tool to run."
 }
-
