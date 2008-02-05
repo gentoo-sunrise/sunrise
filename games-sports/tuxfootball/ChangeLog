@@ -1,0 +1,8 @@
+# ChangeLog for games-sports/tuxfootball
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Feb 2008; Christoph Brill (egore) egore@gmx.de +metadata.xml,
+  +tuxfootball-0.1.1.ebuild:
+  New Ebuild for bug 209032
+
