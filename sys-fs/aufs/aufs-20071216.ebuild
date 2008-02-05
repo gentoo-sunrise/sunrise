@@ -13,10 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="hinotify nfsexport"
 
-MODULE_NAMES="aufs(addon/fs/${PN}:)"
-BUILD_PARAMS="KDIR=${KV_DIR} -f local.mk"
-BUILD_TARGETS="all"
-
 S="${WORKDIR}"/aufs
 
 pkg_setup() {
@@ -61,7 +57,7 @@ src_unpack(){
 src_compile() {
 	use x86 && ARCH=i386
 	use amd64 && ARCH=x86_64
-	emake || die "emake failed"
+	emake KDIR=${KV_DIR} -f local.mk|| die "emake failed"
 }
 
 src_install() {
