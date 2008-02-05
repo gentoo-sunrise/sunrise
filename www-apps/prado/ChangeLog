@@ -1,0 +1,8 @@
+# ChangeLog for www-apps/prado
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Feb 2008; Christoph Brill (egore) egore@gmx.de +metadata.xml,
+  +prado-3.1.1-r2290.ebuild:
+  New Ebuild for bug 201212
+
