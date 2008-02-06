@@ -18,18 +18,18 @@ IUSE=""
 
 DEPEND=""
 REPEND="amd64? ( app-emulation/emul-linux-x86-gtklibs
-                 app-emulation/emul-linux-x86-xlibs
-                 app-emulation/emul-linux-x86-baselibs )
-        x86? ( >=x11-libs/gtk+-2
-               dev-libs/atk
-               x11-libs/libXext
-               x11-libs/libXi
-               x11-libs/libXinerama
-               x11-libs/libXrandr
-               x11-libs/libXcursor
-               x11-libs/libXcomposite
-               x11-libs/libXdamage
-               x11-libs/pango )"
+				app-emulation/emul-linux-x86-xlibs
+				app-emulation/emul-linux-x86-baselibs )
+		x86? ( >=x11-libs/gtk+-2
+				dev-libs/atk
+				x11-libs/libXext
+				x11-libs/libXi
+				x11-libs/libXinerama
+				x11-libs/libXrandr
+				x11-libs/libXcursor
+				x11-libs/libXcomposite
+				x11-libs/libXdamage
+				x11-libs/pango )"
 
 S=${WORKDIR}/rainlendar2
 
