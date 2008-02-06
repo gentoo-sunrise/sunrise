@@ -6,7 +6,8 @@ inherit eutils autotools
 
 MY_PN="Rainlendar-Lite"
 MY_P=${MY_PN}-${PV}
-DESCRIPTION="A very useful x11 calendar"
+DESCRIPTION="Feature rich calendar application that is easy to
+use and doesn't take much space on your desktop."
 HOMEPAGE="http://www.rainlendar.net"
 SRC_URI="http://www.rainlendar.net/download/${MY_P}.tar.bz2"
 
@@ -16,16 +17,19 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-REPEND=">=x11-libs/gtk+-2
-	dev-libs/atk
-	x11-libs/libXext
-	x11-libs/libXi
-	x11-libs/libXinerama
-	x11-libs/libXrandr
-	x11-libs/libXcursor
-	x11-libs/libXcomposite
-	x11-libs/libXdamage
-	x11-libs/pango"
+REPEND="amd64? ( app-emulation/emul-linux-x86-gtklibs
+                 app-emulation/emul-linux-x86-xlibs
+                 app-emulation/emul-linux-x86-baselibs )
+        x86? ( >=x11-libs/gtk+-2
+               dev-libs/atk
+               x11-libs/libXext
+               x11-libs/libXi
+               x11-libs/libXinerama
+               x11-libs/libXrandr
+               x11-libs/libXcursor
+               x11-libs/libXcomposite
+               x11-libs/libXdamage
+               x11-libs/pango )"
 
 S=${WORKDIR}/rainlendar2
 
@@ -34,9 +38,9 @@ RESTRICT="mirror strip"
 QA_TEXTRELS="opt/rainlendar2/plugins/iCalendarPlugin.so"
 
 pkg_setup() {
-	if ! built_with_use '=x11-libs/gtk+-2*' xinerama ; then
+	if use x86 -a ! built_with_use '=x11-libs/gtk+-2*' xinerama ; then
 		einfo "Please re-emerge x11-libs/gtk+ with the xinerama USE flag set"
-		die "rainlendar needs the xinerama use flag set"
+		die "rainlendar needs the xinerama USE flag set"
 	fi
 }
 
