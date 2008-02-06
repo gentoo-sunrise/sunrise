@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Feb 2008; (Tommy[D]) tommy100@gmx.de prado-3.1.1-r2290.ebuild:
+  Drop empty DEPEND
+
   05 Feb 2008; Christoph Brill (egore) egore@gmx.de +metadata.xml,
   +prado-3.1.1-r2290.ebuild:
   New Ebuild for bug 201212

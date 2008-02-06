@@ -13,7 +13,6 @@ LICENSE="BSD" # http://www.pradosoft.com/license/
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND=""
 RDEPEND="virtual/httpd-cgi"
 
 S=${WORKDIR}/${MY_P}
