@@ -11,7 +11,7 @@ SRC_URI="http://download.gna.org/vodovod/${P}-src.tar.gz"
 S="${WORKDIR}/${P}-src"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="media-libs/libsdl
