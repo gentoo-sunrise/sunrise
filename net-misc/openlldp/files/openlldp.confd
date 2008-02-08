@@ -1,5 +1,6 @@
 # Config file for /etc/init.d/openlldp
 
 # Set preferred options here
+# Not specifying an interface will make openlldp listen on all interfaces
 #OPTS="-s"
 OPTS="-s -i eth0"

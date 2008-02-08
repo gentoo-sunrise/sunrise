@@ -10,7 +10,7 @@ S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="libpcap debug"
 
 DEPEND="libpcap? ( net-libs/libpcap )"
@@ -37,5 +37,5 @@ src_install() {
 pkg_postinst() {
 	elog "This is an experimental ebuild. Use with caution."
 	elog ""
-	!use libpcap && elog "The kernel module \"af_packet\" is needed for this tool to run."
+	! use libpcap && elog "The kernel module \"af_packet\" is needed for this tool to run."
 }
