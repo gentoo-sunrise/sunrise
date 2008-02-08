@@ -4,5 +4,5 @@
 
   08 Feb 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
   +metadata.xml, +tabler-1.ebuild:
-  New ebuild for tabler.
+  New ebuild for tabler.  Bug #185943
 
