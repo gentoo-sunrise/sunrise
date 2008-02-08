@@ -1,0 +1,8 @@
+# ChangeLog for app-text/tabler
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Feb 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
+  +metadata.xml, +tabler-1.ebuild:
+  New ebuild for tabler.
+
