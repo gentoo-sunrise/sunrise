@@ -1,6 +1,10 @@
 # ChangeLog for net-nntp/xpn
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  10 Feb 2008; Markus Rennings (mren) <mren@mrmx.de> -xpn-0.7.0.ebuild,
+  +xpn-1.0.0.ebuild:
+  Version bump
 
   12 Jul 2007; David Shakaryan <omp@gentoo.org> xpn-0.7.0.ebuild:
   Fix whitespace and blatant overuse of quotes.
