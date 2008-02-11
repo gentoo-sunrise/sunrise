@@ -1,6 +1,9 @@
 # ChangeLog for dev-util/premake
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Feb 2008; Christoph Brill (egore) egore@gmx.de +premake-3.5.ebuild:
+  Bump to 3.5
 
   07 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   +premake-3.2.ebuild, +metadata.xml:
