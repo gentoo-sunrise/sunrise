@@ -11,6 +11,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
+src_unpack() {
+	unpack ${A}
+	sed -i -e '/^SUBDIRS/ s/test//' "${S}"/Makefile.in || die "sed failed."
+}
+
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO

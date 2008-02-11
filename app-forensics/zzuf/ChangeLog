@@ -3,6 +3,9 @@
 # $Header: $
 
   11 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> zzuf-0.10.ebuild:
+  src_unpack added, don't build the testsuite by default, "looks good" jakub
+
+  11 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> zzuf-0.10.ebuild:
   Added ~sparc keyword
 
   11 Nov 2007; Jukka Ruohonen <drear@iki.fi> -zzuf-0.9.ebuild,
