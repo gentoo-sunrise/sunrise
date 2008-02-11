@@ -16,6 +16,12 @@ src_unpack() {
 	sed -i -e '/^SUBDIRS/ s/test//' "${S}"/Makefile.in || die "sed failed."
 }
 
+src_test() {
+	cd test
+	emake || die "emake failed."
+	sh ./testsuite.sh || die "testsuite failed."
+}
+
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO
