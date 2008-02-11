@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/ogreal
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Feb 2008; Christoph Brill (egore) egore@gmx.de +metadata.xml,
+  +ogreal-9999.ebuild:
+  New Ebuild for bug 209716
+
