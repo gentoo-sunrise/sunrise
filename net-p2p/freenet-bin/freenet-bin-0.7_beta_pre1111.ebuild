@@ -4,15 +4,18 @@
 
 inherit eutils
 
-MY_JAR_REV="r17723"
+MY_JAR_REV="r17892"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
+MY_EXT_PV="18"
+MY_SEED_PV="20080214"
 
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://downloads.freenetproject.org/alpha/installer/freenet07.tar.gz
 	http://downloads.freenetproject.org/alpha/${MY_JAR_FILE}
-	http://downloads.freenetproject.org/alpha/freenet-ext.jar
-	http://downloads.freenetproject.org/alpha/opennet/seednodes.fref"
+	http://dev.gentooexperimental.org/~tommy/${MY_JAR_FILE}
+	http://dev.gentooexperimental.org/~tommy/freenet-ext-${MY_EXT_PV}.jar
+	http://dev.gentooexperimental.org/~tommy/seednodes-${MY_SEED_PV}.fref"
 
 LICENSE="GPL-2"
 IUSE=""
@@ -34,6 +37,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack "freenet07.tar.gz"
+	ln -s freenet-ext-${MY_EXT_PV}.jar "${DISTDIR}"/freenet-ext.jar
+	ln -s seednodes-${MY_SEED_PV}.fref "${DISTDIR}"/seednodes.fref
 	cd "${S}"
 
 	sed -i -e 's:./bin/wrapper:/opt/freenet/bin/wrapper:g' \
