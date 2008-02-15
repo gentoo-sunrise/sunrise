@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/startupmanager
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Feb 2008; Christoph Brill (egore) egore@gmx.de +metadata.xml,
+  +startupmanager-1.9.10.ebuild:
+  New Ebuild for bug 202468
+
