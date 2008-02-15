@@ -1,6 +1,9 @@
 # ChangeLog for net-misc/pyNeighborhood
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Feb 2008; (Tommy[D]) tommy100@gmx.de pyneighborhood-0.4.ebuild:
+  Fix tyto, drop unneeded
 
   22 Dec 2006; Ali Polatel (hawking) <polatel@nerdshack.com>
   +pyNeighborhood-0.4.ebuild, +metadata.xml:

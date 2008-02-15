@@ -13,8 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
-REPEND="net-fs/samba
+RDEPEND="net-fs/samba
 	=dev-python/pygtk-2*"
 
 S="${WORKDIR}/${MY_P}"
