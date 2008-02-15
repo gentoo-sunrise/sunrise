@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Tommy[D] <tommy100@gmx.de> (15 Feb 2008)
+# Masking SVN ebuild
+=media-sound/ogreal-9999
+
 # Jakub Moc <jakub@gentoo.org> (24 Jan 2008)
 # Masking beta versions
 =app-misc/bsc-4.0.06_beta*
