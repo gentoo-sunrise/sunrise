@@ -36,7 +36,7 @@ ZPROD_LIST="ATAudio
 src_unpack() {
 	# this has to be done manually since $A is incorrect, and readonly
 	# unpack function does not work either
-	tar xzf ${DISTDIR}/${MY_P}-tar.gz -C "${WORKDIR}" || die 'unpack failed'
+	tar xzf "${DISTDIR}"/${MY_P}-tar.gz -C "${WORKDIR}" || die 'unpack failed'
 }
 
 src_install() {
