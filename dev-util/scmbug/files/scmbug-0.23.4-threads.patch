@@ -1,0 +1,10 @@
+--- src/lib/product/Daemon/Process.pm.in.orig	2007-05-31 15:55:53.000000000 +0200
++++ src/lib/product/Daemon/Process.pm.in	2007-09-21 09:46:35.000000000 +0200
+@@ -21,7 +21,6 @@
+ use @DEVEL_PRODUCT_NAME@::Daemon::Integration;
+ use @DEVEL_PRODUCT_NAME@::Common;
+ use strict;
+-use threads;
+ use IO::Socket;
+ use FileHandle;
+ use Data::Dumper;

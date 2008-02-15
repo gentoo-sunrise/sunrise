@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/scmbug
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Feb 2008; Christoph Brill (egore) egore@gmx.de
+  +files/scmbug-0.23.4-threads.patch, +metadata.xml, +scmbug-0.23.4.ebuild:
+  New Ebuild for bug 194352
+
