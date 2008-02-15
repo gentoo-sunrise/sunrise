@@ -24,7 +24,7 @@ src_unpack() {
 	cd "${S}"
 
 	if use branding ; then
-		cp ${DISTDIR}/${PN}-background_gentoo.png "${S}"/about/images/background.png
+		cp "${DISTDIR}"/${PN}-background_gentoo.png "${S}"/about/images/background.png
 	fi
 
 	# update some ugly translations
