@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=x11-libs/gtk+-2.0
 	ofx? ( >=dev-libs/libofx-0.7 )"
-DEPEND="${REPEND}
+DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
