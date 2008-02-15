@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-REPEND="amd64? ( app-emulation/emul-linux-x86-gtklibs
+RDEPEND="amd64? ( app-emulation/emul-linux-x86-gtklibs
 				app-emulation/emul-linux-x86-xlibs
 				app-emulation/emul-linux-x86-baselibs )
 		x86? ( >=x11-libs/gtk+-2
