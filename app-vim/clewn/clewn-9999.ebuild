@@ -28,11 +28,11 @@ pkg_setup() {
 
 src_compile() {
 	vimdir=/usr/share/vim/vimfiles econf $(use_enable debug)
-	emake || die "emake failed"
+	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog README
 }
 
