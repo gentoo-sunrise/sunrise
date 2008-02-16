@@ -27,6 +27,8 @@ dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-games/opal:double-precision - more precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
 dev-lang/vala:vapigen - Enable the VAPI generator
+dev-libs/libwiimote:tilt - Enable tilt
+dev-libs/libwiimote:force - Enable force feedback
 dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
