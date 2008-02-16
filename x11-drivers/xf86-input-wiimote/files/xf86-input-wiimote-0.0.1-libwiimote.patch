@@ -1,0 +1,19 @@
+--- configure.ac.org	2007-12-18 04:37:59.000000000 +0100
++++ configure.ac	2008-02-16 02:03:11.000000000 +0100
+@@ -59,10 +59,14 @@
+ PKG_CHECK_MODULES(XORG, xorg-server xproto $REQUIRED_MODULES)
+ sdkdir=$(pkg-config --variable=sdkdir xorg-server)
+ 
+-LIBS="-lcwiimote"
++PKG_CHECK_MODULES(libwiimote, [libwiimote >= 0.4.0])
++AC_SUBST(libwiimote_CFLAGS)
++AC_SUBST(libwiimote_LIBS)
++
++LIBS="$libwiimote_LIBS"
+ AC_SUBST([LIBS])
+ 
+-CFLAGS="$CFLAGS $XORG_CFLAGS "' -I$(top_srcdir)/src'
++CFLAGS="$CFLAGS $XORG_CFLAGS $libwiimote_CFLAGS"' -I$(top_srcdir)/src'
+ AC_SUBST([CFLAGS])
+ 
+ # Checks for libraries.
