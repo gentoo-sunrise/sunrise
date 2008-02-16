@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils versionator
 
-MY_P="SCMBUG_RELEASE_${PV//./-}"
+MY_P=SCMBUG_RELEASE_$(replace_all_version_separators -)
 
 DESCRIPTION="integrates verion control system with bug trackers"
 HOMEPAGE="http://www.mkgnu.net/?q=scmbug"
@@ -12,7 +12,7 @@ SRC_URI="http://files.mkgnu.net/files/scmbug/${MY_P}/source/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="doc? ( media-gfx/transfig )"
@@ -25,16 +25,13 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# Remove threads dependency which is not necessary on Linux (uses fork)
+	# Remove threads dependency which crashes SCMBUG at startup
+	# and use fork instead
 	epatch "${FILESDIR}/${P}-threads.patch"
 }
 
 src_compile() {
-	local myconf
-	use doc || myconf="${myconf} --without-doc"
-
-	econf \
-		${myconf} || die "econf failed"
+	econf $(use_with doc) || die "econf failed"
 	emake || die "emake failed"
 }
 
