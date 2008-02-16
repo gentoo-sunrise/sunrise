@@ -17,7 +17,7 @@ DEPEND="app-arch/unzip"
 RDEPEND=""
 
 src_test() {
-	${python} test_path.py || die "test failed"
+	${python} test_path.py || die "test failed"
 }
 
 src_unpack() {
@@ -27,5 +27,5 @@ src_unpack() {
 	# Don't install test_path.py
 	sed -i \
 		-e "s/, 'test_path'//" \
-		setup.py || die "sed failed"
+		setup.py || die "sed failed"
 }
