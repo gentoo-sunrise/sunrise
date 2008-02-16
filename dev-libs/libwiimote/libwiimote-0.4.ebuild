@@ -11,11 +11,11 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="tilt force"
+IUSE="examples tilt force"
 
-DEPEND="net-wireless/bluez-libs
+RDEPEND="net-wireless/bluez-libs
 		net-wireless/bluez-utils"
-RDEPEND="${DEPEND}
+DEPEND="${RDEPEND}
 		dev-util/pkgconfig"
 
 src_unpack() {
@@ -31,6 +31,10 @@ src_unpack() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS NEWS README TODO
+
+	if use examples; then
+		dodoc test/test?.c
+	fi
 }
