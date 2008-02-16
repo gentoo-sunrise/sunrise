@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/cmemcache
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Feb 2008; Christoph Brill (egore) egore@gmx.de +metadata.xml,
+  +cmemcache-0.91.ebuild:
+  New Ebuild for bug 210306
+
