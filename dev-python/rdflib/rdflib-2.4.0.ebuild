@@ -27,7 +27,7 @@ src_unpack() {
 	sed -i \
 		-e "s/\(find_packages(\)/\1exclude=('test','test.*')/" \
 		-e "/tests_require/d" \
-		setup.py || die "sed in setup.py failed"
+		setup.py || die "sed in setup.py failed"
 }
 
 src_install() {
