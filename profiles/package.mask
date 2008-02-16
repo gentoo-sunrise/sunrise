@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Christoph Brill (egore) <egore@gmx.de> (16 Feb 2008)
+# Masking SVN ebuild
+=dev-libs/libwiimote-9999
+
 # Tommy[D] <tommy100@gmx.de> (15 Feb 2008)
 # Masking SVN ebuild
 =media-sound/ogreal-9999
