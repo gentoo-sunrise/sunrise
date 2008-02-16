@@ -6,7 +6,7 @@ inherit eutils subversion autotools flag-o-matic
 
 ESVN_REPO_URI="https://libwiimote.svn.sourceforge.net/svnroot/libwiimote/branches/ant"
 ESVN_PROJECT="libwiimote"
-ESVN_BOOTSTRAP="eautoreconf"
+#ESVN_BOOTSTRAP="eautoreconf"
 
 DESCRIPTION="Library to connect to the Nintendo Wii remote (svn snapshot)"
 HOMEPAGE="http://libwiimote.sourceforge.net"
@@ -19,6 +19,11 @@ IUSE="examples tilt force"
 RDEPEND="net-wireless/bluez-libs"
 DEPEND="${RDEPEND}"
 
+src_unpack() {
+	subversion_src_unpack
+	epatch "${FILESDIR}/${P}-ldflags.patch"
+	eautoreconf || die "eautoreconf failed"
+}
 
 src_compile() {
 	econf \

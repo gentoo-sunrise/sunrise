@@ -1,0 +1,52 @@
+Index: test/Makefile.am
+===================================================================
+--- test/Makefile.am	(Revision 80)
++++ test/Makefile.am	(Arbeitskopie)
+@@ -1,4 +1,3 @@
+ AM_CFLAGS = -I../src -D_ENABLE_TILT -lm
+ LDADD = ../src/libcwiimote.la
+ noinst_PROGRAMS= test1 test2 test3 test4
+-
+Index: configure.ac
+===================================================================
+--- configure.ac	(Revision 80)
++++ configure.ac	(Arbeitskopie)
+@@ -5,22 +5,26 @@
+ AC_INIT([libwiimote], [0.4.0], [http://sourceforge.net/projects/libwiimote/])
+ AC_CONFIG_HEADER([config.h])
+ 
+-
+ VERSION=0.4.0
+ PACKAGE=libcwiimote
+ 
+ AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
+ 
+ # Checks for programs.
++AC_PROG_CXX
+ AC_PROG_CC
++AC_PROG_CPP
+ AC_PROG_INSTALL
+-AC_PROG_LIBTOOL
++AC_PROG_LN_S
++AC_PROG_MAKE_SET
+ AC_SUBST(LIBTOOL_DEPS)
+ AM_PROG_LIBTOOL
+ 
+ # Checks for libraries.
+ AC_CHECK_LIB([bluetooth], [hci_remote_name],
+-             [], [AC_MSG_ERROR([We require BlueZ])])
++             [], [AC_MSG_ERROR([BlueZ library required, available at http://www.bluez.org/])])
++AC_CHECK_LIB([m], [asin],
++             [], [AC_MSG_ERROR([libm required])])
+ 
+ # Checks for header files.
+ AC_HEADER_STDC
+@@ -45,7 +49,7 @@
+ AC_CONFIG_FILES([Makefile
+                  src/Makefile
+                  test/Makefile
+-		 libwiimote.pc])
++                 libwiimote.pc])
+ AC_OUTPUT
+ echo
+ echo $PACKAGE v$VERSION
