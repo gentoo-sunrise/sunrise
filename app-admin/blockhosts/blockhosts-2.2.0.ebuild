@@ -29,7 +29,7 @@ src_unpack() {
 	# don't let setup.py install bhrss.py to /usr/bin
 	sed -i \
 		-e "s/,.*bhrss\.py'//" \
-		setup.py || die "sed failed"
+		setup.py || die "sed failed"
 
 	# remove logrotate check if not in IUSE
 	if ! use logrotate; then
