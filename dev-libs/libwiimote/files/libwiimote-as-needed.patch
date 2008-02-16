@@ -1,0 +1,21 @@
+--- configure.in.org	2007-03-10 15:46:36.000000000 +0100
++++ configure.in	2007-12-14 10:45:18.000000000 +0100
+@@ -15,6 +15,5 @@
+ 
+ AC_CONFIG_FILES([config.mk
+ 		 Makefile
+-                 src/Makefile
+-                 test/Makefile])
++                 src/Makefile])
+ AC_OUTPUT
+--- Makefile.in.org	2007-02-22 15:54:54.000000000 +0100
++++ Makefile.in	2007-12-14 10:46:35.000000000 +0100
+@@ -13,7 +13,7 @@
+ topdir=.
+ include $(topdir)/config.mk
+ 
+-subdirs=src test
++subdirs=src
+ 
+ all: subdirs
+ 
