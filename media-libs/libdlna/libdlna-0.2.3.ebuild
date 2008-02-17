@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="libdlna aims at being the reference open-source implementation of DLNA (Digital Living Network Alliance) standards."
+DESCRIPTION="A reference open-source implementation of DLNA (Digital Living Network Alliance) standards."
 HOMEPAGE="http://libdlna.geexbox.org"
 SRC_URI="http://libdlna.geexbox.org/releases/${P}.tar.bz2"
 
