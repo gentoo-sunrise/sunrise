@@ -6,7 +6,7 @@ EAPI="1"
 inherit qt4 eutils
 
 MY_P="${P/_/}"
-DESCRIPTION="An extensible drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
+DESCRIPTION="A drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
 HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
 SRC_URI="http://luaforge.net/frs/download.php/2727/${MY_P}-src.tar.gz"
 

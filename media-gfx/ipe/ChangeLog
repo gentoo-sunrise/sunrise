@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/ipe
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de ipe-6.0_pre30.ebuild:
+  Shorten description
 
   30 Dec 2007; Christian Schlotter (schlotter) <again@gmx.de> ++,
   -ipe-6.0_pre28.ebuild:
