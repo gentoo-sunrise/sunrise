@@ -4,7 +4,7 @@
 
 inherit autotools
 
-DESCRIPTION="A c++-class-library for easy and light database-access. Currently postgresql, sqlite3 and mysql are supported."
+DESCRIPTION="A c++-class-library for easy and light database-access. Currently for postgresql, sqlite3 and mysql"
 HOMEPAGE="http://www.tntnet.org/tntdb.hms"
 SRC_URI="http://www.tntnet.org/download/${P}.tar.gz"
 

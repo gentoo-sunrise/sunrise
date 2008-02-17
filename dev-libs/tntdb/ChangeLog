@@ -1,6 +1,9 @@
 # ChangeLog for dev-libs/tntdb
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de tntdb-0.9.4.ebuild:
+  Shorten description
 
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> tntdb-0.9.1-r1.ebuild:
   Fix mysql dependency
