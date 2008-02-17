@@ -1,6 +1,10 @@
 # ChangeLog for sys-devel/scratchbox-toolchain-cs2005q3_2-glibc
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de
+  scratchbox-toolchain-cs2005q3_2-glibc-1.0.5.ebuild:
+  Shorten description
 
   21 Feb 2007; Markus Ullmann <jokey@gentoo.org> Manifest:
   Manifest2 checksums
