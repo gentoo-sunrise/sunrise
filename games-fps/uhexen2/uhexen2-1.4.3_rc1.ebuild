@@ -4,14 +4,15 @@
 
 inherit eutils flag-o-matic toolchain-funcs versionator games
 
-DATA_PV="1.19"
+MY_PV=$(replace_version_separator 3 '-')
+DATA_PV="1.19a"
 HW_PV="0.15"
 MY_PN="hexen2"
 DEMO_PV="1.4.2"
 
 DESCRIPTION="Hexen 2 port - Hammer of Thyrion"
 HOMEPAGE="http://uhexen2.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_PN}source-${PV}.tgz
+SRC_URI="mirror://sourceforge/${PN}/${MY_PN}source-${MY_PV}.tgz
 	mirror://sourceforge/u${MY_PN}/gamedata-all-${DATA_PV}.tgz
 	hexenworld? ( mirror://sourceforge/u${MY_PN}/hexenworld-pakfiles-${HW_PV}.tgz )"
 
@@ -51,7 +52,7 @@ DEPEND="${UIDEPEND}
 	${LNCHDEPEND}
 	x86? ( asm? ( >=dev-lang/nasm-0.98.38 ) )"
 
-S="${WORKDIR}/hexen2source-${PV}"
+S="${WORKDIR}/hexen2source-${MY_PV}"
 dir="${GAMES_DATADIR}/${MY_PN}"
 
 pkg_setup() {
@@ -75,7 +76,6 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}_fix_huffman-vuln.patch"
 
 	cd hexen2
 	epatch "${S}/00_Patches/external-music-file-support.diff"

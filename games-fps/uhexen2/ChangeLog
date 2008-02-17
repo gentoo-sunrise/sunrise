@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Feb 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -uhexen2-1.4.2-r1.ebuild, +uhexen2-1.4.3_rc1.ebuild:
+  Version bump
+
   06 Jan 2008; Markus Ullmann <jokey@gentoo.org> uhexen2-1.4.2:
   Drop old
 
