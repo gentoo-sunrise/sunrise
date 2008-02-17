@@ -4,7 +4,7 @@
 
 inherit eutils flag-o-matic toolchain-funcs versionator games
 
-DATA_PV="1.19"
+DATA_PV="1.19a"
 HW_PV="0.15"
 MY_PN="hexen2"
 DEMO_PV="1.4.2"
