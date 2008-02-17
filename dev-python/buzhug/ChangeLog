@@ -1,6 +1,9 @@
 # ChangeLog for dev-python/buzhug
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de buzhug-0.8.ebuild:
+  Shorten description
 
   19 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com> -buzhug-0.7.ebuild,
   +buzhug-0.8.ebuild:

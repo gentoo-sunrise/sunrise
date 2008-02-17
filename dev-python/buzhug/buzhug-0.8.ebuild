@@ -6,7 +6,7 @@ NEED_PYTHON=2.3
 
 inherit distutils
 
-DESCRIPTION="A fast, pure-Python database engine, using a syntax that Python programmers should find very intuitive"
+DESCRIPTION="Fast, pure-Python database engine, using a syntax that Python programmers should find very intuitive"
 HOMEPAGE="http://buzhug.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
 
