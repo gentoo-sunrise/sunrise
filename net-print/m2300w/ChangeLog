@@ -1,6 +1,9 @@
 # ChangeLog for net-print/m2300w
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de m2300w-0.51.ebuild:
+  Shorten description
 
   18 Jun 2006; David CHANIAL <david@chanial.com> ChangeLog:
   New Ebuild for bug 136835 thanks to myself (David CHANIAL)
