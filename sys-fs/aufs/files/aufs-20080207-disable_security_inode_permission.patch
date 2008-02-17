@@ -1,0 +1,12 @@
+diff -urNad aufs-0+20071211~/fs/aufs/i_op.c aufs-0+20071211/fs/aufs/i_op.c
+--- aufs-0+20071211~/fs/aufs/i_op.c	2008-01-27 18:07:36.000000000 +0100
++++ aufs-0+20071211/fs/aufs/i_op.c	2008-01-27 18:08:28.000000000 +0100
+@@ -69,7 +69,7 @@
+ 		AuTraceErr(err);
+ 	}
+ 
+-#if 1
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,24) || defined(CONFIG_AUFS_SEC_PERM_PATCH)
+ 	if (!err) {
+ #ifndef CONFIG_AUFS_DLGT
+ 		err = security_inode_permission(h_inode, mask, fake_nd);
