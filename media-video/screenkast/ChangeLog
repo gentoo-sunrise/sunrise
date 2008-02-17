@@ -1,6 +1,9 @@
 # ChangeLog for media-video/screenkast
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de screenkast-0.1.3.ebuild:
+  Shorten description
 
   20 Oct 2006; Christian Faulhammer (opfer) <gentoo@faulhammer.org>
   screenkast-0.1.2.ebuild:
