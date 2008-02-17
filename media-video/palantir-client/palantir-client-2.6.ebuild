@@ -8,8 +8,7 @@ inherit eutils qt3
 MY_PN=${PN/-client/}
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="streaming system designed to transmit live video, audio and data
-over a TCP/IP network, as well as to control remote devices."
+DESCRIPTION="Transmit live video, audio and data over a TCP/IP network, as well as to control remote devices."
 HOMEPAGE="http://www.fastpath.it/products/palantir/index.php"
 SRC_URI="http://www.fastpath.it/products/${MY_PN}/pub/${MY_P}.tgz"
 
