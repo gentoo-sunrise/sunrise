@@ -7,7 +7,7 @@ MAJOR_VERSION=${PV%\.[0-9]}
 SBOX_GROUP="sbox"
 RESTRICT="strip"
 
-DESCRIPTION="Scratchbox is a cross-compilation toolkit designed to make embedded Linux application development easier."
+DESCRIPTION="A cross-compilation toolkit designed to make embedded Linux application development easier."
 HOMEPAGE="http://www.scratchbox.org/"
 SRC_URI="http://scratchbox.org/download/files/sbox-releases/stable/tarball/${P}-i386.tar.gz"
 LICENSE="GPL-2"

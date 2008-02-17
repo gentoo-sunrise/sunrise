@@ -1,6 +1,10 @@
 # ChangeLog for sys-devel/scratchbox-devkit-debian
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de
+  scratchbox-devkit-debian-1.0.6.ebuild:
+  Shorten description
 
   21 Feb 2007; Markus Ullmann <jokey@gentoo.org> Manifest:
   Manifest2 checksums
