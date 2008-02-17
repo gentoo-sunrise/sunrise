@@ -1,6 +1,9 @@
 # ChangeLog for net-misc/blocksshd
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de blocksshd-1.1.ebuild:
+  Shorten description
 
   28 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   blocksshd-1.1.ebuild:

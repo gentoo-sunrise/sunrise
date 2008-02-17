@@ -4,7 +4,7 @@
 
 inherit eutils
 
-DESCRIPTION="Protects computers from SSH brute force attacks by dynamically blocking IP addresses by adding iptables rules."
+DESCRIPTION="Protects computers from SSH brute force attacks by dynamically blocking IP addresses over iptables"
 HOMEPAGE="http://sourceforge.net/projects/blocksshd/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
