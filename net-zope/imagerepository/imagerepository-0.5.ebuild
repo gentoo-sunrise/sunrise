@@ -7,7 +7,7 @@ inherit zproduct
 MY_PN="ImageRepository"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Image Repository is a centralized image repository capable of holding thousands of images with keyword/tag-based browsing and filtering"
+DESCRIPTION="A centralized image repository with keyword/tag-based browsing and filtering"
 HOMEPAGE="http://plone.org/products/imagerepository"
 SRC_URI="http://plone.org/products/imagerepository/releases/${PV}/${MY_P}.tgz"
 
