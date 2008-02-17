@@ -7,7 +7,7 @@ inherit zproduct
 MY_PN="Relations"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Relations allows for component-wise control of validation, creation and lifetime of Archetypes references."
+DESCRIPTION="For component-wise control of validation, creation and lifetime of Archetypes references."
 HOMEPAGE="http://plone.org/products/relations/"
 SRC_URI="http://plone.org/products/relations/releases/${PV}/${MY_P}.tar.gz"
 
