@@ -1,6 +1,9 @@
 # ChangeLog for sys-devel/scratchbox
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de scratchbox-1.0.7.ebuild:
+  Shorten description
 
   09 Nov 2007; Jakub Moc <jakub@gentoo.org> scratchbox-1.0.7.ebuild:
   enewgroup handles die on its own; fix Manifest
