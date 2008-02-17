@@ -5,8 +5,7 @@
 EAPI="1"
 inherit kde
 
-DESCRIPTION="small KDE 3.x panel applet that displays the current CPU frequency
-similar to the GNOME cpufreq applet"
+DESCRIPTION="small KDE 3.x panel applet displaying the current CPU frequency similar to the GNOME cpufreq applet"
 SRC_URI="http://www.schaffert.eu/download/${PN}/${P}.tar.gz"
 HOMEPAGE="http://www.schaffert.eu/projects_html"
 

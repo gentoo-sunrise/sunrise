@@ -1,6 +1,9 @@
 # ChangeLog for kde-misc/kcpufreq
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de kcpufreq-0.3-r2.ebuild:
+  Shorten description
 
   17 Oct 2007; Jakub Moc <jakub@gentoo.org> kcpufreq-0.3-r2.ebuild:
   Get rid of noicon flag, use IUSE defaults instead
