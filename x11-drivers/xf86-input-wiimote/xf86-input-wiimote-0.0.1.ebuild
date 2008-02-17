@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-#XDPVER=4
-
 inherit x-modular autotools eutils
 
 DESCRIPTION="X.Org driver for Wiimote input devices"
