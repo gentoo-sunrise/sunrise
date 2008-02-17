@@ -8,7 +8,7 @@ KEYWORDS="~amd64 ~x86"
 
 MY_P=${P/mob/MoB}
 
-DESCRIPTION="A linux console application that blocks connections from/to hosts listed in a file in peerguardian format using iptables."
+DESCRIPTION="Blocks connections from/to hosts listed in a file in peerguardian format using iptables."
 HOMEPAGE="http://moblock.berlios.de/"
 SRC_URI="mirror://berlios/${PN}/${MY_P}-i586.tar.bz2"
 LICENSE="GPL-2"

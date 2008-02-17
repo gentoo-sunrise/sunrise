@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de moblock-0.8-r1.ebuild:
+  Shorten description
+
   30 Jan 2008; Santiago M. Mola <coldwind@gentoo.org>
   files/0.8-r1/moblock-stats, files/0.8-r1/moblock-update:
   Make scripts compatible with baselayout-2.
