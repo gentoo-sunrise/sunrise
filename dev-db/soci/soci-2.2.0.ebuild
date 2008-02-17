@@ -6,7 +6,7 @@ inherit eutils
 
 KEYWORDS="~amd64 ~x86"
 
-DESCRIPTION="A database access library for C++ that makes the illusion of embedding SQL queries in the regular C++ code."
+DESCRIPTION="A db access library for C++ that makes the illusion of embedding SQL queries in the regular C++ code"
 HOMEPAGE="http://soci.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="Boost-1.0"
