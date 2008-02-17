@@ -7,7 +7,7 @@ inherit gdesklets
 DESKLET_NAME="gauges-desklet"
 MY_P=${DESKLET_NAME}-${PV}
 
-DESCRIPTION="A Scalable, themeable, configurable, set of system monitors that look like automobile gauges for gdesklets."
+DESCRIPTION="A Scalable, themeable, configurable, set of system monitors (automobile gauges look) for gdesklets."
 HOMEPAGE="http://gdesklets.org/?mod=project/uview&pid=18"
 SRC_URI="http://gentooexperimental.org/~genstef/dist/${MY_P}.tar.gz"
 LICENSE="GPL-2"
