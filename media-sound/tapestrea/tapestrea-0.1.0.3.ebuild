@@ -4,7 +4,7 @@
 
 inherit eutils toolchain-funcs flag-o-matic
 
-DESCRIPTION="Techniques And Paradigms for Expressive Synthesis, Transformation, and Rendering of Environmental Audio"
+DESCRIPTION="Techniques + Paradigms for Expressive Synthesis, Transformation, Rendering of Environmental Audio"
 HOMEPAGE="http://taps.cs.princeton.edu/"
 SRC_URI="http://taps.cs.princeton.edu/release/files/${P}.tgz"
 

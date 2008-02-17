@@ -1,6 +1,9 @@
 # ChangeLog for media-sound/tapestrea
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de tapestrea-0.1.0.3.ebuild:
+  Shorten description
 
   21 Aug 2006; Cedric Krier <ced@ced.homedns.org> -tapestrea-0.1.0.1.ebuild,
   -files/tapestrea-0.1.0.1-makefile.patch, tapestrea-0.1.0.3.ebuild:
