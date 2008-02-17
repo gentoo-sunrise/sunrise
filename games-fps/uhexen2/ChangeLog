@@ -3,6 +3,10 @@
 # $Header: $
 
   17 Feb 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -files/uhexen2-1.4.2_fix_huffman-vuln.patch:
+  Remove old patch
+
+  17 Feb 2008; Davide Cendron (scen) <scen@gentoo.org>
   -uhexen2-1.4.2-r1.ebuild, +uhexen2-1.4.3_rc1.ebuild:
   Version bump
 
