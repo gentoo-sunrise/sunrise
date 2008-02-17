@@ -6,7 +6,7 @@ inherit autotools eutils
 
 KEYWORDS="~amd64 ~x86"
 
-DESCRIPTION="C++ library that integrates C++ objects tightly to relational database and thus provides an object persistence layer."
+DESCRIPTION="Integrates C++ objects tightly to relational database and thus provides an object persistence layer."
 HOMEPAGE="http://litesql.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="BSD"
