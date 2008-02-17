@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Feb 2008; (Tommy[D]) tommy100@gmx.de +overlay-utils-0.2-r2.ebuild:
+  Use own echangelog-tng to have svn cp/mv working
+
   06 Jan 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   overlay-utils-0.2-r1.ebuild:
   Added ~sparc keyword
