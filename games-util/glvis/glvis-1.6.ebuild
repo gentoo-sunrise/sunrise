@@ -4,7 +4,7 @@
 
 MY_PV=${PV/./}
 
-DESCRIPTION="PVS (Potentially Visible Set) builder specially designed to be used with OpenGL ports of the DOOM game engine."
+DESCRIPTION="PVS (Potentially Visible Set) builder designed to be used with OpenGL ports of the DOOM game engine."
 HOMEPAGE="http://www.vavoom-engine.com/glvis.php"
 SRC_URI="mirror://sourceforge/vavoom/${P}.tar.bz2"
 
