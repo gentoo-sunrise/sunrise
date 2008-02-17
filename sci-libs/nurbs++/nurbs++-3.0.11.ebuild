@@ -4,7 +4,7 @@
 
 inherit libtool eutils
 
-DESCRIPTION="Non-Uniform Rational B-Splines (NURBS) curves and surface are parametric functions which can represent any type of curves or surfaces. This C++ library provides the basic methods for NURBS."
+DESCRIPTION="This C++ library provides the basic methods for Non-Uniform Rational B-Splines (NURBS)."
 HOMEPAGE="http://libnurbs.sourceforge.net/"
 SRC_URI="mirror://sourceforge/libnurbs/${P}.tar.bz2"
 
