@@ -3,6 +3,11 @@
 # $Header: $
 
   18 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  symon-2.78-r2.ebuild:
+  Introduce a new variable (CDEPEND) that will hold common dependencies for
+  (R)DEPEND
+
+  18 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   -symon-2.78-r1.ebuild, +symon-2.78-r2.ebuild:
   New USE flag 'client' added, remove old
 

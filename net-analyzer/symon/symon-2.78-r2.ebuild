@@ -14,11 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE="client symux syweb"
 
-DEPEND="client? ( dev-lang/perl )
-	symux? ( net-analyzer/rrdtool )
+CDEPEND="client? ( dev-lang/perl )
+	symux? ( net-analyzer/rrdtool )"
+DEPEND="${CDEPEND}
 	sys-devel/pmake"
-RDEPEND="client? ( dev-lang/perl )
-	symux? ( net-analyzer/rrdtool )
+RDEPEND="${CDEPEND}
 	syweb? ( virtual/httpd-php )"
 
 S=${WORKDIR}/${PN}
