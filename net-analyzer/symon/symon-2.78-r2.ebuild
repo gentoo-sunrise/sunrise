@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit depend.php eutils toolchain-funcs webapp
+inherit depend.php eutils perl-module toolchain-funcs webapp
 
 DESCRIPTION="System monitor for obtaining accurate and up to date info on the performance of a number of systems"
 HOMEPAGE="http://www.xs4all.nl/~wpd/symon/"
@@ -12,11 +12,13 @@ SRC_URI="http://www.xs4all.nl/~wpd/symon/philes/${P}.tar.gz
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE="symux syweb"
+IUSE="client symux syweb"
 
-DEPEND="symux? ( net-analyzer/rrdtool )
+DEPEND="client? ( dev-lang/perl )
+	symux? ( net-analyzer/rrdtool )
 	sys-devel/pmake"
-RDEPEND="symux? ( net-analyzer/rrdtool )
+RDEPEND="client? ( dev-lang/perl )
+	symux? ( net-analyzer/rrdtool )
 	syweb? ( virtual/httpd-php )"
 
 S=${WORKDIR}/${PN}
@@ -41,6 +43,9 @@ src_unpack() {
 		epatch "${FILESDIR}"/${PN}-syweb-total_firewall.layout.patch
 	fi
 
+	if ! use client ; then
+		sed -i -e "/SUBDIR/ s/client//" "${S}"/Makefile || die "sed failed."
+	fi
 	if ! use symux ; then
 		sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile || die "sed failed."
 	fi
@@ -66,6 +71,14 @@ src_install() {
 	insinto /usr/share/symon
 	doins symon/c_config.sh
 	fperms a+x,u-w /usr/share/symon/c_config.sh
+
+	if use client ; then
+		dobin client/getsymonitem.pl
+
+		perlinfo
+		insinto ${SITE_LIB}
+		doins client/SymuxClient.pm
+	fi
 
 	if use symux ; then
 		insinto /etc
@@ -101,6 +114,8 @@ src_install() {
 }
 
 pkg_postinst() {
+	use client && perl-module_pkg_postinst
+
 	if use syweb ; then
 		elog "Test your syweb configuration by pointing your browser at:"
 		elog "http://${VHOST_HOSTNAME}/${PN}/configtest.php"
