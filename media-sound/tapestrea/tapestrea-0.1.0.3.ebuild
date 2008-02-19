@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
+
 inherit eutils toolchain-funcs flag-o-matic
 
 DESCRIPTION="Techniques + Paradigms for Expressive Synthesis, Transformation, Rendering of Environmental Audio"
@@ -11,7 +13,7 @@ SRC_URI="http://taps.cs.princeton.edu/release/files/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="oss jack alsa doc"
+IUSE="oss jack +alsa doc"
 
 RDEPEND="jack? ( media-sound/jack-audio-connection-kit )
 	alsa? ( >=media-libs/alsa-lib-0.9 )
