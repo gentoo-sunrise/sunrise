@@ -31,7 +31,7 @@ src_unpack() {
 }
 
 src_compile() {
-        econf \
+	econf \
 		$(use_enable force) \
 		$(use_enable tilt)
 
