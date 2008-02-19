@@ -4,10 +4,9 @@
 
 inherit eutils
 
-MY_PV="${PV/0.7_beta_pre/}"
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/${PN}-sources-v${MY_PV}.tar.bz2"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/${PN}-sources-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
