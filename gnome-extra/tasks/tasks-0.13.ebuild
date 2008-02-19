@@ -18,11 +18,7 @@ RDEPEND=">=gnome-extra/evolution-data-server-1.8.2
 	x11-libs/libsexy"
 
 DEPEND="${RDEPEND}
-		sys-apps/gawk
-		sys-apps/grep
 		>=dev-util/pkgconfig-0.9.0
-		dev-lang/perl
-		dev-perl/XML-Parser
 		dev-util/intltool
 		sys-devel/gettext"
 
