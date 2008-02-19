@@ -13,7 +13,4 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="dev-lang/python
-		>=dev-libs/libmemcache-1.4.0_rc2"
-DEPEND="${RDEPEND}"
-
+DEPEND=">=dev-libs/libmemcache-1.4.0_rc2"
