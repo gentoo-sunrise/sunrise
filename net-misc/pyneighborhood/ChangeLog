@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Feb 2008; Jakub Moc <jakub@gentoo.org> pyneighborhood-0.4.ebuild:
+  Replace samba dependency with net-fs/mount-cifs
+
   15 Feb 2008; (Tommy[D]) tommy100@gmx.de pyneighborhood-0.4.ebuild:
   Fix tyto, drop unneeded
 
