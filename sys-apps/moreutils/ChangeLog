@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Feb 2008; (Tommy[D]) tommy100@gmx.de -moreutils-0.26.ebuild,
+  +moreutils-0.28.ebuild:
+  Version bump, requested by lstrojny @#gentoo-sunrise
+
   25 Jan 2008; Santiago M. Mola <coldwind@gentoo.org>
   -moreutils-0.22.ebuild, +moreutils-0.26.ebuild:
   Version bump, remove old, ~amd64 added.
