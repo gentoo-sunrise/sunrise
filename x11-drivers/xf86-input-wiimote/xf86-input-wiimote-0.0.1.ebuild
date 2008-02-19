@@ -20,5 +20,5 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-libwiimote.patch"
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 }
