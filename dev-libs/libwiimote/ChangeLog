@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Feb 2008; Jakub Moc <jakub@gentoo.org> libwiimote-0.4.ebuild,
+  libwiimote-9999.ebuild:
+  Add missing src_compile in 0.4 to actually make use of the USE flags; econf
+  and eautoreconf dies on its own with useful messages. Cosmetics.
+
   16 Feb 2008; Christoph Brill (egore) egore@gmx.de libwiimote-0.4.ebuild,
   libwiimote-9999.ebuild:
   Update ebuilds with suggestions from Tommy[D]

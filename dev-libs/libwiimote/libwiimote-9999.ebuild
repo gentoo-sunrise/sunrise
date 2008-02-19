@@ -13,7 +13,7 @@ HOMEPAGE="http://libwiimote.sourceforge.net"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples tilt force"
+IUSE="examples force tilt"
 
 RDEPEND="net-wireless/bluez-libs"
 DEPEND="${RDEPEND}
@@ -22,14 +22,13 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	subversion_src_unpack
 	epatch "${FILESDIR}/${P}-ldflags.patch"
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 }
 
 src_compile() {
 	econf \
 		$(use_enable force) \
-		$(use_enable tilt) \
-		|| die "Error: econf failed!"
+		$(use_enable tilt)
 
 	emake || die "emake failed"
 }
@@ -39,6 +38,7 @@ src_install() {
 	dodoc AUTHORS NEWS README TODO
 
 	if use examples; then
+		docinto examples
 		dodoc test/test?.c
 	fi
 }

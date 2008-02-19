@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples tilt force"
+IUSE="examples force tilt"
 
 RDEPEND="net-wireless/bluez-libs
 		net-wireless/bluez-utils"
@@ -27,7 +27,15 @@ src_unpack() {
 	use "tilt" || sed -i -e "s:-D_ENABLE_TILT::" config.mk.in
 	use "force" || sed -i -e "s:-D_ENABLE_FORCE::" config.mk.in
 
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
+}
+
+src_compile() {
+        econf \
+		$(use_enable force) \
+		$(use_enable tilt)
+
+	emake || die "emake failed"
 }
 
 src_install() {
@@ -35,6 +43,7 @@ src_install() {
 	dodoc AUTHORS NEWS README TODO
 
 	if use examples; then
+		docinto examples
 		dodoc test/test?.c
 	fi
 }
