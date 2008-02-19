@@ -11,7 +11,10 @@ SRC_URI="http://xpn.altervista.org/codice/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="linguas_de linguas_fr linguas_it"
+LANGS="de fr it"
+for i in ${LANGS} ; do
+	IUSE="${IUSE} linguas_${i}"
+done
 
 DEPEND=""
 RDEPEND=">=dev-lang/python-2.4
@@ -23,10 +26,10 @@ src_install() {
 	exeinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 	doexe ${PN}.py
 
-	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/lang
-	use linguas_de && doins -r lang/de
-	use linguas_fr && doins -r lang/fr
-	use linguas_it && doins -r lang/it
+	for i in ${LANGS} ; do
+		insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/lang
+		use linguas_${i} && doins -r lang/${i}
+	done
 
 	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/pixmaps
 	doins pixmaps/*
@@ -49,6 +52,5 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	python_version
-	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	python_mod_cleanup
 }
