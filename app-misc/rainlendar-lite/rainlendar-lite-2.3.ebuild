@@ -29,8 +29,9 @@ QA_TEXTRELS="opt/rainlendar2/plugins/iCalendarPlugin.so"
 
 pkg_setup() {
 	if use x86 && ! built_with_use '=x11-libs/gtk+-2*' xinerama ; then
-		einfo "Please re-emerge x11-libs/gtk+ with the xinerama USE flag set"
-		die "rainlendar needs the xinerama USE flag set"
+		local diemsg="Please re-emerge x11-libs/gtk+ with the xinerama USE flag set"
+		eerror "${diemsg}"
+		die "${diemsg}"
 	fi
 }
 
