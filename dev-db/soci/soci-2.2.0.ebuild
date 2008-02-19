@@ -31,8 +31,8 @@ src_compile() {
 		$(use_enable mysql backend-mysql) \
 		$(use_enable sqlite3 backend-sqlite3) \
 		$(use_enable postgres backend-postgresql) \
-		$(use_enable firebird backend-firebird) \
-		|| die "econf failed"
+		$(use_enable firebird backend-firebird)
+
 	emake || die "emake failed"
 }
 
