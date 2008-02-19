@@ -16,8 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="doc? ( media-gfx/transfig )"
-RDEPEND="dev-lang/perl
-		dev-perl/Mail-Sendmail"
+RDEPEND="dev-perl/Mail-Sendmail"
 
 S=${WORKDIR}/${MY_P}
 
@@ -31,10 +30,10 @@ src_unpack() {
 }
 
 src_compile() {
-	econf $(use_with doc) || die "econf failed"
+	econf $(use_with doc)
 	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 }
