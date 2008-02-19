@@ -28,7 +28,7 @@ src_compile() {
 		--without-x \
 		$(use_enable debug) \
 		$(use_enable debug verbose-exception) \
-		|| die "econf failed!"
+
 	emake || die "emake failed!"
 }
 
