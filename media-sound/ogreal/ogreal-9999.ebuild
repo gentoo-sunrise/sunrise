@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND=">=dev-games/ogre-1.4
+DEPEND=">=dev-games/ogre-1.4
 		>=media-libs/openal-0.0.8
 		media-libs/libvorbis
 		dev-games/ois"
