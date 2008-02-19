@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Feb 2008; Jakub Moc <jakub@gentoo.org> overlay-utils-0.2-r2.ebuild:
+  Make the sed expression actually readable
+
   17 Feb 2008; (Tommy[D]) tommy100@gmx.de +overlay-utils-0.2-r2.ebuild:
   Use own echangelog-tng to have svn cp/mv working
 

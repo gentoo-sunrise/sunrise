@@ -18,7 +18,7 @@ RDEPEND="dev-util/subversion
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	sed -i -e 's/sbin\(\/functions\.sh\)/etc\/init\.d\1/' sunrise-commit || die "sed failed"
+	sed -i -e 's:/sbin/functions.sh:/etc/init.d/functions.sh:' sunrise-commit || die "sed failed"
 }
 
 src_install() {
