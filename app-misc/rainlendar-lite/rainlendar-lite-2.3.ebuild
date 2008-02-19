@@ -18,18 +18,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="amd64? ( app-emulation/emul-linux-x86-gtklibs
-				app-emulation/emul-linux-x86-xlibs
-				app-emulation/emul-linux-x86-baselibs )
-		x86? ( >=x11-libs/gtk+-2
-				dev-libs/atk
-				x11-libs/libXext
-				x11-libs/libXi
-				x11-libs/libXinerama
-				x11-libs/libXrandr
-				x11-libs/libXcursor
-				x11-libs/libXcomposite
-				x11-libs/libXdamage
-				x11-libs/pango )"
+		    app-emulation/emul-linux-x86-xlibs )
+	x86? ( >=x11-libs/gtk+-2 )"
 
 S=${WORKDIR}/rainlendar2
 
@@ -38,7 +28,7 @@ RESTRICT="mirror strip"
 QA_TEXTRELS="opt/rainlendar2/plugins/iCalendarPlugin.so"
 
 pkg_setup() {
-	if use x86 -a ! built_with_use '=x11-libs/gtk+-2*' xinerama ; then
+	if use x86 && ! built_with_use '=x11-libs/gtk+-2*' xinerama ; then
 		einfo "Please re-emerge x11-libs/gtk+ with the xinerama USE flag set"
 		die "rainlendar needs the xinerama USE flag set"
 	fi
