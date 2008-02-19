@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Feb 2008; (Tommy[D]) tommy100@gmx.de -files/parallel-build.patch:
+  Drop old patch
+
   17 Feb 2008; Tiziano Müller <dev-zero@gentoo.org>
   +files/aufs-20080207-disable_security_inode_permission.patch,
   -aufs-20080207.ebuild, +aufs-20080207-r1.ebuild:
