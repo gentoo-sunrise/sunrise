@@ -22,8 +22,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	if ! use mysql && ! use postgres && ! use sqlite ; then
-		ewarn "You have to specify at least one of the following  USE-flags:"
-		ewarn "'mysql postgresq sqlite'"
+		ewarn "You have to specify at least one of the mysql postgresq sqlite USE flags."
 		ewarn "None specified: support for sqlite automatically activated."
 	fi
 }
@@ -45,14 +44,14 @@ src_unpack() {
 
 src_compile() {
 	if ! use mysql && ! use postgres && ! use sqlite ; then
-		myconf="--with-sqlite3"
+		local myconf="--with-sqlite3"
 	fi
 	econf \
 		$(use_with mysql) \
 		$(use_with postgres pgsql) \
 		$(use_with sqlite sqlite3) \
-		${myconf} \
-		|| die "econf failed"
+		${myconf}
+
 	emake || die "emake failed"
 
 	if use examples ; then
