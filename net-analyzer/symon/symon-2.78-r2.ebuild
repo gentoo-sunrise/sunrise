@@ -26,7 +26,7 @@ WEBAPP_MANUAL_SLOT="yes"
 
 pkg_setup() {
 	if use syweb ; then
-		require_php_with_use gd
+		require_php_with_any_use gd gd-external
 		webapp_pkg_setup
 	fi
 }
@@ -128,4 +128,8 @@ pkg_postinst() {
 	elog "To test the configuration run sym{on,ux} -t"
 	elog "To create the RRDs run /usr/share/symon/c_smrrds.sh all"
 	elog "NOTE that symon won't chroot by default."
+}
+
+pkg_prerm() {
+	use syweb && webapp_pkg_prerm
 }
