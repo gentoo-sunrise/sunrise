@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 src_compile() {
-	econf $(use_enable debug) || die "configure failed"
+	econf $(use_enable debug)
 	emake || die "emake failed"
 }
 
