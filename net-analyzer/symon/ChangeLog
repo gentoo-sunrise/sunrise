@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  symon-2.78-r2.ebuild:
+  Remove slash from docinto, simplify elog messages
+
   19 Feb 2008; Jakub Moc <jakub@gentoo.org> symon-2.78-r2.ebuild:
   Fix php check in pkg_setup, add missing pkg_prerm for webapp.eclass
 

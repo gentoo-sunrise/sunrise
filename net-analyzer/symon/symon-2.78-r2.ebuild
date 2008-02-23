@@ -97,7 +97,7 @@ src_install() {
 	fi
 
 	if use syweb ; then
-		docinto /layouts
+		docinto layouts
 		dodoc "${WORKDIR}"/syweb/symon/total_firewall.layout
 
 		webapp_src_preinst
@@ -122,9 +122,8 @@ pkg_postinst() {
 		webapp_pkg_postinst
 	fi
 
-	elog "You'll need to setup your /etc/symon.conf and "
-	elog "/etc/symux.conf before running these daemons for "
-	elog "the first time."
+	elog "You'll need to setup /etc/sym{on,ux}.conf before running these "
+	elog "daemons for the first time."
 	elog "To test the configuration run sym{on,ux} -t"
 	elog "To create the RRDs run /usr/share/symon/c_smrrds.sh all"
 	elog "NOTE that symon won't chroot by default."
