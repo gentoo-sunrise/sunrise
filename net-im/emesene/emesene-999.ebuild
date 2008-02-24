@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils 
+inherit eutils
 
 DESCRIPTION="Platform independent MSN Messenger client written in Python+GTK"
 HOMEPAGE="http://www.emesene.org"
@@ -23,10 +23,10 @@ S=${WORKDIR}/${PN}
 
 src_install() {
 	insinto /usr/share/emesene
-	rm GPL PSF LGPL 	
+	rm GPL PSF LGPL
 	doins -r *
 	echo -e '#!/bin/sh \n python /usr/share/emesene/Controller.py'>> emesene-start
 	dobin emesene-start
-        newicon ${S}/themes/default/icon96.png ${PN}.png
-        make_desktop_entry emesene-start "EmeSeNe" ${PN}.png
+	newicon "${S}"/themes/default/icon96.png ${PN}.png
+	make_desktop_entry emesene-start "EmeSeNe" ${PN}.png
 }

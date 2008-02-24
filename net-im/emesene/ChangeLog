@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Feb 2008; (Tommy[D]) tommy100@gmx.de emesene-999.ebuild:
+  Drop emtpy files dir, quoting, spaces -> tab
+
   24 Feb 2008; Marcello Magaldi (magowiz) <magowiz@gmail.com>
   +emesene-999.ebuild, +metadata.xml:
   New Ebuild for bug 211174 many many thanks to Tommy[D]
