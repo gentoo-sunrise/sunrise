@@ -1,6 +1,10 @@
 # ChangeLog for app-mobilephone/openmoko-dfu-util
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  24 Feb 2008; (Tommy[D]) tommy100@gmx.de
+  -files/digest-openmoko-dfu-util-9999, -files:
+  Remove obsolete digests
 
   14 Dec 2007; Markus Ullmann <jokey@gentoo.org> openmoko-dfu-util-9999:
   Drop keywords as it's a live ebuild and move eautoreconf to src_unpack
