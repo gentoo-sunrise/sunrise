@@ -3,6 +3,10 @@
 # $Header: $
 
   24 Feb 2008; (Tommy[D]) tommy100@gmx.de emesene-999.ebuild:
+  adding amd64 keyword on request/report by sebasmagri in
+  #gentoo-sunrise
+
+  24 Feb 2008; (Tommy[D]) tommy100@gmx.de emesene-999.ebuild:
   Drop emtpy files dir, quoting, spaces -> tab
 
   24 Feb 2008; Marcello Magaldi (magowiz) <magowiz@gmail.com>
