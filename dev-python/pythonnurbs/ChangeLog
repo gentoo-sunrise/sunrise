@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pythonnurbs
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Feb 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  +pythonnurbs-0.1.ebuild, +metadata.xml:
+  New Ebuild for bug 211453, thanks to Ken69267 and TommyD
+
