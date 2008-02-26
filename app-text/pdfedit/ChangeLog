@@ -1,6 +1,10 @@
 # ChangeLog for app-text/pdfedit
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Feb 2008; Pavel Sanda (ps) <ps at twin.jikos.cz> -pdfedit-0.3.2.ebuild,
+  +pdfedit-0.4.1.ebuild:
+  Version bump
 
   13 Sep 2007; Antti Järvinen (netfiniitti) <netfiniitti@kapsi.fi>
   pdfedit-0.3.2.ebuild:
