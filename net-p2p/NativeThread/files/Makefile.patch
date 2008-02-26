@@ -1,0 +1,26 @@
+--- Makefile	2008-02-24 17:25:07.000000000 +0100
++++ Makefile.new	2008-02-24 17:25:23.000000000 +0100
+@@ -1,20 +1,14 @@
+-CC = gcc
+-INC = /path/to/java/include
+-CFLAGS = -Wall -O3 -fPIC
++INC = $(JAVA_HOME)/include
+ LDFLAGS = -shared -Wl,-soname,libnative.so -I$(INC) -I$(INC)/linux
+ LIBS= -lc
+ 
+ all: clean libNativeThread.so
+ 
+-NativeThread.class:
+-	javac java/NativeThread.java
+-	mv java/NativeThread.class .
+-
+ libNativeThread.so: NativeThread.c NativeThread.h
+ 	$(CC) $(CFLAGS) -o libNativeThread.so $(LDFLAGS) NativeThread.c $(LIBS)
+ 
+-NativeThread.h: NativeThread.class
+-	javah NativeThread
++NativeThread.h:
++	javah -o NativeThread.h -classpath freenet-cvs-snapshot.jar freenet.support.io.NativeThread
+ 
+ clean:
+ 	-rm -f *.class NativeThread.h libNativeThread*.so

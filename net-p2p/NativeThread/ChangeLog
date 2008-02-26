@@ -1,0 +1,9 @@
+# ChangeLog for net-p2p/NativeThread
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Feb 2008; (Tommy[D]) tommy100@gmx.de +NativeThread-20080224.ebuild,
+  +files/Makefile.patch, +metadata.xml:
+  New lib for net-p2p/freenet (bug #128783), moved out of freenet to compile
+  native one
+
