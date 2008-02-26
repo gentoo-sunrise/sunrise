@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Feb 2008; (Tommy[D]) tommy100@gmx.de -gmsh-2.0.8.ebuild:
+  Drop old version
+
   25 Feb 2008; Oliver Borm (boroli) <oli.borm@web.de> gmsh-2.0.8.ebuild,
   +gmsh-2.1.0.ebuild:
   New upstream release and updated dependencies for doc USE-flag
