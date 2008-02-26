@@ -50,7 +50,7 @@ pkg_postinst () {
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet (\"insecure mode\") on the config page to get started."
 	elog " "
-	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown freenet:freenet /opt/freenet/freenet-stable-latest.jar
+	cp /opt/freenet/freenet-cvs-snapshot.jar /opt/freenet/freenet-stable-latest.jar && chown -R freenet:freenet /opt/freenet
 }
 
 pkg_postrm() {
