@@ -1,0 +1,9 @@
+# ChangeLog for net-p2p/fec
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Feb 2008; (Tommy[D]) tommy100@gmx.de +fec-1.0.3.ebuild,
+  +files/Makefile.patch, +metadata.xml:
+  New lib for net-p2p/freenet (bug #128783), moved out of freenet to compile
+  native one
+
