@@ -11,7 +11,7 @@ SRC_URI="http://mesh.dl.sourceforge.net/sourceforge/thinkingrock/${MY_P}.zip"
 
 LICENSE="CDDL"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=virtual/jre-1.5.0"
