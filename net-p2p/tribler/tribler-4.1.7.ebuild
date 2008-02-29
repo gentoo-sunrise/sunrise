@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.zip"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 RDEPEND=">=dev-lang/python-2.4
@@ -30,7 +30,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# Because tribler.py has Windows CR/LF at the end of it's lines
+	# Because tribler.py has Windows CR/LF at the end of its lines
 	sed -i -e 's/.$//' ${PN}.py || die "Error: sed failed"
 }
 
