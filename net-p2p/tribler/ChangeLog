@@ -2,6 +2,18 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Feb 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  tribler-4.1.7.ebuild, +.tribler-4.1.7.ebuild.swp:
+  Fixed missing back slash at line 45.
+
+  29 Feb 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  tribler-4.1.7.ebuild, +.tribler-4.1.7.ebuild.swp:
+  Fixed missing back salsh at line 45.
+
+  28 Feb 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  tribler-4.1.7.ebuild, +.tribler-4.1.7.ebuild.swp:
+  Fixed missing back slash at the end of line 45.
+
   14 Jan 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   +metadata.xml, +tribler-4.1.7.ebuild:
   New ebuild for bug 179384

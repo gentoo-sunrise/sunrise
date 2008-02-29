@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.zip"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/python-2.4
@@ -42,7 +42,7 @@ src_install() {
 	TorrentMaker || die "Error: doins failed"
 	doins abcengine.py btdownloadheadless.py btshowmetainfo.py webtest.py \
 		interconn.py launchmanycore.py webservice.py safeguiupdate.py \
-		tribler.py *.ico *.xpm *.conf *.nsi *.command *.bmp cities.txt
+		tribler.py *.ico *.xpm *.conf *.nsi *.command *.bmp cities.txt \
 		people.txt superpeer.txt || die "Error: doins failed"
 	doicon ${PN}.xpm
 	make_desktop_entry "tribler" "Tribler P2P Bittorrent/Youtube client" \
