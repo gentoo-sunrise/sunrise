@@ -22,9 +22,6 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# no kerberos linkage
-	epatch "${FILESDIR}/${P}-nokrb.patch"
-
 	python setup.py configure || die "configure failed"
 
 	# we want our CFLAGS as well
