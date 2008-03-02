@@ -2,17 +2,13 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Mar 2008; (Tommy[D]) tommy100@gmx.de tribler-4.1.7.ebuild,
+  -.tribler-4.1.7.ebuild.swp:
+  Cleanup
+
   29 Feb 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   tribler-4.1.7.ebuild:
   ~amd64 keyword added.
-
-  29 Feb 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
-  tribler-4.1.7.ebuild, +.tribler-4.1.7.ebuild.swp:
-  Fixed missing back slash at line 45.
-
-  29 Feb 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
-  tribler-4.1.7.ebuild, +.tribler-4.1.7.ebuild.swp:
-  Fixed missing back salsh at line 45.
 
   28 Feb 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   tribler-4.1.7.ebuild, +.tribler-4.1.7.ebuild.swp:
