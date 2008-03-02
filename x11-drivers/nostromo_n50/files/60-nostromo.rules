@@ -1,0 +1,12 @@
+# /etc/udev/rules.d/10-nostromo.rules: nostromo_n50 udev rule
+#
+# This file was created by nostromo_n50 to give proper permissions for nostromo_daemon.
+#
+#
+
+# nostromo n50
+KERNEL=="event*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="050d", ATTRS{idProduct}=="0805", MODE="0660", GROUP="usb"
+
+# nostromo n52
+KERNEL=="event*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="050d", ATTRS{idProduct}=="0815", MODE="0660", GROUP="usb"
+

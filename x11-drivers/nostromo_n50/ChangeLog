@@ -1,0 +1,8 @@
+# ChangeLog for x11-drivers/nostromo_n50
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Mar 2008; Dwayne Asbury (kisak) <kisak42@gmail.com>
+  +files/60-nostromo.rules, +nostromo_n50-1.3.ebuild, +metadata.xml:
+  New ebuild from bug 211562. Thanks to Thomas, Allen, and James
+
