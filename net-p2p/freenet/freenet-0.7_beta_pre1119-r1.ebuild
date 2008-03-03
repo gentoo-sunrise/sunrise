@@ -5,7 +5,7 @@
 inherit eutils
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/${P}.tar.bz2"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/${PF}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
