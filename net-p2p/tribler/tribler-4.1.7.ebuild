@@ -31,7 +31,7 @@ src_unpack() {
 	cd "${S}"
 
 	# Because tribler.py has Windows CR/LF at the end of its lines
-	sed -i -e 's/.$//' ${PN}.py || die "Error: sed failed"
+	edos2unix ${PN}.py
 }
 
 src_install() {
