@@ -32,4 +32,4 @@ src_install() {
 		docinto examples
 		dodoc examples/*.{cilk,c,h}
 	fi
-} 
+}
