@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils java-pkg-2 java-ant-2 eutils
 
 DESCRIPTION="Message board and file sharing client for freenet network"
 HOMEPAGE="http://jtcfrost.sourceforge.net/"
@@ -23,19 +23,18 @@ pkg_setup() {
 }
 
 src_compile() {
-	ant
+	eant distro
 }
 
 src_install() {
 	echo "sh /opt/frost/frost.sh" >frost
 	dobin frost
 	cd build/dist
-	rm *.bat doc/gpl.txt
 	insinto /opt/frost
-	dodoc help/* doc/* *txt
-	rm -r help doc *txt
-	doins -r *
-	dodir -p /opt/frost/{downloads,store,exec}
+	dodoc *txt doc/authors.txt
+	doins frost.sh frost.jar
+	doins -r config downloads exec lib
+	dodir -p /opt/frost/store
 	fowners :frost /usr/bin/frost
 	fperms o-rx /usr/bin/frost
 	fowners -R :frost /opt/frost
