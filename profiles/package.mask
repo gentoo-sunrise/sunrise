@@ -21,16 +21,6 @@
 ##   End example
 ##
 
-# Jakub Moc <jakub@gentoo.org> (03 Mar 2008)
-# broken patch, missing dependencies, broken ebuild
-# net-p2p/freenet depends on this now
-net-p2p/NativeThread
-net-p2p/freenet
-
-# Jakub Moc <jakub@gentoo.org> (03 Mar 2008)
-# this handles java completely wrong
-net-p2p/frost
-
 # Christoph Brill (egore) <egore@gmx.de> (16 Feb 2008)
 # Masking SVN ebuild
 =dev-libs/libwiimote-9999
