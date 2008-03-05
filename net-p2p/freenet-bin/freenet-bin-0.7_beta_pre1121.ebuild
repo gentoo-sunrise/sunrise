@@ -4,10 +4,10 @@
 
 inherit eutils
 
-MY_JAR_REV="r18288"
+MY_JAR_REV="r18369"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 MY_EXT_PV="19"
-MY_SEED_PV="20080301"
+MY_SEED_PV="20080305"
 
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
