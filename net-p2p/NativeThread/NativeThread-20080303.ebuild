@@ -16,14 +16,13 @@ IUSE=""
 DEPEND="net-p2p/freenet
 	virtual/jdk"
 
-append-flags -fPIC
-
 src_unpack() {
 	unpack ${A}
 	epatch "${FILESDIR}"/Makefile.patch
 }
 
 src_compile() {
+	append-ldflags -fPIC
 	tc-export CC
 	emake || die
 }
