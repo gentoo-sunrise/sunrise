@@ -35,7 +35,7 @@ src_unpack() {
 src_install() {
 	emake install || die "emake install failed"
 	doinitd "${FILESDIR}"/freenet
-	dodoc license/README license/LICENSE.Mantissa license/LICENSE.Freenet
+	dodoc license/README license/LICENSE.Mantissa
 }
 
 pkg_postinst () {

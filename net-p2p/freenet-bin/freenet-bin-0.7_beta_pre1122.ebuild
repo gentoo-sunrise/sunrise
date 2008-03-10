@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r18369"
+MY_JAR_REV="r18438"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 MY_EXT_PV="19"
 MY_SEED_PV="20080305"
@@ -22,7 +22,6 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="!net-p2p/freenet
 	>=virtual/jre-1.4"
 
