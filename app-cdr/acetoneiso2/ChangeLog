@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Mar 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
+  acetoneiso2-2.0.0.ebuild:
+  Changed dependency so we can use cdrtools or cdrkit if we want. Tanks
+  Marcello Magaldi.
+
   30 Jan 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
   acetoneiso2-2.0.0.ebuild:
   Added sys-fs/fuseiso to DEPEND. Thanks to realmatrix.
