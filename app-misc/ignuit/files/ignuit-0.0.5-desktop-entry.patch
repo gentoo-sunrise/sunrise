@@ -1,0 +1,12 @@
+--- data/ignuit.desktop.in.in.orig	2008-02-15 21:19:35.000000000 -0500
++++ data/ignuit.desktop.in.in	2008-02-15 21:22:18.000000000 -0500
+@@ -2,8 +2,7 @@
+ _Name=Flashcard Trainer
+ _GenericName=Flashacrd Trainer
+ _Comment=Learn using electronic flashcards
+-Categories=GNOME;GTK;Application;Utility;
+-Encoding=UTF-8
++Categories=GNOME;GTK;Utility;Education;
+ Exec=ignuit %f
+ Icon=ignuit
+ MimeType=
