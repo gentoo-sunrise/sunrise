@@ -19,7 +19,7 @@ DEPEND="${RDEPEND}
 src_compile() {
 	econf \
 		$(use_enable rakvoice) \
-		$(use_enable autopatcher) || die "econf failed"
+		$(use_enable autopatcher)
 	emake || die "emake failed"
 }
 

@@ -3,6 +3,10 @@
 # $Header: $
 
   11 Mar 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
+  raknet-3.06.ebuild:
+  econf dies by default (thanks to tcunha)
+
+  11 Mar 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
   -raknet-3.05.ebuild, raknet-3.06.ebuild:
   Removing old version, adding ChangeLog entry for previous commit, and
   cleaning up ebuild
