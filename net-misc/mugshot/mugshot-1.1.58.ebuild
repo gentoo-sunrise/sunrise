@@ -41,6 +41,7 @@ FIREDIRS="/usr/$(get_libdir)/mozilla-firefox"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
 	epatch "${FILESDIR}/${PN}-1.1.42-libxpcom.patch" || die "epatch failed"
@@ -74,7 +75,7 @@ src_unpack() {
 src_install() {
 	gnome2_src_install
 
-	# this replaces the broken pkg_prerm logic we had before, which removed the 
+	# this replaces the broken pkg_prerm logic we had before, which removed the
 	# firefox extensions on every upgrade.
 	if use firefox || use xulrunner ; then
 		einfo "Installing firefox extension."
