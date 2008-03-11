@@ -2,6 +2,15 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Mar 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
+  -raknet-3.05.ebuild, raknet-3.06.ebuild:
+  Removing old version, adding ChangeLog entry for previous commit, and
+  cleaning up ebuild
+
+  11 Mar 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
+  +raknet-3.06.ebuild:
+  Version bump to 3.06
+
   10 Mar 2008; Markus Ullmann <jokey@gentoo.org> raknet-3.045, raknet-3.05:
   Drop old and some cleanups
 
