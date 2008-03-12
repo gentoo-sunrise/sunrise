@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Mar 2008; Thomas Pani (thpani) <thomas.pani@gmail.com>
+  +pokerth-0.6.1.ebuild:
+  Version bump
+
   06 Jan 2008; Markus Ullmann <jokey@gentoo.org> pokerth-0.5:
   Drop old
 
