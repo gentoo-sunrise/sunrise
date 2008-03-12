@@ -20,6 +20,8 @@ DEPEND="${RDEPEND}
 
 SUPPLIER="public"
 
+S=${WORKDIR}/${PN}
+
 src_install() {
 	latex-package_src_doinstall cls bst
 	dodoc *pdf *tex README README-bst
