@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Mar 2008; (Tommy[D]) tommy100@gmx.de -acetoneiso2-2.0.0.ebuild:
+  Really drop it
+
   12 Mar 2008; Arne Janbu (Ampheus) <admin@ampheus.de> Manifest:
   Remove old version.
 
