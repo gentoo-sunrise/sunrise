@@ -1,6 +1,9 @@
 # ChangeLog for sci-biology/sibsim4
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Mar 2008; azazello <gentoo@horizon.ath.cx> +sibsim4-0.16.ebuild:
+  version bump
 
   28 Oct 2007; Markus Ullmann <jokey@gentoo.org> sibsim4-0.15:
   Fix quoting
