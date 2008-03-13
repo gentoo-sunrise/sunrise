@@ -12,9 +12,6 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
 
-DEPEND=""
-RDEPEND=""
-
 S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
