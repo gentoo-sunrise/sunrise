@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Jakub Moc <jakub@gentoo.org> (16 Mar 2008)
+# svn version should be masked
+=net-misc/wolman-9999
+
 # Christoph Brill (egore) <egore@gmx.de> (16 Feb 2008)
 # Masking SVN ebuild
 =dev-libs/libwiimote-9999
