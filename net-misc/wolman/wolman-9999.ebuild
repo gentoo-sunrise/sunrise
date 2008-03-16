@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="1"
-inherit qt4 subversion
+inherit qt4 subversion eutils
 
 QT4_BUILT_WITH_USE_CHECK="png"
 
@@ -32,4 +32,6 @@ src_compile() {
 
 src_install() {
 	dosbin wolman || die "dosbin failed"
+	newicon gfx/green.png ${PN}.png
+	make_desktop_entry ${PN} "Wake-on-LAN manager" ${PN} "Network;RemoteAccess;Qt" /usr/sbin
 }
