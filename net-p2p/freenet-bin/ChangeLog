@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Mar 2008; (Tommy[D]) tommy100@gmx.de Manifest:
+  Fixing Manifest
+
   13 Mar 2008; (Tommy[D]) tommy100@gmx.de
   -freenet-bin-0.7_beta_pre1122.ebuild,
   +freenet-bin-0.7_beta_pre1123.ebuild:
