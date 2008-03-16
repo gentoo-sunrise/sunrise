@@ -1,0 +1,9 @@
+# ChangeLog for media-video/aegisub
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Mar 2008; Juan Aguado (juantxorena) <juantxorena@gmail.com>
+  +aegisub-2.1_pre1981.ebuild, +aegisub-9999.ebuild, +files/aegisub.png,
+  +metadata.xml:
+  New ebuild for bug 174191
+
