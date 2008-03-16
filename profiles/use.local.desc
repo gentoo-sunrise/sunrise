@@ -11,6 +11,7 @@ app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/collectd:hddtemp - Enable monitoring of disk temperatures (app-admin/hddtemp)
 app-admin/vlogger:dbi - enable support for DBI
+app-cdr/acetoneiso2:7zip - support for optional 7zip features
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
