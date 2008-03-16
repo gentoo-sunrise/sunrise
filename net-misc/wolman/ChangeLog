@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/wolman
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Mar 2008; Jakub Moc <jakub@gentoo.org> +metadata.xml,
+  +wolman-9999.ebuild:
+  New ebuild
+
