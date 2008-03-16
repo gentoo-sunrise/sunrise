@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Juan Aguado <juantxorena@gmail.com> (16 Mar 2008)
+# Masking SVN ebuild
+=media-video/aegisub-9999
+
 # Jakub Moc <jakub@gentoo.org> (16 Mar 2008)
 # svn version should be masked
 =net-misc/wolman-9999
