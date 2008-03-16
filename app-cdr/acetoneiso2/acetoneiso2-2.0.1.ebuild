@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=1
-
 inherit qt4
 
 DESCRIPTION="Graphical tool to do a lot things with image files like extracting, mounting, encrypting."
@@ -13,19 +12,17 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}-source.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cdr crypt"
+IUSE="7zip cdr crypt"
 
-DEPEND="
-	x11-libs/qt:4
-	cdr? ( || ( app-cdr/cdrtools app-cdr/cdrkit )
-	app-cdr/cdrdao )
-	app-arch/p7zip
+DEPEND="x11-libs/qt:4
 	|| ( kde-base/konqueror gnome-base/nautilus kde-base/kdebase )
-	crypt? ( >=app-crypt/gnupg-2 )
 	sys-fs/fuse
 	sys-fs/fuseiso"
 
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}
+	7zip? ( app-arch/p7zip )
+	cdr? ( virtual/cdrtools app-cdr/cdrdao )
+	crypt? ( >=app-crypt/gnupg-2 app-crypt/pinentry )"
 
 S="${WORKDIR}"/${PN}/src/
 
