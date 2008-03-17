@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+WX_GTK_VER="2.8"
+inherit eutils wxwidgets
 
 MY_PV="${PV/_pre/-dev-r}"
 MY_P="${PN}-${MY_PV}"
@@ -41,12 +42,7 @@ DEPEND="${RDEPEND}
 	dev-libs/glib"
 
 pkg_setup() {
-	if ! built_with_use x11-libs/wxGTK opengl; then
-		eerror "Aegisub needs wxGTK with opengl support. Please recompile wxGTK:"
-		eerror "echo \"x11-libs/wxGTK opengl\" >> /etc/portage/package.use"
-		eerror "emerge -av1 wxGTK"
-		die "wxGTK not compiled with 'opengl'!"
-	fi
+	check_wxuse opengl
 }
 
 src_compile() {
