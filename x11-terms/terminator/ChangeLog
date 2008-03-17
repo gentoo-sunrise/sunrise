@@ -1,0 +1,8 @@
+# ChangeLog for x11-terms/terminator
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Mar 2008; Ivan Toshkov (itoshkov) <ivan@toshkov.org>
+  +terminator-0.8.1.ebuild, +metadata.xml:
+  New Ebuild for bug 213243 thanks to Tommy[D].
+
