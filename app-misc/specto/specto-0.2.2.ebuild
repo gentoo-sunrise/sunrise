@@ -25,8 +25,8 @@ DEPEND="dev-python/dbus-python
 	>=dev-python/pygtk-2.10"
 
 src_unpack() {
-        distutils_src_unpack
-	
+	distutils_src_unpack
+
 	sed -i -e "s:share/doc/specto:share/doc/${PF}:" \
 		"${S}"/setup.py "${S}"/spectlib/util.py
 
