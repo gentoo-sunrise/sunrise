@@ -24,6 +24,20 @@ DEPEND="dev-python/dbus-python
 	dev-python/notify-python
 	>=dev-python/pygtk-2.10"
 
+src_unpack() {
+        distutils_src_unpack
+	
+	sed -i -e "s:share/doc/specto:share/doc/${PF}:" \
+		"${S}"/setup.py "${S}"/spectlib/util.py
+
+	# Replace some GNOME icons with their FreeDesktop equivalents
+	# so that it works with oxygen as a theme.
+	sed -i -e '/icon_theme\.load_icon/s:"error":"dialog-error":g' \
+		"${S}"/spectlib/*.py
+	sed -i -e '/icon_theme\.load_icon/s:"reload":"view-refresh":g' \
+		"${S}"/spectlib/*.py
+}
+
 src_install() {
 	distutils_src_install
 	dodoc data/doc/{AUTHORS,ChangeLog}
