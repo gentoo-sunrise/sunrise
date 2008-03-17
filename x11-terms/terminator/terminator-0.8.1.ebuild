@@ -7,17 +7,11 @@ inherit distutils
 DESCRIPTION="Multiple GNOME terminals in one window."
 HOMEPAGE="http://www.tenshu.net/terminator/"
 SRC_URI="http://launchpad.net/${PN}/trunk/${PV}/+download/${PN}_${PV}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=x11-libs/vte-0.16"
-
 RDEPEND="${DEPEND}"
-
-
-src_install() {
-	DOCS="ChangeLog README"
-	distutils_src_install
-}
