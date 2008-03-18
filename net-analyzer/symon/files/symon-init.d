@@ -8,13 +8,13 @@ depend() {
 }
 
 start() {
-        ebegin "Starting symon"
-        start-stop-daemon --start --quiet --exec /usr/sbin/symon -- -u
-        eend ${?}
+	ebegin "Starting symon"
+	start-stop-daemon --start --quiet --exec /usr/sbin/symon -- -u
+	eend ${?}
 }
 
 stop() {
-        ebegin "Stopping symon"
-        start-stop-daemon --stop --quiet --pidfile /var/run/symon.pid
-        eend ${?}
+	ebegin "Stopping symon"
+	start-stop-daemon --stop --quiet --pidfile /var/run/symon.pid
+	eend ${?}
 }

@@ -15,6 +15,6 @@ start() {
 
 stop() {
 	ebegin "Stopping symux"
-        start-stop-daemon --stop --quiet --pidfile /var/run/symux.pid
-        eend ${?}
+	start-stop-daemon --stop --quiet --pidfile /var/run/symux.pid
+	eend ${?}
 }

@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> files/symon-init.d,
+  files/symux-init.d:
+  Beautify the code by converting spaces to tabs
+
   23 Feb 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   symon-2.78-r2.ebuild:
   Remove slash from docinto, simplify elog messages
