@@ -1,4 +1,5 @@
-# rename directories to reflect the changes from the ebuild and symux.conf file
+# Rename directories to reflect the changes from the ebuild and the
+# configuration files.
 
 --- syweb/htdocs/syweb/setup.inc.orig	2007-04-28 18:13:18.000000000 +0100
 +++ syweb/htdocs/syweb/setup.inc	2007-04-28 18:14:25.000000000 +0100

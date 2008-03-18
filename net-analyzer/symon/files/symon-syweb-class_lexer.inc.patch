@@ -1,4 +1,5 @@
-# comment layout test since they aren't installed by default (prevents configtest.php from failing)
+# Comment layout test since they aren't installed by default (prevents
+# configtest.php from failing).
 
 --- syweb/htdocs/syweb/class_lexer.inc.orig	2007-04-30 21:04:45.004493630 +0100
 +++ syweb/htdocs/syweb/class_lexer.inc	2007-04-30 21:04:59.267317747 +0100

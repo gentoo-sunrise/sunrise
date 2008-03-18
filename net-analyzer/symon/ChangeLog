@@ -3,6 +3,12 @@
 # $Header: $
 
   18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  files/symon-syweb-class_lexer.inc.patch,
+  files/symon-syweb-setup.inc.patch,
+  files/symon-syweb-total_firewall.layout.patch:
+  Improve patch comment about renaming the directories, while there prettify them
+
+  18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   symon-2.78-r2.ebuild:
   Tell the user to test the configuration files only after creating the RRDs,
   since symux reads the configuration file with file access checks (prevents

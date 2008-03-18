@@ -1,5 +1,6 @@
-# convert bsd devices to linux
-# rename directories to non-chroot
+# Convert BSD devices to Linux.
+# Rename directories to reflect the changes from the ebuild and the
+# configuration files.
 
 --- syweb/symon/total_firewall.layout.orig	2007-04-30 19:13:12.967405846 +0100
 +++ syweb/symon/total_firewall.layout	2007-04-30 19:14:55.872706997 +0100
