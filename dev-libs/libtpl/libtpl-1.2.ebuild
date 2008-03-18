@@ -17,6 +17,8 @@ RDEPEND="perl? ( dev-lang/perl )"
 DEPEND="${RDEPEND}
 	test? ( dev-lang/perl )"
 
+# Despite of being the default src_compile, it must be redefined because the
+# perl-module eclass exports src_compile.
 src_compile() {
 	econf
 	emake || die "emake failed."
@@ -37,7 +39,6 @@ src_test() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."
-
 	dodoc doc/txt/{examples,future,perl,userguide}.txt
 
 	# Install the PERL API
@@ -46,4 +47,8 @@ src_install() {
 		insinto ${SITE_LIB}
 		doins lang/perl/Tpl.pm
 	fi
+}
+
+pkg_postinst() {
+	use perl && perl-module_pkg_postinst
 }

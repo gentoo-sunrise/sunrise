@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> libtpl-1.2.ebuild:
+  Insert a comment explaining why the default src_compile is redefined, only
+  execute perl-module_pkg_postinst if the 'perl' USE flag was specified, while
+  there tidy up the ebuild
+
   28 Jan 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> +metadata.xml,
   +libtpl-1.2.ebuild:
   New Ebuild for bug 207821. Thanks to jokey and Tommy[D] for the review
