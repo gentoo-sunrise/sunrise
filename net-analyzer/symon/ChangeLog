@@ -2,6 +2,12 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  symon-2.78-r2.ebuild:
+  Tell the user to test the configuration files only after creating the RRDs,
+  since symux reads the configuration file with file access checks (prevents
+  symux -t from giving warnings)
+
   18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> files/symon-init.d,
   files/symux-init.d:
   Beautify the code by converting spaces to tabs
