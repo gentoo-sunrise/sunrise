@@ -1,12 +1,13 @@
-# convert bsd devices to linux
-# mbuf, sensor, and proc still not available in linux
+# Convert BSD devices to Linux.
+# mbuf, pf, proc, and sensor are not available in Linux.
 
---- symon/symon/symon.conf.orig	2007-12-31 16:56:38.322746920 +0000
-+++ symon/symon/symon.conf	2007-12-31 16:58:39.625398962 +0000
-@@ -4,12 +4,9 @@
+--- symon/symon/symon.conf.orig	2008-03-18 03:46:17.173140738 +0000
++++ symon/symon/symon.conf	2008-03-18 04:49:07.463331989 +0000
+@@ -3,13 +3,14 @@
+ #
  # Demo configuration for symon. See symon(8) for BNF.
  
- monitor { cpu(0),  mem,
+-monitor { cpu(0),  mem,
 -	  if(lo0),
 -#	  pf,
 -#         mbuf,
@@ -15,9 +16,14 @@
 -#         if(xl0), if(de0), if(wi0),
 -#	  io(wd1), io(wd2), io(wd3), io(cd0)
 -	  io(wd0)
++monitor {
++	cpu(0),
++	cpu(1),
++#	cpu(2),
++	mem,
 +	if(lo),
 +	if(eth0),
-+#	if(eth1)
-+#	io(hda), io(hdb), io(hdc), io(hdd)
++#	if(eth1),
++#	io(hda), io(hdb), io(hdc), io(hdd),
 +	io(sda), io(sdb)
  } stream to 127.0.0.1 2100

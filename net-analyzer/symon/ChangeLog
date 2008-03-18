@@ -3,6 +3,11 @@
 # $Header: $
 
   18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  files/symon-symon.conf.patch, files/symon-symux.conf.patch:
+  Prettify the configuration files, add resources for MP machines, while there
+  insert missing comments to document the patch purpose
+
+  18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   files/symon-syweb-class_lexer.inc.patch,
   files/symon-syweb-setup.inc.patch,
   files/symon-syweb-total_firewall.layout.patch:
