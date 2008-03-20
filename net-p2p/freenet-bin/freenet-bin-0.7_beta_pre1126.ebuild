@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_JAR_REV="r18509"
+MY_JAR_REV="r18662"
 MY_JAR_FILE="freenet-${MY_JAR_REV}-snapshot.jar"
 MY_EXT_PV="20"
 MY_SEED_PV="20080313"
@@ -45,8 +45,8 @@ src_unpack() {
 		-e 's:PIDDIR=".":PIDDIR="/opt/freenet/":g' \
 		-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' run.sh || die "sed failed"
 
-	head -n 12 run.sh >run1.sh
-	tail -n 556 run.sh >> run1.sh
+	head -n 60 run.sh >run1.sh
+	tail -n 516 run.sh >> run1.sh
 	mv run1.sh run.sh
 }
 
