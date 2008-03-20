@@ -1,8 +1,0 @@
-# ChangeLog for dev-perl/Filesys-Df
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  31 Jan 2008; Markus Ullmann <jokey@gentoo.org> +metadata.xml
-  +Filesys-Df-0.92.ebuild:
-  Initial add as dep for MailScanner
-
