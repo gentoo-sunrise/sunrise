@@ -35,7 +35,9 @@ pkg_postinst() {
 	elog "from http://acs.pandasoftware.com/software/basevirus/"
 }
 
-pkg_prerm() {
-	einfo "Removing stale logdir..."
-	[[ -d "${ROOT}/opt/pavcl/var/log/panda" ]] && rm -rf "${ROOT}/opt/pavcl/var/log/panda"
+pkg_postrm() {
+	if ! has_version ${CATEGORY}/${PN} && [[ -d "${ROOT}/opt/pavcl/var/log/panda" ]] ; then
+		einfo "Removing stale logdir..."
+		rm -rf "${ROOT}/opt/pavcl/var/log/panda"
+	fi
 }
