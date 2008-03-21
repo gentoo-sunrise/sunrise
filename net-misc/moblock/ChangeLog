@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Mar 2008; Jakub Moc <jakub@gentoo.org> moblock-0.8-r1.ebuild:
+  Fix pkg_postinst
+
   17 Feb 2008; (Tommy[D]) tommy100@gmx.de moblock-0.8-r1.ebuild:
   Shorten description
 

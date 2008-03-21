@@ -59,7 +59,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	if [[ -d /var/cache/moblock ]] ; then
+	if ! has_version ${CATEGORY}/${PN} && [[ -d ${ROOT}/var/cache/moblock ]] ; then
 		einfo "Removing leftover cache..."
 		rm -rf /var/cache/moblock
 	fi
