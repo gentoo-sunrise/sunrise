@@ -46,5 +46,7 @@ pkg_config() {
 
 pkg_postrm() {
 	# do not leave orphaned cruft behind
-	[[ -e ${ROOT}/usr/share/${PN} ]] && rm -rf /usr/share/${PN}
+	if ! has_version ${CATEGORY}/${PN} ; then
+		[[ -d ${ROOT}/usr/share/${PN} ]] && rm -rf "${ROOT}"/usr/share/${PN}
+	fi
 }
