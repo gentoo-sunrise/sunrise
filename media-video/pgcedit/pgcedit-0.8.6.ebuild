@@ -35,7 +35,7 @@ src_install() {
 	doexe ${MY_PN}_main.tcl ${MY_PN}.tcl
 	make_wrapper ${PN} /usr/share/${PN}/${MY_PN}.tcl /usr/share/${PN}
 
-	dodir /usr/share/${PN}/plugins
+	keepdir /usr/share/${PN}/plugins
 	insinto /usr/share/${PN}
 	doins -r bin doc lib
 
