@@ -1,6 +1,9 @@
 # ChangeLog for net-misc/iodine
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Mar 2008; Jakub Moc <jakub@gentoo.org> iodine-0.4.1.ebuild:
+  Fix RDEPEND
 
   04 Dec 2007; Jakub Moc <jakub@gentoo.org> -iodine-0.4.0-r1.ebuild,
   +iodine-0.4.1.ebuild:

@@ -15,9 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
 IUSE="test"
 
-DEPEND="sys-libs/zlib
+RDEPEND="sys-libs/zlib"
+DEPEND="${RDEPEND}
 	test? ( dev-libs/check )"
-RDEPEND=""
 
 src_install() {
 	dobin bin/iodine bin/iodined
