@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WEBAPP_OPTIONAL="yes"
 inherit depend.php eutils perl-module toolchain-funcs webapp
 
 DESCRIPTION="System monitor for obtaining accurate and up to date info on the performance of a number of systems"
@@ -10,19 +11,20 @@ SRC_URI="http://www.xs4all.nl/~wpd/symon/philes/${P}.tar.gz
 	syweb? ( http://www.xs4all.nl/~wpd/symon/philes/syweb-0.57.tar.gz )"
 
 LICENSE="BSD-2"
+WEBAPP_MANUAL_SLOT="yes"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE="client symux syweb"
+IUSE="client symux syweb vhosts"
 
-CDEPEND="client? ( dev-lang/perl )
-	symux? ( net-analyzer/rrdtool )"
-DEPEND="${CDEPEND}
+RDEPEND="client? ( dev-lang/perl )
+	symux? ( net-analyzer/rrdtool )
+	syweb? ( ${WEBAPP_DEPEND}
+		    virtual/httpd-php
+		    virtual/httpd-cgi )"
+DEPEND="${RDEPEND}
 	sys-devel/pmake"
-RDEPEND="${CDEPEND}
-	syweb? ( virtual/httpd-php )"
 
 S=${WORKDIR}/${PN}
-WEBAPP_MANUAL_SLOT="yes"
 
 pkg_setup() {
 	if use syweb ; then
