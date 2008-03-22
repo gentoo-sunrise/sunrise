@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2008; Tiziano Müller <dev-zero@gentoo.org>
+  -webkitgtk-30468.ebuild, +webkitgtk-31224.ebuild:
+  Version bump.
+
   23 Feb 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com> 
   webkitgtk-30468.ebuild, -webkitgtk-30267.ebuild:
   Bug 190347. New ebuild for WebKit r30468 nightly build.
