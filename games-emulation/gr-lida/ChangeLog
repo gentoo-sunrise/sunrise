@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2008; (Tommy[D]) tommy100@gmx.de gr-lida-0.3.4.ebuild:
+  Some cleanup, eqmake4 dies on its own
+
   22 Mar 2008; Sebastián Magrí (sebasmagri) <sebasmagri@gmail.com>
   +gr-lida-0.3.4.ebuild, +metadata.xml:
   New Ebuild for bug 213983 thanks to tommy, jokey, chithead, jeeves, juanfra

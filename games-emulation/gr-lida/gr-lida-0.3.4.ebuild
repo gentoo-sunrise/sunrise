@@ -2,10 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+QT4_BUILT_WITH_USE_CHECK="gif jpeg png sqlite3"
+
 inherit qt4
 
 MY_P="GR-lida-${PV}"
-S="${WORKDIR}"/"${MY_P}"
 
 DESCRIPTION="Frontend for scummvm and dosbox"
 HOMEPAGE="http://www.laisladelabandoware.es"
@@ -17,15 +18,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="dosbox scummvm"
 
 DEPEND="$(qt4_min_version 4.3)"
-
 RDEPEND="${DEPEND}
 	dosbox? ( games-emulation/dosbox )
 	scummvm? ( games-engines/scummvm )"
-
-QT4_BUILT_WITH_USE_CHECK="gif jpeg png sqlite3"
+S="${WORKDIR}"/"${MY_P}"
 
 src_compile(){
-	eqmake4 "${PN}".pro || die
+	eqmake4
 	emake || die "Compile Failed"
 }
 
