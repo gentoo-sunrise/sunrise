@@ -33,6 +33,8 @@ dev-libs/libwiimote:force - Enable force feedback
 dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
+games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
 games-fps/chocolate-doom:server - Enable installation of server
 games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2:cdaudio - Enable cd audio playback support
