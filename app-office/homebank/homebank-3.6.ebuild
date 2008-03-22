@@ -2,13 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+WANT_AUTOMAKE="none"
+WANT_AUTOCONF="latest"
 
-MY_P=${P}_unstable
+inherit autotools
 
 DESCRIPTION="The free software you have always wanted to manage your personal accounts at home"
 HOMEPAGE="http://homebank.free.fr/index.php"
-SRC_URI="http://homebank.free.fr/public/${MY_P}.tar.gz"
+SRC_URI="http://homebank.free.fr/public/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="ofx"
@@ -19,11 +20,15 @@ RDEPEND=">=x11-libs/gtk+-2.0
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-S=${WORKDIR}/${MY_P}
-
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}/${P}-libofx.patch"
+	cd "${S}"
+
+	sed -i \
+		-e 's|LDFLAGS="${LDFLAGS} -lofx"|LIBS="${LIBS} -lofx"|' \
+		configure.ac || die "sed failed"
+
+	eautoconf
 }
 
 src_compile() {
