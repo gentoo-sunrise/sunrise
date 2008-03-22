@@ -5,8 +5,7 @@
 PYTHON_MODNAME="spectlib"
 inherit distutils
 
-DESCRIPTION="A desktop application to watch configurable events (such as website updates, emails,
-file and folder changes, system processes, etc) and then trigger notifications."
+DESCRIPTION="A desktop application to watch configurable events and then trigger notifications."
 HOMEPAGE="http://specto.sourceforge.net/"
 SRC_URI="http://specto.googlecode.com/files/${P}.tar.gz"
 

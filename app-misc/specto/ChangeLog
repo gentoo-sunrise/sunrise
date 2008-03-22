@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2008; (Tommy[D]) tommy100@gmx.de specto-0.2.2.ebuild:
+  Shorten description
+
   17 Mar 2008; Jakub Moc <jakub@gentoo.org> specto-0.2.2.ebuild:
   Some icontheme fixes from Flameeyes' overlay
 
