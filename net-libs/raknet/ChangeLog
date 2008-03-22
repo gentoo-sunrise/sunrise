@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
+  -raknet-3.06.ebuild, +raknet-3.07.ebuild:
+  Version bump to 3.07, removing old version
+
   11 Mar 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
   raknet-3.06.ebuild:
   econf dies by default (thanks to tcunha)
