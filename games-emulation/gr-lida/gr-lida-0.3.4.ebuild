@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 QT4_BUILT_WITH_USE_CHECK="gif jpeg png sqlite3"
 
 inherit qt4
@@ -17,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="dosbox scummvm"
 
-DEPEND="$(qt4_min_version 4.3)"
+DEPEND="|| ( ( x11-libs/qt-gui x11-libs/qt-sql )
+		<x11-libs/qt-4.4:4 )"
 RDEPEND="${DEPEND}
 	dosbox? ( games-emulation/dosbox )
 	scummvm? ( games-engines/scummvm )"
@@ -33,6 +35,6 @@ src_install(){
 }
 
 pkg_postinst(){
-	einfo "The GUI is currently in Spanish."
-	einfo "See bug 213983 for instructions about translation."
+	elog "The GUI is currently in Spanish."
+	elog "See bug 213983 for instructions about translation."
 }
