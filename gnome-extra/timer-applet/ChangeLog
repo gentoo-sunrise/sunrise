@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/timer-applet
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  25 Mar 2008; Tiziano Müller <dev-zero@gentoo.org>
+  +timer-applet-2.0.1.ebuild:
+  Version bump (timer-applet-2.x is a complete rewrite in python).
 
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> timer-applet-1.3.3.ebuild:
   Add missing dev-libs/libxml2 dependency
