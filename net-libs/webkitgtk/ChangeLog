@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Mar 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com>
+  -webkitgtk-31224.ebuild:
+  Removed old r31224.
+
   25 Mar 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com> ++:
   Bug 190347. Updated ebuild for nightly build r31275
 
