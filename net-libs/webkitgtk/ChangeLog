@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Mar 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com> ++:
+  Bug 190347. Updated ebuild for nightly build r31275
+
   22 Mar 2008; Tiziano Müller <dev-zero@gentoo.org>
   -webkitgtk-30468.ebuild, +webkitgtk-31224.ebuild:
   Version bump.
