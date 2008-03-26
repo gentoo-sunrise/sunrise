@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2008; Markus Ullmann <jokey@gentoo.org> kgrubeditor-0.6:
+  Works on x86 as well
+
   26 Mar 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   +kgrubeditor-0.6.ebuild, +metadata.xml:
   New ebuild for bug #210960
