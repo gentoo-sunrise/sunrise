@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Thomas Anderson (gentoofan23) <gentoofan23@gmail.com> (26 Mar 2008)
+# Masking kde-misc/kgrubeditor because it has unstable dependencies
+kde-misc/kgrubeditor
+
 # Juan Aguado <juantxorena@gmail.com> (16 Mar 2008)
 # Masking SVN ebuild
 =media-video/aegisub-9999
