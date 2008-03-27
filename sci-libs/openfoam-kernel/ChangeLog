@@ -3,6 +3,10 @@
 # $Header: $
 
   27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
+  openfoam-kernel-1.4.1_p20080131:
+  Actually unpack the patchset
+
+  27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
   -openfoam-kernel-1.4.1_p20080131.patch,
   -openfoam-kernel-compile-1.4.1_p20080131.patch,
   openfoam-kernel-1.4.1_p20080131:
