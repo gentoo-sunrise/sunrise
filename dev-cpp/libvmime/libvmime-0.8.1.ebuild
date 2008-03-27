@@ -4,21 +4,20 @@
 
 inherit eutils
 
-KEYWORDS="~x86"
-
 DESCRIPTION="A powerful C++ class library for working with MIME messages and services like IMAP, POP or SMTP."
 HOMEPAGE="http://www.vmime.org/"
 SRC_URI="mirror://sourceforge/vmime/${P}.tar.bz2"
+
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
 IUSE="debug doc examples sasl ssl"
 
-CDEPEND="sasl? ( net-libs/libgsasl )
+RDEPEND="sasl? ( net-libs/libgsasl )
 		ssl? ( net-libs/gnutls )
 		virtual/libiconv"
-DEPEND="${CDEPEND}
+DEPEND="${RDEPEND}
 		doc? ( app-doc/doxygen )"
-RDEPEND="${CDEPEND}"
 
 src_unpack() {
 	unpack ${A}
