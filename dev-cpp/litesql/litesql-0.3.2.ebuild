@@ -4,13 +4,13 @@
 
 inherit autotools eutils
 
-KEYWORDS="~amd64 ~x86"
-
 DESCRIPTION="Integrates C++ objects tightly to relational database and thus provides an object persistence layer."
 HOMEPAGE="http://litesql.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
 LICENSE="BSD"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc examples mysql postgres sqlite"
 
 RDEPEND="mysql? ( virtual/mysql )
@@ -62,7 +62,6 @@ src_compile() {
 		cd "${S}/docs/doxygen"
 		doxygen doxygen.conf
 	fi
-
 }
 
 src_install() {
