@@ -1,6 +1,9 @@
 # ChangeLog for net-im/gizmo
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Mar 2008; shwouchk <shwouchk@gmail.com> +gizmo-3.1.0.79.ebuild:
+  New ebuild for bug 103587 (gizmo version 3.1.0.79)
 
   12 Jul 2007; David Shakaryan <omp@gentoo.org> gizmo-3.0.1.68.ebuild:
   Use $P in SRC_URI.
