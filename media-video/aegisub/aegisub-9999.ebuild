@@ -34,7 +34,6 @@ RDEPEND="=x11-libs/wxGTK-2.8*
 	spell? ( app-text/hunspell )
 	ffmpeg? ( media-video/ffmpeg )"
 
-
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	media-gfx/imagemagick
@@ -45,28 +44,20 @@ pkg_setup() {
 }
 
 src_compile() {
-	local myconf
-	myconf="--with-libass --prefix=/usr"
-	# Audio drivers	
-	myconf="${myconf}
-	$(use_with alsa) \
-	$(use_with portaudio) \
-	$(use_with pulseaudio) \
-	$(use_with openal)"
-	# Automation
-	myconf="${myconf}
-	$(use_with lua) \
-	$(use_with ruby) \
-	$(use_with perl)"
-	# Other stuff
-	myconf="${myconf}
-	$(use_with ffmpeg) \
-	$(use_with spell hunspell)
-	$(use_enable debug)"
 	# The provided autogen script executes configure too
 	# I'm using it instead of autotools because it also converts
 	# some image files and do some other stuff.
-	./autogen.sh ${myconf} || die "configure failed"
+	./autogen.sh --with-libass --prefix=/usr
+		$(use_with alsa) \
+		$(use_with portaudio) \
+		$(use_with pulseaudio) \
+		$(use_with openal) \
+		$(use_with lua) \
+		$(use_with ruby) \
+		$(use_with perl) \
+		$(use_with ffmpeg) \
+		$(use_with spell hunspell) \
+		$(use_enable debug) || die "configure failed"
 	emake || die "emake failed"
 }
 
@@ -75,4 +66,3 @@ src_install() {
 	doicon "${FILESDIR}"/${PN}.png
 	make_desktop_entry "${PN}" "Aegisub" "${PN}" "AudioVideo;Video;"
 }
-

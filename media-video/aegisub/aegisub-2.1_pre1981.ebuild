@@ -7,7 +7,6 @@ inherit eutils wxwidgets
 
 MY_PV="${PV/_pre/-dev-r}"
 MY_P="${PN}-${MY_PV}"
-S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="Advanced SSA/ASS subtitle editor"
 HOMEPAGE="http://malakith.net/aegiwiki/Main_Page"
@@ -35,11 +34,12 @@ RDEPEND="=x11-libs/wxGTK-2.8*
 	spell? ( app-text/hunspell )
 	ffmpeg? ( media-video/ffmpeg )"
 
-
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	media-gfx/imagemagick
 	dev-libs/glib"
+
+S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
 	check_wxuse opengl
@@ -47,16 +47,13 @@ pkg_setup() {
 
 src_compile() {
 	econf "--with-libass --prefix=/usr" \
-	# Audio drivers	
 	$(use_with alsa) \
 	$(use_with portaudio) \
 	$(use_with pulseaudio) \
 	$(use_with openal) \
-	# Automation
 	$(use_with lua) \
 	$(use_with ruby) \
 	$(use_with perl) \
-	# Other stuff
 	$(use_with ffmpeg) \
 	$(use_with spell hunspell) \
 	$(use_enable debug)
@@ -68,4 +65,3 @@ src_install() {
 	doicon "${FILESDIR}"/${PN}.png
 	make_desktop_entry "${PN}" "Aegisub" "${PN}" "AudioVideo;Video;"
 }
-
