@@ -6,7 +6,8 @@ inherit libtool eutils
 
 DESCRIPTION="This C++ library provides the basic methods for Non-Uniform Rational B-Splines (NURBS)."
 HOMEPAGE="http://libnurbs.sourceforge.net/"
-SRC_URI="mirror://sourceforge/libnurbs/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/libnurbs/${P}.tar.bz2
+	http://dev.gentooexperimental.org/~jokey/sunrise-dist/${P}-gcc-4.1.patch.bz2"
 
 LICENSE="LGPL-2"
 SLOT="0"
@@ -19,7 +20,7 @@ RDEPEND=""
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/nurbs++-3.0.11-gcc-4.1.patch
+	epatch "${DISTDIR}"/${P}-gcc-4.1.patch
 	elibtoolize
 }
 
