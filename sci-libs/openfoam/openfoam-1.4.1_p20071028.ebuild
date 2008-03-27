@@ -13,7 +13,8 @@ MY_PARA_PV_SHORT=$(get_version_component_range 1-2 ${MY_PARA_PV})
 DESCRIPTION="Open Field Operation and Manipulation - CFD Simulation Toolbox"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
-	parafoam? ( http://www.paraview.org/files/v${MY_PARA_PV_SHORT}/ParaView-${MY_PARA_PV}.tar.gz )"
+	parafoam? ( http://www.paraview.org/files/v${MY_PARA_PV_SHORT}/ParaView-${MY_PARA_PV}.tar.gz )
+	http://dev.gentooexperimental.org/~jokey/sunrise-dist/${PN}-1.4.1-patches-0.1.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -98,9 +99,9 @@ src_unpack() {
 	fi
 
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}.patch
-	epatch "${FILESDIR}"/compile-${MY_PV}.patch
-	epatch "${FILESDIR}"/mico-${MY_PV}.patch
+	epatch "${WORKDIR}"/patch/${P}.patch
+	epatch "${WORKDIR}"/patch/compile-${MY_PV}.patch
+	epatch "${WORKDIR}"/patch/mico-${MY_PV}.patch
 }
 
 src_compile() {
