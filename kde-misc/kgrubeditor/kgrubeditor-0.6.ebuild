@@ -21,4 +21,3 @@ RDEPEND="${RDEPEND}
 	sys-boot/grub"
 
 S=${WORKDIR}/${MY_PN}
-
