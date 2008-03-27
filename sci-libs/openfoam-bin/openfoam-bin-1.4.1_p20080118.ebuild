@@ -12,7 +12,8 @@ DESCRIPTION="Open Field Operation and Manipulation - CFD Simulation Toolbox"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
 	x86? ( mirror://sourceforge/foam/${MY_P}.linuxGccDPOpt.gtgz )
-	amd64? ( mirror://sourceforge/foam/${MY_P}.linux64GccDPOpt.gtgz )"
+	amd64? ( mirror://sourceforge/foam/${MY_P}.linux64GccDPOpt.gtgz )
+	http://dev.gentooexperimental.org/~jokey/sunrise-dist/${P}.patch.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -75,7 +76,7 @@ src_unpack() {
 	unpack ./${MY_P}.binary.tgz
 
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}.patch
+	epatch "${DISTDIR}"/${P}.patch.bz2
 	epatch "${FILESDIR}"/compile-${MY_PV}.patch
 }
 

@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
+  -openfoam-bin-1.4.1_p20080118.patch:
+  Move patch to dev.ge.org
+
   29 Jan 2008; Oliver Borm (boroli) <oli.borm@web.de>
   openfoam-bin-1.4.1_p20080118.ebuild:
   Updated dependencies
