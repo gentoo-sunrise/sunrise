@@ -6,7 +6,7 @@ inherit eutils
 
 MY_P=gizmo-project-${PV}
 
-DESCRIPTION="Gizmo is a P2P-VoiceIP client"
+DESCRIPTION="A P2P-VoiceIP client"
 HOMEPAGE="http://www.gizmoproject.com/"
 SRC_URI="http://download.gizmoproject.com/jasmine/gtk-${P}/${MY_P}-1-libstdc++6.tar.gz"
 
@@ -24,7 +24,8 @@ RDEPEND="dev-libs/atk
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/pango
-	sys-libs/zlib"
+	sys-libs/zlib
+	avahi? ( || ( net-dns/avahi net-misc/mDNSResponder ) )"
 
 S=${WORKDIR}/${MY_P}
 
