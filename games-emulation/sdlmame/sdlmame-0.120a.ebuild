@@ -14,7 +14,8 @@ DESCRIPTION="Multiple Arcade Machine Emulator (SDL)"
 HOMEPAGE="http://rbelmont.mameworld.info/?page_id=163"
 # Hope it goes to gentoo mirrors...
 #SRC_URI="mirror://gentoo/${MY_P}.zip"
-SRC_URI="http://rbelmont.mameworld.info/${MY_P}.zip"
+SRC_URI="http://rbelmont.mameworld.info/${MY_P}.zip
+http://dev.gentooexperimental.org/~jokey/sunrise-dist/patch-0.120a.tar.bz2"
 
 # Same as xmame. Should it be renamed to MAME?
 LICENSE="XMAME"
@@ -23,21 +24,21 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="minimal debug"
 
 DEPEND=">=media-libs/libsdl-1.2.10
-		sys-libs/zlib
-		dev-libs/expat
-		debug? (
-			>gnome-base/gconf-2
-			>=x11-libs/gtk+-2 )"
-
+	sys-libs/zlib
+	dev-libs/expat
+	debug? (
+		>gnome-base/gconf-2
+		>=x11-libs/gtk+-2 )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
+
 RESTRICT="fetch strip"
 
 pkg_nofetch() {
-	einfo "Please download sdlmame from"
+	einfo "Please download"
 	einfo "${SRC_URI}"
-	einfo "and put the file in ${DISTDIR}"
+	einfo "and put the files in ${DISTDIR}"
 	einfo
 }
 
@@ -45,7 +46,7 @@ pkg_nofetch() {
 disable_feature() {
 	sed -i \
 		-e "/$1.*=/s:^:# :" \
-		"${S}"/makefile || die "disable $1 pacth failed"
+		"${S}"/makefile || die "disable $1 patch failed"
 }
 
 # Function to enable a makefile option
@@ -63,26 +64,29 @@ src_unpack() {
 	$(disable_feature BUILD_EXPAT)
 
 	case ${ARCH} in
-		amd64)	einfo "Enabling 64-bit support"
-				$(enable_feature PTR64)
-				$(enable_feature AMD64)
-				;;
+		amd64)
+			einfo "Enabling 64-bit support"
+			$(enable_feature PTR64)
+			$(enable_feature AMD64)
+			;;
 
-		x86)	einfo "Optimizing build for $(get-flag march)"
-				case $(get-flag march) in
-					pentium3)	$(enable_feature PM);;
-					pentium-m)	$(enable_feature PM);;
-					pentium4)   $(enable_feature P4);;
-					athlon)		$(enable_feature ATHLON);;
-					k7)			$(enable_feature ATHLON);;
-					i686)		$(enable_feature I686);;
-					pentiumpro)	$(enable_feature I686);;
-				esac
-				;;
+		x86)
+			einfo "Optimizing build for $(get-flag march)"
+			case $(get-flag march) in
+				pentium3)	$(enable_feature PM);;
+				pentium-m)	$(enable_feature PM);;
+				pentium4)   $(enable_feature P4);;
+				athlon)		$(enable_feature ATHLON);;
+				k7)			$(enable_feature ATHLON);;
+				i686)		$(enable_feature I686);;
+				pentiumpro)	$(enable_feature I686);;
+			esac
+			;;
 
-		ppc)	einfo "Enabling PPC support"
-				$(enable_feature G4)
-				;;
+		ppc)
+			einfo "Enabling PPC support"
+			$(enable_feature G4)
+			;;
 	esac
 
 	if use debug ; then
@@ -93,9 +97,9 @@ src_unpack() {
 
 	einfo "Applying WolfMAME patches"
 	cd "${S}"
-	epatch "${FILESDIR}"/${MY_V}/dipports.patch
-	epatch "${FILESDIR}"/${MY_V}/inpview.patch
-	epatch "${FILESDIR}"/${MY_V}/wolf.patch
+	epatch "${WORKDIR}"/patch-${MY_V}/dipports.patch
+	epatch "${WORKDIR}"/patch-${MY_V}/inpview.patch
+	epatch "${WORKDIR}"/patch-${MY_V}/wolf.patch
 }
 
 src_compile() {

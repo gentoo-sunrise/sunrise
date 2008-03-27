@@ -1,6 +1,10 @@
 # ChangeLog for games-emulation/sdlmame
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Mar 2008; Markus Ullmann <jokey@gentoo.org> -dipports.patch,
+  -inpview.patch, -wolf.patch:
+  Move patchset to dev.ge.org
 
   12 Nov 2007; Jakub Moc <jakub@gentoo.org> -sdlmame-0.119_p4.ebuild:
   Nuke old
