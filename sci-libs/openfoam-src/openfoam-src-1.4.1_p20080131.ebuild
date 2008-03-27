@@ -26,7 +26,7 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
 	unpack ./${MY_P}.General.tgz
-	unpack "${DISTDIR}"/${P}-patches-0.1.tar.bz2
+	unpack ${P}-patches-0.1.tar.bz2
 
 	cd "${S}"
 	epatch "${WORKDIR}"/patch/${P}.patch
