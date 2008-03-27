@@ -3,6 +3,11 @@
 # $Header: $
 
   27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
+  -openfoam-src-1.4.1_p20080131.patch,
+  -openfoam-src-compile-1.4.1_p20080131.patch:
+  Move patchset to dev.ge.org
+
+  27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
   -openfoam-src-1.4.1_p20080118.patch,
   -openfoam-src-compile-1.4.1_p20080118.patch, openfoam-src-1.4.1_p20080118:
   Drop old

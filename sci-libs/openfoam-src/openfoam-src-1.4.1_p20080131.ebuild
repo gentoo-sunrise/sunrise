@@ -10,7 +10,8 @@ MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="OpenFOAM - Kernel Sources"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
-SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz"
+SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
+	http://dev.gentooexperimental.org/~jokey/sunrise-dist/${P}-patches-0.1.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -25,10 +26,11 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
 	unpack ./${MY_P}.General.tgz
+	unpack "${DISTDIR}"/${P}-patches-0.1.tar.bz2
 
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}.patch
-	epatch "${FILESDIR}"/${PN}-compile-${PV}.patch
+	epatch "${WORKDIR}"/patch/${P}.patch
+	epatch "${WORKDIR}"/patch/${PN}-compile-${PV}.patch
 }
 
 src_install() {
