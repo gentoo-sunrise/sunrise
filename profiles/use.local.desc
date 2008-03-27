@@ -182,11 +182,9 @@ sci-libs/cgnslib:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/cgnstools:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/gmsh:cgns - Enables cgns output support
 sci-libs/gmsh:metis - Enables metis support
-sci-libs/openfoam:hdf5 - Adds support for the Hierarchical Data Format v5
 sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam:metis - Enables the use of the systemwide metis/parmetis installation
 sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
-sci-libs/openfoam:parafoam - Enables the building of the vtkFoam and PVFoamReader libraries
 sci-libs/openfoam-bin:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-bin:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam-utilities:metis - Enables the use of the systemwide metis/parmetis installation
