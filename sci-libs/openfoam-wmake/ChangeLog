@@ -2,6 +2,13 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Mar 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  +openfoam-wmake-1.4.1_p20080328.ebuild,
+  +files/openfoam-wmake-compile-1.4.1_p20080328.patch,
+  +files/openfoam-wmake-1.4.1_p20080328.patch,
+  +files/openfoam-wmake-paraFoam-1.4.1_p20080328.patch:
+  paraFoam support added
+
   27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
   -openfoam-wmake-1.4.1_p20080118.patch,
   -openfoam-wmake-compile-1.4.1_p20080118.patch,
