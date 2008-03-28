@@ -10,13 +10,12 @@ MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="Open Field Operation and Manipulation - CFD Simulation Toolbox"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
-SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
-	http://dev.gentooexperimental.org/~jokey/${PN}-1.4.1-patches-0.1.tar.bz2"
+SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples lam mpich metis"
+IUSE="examples lam mpich"
 
 RDEPEND="!sci-libs/openfoam-bin
 	!sci-libs/openfoam-kernel
@@ -28,11 +27,11 @@ RDEPEND="!sci-libs/openfoam-bin
 	net-misc/openssh
 	net-misc/mico
 	<virtual/jdk-1.5
+	=sci-libs/parmetis-3.1
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
-	mpich? ( sys-cluster/mpich2 )
-	metis? ( sci-libs/metis sci-libs/parmetis )"
+	mpich? ( sys-cluster/mpich2 )"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
@@ -71,8 +70,9 @@ src_unpack() {
 	unpack ./${MY_P}.General.tgz
 
 	cd "${S}"
-	epatch "${WORKDIR}"/patch/${P}.patch
-	epatch "${WORKDIR}"/patch/compile-${PV}.patch
+	epatch "${FILESDIR}"/${P}.patch
+	epatch "${FILESDIR}"/compile-${PV}.patch
+	epatch "${FILESDIR}"/${PN}-paraFoam-${PV}.patch
 }
 
 src_compile() {
@@ -160,28 +160,23 @@ src_compile() {
 	sed -i -e "s|:../lib/j3d-org.jar|:../lib/j3d-org.jar:/usr/share/sun-java3d-bin/lib/vecmath.jar:/usr/share/sun-java3d-bin/lib/j3dutils.jar:/usr/share/sun-java3d-bin/lib/j3dcore.jar|"	\
 		"${S}"/applications/utilities/mesh/manipulation/patchTool/Java/Make/options
 
-	if use metis ; then
-		sed -i -e "s|-lmetis \\\|-L/usr/$(get_libdir) -lmetis|"	\
-		-e 's|../metis-5.0pre2/include|/usr/include|'	\
-		-e 's|-lGKlib||'	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethods/Make/options	\
-		|| die "could not replace metis options"
+	sed -i -e "s|-lmetis \\\|-lmetis|"	\
+	-e 's|../metis-5.0pre2/include|/usr/include/metis|'	\
+	-e 's|-lGKlib||'	\
+	"${S}"/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethods/Make/options	\
+	|| die "could not replace metis options"
 
-		sed -i -e 's|wmake libso metis|# wmake libso metis|'	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/Allwmake	\
-		|| die "could not replace metis options"
+	sed -i -e 's|wmake libso metis|# wmake libso metis|'	\
+	"${S}"/applications/utilities/parallelProcessing/decompositionMethods/Allwmake	\
+	|| die "could not replace metis options"
 
-		sed -i -e 's|wmake libso ParMetis|# wmake libso ParMetis|'	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Allwmake	\
-		|| die "could not replace metis options"
+	sed -i -e 's|wmake libso ParMetis|# wmake libso ParMetis|'	\
+	"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Allwmake	\
+	|| die "could not replace metis options"
 
-		sed -i -e 's|parMetisDecomp/ParMetis-3.1/ParMETISLib|/usr/include/parmetis|'	\
-		-e 's|parMetisDecomp/ParMetis-3.1|/usr/include|'	\
-		-e "s|-lmetis|-L/usr/$(get_libdir) -lMETIS -lmetis|"	\
-		-e "s|-lparmetis|-L/usr/$(get_libdir) -lparmetis|"	\
-		"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Make/options	\
-		|| die "could not replace metis options"
-	fi
+	sed -i -e 's|parMetisDecomp/ParMetis-3.1/ParMETISLib|/usr/include/parmetis|'	\
+	"${S}"/applications/utilities/parallelProcessing/decompositionMethods/parMetisDecomp/Make/options	\
+	|| die "could not replace metis options"
 
 	cp "${S}"/.${MY_P}/bashrc "${S}"/.${MY_P}/bashrc.bak || "cannot copy bashrc"
 
@@ -198,7 +193,7 @@ src_compile() {
 	cd "${S}"
 	./Allwmake || die "could not build"
 
-	rm "${S}"/bin/paraFoam*
+	rm "${S}"/bin/paraFoam.pvs
 	rm "${S}"/.${MY_P}/bashrc.bak
 
 	sed -i -e "s|/\$WM_OPTIONS||" "${S}"/.bashrc || die "could not delete \$WM_OPTIONS in .bashrc"

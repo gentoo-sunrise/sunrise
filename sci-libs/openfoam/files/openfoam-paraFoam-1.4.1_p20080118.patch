@@ -1,0 +1,29 @@
+--- OpenFOAM-1.4.1-src/bin/paraFoam	2007-04-17 12:57:20.000000000 +0200
++++ paraFoam	2008-03-28 12:36:24.000000000 +0100
+@@ -66,13 +66,19 @@
+     [ -s "$rootDir/$check" ] || usage "file does not exist:  '$check'"
+ done
+ 
++if [ -r system/controlDict.foam ]; then
++	echo "$0: Using already present $caseDir/system/controlDict.foam"
++	# since we are now in the cwd, ROOT/CASE is '$PWD'
++	paraview --data="$PWD/system/controlDict.foam"
++else
++	if [ ! -s system/controlDict ]; then
++	    usage "file does not exist:  'system/controlDict'"
++	fi
++	ln system/controlDict system/controlDict.foam
++	# since we are now in the cwd, ROOT/CASE is '$PWD'
++	paraview --data="$PWD/system/controlDict.foam"
++fi
+ 
+-# since we are now in the cwd, ROOT/CASE is '$PWD'
+-sed -e s%ROOT/CASE%$PWD%g \
+-    -e s%CASE%$caseName%g $WM_PROJECT_DIR/bin/paraFoam.pvs > paraFoam.pvs
+-
+-touch $caseName.foam
+-paraview paraFoam.pvs
+-rm paraFoam.pvs $caseName.foam 2>/dev/null
++rm system/controlDict.foam 2>/dev/null
+ 
+ #------------------------------------------------------------------------------
