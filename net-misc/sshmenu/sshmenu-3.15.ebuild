@@ -14,10 +14,13 @@ SLOT="0"
 KEYWORDS=""
 IUSE="gnome"
 
+#Note: We need to depend on dev-ruby/ruby-gnome2
+#until the issues in bug #215329 are fixed.
 RDEPEND="dev-lang/ruby:1.8
 	dev-ruby/ruby-gtk2
-	dev-ruby/ruby-panel-applet2
-	gnome? ( dev-ruby/ruby-gconf2 )
+	gnome? ( dev-ruby/ruby-gconf2
+		dev-ruby/ruby-panel-applet2
+		dev-ruby/ruby-gnome2 )
 	|| ( net-misc/x11-ssh-askpass net-misc/gtk2-ssh-askpass )"
 
 src_unpack() {
