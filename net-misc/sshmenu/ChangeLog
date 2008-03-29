@@ -4,6 +4,10 @@
 
   29 Mar 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   sshmenu-3.15.ebuild:
+  Implement src_test and use virtualx.eclass.
+
+  29 Mar 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  sshmenu-3.15.ebuild:
   Dep on dev-ruby/ruby-gnome if USE=gnome because dev-ruby/ruby-panel-applet2
   has the dependency missing. dev-ruby/ruby-gnome2 can be removed from RDEPEND
   when the issues in bug #215329 are fixed

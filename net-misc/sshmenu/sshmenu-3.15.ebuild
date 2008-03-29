@@ -3,7 +3,8 @@
 # $Header: $
 
 EAPI="1"
-inherit eutils multilib
+## We need virtualx for src_test's Xmake stuff.
+inherit eutils multilib virtualx
 
 DESCRIPTION="A gnome applet interface to SSH."
 HOMEPAGE="http://sshmenu.sourceforge.net"
@@ -27,6 +28,10 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-fixmultilib.patch
+}
+
+src_test() {
+	Xmake TEST || die "Tests failed!"
 }
 
 src_install() {
