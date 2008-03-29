@@ -18,7 +18,7 @@ RDEPEND="dev-lang/ruby:1.8
 	dev-ruby/ruby-gtk2
 	dev-ruby/ruby-panel-applet2
 	gnome? ( dev-ruby/ruby-gconf2 )
-	|| ( net-misc/x11-ssh-askpass net-misc/getk2-ssh-askpass )"
+	|| ( net-misc/x11-ssh-askpass net-misc/gtk2-ssh-askpass )"
 
 src_unpack() {
 	unpack ${A}

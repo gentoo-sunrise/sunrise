@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Mar 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  sshmenu-3.15.ebuild:
+  Fix typo in RDEPEND: s/getk2/gtk2/
+
+  29 Mar 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   +sshmenu-3.15.ebuild, +files/sshmenu-3.15-fixmultilib.patch,
   +metadata.xml:
   New ebuild for sshmenu, see bug #213944
