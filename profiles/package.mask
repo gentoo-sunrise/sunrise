@@ -22,6 +22,10 @@
 ##
 
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
+# Mask GIT ebuild
+www-client/midori-9999
+
+# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
 # Mask packages with masked deps
 sci-libs/openfoam-kernel
 sci-libs/openfoam-meta
