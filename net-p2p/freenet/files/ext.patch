@@ -1,0 +1,119 @@
+diff -ur freenet-old/build.xml freenet/build.xml
+--- freenet-old/build.xml	2008-03-30 14:55:10.000000000 +0200
++++ freenet/build.xml	2008-03-30 16:02:56.000000000 +0200
+@@ -13,7 +13,9 @@
+ 	<property name="build" location="build"/>
+ 	<property name="build-test" location="build-test"/>
+ 	<property name="lib"	location="lib"/>
+-	<property name="freenet-ext.location" location="${lib}/freenet-ext.jar"/>
++	<property name="wrapper.location" location="${lib}/wrapper.jar"/>
++	<property name="je.location" location="${lib}/je.jar"/>
++	<property name="fec.location" location="${lib}/fec.jar"/>
+ 	<property name="javadoc" location="javadoc"/>
+ 	<property name="svn.revision" value="@custom@"/>
+ 	<property name="CSSTokenizerFilter.relative.jflex" value="freenet/clients/http/filter/CSSTokenizerFilter.jflex"/>
+@@ -34,7 +36,6 @@
+ 	</target>
+ 
+ 	<target name="env" depends="mkdir"   description="Learn about the environment">
+-		<available file="${lib}/freenet-ext.jar" property="freenet-ext.present"/>
+ 		<available file="${CSSTokenizerFilter.java}" property="CSSTokenizerFilter.present"/>
+ 		<available file="${junit.location}" property="junit.present"/>
+ 	</target>
+@@ -48,19 +49,9 @@
+ 		</exec>
+ 	</target>
+ 
+-	<target name="get-extjar" depends="env" unless="freenet-ext.present"
+-		description="Download some external libraries which Freenet relies on">
+-		<mkdir dir="${lib}"/>
+-		<get src="http://downloads.freenetproject.org/alpha/freenet-ext.jar" 
+-			dest="${freenet-ext.location}" 
+-			verbose="true"
+-			usetimestamp="true"/>
+-		<property name="freenet-ext.present" value="true"/>
+-	</target>
+-
+ 	<!-- ================================================== -->
+ 
+-	<target name="compile" depends="get-extjar, generate-CSSTokenizerFilter">
++	<target name="compile" depends="generate-CSSTokenizerFilter">
+ 		<!-- Create the time stamp -->
+ 		<tstamp/>
+ 
+@@ -75,7 +66,9 @@
+ 		<!-- FIXME: remove the debug and replace with optimize -->
+ 		<javac srcdir="${src}" destdir="${build}" debug="on" optimize="on" source="1.4">
+ 			<classpath>
+-				<pathelement location="${freenet-ext.location}"/>
++				<pathelement location="${wrapper.location}"/>
++				<pathelement location="${je.location}"/>
++				<pathelement location="${fec.location}"/>
+ 				<pathelement location="gnu-crypto.jar"/>
+ 				<pathelement location="javax-security.jar"/>
+ 				<pathelement location="javax-crypto.jar"/>
+@@ -131,7 +124,9 @@
+ 		<javac srcdir="${test}" destdir="${build-test}" debug="on" optimize="on" source="1.4">
+ 			<classpath>
+ 				<pathelement path="${build}"/>
+-				<pathelement location="${freenet-ext.location}"/>
++				<pathelement location="${wrapper.location}"/>
++				<pathelement location="${je.location}"/>
++				<pathelement location="${fec.location}"/>
+ 				<pathelement location="${junit.location}"/>
+ 			</classpath>
+ 			<include name="**/*.java"/>
+@@ -144,7 +139,9 @@
+ 			<classpath>
+ 				<pathelement path="${build}"/>
+ 				<pathelement path="${build-test}"/>
+-				<pathelement location="${freenet-ext.location}"/>
++				<pathelement location="${wrapper.location}"/>
++				<pathelement location="${je.location}"/>
++				<pathelement location="${fec.location}"/>
+ 				<pathelement location="${junit.location}"/>
+ 			</classpath>
+ 
+diff -ur freenet-old/src/freenet/node/NodeStarter.java freenet/src/freenet/node/NodeStarter.java
+--- freenet-old/src/freenet/node/NodeStarter.java	2008-03-30 14:55:11.000000000 +0200
++++ freenet/src/freenet/node/NodeStarter.java	2008-03-30 16:02:56.000000000 +0200
+@@ -167,37 +167,8 @@
+     }
+ 
+     private void getExtBuild() {
+-    	try{
+-    		extBuildNumber = ExtVersion.buildNumber;
+-			extRevisionNumber = ExtVersion.cvsRevision;
+-			String builtWithMessage = "freenet.jar built with freenet-ext.jar Build #"+extBuildNumber+" r"+extRevisionNumber;
+-			Logger.normal(this, builtWithMessage);
+-			System.out.println(builtWithMessage);
+-    		extBuildNumber = ExtVersion.buildNumber();
+-			if(extBuildNumber == -42) {
+-				extBuildNumber = ExtVersion.extBuildNumber();
+-				extRevisionNumber = ExtVersion.extRevisionNumber();
+-			}
+-			if(extBuildNumber == 0) {
+-				String buildMessage = "extBuildNumber is 0; perhaps your freenet-ext.jar file is corrupted?";
+-				Logger.error(this, buildMessage);
+-				System.err.println(buildMessage);
+-				extBuildNumber = -1;
+-			}
+-			if(extRevisionNumber == null) {
+-				String revisionMessage = "extRevisionNumber is null; perhaps your freenet-ext.jar file is corrupted?";
+-				Logger.error(this, revisionMessage);
+-				System.err.println(revisionMessage);
+-				extRevisionNumber = "INVALID";
+-			}
+-    	}catch(Throwable t){ 	 
+-    		// Compatibility code ... will be removed
+-    		Logger.error(this, "Unable to get the version of your freenet-ext file : it's probably corrupted!");
+-    		System.err.println("Unable to get the version of your freenet-ext file : it's probably corrupted!");
+-    		System.err.println(t.getMessage());
+-    		extRevisionNumber = "INVALID";
+-    		extBuildNumber = -1;
+-    	}
++    		extRevisionNumber = "";
++    		extBuildNumber = RECOMMENDED_EXT_BUILD_NUMBER;
+ 	}
+ 
+ 	/**
