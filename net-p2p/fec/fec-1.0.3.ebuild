@@ -10,7 +10,7 @@ SRC_URI="http://www.onionnetworks.com/downloads/${P}.zip"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 S=${WORKDIR}/${P}/src/csrc/

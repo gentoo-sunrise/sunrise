@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org fec-1.0.3.ebuild:
+  Added amd64 keyword
+
   26 Feb 2008; (Tommy[D]) tommy100@gmx.de fec-1.0.3.ebuild:
   Fix HOMEPAGE uri
 
