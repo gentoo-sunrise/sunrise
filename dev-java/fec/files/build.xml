@@ -1,0 +1,30 @@
+<project name="fec" default="jar">
+        <property name="build" location="build_dir"/>
+        <property name="jar.location" location="fec.jar"/>
+
+        <target name="init" description="Create build directory">
+                <mkdir dir="${build}"/>
+        </target>
+
+        <target name="fec" depends="init" description="build the fecencoder/decoder plugins for fproxy.">
+                <javac destdir="${build}" optimize="on" source="1.4">
+                        <src path="."/>
+                        <classpath path="../lib/onion-common.jar"/>
+                        <classpath path="../lib/log4j.jar"/>
+                        <classpath path="../lib/concurrent-jaxed.jar"/>
+                </javac>
+
+                <copy todir="${build}">
+                        <fileset dir=".">
+                                <include name="**/*.properties"/>
+                        </fileset>
+                </copy>
+        </target>
+
+	<target name="jar" depends="fec" description="Create the jar file">
+		<jar jarfile="${jar.location}" basedir="${build}" includes="**">
+			<zipfileset src="../lib/onion-common.jar"/>
+			<zipfileset src="../lib/onion-fec.jar"/>
+		</jar>
+	</target>
+</project>

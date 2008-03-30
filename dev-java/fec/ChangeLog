@@ -1,0 +1,9 @@
+# ChangeLog for dev-java/fec
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
+  +files/libfec8path.patch, +fec-1.0.3.ebuild, +files/build.xml,
+  +metadata.xml:
+  New ebuild for bug 128783 (Dependency for >=net-p2p/freenet-0.7_beta_pre1130)
+
