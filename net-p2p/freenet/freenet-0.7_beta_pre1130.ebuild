@@ -9,7 +9,7 @@ inherit eutils java-pkg-2 java-ant-2
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/${P}.tar.bz2
-	http://dev.gentooexperimental.org/~tommy~/wrapper-${WRAPPER_DATE}.conf"
+	http://dev.gentooexperimental.org/~tommy/wrapper-${WRAPPER_DATE}.conf"
 
 LICENSE="GPL-2"
 SLOT="0"
