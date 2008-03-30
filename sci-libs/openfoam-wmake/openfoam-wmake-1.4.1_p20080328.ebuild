@@ -10,7 +10,8 @@ MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="OpenFOAM - wmake"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
-SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz"
+SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
+	http://dev.gentooexperimental.org/~tommy/${P}.patch"
 
 LICENSE="GPL-2"
 SLOT="0"
