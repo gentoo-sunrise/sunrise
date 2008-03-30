@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org -guilt-0.28.ebuild:
+  Drop old version
+
   27 Mar 2008; Denis Cheng (raeLLL) <crquan@gmail.com> ++:
   new version 0.29 released from upstream, http://lwn.net/Articles/274169/
 
