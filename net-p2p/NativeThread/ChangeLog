@@ -3,6 +3,10 @@
 # $Header: $
 
   30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
+  files/Makefile.patch:
+  Update patch
+
+  30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
   -NativeThread-20080303.ebuild, +NativeThread-20080330.ebuild:
   Version bump, added amd64 keyword
 

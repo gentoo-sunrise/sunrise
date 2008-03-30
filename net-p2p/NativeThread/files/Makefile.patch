@@ -1,6 +1,6 @@
 --- Makefile	2008-03-03 13:59:06.000000000 +0100
-+++ Makefile.new	2008-03-03 17:39:07.000000000 +0100
-@@ -1,13 +1,13 @@
++++ Makefile.new	2008-03-30 16:27:12.000000000 +0200
+@@ -1,14 +1,14 @@
 -CC = gcc
  INC = $(JAVA_HOME)/include
 -CFLAGS = -Wall -O3 -fPIC
@@ -13,8 +13,10 @@
  
  NativeThread.class:
 -	javac java/NativeThread.java
-+	javac -classpath /opt/freenet/freenet-cvs-snapshot.jar java/NativeThread.java
+-	mv java/NativeThread.class freenet/support/io/
++	javac -classpath /usr/share/freenet/lib/freenet.jar NativeThread.java
 +	mkdir -p freenet/support/io
- 	mv java/NativeThread.class freenet/support/io/
++	mv NativeThread.class freenet/support/io/
  
  libNativeThread.so: NativeThread.c NativeThread.h
+ 	$(CC) $(CFLAGS) -o libNativeThread.so $(LDFLAGS) NativeThread.c $(LIBS)
