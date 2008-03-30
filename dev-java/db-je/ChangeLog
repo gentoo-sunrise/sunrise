@@ -3,6 +3,10 @@
 # $Header: $
 
   30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
+  db-je-3.2.74.ebuild:
+  Update LICENSE
+
+  30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
   +db-je-3.2.74.ebuild, +metadata.xml:
   New ebuild for bug 128783 (Dependency for >=net-p2p/freenet-0.7_beta_pre1130)
 
