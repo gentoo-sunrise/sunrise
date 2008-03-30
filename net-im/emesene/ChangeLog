@@ -11,16 +11,6 @@
   emesene-1.0 version bump, renamed 999 to 1.0_rc999 to let portage understand
   that 1.0 is the last one
 
-  28 Mar 2008; Marcello Magaldi (magowiz) <magowiz@gmail.com>
-  +emesene-1.0_rc999.ebuild, +emesene-1.0.ebuild:
-  emesene-1.0 version bump, renamed 999 to 1.0_rc999 to let portage understand
-  that 1.0 is the last one
-
-  28 Mar 2008; Marcello Magaldi (magowiz) <magowiz@gmail.com>
-  +emesene-1.0_rc999.ebuild, +emesene-1.0.ebuild:
-  emesene-1.0 version bump, renamed 999 to 1.0_rc999 to let portage understand
-  that 1.0 is the last one
-
   24 Feb 2008; (Tommy[D]) tommy100@gmx.de emesene-999.ebuild:
   adding amd64 keyword on request/report by sebasmagri in
   #gentoo-sunrise
