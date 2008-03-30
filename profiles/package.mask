@@ -21,6 +21,21 @@
 ##   End example
 ##
 
+# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
+# Mask packages with masked deps
+sci-libs/openfoam-kernel
+sci-libs/openfoam-meta
+sci-libs/openfoam-solvers
+sci-libs/openfoam-src
+
+# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
+# Masked until they follow the ebuild conventions
+# (sed -> patch)
+sci-libs/openfoam-wmake
+sci-libs/openfoam-bin
+sci-libs/openfoam-utilities
+sci-libs/openfoam-wmake
+
 # Thomas Anderson (gentoofan23) <gentoofan23@gmail.com> (26 Mar 2008)
 # Masking kde-misc/kgrubeditor because it depends on kde-base/kdelibs-4*
 # which is package.mask'ed in gentoo-x86
