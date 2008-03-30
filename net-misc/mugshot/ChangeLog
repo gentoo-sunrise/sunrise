@@ -2,6 +2,13 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Mar 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -files/mugshot-1.1.42-libxpcom.patch,
+  -files/mugshot-1.1.56-use-firefox.patch, -mugshot-1.1.58.ebuild,
+  +mugshot-1.1.92.ebuild, +files/mugshot-1.1.92-libxpcom.patch,
+  +files/mugshot-1.1.92-use-firefox.patch:
+  Version bump. Now with firefox-3 support.
+
   31 Jan 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   mugshot-1.1.58.ebuild:
   Improved comments, as requested by jakub.
