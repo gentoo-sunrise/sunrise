@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
+  nativebiginteger-0.6.1.31.ebuild, files/Makefile:
+  Added amd64 keyword, cleanup
+
   26 Feb 2008; (Tommy[D]) tommy100@gmx.de +nativebiginteger-0.6.1.31.ebuild,
   +files/Makefile, +metadata.xml:
   New lib for net-p2p/freenet (bug #128783), moved out of freenet to compile
