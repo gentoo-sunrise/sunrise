@@ -10,8 +10,8 @@ libjcpuid:
 
 install:
 	mkdir -p "${DESTDIR}"opt/freenet/${LIBDIR}/
-	/usr/bin/install -o freenet -g freenet -m 700 jbigi/libjbigi.so "${DESTDIR}"opt/freenet/${LIBDIR}/
-	/usr/bin/install -o freenet -g freenet -m 700 jcpuid/libjcpuid-x86-linux.so "${DESTDIR}"opt/freenet/${LIBDIR}/
+	/usr/bin/install jbigi/libjbigi.so "${DESTDIR}"opt/freenet/${LIBDIR}/
+	/usr/bin/install jcpuid/libjcpuid-x86-linux.so "${DESTDIR}"opt/freenet/${LIBDIR}/
 	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-none.so
 	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-pentium.so
 	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-pentiummmx.so
