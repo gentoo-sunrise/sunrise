@@ -23,7 +23,7 @@ DEPEND=">=dev-java/sun-jdk-1.4
 	dev-java/ant
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.4
-	net-p2p/fec
+	x86? ( net-p2p/fec )
 	net-p2p/nativebiginteger
 	${CDEPEND}"
 PDEPEND="net-p2p/NativeThread"
