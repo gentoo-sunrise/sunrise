@@ -1,6 +1,10 @@
 # ChangeLog for media-tv/zattoo-bin
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Apr 2008; Felix Bechstein (flx\) <f@ub0r.de>
+  -zattoo-bin-3.0.8.9191.ebuild, +zattoo-bin-3.1.0.11060.ebuild:
+  version bump for zattoo-bin
 
   11 Dec 2007; Markus Ullmann <jokey@gentoo.org> -77zattoo-bin,
   qdevelop-0.24, zattoo-bin-3.0.8.9191:
