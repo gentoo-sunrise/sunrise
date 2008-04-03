@@ -35,10 +35,10 @@ sci-libs/openfoam-src
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
 # Masked until they follow the ebuild conventions
 # (sed -> patch)
-sci-libs/openfoam-wmake
 sci-libs/openfoam-bin
 sci-libs/openfoam-utilities
 sci-libs/openfoam-wmake
+sci-libs/openfoam
 
 # Thomas Anderson (gentoofan23) <gentoofan23@gmail.com> (26 Mar 2008)
 # Masking kde-misc/kgrubeditor because it depends on kde-base/kdelibs-4*
@@ -68,11 +68,6 @@ kde-misc/kgrubeditor
 # Christian Faulhammer <opfer@gentoo.org> (14 Dec 2007)
 # SVN ebuilds need to be masked
 ~app-mobilephone/openmoko-dfu-util-9999
-
-# Christian Faulhammer <opfer@gentoo.org> (05 Nov 2007)
-# sci-libs/metis is not available in Sunrise...have a look at the
-# Science overlay
-sci-libs/openfoam
 
 # Jakub Moc <jakub@gentoo.org> (31 Oct 2007)
 # svn version should be masked
