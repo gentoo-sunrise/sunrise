@@ -3,6 +3,10 @@
 # $Header: $
 
   03 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -freenet-0.7_rc1_p1132.ebuild, +freenet-0.7_rc2_pre1134.ebuild:
+  Another upstream release
+
+  03 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_rc1.ebuild, +freenet-0.7_rc1_p1132.ebuild:
   New upstream release
 
