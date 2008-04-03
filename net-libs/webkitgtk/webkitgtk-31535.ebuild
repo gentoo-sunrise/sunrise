@@ -12,9 +12,7 @@ SRC_URI="http://nightly.webkit.org/files/trunk/src/${MY_P}.tar.bz2"
 LICENSE="LGPL-2 LGPL-2.1 BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-#Note: SVG support is broken atm
-#IUSE="debug gstreamer sqlite svg"
-IUSE="debug gstreamer sqlite"
+IUSE="debug gstreamer sqlite svg"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -49,8 +47,11 @@ src_compile() {
 		$(use_enable sqlite database) \
 		$(use_enable sqlite icon-database) \
 		$(use_enable debug) \
-		$(use_enable gstreamer video)
-#		$(use_enable svg)
+		$(use_enable gstreamer video) \
+		$(use_enable svg) \
+		$(use_enable svg svg-fonts) \
+		$(use_enable svg svg-as-image) \
+		$(use_enable svg svg-use-element)
 
 	emake || die "emake failed"
 }
