@@ -13,8 +13,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-libs/gmp"
-RDEPEND="${DEPEPND}"
+DEPEND="dev-libs/gmp
+	virtual/jdk"
+RDEPEND="dev-libs/gmp
+	virtual/jre"
 
 QA_TEXTRELS="opt/freenet/lib/libjcpuid-x86-linux.so"
 
