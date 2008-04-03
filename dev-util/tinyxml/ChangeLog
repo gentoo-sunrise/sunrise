@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/tinyxml
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  tinyxml-9999.ebuild:
+  Added amd64 keyword, cosmetics
 
   06 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
   +tinyxml-9999.ebuild, +metadata.xml:

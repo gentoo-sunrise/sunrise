@@ -6,19 +6,17 @@ ECVS_SERVER="tinyxml.cvs.sourceforge.net:/cvsroot/tinyxml"
 ECVS_MODULE="tinyxml"
 inherit eutils cvs
 
-MY_PV=cvs
 DESCRIPTION="A simple C++ XML parser that can be easily integrating into other programs"
 HOMEPAGE="http://www.grinninglizard.com/tinyxml/index.html"
 SRC_URI=""
 
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="debug doc examples"
 
 DEPEND="dev-util/scons
 	doc? ( app-doc/doxygen )"
-RDEPEND=""
 
 S="${WORKDIR}/${PN}"
 
