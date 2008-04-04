@@ -15,7 +15,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc python"
 
 RDEPEND=">=dev-libs/glib-2.6
+	>=dev-libs/libcroco-0.6
 	>=x11-libs/gtk+-2.6
+	>=x11-libs/pango-1.14
 	python? ( dev-lang/python
 		dev-python/pycairo
 		dev-python/pygtk )"
