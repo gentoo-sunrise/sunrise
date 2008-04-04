@@ -4,7 +4,7 @@
 
 inherit autotools eutils
 
-DESCRIPTION="exempi is a port of the Adobe XMP SDK to work on UNIX"
+DESCRIPTION="Exempi is a port of the Adobe XMP SDK to work on UNIX"
 HOMEPAGE="http://libopenraw.freedesktop.org/wiki/Exempi"
 SRC_URI="http://libopenraw.freedesktop.org/download/${P}.tar.gz"
 
@@ -23,7 +23,7 @@ src_unpack() {
 	cd "${S}"
 	#don't waste time on autoreconf for those who don't want to run unit tests
 	if use test; then
-		epatch "${FILESDIR}/${P}-boost.m4.BOOST_FIND_LIB.patch"
+		epatch "${FILESDIR}/${PN}-1.99.9-boost.m4.BOOST_FIND_LIB.patch"
 		AT_M4DIR=m4 eautoreconf
 	fi
 }
