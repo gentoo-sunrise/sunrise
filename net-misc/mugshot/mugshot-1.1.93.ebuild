@@ -7,7 +7,7 @@ SCROLLKEEPER_UPDATE="no"
 
 inherit autotools eutils gnome2 multilib
 
-DESCRIPTION="Companion software for mugshot.org; also includes the ddm library"
+DESCRIPTION="Companion software for mugshot.org"
 HOMEPAGE="http://www.mugshot.org/"
 SRC_URI="http://download.mugshot.org/client/sources/linux/${P}.tar.gz"
 
@@ -25,6 +25,7 @@ RDEPEND=">=dev-libs/glib-2.6
 	x11-libs/cairo
 	>=x11-libs/gtk+-2.10
 	x11-libs/libXScrnSaver
+	>=x11-libs/hippo-canvas-0.2.30
 	x11-libs/pango
 	firefox? ( !xulrunner? ( www-client/mozilla-firefox ) )
 	xulrunner? ( net-libs/xulrunner )"
@@ -40,7 +41,7 @@ src_unpack() {
 	cd "${S}"
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
-	epatch "${FILESDIR}/${P}-libxpcom.patch" || die "epatch failed"
+	epatch "${FILESDIR}/${PN}-1.1.92-libxpcom.patch" || die "epatch failed"
 	epatch "${FILESDIR}/${P}-use-firefox.patch" || die "epatch failed"
 	eautoreconf
 	if use firefox || use xulrunner ; then
@@ -64,8 +65,6 @@ src_unpack() {
 	else
 		G2CONF="--disable-firefox"
 	fi
-	# external hippo-canvas seems to be deprecated now?
-	G2CONF="${G2CONF} --with-included-canvas"
 }
 
 src_install() {
