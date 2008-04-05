@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/gdmap
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Apr 2008; Patrick Lauer (bonsaikitten)
+  <bugs@dev.gentooexperimental.org> gdmap-0.7.5.ebuild:
+  Fixing missing pkgconfig dep
 
   22 Jun 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   New ebuild for bug 111521, thanks to Da Fox for initial ebuild

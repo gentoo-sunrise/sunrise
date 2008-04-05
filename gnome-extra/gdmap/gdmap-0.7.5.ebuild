@@ -14,7 +14,8 @@ IUSE="doc"
 SLOT="0"
 
 DEPEND=">=x11-libs/gtk+-2.6.0
-	dev-libs/libxml2"
+	dev-libs/libxml2
+	dev-util/pkgconfig"
 RDEPEND="${DEPEND}"
 
 src_install() {
