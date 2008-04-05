@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com>
+  -webkitgtk-31535.ebuild, +webkitgtk-31623.ebuild:
+  Bump version. Add SVG options for getting Acid3 to 100%
+
   03 Apr 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com>
   -webkitgtk-31370.ebuild, webkitgtk-31535.ebuild:
   Fix SVG compilation
