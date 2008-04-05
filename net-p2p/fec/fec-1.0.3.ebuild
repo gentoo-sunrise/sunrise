@@ -10,18 +10,22 @@ SRC_URI="http://www.onionnetworks.com/downloads/${P}.zip"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
+DEPEND="virtual/jdk"
 S=${WORKDIR}/${P}/src/csrc/
-
-append-flags -fPIC
-tc-getCC >/dev/null
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/Makefile.patch
+}
+
+src_compile() {
+	append-flags -fPIC
+	tc-export CC
+	emake || die
 }
 
 src_install() {
