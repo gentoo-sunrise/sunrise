@@ -22,7 +22,8 @@ CDEPEND="dev-java/db-je:3.2
 DEPEND=">=dev-java/sun-jdk-1.4
 	dev-java/ant
 	${CDEPEND}"
-RDEPEND=">=virtual/jre-1.4
+RDEPEND="x86? ( >=virtual/jre-1.4 )
+	amd64? ( >=virtual/jre-1.5 )
 	x86? ( net-p2p/fec )
 	net-p2p/nativebiginteger
 	${CDEPEND}"
@@ -37,7 +38,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack ${A}
+	unpack "${P}".tar.bz2
 	cd "${S}"
 	cp "${DISTDIR}"/wrapper-${WRAPPER_DATE}.conf wrapper.conf
 	epatch "${FILESDIR}"/wrapper.conf.patch
@@ -48,6 +49,18 @@ src_unpack() {
 	java-pkg_jar-from db-je-3.2
 	java-pkg_jar-from java-service-wrapper
 	java-pkg_jar-from fec
+}
+
+src_compile() {
+	#workaround for installed blackdown-jdk-1.4
+	#freenet does not compile with it
+	if has_version =dev-java/sun-jdk-1.4*; then
+		GENTOO_VM="sun-jdk-1.4" java-pkg-2_src_compile
+	elif has_version =dev-java/sun-jdk-1.5*; then
+		GENTOO_VM="sun-jdk-1.5" java-pkg-2_src_compile
+	elif has_version =dev-java/sun-jdk-1.6*; then
+		GENTOO_VM="sun-jdk-1.6" java-pkg-2_src_compile
+	fi
 }
 
 src_install() {
@@ -68,10 +81,19 @@ src_install() {
 pkg_postinst () {
 	elog "1. Start freenet with /etc/init.d/freenet start."
 	elog "2. Open localhost:8888 in your browser for the web interface."
-	elog " "
+	elog
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet (\"insecure mode\") on the config page to get started."
-	elog " "
+	elog
+	if use amd64;then
+		if has_version =dev-java/blackdown-jdk-1.4*;then
+			elog "Freenet does not run with 64bit blackdown-jdk,"
+			elog "please make sure that either system-vm or the"
+			elog "user-vm for freenet uses sun-jdk or some other"
+			elog "vm (other vms are untested)."
+			elog
+		fi
+	fi
 	chown freenet:freenet /opt/freenet
 }
 

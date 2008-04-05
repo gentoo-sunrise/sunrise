@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  freenet-0.7_rc2_pre1134.ebuild:
+  Some updates + workarounds for amd64
+
   03 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_rc1_p1132.ebuild, +freenet-0.7_rc2_pre1134.ebuild:
   Another upstream release
