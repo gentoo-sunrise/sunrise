@@ -22,8 +22,7 @@ CDEPEND="dev-java/db-je:3.2
 DEPEND=">=dev-java/sun-jdk-1.4
 	dev-java/ant
 	${CDEPEND}"
-RDEPEND="x86? ( >=virtual/jre-1.4 )
-	amd64? ( >=virtual/jre-1.5 )
+RDEPEND=">=virtual/jre-1.4
 	x86? ( net-p2p/fec )
 	net-p2p/nativebiginteger
 	${CDEPEND}"
