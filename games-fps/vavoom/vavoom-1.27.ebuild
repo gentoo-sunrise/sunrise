@@ -4,9 +4,9 @@
 
 EAPI="1"
 
-WX_GTK_VER="2.6"
+WX_GTK_VER="2.8"
 
-inherit autotools eutils flag-o-matic wxwidgets games
+inherit cmake-utils eutils wxwidgets games
 
 DESCRIPTION="Advanced source port for Doom/Heretic/Hexen/Strife"
 HOMEPAGE="http://www.vavoom-engine.com/"
@@ -15,8 +15,8 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro asm debug dedicated external-glbsp flac mad mikmod models music
-openal opengl +sdl textures tools wxwindows"
+IUSE="allegro asm debug dedicated flac mad mikmod models music openal opengl
++sdl textures tools vorbis wxwindows"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
 
@@ -42,20 +42,19 @@ DEPEND="media-libs/libpng
 	!sdl? ( allegro? ( ${ALLEGDEPEND} ) )
 	!sdl? ( !allegro? ( !dedicated? ( ${OPENGLDEPEND} ) ) )
 	opengl? ( ${OPENGLDEPEND} )
-	music? ( media-libs/libvorbis )
+	vorbis? ( media-libs/libvorbis )
 	flac? ( media-libs/flac )
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	openal? ( media-libs/openal )
-	external-glbsp? ( games-util/glbsp )
-	wxwindows? ( =x11-libs/wxGTK-2.6* )"
+	wxwindows? ( =x11-libs/wxGTK-2.8* )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
 PDEPEND="models? ( >=games-fps/vavoom-models-1.4.2 )
 	music? ( games-fps/vavoom-music )
 	textures? ( games-fps/vavoom-textures )"
 
-dir=${GAMES_DATADIR}/${PN}
+datadir=${GAMES_DATADIR}/${PN}
 
 pkg_setup() {
 	games_pkg_setup
@@ -110,89 +109,84 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# Patch Makefiles to get rid of executable wrappers
-	epatch "${FILESDIR}/${PN}-makefile_nowrapper.patch"
-
-	# Set shared directory
+	# Got rid of icon installation
 	sed -i \
-		-e "s:fl_basedir = \".\":fl_basedir = \"${dir}\":" \
+		-e "/vavoom\.png/d" \
+		source/CMakeLists.txt || die "sed CMakeLists.txt failed"
+
+	# Set shared data directory
+	sed -i \
+		-e "s:fl_basedir = \".\":fl_basedir = \"${datadir}\":" \
 		source/files.cpp || die "sed files.cpp failed"
-
-	eautoreconf
-
-	# Set executable filenames
-	for m in $(find . -type f -name Makefile.in) ; do
-		sed -i \
-			-e "s:MAIN_EXE = @MAIN_EXE@:MAIN_EXE=${PN}:" \
-			-e "s:SERVER_EXE = @SERVER_EXE@:SERVER_EXE=${PN}-ded:" \
-			"${m}" || die "sed ${m} failed"
-	done
 }
 
 src_compile() {
 	local \
-		allegro="--without-allegro" \
-		sdl="--without-sdl"
+		with_allegro="-DWITH_ALLEGRO=OFF" \
+		with_sdl="-DWITH_SDL=OFF" \
+		with_vorbis=$(cmake-utils_use_with vorbis)
 
 	# Sdl is the default, unless sdl=off & allegro=on
 	if ! use sdl && use allegro ; then
-		allegro="--with-allegro"
+		with_allegro="-DWITH_ALLEGRO=ON"
 	else
-		sdl="--with-sdl"
+		with_sdl="-DWITH_SDL=ON"
 	fi
 
-	use debug && append-flags -g2
+	# Forcibly enable vorbis support if "music" USE flag is enabled
+	if ! use vorbis && use music ; then
+		ewarn "\"music\" USE flag requires Vorbis support enabled."
+		ewarn "Forced enabling of \"vorbis\" USE flag"
+		with_vorbis="-DWITH_VORBIS=ON"
+	fi
 
-	egamesconf \
-		--enable-client \
-		${sdl} \
-		${allegro} \
-		$(use_with opengl) \
-		$(use_with openal) \
-		$(use_with external-glbsp) \
-		$(use_with music vorbis) \
-		$(use_with mad libmad) \
-		$(use_with mikmod) \
-		$(use_with flac) \
-		$(use_enable asm) \
-		$(use_enable dedicated server) \
-		$(use_enable debug) \
-		$(use_enable debug zone-debug) \
-		$(use_enable wxwindows launcher) \
-		--with-wx-config=${WX_CONFIG} \
-		--with-iwaddir="${dir}" \
-		--disable-dependency-tracking \
-		--disable-maintainer-mode \
-		|| die "egamesconf failed"
+	mycmakeargs="${mycmakeargs}
+					-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
+					-DCMAKE_CXX_FLAGS_DEBUG=-g2
+					-DDATADIR=${datadir}
+					-DBINDIR=${GAMES_BINDIR}
+					-DENABLE_CLIENT=ON
+					-DENABLE_WRAPPERS=OFF
+					${with_allegro}
+					${with_sdl}
+					${with_vorbis}
+					$(cmake-utils_use_with opengl OPENGL)
+					$(cmake-utils_use_with openal OPENAL)
+					$(cmake-utils_use_with mad LIBMAD)
+					$(cmake-utils_use_with mikmod MIKMOD)
+					$(cmake-utils_use_with flac FLAC)
+					$(cmake-utils_use_enable debug ZONE_DEBUG)
+					$(cmake-utils_use_enable dedicated SERVER)
+					$(cmake-utils_use_enable asm ASM)
+					$(cmake-utils_use_enable wxwindows LAUNCHER)
+					-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}"
 
-	emake || die "emake failed"
+	cmake-utils_src_configurein
+
+	cmake-utils_src_make -j1
 }
 
 src_install() {
 	local de_cmd="${PN}"
 
-	emake DESTDIR="${D}" install || die "emake install failed"
-
-	# Remove unneeded icon
-	rm -f "${D}/${dir}/${PN}.png"
+	cmake-utils_src_install
 
 	# Enable OpenGL in desktop entry, if relevant USE flag is enabled
 	use opengl && de_cmd="${PN} -opengl"
-	doicon source/${PN}.png || die "doicon ${PN}.png failed"
+	doicon "source/${PN}.png" || die "doicon ${PN}.png failed"
 	make_desktop_entry "${de_cmd}" "Vavoom"
 
-	dodoc docs/${PN}.txt || die "dodoc vavoom.txt failed"
+	dodoc "docs/${PN}.txt" || die "dodoc vavoom.txt failed"
 
 	if use tools ; then
 		# The tools are always built
-		dobin utils/bin/{acc,fixmd2,vcc,vlumpy} || die "dobin utils failed"
+		dogamesbin utils/bin/{acc,fixmd2,vcc,vlumpy} || die "dobin utils failed"
 		dodoc utils/vcc/vcc.txt || die "dodoc vcc.txt failed"
 	fi
 
 	if use wxwindows ; then
-		# Install graphical launcher
+		# Install graphical launcher shortcut
 		doicon utils/vlaunch/vlaunch.xpm || die "doicon vlaunch.xpm failed"
-		dogamesbin utils/bin/vlaunch || die "dogamesbin vlaunch failed"
 		make_desktop_entry "vlaunch" "Vavoom Launcher" "vlaunch.xpm"
 	fi
 
@@ -202,11 +196,11 @@ src_install() {
 pkg_postinst() {
 	games_pkg_postinst
 
-	elog "Copy or link wad files into ${dir}"
+	elog "Copy or link wad files into ${datadir}"
 	elog "(the files must be readable by the 'games' group)."
 	elog
 	elog "Example setup:"
-	elog "ln -sn ${GAMES_DATADIR}/doom-data/doom.wad ${dir}/"
+	elog "ln -sn ${GAMES_DATADIR}/doom-data/doom.wad ${datadir}/"
 	elog
 	elog "Example command-line:"
 	elog "   vavoom -doom -opengl"

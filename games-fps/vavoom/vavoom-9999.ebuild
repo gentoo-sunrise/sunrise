@@ -109,10 +109,10 @@ src_unpack() {
 	subversion_src_unpack
 	cd "${S}"
 
-	# Patch CMakelists.txt to
-	# - get rid of executable wrappers
-	# - set custom binary names
-	epatch "${FILESDIR}/${PN}_cmake_build.patch"
+	# Got rid of icon installation
+	sed -i \
+		-e "/vavoom\.png/d" \
+		source/CMakeLists.txt || die "sed CMakeLists.txt failed"
 
 	# Set shared data directory
 	sed -i \
@@ -146,6 +146,7 @@ src_compile() {
 					-DDATADIR=${datadir}
 					-DBINDIR=${GAMES_BINDIR}
 					-DENABLE_CLIENT=ON
+					-DENABLE_WRAPPERS=OFF
 					${with_allegro}
 					${with_sdl}
 					${with_vorbis}
