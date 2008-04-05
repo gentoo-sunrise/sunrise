@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  seom-1.0.192.ebuild:
+  Ebuild cleanup, patch by drac "<drac> tested it on stable amd64, worked fine
+  with yasm etc."
+
   25 Jan 2008; Jakub Moc <jakub@gentoo.org> -seom-1.0.179.ebuild,
   +seom-1.0.192.ebuild:
   Version bump and nuke undownloadable version
