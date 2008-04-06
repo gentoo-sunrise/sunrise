@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/hexen2-demodata
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Apr 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -hexen2-demodata-1.4.2.ebuild, +hexen2-demodata-1.4.3.ebuild:
+  Version bump
 
   04 Oct 2007; Davide Cendron (scen) <scen@gentoo.org>
   -hexen2-demodata-1.4.1.ebuild, +hexen2-demodata-1.4.2.ebuild:
