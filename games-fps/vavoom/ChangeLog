@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -files/vavoom-makefile_nowrapper.patch, -files/vavoom_cmake_build.patch:
+  Really nuke files dir
+
   05 Apr 2008; Davide Cendron (scen) <scen@gentoo.org> -vavoom-1.26.ebuild,
   +vavoom-1.27.ebuild, vavoom-9999.ebuild:
   Version bump (removing also unnecessary patch files)
