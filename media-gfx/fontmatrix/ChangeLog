@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Apr 2008; Markus Rennings (mren) <mren@mrmx.de>
+  -fontmatrix-0.4.0.ebuild, +fontmatrix-0.4.1.ebuild, ,metadata.xml:
+  Version bump
+
   05 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +metadata.xml:
   Add removed metadata.xml and missing Manifest
 
