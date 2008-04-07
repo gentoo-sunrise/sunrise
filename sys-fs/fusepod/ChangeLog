@@ -1,6 +1,9 @@
 # ChangeLog for sys-fs/fusepod
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Apr 2008; Charles Clément <caratorn@gmail.com> +fusepod-0.5.2.ebuild:
+  Version bump
 
   17 Jan 2007; Santiago M. Mola <cooldwind@gmail.com> +fusepod-0.5.1.ebuild,
   +files/fusepod-0.5.1-libgpod-api-fix.patch, +metadata.xml:
