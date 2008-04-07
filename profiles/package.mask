@@ -22,10 +22,6 @@
 ##
 
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Apr 2008)
-# Mask because of missing deps
-=games-fps/uhexen-1.4.3
-
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Apr 2008)
 # Mask SVN ebuild
 =net-p2p/freenet-9999
 
