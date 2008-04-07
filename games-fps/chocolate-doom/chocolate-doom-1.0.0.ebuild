@@ -68,7 +68,7 @@ pkg_postinst() {
 
 	echo
 	elog "To play the original Doom levels, place doom.wad and/or doom2.wad"
-	elog "into ${GAMES_DATADIR}/doom-data, then run: ${PN}"
+	elog "into "${GAMES_DATADIR}"/doom-data, then run: ${PN}"
 	elog
 	elog "To configure game options run:  chocolate-setup"
 	echo
