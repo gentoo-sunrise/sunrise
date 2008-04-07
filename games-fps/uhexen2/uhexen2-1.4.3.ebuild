@@ -412,17 +412,17 @@ pkg_postinst() {
 		elog "To play the demo, emerge with the 'demo' USE flag."
 		elog
 		elog "For the Hexen 2 original game..."
-		elog "Put the following files into ${dir}/data1 before playing:"
+		elog "Put the following files into "${dir}"/data1 before playing:"
 		elog "   pak0.pak pak1.pak"
 		elog "Then to play:  hexen2"
 		elog
 		elog "For the 'Portal of Praevus' mission pack..."
-		elog "Put the following file into ${dir}/portals before playing:"
+		elog "Put the following file into "${dir}"/portals before playing:"
 		elog "   pak3.pak"
 		elog "Then to play:  hexen2 -portals"
 		elog
 		elog "To ensure the data files from the CD are patched, run as root:"
-		elog "   cd ${dir} && sh update_xdelta.sh"
+		elog "   cd "${dir}" && sh update_xdelta.sh"
 		elog
 		elog "Example command-line:"
 		elog "   hexen2 -width 1024 -height 768 -conwidth 640"
