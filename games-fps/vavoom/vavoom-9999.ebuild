@@ -144,7 +144,7 @@ src_compile() {
 					-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
 					-DCMAKE_CXX_FLAGS_DEBUG=-g2
 					-DDATADIR=${datadir}
-					-DBINDIR=${GAMES_BINDIR}
+					-DBINDIR="${GAMES_BINDIR}"
 					-DENABLE_CLIENT=ON
 					-DENABLE_WRAPPERS=OFF
 					${with_allegro}
@@ -200,7 +200,7 @@ pkg_postinst() {
 	elog "(the files must be readable by the 'games' group)."
 	elog
 	elog "Example setup:"
-	elog "ln -sn ${GAMES_DATADIR}/doom-data/doom.wad ${datadir}/"
+	elog "ln -sn "${GAMES_DATADIR}"/doom-data/doom.wad "${datadir}"/"
 	elog
 	elog "Example command-line:"
 	elog "   vavoom -doom -opengl"
