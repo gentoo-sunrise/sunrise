@@ -1,6 +1,10 @@
 # ChangeLog for sci-astronomy/midas
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  midas-20060904.ebuild:
+  Fix quotation
 
   24 Sep 2006; Jakub Moc <jakub@gentoo.org> midas-20060904.ebuild:
   filter-flags -> replace-flags

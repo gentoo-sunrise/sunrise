@@ -74,43 +74,43 @@ src_install() {
 	done
 
 	for dir in system prim applic stdred gui util; do
-		exeinto /usr/share/${PN}/${MY_PV}/${dir}/exec
+		exeinto /usr/share/${PN}/${MY_PV}/"${dir}"/exec
 		doexe "${S}"/${dir}/exec/*.exe
 	done
 
 	for dir in prim applic stdred contrib gui; do
-		insinto /usr/share/${PN}/${MY_PV}/${dir}/proc
-		for i in "${S}"/${dir}/proc/*.{prg,cod,prg_o,sh}; do
+		insinto /usr/share/${PN}/${MY_PV}/"${dir}"/proc
+		for i in "${S}"/"${dir}"/proc/*.{prg,cod,prg_o,sh}; do
 			[ -f ${i} ] && doins ${i}
 		done
 	done
 
 	for dir in prim applic util; do
-		insinto /usr/share/${PN}/${MY_PV}/${dir}/help
-		for i in "${S}"/${dir}/help/*.{hlc,hlq,alq,hlz,txt}; do
+		insinto /usr/share/${PN}/${MY_PV}/"${dir}"/help
+		for i in "${S}"/"${dir}"/help/*.{hlc,hlq,alq,hlz,txt}; do
 			[ -f ${i} ] && doins ${i}
 		done
 	done
 
 	for dir in astromet cloud daophot esolv geotest imres invent iue lyman mva \
 		pepsys romafot surfphot template tsa wavelet; do
-		insinto /usr/share/${PN}/${MY_PV}/contrib/${dir}/help
-		for i in "${S}"/contrib/${dir}/help/*.{hlc,hlq,alq,hlz,txt}; do
+		insinto /usr/share/${PN}/${MY_PV}/contrib/"${dir}"/help
+		for i in "${S}"/contrib/"${dir}"/help/*.{hlc,hlq,alq,hlz,txt}; do
 			[ -f ${i} ] && doins ${i}
 		done
 	done
 
 	for dir in XAlice XBatch XDo XEchelle XFilter XIdent XIrspec XLong; do
-		insinto /usr/share/${PN}/${MY_PV}/gui/${dir}/help
-		for i in "${S}"/gui/${dir}/help/*.{hlc,hlq,alq,hlz,txt}; do
+		insinto /usr/share/${PN}/${MY_PV}/gui/"${dir}"/help
+		for i in "${S}"/gui/"${dir}"/help/*.{hlc,hlq,alq,hlz,txt}; do
 			[ -f ${i} ] && doins ${i}
 		done
 	done
 
 	for dir in ccdred ccdtest do echelle feros irac2 irspec long mos optopus \
 		pisco qc spec; do
-		insinto /usr/share/${PN}/${MY_PV}/stdred/${dir}/help
-		for i in "${S}"/stdred/${dir}/help/*.{hlc,hlq,alq,hlz,txt}; do
+		insinto /usr/share/${PN}/${MY_PV}/stdred/"${dir}"/help
+		for i in "${S}"/stdred/"${dir}"/help/*.{hlc,hlq,alq,hlz,txt}; do
 			[ -f ${i} ] && doins ${i}
 		done
 	done
