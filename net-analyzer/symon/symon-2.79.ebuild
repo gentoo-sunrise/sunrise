@@ -19,8 +19,7 @@ IUSE="client symux syweb vhosts"
 RDEPEND="client? ( dev-lang/perl )
 	symux? ( net-analyzer/rrdtool )
 	syweb? ( ${WEBAPP_DEPEND}
-		    virtual/httpd-php
-		    virtual/httpd-cgi )"
+		    virtual/httpd-php )"
 DEPEND="${RDEPEND}
 	sys-devel/pmake"
 
@@ -54,7 +53,9 @@ src_unpack() {
 }
 
 src_compile() {
-	MAKE=pmake emake CC="$(tc-getCC)" CFLAGS+="${CFLAGS}" \
+	MAKE=pmake emake \
+		CC="$(tc-getCC)" \
+		CFLAGS+="${CFLAGS}" \
 		STRIP=true || die "emake failed."
 }
 

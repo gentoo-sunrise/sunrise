@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> symon-2.79.ebuild:
+  Prettify src_compile, virtual/httpd-cgi removed from RDEPEND since it isn't
+  needed
+
   08 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   -symon-2.78-r2.ebuild, +symon-2.79.ebuild:
   Version bump (syweb bumped too), remove old
