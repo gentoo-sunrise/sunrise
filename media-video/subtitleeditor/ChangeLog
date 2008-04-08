@@ -1,6 +1,10 @@
 # ChangeLog for media-video/subtitleeditor
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Apr 2008; Charles Clément <caratorn@gmail.com>
+  +subtitleeditor-0.20.0.ebuild:
+  Version bump, update HOMEPAGE, SRC_URI and LICENSE, add libxmlpp dependency
 
   05 Aug 2007; Juan Aguado (juantxorena) <juantxorena@gmail.com>
   subtitleeditor-0.13.6.ebuild:
