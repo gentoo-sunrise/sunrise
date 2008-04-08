@@ -17,7 +17,7 @@ IUSE=""
 
 RDEPEND=">=x11-libs/qt-4.3:4
 	=media-libs/freetype-2*"
-RDEPEND="${RDEPEND}
+DEPEND="${RDEPEND}
 	dev-util/cmake"
 
 S="${WORKDIR}/${P}-Source/"
