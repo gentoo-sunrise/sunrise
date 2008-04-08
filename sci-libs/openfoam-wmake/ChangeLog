@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Apr 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  openfoam-wmake-1.4.1_p20080328.ebuild:
+  Just changed the patch source URI, according to the new sources from dev.ge.org
+
   30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
   -openfoam-wmake-1.4.1_p20080118.ebuild,
   openfoam-wmake-1.4.1_p20080328.ebuild,
