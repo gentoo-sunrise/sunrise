@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Apr 2008; Charles Clément <caratorn@gmail.com>
+  -files/fusepod-0.5.1-libgpod-api-fix.patch:
+  Remove old patch
+
   07 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -fusepod-0.5.1.ebuild, fusepod-0.5.2.ebuild:
   Add amd64 keyword from old version + drop old version
