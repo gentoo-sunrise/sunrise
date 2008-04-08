@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Apr 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  openfoam-kernel-1.4.1_p20080131.ebuild:
+  Just changed the unpack command and source, according to the new sources
+  from dev.ge.org
+
   27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
   openfoam-kernel-1.4.1_p20080131:
   Actually unpack the patchset
