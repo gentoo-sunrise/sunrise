@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -freenet-0.7_rc2_pre1134.ebuild, +freenet-0.7_rc2_pre1135.ebuild,
+  freenet-9999.ebuild:
+  New upstream release + update svn ebuild
+
   07 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   +freenet-9999.ebuild:
   Add live ebuild for trunk testers

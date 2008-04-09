@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-DATE=20080313
+DATE=20080409
 DATE2=20080330
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
