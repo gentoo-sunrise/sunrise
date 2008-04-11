@@ -47,14 +47,7 @@ src_compile() {
 		$(use_enable sqlite database) \
 		$(use_enable sqlite icon-database) \
 		$(use_enable gstreamer video) \
-		$(use_enable svg) \
-		$(use_enable svg svg-animation) \
-		$(use_enable svg svg-as-image) \
 		$(use_enable svg svg-experimental) \
-		$(use_enable svg svg-filters) \
-		$(use_enable svg svg-fonts) \
-		$(use_enable svg svg-use-element) \
-		$(use_enable svg svg) \
 		$(use_enable debug)
 
 	emake || die "emake failed"
