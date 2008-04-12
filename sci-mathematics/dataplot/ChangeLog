@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  dataplot-20080225.ebuild:
+  Use alphabetical order
+
   12 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   dataplot-20080225.ebuild:
   Don't do "need_fortran g77 gfortran" but "need_fortran gfortran" until

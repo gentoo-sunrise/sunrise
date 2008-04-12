@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs fortran eutils
+inherit eutils fortran toolchain-funcs
 
 ## PVD->Day component
 ## PVM->Month component
