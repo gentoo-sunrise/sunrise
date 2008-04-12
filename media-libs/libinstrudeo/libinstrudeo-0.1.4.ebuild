@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils autotools
+
 DESCRIPTION="Provides the necessary logic to capture screen recordings and to process them"
 HOMEPAGE="http://libinstrudeo.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
@@ -28,21 +30,17 @@ DEPEND=">=dev-cpp/libxmlpp-2.10.0
 	virtual/glut"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
+src_unpack(){
 	unpack ${A}
 	cd "${S}"
-	sed -i \
-		-e 's#/etc/instrudeo#/usr/share/instrudeo#g' \
-		data/commentboxes/Makefile.in \
-		data/fonts/Makefile.in \
-		src/libinstrudeo/isdcommentbox.h \
-		|| die "sed failed"
+
+	epatch "${FILESDIR}/img_convert_to_sws_scale.patch"
+	eautoreconf
 }
 
 src_compile() {
 	CXXFLAGS="${CXXFLAGS} -D__STDC_CONSTANT_MACROS" econf || die "econf failed"
 	emake || die "emake failed"
-
 }
 
 src_install() {

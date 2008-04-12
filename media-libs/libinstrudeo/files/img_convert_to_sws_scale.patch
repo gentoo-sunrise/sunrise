@@ -1,0 +1,79 @@
+Index: libinstrudeo-0.1.4/configure.ac
+===================================================================
+--- libinstrudeo-0.1.4.orig/configure.ac
++++ libinstrudeo-0.1.4/configure.ac
+@@ -92,6 +92,7 @@ AC_CHECK_LIB([vorbisenc], [vorbis_encode
+ AC_CHECK_LIB([theora], [theora_info_init], , AC_MSG_ERROR([*** theora missing - please install libtheora development package ***]))
+ AC_CHECK_LIB([avcodec], [avcodec_init], , AC_MSG_ERROR([*** avcodec missing - please install avcodec development package ***]), [-lavutil])
+ AC_CHECK_LIB([avformat], [av_open_input_stream], , AC_MSG_ERROR([*** avformat missing - please install avformat development package ***]), [-lavutil])
++AC_CHECK_LIB([swscale], [sws_scale], , AC_MSG_ERROR([*** swscale missing - please install swscale development package ***]), [-lswscale])
+ dnl This should pass, since we successfully linked in the two previous checks
+ dnl This step add the necessary -lavutil to the LIBS variable
+ dnl Note: specifying a method caused troubles, so I switched to main
+@@ -144,4 +145,4 @@ AC_FUNC_STRTOD
+ AC_CHECK_FUNCS([ftime gethostbyname gettimeofday localtime_r memset munmap select setlocale socket sqrt strchr strdup strerror strrchr strstr strtoull])
+ 
+ AC_CONFIG_FILES(Makefile src/Makefile src/libinstrudeo/webservice/Makefile src/libinstrudeo/Makefile src/isdexport/Makefile data/Makefile data/commentboxes/Makefile data/fonts/Makefile)
+-AC_OUTPUT
+\ Pas de fin de ligne à la fin du fichier.
++AC_OUTPUT
+Index: libinstrudeo-0.1.4/src/libinstrudeo/isdffmpegexporter.cpp
+===================================================================
+--- libinstrudeo-0.1.4.orig/src/libinstrudeo/isdffmpegexporter.cpp
++++ libinstrudeo-0.1.4/src/libinstrudeo/isdffmpegexporter.cpp
+@@ -79,6 +79,7 @@ ISDFFmpegExporter::~ISDFFmpegExporter()
+ ISDObject::ISDErrorCode ISDFFmpegExporter::doExport(char* pixelBuffer)
+ {
+     char* grabBuffer;
++    struct SwsContext *toYUV_convert_ctx;
+     
+     if (!initOK) {
+ 	LOG_WARNING("Export routine called without initializing the encoder.");
+@@ -96,6 +97,10 @@ ISDObject::ISDErrorCode ISDFFmpegExporte
+ 	grabBuffer = (char*)malloc(bufSize);
+     }
+ 
++    toYUV_convert_ctx = sws_getContext(codecContext->width, codecContext->height, inputPixFmt,
++                    outputContext->streams[0]->codec->width, outputContext->streams[0]->codec->height,
++                    FFMPEG_STREAM_PIX_FMT, SWS_BICUBIC, NULL, NULL, NULL);
++
+     /*
+      * Note: video time is in milliseconds, so if we have a framerate
+      * of 25, we must increment the loop with 1000/25 milliseconds
+@@ -126,13 +131,13 @@ ISDObject::ISDErrorCode ISDFFmpegExporte
+ 	}
+ 	    
+ 	//convert input pic to yuv420p
+-	if (img_convert(&yuvInputPicture, FFMPEG_STREAM_PIX_FMT, &inputPicture, 
+-			inputPixFmt, codecContext->width, codecContext->height) < 0)
+-	    {
+-		LOG_WARNING("Pixel format conversion not handled while exporting.");
+-		RETURN_ERROR(ISD_EXPORT_FORMAT_ERROR);
+-	    }
+-	    
++        if (sws_scale(toYUV_convert_ctx, inputPicture.data, inputPicture.linesize, 0, codecContext->height,
++                        yuvInputPicture.data, yuvInputPicture.linesize) < 0)
++            {
++                LOG_WARNING("Pixel format conversion not handled while exporting.");
++                RETURN_ERROR(ISD_EXPORT_FORMAT_ERROR);
++            }
++
+ 	outSize = avcodec_encode_video(codecContext, outputBuf, outputBufSize, inputFrame);
+ 	//if zero size, it means the image was buffered
+ 	if (outSize > 0) {
+Index: libinstrudeo-0.1.4/src/libinstrudeo/isdffmpegexporter.h
+===================================================================
+--- libinstrudeo-0.1.4.orig/src/libinstrudeo/isdffmpegexporter.h
++++ libinstrudeo-0.1.4/src/libinstrudeo/isdffmpegexporter.h
+@@ -47,8 +47,11 @@
+ 
+ #include <libinstrudeo/isdexporter.h>
+ 
++extern "C" {
+ #include <ffmpeg/avcodec.h>
+ #include <ffmpeg/avformat.h>
++#include <ffmpeg/swscale.h>
++}
+ 
+ using namespace std;
+ 
