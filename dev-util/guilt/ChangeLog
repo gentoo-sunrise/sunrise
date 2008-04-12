@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Apr 2008; Denis Cheng (raeLLL) <crquan@gmail.com> ++,
+  -guilt-0.29.ebuild:
+  dev-util/guilt: new version 0.30 released from upstream,
+  http://lkml.org/lkml/2008/4/10/386
+
   30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org -guilt-0.28.ebuild:
   Drop old version
 
