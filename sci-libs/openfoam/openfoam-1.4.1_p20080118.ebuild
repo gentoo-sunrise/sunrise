@@ -71,7 +71,7 @@ src_unpack() {
 	unpack ./${MY_P}.General.tgz
 
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}.patch
+	epatch "${DISTDIR}"/${P}.patch
 	epatch "${FILESDIR}"/compile-${PV}.patch
 	epatch "${FILESDIR}"/${PN}-paraFoam-${PV}.patch
 }
