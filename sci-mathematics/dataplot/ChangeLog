@@ -3,6 +3,11 @@
 # $Header: $
 
   12 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  dataplot-20080225.ebuild:
+  Don't do "need_fortran g77 gfortran" but "need_fortran gfortran" until
+  testing with g77 is done
+
+  12 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   +dataplot-20080225.ebuild, +files/dpsrc-patchset-20080225.patch,
   +metadata.xml:
   New Ebuild for bug #217390, thanks to Tommy[D] for reviewing

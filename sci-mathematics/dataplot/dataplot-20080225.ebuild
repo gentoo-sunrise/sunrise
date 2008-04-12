@@ -38,7 +38,7 @@ pkg_setup() {
 		die
 	fi
 
-	need_fortran g77 gfortran
+	need_fortran gfortran
 }
 
 src_unpack() {
