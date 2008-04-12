@@ -11,10 +11,10 @@ ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/ttcut/branches/work"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=x11-libs/qt-4.0:4
+DEPEND="|| ( =x11-libs/qt-4.3* ( x11-libs/qt-gui:4 x11-libs/qt-opengl:4 ) )
 	>=media-libs/libmpeg2-0.4.0
 	virtual/opengl"
 
