@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -thaw-0.8.2.ebuild, +thaw-0.8.4.ebuild:
+  New upstream release
+
   29 Jan 2008; (Tommy[D]) tommy100@gmx.de -thaw-0.8.1.ebuild,
   +thaw-0.8.2.ebuild:
   New upstream release
