@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Apr 2008; Charles Clément <caratorn@gmail.com>
+  -screenkast-0.1.3.ebuild, +screenkast-0.1.4.ebuild:
+  Version bump, add doc USE flag, vncserver dependency
+
   11 Apr 2008; Charles Clément <caratorn@gmail.com>
   -files/0.1.1-include_headers.patch:
   Remove unneeded patch
