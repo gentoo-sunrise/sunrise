@@ -10,13 +10,15 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
-RDEPEND="=x11-libs/qt-3*"
+IUSE="doc"
+RDEPEND="=x11-libs/qt-3*
+	media-libs/t1lib"
 DEPEND="${RDEPEND}
-	dev-libs/boost"
+	dev-libs/boost
+	doc? (app-doc/doxygen)"
 
 src_compile(){
-	econf || die "econf failed"
+	econf $(use_enable doc doxygen-doc) $(use_enable doc advanced-doc)
 	emake || die "emake failed"
 }
 
