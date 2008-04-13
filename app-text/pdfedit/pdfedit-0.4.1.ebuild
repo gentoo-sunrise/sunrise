@@ -17,7 +17,7 @@ DEPEND="${RDEPEND}
 
 src_compile(){
 	econf || die "econf failed"
-	emake src || die "emake failed"
+	emake || die "emake failed"
 }
 
 src_install() {
