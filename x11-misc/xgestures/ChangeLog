@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/xgestures
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Apr 2008; Michał Kiedrowicz (esqualante) <esqualante@o2.pl>
+  +xgestures-0.4.ebuild, +metadata.xml:
+  New Ebuild for bug 217337 with thanks to Tommy[D] and Ken69267
+
