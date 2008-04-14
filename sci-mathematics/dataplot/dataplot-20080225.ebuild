@@ -12,7 +12,7 @@ MY_PVM="${PV:4:2}"
 MY_PVY="${PV:0:4}"
 MY_PV="${MY_PVM}_${MY_PVD}_${MY_PVY}"
 
-DESCRIPTION="A statistics plotter"
+DESCRIPTION="A program for scientific visualization and statistical analyis"
 HOMEPAGE="http://www.itl.nist.gov/div898/software/dataplot/"
 SRC_URI="ftp://ftp.nist.gov/pub/dataplot/unix/dpsrc.${MY_PV}.tar.gz
 	examples? ( ftp://ftp.nist.gov/pub/dataplot/unix/dplib.${MY_PV}.tar.gz )"
