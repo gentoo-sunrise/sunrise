@@ -15,7 +15,7 @@ RDEPEND="=x11-libs/qt-3*
 	media-libs/t1lib"
 DEPEND="${RDEPEND}
 	dev-libs/boost
-	doc? (app-doc/doxygen)"
+	doc? ( app-doc/doxygen )"
 
 src_compile(){
 	econf $(use_enable doc doxygen-doc) $(use_enable doc advanced-doc)

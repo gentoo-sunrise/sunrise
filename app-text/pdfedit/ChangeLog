@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pdfedit-0.4.1.ebuild:
+  Add spaces for conditional depend
+
   26 Feb 2008; Pavel Sanda (ps) <ps at twin.jikos.cz> -pdfedit-0.3.2.ebuild,
   +pdfedit-0.4.1.ebuild:
   Version bump
