@@ -12,7 +12,7 @@ ECVS_MODULE="aufs"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~x86"
 IUSE=""
 
 S=${WORKDIR}/aufs

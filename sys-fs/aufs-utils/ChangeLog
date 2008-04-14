@@ -3,6 +3,10 @@
 # $Header: $
 
   14 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  aufs-utils-9999.ebuild:
+  Also add x86 keyword to live ebuild (now masked by package.mask)
+
+  14 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -aufs-utils-0.1_pre20071210.ebuild:
   Drop old version
 
