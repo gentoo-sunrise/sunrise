@@ -22,6 +22,10 @@
 ##
 
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Apr 2008)
+# Mask live ebuild
+=sys-fs/aufs-utils-9999
+
+# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Apr 2008)
 # Mask SVN ebuild
 =net-p2p/freenet-9999
 
