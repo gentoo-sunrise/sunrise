@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -aufs-utils-0.1_pre20071210.ebuild:
+  Drop old version
+
   22 Jan 2008; Russell Harmon (eatnumber1) <eatnumber1@gmail.com>
   aufs-utils-0.1_pre20080121.ebuild:
   Added block of sys-fs/aufs
