@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  startupmanager-1.9.10.ebuild:
+  Remove useless redundant dependencies and fix DEPEND
+
   15 Feb 2008; Christoph Brill (egore) egore@gmx.de +metadata.xml,
   +startupmanager-1.9.10.ebuild:
   New Ebuild for bug 202468

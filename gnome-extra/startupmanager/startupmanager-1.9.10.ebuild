@@ -13,13 +13,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="dev-lang/python
-		x11-libs/gtk+
-		dev-python/pygtk
+RDEPEND="dev-python/pygtk
 		dev-python/gnome-python-desktop
 		dev-python/gnome-python-extras
 		gnome-extra/yelp
 		media-gfx/imagemagick"
-RDEPEND="${DEPEND}
+DEPEND="${RDEPEND}
 		sys-devel/gettext
 		>=dev-util/intltool-0.35"
