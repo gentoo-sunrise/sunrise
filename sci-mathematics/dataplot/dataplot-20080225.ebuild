@@ -2,20 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils fortran toolchain-funcs
+inherit eutils fortran toolchain-funcs flag-o-matic
 
-## PVD->Day component
-## PVM->Month component
-## PVY->Year component
-MY_PVD="${PV:6:2}"
-MY_PVM="${PV:4:2}"
-MY_PVY="${PV:0:4}"
-MY_PV="${MY_PVM}_${MY_PVD}_${MY_PVY}"
+#     DAY         MONTH    YEAR
+MY_PV=${PV:4:2}_${PV:6:2}_${PV:0:4}
+MY_P=dpsrc.${MY_PV}
+MY_P_AUX=dplib.${MY_PV}
 
 DESCRIPTION="A program for scientific visualization and statistical analyis"
 HOMEPAGE="http://www.itl.nist.gov/div898/software/dataplot/"
 SRC_URI="ftp://ftp.nist.gov/pub/dataplot/unix/dpsrc.${MY_PV}.tar.gz
 	examples? ( ftp://ftp.nist.gov/pub/dataplot/unix/dplib.${MY_PV}.tar.gz )"
+
 
 LICENSE="public-domain"
 SLOT="0"
@@ -27,8 +25,8 @@ RDEPEND="X? ( x11-libs/libX11 )
 	opengl? ( virtual/opengl )
 	gd? ( media-libs/gd )"
 
-S="${WORKDIR}/dpsrc"
-LIBS="${WORKDIR}/dplib"
+S="${WORKDIR}/${MY_P}"
+S_AUX="${WORKDIR}/${MY_P_AUX}"
 
 pkg_setup() {
 	#Dataplot requires media-libs/gd to be built with USE="png jpeg"
@@ -37,15 +35,15 @@ pkg_setup() {
 		eerror "Please recompile media-libs/gd, ensuring USE=\"png jpeg\""
 		die
 	fi
-
-	need_fortran gfortran
+	FORTRAN="gfortran" # needs tests on g77 and ifc
+	fortran_pkg_setup
 }
 
 src_unpack() {
-	mkdir dpsrc && cd "${S}"
-	unpack dpsrc.${MY_PV}.tar.gz
+	mkdir ${MY_P} && cd "${S}"
+	unpack ${MY_P}.tar.gz
 	##Arches!: Add your architecture name here in the braces if you are 64-bit!
-	if use {amd64}; then
+	if use amd64; then
 		cp dp1_linux_64.f dp1.f
 		cp DPCOPA_BIG.INC DPCOPA.INC
 	else
@@ -54,13 +52,13 @@ src_unpack() {
 
 	epatch "${FILESDIR}/dpsrc-patchset-${PV}.patch"
 	if use examples; then
-		mkdir "${LIBS}" && cd "${LIBS}"
-		unpack dplib.${MY_PV}.tar.gz
+		mkdir "${S_AUX}" && cd "${S_AUX}"
+		unpack ${MY_P_AUX}.tar.gz
 	fi
 }
 
 src_compile() {
-	FFLAGS="${FFLAGS} -fno-range-check -c"
+	[[ ${FORTRAN} = gfortran ]] && FFLAGS="${FFLAGS:--O2} -fno-range-check -c"
 
 	for i in {1..46}; do
 		FORTRANSOURCES+="dp${i}.f "
@@ -72,13 +70,13 @@ src_compile() {
 	starpac.f tcdriv_nopc.f aqua_src.f"
 
 	for i in ${FORTRANSOURCES}; do
-		einfo "Compiling ${i}..."
-		$FORTRANC -w ${FFLAGS} ${i} || die "Fortran Compile failed for file: ${i}"
+		echo "${FORTRANC} ${FFLAGS} ${i}"
+		${FORTRANC} ${FFLAGS} ${i} || die "Fortran Compile failed for file: ${i}"
 	done
 
-	use X && LDFLAGS="${LDFLAGS} -L/usr/$(get_libdir) -lX11"
-	use opengl  && LDFLAGS="${LDFLAGS} -L/usr/$(get_libdir)/opengl/xorg-x11/lib -lGL -lGLU"
-	use gd && LDFLAGS="${LDFLAGS} -lgd -lpng -ljpeg -lz"
+	use X && append-ldflags -lX11
+	use opengl && append-ldflags "-lGL -lGLU"
+	use gd && append-ldflags "-lgd -lpng -ljpeg -lz"
 
 	##Compile x11/gd/opengl device drivers
 
@@ -112,8 +110,7 @@ src_install() {
 	dobin dataplot
 
 	if use examples; then
-		cd "${LIBS}"
-		insinto /usr/share/${PN}
-		doins -r data
+		insinto /usr/share/doc/${PF}/examples
+		doins -r "${S_AUX}"/data/* || die "installing examples failed"
 	fi
 }
