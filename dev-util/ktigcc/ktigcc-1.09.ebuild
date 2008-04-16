@@ -14,19 +14,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="minimal"
 
-DEPEND=">=x11-libs/qt-3.3:3
+COMMON_DEPEND=">=x11-libs/qt-3.3:3
 	>=kde-base/kdelibs-3.5.7:3.5
 	dev-util/ctags
-	dev-util/pkgconfig
 	dev-embedded/tigcc
 	>=sci-libs/libticables2-0.1.3
 	>=sci-libs/libticonv-0.0.1
 	>=sci-libs/libtifiles2-0.0.9
 	>=sci-libs/libticalcs2-0.2.4"
 
-RDEPEND="${DEPEND}
+RDEPEND="${COMMON_DEPEND}
 	!minimal? ( dev-util/ktigcc-completion-data )"
 
+DEPEND="${COMMON_DEPEND}
+	dev-util/pkgconfig"
 S=${WORKDIR}/${PN}
 
 src_unpack() {

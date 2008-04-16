@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  ktigcc-1.09.ebuild:
+  Split COMMON_DEPEND out so we don't RDEPEND on dev-util/pkgconfig
+
   15 Jan 2008; Christian Helbling <helch@gmx.ch> -ktigcc-1.08.ebuild,
   +ktigcc-1.09.ebuild:
   Version bump
