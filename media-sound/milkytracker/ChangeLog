@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/milkytracker
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Apr 2008; Christopher O'Neill (Deltafire) <sunrise@chrisoneill.co.uk>
+  +milkytracker-0.90.80.ebuild, +metadata.xml:
+  New Ebuild for bug 217702
+
