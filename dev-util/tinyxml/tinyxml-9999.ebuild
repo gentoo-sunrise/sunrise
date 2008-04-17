@@ -17,6 +17,7 @@ IUSE="debug doc examples"
 
 DEPEND="dev-util/scons
 	doc? ( app-doc/doxygen )"
+RDEPEND=""
 
 S="${WORKDIR}/${PN}"
 
