@@ -1,0 +1,12 @@
+--- src/image-loader.c      2007-07-09 00:42:10.000000000 +0200
++++ src/image-loader.c.patched      2007-07-09 00:42:30.000000000 +0200
+@@ -44,7 +44,7 @@
+   const gchar* const* dirs = g_get_system_data_dirs ();
+   while (*dirs)
+   {
+-    gchar *p = g_strconcat (*dirs, "pixmaps/teatime/", NULL);
++    gchar *p = g_strconcat (*dirs, "/pixmaps/teatime/", NULL);
+     if (g_file_test (p, G_FILE_TEST_IS_DIR))
+     {
+       path = p;
+
