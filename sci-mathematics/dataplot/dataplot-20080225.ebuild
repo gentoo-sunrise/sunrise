@@ -81,14 +81,14 @@ src_compile() {
 	##Compile x11/gd/opengl device drivers
 
 	if use gd; then
-		$(tc-getCC) -c ${CFLAGS} -I/usr/include/GL gd_src.c || die "Compiling gd_src.c
+		$(tc-getCC) -c ${CFLAGS} gd_src.c || die "Compiling gd_src.c
 		failed!"
 	else
 		${FORTRANC} ${FFLAGS} gd_src.f || die "Compiling gd_src.f failed!"
 	fi
 
 	if use opengl; then
-		$(tc-getCC) -c ${CFLAGS} -DUNIX_OS -DAPPEND_UNDERSCORE \
+		$(tc-getCC) -c ${CFLAGS} -I/usr/include/GL -DUNIX_OS -DAPPEND_UNDERSCORE \
 		-DSUBROUTINE_CASE gl_src.c || die "Compiling gl_src.c
 		failed!"
 	else
