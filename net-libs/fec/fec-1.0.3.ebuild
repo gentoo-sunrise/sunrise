@@ -15,7 +15,8 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="virtual/jdk
-	app-arch/unzip"
+	app-arch/unzip
+	!net-p2p/fec"
 S=${WORKDIR}/${P}/src/csrc/
 
 src_unpack() {
