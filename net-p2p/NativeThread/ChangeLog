@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  NativeThread-20080330.ebuild:
+  Add RDEPEND
+
   30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
   files/Makefile.patch:
   Update patch

@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND="net-p2p/freenet
 	virtual/jdk"
+RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
