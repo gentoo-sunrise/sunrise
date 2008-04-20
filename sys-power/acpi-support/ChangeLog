@@ -1,6 +1,10 @@
 # ChangeLog for sys-power/acpi-support
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Apr 2008; Santiago M. Mola <coldwind@gentoo.org>
+  acpi-support-0.103.ebuild:
+  Add ~amd64 keyword.
 
   12 Nov 2007; Jakub Moc <jakub@gentoo.org>
   -files/acpi-support-0.95-gentoo.patch, -acpi-support-0.95.ebuild:
