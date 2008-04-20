@@ -11,7 +11,6 @@ ESVN_REPO_URI="https://chocolate-doom.svn.sourceforge.net/svnroot/chocolate-doom
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 IUSE="server"
 
 DEPEND=">=media-libs/libsdl-1.1.3
@@ -35,6 +34,7 @@ src_unpack() {
 }
 
 src_compile() {
+
 	egamesconf \
 		--disable-sdltest \
 		--disable-dependency-tracking \
@@ -44,19 +44,19 @@ src_compile() {
 }
 
 src_install() {
-	dogamesbin src/${PN} || die "dogamesbin ${PN} failed"
+	dogamesbin "src/${PN}" || die "dogamesbin ${PN} failed"
 	dogamesbin setup/chocolate-setup || die "dogamesbin chocolate-setup failed"
 	if use server ; then
 		dogamesbin src/chocolate-server || die "dogamesbin chocolate-server failed"
 	fi
 
-	doicon data/${PN}.png || die "doicon failed"
-	make_desktop_entry ${PN} "Chocolate Doom"
-	doicon data/chocolate-setup.png || die "doicon failed"
+	newicon data/doom.png "${PN}.png" || die "doicon failed"
+	make_desktop_entry "${PN}" "Chocolate Doom"
+	newicon data/setup.png chocolate-setup.png || die "doicon failed"
 	make_desktop_entry chocolate-setup "Chocolate Doom Setup" chocolate-setup.png
 
-	doman man/${PN}.6 || die "doman failed"
-	dodoc AUTHORS BUGS ChangeLog HACKING NEWS README TODO || die "dodoc failed"
+	doman man/*.{5,6} || die "doman failed"
+	dodoc AUTHORS BUGS CMDLINE ChangeLog NEWS README TODO || die "dodoc failed"
 
 	dodir "${GAMES_DATADIR}/doom-data" || die "dodir failed"
 

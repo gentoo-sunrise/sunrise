@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -chocolate-doom-1.0.0.ebuild, +chocolate-doom-1.1.1.ebuild,
+  chocolate-doom-9999.ebuild:
+  Version bump (and update accordingly SVN live ebuild)
+
   07 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   chocolate-doom-1.0.0.ebuild, chocolate-doom-9999.ebuild:
   Fix quotation
