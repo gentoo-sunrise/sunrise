@@ -15,8 +15,7 @@ IUSE=""
 
 DEPEND="dev-libs/gmp
 	virtual/jdk"
-RDEPEND="dev-libs/gmp
-	virtual/jre"
+RDEPEND="dev-libs/gmp"
 
 QA_TEXTRELS="opt/freenet/lib/libjcpuid-x86-linux.so"
 
