@@ -14,7 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="net-p2p/freenet
-	virtual/jdk"
+	virtual/jdk
+	!net-p2p/NativeThread"
 RDEPEND=""
 
 src_unpack() {
