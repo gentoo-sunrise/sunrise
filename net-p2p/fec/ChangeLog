@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> fec-1.0.3.ebuild:
+  No RDEPEND on JDK
+
   20 Apr 2008; Thomas Anderson <gentoofan23@gentoo.org> fec-1.0.3.ebuild:
   Fix dependencies, putting app-arch/unzip in DEPEND since fec uses a .zip
   distfile

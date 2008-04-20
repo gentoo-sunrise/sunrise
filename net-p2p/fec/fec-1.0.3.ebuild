@@ -13,8 +13,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND="virtual/jdk"
-DEPEND="${RDEPEND}
+RDEPEND=""
+DEPEND="virtual/jdk
 	app-arch/unzip"
 S=${WORKDIR}/${P}/src/csrc/
 
