@@ -29,10 +29,10 @@ DEPEND="dev-util/subversion
 	${CDEPEND}"
 RDEPEND="x86? ( >=virtual/jre-1.4 )
 	amd64? ( >=virtual/jre-1.5 )
-	x86? ( net-p2p/fec )
-	net-p2p/nativebiginteger
+	x86? ( net-libs/fec )
+	net-libs/nativebiginteger
 	${CDEPEND}"
-PDEPEND="net-p2p/NativeThread"
+PDEPEND="net-libs/NativeThread"
 S="${WORKDIR}/freenet"
 
 RESTRICT="userpriv"

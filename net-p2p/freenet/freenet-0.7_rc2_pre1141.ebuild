@@ -23,10 +23,10 @@ DEPEND=">=dev-java/sun-jdk-1.4
 	dev-java/ant
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.4
-	x86? ( net-p2p/fec )
-	net-p2p/nativebiginteger
+	x86? ( net-libs/fec )
+	net-libs/nativebiginteger
 	${CDEPEND}"
-PDEPEND="net-p2p/NativeThread"
+PDEPEND="net-libs/NativeThread"
 S="${WORKDIR}/${PN}"
 
 EANT_BUILD_TARGET="dist"
