@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: Exp $
+# $Header: $
 
 inherit eutils
 
@@ -28,7 +28,7 @@ pkg_nofetch() {
 
 pkg_setup() {
 	if use arts && ! built_with_use app-cdr/k3b arts; then
-		die "Re-emerge app-cdr/k3b with USE arts."
+		die "Re-emerge app-cdr/k3b with USE=\"arts\"."
 	fi
 }
 

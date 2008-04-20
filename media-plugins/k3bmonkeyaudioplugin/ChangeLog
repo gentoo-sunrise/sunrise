@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  k3bmonkeyaudioplugin-3.1.ebuild:
+  Fix invalid Header line, make built_with_use die message clearer
+
   02 Jan 2008; (Tommy[D]) tommy100@gmx.de k3bmonkeyaudioplugin-3.1.ebuild:
   use ${P} in einfo too
 
