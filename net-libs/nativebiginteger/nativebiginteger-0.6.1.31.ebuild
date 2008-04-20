@@ -14,7 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-libs/gmp
-	virtual/jdk"
+	virtual/jdk
+	!net-p2p/nativebiginteger"
 RDEPEND="dev-libs/gmp"
 
 QA_TEXTRELS="opt/freenet/lib/libjcpuid-x86-linux.so"

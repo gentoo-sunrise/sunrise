@@ -4,6 +4,10 @@
 
   20 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   nativebiginteger-0.6.1.31.ebuild:
+  Add blocker for previous location
+
+  20 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  nativebiginteger-0.6.1.31.ebuild:
   No RDEPEND on JRE
 
   03 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
