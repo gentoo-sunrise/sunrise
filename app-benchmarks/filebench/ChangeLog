@@ -1,0 +1,8 @@
+# ChangeLog for app-benchmarks/filebench
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Apr 2008; Denis Cheng (raeLLL) <crquan@gmail.com>
+  +filebench-1.2.4.ebuild, +files/linux-port.patch, +metadata.xml:
+  New ebuild for bug 218223
+
