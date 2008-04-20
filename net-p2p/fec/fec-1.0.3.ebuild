@@ -13,7 +13,9 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="virtual/jdk"
+RDEPEND="virtual/jdk"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
 S=${WORKDIR}/${P}/src/csrc/
 
 src_unpack() {
