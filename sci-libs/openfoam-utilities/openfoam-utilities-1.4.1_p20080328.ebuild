@@ -15,16 +15,14 @@ SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="" # metis
+IUSE=""
 
 RDEPEND="!sci-libs/openfoam
 	!sci-libs/openfoam-bin
-	dev-java/sun-java3d-bin
+	=dev-java/sun-java3d-bin-1.4
 	<virtual/jdk-1.5
 	>=sci-libs/openfoam-kernel-${MY_PV}
-	=sci-libs/parmetis-3.1"
-# 	metis? ( sci-libs/metis  )
-# 	!metis? ( !sci-libs/metis !sci-libs/parmetis )"
+	sci-libs/parmetis"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
