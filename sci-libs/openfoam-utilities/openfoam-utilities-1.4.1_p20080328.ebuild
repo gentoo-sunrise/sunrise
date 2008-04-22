@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="!sci-libs/openfoam
 	!sci-libs/openfoam-bin
-	=dev-java/sun-java3d-bin-1.4
+	=dev-java/sun-java3d-bin-1.4*
 	<virtual/jdk-1.5
 	>=sci-libs/openfoam-kernel-${MY_PV}
 	sci-libs/parmetis"
