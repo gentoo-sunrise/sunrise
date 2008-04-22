@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  aufs-20080207-r1.ebuild:
+  Add check and die for kernel >=2.6.25 for now (bug 218820)
+
   19 Feb 2008; (Tommy[D]) tommy100@gmx.de -files/parallel-build.patch:
   Drop old patch
 

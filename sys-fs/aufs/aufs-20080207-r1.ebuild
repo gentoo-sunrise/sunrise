@@ -25,6 +25,13 @@ pkg_setup() {
 		die "Wrong kernel version"
 	fi
 
+	# kernel version check
+	if kernel_is ge 2 6 25 ; then
+		eerror "Version ${PV} of ${PN} is not supported on linux-2.6.25 and later."
+		eerror "Please install <linux-2.6.25 in order to install this package."
+		die "Wrong kernel version"
+	fi
+
 	linux-mod_pkg_setup
 }
 
