@@ -25,13 +25,6 @@ pkg_setup() {
 		die "Wrong kernel version"
 	fi
 
-	# kernel version check
-	if kernel_is ge 2 6 25 ; then
-		eerror "Version ${PV} of ${PN} is not supported on linux-2.6.25 and later."
-		eerror "Please install <linux-2.6.25 in order to install this package."
-		die "Wrong kernel version"
-	fi
-
 	linux-mod_pkg_setup
 }
 
@@ -39,7 +32,8 @@ src_unpack(){
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-disable_security_inode_permission.patch"
+#aufs code changed, patch does not work any more
+#	epatch "${FILESDIR}/${P}-disable_security_inode_permission.patch"
 
 	# Enable hinotify in priv_def.mk
 	if use hinotify && kernel_is ge 2 6 18 ; then
