@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Apr 2008; Austen Dicken (cvpcs) <admin@cvpc.dyndns.org>
+  aufs-20080422.ebuild:
+  Fixed missing hinotify for aufs-20080422
+
   24 Apr 2008; Austen Dicken (cvpcs) <admin@cvpc.dyndns.org> ChangeLog:
   Modified ebuild for aufs-20080422 to add features and fix CONFIG_SECURITY
   incompatibility.

@@ -47,6 +47,11 @@ src_unpack(){
 	unpack ${A}
 	cd "${S}"
 
+	# Enable hinotify in priv_def.mk 
+	if use hinotify && kernel_is ge 2 6 18 ; then 
+		echo "CONFIG_AUFS_HINOTIFY = y" >> priv_def.mk || die "setting hinotify in priv_def.mk failed!" 
+	fi 
+
 	# Disable SYSAUFS for kernel less than 2.6.18
 	if kernel_is lt 2 6 18 ; then
 		echo "CONFIG_AUFS_SYSAUFS = " >> priv_def.mk || die "unsetting sysaufs in priv_def.mk failed!"
