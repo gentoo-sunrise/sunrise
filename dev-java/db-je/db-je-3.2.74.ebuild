@@ -19,7 +19,7 @@ RDEPEND="=virtual/jre-1.4*"
 S="${WORKDIR}/${P/db-/}"
 
 # allows you to disable testing
-PATCHES="${FILESDIR}/${P}-build.patch"
+PATCHES=( "${FILESDIR}/${P}-build.patch" )
 
 src_unpack() {
 	base_src_unpack
