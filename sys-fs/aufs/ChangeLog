@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Apr 2008; Austen Dicken (cvpcs) <admin@cvpc.dyndns.org> ChangeLog:
+  Modified ebuild for aufs-20080422 to add features and fix CONFIG_SECURITY
+  incompatibility.
+
   23 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -aufs-20080207-r1.ebuild, +aufs-20080422.ebuild:
   Version bump for kernel version 2.6.25
