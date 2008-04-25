@@ -4,7 +4,7 @@
 
 DESCRIPTION="DevKitPro toolchain for ARM processors"
 HOMEPAGE="http://devkitpro.org/"
-SRC_URI="mirror://sourceforge/devkitpro/devkitARM_r${PV}-linux.tar.bz2"
+SRC_URI="mirror://sourceforge/devkitpro/devkitARM_r${PV}-i686-linux.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,8 +19,8 @@ RESTRICT="strip"
 
 dir=/opt/devkitpro/devkitARM
 
-QA_EXECSTACK="${dir:1}/lib/gcc/arm-eabi/4.1.2/thumb/*.o
-	${dir:1}/lib/gcc/arm-eabi/4.1.2/*.o
+QA_EXECSTACK="${dir:1}/lib/gcc/arm-eabi/4.3.0/thumb/*.o
+	${dir:1}/lib/gcc/arm-eabi/4.3.0/*.o
 	${dir:1}/arm-eabi/lib/*.o"
 
 src_install() {
@@ -30,3 +30,4 @@ src_install() {
 
 	doenvd "${FILESDIR}/99devkitpro"
 }
+
