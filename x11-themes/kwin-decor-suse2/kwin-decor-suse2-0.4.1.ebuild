@@ -14,4 +14,4 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
-PATCHES="${FILESDIR}/kwin-decor-suse2-disabletitlebarlogo.patch"
+PATCHES=( "${FILESDIR}/kwin-decor-suse2-disabletitlebarlogo.patch" )

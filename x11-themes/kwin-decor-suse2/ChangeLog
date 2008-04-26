@@ -1,6 +1,10 @@
 # ChangeLog for x11-themes/kwin-decor-suse2
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  kwin-decor-suse2-0.4.1.ebuild:
+  Add bash array to make repoman happy
 
   08 Sep 2007; Markus Ullmann <jokey@gentoo.org>
   -kwin-decor-suse2-0.4.ebuild:
