@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> Manifest:
+  Fix digest
+
   25 Apr 2008; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
   -devkitarm-bin-21.ebuild, +devkitarm-bin-22.ebuild:
   Updated Ebuild or bug 179209.
