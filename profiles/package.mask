@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Tiago Cunha (tcunha) <me@tiagocunha.org> (27 Apr 2008)
+# Mask GIT ebuild
+=sys-apps/ksplice-9999
+
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Apr 2008)
 # Mask live ebuild
 =sys-fs/aufs-utils-9999
