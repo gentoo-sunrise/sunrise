@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  -ksplice-0.8.1.ebuild, +ksplice-0.8.2.ebuild:
+  Version bump, remove old
+
   25 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   +ksplice-0.8.1.ebuild, +metadata.xml:
   New Ebuild for bug 219272. Thanks to Tommy[D] for reviewing
