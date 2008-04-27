@@ -3,6 +3,10 @@
 # $Header: $
 
   27 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  +ksplice-9999.ebuild:
+  Add live ebuild
+
+  27 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   -ksplice-0.8.1.ebuild, +ksplice-0.8.2.ebuild:
   Version bump, remove old
 
