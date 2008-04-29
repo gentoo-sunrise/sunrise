@@ -27,7 +27,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.6
 	x11-libs/libXScrnSaver
 	sqlite? ( >=dev-db/sqlite-3.3 )"
 
-DEPEND=">=dev-util/pkgconfig-0.9
+DEPEND="dev-util/pkgconfig
 	>=gnome-base/gconf-2
 	${RDEPEND}"
 

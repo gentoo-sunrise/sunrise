@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  desktop-data-model-1.2.4.ebuild:
+  Remove dep on outdated version
+
   29 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -desktop-data-model-1.2.2.ebuild, +desktop-data-model-1.2.4.ebuild:
   Version bump.
