@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  ksplice-0.8.4.ebuild:
+  pod2man is required at build time, hence DEPEND on dev-lang/perl too
+
+  29 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   -ksplice-0.8.3.ebuild, +ksplice-0.8.4.ebuild:
   Version bump, remove old
 
