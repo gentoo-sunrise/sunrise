@@ -1,6 +1,11 @@
 # ChangeLog for media-video/divxcalc
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  divxcalc-0.6.ebuild, +files/divxcalc-0.6-build.patch:
+  Fix broken build system. Update homepage to one from freshmeat
+  (axljab.homelinux.org is gone). Tested on amd64.
 
   20 Sep 2006; Raul Porcel (armin76) <armin76@gmail.com>
   +divxcalc-0.6.ebuild, +metadata.xml:

@@ -1,0 +1,47 @@
+Only in divxcalc-0.6/admin: .acinclude.m4.in.swp
+diff -ru divxcalc-0.6.orig/configure.in divxcalc-0.6/configure.in
+--- divxcalc-0.6.orig/configure.in	2003-05-25 09:51:54.000000000 -0400
++++ divxcalc-0.6/configure.in	2008-04-29 07:36:46.843509972 -0400
+@@ -5,7 +5,7 @@
+ AC_CONFIG_AUX_DIR(admin)
+ AC_CANONICAL_SYSTEM 
+ 
+-VERSION="0.5"
++VERSION="0.6"
+ RELEASE="1"
+ LARGEFILESUPPORT="-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE"
+ 
+@@ -40,7 +40,6 @@
+ [ LINK_STATIC="-static" ],
+ )
+ 
+-AC_CHECK_COMPILERS
+ AC_ENABLE_SHARED(yes)
+ AC_ENABLE_STATIC(no)
+ dnl KDE_PROG_LIBTOOL
+diff -ru divxcalc-0.6.orig/src/Makefile.am divxcalc-0.6/src/Makefile.am
+--- divxcalc-0.6.orig/src/Makefile.am	2003-05-25 09:51:54.000000000 -0400
++++ divxcalc-0.6/src/Makefile.am	2008-04-29 09:04:29.844509876 -0400
+@@ -17,6 +17,22 @@
+ 
+ ####### kdevelop will overwrite this part!!! (end)############
+ 
++BUILT_SOURCES = dialogdivxcalcapp.h
++nodist_divxcalc_SOURCES = dialogdivxcalcapp.cpp dialogdivxcalcapp.moc.cpp cdivxcalcapp.moc.cpp
++CLEANFILES = dialogdivxcalcapp.h dialogdivxcalcapp.cpp dialogdivxcalcapp.moc.cpp cdivxcalcapp.moc.cpp
++
++dialogdivxcalcapp.h:
++	$(UIC) dialogdivxcalcapp.ui -o $@
++
++dialogdivxcalcapp.cpp: dialogdivxcalcapp.h dialogdivxcalcapp.ui
++	$(UIC) -impl dialogdivxcalcapp.h dialogdivxcalcapp.ui -o $@
++
++dialogdivxcalcapp.moc.cpp: dialogdivxcalcapp.h
++	$(MOC) dialogdivxcalcapp.h -o $@
++
++cdivxcalcapp.moc.cpp: cdivxcalcapp.h
++	$(MOC) cdivxcalcapp.h -o $@
++
+ # set the include path for X, qt and KDE
+ INCLUDES= $(all_includes)
+ 
