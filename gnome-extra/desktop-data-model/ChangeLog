@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -desktop-data-model-1.2.2.ebuild, +desktop-data-model-1.2.4.ebuild:
+  Version bump.
+
   30 Mar 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   +desktop-data-model-1.2.2.ebuild, +metadata.xml:
   New ebuild for bug 215271
