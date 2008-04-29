@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -exempi-2.0.0.ebuild, +exempi-2.0.1.ebuild:
+  Version bump.
+
   04 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -exempi-1.99.9.ebuild, +exempi-2.0.0.ebuild:
   Version bump.
