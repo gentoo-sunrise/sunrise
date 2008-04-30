@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils fortran toolchain-funcs flag-o-matic
+inherit eutils toolchain-funcs flag-o-matic autotools
 
 #     DAY         MONTH    YEAR
 MY_PV=${PV:4:2}_${PV:6:2}_${PV:0:4}
@@ -12,107 +12,74 @@ MY_P_AUX=dplib.${MY_PV}
 DESCRIPTION="A program for scientific visualization and statistical analyis"
 HOMEPAGE="http://www.itl.nist.gov/div898/software/dataplot/"
 SRC_URI="ftp://ftp.nist.gov/pub/dataplot/unix/dpsrc.${MY_PV}.tar.gz
-	examples? ( ftp://ftp.nist.gov/pub/dataplot/unix/dplib.${MY_PV}.tar.gz )"
+	ftp://ftp.nist.gov/pub/dataplot/unix/dplib.${MY_PV}.tar.gz"
 
 
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples gd opengl X"
+IUSE="examples gd gs opengl X"
 
-DEPEND="${RDEPEND}"
-RDEPEND="X? ( x11-libs/libX11 )
-	opengl? ( virtual/opengl )
-	gd? ( media-libs/gd )"
+COMMON_DEPEND="opengl? ( virtual/opengl )
+	gd? ( media-libs/gd )
+	gs? ( virtual/ghostscript media-libs/gd )"
+DEPEND="${COMMON_DEPEND}"
+RDEPEND="${COMMON_DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 S_AUX="${WORKDIR}/${MY_P_AUX}"
 
 pkg_setup() {
-	#With USE=gd, dataplot requires media-libs/gd to be built with USE="png jpeg"
-	if use gd; then
+	#Dataplot requires media-libs/gd to be built with USE="png jpeg"
+	if use gd || use gs; then
 		if ! built_with_use -a media-libs/gd png jpeg; then
 			eerror "media-libs/gd is not compiled with USE=\"png jpeg\""
 			eerror "Please recompile media-libs/gd, ensuring USE=\"png jpeg\""
 			die
 		fi
 	fi
-	FORTRAN="gfortran" # needs tests on g77 and ifc
-	fortran_pkg_setup
+	#We also need a Fortran 77 compiler
+	if ! built_with_use sys-devel/gcc fortran; then
+		eerror "sys-devel/gcc is not compiled with USE=\"fortran\" and ${PN}
+		needs a fortran compiler"
+		eerror "Please recompile sys-devel/gcc, ensuring USE=\"fortran\""
+	fi
 }
 
 src_unpack() {
 	mkdir ${MY_P} && cd "${S}"
 	unpack ${MY_P}.tar.gz
-	##Arches!: Add your architecture name here in the braces if you are 64-bit!
-	if use amd64; then
-		cp dp1_linux_64.f dp1.f
-		cp DPCOPA_BIG.INC DPCOPA.INC
-	else
-		cp dp1_linux.f dp1.f
-	fi
+	mv DPCOPA.INC DPCOPA.INC.in
+	mv dp1_linux.f dp1_linux.f.in
+	mv dp1_linux_64.f dp1_linux_64.f.in
+	epatch "${FILESDIR}"/dpsrc-patchset-${PV}.patch
+	epatch "${FILESDIR}"/dpsrc-maxobvvalue-${PV}.patch
+	epatch "${FILESDIR}"/dpsrc-dp1patches-${PV}.patch
 
-	epatch "${FILESDIR}/dpsrc-patchset-${PV}.patch"
-	if use examples; then
-		mkdir "${S_AUX}" && cd "${S_AUX}"
-		unpack ${MY_P_AUX}.tar.gz
-	fi
+	cp "${FILESDIR}"/{Makefile.am,configure.ac} "${S}"
+
+	mkdir "${S_AUX}" && cd "${S_AUX}"
+	unpack ${MY_P_AUX}.tar.gz
+	cd "${S}"
+	eautoreconf
 }
 
 src_compile() {
-	[[ ${FORTRAN} = gfortran ]] && FFLAGS="${FFLAGS:--O2} -fno-range-check -c"
+	econf $(use_enable gd) \
+		$(use_enable gs) \
+		$(use_enable opengl) \
+		$(use_enable X)
 
-	for i in {1..46}; do
-		FORTRANSOURCES+="dp${i}.f "
-	done
-
-	FORTRANSOURCES+=" dpcalc.f dpdds2.f dpdds3.f
-	dpdds.f edinit.f edmai2.f edsear.f
-	edsub.f edwrst.f fit3b.f gl_src.f
-	starpac.f tcdriv_nopc.f aqua_src.f"
-
-	for i in ${FORTRANSOURCES}; do
-		echo "${FORTRANC} ${FFLAGS} ${i}"
-		${FORTRANC} ${FFLAGS} ${i} || die "Fortran Compile failed for file: ${i}"
-	done
-
-	use X && append-ldflags -lX11
-	use opengl && append-ldflags "-lGL -lGLU"
-	use gd && append-ldflags "-lgd -lpng -ljpeg -lz"
-
-	##Compile x11/gd/opengl device drivers
-
-	if use gd; then
-		$(tc-getCC) -c ${CFLAGS} gd_src.c || die "Compiling gd_src.c
-		failed!"
-	else
-		${FORTRANC} ${FFLAGS} gd_src.f || die "Compiling gd_src.f failed!"
-	fi
-
-	if use opengl; then
-		$(tc-getCC) -c ${CFLAGS} -I/usr/include/GL -DUNIX_OS -DAPPEND_UNDERSCORE \
-		-DSUBROUTINE_CASE gl_src.c || die "Compiling gl_src.c
-		failed!"
-	else
-		${FORTRANC} ${FFLAGS} gl_src.f || die "Compiling gl_src.f failed!"
-	fi
-
-	if use X; then
-		$(tc-getCC) -c ${CFLAGS} -I/usr/include/X11 x11_src.c || die "Compiling x11_src.c
-		failed!"
-	else
-		${FORTRANC} ${FFLAGS} x11src.f || die "Compiling x11_src.f failed!"
-	fi
-
-	#Link!
-	${FORTRANC} -o dataplot main.f *.o ${LDFLAGS} || die "Linking failed!"
+	emake || die "Make failed"
 }
 
 src_install() {
-	dobin dataplot
+	emake DESTDIR="${D}" install || die "Install failed"
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}/examples
-		doins -r "${S_AUX}"/data/* || die "installing examples failed"
+		doins -r "${S_AUX}"/data/* || die "Installing examples failed"
 	fi
+	insinto /usr/share/dataplot
+	doins "${S_AUX}"/dpmesf.tex "${S_AUX}"/dpsysf.tex "${S_AUX}"/dplogf.tex
 }

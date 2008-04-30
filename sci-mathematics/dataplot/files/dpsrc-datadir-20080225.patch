@@ -1,0 +1,41 @@
+--- dpsrc-orig/dp1_linux.f.in	2007-08-23 18:19:27.000000000 -0400
++++ dpsrc/dp1_linux.f.in	2008-04-29 08:31:51.000000000 -0400
+@@ -2619,7 +2619,7 @@
+      1       (IHOST1.EQ.'SGI ') .OR.
+      1       (IHOST1.EQ.'HP-9') .OR.
+      1       (IHOST1.EQ.'AIX ') .OR.
+-     1       (IHOST1.EQ.'LINU') .OR.
++     1       (IHOST1.EQ.'LINUX') .OR.
+      1       (IOPSY1.EQ.'UNIX')
+      1    )THEN
+ CCCCC FOLLOWING SECTION ADDED FEBRUARY 1998.
+@@ -2635,7 +2635,7 @@
+         UNIXPV='DATAPLOT_FILES'
+         CALL getenv(UNIXPV,UNIXPN)
+         IF(UNIXPN.EQ.' ')THEN
+-          IPATH1='/usr/local/lib/dataplot/'
++          IPATH1='@datadir@/dataplot'
+           NCP1=24
+           UNIXPN=' '
+           UNIXPN(1:NCP1)=IPATH1(1:NCP1)
+--- dpsrc-orig/dp1_linux_64.f.in	2007-08-23 18:19:57.000000000 -0400
++++ dpsrc/dp1_linux_64.f.in	2008-04-29 08:49:20.000000000 -0400
+@@ -2688,7 +2688,7 @@
+      1       (IHOST1.EQ.'SGI ') .OR.
+      1       (IHOST1.EQ.'HP-9') .OR.
+      1       (IHOST1.EQ.'AIX ') .OR.
+-     1       (IHOST1.EQ.'LINU') .OR.
++     1       (IHOST1.EQ.'LINUX') .OR.
+      1       (IOPSY1.EQ.'UNIX')
+      1    )THEN
+ CCCCC FOLLOWING SECTION ADDED FEBRUARY 1998.
+@@ -2704,7 +2704,7 @@
+         UNIXPV='DATAPLOT_FILES'
+         CALL getenv(UNIXPV,UNIXPN)
+         IF(UNIXPN.EQ.' ')THEN
+-          IPATH1='/usr/local/lib/dataplot/'
++          IPATH1='@datadir@/dataplot/'
+           NCP1=24
+           UNIXPN=' '
+           UNIXPN(1:NCP1)=IPATH1(1:NCP1)
+

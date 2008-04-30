@@ -3,6 +3,16 @@
 # $Header: $
 
   30 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  dataplot-20080225.ebuild, +files/dpsrc-datadir-20080225.patch,
+  +files/dpsrc-maxobvvalue-20080225.patch,
+  files/dpsrc-patchset-20080225.patch,
+  +files/dpsrc-dp1patches-20080225.patch, +files/Makefile.am,
+  +files/configure.ac:
+  Many changes. Add parallel build support, using autotools. Add GhostScript
+  support. Many many thanks to bicatali for helping with the autofoo and other
+  general pointers.
+
+  30 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   dataplot-20080225.ebuild:
   Only do built_with_use check if USE='gd'
 
