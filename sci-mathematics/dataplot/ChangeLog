@@ -3,6 +3,10 @@
 # $Header: $
 
   30 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  -dataplot-20080225.ebuild, +dataplot-20080225-r1.ebuild:
+  Oops, forgot to revbump for new ghostscript(gs) USE flag
+
+  30 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   +files/90dataplot, dataplot-20080225.ebuild:
   Add env.d file for dataplot. Necessary for startup file location, env
   variable, and
