@@ -13,9 +13,9 @@ SLOT="3.2"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="=virtual/jdk-1.5*
+DEPEND=">=virtual/jdk-1.5
 	dev-java/ant-core"
-RDEPEND="=virtual/jre-1.4*"
+RDEPEND=">=virtual/jre-1.4"
 S="${WORKDIR}/${P/db-/}"
 
 # allows you to disable testing
