@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/hamster-applet
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  +hamster-applet-0.2.ebuild, +metadata.xml:
+  New ebuild for bug 219801
+
