@@ -3,6 +3,11 @@
 # $Header: $
 
   30 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  +files/90dataplot, dataplot-20080225.ebuild:
+  Add env.d file for dataplot. Necessary for startup file location, env
+  variable, and
+
+  30 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   dataplot-20080225.ebuild, +files/dpsrc-datadir-20080225.patch,
   +files/dpsrc-maxobvvalue-20080225.patch,
   files/dpsrc-patchset-20080225.patch,

@@ -24,7 +24,8 @@ COMMON_DEPEND="opengl? ( virtual/opengl )
 	gd? ( media-libs/gd )
 	gs? ( virtual/ghostscript media-libs/gd )"
 DEPEND="${COMMON_DEPEND}"
-RDEPEND="${COMMON_DEPEND}"
+RDEPEND="${COMMON_DEPEND}
+	X? ( x11-misc/xdg-utils )"
 
 S="${WORKDIR}/${MY_P}"
 S_AUX="${WORKDIR}/${MY_P_AUX}"
@@ -82,4 +83,5 @@ src_install() {
 	fi
 	insinto /usr/share/dataplot
 	doins "${S_AUX}"/dpmesf.tex "${S_AUX}"/dpsysf.tex "${S_AUX}"/dplogf.tex
+	doenvd "${FILESDIR}"/90${PN}
 }
