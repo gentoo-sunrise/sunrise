@@ -29,11 +29,13 @@ S="${WORKDIR}/${MY_P}"
 S_AUX="${WORKDIR}/${MY_P_AUX}"
 
 pkg_setup() {
-	#Dataplot requires media-libs/gd to be built with USE="png jpeg"
-	if ! built_with_use -a media-libs/gd png jpeg; then
-		eerror "media-libs/gd is not compiled with USE=\"png jpeg\""
-		eerror "Please recompile media-libs/gd, ensuring USE=\"png jpeg\""
-		die
+	#With USE=gd, dataplot requires media-libs/gd to be built with USE="png jpeg"
+	if use gd; then
+		if ! built_with_use -a media-libs/gd png jpeg; then
+			eerror "media-libs/gd is not compiled with USE=\"png jpeg\""
+			eerror "Please recompile media-libs/gd, ensuring USE=\"png jpeg\""
+			die
+		fi
 	fi
 	FORTRAN="gfortran" # needs tests on g77 and ifc
 	fortran_pkg_setup
