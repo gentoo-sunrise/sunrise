@@ -24,7 +24,7 @@ CDEPEND="dev-java/db-je:3.2
 	dev-java/java-service-wrapper"
 DEPEND="dev-util/subversion
 	>=dev-java/sun-jdk-1.4
-	dev-java/ant
+	dev-java/ant-core
 	dev-util/subversion
 	${CDEPEND}"
 RDEPEND="x86? ( >=virtual/jre-1.4 )

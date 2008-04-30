@@ -20,7 +20,7 @@ CDEPEND="dev-java/db-je:3.2
 	dev-java/fec
 	dev-java/java-service-wrapper"
 DEPEND=">=dev-java/sun-jdk-1.4
-	dev-java/ant
+	dev-java/ant-core
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.4
 	x86? ( net-libs/fec )
