@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (30 Apr 2008)
+# Mask because of masked deps (>=evolution-2.22)
+=gnome-extra/evolution-rss-0.0.8
+
 # Tiago Cunha (tcunha) <me@tiagocunha.org> (27 Apr 2008)
 # Mask GIT ebuild
 =sys-apps/ksplice-9999
