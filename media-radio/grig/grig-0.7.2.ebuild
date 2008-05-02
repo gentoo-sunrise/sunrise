@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="1"
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="A tool for controlling amateur radios"
 HOMEPAGE="http://groundstation.sourceforge.net/grig/"
@@ -11,13 +11,21 @@ SRC_URI="mirror://sourceforge/groundstation/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc"
+KEYWORDS="~ppc ~x86"
 IUSE="coverage +hardware"
 
 DEPEND=">=dev-libs/glib-2.6
 	>=x11-libs/gtk+-2.6
 	>=media-libs/hamlib-1.2.5"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	#patch to support old GtkTooltips above gtk+-2.12
+	epatch "${FILESDIR}/${P}-Tooltip.patch"
+	eautoreconf
+}
 
 src_compile() {
 	local myconf
