@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 May 2008; Guy Rutenberg (guyru) <guyrutenberg@gmail.com>
+  +textext-0.4.1.ebuild:
+  Version bump of media-gfx/textext-0.4.1, bug #207690, thanks to Oliver Borm
+
   29 Jan 2008; Oliver Borm (boroli) <oli.borm@web.de> textext-0.3.3.ebuild:
   Updated dependencies, thanks to Caster
 
