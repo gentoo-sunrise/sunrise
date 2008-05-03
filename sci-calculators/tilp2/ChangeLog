@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 May 2008; Christian Helbling <helch@gmx.ch> -tilp2-1.10.ebuild,
+  +tilp2-1.11.ebuild:
+  version bump
+
   18 Jan 2008; Christian Helbling <helch@gmx.ch> tilp2-1.10.ebuild:
   changing SRC_URI back to sf mirrors
 
