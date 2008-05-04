@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  +files/db-je-3.2.74-build.patch:
+  Add missing patchfile
+
   30 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   db-je-3.2.74.ebuild:
   Fix dependencies
