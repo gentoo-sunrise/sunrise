@@ -6,7 +6,7 @@ inherit eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="Forword error correction libs"
 HOMEPAGE="http://www.onionnetworks.com/developers/"
-SRC_URI="http://www.onionnetworks.com/downloads/${P}.zip"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.zip"
 
 LICENSE="BSD-2"
 SLOT="0"
