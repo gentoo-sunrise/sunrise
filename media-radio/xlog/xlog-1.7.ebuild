@@ -27,7 +27,7 @@ src_unpack() {
 	# Let portage handle updating mimie/desktop databases
 	epatch "${FILESDIR}/${P}-desktop-update.patch"
 	mkdir -p "${S}"/m4	# make autoconf happy...
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 }
 
 src_compile() {
