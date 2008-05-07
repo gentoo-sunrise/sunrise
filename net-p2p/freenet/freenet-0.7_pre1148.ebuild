@@ -53,19 +53,29 @@ src_unpack() {
 src_compile() {
 	#workaround for installed blackdown-jdk-1.4
 	#freenet does not compile with it
-	if has_version =dev-java/sun-jdk-1.4*; then
-		GENTOO_VM="sun-jdk-1.4" java-pkg-2_src_compile
-	elif has_version =dev-java/sun-jdk-1.5*; then
+#reported compile error with 1.4
+#	if has_version =dev-java/sun-jdk-1.4*; then
+#		GENTOO_VM="sun-jdk-1.4" java-pkg-2_src_compile
+	if has_version =dev-java/sun-jdk-1.5*; then
+		einfo "Using sun-jdk-1.5"
 		GENTOO_VM="sun-jdk-1.5" java-pkg-2_src_compile
 	elif has_version =dev-java/sun-jdk-1.6*; then
+		einfo "Using sun-jdk-1.6"
 		GENTOO_VM="sun-jdk-1.6" java-pkg-2_src_compile
+	else
+		einfo "Using system vm"
+		 java-pkg-2_src_compile #try the actual version
 	fi
 }
 
 src_install() {
 	mv lib/freenet-cvs-snapshot.jar freenet.jar
 	java-pkg_dojar freenet.jar
-	doinitd "${FILESDIR}"/freenet
+	if has_version =sys-apps/baselayout-2*; then
+		doinitd "${FILESDIR}"/freenet
+	else
+		newinitd "${FILESDIR}"/freenet.old freenet
+	fi
 	dodoc license/README license/LICENSE.Mantissa \
 		AUTHORS README
 	insinto /opt/freenet

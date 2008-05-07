@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -freenet-0.7_pre1146.ebuild, +freenet-0.7_pre1148.ebuild,
+  +files/freenet.old:
+  New upstream release
+
   06 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_pre1145.ebuild, +freenet-0.7_pre1146.ebuild,
   freenet-9999.ebuild:
