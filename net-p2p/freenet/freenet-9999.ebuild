@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-DATE=20080506
+DATE=20080507
 DATE2=20080330
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
@@ -11,7 +11,7 @@ inherit eutils java-pkg-2 java-ant-2 subversion
 
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/seednodes-${DATE}.fref
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/seednodes-${DATE}.fref
 	http://dev.gentooexperimental.org/~tommy/wrapper-${DATE2}.conf"
 
 LICENSE="GPL-2"
