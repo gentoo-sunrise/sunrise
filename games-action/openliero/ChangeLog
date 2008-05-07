@@ -1,0 +1,8 @@
+# ChangeLog for games-action/openliero
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 May 2008; Jan Stępień (jano) <jstepien@users.sourceforge.net>
+  +openliero-9.ebuild, +metadata.xml:
+  New ebuild for games-action/openliero
+
