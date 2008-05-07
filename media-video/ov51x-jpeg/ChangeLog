@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 May 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -ov51x-jpeg-1.5.6.ebuild, +ov51x-jpeg-1.5.7.ebuild:
+  Version bump
+
   02 Mar 2008; Kenneth Prugh (Ken69267) <ken69267@gmail.com>
   ov51x-jpeg-1.5.6.ebuild:
   media-video/ov51x-jpeg: Fix BUILD_PARAMS thanks to wvandelli
