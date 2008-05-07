@@ -3,6 +3,10 @@
 # $Header: $
 
   07 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  freenet-0.7_pre1148.ebuild:
+  Try the latest jdk first
+
+  07 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_pre1146.ebuild, +freenet-0.7_pre1148.ebuild,
   +files/freenet.old:
   New upstream release

@@ -53,15 +53,12 @@ src_unpack() {
 src_compile() {
 	#workaround for installed blackdown-jdk-1.4
 	#freenet does not compile with it
-#reported compile error with 1.4
-#	if has_version =dev-java/sun-jdk-1.4*; then
-#		GENTOO_VM="sun-jdk-1.4" java-pkg-2_src_compile
-	if has_version =dev-java/sun-jdk-1.5*; then
-		einfo "Using sun-jdk-1.5"
-		GENTOO_VM="sun-jdk-1.5" java-pkg-2_src_compile
-	elif has_version =dev-java/sun-jdk-1.6*; then
+	if has_version =dev-java/sun-jdk-1.6*; then
 		einfo "Using sun-jdk-1.6"
 		GENTOO_VM="sun-jdk-1.6" java-pkg-2_src_compile
+	elif has_version =dev-java/sun-jdk-1.5*; then
+		einfo "Using sun-jdk-1.5"
+		GENTOO_VM="sun-jdk-1.5" java-pkg-2_src_compile
 	else
 		einfo "Using system vm"
 		 java-pkg-2_src_compile #try the actual version
