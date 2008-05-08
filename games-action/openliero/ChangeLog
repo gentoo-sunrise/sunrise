@@ -2,6 +2,12 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 May 2008; Jan Stępień (jano) <jstepien@users.sourceforge.net>
+  -openliero-9.ebuild, +openliero-20080508.ebuild,
+  +files/openliero-20080508-gcc-4.3.patch:
+  games-action/openliero: SVN snapshot, added information about the fact that
+  the original Liero is required.
+
   06 May 2008; Jan Stępień (jano) <jstepien@users.sourceforge.net>
   +openliero-9.ebuild, +metadata.xml:
   New ebuild for games-action/openliero

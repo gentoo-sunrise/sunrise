@@ -1,0 +1,66 @@
+diff -ur openliero-20080508.orig/blit.cpp openliero-20080508/blit.cpp
+--- openliero-20080508.orig/blit.cpp	2008-05-06 09:16:43.000000000 +0300
++++ openliero-20080508/blit.cpp	2008-05-08 18:14:39.000000000 +0300
+@@ -4,6 +4,7 @@
+ #include "constants.hpp"
+ #include <cstring>
+ #include <cassert>
++#include <cstdlib>
+ 
+ void drawBar(int x, int y, int width, int colour)
+ {
+diff -ur openliero-20080508.orig/bonus.cpp openliero-20080508/bonus.cpp
+--- openliero-20080508.orig/bonus.cpp	2008-05-06 09:16:43.000000000 +0300
++++ openliero-20080508/bonus.cpp	2008-05-08 18:14:50.000000000 +0300
+@@ -2,6 +2,7 @@
+ #include "game.hpp"
+ #include "constants.hpp"
+ #include <iostream>
++#include <cstdlib>
+ 
+ void Bonus::process()
+ {
+diff -ur openliero-20080508.orig/game.cpp openliero-20080508/game.cpp
+--- openliero-20080508.orig/game.cpp	2008-05-06 09:16:43.000000000 +0300
++++ openliero-20080508/game.cpp	2008-05-08 18:14:31.000000000 +0300
+@@ -10,6 +10,7 @@
+ //#include "text.hpp" // TEMP
+ 
+ #include <iostream>
++#include <cstdlib>
+ 
+ Game game;
+ 
+diff -ur openliero-20080508.orig/gfx.cpp openliero-20080508/gfx.cpp
+--- openliero-20080508.orig/gfx.cpp	2008-05-06 09:16:43.000000000 +0300
++++ openliero-20080508/gfx.cpp	2008-05-08 18:16:25.000000000 +0300
+@@ -10,6 +10,7 @@
+ #include <cctype>
+ #include <SDL/SDL.h>
+ #include <iostream>
++#include <cstdlib>
+ 
+ /*
+ ds:0000 is 0x 1AE80
+diff -ur openliero-20080508.orig/sobject.cpp openliero-20080508/sobject.cpp
+--- openliero-20080508.orig/sobject.cpp	2008-05-06 09:16:43.000000000 +0300
++++ openliero-20080508/sobject.cpp	2008-05-08 18:17:26.000000000 +0300
+@@ -9,6 +9,7 @@
+ #include "text.hpp"
+ #include <cmath>
+ #include <cassert>
++#include <cstdlib>
+ #include <iostream> // TEMP
+ 
+ void SObjectType::create(int x, int y, Worm* owner)
+diff -ur openliero-20080508.orig/worm.cpp openliero-20080508/worm.cpp
+--- openliero-20080508.orig/worm.cpp	2008-05-06 09:16:43.000000000 +0300
++++ openliero-20080508/worm.cpp	2008-05-08 18:17:36.000000000 +0300
+@@ -6,6 +6,7 @@
+ #include "constants.hpp"
+ #include "console.hpp"
+ 
++#include <cstdlib>
+ #include <iostream>
+ 
+ struct Point
