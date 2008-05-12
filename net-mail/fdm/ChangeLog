@@ -1,6 +1,11 @@
 # ChangeLog for net-mail/fdm
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 May 2008; Maximilian Gaß <mxey@cloudconnected.org -fdm-1.3c.ebuild,
+  +fdm-1.5.ebuild, +files/rename-childuser.patch:
+  net-mail/fdm: Version bump to 1.5, various style fixes. Thanks to many
+  suggestions on #gentoo-sunrise
 
   08 Sep 2007; Markus Ullmann <jokey@gentoo.org> -fdm-1.1.ebuild:
   Drop old

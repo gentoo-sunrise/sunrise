@@ -1,0 +1,32 @@
+Common subdirectories: fdm-1.5/compat and fdm-1.5.patched/compat
+Common subdirectories: fdm-1.5/examples and fdm-1.5.patched/examples
+diff -u fdm-1.5/fdm.h fdm-1.5.patched/fdm.h
+--- fdm-1.5/fdm.h	2007-12-08 18:32:30.000000000 +0100
++++ fdm-1.5.patched/fdm.h	2008-05-12 13:17:59.000000000 +0200
+@@ -49,7 +49,7 @@
+ #include <openssl/ssl.h>
+ #include <openssl/err.h>
+ 
+-#define CHILDUSER	"_fdm"
++#define CHILDUSER	"fdm"
+ #define CONFFILE	".fdm.conf"
+ #define SYSCONFFILE	"/etc/fdm.conf"
+ #define LOCKFILE	".fdm.lock"
+diff -u fdm-1.5/MANUAL fdm-1.5.patched/MANUAL
+--- fdm-1.5/MANUAL	2008-03-04 09:24:06.000000000 +0100
++++ fdm-1.5.patched/MANUAL	2008-05-12 13:17:59.000000000 +0200
+@@ -90,11 +90,11 @@
+ 	$ export PREFIX=/opt		# defaults to /usr/local
+ 	$ sudo make install
+ 
+-If being run as root, fdm requires a user named "_fdm" to exist. It will drop
++If being run as root, fdm requires a user named "fdm" to exist. It will drop
+ privileges to this user and its primary group. The user may be added on
+ OpenBSD with, for example:
+ 
+-	# useradd -u 999 -s /bin/nologin -d /var/empty -g=uid _fdm
++	# useradd -u 999 -s /bin/nologin -d /var/empty -g=uid fdm
+ 
+ It is not necessary to add a user if fdm is always started by a non-root user.
+ 
+Common subdirectories: fdm-1.5/regress and fdm-1.5.patched/regress
