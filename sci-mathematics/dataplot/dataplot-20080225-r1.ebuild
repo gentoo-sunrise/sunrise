@@ -23,7 +23,8 @@ IUSE="examples gd gs opengl X"
 COMMON_DEPEND="opengl? ( virtual/opengl )
 	gd? ( media-libs/gd )
 	gs? ( virtual/ghostscript media-libs/gd )"
-DEPEND="${COMMON_DEPEND}"
+DEPEND="${COMMON_DEPEND}
+	dev-util/pkgconfig"
 RDEPEND="${COMMON_DEPEND}
 	X? ( x11-misc/xdg-utils )"
 
