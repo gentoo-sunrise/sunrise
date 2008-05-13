@@ -13,7 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="media-gfx/inkscape
+RDEPEND="dev-python/lxml
+	media-gfx/inkscape
 	|| ( media-gfx/pdf2svg media-gfx/pstoedit )"
 DEPEND="${RDEPEND}"
 
