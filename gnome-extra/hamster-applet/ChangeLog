@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 May 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -hamster-applet-0.2.ebuild, +hamster-applet-0.4.1.ebuild:
+  Version bump
+
   30 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   +hamster-applet-0.2.ebuild, +metadata.xml:
   New ebuild for bug 219801
