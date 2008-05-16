@@ -22,25 +22,25 @@ S="${WORKDIR}"
 src_unpack() {
 	cp "${DISTDIR}/install.ml" .
 	sed -i "/download();/d" install.ml
-	
+
 	for M in extlib-dev swflib extc; do
 		ECVS_MODULE="ocaml/${M}"
 		cvs_src_unpack
 	done
-	
+
 	ECVS_MODULE="ocaml/mtasc"
 	ECVS_BRANCH="v`replace_all_version_separators -`"
 	cvs_src_unpack
 }
 
 src_compile() {
-	ocaml install.ml || die "ocaml install failed" 
+	ocaml install.ml || die "ocaml install failed"
 }
 
 src_install() {
 	# Don't install CVS directories.
 	find ocaml/mtasc/std{,8} -name "CVS" -exec rm -rf {} \; 2> /dev/null
-	
+
 	dobin bin/mtasc bin/mtasc-byte
 	insinto /usr/share/mtasc
 	doins -r ocaml/mtasc/std{,8}
