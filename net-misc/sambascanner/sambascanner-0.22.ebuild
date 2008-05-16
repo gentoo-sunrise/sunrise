@@ -34,7 +34,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf CFLAGS="${CFLAGS} -pthread" $(use_enable debug) || die "configure failed"
+	econf CFLAGS="${CFLAGS} -pthread" $(use_enable debug)
 	emake CC=$(tc-getCC) || die "emake failed"
 }
 
