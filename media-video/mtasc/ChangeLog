@@ -1,0 +1,8 @@
+# ChangeLog for media-video/mtasc
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 May 2008; Mikael Lammentausta <mikael.lammentausta at gmail.com >
+  +mtasc-1.12.ebuild, +metadata.xml:
+  New ebuild for bug 110341, thanks to James Le Cuirot and Gorazd Bizjak
+
