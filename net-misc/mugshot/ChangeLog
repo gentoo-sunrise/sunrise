@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 May 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -mugshot-1.1.93.ebuild, +mugshot-1.1.95.ebuild:
+  Version bump
+
   04 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -mugshot-1.1.92.ebuild, -files/mugshot-1.1.92-use-firefox.patch,
   +mugshot-1.1.93.ebuild, +files/mugshot-1.1.93-use-firefox.patch,
