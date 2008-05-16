@@ -20,6 +20,6 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_install() {
-	emake install DESTDIR="${D}" || die "emake install failed"
+	emake install DESTDIR="${D}" || die "emake install failed"
 	dodoc AUTHORS NEWS README TODO
 }
