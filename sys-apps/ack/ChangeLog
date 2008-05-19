@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  ack-1.82.ebuild:
+  Reorder variables to meet Overlay Coding Standards.
+
   06 May 2008; René Neumann (Necoro) <gentoo@necoro.eu> +ack-1.82.ebuild,
   +metadata.xml:
   New Ebuild for bug #220645

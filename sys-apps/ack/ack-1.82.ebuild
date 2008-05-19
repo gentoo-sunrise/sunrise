@@ -9,12 +9,10 @@ heterogeneous source code"
 HOMEPAGE="http://www.petdance.com/ack/"
 SRC_URI="mirror://cpan/authors/id/P/PE/PETDANCE/${P}.tar.gz"
 
-
-IUSE=""
-
-SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
+SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND=">=dev-perl/File-Next-1.02
 	dev-lang/perl"
