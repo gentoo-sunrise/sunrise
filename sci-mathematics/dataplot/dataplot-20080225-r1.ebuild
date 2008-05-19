@@ -86,3 +86,9 @@ src_install() {
 	doins "${S_AUX}"/dpmesf.tex "${S_AUX}"/dpsysf.tex "${S_AUX}"/dplogf.tex
 	doenvd "${FILESDIR}"/90${PN}
 }
+
+pkg_postinst() {
+	einfo "To avoid error messages on dataplot startup please run(as root): "
+	einfo "env-update && source /etc/profile"
+	einfo "This is because dataplot installs env.d files for dataplot variables."
+}
