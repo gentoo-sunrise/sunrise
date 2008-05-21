@@ -26,10 +26,6 @@ pkg_setup() {
 	enewuser kluser -1 -1 /var/db/kav klusers
 }
 
-src_compile() {
-	einfo "Nothing to compile, installing Kasperky AV for Fileservers..."
-}
-
 src_install() {
 	dodir /var/log/kav/5.5/kav4unix
 	dodir /var/db/kav/5.5/kav4unix/{bases,bases.backup,licenses,patches}
