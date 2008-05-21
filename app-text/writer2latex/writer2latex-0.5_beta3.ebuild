@@ -19,7 +19,8 @@ KEYWORDS="~x86"
 IUSE="doc examples"
 
 DEPEND="=virtual/jdk-1.4*
-	virtual/tetex"
+	virtual/tetex
+	app-arch/unzip"
 RDEPEND=">=virtual/jre-1.4"
 
 S=${WORKDIR}/${PN}05
