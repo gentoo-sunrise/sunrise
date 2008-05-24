@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-DATE=20080516
+DATE=20080524
 DATE2=20080330
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
@@ -12,7 +12,7 @@ inherit eutils java-pkg-2 java-ant-2 subversion
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/seednodes-${DATE}.fref
-	http://dev.gentooexperimental.org/~tommy/wrapper-${DATE2}.conf"
+	http://dev.gentooexperimental.org/~tommy/distfiles/wrapper-${DATE2}.conf"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,12 +23,11 @@ CDEPEND="dev-java/db-je:3.2
 	dev-java/fec
 	dev-java/java-service-wrapper"
 DEPEND="dev-util/subversion
-	>=dev-java/sun-jdk-1.4
+	>=dev-java/sun-jdk-1.5
 	dev-java/ant-core
 	dev-util/subversion
 	${CDEPEND}"
-RDEPEND="x86? ( >=virtual/jre-1.4 )
-	amd64? ( >=virtual/jre-1.5 )
+RDEPEND=">=virtual/jre-1.5
 	x86? ( net-libs/fec )
 	net-libs/nativebiginteger
 	${CDEPEND}"
@@ -69,12 +68,12 @@ src_unpack() {
 src_compile() {
 	#workaround for installed blackdown-jdk-1.4
 	#freenet does not compile with it
-	if has_version =dev-java/sun-jdk-1.4*; then
-		GENTOO_VM="sun-jdk-1.4" java-pkg-2_src_compile
+	if has_version =dev-java/sun-jdk-1.6*; then
+		GENTOO_VM="sun-jdk-1.6" java-pkg-2_src_compile
 	elif has_version =dev-java/sun-jdk-1.5*; then
 		GENTOO_VM="sun-jdk-1.5" java-pkg-2_src_compile
-	elif has_version =dev-java/sun-jdk-1.6*; then
-		GENTOO_VM="sun-jdk-1.6" java-pkg-2_src_compile
+	elif has_version =dev-java/sun-jdk-1.4*; then
+		die ">=dev-java/sun-jdk-1.5 not found"
 	fi
 }
 

@@ -9,7 +9,7 @@ inherit eutils java-pkg-2 java-ant-2
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2
-	http://dev.gentooexperimental.org/~tommy/wrapper-${WRAPPER_DATE}.conf"
+	http://dev.gentooexperimental.org/~tommy/distfiles/wrapper-${WRAPPER_DATE}.conf"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,10 +19,10 @@ IUSE=""
 CDEPEND="dev-java/db-je:3.2
 	dev-java/fec
 	dev-java/java-service-wrapper"
-DEPEND=">=dev-java/sun-jdk-1.4
+DEPEND=">=dev-java/sun-jdk-1.5
 	dev-java/ant-core
 	${CDEPEND}"
-RDEPEND=">=virtual/jre-1.4
+RDEPEND=">=virtual/jre-1.5
 	x86? ( net-libs/fec )
 	net-libs/nativebiginteger
 	${CDEPEND}"
