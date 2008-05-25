@@ -11,9 +11,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
 S=${WORKDIR}/bar-${PV}
 
 src_install() {
