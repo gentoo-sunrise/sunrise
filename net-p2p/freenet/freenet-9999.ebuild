@@ -72,7 +72,7 @@ src_compile() {
 		GENTOO_VM="sun-jdk-1.6" java-pkg-2_src_compile
 	elif has_version =dev-java/sun-jdk-1.5*; then
 		GENTOO_VM="sun-jdk-1.5" java-pkg-2_src_compile
-	elif has_version =dev-java/sun-jdk-1.4*; then
+	else
 		die ">=dev-java/sun-jdk-1.5 not found"
 	fi
 }
