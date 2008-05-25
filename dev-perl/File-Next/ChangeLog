@@ -1,8 +1,0 @@
-# ChangeLog for dev-perl/File-Next
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  06 May 2008; René Neumann (Necoro) <gentoo@necoro.eu>
-  +File-Next-1.02.ebuild, +metadata.xml:
-  New Ebuild for bug #220639
-
