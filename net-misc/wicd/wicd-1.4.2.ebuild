@@ -2,15 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+MY_P="${PN}_${PV}-src"
 DESCRIPTION="A wired and wireless network manager for Linux"
 HOMEPAGE="http://wicd.sourceforge.net/"
-MY_P="${PN}_${PV}-src"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
-LICENSE="GPL-2"
 
-IUSE=""
-KEYWORDS="~x86 ~amd64"
+LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86 ~amd64"
+IUSE=""
 
 DEPEND=""
 RDEPEND="dev-python/dbus-python
@@ -18,8 +18,7 @@ RDEPEND="dev-python/dbus-python
 	net-misc/dhcp
 	net-wireless/wireless-tools
 	net-wireless/wpa_supplicant
-	sys-apps/ethtool
-	"
+	sys-apps/ethtool"
 
 src_install() {
 	mv "${WORKDIR}"/* "${D}" || die "Copy failed"
