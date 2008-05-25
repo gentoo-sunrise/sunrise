@@ -1,6 +1,10 @@
 # ChangeLog for net-mail/checkgmail
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  25 May 2008; Joel Cunningham (slithy) <uber.leoj@gmail.com>
+  +checkgmail-1.13.ebuild:
+  New Ebuild for bug 117867
 
   20 Oct 2007; Jakub Moc <jakub@gentoo.org> checkgmail-1.12.ebuild:
   Fix die message
