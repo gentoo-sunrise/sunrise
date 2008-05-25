@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -checkgmail-1.12.ebuild:
+  Drop old version
+
   25 May 2008; Joel Cunningham (slithy) <uber.leoj@gmail.com>
   +checkgmail-1.13.ebuild:
   New Ebuild for bug 117867
