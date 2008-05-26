@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 May 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  -ksplice-0.8.4.ebuild, +ksplice-0.8.6.ebuild:
+  Version bump, remove old
+
   29 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> ksplice-9999.ebuild:
   DEPEND on dev-lang/perl too in the live git ebuild
 
