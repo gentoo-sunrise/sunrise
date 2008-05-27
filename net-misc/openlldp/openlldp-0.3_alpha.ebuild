@@ -31,7 +31,7 @@ src_install() {
 
 	dodoc README
 	newinitd "${FILESDIR}"/openlldp.initd lldpd
-	newconfd "${FILESDIR}"/openlldp.confd openlldp
+	newconfd "${FILESDIR}"/openlldp.confd lldpd
 }
 
 pkg_postinst() {
