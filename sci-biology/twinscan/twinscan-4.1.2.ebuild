@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="TwinScan, N-SCAN, and Pairagon: A gene structure prediction pipeline"
+DESCRIPTION="A gene structure prediction pipeline"
 LICENSE="as-is"
 HOMEPAGE="http://mblab.wustl.edu/software/twinscan"
 SLOT="0"
