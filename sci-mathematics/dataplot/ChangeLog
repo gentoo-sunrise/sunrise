@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  dataplot-20080225-r1.ebuild:
+  Switch back to using need_fortran instead of built_with_use checks, though
+  it's doing essentially the same thing behind the scenes
+
   19 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   dataplot-20080225-r1.ebuild:
   Notify user about the need to update their environment after merging to
