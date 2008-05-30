@@ -3,6 +3,10 @@
 # $Header: $
 
   30 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  dataplot-20080225-r1.ebuild:
+  tweak fortran checks
+
+  30 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   -files/dpsrc-datadir-20080225.patch:
   Remove obsolete patches that have been incorporated into dp1patches
 

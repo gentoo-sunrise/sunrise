@@ -40,8 +40,9 @@ pkg_setup() {
 			die
 		fi
 	fi
-
-	need_fortran gfortran
+	##FIXME: Just gfortran for now, I'll get to testing g77 later
+	NEED_FORTRAN="gfortran"
+	fortran_pkg_setup
 }
 
 src_unpack() {
