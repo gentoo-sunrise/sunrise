@@ -3,6 +3,15 @@
 # $Header: $
 
   30 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  dataplot-20080225-r1.ebuild, -files/dpsrc-maxobvvalue-20080225.patch,
+  files/dpsrc-dp1patches-20080225.patch, -files/Makefile.am,
+  +files/Makefile.am.20080225, -files/configure.ac,
+  +files/configure.ac.20080225:
+  Merge maxobvvalue into dp1patches. Move dataplot's Makefile.am and
+  configure.ac to {configure.ac,Makefile.am}.${PV}. Add || die to doins and
+  econf
+
+  30 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   dataplot-20080225-r1.ebuild:
   tweak fortran checks
 

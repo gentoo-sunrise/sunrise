@@ -52,10 +52,10 @@ src_unpack() {
 	mv dp1_linux.f dp1_linux.f.in
 	mv dp1_linux_64.f dp1_linux_64.f.in
 	epatch "${FILESDIR}"/dpsrc-patchset-${PV}.patch
-	epatch "${FILESDIR}"/dpsrc-maxobvvalue-${PV}.patch
 	epatch "${FILESDIR}"/dpsrc-dp1patches-${PV}.patch
 
-	cp "${FILESDIR}"/{Makefile.am,configure.ac} "${S}"
+	cp "${FILESDIR}"/Makefile.am.${PV} "${S}"/Makefile.am
+	cp "${FILESDIR}"/configure.ac.${PV} "${S}"/configure.ac
 
 	mkdir "${S_AUX}" && cd "${S_AUX}"
 	unpack ${MY_P_AUX}.tar.gz
@@ -67,7 +67,7 @@ src_compile() {
 	econf $(use_enable gd) \
 		$(use_enable gs) \
 		$(use_enable opengl) \
-		$(use_enable X)
+		$(use_enable X) || die "Econf failed"
 
 	emake || die "Make failed"
 }
@@ -80,7 +80,8 @@ src_install() {
 		doins -r "${S_AUX}"/data/* || die "Installing examples failed"
 	fi
 	insinto /usr/share/dataplot
-	doins "${S_AUX}"/dpmesf.tex "${S_AUX}"/dpsysf.tex "${S_AUX}"/dplogf.tex
+	doins "${S_AUX}"/dpmesf.tex "${S_AUX}"/dpsysf.tex "${S_AUX}"/dplogf.tex || \
+	die "Doins failed."
 	doenvd "${FILESDIR}"/90${PN}
 }
 
