@@ -1,0 +1,8 @@
+# ChangeLog for media-video/ripwrap
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  31 May 2008; Micah Chambers (shamgar03) <micahc.vt@gmail.com>
+  +metadata.xml, +ripwrap-0.17.ebuild, +ripwrap-0.20.ebuild:
+  New ebuild for bug 223901
+
