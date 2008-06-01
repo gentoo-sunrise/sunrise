@@ -1,0 +1,8 @@
+# ChangeLog for games-util/playonlinux
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Jun 2008; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
+  +playonlinux-3.0.1.ebuild, +metadata.xml:
+  New ebuild for bug 213287.
+
