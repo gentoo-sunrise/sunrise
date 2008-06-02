@@ -10,7 +10,7 @@ SRC_URI="http://www.milkytracker.net/files/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="alsa jack"
 
 DEPEND=">=media-libs/libsdl-1.2.0
