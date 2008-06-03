@@ -46,10 +46,10 @@ src_unpack() {
 	fi
 
 	if ! use client ; then
-		sed -i -e "/SUBDIR/ s/client//" "${S}"/Makefile || die "sed failed."
+		sed -i "/SUBDIR/s/client//" "${S}"/Makefile || die "sed failed."
 	fi
 	if ! use symux ; then
-		sed -i -e "/SUBDIR/ s/symux//" "${S}"/Makefile || die "sed failed."
+		sed -i "/SUBDIR/s/symux//" "${S}"/Makefile || die "sed failed."
 	fi
 }
 
