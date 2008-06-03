@@ -18,7 +18,7 @@ RDEPEND=""
 
 src_test() {
 	cd tests
-	sed -i -e "/CFLAGS/ s/-g/${CFLAGS}/" Makefile || die "sed failed."
+	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed failed."
 	emake CC="$(tc-getCC)" || die "emake failed."
 }
 
