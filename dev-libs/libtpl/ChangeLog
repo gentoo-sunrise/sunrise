@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> libtpl-1.2.ebuild:
+  Simplify sed calls
+
   18 Mar 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> libtpl-1.2.ebuild:
   Insert a comment explaining why the default src_compile is redefined, only
   execute perl-module_pkg_postinst if the 'perl' USE flag was specified, while

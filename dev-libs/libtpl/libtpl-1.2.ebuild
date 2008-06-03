@@ -26,9 +26,9 @@ src_compile() {
 
 src_test() {
 	cd tests
-	sed -i -e "/CFLAGS/ s/-g/${CFLAGS}/" Makefile || die "sed failed."
+	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed failed."
 	# don't dump/load the tpl files on /tmp
-	sed -i -e "s|/tmp/||g" *.c || die "sed failed."
+	sed -i "s|/tmp/||g" *.c || die "sed failed."
 	emake -j1 CC="$(tc-getCC)" || die "emake failed."
 
 	if use perl ; then
