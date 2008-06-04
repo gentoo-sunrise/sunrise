@@ -70,7 +70,7 @@ src_unpack() {
 src_install() {
 	gnome2_src_install
 
-	# this replaces the broken pkg_prerm logic we had before, which removed the 
+	# this replaces the broken pkg_prerm logic we had before, which removed the
 	# firefox extensions on every upgrade.
 	if use firefox || use xulrunner ; then
 		einfo "Installing firefox extension."
