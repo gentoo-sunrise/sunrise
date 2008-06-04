@@ -47,7 +47,7 @@ src_unpack(){
 	unpack ${A}
 	cd "${S}"
 
-	# Enable hinotify in priv_def.mk 
+	# Enable hinotify in priv_def.mk
 	if use hinotify && kernel_is ge 2 6 18 ; then
 		echo "CONFIG_AUFS_HINOTIFY = y" >> priv_def.mk || die "setting hinotify in priv_def.mk failed!"
 	fi
