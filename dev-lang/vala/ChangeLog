@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jun 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -vala-0.3.2.ebuild, +vala-0.3.3.ebuild:
+  Version bump
+
   13 May 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -vala-0.3.1.ebuild, +vala-0.3.2.ebuild:
   Version bump
