@@ -15,3 +15,10 @@ IUSE=""
 
 DEPEND=">=x11-libs/vte-0.16"
 RDEPEND="${DEPEND}"
+
+pkg_setup() {
+	if ! built_with_use x11-libs/vte python ; then
+		eerror "You need to build x11-libs/vte with USE=python enabled."
+		die "You need to build x11-libs/vte with USE=python enabled."
+	fi
+}
