@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -webkitgtk-33431.ebuild:
+  Drop old version
+
   29 May 2008; Markus Ullmann <jokey@gentoo.org> +webkitgtk-34192.ebuild:
   Version bump
 
