@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2008; Sebastián Magrí - (sebasmagri) <sebasmagri@gmail.com>
+  -gr-lida-0.4.0.ebuild, +gr-lida-0.5.0.ebuild:
+  Version bump for GR-lida
+
   04 Apr 2008; Sebastián Magrí (sebasmagri) <sebasmagri@gmail.com>
   ChangeLog:
   Erased previous version
