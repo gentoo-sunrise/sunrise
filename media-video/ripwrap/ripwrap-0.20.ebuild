@@ -7,7 +7,7 @@ inherit perl-app
 DESCRIPTION="gtk-perl wrapper for mencoder and mp4box with scripting support"
 HOMEPAGE="http://sourceforge.net/projects/ripwrap/"
 SRC_URI="mirror://sourceforge/ripwrap/${P}.tar.gz"
-RESTRICT="mirror"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -26,7 +26,7 @@ pkg_setup() {
 		eerror "USE=\"encode\" emerge mplayer"
 		die "MEncoder not installed!"
 	fi
-	
+
 	for i in aac mp2 mp3 x264; do
 		if use $i && ! built_with_use media-video/mplayer $i; then
 			eerror "You have enabled $i support, but mplayer needs to compiled with"

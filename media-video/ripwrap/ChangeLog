@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -ripwrap-0.17.ebuild, ripwrap-0.20.ebuild:
+  Drop older version + RESTRICT
+
   31 May 2008; Micah Chambers (shamgar03) <micahc.vt@gmail.com>
   +metadata.xml, +ripwrap-0.17.ebuild, +ripwrap-0.20.ebuild:
   New ebuild for bug 223901
