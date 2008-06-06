@@ -6,7 +6,7 @@ EAPI="1"
 
 inherit games
 
-DESCRIPTION="PlayOnLinux is a piece of sofware which allow you to install and use easily numerous games and softwares designed to run with Windows(tm)."
+DESCRIPTION="PlayOnLinux allows you to install and use many games and softwares designed to run with Windows(tm)."
 HOMEPAGE="http://www.playonlinux.com/"
 SRC_URI="http://www.playonlinux.com/script_files/PlayOnLinux/${PV}/PlayOnLinux_${PV}.tar.gz"
 
@@ -31,19 +31,8 @@ RDEPEND="${DEPEND}
 
 S="${WORKDIR}/playonlinux"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-}
-
 src_install() {
-	cd "${S}"
 	./playonlinux || die "install failed"
-	einfo "Fix for License miss spelling"
-	addpredict "${S}"
-	addread "${S}"
-	mv LICENCE LICENSE
-
-	dodoc CHANGELOG LICENSE || die "doc failed"
+	dodoc CHANGELOG || die "doc failed"
 }
 
