@@ -124,6 +124,8 @@ media-sound/scala-bin:midi - MIDI support
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
 media-video/pgcedit:video - Add support for video preview
+media-video/ripwrap:mp2 - Add mp2 support
+media-video/ripwrap:mp4 - Add mp4 support
 media-video/ushare:dlna - Add DLNA support
 net-analyzer/honeytrap:efence - Compile with electronic fence malloc debugger
 net-analyzer/honeytrap:ipq-mon - IP queue based monitor
