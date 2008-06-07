@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> tntdb-0.9.4.ebuild:
+  Changed dependency from dev-db/libpq to virtual/postgresql-base
+
   17 Feb 2008; (Tommy[D]) tommy100@gmx.de tntdb-0.9.4.ebuild:
   Shorten description
 

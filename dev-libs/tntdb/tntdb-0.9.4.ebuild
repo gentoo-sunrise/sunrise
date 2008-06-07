@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc mysql postgres sqlite"
 
 RDEPEND="mysql? ( virtual/mysql )
-	postgres? ( dev-db/libpq )
+	postgres? ( virtual/postgresql-base )
 	sqlite? ( >=dev-db/sqlite-3 )
 	>=dev-libs/cxxtools-1.4.3"
 DEPEND="${RDEPEND}
