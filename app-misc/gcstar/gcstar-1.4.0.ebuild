@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+GCONF_DEBUG="no"
+SCROLLKEEPER_UPDATE="no"
+
+inherit eutils gnome2
 
 DESCRIPTION="GCstar is a personal collections manager."
 HOMEPAGE="http://www.gcstar.org/"
@@ -11,9 +14,9 @@ SRC_URI="http://download.gna.org/gcstar/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="mp3 spell tellico vorbis"
+IUSE="cddb gnome mp3 spell tellico vorbis"
 
-LANGS="ar bg ca cs de es fr gl id it pl pt ro ru sr sv tr"
+LANGS="ar bg ca cs de el es fr gl hu id it pl pt ro ru sr sv tr uk"
 for x in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${x}"
 done
@@ -35,6 +38,8 @@ DEPEND="dev-lang/perl
 		virtual/perl-File-Spec
 		virtual/perl-File-Temp
 		virtual/perl-libnet
+		cddb? ( dev-perl/Net-FreeDB )
+		gnome? ( dev-perl/gnome2-vfs-perl )
 		mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
 		spell? ( dev-perl/gtk2-spell )
 		tellico? ( dev-perl/Archive-Zip
@@ -49,6 +54,12 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-man.patch"
+	epatch "${FILESDIR}/${P}-desktop.patch"
+}
+
+src_compile() {
+	# do nothing (otherwise gnome2_src_compile would get called)
+	return
 }
 
 src_install() {
@@ -74,6 +85,8 @@ src_install() {
 
 	domenu share/applications/gcstar.desktop
 	newicon share/gcstar/icons/gcstar_64x64.png gcstar.png
+	insinto /usr/share/mime/packages
+	doins share/applications/gcstar.xml
 
 	dodoc CHANGELOG README
 

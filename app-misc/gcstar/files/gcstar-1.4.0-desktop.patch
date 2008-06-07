@@ -1,0 +1,11 @@
+diff -ru gcstar/share/applications/gcstar.desktop gcstar-1.4.0.mod/share/applications/gcstar.desktop
+--- gcstar/share/applications/gcstar.desktop	2008-05-26 12:53:36.000000000 -0400
++++ gcstar-1.4.0.mod/share/applications/gcstar.desktop	2008-06-07 10:42:36.620696345 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Version=1.0
+-Name=GCstar Collections Manage
++Name=GCstar Collections Manager
+ Name[es]=Gestor de colecciones GCstar
+ GenericName=Personal Collections Manager
+ Comment=Manage your collections of movies, video games, books, music,...
