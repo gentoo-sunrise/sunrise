@@ -15,7 +15,7 @@ IUSE="debug firebird mysql postgres sqlite3 static"
 
 DEPEND="firebird? ( dev-db/firebird )
 		mysql? ( virtual/mysql )
-		postgres? ( dev-db/libpq )
+		postgres? ( virtual/postgresql-base )
 		sqlite3? ( =dev-db/sqlite-3* )"
 
 src_unpack() {
