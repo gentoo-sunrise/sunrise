@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> raknet-3.07.ebuild:
+  Changed dependency from dev-db/libpq to virtual/postgresql-base
+
   22 Mar 2008; Renaud Chaput (renchap) <renchap@cocoa-x.com>
   -raknet-3.06.ebuild, +raknet-3.07.ebuild:
   Version bump to 3.07, removing old version
