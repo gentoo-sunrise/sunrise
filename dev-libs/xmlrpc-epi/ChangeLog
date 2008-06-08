@@ -1,0 +1,8 @@
+# ChangeLog for dev-libs/xmlrpc-epi
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jun 2008; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
+  +xmlrpc-epi-0.54.ebuild, +metadata.xml:
+  New ebuild for bug 225295
+
