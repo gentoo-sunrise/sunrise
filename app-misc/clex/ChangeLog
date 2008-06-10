@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  -clex-3.18-r1.ebuild, +clex-4.0_beta2.ebuild:
+  Version bump, remove old
+
   12 Apr 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> -clex-3.18.ebuild,
   +clex-3.18-r1.ebuild:
   HTML help pages released, hence add back 'doc' USE flag
