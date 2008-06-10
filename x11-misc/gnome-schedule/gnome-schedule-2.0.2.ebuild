@@ -18,7 +18,10 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	>=dev-lang/python-2.3
 	>=dev-python/pygtk-2.6
 	virtual/cron
-	sys-process/at"
+	sys-process/at
+	>=dev-python/gnome-python-2.12.0
+	>=app-text/gnome-doc-utils-0.3.2
+	app-text/rarian"
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext
