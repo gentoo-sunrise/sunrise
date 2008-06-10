@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jun 2008; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
+  plotmm-0.1.2.ebuild:
+  Enhanced doc installation.
+
   07 Jun 2008; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
   +plotmm-0.1.2.ebuild, +metadata.xml:
   New Ebuild for bug 225287.
