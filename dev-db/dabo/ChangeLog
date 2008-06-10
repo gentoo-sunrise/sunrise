@@ -1,6 +1,9 @@
 # ChangeLog for dev-db/dabo
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  10 Jun 2008; Geoff Clements <geoff@electron.me.uk> +dabo-0.8.4.ebuild:
+  Version bump.
 
   12 Dec 2007; Geoff Clements <geoff@electron.me.uk> -dabo-0.8.2.ebuild,
   +dabo-0.8.3.ebuild:
