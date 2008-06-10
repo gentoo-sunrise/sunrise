@@ -25,6 +25,7 @@ app-misc/gizmod:libvisual - Enable the libvisual (Amarok) plugin
 app-misc/mc-mp:7zip - Add support for 7zip archives
 app-portage/pusher:subversion - Enable support for Subversion.
 dev-cpp/libcwd:pch - Add support for precompiled headers
+dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - more precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
 dev-lang/vala:vapigen - Enable the VAPI generator
