@@ -28,4 +28,3 @@ src_install() {
 	elog "Copy file /usr/share/doc/${PF}/gestures to \$HOME/.gestures"
 	echo
 }
-
