@@ -21,4 +21,3 @@ src_install() {
 
 	dodoc AUTHORS ChangeLog INSTALL NEWS README
 }
-
