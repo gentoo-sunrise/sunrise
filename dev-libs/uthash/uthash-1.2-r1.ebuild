@@ -18,8 +18,8 @@ RDEPEND=""
 
 src_test() {
 	cd tests
-	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed failed."
-	emake CC="$(tc-getCC)" || die "emake failed."
+	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed cflags failed"
+	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
 src_install() {
