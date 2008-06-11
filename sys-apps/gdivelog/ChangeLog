@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  gdivelog-0.5.1.ebuild:
+  Fix ebuild license header
+
   11 Jun 2008; Anders Lejon (lappen) <lappen@gmail.com>
   +gdivelog-0.5.1.ebuild, +metadata.xml:
   New Ebuild for bug 225673 thanks to Tommy[D], Carsten
