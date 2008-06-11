@@ -23,6 +23,7 @@ src_install() {
 
 	dodoc AUTHORS ChangeLog INSTALL NEWS README || die
 
-	use doc && dohtml -r doc/html/*
+	if use doc; then
+		dohtml -r doc/html/* || die "Dohtml failed"
+	fi
 }
-

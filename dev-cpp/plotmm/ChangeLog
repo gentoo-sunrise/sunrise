@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  plotmm-0.1.2.ebuild:
+  dohtml should die if it fails
+
   10 Jun 2008; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
   plotmm-0.1.2.ebuild:
   Enhanced doc installation.
