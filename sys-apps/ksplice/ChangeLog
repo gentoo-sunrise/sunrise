@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  ksplice-0.8.6.ebuild, ksplice-9999.ebuild:
+  Simplify die messages
+
   26 May 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   -ksplice-0.8.4.ebuild, +ksplice-0.8.6.ebuild:
   Version bump, remove old
