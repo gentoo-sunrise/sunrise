@@ -21,27 +21,26 @@ DEPEND="${RDEPEND}
 # perl-module eclass exports src_compile.
 src_compile() {
 	econf
-	emake || die "emake failed."
+	emake || die "emake failed"
 }
 
 src_test() {
 	cd tests
-	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed failed."
+	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed cflags failed"
 	# don't dump/load the tpl files on /tmp
-	sed -i "s|/tmp/||g" *.c || die "sed failed."
-	emake -j1 CC="$(tc-getCC)" || die "emake failed."
+	sed -i "s|/tmp/||g" *.c || die "sed tpl failed"
+	emake -j1 CC="$(tc-getCC)" || die "emake failed"
 
 	if use perl ; then
 		cd "${S}"/lang/perl/tests
-		emake || die "emake failed."
+		emake || die "emake perl failed"
 	fi
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed."
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc doc/txt/{examples,future,perl,userguide}.txt
 
-	# Install the PERL API
 	if use perl ; then
 		perlinfo
 		insinto ${SITE_LIB}
