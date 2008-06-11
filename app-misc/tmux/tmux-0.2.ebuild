@@ -21,17 +21,17 @@ src_unpack() {
 	cd "${S}"
 
 	if use debug ; then
-		sed -i "/DEBUG/s/^#//" GNUmakefile || die "sed failed."
+		sed -i "/DEBUG/s/^#//" GNUmakefile || die "sed debug failed"
 	fi
-	sed -i "s|man/man1|share/man/man1|" GNUmakefile || die "sed failed."
+	sed -i "s|man/man1|share/man/man1|" GNUmakefile || die "sed man failed"
 }
 
 src_compile() {
-	emake CC="$(tc-getCC)" || die "emake failed."
+	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed."
+	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
 
 	dodoc NOTES TODO
 
