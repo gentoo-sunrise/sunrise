@@ -30,4 +30,3 @@ src_install() {
 
 	doenvd "${FILESDIR}/99devkitpro"
 }
-
