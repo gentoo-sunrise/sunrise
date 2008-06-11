@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  -evolution-rss-0.0.7.ebuild:
+  Remove old version
+
   28 Apr 2008; Auke Booij (tulcod) <auke.booij@gmail.com>
   +evolution-rss-0.0.7.ebuild, +evolution-rss-0.0.8.ebuild, +metadata.xml:
   New ebuilds for bug 219632
