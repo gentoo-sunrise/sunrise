@@ -13,7 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-
 RDEPEND=">=virtual/jre-1.4"
 DEPEND=">=virtual/jdk-1.4
 	app-arch/unzip
@@ -53,4 +52,3 @@ src_compile() {
 src_install() {
 	java-pkg_dojar src/"${PN}".jar
 }
-
