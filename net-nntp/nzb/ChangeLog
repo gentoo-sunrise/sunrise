@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  nzb-0.1.7.ebuild:
+  Whitespace; remove bogus INHERIT; formatting
+
   06 May 2008; deface <deface@uberpenguin.net> +nzb-0.1.7.ebuild,
   +metadata.xml:
   New Ebuild for 220195
