@@ -33,13 +33,12 @@ src_install() {
 
 	dodoc ANNOUNCE AUTHORS ChangeLog README TODO
 
-	if use ide
-	then
+	if use ide; then
 		cd "${S}/ide"
 		INS="/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/ide"
 
 		insinto ${INS}
-		doins -r *
+		doins -r * || die "IDE installation failed!"
 
 		# pick out those files which should be executable
 		for EFIL in $(grep -RI '^#!' * | cut -d : -f 1 | grep -iv '\.txt$')
