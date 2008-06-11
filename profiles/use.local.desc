@@ -62,7 +62,6 @@ games-fps/uhexen2-cvs:sdlcd - Enable cd audio playback support through SDL
 games-fps/uhexen2-cvs:tools - Install various useful tools
 games-fps/vavoom:allegro - Adds support for Allegro (media library)
 games-fps/vavoom:asm - Enable faster assembly-language code for rendering
-games-fps/vavoom:external-glbsp - Use external library provided from games-util/glbsp
 games-fps/vavoom:models - Install enhanced 3D models
 games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
 games-fps/vavoom:tools - Enable compilation of mod-developing tools
