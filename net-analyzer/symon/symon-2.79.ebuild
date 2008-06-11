@@ -46,10 +46,10 @@ src_unpack() {
 	fi
 
 	if ! use client ; then
-		sed -i "/SUBDIR/s/client//" "${S}"/Makefile || die "sed failed."
+		sed -i "/SUBDIR/s/client//" "${S}"/Makefile || die "sed client failed"
 	fi
 	if ! use symux ; then
-		sed -i "/SUBDIR/s/symux//" "${S}"/Makefile || die "sed failed."
+		sed -i "/SUBDIR/s/symux//" "${S}"/Makefile || die "sed symux failed"
 	fi
 }
 
@@ -59,14 +59,14 @@ src_compile() {
 		CC="$(tc-getCC)" \
 		CFLAGS+="${CFLAGS}" \
 		RANLIB="$(tc-getRANLIB)" \
-		STRIP=true || die "emake failed."
+		STRIP=true || die "emake failed"
 }
 
 src_install() {
 	insinto /etc
 	doins symon/symon.conf
 
-	newinitd "${FILESDIR}"/${PN}-init.d ${PN} || die "newinitd failed."
+	newinitd "${FILESDIR}"/${PN}-init.d ${PN} || die "newinitd symon failed"
 
 	dodoc CHANGELOG HACKERS TODO
 
@@ -90,7 +90,7 @@ src_install() {
 		insinto /etc
 		doins symux/symux.conf
 
-		newinitd "${FILESDIR}"/symux-init.d symux || die "newinitd failed."
+		newinitd "${FILESDIR}"/symux-init.d symux || die "newinitd symux failed"
 
 		doman symux/symux.8
 		dosbin symux/symux
