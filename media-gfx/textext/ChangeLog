@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  -textext-0.3.3.ebuild:
+  Remove old version
+
   13 May 2008; Oliver Borm (boroli) <oli.borm@web.de> +textext-0.3.3.ebuild:
   Added old version of textext-0.3.3 again for the stable inkscape-0.45
 
