@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI="1"
-
 inherit eutils games
 
 DESCRIPTION="Set of scripts to easily configure wine for numerous Windows(tm) games."
@@ -16,9 +15,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="x11-libs/gtk+
-		x11-libs/wxGTK:2.8
-		dev-python/wxpython:2.8
+RDEPEND="dev-python/wxpython:2.8
 		app-arch/unzip
 		app-arch/cabextract
 		x11-terms/xterm
@@ -27,7 +24,7 @@ RDEPEND="x11-libs/gtk+
 		app-arch/lzma-utils"
 # lzma-utils is a run dep regarding playonlinux team
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_install() {
 	# all things without exec permissions
@@ -76,4 +73,3 @@ src_install() {
 	make_desktop_entry ${PN} "PlayOnLinux"
 	prepgamesdirs
 }
-
