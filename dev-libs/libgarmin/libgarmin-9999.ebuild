@@ -12,10 +12,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-
 ESVN_REPO_URI="http://libgarmin.svn.sourceforge.net/svnroot/libgarmin/libgarmin/dev"
-ESVN_PROJECT="libgarmin" 
+ESVN_PROJECT="libgarmin"
 ##Upstream's bootstrap runs configure, which is evil
 ESVN_BOOTSTRAP="eautoreconf"
 
