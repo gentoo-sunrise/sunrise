@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  -timer-applet-1.3.3.ebuild:
+  Remove old version
+
   25 Mar 2008; Tiziano Müller <dev-zero@gentoo.org>
   +timer-applet-2.0.1.ebuild:
   Version bump (timer-applet-2.x is a complete rewrite in python).
