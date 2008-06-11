@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  clpbar-1.10.9.ebuild:
+  Whitespace
+
   25 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   clpbar-1.10.9.ebuild:
   Drop empty (R)DEPEND

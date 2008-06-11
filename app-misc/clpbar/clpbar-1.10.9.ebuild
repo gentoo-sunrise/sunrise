@@ -16,4 +16,3 @@ S=${WORKDIR}/bar-${PV}
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 }
-
