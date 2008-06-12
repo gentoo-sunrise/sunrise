@@ -1,0 +1,8 @@
+# ChangeLog for sys-apps/daemonize
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  +daemonize-1.5.1.ebuild, +metadata.xml:
+  New ebuild for bug #226055
+
