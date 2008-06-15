@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  navit-9999.ebuild:
+  Re-keyword navit as sunrise policy is different from gentoo-x86 policy
+
   14 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   navit-9999.ebuild:
   Drop keywords as per policy
