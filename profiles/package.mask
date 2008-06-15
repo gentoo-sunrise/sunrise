@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Thomas Anderson (gentoofan23) <gentoofan23@gmail.com> (15 Jun 2008)
+# Mask live ebuild
+=app-misc/navit-9999
+
 # Geoff Clements (ContextSwitch) <geoff@electron.me.uk> (10 Jun 2008)
 # >=dev-db/dabo-0.8.4 now contains daboide
 # daboide will be deleted with next release of dabo
