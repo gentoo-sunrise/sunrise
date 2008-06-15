@@ -11,10 +11,19 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="gnome-base/libgnomeui
-	dev-db/sqlite"
+DEPEND=">=gnome-base/libgnomeui-2.10
+	>=dev-db/sqlite-3.1.2"
+RDEPEND="${DEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+}
+
+pkg_postinst() {
+	elog "For extendable plugins support just emerge the appropriate ebuild"
+	elog ""
+	elog "x11-plugins/gdivelog-hyperaqualand-plugin		Citizen Hyperaqualand."
+	elog "x11-plugins/gdivelog-sensuspro-plugin			Reefnet Sensus Pro."
+	elog "x11-plugins/gdivelog-suunto-plugin			Suunto Cobra, Mosquito, Spyder,	Stinger, Vyper and Vytec."
+	elog ""
 }
