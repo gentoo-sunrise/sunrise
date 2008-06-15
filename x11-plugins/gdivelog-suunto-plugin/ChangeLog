@@ -1,0 +1,8 @@
+# ChangeLog for x11-plugins/gdivelog-suunto-plugin
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Jun 2008; Anders Lejon (lappen) <lappen@gmail.com>
+  +gdivelog-suunto-plugin-0.2.ebuild, +metadata.xml:
+  New ebuild for bug 227157. Thanks to gentoofan23, Volkmar
+
