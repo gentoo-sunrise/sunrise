@@ -1,0 +1,8 @@
+# ChangeLog for x11-plugins/gdivelog-hyperaqualand-plugin
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Jun 2008; Anders Lejon (lappen) <lappen@gmail.com>
+  +gdivelog-hyperaqualand-plugin-0.1.ebuild, +metadata.xml:
+  New ebuild for bug 227181. Thanks to gentoofan23, Volkmar
+
