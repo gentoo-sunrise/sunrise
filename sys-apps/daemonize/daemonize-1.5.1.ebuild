@@ -12,7 +12,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_install() {
-	exeinto /usr/bin
-	doexe "${S}"/${PN}
+	dobin "${S}"/${PN}
 	doman "${S}"/${PN}.1
 }
