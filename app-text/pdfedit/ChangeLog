@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  pdfedit-0.4.1.ebuild:
+  Fix Access violations to /usr/qt/3/etc/settings, thanks to klink in
+  #gentoo-sunrise
+
   14 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   pdfedit-0.4.1.ebuild:
   Add spaces for conditional depend
