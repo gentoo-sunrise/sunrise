@@ -23,7 +23,6 @@ src_unpack() {
 	if use debug ; then
 		sed -i "/DEBUG/s/^#//" GNUmakefile || die "sed debug failed"
 	fi
-	sed -i "s|man/man1|share/man/man1|" GNUmakefile || die "sed man failed"
 }
 
 src_compile() {
@@ -31,7 +30,10 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
+	emake \
+		DESTDIR="${D}" \
+		MANDIR="/usr/share/man/man1" \
+		PREFIX="/usr" install || die "emake install failed"
 
 	dodoc NOTES TODO
 

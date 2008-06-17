@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> -tmux-0.2.ebuild,
+  +tmux-0.3.ebuild:
+  Version bump, this version adds a MANDIR variable to GNUmakefile so correct
+  it in src_install instead, remove old
+
   11 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> tmux-0.2.ebuild:
   Simplify die messages, while there avoid using identical die messages in the
   same function to ease error identification
