@@ -24,6 +24,12 @@ app-misc/genealogyj-bin:skins - Installs some skins
 app-misc/gizmod:libvisual - Enable the libvisual (Amarok) plugin
 app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
+app-misc/heyu:cm17a - Support the X10 CM17A "Firecracker" device.
+app-misc/heyu:dmx210 - Support the Digimax 210 remote thermostat device.
+app-misc/heyu:ext0 - Support extended type 0 (shutter and shade) commands.
+app-misc/heyu:ore - Support Oregon RF sensors.
+app-misc/heyu:rfxm - Support RFXMeters.
+app-misc/heyu:rfxs - Support RFXSensors.
 app-misc/mc-mp:7zip - Add support for 7zip archives
 app-portage/pusher:subversion - Enable support for Subversion.
 dev-cpp/libcwd:pch - Add support for precompiled headers
