@@ -1,0 +1,9 @@
+# ChangeLog for net-irc/irssi-otr
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jun 2008; Uli M (ulim) <a.sporto+bee@gmail.com> +irssi-otr-0.1.ebuild,
+  +metadata.xml:
+  net-irc/irssi-otr: New Ebuild and package for bug 228031. Thanks to
+  #gentoo-dev-help,jokey,Tommy[D]
+
