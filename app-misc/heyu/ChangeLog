@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/heyu
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jun 2008; Sven Schwyn (svoop) <gentoo@bitcetera.com> +files/2.3.2,
+  +files/2.3.2/heyu.init, +heyu-2.3.2.ebuild, +metadata.xml:
+  new ebuild app-misc/heyu (bug 91396)
+

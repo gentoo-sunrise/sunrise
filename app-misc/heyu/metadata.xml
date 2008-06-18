@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<maintainer>
+		<email>gentoo@bitcetera.com</email>
+		<name>Sven Schwyn</name>
+	</maintainer>
+	<longdescription lang="en">
+		Heyu is a console program for remotely controlling lights and appliances.
+
+		Heyu uses the CM11A computer interface to send and receive X10 control
+		signals over the AC power lines to modules which can turn On, Off, or Dim
+		attached lamps or appliances. It can store a schedule of timed events in
+		the CM11A memory for execution when the computer is turned off or
+		disconnected.
+
+		Heyu supports an optional W800RF32A, MR26A, or RFXCOM RF receiver connected
+		to a second port as an auxiliary input device for X10 RF signals.
+
+		Heyu can also use an optional CM17A interface to transmit X10 RF signals. 
+	</longdescription>
+</pkgmetadata>
