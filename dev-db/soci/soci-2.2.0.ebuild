@@ -21,7 +21,9 @@ DEPEND="firebird? ( dev-db/firebird )
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-sqlite_fix.patch"
+	epatch \
+		"${FILESDIR}/${P}-sqlite_fix.patch" \
+		"${FILESDIR}/${P}-gcc43_glibc28.patch"
 }
 
 src_compile() {

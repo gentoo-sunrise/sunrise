@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> soci-2.2.0.ebuild,
+  +files/soci-2.2.0-gcc43_glibc28.patch:
+  Fix gcc-4.3/glibc-2.8 compilation problems
+
   07 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> soci-2.2.0.ebuild:
   Changed dependency from dev-db/libpq to virtual/postgresql-base
 
