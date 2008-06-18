@@ -31,8 +31,10 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-extra_qualifier.patch"
-	epatch "${FILESDIR}/${P}-pkg_makefile_am.patch"
+	epatch \
+		"${FILESDIR}/${P}-extra_qualifier.patch" \
+		"${FILESDIR}/${P}-pkg_makefile_am.patch" \
+		"${FILESDIR}/${P}-gcc43_glibc28.patch"
 
 	sed -i \
 		-e 's/docs//' \

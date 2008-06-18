@@ -1,0 +1,37 @@
+diff -Naur litesql-0.3.2.orig/src/library/field.cpp litesql-0.3.2/src/library/field.cpp
+--- litesql-0.3.2.orig/src/library/field.cpp	2008-06-18 18:54:42.000000000 +0200
++++ litesql-0.3.2/src/library/field.cpp	2008-06-18 18:59:39.000000000 +0200
+@@ -5,6 +5,8 @@
+  * See LICENSE for copyright information. */
+ #include "compatibility.hpp"
+ #include "litesql.hpp"
++#include <cstdlib>
++
+ namespace litesql {
+ using namespace std;
+ In FieldType::in(const string& set) const {
+diff -Naur litesql-0.3.2.orig/src/library/split.cpp litesql-0.3.2/src/library/split.cpp
+--- litesql-0.3.2.orig/src/library/split.cpp	2008-06-18 18:54:42.000000000 +0200
++++ litesql-0.3.2/src/library/split.cpp	2008-06-18 18:55:10.000000000 +0200
+@@ -6,8 +6,9 @@
+ #include "compatibility.hpp"
+ #include "litesql/split.hpp"
+ #include <string>
+-#include <string.h>
+ #include <cstring>
++#include <cstring>
++#include <cstdlib>
+ 
+ namespace litesql {    
+ using namespace std;
+diff -Naur litesql-0.3.2.orig/src/library/string.cpp litesql-0.3.2/src/library/string.cpp
+--- litesql-0.3.2.orig/src/library/string.cpp	2008-06-18 18:54:42.000000000 +0200
++++ litesql-0.3.2/src/library/string.cpp	2008-06-18 18:58:30.000000000 +0200
+@@ -8,6 +8,7 @@
+ #include "litesql/utils.hpp"
+ #include "litesql/field.hpp"
+ #include <ctype.h>
++#include <cstdlib>
+ 
+ namespace litesql {
+ using namespace std;    
