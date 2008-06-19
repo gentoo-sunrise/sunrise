@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Chi-Thanh Christopher Nguyen (chithead) <chithanh@cs.tu-berlin.de> (19 Jun 2008)
+# Mask live ebuild
+=media-tv/em28xx-new-9999
+
 # Thomas Anderson (gentoofan23) <gentoofan23@gmail.com> (15 Jun 2008)
 # Mask live ebuild
 =app-misc/navit-9999
