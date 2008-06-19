@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Jun 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> +em28xx-new-0_p20080619.ebuild:
+  add em28xx-new snapshot to satisfy carlo
+
+  19 Jun 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> +em28xx-new-9999.ebuild, +metadata.xml:
   add media-tv/em28xx-new ebuild from bug 228111
 
