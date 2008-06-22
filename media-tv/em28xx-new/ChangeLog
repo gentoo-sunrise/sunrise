@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jun 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  em28xx-new-0_p20080619.ebuild:
+  Remove redundant directory change in src_compile, src_compile starts in ${S}
+
   19 Jun 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> +em28xx-new-0_p20080619.ebuild:
   add em28xx-new snapshot to satisfy carlo
