@@ -2,17 +2,19 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-info linux-mod
+inherit linux-info linux-mod versionator
+
+printf -v EHG_REVISION '%x' "$(get_version_component_range 4)"
 
 DESCRIPTION="next generation em28xx driver including dvb support"
 HOMEPAGE="http://mcentral.de/"
-SRC_URI="http://omploader.org/vazFp/${P}.tar.gz"
+SRC_URI="http://mcentral.de/hg/~mrec/${PN}/archive/${EHG_REVISION}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-S=${WORKDIR}/${PN}*
+S=${WORKDIR}/${PN}-${EHG_REVISION}
 
 MODULE_NAMES="cx25843(empia:${S}/cx25843:${S}/cx25843)
 	drx3973d(empia:${S}/drx3973d:${S}/drx3973d)
@@ -46,7 +48,6 @@ pkg_setup() {
 }
 
 src_compile() {
-	cd ${S}
 	set_arch_to_kernel
 	emake || die "Compiling kernel modules failed"
 }

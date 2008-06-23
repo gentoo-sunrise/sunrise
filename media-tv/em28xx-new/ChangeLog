@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jun 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -em28xx-new-0_p20080619.ebuild,
+  +em28xx-new-0.0.20080614.160257450985987.ebuild:
+  Download snapshots directly from upstream, avoid cd ${S} in src_compile
+
   23 Jun 2008; Thomas Anderson <gentoofan23@gentoo.org>
   em28xx-new-0_p20080619.ebuild:
   Revert revision #6351, cd ${S} is really needed
