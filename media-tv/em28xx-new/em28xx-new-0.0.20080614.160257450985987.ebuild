@@ -4,7 +4,7 @@
 
 inherit linux-info linux-mod versionator
 
-printf -v EHG_REVISION '%x' "$(get_version_component_range 4)"
+printf -v EHG_REVISION '%012x' "$(get_version_component_range 4)"
 
 DESCRIPTION="next generation em28xx driver including dvb support"
 HOMEPAGE="http://mcentral.de/"

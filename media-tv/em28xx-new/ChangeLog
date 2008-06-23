@@ -3,6 +3,10 @@
 # $Header: $
 
   23 Jun 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> em28xx-new-0.0.20080614.160257450985987.ebuild:
+  Allow mercurial revisions with leading zeroes
+
+  23 Jun 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -em28xx-new-0_p20080619.ebuild,
   +em28xx-new-0.0.20080614.160257450985987.ebuild:
   Download snapshots directly from upstream, avoid cd ${S} in src_compile
