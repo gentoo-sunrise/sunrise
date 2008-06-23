@@ -46,6 +46,7 @@ pkg_setup() {
 }
 
 src_compile() {
+	cd ${S}
 	set_arch_to_kernel
 	emake || die "Compiling kernel modules failed"
 }
