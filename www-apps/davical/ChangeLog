@@ -1,0 +1,9 @@
+# ChangeLog for www-apps/davical
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Jun 2008; lebarjack <francois.perichon@univ-lille2.fr>
+  +davical-0.9.5.ebuild, +files/postinstall-en-0.9.5.txt,
+  +files/driver_ldap.patch, +files/rscds.conf, +metadata.xml:
+  New ebuild for bug 195118 - (initial work by Cory Coager <ccoager@gmail.com>)
+
