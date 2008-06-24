@@ -13,3 +13,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RDEPEND="${DEPEND}
+	|| ( sci-libs/openfoam-meta sci-libs/openfoam sci-libs/openfoam-bin ) "
