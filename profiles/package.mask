@@ -22,8 +22,8 @@
 ##
 
 # Oliver Borm (boroli) <oli.borm@web.de> (24 Jun 2008)
-# Mask PyNurbs, because deps are masked
-dev-python/PyNurbs
+# Mask PyFoam, because deps are masked
+dev-python/PyFoam
 
 # Chi-Thanh Christopher Nguyen (chithead) <chithanh@cs.tu-berlin.de> (19 Jun 2008)
 # Mask live ebuild
