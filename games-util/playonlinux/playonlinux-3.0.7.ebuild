@@ -12,6 +12,8 @@ SRC_URI="http://www.playonlinux.com/script_files/PlayOnLinux/${PV}/PlayOnLinux_$
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="-* ~x86"
+# ~amd64 is available but can't be added on sunrise because wine is hard masked
+# on no-multilib amd64 profiles
 IUSE=""
 
 DEPEND=""
