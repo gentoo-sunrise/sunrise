@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  ksplice-0.8.7.ebuild, ksplice-9999.ebuild:
+  Install ChangeLog
+
   21 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   -ksplice-0.8.6.ebuild, +ksplice-0.8.7.ebuild:
   Version bump, remove old
