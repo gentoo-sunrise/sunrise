@@ -6,12 +6,12 @@ DESCRIPTION="Nintendo DS Libraries for devkitPro ARM"
 HOMEPAGE="http://devkitpro.org/"
 SRC_URI="mirror://sourceforge/devkitpro/libnds-src-${PV}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=dev-util/devkitarm-bin-21"
+DEPEND="dev-util/devkitarm-bin"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}
@@ -26,17 +26,16 @@ src_compile() {
 }
 
 src_install() {
-	local INSTDIR=${DEVKITPRO}/libnds
+	insinto "${DEVKITPRO}"/libnds
+	into "${DEVKITPRO}"/libnds
 
 	# libs installation
-	insinto "${INSTDIR}"/lib
-	doins lib/*.a
+	dolib.a lib/*.a || die "lib.a files installation failed"
 
 	# headers installation
-	insinto "${INSTDIR}"
-	doins -r include/
+	doins -r include/ || die "include files installation failed"
 
 	# license installation
-	insinto "${INSTDIR}"
-	doins "libnds_license.txt"
+	newins "libnds_license.txt" "license.txt" || die "license installation
+	failed"
 }
