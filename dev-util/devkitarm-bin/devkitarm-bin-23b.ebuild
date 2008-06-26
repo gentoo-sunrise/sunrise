@@ -11,9 +11,6 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
 S="${WORKDIR}/devkitARM"
 RESTRICT="strip"
 
@@ -21,7 +18,8 @@ dir=/opt/devkitpro/devkitARM
 
 QA_EXECSTACK="${dir:1}/lib/gcc/arm-eabi/4.3.0/thumb/*.o
 	${dir:1}/lib/gcc/arm-eabi/4.3.0/*.o
-	${dir:1}/arm-eabi/lib/*.o"
+	${dir:1}/arm-eabi/lib/*.o
+	${dir:1}/libexec/gcc/arm-eabi/4.3.0/cc1*"
 
 src_install() {
 	insinto /opt/devkitpro/devkitARM

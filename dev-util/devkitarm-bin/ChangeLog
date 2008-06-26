@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Jun 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  -devkitarm-bin-22.ebuild, +devkitarm-bin-23b.ebuild:
+  Update 22 -> 23b
+
   11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   devkitarm-bin-22.ebuild:
   Whitespace
