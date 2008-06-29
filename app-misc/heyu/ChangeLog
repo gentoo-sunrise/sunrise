@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  heyu-2.3.2.ebuild:
+  Remove mirror restriction
+
   24 Jun 2008; Sven Schwyn (svoop) <gentoo@bitcetera.com> heyu-2.3.2.ebuild:
   Minor changes according to input from IRC.
 
