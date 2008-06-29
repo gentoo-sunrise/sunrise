@@ -8,9 +8,12 @@ MY_P=${PN}-$(replace_all_version_separators '-')
 DESCRIPTION="A simple, lightweight tool for sniping ebay auctions."
 HOMEPAGE="http://esniper.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
+
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
+
 DEPEND="dev-libs/openssl
 		>=net-misc/curl-7.12"
 RDEPEND="${DEPEND}"

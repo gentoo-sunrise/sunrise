@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  esniper-2.17.1.ebuild:
+  Add IUSE
+
   08 Feb 2008; Mark Keisler (grimm26) <grimm26@mitsein.net> +metadata.xml,
   +esniper-2.17.1.ebuild:
   New Ebuild for bug 96196
