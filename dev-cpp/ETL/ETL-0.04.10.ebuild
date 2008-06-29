@@ -14,6 +14,7 @@ SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
