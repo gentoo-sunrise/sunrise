@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> tabler-1.ebuild:
+  Add IUSE
+
   08 Feb 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
   +metadata.xml, +tabler-1.ebuild:
   New ebuild for tabler.  Bug #185943
