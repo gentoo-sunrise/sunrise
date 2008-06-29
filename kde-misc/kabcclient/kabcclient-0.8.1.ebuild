@@ -12,6 +12,7 @@ SRC_URI="http://www.sbox.tugraz.at/home/v/voyager/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND="|| ( kde-base/kaddressbook:3.5 kde-base/kdepim:3.5 )"
 RDEPEND="${DEPEND}"
