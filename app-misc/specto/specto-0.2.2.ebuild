@@ -12,6 +12,8 @@ SRC_URI="http://specto.googlecode.com/files/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
+
 LANGS="cs de es fr it pt_BR ro sv tr"
 for i in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${i}"
