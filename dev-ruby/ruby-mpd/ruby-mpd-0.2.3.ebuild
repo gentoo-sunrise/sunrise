@@ -11,7 +11,9 @@ HOMEPAGE="http://www.andsoforth.com/geek/mpd_rb.html"
 SRC_URI="http://www.andsoforth.com/downloads/mpd-rb/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 RDEPEND="media-sound/mpd"
 

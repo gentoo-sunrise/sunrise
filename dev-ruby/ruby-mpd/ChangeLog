@@ -1,6 +1,10 @@
 # ChangeLog for dev-ruby/ruby-mpd
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ruby-mpd-0.2.3.ebuild:
+  Add IUSE+SLOT
 
   28 Nov 2006; Markus Ullmann <jokey@gentoo.org> ruby-mpd-0.2.3.ebuild:
   Fix RDEPEND
