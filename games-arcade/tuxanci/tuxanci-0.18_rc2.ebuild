@@ -7,12 +7,13 @@ inherit eutils games
 MY_P=${P/_/}
 
 DESCRIPTION="First Cushion Shooter! A remake of well-known Czech game Bulanci."
-SRC_URI="http://tuxanci.tuxportal.cz/releases/${MY_P}.tar.bz2"
 HOMEPAGE="http://tuxanci.tuxportal.cz"
+SRC_URI="http://tuxanci.tuxportal.cz/releases/${MY_P}.tar.bz2"
 
-KEYWORDS="~amd64 ~x86 ~x86-fbsd"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~amd64 ~x86 ~x86-fbsd"
+IUSE=""
 
 DEPEND=">=media-libs/libsdl-1.2.7
 	media-libs/sdl-ttf

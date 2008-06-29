@@ -1,6 +1,10 @@
 # ChangeLog for games-arcade/tuxanci
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  tuxanci-0.18_rc2.ebuild:
+  Add IUSE
 
   23 Jun 2007; Jakub Moc <jakub@gentoo.org> -tuxanci-0.18_rc1.ebuild,
   +tuxanci-0.18_rc2.ebuild:
