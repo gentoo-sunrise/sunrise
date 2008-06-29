@@ -13,6 +13,7 @@ SRC_URI="ftp://ftp.free.fr/pub/Distributions_Linux/MandrivaLinux/official/2007.1
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 DEPEND="x11-themes/gnome-icon-theme"
 RDEPEND="${DEPEND}"
