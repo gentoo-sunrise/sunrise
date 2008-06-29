@@ -11,6 +11,8 @@ SRC_URI="http://xpn.altervista.org/codice/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
+
 LANGS="de fr it"
 for i in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${i}"

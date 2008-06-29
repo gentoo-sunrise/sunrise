@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> xpn-1.0.0.ebuild:
+  Add IUSE+SLOT
+
   19 Feb 2008; Jakub Moc <jakub@gentoo.org> xpn-1.0.0.ebuild:
   Make LINGUAS handling more extensible, fix python_mod_cleanup
 
