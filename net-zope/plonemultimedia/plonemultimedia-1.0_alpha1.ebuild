@@ -15,6 +15,7 @@ SRC_URI="http://plone.org/products/plonemultimedia/releases/${PV:0:3}/${MY_P}-ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc ~x86"
+IUSE=""
 
 DEPEND=">=net-zope/plone-2.1
 	>=net-zope/zope-2.8"

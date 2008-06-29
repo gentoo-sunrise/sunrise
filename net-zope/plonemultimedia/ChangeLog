@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  plonemultimedia-1.0_alpha1.ebuild:
+  Add IUSE
+
   15 Feb 2008; (Tommy[D]) tommy100@gmx.de plonemultimedia-1.0_alpha1.ebuild:
   quoting
 
