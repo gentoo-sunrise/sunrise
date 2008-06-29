@@ -8,9 +8,11 @@ DESCRIPTION="X.Org driver for Wiimote input devices"
 HOMEPAGE="http://people.freedesktop.org/~whot/wiimote/"
 SRC_URI="http://people.freedesktop.org/~whot/wiimote/${P}.tar.bz2"
 
-KEYWORDS="~amd64"
-
 LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE=""
+
 RDEPEND=">=x11-base/xorg-server-1.0.99"
 DEPEND="${RDEPEND}
 	dev-libs/libwiimote
