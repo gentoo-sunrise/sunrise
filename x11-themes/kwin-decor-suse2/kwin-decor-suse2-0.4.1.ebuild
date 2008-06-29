@@ -13,5 +13,6 @@ SRC_URI="http://www.gerdfleischer.de/kwin-decor-suse2/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+IUSE=""
 
 PATCHES=( "${FILESDIR}/kwin-decor-suse2-disabletitlebarlogo.patch" )
