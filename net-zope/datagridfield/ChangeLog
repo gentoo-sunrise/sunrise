@@ -1,6 +1,10 @@
 # ChangeLog for net-zope/datagridfield
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  datagridfield-1.5.0.ebuild:
+  Add IUSE
 
   05 Jan 2007; Mikael Lammentausta (lamikae) <lamikae@developer.berlios.de>
   +datagridfield-1.5.0.ebuild, +metadata.xml:
