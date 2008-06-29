@@ -34,8 +34,4 @@ src_install() {
 
 	# headers installation
 	doins -r include/ || die "include files installation failed"
-
-	# license installation
-	newins "libnds_license.txt" "license.txt" || die "license installation
-	failed"
 }
