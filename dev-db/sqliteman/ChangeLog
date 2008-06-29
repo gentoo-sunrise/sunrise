@@ -1,6 +1,10 @@
 # ChangeLog for dev-db/sqliteman
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  sqliteman-1.0.1.ebuild:
+  Add IUSE
 
   25 Nov 2007; Jakub Moc <jakub@gentoo.org> sqliteman-1.0.1.ebuild:
   Switch to cmake-utils eclass; move built_with_use check to pkg_setup()
