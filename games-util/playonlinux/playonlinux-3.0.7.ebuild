@@ -11,9 +11,10 @@ SRC_URI="http://www.playonlinux.com/script_files/PlayOnLinux/${PV}/PlayOnLinux_$
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="-* ~x86"
-# ~amd64 is available but can't be added on sunrise because wine is hard masked
-# on no-multilib amd64 profiles
+KEYWORDS="-* ~x86 ~amd64"
+# ~amd64 will not work with no-multilib amd64 profiles.
+# when ebuild will be in portage, playonlinux must be added as masked package
+# for no-multilib amd64 profiles.
 IUSE=""
 
 DEPEND=""
