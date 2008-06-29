@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/freeme2
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  freeme2-9999.ebuild:
+  Add IUSE
 
   31 Oct 2007; Jakub Moc <jakub@gentoo.org> +metadata.xml,
   +freeme2-9999.ebuild:
