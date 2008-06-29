@@ -1,6 +1,10 @@
 # ChangeLog for net-news/feed2imap
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  feed2imap-0.7.ebuild:
+  Add IUSE+SLOT
 
   23 Jun 2006; David Shakaryan <d@ompty.org> +feed2imap-0.7.ebuild:
   New ebuild for bug #105122 by Sam Kyritsoglou.

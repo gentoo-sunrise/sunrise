@@ -9,7 +9,9 @@ HOMEPAGE="http://home.gna.org/feed2imap/"
 SRC_URI="http://download.gna.org/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 DEPEND="dev-ruby/ruby-feedparser
 	dev-ruby/rubymail"
