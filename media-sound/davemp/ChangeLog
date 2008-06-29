@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/davemp
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  davemp-1.23.ebuild:
+  Add IUSE
 
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> davemp-1.23.ebuild:
   Use a less retarded sed separator and fix multilib handling
