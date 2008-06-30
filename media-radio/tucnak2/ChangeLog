@@ -1,0 +1,10 @@
+# ChangeLog for media-radio/tucnak2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Jun 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  +tucnak2-2.11.ebuild, +files/tucnak2-2.11-config.diff,
+  +files/tucnak2-2.11-doc.diff, +metadata.xml:
+  New ebuild for media-radio/tucnak2 (replaces media-radio/tucnak2). Thanks drac
+
+*tucnak2-2.11 (30 Jun2008)

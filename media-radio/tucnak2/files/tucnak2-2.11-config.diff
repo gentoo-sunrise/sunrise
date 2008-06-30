@@ -1,0 +1,41 @@
+--- configure.in.orig	2008-06-10 21:58:59.000000000 +0200
++++ configure.in	2008-06-29 14:43:27.000000000 +0200
+@@ -72,7 +72,10 @@
+                       AC_MSG_ERROR([glib is installed but gthread not ?]))
+ fi    
+ 
++AC_ARG_WITH([sdl], AS_HELP_STRING([--without-sdl], [Build without sdl library for graphics support (default: test)]))
++tucnak_sdl="no"
+ 
++if test "x$with_sdl" != "xno"; then
+ # check for SDL
+ SDL_VERSION=1.2.0
+ AM_PATH_SDL($SDL_VERSION,
+@@ -82,6 +85,7 @@
+               tucnak_odebs="$tucnak_odebs libsdl-dev"
+               tucnak_sdl="no"]
+             )
++fi
+ 
+ export PKG_CONFIG=/usr/bin/pkg-config
+ 
+@@ -172,6 +176,10 @@
+     tucnak_odebs="$tucnak_odebs libasound-dev"]
+ )              
+ 
++AC_ARG_ENABLE([ftdi], AS_HELP_STRING([--disable-ftdi], [Disable FTDI support for usb to serial converter (default: test)]))
++tucnak_ftdi="no"
++
++if test "x$enable_ftdi" != "xno"; then
+ # check for libftdi
+ tucnak_ftdi_ver=""
+ PKG_CHECK_MODULES(LIBFTDI, libftdi >= 0.7, 
+@@ -189,7 +197,7 @@
+             [ AC_DEFINE([HAVE_FTDI_NEW],[1], [ftdi_new() is present (libftdi >= 0.11)])
+               tucnak_ftdi_new="yes"],
+             [ tucnak_ftdi_new="no"])
+-
++fi
+ 
+ # check for library errors
+ if test -n "$tucnak_mlibs$tucnak_olibs"; then
