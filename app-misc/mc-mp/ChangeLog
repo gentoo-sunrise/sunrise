@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/mc-mp
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  mc-mp-4.1.40_pre9.ebuild:
+  Remove dep on out of tree slang
 
   13 Oct 2007; Jakub Moc <jakub@gentoo.org> mc-mp-4.1.40_pre9.ebuild:
   Remove PROVIDE for new-style virtual/editor

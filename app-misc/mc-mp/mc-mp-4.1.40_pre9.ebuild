@@ -20,7 +20,7 @@ RDEPEND="kernel_linux? ( >=sys-fs/e2fsprogs-1.19 )
 	ncurses? ( >=sys-libs/ncurses-5.2-r5 )
 	pam? ( >=sys-libs/pam-0.78-r3 net-nds/portmap )
 	gpm? ( >=sys-libs/gpm-1.19.3 )
-	slang? ( =sys-libs/slang-1.4* )
+	slang? ( sys-libs/slang )
 	x86? ( 7zip? ( >=app-arch/p7zip-4.16 ) )
 	amd64? ( 7zip? ( >=app-arch/p7zip-4.16 ) )
 	!app-misc/mc"
