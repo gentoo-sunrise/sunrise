@@ -117,6 +117,7 @@ media-radio/fldigi:hamlib - with Hamlib amateur radio rig control library
 media-radio/gpredict:coverage - Enable coverage reports
 media-radio/grig:coverage - Enable coverage reports
 media-radio/grig:hardware - Enable hardware IO
+media-radio/tucnak2:ftdi - Enable support for FTDI USB chips
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
 media-sound/gnormalize:musepack - Enables support for the musepack audio codec
