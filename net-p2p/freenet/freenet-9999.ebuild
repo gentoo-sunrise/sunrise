@@ -12,7 +12,9 @@ inherit eutils java-pkg-2 java-ant-2 subversion
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/seednodes-${DATE}.fref
-	http://dev.gentooexperimental.org/~tommy/distfiles/wrapper-${DATE2}.conf"
+	http://dev.gentoo.org/~tommy/distfiles/seednodes-${DATE}.fref
+	http://dev.gentooexperimental.org/~tommy/distfiles/wrapper-${DATE2}.conf
+	http://dev.gentoo.org/~tommy/distfiles/wrapper-${DATE2}.conf"
 
 LICENSE="GPL-2"
 SLOT="0"
