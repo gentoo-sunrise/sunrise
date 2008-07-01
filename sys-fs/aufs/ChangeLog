@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  aufs-20080422.ebuild:
+  Add another source
+
   04 Jun 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   aufs-20080422.ebuild:
   Remove trailing whitespace
