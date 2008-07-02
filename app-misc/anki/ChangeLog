@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/anki
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Jul 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
+  +anki-0.9.5.7.ebuild, +metadata.xml:
+  New ebuild for app-misc/anki, bug 214472.
+
