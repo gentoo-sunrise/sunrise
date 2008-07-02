@@ -16,6 +16,9 @@ app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
 app-emulation/xenman:lvm2 - Enable lvm2 support
+app-misc/anki:graph - Enable support for making graphs
+app-misc/anki:sound - Enable support for adding sound to cards
+app-misc/anki:kakasi - Enable kakasi support for furigana generation
 app-misc/ccpublisher:zope - Install zope stuff
 app-misc/emelfm2:fam - Use FAM for file-change monitoring
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
