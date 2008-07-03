@@ -74,20 +74,19 @@ diff -ur freenet-old/build.xml freenet/build.xml
  				<pathelement location="${junit.location}"/>
  			</classpath>
  
-diff -ur freenet-old/src/freenet/node/NodeStarter.java freenet/src/freenet/node/NodeStarter.java
---- freenet-old/src/freenet/node/NodeStarter.java	2008-03-30 14:55:11.000000000 +0200
-+++ freenet/src/freenet/node/NodeStarter.java	2008-03-30 16:02:56.000000000 +0200
-@@ -167,37 +167,8 @@
-     }
+--- freenet/src/freenet/node/NodeStarter.java	2008-07-03 23:05:20.000000000 +0200
++++ freenet/src/freenet/node/NodeStarter.java.new	2008-07-03 23:08:14.000000000 +0200
+@@ -162,37 +162,8 @@
+ 	}
  
-     private void getExtBuild() {
--    	try{
--    		extBuildNumber = ExtVersion.buildNumber;
+ 	private void getExtBuild() {
+-		try {
+-			extBuildNumber = ExtVersion.buildNumber;
 -			extRevisionNumber = ExtVersion.cvsRevision;
--			String builtWithMessage = "freenet.jar built with freenet-ext.jar Build #"+extBuildNumber+" r"+extRevisionNumber;
+-			String builtWithMessage = "freenet.jar built with freenet-ext.jar Build #" + extBuildNumber + " r" + extRevisionNumber;
 -			Logger.normal(this, builtWithMessage);
 -			System.out.println(builtWithMessage);
--    		extBuildNumber = ExtVersion.buildNumber();
+-			extBuildNumber = ExtVersion.buildNumber();
 -			if(extBuildNumber == -42) {
 -				extBuildNumber = ExtVersion.extBuildNumber();
 -				extRevisionNumber = ExtVersion.extRevisionNumber();
@@ -104,16 +103,16 @@ diff -ur freenet-old/src/freenet/node/NodeStarter.java freenet/src/freenet/node/
 -				System.err.println(revisionMessage);
 -				extRevisionNumber = "INVALID";
 -			}
--    	}catch(Throwable t){ 	 
--    		// Compatibility code ... will be removed
--    		Logger.error(this, "Unable to get the version of your freenet-ext file : it's probably corrupted!");
--    		System.err.println("Unable to get the version of your freenet-ext file : it's probably corrupted!");
--    		System.err.println(t.getMessage());
--    		extRevisionNumber = "INVALID";
--    		extBuildNumber = -1;
--    	}
-+    		extRevisionNumber = "";
-+    		extBuildNumber = RECOMMENDED_EXT_BUILD_NUMBER;
+-		} catch(Throwable t) {
+-			// Compatibility code ... will be removed
+-			Logger.error(this, "Unable to get the version of your freenet-ext file : it's probably corrupted!");
+-			System.err.println("Unable to get the version of your freenet-ext file : it's probably corrupted!");
+-			System.err.println(t.getMessage());
+-			extRevisionNumber = "INVALID";
+-			extBuildNumber = -1;
+-		}
++               extRevisionNumber = "";
++               extBuildNumber = RECOMMENDED_EXT_BUILD_NUMBER;	
  	}
  
  	/**
