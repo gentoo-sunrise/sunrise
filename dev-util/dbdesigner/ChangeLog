@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/dbdesigner
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Jul 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  +dbdesigner-4.0.5.4-r4.ebuild, +metadata.xml:
+  Initial Commit. See bug #217254
+
