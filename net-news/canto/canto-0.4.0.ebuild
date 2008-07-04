@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python
+inherit python distutils
 
 DESCRIPTION="Ncurses RSS client"
 HOMEPAGE="http://www.codezen.org/canto/"
@@ -17,12 +17,3 @@ DEPEND=">=dev-lang/python-2.4
 	sys-libs/ncurses"
 
 RDEPEND=">=dev-lang/python-2.4"
-
-src_install() {
-	python_version
-	python setup.py install \
-		--root="${D}" \
-		--prefix="/usr" \
-		--install-lib=/usr/lib/python${PYVER}/site-packages \
-		|| die "Setup.py Install Failed."
-}
