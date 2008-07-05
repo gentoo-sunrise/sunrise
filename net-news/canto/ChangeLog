@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jul 2008; Jack Miller (TheMoken) jack@codezen.org +canto-9999.ebuild:
+  Add git ebuild.
+
   04 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   canto-0.4.0.ebuild:
   Add ~amd64 keyword
