@@ -19,8 +19,7 @@ S=${WORKDIR}/DBDesigner4
 INSTALLDIR=/opt/DBDesigner4
 
 
-src_install()
-{
+src_install() {
 	insinto "${INSTALLDIR}"
 	doins -r "${S}"/*
 	ebegin "Fixing permissions of DBDesigner4 executable"
@@ -51,9 +50,8 @@ src_install()
 	eend
 }
 
-pkg_postinst()
-{
-        elog ""
-        elog "DBDesigner4 is now installed. Use startdbd command to run it"
-        elog ""
+pkg_postinst() {
+	elog ""
+	elog "DBDesigner4 is now installed. Use startdbd command to run it"
+	elog ""
 }
