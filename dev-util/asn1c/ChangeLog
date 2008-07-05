@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/asn1c
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Jul 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  +asn1c-0.9.21-r1.ebuild, +metadata.xml:
+  New Ebuild for bug #122370
+
