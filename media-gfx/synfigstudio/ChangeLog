@@ -3,6 +3,10 @@
 # $Header: $
 
   06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -synfigstudio-0.61.07.ebuild, +synfigstudio-0.61.08.ebuild:
+  Version bump
+
+  06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   synfigstudio-0.61.07.ebuild:
   Update homepage
 
