@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  canto-0.4.1.ebuild:
+  Simplify
+
   06 Jul 2008; Jack Miller (TheMoken) <jack@codezen.org>
   -canto-0.4.0.ebuild, +canto-0.4.1.ebuild:
   Version bump.

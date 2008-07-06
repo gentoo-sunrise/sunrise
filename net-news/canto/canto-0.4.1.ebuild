@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python distutils
+NEED_PYTHON="2.4"
+inherit distutils
 
 DESCRIPTION="Ncurses RSS client"
 HOMEPAGE="http://www.codezen.org/canto/"
@@ -13,7 +14,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/python-2.4
-	sys-libs/ncurses"
-
-RDEPEND=">=dev-lang/python-2.4"
+DEPEND="sys-libs/ncurses"
