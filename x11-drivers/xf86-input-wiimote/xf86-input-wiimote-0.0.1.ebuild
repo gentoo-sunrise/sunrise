@@ -10,7 +10,7 @@ SRC_URI="http://people.freedesktop.org/~whot/wiimote/${P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=x11-base/xorg-server-1.0.99"

@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2008; Markus Ullmann <jokey@gentoo.org>
+  xf86-input-wiimote-0.0.1.ebuild:
+  Also works on x86
+
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   xf86-input-wiimote-0.0.1.ebuild:
   Add IUSE+SLOT
