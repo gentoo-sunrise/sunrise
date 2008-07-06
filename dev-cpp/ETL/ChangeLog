@@ -3,6 +3,10 @@
 # $Header: $
 
   06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ETL-0.04.11.ebuild:
+  Update homepage
+
+  06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -ETL-0.04.10.ebuild, +ETL-0.04.11.ebuild:
   Version bump
 
