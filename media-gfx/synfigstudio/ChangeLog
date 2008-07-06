@@ -1,6 +1,10 @@
 # ChangeLog for media-gfx/synfigstudio
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  synfigstudio-0.61.07.ebuild:
+  Update homepage
 
   19 Nov 2007; Cillian de Róiste (goibhniu) cillian.deroiste@gmail.com
   +metadata.xml, +synfigstudio-0.61.07.ebuild:

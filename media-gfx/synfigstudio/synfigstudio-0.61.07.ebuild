@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="Synfig: Film-Quality Vector Animation (main UI)"
-HOMEPAGE="http://www.synfig.com/"
+HOMEPAGE="http://www.synfig.org/"
 SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -11,11 +11,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="fmod"
 
-RDEPEND="	>=dev-cpp/gtkmm-2.4.0
-			>=media-gfx/synfig-${PV}
-			>=dev-libs/libsigc++-2.0
-			>=sys-devel/libtool-1.3.5
-			fmod? ( media-libs/fmod )"
+RDEPEND=">=dev-cpp/gtkmm-2.4.0
+	>=media-gfx/synfig-${PV}
+	>=dev-libs/libsigc++-2.0
+	>=sys-devel/libtool-1.3.5
+	fmod? ( media-libs/fmod )"
 
 src_compile() {
 	econf \
