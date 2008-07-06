@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  synfig-0.61.07.ebuild:
+  Update homepage
+
   18 Jan 2008; (Tommy[D]) tommy100@gmx.de synfig-0.61.07.ebuild:
   Reorder KEYWORDS
 
