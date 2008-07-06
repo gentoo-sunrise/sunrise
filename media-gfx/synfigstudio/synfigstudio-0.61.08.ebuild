@@ -11,10 +11,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="fmod"
 
+DEPEND=">=sys-devel/libtool-1.3.5"
 RDEPEND=">=dev-cpp/gtkmm-2.4.0
 	>=media-gfx/synfig-${PV}
 	>=dev-libs/libsigc++-2.0
-	>=sys-devel/libtool-1.3.5
 	fmod? ( media-libs/fmod )"
 
 src_compile() {
