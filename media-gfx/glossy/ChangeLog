@@ -1,0 +1,8 @@
+# ChangeLog for media-gfx/glossy
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Jul 2008; Víctor Enríquez (VQuickSilver)
+  <victor.quicksilver@gmail.com> +glossy-0.1.ebuild, +metadata.xml:
+  New Ebuild for bug 230957 thanks to Coldwind,Ken69267 and gentoofan23
+
