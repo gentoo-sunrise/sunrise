@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/pysdm
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Jul 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  +pysdm-0.4.1-r1.ebuild, +metadata.xml:
+  New ebuild for bug #217027
+
