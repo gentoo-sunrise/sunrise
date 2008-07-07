@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  +dbdesigner-4.0.5.4.ebuild, -dbdesigner-4.0.5.4-r4.ebuild:
+  Use normal versioning
+
   05 Jul 2008; Thomas Anderson <gentoofan23@gentoo.org> ChangeLog:
   Revised ebuild from discussion on #gentoo-sunrise
 
