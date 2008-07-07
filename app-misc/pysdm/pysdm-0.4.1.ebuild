@@ -13,23 +13,21 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-python/pygtk >=dev-lang/python-2.4"
+DEPEND="dev-python/pygtk 
+	>=dev-lang/python-2.4"
 
-src_install()
-{
+src_install() {
 	emake DESTDIR="${D}" install || die "emake failed"
 	dodoc NEWS TODO
 	cd "${PN}"
-	newbin pysdm.py pysdm|| die "failed to create executable"
+	newbin pysdm.py pysdm || die "failed to create executable"
 }
 
-pkg_postinst()
-{
+pkg_postinst() {
 	python_mod_optimize /usr/share/pysdm/fsdata/
 }
 
-pkg_postrm()
-{
+pkg_postrm() {
 	python_mod_cleanup /usr/share/pysdm/fsdata/
 	python_mod_cleanup
 }
