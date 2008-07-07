@@ -14,9 +14,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="graph kakasi sound"
 
 RDEPEND=">=dev-python/PyQt4-4.2
-	>=dev-python/sqlalchemy-0.4
+	>=dev-python/sqlalchemy-0.4.1
 	>=dev-python/simplejson-1.7.3
-	dev-python/pysqlite
+	>=dev-python/pysqlite-2.3.0
 	app-text/dvipng
 	graph? (
 		dev-python/numpy
