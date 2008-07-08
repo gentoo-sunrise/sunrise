@@ -6,7 +6,7 @@ S="${WORKDIR}/${P}/src/=build"
 DESCRIPTION="Revision control system ideal for widely distributed development"
 HOMEPAGE="http://savannah.gnu.org/projects/gnu-arch http://wiki.gnuarch.org/ http://arch.quackerhead.com/~lord/"
 SRC_URI="http://ftp.gnu.org/gnu/gnu-arch/${P}.tar.gz
-	http://dev.gentooexperimental.org/~dreeevil/tla.1-2.gz"
+	http://gentooexperimental.org/~patrick/tla.1-2.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
