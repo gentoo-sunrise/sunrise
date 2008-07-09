@@ -17,10 +17,17 @@ IUSE=""
 DEPEND=""
 RDEPEND="dev-python/dbus-python
 	dev-python/pygtk
-	net-misc/dhcp
+	|| (
+		net-misc/dhcp
+		net-misc/dhcpcd
+		net-misc/pump
+	)
 	net-wireless/wireless-tools
 	net-wireless/wpa_supplicant
-	sys-apps/ethtool"
+	|| (
+		sys-apps/ethtool
+		sys-apps/net-tools
+	)"
 
 S="${WORKDIR}/${MY_P}"
 

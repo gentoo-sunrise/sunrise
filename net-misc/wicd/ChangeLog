@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Jul 2008; Ian Stakenvicius (_AxS_) <i.stakenvicius@gmail.com>
+  wicd-1.5.0_rc5.ebuild:
+  fixed dependency information for 1.5.0_rc5
+
+  09 Jul 2008; Ian Stakenvicius (_AxS_) <i.stakenvicius@gmail.com>
   +wicd-1.5.0_rc5.ebuild, +files/wicd-1.5.0_rc5-init.d:
   new ebuild for wicd-1.5.0rc5 (original request bug#198281)
 
