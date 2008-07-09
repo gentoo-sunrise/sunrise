@@ -1,0 +1,16 @@
+# ChangeLog for dev-util/tla-tools
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Jan 2008; (Tommy[D]) tommy100@gmx.de tla-tools-20060509.ebuild:
+  drop WANT_AUTO*
+
+  05 Jan 2007; Jakub Moc <jakub@gentoo.org> tla-tools-20060509.ebuild:
+  Remove broken src_unpack; this does not eautoreconf due to missing files
+
+  05 Oct 2006; Jakub Moc <jakub@gentoo.org> tla-tools-20060509.ebuild:
+  Add missing autoconf/automake dependencies
+
+  21 Jun 2006; DrChandra <gentooperson@yahoo.com> ChangeLog:
+  New Ebuild for bug 137090 thanks to Kirill A. Korinskiy <catap@catap.ru>
+
