@@ -13,41 +13,25 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~sh ~sparc ~x86"
 IUSE="doc"
 
-DEPEND="sys-apps/coreutils
-	sys-apps/diffutils
-	sys-devel/patch
-	sys-apps/findutils
-	sys-apps/gawk
-	app-arch/tar
-	sys-apps/util-linux
-	sys-apps/debianutils
-	sys-devel/make"
+DEPEND="sys-apps/debianutils"
 
 src_unpack() {
-	unpack ${P}.tar.gz
-	unpack tla.1-2.gz
+	unpack ${A}
 	mkdir "${S}"
-	cd "${WORKDIR}/${P}"
 	sed -i 's:/home/lord/{install}:/usr:g' "${WORKDIR}/${P}/src/tla/=gpg-check.awk"
 }
 
 src_compile() {
 	OPTIONS="--prefix=/usr --with-posix-shell=/bin/bash "
-
-	if [[ -n $CC ]]
-	then
-	      	../configure ${OPTIONS} --with cc="$CC $CFLAGS" || die "configure failed"
-	else
-		../configure ${OPTIONS} || die "configure failed"
-	fi
+	../configure ${OPTIONS} || die "configure failed"
 	# parallel make may cause problems with this package
-	make || die "make failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install () {
 	make install prefix="${D}/usr" || die "make install failed"
 
-	cd "${S}"/..
+	cd ..
 	dodoc ChangeLog
 
 	if use doc; then
@@ -66,6 +50,5 @@ src_install () {
 	mv tla.1-2 tla.1
 	doman tla.1
 
-	chmod 755 "${WORKDIR}/${P}/src/tla/=gpg-check.awk"
-	cp -pPR "${WORKDIR}/${P}/src/tla/=gpg-check.awk" "${D}/usr/bin/tla-gpg-check.awk"
+	newbin "${WORKDIR}/${P}/src/tla/=gpg-check.awk" tla-gpg-check.awk
 }

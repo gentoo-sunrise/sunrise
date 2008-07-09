@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> tla-1.3.5.ebuild:
+  Simplify
+
   08 Jul 2008; Pavel Sanda (ps) <ps at twin.jikos.cz> +tla-1.3.5.ebuild,
   +metadata.xml:
   Bug 59548 - copy dev-util/tla ebuild from portage tree; already masked and
