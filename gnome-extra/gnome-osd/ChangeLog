@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  gnome-osd-0.11.3.ebuild:
+  Remove unused autotools.eclass
+
   13 Jan 2008; (Tommy[D]) tommy100@gmx.de gnome-osd-0.11.3.ebuild:
   drop WANT_AUTOCONF
 

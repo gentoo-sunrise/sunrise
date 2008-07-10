@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WANT_AUTOMAKE="none"
-
-inherit gnome2 autotools
+inherit gnome2
 
 DESCRIPTION="Gnome OSD notification system"
 HOMEPAGE="http://www.gnomefiles.org/app.php?soft_id=350"
