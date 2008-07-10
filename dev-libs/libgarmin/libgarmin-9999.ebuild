@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit subversion autotools
+inherit subversion
 
 DESCRIPTION="Experimental driver for Garmin IMG maps"
 HOMEPAGE="http://libgarmin.sourceforge.net/"
