@@ -1,0 +1,178 @@
+diff -u scripts.orig/Makefile.am scripts/Makefile.am
+--- scripts.orig/Makefile.am	2007-01-03 20:40:49.000000000 +0100
++++ scripts/Makefile.am	2008-07-10 14:39:40.000000000 +0200
+@@ -8,9 +8,7 @@
+     coord-convert.pl \
+     fcc-get \
+     get-gnis \
+-    get-maptools.sh \
+     get-NWSdata \
+-    get_shapelib.sh \
+     gpx2shape \
+     icontable.pl \
+     inf2geo.pl \
+@@ -29,8 +27,6 @@
+     track-get.pl \
+     update_langfile.pl \
+     waypoint-get.pl \
+-    xastir-fixcfg.sh \
+-    xastir-migrate.sh \
+     Xastir_tigerpoly.py
+ 
+ 
+diff -u scripts.orig/coord-convert.pl scripts/coord-convert.pl
+--- scripts.orig/coord-convert.pl	2002-08-26 23:52:03.000000000 +0200
++++ scripts/coord-convert.pl	2008-07-10 14:36:21.000000000 +0200
+@@ -26,7 +26,7 @@
+ #
+ 
+ 
+-use lib "/usr/local/lib";
++use lib "/usr/lib";
+ use Coordinate;         # WE7U's Coordinate.pm module
+ 
+ 
+diff -u scripts.orig/fcc-get scripts/fcc-get
+--- scripts.orig/fcc-get	2007-03-22 18:05:01.000000000 +0100
++++ scripts/fcc-get	2008-07-10 14:36:21.000000000 +0200
+@@ -10,7 +10,7 @@
+ # Note: Run this script as root in order to write the files into the
+ # destination directory listed below.
+ #
+-XASTIR_BASE=/usr/local/share/xastir
++XASTIR_BASE=/usr/share/xastir
+ cd /var/tmp
+ #
+ #
+diff -u scripts.orig/get-NWSdata scripts/get-NWSdata
+--- scripts.orig/get-NWSdata	2007-06-10 18:53:41.000000000 +0200
++++ scripts/get-NWSdata	2008-07-10 14:36:21.000000000 +0200
+@@ -41,7 +41,7 @@
+ FILE7="fz17ap07"  # NWSM Libraries: Fire Weather Zone Boundaries
+ 
+ 
+-cd /usr/local/share/xastir/Counties
++cd /usr/share/xastir/Counties
+ 
+ 
+ # Remove any old zip files hanging around in this directory
+diff -u scripts.orig/get-gnis scripts/get-gnis
+--- scripts.orig/get-gnis	2007-01-03 20:40:49.000000000 +0100
++++ scripts/get-gnis	2008-07-10 14:36:21.000000000 +0200
+@@ -55,8 +55,8 @@
+ 
+     if ( [ -f ${MYSTATE}_DECI.TXT ] )
+     then 
+-        printf "File successfully downloaded. Moving to /usr/local/share/xastir/GNIS\n" 
+-        sudo mv ${MYSTATE}_DECI.TXT /usr/local/share/xastir/GNIS/${MYSTATE}.gnis
++        printf "File successfully downloaded. Moving to /usr/share/xastir/GNIS\n" 
++        sudo mv ${MYSTATE}_DECI.TXT /usr/share/xastir/GNIS/${MYSTATE}.gnis
+     else 
+         printf "File for %s not successfully downloaded.\n" ${MYSTATE}
+     fi 
+diff -u scripts.orig/get-maptools.sh scripts/get-maptools.sh
+--- scripts.orig/get-maptools.sh	2007-01-03 20:40:49.000000000 +0100
++++ scripts/get-maptools.sh	2008-07-10 14:36:21.000000000 +0200
+@@ -135,11 +135,11 @@
+ 	fi 
+     fi
+ 
+-    if touch -a /usr/local/lib 
++    if touch -a /usr/lib 
+     then
+-        printf "We can modify /usr/local/lib\n"
++        printf "We can modify /usr/lib\n"
+     else
+-        printf "ERROR: We cannot modify /usr/local/lib - aborting\n"
++        printf "ERROR: We cannot modify /usr/lib - aborting\n"
+         exit
+     fi 
+ fi 
+@@ -163,22 +163,22 @@
+ 	sudo touch $LDCONF_FILE
+     fi
+ 
+-    if (! grep /usr/local/lib $LDCONF_FILE 2>&1 > /dev/null) 
++    if (! grep /usr/lib $LDCONF_FILE 2>&1 > /dev/null) 
+     then
+-        printf "Warning: /usr/local/lib not in %s - adding it\n" $LDCONF_FILE
++        printf "Warning: /usr/lib not in %s - adding it\n" $LDCONF_FILE
+ 	if [ -f $LDCONF_FILE ]
+ 	then
+ 	        cp $LDCONF_FILE /tmp/ldconfig.tmp
+ 	        $SUDO cp $LDCONF_FILE $LDCONF_FILE.orig.$$
+ 	fi
+-        printf "/usr/local/lib\n" >> /tmp/ldconf.tmp
++        printf "/usr/lib\n" >> /tmp/ldconf.tmp
+         $SUDO cp /tmp/ldconf.tmp $LDCONF_FILE
+ 
+     fi
+ 
+-    if (! grep /usr/local/lib $LDCONF_FILE 2>&1 > /dev/null) 
++    if (! grep /usr/lib $LDCONF_FILE 2>&1 > /dev/null) 
+     then
+-        printf "ERROR: could not add /usr/local/lib to %s - aborting\n " $LDCONFIG_FILE
++        printf "ERROR: could not add /usr/lib to %s - aborting\n " $LDCONFIG_FILE
+         exit
+     fi
+ 
+diff -u scripts.orig/icontable.pl scripts/icontable.pl
+--- scripts.orig/icontable.pl	2003-07-07 19:17:54.000000000 +0200
++++ scripts/icontable.pl	2008-07-10 14:36:21.000000000 +0200
+@@ -29,7 +29,7 @@
+ #--------------------------------------------------------------------------
+                                             
+ # symbols file from XASTIR V2.1, change the path for your environment
+-$SYMBFILE = "/usr/local/share/xastir/symbols/symbols.dat";
++$SYMBFILE = "/usr/share/xastir/symbols/symbols.dat";
+ 
+ #--------------------------------------------------------------------------
+ %sympix = ();
+diff -u scripts.orig/permutations.pl scripts/permutations.pl
+--- scripts.orig/permutations.pl	2005-03-25 21:53:04.000000000 +0100
++++ scripts/permutations.pl	2008-07-10 14:36:21.000000000 +0200
+@@ -34,7 +34,7 @@
+ #
+ 
+ 
+-use lib "/usr/local/lib";
++use lib "/usr/lib";
+ use Coordinate;         # WE7U's Coordinate.pm module
+ 
+ 
+diff -u scripts.orig/test_coord.pl scripts/test_coord.pl
+--- scripts.orig/test_coord.pl	2003-01-06 23:42:17.000000000 +0100
++++ scripts/test_coord.pl	2008-07-10 14:36:21.000000000 +0200
+@@ -33,7 +33,7 @@
+ 
+ #------------------------------------------------------------------------------------------------
+ 
+-use lib "/usr/local/lib";
++use lib "/usr/lib";
+ use Coordinate;		# Snag WE7U's Coordinate module
+ 
+ 
+diff -u scripts.orig/toporama250k.pl scripts/toporama250k.pl
+--- scripts.orig/toporama250k.pl	2008-07-10 14:35:01.000000000 +0200
++++ scripts/toporama250k.pl	2008-07-10 14:36:21.000000000 +0200
+@@ -28,7 +28,7 @@
+ # map files for the whole of Canada!
+ #
+ #
+-# * cd /usr/local/share/xastir/maps
++# * cd /usr/share/xastir/maps
+ # * Run this script from there.  Make sure that you have write
+ #   privileges there.
+ # * Move the directories and contents to whereever makes sense.
+diff -u scripts.orig/toporama50k.pl scripts/toporama50k.pl
+--- scripts.orig/toporama50k.pl	2008-07-10 14:35:01.000000000 +0200
++++ scripts/toporama50k.pl	2008-07-10 14:36:21.000000000 +0200
+@@ -27,7 +27,7 @@
+ # map files for the whole of Canada!
+ #
+ #
+-# * cd /usr/local/share/xastir/maps
++# * cd /usr/share/xastir/maps
+ # * Run this script from there.  Make sure that you have write
+ #   privileges there.
+ # * Move the directories and contents to whereever makes sense.

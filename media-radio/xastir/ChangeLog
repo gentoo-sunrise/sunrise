@@ -1,0 +1,13 @@
+# ChangeLog for media-radio/fldigi
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Jul 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  +xastir-1.9.2.ebuild, +files/xastir-1.9.2-IM.diff,
+  +files/xastir-1.9.2-curl.diff, +files/xastir-1.9.2-scripts.diff,
+  +metadata.xml:
+  Ebuild for bug 231416 (and 109695) thanks to tcunha and chithead
+
+*xastir-1.9.2 (10 Jul 2008)
+
+ 
