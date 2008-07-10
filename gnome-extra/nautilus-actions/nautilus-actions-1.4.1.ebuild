@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WANT_AUTOMAKE="1.7"
-inherit gnome2 autotools
+inherit gnome2
 
 DESCRIPTION="Nautilus extension for adding user-configurable actions to the context menu"
 HOMEPAGE="http://www.grumz.net/?q=taxonomy/term/2/9"
