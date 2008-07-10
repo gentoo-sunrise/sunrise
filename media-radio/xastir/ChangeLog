@@ -3,6 +3,10 @@
 # $Header: $
 
   10 Jul 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  xastir-1.9.2.ebuild:
+  dropped explicit RDEPEND  thanks to Tommy[D]
+
+  10 Jul 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   +xastir-1.9.2.ebuild, +files/xastir-1.9.2-IM.diff,
   +files/xastir-1.9.2-curl.diff, +files/xastir-1.9.2-scripts.diff,
   +metadata.xml:

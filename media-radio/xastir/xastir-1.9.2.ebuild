@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="festival gdal geotiff imagemagick"
 
-RDEPEND="x11-libs/openmotif
+DEPEND="x11-libs/openmotif
 	x11-libs/libXpm
 	dev-libs/libpcre
 	net-misc/curl
@@ -26,7 +26,6 @@ RDEPEND="x11-libs/openmotif
 	gdal? ( sci-libs/gdal )
 	imagemagick? ( >=media-gfx/imagemagick-6.4 )
 	festival? ( app-accessibility/festival )"
-DEPEND="${RDEPEND}"
 
 
 src_unpack() {
