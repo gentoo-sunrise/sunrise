@@ -18,8 +18,14 @@ DEPEND="dev-util/tla"
 ETLA_VERSION="miles@gnu.org--2006/tla-tools--devo--0"
 ETLA_ARCHIVES="http://mirrors.sourcecontrol.net/miles@gnu.org--2006"
 
+src_unpack() {
+	tla_src_unpack
+	cp -r "${DISTDIR}"/tla-tools--devo--0--patch-*/* "${S}"
+}
+
 src_compile() {
-	econf	--prefix /usr || die "./configure failed"
+	./configure \
+		--prefix /usr || die "./configure failed"
 	emake || die "make failed"
 }
 
