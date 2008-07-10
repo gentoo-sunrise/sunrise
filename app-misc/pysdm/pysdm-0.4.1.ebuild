@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-python/pygtk 
+DEPEND="dev-python/pygtk
 	>=dev-lang/python-2.4"
 
 src_install() {
