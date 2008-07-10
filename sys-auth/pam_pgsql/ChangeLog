@@ -1,6 +1,10 @@
 # ChangeLog for sys-auth/pam_pgsql
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  10 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pam_pgsql-1.0.0.ebuild:
+  Remove unused autotools.eclass + obsolete RDEPEND
 
   21 Dec 2006; Jakub Moc <jakub@gentoo.org> -files/digest-pam_pgsql-0.6.3:
   Fix borked digest, again!!!
