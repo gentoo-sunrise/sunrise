@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  openmoko-dfu-util-9999.ebuild:
+  Remove unused autotools.eclass
+
   24 Feb 2008; (Tommy[D]) tommy100@gmx.de
   -files/digest-openmoko-dfu-util-9999, -files:
   Remove obsolete digests
