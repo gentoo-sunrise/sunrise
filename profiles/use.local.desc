@@ -121,6 +121,9 @@ media-radio/gpredict:coverage - Enable coverage reports
 media-radio/grig:coverage - Enable coverage reports
 media-radio/grig:hardware - Enable hardware IO
 media-radio/tucnak2:ftdi - Enable support for FTDI USB chips
+media-radio/xastir:festival - Enable text to speech synthesizer
+media-radio/xastir:gdal - Enables gdal library support
+media-radio/xastir:geotiff - library for reading TIFF files with embedded geographical informations
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
 media-sound/gnormalize:musepack - Enables support for the musepack audio codec
