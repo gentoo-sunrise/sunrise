@@ -64,18 +64,18 @@ dev-python/PyFoam
 
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
 # Mask packages with masked deps
-sci-libs/openfoam-kernel
-sci-libs/openfoam-meta
-sci-libs/openfoam-solvers
-sci-libs/openfoam-src
+=sci-libs/openfoam-kernel-1.4.1_p20080131
+=sci-libs/openfoam-meta-1.4.1
+=sci-libs/openfoam-solvers-1.4.1_p20080328
+=sci-libs/openfoam-src-1.4.1_p20080131
 
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
 # Masked until they follow the ebuild conventions
 # (sed -> patch)
-sci-libs/openfoam-bin
-sci-libs/openfoam-utilities
-sci-libs/openfoam-wmake
-sci-libs/openfoam
+=sci-libs/openfoam-bin-1.4.1_p20080118
+=sci-libs/openfoam-utilities-1.4.1_p20080328
+=sci-libs/openfoam-wmake-1.4.1_p20080328
+=sci-libs/openfoam-1.4.1_p20080118
 
 # Thomas Anderson (gentoofan23) <gentoofan23@gmail.com> (26 Mar 2008)
 # Masking kde-misc/kgrubeditor because it depends on kde-base/kdelibs-4*
