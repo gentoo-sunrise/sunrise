@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  rainlendar-lite-2.3.ebuild:
+  Remove unused autotools.eclass and empty DEPEND
+
   19 Feb 2008; Jakub Moc <jakub@gentoo.org> rainlendar-lite-2.3.ebuild:
   Nuke loads of dependencies already implied by gtk+
 

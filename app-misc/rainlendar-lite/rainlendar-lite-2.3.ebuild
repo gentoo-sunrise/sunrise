@@ -2,12 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils autotools
+inherit eutils
 
 MY_PN="Rainlendar-Lite"
 MY_P=${MY_PN}-${PV}
-DESCRIPTION="Feature rich calendar application that is easy to
-use and doesn't take much space on your desktop."
+DESCRIPTION="Feature rich calendar application that is easy to use and doesn't take much space on your desktop."
 HOMEPAGE="http://www.rainlendar.net"
 SRC_URI="http://www.rainlendar.net/download/${MY_P}.tar.bz2"
 
@@ -16,7 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
 RDEPEND="amd64? ( app-emulation/emul-linux-x86-gtklibs
 		    app-emulation/emul-linux-x86-xlibs )
 	x86? ( >=x11-libs/gtk+-2 )"
