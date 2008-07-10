@@ -13,9 +13,9 @@ IUSE=""
 RDEPEND="dev-python/pychm
 	app-text/htmldoc
 	dev-libs/chmlib
-	dev-lang/python	"
+	dev-lang/python"
 
 src_install() {
-    dobin ${PN} || die "failed to create executable"
-    dodoc README
+	dobin ${PN} || die "failed to create executable"
+	dodoc README
 }
