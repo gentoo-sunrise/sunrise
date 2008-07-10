@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jul 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
+  Manifest:
+  Fixed Manifest (checksum for source was wrong).
+
   07 Jul 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
   -anki-0.9.5.7.ebuild, +anki-0.9.6.ebuild:
   Version bump for app-misc/anki.
