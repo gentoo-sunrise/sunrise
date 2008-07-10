@@ -3,7 +3,7 @@
 # $Header: $
 
 WX_GTK_VER="2.8"
-inherit autotools eutils subversion wxwidgets
+inherit eutils subversion wxwidgets
 
 DESCRIPTION="Advanced SSA/ASS subtitle editor"
 HOMEPAGE="http://malakith.net/aegiwiki/Main_Page"
