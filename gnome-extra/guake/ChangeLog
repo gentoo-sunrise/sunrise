@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/guake
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Jul 2008; Isakov_AN <satana.hell@gmail.com> +guake-0.2.2.ebuild,
+  +guake-9999.ebuild, +metadata.xml:
+  New Ebuild for bug 227559
+
