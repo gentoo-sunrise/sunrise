@@ -144,7 +144,7 @@ games-fps/uhexen2-cvs
 
 # Eduard Warkentin <eduard.warkentin@gmx.de> (14 Feb 2007)
 # This is a svn checkout based ebuild until further changes
-=app-backup/darbackup-0.7.27_pre485
+~app-backup/darbackup-0.7.27
 
 # Christian Faulhammer <opfer@gentoo.org> (05 Feb 2007)
 # live ebuilds should be masked
