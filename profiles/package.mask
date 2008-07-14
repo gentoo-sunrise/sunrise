@@ -106,10 +106,6 @@ kde-misc/kgrubeditor
 # svn version should be masked
 =app-misc/freeme2-9999
 
-# Markus Ullmann <jokey@gentoo.org> (29 Oct 2007)
-# mask wrt broken java support
-=dev-libs/dbxml-2.3.10-r2
-
 # Felix Bechstein <f@ub0r.de> (28 Oct 2007)
 # svn version should be masked
 =net-misc/ypd-9999
@@ -165,10 +161,6 @@ app-antivirus/kav4fileservers
 # mask the whole thing as it really does not work
 # ATM and upstream activity ceased - see Bug 156736
 app-portage/rep-rebuild
-
-# Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
-# svn version should be masked
-=x11-misc/lsw-9999
 
 # Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
 # svn version should be masked
