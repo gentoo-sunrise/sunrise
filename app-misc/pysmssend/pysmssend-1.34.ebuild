@@ -25,7 +25,7 @@ src_install() {
 		doins   Icons/*
 		doicon  Icons/pysmssend.png
 		dobin   pysmssend pysmssendcmd || die "failed to create executables"
-		make_desktop_entry pysmssend pySMSsend pysmssend.png "Applications;Network" 
+		make_desktop_entry pysmssend pySMSsend pysmssend.png "Applications;Network"
 	else
 		dobin   pysmssendcmd || die "failed to create executable"
 		dosym   pysmssendcmd /usr/bin/pysmssend

@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  pysmssend-1.34.ebuild:
+  Remove trailing whitespace
+
   11 Jul 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   +pysmssend-1.34.ebuild, +metadata.xml:
   New Ebuild for bug #196545
