@@ -42,7 +42,6 @@ dev-lang/brainwash:char - Compile with support for unsigned character (instead o
 dev-lang/vala:vapigen - Enable the VAPI generator
 dev-libs/libwiimote:tilt - Enable tilt
 dev-libs/libwiimote:force - Enable force feedback
-dev-python/pyyaml:libyaml - Adds support for the LibYAML library (written in C)
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
@@ -98,11 +97,6 @@ gnome-extra/eiciel:xattr - if you want extended attributes support enabled
 gnome-extra/timer-applet:sounds - Installs optional sound data
 kde-misc/kcpufreq:icon - Add icon for GUI applet (enabled by default)
 kde-misc/kio-sysinfo:branding - Enable a custom gentoo branded background
-mail-filter/MailScanner:bitdefender - Enable usage of bitdefender virus scanner
-mail-filter/MailScanner:exim - Set exim to used MTA
-mail-filter/MailScanner:f-prot - Enable usage of fprot virus scanner
-mail-filter/MailScanner:postfix - Set postfix to used MTA
-mail-filter/MailScanner:spamassassin - Enable usage of spamassassin for spam detection
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:cluster - Add support for cluster rendering
@@ -162,38 +156,17 @@ net-dns/nsd:nsid - Enable NSID support
 net-dns/nsd:plugins - Enable plugin support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:tsig - Enable TSIG support
-net-ftp/cmdftp:onlysmall - Disable largefile support
 net-im/gizmo:avahi - Use avahi mdns daemon
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
 net-libs/raknet:rakvoice - Enable RakNet RakVoice module
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
 net-mail/fdm:tdb - Enable the Trivial Database (xdb) backend
-net-mail/simscan:attachment - Enable attachment filtering
-net-mail/simscan:custom-smtp-reject - Enable the custom SMTP reject with qmail
-net-mail/simscan:dropmsg - Enable dropping message contains virus/spam
-net-mail/simscan:passthru - Disable reject of messages where spam or virus is detected
-net-mail/simscan:per-domain - Enable per domain virus/spam/attach checks/filters
-net-mail/simscan:quarantine - Enable the detected spam/virus to be stored in quarantine
-net-mail/simscan:received - Enable the add of a Received line in scanned messages
-net-mail/simscan:regex - Enable regex attachment filename checking
-net-mail/simscan:spamassassin - Enable the spam checks with spamassasin
 net-misc/clinkcc:mythtv - Enable MythTV support
 net-misc/mugshot:xulrunner - Compile browser extension using xulrunner
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
-net-news/rsstool:presets - Includes some preset searches for creating RSS feeds.
-net-p2p/btg:cppunit - Enable building unittests.
-net-p2p/btg:event-callback - Enable executing scripts for certain events (daemon).
-net-p2p/btg:session-saving - Enable saving sessions (daemon).
-net-p2p/btg:upnp - Enable using UPnP (daemon). Interfaces the CyberLink UPnP library.
-net-p2p/btg:web - Enable installing WWW client.
 net-p2p/murmur:trayicon - Enable support for tray icon
-net-wireless/rt2x00-git:rt2400pci - Build rt2400pci driver
-net-wireless/rt2x00-git:rt2500pci - Build rt2500pci driver
-net-wireless/rt2x00-git:rt2500usb - Build rt2500usb driver
-net-wireless/rt2x00-git:rt61pci - Build rt61pci driver
-net-wireless/rt2x00-git:rt73usb - Build rt73usb driver
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-libs/cgnslib:hdf5 - Adds support for the Hierarchical Data Format v5
@@ -218,7 +191,6 @@ sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module r
 sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
 sys-fs/aufs:robr - Enable aufs readonly-branch
-sys-kernel/thinkpad-sources:sco_flowcontrol - Adds sco_flowcontrol patch from bluez cvs
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
