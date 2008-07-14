@@ -33,8 +33,8 @@ src_unpack() {
 	cd "${S}"
 	# fix some scripts with DOS line endings
 	edos2unix scripts/toporama*
-	# support for new imagemagick, 
-	# correction for selection of curl library in configure.ac and 
+	# support for new imagemagick,
+	# correction for selection of curl library in configure.ac and
 	# fix for different install directory in scripts
 	epatch "${FILESDIR}/${P}-IM.diff" \
 		"${FILESDIR}/${P}-curl.diff" \

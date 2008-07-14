@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> xastir-1.9.2.ebuild:
+  Remove trailing whitespace
+
   10 Jul 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   xastir-1.9.2.ebuild:
   dropped explicit RDEPEND  thanks to Tommy[D]
