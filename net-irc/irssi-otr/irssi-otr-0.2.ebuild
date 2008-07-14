@@ -5,7 +5,7 @@
 inherit cmake-utils eutils
 
 DESCRIPTION="Off-The-Record messaging (OTR) for irssi"
-HOMEPAGE="http://projects.tuxfamily.org/group.pl?name=irssiotr"
+HOMEPAGE="http://irssi-otr.tuxfamily.org"
 
 # This should probably be exported by cmake-utils as a variable
 CMAKE_BINARY_DIR="${WORKDIR}"/${PN}_build
@@ -27,7 +27,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 RDEPEND="
-	>=net-libs/libotr-3.1.0
+	net-libs/libotr
 	net-irc/irssi"
 
 DEPEND="${RDEPEND}
@@ -40,16 +40,22 @@ src_unpack() {
 	ln -s "${DISTDIR}/irssiotr.git;a=snapshot;h=${MY_PV};sf=tgz" ${P}.tgz
 	unpack ./${P}.tgz
 
-	mkdir -p "${CMAKE_BINARY_DIR}"
+	mkdir -p "${CMAKE_BINARY_DIR}/irssi-private-headers/fe-text"
 
 	# copy prefetched irssi private headers and patch them
 	# a bug has been filed to make these public, irssi FS#535
 	for privheader in mainwindows.h term.h statusbar.h; do
 		cp "${DISTDIR}/${privheader}?${MY_IRSSI_URLPARMS}" \
-			"${CMAKE_BINARY_DIR}/${privheader}" \
+			"${CMAKE_BINARY_DIR}/irssi-private-headers/fe-text/${privheader}" \
 			|| die "failed to copy prefetched irssi private headers"
 	done
-	cd "${CMAKE_BINARY_DIR}"
+	cd "${CMAKE_BINARY_DIR}/irssi-private-headers/fe-text"
 	epatch "${S}"/privheaders.patch
-	mycmakeargs="-DIRSSIOTR_VERSION=${PV}"
+	mycmakeargs="-DIRSSIOTR_VERSION=${PV} -DDOCDIR=/usr/share/doc/${PF}"
+}
+
+src_install() {
+	cmake-utils_src_install
+	rm "${D}"/usr/share/doc/${PF}/LICENSE
+	prepalldocs
 }
