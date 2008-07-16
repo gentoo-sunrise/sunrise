@@ -1,59 +1,55 @@
 #!/sbin/runscript 
+# Copyright 1999-2008 Gentoo Foundation 
+# Distributed under the terms of the GNU General Public License v2 
+# $Header: $ 
 #
-opts="${opts} rebuild reload status update notify" 
+opts="${opts} reload configtest"
+description="NSD is an authoritative only, high performance, open source name server"
+description_start="Start the server"
+description_stop="Stop the server"
+description_configtest="Check the syntax of the configuration file"
+description_reload="Reload the database file"
+
+CONTROL="/usr/sbin/nsdc"
 
 depend() { 
-   need net 
-   use logger 
+	need net 
+	use logger 
 } 
 
-checkconfig() {
-	if [ ! -e "/etc/nsd/nsdc.conf" -a ! -e "/etc/nsd/nsd.zones" ]; then
-		eerror "You need to create apropriate configs"
-		eerror "in /etc/nsd/ . Examples can be found in /etc/nsd/*.sample"
-		return 1
-	fi
+configtest() {
+	ebegin "Checking config"
+		if [ ! -e "/etc/nsd/nsd.conf" ]; then
+			eerror "You need to create an appropriate config file"
+			eerror "in /etc/nsd/ . An example can be found in /etc/nsd/nsd.conf.sample"
+			return 1
+		fi
+
+		if ! nsd-checkconf "/etc/nsd/nsd.conf"; then
+			eerror "You have errors in your configfile"
+			return 1
+		fi
+	eend
 }
 
 start() { 
-	ebegin "Starting nsd" 
-	checkconfig && \
-	/usr/sbin/nsdc start &>/dev/null
+	configtest || return 1
+
+	ebegin "Starting NSD"
+		${CONTROL} start
+		${CONTROL} running
 	eend $? 
-} 
+}
 
 stop() { 
-	ebegin "Stopping nsd" 
-	/usr/sbin/nsdc stop &>/dev/null 
+	ebegin "Stopping NSD"
+		${CONTROL} stop
 	eend $? 
 } 
 
-reload() { 
-	ebegin "Reloading nsd" 
-	/usr/sbin/nsdc reload &>/dev/null 
-	eend $? 
-} 
-
-rebuild() { 
-	ebegin "Rebuild nsd database" 
-	/usr/sbin/nsdc rebuild &>/dev/null 
-	eend $? 
-} 
-
-status() { 
-	ebegin "Check if nsd is running" 
-	/usr/sbin/nsdc running &>/dev/null 
-	eend $? 
-} 
-
-update() { 
-	ebegin "Updating nsd zones" 
-	/usr/sbin/nsdc update &>/dev/null 
-	eend $? 
-} 
-
-notify() { 
-	ebegin "Notify slave servers for zones" 
-	/usr/sbin/nsdc notify &>/dev/null 
+reload() {
+	configtest || return 1
+	ebegin "Reloading NSD"
+		${CONTROL} reload
 	eend $? 
 }
