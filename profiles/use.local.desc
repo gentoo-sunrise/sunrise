@@ -143,7 +143,6 @@ net-analyzer/honeytrap:nfq-mon - Netfilter queue based monitor
 net-analyzer/honeytrap:pcap-mon - pcap based monitor
 net-analyzer/honeytrap:spamsum - Enables SpamSum similarity analysis for recorded attacks
 net-analyzer/honeytrap:cspm - Enables shellcode pattern matching
-net-analyzer/symon:client - Enables a generic perl symux client
 net-analyzer/symon:symux - Enables the multiplexer which stores incoming symon streams on disk in RRD files
 net-analyzer/symon:syweb - Enables the PHP script that draws rrdtool pictures of the stored data
 net-dialup/iwar:iax2 - Enable iax2 protocol support
