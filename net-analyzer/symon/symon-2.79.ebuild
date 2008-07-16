@@ -15,9 +15,9 @@ LICENSE="BSD-2"
 WEBAPP_MANUAL_SLOT="yes"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE="client symux syweb vhosts"
+IUSE="perl symux syweb vhosts"
 
-RDEPEND="client? ( dev-lang/perl )
+RDEPEND="perl? ( dev-lang/perl )
 	symux? ( net-analyzer/rrdtool )
 	syweb? ( ${WEBAPP_DEPEND}
 		    virtual/httpd-php )"
@@ -45,7 +45,7 @@ src_unpack() {
 		epatch "${FILESDIR}"/${PN}-syweb-total_firewall.layout.patch
 	fi
 
-	if ! use client ; then
+	if ! use perl ; then
 		sed -i "/SUBDIR/s/client//" "${S}"/Makefile || die "sed client failed"
 	fi
 	if ! use symux ; then
@@ -78,7 +78,7 @@ src_install() {
 	doins symon/c_config.sh
 	fperms a+x,u-w /usr/share/symon/c_config.sh
 
-	if use client ; then
+	if use perl ; then
 		dobin client/getsymonitem.pl
 
 		perlinfo
@@ -120,7 +120,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	use client && perl-module_pkg_postinst
+	use perl && perl-module_pkg_postinst
 
 	if use syweb ; then
 		elog "Test your syweb configuration by pointing your browser at:"
