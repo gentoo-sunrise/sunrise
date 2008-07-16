@@ -33,5 +33,3 @@ src_install() {
 	cd ${MY_P}
 	dodoc ChangeLog README || die "dodoc failed."
 }
-
-
