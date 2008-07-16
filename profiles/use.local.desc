@@ -151,10 +151,12 @@ net-dns/nsd:axfr - Enable AXFR client to transfer zones from a name server
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
 net-dns/nsd:checking - Enable internal runtime checks
 net-dns/nsd:dnssec - Enable DNSSEC support
+net-dns/nsd:largefile - Enable largefile support
 net-dns/nsd:nsec3 - Enable NSEC3 support
 net-dns/nsd:nsid - Enable NSID support
 net-dns/nsd:plugins - Enable plugin support
 net-dns/nsd:root-server - Configure NSD as a root server
+net-dns/nsd:runtime-checks - Enable runtime checks
 net-dns/nsd:tsig - Enable TSIG support
 net-im/gizmo:avahi - Use avahi mdns daemon
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
