@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<longdescription lang="en">
+		Yzis a vi-like editor inspired by vim. Yzis aims to be a powerful, fast
+		editor with all of Vim's features and hopefully, at some point, more.
+	</longdescription>
+</pkgmetadata>
+
