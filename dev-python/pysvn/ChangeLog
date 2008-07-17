@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Jul 2008; Markus Rennings (mren) <mren@mrmx.de> -pysvn-1.5.3.ebuild,
+  +pysvn-1.6.0.ebuild:
+  Version bump
+
   02 Mar 2008; Markus Rennings (mren) <mren@mrmx.de>
   -files/pysvn-1.5.2-nokrb.patch, -pysvn-1.5.2.ebuild, +pysvn-1.5.3.ebuild:
   Version bump, it seems, the patch is not needed anymore
