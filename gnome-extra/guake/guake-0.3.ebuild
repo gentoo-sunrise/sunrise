@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI="1"
-NEED_PYTHON="2.4"
 inherit gnome2 versionator
 B=$(get_version_component_range 1-2)
 
@@ -16,8 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="x11-libs/gtk+:2
-		gnome-base/gconf:2
-		x11-libs/libX11
-		dev-python/notify-python
-		x11-libs/vte"
+DEPEND=">=dev-lang/python-2.4
+	x11-libs/gtk+:2
+	gnome-base/gconf:2
+	x11-libs/libX11
+	dev-python/notify-python
+	x11-libs/vte"
