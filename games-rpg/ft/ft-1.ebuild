@@ -16,7 +16,7 @@ RESTRICT="strip"
 RDEPEND=">=games-engines/scummvm-0.2.0"
 
 src_install() {
-	dir=${GAMES_DATADIR}/${PN}
+	local dir=${GAMES_DATADIR}/${PN}
 
 	insinto "${dir}"
 
