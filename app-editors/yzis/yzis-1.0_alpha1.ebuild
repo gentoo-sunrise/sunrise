@@ -11,6 +11,7 @@ SRC_URI="http://dl.freehackers.org/yzis/${MY_P}.tar.bz2"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND="dev-util/cmake"
 RDEPEND=">=dev-lang/lua-5.1
