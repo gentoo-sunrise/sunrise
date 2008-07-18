@@ -20,9 +20,9 @@ DEPEND="|| (
 	app-arch/rar )"
 
 S=${WORKDIR}
-dir=${GAMES_DATADIR}/${PN}
 
 src_install() {
+	local dir=${GAMES_DATADIR}/${PN}
 	insinto "${dir}"
 	doins MUSIC.RES SCREAM.RES SCRIPTS.RES SFX.RES VOICESD.RES || die "doins failed"
 
