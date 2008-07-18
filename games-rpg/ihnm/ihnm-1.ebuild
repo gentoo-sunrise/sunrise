@@ -16,9 +16,9 @@ RESTRICT="strip"
 RDEPEND=">=games-engines/scummvm-0.11.0"
 
 S=${WORKDIR}
-dir=${GAMES_DATADIR}/${PN}
 
 src_install() {
+	local dir=${GAMES_DATADIR}/${PN}
 	insinto "${dir}"
 
 	cdrom_get_cds scream.res
