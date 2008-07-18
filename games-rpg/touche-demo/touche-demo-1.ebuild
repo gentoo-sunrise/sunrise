@@ -18,9 +18,9 @@ RDEPEND=">=games-engines/scummvm-0.10.0"
 DEPEND="app-arch/unzip"
 
 S=${WORKDIR}
-dir=${GAMES_DATADIR}/${PN}
 
 src_install() {
+	local dir=${GAMES_DATADIR}/${PN}
 	insinto "${dir}"
 	doins DATABASE/TOUCHE.DAT \
 		OBJ \
