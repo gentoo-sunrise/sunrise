@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> dott-1.ebuild:
+  Use local vars
+
   15 Jul 2008; Nathan Egge (unlord) <nathanegge@yahoo.com> +dott-1.ebuild,
   +files/dott.png, +metadata.xml:
   New ebuild for bug 142334
