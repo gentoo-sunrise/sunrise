@@ -1,0 +1,33 @@
+diff -r fbbf32d0aaf4 em2880-dvb.c
+--- a/em2880-dvb.c	Wed Jul 09 23:45:08 2008 +0200
++++ b/em2880-dvb.c	Sat Jul 19 00:37:32 2008 +0200
+@@ -200,6 +200,8 @@
+ static unsigned int debug;
+ module_param(debug, int, 0644);
+ MODULE_PARM_DESC(debug, "em2880-dvb debug level (default off)");
++
++DVB_DEFINE_MOD_OPT_ADAPTER_NR(adapter_nr);
+ 
+ #define dprintk(lvl, fmt, args...) if (debug >= lvl) do {\
+ 	printk(fmt, ##args); } while (0)
+@@ -869,7 +871,7 @@
+ #endif
+ 
+ 	dvb_register_adapter(&dvb_dev->adapter, "em2880 DVB-T", THIS_MODULE,
+-			&dev->udev->dev);
++			&dev->udev->dev, adapter_nr);
+ 
+ 	dvb_dev->adapter.priv = dev;
+ 
+diff -r fbbf32d0aaf4 em28xx-cards.c
+--- a/em28xx-cards.c	Wed Jul 09 23:45:08 2008 +0200
++++ b/em28xx-cards.c	Sat Jul 19 00:37:32 2008 +0200
+@@ -1928,7 +1928,7 @@
+ 		.em_type      = EM2800,
+ 		.vchannels    = 3,
+ 		.norm         = V4L2_STD_PAL_BG,
+-		.tuner_type   = TUNER_PHILIPS_ATSC,
++		.tuner_type   = TUNER_PHILIPS_FCV1236D,
+ 		.tda9887_conf = TDA9887_PRESENT,
+ 		.has_tuner    = 1,
+ 		.decoder      = EM28XX_SAA7113,
