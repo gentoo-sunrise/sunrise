@@ -4,7 +4,7 @@
 
 DESCRIPTION="Daemon to control the speed and voltage of CPUs"
 HOMEPAGE="http://powerthend.scheissname.de/"
-SRC_URI="http://powerthend.scheissname.de/sources/${P}.tar.gz"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

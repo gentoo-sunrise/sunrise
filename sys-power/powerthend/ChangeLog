@@ -1,6 +1,10 @@
 # ChangeLog for sys-power/powerthend
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  powerthend-1.1.1.ebuild:
+  Add an existing source location
 
   04 Dec 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
   nothing executable here
