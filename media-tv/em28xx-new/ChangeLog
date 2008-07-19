@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Jul 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> em28xx-new-9999.ebuild:
+  change installation method on live mercurial ebuild
+
+  19 Jul 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de>
   +em28xx-new-0.0.20080709.276798609861364.ebuild,
   +files/em28xx-new-2.6.26.patch:

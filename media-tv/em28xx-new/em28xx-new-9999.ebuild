@@ -16,19 +16,6 @@ IUSE=""
 
 S=${WORKDIR}/${PN}
 
-MODULE_NAMES="cx25843(empia:${S}/cx25843:${S}/cx25843)
-	drx3973d(empia:${S}/drx3973d:${S}/drx3973d)
-	lgdt3304-demod(empia:${S}/lgdt3304:${S}/lgdt3304)
-	mt2060(empia:${S}/mt2060:${S}/mt2060)
-	qt1010(empia:${S}/qt1010:${S}/qt1010)
-	tvp5150(empia:${S}/tvp5150:${S}/tvp5150)
-	xc3028-tuner(empia:${S}/xc3028:${S}/xc3028)
-	xc5000-tuner(empia:${S}/xc5000:${S}/xc5000)
-	zl10353(empia:${S}/zl10353:${S}/zl10353)
-	em28xx-audio(empia:${S}:${S})
-	em28xx-dvb(empia:${S}:${S})
-	em28xx(empia:${S}:${S})"
-
 CONFIG_CHECK="VIDEO_V4L2 DVB_CORE"
 
 pkg_setup() {
@@ -50,4 +37,12 @@ pkg_setup() {
 src_compile() {
 	set_arch_to_kernel
 	emake || die "Compiling kernel modules failed"
+}
+
+src_install() {
+	insinto /lib/modules/${KV_FULL}/empia
+	local extglob_bak=$(shopt -p extglob)
+	shopt -s extglob # portage disables bash extglob in ebuilds
+	doins $(echo {!(precompiled)/,}*.ko)
+	eval ${extglob_bak} # restore previous extglob status
 }
