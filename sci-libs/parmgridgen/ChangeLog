@@ -1,0 +1,9 @@
+# ChangeLog for sci-libs/parmgridgen
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Jul 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  +parmgridgen-1.0.ebuild, +files/parmgridgen-1.0-autotools.patch,
+  +metadata.xml:
+  New ebuild for bug 232491.
+
