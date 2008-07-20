@@ -33,6 +33,5 @@ src_unpack() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README
-	insinto /usr/share/doc/${PF}
-	doins Doc/*.pdf || die
+	dodoc Doc/*.pdf
 }
