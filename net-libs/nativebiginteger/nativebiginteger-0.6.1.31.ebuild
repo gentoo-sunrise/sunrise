@@ -24,9 +24,29 @@ src_compile() {
 	append-flags -fPIC
 	tc-export CC
 	cp "${FILESDIR}"/Makefile .
-	make libjbigi || die
+
+	#workaround, if current system-vm is a jre
+	if has_version =dev-java/sun-jdk-1.6*; then
+		einfo "Using sun-jdk-1.6"
+		GENTOO_VM="sun-jdk-1.6" make libjbigi || die
+	elif has_version =dev-java/sun-jdk-1.5*; then
+		einfo "Using sun-jdk-1.5"
+		GENTOO_VM="sun-jdk-1.5" make libjbigi || die
+	else
+		ewarn "Using system vm, make sure it is a JDK!!!"
+		make libjbigi || die
+	fi
 	use amd64 || filter-flags -fPIC
-	make libjcpuid || die
+	if has_version =dev-java/sun-jdk-1.6*; then
+		einfo "Using sun-jdk-1.6"
+		GENTOO_VM="sun-jdk-1.6" make libjcpuid || die
+	elif has_version =dev-java/sun-jdk-1.5*; then
+		einfo "Using sun-jdk-1.5"
+		GENTOO_VM="sun-jdk-1.5" make libjcpuid || die
+	else
+		ewarn "Using system vm, make sure it is a JDK!!!"
+		make libjcpuid || die
+	fi
 }
 
 src_install() {
