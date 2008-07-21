@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> symon-2.79.ebuild:
+  Improve elog messages
+
   16 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> symon-2.79.ebuild:
   Rename 'client' USE flag to 'perl'
 
