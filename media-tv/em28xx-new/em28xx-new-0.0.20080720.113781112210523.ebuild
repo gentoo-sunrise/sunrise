@@ -25,10 +25,6 @@ pkg_setup() {
 		die "Kernel too old"
 	fi
 
-	if kernel_is ge 2 6 26; then
-		PATCHES=( "${FILESDIR}/${PN}-2.6.26.patch" )
-	fi
-
 	ebegin "Checking for CONFIG_VIDEO_EM28XX disabled"
 	! linux_chkconfig_present VIDEO_EM28XX
 	eend $?
