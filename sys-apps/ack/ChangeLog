@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jul 2008; René Neumann (Necoro) <gentoo@necoro.eu> -ack-1.84.ebuild,
+  +ack-1.86.ebuild:
+  Version bump
+
   01 Jun 2008; René Neumann (Necoro) <gentoo@necoro.eu> ack-1.84.ebuild:
   Added ~amd64 keyword as per bug #220645 comment #5
 
