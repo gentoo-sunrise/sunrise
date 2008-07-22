@@ -25,10 +25,6 @@
 # Mask live ebuild
 =net-news/canto-9999
 
-# Oliver Borm (boroli) <oli.borm@web.de> (24 Jun 2008)
-# Mask PyFoam, because deps are masked
-dev-python/PyFoam
-
 # Chi-Thanh Christopher Nguyen (chithead) <chithanh@cs.tu-berlin.de> (19 Jun 2008)
 # Mask live ebuild
 =media-tv/em28xx-new-9999
