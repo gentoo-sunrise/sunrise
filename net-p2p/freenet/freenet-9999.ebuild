@@ -24,23 +24,22 @@ IUSE=""
 CDEPEND="dev-java/db-je:3.2
 	dev-java/fec
 	dev-java/java-service-wrapper"
-DEPEND="dev-util/subversion
-	>=dev-java/sun-jdk-1.5
+DEPEND=">=virtual/jdk-1.5
 	dev-java/ant-core
-	dev-util/subversion
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
 	x86? ( net-libs/fec )
 	net-libs/nativebiginteger
 	${CDEPEND}"
 PDEPEND="net-libs/NativeThread"
-S="${WORKDIR}/freenet"
+S="${WORKDIR}/${PN}"
 
 RESTRICT="userpriv"
 EANT_BUILD_TARGET="dist"
 MY_FREENET_LATEST="-trunk"
 
 pkg_setup() {
+	java-pkg-2_pkg_setup
 	enewgroup freenet
 	enewuser freenet -1 -1 /opt/freenet freenet
 }
@@ -59,7 +58,6 @@ src_unpack() {
 	epatch "${FILESDIR}"/wrapper.conf.patch
 	epatch "${FILESDIR}"/ext.patch
 	use amd64 && sed -i -e 's/=lib/=lib64/g' wrapper.conf
-	sed -i -e 's/=128/=2048/g' wrapper.conf
 	mkdir -p lib
 	cd lib
 	java-pkg_jar-from db-je-3.2
@@ -99,15 +97,6 @@ pkg_postinst () {
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet (\"insecure mode\") on the config page to get started."
 	elog
-	if use amd64;then
-		if has_version =dev-java/blackdown-jdk-1.4*;then
-			elog "Freenet does not run with 64bit blackdown-jdk,"
-			elog "please make sure that either system-vm or the"
-			elog "user-vm for freenet uses sun-jdk or some other"
-			elog "vm (other vms are untested)."
-			elog
-		fi
-	fi
 	chown freenet:freenet /opt/freenet
 }
 
