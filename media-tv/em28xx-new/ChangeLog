@@ -2,6 +2,12 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jul 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de>
+  -em28xx-new-0.0.20080720.113781112210523.ebuild,
+  +em28xx-new-0.0.20080723.48406006002114.ebuild:
+  new snapshot
+
   21 Jul 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de>
   -em28xx-new-0.0.20080709.276798609861364.ebuild,
