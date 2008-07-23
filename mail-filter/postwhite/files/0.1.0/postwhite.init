@@ -1,0 +1,21 @@
+#!/sbin/runscript
+# Copyright 1999-2008 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need net
+	before postfix
+}
+
+start() {
+	ebegin "Starting Postwhite"
+	/usr/sbin/postwhite --quiet --detach ${POSTWHITE_OPTS} start 
+	eend ${?}
+}
+
+stop() {
+	ebegin "Stopping Postwhite"
+	/usr/sbin/postwhite --quiet stop	
+	eend ${?}
+}

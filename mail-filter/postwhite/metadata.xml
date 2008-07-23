@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<maintainer>
+		<email>gentoo@bitcetera.com</email>
+		<name>Sven Schwyn</name>
+	</maintainer>
+	<longdescription lang="en">
+		Postwhite is a policy server for Postfix MTA which filters incoming emails
+		based on per recipient whitelists managed by an email frontend.
+		
+		Incoming emails are denied unless the sender address or sender domain is 
+		present on the recipient's whitelist. This concept is neither new nor fancy
+		in itself, but the way Postwhite lets you manage your whitelist sure is.
+
+		Here is a real life example:
+
+		Arthur's main email address arthur@dent.tld is great for everyday
+		use, but he doesn't want to pollute it by using it for mailing lists,
+		websites, online shopping and such. Postwhite to the rescue! Arthur creates 
+		a virtual email address hitchhike@dent.tld which is delivered to 
+		the same mailbox. He adds this address to recipients.yml and then
+		restarts Postwhite.
+
+		Initially, all incoming emails will be denied, so when Arthur decides to 
+		join the Betelgeuse mailing list, his whitelist has to learn about this. 
+		Arthur sends an empty email to hitchhike+learn@dent.tld which
+		puts Postwhite into learning mode for a limited period of time. In learning
+		mode, Postwhite allows and delivers any incoming mails, yet it
+		delivers a followup notification message along with it. When the first 
+		email from the Betelgeuse mailing list comes in, Arthur simply replies to 
+		the corresponding notification message thus adding Betelgeuse to the 
+		whitelist.
+	</longdescription>
+</pkgmetadata>
