@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jul 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -gcstar-1.4.0.ebuild, +gcstar-1.4.1.ebuild:
+  Version bump
+
   07 Jun 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -gcstar-1.3.2.ebuild, -files/gcstar-1.3.2-man.patch, +gcstar-1.4.0.ebuild,
   +files/gcstar-1.4.0-desktop.patch, +files/gcstar-1.4.0-man.patch:
