@@ -17,7 +17,6 @@ DEPEND="x11-libs/openmotif
 	x11-libs/libXpm
 	dev-libs/libpcre
 	net-misc/curl
-	sys-libs/zlib
 	sys-libs/db
 	sci-libs/shapelib
 	geotiff? ( sci-libs/proj
