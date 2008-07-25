@@ -2,6 +2,10 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Jul 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  ax25-tools-0.0.8_p20080711.ebuild:
+  fix trailing whitespace
+
   25 Jul 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> +files/ax25d.rc,
   +ax25-tools-0.0.8_p20080711.ebuild, +files/mheardd.rc, +files/netromd.rc,
   +files/rip98d.rc, +files/ax25-tools-9999-axgetput.diff, +files/rxecho.rc,
