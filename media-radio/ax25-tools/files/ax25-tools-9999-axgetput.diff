@@ -1,0 +1,13 @@
+# first install man files. afterward do links...
+
+--- ax25/axgetput/Makefile.am.orig	2008-07-15 15:16:15.000000000 +0200
++++ ax25/axgetput/Makefile.am	2008-07-15 15:16:33.000000000 +0200
+@@ -15,7 +15,6 @@
+ 
+ install-exec-local:
+ 	(cd $(DESTDIR)$(bindir) && ln -sf axgetput bget && ln -sf axgetput bput)
+-	make install-man-local
+ 
+-install-man-local:
++install-data-hook:
+ 	(cd $(DESTDIR)$(mandir)/man1 && ln -sf axgetput.1 bget.1 && ln -sf axgetput.1 bput.1)

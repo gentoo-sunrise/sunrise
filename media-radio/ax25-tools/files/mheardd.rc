@@ -1,0 +1,20 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/www/viewcvs.gentoo.org/raw_cvs/gentoo-x86/media-radio/ax25-tools/files/Attic/mheardd.rc,v 1.4 2007/02/04 19:03:09 masterdriverz dead $
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting mheardd"
+	start-stop-daemon --start --quiet --background --exec /usr/sbin/mheardd
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping mheardd"
+	start-stop-daemon --stop --quiet --exec /usr/sbin/mheardd
+	eend $?
+}

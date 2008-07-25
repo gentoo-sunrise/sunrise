@@ -1,0 +1,20 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/www/viewcvs.gentoo.org/raw_cvs/gentoo-x86/media-radio/ax25-tools/files/Attic/rxecho.rc,v 1.4 2007/02/04 19:03:09 masterdriverz dead $
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting rxecho"
+	start-stop-daemon --start --quiet --background --exec /usr/sbin/rxecho
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping rxecho"
+	start-stop-daemon --stop --quiet --exec /usr/sbin/rxecho
+	eend $?
+}
