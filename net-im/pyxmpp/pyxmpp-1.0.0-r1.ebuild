@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils distutils
 
 DESCRIPTION="A Python XMPP (RFC 3920,3921) and Jabber implementation"
 HOMEPAGE="http://pyxmpp.jajcus.net/"
@@ -11,11 +11,12 @@ SRC_URI="http://pyxmpp.jajcus.net/downloads/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="doc"
 
 DEPEND=">=dev-lang/python-2.3
 	>=dev-libs/libxml2-2.6.23"
-RDEPEND=">=dev-python/dnspython-1.3.2
+RDEPEND="${DEPEND}
+	>=dev-python/dnspython-1.3.2
 	>=dev-python/m2crypto-0.13.1"
 
 pkg_setup() {
@@ -27,7 +28,8 @@ pkg_setup() {
 	fi
 }
 
-src_compile() {
-	emake DESTDIR="${D}" build || die "emake build failed"
-	dohtml -r doc/*
+src_install() {
+	DOCS="CHANGES"
+	distutils_src_install
+	use doc && dohtml -r doc/www/*
 }
