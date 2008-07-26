@@ -19,7 +19,7 @@ IUSE=""
 
 DEPEND="|| ( sci-libs/openfoam-meta sci-libs/openfoam sci-libs/openfoam-bin )"
 
-S="${WORKDIR}"/${MY_P}
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
