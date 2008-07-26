@@ -21,7 +21,7 @@ DEPEND="!sci-libs/openfoam
 	!sci-libs/openfoam-bin
 	>=sci-libs/openfoam-kernel-${MY_PV}"
 
-S="${WORKDIR}"/${MY_P}
+S=${WORKDIR}/${MY_P}
 INSDIR=/usr/$(get_libdir)/${MY_PN}/${MY_P}
 
 pkg_setup() {
@@ -34,7 +34,7 @@ src_unpack() {
 	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
 	unpack ./${MY_P}.General.tgz
 
-	cd ${S}
+	cd "${S}"
 	epatch "${FILESDIR}"/${MY_P}-compile.patch
 }
 
