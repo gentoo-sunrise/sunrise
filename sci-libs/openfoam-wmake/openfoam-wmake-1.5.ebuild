@@ -22,7 +22,7 @@ DEPEND="!sci-libs/openfoam
 	virtual/mpi
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )"
 
-S="${WORKDIR}"/${MY_P}
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
