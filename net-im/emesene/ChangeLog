@@ -3,6 +3,11 @@
 # $Header: $
 
   27 Jul 2008; Denis ChengRq (raeLLL) <crquan@gmail.com>
+  emesene-1.0.1.ebuild:
+  Sorry to readd IUSE, which tommy have done in r6389, I just worked on a base
+  of emesene-1.0.ebuild from bug 211174
+
+  27 Jul 2008; Denis ChengRq (raeLLL) <crquan@gmail.com>
   +emesene-1.0.1.ebuild:
   New ebuild for bug 211174, thanks to Tommy[D], reviewed by darc
 

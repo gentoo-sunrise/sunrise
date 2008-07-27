@@ -10,8 +10,8 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 DEPEND=">=dev-lang/python-2.4.3
 	>=x11-libs/gtk+-2.8.20
