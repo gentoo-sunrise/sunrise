@@ -31,5 +31,7 @@ pkg_setup() {
 src_install() {
 	DOCS="CHANGES"
 	distutils_src_install
-	use doc && dohtml -r doc/www/*
+	if use doc; then
+		dohtml -r doc/www/* || die "Dohtml failed"
+	fi
 }

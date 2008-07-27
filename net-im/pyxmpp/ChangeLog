@@ -3,6 +3,10 @@
 # $Header: $
 
   27 Jul 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  pyxmpp-1.0.0-r2.ebuild:
+  Make dohtml die on failure.
+
+  27 Jul 2008; Thomas Anderson <gentoofan23@gentoo.org>
   -pyxmpp-1.0.0-r1.ebuild, +pyxmpp-1.0.0-r2.ebuild:
   Revision bump for new doc USE flag
 
