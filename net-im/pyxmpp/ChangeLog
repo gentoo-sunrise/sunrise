@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jul 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  -pyxmpp-1.0.0-r1.ebuild, +pyxmpp-1.0.0-r2.ebuild:
+  Revision bump for new doc USE flag
+
   25 Jul 2008; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
   pyxmpp-1.0.0-r1.ebuild:
   Fixed package installation, added "doc" use-flag.
