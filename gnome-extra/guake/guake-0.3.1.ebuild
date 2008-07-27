@@ -3,12 +3,11 @@
 # $Header: $
 
 EAPI="1"
-inherit gnome2 versionator
-MY_PN=$(get_version_component_range 1-2)
+inherit gnome2
 
 DESCRIPTION="Guake is a drop-down terminal for Gnome"
 HOMEPAGE="http://guake-terminal.org/"
-SRC_URI="http://guake-terminal.org/releases/${MY_PN}/${P}.tar.gz"
+SRC_URI="http://guake-terminal.org/releases/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
