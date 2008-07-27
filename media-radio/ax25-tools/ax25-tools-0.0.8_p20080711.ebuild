@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~ppc ~x86"
 IUSE="X"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 DEPEND=">=dev-libs/libax25-0.0.5
 	X? ( x11-libs/libX11
