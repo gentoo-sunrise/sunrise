@@ -7,7 +7,7 @@ DATE=20080721
 DATE2=20080330
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
-inherit eutils java-pkg-2 java-ant-2 subversion
+inherit eutils java-pkg-2 java-ant-2 multilib subversion
 
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
@@ -57,7 +57,7 @@ src_unpack() {
 	sed -ie "s:@custom@:${MY_FREENET_LATEST}:g" src/freenet/node/Version.java
 	epatch "${FILESDIR}"/wrapper.conf.patch
 	epatch "${FILESDIR}"/ext.patch
-	use amd64 && sed -i -e 's/=lib/=lib64/g' wrapper.conf
+	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
 	mkdir -p lib
 	cd lib
 	java-pkg_jar-from db-je-3.2
