@@ -39,15 +39,15 @@ src_unpack() {
 }
 
 src_compile() {
-	cp -a ${INSDIR}/etc/{bashrc,settings.sh} "${S}"/etc/. || die "cannot copy bashrc"
+	cp -a /usr/$(get_libdir)/${MY_PN}/${MY_P}/etc/{bashrc,settings.sh} "${S}"/etc/. || die "cannot copy bashrc"
 
 	# This is a hack, due to the meta ebuild:
-	sed -i -e "s|FOAM_LIB=\$WM_PROJECT_DIR/lib|FOAM_LIB=${INSDIR}/lib|"	\
+	sed -i -e "s|FOAM_LIB=\$WM_PROJECT_DIR/lib|FOAM_LIB=/usr/$(get_libdir)/${MY_PN}/${MY_P}/lib|"	\
 		-e "s|FOAM_LIBBIN=\$FOAM_LIB|FOAM_LIBBIN=\$WM_PROJECT_DIR/lib|"	\
 		-e "s|_foamAddLib \$FOAM_USER_LIBBIN|_foamAddLib \$FOAM_LIB|"	\
 		etc/settings.sh || die "could not replace paths"
 
-	sed -i -e "s|-L\$(LIB_WM_OPTIONS_DIR)|-L\$(LIB_WM_OPTIONS_DIR) -L${INSDIR}/lib|" \
+	sed -i -e "s|-L\$(LIB_WM_OPTIONS_DIR)|-L\$(LIB_WM_OPTIONS_DIR) -L/usr/$(get_libdir)/${MY_PN}/${MY_P}/lib|" \
 		wmake/Makefile || die "could not replace search paths"
 
 	sed -i -e "s|(FOAM_LIBBIN)|(FOAM_LIB)|" applications/utilities/postProcessing/velocityField/{flowType,Pe,uprime,vorticity,enstrophy,Q,Co,Lambda2,Mach}/Make/options	|| die "cannot change LIB dir"
@@ -56,16 +56,13 @@ src_compile() {
 	export FOAM_INST_DIR="${WORKDIR}"
 	source etc/bashrc
 
-	cd wmake/src
-	make
-
 	cd applications/utilities
 	wmake all || die "could not build OpenFOAM utilities"
 }
 
 src_install() {
 	insopts -m0755
-	insinto ${INSDIR}/applications/bin
+	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications/bin
 	doins -r applications/bin/*
 
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/lib
