@@ -24,7 +24,6 @@ DEPEND="!sci-libs/openfoam
 	sci-libs/parmgridgen"
 
 S=${WORKDIR}/${MY_P}
-INSDIR=/usr/$(get_libdir)/${MY_PN}/${MY_P}
 
 pkg_setup() {
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
@@ -41,13 +40,10 @@ src_unpack() {
 }
 
 src_compile() {
-	cp -a ${INSDIR}/etc/{bashrc,settings.sh} etc/. || die "cannot copy bashrc"
+	cp -a /usr/$(get_libdir)/${MY_PN}/${MY_P}/etc/{bashrc,settings.sh} etc/. || die "cannot copy bashrc"
 
 	export FOAM_INST_DIR="${WORKDIR}"
 	source etc/bashrc
-
-	cd wmake/src
-	make
 
 	cd src
 	./Allwmake || die "could not build OpenFOAM kernel"
