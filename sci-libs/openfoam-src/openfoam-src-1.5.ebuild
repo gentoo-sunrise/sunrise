@@ -30,7 +30,6 @@ src_unpack() {
 }
 
 src_install() {
-	insopts -m0644
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/src
 	doins -r src/*
 

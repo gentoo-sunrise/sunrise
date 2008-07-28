@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jul 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  openfoam-src-1.5.ebuild:
+  Removed unnecessary insopts line
+
   26 Jul 2008; Thomas Anderson <gentoofan23@gentoo.org>
   openfoam-src-1.5.ebuild:
   Fix unnecessary quoting
