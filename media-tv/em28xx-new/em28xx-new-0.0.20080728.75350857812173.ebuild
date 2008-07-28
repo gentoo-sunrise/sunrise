@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base linux-info linux-mod versionator
+inherit linux-info linux-mod versionator
 
 printf -v EHG_REVISION '%012x' "$(get_version_component_range 4)"
 
