@@ -16,8 +16,8 @@ IUSE="ftdi sdl"
 RDEPEND=">=dev-libs/glib-2
 	sys-libs/gpm
 	media-libs/libsndfile
-	media-libs/libpng
-	sdl? ( media-libs/libsdl )
+	>=media-libs/libpng-1.2
+	sdl? ( >=media-libs/libsdl-1.2 )
 	ftdi? ( dev-embedded/libftdi )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
