@@ -18,7 +18,7 @@ RDEPEND=""
 
 src_test() {
 	cd tests
-	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed cflags failed"
+	sed -i "/CFLAGS/s/-O3/${CFLAGS}/" Makefile || die "sed cflags failed"
 	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
@@ -26,6 +26,5 @@ src_install() {
 	insinto /usr/include
 	doins src/uthash.h
 
-	dodoc doc/txt/userguide.txt
-	doman doc/man/uthash.3
+	dodoc ChangeLog doc/txt/userguide.txt
 }
