@@ -22,7 +22,6 @@ DEPEND="!sci-libs/openfoam
 	>=sci-libs/openfoam-solvers-${MY_PV}"
 
 S=${WORKDIR}/${MY_P}
-INSDIR=/usr/$(get_libdir)/${MY_PN}/${MY_P}
 
 pkg_setup() {
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
