@@ -66,7 +66,7 @@ src_compile() {
 	find wmake -name wmkdep | xargs rm -rf
 
 	cd wmake/src
-	make || die "could not build wmake"
+	emake || die "could not build wmake"
 }
 
 src_test() {
