@@ -33,7 +33,7 @@ src_unpack() {
 	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
 	unpack ./${MY_P}.General.tgz
 
-	cd ${S}
+	cd "${S}"
 	epatch "${FILESDIR}"/${MY_P}-compile.patch
 }
 
