@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  acpi-support-0.103.ebuild:
+  Change SRC_URI to use the mirror list + drop empty DEPEND
+
   20 Apr 2008; Santiago M. Mola <coldwind@gentoo.org>
   acpi-support-0.103.ebuild:
   Add ~amd64 keyword.

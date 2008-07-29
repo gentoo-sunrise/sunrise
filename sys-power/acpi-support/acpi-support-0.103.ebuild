@@ -6,14 +6,13 @@ inherit eutils
 
 DESCRIPTION="Ubuntu scripts and events for acpid, power management, and vendor-specific laptop configuration"
 HOMEPAGE="http://packages.ubuntu.com/feisty/admin/acpi-support"
-SRC_URI="http://archive.ubuntu.com/ubuntu/pool/main/a/acpi-support/acpi-support_${PV}.tar.gz"
+SRC_URI="mirror://ubuntu/pool/main/a/acpi-support/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="X hibernate-script video_cards_radeon"
 
-DEPEND=""
 RDEPEND="sys-power/acpid
 	sys-apps/kbd
 	sys-apps/dmidecode
