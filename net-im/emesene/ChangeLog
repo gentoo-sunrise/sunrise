@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -emesene-1.0.ebuild:
+  Drop old version
+
   27 Jul 2008; Denis ChengRq (raeLLL) <crquan@gmail.com>
   emesene-1.0.1.ebuild:
   Sorry to readd IUSE, which tommy have done in r6389, I just worked on a base
