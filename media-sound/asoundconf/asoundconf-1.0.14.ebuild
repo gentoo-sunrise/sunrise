@@ -9,8 +9,8 @@ MY_P="alsa-utils_${PV}-1ubuntu4_i386"
 GTK_PN="${PN}-gtk"
 GTK_PV="1.5.1"
 GTK_MY_P="${PN}-gtk_${GTK_PV}-0ubuntu2_all"
-SRC_URI="http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-utils/${MY_P}.deb
-	 gtk? ( http://archive.ubuntu.com/ubuntu/pool/universe/a/${GTK_PN}/${GTK_MY_P}.deb )"
+SRC_URI="mirror://ubuntu/pool/main/a/alsa-utils/${MY_P}.deb
+	 gtk? ( mirror://ubuntu/pool/universe/a/${GTK_PN}/${GTK_MY_P}.deb )"
 
 LICENSE="GPL-2"
 SLOT="0"
