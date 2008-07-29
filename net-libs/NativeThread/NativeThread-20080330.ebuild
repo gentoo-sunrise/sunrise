@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic java-pkg-2 toolchain-funcs
 
 DESCRIPTION="NativeThread for priorities on linux for freenet"
 HOMEPAGE="http://www.freenetproject.org/"
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="net-p2p/freenet
-	virtual/jdk
+	>=virtual/jdk-1.4
 	!net-p2p/NativeThread"
 RDEPEND=""
 
