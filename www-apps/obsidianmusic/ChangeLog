@@ -1,0 +1,8 @@
+# ChangeLog for www-apps/obsidianmusic
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jul 2008; Pavel Denisov (akreal) <paul_denisov@inbox.ru>
+  +obsidianmusic-2.0.5.4.ebuild, +metadata.xml:
+  Initial ebuild for bug #233304.
+
