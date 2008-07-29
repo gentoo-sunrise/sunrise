@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic java-pkg-2 toolchain-funcs
 
 DESCRIPTION="Forword error correction libs"
 HOMEPAGE="http://www.onionnetworks.com/developers/"
@@ -14,7 +14,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND=""
-DEPEND="virtual/jdk
+DEPEND=">=virtual/jdk-1.4
 	app-arch/unzip
 	!net-p2p/fec"
 S=${WORKDIR}/${P}/src/csrc/

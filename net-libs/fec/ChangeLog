@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> fec-1.0.3.ebuild:
+  Add java eclass
+
   04 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> fec-1.0.3.ebuild:
   Fix SRC_URI
 
