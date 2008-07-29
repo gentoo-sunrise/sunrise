@@ -25,8 +25,8 @@ src_compile() {
 	tc-export CC
 	cp "${FILESDIR}"/Makefile .
 
-	make libjbigi || die
-	make libjcpuid || die
+	emake libjbigi || die
+	emake libjcpuid || die
 }
 
 src_install() {
