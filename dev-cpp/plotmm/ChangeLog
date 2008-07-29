@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  plotmm-0.1.2.ebuild:
+  Whitey
+
   24 Jul 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   plotmm-0.1.2.ebuild, +files/plotmm-0.1.2-libsigc++-2.2.patch:
   Updated ebuild with libsigc++-2.2* patch

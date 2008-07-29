@@ -36,4 +36,3 @@ src_install() {
 		dohtml -r doc/html/* || die "dohtml failed"
 	fi
 }
-
