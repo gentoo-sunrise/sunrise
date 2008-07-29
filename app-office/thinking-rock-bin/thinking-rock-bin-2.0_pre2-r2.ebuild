@@ -7,7 +7,7 @@ inherit eutils
 MY_P="tr-2.0.epsilon"
 DESCRIPTION="Java-based Getting Things Done (GTD) application"
 HOMEPAGE="http://thinkingrock.com.au/"
-SRC_URI="http://mesh.dl.sourceforge.net/sourceforge/thinkingrock/${MY_P}.zip"
+SRC_URI="mirror://sourceforge/thinkingrock/${MY_P}.zip"
 
 LICENSE="CDDL"
 SLOT="0"
