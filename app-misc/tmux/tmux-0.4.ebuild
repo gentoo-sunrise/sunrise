@@ -42,3 +42,8 @@ src_install() {
 		dodoc examples/*
 	fi
 }
+
+pkg_postinst() {
+	elog "NOTE that tmux doesn't support \\\033_string\\\033\\\\\\ for window"
+	elog "titles. If you're using BASH unset PROMPT_COMMAND."
+}
