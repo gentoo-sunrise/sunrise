@@ -4,7 +4,7 @@
 
 DESCRIPTION="a tool to write option parsing code for C programs."
 HOMEPAGE="http://www.gnu.org/software/gengetopt/"
-SRC_URI="ftp://ftp.gnu.org/gnu/${PN}/${P}.tar.gz"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
