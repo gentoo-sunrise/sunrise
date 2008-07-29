@@ -1,8 +1,0 @@
-# ChangeLog for media-gfx/pngnq
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  05 Feb 2008; Christoph Brill (egore) egore@gmx.de
-  +files/pngnq-0.5-makefile.patch, +metadata.xml, +pngnq-0.5.ebuild:
-  New Ebuild for bug 203000
-
