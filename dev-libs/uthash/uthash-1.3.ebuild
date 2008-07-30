@@ -24,7 +24,7 @@ src_test() {
 
 src_install() {
 	insinto /usr/include
-	doins src/uthash.h
+	doins src/uthash.h || die "doins failed"
 
-	dodoc ChangeLog doc/txt/userguide.txt
+	dodoc ChangeLog doc/txt/userguide.txt || die "dodoc failed"
 }
