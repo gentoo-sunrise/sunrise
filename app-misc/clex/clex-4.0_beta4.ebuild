@@ -20,5 +20,5 @@ S=${WORKDIR}/${PN}-${PV%_beta*}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ChangeLog
+	dodoc ChangeLog || die "dodoc failed"
 }
