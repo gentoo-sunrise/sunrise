@@ -2,18 +2,19 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt4 multilib
 
 DESCRIPTION="Homebrewer's recipe calculator"
 HOMEPAGE="http://www.usermode.org/code.html"
 SRC_URI="http://www.usermode.org/code/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="$(qt4_min_version 4.3)"
+DEPEND="|| ( ( x11-libs/qt-core:4 x11-libs/qt-gui:4 ) >=x11-libs/qt-4.3:4 )"
 RDEPEND="${DEPEND}"
 
 src_compile() {
