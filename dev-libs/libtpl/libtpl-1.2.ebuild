@@ -39,12 +39,12 @@ src_test() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc doc/txt/{examples,future,perl,userguide}.txt
+	dodoc doc/txt/{examples,future,perl,userguide}.txt || die "dodoc failed"
 
 	if use perl ; then
 		perlinfo
 		insinto ${SITE_LIB}
-		doins lang/perl/Tpl.pm
+		doins lang/perl/Tpl.pm || die "doins failed"
 	fi
 }
 
