@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> uthash-1.3.ebuild:
+  Avoid returning zero if a test fails
+
   30 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> uthash-1.3.ebuild:
   Make doins, and dodoc die on failure
 
