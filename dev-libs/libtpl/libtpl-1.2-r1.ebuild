@@ -26,9 +26,11 @@ src_compile() {
 
 src_test() {
 	cd tests
+
 	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed cflags failed"
-	# don't dump/load the tpl files on /tmp
 	sed -i "s|/tmp/||g" *.c || die "sed tpl failed"
+	sed -i "\$a\exit \$num_failed" do_tests || die "sed exit code failed"
+
 	emake -j1 CC="$(tc-getCC)" || die "emake failed"
 
 	if use perl ; then
