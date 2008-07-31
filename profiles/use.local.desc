@@ -122,9 +122,6 @@ media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:cddb - Access cddb servers to retrieve and submit information about compact disks.
 media-sound/gnormalize:musepack - Enables support for the musepack audio codec
 media-sound/gnormalize:normalize - Enable the normalize front-end
-media-sound/lmms:ladspa - Enables support for LADSPA plugins
-media-sound/lmms:samplerate - Enable support for libsamplerate
-media-sound/lmms:vst - Enable support for VST plugins
 media-sound/ncmpc:artist-screen - local USE flag for this software, please describe
 media-sound/ncmpc:lyrics-screen - local USE flag for this software, please describe
 media-sound/om:dssi - Enables support for DSSI plugins
