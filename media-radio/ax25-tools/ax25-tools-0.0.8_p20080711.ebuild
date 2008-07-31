@@ -48,4 +48,3 @@ src_install() {
 	newinitd "${FILESDIR}"/rxecho.rc rxecho
 	newinitd "${FILESDIR}"/ttylinkd.rc ttylinkd
 }
-
