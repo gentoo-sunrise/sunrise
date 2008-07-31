@@ -164,7 +164,6 @@ net-misc/clinkcc:mythtv - Enable MythTV support
 net-misc/mugshot:xulrunner - Compile browser extension using xulrunner
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
-net-p2p/murmur:trayicon - Enable support for tray icon
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-libs/cgnslib:hdf5 - Adds support for the Hierarchical Data Format v5
@@ -192,4 +191,3 @@ sys-fs/aufs:robr - Enable aufs readonly-branch
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
-x11-misc/wbar:animation - Patch for animation support
