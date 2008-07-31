@@ -121,14 +121,16 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Before running the monitor, edit /etc/symon.conf"
+	elog "Before running the monitor, edit /etc/symon.conf. To test your"
+	elog "configuration file, run symon -t."
 	elog "NOTE that symon won't chroot by default."
 
 	use perl && perl-module_pkg_postinst
 
 	if use symux ; then
-		elog "Before running the data collector, edit /etc/symux.conf"
-		elog "To create the RRDs run /usr/share/symon/c_smrrds.sh all"
+		elog "Before running the data collector, edit /etc/symux.conf."
+		elog "To create the RRDs run /usr/share/symon/c_smrrds.sh all. Then,"
+		elog "to test your configuration file, run symux -t."
 		elog "For information about migrating RRDs from a previous symux"
 		elog "version read the LEGACY FORMATS section of symux(8)."
 	fi
@@ -136,6 +138,8 @@ pkg_postinst() {
 	if use syweb ; then
 		elog "Test your syweb configuration by pointing your browser at:"
 		elog "http://${VHOST_HOSTNAME}/${PN}/configtest.php"
+		elog "NOTE that syweb expects a machine/*.rrd style directory"
+		elog "structure under /var/lib/symon/rrds."
 		webapp_pkg_postinst
 	fi
 }
