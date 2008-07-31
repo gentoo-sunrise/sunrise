@@ -54,7 +54,7 @@ src_unpack() {
 }
 
 src_compile() {
-	MAKE=pmake emake \
+	MAKE=pmake MAKEOPTS= emake \
 		AR="$(tc-getAR)" \
 		CC="$(tc-getCC)" \
 		CFLAGS+="${CFLAGS}" \
