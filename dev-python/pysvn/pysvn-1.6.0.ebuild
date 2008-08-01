@@ -38,7 +38,7 @@ src_install() {
 
 	cd pysvn
 	exeinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
-	doexe _pysvn_2_4.so
+	doexe _pysvn*.so
 	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 	doins __init__.py
 
