@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -lxdream-0.8.3.ebuild, +lxdream-0.8.4.ebuild:
+  Version bump, add debug, esd, pulseaudio USE flags
+
   23 May 2008; Chi-Thanh Christopher Nguyen <chithanh@cs.tu-berlin.de>
   +lxdream-0.8.3.ebuild, +metadata.xml:
   add lxdream ebuild from bug 202989
