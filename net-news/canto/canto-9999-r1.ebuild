@@ -17,3 +17,11 @@ IUSE=""
 DEPEND="sys-libs/ncurses"
 
 EGIT_REPO_URI="http://codezen.org/src/canto.git"
+
+src_install() {
+	sed -i "s:SETUPPY_SET_MAN_PATH:\"\":g" "${S}/canto/cfg.py" || die
+	sed -i "s:SETUPPY_SET_BIN_PATH:\"/usr/bin/\":g" "${S}/canto/cfg.py" || die
+	sed -i "s:/canto.1:canto:g" "${S}/canto/gui.py" || die
+
+	distutils_src_install
+}
