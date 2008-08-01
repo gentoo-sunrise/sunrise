@@ -1,0 +1,8 @@
+# ChangeLog for dev-tex/sketch
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Aug 2008; Dmitry Dzhus (dzhus) <dima@sphinx.net.ru>
+  +sketch-0.2.90.ebuild, +metadata.xml:
+  New ebuild from bug 233249
+
