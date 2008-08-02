@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	unpack ./${PN}.1.bz2
+	unpack ./${PN}.1.lzma
 }
 
 src_install() {
