@@ -100,6 +100,11 @@ kde-misc/kio-sysinfo:branding - Enable a custom gentoo branded background
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:cluster - Add support for cluster rendering
+media-gfx/graphicsmagick:fpx - Enable FlashPix support
+media-gfx/graphicsmagick:imagemagick - Enable ImageMagick command compatibility
+media-gfx/graphicsmagick:openmp - Build support for the OpenMP (support parallel computing)
+media-gfx/graphicsmagick:q16 - Set quantum depth to 16
+media-gfx/graphicsmagick:q32 - Set quantum depth to 32
 media-gfx/openscenegraph:coin - Compile coin plugin
 media-gfx/openscenegraph:gdal - Compile gdal plugin
 media-gfx/openscenegraph:introspection - Compile osgIntrospection
