@@ -4,6 +4,10 @@
 
   03 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gnormalize-0.63.ebuild:
+  Whitey
+
+  03 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  gnormalize-0.63.ebuild:
   Dobin should have a die, simplify
 
   05 Apr 2007; Jakub Moc <jakub@gentoo.org> gnormalize-0.52.ebuild:
