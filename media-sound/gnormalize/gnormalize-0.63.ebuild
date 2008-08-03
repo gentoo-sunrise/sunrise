@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="aac cddb flac mp3 musepack normalize vorbis"
 
-RDEPEND=">=x11-libs/gtk+-2.4.0
+DEPEND=">=x11-libs/gtk+-2.4.0
 	>=dev-perl/gtk2-perl-1.040
 	aac? ( media-libs/faac
 		media-libs/faad2 )
@@ -31,7 +31,6 @@ RDEPEND=">=x11-libs/gtk+-2.4.0
 	musepack? ( media-sound/musepack-tools )
 	normalize? ( media-sound/normalize )
 	vorbis? ( media-sound/vorbis-tools )"
-DEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
@@ -40,7 +39,7 @@ src_unpack() {
 }
 
 src_install() {
-	dobin ${PN}
+	dobin ${PN} || die "dobin failed"
 
 	insinto /usr/share/${PN}
 	doins -r animations
@@ -48,7 +47,7 @@ src_install() {
 	doicon icons/${PN}.png
 	make_desktop_entry ${PN} ${PN} ${PN}.png "AudioVideo;Audio;AudioVideoEditing"
 
-	doman ${PN}.1
+	doman ${PN}.1 
 	dodoc README
 }
 
