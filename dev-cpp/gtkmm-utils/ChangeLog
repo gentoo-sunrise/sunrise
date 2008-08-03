@@ -1,0 +1,8 @@
+# ChangeLog for dev-cpp/gtkmm-utils
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Aug 2008; Dmitry Dzhus (dzhus) <dima@sphinx.net.ru> +metadata.xml,
+  +gtkmm-utils-0.3.2.ebuild:
+  New ebuild from bug 233733
+
