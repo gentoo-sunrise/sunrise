@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/paperbox
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Aug 2008; Dmitry Dzhus (dzhus) <dima@sphinx.net.ru> +metadata.xml,
+  +paperbox-0.3.1.ebuild:
+  New ebuild from bug 233731
+
