@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  graphicsmagick-1.2.5.ebuild:
+  econf dies on its own
+
   03 Aug 2008; Janne Rönkkö (jroo) <jroo@iki.fi>
   graphicsmagick-1.2.5.ebuild:
   Corrected license for graphicsmagick-1.2.5.

@@ -1,6 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
 EAPI=1
 
 MY_P=${P/graphicsm/GraphicsM}
@@ -72,8 +73,7 @@ src_compile() {
 		--without-umem \
 		--without-trio \
 		--with-modules \
-		--enable-shared \
-		|| die "Configure failed."
+		--enable-shared
 
 	emake || die "Build failed."
 }
