@@ -9,7 +9,7 @@ DESCRIPTION="A collection of tools and libraries for many image formats"
 HOMEPAGE="http://www.graphicsmagick.org/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bzip2 cxx fpx imagemagick jbig +jpeg +jpeg2k lcms openmp
