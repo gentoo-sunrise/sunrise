@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  fontmatrix-0.4.2.ebuild:
+  Simplify, add die to dobin
+
   30 Jul 2008; Markus Rennings (mren) <mren@mrmx.de>
   fontmatrix-0.4.2.ebuild:
   updated ebuild to the one from bugzilla, thx to Matteo 'The Peach' Pescarin

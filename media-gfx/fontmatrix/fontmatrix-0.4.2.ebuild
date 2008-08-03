@@ -8,18 +8,15 @@ inherit cmake-utils qt4
 
 DESCRIPTION="A font manager"
 HOMEPAGE="http://www.fontmatrix.net/"
-SRC_URI="http://www.fontmatrix.net/archives/${PN}-${PV}-Source.tar.gz"
+SRC_URI="http://www.fontmatrix.net/archives/${P}-Source.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 IUSE="debug"
 
-RDEPEND=">=x11-libs/qt-4.3:4
+DEPEND=">=x11-libs/qt-4.3:4
 	>=media-libs/freetype-2"
-
-DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${P}-Source
 B=${WORKDIR}/${PN}_build
@@ -32,7 +29,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin ${B}/src/${PN}
+	dobin ${B}/src/${PN} || die
 	doicon "${S}/${PN}.png"
 	make_desktop_entry ${PN} "Fontmatrix" ${PN}.png
 }
