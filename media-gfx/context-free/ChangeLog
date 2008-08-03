@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  context-free-2.2_beta2.ebuild:
+  Drop unneeded RDPEND
+
   02 Aug 2008; Markus Ullmann <jokey@gentoo.org>
   context-free-2.2_beta2.ebuild:
   Remove default function

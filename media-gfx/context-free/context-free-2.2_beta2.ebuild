@@ -16,7 +16,6 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="media-libs/libpng"
-RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/ContextFreeSource${MY_PV}"
 
