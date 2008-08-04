@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> qbrew-0.4.1.ebuild:
+  eqmake4 dies on its own
+
   30 Jul 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
   qbrew-0.4.1.ebuild:
   Remove depreciated qt4 eclass functions and fix for qt split ebuilds. Thanks

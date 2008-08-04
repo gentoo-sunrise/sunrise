@@ -21,7 +21,7 @@ src_compile() {
 	export BINDIR="/usr/bin" DATADIR="/usr/share/${PN}" DOCDIR="/usr/share/doc/${P}"
 	./configure --qtdir="/usr/$(get_libdir)/qt4" || die "configure failed"
 	echo "QT += xml" >> qbrew.pro
-	eqmake4	|| die "qmake failed"
+	eqmake4
 	emake || die "emake failed"
 }
 
