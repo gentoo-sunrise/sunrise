@@ -92,4 +92,3 @@ pkg_postinst() {
 		elog "You need GCC 4.2.0 or greater for OpenMP."
 	fi
 }
-
