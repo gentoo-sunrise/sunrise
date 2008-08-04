@@ -18,16 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples lam mpich"
 
-RDEPEND="!sci-libs/openfoam
-	!sci-libs/openfoam-bin
-	net-misc/openssh
+DEPEND="!=sci-libs/openfoam-${MY_PV}*
+	!=sci-libs/openfoam-bin-${MY_PV}*
 	net-misc/mico
 	<virtual/jdk-1.5
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
 	mpich? ( sys-cluster/mpich2 )"
-DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
 

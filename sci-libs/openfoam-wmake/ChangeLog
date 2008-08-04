@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  openfoam-wmake-1.4.1_p20080328.ebuild, openfoam-wmake-1.5.ebuild:
+  Changed version dependencies
+
   28 Jul 2008; Oliver Borm (boroli) <oli.borm@web.de>
   openfoam-wmake-1.5.ebuild:
   Changed make to emake.

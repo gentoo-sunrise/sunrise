@@ -17,8 +17,8 @@ SLOT="1"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples doc"
 
-DEPEND="!sci-libs/openfoam
-	!sci-libs/openfoam-bin
+DEPEND="!=sci-libs/openfoam-${MY_PV}*
+	!=sci-libs/openfoam-bin-${MY_PV}*
 	virtual/mpi
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )"
 
