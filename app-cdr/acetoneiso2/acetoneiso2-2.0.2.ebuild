@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}"/${PN}/src/
 
 src_compile() {
-	eqmake4 || die "qmake failed"
+	eqmake4
 	emake || die "emake failed"
 }
 
