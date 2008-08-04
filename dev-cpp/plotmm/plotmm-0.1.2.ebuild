@@ -30,7 +30,7 @@ src_unpack() {
 src_install() {
 	make install DESTDIR="${D}" || die "install failed"
 
-	dodoc AUTHORS ChangeLog INSTALL NEWS README || die
+	dodoc AUTHORS ChangeLog NEWS README || die
 
 	if use doc; then
 		dohtml -r doc/html/* || die "dohtml failed"
