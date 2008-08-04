@@ -19,12 +19,12 @@ SLOT="1.5"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE="examples doc"
 
-DEPEND="!sci-libs/openfoam
-	!sci-libs/openfoam-kernel
-	!sci-libs/openfoam-meta
-	!sci-libs/openfoam-solvers
-	!sci-libs/openfoam-utilities
-	!sci-libs/openfoam-wmake
+DEPEND="!=sci-libs/openfoam-${MY_PV}*
+	!=sci-libs/openfoam-kernel-${MY_PV}*
+	!=sci-libs/openfoam-meta-${MY_PV}*
+	!=sci-libs/openfoam-solvers-${MY_PV}*
+	!=sci-libs/openfoam-utilities-${MY_PV}*
+	!=sci-libs/openfoam-wmake-${MY_PV}*
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )
 	virtual/mpi"
 

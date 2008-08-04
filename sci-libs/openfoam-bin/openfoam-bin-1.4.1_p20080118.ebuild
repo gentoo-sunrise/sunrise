@@ -20,21 +20,19 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE="examples lam mpich"
 
-RDEPEND="!sci-libs/openfoam
-	!sci-libs/openfoam-kernel
-	!sci-libs/openfoam-meta
-	!sci-libs/openfoam-solvers
-	!sci-libs/openfoam-utilities
-	!sci-libs/openfoam-wmake
-	dev-java/sun-java3d-bin
-	net-misc/openssh
+DEPEND="!=sci-libs/openfoam-${MY_PV}*
+	!=sci-libs/openfoam-kernel-${MY_PV}*
+	!=sci-libs/openfoam-meta-${MY_PV}*
+	!=sci-libs/openfoam-solvers-${MY_PV}*
+	!=sci-libs/openfoam-utilities-${MY_PV}*
+	!=sci-libs/openfoam-wmake-${MY_PV}*
+	=dev-java/sun-java3d-bin-1.4*
 	net-misc/mico
 	<virtual/jdk-1.5
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
 	mpich? ( sys-cluster/mpich2 )"
-DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
