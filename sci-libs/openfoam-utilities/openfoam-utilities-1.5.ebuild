@@ -17,9 +17,9 @@ SLOT="1.5"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="!sci-libs/openfoam
-	!sci-libs/openfoam-bin
-	>=sci-libs/openfoam-solvers-${MY_PV}"
+DEPEND="!=sci-libs/openfoam-${MY_PV}*
+	!=sci-libs/openfoam-bin-${MY_PV}*
+	=sci-libs/openfoam-solvers-${MY_PV}*"
 
 S=${WORKDIR}/${MY_P}
 

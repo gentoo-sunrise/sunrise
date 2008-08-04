@@ -17,13 +17,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="!sci-libs/openfoam
-	!sci-libs/openfoam-bin
+DEPEND="!=sci-libs/openfoam-${MY_PV}*
+	!=sci-libs/openfoam-bin-${MY_PV}*
 	=dev-java/sun-java3d-bin-1.4*
 	<virtual/jdk-1.5
-	>=sci-libs/openfoam-kernel-${MY_PV}
+	=sci-libs/openfoam-kernel-${MY_PV}*
 	sci-libs/parmetis"
-DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
 INSDIR=/usr/$(get_libdir)/${MY_PN}/${MY_P}
