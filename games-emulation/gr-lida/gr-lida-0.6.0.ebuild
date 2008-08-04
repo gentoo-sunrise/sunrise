@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 QT4_BUILT_WITH_USE_CHECK="gif jpeg png sqlite3"
 
 src_compile(){
-	eqmake4 "${PN}".pro || die
+	eqmake4 "${PN}".pro
 	emake || die "Compile Failed"
 }
 
