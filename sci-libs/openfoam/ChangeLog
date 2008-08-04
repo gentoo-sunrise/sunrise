@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  openfoam-1.4.1_p20080118.ebuild, openfoam-1.5.ebuild:
+  Changed version dependencies
+
   04 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de> openfoam-1.5.ebuild:
   Fixed some typos in the src_install section, thanks to Maxim Loginov.
 
