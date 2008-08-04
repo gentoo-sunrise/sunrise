@@ -19,5 +19,5 @@ DEPEND="$RDEPEND"
 src_install() {
 	einstall || die "install failed"
 
-	dodoc AUTHORS ChangeLog INSTALL NEWS README
+	dodoc AUTHORS ChangeLog NEWS README
 }
