@@ -46,5 +46,5 @@ src_install() {
 	doins -r util Matrices
 	keepdir /usr/share/${PN}/Libraries
 
-	dodoc README INSTALL repeatmasker.help daterepeats.help
+	dodoc README repeatmasker.help daterepeats.help
 }

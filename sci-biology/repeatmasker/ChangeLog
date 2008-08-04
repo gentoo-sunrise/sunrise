@@ -1,6 +1,10 @@
 # ChangeLog for sci-biology/repeatmasker
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  repeatmasker-3.1.8.ebuild:
+  Don't dodoc INSTALL
 
   09 Nov 2007; azazello <gentoo@horizon.ath.cx> -repeatmasker-3.1.7.ebuild,
   +repeatmasker-3.1.8.ebuild:
