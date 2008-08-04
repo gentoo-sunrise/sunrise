@@ -41,8 +41,8 @@ src_unpack() {
 	cd "${S}"
 	# configure looks in the wrong place for xpidl
 	sed -e 's:bin/xpidl:xpidl:' -i configure.ac
-	epatch "${FILESDIR}/${PN}-1.1.92-libxpcom.patch" || die "epatch failed"
-	epatch "${FILESDIR}/${PN}-1.1.93-use-firefox.patch" || die "epatch failed"
+	epatch "${FILESDIR}/${PN}-1.1.92-libxpcom.patch"
+	epatch "${FILESDIR}/${PN}-1.1.93-use-firefox.patch"
 	eautoreconf
 	if use firefox || use xulrunner ; then
 		G2CONF="--enable-firefox"
