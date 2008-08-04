@@ -21,7 +21,7 @@ DEPEND=">=dev-games/ogre-1.4
 
 src_unpack() {
 	subversion_src_unpack
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 }
 
 src_install() {
