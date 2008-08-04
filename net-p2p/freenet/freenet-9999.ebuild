@@ -46,8 +46,10 @@ pkg_setup() {
 
 src_unpack() {
 	subversion_src_unpack
+	ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/apps/new_installer/res/unix/"
+	ESVN_OPTIONS="-N"
+	subversion_src_unpack
 	cd "${S}"
-	svn -N co http://freenet.googlecode.com/svn/trunk/apps/new_installer/res/unix/ .
 	cp "${DISTDIR}"/seednodes-${DATE}.fref seednodes.fref
 	cp "${DISTDIR}"/wrapper-${DATE2}.conf wrapper.conf
 	sed -i -e 's:./bin/wrapper:/opt/freenet/bin/wrapper:g' \
