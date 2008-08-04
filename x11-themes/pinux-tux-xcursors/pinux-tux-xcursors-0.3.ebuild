@@ -30,7 +30,7 @@ src_install() {
 			"${D}usr/share/cursors/${X11_IMPLEM}/${cursortheme}/" || die
 		done
 	done
-	dodoc "${WORKDIR}/README" "${WORKDIR}/COPYRIGHT"
+	dodoc "${WORKDIR}/README"
 }
 
 pkg_postinst() {
