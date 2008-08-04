@@ -91,10 +91,10 @@ src_install() {
 	doins -r bin
 
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/applications/bin
-	doins -r applications/bin/${WM_OPTIONS}/*
+	doins -r applications/bin/*
 
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/lib
-	doins -r lib/${WM_OPTIONS}/*
+	doins -r lib/*
 
 	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/wmake
 	doins -r wmake/*
