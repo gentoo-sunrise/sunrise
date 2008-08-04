@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="|| ( sci-libs/openfoam-meta sci-libs/openfoam sci-libs/openfoam-bin )"
-DEPEND="${RDEPEND}"
+DEPEND="|| ( =sci-libs/openfoam-meta-${MY_PV}* =sci-libs/openfoam-${MY_PV}* =sci-libs/openfoam-bin-${MY_PV}* )"
 
 S=${WORKDIR}/${MY_P}
 
