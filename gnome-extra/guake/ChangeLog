@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2008; Isakov_AN <satana.hell@gmail.com> +guake-9999.ebuild:
+  Add live git ebuild
+
   27 Jul 2008; Isakov_AN <satana.hell@gmail.com> -guake-0.3.ebuild,
   +guake-0.3.1.ebuild:
   Version bump
