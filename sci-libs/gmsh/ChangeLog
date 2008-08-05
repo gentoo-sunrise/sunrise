@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de> +gmsh-2.2.3.ebuild,
+  +files/gmsh-2.2.3-metis.patch, +files/gmsh-2.2.3.patch:
+  Version bump and added opencascade support.
+
   26 Feb 2008; (Tommy[D]) tommy100@gmx.de -gmsh-2.0.8.ebuild:
   Drop old version
 
