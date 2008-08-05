@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  gnormalize-0.63.ebuild:
+  Add dependency on lzma-utils since upstream switched distribution tarball type.
+
   03 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gnormalize-0.63.ebuild:
   Whitey
