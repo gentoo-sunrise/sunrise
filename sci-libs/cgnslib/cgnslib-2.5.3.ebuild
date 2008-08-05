@@ -66,6 +66,6 @@ src_install() {
 
 	insinto /usr/include
 	doins cgnslib.h cgnslib_f.h cgnswin_f.h
-	cd ${D}/usr/$(get_libdir)
+	cd "${D}"/usr/$(get_libdir)
 	dosym libcgns.so.0 /usr/$(get_libdir)/libcgns.so
 }
