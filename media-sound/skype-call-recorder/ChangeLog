@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  skype-call-recorder-0.5.ebuild:
+  Fixxor dependencies
+
   05 Aug 2008; Jean-Luc Herren (jlh) <jlh@gmx.ch>
   +skype-call-recorder-0.5.ebuild, +metadata.xml:
   New Ebuild for Skype Call Recorder 0.5

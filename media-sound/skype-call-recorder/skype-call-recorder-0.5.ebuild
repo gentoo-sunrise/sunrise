@@ -17,18 +17,15 @@ IUSE=""
 
 RDEPEND="
 	|| (
-		( >=x11-libs/qt-gui-4.4.0:4 >=x11-libs/qt-dbus-4.4.0:4 )
-		=x11-libs/qt-4.3*:4
+		( >=x11-libs/qt-core-4.4.0:4 >=x11-libs/qt-gui-4.4.0:4 >=x11-libs/qt-dbus-4.4.0:4 )
+		<x11-libs/qt-4.4.0:4
 	)
 	media-sound/lame
 	media-libs/id3lib
 	>=media-libs/libvorbis-1.2.0
-	sys-apps/dbus
-"
+	sys-apps/dbus"
 DEPEND="
 	${RDEPEND}
-	>=dev-util/cmake-2.4.8
-"
+	>=dev-util/cmake-2.4.8"
 
 QT4_BUILT_WITH_USE_CHECK="dbus"
-
