@@ -4,7 +4,7 @@
 
 inherit toolchain-funcs
 
-DESCRIPTION="open source file compressor and archiver"
+DESCRIPTION="Open source file compressor and archiver"
 HOMEPAGE="http://www.cs.fit.edu/~mmahoney/compression"
 SRC_URI="http://www.cs.fit.edu/~mmahoney/compression/${PN}.zip"
 
@@ -18,7 +18,6 @@ DEPEND="app-arch/unzip"
 RDEPEND=""
 
 S=${WORKDIR}/${PN}
-
 
 src_compile() {
 	$( tc-getCXX ) ${CXXFLAGS} -DNOASM -DUNIX ${PN}.cpp -o ${PN} || die "compile failed"

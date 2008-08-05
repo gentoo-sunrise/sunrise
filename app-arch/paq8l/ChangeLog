@@ -3,6 +3,10 @@
 # $Header: $
 
   05 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  paq8l-20070308.ebuild:
+  Whitespace and fix of
+
+  05 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   +paq8l-20070308.ebuild, +metadata.xml:
   New ebuild for paq8l compressor. Thanks gentoofan23, dzhus and Ken69267
 
