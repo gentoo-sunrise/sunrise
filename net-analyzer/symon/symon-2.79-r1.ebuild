@@ -104,8 +104,9 @@ src_install() {
 
 	if use syweb ; then
 		docinto layouts
-		dodoc "${WORKDIR}"/syweb/symon/total_firewall.layout \
-			|| die "dodoc syweb failed"
+		dodoc "${WORKDIR}"/syweb/symon/total* || die "dodoc layouts failed"
+		docinto syweb
+		dodoc "${WORKDIR}"/syweb/{CHANGELOG,README} || die "dodoc syweb failed"
 
 		webapp_src_preinst
 

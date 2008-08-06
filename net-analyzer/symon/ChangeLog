@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> -symon-2.79.ebuild,
+  +symon-2.79-r1.ebuild:
+  Install syweb documentation, remove old
+
   31 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> symon-2.79.ebuild:
   symon doesn't use GNU make, hence ignore MAKEOPTS since some options aren't
   available in pmake (e.g. --load-average)
