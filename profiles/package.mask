@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Tiago Cunha (tcunha) <me@tiagocunha.org> (06 Aug 2008)
+# Mask GIT ebuild
+=gnome-extra/guake-9999
+
 # Jack Miller (TheMoken) <jack@codezen.org> (05 Jul 2008)
 # Mask live ebuild
 =net-news/canto-9999
