@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  symon-2.79-r1.ebuild:
+  Improve syweb elog messages by saying how to customize it, and mention that
+  there's a no user interaction php script
+
   06 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> -symon-2.79.ebuild,
   +symon-2.79-r1.ebuild:
   Install syweb documentation, remove old
