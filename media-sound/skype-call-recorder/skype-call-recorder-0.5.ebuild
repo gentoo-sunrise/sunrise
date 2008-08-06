@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND="
 	|| (
 		( >=x11-libs/qt-core-4.4.0:4 >=x11-libs/qt-gui-4.4.0:4 >=x11-libs/qt-dbus-4.4.0:4 )
-		<x11-libs/qt-4.4.0:4
+		=x11-libs/qt-4.3*:4
 	)
 	media-sound/lame
 	media-libs/id3lib

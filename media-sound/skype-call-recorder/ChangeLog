@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Aug 2008; Jean-Luc Herren (jlh) <jlh@gmx.ch>
+  skype-call-recorder-0.5.ebuild:
+  Revert part of r6687 since <x11-libs/qt-4.3 will not work
+
   05 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
   skype-call-recorder-0.5.ebuild:
   Fixxor dependencies
