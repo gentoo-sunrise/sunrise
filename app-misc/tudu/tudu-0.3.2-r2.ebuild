@@ -13,14 +13,14 @@ KEYWORDS="~amd64 ~x86"
 DEPEND="sys-libs/ncurses"
 
 src_compile() {
-	emake DESTDIR="${ROOT}usr/" ETC_DIR="${ROOT}etc" || die "emake failed"
+	emake DESTDIR="/usr/" ETC_DIR="/etc" || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}/usr/" install || die "install failed"
 	# Cleanup for Makefile bug, since it never creates ETC_DIR beforehand:
 	rm -f "${D}usr/etc"
-	insinto "${ROOT}etc"
+	insinto "/etc"
 	doins data/tudurc || die
 	dodoc README ChangeLog || die
 }

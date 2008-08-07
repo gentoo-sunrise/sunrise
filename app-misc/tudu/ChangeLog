@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  tudu-0.3.2-r2.ebuild:
+  Use / instead of ROOT
+
   03 Aug 2008; Mike Kazantsev (MK_FG) <mk.fraggod@gmail.com>
   +tudu-0.3.2-r2.ebuild, +files/makefile.patch, +metadata.xml:
   New ebuild for bug 233803 thanx to tcunha, Tommy[D]
