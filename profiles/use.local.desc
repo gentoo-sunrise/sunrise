@@ -114,7 +114,6 @@ media-gfx/openscenegraph:producer - Compile osgProducer
 media-gfx/openvrml:imagetexture - Support for image textures
 media-gfx/synfig:fontconfig - Support for managing custom fonts via fontconfig
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
-media-libs/libass:enca - Enables support for charset discovery and conversion
 media-radio/fldigi:hamlib - with Hamlib amateur radio rig control library
 media-radio/gpredict:coverage - Enable coverage reports
 media-radio/grig:coverage - Enable coverage reports
