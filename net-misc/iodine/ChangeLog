@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Aug 2008; Erik Ekman (yarrick) <yarrick@kryo.se> +iodine-0.4.2.ebuild:
+  New release
+
   21 Mar 2008; Jakub Moc <jakub@gentoo.org> iodine-0.4.1.ebuild:
   Fix RDEPEND
 
