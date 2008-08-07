@@ -11,7 +11,6 @@ SRC_URI="http://www.cs.fit.edu/~mmahoney/compression/${PN}.zip"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86"
-
 IUSE=""
 
 DEPEND="app-arch/unzip"
