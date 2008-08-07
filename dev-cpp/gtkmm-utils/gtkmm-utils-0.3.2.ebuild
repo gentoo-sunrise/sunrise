@@ -21,7 +21,7 @@ DEPEND="doc? ( app-doc/doxygen )
 	${RDEPEND}"
 
 src_compile() {
-	econf $(use_enable doc documentation) || die "econf failed"
+	econf $(use_enable doc documentation)
 	emake || die "emake failed"
 }
 

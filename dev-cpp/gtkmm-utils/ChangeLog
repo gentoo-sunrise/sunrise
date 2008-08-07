@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  gtkmm-utils-0.3.2.ebuild:
+  econf dies on its own
+
   03 Aug 2008; Dmitry Dzhus (dzhus) <dima@sphinx.net.ru> +metadata.xml,
   +gtkmm-utils-0.3.2.ebuild:
   New ebuild from bug 233733
