@@ -1,0 +1,8 @@
+# ChangeLog for dev-libs/libhid
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Aug 2008; Mark Karpeles (MagicalTux) <mark@hell.ne.jp>
+  +libhid-0.2.16.ebuild, +metadata.xml:
+  new package dev-libs/libhid built with help from Tommy[D]
+
