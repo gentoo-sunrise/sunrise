@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="dosbox scummvm"
 
 DEPEND="|| ( ( x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-sql:4 )
-	( >=x11-libs/qt-4.2:4 <x11-libs/qt-4.4.0:4 ) )
+	( >=x11-libs/qt-4.3:4 <x11-libs/qt-4.4.0:4 ) )
 	dosbox? ( games-emulation/dosbox )
 	scummvm? ( games-engines/scummvm )"
 
