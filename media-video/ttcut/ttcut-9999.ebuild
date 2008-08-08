@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="|| ( >=x11-libs/qt-4.3:4 ( x11-libs/qt-gui:4 x11-libs/qt-opengl:4 ) )
+DEPEND="|| ( ( x11-libs/qt-gui:4 x11-libs/qt-opengl:4 ) =x11-libs/qt-4.3*:4 )
 	>=media-libs/libmpeg2-0.4.0
 	virtual/opengl"
 
