@@ -4,6 +4,10 @@
 
   08 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
   gr-lida-0.6.0.ebuild:
+  Simplify
+
+  08 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  gr-lida-0.6.0.ebuild:
   Fix typo
 
   08 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
