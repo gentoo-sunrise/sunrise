@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit qt4
 
 MY_P="GR-lida-${PV}"
@@ -16,9 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="dosbox scummvm"
 
-DEPEND="$(qt4_min_version 4.3)"
-
-RDEPEND="${DEPEND}
+DEPEND="|| ( ( x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-sql:4 )
+	( >=x11-libs/qt-4.2:4 <x11-libs/qt-4.4.0:4 ) )
 	dosbox? ( games-emulation/dosbox )
 	scummvm? ( games-engines/scummvm )"
 
