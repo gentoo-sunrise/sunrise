@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  fontmatrix-0.4.2.ebuild:
+  Fix qt4 dependencies for split qt4, quoting
+
   03 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   fontmatrix-0.4.2.ebuild:
   Simplify, add die to dobin
