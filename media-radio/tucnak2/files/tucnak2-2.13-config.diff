@@ -1,7 +1,6 @@
-# makes config respect USE flags settings for 'sdl' and'ftdi'
---- configure.in.orig	2008-07-02 08:55:25.000000000 +0200
-+++ configure.in	2008-07-28 16:57:35.000000000 +0200
-@@ -90,7 +90,10 @@
+--- configure.in.orig	2008-07-22 12:28:01.000000000 +0200
++++ configure.in	2008-08-09 11:30:59.000000000 +0200
+@@ -117,7 +117,10 @@
                        AC_MSG_ERROR([glib is installed but gthread not ?]))
  fi    
  
@@ -12,7 +11,7 @@
  # check for SDL
  SDL_VERSION=1.2.0
  tucnak_sdl_ver="";
-@@ -102,6 +105,7 @@
+@@ -129,6 +132,7 @@
                tucnak_odebs="$tucnak_odebs libsdl-dev"
                tucnak_sdl="no"]
              )
@@ -20,7 +19,7 @@
  
  export PKG_CONFIG=/usr/bin/pkg-config
  
-@@ -227,6 +231,10 @@
+@@ -256,6 +260,10 @@
      tucnak_odebs="$tucnak_odebs libasound-dev"]
  )              
  
@@ -30,12 +29,11 @@
 +if test "x$enable_ftdi" != "xno"; then
  # check for libftdi
  tucnak_ftdi_ver=""
- PKG_CHECK_MODULES(LIBFTDI, libftdi >= 0.7, 
-@@ -244,7 +252,7 @@
-             [ AC_DEFINE([HAVE_FTDI_NEW],[1], [ftdi_new() is present (libftdi >= 0.11)])
-               tucnak_ftdi_new="new"],
-             [ tucnak_ftdi_new="old"])
--
+ tucnak_ftdi_new=""
+@@ -275,6 +283,7 @@
+                   tucnak_ftdi_new="new"],
+                 [ tucnak_ftdi_new="old"])
+ fi
 +fi
  
  # check for library errors
