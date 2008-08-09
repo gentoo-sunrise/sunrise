@@ -1,6 +1,10 @@
 # ChangeLog for kde-misc/diskmonitor
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Aug 2008; Simon Frettloeh <sfgentoo@villastraylight.org>
+  diskmonitor-0.4.1.ebuild:
+  updated source download URI in ebuild
 
   21 Dec 2006; Jakub Moc <jakub@gentoo.org> diskmonitor-0.4.1.ebuild:
   Move need-kde to proper place
