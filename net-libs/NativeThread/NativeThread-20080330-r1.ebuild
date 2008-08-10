@@ -6,7 +6,7 @@ inherit eutils flag-o-matic java-pkg-2 toolchain-funcs
 
 DESCRIPTION="NativeThread for priorities on linux for freenet"
 HOMEPAGE="http://www.freenetproject.org/"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/${P}.tar.bz2"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -14,8 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="net-p2p/freenet
-	>=virtual/jdk-1.4
-	!net-p2p/NativeThread"
+	>=virtual/jdk-1.4"
 RDEPEND=""
 
 src_unpack() {
@@ -30,6 +29,5 @@ src_compile() {
 }
 
 src_install() {
-	into /opt/freenet
 	dolib.so libNativeThread.so
 }

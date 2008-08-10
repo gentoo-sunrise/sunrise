@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -NativeThread-20080330.ebuild, +NativeThread-20080330-r1.ebuild:
+  Change SRC_URI + install location
+
   29 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   NativeThread-20080330.ebuild:
   Add java eclass
