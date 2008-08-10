@@ -41,11 +41,11 @@ pkg_setup() {
 	grep /opt/freenet /etc/passwd >/dev/null
 	if [ $? == "0" ]; then
 		ewarn " "
-		ewarn "Changing freenet homedir from /opt/freenet to /var/freen$
+		ewarn "Changing freenet homedir from /opt/freenet to /var/freenet"
 		ewarn " "
-		usermod -d /var/freenet freenet || die "Was not able to change $
+		usermod -d /var/freenet freenet || die "Was not able to change freenet homedir from /opt/freenet to /var/freenet"
 	else
-	enewuser freenet -1 -1 /var/freenet freenet
+		enewuser freenet -1 -1 /var/freenet freenet
 	fi
 }
 
