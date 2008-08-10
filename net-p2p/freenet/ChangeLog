@@ -3,6 +3,10 @@
 # $Header: $
 
   10 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -files/wrapper.conf.patch:
+  Delete obsolete patch
+
+  10 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_p1155.ebuild, +freenet-0.7_p1155-r1.ebuild,
   -freenet-9999.ebuild, +freenet-9999-r1.ebuild, files/freenet,
   files/freenet.old, files/wrapper.conf.patch, +files/wrapper1.conf:
