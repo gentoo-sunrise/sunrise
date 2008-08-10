@@ -7,7 +7,8 @@
 
   06 Aug 2008; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   ttcut-9999.ebuild:
-  Really fix qt split dependencies and remove ~amd64 keywords
+  Really fix qt split dependencies and remove ~amd64 keywords (see bug
+  #228145 for details)
 
   12 Apr 2008; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
   ttcut-9999.ebuild:
