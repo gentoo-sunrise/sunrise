@@ -9,18 +9,18 @@ libjcpuid:
 	src/*.c -o libjcpuid-x86-linux.so
 
 install:
-	mkdir -p "${DESTDIR}"opt/freenet/${LIBDIR}/
-	/usr/bin/install jbigi/libjbigi.so "${DESTDIR}"opt/freenet/${LIBDIR}/
-	/usr/bin/install jcpuid/libjcpuid-x86-linux.so "${DESTDIR}"opt/freenet/${LIBDIR}/
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-none.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-pentium.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-pentiummmx.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-pentium2.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-pentium3.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-pentium4.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-k6.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-k62.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-k63.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-athlon.so
-	/bin/ln -s libjbigi.so "${DESTDIR}"/opt/freenet/${LIBDIR}/libjbigi-linux-x86_64.so
+	mkdir -p "${DESTDIR}"var/freenet/${LIBDIR}/
+	/usr/bin/install jbigi/libjbigi.so "${DESTDIR}"var/freenet/${LIBDIR}/
+	/usr/bin/install jcpuid/libjcpuid-x86-linux.so "${DESTDIR}"var/freenet/${LIBDIR}/
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-none.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-pentium.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-pentiummmx.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-pentium2.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-pentium3.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-pentium4.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-k6.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-k62.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-k63.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-athlon.so
+	/bin/ln -s libjbigi.so "${DESTDIR}"/var/freenet/${LIBDIR}/libjbigi-linux-x86_64.so
 
