@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Aug 2008; Dmitry Dzhus (dzhus) <dima@sphinx.net.ru>
+  -sketch-0.2.90.ebuild, +sketch-0.2.90-r1.ebuild:
+  Respect compiler and LDFLAGS, install examples, do not compress PDF docs.
+  Suggested by A. Ballier, reviewed by Tommy[D].
+
   01 Aug 2008; Dmitry Dzhus (dzhus) <dima@sphinx.net.ru>
   +sketch-0.2.90.ebuild, +metadata.xml:
   New ebuild from bug 233249
