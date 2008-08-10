@@ -1,9 +1,9 @@
---- wrapper.conf	2008-03-30 16:12:53.000000000 +0200
-+++ wrapper.conf.new	2008-03-30 16:16:12.000000000 +0200
+--- wrapper.conf	2008-08-10 16:00:36.000000000 +0200
++++ wrapper.conf.new	2008-08-10 16:01:50.000000000 +0200
 @@ -1,8 +1,10 @@
  wrapper.java.command=java
 -wrapper.working.dir=../
-+wrapper.working.dir=/opt/freenet/
++wrapper.working.dir=/var/freenet/
  wrapper.java.mainclass=freenet.node.NodeStarter
 -wrapper.java.classpath.1=freenet.jar
 -wrapper.java.classpath.2=freenet-ext.jar

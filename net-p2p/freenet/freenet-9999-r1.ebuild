@@ -4,7 +4,6 @@
 
 EAPI=1
 DATE=20080721
-DATE2=20080330
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
 inherit eutils java-pkg-2 java-ant-2 multilib subversion
@@ -12,9 +11,7 @@ inherit eutils java-pkg-2 java-ant-2 multilib subversion
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/seednodes-${DATE}.fref
-	http://dev.gentoo.org/~tommy/distfiles/seednodes-${DATE}.fref
-	http://dev.gentooexperimental.org/~tommy/distfiles/wrapper-${DATE2}.conf
-	http://dev.gentoo.org/~tommy/distfiles/wrapper-${DATE2}.conf"
+	http://dev.gentoo.org/~tommy/distfiles/seednodes-${DATE}.fref"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -41,7 +38,15 @@ MY_FREENET_LATEST="-trunk"
 pkg_setup() {
 	java-pkg-2_pkg_setup
 	enewgroup freenet
-	enewuser freenet -1 -1 /opt/freenet freenet
+	grep /opt/freenet /etc/passwd >/dev/null
+	if [ $? == "0" ]; then
+		ewarn " "
+		ewarn "Changing freenet homedir from /opt/freenet to /var/freen$
+		ewarn " "
+		usermod -d /var/freenet freenet || die "Was not able to change $
+	else
+	enewuser freenet -1 -1 /var/freenet freenet
+	fi
 }
 
 src_unpack() {
@@ -51,13 +56,12 @@ src_unpack() {
 	subversion_src_unpack
 	cd "${S}"
 	cp "${DISTDIR}"/seednodes-${DATE}.fref seednodes.fref
-	cp "${DISTDIR}"/wrapper-${DATE2}.conf wrapper.conf
-	sed -i -e 's:./bin/wrapper:/opt/freenet/bin/wrapper:g' \
-	-e 's:./wrapper.conf:/opt/freenet/wrapper.conf:g' \
-	-e 's:PIDDIR=".":PIDDIR="/opt/freenet/":g' \
+	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
+	sed -i -e 's:./bin/wrapper:/var/freenet/bin/wrapper:g' \
+	-e 's:./wrapper.conf:/var/freenet/wrapper.conf:g' \
+	-e 's:PIDDIR=".":PIDDIR="/var/freenet/":g' \
 	-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' run.sh || die "sed failed"
 	sed -ie "s:@custom@:${MY_FREENET_LATEST}:g" src/freenet/node/Version.java
-	epatch "${FILESDIR}"/wrapper.conf.patch
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
 	mkdir -p lib
@@ -67,43 +71,43 @@ src_unpack() {
 	java-pkg_jar-from fec
 }
 
-src_compile() {
-	#workaround for installed blackdown-jdk-1.4
-	#freenet does not compile with it
-	if has_version =dev-java/sun-jdk-1.6*; then
-		GENTOO_VM="sun-jdk-1.6" java-pkg-2_src_compile
-	elif has_version =dev-java/sun-jdk-1.5*; then
-		GENTOO_VM="sun-jdk-1.5" java-pkg-2_src_compile
-	else
-		die ">=dev-java/sun-jdk-1.5 not found"
-	fi
-}
-
 src_install() {
 	mv lib/freenet-cvs-snapshot.jar freenet.jar
 	java-pkg_dojar freenet.jar
-	doinitd "${FILESDIR}"/freenet
-	insinto /opt/freenet
+	if has_version =sys-apps/baselayout-2*; then
+		doinitd "${FILESDIR}"/freenet
+	else
+		newinitd "${FILESDIR}"/freenet.old freenet
+	fi
+	insinto /var/freenet
 	doins wrapper.conf run.sh seednodes.fref
-	dodir /opt/freenet/bin
-	dosym /usr/bin/wrapper /opt/freenet/bin/wrapper
-	dodir /opt/freenet/$(get_libdir)
-	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /opt/freenet/$(get_libdir)/libwrapper.so
-	fperms +x /opt/freenet/run.sh
+	dodir /var/freenet/bin
+	dosym /usr/bin/wrapper /var/freenet/bin/wrapper
+	dodir /var/freenet/$(get_libdir)
+	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /var/freenet/$(get_libdir)/libwrapper.so
+	fperms +x /var/freenet/run.sh
 }
 
 pkg_postinst () {
 	elog "1. Start freenet with /etc/init.d/freenet start."
 	elog "2. Open localhost:8888 in your browser for the web interface."
-	elog
+	elog " "
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet (\"insecure mode\") on the config page to get started."
-	elog
-	chown freenet:freenet /opt/freenet
+	elog " "
+	chown freenet:freenet /var/freenet
+	if [[ -e /opt/freenet/freenet.ini ]] && ! [[ -e /var/freenet/freenet.ini ]]; then
+		ewarn " "
+		ewarn "Please move freenet to the new location with the following command:"
+		ewarn "         mv /opt/freenet /var/freenet"
+		ewarn " "
+	fi
 }
 
 pkg_postrm() {
-	elog "If you dont want to use freenet any more"
-	elog "and dont want to keep your identity/other stuff"
-	elog "remember to do 'rm -rf /opt/freenet' to remove everything"
+	if [ -z has_version ]; then
+		elog "If you dont want to use freenet any more"
+		elog "and dont want to keep your identity/other stuff"
+		elog "remember to do 'rm -rf /opt/freenet' to remove everything"
+	fi
 }

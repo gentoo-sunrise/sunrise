@@ -3,16 +3,22 @@
 # Distributed under the terms of the GNU General Public License v2
 
 start() {
-	start-stop-daemon --start --chuid freenet --exec /opt/freenet/run.sh start 2>/dev/null
-	eend 0
+	if ! [[ -e /opt/freenet/freenet.ini ]] && [[ -e /var/freenet/freenet.ini ]]; then
+		start-stop-daemon --start --chuid freenet --exec /var/freenet/run.sh start 2>/dev/null
+		eend 0
+	else
+		echo "Please move freenet to the new location with the following command:"
+		echo "         mv /opt/freenet /var/freenet"
+		eend 1
+	fi
 }
 
 status() {
-	start-stop-daemon --start --chuid freenet --exec /opt/freenet/run.sh status 2>/dev/null
+	start-stop-daemon --start --chuid freenet --exec /var/freenet/run.sh status 2>/dev/null
 	eend 0
 }
 
 stop() {
-	start-stop-daemon --start --chuid freenet --exec /opt/freenet/run.sh stop 2>/dev/null
+	start-stop-daemon --start --chuid freenet --exec /var/freenet/run.sh stop 2>/dev/null
 	eend 0
 }

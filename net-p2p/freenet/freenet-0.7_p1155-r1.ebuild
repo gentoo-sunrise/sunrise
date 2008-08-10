@@ -3,15 +3,12 @@
 # $Header: $
 
 EAPI=1
-WRAPPER_DATE=20080330
 inherit eutils java-pkg-2 java-ant-2 multilib
 
 DESCRIPTION="An encrypted network without censorship"
 HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2
-	http://dev.gentoo.org/~tommy/distfiles/${P}.tar.bz2
-	http://dev.gentooexperimental.org/~tommy/distfiles/wrapper-${WRAPPER_DATE}.conf
-	http://dev.gentoo.org/~tommy/distfiles/wrapper-${WRAPPER_DATE}.conf"
+	http://dev.gentoo.org/~tommy/distfiles/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -36,16 +33,24 @@ EANT_BUILD_TARGET="dist"
 pkg_setup() {
 	java-pkg-2_pkg_setup
 	enewgroup freenet
-	enewuser freenet -1 -1 /opt/freenet freenet
+	grep /opt/freenet /etc/passwd >/dev/null
+	if [ $? == "0" ]; then
+		ewarn " "
+		ewarn "Changing freenet homedir from /opt/freenet to /var/freenet"
+		ewarn " "
+		usermod -d /var/freenet freenet || die "Was not able to change freenet homedir from /opt/freenet to /var/freenet"
+	else
+		enewuser freenet -1 -1 /var/freenet freenet
+	fi
 }
 
 src_unpack() {
 	unpack "${P}".tar.bz2
 	cd "${S}"
-	cp "${DISTDIR}"/wrapper-${WRAPPER_DATE}.conf wrapper.conf
-	epatch "${FILESDIR}"/wrapper.conf.patch
+	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
+	sed -i -e "s:opt/:var/:g" run.sh || die "sed failed"
 	mkdir -p lib
 	cd lib
 	java-pkg_jar-from db-je-3.2
@@ -63,36 +68,38 @@ src_install() {
 	fi
 	dodoc license/README license/LICENSE.Mantissa \
 		AUTHORS README
-	insinto /opt/freenet
+	insinto /var/freenet
 	doins seednodes.fref wrapper.conf run.sh
-	dodir /opt/freenet/bin
-	dosym /usr/bin/wrapper /opt/freenet/bin/wrapper
-	dodir /opt/freenet/$(get_libdir)
-	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /opt/freenet/$(get_libdir)/libwrapper.so
-	fperms +x /opt/freenet/run.sh
+	dodir /var/freenet/bin
+	dosym /usr/bin/wrapper /var/freenet/bin/wrapper
+	dodir /var/freenet/$(get_libdir)
+	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /var/freenet/$(get_libdir)/libwrapper.so
+	dosym ../../../usr/$(get_libdir)/libNativeThread.so /var/freenet/$(get_libdir)/libNativeThread.so
+	use x86 && dosym ../../../usr/$(get_libdir)/libfec8so /var/freenet/$(get_libdir)/libfec8.so
+	use x86 && dosym ../../../usr/$(get_libdir)/libfec16so /var/freenet/$(get_libdir)/libfec16.so
+	fperms +x /var/freenet/run.sh
 }
 
 pkg_postinst () {
 	elog "1. Start freenet with /etc/init.d/freenet start."
 	elog "2. Open localhost:8888 in your browser for the web interface."
-	elog
+	elog " "
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet (\"insecure mode\") on the config page to get started."
-	elog
-	if use amd64;then
-		if has_version =dev-java/blackdown-jdk-1.4*;then
-			elog "Freenet does not run with 64bit blackdown-jdk,"
-			elog "please make sure that either system-vm or the"
-			elog "user-vm for freenet uses sun-jdk or some other"
-			elog "vm (other vms are untested)."
-			elog
-		fi
+	elog " "
+	chown freenet:freenet /var/freenet
+	if [[ -e /opt/freenet/freenet.ini ]] && ! [[ -e /var/freenet/freenet.ini ]]; then
+		ewarn " "
+		ewarn "Please move freenet to the new location with the following command:"
+		ewarn "		mv /opt/freenet /var/freenet"
+		ewarn " "
 	fi
-	chown freenet:freenet /opt/freenet
 }
 
 pkg_postrm() {
-	elog "If you dont want to use freenet any more"
-	elog "and dont want to keep your identity/other stuff"
-	elog "remember to do 'rm -rf /opt/freenet' to remove everything"
+	if [ -z has_version ]; then
+		elog "If you dont want to use freenet any more"
+		elog "and dont want to keep your identity/other stuff"
+		elog "remember to do 'rm -rf /var/freenet' to remove everything"
+	fi
 }
