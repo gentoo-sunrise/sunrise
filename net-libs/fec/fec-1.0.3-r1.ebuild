@@ -4,9 +4,10 @@
 
 inherit eutils flag-o-matic java-pkg-2 toolchain-funcs
 
-DESCRIPTION="Forword error correction libs"
+DESCRIPTION="Forward error correction libs"
 HOMEPAGE="http://www.onionnetworks.com/developers/"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.zip"
+SRC_URI="http://www.onionnetworks.com/downloads/${P}.zip
+	http://dev.gentooexperimental.org/~tommy/distfiles/${P}.zip"
 
 LICENSE="BSD-2"
 SLOT="0"
@@ -15,8 +16,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND=">=virtual/jdk-1.4
-	app-arch/unzip
-	!net-p2p/fec"
+	app-arch/unzip"
 S=${WORKDIR}/${P}/src/csrc/
 
 src_unpack() {
@@ -32,6 +32,5 @@ src_compile() {
 }
 
 src_install() {
-	into /opt/freenet
 	dolib.so ../../lib/fec-linux-x86/lib/linux/x86/libfec{8,16}.so
 }
