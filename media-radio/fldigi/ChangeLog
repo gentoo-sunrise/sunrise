@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added use flag description (GLEP56)
+
   30 Jun 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   +fldigi-2.10.3.ebuild, +metadata.xml:
   New ebuild for bug 230197. Thanks drac, gentoofan23, tcunha
