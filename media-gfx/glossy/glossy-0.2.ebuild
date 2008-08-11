@@ -10,7 +10,7 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-RESTRICT="binchecks strip primaryuri"
+RESTRICT="binchecks strip"
 
 RDEPEND=">=media-gfx/splashutils-1.4.1"
 

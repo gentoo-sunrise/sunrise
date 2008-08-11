@@ -3,6 +3,10 @@
 # $Header: $
 
   11 Aug 2008; Victor Enriquez (VQuickSilver) <victor.quicksilver@gmail.com>
+  glossy-0.2.ebuild:
+  Removed primaryuri from RESTRICT, thanks to Tommy[D]
+
+  11 Aug 2008; Victor Enriquez (VQuickSilver) <victor.quicksilver@gmail.com>
   +glossy-0.2.ebuild:
   New Ebuild for version 0.2, now with fully glossy progressbar
 
