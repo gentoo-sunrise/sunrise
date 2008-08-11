@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -glossy-0.1.ebuild:
+  Drop old version
+
   11 Aug 2008; Victor Enriquez (VQuickSilver) <victor.quicksilver@gmail.com>
   glossy-0.2.ebuild:
   Removed primaryuri from RESTRICT, thanks to Tommy[D]
