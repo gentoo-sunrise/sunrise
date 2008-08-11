@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2008; Pielmeier Daniel (billie) <daniel.pielmeier@googlemail.com>
+  ttcut-9999.ebuild:
+  add -amd64, because it compiles fine but fails at runtime
+
   08 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org> ttcut-9999.ebuild:
   Fix split qt4 dependencies by reordering; split goes first
 
