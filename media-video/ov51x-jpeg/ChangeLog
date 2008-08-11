@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2008; Davide Cendron (scen) <scen@gentoo.org>
+  -ov51x-jpeg-1.5.7.ebuild, +ov51x-jpeg-1.5.8.ebuild:
+  Version bump
+
   07 May 2008; Davide Cendron (scen) <scen@gentoo.org>
   -ov51x-jpeg-1.5.6.ebuild, +ov51x-jpeg-1.5.7.ebuild:
   Version bump
