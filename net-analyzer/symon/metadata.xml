@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>maintainer-wanted</herd>
+	<herd>maintainer-wanted</herd>
+	<use>
+		<flag name='perl'>Enables a generic perl symux client</flag>
+		<flag name='symux'>Enables the multiplexer which stores incoming symon
+		streams on disk in RRD files</flag>
+		<flag name='syweb'>Enables the PHP script that draws rrdtool pictures
+		of the stored data</flag>
+	</use>
 </pkgmetadata>
