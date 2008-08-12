@@ -1,0 +1,9 @@
+# ChangeLog for sys-auth/nss-ldapd
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Aug 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
+  +nss-ldapd-0.6.4.ebuild, +files/nss-ldapd-0.6.4-configure-fixes.patch,
+  +files/nslcd.rc, +metadata.xml:
+  New ebuild for sys-auth/nss-ldapd, bug 234555.
+
