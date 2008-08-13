@@ -1,5 +1,5 @@
---- configure.in.orig	2008-07-22 12:28:01.000000000 +0200
-+++ configure.in	2008-08-09 11:30:59.000000000 +0200
+--- configure.in.orig	2008-08-13 08:23:37.000000000 +0200
++++ configure.in	2008-08-13 08:29:23.000000000 +0200
 @@ -117,7 +117,10 @@
                        AC_MSG_ERROR([glib is installed but gthread not ?]))
  fi    
@@ -11,7 +11,7 @@
  # check for SDL
  SDL_VERSION=1.2.0
  tucnak_sdl_ver="";
-@@ -129,6 +132,7 @@
+@@ -129,10 +132,14 @@
                tucnak_odebs="$tucnak_odebs libsdl-dev"
                tucnak_sdl="no"]
              )
@@ -19,18 +19,68 @@
  
  export PKG_CONFIG=/usr/bin/pkg-config
  
-@@ -256,6 +260,10 @@
+ 
++AC_ARG_WITH([png], AS_HELP_STRING([--without-png], [Build without PNG support (default: test)]))
++
++if test "x$with_png" != "xno"; then
+ # check for libpng
+ tucnak_libpng_ver=""
+ PKG_CHECK_MODULES(LIBPNG, libpng12 > 1.2.0,
+@@ -140,7 +147,7 @@
+               tucnak_libpng_ver=`$PKG_CONFIG --modversion 'libpng12 > 1.2.0'` ], 
+             [ tucnak_olibs="$tucnak_olibs libpng"
+               tucnak_odebs="$tucnak_odebs libpng-dev"])
+-
++fi
+ 
+ # check for iconv
+ if test x"$tucnak_sdl" = x"yes"; then
+@@ -178,6 +185,11 @@
+     tucnak_iconv="not needed"
+ fi    
+     
++
++AC_ARG_WITH([gpm], AS_HELP_STRING([--without-gpm], [Build without GPM support (default: test)]))
++tucnak_libgpm="no"
++
++if test "x$with_gpm" != "xno"; then
+ # check for libgpm
+ tucnak_libgpm="no"
+ tucnak_old_LIBS=$LIBS
+@@ -203,7 +215,7 @@
+       tucnak_odebs="$tucnak_odebs libgpmg1-dev"]) 
+     rm -f conftest.libgpm.out
+ fi    
+-
++fi
+ 
+ # check for libsndfile
+ libsndfile_LIBS=$LIBS
+@@ -218,6 +230,10 @@
+               tucnak_mdebs="$tucnak_mdebs libsndfile-dev"])
+ 
+ 
++AC_ARG_WITH([alsa], AS_HELP_STRING([--without-alsa], [Build without alsa library for audio i/o (default: test)]))
++tucnak_alsa="no"
++
++if test "x$with_alsa" != "xno"; then
+ # check for alsa
+ tucnak_alsa_ver=""
+ AC_MSG_CHECKING(for alsa)
+@@ -255,7 +271,12 @@
+     tucnak_olibs="$tucnak_olibs libasound"
      tucnak_odebs="$tucnak_odebs libasound-dev"]
  )              
- 
-+AC_ARG_ENABLE([ftdi], AS_HELP_STRING([--disable-ftdi], [Disable FTDI support for usb to serial converter (default: test)]))
-+tucnak_ftdi="no"
++fi
 +
-+if test "x$enable_ftdi" != "xno"; then
++AC_ARG_WITH([ftdi], AS_HELP_STRING([--without-ftdi], [Build without FTDI support for usb to serial converter (default: test)]))
++tucnak_ftdi="no"
+ 
++if test "x$with_ftdi" != "xno"; then
  # check for libftdi
  tucnak_ftdi_ver=""
  tucnak_ftdi_new=""
-@@ -275,6 +283,7 @@
+@@ -275,6 +296,7 @@
                    tucnak_ftdi_new="new"],
                  [ tucnak_ftdi_new="old"])
  fi

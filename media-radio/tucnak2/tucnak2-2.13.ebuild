@@ -11,14 +11,15 @@ SRC_URI="http://tucnak.nagano.cz/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="ftdi sdl"
+IUSE="alsa ftdi gpm"
 
 RDEPEND=">=dev-libs/glib-2
-	sys-libs/gpm
 	media-libs/libsndfile
-	>=media-libs/libpng-1.2
-	sdl? ( >=media-libs/libsdl-1.2 )
-	ftdi? ( dev-embedded/libftdi )"
+	>=media-libs/libsdl-1.2
+	alsa? ( media-libs/alsa-lib )
+	ftdi? ( dev-embedded/libftdi )
+	gpm? ( sys-libs/gpm )
+	>=media-libs/libpng-1.2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -26,22 +27,27 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-doc.diff" \
+	    "${FILESDIR}/${P}-appname.diff" \
 	    "${FILESDIR}/${P}-config.diff"
 	eautoreconf
 }
 
 
 src_compile() {
-	econf $(use_with sdl) $(use_enable ftdi)
+	econf $(use_with alsa) $(use_with ftdi) \
+		$(use_with gpm) --with-sdl
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	dodoc AUTHORS ChangeLog TODO || die "dodoc failed"
+	doman debian/tucnak2.1 || die "doman failed"
+	dodoc AUTHORS ChangeLog TODO doc/NAVOD.sxw doc/NAVOD.pdf || die "dodoc failed"
 }
 
 pkg_postinst() {
+	elog "In order to use sound with tucnak2 add yourself to the audio group"
+	elog ""
 	elog "tucnak2 can be used with the following additional packages:"
 	elog "	   media-radio/cwdaemon  : Morse output via code cwdaemon"
 	elog "                             (No need to recompile)"
