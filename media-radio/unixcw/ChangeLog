@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Add USE flag description to metadata.xml wrt GLEP 56
+
   08 Jun 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -unixcw-2.3.ebuild, +unixcw-2.3-r1.ebuild, +files/unixcw-2.3-config.patch:
   Modified to to repsect use flag settings.
