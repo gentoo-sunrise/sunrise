@@ -5,8 +5,8 @@
 inherit eutils flag-o-matic multilib toolchain-funcs java-pkg-2
 
 DESCRIPTION="NativeBigInteger libs for Freenet taken from i2p"
-HOMEPAGE="http://www.i2p.net"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/${P}.tar.bz2"
+HOMEPAGE="http://www.i2p2.de"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2"
 
 LICENSE="|| ( public-domain BSD MIT )"
 SLOT="0"
@@ -14,8 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-libs/gmp
-	>=virtual/jdk-1.4
-	!net-p2p/nativebiginteger"
+	>=virtual/jdk-1.4"
 RDEPEND="dev-libs/gmp"
 
 QA_TEXTRELS="opt/freenet/lib/libjcpuid-x86-linux.so"
@@ -23,8 +22,6 @@ QA_TEXTRELS="opt/freenet/lib/libjcpuid-x86-linux.so"
 src_compile() {
 	append-flags -fPIC
 	tc-export CC
-	cp "${FILESDIR}"/Makefile .
-
 	emake libjbigi || die
 	emake libjcpuid || die
 }
