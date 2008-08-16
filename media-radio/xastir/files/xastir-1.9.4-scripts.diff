@@ -1,9 +1,9 @@
 diff -u scripts.orig/Makefile.am scripts/Makefile.am
---- scripts.orig/Makefile.am	2007-01-03 20:40:49.000000000 +0100
-+++ scripts/Makefile.am	2008-07-10 14:39:40.000000000 +0200
+--- scripts.orig/Makefile.am	2008-06-24 17:48:59.000000000 +0200
++++ scripts/Makefile.am	2008-08-16 07:47:00.000000000 +0200
 @@ -8,9 +8,7 @@
      coord-convert.pl \
-     fcc-get \
+     get-fcc-rac.pl \
      get-gnis \
 -    get-maptools.sh \
      get-NWSdata \
@@ -22,7 +22,7 @@ diff -u scripts.orig/Makefile.am scripts/Makefile.am
  
 diff -u scripts.orig/coord-convert.pl scripts/coord-convert.pl
 --- scripts.orig/coord-convert.pl	2002-08-26 23:52:03.000000000 +0200
-+++ scripts/coord-convert.pl	2008-07-10 14:36:21.000000000 +0200
++++ scripts/coord-convert.pl	2008-08-16 07:47:00.000000000 +0200
 @@ -26,7 +26,7 @@
  #
  
@@ -32,47 +32,47 @@ diff -u scripts.orig/coord-convert.pl scripts/coord-convert.pl
  use Coordinate;         # WE7U's Coordinate.pm module
  
  
-diff -u scripts.orig/fcc-get scripts/fcc-get
---- scripts.orig/fcc-get	2007-03-22 18:05:01.000000000 +0100
-+++ scripts/fcc-get	2008-07-10 14:36:21.000000000 +0200
-@@ -10,7 +10,7 @@
- # Note: Run this script as root in order to write the files into the
- # destination directory listed below.
- #
--XASTIR_BASE=/usr/local/share/xastir
-+XASTIR_BASE=/usr/share/xastir
- cd /var/tmp
- #
- #
 diff -u scripts.orig/get-NWSdata scripts/get-NWSdata
---- scripts.orig/get-NWSdata	2007-06-10 18:53:41.000000000 +0200
-+++ scripts/get-NWSdata	2008-07-10 14:36:21.000000000 +0200
-@@ -41,7 +41,7 @@
- FILE7="fz17ap07"  # NWSM Libraries: Fire Weather Zone Boundaries
- 
+--- scripts.orig/get-NWSdata	2008-07-18 17:26:39.000000000 +0200
++++ scripts/get-NWSdata	2008-08-16 07:47:00.000000000 +0200
+@@ -40,7 +40,7 @@
+ FILE6="fz25jn08"  # NWSM Libraries: Fire Weather Zone Boundaries
+ FILE7="c_11mr07"  # County Libraries: AWIPS Counties
  
 -cd /usr/local/share/xastir/Counties
 +cd /usr/share/xastir/Counties
  
  
  # Remove any old zip files hanging around in this directory
+diff -u scripts.orig/get-fcc-rac.pl scripts/get-fcc-rac.pl
+--- scripts.orig/get-fcc-rac.pl	2008-06-24 17:48:59.000000000 +0200
++++ scripts/get-fcc-rac.pl	2008-08-16 08:07:57.000000000 +0200
+@@ -9,7 +9,7 @@
+ #
+ # Note: Run this script as root in order to write the files into the
+ # destination directory listed below, or change directory write access.
+-my $XASTIR_BASE="/usr/local/share/xastir";
++my $XASTIR_BASE="/usr/share/xastir";
+ 
+ 
+ # This script uses temporary storage space in /var/tmp to do its work.
 diff -u scripts.orig/get-gnis scripts/get-gnis
---- scripts.orig/get-gnis	2007-01-03 20:40:49.000000000 +0100
-+++ scripts/get-gnis	2008-07-10 14:36:21.000000000 +0200
+--- scripts.orig/get-gnis	2008-07-01 03:47:48.000000000 +0200
++++ scripts/get-gnis	2008-08-16 08:07:12.000000000 +0200
 @@ -55,8 +55,8 @@
  
-     if ( [ -f ${MYSTATE}_DECI.TXT ] )
+     if ( [ -f ${MYSTATE}_DECI.txt ] )
      then 
 -        printf "File successfully downloaded. Moving to /usr/local/share/xastir/GNIS\n" 
--        sudo mv ${MYSTATE}_DECI.TXT /usr/local/share/xastir/GNIS/${MYSTATE}.gnis
+-        sudo mv ${MYSTATE}_DECI.txt /usr/local/share/xastir/GNIS/${MYSTATE}.gnis
 +        printf "File successfully downloaded. Moving to /usr/share/xastir/GNIS\n" 
-+        sudo mv ${MYSTATE}_DECI.TXT /usr/share/xastir/GNIS/${MYSTATE}.gnis
++        sudo mv ${MYSTATE}_DECI.txt /usr/share/xastir/GNIS/${MYSTATE}.gnis
      else 
          printf "File for %s not successfully downloaded.\n" ${MYSTATE}
      fi 
 diff -u scripts.orig/get-maptools.sh scripts/get-maptools.sh
---- scripts.orig/get-maptools.sh	2007-01-03 20:40:49.000000000 +0100
-+++ scripts/get-maptools.sh	2008-07-10 14:36:21.000000000 +0200
+--- scripts.orig/get-maptools.sh	2008-01-16 20:33:59.000000000 +0100
++++ scripts/get-maptools.sh	2008-08-16 07:47:00.000000000 +0200
 @@ -135,11 +135,11 @@
  	fi 
      fi
@@ -118,7 +118,7 @@ diff -u scripts.orig/get-maptools.sh scripts/get-maptools.sh
  
 diff -u scripts.orig/icontable.pl scripts/icontable.pl
 --- scripts.orig/icontable.pl	2003-07-07 19:17:54.000000000 +0200
-+++ scripts/icontable.pl	2008-07-10 14:36:21.000000000 +0200
++++ scripts/icontable.pl	2008-08-16 07:47:00.000000000 +0200
 @@ -29,7 +29,7 @@
  #--------------------------------------------------------------------------
                                              
@@ -130,7 +130,7 @@ diff -u scripts.orig/icontable.pl scripts/icontable.pl
  %sympix = ();
 diff -u scripts.orig/permutations.pl scripts/permutations.pl
 --- scripts.orig/permutations.pl	2005-03-25 21:53:04.000000000 +0100
-+++ scripts/permutations.pl	2008-07-10 14:36:21.000000000 +0200
++++ scripts/permutations.pl	2008-08-16 07:47:00.000000000 +0200
 @@ -34,7 +34,7 @@
  #
  
@@ -142,7 +142,7 @@ diff -u scripts.orig/permutations.pl scripts/permutations.pl
  
 diff -u scripts.orig/test_coord.pl scripts/test_coord.pl
 --- scripts.orig/test_coord.pl	2003-01-06 23:42:17.000000000 +0100
-+++ scripts/test_coord.pl	2008-07-10 14:36:21.000000000 +0200
++++ scripts/test_coord.pl	2008-08-16 07:47:00.000000000 +0200
 @@ -33,7 +33,7 @@
  
  #------------------------------------------------------------------------------------------------
@@ -153,26 +153,42 @@ diff -u scripts.orig/test_coord.pl scripts/test_coord.pl
  
  
 diff -u scripts.orig/toporama250k.pl scripts/toporama250k.pl
---- scripts.orig/toporama250k.pl	2008-07-10 14:35:01.000000000 +0200
-+++ scripts/toporama250k.pl	2008-07-10 14:36:21.000000000 +0200
-@@ -28,7 +28,7 @@
+--- scripts.orig/toporama250k.pl	2008-08-16 07:42:13.000000000 +0200
++++ scripts/toporama250k.pl	2008-08-16 08:03:08.000000000 +0200
+@@ -28,14 +28,14 @@
  # map files for the whole of Canada!
  #
  #
--# * cd /usr/local/share/xastir/maps
-+# * cd /usr/share/xastir/maps
- # * Run this script from there.  Make sure that you have write
- #   privileges there.
- # * Move the directories and contents to whereever makes sense.
+-# - "cd /usr/local/share/xastir/maps"
++# - "cd /usr/share/xastir/maps"
+ #
+ # - Assure you have write privileges in the directory above either
+ #   by becoming root using the "su" command, using "sudo", or
+ #   temporarily changing ownership and/or privileges on the
+ #   "maps" directory.
+ #
+-# - "/usr/local/lib/xastir/toporama250k.pl"
++# - "/usr/lib/xastir/toporama250k.pl"
+ #
+ # - The script will create/populate this directory heirarchy:
+ #   .../maps/toporama/images/
 diff -u scripts.orig/toporama50k.pl scripts/toporama50k.pl
---- scripts.orig/toporama50k.pl	2008-07-10 14:35:01.000000000 +0200
-+++ scripts/toporama50k.pl	2008-07-10 14:36:21.000000000 +0200
-@@ -27,7 +27,7 @@
+--- scripts.orig/toporama50k.pl	2008-08-16 07:42:13.000000000 +0200
++++ scripts/toporama50k.pl	2008-08-16 08:02:48.000000000 +0200
+@@ -27,14 +27,14 @@
  # map files for the whole of Canada!
  #
  #
--# * cd /usr/local/share/xastir/maps
-+# * cd /usr/share/xastir/maps
- # * Run this script from there.  Make sure that you have write
- #   privileges there.
- # * Move the directories and contents to whereever makes sense.
+-# - "cd /usr/local/share/xastir/maps"
++# - "cd /usr/share/xastir/maps"
+ #
+ # - Assure you have write privileges in the directory above either
+ #   by becoming root using the "su" command, using "sudo", or
+ #   temporarily changing ownership and/or privileges on the
+ #   "maps" directory.
+ #
+-# - "/usr/local/lib/xastir/toporama50k.pl"
++# - "/usr/lib/xastir/toporama50k.pl"
+ #
+ # - The script will create/populate this directory heirarchy:
+ #   .../maps/toporama/images/
