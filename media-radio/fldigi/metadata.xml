@@ -8,5 +8,9 @@
 		  in use.</flag>
 	  <flag name='sndfile'>Enables audio file generation, capture and playback
 		  support.</flag>
+	  <flag name='portaudio'>Enables sound I/O via portaudio library.</flag>
+	  <flag name='pulseaudio'>Enables sound I/O via the pulseaudio sound
+		  server.</flag>
+	  <flag name='xmlrpc'>Enables support for the builtin XMLRPC server.</flag>
   </use>
 </pkgmetadata>
