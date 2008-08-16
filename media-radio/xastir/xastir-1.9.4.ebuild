@@ -32,13 +32,8 @@ src_unpack() {
 	cd "${S}"
 	# fix some scripts with DOS line endings
 	edos2unix scripts/toporama*
-	# support for new imagemagick,
-	# correction for selection of curl library in configure.ac and
 	# fix for different install directory in scripts
-	epatch "${FILESDIR}/${P}-IM.diff" \
-		"${FILESDIR}/${P}-curl.diff" \
-		"${FILESDIR}/${P}-scripts.diff"
-	eautoreconf
+	epatch "${FILESDIR}/${P}-scripts.diff"
 }
 
 src_compile() {
@@ -58,6 +53,10 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	# make doc more Gentoo like
+	rm -rf "${D}/usr/share/doc/xastir"
+	dodoc AUTHORS ChangeLog FAQ README README.Contributing \
+		README.Getting-Started README.MAPS || die "dodoc failed"
 }
 
 pkg_postinst() {

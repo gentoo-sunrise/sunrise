@@ -3,6 +3,10 @@
 # $Header: $
 
   16 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  xastir-1.9.4.ebuild:
+  Missing ebuild changes fixed.
+
+  16 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -xastir-1.9.2.ebuild, -files/xastir-1.9.2-IM.diff,
   -files/xastir-1.9.2-curl.diff, -files/xastir-1.9.2-scripts.diff,
   +xastir-1.9.4.ebuild, +files/xastir-1.9.4-scripts.diff, metadata.xml:
