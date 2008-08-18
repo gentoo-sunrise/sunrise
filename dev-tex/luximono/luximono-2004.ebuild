@@ -18,8 +18,6 @@ DEPEND="app-arch/unzip"
 RDEPEND=">=app-text/tetex-3.0"
 
 S=${WORKDIR}/${MY_PN}
-PACK="luxi"
-SUPPLIER="public"
 
 src_unpack(){
 	unpack ${A}
@@ -28,6 +26,9 @@ src_unpack(){
 }
 
 src_install() {
+	local PACK="luxi"
+	local SUPPLIER="public"
+
 #	latex-package_src_doinstall generally uses different
 #	directories than this package expects
 #	cd ${S}
