@@ -11,7 +11,7 @@ SRC_URI="http://pysvn.barrys-emacs.org/source_kits/${P}.tar.gz"
 LICENSE="Apache-1.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE=""
+IUSE="examples"
 
 DEPEND=">=dev-util/subversion-1.2.0"
 RDEPEND="${DEPEND}"
@@ -44,6 +44,11 @@ src_install() {
 
 	cd "${S}/../Docs"
 	dohtml *.html *.js
+
+	if use examples; then
+		insinto "/usr/share/doc/${PF}/Examples"
+		doins -r "${S}"/../Examples/*
+	fi
 }
 
 pkg_postinst() {
