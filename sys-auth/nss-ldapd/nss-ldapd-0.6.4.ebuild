@@ -27,6 +27,7 @@ src_unpack() {
 }
 
 src_compile() {
+	# nss libraries go in /lib (as opposed to /usr/lib)
 	econf \
 		$(use_enable sasl) \
 		$(use_enable kerberos) \
