@@ -31,5 +31,5 @@ src_compile(){
 }
 
 src_install() {
-	dobin dist/Release/GNU-Linux-x86/${PN}
+	dobin dist/Release/GNU-Linux-x86/${PN} || die "install failed"
 }

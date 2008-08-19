@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Aug 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
+  mmsap2-2.0.2.ebuild:
+  Missing die on install updating ebuild
+
+  19 Aug 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
   +mmsap2-2.0.2.ebuild, +metadata.xml:
   New ebuild for bug 235190 thanks to Ken69267 for review
 
