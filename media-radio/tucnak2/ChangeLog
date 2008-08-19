@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Fix metadata.xml
+
   13 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   tucnak2-2.13.ebuild, +files/tucnak2-2.13-appname.diff,
   files/tucnak2-2.13-config.diff, files/tucnak2-2.13-doc.diff, metadata.xml:
