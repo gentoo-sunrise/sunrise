@@ -11,13 +11,12 @@ SRC_URI="http://www.geuz.org/gmsh/src/${P}-source.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cgns doc examples jpeg metis opencascade png zlib X"
+IUSE="cgns doc examples jpeg metis png zlib X"
 
 RDEPEND="sci-libs/gsl
 	x11-libs/fltk
 	cgns? ( sci-libs/cgnslib )
 	jpeg? ( media-libs/jpeg )
-	opencascade? ( sci-libs/opencascade )
 	png? ( media-libs/libpng )
 	zlib? ( sys-libs/zlib )"
 
@@ -33,14 +32,12 @@ src_unpack() {
 
 src_compile() {
 	local myconf=""
-	use opencascade && myconf="${myconf} --with-occ-prefix=$CASROOT/lin"
 
 	econf ${myconf} \
 		$(use_enable X gui) \
 		$(use_enable cgns) \
 		$(use_enable jpeg) \
 		$(use_enable metis) \
-		$(use_enable opencascade occ) \
 		$(use_enable png) \
 		$(use_enable zlib)
 
