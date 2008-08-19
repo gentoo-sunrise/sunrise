@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/mmsap2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Aug 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
+  +mmsap2-2.0.2.ebuild, +metadata.xml:
+  New ebuild for bug 235190 thanks to Ken69267 for review
+
