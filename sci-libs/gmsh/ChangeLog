@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -gmsh-2.1.0.ebuild, metadata.xml:
+  Drop old version + add flag information for GLEP 56
+
+  19 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gmsh-2.2.3.ebuild:
   Remove opencascade support (missing dep in sunrise/main tree)
 
