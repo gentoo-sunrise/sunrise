@@ -2,6 +2,9 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Fix metadata.xml and add USE flag description wrt GLEP 56
+
   31 Jul 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   ax25-tools-0.0.8_p20080711.ebuild:
   Whitespace
