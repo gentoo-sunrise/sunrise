@@ -21,10 +21,6 @@
 ##   End example
 ##
 
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Aug 2008)
-# Mask sci-libs/gmsh-2.2.3 because of missing dep (sci-libs/opencascade)
-=sci-libs/gmsh-2.2.3
-
 # Tiago Cunha (tcunha) <me@tiagocunha.org> (06 Aug 2008)
 # Mask GIT ebuild
 =gnome-extra/guake-9999
