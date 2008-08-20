@@ -5,7 +5,7 @@
 	<use>
 		<flag name='alsa'>Enable alsa audio i/o (otherwise use only OSS)</flag>
 		<flag name='ftdi'>Enable support for USB FTDI chips</flag>
-		<flag name='gpm'>Adds support for sys-libs/gpm (Console-based mouse
+		<flag name='gpm'>Adds support for <pkg>sys-libs/gpm</pkg> (Console-based mouse
 		driver)</flag>
 	</use>
 </pkgmetadata>
