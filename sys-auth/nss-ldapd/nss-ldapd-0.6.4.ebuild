@@ -31,7 +31,7 @@ src_compile() {
 	econf \
 		$(use_enable sasl) \
 		$(use_enable kerberos) \
-		--libdir=/$(get_libdir) || die "configure failed"
+		--libdir=/$(get_libdir)
 
 	emake || die "make failed"
 }
