@@ -19,7 +19,6 @@ CDEPEND="dev-java/db-je:3.2
 	dev-java/fec
 	dev-java/java-service-wrapper"
 DEPEND=">=virtual/jdk-1.5
-	dev-java/ant-core
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
 	x86? ( net-libs/fec )
@@ -50,7 +49,6 @@ src_unpack() {
 	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
-	sed -i -e "s:opt/:var/:g" run.sh || die "sed failed"
 	mkdir -p lib
 	cd lib
 	java-pkg_jar-from db-je-3.2

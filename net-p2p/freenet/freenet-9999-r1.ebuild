@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-DATE=20080721
+DATE=20080820
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
 inherit eutils java-pkg-2 java-ant-2 multilib subversion
@@ -22,7 +22,6 @@ CDEPEND="dev-java/db-je:3.2
 	dev-java/fec
 	dev-java/java-service-wrapper"
 DEPEND=">=virtual/jdk-1.5
-	dev-java/ant-core
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
 	x86? ( net-libs/fec )
