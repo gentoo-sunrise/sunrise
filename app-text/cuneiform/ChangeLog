@@ -1,7 +1,10 @@
 # ChangeLog for app-text/cuneiform                        
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $                                                         
-                                                                     
+# $Header: $
+
+  20 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Correct <herd> in metadata.xml
+
   20 Aug 2008; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru>           
   +cuneiform-0.3.ebuild, +files/cuneiform-0.3-no-imagemagic.patch,   
   +metadata.xml:                                                     
