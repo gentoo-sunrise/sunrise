@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  openmoko-dfu-util-9999.ebuild:
+  Readd autotools.eclass
+
   10 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   openmoko-dfu-util-9999.ebuild:
   Remove unused autotools.eclass

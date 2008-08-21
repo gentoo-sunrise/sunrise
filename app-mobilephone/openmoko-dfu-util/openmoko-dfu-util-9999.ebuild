@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit subversion
+inherit autotools subversion
 
 DESCRIPTION="Implements the Host (PC) side of USB DFU (Universal Serial Bus Device Firmware Upgrade) protocol."
 HOMEPAGE="http://wiki.openmoko.org/wiki/Dfu-util/"
