@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  tacticsgame-0.3.ebuild:
+  Use PN and remove unneeded RDEPEND
+
   21 Aug 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
   +tacticsgame-0.3.ebuild, +metadata.xml:
   New ebuild for bug 235376 thanks to gentoofan23 for the dev review
