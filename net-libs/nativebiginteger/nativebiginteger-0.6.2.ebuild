@@ -17,12 +17,13 @@ DEPEND="dev-libs/gmp
 	>=virtual/jdk-1.4"
 RDEPEND="dev-libs/gmp"
 
-QA_TEXTRELS="opt/freenet/lib/libjcpuid-x86-linux.so"
+QA_TEXTRELS="var/freenet/lib/libjcpuid-x86-linux.so"
 
 src_compile() {
 	append-flags -fPIC
 	tc-export CC
 	emake libjbigi || die
+	use x86 && filter-flags -fPIC
 	emake libjcpuid || die
 }
 
