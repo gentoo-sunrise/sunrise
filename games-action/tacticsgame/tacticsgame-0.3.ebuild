@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND="media-libs/libsdl
 	virtual/opengl"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/TS"
 
