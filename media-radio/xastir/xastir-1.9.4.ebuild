@@ -25,6 +25,7 @@ DEPEND="x11-libs/openmotif
 	gdal? ( sci-libs/gdal )
 	imagemagick? ( >=media-gfx/imagemagick-6.4 )
 	festival? ( app-accessibility/festival )"
+RDEPEND="${DEPEND}"
 
 
 src_unpack() {

@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  xastir-1.9.4.ebuild:
+  Readd RDEPEND as said by devmanual(see Runtime Dependencies)
+
   19 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   xastir-1.9.4.ebuild:
   Remove unneeded autotools.eclass
