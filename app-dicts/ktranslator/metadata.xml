@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>maintainer-wanted</herd>
+	<herd>maintainer-wanted</herd>
+	<use>
+		<flag name='festival'>Enable festival support.</flag>
+		<flag name='lowmem'>Disable optimizations for searches.</flag>
+		<flag name='ocr'>Enable GOCR support.</flag>
+	</use>
 </pkgmetadata>

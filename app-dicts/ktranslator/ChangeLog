@@ -1,6 +1,9 @@
 # ChangeLog for app-dicts/ktranslator
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added USE flag description wrt GLEP 56
 
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   ktranslator-0.4.ebuild:
