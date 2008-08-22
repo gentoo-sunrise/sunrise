@@ -8,13 +8,12 @@ DESCRIPTION="Berkeley DB JE is a high performance, transactional storage engine 
 HOMEPAGE="http://www.oracle.com/database/berkeley-db/je/index.html"
 SRC_URI="http://download.oracle.com/berkeley-db/${P/db-/}.tar.gz"
 
-LICENSE="OracleDB"
+LICENSE="as-is"
 SLOT="3.2"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/jdk-1.5
-	dev-java/ant-core"
+DEPEND=">=virtual/jdk-1.5"
 RDEPEND=">=virtual/jre-1.4"
 S="${WORKDIR}/${P/db-/}"
 

@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  db-je-3.2.76.ebuild, db-je-3.3.69.ebuild:
+  Change LICENSE and remove unneeded dep
+
+  22 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -db-je-3.2.74.ebuild, -files/db-je-3.2.74-build.patch,
   +db-je-3.2.76.ebuild, +files/db-je-3.2.76-build.patch:
   Minor revision bump
