@@ -55,6 +55,12 @@ pkg_setup() {
 	fi
 }
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-include-string.patch || die
+}
+
 src_compile() {
 	# Ipe bug #240, Gentoo bug #80448#c8: allow Ipe to be built with GCC 4.2
 	sed -i -e "s/-Werror/-Wno-error/" \
