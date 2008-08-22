@@ -1,6 +1,9 @@
 # ChangeLog for app-admin/vlogger
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added USE flag description wrt GLEP 56
 
   21 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> vlogger-1.3.ebuild:
   Cosmetics
