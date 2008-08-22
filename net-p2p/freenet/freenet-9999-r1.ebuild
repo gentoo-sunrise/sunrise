@@ -15,7 +15,7 @@ SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/seednodes-${DATE}.fr
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 CDEPEND="dev-java/db-je:3.2
