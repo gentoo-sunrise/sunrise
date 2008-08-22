@@ -3,7 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 start() {
-	if ! [[ -e /opt/freenet/freenet.ini ]] && [[ -e /var/freenet/freenet.ini ]]; then
+	if ! [[ -e /opt/freenet/freenet.ini ]]; then
 		start-stop-daemon --start --chuid freenet --exec /var/freenet/run.sh start 2>/dev/null
 		eend 0
 	else
