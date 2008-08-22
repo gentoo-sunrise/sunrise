@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Aug 2008; Andres Becerra Sandoval (bec) <andres.becerra@gmail.com>
+  ipe-6.0_pre30.ebuild:
+  Deleted || die for epatch
+
+  22 Aug 2008; Andres Becerra Sandoval (bec) <andres.becerra@gmail.com>
   ipe-6.0_pre30.ebuild, +files/ipe-6.0_pre30-include-string.patch:
   Patch for ipe-6.0_pre30, it is also reported upstream:
   http://http.theano.de/cgi-bin/bugzilla/show_bug.cgi?id=265

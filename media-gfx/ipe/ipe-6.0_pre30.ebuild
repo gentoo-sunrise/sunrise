@@ -58,7 +58,7 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-include-string.patch || die
+	epatch "${FILESDIR}"/${P}-include-string.patch 
 }
 
 src_compile() {
