@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>maintainer-wanted</herd>
-<longdescription lang="en">
-Fyre provides a rendering of the Peter de Jong map, with an
-interactive GTK+ frontend and a command line interface for easy and
-efficient rendering of high-resolution, high quality images.
-</longdescription>
+	<herd>maintainer-wanted</herd>
+	<longdescription lang="en">
+		Fyre provides a rendering of the Peter de Jong map, with an
+		interactive GTK+ frontend and a command line interface for easy and
+		efficient rendering of high-resolution, high quality images.
+	</longdescription>
+	<use>
+		<flag name='cluster'>Add support for cluster rendering</flag>
+	</use>
 </pkgmetadata>

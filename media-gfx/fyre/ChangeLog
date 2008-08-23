@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/fyre
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added local USE flag description wrt GLEP 56
 
   03 Apr 2007; Markus Ullmann <jokey@gentoo.org> fyre-1.0.1.ebuild:
   cosmetics
