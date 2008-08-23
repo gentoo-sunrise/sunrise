@@ -33,7 +33,6 @@ app-misc/heyu:ore - Support Oregon RF sensors.
 app-misc/heyu:rfxm - Support RFXMeters.
 app-misc/heyu:rfxs - Support RFXSensors.
 app-misc/mc-mp:7zip - Add support for 7zip archives
-dev-cpp/libcwd:pch - Add support for precompiled headers
 dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - more precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
