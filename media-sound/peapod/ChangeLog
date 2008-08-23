@@ -1,6 +1,9 @@
 # ChangeLog for media-sound/peapod
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added local USE flag description wrt GLEP 56
 
   16 Jul 2006; Devon Warren (devon) <CptnObvious999@gmail.com> ChangeLog:
   New Ebuild for bug 140442 thanks to dev-zero, aross, and dragonheart on IRC
