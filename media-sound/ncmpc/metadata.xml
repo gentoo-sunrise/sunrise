@@ -11,5 +11,14 @@
 		upstream maintainers refuse to release a new version with all the shiny
 		advantages.
 	</longdescription>
+	<use>
+		<flag name='artist-screen'>Enable artist screen (EXPERIMENTAL)</flag>
+		<flag name='clock-screen'>Enable clock screen</flag>
+		<flag name='key-screen'>Enable key editor screen</flag>
+		<flag name='lyrics-screen'>Enable lyrics screen</flag>
+		<flag name='mouse'>Enable curses getmouse support</flag>
+		<flag name='raw-mode'>raw terminal mode</flag>
+		<flag name='search-screen'>Enable search screen (EXPERIMENTAL)</flag>
+	</use>
 </pkgmetadata>
 
