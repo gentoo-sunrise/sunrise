@@ -118,8 +118,8 @@ media-radio/xastir:gdal - Enables gdal library support
 media-radio/xastir:geotiff - library for reading TIFF files with embedded geographical informations
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
-media-sound/ncmpc:artist-screen - local USE flag for this software, please describe
-media-sound/ncmpc:lyrics-screen - local USE flag for this software, please describe
+media-sound/ncmpc:artist-screen - Enable artist screen (EXPERIMENTAL)
+media-sound/ncmpc:lyrics-screen - Enable lyrics screen
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/scala-bin:midi - MIDI support
