@@ -117,7 +117,6 @@ media-radio/xastir:festival - Enable text to speech synthesizer
 media-radio/xastir:gdal - Enables gdal library support
 media-radio/xastir:geotiff - library for reading TIFF files with embedded geographical informations
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
-media-sound/gnormalize:musepack - Enables support for the musepack audio codec
 media-sound/gnormalize:normalize - Enable the normalize front-end
 media-sound/ncmpc:artist-screen - local USE flag for this software, please describe
 media-sound/ncmpc:lyrics-screen - local USE flag for this software, please describe
