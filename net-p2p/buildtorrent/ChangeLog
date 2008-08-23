@@ -8,5 +8,5 @@
 
   23 Aug 2008; Robert Steen (Gandalf) <gandalf@vebbe.se>
   +buildtorrent-0.7.ebuild, +metadata.xml:
-  New ebuild for software buildtorrent
+  New ebuild for software buildtorrent, bug 235399
 
