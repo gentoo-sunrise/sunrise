@@ -20,4 +20,14 @@
 
 		Heyu can also use an optional CM17A interface to transmit X10 RF signals. 
 	</longdescription>
+	<use>
+		<flag name='cm17a'>Support the X10 CM17A "Firecracker" device.</flag>
+		<flag name='dmx210'>Support the Digimax 210 remote thermostat 
+			device.</flag>
+		<flag name='ext0'>Support extended type 0 (shutter and shade) 
+			commands.</flag>
+		<flag name='ore'>Support Oregon RF sensors.</flag>
+		<flag name='rfxm'>Support RFXMeters.</flag>
+		<flag name='rfxs'>Support RFXSensors.</flag>
+	</use>
 </pkgmetadata>
