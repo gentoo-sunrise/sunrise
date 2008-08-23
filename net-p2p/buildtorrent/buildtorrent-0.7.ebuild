@@ -16,5 +16,5 @@ IUSE=""
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-    emake DESTDIR="${D}" install || die "emake install failed."
+	emake DESTDIR="${D}" install || die "emake install failed."
 }
