@@ -29,4 +29,7 @@ a set of command files is included to build other kinds of scales such as
 triadic scales, circular mirrorings, circulating temperaments, etc., and to
 serve as examples. 
 </longdescription>
+<use>
+	<flag name='midi'>MIDI support</flag>
+</use>
 </pkgmetadata>
