@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>maintainer-wanted</herd>
+	<herd>maintainer-wanted</herd>
+	<use>
+		<flag name='fpx'>Enable FlashPix support</flag>
+		<flag name='imagemagick'>Enable ImageMagick command compatibility</flag>
+		<flag name='openmp'>Build support for the OpenMP (support parallel
+			computing)</flag>
+		<flag name='q16'>Set quantum depth to 16</flag>
+		<flag name='q32'>Set quantum depth to 32</flag>
+	</use>
 </pkgmetadata>
