@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/openscenegraph
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added local USE flag description wrt GLEP 56
 
   02 Nov 2006; Cedric Krier <ced@ced.homedns.org>
   -openscenegraph-1.0.ebuild, -files/openscenegraph-1.0-build.patch,
