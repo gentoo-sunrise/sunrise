@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>maintainer-wanted</herd>
-<longdescription lang="en">
-	GCstar is a free open source application for managing your collections.
-	Detailed information on each item can be automatically retrieved from the
-	internet and you can store additional data, such as the location or who
-	you've lent it to. You may also search and filter your collection by many
-	criteria.
-</longdescription>
+	<herd>maintainer-wanted</herd>
+	<longdescription lang="en">
+		GCstar is a free open source application for managing your collections.
+		Detailed information on each item can be automatically retrieved from the
+		internet and you can store additional data, such as the location or who
+		you've lent it to. You may also search and filter your collection by many
+		criteria.
+	</longdescription>
+	<use>
+		<flag name='cddb'>Access cddb servers to retrieve and submit information about compact disks</flag>
+		<flag name='gnome'>Adds GNOME support</flag>
+		<flag name='mp3'>Add support for reading mp3 files</flag>
+		<flag name='spell'>Adds dictionary support</flag>
+		<flag name='tellico'>Enable support for <pkg>kde-misc/tellico</pkg> files</flag>
+		<flag name='vorbis'>Adds support for the OggVorbis audio codec</flag>
+	</use>
 </pkgmetadata>
