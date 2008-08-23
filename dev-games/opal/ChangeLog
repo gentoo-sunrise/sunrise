@@ -1,6 +1,9 @@
 # ChangeLog for dev-games/opal
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added local USE flag description wrt GLEP 56
 
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> opal-0.4.0.ebuild:
   Fix dependencies
