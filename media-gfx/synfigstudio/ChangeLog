@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added USE flag description wrt GLEP 56
+
   06 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   synfigstudio-0.61.08.ebuild:
   Move libtool to DEPEND
