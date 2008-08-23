@@ -1,0 +1,8 @@
+# ChangeLog for net-p2p/buildtorrent
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Aug 2008; Robert Steen (Gandalf) <gandalf@vebbe.se>
+  +buildtorrent-0.7.ebuild, +metadata.xml:
+  New ebuild for software buildtorrent
+
