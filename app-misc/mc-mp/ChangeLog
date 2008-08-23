@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added local USE flag description wrt GLEP 56
+
   30 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   mc-mp-4.1.40_pre9.ebuild:
   Remove dep on out of tree slang
