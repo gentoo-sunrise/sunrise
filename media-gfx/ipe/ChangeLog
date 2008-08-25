@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ipe-6.0_pre30.ebuild:
+  Fix whitespace
+
   22 Aug 2008; Andres Becerra Sandoval (bec) <andres.becerra@gmail.com>
   ipe-6.0_pre30.ebuild:
   Deleted || die for epatch
