@@ -3,6 +3,10 @@
 # $Header: $
 
   25 Aug 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
+  wally-1.0.0.ebuild:
+  Correcting licence on package
+
+  25 Aug 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
   +wally-1.0.0.ebuild, +metadata.xml:
   New Ebuild for bug 235687 thanks to jokey for the review
 

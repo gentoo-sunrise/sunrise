@@ -7,7 +7,7 @@ inherit qt4
 DESCRIPTION="Wally is a QT4 wallpaper changer"
 HOMEPAGE="http://wally.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
-LICENSE="GPL-1"
+LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64"
