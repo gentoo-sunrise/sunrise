@@ -156,16 +156,10 @@ net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
-sci-libs/cgnslib:hdf5 - Adds support for the Hierarchical Data Format v5
-sci-libs/cgnstools:hdf5 - Adds support for the Hierarchical Data Format v5
-sci-libs/gmsh:cgns - Enables cgns output support
-sci-libs/gmsh:metis - Enables metis support
 sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
-sci-libs/openfoam:metis - Enables the use of the systemwide metis/parmetis installation
 sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam-bin:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-bin:mpich - Defines mpich as default mpi implementation
-sci-libs/openfoam-utilities:metis - Enables the use of the systemwide metis/parmetis installation
 sci-libs/openfoam-wmake:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-wmake:mpich - Defines mpich as default mpi implementation
 sci-libs/sympy:xslt - Adds MathML printing support
