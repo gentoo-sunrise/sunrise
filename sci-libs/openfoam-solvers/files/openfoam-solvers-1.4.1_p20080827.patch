@@ -1,0 +1,423 @@
+Index: multiphase/multiphaseInterFoam/multiphaseMixture/multiphaseMixture.C
+===================================================================
+--- applications/solvers/multiphase/multiphaseInterFoam/multiphaseMixture/multiphaseMixture.C	(Revision 30)
++++ applications/solvers/multiphase/multiphaseInterFoam/multiphaseMixture/multiphaseMixture.C	(Revision 784)
+@@ -120,30 +120,30 @@
+ 
+ Foam::tmp<Foam::volScalarField> Foam::multiphaseMixture::rho() const
+ {
+     PtrDictionary<phase>::const_iterator iter = phases_.begin();
+ 
+     tmp<volScalarField> trho = iter()*iter().rho();
+ 
+-    for(; iter != phases_.end(); ++iter)
++    for(++iter; iter != phases_.end(); ++iter)
+     {
+         trho() += iter()*iter().rho();
+     }
+ 
+     return trho;
+ }
+ 
+ 
+ Foam::tmp<Foam::volScalarField> Foam::multiphaseMixture::mu() const
+ {
+     PtrDictionary<phase>::const_iterator iter = phases_.begin();
+ 
+     tmp<volScalarField> tmu = iter()*iter().rho()*iter().nu();
+ 
+-    for(; iter != phases_.end(); ++iter)
++    for(++iter; iter != phases_.end(); ++iter)
+     {
+         tmu() += iter()*iter().rho()*iter().nu();
+     }
+ 
+     return tmu;
+ }
+ 
+@@ -151,15 +151,15 @@
+ Foam::tmp<Foam::surfaceScalarField> Foam::multiphaseMixture::muf() const
+ {
+     PtrDictionary<phase>::const_iterator iter = phases_.begin();
+ 
+     tmp<surfaceScalarField> tmuf = 
+         fvc::interpolate(iter())*iter().rho()*fvc::interpolate(iter().nu());
+ 
+-    for(; iter != phases_.end(); ++iter)
++    for(++iter; iter != phases_.end(); ++iter)
+     {
+         tmuf() += 
+             fvc::interpolate(iter())*iter().rho()*fvc::interpolate(iter().nu());
+     }
+ 
+     return tmuf;
+ }
+
+Index: multiphase/interFoam/FoamX/fvSchemes.cfg
+===================================================================
+--- applications/solvers/multiphase/interFoam/FoamX/fvSchemes.cfg	(Revision 0)
++++ applications/solvers/multiphase/interFoam/FoamX/fvSchemes.cfg	(Revision 784)
+@@ -0,0 +1,29 @@
++/*---------------------------------------------------------------------------*\
++| =========                 |                                                 |
++| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
++|  \\    /   O peration     | Version:  1.4                                   |
++|   \\  /    A nd           | Web:      http://www.openfoam.org               |
++|    \\/     M anipulation  |                                                 |
++\*---------------------------------------------------------------------------*/
++
++include "$FOAMX_CONFIG/dictionaries/fvSchemes/fvSchemes.cfg";
++
++entries
++{
++    include "$FOAMX_CONFIG/dictionaries/fvSchemes/ddt/transient.cfg";
++
++    include "$FOAMX_CONFIG/dictionaries/fvSchemes/grad/defaultOnly.cfg";
++    include "fvSchemes/divSchemes.cfg";
++    include "$FOAMX_CONFIG/dictionaries/fvSchemes/laplacian/defaultOnly.cfg";
++    include "fvSchemes/interpolationSchemes.cfg";
++    include "$FOAMX_CONFIG/dictionaries/fvSchemes/snGrad/defaultOnly.cfg";
++    include "$FOAMX_CONFIG/dictionaries/fvSchemes/flux/pdPcorrGamma.cfg"
++;
++}
++
++default
++{
++    include "defaults/system/fvSchemes";
++}
++
++// ************************************************************************* //
+Index: multiphase/interFoam/FoamX/interFoam.cfg
+===================================================================
+--- applications/solvers/multiphase/interFoam/FoamX/interFoam.cfg	(Revision 0)
++++ applications/solvers/multiphase/interFoam/FoamX/interFoam.cfg	(Revision 784)
+@@ -0,0 +1,57 @@
++/*---------------------------------------------------------------------------*\
++| =========                 |                                                 |
++| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
++|  \\    /   O peration     | Version:  1.4                                   |
++|   \\  /    A nd           | Web:      http://www.openfoam.org               |
++|    \\/     M anipulation  |                                                 |
++\*---------------------------------------------------------------------------*/
++
++description "Free surface-capturing unsteady laminar two-phase flow code";
++
++dictionaries        
++{
++    include "$FOAMX_CONFIG/dictionaries/controlDict/controlDictAdjustTimeStep.cfg";
++    fvSchemes;
++    fvSolution;
++    include "$FOAMX_CONFIG/dictionaries/transportProperties/twoPhaseTransportProperties.cfg";
++    include "$FOAMX_CONFIG/dictionaries/environmentalProperties/environmentalPropertiesg.cfg";
++}
++
++fields
++{
++    include "$FOAMX_CONFIG/entries/geometricFields/pd.cfg";
++    include "$FOAMX_CONFIG/entries/geometricFields/U.cfg";
++    include "$FOAMX_CONFIG/entries/geometricFields/gamma.cfg";
++}
++
++patchPhysicalTypes
++{
++    include "$FOAMX_CONFIG/entries/patchPhysicalTypes/standard/patches.cfg";
++
++    wallContactAngle
++    {
++        description         "Wall boundary condition with specified contact-angle";
++        parentType           wall;
++    }
++}
++
++patchFieldsPhysicalTypes
++{
++    gamma
++    {
++        include "$FOAMX_CONFIG/entries/patchPhysicalTypes/standard/gamma.cfg";
++        wallContactAngle gammaContactAngle;
++    }
++
++    U
++    {
++        include "$FOAMX_CONFIG/entries/patchPhysicalTypes/standard/U.cfg";
++    }
++
++    pd
++    {
++        include "$FOAMX_CONFIG/entries/patchPhysicalTypes/standard/pd.cfg";
++    }
++}
++
++// ************************************************************************* //
+Index: multiphase/interFoam/FoamX/fvSchemes/divSchemes.cfg
+===================================================================
+--- applications/solvers/multiphase/interFoam/FoamX/fvSchemes/divSchemes.cfg	(Revision 0)
++++ applications/solvers/multiphase/interFoam/FoamX/fvSchemes/divSchemes.cfg	(Revision 784)
+@@ -0,0 +1,21 @@
++/*---------------------------------------------------------------------------*\
++| =========                 |                                                 |
++| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
++|  \\    /   O peration     | Version:  1.4                                   |
++|   \\  /    A nd           | Web:      http://www.openfoam.org               |
++|    \\/     M anipulation  |                                                 |
++\*---------------------------------------------------------------------------*/
++
++divSchemes
++{
++    include "$FOAMX_CONFIG/dictionaries/fvSchemes/div/schemes.cfg"; 
++    entries
++    {
++        include "$FOAMX_CONFIG/dictionaries/fvSchemes/div/rhoPhiU.cfg";
++        include "$FOAMX_CONFIG/dictionaries/fvSchemes/div/phiGamma.cfg";
++        include "$FOAMX_CONFIG/dictionaries/fvSchemes/div/phirbGamma.cfg";
++    }                  
++}
++
++
++// ************************************************************************* //
+Index: multiphase/interFoam/FoamX/fvSchemes/interpolationSchemes.cfg
+===================================================================
+--- applications/solvers/multiphase/interFoam/FoamX/fvSchemes/interpolationSchemes.cfg	(Revision 0)
++++ applications/solvers/multiphase/interFoam/FoamX/fvSchemes/interpolationSchemes.cfg	(Revision 784)
+@@ -0,0 +1,18 @@
++/*---------------------------------------------------------------------------*\
++| =========                 |                                                 |
++| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
++|  \\    /   O peration     | Version:  1.4                                   |
++|   \\  /    A nd           | Web:      http://www.openfoam.org               |
++|    \\/     M anipulation  |                                                 |
++\*---------------------------------------------------------------------------*/
++
++interpolationSchemes
++{
++    include "$FOAMX_CONFIG/dictionaries/fvSchemes/interpolation/schemes.cfg"; 
++    entries
++    {
++        include "$FOAMX_CONFIG/dictionaries/fvSchemes/interpolation/default.cfg";
++    }
++}
++
++// ************************************************************************* //
+Index: multiphase/interFoam/FoamX/fvSolution.cfg
+===================================================================
+--- applications/solvers/multiphase/interFoam/FoamX/fvSolution.cfg	(Revision 0)
++++ applications/solvers/multiphase/interFoam/FoamX/fvSolution.cfg	(Revision 784)
+@@ -0,0 +1,45 @@
++/*---------------------------------------------------------------------------*\
++| =========                 |                                                 |
++| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
++|  \\    /   O peration     | Version:  1.4                                   |
++|   \\  /    A nd           | Web:      http://www.openfoam.org               |
++|    \\/     M anipulation  |                                                 |
++\*---------------------------------------------------------------------------*/
++
++include "$FOAMX_CONFIG/dictionaries/fvSolution/fvSolution.cfg";
++
++entries
++{
++    solvers
++    {
++        type        dictionary;
++        entries
++        {
++            include "$FOAMX_CONFIG/dictionaries/fvSolution/solvers/pcorr.cfg";
++            include "$FOAMX_CONFIG/dictionaries/fvSolution/solvers/pd.cfg";
++            include "$FOAMX_CONFIG/dictionaries/fvSolution/solvers/pdFinal.cfg";
++            include "$FOAMX_CONFIG/dictionaries/fvSolution/solvers/U.cfg";
++        }
++    }
++
++    PISO
++    {
++        type        dictionary;
++        entries
++        {
++            include "$FOAMX_CONFIG/entries/Switch/momentumPredictor.cfg";
++            include "$FOAMX_CONFIG/entries/label/nCorrectors.cfg";
++            include "$FOAMX_CONFIG/entries/label/nNonOrthogonalCorrectors.cfg";
++            include "$FOAMX_CONFIG/entries/label/nGammaCorr.cfg";
++            include "$FOAMX_CONFIG/entries/label/nGammaSubCycles.cfg";
++            include "$FOAMX_CONFIG/entries/scalar/cGamma.cfg";
++        }
++    }
++}
++
++default
++{
++    include "defaults/system/fvSolution";
++}
++
++// ************************************************************************* //
+Index: multiphase/interFoam/FoamX/defaults/system/fvSchemes
+===================================================================
+--- applications/solvers/multiphase/interFoam/FoamX/defaults/system/fvSchemes	(Revision 0)
++++ applications/solvers/multiphase/interFoam/FoamX/defaults/system/fvSchemes	(Revision 784)
+@@ -0,0 +1,67 @@
++/*---------------------------------------------------------------------------*\
++| =========                 |                                                 |
++| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
++|  \\    /   O peration     | Version:  1.4                                   |
++|   \\  /    A nd           | Web:      http://www.openfoam.org               |
++|    \\/     M anipulation  |                                                 |
++\*---------------------------------------------------------------------------*/
++
++FoamFile
++{
++    version         2.0;
++    format          ascii;
++
++    root            "";
++    case            "";
++    instance        "";
++    local           "";
++
++    class           dictionary;
++    object          fvSchemes;
++}
++
++// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
++
++ddtSchemes
++{
++    default Euler;
++}
++
++gradSchemes
++{
++    default         Gauss linear;
++}
++
++divSchemes
++{
++    div(rho*phi,U)  Gauss limitedLinearV 1;
++    div(phi,gamma)  Gauss vanLeer;
++    div(phirb,gamma) Gauss interfaceCompression;
++}
++
++laplacianSchemes
++{
++    default         Gauss linear corrected;
++}
++
++interpolationSchemes
++{
++    default         linear;
++    interpolate(HbyA) linear;
++}
++
++snGradSchemes
++{
++    default         corrected;
++}
++
++fluxRequired
++{
++    default         no;
++    pd;
++    pcorr;
++    gamma;
++}
++
++
++// ************************************************************************* //
+Index: multiphase/interFoam/FoamX/defaults/system/fvSolution
+===================================================================
+--- applications/solvers/multiphase/interFoam/FoamX/defaults/system/fvSolution	(Revision 0)
++++ applications/solvers/multiphase/interFoam/FoamX/defaults/system/fvSolution	(Revision 784)
+@@ -0,0 +1,64 @@
++/*---------------------------------------------------------------------------*\
++| =========                 |                                                 |
++| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
++|  \\    /   O peration     | Version:  1.4                                   |
++|   \\  /    A nd           | Web:      http://www.openfoam.org               |
++|    \\/     M anipulation  |                                                 |
++\*---------------------------------------------------------------------------*/
++
++FoamFile
++{
++    version         2.0;
++    format          ascii;
++
++    root            "";
++    case            "";
++    instance        "";
++    local           "";
++
++    class           dictionary;
++    object          fvSolution;
++}
++
++// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
++
++solvers
++{
++    pcorr PCG
++    {
++        preconditioner   DIC;
++        tolerance        1e-10;
++        relTol           0;
++    };
++    pd PCG
++    {
++        preconditioner   DIC;
++        tolerance        1e-7;
++        relTol           0.05;
++    };
++    pdFinal PCG
++    {
++        preconditioner   DIC;
++        tolerance        1e-7;
++        relTol           0;
++    };
++    U PBiCG
++    {
++        preconditioner   DILU;
++        tolerance        1e-06;
++        relTol           0;
++    };
++}
++
++PISO
++{
++    momentumPredictor no;
++    nCorrectors     3;
++    nNonOrthogonalCorrectors 1;
++    nGammaCorr      1;
++    nGammaSubCycles 2;
++    cGamma          1;
++}
++
++
++// ************************************************************************* //
+
+Index: multiphase/twoPhaseEulerFoam/kineticTheoryModel/frictionalStressModel/Schaeffer/SchaefferFrictionalStress.C
+===================================================================
+--- applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/frictionalStressModel/Schaeffer/SchaefferFrictionalStress.C	(Revision 30)
++++ applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/frictionalStressModel/Schaeffer/SchaefferFrictionalStress.C	(Revision 784)
+@@ -126,23 +126,23 @@
+     volScalarField& muf_ = tmuf();
+ 
+     forAll (D, celli)
+     {
+         if (alpha[celli] > alphaMax.value()-5e-2)
+         {
+             muf_[celli] = 
+-                0.5*alpha[celli]*pf[celli]*sin(phi.value())
++                0.5*pf[celli]*sin(phi.value())
+                /(
+                     sqrt(1.0/6.0*(sqr(D[celli].xx() - D[celli].yy())
+                   + sqr(D[celli].yy() - D[celli].zz())
+                   + sqr(D[celli].zz() - D[celli].xx()))
+                   + sqr(D[celli].xy()) + sqr(D[celli].xz())
+                   + sqr(D[celli].yz())) + I2Dsmall
+                 );
+         }
+     }
+ 
+-    return muf_;
++    return tmuf;
+ }
+ 
+ 
+ // ************************************************************************* //
+
