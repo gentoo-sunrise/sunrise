@@ -29,13 +29,13 @@ need_apache2
 src_compile() {
 	local MYOPTS="-c mod_qos.c"
 	cd "${APXS2_S}"
-	"${APXS}" "${MYOPTS}" || die "compile failed"
+	${APXS} ${MYOPTS} || die "compile failed"
 	MYOPTS="-c mod_qos.lo"
-	"${APXS}" "${MYOPTS}" || die "compile failed"
+	${APXS} ${MYOPTS} || die "compile failed"
 	MYOPTS="-c mod_qos_control.c"
-	"${APXS}" "${MYOPTS}" || die "compile failed"
+	${APXS} ${MYOPTS} || die "compile failed"
 	MYOPTS="-c mod_qos_control.lo"
-	"${APXS}" "${MYOPTS}" || die "compile failed"
+	${APXS} ${MYOPTS} || die "compile failed"
 	cd "${S}"/tools
 	sed -i -e '/strip/ d' Makefile || die "sed tools makefile failed"
 	emake || die "emake failed"
