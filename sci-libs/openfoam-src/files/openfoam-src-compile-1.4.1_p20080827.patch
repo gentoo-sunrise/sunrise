@@ -1,0 +1,231 @@
+diff -ur OpenFOAM-1.4.1-src/src/Allwmake OpenFOAM-1.4.1/src/Allwmake
+--- OpenFOAM-1.4.1-src/src/Allwmake	2007-07-27 17:54:28.000000000 +0200
++++ OpenFOAM-1.4.1/src/Allwmake	2007-10-18 21:04:12.000000000 +0200
+@@ -3,103 +3,103 @@
+ 
+ (cd $FOAM_SRC/OpenFOAM ; wmakeLnInclude . )
+ 
+-wmake libso zlib-1.2.1
+-
+-if [ "$WM_MPLIB" = "OPENMPI" -a ! -r $OPENMPI_ARCH_PATH/lib/libmpi.a -a ! -r $OPENMPI_ARCH_PATH/lib/libmpi.so ]
+-then
+-
+-    cd $OPENMPI_HOME
+-
+-        gmake distclean
+-        rm -rf $OPENMPI_ARCH_PATH
+-
+-        ./configure \
+-            --prefix=$OPENMPI_ARCH_PATH \
+-            --disable-mpirun-prefix-by-default \
+-            --disable-orterun-prefix-by-default \
+-            --enable-shared --disable-static \
+-            --disable-mpi-f77 --disable-mpi-f90 --disable-mpi-cxx \
+-            --disable-mpi-profile
+-
+-        gmake
+-        gmake install
+-        gmake distclean
+-
+-    cd $FOAM_SRC
+-fi
+-
+-if [ "$WM_MPLIB" = "LAM" -a ! -r $LAM_ARCH_PATH/lib/libmpi.a -a ! -r $LAM_ARCH_PATH/lib/libmpi.so ]
+-then
+-
+-    cd $LAMHOME
+-
+-        gmake distclean
+-        rm -rf $LAM_ARCH_PATH
+-
+-        ./configure \
+-            --prefix=$LAM_ARCH_PATH \
+-            --enable-shared \
+-            --disable-static \
+-            --without-romio \
+-            --without-mpi2cpp \
+-            --without-profiling \
+-            --without-fc
+-
+-        gmake
+-        gmake install
+-        gmake distclean
+-
+-    cd $FOAM_SRC
+-fi
+-
+-if [ "$WM_MPLIB" = "MPICH" -a ! -r $MPICH_ARCH_PATH/lib/libmpich.a -a ! -r $MPICH_ARCH_PATH/lib/libmpich.so ]
+-then
+-    
+-    cd $MPICH_PATH
+-
+-        make distclean
+-        rm -rf $MPICH_ARCH_PATH
+-        rm util/machines/machines.*
+-
+-        ./configure \
+-            --without-mpe \
+-            --disable-f77 \
+-            --disable-f90 \
+-            --disable-f90modules \
+-            --disable-c++ \
+-            --disable-mpedbg \
+-            --disable-devdebug \
+-            --disable-debug \
+-            --enable-sharedlib=$MPICH_ARCH_PATH/lib \
+-            --with-device=ch_p4 \
+-            -prefix=$MPICH_ARCH_PATH
+-        make
+-        make install
+-        make distclean
+-
+-        if [ -r $MPICH_ARCH_PATH ]
+-        then
+-            cd $MPICH_ARCH_PATH/bin
+-            for file in *
+-            do
+-                sed s%$MPICH_ARCH_PATH%'$MPICH_ARCH_PATH'%g $file > temp.$$
+-                mv temp.$$ $file
+-                chmod ugo+rx $file
+-            done
+-
+-            cd $MPICH_ARCH_PATH/lib
+-
+-            if [ -r libmpich.so.1.0 ]
+-            then
+-                rm *.so
+-                ln -s libmpich.so.1.0 libmpich.so
+-            fi
+-
+-            cd $MPICH_ARCH_PATH
+-        fi
+-
+-    cd $FOAM_SRC
+-fi
++# wmake libso zlib-1.2.1
++#
++# if [ "$WM_MPLIB" = "OPENMPI" -a ! -r $OPENMPI_ARCH_PATH/lib/libmpi.a -a ! -r $OPENMPI_ARCH_PATH/lib/libmpi.so ]
++# then
++# 
++#     cd $OPENMPI_HOME
++# 
++#         gmake distclean
++#         rm -rf $OPENMPI_ARCH_PATH
++# 
++#         ./configure \
++#             --prefix=$OPENMPI_ARCH_PATH \
++#             --disable-mpirun-prefix-by-default \
++#             --disable-orterun-prefix-by-default \
++#             --enable-shared --disable-static \
++#             --disable-mpi-f77 --disable-mpi-f90 --disable-mpi-cxx \
++#             --disable-mpi-profile
++# 
++#         gmake
++#         gmake install
++#         gmake distclean
++# 
++#     cd $FOAM_SRC
++# fi
++# 
++# if [ "$WM_MPLIB" = "LAM" -a ! -r $LAM_ARCH_PATH/lib/libmpi.a -a ! -r $LAM_ARCH_PATH/lib/libmpi.so ]
++# then
++# 
++#     cd $LAMHOME
++# 
++#         gmake distclean
++#         rm -rf $LAM_ARCH_PATH
++# 
++#         ./configure \
++#             --prefix=$LAM_ARCH_PATH \
++#             --enable-shared \
++#             --disable-static \
++#             --without-romio \
++#             --without-mpi2cpp \
++#             --without-profiling \
++#             --without-fc
++# 
++#         gmake
++#         gmake install
++#         gmake distclean
++# 
++#     cd $FOAM_SRC
++# fi
++# 
++# if [ "$WM_MPLIB" = "MPICH" -a ! -r $MPICH_ARCH_PATH/lib/libmpich.a -a ! -r $MPICH_ARCH_PATH/lib/libmpich.so ]
++# then
++#     
++#     cd $MPICH_PATH
++# 
++#         make distclean
++#         rm -rf $MPICH_ARCH_PATH
++#         rm util/machines/machines.*
++# 
++#         ./configure \
++#             --without-mpe \
++#             --disable-f77 \
++#             --disable-f90 \
++#             --disable-f90modules \
++#             --disable-c++ \
++#             --disable-mpedbg \
++#             --disable-devdebug \
++#             --disable-debug \
++#             --enable-sharedlib=$MPICH_ARCH_PATH/lib \
++#             --with-device=ch_p4 \
++#             -prefix=$MPICH_ARCH_PATH
++#         make
++#         make install
++#         make distclean
++# 
++#         if [ -r $MPICH_ARCH_PATH ]
++#         then
++#             cd $MPICH_ARCH_PATH/bin
++#             for file in *
++#             do
++#                 sed s%$MPICH_ARCH_PATH%'$MPICH_ARCH_PATH'%g $file > temp.$$
++#                 mv temp.$$ $file
++#                 chmod ugo+rx $file
++#             done
++# 
++#             cd $MPICH_ARCH_PATH/lib
++# 
++#             if [ -r libmpich.so.1.0 ]
++#             then
++#                 rm *.so
++#                 ln -s libmpich.so.1.0 libmpich.so
++#             fi
++# 
++#             cd $MPICH_ARCH_PATH
++#         fi
++# 
++#     cd $FOAM_SRC
++# fi
+ 
+ (cd Pstream ; ./Allwmake)
+ wmake libso OpenFOAM
+diff -ur OpenFOAM-1.4.1-src/src/Allwmake OpenFOAM-1.4.1/src/Allwmake
+--- OpenFOAM-1.4.1-src/src/Allwmake	2007-07-27 17:54:28.000000000 +0200
++++ OpenFOAM-1.4.1/src/Allwmake	2007-10-18 21:04:12.000000000 +0200
+@@ -141,13 +141,13 @@
+ 
+ (cd malloc ; ./Allwmake)
+ 
+-if [ ! -r $MICO_ARCH_PATH/lib/libmico${MICO_VERSION}.a ]
+-then
+-    cd $MICO_PATH
+-    gmake distclean
+-    ./configure --prefix=$MICO_ARCH_PATH --disable-shared --without-x
+-    gmake
+-    gmake install
+-    gmake distclean
+-    cd ..
+-fi
++# if [ ! -r $MICO_ARCH_PATH/lib/libmico${MICO_VERSION}.a ]
++# then
++#     cd $MICO_PATH
++#     gmake distclean
++#     ./configure --prefix=$MICO_ARCH_PATH --disable-shared --without-x
++#     gmake
++#     gmake install
++#     gmake distclean
++#     cd ..
++# fi
