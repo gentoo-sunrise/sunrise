@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  openfoam-src-1.4.1_p20080827.ebuild:
+  Fixed typo in OpenFOAM sources
+
   28 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de>
   +openfoam-src-1.4.1_p20080827.ebuild,
   +files/openfoam-src-1.4.1_p20080827.patch,
