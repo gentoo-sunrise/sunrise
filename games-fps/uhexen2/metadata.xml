@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd></herd>
+	<herd>maintainer-wanted</herd>
 	<longdescription lang="en">
 		Hammer of Thyrion is a port of Raven's Hexen II source code to support
 		Linux, FreeBSD, other unices and Windows.
 	</longdescription>
+	<use>
+		<flag name='asm'> Use x86 assembly on ia32 machines which is faster (it only applies to software renderer) </flag>
+		<flag name='cdaudio'> Enable cd audio playback support </flag>
+		<flag name='demo'> Install the demo files (hexen2-demodata) and configure for use </flag>
+		<flag name='dynamic'> Link to the opengl libraries at compile time </flag>
+		<flag name='hexenworld'> Build support for HexenWorld </flag>
+		<flag name='lights'> Install and setup the updated light maps </flag>
+		<flag name='midi'> Include MIDI music support </flag>
+		<flag name='optimize-cflags'> Build with more optimized CFLAGS </flag>
+		<flag name='sdlaudio'> Enable SDL audio </flag>
+		<flag name='sdlcd'> Enable cd audio playback support through SDL </flag>
+		<flag name='tools'> Enable compilation of various useful tools </flag>
+	</use>
 </pkgmetadata>
 
