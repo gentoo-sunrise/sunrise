@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   08 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
   gr-lida-0.6.0.ebuild:
   Simplify
