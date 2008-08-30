@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   20 Apr 2008; Davide Cendron (scen) <scen@gentoo.org>
   -chocolate-doom-1.0.0.ebuild, +chocolate-doom-1.1.1.ebuild,
   chocolate-doom-9999.ebuild:
