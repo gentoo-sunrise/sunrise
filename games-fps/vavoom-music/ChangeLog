@@ -1,6 +1,9 @@
 # ChangeLog for games-fps/vavoom-music
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
 
   28 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   vavoom-music-1.0.ebuild:
