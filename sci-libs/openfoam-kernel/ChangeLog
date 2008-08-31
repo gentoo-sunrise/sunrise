@@ -3,6 +3,11 @@
 # $Header: $
 
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  openfoam-kernel-1.4.1_p20080827.ebuild,
+  -files/openfoam-kernel-1.4.1_p20080827.patch:
+  Move big patch to external source
+
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -openfoam-kernel-1.4.1_p20080131.ebuild:
   Drop old version
 
