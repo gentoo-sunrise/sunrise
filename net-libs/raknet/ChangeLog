@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   07 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> raknet-3.07.ebuild:
   Changed dependency from dev-db/libpq to virtual/postgresql-base
 
