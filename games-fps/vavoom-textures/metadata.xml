@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd></herd>
-  <longdescription lang="en">
-    High resolution textures for Vavoom
-</longdescription>
+	<herd>maintainer-wanted</herd>
+	<longdescription lang="en">
+		High resolution textures for Vavoom
+	</longdescription>
+	<use>
+		<flag name='doom1'> Install Doom 1 resources </flag>
+		<flag name='doom2'> Install Doom 2 resources </flag>
+		<flag name='heretic'> Install Heretic resources </flag>
+		<flag name='hexen'> Install Hexen resources </flag>
+		<flag name='plutonia'> Install 'The Plutonia Experiment' resources </flag>
+		<flag name='tnt'> Install 'TNT: Evilution' resources </flag>
+	</use>
 </pkgmetadata>
 

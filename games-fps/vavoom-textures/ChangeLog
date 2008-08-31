@@ -1,6 +1,9 @@
 # ChangeLog for games-fps/vavoom-textures
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
 
   21 Jun 2007; Davide Cendron (scen) <scen@gentoo.org>
   -vavoom-textures-1.0.ebuild, +vavoom-textures-1.1.ebuild:
