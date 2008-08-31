@@ -55,7 +55,6 @@ games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
 games-fps/uhexen2:sdlaudio - Enable SDL Audio
 games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
 games-fps/uhexen2:tools - Enable compilation of various useful tools
-games-fps/uhexen2-cvs:3dfx - Enable 3dfx glide hacks for native hardware gamma for the old Voodoo Graphics and Voodoo2 cards
 games-fps/uhexen2-cvs:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2-cvs:cdaudio - Enable cd audio playback support
 games-fps/uhexen2-cvs:demo - Install the demo files (hexen2-demodata) and configure for use
