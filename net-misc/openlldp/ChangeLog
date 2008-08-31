@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   15 Jan 2008; TimMayle(Max_) <max-lists@ycom.ch> +files/openlldp.confd,
   +files/openlldp.initd, +metadata.xml, +openlldp-0.3_alpha.ebuild:
   New Ebuild for bug 203903 thanks to Tommy[D],bonzaikitten and jokey
