@@ -149,7 +149,6 @@ net-mail/checkgmail:clickurl - Add support to click urls in the popup notificati
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
 net-mail/fdm:tdb - Enable the Trivial Database (xdb) backend
 net-misc/clinkcc:mythtv - Enable MythTV support
-net-misc/mugshot:xulrunner - Compile browser extension using xulrunner
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
