@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>maintainer-wanted</herd>
+	<herd>maintainer-wanted</herd>
+	<use>
+		<flag name='latin1'> Add support for latin1 characters 
+			</flag>
+		<flag name='nextaw'> Use neXtaw instead of Xaw </flag>
+	</use>
 </pkgmetadata>
