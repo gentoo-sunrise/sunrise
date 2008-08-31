@@ -1,6 +1,9 @@
 # ChangeLog for net-dialup/iwar
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
 
   07 Nov 2007; Antti Järvinen (netfiniitti) <netfiniitti@kapsi.fi>
   iwar-0.071.ebuild:
