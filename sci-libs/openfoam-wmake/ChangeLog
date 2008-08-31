@@ -3,6 +3,12 @@
 # $Header: $
 
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -openfoam-wmake-1.4.1_p20080328.ebuild,
+  -files/openfoam-wmake-compile-1.4.1_p20080328.patch,
+  -files/openfoam-wmake-paraFoam-1.4.1_p20080328.patch:
+  Drop old version
+
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   openfoam-wmake-1.4.1_p20080827.ebuild,
   -files/openfoam-wmake-1.4.1_p20080827.patch:
   Move big patch to external source
