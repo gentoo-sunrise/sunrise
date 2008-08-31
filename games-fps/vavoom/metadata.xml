@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd></herd>
-  <longdescription lang="en">
-    Vavoom is a source port based on sources of Doom, Heretic, Hexen and a
-	little bit from Quake
-</longdescription>
+	<herd>maintainer-wanted</herd>
+	<longdescription lang="en">
+		Vavoom is a source port based on sources of Doom, Heretic, Hexen and a
+		little bit from Quake
+	</longdescription>
+	<use>
+		<flag name='allegro'> Adds support for <pkg>media-libs/allegro</pkg> (media library) </flag>
+		<flag name='asm'> Enable faster assembly-language code for rendering </flag>
+		<flag name='models'> Install enhanced 3D models </flag>
+		<flag name='music'> Install enhanced hi-quality music (in OGG format) </flag>
+		<flag name='textures'> Install enhanced hi-res textures </flag>
+		<flag name='tools'> Enable compilation of mod-developing tools </flag>
+	</use>
 </pkgmetadata>
 
