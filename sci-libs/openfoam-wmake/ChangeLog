@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  openfoam-wmake-1.4.1_p20080827.ebuild,
+  -files/openfoam-wmake-1.4.1_p20080827.patch:
+  Move big patch to external source
+
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Add local useflags to metadata.xml (GLEP 56)
 
