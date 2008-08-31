@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   12 May 2008; Maximilian Gaß <mxey@cloudconnected.org -fdm-1.3c.ebuild,
   +fdm-1.5.ebuild, +files/rename-childuser.patch:
   net-mail/fdm: Version bump to 1.5, various style fixes. Thanks to many
