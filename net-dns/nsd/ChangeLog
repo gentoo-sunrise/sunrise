@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   21 Jul 2008; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -nsd-3.1.0.ebuild, +nsd-3.1.1.ebuild:
   Version bump
