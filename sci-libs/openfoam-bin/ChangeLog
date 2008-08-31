@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   04 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de>
   openfoam-bin-1.4.1_p20080118.ebuild, openfoam-bin-1.5.ebuild:
   Changed version dependencies
