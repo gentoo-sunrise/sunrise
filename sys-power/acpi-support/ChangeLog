@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   29 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   acpi-support-0.103.ebuild:
   Change SRC_URI to use the mirror list + drop empty DEPEND
