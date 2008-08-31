@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Add local useflags to metadata.xml (GLEP 56)
+
   17 Feb 2008; (Tommy[D]) tommy100@gmx.de scratchbox-1.0.7.ebuild:
   Shorten description
 
