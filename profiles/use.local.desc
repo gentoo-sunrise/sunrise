@@ -159,7 +159,8 @@ sci-libs/openfoam-bin:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-bin:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam-wmake:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-wmake:mpich - Defines mpich as default mpi implementation
-sci-libs/sympy:xslt - Adds MathML printing support
+sci-libs/sympy:mathml - Adds MathML printing support
+sci-libs/sympy:texmacs - Install the TeXmacs plugin
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
 sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
