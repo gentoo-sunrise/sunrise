@@ -73,7 +73,6 @@ pkg_postinst() {
 		ewarn "Missing qt4 use flag, ibus will not work in qt4 applications."
 		ebeep 3
 	fi
-	elog
 
 	[ -x /usr/bin/gtk-query-immodules-2.0 ] && gtk-query-immodules-2.0 > "${ROOT}$(get_gtk_confdir)/gtk.immodules"
 }
