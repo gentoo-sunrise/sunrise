@@ -13,6 +13,6 @@ KEYWORDS="~x86"
 IUSE=""
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS NEWS README ChangeLog
 }
