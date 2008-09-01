@@ -4,7 +4,7 @@
 
 NEED_PYTHON=2.4
 
-inherit eutils distutils python multilib
+inherit distutils
 
 DESCRIPTION="Python library for symbolic mathematics."
 HOMEPAGE="http://code.google.com/p/sympy/"

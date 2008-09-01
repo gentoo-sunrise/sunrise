@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Sep 2008; Thomas Pani (thpani) <thomas.pani@gmail.com>
+  sympy-0.6.1.ebuild:
+  Cleanup inherits.
+
   13 Aug 2008; Thomas Pani (thpani) <thomas.pani@gmail.com>
   -sympy-0.5.8.ebuild, +sympy-0.6.1.ebuild:
   version bump to 0.6.1
