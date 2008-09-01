@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -textext-0.4.2.ebuild:
+  Drop old version
+
   28 Aug 2008; Oliver Borm (boroli) <oli.borm@web.de> +textext-0.4.3.ebuild:
   Version bump
 
