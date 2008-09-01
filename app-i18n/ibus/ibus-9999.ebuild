@@ -16,6 +16,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="nls qt4"
 
+# We really need cvs, please have a look at Bug #152872
 DEPEND=">=dev-lang/python-2.5
 	dev-libs/dbus-glib
 	dev-util/cvs
@@ -62,7 +63,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "This package is very experimental, please report your bug to"
+	ewarn "This package is very experimental, please report your bugs to"
 	ewarn "http://ibus.googlecode.com/issues/list"
 	elog
 	elog "To use ibus, you should:"

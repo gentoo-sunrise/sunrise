@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Sep 2008; Hong Hao <oahong@gmail.com> ibus-0.1.1.20080901.ebuild,
+  ibus-9999.ebuild:
+  Added ~amd64 keyword, fixed a typo.
+
   01 Sep 2008; Hong Hao <oahong@gmail.com> -ibus-0.1.1.20080830.ebuild,
   +ibus-0.1.1.20080901.ebuild, ibus-9999.ebuild:
   Bump to snapshot 20080901

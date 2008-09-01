@@ -12,7 +12,7 @@ SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="nls qt4"
 
 DEPEND=">=dev-lang/python-2.5
@@ -54,7 +54,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "This package is very experimental, please report your bug to"
+	ewarn "This package is very experimental, please report your bugs to"
 	ewarn "http://ibus.googlecode.com/issues/list"
 	elog
 	elog "To use ibus, you should:"
