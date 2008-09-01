@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  sympy-0.6.1.ebuild:
+  Merge NEED_PYTHON into related DEPEND position
+
   01 Sep 2008; Thomas Pani (thpani) <thomas.pani@gmail.com>
   sympy-0.6.1.ebuild:
   Cleanup inherits.

@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_PYTHON=2.4
-
 inherit distutils
 
 DESCRIPTION="Python library for symbolic mathematics."
@@ -28,7 +26,7 @@ RDEPEND="mathml? (
 	texmacs? ( app-office/texmacs )
 	dev-python/pyopengl
 	dev-python/imaging
-	|| ( dev-python/ctypes >=dev-lang/python-2.5 )
+	|| ( ( =dev-lang/python-2.4* dev-python/ctypes ) >=dev-lang/python-2.5 )
 	>=dev-python/pexpect-2.0"
 DEPEND="test? ( >=dev-python/py-0.9.0 )
 	${RDEPEND}"
