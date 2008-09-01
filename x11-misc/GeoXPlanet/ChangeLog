@@ -1,0 +1,9 @@
+# ChangeLog for x11-misc/GeoXPlanet
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Sep 2008; Mike Kazantsev (MK_FG) <mk.fraggod@gmail.com>
+  +GeoXPlanet-0.4.5-r2.ebuild, +files/GeoXPlanet-0.4.5-r2.patch,
+  +files/geoxplanet, +metadata.xml:
+  New Ebuild for bug 236353 (GeoXPlanet)
+
