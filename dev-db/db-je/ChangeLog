@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  db-je-3.3.69.ebuild:
+  Fix Slot
+
   22 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   db-je-3.2.76.ebuild, db-je-3.3.69.ebuild:
   Change LICENSE and remove unneeded dep

@@ -9,7 +9,7 @@ HOMEPAGE="http://www.oracle.com/database/berkeley-db/je/index.html"
 SRC_URI="http://download.oracle.com/berkeley-db/${P/db-/}.tar.gz"
 
 LICENSE="as-is"
-SLOT="3.2"
+SLOT="3.3"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
