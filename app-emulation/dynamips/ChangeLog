@@ -1,0 +1,9 @@
+# ChangeLog for app-emulation/dynamips
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Sep 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
+  +dynamips-0.2.7.ebuild, +metadata.xml:
+  New ebuild for bug 154491 thanks to Sergey Khalavchuck for the RC ebuild and
+  scarabeus for help and Tommy for the dev review
+
