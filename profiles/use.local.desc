@@ -10,35 +10,35 @@
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/collectd:hddtemp - Enable monitoring of disk temperatures (app-admin/hddtemp)
-app-admin/vlogger:dbi - enable support for DBI
+app-admin/vlogger:dbi - Enable support for DBI
 app-cdr/acetoneiso2:7zip - support for optional 7zip features
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
 app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/anki:graph - Enable support for making graphs
-app-misc/anki:sound - Enable support for adding sound to cards
 app-misc/anki:kakasi - Enable kakasi support for furigana generation
+app-misc/anki:sound - Enable support for adding sound to cards
 app-misc/ccpublisher:zope - Install zope stuff
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
-app-misc/gizmod:libvisual - Enable the libvisual (Amarok) plugin
+app-misc/gizmod:libvisual - Enable the media-libs/libvisual (Amarok) plugin
+app-misc/heyu:cm17a - Support the X10 CM17A "Firecracker" device
+app-misc/heyu:dmx210 - Support the Digimax 210 remote thermostat device
+app-misc/heyu:ext0 - Support extended type 0 (shutter and shade) commands
+app-misc/heyu:ore - Support Oregon RF sensors
+app-misc/heyu:rfxm - Support RFXMeters
+app-misc/heyu:rfxs - Support RFXSensors
+app-misc/mc-mp:7zip - Add support for 7zip archives
 app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
-app-misc/heyu:cm17a - Support the X10 CM17A "Firecracker" device.
-app-misc/heyu:dmx210 - Support the Digimax 210 remote thermostat device.
-app-misc/heyu:ext0 - Support extended type 0 (shutter and shade) commands.
-app-misc/heyu:ore - Support Oregon RF sensors.
-app-misc/heyu:rfxm - Support RFXMeters.
-app-misc/heyu:rfxs - Support RFXSensors.
-app-misc/mc-mp:7zip - Add support for 7zip archives
 dev-db/dabo:ide - Enable dabo IDE
-dev-games/opal:double-precision - more precise calculations at the expense of speed
-dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells.
+dev-games/opal:double-precision - More precise calculations at the expense of speed
+dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
 dev-lang/vala:vapigen - Enable the VAPI generator
-dev-libs/libwiimote:tilt - Enable tilt
 dev-libs/libwiimote:force - Enable force feedback
+dev-libs/libwiimote:tilt - Enable tilt
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
@@ -46,15 +46,6 @@ games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
 games-fps/chocolate-doom:server - Enable installation of server
 games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2:cdaudio - Enable cd audio playback support
-games-fps/uhexen2:demo - Install the demo files (hexen2-demodata) and configure for use
-games-fps/uhexen2:dynamic - Link to the opengl libraries at compile time
-games-fps/uhexen2:hexenworld - Build support for HexenWorld
-games-fps/uhexen2:lights - Install and setup the updated light maps
-games-fps/uhexen2:midi - Include MIDI music support
-games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
-games-fps/uhexen2:sdlaudio - Enable SDL Audio
-games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
-games-fps/uhexen2:tools - Enable compilation of various useful tools
 games-fps/uhexen2-cvs:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2-cvs:cdaudio - Enable cd audio playback support
 games-fps/uhexen2-cvs:demo - Install the demo files (hexen2-demodata) and configure for use
@@ -63,31 +54,40 @@ games-fps/uhexen2-cvs:hexenworld - Build support for HexenWorld
 games-fps/uhexen2-cvs:lights - Install and setup the updated light maps
 games-fps/uhexen2-cvs:midi - Include MIDI music support
 games-fps/uhexen2-cvs:optimize-cflags - Build with more optimized CFLAGS
-games-fps/uhexen2-cvs:sdlaudio - Enable SDL Audio
+games-fps/uhexen2-cvs:sdlaudio - Enable SDL audio
 games-fps/uhexen2-cvs:sdlcd - Enable cd audio playback support through SDL
 games-fps/uhexen2-cvs:tools - Install various useful tools
-games-fps/vavoom:allegro - Adds support for Allegro (media library)
+games-fps/uhexen2:demo - Install the demo files (hexen2-demodata) and configure for use
+games-fps/uhexen2:dynamic - Link to the opengl libraries at compile time
+games-fps/uhexen2:hexenworld - Build support for HexenWorld
+games-fps/uhexen2:lights - Install and setup the updated light maps
+games-fps/uhexen2:midi - Include MIDI music support
+games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
+games-fps/uhexen2:sdlaudio - Enable SDL audio
+games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
+games-fps/uhexen2:tools - Enable compilation of various useful tools
+games-fps/vavoom:allegro - Adds support for media-libs/allegro(media library)
 games-fps/vavoom:asm - Enable faster assembly-language code for rendering
-games-fps/vavoom:models - Install enhanced 3D models
-games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
-games-fps/vavoom:tools - Enable compilation of mod-developing tools
-games-fps/vavoom:textures - Install enhanced hi-res textures
 games-fps/vavoom-models:doom - Install Doom resources
 games-fps/vavoom-models:heretic - Install Heretic resources
 games-fps/vavoom-models:hexen - Install Hexen resources
+games-fps/vavoom:models - Install enhanced 3D models
 games-fps/vavoom-models:strife - Install Strife resources
 games-fps/vavoom-music:doom1 - Install Doom 1 resources
 games-fps/vavoom-music:doom2 - Install Doom 2 resources
 games-fps/vavoom-music:heretic - Install Heretic resources
 games-fps/vavoom-music:hexen - Install Hexen resources
+games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
 games-fps/vavoom-music:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-music:tnt - Install 'TNT: Evilution' resources
 games-fps/vavoom-textures:doom1 - Install Doom 1 resources
 games-fps/vavoom-textures:doom2 - Install Doom 2 resources
 games-fps/vavoom-textures:heretic - Install Heretic resources
 games-fps/vavoom-textures:hexen - Install Hexen resources
+games-fps/vavoom:textures - Install enhanced hi-res textures
 games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
+games-fps/vavoom:tools - Enable compilation of mod-developing tools
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/timer-applet:sounds - Installs optional sound data
 kde-misc/kcpufreq:icon - Add icon for GUI applet (enabled by default)
@@ -99,35 +99,40 @@ media-gfx/graphicsmagick:imagemagick - Enable ImageMagick command compatibility
 media-gfx/graphicsmagick:openmp - Build support for the OpenMP (support parallel computing)
 media-gfx/graphicsmagick:q16 - Set quantum depth to 16
 media-gfx/graphicsmagick:q32 - Set quantum depth to 32
-media-gfx/openscenegraph:coin - Compile coin plugin
-media-gfx/openscenegraph:gdal - Compile gdal plugin
+media-gfx/openscenegraph:coin - Compile media-libs/coin plugin
+media-gfx/openscenegraph:gdal - Compile sci-libs/gdal plugin
 media-gfx/openscenegraph:introspection - Compile osgIntrospection
-media-gfx/openscenegraph:inventor - Compile inventor plugin
-media-gfx/openscenegraph:jasper - Compile jasper plugin
+media-gfx/openscenegraph:inventor - Compile media-libs/openinventor plugin
+media-gfx/openscenegraph:jasper - Compile media-libs/jasper plugin
 media-gfx/openscenegraph:producer - Compile osgProducer
 media-gfx/openvrml:imagetexture - Support for image textures
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
-media-radio/fldigi:hamlib - with Hamlib amateur radio rig control library
-media-radio/gpredict:coverage - enable coverage reports
+media-radio/fldigi:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio in use
+media-radio/gpredict:coverage - Enable coverage reports
 media-radio/grig:coverage - Enable coverage reports
 media-radio/grig:hardware - Enable hardware IO
 media-radio/tucnak2:ftdi - Enable support for FTDI USB chips
 media-radio/xastir:festival - Enable text to speech synthesizer
-media-radio/xastir:gdal - Enables gdal library support
-media-radio/xastir:geotiff - library for reading TIFF files with embedded geographical informations
+media-radio/xastir:gdal - Support for some further map formats
+media-radio/xastir:geotiff - Install geotiff support. Allows using USGS DRG topo maps or other types of geotiff mapes/images
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
 media-sound/ncmpc:artist-screen - Enable artist screen (EXPERIMENTAL)
+media-sound/ncmpc:clock-screen - Enable clock screen
+media-sound/ncmpc:key-screen - Enable key editor screen
 media-sound/ncmpc:lyrics-screen - Enable lyrics screen
+media-sound/ncmpc:mouse - Enable curses getmouse support
+media-sound/ncmpc:raw-mode - raw terminal mode
+media-sound/ncmpc:search-screen - Enable search screen (EXPERIMENTAL)
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
-media-sound/scala-bin:midi - MIDI support
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
+media-sound/scala-bin:midi - MIDI support
 media-video/pgcedit:video - Add support for video preview
 media-video/ripwrap:mp2 - Add mp2 support
 media-video/ripwrap:mp4 - Add mp4 support
-media-video/ushare:dlna - Add DLNA support
+media-video/ushare:dlna - Add DLNA (media-libs/libdlna) support
 net-analyzer/honeytrap:cspm - Enables shellcode pattern matching
 net-analyzer/honeytrap:efence - Compile with electronic fence malloc debugger
 net-analyzer/honeytrap:ipq-mon - IP queue based monitor
@@ -135,7 +140,7 @@ net-analyzer/honeytrap:nfq-mon - Netfilter queue based monitor
 net-analyzer/honeytrap:pcap-mon - pcap based monitor
 net-analyzer/honeytrap:spamsum - Enables SpamSum similarity analysis for recorded attacks
 net-dialup/iwar:iax2 - Enable iax2 protocol support
-net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS & XSTATS
+net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:dnssec - Enable DNSSEC support
 net-dns/nsd:largefile - Enable largefile support
 net-dns/nsd:nsec3 - Enable NSEC3 support
@@ -155,10 +160,10 @@ net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
-sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
-sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam-bin:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-bin:mpich - Defines mpich as default mpi implementation
+sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
+sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam-wmake:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-wmake:mpich - Defines mpich as default mpi implementation
 sci-libs/sympy:mathml - Adds MathML printing support
@@ -169,8 +174,8 @@ sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for
 sys-fs/aufs:fuse - Enable FUSE workaround
 sys-fs/aufs:hinotify - Add support for aufs inotify
 sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module run more efficiently
-sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
+sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:robr - Enable aufs readonly-branch
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
