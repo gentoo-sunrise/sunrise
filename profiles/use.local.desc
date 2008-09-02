@@ -148,6 +148,7 @@ net-dns/nsd:nsid - Enable NSID support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:runtime-checks - Enable runtime checks
 net-dns/nsd:tsig - Enable TSIG support
+net-dns/unbound:libevent - Enable support for libevent
 net-libs/ldns:drill - Enable installation of the drill utility
 net-libs/ldns:utils - Enable installation of the example utilities
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
