@@ -13,7 +13,8 @@ SLOT="3.3"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/jdk-1.5"
+DEPEND=">=virtual/jdk-1.5
+	!dev-java/db-je"
 RDEPEND=">=virtual/jre-1.4"
 S="${WORKDIR}/${P/db-/}"
 
