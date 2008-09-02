@@ -9,6 +9,7 @@ app-dicts
 app-editors
 app-emulation
 app-forensics
+app-i18n
 app-laptop
 app-misc
 app-mobilephone
@@ -82,6 +83,7 @@ sys-fs
 sys-libs
 sys-power
 sys-process
+www-apache
 www-apps
 www-client
 www-misc
