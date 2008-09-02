@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Sep 2008; Jack Miller (TheMoken) <jack@codezen.org>
+  -canto-0.4.7.ebuild, +canto-0.4.8.ebuild:
+  Version bump.
+
   23 Aug 2008; Jack Miller (TheMoken) <jack@codezen.org>
   -canto-0.4.6.ebuild, +canto-0.4.7.ebuild:
   Version bump.
