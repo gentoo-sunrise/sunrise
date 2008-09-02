@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='logrotate'>Enable logrotate file installation.</flag>
-		<flag name='logwatch'>Install support files for logwatch.</flag>
+		<flag name='logrotate'>Enable logrotate file installation</flag>
+		<flag name='logwatch'>Install support files for logwatch</flag>
 	</use>
 </pkgmetadata>
