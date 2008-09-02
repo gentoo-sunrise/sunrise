@@ -11,8 +11,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-S=${WORKDIR}/${P}
-
 src_install () {
 	dosbin bwping           || die "dosbin failed"
 	doman  bwping.8         || die "doman failed"
