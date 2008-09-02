@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/jdk-1.5
-	!dev-java/db"
+	!dev-java/db-je"
 RDEPEND=">=virtual/jre-1.4"
 S="${WORKDIR}/${P/db-/}"
 
