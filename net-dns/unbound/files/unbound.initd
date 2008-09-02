@@ -1,0 +1,46 @@
+#!/sbin/runscript
+# Copyright 1999-2008 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+opts="start stop configtest"
+description="Unbound is a validating, recursive and caching DNS resolver"
+description_start="Start the server"
+description_stop="Stop the server"
+description_configtest="Check the syntax of the configuration file"
+
+config_file=${config_file:-/etc/unbound/unbound.conf}
+pid_file=${pid_file:-/var/run/unbound.pid}
+
+depend() {
+	provide dns
+	need net
+	after auth-dns
+}
+
+start() {
+	configtest || return 1
+
+	ebegin "Starting unbound"
+		touch "${pid_file}"
+		chown unbound:unbound "${pid_file}"
+		unbound -c "${config_file}"
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping unbound"
+		start-stop-daemon --stop --pidfile="${pid_file}"
+	eend $?
+}
+
+configtest() {
+	ebegin "Checking config"
+		unbound-checkconf "${config_file}" > /dev/null 2>&1
+		local RESULT=$?
+		if test "$RESULT" != 0; then
+			eerror "`unbound-checkconf "${config_file}" 2>&1`"
+			eend 1
+		fi
+	eend "$RESULT"
+}

@@ -1,0 +1,9 @@
+# ChangeLog for net-dns/unbound
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Sep 2008; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  +unbound-1.0.2.ebuild, +files/chroot_howto.txt, +files/unbound.confd,
+  +files/unbound.initd, +metadata.xml:
+  New ebuild for unbound, see bug #223103
+

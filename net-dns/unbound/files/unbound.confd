@@ -1,0 +1,7 @@
+# Settings should normally only be changed when using a chroot jail.
+
+# Location of the unbound configuration file. Leave empty for the default.
+#config_file="/etc/unbound/unbound.conf"
+
+# Location of the unbound pidfile. Leave empty for the default.
+#pid_file="/var/run/unbound.pid"
