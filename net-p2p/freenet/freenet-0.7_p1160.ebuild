@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-CDEPEND="dev-java/db-je:3.2
+CDEPEND="dev-db/db-je:3.3
 	dev-java/fec
 	dev-java/java-service-wrapper"
 DEPEND=">=virtual/jdk-1.5
@@ -44,7 +44,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${P}".tar.bz2
+	unpack ${A}
 	cd "${S}"
 	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
 	epatch "${FILESDIR}"/ext.patch
