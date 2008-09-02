@@ -1,0 +1,8 @@
+# ChangeLog for net-libs/ldns
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Sep 2008; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  +ldns-1.3.0.ebuild, +metadata.xml:
+  New ebuild for net-libs/ldns, see bug #192728
+
