@@ -10,11 +10,6 @@
 		criteria.
 	</longdescription>
 	<use>
-		<flag name='cddb'>Access cddb servers to retrieve and submit information about compact disks</flag>
-		<flag name='gnome'>Adds GNOME support</flag>
-		<flag name='mp3'>Add support for reading mp3 files</flag>
-		<flag name='spell'>Adds dictionary support</flag>
 		<flag name='tellico'>Enable support for <pkg>kde-misc/tellico</pkg> files</flag>
-		<flag name='vorbis'>Adds support for the OggVorbis audio codec</flag>
 	</use>
 </pkgmetadata>
