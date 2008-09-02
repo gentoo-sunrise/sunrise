@@ -1,0 +1,45 @@
+--- build.xml	2008-02-06 17:31:52.000000000 +0100
++++ build.xml.new	2008-03-23 16:28:59.000000000 +0100
+@@ -76,6 +76,7 @@
+     <path id="empty.classpath"/>
+ 
+     <path id="class.path">
++	<fileset dir="lib" includes="*.jar"/>
+       <pathelement location="${destdir}"/>
+       <pathelement location="."/>
+     </path>
+@@ -452,14 +453,14 @@
+     <!-- JUnit unit tests                                             -->
+     <!-- ============================================================ -->
+ 
+-    <target name="init-unittest" depends="init">
++    <target name="init-unittest" depends="init" unless="notest">
+         <delete dir="${unittest.datadir}"/>
+         <delete dir="${unittest.reportsdir}"/>
+         <mkdir dir="${unittest.datadir}"/>
+         <mkdir dir="${unittest.reportsdir}"/>
+     </target>
+ 
+-    <target name="clean-unittest" depends="init-unittest">
++    <target name="clean-unittest" depends="init-unittest" unless="notest">
+         <delete dir="${unittest.destdir}"/>
+         <mkdir dir="${unittest.destdir}"/>
+         <delete dir="${unittest.testserialdir}"/>
+@@ -468,7 +469,7 @@
+         <mkdir dir="${unittest.testevolvedir}"/>
+     </target>
+ 
+-    <target name="compile-unittest" depends="compile-src">
++    <target name="compile-unittest" depends="compile-src" unless="notest">
+         <ant antfile="ant/compile.xml" dir="." inheritall="false">
+             <property name="java15files1" value="**/persist/**/*.java"/>
+             <property name="java15files2" value="**/rep/**/*.java"/>
+@@ -541,7 +542,7 @@
+             depends="compile-unittest-j2ee,test"/>
+ 
+     <target name="test"
+-            depends="compile-unittest, init-unittest, jar">
++            depends="compile-unittest, init-unittest, jar" unless="notest">
+ 
+       <!-- Determine which tests to run. -->
+       <condition property="alltests">
