@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
-	<maintainer>
-		<email>oleg@vsi.ru</email>
-		<name>Oleg Derevenetz</name>
-	</maintainer>
-	<longdescription>A tool to measure bandwidth and response times between two hosts using Internet Control Message Protocol (ICMP) echo request/echo reply mechanism.</longdescription>
+	<herd>maintainer-wanted</herd>
+	<longdescription>
+	A tool to measure bandwidth and response times between two hosts using
+	Internet Control Message Protocol (ICMP) echo request/echo reply mechanism.
+	</longdescription>
 </pkgmetadata>
