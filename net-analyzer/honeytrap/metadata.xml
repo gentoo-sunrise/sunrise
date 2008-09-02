@@ -3,15 +3,13 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='pcap-mon'> pcap based monitor </flag>
-		<flag name='ipq-mon'> IP queue based monitor </flag>
-		<flag name='nfq-mon'> Netfilter queue based monitor 
-			</flag>
-		<flag name='spamsum'> Enables SpamSum similarity 
-			analysis for recorded attacks </flag>
-		<flag name='cspm'> Enables shellcode pattern matching 
-			</flag>
-		<flag name='efence'> Compile with electronic fence 
-			malloc debugger </flag>
+		<flag name='pcap-mon'>pcap based monitor</flag>
+		<flag name='ipq-mon'>IP queue based monitor</flag>
+		<flag name='nfq-mon'>Netfilter queue based monitor</flag>
+		<flag name='spamsum'>Enables SpamSum similarity 
+			analysis for recorded attacks</flag>
+		<flag name='cspm'>Enables shellcode pattern matching</flag>
+		<flag name='efence'>Compile with electronic fence 
+			malloc debugger</flag>
 	</use>
 </pkgmetadata>

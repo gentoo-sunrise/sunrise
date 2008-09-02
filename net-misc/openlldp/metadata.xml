@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='libpcap'> Enable the use of PCAP/DNET 
-			instead of native handler </flag>
+		<flag name='libpcap'>Enable the use of PCAP/DNET 
+			instead of native handler</flag>
 	</use>
 </pkgmetadata>

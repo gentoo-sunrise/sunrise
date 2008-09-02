@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='zope'>Install zope stuff.</flag>
+		<flag name='zope'>Install zope stuff</flag>
 	</use>
 </pkgmetadata>

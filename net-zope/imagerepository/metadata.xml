@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='kupu'> Pulls in kupu as a dependency </flag>
+		<flag name='kupu'>Pulls in kupu as a dependency</flag>
 	</use>
 </pkgmetadata>

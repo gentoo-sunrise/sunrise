@@ -7,7 +7,7 @@
 		behaviour of 'Vanilla' Doom as closely as possible.
 	</longdescription>
 	<use>
-		<flag name='server'> Enable installation of server </flag>
+		<flag name='server'>Enable installation of server</flag>
 	</use>
 </pkgmetadata>
 

@@ -3,9 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='arm'> Install the toolchain for the ARM arch 
-			</flag>
-		<flag name='i386'> Install the toolchain for the i386 
-			arch </flag>
+		<flag name='arm'>Install the toolchain for the ARM arch</flag>
+		<flag name='i386'>Install the toolchain for the i386 arch</flag>
 	</use>
 </pkgmetadata>

@@ -8,8 +8,8 @@
 		easily, quickly and efficiently as possible.
 	</longdescription>
 	<use>
-		<flag name='graph'>Enable support for making graphs.</flag>
-		<flag name='kakasi'>Enable kakasi support for furigana generation.</flag>
-		<flag name='sound'>Enable support for adding sound to cards.</flag>
+		<flag name='graph'>Enable support for making graphs</flag>
+		<flag name='kakasi'>Enable kakasi support for furigana generation</flag>
+		<flag name='sound'>Enable support for adding sound to cards</flag>
 	</use>
 </pkgmetadata>

@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='tdb'> Enable the Trivial Database (xdb) 
-			backend </flag>
+		<flag name='tdb'>Enable the Trivial Database (xdb) 
+			backend</flag>
 	</use>
 </pkgmetadata>

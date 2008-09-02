@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='iax2'> Enable iax2 protocol support </flag>
+		<flag name='iax2'>Enable iax2 protocol support</flag>
 	</use>
 </pkgmetadata>

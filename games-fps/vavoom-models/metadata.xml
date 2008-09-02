@@ -6,10 +6,10 @@
 		MD2 3D models package for Vavoom
 	</longdescription>
 	<use>
-		<flag name='doom'> Install Doom resources </flag>
-		<flag name='heretic'> Install Heretic resources </flag>
-		<flag name='hexen'> Install Hexen resources </flag>
-		<flag name='strife'> Install Strife resources </flag>
+		<flag name='doom'>Install Doom resources</flag>
+		<flag name='heretic'>Install Heretic resources</flag>
+		<flag name='hexen'>Install Hexen resources</flag>
+		<flag name='strife'>Install Strife resources</flag>
 	</use>
 </pkgmetadata>
 

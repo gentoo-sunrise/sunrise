@@ -3,15 +3,13 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='hinotify'> Add support for aufs inotify 
-			</flag>
-		<flag name='ksize'> Patch to support realloc of memory 
-			to make the aufs module run more efficiently 
-			</flag>
-		<flag name='nfs'> Patch for lhash support </flag>
-		<flag name='nfsexport'> Enable support for exporting 
-			aufs via nfs </flag>
-		<flag name='fuse'> Enable FUSE workaround </flag>
-		<flag name='robr'> Enable aufs readonly-branch </flag>
+		<flag name='hinotify'>Add support for aufs inotify</flag>
+		<flag name='ksize'>Patch to support realloc of memory 
+			to make the aufs module run more efficiently</flag>
+		<flag name='nfs'>Patch for lhash support</flag>
+		<flag name='nfsexport'>Enable support for exporting 
+			aufs via nfs</flag>
+		<flag name='fuse'>Enable FUSE workaround</flag>
+		<flag name='robr'>Enable aufs readonly-branch</flag>
 	</use>
 </pkgmetadata>

@@ -4,6 +4,6 @@
 	<herd>maintainer-wanted</herd>
 	<use>
 		<flag name='char'>Compile with support for unsigned character (instead
-			of signed integer) cells.</flag>
+			of signed integer) cells</flag>
 	</use>
 </pkgmetadata>

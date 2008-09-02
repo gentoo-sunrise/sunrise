@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='ftdi'>Enable support for USB FTDI chips</flag>
+		<flag name='ftdi'>Enable support for FTDI USB chips</flag>
 	</use>
 </pkgmetadata>

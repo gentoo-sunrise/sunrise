@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='sounds'>Installs optional sound data.</flag>
+		<flag name='sounds'>Installs optional sound data</flag>
 	</use>
 </pkgmetadata>

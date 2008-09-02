@@ -6,7 +6,7 @@
 		<flag name='coin'>Compile <pkg>media-libs/coin</pkg> plugin</flag>
 		<flag name='gdal'>Compile <pkg>sci-libs/gdal</pkg> plugin</flag>
 		<flag name='introspection'>Compile osgIntrospection</flag>
-		<flag name='inventor'>Compile <pkg>media-libs/openinventor</pkg> 
+		<flag name='inventor'>Compile <pkg>media-libs/openinventor</pkg>
 			plugin</flag>
 		<flag name='jasper'>Compile <pkg>media-libs/jasper</pkg> plugin</flag>
 		<flag name='producer'>Compile osgProducer</flag>

@@ -3,8 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='latin1'> Add support for latin1 characters 
-			</flag>
-		<flag name='nextaw'> Use neXtaw instead of Xaw </flag>
+		<flag name='latin1'>Add support for latin1 characters</flag>
+		<flag name='nextaw'>Use neXtaw instead of Xaw</flag>
 	</use>
 </pkgmetadata>

@@ -3,9 +3,9 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='clickurl'> Add support to click urls in the 
-			popup notification </flag>
-		<flag name='savepwd'> Add support for saving and 
-			encrypting GMail password </flag>
+		<flag name='clickurl'>Add support to click urls in the 
+			popup notification</flag>
+		<flag name='savepwd'>Add support for saving and 
+			encrypting GMail password</flag>
 	</use>
 </pkgmetadata>

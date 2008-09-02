@@ -3,8 +3,8 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='pvm'> Use <pkg>sys-cluster/pvm</pkg> 
+		<flag name='pvm'>Use <pkg>sys-cluster/pvm</pkg>
 			(Parallel Virtual Machine) and build the pvmsx 
-			utility </flag>
+			utility</flag>
 	</use>
 </pkgmetadata>

@@ -3,9 +3,9 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='festival'>Enables sound alerts.</flag>
-		<flag name='gdal'>Support for some further map formats.</flag>
+		<flag name='festival'>Enable text to speech synthesizer</flag>
+		<flag name='gdal'>Support for some further map formats</flag>
 		<flag name='geotiff'>Install geotiff support. Allows using USGS DRG topo
-			maps or other types of geotiff mapes/images.</flag>
+			maps or other types of geotiff mapes/images</flag>
 	</use>
 </pkgmetadata>

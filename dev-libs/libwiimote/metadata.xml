@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='force'>Enable force feedback.</flag>
-		<flag name='tilt'>Enable tilt.</flag>
+		<flag name='force'>Enable force feedback</flag>
+		<flag name='tilt'>Enable tilt</flag>
 	</use>
 </pkgmetadata>

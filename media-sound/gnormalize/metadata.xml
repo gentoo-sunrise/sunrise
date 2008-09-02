@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='normalize'> Enable the normalize front-end</flag>
+		<flag name='normalize'>Enable the normalize front-end</flag>
 	</use>
 </pkgmetadata>

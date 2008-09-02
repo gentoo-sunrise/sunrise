@@ -3,8 +3,8 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='hibernate-script'> Use 
-			<pkg>sys-power/hibernate-script</pkg>  for sleep 
-			and hibernate actions </flag>
+		<flag name='hibernate-script'>Use 
+			<pkg>sys-power/hibernate-script</pkg> for sleep 
+			and hibernate actions</flag>
 	</use>
 </pkgmetadata>

@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='vapigen'>Enable the VAPI generator.</flag>
+		<flag name='vapigen'>Enable the VAPI generator</flag>
 	</use>
 </pkgmetadata>

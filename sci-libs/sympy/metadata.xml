@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='mathml'> Adds MathML printing support </flag>
-		<flag name='texmacs'> Install the TeXmacs plugin </flag>
+		<flag name='mathml'>Adds MathML printing support</flag>
+		<flag name='texmacs'>Install the TeXmacs plugin</flag>
 	</use>
 </pkgmetadata>

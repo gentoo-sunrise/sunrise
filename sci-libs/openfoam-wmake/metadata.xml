@@ -3,9 +3,9 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='lam'> Defines lam-mpi as default mpi 
-			implementation </flag>
-		<flag name='mpich'> Defines mpich as default mpi 
-			implementation </flag>
+		<flag name='lam'>Defines lam-mpi as default mpi 
+			implementation</flag>
+		<flag name='mpich'>Defines mpich as default mpi 
+			implementation</flag>
 	</use>
 </pkgmetadata>

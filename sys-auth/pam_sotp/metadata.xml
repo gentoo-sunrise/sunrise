@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='urandom'> Use /dev/urandom for password 
-			generations (faster but less secure) </flag>
+		<flag name='urandom'>Use /dev/urandom for password 
+			generations (faster but less secure)</flag>
 	</use>
 </pkgmetadata>

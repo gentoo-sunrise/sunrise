@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='dosbox'> Enable support for dosbox emulator </flag>
-		<flag name='scummvm'> Enable support for scummvm emulator </flag>
+		<flag name='dosbox'>Enable support for dosbox emulator</flag>
+		<flag name='scummvm'>Enable support for scummvm emulator</flag>
 	</use>
 </pkgmetadata>

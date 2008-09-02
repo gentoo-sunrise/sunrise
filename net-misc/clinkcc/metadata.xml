@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='mythtv'> Enable MythTV support </flag>
+		<flag name='mythtv'>Enable MythTV support</flag>
 	</use>
 </pkgmetadata>

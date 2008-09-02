@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='dmalloc'> Enable debugging with the dmalloc library </flag>
+		<flag name='dmalloc'>Enable debugging with the dmalloc library</flag>
 	</use>
 </pkgmetadata>

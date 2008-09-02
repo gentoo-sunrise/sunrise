@@ -3,9 +3,8 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='autopatcher'> Enable RakNet autopatcher 
-			support </flag>
-		<flag name='rakvoice'> Enable RakNet RakVoice module 
-			</flag>
+		<flag name='autopatcher'>Enable RakNet autopatcher 
+			support</flag>
+		<flag name='rakvoice'>Enable RakNet RakVoice module</flag>
 	</use>
 </pkgmetadata>
