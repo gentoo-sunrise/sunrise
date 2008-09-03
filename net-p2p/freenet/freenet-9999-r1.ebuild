@@ -65,7 +65,7 @@ src_unpack() {
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
 	mkdir -p lib
 	cd lib
-	java-pkg_jar-from db-je-3.2
+	java-pkg_jar-from db-je-3.3
 	java-pkg_jar-from java-service-wrapper
 	java-pkg_jar-from fec
 }

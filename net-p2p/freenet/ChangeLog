@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  freenet-0.7_p1160.ebuild, freenet-9999-r1.ebuild:
+  Use db-je:3.3
+
   02 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_p1158.ebuild, +freenet-0.7_p1160.ebuild:
   New upstream release
