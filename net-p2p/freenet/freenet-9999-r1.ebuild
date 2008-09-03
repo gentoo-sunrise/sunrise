@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-CDEPEND="dev-java/db-je:3.2
+CDEPEND="dev-db/db-je:3.3
 	dev-java/fec
 	dev-java/java-service-wrapper"
 DEPEND=">=virtual/jdk-1.5
