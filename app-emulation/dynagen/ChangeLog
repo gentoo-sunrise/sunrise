@@ -1,0 +1,8 @@
+# ChangeLog for app-emulation/dynagen
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Sep 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
+  +dynagen-0.11.0.ebuild, +metadata.xml:
+  New ebuild for bug 170013 thanks to Tommy for the review
+
