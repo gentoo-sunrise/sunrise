@@ -16,14 +16,14 @@ SLOT="0"
 KEYWORDS=""
 IUSE="nls"
 
-# autopoint need cvs to work. Bug #152872
+# autopoint needs cvs to work. Bug #152872
 DEPEND="app-i18n/libhangul
 	>=dev-lang/python-2.5
 	dev-lang/swig
 	dev-util/cvs
 	sys-devel/gettext"
 RDEPEND="app-i18n/ibus
-	app-i18n/lighangul
+	app-i18n/libhangul
 	>=dev-lang/python-2.5"
 
 src_unpack() {
