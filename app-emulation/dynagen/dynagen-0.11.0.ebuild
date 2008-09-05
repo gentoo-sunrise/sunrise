@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python
+inherit multilib python
 
 DESCRIPTION="Text-based frontend to Dynamips Cisco router emulator."
 HOMEPAGE="http://www.dynagen.org/"
