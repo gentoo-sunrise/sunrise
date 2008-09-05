@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
-inherit git autotools
+NEED_PYTHON="2.5"
+inherit autotools git python
 
 EGIT_REPO_URI="git://github.com/phuang/ibus-hangul.git"
 
@@ -17,14 +17,13 @@ KEYWORDS=""
 IUSE="nls"
 
 # autopoint needs cvs to work. Bug #152872
-DEPEND="app-i18n/libhangul
-	>=dev-lang/python-2.5
+COMMON_DEPEND="app-i18n/libhangul"
+DEPEND="${COMMON_DEPEND}
 	dev-lang/swig
 	dev-util/cvs
-	sys-devel/gettext"
-RDEPEND="app-i18n/ibus
-	app-i18n/libhangul
-	>=dev-lang/python-2.5"
+	nls? ( sys-devel/gettext )"
+RDEPEND="${COMMON_DEPEND}
+	app-i18n/ibus"
 
 src_unpack() {
 	git_src_unpack

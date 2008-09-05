@@ -2,6 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON="2.5"
+inherit python
+
 DESCRIPTION="Korean input method Hangul IMEngine for IBus Framework"
 HOMEPAGE="http://ibus.googlecode.com"
 SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
@@ -11,13 +14,12 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="nls"
 
-DEPEND="app-i18n/libhangul
-	>=dev-lang/python-2.5
+COMMON_DEPEND="app-i18n/libhangul"
+DEPEND="${COMMON_DEPEND}
 	dev-lang/swig
 	nls? ( sys-devel/gettext )"
-RDEPEND="app-i18n/ibus
-	app-i18n/libhangul
-	>=dev-lang/python-2.5"
+RDEPEND="${COMMON_DEPEND}
+	app-i18n/ibus"
 
 src_compile() {
 	econf $(use_enable nls) \
