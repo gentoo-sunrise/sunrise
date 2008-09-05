@@ -157,6 +157,21 @@ net-mail/checkgmail:clickurl - Add support to click urls in the popup notificati
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
 net-mail/fdm:tdb - Enable the Trivial Database (xdb) backend
 net-misc/clinkcc:mythtv - Enable MythTV support
+net-misc/gvpe:compression - Enables LZO compression
+net-misc/gvpe:dns - Enables DNS transport support
+net-misc/gvpe:tcp - Enables tcp transport support
+net-misc/gvpe:icmp - Enables icmp transport support
+net-misc/gvpe:http-proxy - Enables http-proxy transport support
+net-misc/gvpe:cipher-aes-256 - Enables aes-256 cipher
+net-misc/gvpe:cipher-aes-192 - Enables aes-192 cipher
+net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
+net-misc/gvpe:cipher-blowfish - Enables blowfish2 cipher
+net-misc/gvpe:digset-sha512 - Enables digset sha512
+net-misc/gvpe:digset-sha256 - Enables digset sha256
+net-misc/gvpe:digset-sha1 - Enables digset sha1
+net-misc/gvpe:digset-md5 - Enables digset md5
+net-misc/gvpe:digset-md4-insecure - Enables digset md4
+net-misc/gvpe:digset-ripemd160 - Enables digset ripemd160
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
