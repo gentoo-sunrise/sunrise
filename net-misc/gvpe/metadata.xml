@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>maintainer-wanted</herd>
+  <longdescription>GVPE creates a virtual ethernet (broadcasts supported,
+  any protocol that works with a normal ethernet should work with GVPE) by
+  creating encrypted host-to-host tunnels between multiple endpoints. 
+  Unlike other virtual private "network" solutions which merely create a
+  single tunnel, GVPE creates a real network with multiple endpoints.
+  </longdescription>
+  <use>
+    <flag name="compression">Enables LZO compression</flag>
+    <flag name="dns">Enables DNS transport support</flag>
+    <flag name="tcp">Enables tcp transport support</flag>
+    <flag name="icmp">Enables icmp transport support</flag>
+    <flag name="http-proxy">Enables http-proxy transport support</flag>
+    <flag name="cipher-aes-256">Enables aes-256 cipher</flag>
+    <flag name="cipher-aes-192">Enables aes-192 cipher</flag>
+    <flag name="cipher-aes-128">Enables aes-128 cipher</flag>
+    <flag name="cipher-blowfish">Enables blowfish2 cipher</flag>
+    <flag name="digset-sha512">Enables digset sha512</flag>
+    <flag name="digset-sha256">Enables digset sha256</flag>
+    <flag name="digset-sha1">Enables digset sha1</flag>
+    <flag name="digset-md5">Enables digset md5</flag>
+    <flag name="digset-md4-insecure">Enables digset md4</flag>
+    <flag name="digset-ripemd160">Enables digset ripemd160</flag>
+  </use>
+</pkgmetadata>
