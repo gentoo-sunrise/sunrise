@@ -2,10 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
 EGIT_REPO_URI="git://github.com/phuang/ibus-pinyin.git"
-
-inherit autotools eutils git
+NEED_PYTHON="2.5"
+inherit autotools eutils git python
 
 PYDB_TAR="pinyin-database-0.1.10.5.tar.bz2"
 DESCRIPTION="Chinese PinYin IMEngine for IBus Framework"
@@ -18,11 +17,9 @@ KEYWORDS=""
 IUSE="nls"
 
 # autopoint needs cvs. bug #152872
-DEPEND=">=dev-lang/python-2.5
-	dev-util/cvs
+DEPEND="dev-util/cvs
 	sys-devel/gettext"
-RDEPEND="app-i18n/ibus
-	>=dev-lang/python-2.5"
+RDEPEND="app-i18n/ibus"
 
 pkg_setup() {
 	if ! built_with_use '>=dev-lang/python-2.5' sqlite; then

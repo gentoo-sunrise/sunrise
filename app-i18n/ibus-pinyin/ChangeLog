@@ -3,6 +3,10 @@
 # $Header: $
 
   05 Sep 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  ibus-pinyin-9999.ebuild:
+  Simplify dependencies by using NEED_PYTHON
+
+  05 Sep 2008; Thomas Anderson <gentoofan23@gentoo.org>
   ibus-pinyin-0.1.1.20080901.ebuild:
   Simplify dependencies by using NEED_PYTHON
 
