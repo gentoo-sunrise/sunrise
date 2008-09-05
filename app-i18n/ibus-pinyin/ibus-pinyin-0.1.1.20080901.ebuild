@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+NEED_PYTHON="2.5"
+inherit eutils python
 
 PYDB_TAR="pinyin-database-0.1.10.5.tar.bz2"
 DESCRIPTION="Chinese PinYin IMEngine for IBus Framework"
@@ -15,10 +16,8 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="nls"
 
-DEPEND=">=dev-lang/python-2.5
-	nls? ( sys-devel/gettext )"
-RDEPEND="app-i18n/ibus
-	>=dev-lang/python-2.5"
+DEPEND="nls? ( sys-devel/gettext )"
+RDEPEND="app-i18n/ibus"
 
 pkg_setup() {
 	if ! built_with_use '>=dev-lang/python-2.5' sqlite; then
