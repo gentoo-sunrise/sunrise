@@ -21,7 +21,7 @@ COMMON_DEPEND="app-i18n/libhangul"
 DEPEND="${COMMON_DEPEND}
 	dev-lang/swig
 	dev-util/cvs
-	nls? ( sys-devel/gettext )"
+	sys-devel/gettext"
 RDEPEND="${COMMON_DEPEND}
 	app-i18n/ibus"
 

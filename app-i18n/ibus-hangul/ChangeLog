@@ -3,6 +3,10 @@
 # $Header: $
 
   05 Sep 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  ibus-hangul-9999.ebuild:
+  gettext should be mandatory
+
+  05 Sep 2008; Thomas Anderson <gentoofan23@gentoo.org>
   ibus-hangul-0.1.1.20080901.ebuild, ibus-hangul-9999.ebuild:
   Simplify dependencies, use NEED_PYTHON, don't need EAPI 1
 
