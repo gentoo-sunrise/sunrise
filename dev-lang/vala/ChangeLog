@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -vala-0.3.3.ebuild, +vala-0.3.5.ebuild:
+  Version bump
+
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added USE flag description wrt GLEP 56
 
