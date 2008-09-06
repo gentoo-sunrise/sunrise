@@ -31,4 +31,3 @@ src_unpack(){
 		|| die "Sed for ImageMagick automagic dependency failed."
 	fi
 }
-

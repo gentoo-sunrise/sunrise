@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  cuneiform-0.4.ebuild:
+  Whitespace
+
   02 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Remove global use flag
 
