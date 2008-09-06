@@ -8,11 +8,9 @@ SCROLLKEEPER_UPDATE="no"
 inherit gnome2
 
 DESCRIPTION="Time tracking for the masses, in a GNOME applet"
-HOMEPAGE="http://projecthamster.wordpress.com/ http://code.google.com/p/projecthamster/"
-SRC_URI="http://projecthamster.googlecode.com/files/${P}.tar.gz"
+HOMEPAGE="http://live.gnome.org/ProjectHamster"
 
-#license on homepage is out-of-date, was changed to GPL-2 on 2008-04-16
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -25,7 +23,7 @@ RDEPEND=">=dev-lang/python-2.5
 	x11-libs/libXScrnSaver"
 
 DEPEND="${RDEPEND}
-	>=dev-util/intltool-0.35
+	>=dev-util/intltool-0.37.1
 	dev-util/pkgconfig
 	sys-devel/gettext"
 

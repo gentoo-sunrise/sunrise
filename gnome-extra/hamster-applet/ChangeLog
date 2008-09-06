@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -hamster-applet-0.6.2.1.ebuild, +hamster-applet-2.23.91.ebuild:
+  Version bump. New homepage, new license, now hosted by Gnome.
+
   02 Aug 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -hamster-applet-0.6.1.ebuild, +hamster-applet-0.6.2.1.ebuild:
   Version bump
