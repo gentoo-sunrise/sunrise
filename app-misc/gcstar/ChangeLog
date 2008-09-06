@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -files/gcstar-1.4.0-desktop.patch, -gcstar-1.4.1.ebuild,
+  +gcstar-1.4.2.ebuild:
+  Version bump
+
   02 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Remove global use flags
 

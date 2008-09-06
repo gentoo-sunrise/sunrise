@@ -54,7 +54,6 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-1.4.0-man.patch"
-	epatch "${FILESDIR}/${PN}-1.4.0-desktop.patch"
 }
 
 src_compile() {
