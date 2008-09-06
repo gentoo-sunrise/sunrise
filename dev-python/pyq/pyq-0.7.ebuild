@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python eutils
+inherit python eutils multilib
 
 DESCRIPTION="fast, efficient, command-line utility for downloading quotes from Yahoo."
 HOMEPAGE="http://rimonbarr.com/repository/pyq/index.html"
