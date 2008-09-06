@@ -65,7 +65,7 @@ src_compile() {
 	#add proper support for --disable in the configure scrip
 	epatch "${FILESDIR}/configure.${P}.patch"
 
-	#the hmac and rand flags are hardcoded this is not so good because 
+	#the hmac and rand flags are hardcoded this is not so good because
 	#it leaves the system more predictable. But I don't think that adding
 	#24 more use flags is a good idea too.
 	econf $(use_enable nls) \

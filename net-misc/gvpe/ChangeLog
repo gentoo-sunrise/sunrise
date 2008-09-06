@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> gvpe-2.2.ebuild:
+  Remove trailing whitespace
+
   05 Sep 2008; Plamen Kosseff (blackdestiny) <p.kosseff{AT}gmail.com>
   +gvpe-2.2.ebuild, +files/configure.gvpe-2.2.patch,
   +files/gvpe.conf.example, +files/gvpe.confd, +files/gvpe.rc, +files/if-up,
