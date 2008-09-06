@@ -1,6 +1,10 @@
 # ChangeLog for sci-visualization/jps2ps
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Sep 2008; Nuno J. Silva (njsg) <nunojsg@gmail.com> -jps2ps-0.16.ebuild,
+  +jps2ps-0.17.ebuild:
+  Version bump for jps2ps, thanks to Tommy[D]
 
   28 Oct 2007; Markus Ullmann <jokey@gentoo.org> rt2x00-git-20070529,
   jps2ps-0.16:
