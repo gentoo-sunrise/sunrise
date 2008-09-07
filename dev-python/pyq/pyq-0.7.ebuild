@@ -13,9 +13,6 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
 src_unpack() {
 	cp "${DISTDIR}"/pyq "${WORKDIR}"
 }
