@@ -32,7 +32,7 @@ src_install() {
 	# Based on the dev-lang/R ebuild regexp.
 	sed \
 		-e "/^\$JPS2PS_DIR = .*/s::\$JPS2PS_DIR = \"/usr/$(get_libdir)/syracuse/app/jps2ps/\";:" \
-		-i ${D}/usr/$(get_libdir)/syracuse/app/jps2ps/jps2ps.pl \
+		-i "${D}"/usr/$(get_libdir)/syracuse/app/jps2ps/jps2ps.pl \
 		|| die "sed failed."
 
 	dosym /usr/$(get_libdir)/syracuse/app/jps2ps/jps2ps.pl /usr/bin/jps2ps
