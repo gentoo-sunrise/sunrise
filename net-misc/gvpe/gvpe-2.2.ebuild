@@ -3,8 +3,7 @@
 # $Header$
 EAPI="1"
 
-inherit eutils
-inherit linux-info
+inherit eutils linux-info
 
 DESCRIPTION="GNU Virtual Private Ethernet"
 HOMEPAGE="http://savannah.gnu.org/projects/gvpe"
