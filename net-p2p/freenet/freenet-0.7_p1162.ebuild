@@ -17,7 +17,8 @@ IUSE=""
 
 CDEPEND="dev-db/db-je:3.3
 	dev-java/fec
-	dev-java/java-service-wrapper"
+	dev-java/java-service-wrapper
+	dev-java/db4o"
 DEPEND=">=virtual/jdk-1.5
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
@@ -54,6 +55,7 @@ src_unpack() {
 	java-pkg_jar-from db-je-3.3
 	java-pkg_jar-from java-service-wrapper
 	java-pkg_jar-from fec
+	java-pkg_jar-from db4o
 }
 
 src_install() {

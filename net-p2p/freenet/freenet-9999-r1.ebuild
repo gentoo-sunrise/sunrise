@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-DATE=20080820
+DATE=20080907
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
 inherit eutils java-pkg-2 java-ant-2 multilib subversion
@@ -20,7 +20,8 @@ IUSE=""
 
 CDEPEND="dev-db/db-je:3.3
 	dev-java/fec
-	dev-java/java-service-wrapper"
+	dev-java/java-service-wrapper
+	dev-java/db4o"
 DEPEND=">=virtual/jdk-1.5
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
@@ -68,6 +69,7 @@ src_unpack() {
 	java-pkg_jar-from db-je-3.3
 	java-pkg_jar-from java-service-wrapper
 	java-pkg_jar-from fec
+	java-pkg_jar-from db4o
 }
 
 src_install() {
