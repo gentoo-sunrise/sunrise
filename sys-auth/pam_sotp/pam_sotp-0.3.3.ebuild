@@ -23,7 +23,7 @@ pkg_setup() {
 src_compile() {
 	myconf=""
 	use urandom && myconf="--with-randomdev=/dev/urandom"
-	econf --libdir="/$(get_libdir)" $(use_enable debug) ${myconf} || die "econf failed"
+	econf --libdir="/$(get_libdir)" $(use_enable debug) ${myconf}
 	emake || die "emake failed"
 }
 
