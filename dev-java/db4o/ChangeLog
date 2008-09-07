@@ -5,5 +5,6 @@
   07 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +db4o-7.4.ebuild,
   +files/build.xml, +metadata.xml:
   Initial commit for bug 236981 (will be a dep for future net-p2p/freenet
-  versions)
+  versions), thanks for the initial build.xml to 
+  nextgens@freenetproject.org
 
