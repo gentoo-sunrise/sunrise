@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2008; Robert Steen (Gandalf) <gandalf@vebbe.se>
+  -fotoxx-5.2.1.ebuild, +fotoxx-5.2.2.ebuild:
+  Version bumb for fotoxx.
+
   03 Sep 2008; Robert Steen (Gandalf) <gandalf@vebbe.se>
   +fotoxx-5.2.1.ebuild, +metadata.xml:
   New Ebuild for bug 235961 thanks to dzhus and chithead for all help
