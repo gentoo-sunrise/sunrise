@@ -43,7 +43,7 @@ echo "" >> /tmp/${pid}.use.local.desc
 #grep -v -f /tmp/${pid}.grep "${1}/profiles/use.local.desc" > /tmp/${pid}.new.use
 
 # the secret sauce, append to new use.local.desc
-python scripts/use_desc_gen --repo_path "${1}" > /tmp/${pid}.new.use
+python scripts/use_desc_gen.py --repo_path "${1}" > /tmp/${pid}.new.use
 
 # let's keep it sorted: use major category, minor category, and package name
 # as primary, secondary, and tertiary sort keys, respectively
