@@ -102,10 +102,6 @@ kde-misc/kgrubeditor
 # Masking beta versions
 =app-misc/bsc-4.0.06_beta*
 
-# Christian Faulhammer <opfer@gentoo.org> (14 Dec 2007)
-# SVN ebuilds need to be masked
-~app-mobilephone/openmoko-dfu-util-9999
-
 # Jakub Moc <jakub@gentoo.org> (31 Oct 2007)
 # svn version should be masked
 =app-misc/freeme2-9999
