@@ -1,7 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 
@@ -45,6 +44,15 @@ games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
 games-fps/chocolate-doom:server - Enable installation of server
 games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2:cdaudio - Enable cd audio playback support
+games-fps/uhexen2:demo - Install the demo files (hexen2-demodata) and configure for use
+games-fps/uhexen2:dynamic - Link to the opengl libraries at compile time
+games-fps/uhexen2:hexenworld - Build support for HexenWorld
+games-fps/uhexen2:lights - Install and setup the updated light maps
+games-fps/uhexen2:midi - Include MIDI music support
+games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
+games-fps/uhexen2:sdlaudio - Enable SDL audio
+games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
+games-fps/uhexen2:tools - Enable compilation of various useful tools
 games-fps/uhexen2-cvs:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2-cvs:cdaudio - Enable cd audio playback support
 games-fps/uhexen2-cvs:demo - Install the demo files (hexen2-demodata) and configure for use
@@ -56,37 +64,28 @@ games-fps/uhexen2-cvs:optimize-cflags - Build with more optimized CFLAGS
 games-fps/uhexen2-cvs:sdlaudio - Enable SDL audio
 games-fps/uhexen2-cvs:sdlcd - Enable cd audio playback support through SDL
 games-fps/uhexen2-cvs:tools - Install various useful tools
-games-fps/uhexen2:demo - Install the demo files (hexen2-demodata) and configure for use
-games-fps/uhexen2:dynamic - Link to the opengl libraries at compile time
-games-fps/uhexen2:hexenworld - Build support for HexenWorld
-games-fps/uhexen2:lights - Install and setup the updated light maps
-games-fps/uhexen2:midi - Include MIDI music support
-games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
-games-fps/uhexen2:sdlaudio - Enable SDL audio
-games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
-games-fps/uhexen2:tools - Enable compilation of various useful tools
 games-fps/vavoom:allegro - Adds support for media-libs/allegro(media library)
 games-fps/vavoom:asm - Enable faster assembly-language code for rendering
+games-fps/vavoom:models - Install enhanced 3D models
+games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
+games-fps/vavoom:textures - Install enhanced hi-res textures
+games-fps/vavoom:tools - Enable compilation of mod-developing tools
 games-fps/vavoom-models:doom - Install Doom resources
 games-fps/vavoom-models:heretic - Install Heretic resources
 games-fps/vavoom-models:hexen - Install Hexen resources
-games-fps/vavoom:models - Install enhanced 3D models
 games-fps/vavoom-models:strife - Install Strife resources
 games-fps/vavoom-music:doom1 - Install Doom 1 resources
 games-fps/vavoom-music:doom2 - Install Doom 2 resources
 games-fps/vavoom-music:heretic - Install Heretic resources
 games-fps/vavoom-music:hexen - Install Hexen resources
-games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
 games-fps/vavoom-music:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-music:tnt - Install 'TNT: Evilution' resources
 games-fps/vavoom-textures:doom1 - Install Doom 1 resources
 games-fps/vavoom-textures:doom2 - Install Doom 2 resources
 games-fps/vavoom-textures:heretic - Install Heretic resources
 games-fps/vavoom-textures:hexen - Install Hexen resources
-games-fps/vavoom:textures - Install enhanced hi-res textures
 games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
-games-fps/vavoom:tools - Enable compilation of mod-developing tools
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/timer-applet:sounds - Installs optional sound data
 kde-misc/kcpufreq:icon - Add icon for GUI applet (enabled by default)
@@ -178,10 +177,10 @@ net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
-sci-libs/openfoam-bin:lam - Defines lam-mpi as default mpi implementation
-sci-libs/openfoam-bin:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam:mpich - Defines mpich as default mpi implementation
+sci-libs/openfoam-bin:lam - Defines lam-mpi as default mpi implementation
+sci-libs/openfoam-bin:mpich - Defines mpich as default mpi implementation
 sci-libs/openfoam-wmake:lam - Defines lam-mpi as default mpi implementation
 sci-libs/openfoam-wmake:mpich - Defines mpich as default mpi implementation
 sci-libs/sympy:mathml - Adds MathML printing support
