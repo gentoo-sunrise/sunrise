@@ -11,8 +11,8 @@ MY_P="${MY_PN}-${MY_PV}"
 DESCRIPTION="OpenFOAM - utilities"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
-	http://omploader.org/vcWF1/openfoam-utilities-1.5_p20080905.patch
-	http://omploader.org/vcWFz/openfoam-kernel-1.5_p20080905.patch"
+	http://omploader.org/vcWF1/${P}.patch
+	http://omploader.org/vcWFz/openfoam-kernel-${PVR}.patch"
 
 LICENSE="GPL-2"
 SLOT="1.5"
