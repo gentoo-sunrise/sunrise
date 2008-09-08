@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  -openfoam-utilities-1.5.ebuild, +openfoam-utilities-1.5_p20080905.ebuild:
+  New patch sets
+
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -files/openfoam-utilities-1.4.1_p20080827.patch:
   Move big patch to external source
