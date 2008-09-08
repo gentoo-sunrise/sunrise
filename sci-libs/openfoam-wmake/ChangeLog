@@ -3,6 +3,10 @@
 # $Header: $
 
   08 Sep 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  -openfoam-wmake-1.5.ebuild:
+  Deleting old version
+
+  08 Sep 2008; Oliver Borm (boroli) <oli.borm@web.de>
   +openfoam-wmake-1.5_p20080905.ebuild:
   New patch sets
 
