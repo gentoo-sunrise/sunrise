@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2008; Robert Steen (Gandalf) <gandalf@vebbe.se>
+  -printoxx-1.2.ebuild, +printoxx-1.3.ebuild:
+  Version bumb for printoxx
+
   03 Sep 2008; Robert Steen (Gandalf) <gandalf@vebbe.se>
   +printoxx-1.2.ebuild, +metadata.xml:
   New Ebuild for bug 236499 thanks to dzhus and chithead for all help
