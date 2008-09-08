@@ -5,5 +5,11 @@
 	<longdescription lang="en">
 		Cuneiform is an multi-language OCR system.
 	</longdescription>
+	<use>
+		<flag name='imagemagick'>Enables support of various input 
+			formats using <pkg>media-gfx/imagemagick</pkg>. 
+			Otherwise only uncompressed BMP files are supported.
+		</flag>
+	</use>
 </pkgmetadata>
 
