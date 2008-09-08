@@ -90,6 +90,25 @@ while [[ $# > 0 ]] ; do
 	esac
 done
 
+cd sunrise
+sh scripts/use_desc_gen.sh .
+if [[ $(svn diff profiles/use.local.desc) ]]; then
+	svn diff profiles/use.local.desc | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
+	echo -n "${BOLD}Commit changes?${NORMAL} [${GREEN}Yes${NORMAL}/${RED}No${NORMAL}] "
+	read choice
+	echo
+	case "$choice" in
+		y*|Y*|"")
+			svn commit -m "Automatic update to use.local.desc" profiles/use.local.desc || exit
+			;;
+			*)
+			echo "Quitting."
+			echo
+			exit ;;
+	esac
+fi
+cd ..
+
 if [[ -z "$*" ]] ; then
 	ebegin "Updating working copy to latest version from repository"
 	update=$(svn_up)
@@ -97,7 +116,7 @@ if [[ -z "$*" ]] ; then
 		echo $update
 	fi
 	update=$(echo $update | tail -n 1)
-	update=${update/At revision }
+	update=${update/Revision }
 	sunrise_revision=${update/.}
 	[ "$sunrise_revision" -lt "10" ] && exit 1
 	eend

@@ -56,6 +56,3 @@ sort -t: -k1,1 -k2 /tmp/${pid}.new.use | sort -s -t/ -k1,1 \
 rm -rf /tmp/${pid}.new.use
 
 mv /tmp/${pid}.use.local.desc profiles/use.local.desc
-if [[ $(svn diff profiles/use.local.desc) ]]; then 
-	svn commit -m "Automatic update to use.local.desc" profiles/use.local.desc;
-fi
