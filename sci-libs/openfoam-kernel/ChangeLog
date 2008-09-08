@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  openfoam-kernel-1.5_p20080905.ebuild:
+  Use ${P} in SRC_URI
+
   08 Sep 2008; Oliver Borm (boroli) <oli.borm@web.de>
   -openfoam-kernel-1.5.ebuild, +openfoam-kernel-1.5_p20080905.ebuild:
   New patche sets
