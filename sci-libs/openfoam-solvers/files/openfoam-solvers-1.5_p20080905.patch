@@ -1,0 +1,259 @@
+Index: heatTransfer/chtMultiRegionFoam/fluid/pEqn.H
+===================================================================
+--- applications/solvers/heatTransfer/chtMultiRegionFoam/fluid/pEqn.H	(Revision 723)
++++ applications/solvers/heatTransfer/chtMultiRegionFoam/fluid/pEqn.H	(Revision 801)
+@@ -47,14 +47,14 @@
+                 (
+                     "massIni",
+                     dimMass,
+                     initialMassf[i]
+                 )
+               - fvc::domainIntegrate(thermof[i].psi()*thermof[i].p())
+             )/fvc::domainIntegrate(thermof[i].psi());
+-
++        pdf[i] == thermof[i].p() - (rhof[i]*ghf[i] + pRef);
+         rhof[i] = thermof[i].rho();
+     }
+ 
+     // Update thermal conductivity
+     Kf[i] = rhof[i]*thermof[i].Cp()*turb[i].alphaEff();
+ }
+Index: heatTransfer/chtMultiRegionFoam/fluid/createFluidFields.H
+===================================================================
+--- applications/solvers/heatTransfer/chtMultiRegionFoam/fluid/createFluidFields.H	(Revision 723)
++++ applications/solvers/heatTransfer/chtMultiRegionFoam/fluid/createFluidFields.H	(Revision 801)
+@@ -43,18 +43,15 @@
+         );
+ 
+         Info<< "    Adding to thermof\n" << endl;
+ 
+         thermof.set
+         (
+             i,
+-            autoPtr<basicThermo>
+-            (
+-                basicThermo::New(fluidRegions[i])
+-            ).ptr()
++            basicThermo::New(fluidRegions[i]).ptr()
+         );
+ 
+         Info<< "    Adding to rhof\n" << endl;
+         rhof.set
+         (
+             i,
+             new volScalarField
+Index: heatTransfer/buoyantFoam/pEqn.H
+===================================================================
+--- applications/solvers/heatTransfer/buoyantFoam/pEqn.H	(Revision 723)
++++ applications/solvers/heatTransfer/buoyantFoam/pEqn.H	(Revision 801)
+@@ -51,9 +51,10 @@
+ 
+ // For closed-volume cases adjust the pressure and density levels
+ // to obey overall mass continuity
+ if (closedVolume)
+ {
+     p += (initialMass - fvc::domainIntegrate(thermo->psi()*p))
+         /fvc::domainIntegrate(thermo->psi());
++    pd == p - (rho*gh + pRef);
+     rho = thermo->rho();
+ }
+Index: heatTransfer/buoyantSimpleRadiationFoam/pEqn.H
+===================================================================
+--- applications/solvers/heatTransfer/buoyantSimpleRadiationFoam/pEqn.H	(Revision 723)
++++ applications/solvers/heatTransfer/buoyantSimpleRadiationFoam/pEqn.H	(Revision 801)
+@@ -42,12 +42,13 @@
+ 
+ // For closed-volume cases adjust the pressure and density levels
+ // to obey overall mass continuity
+ if (closedVolume)
+ {
+     p += (initialMass - fvc::domainIntegrate(thermo->psi()*p))
+         /fvc::domainIntegrate(thermo->psi());
++    pd == p - (rho*gh + pRef);
+ }
+ 
+ rho = thermo->rho();
+ rho.relax();
+ Info<< "rho max/min : " << max(rho).value() << " " << min(rho).value() << endl;
+Index: heatTransfer/buoyantSimpleFoam/pEqn.H
+===================================================================
+--- applications/solvers/heatTransfer/buoyantSimpleFoam/pEqn.H	(Revision 723)
++++ applications/solvers/heatTransfer/buoyantSimpleFoam/pEqn.H	(Revision 801)
+@@ -1,10 +1,11 @@
+ volScalarField rUA = 1.0/UEqn().A();
+ U = rUA*UEqn().H();
+ UEqn.clear();
++
+ phi = fvc::interpolate(rho)*(fvc::interpolate(U) & mesh.Sf());
+ bool closedVolume = adjustPhi(phi, U, p);
+ phi -= fvc::interpolate(rho*gh*rUA)*fvc::snGrad(rho)*mesh.magSf();
+ 
+ for (int nonOrth=0; nonOrth<=nNonOrthCorr; nonOrth++)
+ {
+     fvScalarMatrix pdEqn
+@@ -42,12 +43,13 @@
+ 
+ // For closed-volume cases adjust the pressure and density levels
+ // to obey overall mass continuity
+ if (closedVolume)
+ {
+     p += (initialMass - fvc::domainIntegrate(thermo->psi()*p))
+         /fvc::domainIntegrate(thermo->psi());
++    pd == p - (rho*gh + pRef);
+ }
+ 
+ rho = thermo->rho();
+ rho.relax();
+ Info<< "rho max/min : " << max(rho).value() << " " << min(rho).value() << endl;
+Index: multiphase/twoPhaseEulerFoam/kineticTheoryModels/kineticTheoryModel/kineticTheoryModel.C
+===================================================================
+--- applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModels/kineticTheoryModel/kineticTheoryModel.C	(Revision 723)
++++ applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModels/kineticTheoryModel/kineticTheoryModel.C	(Revision 801)
+@@ -234,16 +234,15 @@
+         1.0e-6
+     );
+ 
+     dimensionedScalar TsmallSqrt = sqrt(Tsmall);
+     volScalarField ThetaSqrt = sqrt(Theta_);
+ 
+     // 'thermal' conductivity (Table 3.3, p. 49)
+-    volScalarField kappa_ =
+-        conductivityModel_->kappa(alpha, Theta_, gs0_, rhoa_, da_, e_);
++    kappa_ = conductivityModel_->kappa(alpha, Theta_, gs0_, rhoa_, da_, e_);
+ 
+     // particle viscosity (Table 3.2, p.47)
+     mua_ = viscosityModel_->mua(alpha, Theta_, gs0_, rhoa_, da_, e_);
+ 
+     // dissipation (Eq. 3.24, p.50)
+     volScalarField gammaCoeff =
+         12.0*(1.0 - e_*e_)*sqr(alpha)*rhoa_*gs0_*(1.0/da_)
+@@ -252,16 +251,15 @@
+     // Eq. 3.25, p. 50 Js = J1 - J2
+     volScalarField J1 = 3.0*betaPrim;
+     volScalarField J2 =
+         0.25*sqr(betaPrim)*da_*sqr(Ur)
+        /(alpha*rhoa_*sqrtPi*(ThetaSqrt + TsmallSqrt));
+ 
+     // bulk viscosity  p. 45 (Lun et al. 1984).
+-    volScalarField lambda_ =
+-        (4.0/3.0)*sqr(alpha_)*rhoa_*da_*gs0_*(1.0+e_)*ThetaSqrt/sqrtPi;
++    lambda_ = (4.0/3.0)*sqr(alpha_)*rhoa_*da_*gs0_*(1.0+e_)*ThetaSqrt/sqrtPi;
+ 
+ 
+     // stress tensor, Definitions, Table 3.1, p. 43
+     volTensorField tau = 2.0*mua_*D + (lambda_ - (2.0/3.0)*mua_)*tr(D)*I;
+ 
+     if (!equilibrium_)
+     {
+@@ -348,16 +346,15 @@
+     );
+ 
+     // add frictional stress for alpha > alphaMinFriction
+     mua_ = viscosityModel_->mua(alpha, Theta_, gs0_, rhoa_, da_, e_) + muf;
+     mua_.min(1.0e+2);
+     mua_.max(0.0);
+ 
+-    lambda_ = (4.0/3.0)*sqr(alpha_)*rhoa_*da_*gs0_*(1.0 + e_)
+-        *ThetaSqrt/sqrtPi;
++    lambda_ = (4.0/3.0)*sqr(alpha_)*rhoa_*da_*gs0_*(1.0 + e_)*ThetaSqrt/sqrtPi;
+ 
+     Info<< "kinTheory: max(Theta) = " << max(Theta_).value() << endl;
+ 
+     volScalarField ktn = mua_/rhoa_;
+ 
+     Info<< "kinTheory: min(nua) = " << min(ktn).value()
+         << ", max(nua) = " << max(ktn).value() << endl;
+Index: multiphase/interDyMFoam/UEqn.H
+===================================================================
+--- applications/solvers/multiphase/interDyMFoam/UEqn.H	(Revision 723)
++++ applications/solvers/multiphase/interDyMFoam/UEqn.H	(Revision 801)
+@@ -1,29 +1,34 @@
+-    surfaceScalarField muf = twoPhaseProperties.muf();
++surfaceScalarField muEff
++(
++    "muEff",
++    twoPhaseProperties.muf()
++  + fvc::interpolate(rho*turbulence->nut())
++);
+ 
+-    fvVectorMatrix UEqn
+-    (
+-        fvm::ddt(rho, U)
+-      + fvm::div(rhoPhi, U)
+-      - fvm::laplacian(muf, U)
+-      - (fvc::grad(U) & fvc::grad(muf))
+-    //- fvc::div(muf*(fvc::interpolate(dev(fvc::grad(U))) & mesh.Sf()))
+-    );
++fvVectorMatrix UEqn
++(
++    fvm::ddt(rho, U)
++  + fvm::div(rhoPhi, U)
++  - fvm::laplacian(muEff, U)
++  - (fvc::grad(U) & fvc::grad(muEff))
++//- fvc::div(muEff*(fvc::interpolate(dev(fvc::grad(U))) & mesh.Sf()))
++);
+ 
+-    UEqn.relax();
++UEqn.relax();
+ 
+-    if (momentumPredictor)
+-    {
+-        solve
++if (momentumPredictor)
++{
++    solve
++    (
++        UEqn
++      ==
++        fvc::reconstruct
+         (
+-            UEqn
+-         ==
+-            fvc::reconstruct
+             (
+-                (
+-                    fvc::interpolate(interface.sigmaK())*fvc::snGrad(gamma)
+-                  - ghf*fvc::snGrad(rho)
+-                  - fvc::snGrad(pd)
+-                ) * mesh.magSf()
+-            )
+-        );
+-    }
++                fvc::interpolate(interface.sigmaK())*fvc::snGrad(gamma)
++              - ghf*fvc::snGrad(rho)
++              - fvc::snGrad(pd)
++            )*mesh.magSf()
++        )
++    );
++}
+Index: incompressible/icoFoam/icoFoam.C
+===================================================================
+--- applications/solvers/incompressible/icoFoam/icoFoam.C	(Revision 723)
++++ applications/solvers/incompressible/icoFoam/icoFoam.C	(Revision 801)
+@@ -1,8 +1,8 @@
+-/*---------------------------------------------------------------------------* \
++/*---------------------------------------------------------------------------*\
+   =========                 |
+   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+    \\    /   O peration     |
+     \\  /    A nd           | Copyright (C) 1991-2008 OpenCFD Ltd.
+      \\/     M anipulation  |
+ -------------------------------------------------------------------------------
+ License
+@@ -67,15 +67,15 @@
+         // --- PISO loop
+ 
+         for (int corr=0; corr<nCorr; corr++)
+         {
+             volScalarField rUA = 1.0/UEqn.A();
+ 
+             U = rUA*UEqn.H();
+-            phi = (fvc::interpolate(U) & mesh.Sf()) 
++            phi = (fvc::interpolate(U) & mesh.Sf())
+                 + fvc::ddtPhiCorr(rUA, U, phi);
+ 
+             adjustPhi(phi, U, p);
+ 
+             for (int nonOrth=0; nonOrth<=nNonOrthCorr; nonOrth++)
+             {
+                 fvScalarMatrix pEqn

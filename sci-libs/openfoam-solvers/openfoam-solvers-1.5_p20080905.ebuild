@@ -35,6 +35,7 @@ src_unpack() {
 
 	cd "${S}"
 	epatch "${FILESDIR}"/${MY_P}-compile.patch
+	epatch "${FILESDIR}"/${P}.patch
 }
 
 src_compile() {
