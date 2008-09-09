@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="graph kakasi sound"
 
-RDEPEND=">=dev-python/PyQt4-4.2
+RDEPEND=">=dev-python/PyQt4-4.3
 	>=dev-python/sqlalchemy-0.4.1
 	>=dev-python/simplejson-1.7.3
 	>=dev-python/pysqlite-2.3.0

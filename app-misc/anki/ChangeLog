@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Sep 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
+  anki-0.9.7.8.ebuild:
+  Fixed dev-python/PyQt4 dependency.
+
+  09 Sep 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
   -anki-0.9.6.ebuild, +anki-0.9.7.8.ebuild, metadata.xml:
   Version bump for anki.
 
