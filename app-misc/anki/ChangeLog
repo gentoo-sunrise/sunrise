@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Sep 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
+  -anki-0.9.6.ebuild, +anki-0.9.7.8.ebuild, metadata.xml:
+  Version bump for anki.
+
   25 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Fix metadata.xml
 
