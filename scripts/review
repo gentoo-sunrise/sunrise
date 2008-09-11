@@ -91,7 +91,7 @@ while [[ $# > 0 ]] ; do
 done
 
 cd sunrise
-sh scripts/use_desc_gen.sh .
+sh scripts/use_desc_gen.sh . || exit $?
 if [[ $(svn diff profiles/use.local.desc) ]]; then
 	svn diff profiles/use.local.desc | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
 	echo -n "${BOLD}Commit changes?${NORMAL} [${GREEN}Yes${NORMAL}/${RED}No${NORMAL}] "
