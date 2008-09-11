@@ -1,9 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>
-		maintainer-wanted
-	</herd>
+	<herd>maintainer-wanted</herd>
 	<longdescription>
 		KXStitch is a program that lets you create cross stitch patterns and
 		charts. Patterns can be created from scratch on a user defined size
@@ -15,12 +13,4 @@
 		a background. These imported images can then be modified using the
 		supplied tools to produce your final design.
 	</longdescription>
-	<maintainer>
-		<email>
-			throw_away_2002@yahoo.com
-		</email>
-		<name>
-			Thomas Patrick
-		</name>
-	</maintainer>
 </pkgmetadata>
