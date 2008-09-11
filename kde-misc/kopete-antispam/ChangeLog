@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  kopete-antispam-0.3.ebuild:
+  Removed kde-base/kdenetwork from dependencies, added kde-base/kopete as
+  runtime dependency
+
   10 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   +kopete-antispam-0.3.ebuild, +metadata.xml:
   New Ebuild for bug #161552
