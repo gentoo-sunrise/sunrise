@@ -2,6 +2,9 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> metadata.xml:
+  Fix metadata.xml
+
   07 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   paq8l-20070308.ebuild:
   Whitey
