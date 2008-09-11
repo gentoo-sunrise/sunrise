@@ -19,7 +19,7 @@ RDEPEND="bluetooth? ( net-wireless/bluez-libs net-wireless/bluez-utils )
 DEPEND="${RDEPEND}"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/btio.patch"
 }
