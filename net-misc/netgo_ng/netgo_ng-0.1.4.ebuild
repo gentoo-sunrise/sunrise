@@ -17,11 +17,11 @@ IUSE=""
 need-kde 3.5
 
 DEPEND="x11-libs/qt:3"
-RDEPEND=" ${DEPEND} 
-	net-misc/dhcpcd 
-	sys-apps/net-tools 
-	net-wireless/wireless-tools 
-	net-wireless/wpa_supplicant "
+RDEPEND=" ${DEPEND}
+	net-misc/dhcpcd
+	sys-apps/net-tools
+	net-wireless/wireless-tools
+	net-wireless/wpa_supplicant"
 
 src_compile() {
 	addpredict "$QTDIR/etc/settings"
@@ -30,6 +30,6 @@ src_compile() {
 }
 
 src_install() {
-        emake DESTDIR="${D}" install || die "Install failed"
-        dodoc authors ChangeLog readme todo
+	emake DESTDIR="${D}" install || die "Install failed"
+	dodoc authors ChangeLog readme todo
 }

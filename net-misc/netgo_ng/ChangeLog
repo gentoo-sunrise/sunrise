@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  netgo_ng-0.1.4.ebuild:
+  whitespaces
+
   10 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   +netgo_ng-0.1.4.ebuild, +metadata.xml:
   New ebuild for bug #237343
