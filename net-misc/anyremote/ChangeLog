@@ -3,6 +3,10 @@
 # $Header: $
 
   11 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  +anyremote-4.8.1.ebuild, -anyremote-4.8.1-r1.ebuild, +files/btio.patch:
+  Upstream patch for compilation failure when --disable-bluez was used
+
+  11 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   -anyremote-4.8.1.ebuild, +anyremote-4.8.1-r1.ebuild:
   Drop kde,gnome use flags
 

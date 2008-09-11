@@ -1,0 +1,38 @@
+--- src/btio.c	2008-08-06 23:54:18.000000000 +0300
++++ src/btio.c	2008-09-11 21:07:22.000000000 +0300
+@@ -18,7 +18,7 @@
+ // along with this program; if not, write to the Free Software
+ // Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. 
+ //
+- 
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -488,6 +488,8 @@
+ // Support SDP
+ //
+ 
++#ifdef USE_BT
++ 
+ #include <bluetooth/sdp.h>
+ #include <bluetooth/sdp_lib.h>
+ 
+@@ -570,14 +572,17 @@
+     sdp_list_free( svc_class_list, 0 );
+     sdp_list_free( profile_list, 0 );
+ }
++#endif
+ 
+ void sdpDeregister()
+ {
++    #ifdef USE_BT
+     if (session != NULL) {
+         sdp_record_unregister(session, record);
+         session = NULL;
+         //sdp_record_free(record);
+     }
++    #endif
+ }
+ 
+ //

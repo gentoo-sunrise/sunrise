@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit eutils
+
 DESCRIPTION="Anyremote provides wireless Bluetooth or infrared remote control service, but works also with cable"
 HOMEPAGE="http://anyremote.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
@@ -15,6 +17,12 @@ RDEPEND="bluetooth? ( net-wireless/bluez-libs net-wireless/bluez-utils )
 	x11-libs/libXtst"
 
 DEPEND="${RDEPEND}"
+
+src_unpack() {
+	unpack "${A}"
+	cd "${S}"
+	epatch "${FILESDIR}/btio.patch"
+}
 
 src_compile() {
 	econf $(use_enable bluetooth bluez)
