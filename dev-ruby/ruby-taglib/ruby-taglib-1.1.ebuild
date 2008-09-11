@@ -20,4 +20,3 @@ src_install() {
 	ruby_src_install
 	dodoc README
 }
-

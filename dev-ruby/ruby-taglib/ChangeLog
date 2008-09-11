@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  ruby-taglib-1.1.ebuild:
+  Remove unneeded empty line
+
   10 Sep 2008; Erik Hahn (a_b) <erikholgerhahn@web.de>
   +ruby-taglib-1.1.ebuild, +metadata.xml:
   New ebuild for Bug #228909, created by Matthias Raffelsieper
