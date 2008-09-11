@@ -14,10 +14,8 @@ KEYWORDS="~ppc ~x86"
 IUSE=""
 
 RDEPEND="media-libs/hamlib
-	dev-libs/libxml2
 	=dev-libs/glib-2*
-	>=x11-libs/gtk+-2.12
-	>=gnome-base/libgnomeprint-2.2"
+	>=x11-libs/gtk+-2.12"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -44,6 +42,11 @@ src_install() {
 pkg_postinst() {
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
+
+	if has_version '<media-radio/xlog-1.8' ; then
+		ewarn "You have to reconfigure xlog."
+		ewarn "(You can find your old configuration in ~/.xlog/preferences.xml.)"
+	fi
 }
 
 pkg_postrm() {

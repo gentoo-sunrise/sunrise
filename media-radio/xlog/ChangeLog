@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> -xlog-1.7.ebuild,
+  -files/xlog-1.7-desktop-update.patch, +xlog-1.8.1.ebuild,
+  +files/xlog-1.8.1-desktop-update.patch:
+  Version bump
+
   06 May 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> xlog-1.7.ebuild:
   Eautoreconf dies on its own
 
