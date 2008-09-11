@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -anyremote-4.8.1.ebuild, +anyremote-4.8.1-r1.ebuild:
+  Drop kde,gnome use flags
+
   10 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   +anyremote-4.8.1.ebuild, +metadata.xml:
   New ebuild for bug #209686
