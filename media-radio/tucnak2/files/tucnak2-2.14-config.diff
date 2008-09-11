@@ -88,3 +88,22 @@
  
  # check for library errors
  if test -n "$tucnak_mlibs$tucnak_olibs"; then
+@@ -299,6 +299,10 @@
+ fi
+ 
+ 
++AC_ARG_WITH([hamlib], AS_HELP_STRING([--without-hamlib], [Build without Hamlib support (default: test)]))
++tucnak_hamlib="no"
++
++if test "x$with_hamlib" != "xno"; then
+ # check for hamlib
+ tucnak_hamlib_ver=""
+ PKG_CHECK_MODULES(HAMLIB, 
+@@ -309,6 +313,7 @@
+         [ tucnak_olibs="$tucnak_olibs libhamlib"
+           tucnak_odebs="$tucnak_odebs libhamlib-dev" 
+           tucnak_hamlib="false" ])
++fi
+ 
+ # check for library errors
+ if test -n "$tucnak_mlibs$tucnak_olibs"; then

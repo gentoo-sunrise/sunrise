@@ -11,7 +11,7 @@ SRC_URI="http://tucnak.nagano.cz/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="alsa ftdi gpm"
+IUSE="alsa ftdi gpm hamlib"
 
 RDEPEND=">=dev-libs/glib-2
 	media-libs/libsndfile
@@ -19,6 +19,7 @@ RDEPEND=">=dev-libs/glib-2
 	alsa? ( media-libs/alsa-lib )
 	ftdi? ( dev-embedded/libftdi )
 	gpm? ( sys-libs/gpm )
+	hamlib? ( media-libs/hamlib )
 	>=media-libs/libpng-1.2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
@@ -35,7 +36,7 @@ src_unpack() {
 
 src_compile() {
 	econf $(use_with alsa) $(use_with ftdi) \
-		$(use_with gpm) --with-sdl
+		$(use_with gpm) $(use_with hamlib) --with-sdl
 	emake || die "emake failed"
 }
 
