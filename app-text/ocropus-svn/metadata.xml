@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
-	<email>bfolkens@gmail.com</email>
-	<name>Bradford Folkens</name>
-</maintainer>
+<herd>maintainer-wanted</herd>
 <longdescription lang="en">
 	OCRopus is a state-of-the-art document analysis and OCR system, featuring
 	pluggable layout analysis, pluggable character recognition, statistical
 	natural language modeling, and multi-lingual capabilities.
 </longdescription>
 </pkgmetadata>
-
