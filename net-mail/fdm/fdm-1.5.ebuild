@@ -27,7 +27,7 @@ src_compile() {
 		vars="$vars PCRE=1"
 	fi
 
-	emake $vars
+	emake $vars || die "emake failed"
 }
 
 src_install() {
