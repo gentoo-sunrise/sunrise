@@ -1,0 +1,10 @@
+# ChangeLog for media-radio/xwxapt
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Sep 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  +xwxapt-1.1.ebuild, +metadata.xml:
+  New ebuild for media-radio/xwxapt (Bug 237460). Thanks to Tommy[D] for help.
+
+*media-radio/xwxapt-1.1 (12Sep2008)
+
