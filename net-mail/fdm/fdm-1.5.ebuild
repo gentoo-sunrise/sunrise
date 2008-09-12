@@ -19,13 +19,10 @@ DEPEND="dev-libs/openssl
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	if use tdb; then
-		vars="DB=1"
-	fi
+	local vars
 
-	if use pcre; then
-		vars="$vars PCRE=1"
-	fi
+	use tdb && vars="DB=1"
+	use pcre && vars="$vars PCRE=1"
 
 	emake $vars || die "emake failed"
 }

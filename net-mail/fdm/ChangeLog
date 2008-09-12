@@ -3,6 +3,10 @@
 # $Header: $
 
   12 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> fdm-1.5.ebuild:
+  Avoid polluting global scope by declaring vars local, while there simplify
+  src_unpack
+
+  12 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> fdm-1.5.ebuild:
   Add missing die to emake
 
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
