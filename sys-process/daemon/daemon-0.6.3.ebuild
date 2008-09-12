@@ -26,10 +26,10 @@ src_unpack() {
 src_compile() {
 	./config
 	emake CC="$(tc-getCC)" AR="$(tc-getAR)" RANLIB="$(tc-getRANLIB)" \
-		CCFLAGS="${CFLAGS}" PREFIX="/usr"
+		CCFLAGS="${CFLAGS}" PREFIX="/usr" || die "emake failed"
 }
 
 src_install() {
-	emake PREFIX="${D}/usr" install
+	emake PREFIX="${D}/usr" install || die "emake install failed"
 	dodoc README
 }
