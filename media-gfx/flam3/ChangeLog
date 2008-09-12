@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Sep 2008; David Bitseff (useer) <dbitsef@zipcon.net> -files:
+  Removed unused files directory.
+
   11 Sep 2008; David Bitseff (useer) <dbitsef@zipcon.net>
   +flam3-2.7.16.ebuild, +metadata.xml:
   New ebuild for bug #237107
