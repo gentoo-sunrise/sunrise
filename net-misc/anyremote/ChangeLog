@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  anyremote-4.8.1.ebuild:
+  Added kde,gnome use flags for kanyremote and ganyremote packages respectively
+
   11 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   anyremote-4.8.1.ebuild:
   Remove quotes on ${A}
