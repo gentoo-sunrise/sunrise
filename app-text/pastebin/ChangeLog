@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Sep 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  pastebin-0.3.ebuild:
+  Working on PPC : adding ~ppc keyword.
+
   11 Sep 2008; Erik Hahn (a_b) <erikholgerhahn@web.de> +pastebin-0.3.ebuild,
   +metadata.xml:
   Ebuild for Bug #235377, based on the one by cHoBi

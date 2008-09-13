@@ -8,7 +8,7 @@ SRC_URI="http://pastebin-cli.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~ppc ~x86"
 IUSE=""
 
 RDEPEND="dev-lang/perl
