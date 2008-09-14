@@ -3,6 +3,10 @@
 # $Header: $
 
   14 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  freenet-9999-r1.ebuild:
+  Fix live ebuild for first startup
+
+  14 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_p1162.ebuild, +freenet-0.7_p1163.ebuild,
   freenet-9999-r1.ebuild:
   New upstream release + update ebuilds

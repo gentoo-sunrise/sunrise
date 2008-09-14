@@ -61,6 +61,9 @@ src_unpack() {
 	-e 's:./wrapper.conf:/etc/freenet-wrapper.conf:g' \
 	-e 's:PIDDIR=".":PIDDIR="/var/freenet/":g' \
 	-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' run.sh || die "sed failed"
+	head -n 133 run.sh >run1.sh
+	tail -n 444 run.sh >>run1.sh
+	mv run1.sh run.sh
 	subversion_wc_info
 	sed -ie "s:@custom@:${ESVN_WC_REVISION}:g" src/freenet/node/Version.java
 	epatch "${FILESDIR}"/ext.patch
