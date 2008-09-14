@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-DATE=20080907
+DATE=20080914
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
 inherit eutils java-pkg-2 java-ant-2 multilib subversion
@@ -57,11 +57,12 @@ src_unpack() {
 	cd "${S}"
 	cp "${DISTDIR}"/seednodes-${DATE}.fref seednodes.fref
 	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
-	sed -i -e 's:./bin/wrapper:/var/freenet/bin/wrapper:g' \
-	-e 's:./wrapper.conf:/var/freenet/wrapper.conf:g' \
+	sed -i -e 's:./bin/wrapper:/usr/bin/wrapper:g' \
+	-e 's:./wrapper.conf:/etc/freenet-wrapper.conf:g' \
 	-e 's:PIDDIR=".":PIDDIR="/var/freenet/":g' \
 	-e 's:#RUN_AS_USER=:RUN_AS_USER=freenet:g' run.sh || die "sed failed"
-	sed -ie "s:@custom@:${MY_FREENET_LATEST}:g" src/freenet/node/Version.java
+	subversion_wc_info
+	sed -ie "s:@custom@:${ESVN_WC_REVISION}:g" src/freenet/node/Version.java
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
 	mkdir -p lib
@@ -80,10 +81,11 @@ src_install() {
 	else
 		newinitd "${FILESDIR}"/freenet.old freenet
 	fi
+	insinto /etc
+	newins wrapper.conf freenet-wrapper.conf
 	insinto /var/freenet
-	doins wrapper.conf run.sh seednodes.fref
+	doins run.sh seednodes.fref
 	dodir /var/freenet/bin
-	dosym /usr/bin/wrapper /var/freenet/bin/wrapper
 	dodir /var/freenet/$(get_libdir)
 	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /var/freenet/$(get_libdir)/libwrapper.so
 	dosym ../../../usr/$(get_libdir)/libNativeThread.so /var/freenet/$(get_libdir)/libNativeThread.so

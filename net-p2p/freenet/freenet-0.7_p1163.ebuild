@@ -68,10 +68,11 @@ src_install() {
 	fi
 	dodoc license/README license/LICENSE.Mantissa \
 		AUTHORS README
+	insinto /etc
+	newins wrapper.conf freenet-wrapper.conf
 	insinto /var/freenet
-	doins seednodes.fref wrapper.conf run.sh
+	doins seednodes.fref run.sh
 	dodir /var/freenet/bin
-	dosym /usr/bin/wrapper /var/freenet/bin/wrapper
 	dodir /var/freenet/$(get_libdir)
 	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /var/freenet/$(get_libdir)/libwrapper.so
 	dosym ../../../usr/$(get_libdir)/libNativeThread.so /var/freenet/$(get_libdir)/libNativeThread.so
