@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="Tools and a library for creating flame fractal images"
 HOMEPAGE="http://flam3.com/"
 SRC_URI="${HOMEPAGE}/${P}.tar.gz"
