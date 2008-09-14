@@ -28,6 +28,5 @@ pkg_postinst() {
 	if ! built_with_use net-misc/anyremote bluetooth ; then
 		ewarn "If you want to use bluetooth with ganyremote, you need to "
 		ewarn "compile net-misc/anyremote with bluetooth use flag."
-        fi
+	fi
 }
-
