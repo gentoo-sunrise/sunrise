@@ -104,6 +104,9 @@ pkg_postinst () {
 	elog "If you dont know trusted people running freenet,"
 	elog "enable opennet (\"insecure mode\") on the config page to get started."
 	elog " "
+	ewarn "The wrapper config file wrapper.conf has been moved to /etc/freenet-wrapper.conf."
+	ewarn "You can now edit it without the next update overwriting it."
+	elog " "
 	chown freenet:freenet /var/freenet
 	if [[ -e /opt/freenet/freenet.ini ]] && ! [[ -e /var/freenet/freenet.ini ]]; then
 		ewarn " "
