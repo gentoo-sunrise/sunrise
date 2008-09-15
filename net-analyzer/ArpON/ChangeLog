@@ -1,0 +1,8 @@
+# ChangeLog for net-analyzer/ArpON
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Sep 2008; Giuseppe Marco Randazzo (zeld) <gmrandazzo@gmail.com>
+  +ArpON-1.72.ebuild, +metadata.xml:
+  New Ebuild for bug 225125 thanks to Giuseppe Marco Randazzo
+
