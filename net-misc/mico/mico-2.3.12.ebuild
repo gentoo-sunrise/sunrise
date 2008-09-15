@@ -18,6 +18,9 @@ DEPEND=">=sys-devel/flex-2.5.2
 	ssl? ( dev-libs/openssl )
 	tcl? ( dev-lang/tcl )
 	postgres? ( dev-db/postgresql )"
+DEPEND="ssl? ( dev-libs/openssl )
+	tcl? ( dev-lang/tcl )
+	postgres? ( dev-db/postgresql )"
 
 S="${WORKDIR}/${PN}"
 
