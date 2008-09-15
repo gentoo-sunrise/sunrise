@@ -1,6 +1,10 @@
 # ChangeLog for app-office/ganttproject-bin
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ganttproject-bin-2.0.5.ebuild:
+  Reorder vars
 
   27 Oct 2007; (Tommy[D]) tommy100@gmx.de ++,
   -ganttproject-bin-2.0.2.ebuild:
