@@ -7,7 +7,7 @@ EAPI=1
 DESCRIPTION="ArpON (Arp handler inspectiON) is a portable Arp handler."
 
 HOMEPAGE="http://arpon.sourceforge.net/"
-SRC_URI="mirror://sourceforge/arpon/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/arpon/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
