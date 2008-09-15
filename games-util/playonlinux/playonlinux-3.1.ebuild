@@ -11,7 +11,7 @@ SRC_URI="http://www.playonlinux.com/script_files/PlayOnLinux/${PV}/PlayOnLinux_$
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="-* ~x86 ~amd64"
+KEYWORDS="-* ~amd64 ~x86"
 # ~amd64 will not work with no-multilib amd64 profiles.
 # when ebuild will be in portage, playonlinux must be added as masked package
 # for no-multilib amd64 profiles.
@@ -59,11 +59,15 @@ src_install() {
 	insinto "${GAMES_DATADIR}/${PN}/python"
 	doins -r "${S}"/python/lib || die "installation failed"
 
+	# daemon/ install
+	exeinto "${GAMES_DATADIR}/${PN}/daemon"
+	doexe "${S}"/daemon/* || "installation failed"
+
 	# main executable files
 	exeinto "${GAMES_DATADIR}/${PN}"
 	doexe "${S}/${PN}" || die "installation failed"
-	exeinto "${GAMES_DATADIR}/${PN}"
 	doexe "${S}/${PN}-pkg" || die "installation failed"
+	doexe "${S}/${PN}-daemon" || die "installation failed"
 
 	# making a script to run app from ${GAMES_BINDIR}
 	echo "#!/bin/bash" > ${PN}_launcher
