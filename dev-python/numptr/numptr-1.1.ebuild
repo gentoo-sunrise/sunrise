@@ -16,6 +16,6 @@ IUSE=""
 KEYWORDS="~x86"
 
 DEPEND="dev-lang/swig"
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
