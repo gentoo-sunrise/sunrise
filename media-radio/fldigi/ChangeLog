@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Sep 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -fldigi-3.0.ebuild, +fldigi-3.03.ebuild:
+  Version bump
+
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Remove global useflags from metadata.xml
 
