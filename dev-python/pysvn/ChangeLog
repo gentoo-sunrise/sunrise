@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Sep 2008; Markus Rennings (mren) <mren@mrmx.de> -pysvn-1.6.0.ebuild,
+  +pysvn-1.6.1.ebuild:
+  version bump
+
   18 Aug 2008; Markus Rennings (mren) <mren@mrmx.de> pysvn-1.6.0.ebuild:
   add example USE flag
 
