@@ -14,6 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="sys-libs/ncurses"
+DEPEND="sys-libs/ncurses
+		dev-python/feedparser
+		dev-python/chardet"
 
 EGIT_REPO_URI="http://codezen.org/src/canto.git"
