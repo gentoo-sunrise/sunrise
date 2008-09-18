@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> fec-1.0.3.ebuild:
+  Add seperate bug number to Changelog + some minor changes
+
   11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   Manifest:
   And fix Manifest as well
@@ -13,5 +16,6 @@
   30 Mar 2008; Thomas Sachau (Tommy[D]) tommy@gentoo.org
   +files/libfec8path.patch, +fec-1.0.3.ebuild, +files/build.xml,
   +metadata.xml:
-  New ebuild for bug 128783 (Dependency for >=net-p2p/freenet-0.7_beta_pre1130)
+  New ebuild (Dependency for >=net-p2p/freenet-0.7_beta_pre1130) Bug 
+  238020
 

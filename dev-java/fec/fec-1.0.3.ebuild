@@ -28,8 +28,7 @@ src_unpack() {
 	cd lib
 	rm -rf *
 	java-pkg_jar-from --build-only log4j
-	java-pkg_jar-from --build-only concurrent-util
-	mv concurrent.jar concurrent-jaxed.jar
+	java-pkg_jar-from --build-only concurrent-util concurrent.jar concurrent-jaxed.jar
 
 	cd "${S}"
 	unzip -q common-20020926.zip
@@ -50,5 +49,5 @@ src_compile() {
 }
 
 src_install() {
-	java-pkg_dojar src/"${PN}".jar
+	java-pkg_dojar src/${PN}.jar
 }
