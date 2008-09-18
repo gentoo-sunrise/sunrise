@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> qutecom-2.2_rc1.ebuild:
+  fix variable assignment
+
   17 Sep 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> +files/qutecom-boost-1.35.patch,
   +qutecom-2.2_rc1.ebuild, +files/qutecom-gcc-4.3-switch-enum.patch,

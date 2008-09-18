@@ -45,7 +45,7 @@ src_unpack() {
 }
 
 src_compile() {
-	EXTRA_ECONF = " \
+	EXTRA_ECONF=" \
 		$(cmake_use_enable portaudio PORTAUDIO_SUPPORT) \
 		$(cmake_use_enable alsa PHAPI_AUDIO_ALSA_SUPPORT) \
 		$(cmake_use_enable oss PHAPI_AUDIO_OSS_SUPPORT) \
