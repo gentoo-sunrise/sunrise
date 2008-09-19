@@ -42,7 +42,8 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-types.h.patch
 	epatch "${FILESDIR}"/${PN}-cstdlib-include.patch
 	epatch "${FILESDIR}"/${PN}-gcc-4.3-switch-enum.patch
-	epatch "${FILESDIR}"/${PN}-cmake-hg-svnrevision.patch
+	epatch "${FILESDIR}"/${PN}-newerffmpeg0.patch
+	epatch "${FILESDIR}"/${PN}-newerffmpeg1.patch
 }
 
 src_compile() {
