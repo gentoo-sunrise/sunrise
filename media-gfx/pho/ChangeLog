@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Sep 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  pho-0.9.5.1.ebuild:
+  Add ~ppc keyword. Fixing variables order. Fixing indentation.
+
   18 Sep 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
   +pho-0.9.5.1.ebuild, +metadata.xml:
   New ebuild for bug 238032. Thanks to dzhus and Tommy
