@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Sep 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> qutecom-2.2_rc1-r1.ebuild:
+  fix wrong domenu/doicon path
+
+  19 Sep 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -qutecom-2.2_rc1.ebuild,
   +qutecom-2.2_rc1-r1.ebuild, +files/qutecom-cmake-hg-svnrevision.patch:
   fix cmake-utils_use_enable calls and allow building with mercurial present
