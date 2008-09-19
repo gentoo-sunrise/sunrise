@@ -42,14 +42,15 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-types.h.patch
 	epatch "${FILESDIR}"/${PN}-cstdlib-include.patch
 	epatch "${FILESDIR}"/${PN}-gcc-4.3-switch-enum.patch
+	epatch "${FILESDIR}"/${PN}-cmake-hg-svnrevision.patch
 }
 
 src_compile() {
 	EXTRA_ECONF=" \
-		$(cmake_use_enable portaudio PORTAUDIO_SUPPORT) \
-		$(cmake_use_enable alsa PHAPI_AUDIO_ALSA_SUPPORT) \
-		$(cmake_use_enable oss PHAPI_AUDIO_OSS_SUPPORT) \
-		$(cmake_use_enable xv WENGOPHONE_XV_SUPPORT) "
+		$(cmake-utils_use_enable portaudio PORTAUDIO_SUPPORT) \
+		$(cmake-utils_use_enable alsa PHAPI_AUDIO_ALSA_SUPPORT) \
+		$(cmake-utils_use_enable oss PHAPI_AUDIO_OSS_SUPPORT) \
+		$(cmake-utils_use_enable xv WENGOPHONE_XV_SUPPORT) "
 
 	cmake-utils_src_configureout
 	cmake-utils_src_make

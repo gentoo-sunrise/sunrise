@@ -1,0 +1,24 @@
+diff -ur a/owbuild/owbuild/OWGlobalVariables.cmake b/owbuild/owbuild/OWGlobalVariables.cmake
+--- a/owbuild/owbuild/OWGlobalVariables.cmake	2008-08-21 15:10:12.000000000 +0200
++++ b/owbuild/owbuild/OWGlobalVariables.cmake	2008-09-19 13:20:23.705870719 +0200
+@@ -1,6 +1,6 @@
+ # Defines global public variables
+ #
+-# CMAKE_BUILD_TYPE = set to Debug by default
++# CMAKE_BUILD_TYPE = set to Debug by default
+ # BUILD_TYPE = same as CMAKE_BUILD_TYPE but lowercase (debug, release, minsizerel...)
+ # BUILD_DIR = directory where compiled files will be copied, ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE} by default
+ # LOCALE_COPY_DIR = location for translations files (*.qm), ${BUILD_DIR}/lang by default
+@@ -46,10 +46,10 @@
+ 
+ # Gets svn revision
+ set(SVN_REVISION "0")
+-ow_get_hg_revision(SVN_REVISION)
++#ow_get_hg_revision(SVN_REVISION)
+ # Bugfix with svn revision number that can integrate a : and
+ # this does not work under Windows for the installer name, replace it by -
+-string(REPLACE ":" "-" SVN_REVISION ${SVN_REVISION})
++#string(REPLACE ":" "-" SVN_REVISION ${SVN_REVISION})
+ 
+ # Gets current date time
+ set(CURRENT_DATE_TIME "0")
