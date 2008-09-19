@@ -76,8 +76,8 @@ src_install() {
 	dodir /var/freenet/$(get_libdir)
 	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /var/freenet/$(get_libdir)/libwrapper.so
 	dosym ../../../usr/$(get_libdir)/libNativeThread.so /var/freenet/$(get_libdir)/libNativeThread.so
-	use x86 && dosym ../../../usr/$(get_libdir)/libfec8so /var/freenet/$(get_libdir)/libfec8.so
-	use x86 && dosym ../../../usr/$(get_libdir)/libfec16so /var/freenet/$(get_libdir)/libfec16.so
+	use x86 && dosym ../../../usr/$(get_libdir)/libfec8.so /var/freenet/$(get_libdir)/libfec8.so
+	use x86 && dosym ../../../usr/$(get_libdir)/libfec16.so /var/freenet/$(get_libdir)/libfec16.so
 	fperms +x /var/freenet/run.sh
 }
 
