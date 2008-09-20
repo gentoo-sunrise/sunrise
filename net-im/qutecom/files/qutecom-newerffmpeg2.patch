@@ -1,0 +1,92 @@
+diff -ur a/libs/pixertool/config.h.cmake b/libs/pixertool/config.h.cmake
+--- a/libs/pixertool/config.h.cmake	2008-08-21 15:10:12.000000000 +0200
++++ b/libs/pixertool/config.h.cmake	2008-09-20 02:54:33.905671532 +0200
+@@ -1,6 +1,6 @@
+ #ifndef PIXERTOOL_CONFIG_H
+ #define PIXERTOOL_CONFIG_H
+ 
+-#cmakedefine HAVE_SWSCALE
++#cmakedefine SWSCALE_LIBRARY
+ 
+ #endif
+diff -ur a/libs/pixertool/include/pixertool/ffmpeg-pixertool.h b/libs/pixertool/include/pixertool/ffmpeg-pixertool.h
+--- a/libs/pixertool/include/pixertool/ffmpeg-pixertool.h	2008-08-21 15:10:12.000000000 +0200
++++ b/libs/pixertool/include/pixertool/ffmpeg-pixertool.h	2008-09-20 02:55:49.639925955 +0200
+@@ -27,7 +27,7 @@
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+-#ifdef HAVE_SWSCALE
++#ifdef SWSCALE_LIBRARY
+ #include <swscale.h>
+ #endif
+ #include <avcodec.h>
+diff -ur a/libs/pixertool/src/ffmpeg/ffmpeg-pixertool.c b/libs/pixertool/src/ffmpeg/ffmpeg-pixertool.c
+--- a/libs/pixertool/src/ffmpeg/ffmpeg-pixertool.c	2008-08-21 15:10:12.000000000 +0200
++++ b/libs/pixertool/src/ffmpeg/ffmpeg-pixertool.c	2008-09-20 02:55:15.759926681 +0200
+@@ -24,7 +24,7 @@
+ #include <stdlib.h>
+ 
+ #include <avcodec.h>
+-#ifdef HAVE_SWSCALE
++#ifdef SWSCALE_LIBRARY
+ #include <swscale.h>
+ #endif
+ 
+@@ -131,7 +131,7 @@
+ }
+ 
+ pixerrorcode pix_convert_avpicture(int flags, piximage * img_dst, AVPicture * img_src, pixosi src_fmt) {
+-#ifdef HAVE_SWSCALE
++#ifdef SWSCALE_LIBRARY
+ 	struct SwsContext *convert_context;
+ #endif
+ 	pixosi desiredPalette = pix_ffmpeg_from_pix_osi(img_dst->palette);
+@@ -144,7 +144,7 @@
+ 
+ 	avpicture_fill(pictureBuffer, img_dst->data, desiredPalette, img_dst->width, img_dst->height);
+ 
+-#ifndef HAVE_SWSCALE
++#ifndef SWSCALE_LIBRARY
+        img_convert(pictureBuffer, desiredPalette,
+                img_src, pix_ffmpeg_from_pix_osi(src_fmt),
+                img_dst->width, img_dst->height);
+diff -ur a/libs/pixertool/src/pixertool.cpp b/libs/pixertool/src/pixertool.cpp
+--- a/libs/pixertool/src/pixertool.cpp	2008-08-21 15:10:12.000000000 +0200
++++ b/libs/pixertool/src/pixertool.cpp	2008-09-20 02:55:02.875921871 +0200
+@@ -27,7 +27,7 @@
+ extern "C" {
+ #endif
+ #include <avcodec.h>
+-#ifdef HAVE_SWSCALE
++#ifdef SWSCALE_LIBRARY
+ #include <swscale.h>
+ #endif
+ #ifdef __cplusplus
+@@ -90,7 +90,7 @@
+ 
+ 	uint8_t * buf_source = img_src->data;
+ 	int need_avfree = 0;
+-#ifdef HAVE_SWSCALE
++#ifdef SWSCALE_LIBRARY
+ 	struct SwsContext *convert_context;
+ #endif
+ 
+@@ -141,7 +141,7 @@
+ 			return PIX_NOK;
+ 		}
+ 
+-#ifndef HAVE_SWSCALE
++#ifndef SWSCALE_LIBRARY
+ 	      //TODO optimize this part but will need the preparation of contexts
+                ImgReSampleContext * resample_context = img_resample_init(img_dst->width, img_dst->height,
+                        img_src->width, img_src->height);
+@@ -188,7 +188,7 @@
+ #endif
+ 
+ 	} else {
+-#ifndef HAVE_SWSCALE
++#ifndef SWSCALE_LIBRARY
+                if (img_convert(&avp_target, pix_fmt_target,
+                        &avp_source, pix_fmt_source,
+                        img_src->width, img_src->height) == -1) {

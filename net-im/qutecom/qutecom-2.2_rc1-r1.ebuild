@@ -25,7 +25,7 @@ DEPEND=">=dev-libs/boost-1.34
 	media-libs/libsndfile
 	portaudio? ( >=media-libs/portaudio-19_pre )
 	media-libs/speex
-	media-video/ffmpeg
+	>=media-video/ffmpeg-0.4.9_p20080326
 	net-libs/gnutls
 	>=net-libs/libosip-3
 	net-misc/curl
@@ -44,6 +44,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-gcc-4.3-switch-enum.patch
 	epatch "${FILESDIR}"/${PN}-newerffmpeg0.patch
 	epatch "${FILESDIR}"/${PN}-newerffmpeg1.patch
+	epatch "${FILESDIR}"/${PN}-newerffmpeg2.patch
 }
 
 src_compile() {
