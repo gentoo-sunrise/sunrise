@@ -99,7 +99,7 @@ if [[ $(svn diff profiles/categories) ]]; then
 	echo
 	case "$choice" in
 		y*|Y*|"")
-			svn commit -m "Automatic update to categories" profiles/categories || exit
+			svn commit -m "Automatic update to categories" profiles/categories || exit 1
 			;;
 		*)
 			echo "Quitting."
@@ -115,7 +115,7 @@ if [[ $(svn diff profiles/use.local.desc) ]]; then
 	echo
 	case "$choice" in
 		y*|Y*|"")
-			svn commit -m "Automatic update to use.local.desc" profiles/use.local.desc || exit
+			svn commit -m "Automatic update to use.local.desc" profiles/use.local.desc || exit 1
 			;;
 		*)
 			echo "Quitting."
@@ -129,10 +129,9 @@ if [[ -z "$*" ]] ; then
 	ebegin "Updating working copy to latest version from repository"
 	update=$(svn_up)
 	if [[ "$opt_verbose" == "1" ]] ; then
-		echo $update
+		echo "$update"
 	fi
-	update=$(echo $update | tail -n 1)
-	update=${update/Revision }
+	update=$(echo $update|awk '// {print $NF}' )
 	sunrise_revision=${update/.}
 	[ "$sunrise_revision" -lt "10" ] && exit 1
 	eend
@@ -149,14 +148,14 @@ fi
 
 if ! [ -e sunrise ] || ! [ -e reviewed ]; then
 	eerror "You need to have sunrise and reviewed subdirs"
-	exit
+	exit 1
 fi
 
 reviewed_revision=$(svn log reviewed 2>/dev/null | grep "Reviewed up to revision " -m 1 | sed "s:Reviewed up to revision ::")
 
 if [ $reviewed_revision -gt $sunrise_revision ]; then
 	eerror "a newer revision is already reviewed"
-	exit
+	exit 1
 fi
 (
 cd sunrise
