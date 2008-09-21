@@ -1,0 +1,8 @@
+# ChangeLog for kde-misc/kndiswrapper
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  +kndiswrapper-0.3.4.ebuild, +metadata.xml:
+  New Ebuild for bug #238322, thanks to Tommy[D]
+
