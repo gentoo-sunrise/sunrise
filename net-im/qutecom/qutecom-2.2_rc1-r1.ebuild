@@ -60,6 +60,6 @@ src_compile() {
 
 src_install() {
 	cmake-utils_src_install
-	domenu "${S}"/wengophone/res/wengophone.desktop || die "domenu failed"
-	doicon "${S}"/wengophone/res/wengophone_64x64.png || die "doicon failed"
+	domenu wengophone/res/wengophone.desktop || die "domenu failed"
+	doicon wengophone/res/wengophone_64x64.png || die "doicon failed"
 }

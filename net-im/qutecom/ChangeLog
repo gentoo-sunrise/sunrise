@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Sep 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> qutecom-2.2_rc1-r1.ebuild:
+  drop unnecessary ${S} as per tommy's comment on irc
+
   20 Sep 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> +files/qutecom-newerffmpeg2.patch,
   qutecom-2.2_rc1-r1.ebuild:
