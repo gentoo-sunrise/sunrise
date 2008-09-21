@@ -91,6 +91,22 @@ while [[ $# > 0 ]] ; do
 done
 
 cd sunrise
+ls -d *-* > profiles/categories
+if [[ $(svn diff profiles/categories) ]]; then
+	svn diff profiles/categories | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
+	echo -n "${BOLD}Commit changes?${NORMAL} [${GREEN}Yes${NORMAL}/${RED}No${NORMAL}] "
+	read choice
+	echo
+	case "$choice" in
+		y*|Y*|"")
+			svn commit -m "Automatic update to categories" profiles/categories || exit
+			;;
+		*)
+			echo "Quitting."
+			echo
+			exit ;;
+	esac
+fi
 sh scripts/use_desc_gen.sh . || exit $?
 if [[ $(svn diff profiles/use.local.desc) ]]; then
 	svn diff profiles/use.local.desc | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
@@ -101,7 +117,7 @@ if [[ $(svn diff profiles/use.local.desc) ]]; then
 		y*|Y*|"")
 			svn commit -m "Automatic update to use.local.desc" profiles/use.local.desc || exit
 			;;
-			*)
+		*)
 			echo "Quitting."
 			echo
 			exit ;;
