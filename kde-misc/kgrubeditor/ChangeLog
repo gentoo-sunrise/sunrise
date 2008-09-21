@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -kgrubeditor-0.7.ebuild, +kgrubeditor-0.8.5b.ebuild:
+  Version bump for kgrubeditor
+
   21 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   kgrubeditor-0.7.ebuild:
   Remove unnecessary unneeded from RDEPEND, as magic takes care of the eclass
