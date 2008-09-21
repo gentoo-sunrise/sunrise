@@ -18,11 +18,11 @@ DEPEND="latex? ( app-text/dvipng )
 	dev-python/pygame"
 
 src_unpack() {
-    distutils_src_unpack
+	distutils_src_unpack
 
-    if ! use latex ; then
+	if ! use latex ; then
 	sed -i \
 		-e "s/process_latex(latex_command):/process_latex(latex_command):\n    return latex_command/" \
 		mnemosyne/core/mnemosyne_core.py || die "sed failed"
-    fi
+	fi
 }
