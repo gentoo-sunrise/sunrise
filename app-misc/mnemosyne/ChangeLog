@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/mnemosyne
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Sep 2008; Guy Cirino (Lobe) <gentoo-lobe@planwander.org>
+  +mnemosyne-1.1.1.ebuild, +metadata.xml:
+  Initial import, based on bug #173711.  Thanks to Pavol, Thomas, and Christian.
+
