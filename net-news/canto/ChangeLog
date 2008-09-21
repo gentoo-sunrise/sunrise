@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Sep 2008; Jack Miller (TheMoken) <jack@codezen.org> canto-0.5.1.ebuild:
+  Opps, fix minorsyn.
+
   21 Sep 2008; Jack Miller (TheMoken) <jack@codezen.org>
   +canto-0.5.1.ebuild:
   Version bump.
