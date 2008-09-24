@@ -19,7 +19,6 @@ RDEPEND=""
 src_test() {
 	cd tests
 	sed -i "/CFLAGS/s/-O3/${CFLAGS}/" Makefile || die "sed cflags failed"
-	sed -i "\$a\exit \$num_failed" do_tests || die "sed exit code failed"
 	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
