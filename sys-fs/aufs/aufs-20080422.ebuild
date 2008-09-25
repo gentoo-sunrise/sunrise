@@ -33,7 +33,7 @@ pkg_setup() {
 		fi
 
 		# make sure the user is allowing this to happen
-		if [[ APPLY_SEC_PERM_PATCH="y" ]] ; then
+		if [[ APPLY_SEC_PERM_PATCH = "y" ]] ; then
 			eerror "${PN} requires that all kernels with CONFIG_SECURITY enabled >= 2.6.24"
 			eerror "be patched.  Please enable visit ${HOMEPAGE} and read"
 			eerror "about the sec_perm patch to enable ${PN} support."
