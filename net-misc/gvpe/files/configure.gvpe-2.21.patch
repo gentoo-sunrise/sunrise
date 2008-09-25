@@ -1,0 +1,71 @@
+--- ../configure	2008-09-03 07:56:58.000000000 +0300
++++ ./configure	2008-09-25 21:12:38.321109165 +0300
+@@ -11109,8 +11109,10 @@
+ 
+ # Check whether --enable-static-daemon was given.
+ if test "${enable_static_daemon+set}" = set; then
+-  enableval=$enable_static_daemon; LDFLAGS_DAEMON=-static
+-
++    enableval=$enable_static_daemon
++if test "x$enableval" != "xno"; then
++   LDFLAGS_DAEMON=-static
++fi
+ fi
+ 
+ 
+@@ -11131,10 +11133,11 @@
+ # Check whether --enable-icmp was given.
+ if test "${enable_icmp+set}" = set; then
+   enableval=$enable_icmp;
++if test "x$enableval" != "xno"; then
+ cat >>confdefs.h <<_ACEOF
+ #define ENABLE_ICMP 1
+ _ACEOF
+-
++fi
+ 
+ fi
+ 
+@@ -11142,10 +11145,11 @@
+ # Check whether --enable-tcp was given.
+ if test "${enable_tcp+set}" = set; then
+   enableval=$enable_tcp;
++if test "x$enableval" != "xno"; then  
+ cat >>confdefs.h <<_ACEOF
+ #define ENABLE_TCP 1
+ _ACEOF
+-
++fi
+ 
+ fi
+ 
+@@ -11153,6 +11157,7 @@
+ # Check whether --enable-dns was given.
+ if test "${enable_dns+set}" = set; then
+   enableval=$enable_dns;
++if test "x$enableval" != "xno"; then  
+     if test "${ac_cv_header_gmp_h+set}" = set; then
+   { echo "$as_me:$LINENO: checking for gmp.h" >&5
+ echo $ECHO_N "checking for gmp.h... $ECHO_C" >&6; }
+@@ -11361,7 +11366,7 @@
+ cat >>confdefs.h <<_ACEOF
+ #define ENABLE_DNS 1
+ _ACEOF
+-
++fi
+ 
+ 
+ fi
+@@ -11370,10 +11375,11 @@
+ # Check whether --enable-http-proxy was given.
+ if test "${enable_http_proxy+set}" = set; then
+   enableval=$enable_http_proxy;
++if test "x$enableval" != "xno"; then
+ cat >>confdefs.h <<_ACEOF
+ #define ENABLE_HTTP_PROXY 1
+ _ACEOF
+-
++fi
+ 
+ fi
+ 
