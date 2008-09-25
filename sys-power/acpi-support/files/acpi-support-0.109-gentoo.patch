@@ -1,9 +1,6 @@
-diff -urN orig/acpi-support-0.102/acpi-support 
-work/acpi-support-0.102/acpi-support
---- orig/acpi-support-0.102/acpi-support	2007-08-30 
-23:35:02.000000000 -0400
-+++ work/acpi-support-0.102/acpi-support	2007-11-09 
-10:48:42.000000000 -0500
+diff -urN orig/acpi-support-0.102/acpi-support work/acpi-support-0.102/acpi-support
+--- orig/acpi-support-0.102/acpi-support	2007-08-30 23:35:02.000000000 -0400
++++ work/acpi-support-0.102/acpi-support	2007-11-09 10:48:42.000000000 -0500
 @@ -69,4 +69,12 @@
  ENABLE_LAPTOP_MODE=false
  
@@ -12,27 +9,20 @@ work/acpi-support-0.102/acpi-support
 \ No newline at end of file
 +SPINDOWN_TIME=12
 +
-+# Disable wake-on-LAN for wired Ethernet devices. WOL is on by default 
-on some
++# Disable wake-on-LAN for wired Ethernet devices. WOL is on by default on some
 +# laptops. Disabling it can save power during sleep.
 +# DISABLE_WOL=true
 +
-+# Use hibernate-script to handle hibernation and sleep. 
-Hibernate-script uses
-+# configuration files in /etc/hibernate and does not use the options 
-above.
++# Use hibernate-script to handle hibernation and sleep. Hibernate-script uses
++# configuration files in /etc/hibernate and does not use the options above.
 +# USE_HIBERNATE_SCRIPT=true
-diff -urN orig/acpi-support-0.102/debian/init.d 
-work/acpi-support-0.102/debian/init.d
---- orig/acpi-support-0.102/debian/init.d	2007-08-30 
-22:48:20.000000000 -0400
-+++ work/acpi-support-0.102/debian/init.d	2007-11-09 
-12:11:54.000000000 -0500
+diff -urN orig/acpi-support-0.102/debian/init.d work/acpi-support-0.102/debian/init.d
+--- orig/acpi-support-0.102/debian/init.d	2007-08-30 22:48:20.000000000 -0400
++++ work/acpi-support-0.102/debian/init.d	2007-11-09 12:11:54.000000000 -0500
 @@ -1,35 +1,34 @@
 -#!/bin/bash
 +#!/sbin/runscript
- # INIT script to check whether we're on batteries, and so start with 
-laptop 
+ # INIT script to check whether we're on batteries, and so start with laptop 
  # mode etc enabled.
  
  # BUGS: unless we start *really* late, we have no way of throttling 
@@ -93,54 +83,41 @@ laptop
 +	/etc/acpi/power.sh stop
 +	eend 0
 +}
-diff -urN orig/acpi-support-0.102/events/ibm-ultrabay-eject 
-work/acpi-support-0.102/events/ibm-ultrabay-eject
---- orig/acpi-support-0.102/events/ibm-ultrabay-eject	1969-12-31 
-19:00:00.000000000 -0500
-+++ work/acpi-support-0.102/events/ibm-ultrabay-eject	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/events/ibm-ultrabay-eject work/acpi-support-0.102/events/ibm-ultrabay-eject
+--- orig/acpi-support-0.102/events/ibm-ultrabay-eject	1969-12-31 19:00:00.000000000 -0500
++++ work/acpi-support-0.102/events/ibm-ultrabay-eject	2007-11-09 10:47:47.000000000 -0500
 @@ -0,0 +1,5 @@
 +# /etc/acpi/events/ibm-ultrabay-eject
 +# This is called when the user ejects the ultrabay lever
 +
 +event=ibm/bay MSTR 00000003 00000000
 +action=/etc/acpi/thinkpad-ultrabay-eject.sh
-diff -urN orig/acpi-support-0.102/events/ibm-ultrabay-insert 
-work/acpi-support-0.102/events/ibm-ultrabay-insert
---- orig/acpi-support-0.102/events/ibm-ultrabay-insert	1969-12-31 
-19:00:00.000000000 -0500
-+++ work/acpi-support-0.102/events/ibm-ultrabay-insert	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/events/ibm-ultrabay-insert work/acpi-support-0.102/events/ibm-ultrabay-insert
+--- orig/acpi-support-0.102/events/ibm-ultrabay-insert	1969-12-31 19:00:00.000000000 -0500
++++ work/acpi-support-0.102/events/ibm-ultrabay-insert	2007-11-09 10:47:47.000000000 -0500
 @@ -0,0 +1,5 @@
 +# /etc/acpi/events/ibm-ultrabay-insert
 +# This is called when the user inserts the ultrabay lever
 +
 +event=ibm/bay MSTR 00000001 00000000
 +action=/etc/acpi/thinkpad-ultrabay-insert.sh
-diff -urN orig/acpi-support-0.102/hibernatebtn.sh 
-work/acpi-support-0.102/hibernatebtn.sh
---- orig/acpi-support-0.102/hibernatebtn.sh	2006-02-06 
-09:54:47.000000000 -0500
-+++ work/acpi-support-0.102/hibernatebtn.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/hibernatebtn.sh work/acpi-support-0.102/hibernatebtn.sh
+--- orig/acpi-support-0.102/hibernatebtn.sh	2006-02-06 09:54:47.000000000 -0500
++++ work/acpi-support-0.102/hibernatebtn.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -1,3 +1,3 @@
  #!/bin/bash
 -. /usr/share/acpi-support/key-constants
 -acpi_fakekey $KEY_SUSPEND 
 +
 +. /etc/acpi/hibernate.sh
-diff -urN orig/acpi-support-0.102/hibernate.sh 
-work/acpi-support-0.102/hibernate.sh
---- orig/acpi-support-0.102/hibernate.sh	2006-09-15 
-16:43:46.000000000 -0400
-+++ work/acpi-support-0.102/hibernate.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/hibernate.sh work/acpi-support-0.102/hibernate.sh
+--- orig/acpi-support-0.102/hibernate.sh	2006-09-15 16:43:46.000000000 -0400
++++ work/acpi-support-0.102/hibernate.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -8,6 +8,11 @@
    exit;
  fi
  
-+if [[ $USE_HIBERNATE_SCRIPT == true ]] && [[ -x /usr/sbin/hibernate ]] 
-; then
++if [[ $USE_HIBERNATE_SCRIPT == true ]] && [[ -x /usr/sbin/hibernate ]] ; then
 +	/usr/sbin/hibernate
 +	exit
 +fi
@@ -148,29 +125,20 @@ work/acpi-support-0.102/hibernate.sh
  # Unset video posting - it's not needed for suspend to disk
  unset POST_VIDEO
  unset USE_DPMS
-diff -urN orig/acpi-support-0.102/lib/policy-funcs 
-work/acpi-support-0.102/lib/policy-funcs
---- orig/acpi-support-0.102/lib/policy-funcs	2006-05-19 
-16:21:58.000000000 -0400
-+++ work/acpi-support-0.102/lib/policy-funcs	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/lib/policy-funcs work/acpi-support-0.102/lib/policy-funcs
+--- orig/acpi-support-0.102/lib/policy-funcs	2006-05-19 16:21:58.000000000 -0400
++++ work/acpi-support-0.102/lib/policy-funcs	2007-11-09 10:47:47.000000000 -0500
 @@ -1,6 +1,6 @@
  CheckPolicy() {
  	if pidof gnome-power-manager kpowersave > /dev/null ||
--	   (pidof dcopserver > /dev/null && test -x /usr/bin/dcop && 
-/usr/bin/dcop kded kded loadedModules | grep -q klaptopdaemon) ; then
-+	   (pidof dcopserver > /dev/null && test -x 
-/usr/kde/3.5/bin/dcop && /usr/kde/3.5/bin/dcop kded kded loadedModules | 
-grep -q klaptopdaemon) ; then
+-	   (pidof dcopserver > /dev/null && test -x /usr/bin/dcop && /usr/bin/dcop kded kded loadedModules | grep -q klaptopdaemon) ; then
++	   (pidof dcopserver > /dev/null && test -x /usr/kde/3.5/bin/dcop && /usr/kde/3.5/bin/dcop kded kded loadedModules | grep -q klaptopdaemon) ; then
  		echo 0;
  	else
  		echo 1;
-diff -urN orig/acpi-support-0.102/lib/power-funcs 
-work/acpi-support-0.102/lib/power-funcs
---- orig/acpi-support-0.102/lib/power-funcs	2007-08-30 
-22:07:02.000000000 -0400
-+++ work/acpi-support-0.102/lib/power-funcs	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/lib/power-funcs work/acpi-support-0.102/lib/power-funcs
+--- orig/acpi-support-0.102/lib/power-funcs	2007-08-30 22:07:02.000000000 -0400
++++ work/acpi-support-0.102/lib/power-funcs	2007-11-09 10:47:47.000000000 -0500
 @@ -6,9 +6,9 @@
  POWERSTATE="/var/lib/acpi-support/powerstate"
  
@@ -178,18 +146,14 @@ work/acpi-support-0.102/lib/power-funcs
 -        user=`finger| grep -m1 ":$displaynum " | awk '{print $1}'`
 +        user=`who| grep -m1 ":$displaynum " | awk '{print $1}'`
  	if [ x"$user" = x"" ]; then
--		user=`finger| grep -m1 ":$displaynum" | awk '{print 
-$1}'`
+-		user=`finger| grep -m1 ":$displaynum" | awk '{print $1}'`
 +		user=`who| grep -m1 ":$displaynum" | awk '{print $1}'`
  	fi
  	if [ x"$user" != x"" ]; then
          	userhome=`getent passwd $user | cut -d: -f6`
-diff -urN orig/acpi-support-0.102/Makefile 
-work/acpi-support-0.102/Makefile
---- orig/acpi-support-0.102/Makefile	2006-03-21 12:03:00.000000000 
--0500
-+++ work/acpi-support-0.102/Makefile	2007-11-09 10:47:47.000000000 
--0500
+diff -urN orig/acpi-support-0.102/Makefile work/acpi-support-0.102/Makefile
+--- orig/acpi-support-0.102/Makefile	2006-03-21 12:03:00.000000000 -0500
++++ work/acpi-support-0.102/Makefile	2007-11-09 10:47:47.000000000 -0500
 @@ -2,7 +2,6 @@
  
  acpi_fakekey: acpi_fakekey.c
@@ -198,27 +162,20 @@ work/acpi-support-0.102/Makefile
  
  # Keep this manually generated so that it doesn't build-dep on
  # 'linux-headers' and stays predictable.
-diff -urN orig/acpi-support-0.102/resume.d/13-855-resolution-set.sh 
-work/acpi-support-0.102/resume.d/13-855-resolution-set.sh
---- orig/acpi-support-0.102/resume.d/13-855-resolution-set.sh	
-2005-09-26 20:29:27.000000000 -0400
-+++ work/acpi-support-0.102/resume.d/13-855-resolution-set.sh	
-2007-11-09 10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/resume.d/13-855-resolution-set.sh work/acpi-support-0.102/resume.d/13-855-resolution-set.sh
+--- orig/acpi-support-0.102/resume.d/13-855-resolution-set.sh	2005-09-26 20:29:27.000000000 -0400
++++ work/acpi-support-0.102/resume.d/13-855-resolution-set.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -1,7 +1,6 @@
  #!/bin/bash
  
  if [ -x /usr/sbin/855resolution ]; then
 -    . /etc/default/855resolution
-     if [ "$MODE" != "" ] && [ "$XRESO" != "" ] && [ "$YRESO" != "" ]; 
-then
+     if [ "$MODE" != "" ] && [ "$XRESO" != "" ] && [ "$YRESO" != "" ]; then
  	/etc/init.d/855resolution start;
      fi
-diff -urN orig/acpi-support-0.102/resume.d/40-infra-red.sh 
-work/acpi-support-0.102/resume.d/40-infra-red.sh
---- orig/acpi-support-0.102/resume.d/40-infra-red.sh	2006-04-21 
-10:12:54.000000000 -0400
-+++ work/acpi-support-0.102/resume.d/40-infra-red.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/resume.d/40-infra-red.sh work/acpi-support-0.102/resume.d/40-infra-red.sh
+--- orig/acpi-support-0.102/resume.d/40-infra-red.sh	2006-04-21 10:12:54.000000000 -0400
++++ work/acpi-support-0.102/resume.d/40-infra-red.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -3,7 +3,6 @@
  # Restart IR if necessary
  if [ -f /var/run/irdadev ] && [ x$RESTART_IRDA = xtrue ]; then
@@ -228,42 +185,31 @@ work/acpi-support-0.102/resume.d/40-infra-red.sh
 +    /etc/init.d/irda start;
  fi;
  
-diff -urN orig/acpi-support-0.102/resume.d/49-855-resolution-set.sh 
-work/acpi-support-0.102/resume.d/49-855-resolution-set.sh
---- orig/acpi-support-0.102/resume.d/49-855-resolution-set.sh	
-2005-09-26 20:29:27.000000000 -0400
-+++ work/acpi-support-0.102/resume.d/49-855-resolution-set.sh	
-2007-11-09 10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/resume.d/49-855-resolution-set.sh work/acpi-support-0.102/resume.d/49-855-resolution-set.sh
+--- orig/acpi-support-0.102/resume.d/49-855-resolution-set.sh	2005-09-26 20:29:27.000000000 -0400
++++ work/acpi-support-0.102/resume.d/49-855-resolution-set.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -1,7 +1,6 @@
  #!/bin/bash
  
  if [ -x /usr/sbin/855resolution ]; then
 -    . /etc/default/855resolution
-     if [ "$MODE" != "" ] && [ "$XRESO" != "" ] && [ "$YRESO" != "" ]; 
-then
+     if [ "$MODE" != "" ] && [ "$XRESO" != "" ] && [ "$YRESO" != "" ]; then
  	/etc/init.d/855resolution start;
      fi
-diff -urN orig/acpi-support-0.102/resume.d/62-ifup.sh 
-work/acpi-support-0.102/resume.d/62-ifup.sh
---- orig/acpi-support-0.102/resume.d/62-ifup.sh	2006-04-21 
-10:13:34.000000000 -0400
-+++ work/acpi-support-0.102/resume.d/62-ifup.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/resume.d/62-ifup.sh work/acpi-support-0.102/resume.d/62-ifup.sh
+--- orig/acpi-support-0.102/resume.d/62-ifup.sh	2006-04-21 10:13:34.000000000 -0400
++++ work/acpi-support-0.102/resume.d/62-ifup.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -3,6 +3,6 @@
- # Bring up the interfaces (this should probably be left up to some 
-policy
+ # Bring up the interfaces (this should probably be left up to some policy
  # manager, but at the moment we just bring back whatever we ifdowned)
  for x in $INTERFACES; do
 -    ifup $x &
 +    /etc/init.d/net.$x start &
  done
  
-diff -urN orig/acpi-support-0.102/resume.d/67-sound.sh 
-work/acpi-support-0.102/resume.d/67-sound.sh
---- orig/acpi-support-0.102/resume.d/67-sound.sh	2006-04-21 
-10:19:38.000000000 -0400
-+++ work/acpi-support-0.102/resume.d/67-sound.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/resume.d/67-sound.sh work/acpi-support-0.102/resume.d/67-sound.sh
+--- orig/acpi-support-0.102/resume.d/67-sound.sh	2006-04-21 10:19:38.000000000 -0400
++++ work/acpi-support-0.102/resume.d/67-sound.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -1,7 +1,7 @@
  #!/bin/sh
  
@@ -274,30 +220,23 @@ work/acpi-support-0.102/resume.d/67-sound.sh
 +  /etc/init.d/alsasound start
  fi
  
-diff -urN orig/acpi-support-0.102/sleepbtn.sh 
-work/acpi-support-0.102/sleepbtn.sh
---- orig/acpi-support-0.102/sleepbtn.sh	2006-02-06 09:55:00.000000000 
--0500
-+++ work/acpi-support-0.102/sleepbtn.sh	2007-11-09 10:47:47.000000000 
--0500
+diff -urN orig/acpi-support-0.102/sleepbtn.sh work/acpi-support-0.102/sleepbtn.sh
+--- orig/acpi-support-0.102/sleepbtn.sh	2006-02-06 09:55:00.000000000 -0500
++++ work/acpi-support-0.102/sleepbtn.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -1,3 +1,3 @@
  #!/bin/bash
 -. /usr/share/acpi-support/key-constants
 -acpi_fakekey $KEY_SLEEP 
 +
 +. /etc/acpi/sleep.sh
-diff -urN orig/acpi-support-0.102/sleep.sh 
-work/acpi-support-0.102/sleep.sh
---- orig/acpi-support-0.102/sleep.sh	2006-05-19 15:37:32.000000000 
--0400
-+++ work/acpi-support-0.102/sleep.sh	2007-11-09 10:47:47.000000000 
--0500
+diff -urN orig/acpi-support-0.102/sleep.sh work/acpi-support-0.102/sleep.sh
+--- orig/acpi-support-0.102/sleep.sh	2006-05-19 15:37:32.000000000 -0400
++++ work/acpi-support-0.102/sleep.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -16,6 +16,11 @@
      exit;
  fi
  
-+if [[ $USE_HIBERNATE_SCRIPT == true ]] && [[ -x /usr/sbin/hibernate ]] 
-; then
++if [[ $USE_HIBERNATE_SCRIPT == true ]] && [[ -x /usr/sbin/hibernate ]] ; then
 +	/usr/sbin/hibernate --config-file=/etc/hibernate/ram.conf
 +	exit;
 +fi
@@ -305,12 +244,9 @@ work/acpi-support-0.102/sleep.sh
  if [ x$LOCK_SCREEN = xtrue ]; then
      if pidof xscreensaver > /dev/null; then 
  	for x in /tmp/.X11-unix/*; do
-diff -urN orig/acpi-support-0.102/suspend.d/50-irda-stop.sh 
-work/acpi-support-0.102/suspend.d/50-irda-stop.sh
---- orig/acpi-support-0.102/suspend.d/50-irda-stop.sh	2006-04-21 
-11:05:47.000000000 -0400
-+++ work/acpi-support-0.102/suspend.d/50-irda-stop.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/suspend.d/50-irda-stop.sh work/acpi-support-0.102/suspend.d/50-irda-stop.sh
+--- orig/acpi-support-0.102/suspend.d/50-irda-stop.sh	2006-04-21 11:05:47.000000000 -0400
++++ work/acpi-support-0.102/suspend.d/50-irda-stop.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -2,7 +2,7 @@
  
  # Stop IRDA if it's running
@@ -320,12 +256,9 @@ work/acpi-support-0.102/suspend.d/50-irda-stop.sh
      killall -9 irattach
  fi
  
-diff -urN orig/acpi-support-0.102/suspend.d/52-disable-wol.sh 
-work/acpi-support-0.102/suspend.d/52-disable-wol.sh
---- orig/acpi-support-0.102/suspend.d/52-disable-wol.sh	1969-12-31 
-19:00:00.000000000 -0500
-+++ work/acpi-support-0.102/suspend.d/52-disable-wol.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/suspend.d/52-disable-wol.sh work/acpi-support-0.102/suspend.d/52-disable-wol.sh
+--- orig/acpi-support-0.102/suspend.d/52-disable-wol.sh	1969-12-31 19:00:00.000000000 -0500
++++ work/acpi-support-0.102/suspend.d/52-disable-wol.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -0,0 +1,13 @@
 +#!/bin/sh
 +
@@ -336,18 +269,13 @@ work/acpi-support-0.102/suspend.d/52-disable-wol.sh
 +	INTERFACES=`/sbin/ifconfig | awk '/^[^ ]+/ {print $1}'`
 +
 +	for i in $INTERFACES; do
-+		# TODO: find out if it's a wired ethernet card (and/or 
-supports WOL)
-+		[[ $i =~ "eth" && -n $ETHTOOL && -x $ETHTOOL ]] && 
-$ETHTOOL -s $i wol d > /dev/null 2>&1
++		# TODO: find out if it's a wired ethernet card (and/or supports WOL)
++		[[ $i =~ "eth" && -n $ETHTOOL && -x $ETHTOOL ]] && $ETHTOOL -s $i wol d > /dev/null 2>&1
 +	done
 +fi
-diff -urN orig/acpi-support-0.102/suspend.d/55-down-interfaces.sh 
-work/acpi-support-0.102/suspend.d/55-down-interfaces.sh
---- orig/acpi-support-0.102/suspend.d/55-down-interfaces.sh	
-2006-05-16 07:57:43.000000000 -0400
-+++ work/acpi-support-0.102/suspend.d/55-down-interfaces.sh	
-2007-11-09 10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/suspend.d/55-down-interfaces.sh work/acpi-support-0.102/suspend.d/55-down-interfaces.sh
+--- orig/acpi-support-0.102/suspend.d/55-down-interfaces.sh	2006-05-16 07:57:43.000000000 -0400
++++ work/acpi-support-0.102/suspend.d/55-down-interfaces.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -10,7 +10,7 @@
  
  # And shut them down
@@ -357,12 +285,9 @@ work/acpi-support-0.102/suspend.d/55-down-interfaces.sh
      ifconfig $x down;
  done
  
-diff -urN orig/acpi-support-0.102/suspend.d/85-alsa-state.sh 
-work/acpi-support-0.102/suspend.d/85-alsa-state.sh
---- orig/acpi-support-0.102/suspend.d/85-alsa-state.sh	2006-04-21 
-11:00:08.000000000 -0400
-+++ work/acpi-support-0.102/suspend.d/85-alsa-state.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/suspend.d/85-alsa-state.sh work/acpi-support-0.102/suspend.d/85-alsa-state.sh
+--- orig/acpi-support-0.102/suspend.d/85-alsa-state.sh	2006-04-21 11:00:08.000000000 -0400
++++ work/acpi-support-0.102/suspend.d/85-alsa-state.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -1,7 +1,7 @@
  #!/bin/sh
  
@@ -373,20 +298,16 @@ work/acpi-support-0.102/suspend.d/85-alsa-state.sh
 +  /etc/init.d/alsasound stop
  fi
  
-diff -urN orig/acpi-support-0.102/thinkpad-ultrabay-eject.sh 
-work/acpi-support-0.102/thinkpad-ultrabay-eject.sh
---- orig/acpi-support-0.102/thinkpad-ultrabay-eject.sh	1969-12-31 
-19:00:00.000000000 -0500
-+++ work/acpi-support-0.102/thinkpad-ultrabay-eject.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/thinkpad-ultrabay-eject.sh work/acpi-support-0.102/thinkpad-ultrabay-eject.sh
+--- orig/acpi-support-0.102/thinkpad-ultrabay-eject.sh	1969-12-31 19:00:00.000000000 -0500
++++ work/acpi-support-0.102/thinkpad-ultrabay-eject.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -0,0 +1,66 @@
 +s#!/bin/sh
 +# Handle Thinkpad Ultrabay hotswap
 +
 +# TODO: /sys/devices/platform/bay* may also work
 +# TODO: must check that libata is used for the bay!
-+if ! ( egrep -sq 'status:.+occupied' /proc/acpi/ibm/bay && egrep -sq 
-'commands:.+eject' /proc/acpi/ibm/bay ) ; then
++if ! ( egrep -sq 'status:.+occupied' /proc/acpi/ibm/bay && egrep -sq 'commands:.+eject' /proc/acpi/ibm/bay ) ; then
 +	exit 1;
 +fi
 +
@@ -399,11 +320,9 @@ work/acpi-support-0.102/thinkpad-ultrabay-eject.sh
 +		$major_minor =~ m/^(\d+):(\d+)$/ or die;
 +		push(@tgt_rdevs, ($1<<8)|$2);
 +	}
-+        # Sort by reverse length of mount point, to unmount 
-sub-directories first
++        # Sort by reverse length of mount point, to unmount sub-directories first
 +        open MOUNTS,"</proc/mounts" or die "$!";
-+        @mounts=sort { length($b->[1]) <=> length($a->[1]) } map { [ 
-split ] } <MOUNTS>;
++        @mounts=sort { length($b->[1]) <=> length($a->[1]) } map { [ split ] } <MOUNTS>;
 +        close MOUNTS;
 +        foreach $m (@mounts) {
 +                ($dev,$dir)=@$m;
@@ -449,12 +368,9 @@ split ] } <MOUNTS>;
 +fi
 +# Tell the user we're OK
 +echo 12 > /proc/acpi/ibm/beep
-diff -urN orig/acpi-support-0.102/thinkpad-ultrabay-insert.sh 
-work/acpi-support-0.102/thinkpad-ultrabay-insert.sh
---- orig/acpi-support-0.102/thinkpad-ultrabay-insert.sh	1969-12-31 
-19:00:00.000000000 -0500
-+++ work/acpi-support-0.102/thinkpad-ultrabay-insert.sh	2007-11-09 
-10:47:47.000000000 -0500
+diff -urN orig/acpi-support-0.102/thinkpad-ultrabay-insert.sh work/acpi-support-0.102/thinkpad-ultrabay-insert.sh
+--- orig/acpi-support-0.102/thinkpad-ultrabay-insert.sh	1969-12-31 19:00:00.000000000 -0500
++++ work/acpi-support-0.102/thinkpad-ultrabay-insert.sh	2007-11-09 10:47:47.000000000 -0500
 @@ -0,0 +1,15 @@
 +#!/bin/sh
 +# Handle Thinkpad Ultrabay hotswap
@@ -469,16 +385,11 @@ work/acpi-support-0.102/thinkpad-ultrabay-insert.sh
 +
 +echo 0 0 0 > /sys/class/scsi_host/host1/scan
 +
-+# The beep is necessary as confirmation of success. Instead of the 
-beep, need to configure a messaging system, e.g. using kdialog or gnome 
-equivalent or xosd
++# The beep is necessary as confirmation of success. Instead of the beep, need to configure a messaging system, e.g. using kdialog or gnome equivalent or xosd
 +echo 12 > /proc/acpi/ibm/beep
-diff -urN orig/acpi-support-0.102/vbesave 
-work/acpi-support-0.102/vbesave
---- orig/acpi-support-0.102/vbesave	2006-05-03 16:31:51.000000000 
--0400
-+++ work/acpi-support-0.102/vbesave	2007-11-09 10:47:47.000000000 
--0500
+diff -urN orig/acpi-support-0.102/vbesave work/acpi-support-0.102/vbesave
+--- orig/acpi-support-0.102/vbesave	2006-05-03 16:31:51.000000000 -0400
++++ work/acpi-support-0.102/vbesave	2007-11-09 10:47:47.000000000 -0500
 @@ -3,8 +3,6 @@
  test -x /usr/sbin/vbetool || exit 0
  set -e
@@ -487,8 +398,7 @@ work/acpi-support-0.102/vbesave
 -
  test -f /etc/default/rcS && . /etc/default/rcS
  test -f /etc/default/acpi-support && . /etc/default/acpi-support
- test -f /usr/share/acpi-support/device-funcs && . 
-/usr/share/acpi-support/device-funcs
+ test -f /usr/share/acpi-support/device-funcs && . /usr/share/acpi-support/device-funcs
 @@ -20,20 +18,16 @@
  	fi
  
