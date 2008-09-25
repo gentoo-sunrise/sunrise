@@ -19,8 +19,8 @@ need-kde 3.5
 RDEPEND="net-misc/dhcpcd
 	sys-apps/net-tools
 	net-wireless/ndiswrapper
-        net-wireless/wireless-tools
-        net-wireless/wpa_supplicant"
+	net-wireless/wireless-tools
+	net-wireless/wpa_supplicant"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
