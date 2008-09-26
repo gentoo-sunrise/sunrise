@@ -29,7 +29,7 @@ RDEPEND=">=x11-libs/gtk+-2.4.0
 			media-sound/mpg321
 			media-sound/mpg123 ) )
 	musepack? ( media-sound/musepack-tools )
-	normalize? ( media-sound/normalize )
+	normalize? ( media-sound/wavegain )
 	vorbis? ( media-sound/vorbis-tools )"
 
 DEPEND="${RDEPEND} app-arch/lzma-utils"
