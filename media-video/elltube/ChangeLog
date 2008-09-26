@@ -1,0 +1,8 @@
+# ChangeLog for media-video/elltube
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  +elltube-0.1.ebuild, +metadata.xml:
+  New ebuild for bug #238772, thanks to scarabeus,Tommy[D],and Ken69267
+
