@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  +kgrubeditor-0.8.5.ebuild, -kgrubeditor-0.8.5b.ebuild:
+  Version bump to major version 0.8.5.
+
   21 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   -kgrubeditor-0.7.ebuild, +kgrubeditor-0.8.5b.ebuild:
   Version bump for kgrubeditor
