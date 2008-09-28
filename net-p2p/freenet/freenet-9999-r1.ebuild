@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-DATE=20080918
+DATE=20080928
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/freenet"
 ESVN_OPTIONS="--ignore-externals"
 inherit eutils java-pkg-2 java-ant-2 multilib subversion
