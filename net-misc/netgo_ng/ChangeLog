@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -netgo_ng-0.1.4.ebuild, +netgo_ng-0.1.5.ebuild:
+  Version bump to 0.1.5
+
   21 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   netgo_ng-0.1.4.ebuild:
   Removed qt:3 from dependencies since it is pulled up by inherited
