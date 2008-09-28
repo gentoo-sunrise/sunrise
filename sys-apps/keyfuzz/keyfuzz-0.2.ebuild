@@ -15,6 +15,11 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
+src_compile() {
+	econf --disable-lynx || die "econf failed"
+	emake || die "emake failed"
+}
+
 src_install() {
 	dobin src/keyfuzz
 	dodoc README
