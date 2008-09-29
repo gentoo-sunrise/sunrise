@@ -1,0 +1,10 @@
+# ChangeLog for net-misc/igmpproxy
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Sep 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  +igmpproxy-0.1_beta2.ebuild, +files/igmpproxy-conf.d,
+  +files/igmpproxy-init.d, +files/igmpproxy-remove-banner.patch,
+  +metadata.xml:
+  New Ebuild for bug 233738 thanks to Ivan, Constantin and Conrad.
+
