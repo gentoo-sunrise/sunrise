@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Sep 2008; Heath Caldwell (hncaldwell) <hncaldwell@csupomona.edu>
+  -anki-0.9.7.8.ebuild, +anki-0.9.8.1.ebuild, metadata.xml:
+  Version bump and added IUSE defaults.
+
   10 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> metadata.xml:
   Fix metadata.xml
 

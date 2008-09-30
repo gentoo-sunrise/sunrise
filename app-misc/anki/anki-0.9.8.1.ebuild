@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=1
+
 NEED_PYTHON=2.4
 inherit eutils multilib python
 
@@ -11,7 +13,7 @@ SRC_URI="http://ichi2.net/anki/download/${P}.tgz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="graph kakasi sound"
+IUSE="+graph kakasi +sound"
 
 RDEPEND=">=dev-python/PyQt4-4.3
 	>=dev-python/sqlalchemy-0.4.1
