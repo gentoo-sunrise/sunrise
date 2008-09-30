@@ -45,6 +45,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-newerffmpeg0.patch
 	epatch "${FILESDIR}"/${PN}-newerffmpeg1.patch
 	epatch "${FILESDIR}"/${PN}-newerffmpeg2.patch
+	epatch "${FILESDIR}"/${PN}-cmake-hg-svnrevision.patch
 }
 
 src_compile() {
