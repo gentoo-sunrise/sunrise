@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>hncaldwell@csupomona.edu</email>
-		<name>Heath Caldwell</name>
-	</maintainer>
-	<herd>no-herd</herd>
+	<herd>maintainer-wanted</herd>
 	<longdescription lang="en">
 		Anki is a program designed to help you remember facts
 		(such as words and phrases in a foreign language) as
@@ -15,11 +11,11 @@
 		<flag name="graph">
 			Enable support for making graphs
 		</flag>
-		<flag name="sound">
-			Enable support for adding sound to cards
-		</flag>
 		<flag name="kakasi">
 			Enable <pkg>app-i18n/kakasi</pkg> support for furigana generation
+		</flag>
+		<flag name="sound">
+			Enable support for adding sound to cards
 		</flag>
 	</use>
 </pkgmetadata>
