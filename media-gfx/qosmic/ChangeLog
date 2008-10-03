@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Oct 2008; David Bitseff (useer) <dbitsef@zipcon.net>
+  -qosmic-1.4.1.ebuild, +qosmic-1.4.2.ebuild:
+  Version bump for qosmic.
+
   12 Sep 2008; David Bitseff (useer) <dbitsef@zipcon.net>
   +qosmic-1.4.1.ebuild, +metadata.xml:
   New ebuild for bug #234695.
