@@ -30,7 +30,7 @@ src_unpack() {
 
 src_compile() {
 	# mime-update causes file collisions if enabled
-	econf --disable-mime-update --disable-desktop-update || die "econf failed"
+	econf --disable-mime-update --disable-desktop-update
 	emake || die "emake failed"
 }
 
