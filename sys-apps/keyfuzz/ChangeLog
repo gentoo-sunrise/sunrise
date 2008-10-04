@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Oct 2008; Federico Ferri (federico__) <mescalinum@gmail.com>
+  keyfuzz-0.2.ebuild:
+  Fixed doc stuff
+
   28 Sep 2008; Federico Ferri (mescalinum) <mescalinum@gmail.com>
   keyfuzz-0.2.ebuild:
   Added --disable-lynx, as the lynx generated docs are already bundled, and it

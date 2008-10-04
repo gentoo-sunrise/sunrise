@@ -10,18 +10,18 @@ SRC_URI="http://0pointer.de/lennart/projects/${PN}/${P}.tar.gz"
 LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="doc"
 
-DEPEND=""
+DEPEND="doc? ( www-client/lynx )"
 RDEPEND=""
 
 src_compile() {
-	econf --disable-lynx || die "econf failed"
+	econf $(use_enable doc lynx) || die "econf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
 	dobin src/keyfuzz
-	dodoc README
+	use doc && dodoc README
 	doman man/*
 }
