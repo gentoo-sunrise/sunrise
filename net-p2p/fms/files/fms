@@ -1,0 +1,15 @@
+#!/sbin/runscript
+# Copyright 1999-2008 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+start() {
+	cd /var/freenet/fms
+	su -s /bin/sh -c "./fms --daemon" freenet
+	eend $?
+}
+
+stop() {
+	pkill -u freenet -f "fms --daemon"
+	eend 0
+}
