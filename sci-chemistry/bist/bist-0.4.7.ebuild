@@ -13,14 +13,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="net-misc/curl
+RDEPEND="net-misc/curl
 	dev-libs/expat
 	x11-libs/fltk
-	>=sys-devel/gcc-4.2
 	sci-libs/gsl
 	>=sci-chemistry/openbabel-2.2.0
 	>=media-libs/plotutils-2.5"
-
+DEPEND="${RDEPEND}
+	>=sys-devel/gcc-4.2"
 
 src_unpack() {
 	unpack ${A}
@@ -31,7 +31,7 @@ src_unpack() {
 
 src_install() {
 	dobin bist || die "bist install failed"
-	#istall bist plugin
+	#install bist plug-ins
 	insinto /usr/lib/bist/plugin
 	doins plugin/*.so || die "make plugin failed"
 	dodoc AUTHORS TODO || die

@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Oct 2008; Tomáš Chvátal <tomas.chvatal@gmail.com> bist-0.4.7.ebuild:
+  Fix Depend/Rdepend issue about gcc
+
   30 Sep 2008; Giuseppe Marco Randazzo <gmrandazzo@gmail.com>
   +files/wrap_bracket_dialog-amd64.patch, +bist-0.4.7.ebuild, +metadata.xml:
   New Ebuild sci-chemistry/bist for bug 239172 thanks to Giuseppe Marco
