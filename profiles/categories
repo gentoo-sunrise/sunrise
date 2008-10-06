@@ -62,15 +62,15 @@ net-misc
 net-nds
 net-news
 net-nntp
-net-print
 net-p2p
+net-print
 net-wireless
 net-zope
 sci-astronomy
 sci-biology
 sci-calculators
-sci-electronics
 sci-chemistry
+sci-electronics
 sci-libs
 sci-mathematics
 sci-visualization
@@ -87,8 +87,6 @@ www-apps
 www-client
 www-misc
 www-servers
-xfce-base
-xfce-extra
 x11-apps
 x11-drivers
 x11-libs
@@ -96,3 +94,5 @@ x11-misc
 x11-plugins
 x11-terms
 x11-themes
+xfce-base
+xfce-extra
