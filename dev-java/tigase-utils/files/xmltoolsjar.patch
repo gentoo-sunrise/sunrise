@@ -1,0 +1,35 @@
+Index: ant-definitions.xml
+===================================================================
+--- ant-definitions.xml	(revision 511)
++++ ant-definitions.xml	(working copy)
+@@ -12,13 +12,9 @@
+         excludes="@{excldir}"
+         destdir="${build}"
+         debug="on"
++	classpath="${xmltoolsjar}"
+         deprecation="@{deprecation}">
+         <compilerarg line="@{xlint}"/>
+-	<classpath>
+-	  <fileset dir="${libs}">
+-	    <include name="**/*.jar"/>
+-	  </fileset>
+-	</classpath>
+       </javac>
+     </sequential>
+   </macrodef>
+@@ -78,14 +74,10 @@
+         version="true"
+         verbose="false"
+         protected="true"
++	classpath="${xmltoolsjar}"
+         bottom="${javadoc-copyright}">
+         <link offline="true" href="http://java.sun.com/j2se/1.5.0/docs/api/"
+           packagelistLoc="package-list"/>
+-	<classpath>
+-	  <fileset dir="${libs}">
+-	    <include name="**/*.jar"/>
+-	  </fileset>
+-	</classpath>
+       </javadoc>
+     </sequential>
+   </macrodef>
