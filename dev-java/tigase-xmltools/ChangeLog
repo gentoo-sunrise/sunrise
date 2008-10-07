@@ -1,0 +1,8 @@
+# ChangeLog for dev-java/tigase-xmltools
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Oct 2008; Mads Randstoft (mazzachre) <mads_randstoft@yahoo.dk>
+  +tigase-xmltools-9999_pre2.ebuild, +metadata.xml:
+  New Ebuild for tigase-xmltools
+
