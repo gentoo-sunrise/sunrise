@@ -1,0 +1,57 @@
+Index: src/main/java/tigase/conf/Configurable.java
+===================================================================
+--- src/main/java/tigase/conf/Configurable.java	(revision 1113)
++++ src/main/java/tigase/conf/Configurable.java	(working copy)
+@@ -122,7 +122,7 @@
+ 	public static final String LIBRESOURCE_REPO_CLASS_PROP_VAL =
+ 		"tigase.db.jdbc.LibreSourceAuth";
+ 
+-	public static final String XML_REPO_URL_PROP_VAL = "user-repository.xml";
++	public static final String XML_REPO_URL_PROP_VAL = "/var/lib/tigase/user-repository.xml";
+ 	public static final String MYSQL_REPO_URL_PROP_VAL =
+ 		"jdbc:mysql://localhost/tigase?user=root&password=mypass";
+ 	public static final String PGSQL_REPO_URL_PROP_VAL =
+Index: src/main/java/tigase/conf/Configurator.java
+===================================================================
+--- src/main/java/tigase/conf/Configurator.java	(revision 1113)
++++ src/main/java/tigase/conf/Configurator.java	(working copy)
+@@ -328,7 +328,7 @@
+ 			"tigase.util.LogFormatter");
+ 		defaults.put(LOGGING_KEY + "java.util.logging.FileHandler.limit", "10000000");
+ 		defaults.put(LOGGING_KEY + "java.util.logging.FileHandler.pattern",
+-			"logs/tigase.log");
++			"/var/log/tigase.log");
+ 		defaults.put(LOGGING_KEY + "tigase.useParentHandlers", "true");
+ 		if (params.get(GEN_DEBUG) != null) {
+ 			defaults.put(LOGGING_KEY + ".level", "INFO");
+Index: src/main/java/tigase/io/SSLContextContainerIfc.java
+===================================================================
+--- src/main/java/tigase/io/SSLContextContainerIfc.java	(revision 1113)
++++ src/main/java/tigase/io/SSLContextContainerIfc.java	(working copy)
+@@ -70,7 +70,7 @@
+ 	 * JKS keystore file.
+ 	 */
+ 	public static final String JKS_KEYSTORE_FILE_VAL =
+-		"certs" + File.separator + "rsa-keystore";
++		"/var/lib/tigase/certificates" + File.separator + "rsa-keystore";
+ 	/**
+ 	 * Constant <code>JKS_KEYSTORE_PWD_KEY</code> is a key pointing to a private
+ 	 * key password,
+@@ -90,7 +90,7 @@
+ 	 * Constant <code>TRUSTSTORE_FILE_VAL</code> is a default truststore file.
+ 	 */
+ 	public static final String TRUSTSTORE_FILE_VAL =
+-		"certs" + File.separator + "truststore";
++		"/var/lib/tigase/certificates" + File.separator + "truststore";
+ 	/**
+ 	 * Constant <code>TRUSTSTORE_PWD_KEY</code> is a key pointing to a trustore
+ 	 * file password.
+@@ -118,7 +118,7 @@
+ 	 * where all certificate files are stored.
+ 	 *
+ 	 */
+-	public static final String SERVER_CERTS_DIR_VAL = "certs/";
++	public static final String SERVER_CERTS_DIR_VAL = "/var/lib/tigase/certificates";
+ 	/**
+ 	 * Constant <code>TRUSTED_CERTS_DIR_KEY</code> is a key pointing to a configuration
+ 	 * parameter where all trusted certificates are stored.

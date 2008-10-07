@@ -1,0 +1,41 @@
+#!/sbin/runscript
+
+depend() {
+	need net
+	use dns logger
+}
+
+checkconfig() {
+	if [ ! -e ${TIGASE_CONFIG} ] ; then
+		eerror "No config file!"
+		eerror "Stop the server and edit config file ${TIGASE_CONFIG} to your needs before running the service"
+	fi
+}
+
+start()	{
+	source /etc/conf.d/tigase
+	checkconfig
+
+	ebegin "Starting Tigase"
+
+	start-stop-daemon --user ${TIGASE_USER} --start --quiet --background --pidfile /var/run/tigase --make-pidfile --exec /usr/bin/java -- ${JAVA_OPTIONS} -classpath ${CLASSPATH} tigase.server.XMPPServer -c ${TIGASE_CONFIG} ${TIGASE_OPTIONS}
+	eend $?
+}
+
+stop ()	{
+	ebegin "Stopping Tigase"
+	start-stop-daemon -u tigase --stop --quiet --pidfile /var/run/tigase
+	sleep 2
+	eend $?
+}
+
+svc_restart () {
+	source /etc/conf.d/tigase
+
+	ebegin "Restarting Tigase"
+
+	start-stop-daemon -u tigase --stop --quiet --pidfile /var/run/tigase
+	sleep 5
+	start-stop-daemon --user ${TIGASE_USER} --start --quiet --background --pidfile /var/run/tigase --make-pidfile --exec /usr/bin/java -- ${JAVA_OPTIONS} -classpath ${CLASSPATH} tigase.server.XMPPServer -c ${TIGASE_CONFIG} ${TIGASE_OPTIONS}
+	eend $?
+}

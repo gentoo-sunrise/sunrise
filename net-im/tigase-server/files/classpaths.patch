@@ -1,0 +1,49 @@
+Index: build.properties
+===================================================================
+--- build.properties	(revision 1113)
++++ build.properties	(working copy)
+@@ -6,7 +6,8 @@
+ src.java.dir=${src}
+ build=classes
+ jars=jars
+-libs=libs
++xmltools=/usr/share/tigase-xmltools/lib/tigase-xmltools.jar
++utils=/usr/share/tigase-utils/lib/tigase-utils.jar
+ docs=docs
+ dist=dist
+ unittests=tests/unittests/src
+Index: ant-definitions.xml
+===================================================================
+--- ant-definitions.xml	(revision 1113)
++++ ant-definitions.xml	(working copy)
+@@ -13,13 +13,9 @@
+ 		destdir="${build}"
+ 		debug="on"
+ 		encoding="UTF-8"
++		classpath="${xmltools}:${utils}"
+ 		deprecation="@{deprecation}">
+ 		<compilerarg line="@{xlint}"/>
+-		<classpath>
+-		 <fileset dir="${libs}">
+-	    <include name="**/*.jar"/>
+-		 </fileset>
+-		</classpath>
+ 	 </javac>
+ 	</sequential>
+  </macrodef>
+@@ -79,14 +75,8 @@
+         version="true"
+         verbose="false"
+         protected="true"
++	classpath="${xmltools};${utils}"
+         bottom="${javadoc-copyright}">
+-        <link offline="true" href="http://java.sun.com/j2se/1.5.0/docs/api/"
+-          packagelistLoc="package-list"/>
+-	<classpath>
+-	  <fileset dir="${libs}">
+-	    <include name="**/*.jar"/>
+-	  </fileset>
+-	</classpath>
+       </javadoc>
+     </sequential>
+   </macrodef>
