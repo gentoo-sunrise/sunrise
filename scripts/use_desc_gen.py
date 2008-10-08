@@ -67,12 +67,23 @@ def FindMetadataFiles(repo_path, category_path, output=sys.stdout):
   for num, pkg_path in enumerate(packages):
     metadata_path = os.path.join(pkg_path, METADATA_XML)
     logging.info('processing %s (%s/%s)' % (metadata_path, num, total))
-    f = open(metadata_path, 'rb')
+    try:
+      f = open(metadata_path, 'rb')
+    except IOError, e:
+      if e.errno == errno.ENOENT:
+        logging.error('Time to shoot the maintainer: %s does not contain a metadata.xml!' % (pkg_path))
+        continue
+      else:
+        # remember to re-raise if it's not a missing file
+        raise e
     metadata = GetLocalFlagInfoFromMetadataXml(f)
     pkg_split = pkg_path.split('/')
     for k, v in metadata.iteritems():
-      output.write('%s/%s:%s - %s\n' % (pkg_split[-2] ,pkg_split[-1], k, v))
-
+      try:
+        output.write('%s/%s:%s - %s\n' % (pkg_split[-2] ,pkg_split[-1], k, v))
+      except UnicodeEncodeError, e:
+        logging.error('Unicode found in %s, not generating to output' % (pkg_path))
+        continue
 
 def _GetTextFromNode(node):
   """Given an XML node, try to turn all it's children into text.

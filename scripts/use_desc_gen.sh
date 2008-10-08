@@ -47,7 +47,6 @@ python scripts/use_desc_gen.py --repo_path "${1}" > /tmp/${pid}.new.use
 
 # let's keep it sorted: use major category, minor category, and package name
 # as primary, secondary, and tertiary sort keys, respectively
-LC_ALL=C
 sort -t: -k1,1 -k2 /tmp/${pid}.new.use | sort -s -t/ -k1,1 \
     >> /tmp/${pid}.use.local.desc
 

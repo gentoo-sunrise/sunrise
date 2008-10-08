@@ -107,7 +107,7 @@ if [[ $(svn diff profiles/categories) ]]; then
 			exit ;;
 	esac
 fi
-sh scripts/use_desc_gen.sh . || exit $?
+LC_ALL="C" sh scripts/use_desc_gen.sh . || exit $?
 if [[ $(svn diff profiles/use.local.desc) ]]; then
 	svn diff profiles/use.local.desc | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
 	echo -n "${BOLD}Commit changes?${NORMAL} [${GREEN}Yes${NORMAL}/${RED}No${NORMAL}] "
