@@ -20,7 +20,7 @@ Index: src/main/java/tigase/conf/Configurator.java
  		defaults.put(LOGGING_KEY + "java.util.logging.FileHandler.limit", "10000000");
  		defaults.put(LOGGING_KEY + "java.util.logging.FileHandler.pattern",
 -			"logs/tigase.log");
-+			"/var/log/tigase.log");
++			"/var/log/tigase/tigase.log");
  		defaults.put(LOGGING_KEY + "tigase.useParentHandlers", "true");
  		if (params.get(GEN_DEBUG) != null) {
  			defaults.put(LOGGING_KEY + ".level", "INFO");

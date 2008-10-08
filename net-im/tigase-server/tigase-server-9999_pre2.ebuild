@@ -60,6 +60,8 @@ src_install() {
 	insinto /var/lib/tigase/certificates
 	insopts -m0600
 	doins certs/*
+
+	dodir /var/log/tigase
 }
 
 pkg_preinst() {
@@ -67,6 +69,7 @@ pkg_preinst() {
 	enewuser tigase -1 -1 /dev/null tigase
 
 	fowners -R tigase:tigase /var/lib/tigase
+	fowners -R tigase:tigase /var/log/tigase
 }
 
 pkg_postinst() {
