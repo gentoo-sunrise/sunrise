@@ -23,10 +23,6 @@ DEPEND="${CDEPEND}
 RDEPEND="${CDEPEND}
 	>=virtual/jre-1.5"
 
-pkg_setup() {
-	java-pkg-2_pkg_setup
-}
-
 src_unpack() {
 	subversion_src_unpack
 	cd "${S}"
