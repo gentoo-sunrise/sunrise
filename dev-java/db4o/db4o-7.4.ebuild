@@ -8,7 +8,7 @@ inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="Object database for java"
 HOMEPAGE="http://www.db4o.com"
-SRC_URI="http://www.db4o.com/downloads/${P}-java.zip"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}-java.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
