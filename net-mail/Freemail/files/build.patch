@@ -1,0 +1,86 @@
+--- build.xml	2008-10-08 18:58:11.000000000 +0200
++++ build.xml.new	2008-10-08 18:59:25.000000000 +0200
+@@ -4,64 +4,8 @@
+ 	<property name="src" location="src"/>
+ 	<property name="build" location="build"/>
+ 	<property name="lib" location="lib"/>
+-	<property name="deps" location="deps"/>
+-	
+-	<property name="bcdist" value="lcrypto-jdk14-138"/>
+-	<property name="freenetjarurl.url" value="http://downloads.freenetproject.org/alpha/freenet-testing-latest.jar.url"/>
+-	<property name="freenetjarurl.localpath" value="${deps}/freenet-testing-latest.jar.url"/>
+-	<property name="freenetjar" value="freenet-main.jar"/>
+-
+-	<target name="freenetjar-check">
+-		<available file="${deps}/${freenetjar}" property="freenetjar.present" />
+-	</target>
+-
+-	<!-- Fetching the Freenet jar here is far from optimal:
+-	     Ideally we'd compile against a the freenet jar or class files
+-	     which the user almost certainly has on their computer already.
+-	     Unfortunately about the only sensible way of doing this would
+-	     be with Maven2, and both Freenet and Freemail import code from
+-	     other projects which would make things difficult and/or ugly.
+-	-->
+-	<target name="freenetjar-fetch" depends="freenetjar-check" unless="freenetjar.present">
+-		<echo>
+-			Attempting to fetch Freenet main jar - ant cannot do this reliably, so if it fails, delete ${deps}/${freenetjar} and ${freenetjarurl.localpath} and run ant again.
+-		</echo>
+-		<mkdir dir="${deps}" />
+-		<!-- loadresource directly from an HTTP URL is causing problems -->
+-		<get src="${freenetjarurl.url}"
+-			dest="${freenetjarurl.localpath}" />
+-		<loadfile property="freenetjar.url"
+-			srcFile="${freenetjarurl.localpath}" />
+-		<get src="${freenetjar.url}" 
+-			dest="${deps}/${freenetjar}" 
+-			verbose="true" />
+-	</target>
+-	
+-	<target name="bouncycastle-check">
+-		<available file="${deps}/${bcdist}" property="bouncycastle-dist.present" />
+-		<available file="${build}/org/bouncycastle" property="bouncycastle-bin.present" />
+-	</target>
+-
+-	<target name="bouncycastle-fetch" depends="bouncycastle-check" unless="bouncycastle-dist.present">
+-		<mkdir dir="${deps}" />
+-		<get src="http://www.bouncycastle.org/download/${bcdist}.zip" 
+-		dest="${deps}/${bcdist}.zip" 
+-		verbose="true"
+-		usetimestamp="true" />
+-
+-		<unzip src="${deps}/${bcdist}.zip" dest="${deps}" />
+-	</target>
+-
+-	<target name="bouncycastle-compile" depends="bouncycastle-fetch" unless="bouncycastle-bin.present">
+-		<mkdir dir="build" />
+-		<javac srcdir="${deps}/${bcdist}/src" destdir="${build}" debug="on" optimize="on" source="1.4" nowarn="true">
+-			<exclude name="**/test/*" />
+-			<exclude name="org/bouncycastle/util/IPTest.java" />
+-			<exclude name="org/bouncycastle/util/AllTests.java" />
+-		</javac>
+-	</target>
+ 
+-	<target name="compile" depends="bouncycastle-compile, freenetjar-fetch">
++	<target name="compile">
+ 		<mkdir dir="${build}"/>
+ 
+ 		<tstamp/>
+@@ -70,7 +14,8 @@
+ 		     It makes it much easier to run -->
+ 		<javac srcdir="${src}" destdir="${build}" debug="on" optimize="on" source="1.4">
+ 			<classpath>
+-				<pathelement location="${deps}/${freenetjar}"/>
++				<pathelement location="freenet.jar"/>
++				<pathelement location="bcprov.jar"/>
+ 			</classpath>
+ 		</javac>
+ 		<copy todir="${build}/freemailgui/text">
+@@ -88,6 +33,7 @@
+ 			<manifest>
+ 				<attribute name="Main-Class" value="freemail.FreemailCli"/>
+ 				<attribute name="Plugin-Main-Class" value="freemail.FreemailPlugin"/>
++				<attribute name="Class-Path" value="/usr/share/bcprov/lib/bcprov.jar /usr/share/freenet/lib/freenet.jar"/>
+ 				<attribute name="Built-By" value="${user.name}"/>
+ 				<section name="common">
+ 					<attribute name="Implementation-Title" value="Freemail"/>
