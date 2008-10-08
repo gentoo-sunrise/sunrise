@@ -51,7 +51,7 @@ Index: src/main/java/tigase/io/SSLContextContainerIfc.java
  	 *
  	 */
 -	public static final String SERVER_CERTS_DIR_VAL = "certs/";
-+	public static final String SERVER_CERTS_DIR_VAL = "/var/lib/tigase/certificates";
++	public static final String SERVER_CERTS_DIR_VAL = "/var/lib/tigase/certificates/";
  	/**
  	 * Constant <code>TRUSTED_CERTS_DIR_KEY</code> is a key pointing to a configuration
  	 * parameter where all trusted certificates are stored.

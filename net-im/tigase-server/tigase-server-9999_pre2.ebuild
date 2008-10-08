@@ -62,6 +62,7 @@ src_install() {
 	doins certs/*
 
 	dodir /var/log/tigase
+	touch "${D}/var/log/tigase/tigase.log"
 }
 
 pkg_preinst() {
