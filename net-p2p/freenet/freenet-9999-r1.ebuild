@@ -16,7 +16,7 @@ SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/seednodes-${DATE}.fr
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="freemail"
 
 CDEPEND="dev-db/db-je:3.3
 	dev-java/fec
@@ -28,10 +28,11 @@ RDEPEND=">=virtual/jre-1.5
 	x86? ( net-libs/fec )
 	net-libs/nativebiginteger
 	${CDEPEND}"
-PDEPEND="net-libs/NativeThread"
+PDEPEND="net-libs/NativeThread
+	freemail? ( dev-java/bcprov
+		net-mail/freemail )"
 S="${WORKDIR}/${PN}"
 
-RESTRICT="userpriv"
 EANT_BUILD_TARGET="dist"
 MY_FREENET_LATEST="-trunk"
 
@@ -68,6 +69,7 @@ src_unpack() {
 	sed -ie "s:@custom@:${ESVN_WC_REVISION}:g" src/freenet/node/Version.java
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
+	use freemail && echo "wrapper.java.classpath.5=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
 	mkdir -p lib
 	cd lib
 	java-pkg_jar-from db-je-3.3
