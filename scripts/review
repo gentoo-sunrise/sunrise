@@ -91,7 +91,7 @@ while [[ $# > 0 ]] ; do
 done
 
 cd sunrise
-ls -d *-* > profiles/categories
+LC_ALL="C" ls -d *-* > profiles/categories
 if [[ $(svn diff profiles/categories) ]]; then
 	svn diff profiles/categories | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
 	echo -n "${BOLD}Commit changes?${NORMAL} [${GREEN}Yes${NORMAL}/${RED}No${NORMAL}] "
