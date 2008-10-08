@@ -173,6 +173,7 @@ net-misc/gvpe:icmp - Enables icmp transport support
 net-misc/gvpe:tcp - Enables tcp transport support
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
+net-p2p/freenet:freemail - Add Freemail support
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-libs/openfoam:lam - Defines lam-mpi as default mpi implementation
