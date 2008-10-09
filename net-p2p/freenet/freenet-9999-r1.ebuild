@@ -30,7 +30,7 @@ RDEPEND=">=virtual/jre-1.5
 	${CDEPEND}"
 PDEPEND="net-libs/NativeThread
 	freemail? ( dev-java/bcprov
-		net-mail/freemail )"
+		net-mail/Freemail )"
 S="${WORKDIR}/${PN}"
 
 EANT_BUILD_TARGET="dist"
