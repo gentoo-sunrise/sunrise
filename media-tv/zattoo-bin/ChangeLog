@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -zattoo-bin-3.1.0.11060.ebuild, +zattoo-bin-3.3.0.17284.ebuild:
+  Version bump, thanks go to lubomir, he did the tests
+
   01 Apr 2008; Felix Bechstein (flx\) <f@ub0r.de>
   -zattoo-bin-3.0.8.9191.ebuild, +zattoo-bin-3.1.0.11060.ebuild:
   version bump for zattoo-bin
