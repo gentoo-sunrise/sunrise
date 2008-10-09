@@ -18,7 +18,7 @@ start()	{
 
 	ebegin "Starting Tigase"
 
-	start-stop-daemon --user ${TIGASE_USER} --start --quiet --background --pidfile /var/run/tigase --make-pidfile --exec /usr/bin/java -- ${JAVA_OPTIONS} -classpath ${CLASSPATH} tigase.server.XMPPServer -c ${TIGASE_CONFIG} ${TIGASE_OPTIONS}
+	start-stop-daemon --user ${TIGASE_USER} --start --quiet --background --pidfile /var/run/tigase --make-pidfile --exec /usr/bin/java -- ${JAVA_OPTIONS} -classpath $(java-config -dp tigase-server):${CLASSPATH} tigase.server.XMPPServer -c ${TIGASE_CONFIG} ${TIGASE_OPTIONS}
 	eend $?
 }
 
@@ -36,6 +36,6 @@ svc_restart () {
 
 	start-stop-daemon -u tigase --stop --quiet --pidfile /var/run/tigase
 	sleep 5
-	start-stop-daemon --user ${TIGASE_USER} --start --quiet --background --pidfile /var/run/tigase --make-pidfile --exec /usr/bin/java -- ${JAVA_OPTIONS} -classpath ${CLASSPATH} tigase.server.XMPPServer -c ${TIGASE_CONFIG} ${TIGASE_OPTIONS}
+	start-stop-daemon --user ${TIGASE_USER} --start --quiet --background --pidfile /var/run/tigase --make-pidfile --exec /usr/bin/java -- ${JAVA_OPTIONS} -classpath $(java-config -dp tigase-server):${CLASSPATH} tigase.server.XMPPServer -c ${TIGASE_CONFIG} ${TIGASE_OPTIONS}
 	eend $?
 }

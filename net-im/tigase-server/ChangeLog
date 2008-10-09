@@ -2,6 +2,12 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Oct 2008; Mads Randstoft (mazzachre) mads_randstoft@yahoo.dk
+  -tigase-server-9999_pre2.ebuild, +tigase-server-9999_pre3.ebuild,
+  files/init_d_tigase:
+  Ebuild version bump, now uses java-config to find essential jars instead of
+  config, leaving config to user added classes.
+
   07 Oct 2008; Mads Randstoft (mazzachre) <mads_randstoft@yahoo.dk>
   +tigase-server-9999_pre2.ebuild, +files/classpaths.patch,
   +files/conf_d_tigase, +files/default_config.patch, +files/init_d_tigase,
