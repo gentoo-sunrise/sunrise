@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/apps/Freemail"
 ESVN_OPTIONS="--ignore-externals"
 EANT_BUILD_TARGET="dist"
@@ -17,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 CDEPEND="dev-java/bcprov
-	net-p2p/freenet"
+	net-p2p/freenet[freemail]"
 DEPEND="${CDEPEND}
 	>=virtual/jdk-1.5"
 RDEPEND="${CDEPEND}
