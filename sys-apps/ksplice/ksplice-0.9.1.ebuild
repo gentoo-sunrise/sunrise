@@ -3,8 +3,8 @@
 # $Header: $
 
 DESCRIPTION="Rebootless Linux kernel security updates"
-HOMEPAGE="http://web.mit.edu/ksplice/"
-SRC_URI="http://web.mit.edu/ksplice/dist/${P}-src.tar.gz"
+HOMEPAGE="http://www.ksplice.com/"
+SRC_URI="http://www.ksplice.com/dist/${P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
