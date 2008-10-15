@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Oct 2008; Markus Rennings (mren) <mren@mrmx.de> -pysvn-1.6.1.ebuild,
+  +pysvn-1.6.2.ebuild:
+  Version bump
+
   16 Sep 2008; Markus Rennings (mren) <mren@mrmx.de> -pysvn-1.6.0.ebuild,
   +pysvn-1.6.1.ebuild:
   version bump
