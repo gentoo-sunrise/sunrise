@@ -2,6 +2,13 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Oct 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -tucnak2-2.15.ebuild, -files/tucnak2-2.15-appname.diff,
+  -files/tucnak2-2.15-config.diff, -files/tucnak2-2.15-doc.diff,
+  +tucnak2-2.16.ebuild, +files/tucnak2-2.16-appname.diff,
+  +files/tucnak2-2.16-config.diff, +files/tucnak2-2.16-doc.diff:
+  Version bump. Fixes segfault after network problem
+
   03 Oct 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -tucnak2-2.14.ebuild, -files/tucnak2-2.14-appname.diff,
   -files/tucnak2-2.14-config.diff, -files/tucnak2-2.14-doc.diff,
