@@ -4,6 +4,10 @@
 
   17 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   synfigstudio-0.61.08.ebuild:
+  DDEPEND->DEPEND, thanks to tanderson
+
+  17 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  synfigstudio-0.61.08.ebuild:
   Simplify
 
   17 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>

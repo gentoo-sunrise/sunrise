@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="fmod"
 
-DDEPEND=">=dev-cpp/gtkmm-2.4.0
+DEPEND=">=dev-cpp/gtkmm-2.4.0
 	>=media-gfx/synfig-${PV}
 	>=dev-libs/libsigc++-2.0
 	fmod? ( media-libs/fmod )"
