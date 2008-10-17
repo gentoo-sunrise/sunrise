@@ -26,15 +26,13 @@ DEPEND=">=dev-libs/libsigc++-2.0.0
 	openexr? ( media-libs/openexr )
 	truetype? ( >=media-libs/freetype-2.1.9 )"
 
-RDEPEND="${DEPEND}"
-
 src_compile() {
 	econf \
 		$(use_with ffmpeg ) \
 		$(use_with ffmpeg libavcodec ) \
 		$(use_with fontconfig) \
 		$(use_with imagemagick) \
-		$(use_with libdv) \
+		$(use_with dv libdv) \
 		$(use_with openexr ) \
 		$(use_with truetype freetype)
 
