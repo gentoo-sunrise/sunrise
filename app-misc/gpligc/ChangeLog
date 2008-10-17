@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/gpligc
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Oct 2008; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
+  -gpligc-1.5.1.ebuild, +gpligc-1.6.ebuild:
+  Version bump for gpligc
 
   27 Oct 2007; Jakub Moc <jakub@gentoo.org> gpligc-1.5.1.ebuild:
   Use keepdir on empty dirs, einfo -> elog, cosmetics
