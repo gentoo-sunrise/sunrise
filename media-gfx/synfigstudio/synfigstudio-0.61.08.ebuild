@@ -11,16 +11,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="fmod"
 
-DEPEND=">=sys-devel/libtool-1.3.5"
 RDEPEND=">=dev-cpp/gtkmm-2.4.0
 	>=media-gfx/synfig-${PV}
 	>=dev-libs/libsigc++-2.0
 	fmod? ( media-libs/fmod )"
+DEPEND="${RDEPEND}
+	>=sys-devel/libtool-1.3.5"
 
 src_compile() {
-	econf \
-		$(use_with fmode libfmod ) \
-		|| die "Configure failed!"
+	econf $(use_with fmod libfmod )
 	emake || die "emake failed"
 }
 
