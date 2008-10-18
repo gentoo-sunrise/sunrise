@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EGIT_REPO_URI="http://web.mit.edu/ksplice/ksplice.git"
+EGIT_REPO_URI="http://www.ksplice.com/git/ksplice.git"
 
 inherit git
 
 DESCRIPTION="Rebootless Linux kernel security updates"
-HOMEPAGE="http://web.mit.edu/ksplice/"
+HOMEPAGE="http://www.ksplice.com/"
 SRC_URI=""
 
 LICENSE="GPL-2"
