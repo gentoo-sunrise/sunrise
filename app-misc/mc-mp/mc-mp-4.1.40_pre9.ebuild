@@ -40,6 +40,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PV}/ebuild-syntax.patch"
 	epatch "${FILESDIR}/${PV}/mc-menu.patch"
 	epatch "${FILESDIR}/${PV}/gcc34.patch"
+	epatch "${FILESDIR}/${PV}/po.patch"
 }
 
 src_compile() {

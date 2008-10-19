@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Oct 2008; Alex Efros (powerman) <powerman-asdf@ya.ru>
+  +files/4.1.40_pre9/po.patch, mc-mp-4.1.40_pre9.ebuild:
+  Added patch to fix compile error with LINGUA=ru
+
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added local USE flag description wrt GLEP 56
 
