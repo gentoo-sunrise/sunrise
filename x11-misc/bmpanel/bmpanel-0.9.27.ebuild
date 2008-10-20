@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="debug libev libevent"
 
-DEPEND=">=media-libs/imlib2-1.4.0
+RDEPEND=">=media-libs/imlib2-1.4.0
 	media-libs/freetype:2
 	x11-libs/libX11
 	x11-libs/libXrender
@@ -25,7 +25,8 @@ DEPEND=">=media-libs/imlib2-1.4.0
 	media-libs/fontconfig
 	libev? ( dev-libs/libev  )
 	libevent? ( dev-libs/libevent )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 pkg_setup() {
 	# event loop stuff in glibc-2.8_p20080602 seems to be broken

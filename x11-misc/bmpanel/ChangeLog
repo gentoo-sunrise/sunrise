@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Oct 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  bmpanel-0.9.27.ebuild:
+  Added dependency dev-util/pkgconfig.
+
+  20 Oct 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
   +bmpanel-0.9.27.ebuild, +files/Makefile-no-strip.patch, +metadata.xml:
   New Ebuild for bug 242830 thanks to Paul.
 
