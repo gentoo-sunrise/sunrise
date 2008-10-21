@@ -1,0 +1,9 @@
+# ChangeLog for dev-libs/log4shib
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Oct 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  +files/log4shib-doc.patch, +log4shib-1.0.1.ebuild, +metadata.xml:
+  New ebuild wrt bug 202952. Tnx to bug authors for prototype and chithead and
+  pva for review.
+
