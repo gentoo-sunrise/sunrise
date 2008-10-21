@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Oct 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -netgo_ng-0.1.6.ebuild, +netgo_ng-0.1.8.ebuild:
+  Version Bump
+
   04 Oct 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   -netgo_ng-0.1.5.ebuild, +netgo_ng-0.1.6.ebuild:
   Version bump to 0.1.6
