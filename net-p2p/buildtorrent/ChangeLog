@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Oct 2008; Dennis Nezic <dennisn@dennisn.dyndns.org>
+  buildtorrent-0.7.ebuild:
+  Tested on amd64
+
   23 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   buildtorrent-0.7.ebuild:
   Remove empty files dir + whitespace
