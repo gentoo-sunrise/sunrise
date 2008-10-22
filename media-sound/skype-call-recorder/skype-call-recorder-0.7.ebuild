@@ -4,7 +4,7 @@
 
 EAPI="1"
 
-inherit cmake-utils qt4
+inherit cmake-utils eutils qt4
 
 DESCRIPTION="Records Skype calls to MP3/Ogg/WAV files"
 HOMEPAGE="http://atdot.ch/scr/"
@@ -29,3 +29,14 @@ DEPEND="
 	>=dev-util/cmake-2.4.8"
 
 QT4_BUILT_WITH_USE_CHECK="dbus"
+
+pkg_setup() {
+	qt4_pkg_setup
+
+	if built_with_use net-im/skype qt-static; then
+		ewarn "WARNING: net-im/skype was built with the 'qt-static' USE flag!  Skype Call"
+		ewarn "Recorder won't be able to connect to Skype!  Reinstall Skype without"
+		ewarn "'qt-static' to make it work."
+	fi
+}
+

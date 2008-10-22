@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2008; Jean-Luc Herren (jlh) <jlh@gmx.ch>
+  -skype-call-recorder-0.5.ebuild, +skype-call-recorder-0.7.ebuild:
+  Version bump, thanks to Tobias Kral for his suggestion
+
   11 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> metadata.xml:
   Fix metadata.xml
 
