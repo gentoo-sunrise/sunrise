@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> +qutecom-2.2_rc2.ebuild:
+  new release candidate, drop amd64 keyword due to google breakpad snafu
+
   30 Sep 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de qutecom-2.2_rc1-r1.ebuild:
   apply patch that was added in changeset 7123
