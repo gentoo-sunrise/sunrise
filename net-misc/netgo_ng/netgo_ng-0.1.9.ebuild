@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
 inherit kde
 
 DESCRIPTION="A Qt based gui for wire-bound and wireless network setup"
@@ -16,8 +15,7 @@ IUSE=""
 
 need-kde 3.5
 
-RDEPEND=" ${DEPEND}
-	net-misc/dhcpcd
+RDEPEND="net-misc/dhcpcd
 	sys-apps/net-tools
 	net-wireless/wireless-tools
 	net-wireless/wpa_supplicant"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 
 inherit cmake-utils eutils qt4
 
@@ -17,15 +17,14 @@ IUSE=""
 
 RDEPEND="
 	|| (
-		( >=x11-libs/qt-core-4.4.0:4 >=x11-libs/qt-gui-4.4.0:4 >=x11-libs/qt-dbus-4.4.0:4 )
+		x11-libs/qt-gui:4[dbus]
 		=x11-libs/qt-4.3*:4
 	)
 	media-sound/lame
 	media-libs/id3lib
 	>=media-libs/libvorbis-1.2.0
 	sys-apps/dbus"
-DEPEND="
-	${RDEPEND}
+DEPEND="${RDEPEND}
 	>=dev-util/cmake-2.4.8"
 
 QT4_BUILT_WITH_USE_CHECK="dbus"

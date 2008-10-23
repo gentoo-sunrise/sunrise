@@ -69,11 +69,9 @@ src_install() {
 	# English version should be always available so we will keep it
 	mv tmp/EN .
 
-	for x in ${LANGS}; do
+	for x in ${LINGUAS}; do
 		# GCstar uses upper-case language names
-		if use linguas_${x} ; then
-			mv tmp/$(echo ${x} | tr '[:lower:]' '[:upper:]') .
-		fi
+		mv tmp/$(echo ${x} | tr '[:lower:]' '[:upper:]') .
 	done
 
 	rm -rf tmp

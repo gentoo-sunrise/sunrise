@@ -16,7 +16,6 @@ IUSE=""
 DEPEND=" >=net-misc/anyremote-4.4
 	 >=dev-python/PyQt-3.17
 	 >=dev-python/pykde-3.16"
-RDEPEND="${DEPEND}"
 
 src_install() {
 	emake install DESTDIR="${D}" || die "emake install failed"
@@ -25,11 +24,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	 if ! built_with_use net-misc/anyremote bluetooth ; then
-		echo
-	        ewarn "If you want to use bluetooth with kanyremote, you need to "
-		ewarn "compile net-misc/anyremote with bluetooth use flag."
-	        echo
+	if ! built_with_use net-misc/anyremote bluetooth ; then
+		elog
+		elog "If you want to use bluetooth with kanyremote, you need to"
+		elog "compile net-misc/anyremote with bluetooth use flag."
 	fi
 }
 

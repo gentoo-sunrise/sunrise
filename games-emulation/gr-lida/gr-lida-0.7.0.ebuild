@@ -34,6 +34,6 @@ src_install(){
 }
 
 pkg_postinst(){
-	einfo "The GUI is by default in Spanish."
-	einfo "If you need it, English is available on the Options Menu."
+	elog "The GUI is by default in Spanish."
+	elog "If you need it, English is available on the Options Menu."
 }

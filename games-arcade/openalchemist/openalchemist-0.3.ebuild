@@ -35,12 +35,12 @@ src_unpack() {
 src_install() {
 	dogamesbin build/${PN} || die "dogamesbin failed"
 	dogamesbin ${PN}-config || die "dogamesbin config failed"
-	
+
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins -r data skins || die "doins failed"
-	
+
 	dodoc NEWS README TODO ChangeLog
-	
+
 	newicon data/logo.png openalchemist.png
 	newicon data/logo_svg.svg openalchemist.svg
 	make_desktop_entry ${PN} OpenAlchemist ${PN}
