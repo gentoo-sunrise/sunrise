@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/cvsroot/hk_portage/app-misc/gpligc/gpligc-1.6.ebuild,v 1.3 2008/06/04 11:17:19 kruegerh Exp $
+# $Header: $
 
 inherit eutils
 
@@ -51,7 +51,7 @@ src_install() {
 
 	dodoc doc/CHANGES
 
-	# at least this pdf is supposed to be used often, so its better left
+	# at least this pdf is supposed to be used often, so its better left uncompressed
 	insinto /usr/share/doc/${P}
 	doins doc/GPLIGC_Manual.pdf
 
