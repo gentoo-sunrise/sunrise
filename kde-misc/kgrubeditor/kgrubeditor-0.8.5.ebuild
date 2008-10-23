@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
-NEED_KDE=":kde-4"
+EAPI="2"
+NEED_KDE=":4.1"
 inherit kde4-base
 
 MY_PN="KGRUBEditor"
@@ -19,4 +19,3 @@ IUSE=""
 
 RDEPEND="sys-boot/grub"
 
-S=${WORKDIR}/${MY_PN}

@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Oct 2008; Tomas Chvatal (scarabeus) <tomas.chvatal@gmail.com>
+  kgrubeditor-0.8.5.ebuild:
+  Fix dependency on 4.0.X and replace it with 4.1 and move to eapi2 as it is
+  needed for kde4.1 packages.
+
   26 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   +kgrubeditor-0.8.5.ebuild, -kgrubeditor-0.8.5b.ebuild:
   Version bump to major version 0.8.5.
