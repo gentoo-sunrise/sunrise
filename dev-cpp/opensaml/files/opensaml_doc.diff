@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2008-10-22 20:29:22.000000000 +0200
++++ Makefile.am	2008-10-22 20:29:47.000000000 +0200
+@@ -5,7 +5,7 @@
+ EXTRA_DIST = OpenSAML.dsw libtool.m4 acx_pthread.m4 depcomp \
+ 	config_win32.h opensaml.spec.in opensaml.spec pkginfo.in pkginfo depend
+ 
+-SUBDIRS = doc schemas saml test
++SUBDIRS = schemas saml test
+ 
+ all-local: opensaml.spec pkginfo
+ 

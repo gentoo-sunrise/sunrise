@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Oct 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  +files/opensaml_doc.diff:
+  Add missing files directory
+
   22 Oct 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   +opensaml-1.1.1.ebuild, +metadata.xml:
   New ebuild wrt bug 202952. Tnx to original bug authors.
