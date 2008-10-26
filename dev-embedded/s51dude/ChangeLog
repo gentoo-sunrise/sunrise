@@ -1,0 +1,8 @@
+# ChangeLog for dev-embedded/s51dude
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Oct 2008; Lucas Chiesa (tulku) <lucas.chiesa@gmail.com>
+  +s51dude-0.2.0.ebuild, +metadata.xml:
+  New ebuild for s51dude. Bug 241662
+
