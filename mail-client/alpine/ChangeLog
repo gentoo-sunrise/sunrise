@@ -1,0 +1,9 @@
+# ChangeLog for mail-client/alpine
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Oct 2008; Janne Rönkkö (jroo) <jroo@iki.fi> +alpine-2.00.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 176904. Thanks to Sascha Lucas and Holger Hoffstätte for
+  the original ebuild.
+
