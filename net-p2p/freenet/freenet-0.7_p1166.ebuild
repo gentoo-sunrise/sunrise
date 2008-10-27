@@ -18,7 +18,8 @@ IUSE="freemail"
 CDEPEND="dev-db/db-je:3.3
 	dev-java/fec
 	dev-java/java-service-wrapper
-	dev-java/db4o"
+	dev-java/db4o
+	dev-java/ant-core"
 DEPEND=">=virtual/jdk-1.5
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
@@ -52,13 +53,14 @@ src_unpack() {
 	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
-	use freemail && echo "wrapper.java.classpath.5=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
+	use freemail && echo "wrapper.java.classpath.7=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
 	mkdir -p lib
 	cd lib
 	java-pkg_jar-from db-je-3.3
 	java-pkg_jar-from java-service-wrapper
 	java-pkg_jar-from fec
 	java-pkg_jar-from db4o
+	java-pkg_jar-from ant-core ant.jar
 }
 
 src_install() {
