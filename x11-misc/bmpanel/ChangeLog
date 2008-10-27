@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Oct 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  bmpanel-0.9.27.ebuild:
+  Add ~ppc keyword
+
   20 Oct 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
   bmpanel-0.9.27.ebuild:
   Added dependency dev-util/pkgconfig.

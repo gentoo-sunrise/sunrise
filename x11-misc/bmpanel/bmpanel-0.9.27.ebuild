@@ -13,7 +13,7 @@ SRC_URI="http://nsf.110mb.com/${PN}/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~ppc"
 IUSE="debug libev libevent"
 
 RDEPEND=">=media-libs/imlib2-1.4.0
