@@ -5,8 +5,8 @@
 -bin_PROGRAMS = tucnak soundwrapper 
 +bin_PROGRAMS = tucnak2 soundwrapper 
  
--tucnak_SOURCES = excdb.c adif.c alsa.c bfu.c charsets.c codepage.h codepage.inc \
-+tucnak2_SOURCES = excdb.c adif.c alsa.c bfu.c charsets.c codepage.h codepage.inc \
+-tucnak_SOURCES = winkey.c excdb.c adif.c alsa.c bfu.c charsets.c codepage.h codepage.inc \
++tucnak2_SOURCES = winkey.c excdb.c adif.c alsa.c bfu.c charsets.c codepage.h codepage.inc \
  	control.c cor.c cor.h cor.inc \
  	cwdaemon.c cwdb.c cwwindow.c davac4.c dsp.c dwdb.c dxc.c ebw.c edi.c \
  	error.c fhs.c fifo.c font.c font.inc gfx_png.c ghash.c \
