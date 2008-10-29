@@ -1,0 +1,8 @@
+# ChangeLog for dev-java/lzmajio
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  +lzmajio-0.92.ebuild, +files/build.xml, +metadata.xml:
+  New ebuild for bug 244924 (dep for net-p2p/freenet)
+
