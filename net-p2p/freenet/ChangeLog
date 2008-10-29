@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -freenet-0.7_p1167.ebuild, +freenet-0.7_p1168.ebuild:
+  New upstream release
+
+  29 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -freenet-0.7_p1166.ebuild, +freenet-0.7_p1167.ebuild,
   freenet-9999-r1.ebuild, files/ext.patch, files/freenet, files/freenet.old,
   files/wrapper1.conf:
