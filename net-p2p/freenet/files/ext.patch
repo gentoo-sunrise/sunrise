@@ -1,7 +1,7 @@
 diff -ur freenet-old/build.xml freenet/build.xml
---- freenet-old/build.xml	2008-10-27 18:32:49.000000000 +0100
-+++ freenet/build.xml	2008-10-27 18:36:47.000000000 +0100
-@@ -16,7 +16,10 @@
+--- freenet-old/build.xml	2008-10-28 21:40:50.000000000 +0100
++++ freenet/build.xml	2008-10-28 21:40:42.000000000 +0100
+@@ -16,7 +16,13 @@
  	<property name="build" location="build"/>
  	<property name="build-test" location="build-test"/>
  	<property name="lib"	location="lib"/>
@@ -10,10 +10,13 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +	<property name="je.location" location="${lib}/je.jar"/>
 +	<property name="fec.location" location="${lib}/fec.jar"/>
 +	<property name="ant.location" location="${lib}/ant.jar"/>
++	<property name="sevenzip.location" location="${lib}/sevenzip.jar"/>
++	<property name="lzmajio.location" location="${lib}/lzmajio.jar"/>
++	<property name="mersennetwister.location" location="${lib}/mersennetwister.jar"/>
  	<property name="javadoc" location="javadoc"/>
  	<property name="svn.revision" value="@custom@"/>
  	<property name="CSSTokenizerFilter.relative.jflex" value="freenet/clients/http/filter/CSSTokenizerFilter.jflex"/>
-@@ -37,7 +40,6 @@
+@@ -37,7 +43,6 @@
  	</target>
  
  	<target name="env" depends="mkdir"   description="Learn about the environment">
@@ -21,7 +24,7 @@ diff -ur freenet-old/build.xml freenet/build.xml
  		<available file="${CSSTokenizerFilter.java}" property="CSSTokenizerFilter.present"/>
  		<available file="${junit.location}" property="junit.present"/>
  	</target>
-@@ -51,19 +53,9 @@
+@@ -51,19 +56,9 @@
  		</exec>
  	</target>
  
@@ -42,7 +45,7 @@ diff -ur freenet-old/build.xml freenet/build.xml
  		<!-- Create the time stamp -->
  		<tstamp/>
  
-@@ -77,7 +69,10 @@
+@@ -77,7 +72,13 @@
  
  		<javac srcdir="${src}" destdir="${build}" debug="on" optimize="on" source="1.5">
  			<classpath>
@@ -51,10 +54,13 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +				<pathelement location="${je.location}"/>
 +				<pathelement location="${fec.location}"/>
 +				<pathelement location="${ant.location}"/>
++				<pathelement location="${sevenzip.location}"/>
++				<pathelement location="${lzmajio.location}"/>
++				<pathelement location="${mersennetwister.location}"/>
  				<pathelement location="gnu-crypto.jar"/>
  				<pathelement location="javax-security.jar"/>
  				<pathelement location="javax-crypto.jar"/>
-@@ -135,7 +130,10 @@
+@@ -135,7 +136,13 @@
  		<javac srcdir="${test}" destdir="${build-test}" debug="on" optimize="on" source="1.5">
  			<classpath>
  				<pathelement path="${build}"/>
@@ -63,10 +69,13 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +				<pathelement location="${je.location}"/>
 +				<pathelement location="${fec.location}"/>
 +				<pathelement location="${ant.location}"/>
++				<pathelement location="${sevenzip.location}"/>
++				<pathelement location="${lzmajio.location}"/>
++				<pathelement location="${mersennetwister.location}"/>
  				<pathelement location="${junit.location}"/>
  			</classpath>
  			<compilerarg value="-Xlint"/>
-@@ -149,7 +147,10 @@
+@@ -149,7 +156,13 @@
  			<classpath>
  				<pathelement path="${build}"/>
  				<pathelement path="${build-test}"/>
@@ -75,13 +84,15 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +				<pathelement location="${je.location}"/>
 +				<pathelement location="${fec.location}"/>
 +				<pathelement location="${ant.location}"/>
++				<pathelement location="${sevenzip.location}"/>
++				<pathelement location="${lzmajio.location}"/>
++				<pathelement location="${mersennetwister.location}"/>
  				<pathelement location="${junit.location}"/>
  			</classpath>
  
-Nur in freenet: lib.
 diff -ur freenet-old/src/freenet/node/NodeStarter.java freenet/src/freenet/node/NodeStarter.java
---- freenet-old/src/freenet/node/NodeStarter.java	2008-10-27 18:32:49.000000000 +0100
-+++ freenet/src/freenet/node/NodeStarter.java	2008-10-27 18:34:12.000000000 +0100
+--- freenet-old/src/freenet/node/NodeStarter.java	2008-10-28 21:40:50.000000000 +0100
++++ freenet/src/freenet/node/NodeStarter.java	2008-10-28 21:39:14.000000000 +0100
 @@ -162,37 +162,8 @@
  	}
  

@@ -19,7 +19,10 @@ CDEPEND="dev-db/db-je:3.3
 	dev-java/fec
 	dev-java/java-service-wrapper
 	dev-java/db4o
-	dev-java/ant-core"
+	dev-java/ant-core
+	dev-java/sevenzip
+	dev-java/lzmajio
+	dev-java/mersennetwister"
 DEPEND=">=virtual/jdk-1.5
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
@@ -36,15 +39,7 @@ EANT_BUILD_TARGET="dist"
 pkg_setup() {
 	java-pkg-2_pkg_setup
 	enewgroup freenet
-	grep /opt/freenet /etc/passwd >/dev/null
-	if [ $? == "0" ]; then
-		ewarn " "
-		ewarn "Changing freenet homedir from /opt/freenet to /var/freenet"
-		ewarn " "
-		usermod -d /var/freenet freenet || die "Was not able to change freenet homedir from /opt/freenet to /var/freenet"
-	else
-		enewuser freenet -1 -1 /var/freenet freenet
-	fi
+	enewuser freenet -1 -1 /var/freenet freenet
 }
 
 src_unpack() {
@@ -53,7 +48,7 @@ src_unpack() {
 	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
-	use freemail && echo "wrapper.java.classpath.7=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
+	use freemail && echo "wrapper.java.classpath.10=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
 	mkdir -p lib
 	cd lib
 	java-pkg_jar-from db-je-3.3
@@ -61,6 +56,9 @@ src_unpack() {
 	java-pkg_jar-from fec
 	java-pkg_jar-from db4o
 	java-pkg_jar-from ant-core ant.jar
+	java-pkg_jar-from sevenzip
+	java-pkg_jar-from lzmajio
+	java-pkg_jar-from mersennetwister
 }
 
 src_install() {
@@ -97,12 +95,6 @@ pkg_postinst () {
 	ewarn "You can now edit it without the next update overwriting it."
 	elog " "
 	chown freenet:freenet /var/freenet
-	if [[ -e /opt/freenet/freenet.ini ]] && ! [[ -e /var/freenet/freenet.ini ]]; then
-		ewarn " "
-		ewarn "Please move freenet to the new location with the following command:"
-		ewarn "		mv /opt/freenet /var/freenet"
-		ewarn " "
-	fi
 }
 
 pkg_postrm() {
