@@ -1,8 +1,0 @@
-# ChangeLog for dev-lang/cilk
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  20 Feb 2008; Michał Kiedrowicz (esqualante) <esqualante@o2.pl>
-  +metadata.xml, +cilk-5.4.6.ebuild:
-  New Ebuild for bug 210816 thanks to Tommy[D], Ken69267 and tcunha
-
