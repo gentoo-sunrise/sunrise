@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lzmajio" default="dist" basedir=".">
+	<!-- set global properties for this build -->
+	<property name="build" location="build"/>
+
+	<target name="mkdir">
+		<mkdir dir="${build}"/>
+	</target>
+
+	<target name="compile" depends="mkdir">
+		<javac srcdir="." destdir="${build}" debug="on" optimize="on" source="1.5">
+			<classpath>
+				<pathelement location="sevenzip.jar"/>
+			</classpath>
+			<compilerarg value="-Xlint"/>
+
+			<!-- following a very temporary list of files to be build -->
+			<include name="**/*.java"/>
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile" description="generate the distribution">
+		<jar jarfile="mersennetwister.jar" basedir="${build}">
+		</jar>    
+	</target>
+
+</project>
