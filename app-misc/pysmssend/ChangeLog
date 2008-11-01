@@ -3,6 +3,10 @@
 # $Header: $
 
   01 Nov 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -pysmssend-1.38.ebuild, +pysmssend-1.39.ebuild:
+  Version Bump
+
+  01 Nov 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   -pysmssend-1.37-r1.ebuild, +pysmssend-1.38.ebuild:
   Version Bump
 
