@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="qt4"
 
-RDEPEND="dev-python/mechanize
+RDEPEND=">dev-python/mechanize-0.1.7b
 	qt4? ( dev-python/PyQt4 )"
 
 src_install() {
