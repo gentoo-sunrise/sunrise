@@ -19,7 +19,7 @@ DEPEND=">=x11-libs/qt-4.2:4
 	>=media-libs/freetype-2.1.8"
 # The virtual/tetex dep is for pdfLaTeX and URW fonts.
 RDEPEND="${DEPEND}
-	virtual/tetex
+	virtual/latex-base
 	!seamonkey? ( || ( www-client/mozilla-firefox
 		www-client/mozilla-firefox-bin ) )
 	seamonkey? ( || ( www-client/seamonkey

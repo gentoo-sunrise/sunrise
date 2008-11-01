@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Nov 2008; Tomas Chvatal <scarabeus@gentoo.org>
+  writer2latex-0.5_beta3.ebuild:
+  Removing redundant virtual/tetex dependency.
+
   21 May 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   writer2latex-0.5_beta3.ebuild:
   Add necessary zip dependency to DEPEND
