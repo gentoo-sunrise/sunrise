@@ -1,6 +1,9 @@
 # ChangeLog for dev-tex/SIstyle
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Nov 2008; Tomas Chvatal <scarabeus@gentoo.org> SIstyle-2.3.0.ebuild:
+  Remove wrong duplicate virtual/tetex RDEPEND.
 
   16 Jan 2007; Markus Rennings (mren) <mren@mrmx.de> SIstyle-2.3.0.ebuild:
   added RDEPEND
