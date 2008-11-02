@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Nov 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  pastebin-0.3.ebuild:
+  Added ~amd64 keyword.
+
   13 Sep 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   pastebin-0.3.ebuild:
   Working on PPC : adding ~ppc keyword.
