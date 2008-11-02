@@ -1,6 +1,11 @@
 # ChangeLog for dev-util/uno
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Nov 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  -files/2.11-makefile.patch, -uno-2.11.ebuild, +files/2.13-makefile.patch,
+  +uno-2.13.ebuild:
+  Version bump to 2.13, added ~amd64 keyword, cleanup.
 
   24 Jun 2007; Jakub Moc <jakub@gentoo.org> uno-2.11.ebuild:
   Fix LICENSE

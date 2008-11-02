@@ -10,33 +10,30 @@ SRC_URI="http://spinroot.com/${PN}/${PN}_v${PV/./}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND=""
-RDEPEND=""
-
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}/src"
 
 src_unpack() {
 	unpack ${A}
+	cd "${S}"
+
 	epatch "${FILESDIR}/${PV}-makefile.patch"
 }
 
 src_compile() {
-	cd "${S}/src"
 	emake CC="$(tc-getCC)" || die "emake failed"
 }
 
 src_install() {
-	dobin src/uno src/uno_local src/uno_global
-	doman doc/uno.1
+	dobin uno uno_local uno_global
+	doman ../doc/uno.1
 
 	insinto /usr/share/${PN}
-	doins -r prop
+	doins -r ../prop
 
 	if use doc ; then
-		insinto /usr/share/doc/${PF}
-		doins doc/*.pdf
+		dodoc ../doc/*.pdf
 	fi
 }
