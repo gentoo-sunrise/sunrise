@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Nov 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  khtml2png-2.7.6.ebuild:
+  Added ~amd64 keyword.
+
   01 Nov 2008; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
   +khtml2png-2.7.6.ebuild, +metadata.xml:
   New Ebuild for bug 115837 thanks to scarabeus and gtlinuxman.
