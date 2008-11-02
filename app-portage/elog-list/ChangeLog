@@ -1,6 +1,10 @@
 # ChangeLog for app-portage/elog-list
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Nov 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  elog-list-0.0.6.ebuild:
+  Added ~amd64 keyword, removed DEPEND/RDEPEND.
 
   26 Oct 2007; Charlie Shepherd <masterdriverz@gentoo.org>
   elog-list-0.0.6.ebuild:

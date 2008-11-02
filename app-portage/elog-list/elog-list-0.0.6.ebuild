@@ -8,11 +8,8 @@ SRC_URI="http://www.mpagano.com/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
 
 src_install() {
 	dobin ${PN} || die "dobin failed"
