@@ -23,8 +23,6 @@ RDEPEND="sys-power/acpid
 	X? ( x11-apps/xset )
 	video_cards_radeon? ( app-laptop/radeontool )"
 
-# Say thanks to whoever packaged this...
-
 src_unpack() {
 	unpack ${A}
 	epatch "${FILESDIR}/${P}-gentoo.patch"
