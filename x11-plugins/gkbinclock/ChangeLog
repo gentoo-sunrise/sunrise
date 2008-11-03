@@ -1,0 +1,8 @@
+# ChangeLog for x11-plugins/gkbinclock
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Nov 2008; Jesus Perez (h0m3r) <chescu@gmail.com>
+  +gkbinclock-0.6.ebuild, +metadata.xml:
+  New ebuild for bug 94031
+
