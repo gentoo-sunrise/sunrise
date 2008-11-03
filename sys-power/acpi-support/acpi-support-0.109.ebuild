@@ -24,7 +24,6 @@ RDEPEND="sys-power/acpid
 	video_cards_radeon? ( app-laptop/radeontool )"
 
 # Say thanks to whoever packaged this...
-S=${WORKDIR}/${PN}-0.102
 
 src_unpack() {
 	unpack ${A}
