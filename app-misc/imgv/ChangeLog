@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/imgv
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Nov 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  imgv-3.1.5.ebuild:
+  Added ~amd64 keyword.
 
   09 Apr 2007; Jakub Moc <jakub@gentoo.org> imgv-3.1.5.ebuild:
   Use doenvd
