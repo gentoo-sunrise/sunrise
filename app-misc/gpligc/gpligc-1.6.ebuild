@@ -33,6 +33,16 @@ src_compile() {
 	emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" || die "Build failed"
 }
 
+# src_unpack is needed to apply some minor patched (for gcc-4.3). This will not be needed for >1.6
+src_unpack() {
+	unpack ${A}
+	cd "${S}"/openGLIGCexplorer
+	sed -i -e '23a\#include <cstdlib>' createworlddem.cpp || die "sed failed"
+	sed -i -e '30a\#include <cstring>' -e '30a\#include <cstdlib>' etopo2merger.cpp || die "sed failed"
+	sed -i -e '23a\#include <cstring>' -e '23a\#include <cstdlib>' merger.cpp || die "sed failed"
+	sed -i -e 's:<string>:<cstring>:g' optimizer.cpp || die "sed failed"
+}
+
 src_install() {
 	# create openGLIGCexplorer data dirs
 	keepdir /usr/share/${PN}/data/map
