@@ -11,7 +11,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-DEPEND=""
 RDEPEND="dev-util/subversion
 	>=sys-apps/portage-2.1"
 
@@ -22,6 +21,6 @@ src_unpack() {
 }
 
 src_install() {
-	dobin sunrise-commit echangelog-tng
+	dobin sunrise-commit echangelog-tng || die
 	doman sunrise-commit.1
 }
