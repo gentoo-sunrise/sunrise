@@ -2,12 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils git webapp depend.php versionator
+inherit eutils webapp depend.php versionator
 
 DESCRIPTION="A CalDAV and iCal server"
-HOMEPAGE="http://rscds.sourceforge.net/"
-EGIT_REPO_URI="http://repo.or.cz/r/${PN}.git"
-EGIT_TREE="r${PV}"
+HOMEPAGE="http://davical.org/"
+SRC_URI="http://debian.mcmillan.net.nz/packages/davical/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
@@ -16,7 +15,7 @@ DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
 	dev-lang/php
 	app-admin/pwgen
-	dev-php/libawl-php
+	>=dev-php/awl-0.33
 	dev-perl/yaml
 	dev-perl/DBI
 	dev-perl/DBD-Pg"
@@ -42,7 +41,7 @@ src_compile() {
 src_install() {
 	webapp_src_preinst
 
-	local docs="INSTALL README debian/README.debian \
+	local docs="INSTALL README debian/README.Debian \
 		testing/README.regression_tests \
 		TODO debian/changelog"
 	dodoc-php ${docs} || die "dodoc failed"
@@ -65,6 +64,6 @@ src_install() {
 	insinto /etc/davical/
 	newins "${FILESDIR}/rscds.conf" calendar.example.com-conf.php
 
-	webapp_postinst_txt en "${FILESDIR}/postinstall-en-0.9.5.txt"
+	webapp_postinst_txt en "${FILESDIR}/postinstall-en-${PV}.txt"
 	webapp_src_install
 }
