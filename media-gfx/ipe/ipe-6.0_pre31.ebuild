@@ -8,7 +8,7 @@ inherit qt4 eutils
 MY_P="${P/_/}"
 DESCRIPTION="A drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
 HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
-SRC_URI="http://luaforge.net/frs/download.php/2727/${MY_P}-src.tar.gz"
+SRC_URI="http://luaforge.net/frs/download.php/3815/${MY_P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -58,14 +58,10 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-include-string.patch
+	epatch "${FILESDIR}"/${P}-fix-version.patch
 }
 
 src_compile() {
-	# Ipe bug #240, Gentoo bug #80448#c8: allow Ipe to be built with GCC 4.2
-	sed -i -e "s/-Werror/-Wno-error/" \
-		config.pri figtoipe/figtoipe.pro ipe5toxml/ipe5toxml.pro
-
 	# Ipe's default browser is Firefox
 	local myconf
 	use seamonkey && myconf="IPEBROWSER=seamonkey"
