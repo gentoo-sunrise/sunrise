@@ -2,13 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils git php-lib-r1
+inherit eutils php-lib-r1
 
 DESCRIPTION="Andrew McMillan's web libraries: A collection of generic classes
 used by the davical calendar server"
 HOMEPAGE="http://andrew.mcmillan.net.nz/projects/awl"
-EGIT_REPO_URI="http://repo.or.cz/r/awl.git"
-EGIT_TREE="${PV}"
+SRC_URI="http://debian.mcmillan.net.nz/packages/awl/awl_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
