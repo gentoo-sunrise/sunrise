@@ -8,7 +8,7 @@ inherit qt4 eutils
 MY_P="${P/_/}"
 DESCRIPTION="A drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
 HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
-SRC_URI="http://luaforge.net/frs/download.php/3815/${MY_P}-src.tar.gz"
+SRC_URI="http://luaforge.net/frs/download.php/3824/${MY_P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -53,12 +53,6 @@ pkg_setup() {
 		ewarn "Could not find directory containing URW fonts.  Ipe will not"
 		ewarn "function properly without them."
 	fi
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-fix-version.patch
 }
 
 src_compile() {

@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Nov 2008; Christian Schlotter (schlotter) <again@gmx.de>
+  ipe-6.0_pre31.ebuild:
+  Ipe tarball changed (fix for Ipe bug 271)
+
   05 Nov 2008; Christian Schlotter (schlotter) <again@gmx.de>
   -ipe-6.0_pre30.ebuild, +ipe-6.0_pre31.ebuild,
   -files/ipe-6.0_pre30-include-string.patch,
