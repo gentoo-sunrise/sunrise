@@ -17,8 +17,6 @@ DEPEND="dev-libs/gmp
 	>=virtual/jdk-1.4"
 RDEPEND="dev-libs/gmp"
 
-QA_TEXTRELS="var/freenet/lib/libjcpuid-x86-linux.so"
-
 src_compile() {
 	append-flags -fPIC
 	tc-export CC
@@ -28,5 +26,5 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" LIBDIR=$(get_libdir) install || die
+	emake DESTDIR="${D}" LIBDIR=$(get_libdir) install || die
 }
