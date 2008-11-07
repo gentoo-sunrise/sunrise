@@ -28,8 +28,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-2.16-doc.diff" \
-	    "${FILESDIR}/${PN}-2.17-appname.diff" \
-	    "${FILESDIR}/${PN}-2.16-config.diff"
+	    "${FILESDIR}/${PN}-2.17-appname.diff"
 	eautoreconf
 }
 
