@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -kndiswrapper-0.3.5.ebuild, +kndiswrapper-0.3.6.ebuild:
+  Version Bump
+
   03 Oct 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   -kndiswrapper-0.3.4.ebuild, +kndiswrapper-0.3.5.ebuild:
   Version bump to 0.3.5
