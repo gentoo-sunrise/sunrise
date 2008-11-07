@@ -7,7 +7,7 @@ inherit eutils qt4 subversion
 
 DESCRIPTION="Tool for removing advertisements from recorded MPEG files"
 HOMEPAGE="http://ttcut.tritime.org/"
-ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/ttcut/branches/work"
+ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/ttcut/branches/refactor"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -33,14 +33,14 @@ pkg_setup() {
 }
 
 src_compile() {
-	eqmake4 ttcut.pro -o Makefile.ttcut
+	eqmake4 ttcut_linux.pro -o Makefile.ttcut
 	emake -f Makefile.ttcut || die "emake failed"
 }
 
 src_install() {
-	dobin ttcut || die "Couldn't install ttcut"
-	make_desktop_entry ttcut TTCut "" "AudioVideo;Video;AudioVideoEditing" || \
-		die "Couldn't make ttcut desktop entry"
+	dobin TTCut || die "Couldn't install TTCut"
+	make_desktop_entry TTCut TTCut "" "AudioVideo;Video;AudioVideoEditing" || \
+		die "Couldn't make TTCut desktop entry"
 
 	dodoc AUTHORS BUGS CHANGELOG \
 		README.DE README.EN TODO || die "Couldn't install documentation"
