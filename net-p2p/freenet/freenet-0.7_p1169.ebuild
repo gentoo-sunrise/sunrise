@@ -10,7 +10,7 @@ HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2
 	http://dev.gentoo.org/~tommy/distfiles/${P}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="as-is GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="freemail"
@@ -47,7 +47,7 @@ src_unpack() {
 	cd "${S}"
 	cp "${FILESDIR}"/wrapper1.conf wrapper.conf
 	epatch "${FILESDIR}"/ext.patch
-	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
+	sed -i -e "s:=/usr/lib:=/usr/$(get_libdir):g" wrapper.conf || die "sed failed"
 	use freemail && echo "wrapper.java.classpath.10=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
 	mkdir -p lib
 	cd lib
@@ -69,19 +69,13 @@ src_install() {
 	else
 		newinitd "${FILESDIR}"/freenet.old freenet
 	fi
-	dodoc license/README license/LICENSE.Mantissa \
-		AUTHORS README
+	dodoc AUTHORS README
 	insinto /etc
 	newins wrapper.conf freenet-wrapper.conf
 	insinto /var/freenet
 	doins seednodes.fref run.sh
-	dodir /var/freenet/bin
-	dodir /var/freenet/$(get_libdir)
-	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /var/freenet/$(get_libdir)/libwrapper.so
-	dosym ../../../usr/$(get_libdir)/libNativeThread.so /var/freenet/$(get_libdir)/libNativeThread.so
-	use x86 && dosym ../../../usr/$(get_libdir)/libfec8.so /var/freenet/$(get_libdir)/libfec8.so
-	use x86 && dosym ../../../usr/$(get_libdir)/libfec16.so /var/freenet/$(get_libdir)/libfec16.so
 	fperms +x /var/freenet/run.sh
+	dosym java-service-wrapper/libwrapper.so /usr/$(get_libdir)/libwrapper.so
 }
 
 pkg_postinst () {

@@ -64,7 +64,7 @@ src_unpack() {
 	mv run1.sh run.sh
 	sed -ie "s:@custom@:${ESVN_WC_REVISION}:g" src/freenet/node/Version.java
 	epatch "${FILESDIR}"/ext.patch
-	sed -i -e "s/=lib/=$(get_libdir)/g" wrapper.conf || die "sed failed"
+	sed -i -e "s:=/usr/lib:=/usr/$(get_libdir):g" wrapper.conf || die "sed failed"
 	use freemail && echo "wrapper.java.classpath.10=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
 	mkdir -p lib
 	cd lib
@@ -90,13 +90,8 @@ src_install() {
 	newins wrapper.conf freenet-wrapper.conf
 	insinto /var/freenet
 	doins run.sh seednodes.fref
-	dodir /var/freenet/bin
-	dodir /var/freenet/$(get_libdir)
-	dosym ../../../usr/$(get_libdir)/java-service-wrapper/libwrapper.so /var/freenet/$(get_libdir)/libwrapper.so
-	dosym ../../../usr/$(get_libdir)/libNativeThread.so /var/freenet/$(get_libdir)/libNativeThread.so
-	use x86 && dosym ../../../usr/$(get_libdir)/libfec8.so /var/freenet/$(get_libdir)/libfec8.so
-	use x86 && dosym ../../../usr/$(get_libdir)/libfec16.so /var/freenet/$(get_libdir)/libfec16.so
 	fperms +x /var/freenet/run.sh
+	dosym java-service-wrapper/libwrapper.so /usr/$(get_libdir)/libwrapper.so
 }
 
 pkg_postinst () {
