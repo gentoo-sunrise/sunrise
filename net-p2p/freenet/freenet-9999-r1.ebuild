@@ -62,7 +62,7 @@ src_unpack() {
 	head -n 133 run.sh >run1.sh
 	tail -n 444 run.sh >>run1.sh
 	mv run1.sh run.sh
-	sed -ie "s:@custom@:${ESVN_WC_REVISION}:g" src/freenet/node/Version.java
+	sed -i -e "s:@custom@:${ESVN_WC_REVISION}:g" src/freenet/node/Version.java || die "sed failed"
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s:=/usr/lib:=/usr/$(get_libdir):g" wrapper.conf || die "sed failed"
 	use freemail && echo "wrapper.java.classpath.10=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
@@ -111,6 +111,6 @@ pkg_postrm() {
 	if [ -z has_version ]; then
 		elog "If you dont want to use freenet any more"
 		elog "and dont want to keep your identity/other stuff"
-		elog "remember to do 'rm -rf /opt/freenet' to remove everything"
+		elog "remember to do 'rm -rf /var/freenet' to remove everything"
 	fi
 }

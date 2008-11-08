@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Nov 2008; Dennis Nezic <dennisn@dennisn.dyndns.org>
+  freenet-9999-r1.ebuild:
+  Fixed some typos
+
   07 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   files/wrapper1.conf, -freenet-0.7_p1168.ebuild, +freenet-0.7_p1169.ebuild,
   freenet-9999-r1.ebuild:
