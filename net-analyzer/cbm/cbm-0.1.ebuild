@@ -4,7 +4,7 @@
 
 inherit eutils
 
-DESCRIPTION="cbm — display the current traffic on all network devices"
+DESCRIPTION="display the current traffic on all network devices"
 HOMEPAGE="http://www.isotton.com/software/unix/cbm/"
 SRC_URI="http://www.isotton.com/software/unix/${PN}/download/${P}.tar.gz"
 
