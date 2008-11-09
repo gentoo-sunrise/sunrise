@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2008; Davide Cendron (scen) <scen@gentoo.org> -vavoom-1.28.ebuild,
+  +vavoom-1.29.ebuild:
+  Version bump. Implemented also some EAPI2 feature (USE conditional
+  dependencies)
+
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Add local useflags to metadata.xml (GLEP 56)
 
