@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -tudu-0.3.2-r2.ebuild:
+  Drop old version
+
   08 Nov 2008; Mike Kazantsev (MK_FG) <mk.fraggod@gmail.com>
   +tudu-0.4.ebuild:
   app-misc/tudu: Version bump
