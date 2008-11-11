@@ -165,10 +165,6 @@ app-portage/rep-rebuild
 # svn version should be masked
 =app-misc/ssid-9999
 
-# David Shakaryan <omp@gentoo.org> (18 Oct 2006)
-# svn version should be masked
-=media-video/ttcut-9999
-
 # Jakub Moc <jakub@gentoo.org> (31 Jul 2006)
 # masked as it needs testing with other virtual/blas providers
 # (blas-atlas, blas-reference, and acml)
