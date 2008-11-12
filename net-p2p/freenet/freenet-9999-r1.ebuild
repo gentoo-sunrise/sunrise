@@ -49,6 +49,7 @@ pkg_setup() {
 src_unpack() {
 	subversion_src_unpack
 	subversion_wc_info
+	FREENET_REVISION=${ESVN_WC_REVISION}
 	ESVN_REPO_URI="http://freenet.googlecode.com/svn/trunk/apps/new_installer/res/unix/"
 	ESVN_OPTIONS="-N"
 	subversion_src_unpack
@@ -62,7 +63,7 @@ src_unpack() {
 	head -n 133 run.sh >run1.sh
 	tail -n 444 run.sh >>run1.sh
 	mv run1.sh run.sh
-	sed -i -e "s:@custom@:${ESVN_WC_REVISION}:g" src/freenet/node/Version.java || die "sed failed"
+	sed -i -e "s:@custom@:${FREENET_REVISION}:g" src/freenet/node/Version.java || die "sed failed"
 	epatch "${FILESDIR}"/ext.patch
 	sed -i -e "s:=/usr/lib:=/usr/$(get_libdir):g" wrapper.conf || die "sed failed"
 	use freemail && echo "wrapper.java.classpath.10=/usr/share/bcprov/lib/bcprov.jar" >> wrapper.conf
