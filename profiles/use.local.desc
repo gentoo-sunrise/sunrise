@@ -108,8 +108,6 @@ media-radio/fldigi:hamlib - Enables support by the Hamlib amateur radio rig cont
 media-radio/gpredict:coverage - Enable coverage reports
 media-radio/grig:coverage - Enable coverage reports
 media-radio/grig:hardware - Enable hardware IO
-media-radio/tucnak2:ftdi - Enable support for FTDI USB chips
-media-radio/tucnak2:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio
 media-radio/unixcw:ncurses - Enables building the curses based morse code tutor program 'cwcp'.
 media-radio/unixcw:qt3 - Enables building the Qt based morse code tutor program 'xcwcp'.
 media-radio/xastir:festival - Enable text to speech synthesizer
