@@ -15,6 +15,7 @@ CONTROL="/usr/sbin/nsdc"
 depend() { 
 	need net 
 	use logger 
+	provide auth-dns
 } 
 
 configtest() {
@@ -43,6 +44,7 @@ start() {
 
 stop() { 
 	ebegin "Stopping NSD"
+		${CONTROL} patch
 		${CONTROL} stop
 	eend $? 
 } 
