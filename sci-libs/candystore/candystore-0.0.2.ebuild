@@ -15,23 +15,22 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-RDEPEND="x11-libs/libqglviewer
+DEPEND="x11-libs/libqglviewer
 	|| ( x11-libs/qt-gui >=x11-libs/qt-4.3 )"
 
-S="${WORKDIR}"/${MY_PN}
+S=${WORKDIR}/${MY_PN}
 
 src_compile() {
-	eqmake4 ${MY_PN}.pro -o Makefile \
-		PREFIX=/usr || die "qmake failed"
+	eqmake4 ${MY_PN}.pro -o Makefile PREFIX=/usr
 	emake || die "emake failed"
 }
 
 src_install() {
-	dobin ${MY_PN}
+	dobin ${MY_PN} || die "installation failed"
 
 	if use doc ; then
-		dohtml -r html/*
-		insinto /usr/share/doc/${PF}/examples
-		doins test-files/*
+		dohtml -r html/* || die "installing html files failed"
+		docinto examples
+		dodoc test-files/* || die "installing examples failed"
 	fi
 }

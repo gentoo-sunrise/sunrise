@@ -3,6 +3,10 @@
 # $Header: $
 
   13 Nov 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  candystore-0.0.2.ebuild:
+  Some minor improvements
+
+  13 Nov 2008; Oliver Borm (boroli) <oli.borm@web.de>
   +candystore-0.0.2.ebuild, +metadata.xml:
   New ebuild for bug 246611, thanks to scarabeus
 
