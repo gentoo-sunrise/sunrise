@@ -3,6 +3,10 @@
 # $Header: $
 
   13 Nov 2008; Oliver Borm (boroli) <oli.borm@web.de>
+  libqglviewer-2.3.1.ebuild:
+  Some minor improvements
+
+  13 Nov 2008; Oliver Borm (boroli) <oli.borm@web.de>
   +libqglviewer-2.3.1.ebuild, +metadata.xml:
   New ebuild for bug 53167, thanks to scarabeus
 
