@@ -1,0 +1,10 @@
+# ChangeLog for app-accessibility/julius
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Nov 2008; Daniel Pinto dos Santos (danielpi) <danielpi@gmx.net>
+  +julius-4.1.ebuild, +files/julius-4.1-makefile.patch,
+  +files/julius-4.1-mkfacrash.patch, +files/julius-4.1-newParam.patch,
+  +metadata.xml:
+  New ebuild for julius, see bug #245475. Thanks to idl0r and Tommy.
+

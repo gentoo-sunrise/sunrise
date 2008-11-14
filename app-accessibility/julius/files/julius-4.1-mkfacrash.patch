@@ -1,0 +1,12 @@
+diff -Naur working/dists/julius-4.1/gramtools/mkdfa/mkfa-1.44-flex/triplet.c working/dists/julius-4.1_mod2/gramtools/mkdfa/mkfa-1.44-flex/triplet.c
+--- gramtools/mkdfa/mkfa-1.44-flex/triplet.c	2007-12-18 21:45:47.000000000 +1300
++++ gramtools/mkdfa/mkfa-1.44-flex/triplet.c	2008-11-10 15:40:09.000000000 +1300
+@@ -150,7 +150,7 @@
+     FAQ *newFAQ;
+ 
+     if( fa != NULL ){
+-	if( (newFAQ = malloc( sizeof(newFAQ) )) == NULL ){
++	if( (newFAQ = malloc( sizeof(FAQ) )) == NULL ){
+ 	    errMes( "Can't malloc queue for breadth-first search of triplet list" );
+ 	}
+ 	newFAQ->fa = fa;
