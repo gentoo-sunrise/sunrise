@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit flag-o-matic
+
 EAPI=1
 
 MY_P=${P/graphicsm/GraphicsM}
@@ -13,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bzip2 cxx fpx imagemagick jbig +jpeg +jpeg2k lcms openmp
+IUSE="bzip2 cxx debug fpx imagemagick jbig +jpeg +jpeg2k lcms openmp
 	perl +png q16 q32 +svg +threads tiff +truetype X wmf zlib"
 
 DEPEND="bzip2? ( app-arch/bzip2 )
@@ -47,6 +49,8 @@ src_compile() {
 		quantumDepth="${quantumDepth}8"
 	fi
 
+	use debug && filter-flags -fomit-frame-pointer
+
 	econf \
 		${quantumDepth} \
 		$( use_enable imagemagick magick-compat ) \
@@ -67,6 +71,11 @@ src_compile() {
 		$( use_with wmf ) \
 		$( use_with zlib ) \
 		$( use_with threads ) \
+		$( use_enable debug ccmalloc ) \
+		$( use_enable debug prof ) \
+		$( use_enable debug gcov ) \
+		--disable-gprof \
+		--enable-largefile \
 		--without-included-ltdl \
 		--without-gslib \
 		--without-dps \
@@ -80,7 +89,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Installation failed"
-	dodoc README.txt FAQ.txt ChangeLog* || die "dodoc failed."
+	dodoc README.txt ChangeLog* || die "dodoc failed."
 }
 
 pkg_postinst() {
