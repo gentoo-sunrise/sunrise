@@ -19,9 +19,9 @@ for i in ${LANGS} ; do
 done
 
 DEPEND=""
-RDEPEND=">=dev-lang/python-2.4
-	>=dev-python/pygtk-2.8
-	>=x11-libs/gtk+-2.8"
+RDEPEND=">=dev-lang/python-2.5
+	>=dev-python/pygtk-2.10
+	>=x11-libs/gtk+-2.10"
 
 src_install() {
 	python_version
@@ -46,11 +46,13 @@ src_install() {
 	dohtml xpn.html
 
 	make_wrapper ${PN} ./${PN}.py /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
+
+	python_need_rebuild
 }
 
 pkg_postinst() {
 	python_version
-	python_mod_optimize "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
 }
 
 pkg_postrm() {
