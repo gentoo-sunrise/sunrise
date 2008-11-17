@@ -2,4 +2,4 @@ JAVA_OPTIONS="-Djava.awt.headless=true -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=
 CLASSPATH=
 TIGASE_USER=tigase
 TIGASE_CONFIG=/etc/tigase-config.xml
-TIGASE_OPTIONS=
+TIGASE_PROPERTIES=/etc/tigase.properties

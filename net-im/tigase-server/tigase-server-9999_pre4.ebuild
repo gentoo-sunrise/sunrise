@@ -51,11 +51,14 @@ src_compile() {
 src_install() {
 	java-pkg_dojar jars/*.jar
 
-	use doc && java-pkg_dojavadoc docs-tigase-server/api
+	use doc && java-pkg_dojavadoc docs/api
 	use source && java-pkg_dosrc src/main/java/
 
 	newconfd "${FILESDIR}/conf_d_tigase" tigase
 	newinitd "${FILESDIR}/init_d_tigase" tigase
+
+	insinto /etc
+	doins "${FILESDIR}/tigase.properties"
 
 	insinto /var/lib/tigase/certificates
 	insopts -m0600

@@ -1,0 +1,44 @@
+Index: src/main/java/tigase/util/LogFormatter.java
+===================================================================
+--- src/main/java/tigase/util/LogFormatter.java (revision 1213)
++++ src/main/java/tigase/util/LogFormatter.java (working copy)
+@@ -26,6 +26,7 @@
+ import java.util.Calendar;
+ import java.util.logging.Formatter;
+ import java.util.logging.LogRecord;
++import java.text.MessageFormat;
+
+ /**
+  * Describe class LogFormatter here.
+@@ -70,7 +71,25 @@
+                while (sb.length() < MED_LEN + LEVEL_OFFSET) {
+                        sb.append(' ');
+                } // end of while (sb.length() < MEDIUM_LEN)
+-               sb.append(record.getMessage());
++/*
++               try {
++                       
+sb.append(MessageFormat.format(record.getMessage().replaceAll("(\\{\\d+\\})", 
+"<$1>"), record.getParameters()));
++               } catch( Exception e ) {
++                       sb.append(e.getMessage());
++               }
++*/
++               sb.append(record.getMessage().replaceAll("(\\{\\d+\\})", 
+"").trim());
++
++               if( record.getParameters() != null ) {
++                       for( Object param : record.getParameters() ) {
++                               if( param == null ) {
++                                       sb.append("null");
++                               } else {
++                                       sb.append(" <" + 
+param.getClass().getName() + ":" + param.toString() + "> ");
++                               }
++                       }
++               }
++
+                if (record.getThrown() != null) {
+            try {
+                                StringWriter sw = new StringWriter();
+
