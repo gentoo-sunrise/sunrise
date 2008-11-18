@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -mersennetwister-23158.ebuild, +mersennetwister-23740.ebuild:
+  New release
+
   29 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   +mersennetwister-23158.ebuild, +files/build.xml, +metadata.xml:
   New ebuild for bug 244925 (dep for net-p2p/freenet)
