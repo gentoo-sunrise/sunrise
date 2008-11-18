@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Nov 2008; Tiziano Müller <dev-zero@gentoo.org> libvmime-0.8.1.ebuild:
+  Keyworded for ~amd64
+
   26 Mar 2008; Markus Ullmann <jokey@gentoo.org>
   -libvmime-0.8.1-gnutls_ssl-detection.patch, libvmime-0.8.1:
   Remove unused patch
