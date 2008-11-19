@@ -18,7 +18,7 @@ DEPEND="dev-lang/perl
 	virtual/perl-Time-HiRes
 	virtual/perl-Getopt-Long
 	dev-perl/TermReadKey
-	dev-perl/Term-ANSIColor
+	virtual/perl-Term-ANSIColor
 	dev-perl/XML-DOM
 	ssl? ( dev-perl/IO-Socket-SSL )
 	ipv6? ( dev-perl/IO-Socket-INET6 )
