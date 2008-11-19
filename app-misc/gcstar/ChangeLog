@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  gcstar-1.4.3.ebuild:
+  Fix deps and remove dublicates
+
   17 Oct 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -gcstar-1.4.2.ebuild, +gcstar-1.4.3.ebuild:
   Version bump

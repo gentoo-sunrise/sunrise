@@ -22,9 +22,9 @@ for x in ${LANGS} ; do
 done
 
 DEPEND="dev-lang/perl
-		dev-perl/Archive-Tar
+		virtual/perl-Archive-Tar
 		dev-perl/Archive-Zip
-		dev-perl/Compress-Zlib
+		virtual/perl-Compress-Zlib
 		dev-perl/gtk2-perl
 		dev-perl/HTML-Parser
 		dev-perl/libwww-perl
@@ -32,9 +32,7 @@ DEPEND="dev-lang/perl
 		dev-perl/XML-LibXML
 		dev-perl/XML-Parser
 		dev-perl/XML-Simple
-		dev-perl/Archive-Tar
-		dev-perl/Compress-Zlib
-		dev-perl/Time-Piece
+		virtual/perl-Time-Piece
 		virtual/perl-File-Spec
 		virtual/perl-File-Temp
 		virtual/perl-libnet
@@ -42,8 +40,7 @@ DEPEND="dev-lang/perl
 		gnome? ( dev-perl/gnome2-vfs-perl )
 		mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
 		spell? ( dev-perl/gtk2-spell )
-		tellico? ( dev-perl/Archive-Zip
-			virtual/perl-Digest-MD5
+		tellico? ( virtual/perl-Digest-MD5
 			virtual/perl-MIME-Base64 )
 		vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )"
 RDEPEND="${DEPEND}"
