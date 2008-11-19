@@ -9,6 +9,7 @@ SRC_URI="ftp://download.gnu.org.ua/pub/release/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 src_install() {
 	dodoc THANKS AUTHORS README NEWS || die "copying documentation failed"
