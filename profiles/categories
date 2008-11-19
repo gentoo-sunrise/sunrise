@@ -15,6 +15,7 @@ app-misc
 app-office
 app-pda
 app-portage
+app-shells
 app-text
 app-vim
 dev-cpp
