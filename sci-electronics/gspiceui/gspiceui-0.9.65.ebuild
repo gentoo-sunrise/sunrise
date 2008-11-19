@@ -2,20 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WX_GTK_VER="2.6"
+WX_GTK_VER="2.8"
 inherit eutils wxwidgets
 
 MY_P="${PN}-v${PV}"
 DESCRIPTION="GUI frontend for Ngspice and Gnucap"
 HOMEPAGE="http://www.geda.seul.org/tools/gspiceui/index.html"
-SRC_URI="http://www.geda.seul.org/dist/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 
-DEPEND="=x11-libs/wxGTK-2.6*"
+DEPEND="=x11-libs/wxGTK-2.8*"
 RDEPEND="${DEPEND}
 	|| ( sci-electronics/ng-spice-rework sci-electronics/gnucap )
 	sci-electronics/gwave

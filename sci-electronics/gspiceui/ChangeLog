@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Nov 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -gspiceui-0.8.90.ebuild, +gspiceui-0.9.65.ebuild:
+  Version bump. changed SRC_URI to sourceforge
+
   13 Jan 2008; Jakub Moc <jakub@gentoo.org> gspiceui-0.8.90.ebuild:
   Fix wxGTK handling
 
