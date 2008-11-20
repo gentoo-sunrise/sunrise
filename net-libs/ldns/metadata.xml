@@ -3,7 +3,5 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='drill'>Enable installation of the drill utility</flag>
-		<flag name='utils'>Enable installation of the example utilities</flag>
 	</use>
 </pkgmetadata>
