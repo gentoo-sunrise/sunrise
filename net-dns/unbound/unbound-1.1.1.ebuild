@@ -13,10 +13,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug libevent static threads"
 
-RDEPEND="dev-libs/openssl
-		net-libs/ldns
-		libevent? ( dev-libs/libevent )"
-DEPEND="${RDEPEND}"
+DEPEND="dev-libs/openssl
+	>=net-libs/ldns-1.4.0
+	libevent? ( dev-libs/libevent )"
 
 pkg_setup() {
 	enewgroup unbound
@@ -48,12 +47,12 @@ src_install() {
 	dodoc "${FILESDIR}/chroot_howto.txt" || die "dodoc failed"
 
 	# adapt config file to disable the chroot
-	sed -i '/^\t# chroot:/a\\tchroot: ""' "$D/etc/unbound/unbound.conf" || die "sed failed"
+	sed -i '/^\t# chroot:/a\\tchroot: ""' "${D}/etc/unbound/unbound.conf" || die "sed failed"
 }
 
 pkg_postinst() {
 	elog "The gentoo configuration does not enable a chroot environment,"
 	elog "this differs from the default upstream configuration."
-	elog "To use a chroot enviroment, please read:"
-	elog "/usr/share/doc/${PF}/chroot_howto.txt.bz2"
+	elog "To use a chroot enviroment which is recommended, please read"
+	elog "the chroot_howto.txt in /usr/share/doc/${PF}"
 }

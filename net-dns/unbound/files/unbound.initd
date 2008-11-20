@@ -22,8 +22,6 @@ start() {
 	configtest || return 1
 
 	ebegin "Starting unbound"
-		touch "${pid_file}"
-		chown unbound:unbound "${pid_file}"
 		unbound -c "${config_file}"
 	eend $?
 }
@@ -35,7 +33,7 @@ stop() {
 }
 
 configtest() {
-	ebegin "Checking config"
+	ebegin "Checking config (${config_file})"
 		unbound-checkconf "${config_file}" > /dev/null 2>&1
 		local RESULT=$?
 		if test "$RESULT" != 0; then
