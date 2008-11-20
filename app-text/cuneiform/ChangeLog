@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Nov 2008; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru>
+  -cuneiform-0.4.ebuild, +cuneiform-0.5.ebuild:
+  Version bump to 0.5
+
   08 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Readd more detailed information for global useflag
 

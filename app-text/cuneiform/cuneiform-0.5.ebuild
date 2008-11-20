@@ -22,6 +22,8 @@ DEPEND=">=dev-util/cmake-2.4.7
 
 DOCS="readme.txt"
 
+S="${S}.0"
+
 src_unpack(){
 	unpack ${A}
 	# Fix automagic dependencies / linking
