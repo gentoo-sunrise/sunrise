@@ -13,7 +13,7 @@ HOMEPAGE="http://www.freenetproject.org/"
 SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/seednodes-${DATE}.fref
 	http://dev.gentoo.org/~tommy/distfiles/seednodes-${DATE}.fref"
 
-LICENSE="GPL-2"
+LICENSE="as-is GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="freemail"
