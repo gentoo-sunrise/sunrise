@@ -24,7 +24,7 @@ src_compile() {
 		einfo "Building in ${dir}"
 		cd "${dir}"
 			econf
-			emake || die "emake in ${dir} failed"
+			emake || die "emake in ""${dir}"" failed"
 		cd ..
 	done
 }
@@ -32,7 +32,7 @@ src_compile() {
 src_install() {
 	for dir in ${DIRS}; do
 		cd "${dir}"
-		emake DESTDIR="${D}" install || die "emake install in ${dir} failed"
+		emake DESTDIR="${D}" install || die "emake install in ""${dir}"" failed"
 		cd ..
 	done
 
