@@ -11,7 +11,8 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-RDEPEND="app-dicts/stardict"
+RDEPEND="app-dicts/stardict
+		!app-dicts/stardict-freedict-eng-rus"
 
 DEPEND="app-arch/unrar"
 
