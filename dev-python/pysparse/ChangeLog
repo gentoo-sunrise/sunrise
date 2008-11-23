@@ -1,6 +1,11 @@
 # ChangeLog for dev-python/pysparse
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Nov 2008; Syed Saifullah Albiz (try_catch) <s.s.albiz@gmail.com>
+  -pysparse-0.34.032.ebuild, -files/pysparse-0.34.032.patch,
+  +pysparse-1.0.1.ebuild, +files/pysparse-1.0.1.patch:
+  version bump and fixed dependencies, thanks Tommy
 
   24 Sep 2006; David Grant (dgrant) <davidgrant@gmail.com>
   pysparse-0.34.032.ebuild:
