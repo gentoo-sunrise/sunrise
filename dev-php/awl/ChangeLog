@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Nov 2008; lebarjack <francois.perichon@univ-lille2.fr>
+  -awl-0.33.ebuild, +awl-0.34.ebuild:
+  New version for awl
+
   05 Nov 2008; lebarjack <francois.perichon@univ-lille2.fr>
   -libawl-php-0.31.ebuild, +awl-0.33.ebuild:
   New version. Renamed to dev-php/awl to reflect upstream naming scheme
