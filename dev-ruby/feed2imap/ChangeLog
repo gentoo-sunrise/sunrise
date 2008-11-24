@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/feed2imap
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Nov 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  +feed2imap-0.9.3.ebuild, +metadata.xml:
+  New ebuild for package feed2imap. Bug 105122.
+
