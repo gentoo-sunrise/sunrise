@@ -1,0 +1,10 @@
+# ChangeLog for games-board/dreamchess
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Nov 2008; David Bitseff (useer) <dbitsef@zipcon.net>
+  +dreamchess-0.2.0.ebuild, +files/dreamchess-0.2.0-configure.ac.patch,
+  +metadata.xml:
+  New Ebuild for bug 194737. Thanks to Paul Bredbury, Chi-Thanh, Christian
+  Ruppert, Tiziano Mueller, scarabeus, and Ken69267
+
