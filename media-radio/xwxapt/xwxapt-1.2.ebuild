@@ -15,6 +15,7 @@ IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2"
 DEPEND="${RDEPEND}
+	dev-util/pkgconfig
 	>=dev-libs/glib-2"
 
 S="${WORKDIR}/${PN}"
