@@ -6,7 +6,7 @@ inherit autotools eutils
 
 DESCRIPTION="Basic AX.25 (Amateur Radio) administrative tools and daemons"
 HOMEPAGE="http://www.linux-ax25.org/"
-SRC_URI="http://omploader.org/vbXFs/${P}.tar.gz"
+SRC_URI="http://omploader.org/veWxk/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,7 +23,6 @@ DEPEND=">=dev-libs/libax25-0.0.5
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/ax25-tools-9999-axgetput.diff"
 	eautoreconf
 }
 
