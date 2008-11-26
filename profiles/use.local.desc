@@ -37,6 +37,8 @@ dev-libs/libwiimote:tilt - Enable tilt
 dev-libs/xml-security-c:xalan - Enable support for XSLT and XPath parsing by dev-libs/xalan-c
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+games-board/dreamchess:music - Install the music pack
+games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
 games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
 games-fps/chocolate-doom:server - Enable installation of server
@@ -128,6 +130,9 @@ media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
 media-sound/scala-bin:midi - MIDI support
+media-sound/songbird-bin:faac - Add faac support
+media-sound/songbird-bin:faad - Add faad support
+media-sound/songbird-bin:ugly - Add ugly support
 media-video/pgcedit:video - Add support for video preview
 media-video/ripwrap:mp2 - Add mp2 support
 media-video/ripwrap:mp4 - Add mp4 support
