@@ -6,14 +6,6 @@
   +ruby-feedparser-0.6.ebuild:
   Version bump for ruby-feedparser. Bug 105122.
 
-  24 Nov 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
-  +ruby-feedparser-0.6.ebuild:
-  Version bump for ruby-feedparser. Bug 105122.
-
-  24 Nov 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
-  +ruby-feedparser-0.6.ebuild:
-  Version bump for ruby-feedparser. Bug 105122.
-
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   ruby-feedparser-0.2.ebuild:
   Add IUSE+SLOT
