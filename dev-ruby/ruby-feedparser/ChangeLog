@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ruby-feedparser-0.6.ebuild:
+  Readd IUSE, x86-keyword
+
   24 Nov 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   +ruby-feedparser-0.6.ebuild:
   Version bump for ruby-feedparser. Bug 105122.
