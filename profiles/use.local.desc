@@ -118,13 +118,6 @@ media-radio/xastir:gdal - Support for some further map formats
 media-radio/xastir:geotiff - Install geotiff support. Allows using USGS DRG topo maps or other types of geotiff mapes/images
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
-media-sound/ncmpc:artist-screen - Enable artist screen (EXPERIMENTAL)
-media-sound/ncmpc:clock-screen - Enable clock screen
-media-sound/ncmpc:key-screen - Enable key editor screen
-media-sound/ncmpc:lyrics-screen - Enable lyrics screen
-media-sound/ncmpc:mouse - Enable curses getmouse support
-media-sound/ncmpc:raw-mode - raw terminal mode
-media-sound/ncmpc:search-screen - Enable search screen (EXPERIMENTAL)
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
