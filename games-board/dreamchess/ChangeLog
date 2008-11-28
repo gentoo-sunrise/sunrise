@@ -2,6 +2,12 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2008; David Bitseff (useer) <dbitsef@zipcon.net>
+  files/dreamchess-0.2.0-configure.ac.patch:
+  New patch for configure.ac so app will build with any version of
+  dev-libs/mini-xml currently in portage. Thanks to Thomas Capricelli and
+  Tommy.
+
   24 Nov 2008; David Bitseff (useer) <dbitsef@zipcon.net>
   +dreamchess-0.2.0.ebuild, +files/dreamchess-0.2.0-configure.ac.patch,
   +metadata.xml:
