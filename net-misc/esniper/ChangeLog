@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Nov 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  -esniper-2.17.1.ebuild, +esniper-2.19.0.ebuild:
+  Version bump to 2.19.0
+
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   esniper-2.17.1.ebuild:
   Add IUSE

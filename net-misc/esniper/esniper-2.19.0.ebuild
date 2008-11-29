@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-libs/openssl
@@ -22,7 +22,8 @@ S=${WORKDIR}/${MY_P}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	dodoc README NEWS TODO AUTHORS sample_auction.txt sample_config.txt
+	dobin frontends/snipe || die
+	dodoc README NEWS TODO AUTHORS sample_auction.txt sample_config.txt || die
 }
 
 pkg_postinst() {
