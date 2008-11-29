@@ -24,7 +24,6 @@ PDEPEND="kde? ( net-misc/kanyremote )
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/btio.patch"
 }
 
 src_compile() {
