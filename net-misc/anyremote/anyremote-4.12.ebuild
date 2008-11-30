@@ -21,11 +21,6 @@ DEPEND="${RDEPEND}"
 PDEPEND="kde? ( net-misc/kanyremote )
 	  gnome? ( net-misc/ganyremote )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-}
-
 src_compile() {
 	econf $(use_enable bluetooth bluez)
 	emake || die "emake failed"
