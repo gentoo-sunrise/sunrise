@@ -1,0 +1,9 @@
+# ChangeLog for www-apps/phpMyProxy
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Nov 2008; Gökdeniz Karadağ (hayalci) <gokdenizk@gmail.com>
+  +phpMyProxy-1.0.3.ebuild, +metadata.xml:
+  New ebuild for phpMyAdmin. Thanks to dleverton, zlin, pva, scarabeus,
+  Tommy[D], omp for review and general help about sunrise. Bug #249411
+
