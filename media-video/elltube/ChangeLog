@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Nov 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -elltube-0.2.2.ebuild, +elltube-0.3.ebuild:
+  version bump
+
   09 Oct 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   -elltube-0.2.1.ebuild, +elltube-0.2.2.ebuild:
   version bump, remove old
