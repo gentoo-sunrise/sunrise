@@ -10,6 +10,7 @@ HOMEPAGE="http://www.phpmyproxy.com/"
 SRC_URI="http://omploader.org/vejZx/${P/-/_}.zip"
 
 LICENSE="GPL-3"
+SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
