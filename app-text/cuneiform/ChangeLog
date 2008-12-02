@@ -4,7 +4,7 @@
 
   01 Dec 2008; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru>
   cuneiform-0.5.ebuild:
-  Fix Cmake depend (reported by Thomas Fischer), patch from Thomas Fischer
+  Fix Cmake depend (reported by Thomas Fischer), patch from Sven Eckelmann
   (Debian) to build with binutils-2.19 added.
 
   20 Nov 2008; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru>
