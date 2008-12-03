@@ -12,10 +12,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
-S="${WORKDIR}/${PN}"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+S="${WORKDIR}/${PN}"
 
 src_install() {
 	PORTCFG=$(python -c 'import portage; print portage.USER_CONFIG_PATH,') \
@@ -25,17 +23,17 @@ src_install() {
 	PSETC="${PSDIR}/etc"
 
 	exeinto /usr/sbin
-	doexe postsync
+	doexe postsync || die
 
 	exeinto "${PORTCFG}/bin"
-	doexe post_sync
+	doexe post_sync || die
 
 	exeinto "${PSBIN}"
-	doexe bin/*
+	doexe bin/* || die
 
-	dodir "${PSETC}"
+	dodir "${PSETC}" || die
 
-	dodoc README ChangeLog doc/*
+	dodoc README ChangeLog doc/* || die
 }
 
 pkg_postinst() {
