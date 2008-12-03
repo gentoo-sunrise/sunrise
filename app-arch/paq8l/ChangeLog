@@ -15,5 +15,5 @@
 
   05 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   +paq8l-20070308.ebuild, +metadata.xml:
-  New ebuild for paq8l compressor. Thanks gentoofan23, dzhus and Ken69267
+  New ebuild for paq8l compressor (see Bug 249724). Thanks gentoofan23, dzhus and Ken69267
 
