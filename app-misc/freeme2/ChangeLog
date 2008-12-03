@@ -8,5 +8,4 @@
 
   31 Oct 2007; Jakub Moc <jakub@gentoo.org> +metadata.xml,
   +freeme2-9999.ebuild:
-  New ebuild
-
+  New ebuild (bug 249720)
