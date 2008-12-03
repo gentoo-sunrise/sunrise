@@ -30,5 +30,6 @@
   Vesion bump
 
   26 Jul 2006; Geoff Clements <geoff@electron.me.uk>:
-  Initial import, bug 133238
+  Initial import, bug 133238 was the original idea, the needed bug for this ebuild is 
+  bug 249739
 
