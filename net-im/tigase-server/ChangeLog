@@ -18,5 +18,4 @@
   +tigase-server-9999_pre2.ebuild, +files/classpaths.patch,
   +files/conf_d_tigase, +files/default_config.patch, +files/init_d_tigase,
   +metadata.xml:
-  New EBuild for Tigase Server
-
+  New EBuild for Tigase Server (bug 238755)
