@@ -8,8 +8,8 @@ inherit webapp
 
 DESCRIPTION="The Ajax CMS for today. And tomorrow."
 HOMEPAGE="http://www.modxcms.com/"
-SRC_URI="http://www.modxcms.com/assets/snippets/filedownload/download.php?path=YnVpbGRz&fileName=modx-${PV}.tar.gz
--> modx-${PV}.tar.gz"
+SRC_URI="http://www.modxcms.com/assets/snippets/filedownload/download.php?path=YnVpbGRz&fileName=${P}.tar.gz
+-> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
