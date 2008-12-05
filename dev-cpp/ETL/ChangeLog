@@ -43,5 +43,4 @@
 
   23 Jun 2007; Steve Long (igli) <slong@rathaus.eclipse.co.uk>
   +ETL-502.ebuild, +metadata.xml:
-  New Ebuild ETL support lib for synfig-studio
-
+  New Ebuild ETL support lib for synfig-studio (bug 111277)
