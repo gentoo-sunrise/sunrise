@@ -8,7 +8,7 @@ MY_P=${P/ruby-mpd/mpd-rb}
 
 DESCRIPTION="Ruby class for communicating with an MPD server"
 HOMEPAGE="http://www.andsoforth.com/geek/mpd_rb.html"
-SRC_URI="http://www.andsoforth.com/downloads/mpd-rb/${MY_P}.tar.gz"
+SRC_URI="http://rubyforge.org/frs/download.php/8040/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
