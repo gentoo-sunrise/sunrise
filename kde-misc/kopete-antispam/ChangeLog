@@ -6,9 +6,6 @@
   ,kopete-antispam-0.3.ebuild:
   kopete-antispam ebuild for kde3 is dropped. New ebuild for kde4
 
-  07 Dec 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr> ChangeLog:
-  fixing bug number. This ebuild is for bug #225655
-
   11 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   kopete-antispam-0.3.ebuild:
   Removed kde-base/kdenetwork from dependencies, added kde-base/kopete as
@@ -16,5 +13,5 @@
 
   10 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   +kopete-antispam-0.3.ebuild, +metadata.xml:
-  New Ebuild for bug #161552
+  New Ebuild for bug #225655
 
