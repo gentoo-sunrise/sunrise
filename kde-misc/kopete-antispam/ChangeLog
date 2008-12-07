@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr> ChangeLog:
+  fixing bug number. This ebuild is for bug #225655
+
   11 Sep 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   kopete-antispam-0.3.ebuild:
   Removed kde-base/kdenetwork from dependencies, added kde-base/kopete as
