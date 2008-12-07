@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  ,kopete-antispam-0.3.ebuild:
+  kopete-antispam ebuild for kde3 is dropped. New ebuild for kde4
+
   07 Dec 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr> ChangeLog:
   fixing bug number. This ebuild is for bug #225655
 
