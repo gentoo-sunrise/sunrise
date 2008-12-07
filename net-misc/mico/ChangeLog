@@ -18,6 +18,6 @@
 
   02 Nov 2007; Oliver Borm (boroli) <oli.borm@web.de> +metadata.xml,
   +mico-2.3.12.ebuild:
-  Ebuild for bug 122141; Need mico for the soon coming OpenFOAM ebuild; Asked
+  Ebuild for bug 250222; Need mico for the soon coming OpenFOAM ebuild; Asked
   for that in gentoo-sunrise irc.
 
