@@ -13,22 +13,18 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="gtk postgres ssl tcl threads"
 
-DEPEND=">=sys-devel/flex-2.5.2
-	>=sys-devel/bison-1.22
-	ssl? ( dev-libs/openssl )
+RDEPEND="ssl? ( dev-libs/openssl )
 	tcl? ( dev-lang/tcl )
 	postgres? ( dev-db/postgresql )"
-DEPEND="ssl? ( dev-libs/openssl )
-	tcl? ( dev-lang/tcl )
-	postgres? ( dev-db/postgresql )"
+DEPEND="${RDEPEND}
+	>=sys-devel/flex-2.5.2
+	>=sys-devel/bison-1.22"
 
 S="${WORKDIR}/${PN}"
 
 src_compile() {
 	local myopts="--enable-final
 		--disable-mini-stl"
-#		--enable-life
-#		--enable-externalize"
 
 	if ! use threads; then
 		myopts="${myopts} --enable-threads=no --enable-pthreads=no"
