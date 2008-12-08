@@ -11,5 +11,7 @@
 			aufs via nfs</flag>
 		<flag name='fuse'>Enable FUSE workaround</flag>
 		<flag name='robr'>Enable aufs readonly-branch</flag>
+		<flag name='sec_perm'>Enable patch for kernel with CONFIG_SECURITY
+			enabled</flag>
 	</use>
 </pkgmetadata>

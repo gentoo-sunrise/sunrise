@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  +aufs-20081208.ebuild, +files/aufs-20081208-sec_perm-2.6.24.patch:
+  Version bump, needs some more testing before removing old version
+
   25 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   aufs-20080422.ebuild:
   Hopefully fix sec_perm check
