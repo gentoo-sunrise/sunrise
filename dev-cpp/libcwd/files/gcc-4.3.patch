@@ -1,0 +1,20 @@
+--- elfxx.cc	2007-07-07 04:07:29.000000000 +0200
++++ elfxx.cc.new	2008-12-06 20:00:55.000000000 +0100
+@@ -687,7 +687,7 @@
+   }
+ 
+ template<>
+-  static void
++  void
+   dwarf_read(unsigned char const*& in, uLEB128_t& x)
+   {
+     int shift = 7;
+@@ -708,7 +708,7 @@
+   }
+ 
+ template<>
+-  static void
++  void
+   dwarf_read(unsigned char const*& in, LEB128_t& x)
+   {
+     int shift = 7;

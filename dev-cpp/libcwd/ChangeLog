@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/libcwd
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Dec 2008; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  libcwd-0.99.47.ebuild, +files/gcc-4.3.patch:
+  fixed for gcc-4.3 as pointed out in bug 18587
 
   19 Oct 2007; Tiziano Müller <dev-zero@gentoo.org>
   -files/libcwd-0.99.45-getenv.patch, -libcwd-0.99.45.ebuild,

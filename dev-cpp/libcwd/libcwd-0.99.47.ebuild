@@ -24,6 +24,8 @@ src_unpack() {
 		-e 's/-O3//' \
 		configure || die "sed failed"
 
+	epatch "${FILESDIR}"/gcc-4.3.patch ||die
+
 	# Clean-out possibly old docs
 	rm -f  documentation/doxygen.config
 	rm -rf documentation/html/*
