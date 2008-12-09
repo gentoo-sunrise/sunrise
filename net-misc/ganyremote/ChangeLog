@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Dec 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
+  -ganyremote-5.2.ebuild, +ganyremote-5.4.2.ebuild:
+  version bump
+
   14 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   ganyremote-5.2.ebuild:
   Fix whiteys
