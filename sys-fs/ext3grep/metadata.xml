@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>private-overlay</herd>
+	<maintainer>
+		<email>justin@j-schmitz.net</email>
+		<name>Justin Lecher</name>
+	</maintainer>
+	<maintainer>
+		<email>johann@j-schmitz.net</email>
+		<name>Johann Schmitz</name>
+	</maintainer>
+	<use>
+		<flag name='largefile'>Add support for files greater then 2gb on x86</flag>
+		<flag name='libcwd'>Debuging support</flag>
+	</use>
+</pkgmetadata>
+
