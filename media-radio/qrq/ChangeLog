@@ -1,0 +1,9 @@
+# ChangeLog for media-radio/qrq
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Dec 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> +qrq-0.1.4.ebuild,
+  +metadata.xml:
+  New ebuild for media-radio/qrq (bug 250521). Thanks to scarabeus and
+  chithead for help.
+
