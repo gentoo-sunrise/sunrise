@@ -22,6 +22,8 @@ RDEPEND=""
 S=${WORKDIR}/${PN}
 
 src_compile() {
+	local myconf
+
 	premake --target gnu || die "creating Makefile failed"
 	if use !debug ; then
 		myconf="CONFIG=Release"
