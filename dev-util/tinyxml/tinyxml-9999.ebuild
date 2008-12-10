@@ -22,6 +22,8 @@ RDEPEND=""
 S="${WORKDIR}/${PN}"
 
 src_compile() {
+	local myconf
+
 	use debug && myconf="debug=0"
 	scons ${MAKEOPTS} ${myconf} sharedlibrary=1 program=0 || die "scons failed"
 	if use doc ; then
