@@ -1,0 +1,9 @@
+# ChangeLog for media-gfx/ktikz
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Dec 2008; Tiziano Müller <dev-zero@gentoo.org> +ktikz-0.7.ebuild,
+  +metadata.xml:
+  Initial commit for bug #236750 (based on the ebuild written by Nico
+  Schlömer and Daniel Spoonhower with a couple of corrections)
+
