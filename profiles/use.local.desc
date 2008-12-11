@@ -187,6 +187,9 @@ sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module r
 sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
 sys-fs/aufs:robr - Enable aufs readonly-branch
+sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
+sys-fs/ext3grep:largefile - Add support for files greater then 2gb on x86
+sys-fs/ext3grep:libcwd - Debuging support
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
