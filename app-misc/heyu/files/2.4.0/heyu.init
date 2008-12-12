@@ -1,0 +1,24 @@
+#!/sbin/runscript
+# Copyright 1999-2008 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+start() {
+	ebegin "Starting heyu"
+	mkdir /var/tmp/heyu 2>/dev/null
+	chmod a=rwx /var/tmp/heyu
+	/usr/bin/heyu start >/dev/null
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping heyu"
+	/usr/bin/heyu stop
+	eend $?
+}
+
+restart() {
+	svc_stop
+	sleep 5
+	svc_start
+}

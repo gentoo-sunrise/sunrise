@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2008; Sven Schwyn (svoop) <gentoo@bitcetera.com> +files/2.4.0,
+  +heyu-2.4.0.ebuild, +files/2.4.0/heyu.init:
+  Version bump for bug 91396
+
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added USE flag description wrt GLEP 56
 
