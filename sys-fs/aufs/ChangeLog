@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -aufs-20081208.ebuild, +aufs-20081208-r1.ebuild:
+  Add missed file to install
+
   08 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   +aufs-20081208.ebuild, +files/aufs-20081208-sec_perm-2.6.24.patch:
   Version bump, needs some more testing before removing old version

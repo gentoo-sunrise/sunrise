@@ -125,6 +125,8 @@ src_install() {
 	exeopts -m0500
 	doexe mount.aufs umount.aufs auplink aulchown
 	doman aufs.5
+	insinto /etc/default
+	newins etc_default_aufs aufs || die
 	linux-mod_src_install
 }
 
