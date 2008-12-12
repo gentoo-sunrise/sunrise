@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WANT_AUTOMAKE=1.6
-
-inherit kde autotools
+inherit kde
 
 DESCRIPTION="Control Center module for editing your ~/.kde/Autostart entries"
 HOMEPAGE="http://www.kde-apps.org/content/show.php?content=45975"
