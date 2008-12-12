@@ -6,17 +6,18 @@ inherit eutils cmake-utils
 
 DESCRIPTION="A spam-resistant message board application for Freenet"
 HOMEPAGE="http://freenetproject.org/tools.html"
-SRC_URI="http://individual.utoronto.ca/nezic/${PN}-src-${PV}.zip"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${PN}-src-${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="net-p2p/freenet
-	virtual/libiconv
+DEPEND="virtual/libiconv
 	>=dev-libs/poco-1.2.9
 	dev-db/sqlite"
+RDEPEND="${DEPEND}
+	net-p2p/freenet"
 
 S=${WORKDIR}
 
@@ -34,9 +35,11 @@ src_compile() {
 
 src_install() {
 	insinto /var/freenet/fms
-	doins ${PN}_build/fms template.htm || die "doinstall failed"
+	doins ${PN}_build/fms {forum-,}template.htm || die "doinstall failed"
 	insinto /var/freenet/fms/fonts
 	doins fonts/*.bmp || die "doinstall of fonts failed"
+	insinto /var/freenet/fms/images
+	doins images/*png || die "doinstall of images failed"
 	fperms +x /var/freenet/fms/fms
 	fperms -R o-rwx /var/freenet/fms/
 	fowners -R freenet:freenet /var/freenet/fms/
