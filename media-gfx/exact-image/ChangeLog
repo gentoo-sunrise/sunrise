@@ -1,0 +1,9 @@
+# ChangeLog for media-gfx/exact-image
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Dec 2008; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
+  +exact-image-0.6.9.ebuild, +metadata.xml:
+  New ebuild for bug #249032, thanks to Tommy[D],TomJBE for helping, and
+  Thomas Fisher for the initial ebuild
+
