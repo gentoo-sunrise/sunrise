@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Dec 2008; Oliver Borm (boroli) <oli.borm@web.de> nurbs++-3.0.11.ebuild,
+  +files/nurbs++-3.0.11-gcc-4.3.patch:
+  Corrected typo and added gcc-4.3 support
+
   27 Mar 2008; Markus Ullmann <jokey@gentoo.org>
   -nurbs++-3.0.11-gcc-4.1.patch, nurbs++-3.0.11:
   Move patch to dev.ge.org

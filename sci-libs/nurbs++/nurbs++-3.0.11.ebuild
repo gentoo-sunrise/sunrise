@@ -20,7 +20,8 @@ RDEPEND=""
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${DISTDIR}"/${P}-gcc-4.1.patch
+	epatch "${WORKDIR}"/${P}-gcc-4.1.patch
+	epatch "${FILESDIR}"/${P}-gcc-4.3.patch
 	elibtoolize
 }
 
