@@ -90,6 +90,8 @@ games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/timer-applet:sounds - Installs optional sound data
 kde-misc/kcpufreq:icon - Add icon for GUI applet (enabled by default)
 mail-client/alpine:chappa - Include chappa patches
+media-gfx/exact-image:agg - Adds Anti-Grain Geometry supportx11-libs/agg
+media-gfx/exact-image:swig - Adds Swig support dev-lang/swig
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:cluster - Add support for cluster rendering
