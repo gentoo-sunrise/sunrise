@@ -1,0 +1,25 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need net
+	use logger dns
+	after bootmisc
+}
+
+start() {
+	ebegin "Starting inadyn"
+	start-stop-daemon --start --chuid inadyn-mt --exec /usr/sbin/inadyn-mt \
+	    --pidfile /var/run/inadyn-mt.pid --make-pidfile --background \
+	    -- --syslog --input_file /etc/conf.d/inadyn-mt
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping inadyn"
+	start-stop-daemon --stop --exec /usr/sbin/inadyn-mt \
+	    --pidfile /var/run/inadyn-mt.pid
+	eend $?
+}

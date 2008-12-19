@@ -1,0 +1,9 @@
+# ChangeLog for net-dns/inadyn-mt
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Dec 2008; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  +inadyn-mt-02.12.24.ebuild, +files/inadyn-mt.conf, +files/inadyn-mt.initd,
+  +metadata.xml:
+  New package, bug #231950. ebuilds etc. are based on those for net-dns/inadyn.
+
