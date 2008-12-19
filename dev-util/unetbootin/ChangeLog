@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Dec 2008; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
+  -unetbootin-301.ebuild, +unetbootin-304.ebuild:
+  version bump
+
   01 Dec 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   +unetbootin-301.ebuild, +metadata.xml:
   New ebuild for bug #245749,thanks to tanderson
