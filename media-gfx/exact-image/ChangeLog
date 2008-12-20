@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Dec 2008; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
+  exact-image-0.6.9.ebuild:
+  Added src_configure fucntion due to EAPI-2, drop src_compile function
+
   18 Dec 2008; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
   exact-image-0.6.9.ebuild:
   Removed unecessary freetype dependecy

@@ -35,7 +35,7 @@ DEPEND="
 		x11-libs/libSM
 	)"
 
-src_compile() {
+src_configure() {
 	# evas support is disabled since evas is not on main tree. You can find it
 	# on enlightenment overlay
 	# bardecode is disabled since it is protected by custom licence
@@ -58,7 +58,6 @@ src_compile() {
 		$(use_with X x11)"
 	#econf fails
 	./configure ${myconf} || die "configure failed"
-	emake || die "emake failed"
 }
 
 src_install() {
