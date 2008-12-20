@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="agg expat jpeg jpeg2k lcms lua openexr php perl python ruby swig tiff truetype X"
 
-DEPEND="
+RDEPEND="
 	agg? ( x11-libs/agg[truetype] )
 	expat? ( dev-libs/expat )
 	jpeg2k? ( media-libs/jasper )
@@ -25,7 +25,6 @@ DEPEND="
 	perl? ( sys-devel/libperl )
 	python? ( dev-lang/python )
 	ruby? ( dev-lang/ruby )
-	swig? ( dev-lang/swig )
 	tiff? ( media-libs/tiff )
 	truetype? ( >=media-libs/freetype-2 )
 	X? (
@@ -34,6 +33,9 @@ DEPEND="
 		x11-libs/libICE
 		x11-libs/libSM
 	)"
+
+DEPEND="${RDEPEND}
+	swig? ( dev-lang/swig )"
 
 src_configure() {
 	# evas support is disabled since evas is not on main tree. You can find it
