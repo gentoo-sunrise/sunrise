@@ -5,7 +5,7 @@
 inherit mono eutils
 
 DESCRIPTION="Gtk# frontend for Internet translation services"
-HOMEPAGE="http://www.laas02.org/youtranslate"
+HOMEPAGE="http://www.laas02.org/?page_id=17"
 SRC_URI="http://www.laas02.org/res/yt/${P}_src.tar.gz"
 
 LICENSE="GPL-2"
