@@ -8,8 +8,8 @@ MY_PN="DIYPloneStyle"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Base to develop new styles for Plone 2.1.x."
-HOMEPAGE="http://plone.org/products/dyiplonestyle"
-SRC_URI="http://plone.org/products/dyiplonestyle/releases/${PV}/${MY_P}.tar.gz"
+HOMEPAGE="http://plone.org/products/diyplonestyle"
+SRC_URI="http://plone.org/products/${PN}/releases/${PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

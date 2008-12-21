@@ -1,6 +1,10 @@
 # ChangeLog for net-zope/diyplonestyle
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  diyplonestyle-2.1.3.ebuild:
+  HOMEPAGE fixed.
 
   09 Jan 2007; Markus Ullmann <jokey@gentoo.org> diyplonestyle-2.1.3.ebuild:
   IUSE required
