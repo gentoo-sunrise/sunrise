@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/libiqxmlrpc
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  libiqxmlrpc-0.8.7.ebuild:
+  HOMEPAGE fixed.
 
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> libiqxmlrpc-0.8.1.ebuild:
   Fix built_with_use check for newer boost versions

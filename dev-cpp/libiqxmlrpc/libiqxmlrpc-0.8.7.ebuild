@@ -5,7 +5,7 @@
 inherit autotools eutils
 
 DESCRIPTION="An object-oriented library which represents simple XML-RPC solution for client and server side."
-HOMEPAGE="http://libiqxmlrpc.sourceforge.net/"
+HOMEPAGE="http://sourceforge.net/projects/libiqxmlrpc"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2"
