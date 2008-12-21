@@ -5,7 +5,7 @@
 inherit eutils toolchain-funcs
 
 DESCRIPTION="Curses-based real-time GSM file player with file selector"
-HOMEPAGE="http://rus.members.beeb.net/zgsmplay.html"
+HOMEPAGE="http://www.svgalib.org/rus/zgsmplay.html"
 SRC_URI="ftp://ftp.ibiblio.org/pub/Linux/apps/sound/players/${P}.tar.gz"
 
 LICENSE="GPL-2"
