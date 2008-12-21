@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2008; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
+  -ganyremote-5.5.ebuild, +ganyremote-5.5.1.ebuild:
+  version bump
+
   19 Dec 2008; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
   -ganyremote-5.4.2.ebuild, +ganyremote-5.5.ebuild:
   version bump
