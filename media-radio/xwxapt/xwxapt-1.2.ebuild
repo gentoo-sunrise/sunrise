@@ -5,7 +5,7 @@
 inherit autotools
 
 DESCRIPTION="GTK+ linux weather satellite APT image decoder software"
-HOMEPAGE="http://5b4az.chronos.org.uk/pages/apt.html/"
+HOMEPAGE="http://5b4az.chronos.org.uk/pages/apt.html"
 SRC_URI="http://5b4az.chronos.org.uk/pkg/apt/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"

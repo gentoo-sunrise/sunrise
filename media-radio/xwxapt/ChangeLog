@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  xwxapt-1.2.ebuild:
+  HOMEPAGE fixed.
+
   20 Dec 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> xwxapt-1.2.ebuild:
   fixed typo in HOMEPAGE
 
