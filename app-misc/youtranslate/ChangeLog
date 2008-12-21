@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/youtranslate
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  youtranslate-1.1.10.ebuild:
+  HOMEPAGE fixed.
 
   23 Sep 2007; Alex Tarkovsky <alextarkovsky@gmail.com>
   +files/youtranslate-1.1.10-makefile-depend-bump.patch,
