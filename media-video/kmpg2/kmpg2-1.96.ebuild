@@ -10,7 +10,7 @@ KEYWORDS="~x86"
 MY_P=${P/kmp/KmP}
 
 DESCRIPTION="A graphical MPEG2 encoder frontend, for producing 100% DVD compatible MPEG2 streams."
-HOMEPAGE="http://kmpg2.sourceforge.net/"
+HOMEPAGE="http://sourceforge.net/projects/kmpg2"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"

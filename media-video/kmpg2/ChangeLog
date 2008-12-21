@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  kmpg2-1.96.ebuild:
+  HOMEPAGE fixed.
+
   02 Jan 2008; Jakub Moc <jakub@gentoo.org> files/kmpg2.desktop,
   files/kmpg2profiler.desktop, kmpg2-1.96.ebuild:
   Fix desktop files, remove DESTTREE abuse
