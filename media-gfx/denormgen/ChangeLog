@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  denormgen-1.5.ebuild:
+  HOMEPAGE fixed.
+
   13 Jan 2008; (Tommy[D]) tommy100@gmx.de denormgen-1.5.ebuild:
   drop WANT_AUTO* and eutils.eclass
 
