@@ -4,13 +4,13 @@
 
 EAPI="1"
 
-inherit cmake-utils eutils multilib
+inherit cmake-utils eutils
 
 MY_P=${P/_rc/-RC}
 
 DESCRIPTION="An open source softphone"
 HOMEPAGE="http://www.qutecom.com/"
-SRC_URI="http://www.qutecom.com/downloads/${MY_P}.tar.gz"
+SRC_URI="http://www.qutecom.com/downloads/${MY_P}.tar.gz http://omploader.org/vMTFvMg/qutecom_googlebreakpad_64.patch"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -41,7 +41,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}_wifo_phapi.patch
-	epatch "${FILESDIR}"/${PN}_googlebreakpad_64.patch
+	epatch "${DISTDIR}"/${PN}_googlebreakpad_64.patch
 }
 
 src_compile() {

@@ -3,6 +3,11 @@
 # $Header: $
 
   23 Dec 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -files/qutecom_googlebreakpad_64.patch,
+  qutecom-2.2_rc3.ebuild:
+  do not inherit multilib, host large patch elsewhere
+
+  23 Dec 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -files/qutecom-newerffmpeg1.patch,
   -files/qutecom-boost-1.35.patch, -qutecom-2.2_rc1-r1.ebuild,
   -qutecom-2.2_rc2.ebuild, +qutecom-2.2_rc3.ebuild,
