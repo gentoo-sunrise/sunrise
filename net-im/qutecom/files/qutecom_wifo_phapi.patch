@@ -1,0 +1,14 @@
+The variable has been removed from latest libavcodec and is
+already unused in the internal version of ffmpeg.
+
+diff --git a/wifo/phapi/phcodec-avcodec-wrapper.c b/wifo/phapi/phcodec-avcodec-wrapper.c
+--- a/wifo/phapi/phcodec-avcodec-wrapper.c
++++ b/wifo/phapi/phcodec-avcodec-wrapper.c
+@@ -123,7 +123,6 @@
+ 	encoder_t->context->dct_algo = FF_DCT_AUTO;
+ 	encoder_t->context->idct_algo = FF_IDCT_AUTO;
+ 	encoder_t->context->opaque = opaque;
+-	encoder_t->context->rtp_mode = 1;
+ 	encoder_t->context->rtp_payload_size = 1000;
+ 	encoder_t->context->rtp_callback = phcodec_avcodec_video_rtp_callback;
+ 

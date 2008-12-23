@@ -2,6 +2,17 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Dec 2008; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -files/qutecom-newerffmpeg1.patch,
+  -files/qutecom-boost-1.35.patch, -qutecom-2.2_rc1-r1.ebuild,
+  -qutecom-2.2_rc2.ebuild, +qutecom-2.2_rc3.ebuild,
+  -files/qutecom-gcc-4.3-switch-enum.patch,
+  -files/qutecom-cmake-hg-svnrevision.patch,
+  -files/qutecom-cstdlib-include.patch, -files/qutecom-newerffmpeg0.patch,
+  -files/qutecom-newerffmpeg2.patch, -files/qutecom-types.h.patch,
+  +files/qutecom_googlebreakpad_64.patch, +files/qutecom_wifo_phapi.patch:
+  version bump, add ~amd64 keyword again
+
   22 Oct 2008; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> +qutecom-2.2_rc2.ebuild:
   new release candidate, drop amd64 keyword due to google breakpad snafu
