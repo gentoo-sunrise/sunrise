@@ -6,15 +6,14 @@ inherit distutils
 
 DESCRIPTION="A mednafen frontend / launcher."
 HOMEPAGE="http://mednafenfe.sourceforge.net/"
-SRC_URI="mirror://sourceforge/mednafenfe/mfe-${PV}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/mfe-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="${DEPEND}
-	games-emulation/mednafen
+RDEPEND="games-emulation/mednafen
 	dev-python/configobj
 	dev-python/pygtk"
 
