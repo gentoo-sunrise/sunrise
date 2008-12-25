@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Dec 2008; Thomas Pani (thpani) <thomas.pani@gmail.com>
+  -pokerth-0.6.2.ebuild, +pokerth-0.6.3.ebuild:
+  bumped to 0.6.3, purge old
+
   22 May 2008; Thomas Pani (thpani) <thomas.pani@gmail.com>
   -pokerth-0.6.1.ebuild, +pokerth-0.6.2.ebuild:
   Version bump, drop old
