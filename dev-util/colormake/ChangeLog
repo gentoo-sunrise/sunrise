@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/colormake
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Dec 2008; Sebastian Pipping (sping) <sebastian@pipping.org>
+  +colormake-0.2.ebuild, +files/colormake-0.2-disable-broken-tagging.patch,
+  +metadata.xml:
+  Add colormake-0.2 ebuild

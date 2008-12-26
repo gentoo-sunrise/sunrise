@@ -1,0 +1,20 @@
+--- colormake.pl	2000-03-08 00:58:33.000000000 +0100
++++ colormake.pl	2008-12-22 02:52:02.000000000 +0100
+@@ -27,7 +27,7 @@
+ $col_green =        "\033[32m";
+ $col_cyan =         "\033[36m";
+ $col_brown =        "\033[33m";
+-$col_norm =	        "\033[00m";
++$col_norm =         "\033[00m";
+ $col_background =   "\033[07m";
+ $col_brighten =     "\033[01m";
+ $col_underline =    "\033[04m";
+@@ -42,7 +42,7 @@
+ $col_linenum =      $col_cyan;
+ $col_trace =        $col_brown;
+ $col_warning =      $col_green;
+-$tag_error =        "Error: ";
++$tag_error =        "";
+ $col_error =        $tag_error . $col_brown . $col_brighten;
+ $error_highlight =  $col_brighten;
+ 
