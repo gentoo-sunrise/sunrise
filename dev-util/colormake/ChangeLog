@@ -5,4 +5,4 @@
   26 Dec 2008; Sebastian Pipping (sping) <sebastian@pipping.org>
   +colormake-0.2.ebuild, +files/colormake-0.2-disable-broken-tagging.patch,
   +metadata.xml:
-  Add colormake-0.2 ebuild
+  New ebuild for bug 252313
