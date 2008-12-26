@@ -11,7 +11,7 @@ SRC_URI="http://www.onionnetworks.com/downloads/${P}.zip
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="-amd64 ~x86"
 IUSE=""
 
 RDEPEND=""
@@ -19,16 +19,9 @@ DEPEND=">=virtual/jdk-1.4
 	app-arch/unzip"
 S=${WORKDIR}/${P}/src/csrc/
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/Makefile.patch
-}
-
 src_compile() {
 	append-flags -fPIC
-	tc-export CC
-	emake || die
+	emake CC=$(tc-getCC) CFLAGS="${CFLAGS}" || die
 }
 
 src_install() {
