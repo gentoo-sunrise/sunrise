@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="Program for improving image files made with a digital camera."
 HOMEPAGE="http://kornelix.squarespace.com/fotoxx"
-SRC_URI="http://kornelix.squarespace.com/storage/${PN}/${P}.tar.gz"
+SRC_URI="http://kornelix.squarespace.com/storage/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
