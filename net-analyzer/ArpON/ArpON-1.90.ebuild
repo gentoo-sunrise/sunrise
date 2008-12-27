@@ -27,6 +27,6 @@ src_compile() {
 src_install() {
 	dosbin arpon  || die "arpon installation failed"
 	doman man8/arpon.8 || die "arpon man installation failed"
-	dodoc AUTHORS  CHANGELOG LICENSE  TODO || die
+	dodoc AUTHORS  CHANGELOG TODO || die
 	dohtml man8/html/*.html doc/*.png || die
 }

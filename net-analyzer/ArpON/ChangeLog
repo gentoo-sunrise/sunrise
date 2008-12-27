@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ArpON-1.90.ebuild:
+  Remove LICENSE file from dodoc
+
   21 Dec 2008; Giuseppe Marco Randazzo (zeld) <zeld@freaknet.org>
   -ArpON-1.72.ebuild, +ArpON-1.90.ebuild:
   ArpON ebuild updated to version 1.90
