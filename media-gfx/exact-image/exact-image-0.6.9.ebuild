@@ -13,8 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="agg expat jpeg jpeg2k lcms lua openexr php perl python ruby swig tiff truetype X"
 
-RDEPEND="
-	agg? ( x11-libs/agg[truetype] )
+RDEPEND="agg? ( x11-libs/agg[truetype] )
 	expat? ( dev-libs/expat )
 	jpeg2k? ( media-libs/jasper )
 	jpeg? ( media-libs/jpeg )
