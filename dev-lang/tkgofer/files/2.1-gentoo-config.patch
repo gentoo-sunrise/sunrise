@@ -1,0 +1,75 @@
+--- tkgofer2.1.orig/tkgofer.install	2008-12-30 19:22:18.000000000 +0100
++++ tkgofer2.1/tkgofer.install	2008-12-30 19:23:26.000000000 +0100
+@@ -16,20 +16,20 @@
+ LibStd="/usr/lib"
+ 
+ #- Location of `libtcl.a' and Tcl include files
+-LibTcl="/usr/local/lib"
+-IncTcl="/usr/local/include"
++LibTcl="/usr/lib"
++IncTcl="/usr/include"
+ 	
+ #- Location of `libtk.a' and Tk include files
+ LibTk="$LibTcl"
+ IncTk="$IncTcl"			
+ 
+ #- Location of `libX11.so.?' and X11 include files
+-LibX11="/usr/lib"
++LibX11="/usr/X11R6/lib"
+ IncX11="/usr/openwin/include"
+ 
+ #- Architecture Settings
+ 
+-Architecture="SOLARIS"
++Architecture="LINUX"
+ 	# Choose from: TURBOC, BCC, WATCOM, ZTC, DJGPP, OS2,
+ 	#   SUNOS, MIPS, NEXTSTEP, NEXTGCC, MINIX68K,
+ 	#   AMIGA, HPUX, LINUX, RISCOS, ALPHA, SVR4, ULTRIX,
+@@ -47,12 +47,12 @@
+ 
+ LibFlags="-L$LibStd -L$LibTcl -L$LibTk -L$LibX11"
+ IncFlags="-I$IncTcl -I$IncTk -I$IncX11"
+-LinkFlags="-ltk4.2 -ltcl7.6 -lX11 -lm -ldl -lsocket -lnsl"
++LinkFlags="${LDFLAGS} -ltk -ltcl -lX11 -lm -ldl -lncurses -lreadline -lnsl"
+ 
+ #- Compiler
+ 
+ Compiler="gcc"
+-CompilerFlags=""
++CompilerFlags="${CFLAGS} -DUSE_READLINE=1"
+ 
+ #---------------------------------------------------------------------
+ #- Derived variables -- Don't change
+--- tkgofer2.1.orig/Skeletons/Makefile.skel	2008-12-30 19:22:18.000000000 +0100
++++ tkgofer2.1/Skeletons/Makefile.skel	2008-12-30 19:20:58.000000000 +0100
+@@ -24,7 +24,7 @@
+ CC		= @Compiler@ $(INCDIRS) 
+ CFLAGS		= @CompilerFlags@
+ 
+-OPTFLAGS	= -O
++OPTFLAGS	= 
+ OPT1		=
+ 
+ # ----------------------------------------------------------------------
+@@ -36,7 +36,6 @@
+ tkgofer		: $(IOBJECTS)
+ 		  $(CC) $(CFLAGS) $(OPTFLAGS) $(IOBJECTS) \
+ 			$(LIBDIRS) -o tkgofer.exe $(LDFLAGS)
+-		  strip tkgofer.exe
+ 
+ .c.o		:
+ 		  $(CC) -c $(CFLAGS) $(OPTFLAGS) $<
+@@ -48,13 +47,11 @@
+ 		  ./gofc $*.gs
+ 		  $(CC) $(OPTFLAGS) $*.c runtime.o -o $* $(LDFLAGS)
+ 		  rm $*.c
+-		  strip $*
+ 
+ .gp		:
+ 		  ./gofc + $*.gp
+ 		  $(CC) $(OPTFLAGS) $*.c runtime.o -o $* $(LDFLAGS)
+ 		  rm $*.c
+-		  strip $*
+ 
+ parser.c	: parser.y
+ 		  yacc parser.y

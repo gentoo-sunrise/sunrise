@@ -1,0 +1,22 @@
+diff -ur --exclude='*~' tkgofer2.1.orig/Skeletons/prelude.h.skel tkgofer2.1/Skeletons/prelude.h.skel
+--- tkgofer2.1.orig/Skeletons/prelude.h.skel	2008-12-30 18:52:00.000000000 +0100
++++ tkgofer2.1/Skeletons/prelude.h.skel	2008-12-30 18:55:37.000000000 +0100
+@@ -227,6 +227,7 @@
+ 
+ #if     (HPUX | DJGPP | ZTC | LINUX | ALPHA | OS2 | SVR4 | AIX | \
+          SGI4 | NETBSD | GNUWIN32)
++#include <string.h>
+ #include <stdlib.h>
+ #define  far
+ #endif
+diff -ur --exclude='*~' tkgofer2.1.orig/Sources/machdep.c tkgofer2.1/Sources/machdep.c
+--- tkgofer2.1.orig/Sources/machdep.c	2008-12-30 18:52:00.000000000 +0100
++++ tkgofer2.1/Sources/machdep.c	2008-12-30 18:52:36.000000000 +0100
+@@ -13,6 +13,7 @@
+ #include <fcntl.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <string.h>
+ #endif
+ 
+ #if (TURBOC | BCC)
