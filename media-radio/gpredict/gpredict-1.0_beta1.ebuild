@@ -4,35 +4,48 @@
 
 inherit autotools eutils
 
+MY_PV=${PV/_beta/b}
+
 DESCRIPTION="A tool for tracking amateur radio satellites"
-HOMEPAGE="http://groundstation.sourceforge.net/gpredict/"
-SRC_URI="mirror://sourceforge/groundstation/${P}.tar.gz"
+HOMEPAGE="http://gpredict.oz9aec.net"
+SRC_URI="mirror://sourceforge/${PN}/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc ~x86"
-IUSE="coverage"
+IUSE=""
 
-DEPEND=">=dev-libs/glib-2.12.0
-	>=x11-libs/gtk+-2.10
+RDEPEND=">=dev-libs/glib-2.14.0
+	>=x11-libs/gtk+-2.12
 	>=x11-libs/goocanvas-0.8
 	net-misc/curl"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig
+	sys-devel/gettext"
+
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	# Patch to prevent gpredict from building goocanvas itself
+
+	# prevent gpredict from building goocanvas itself
 	epatch "${FILESDIR}/${P}-goocanvas.patch"
+	rm -rf goocanv8
+
+	# remove wrong doc location
+	epatch "${FILESDIR}/${P}-doc.patch"
+
 	eautoreconf
 }
 
 src_compile() {
-	econf $(use_enable coverage ) || die "econf failed!"
+	econf --disable-coverage
 	emake || die "emake failed!"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	make_desktop_entry ${PN} "GPredict" "/usr/share/pixmaps/gpredict/icons/gpredict-icon.png" Science
+	dodoc AUTHORS ChangeLog NEWS README TODO  || die "dodoc died"
 }

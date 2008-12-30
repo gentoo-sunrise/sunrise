@@ -12,20 +12,20 @@
  fi
  
  dnl chack for glib and gtk libraries
--pkg_modules="gtk+-2.0 >= 2.10.0 glib-2.0 >= 2.12.0 gthread-2.0 >= 2.12.0"
-+pkg_modules="gtk+-2.0 >= 2.10.0 glib-2.0 >= 2.12.0 gthread-2.0 >= 2.12.0 goocanvas >= 0.8"
+-pkg_modules="gtk+-2.0 >= 2.12.0 glib-2.0 >= 2.14.0 gthread-2.0 >= 2.14.0"
++pkg_modules="gtk+-2.0 >= 2.12.0 glib-2.0 >= 2.14.0 gthread-2.0 >= 2.14.0 goocanvas >= 0.8"
  PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
  AC_SUBST(PACKAGE_CFLAGS)
  AC_SUBST(PACKAGE_LIBS)
-@@ -63,6 +63,7 @@
+@@ -76,6 +76,7 @@
  GTHR_V=`pkg-config --modversion gthread-2.0`
  GDK_V=`pkg-config --modversion gdk-2.0`
  GTK_V=`pkg-config --modversion gtk+-2.0`
 +GOO_V=`pkg-config --modversion goocanvas`
+ dnl SQL_V=`pkg-config --modversion sqlite3`
  if test "$havecurl" = true ; then
     CURL_V=`pkg-config --modversion libcurl`
- fi
-@@ -71,8 +72,6 @@
+@@ -88,8 +88,6 @@
  AC_SUBST(CFLAGS)
  AC_SUBST(LDFLAGS)
  
@@ -34,14 +34,14 @@
  AC_OUTPUT([
  Makefile
  doc/Makefile
-@@ -96,6 +95,7 @@
+@@ -112,6 +112,7 @@
  echo Gthread version.... : $GTHR_V
  echo Gdk version........ : $GDK_V
  echo Gtk+ version....... : $GTK_V
 +echo Goocanvas version.. : $GOO_V
+ dnl echo SQLite version..... : $SQL_V
  if test "$havecurl" = true ; then
  echo Curl version....... : $CURL_V
- else
 --- src/Makefile.am.orig	2007-11-06 10:44:26.000000000 -0800
 +++ src/Makefile.am	2007-11-06 10:44:46.000000000 -0800
 @@ -3,7 +3,7 @@

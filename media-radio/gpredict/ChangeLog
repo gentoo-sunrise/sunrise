@@ -2,6 +2,12 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Dec 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -gpredict-0.9.0.ebuild, -files/gpredict-0.9.0-goocanvas.patch,
+  +gpredict-1.0_beta1.ebuild, +files/gpredict-1.0_beta1-doc.patch,
+  +files/gpredict-1.0_beta1-goocanvas.patch:
+  Version bump
+
   22 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added USE flag description wrt GLEP 56
 
