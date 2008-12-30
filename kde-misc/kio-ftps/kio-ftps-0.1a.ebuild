@@ -1,11 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
 inherit kde
 
 DESCRIPTION="An ftps KIO slave for KDE"
 HOMEPAGE="http://kasablanca.berlios.de/kio-ftps/"
-SRC_URI="http://download.berlios.de/kasablanca/${P}.tar.gz"
+SRC_URI="mirror://berlios/kasablanca/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
