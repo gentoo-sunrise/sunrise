@@ -1,0 +1,8 @@
+# ChangeLog for dev-db/dbf
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Dec 2008; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +dbf-0.9.0.ebuild, +metadata.xml:
+  Second of two ebuilds from bug 85553
+
