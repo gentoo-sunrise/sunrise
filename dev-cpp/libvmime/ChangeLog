@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -libvmime-0.8.1.ebuild, +libvmime-0.9.0.ebuild:
+  Version bump as requested and tested in bug 251213
+
   18 Nov 2008; Tiziano Müller <dev-zero@gentoo.org> libvmime-0.8.1.ebuild:
   Keyworded for ~amd64
 
