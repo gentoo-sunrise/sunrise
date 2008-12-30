@@ -11,8 +11,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="xalan"
 
-RDEPEND="dev-libs/xerces-c
-	xalan? ( dev-libs/xalan-c )
+RDEPEND="=dev-libs/xerces-c-2*
+	xalan? ( =dev-libs/xalan-c-1.10* )
 	dev-libs/openssl"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
