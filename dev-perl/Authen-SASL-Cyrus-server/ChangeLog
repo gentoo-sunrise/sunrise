@@ -1,0 +1,8 @@
+# ChangeLog for dev-perl/Authen-SASL-Cyrus-server
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Dec 2008; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +Authen-SASL-Cyrus-server-0.13.ebuild, +metadata.xml:
+  Ebuild from bug 154782
+
