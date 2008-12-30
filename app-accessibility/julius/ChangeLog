@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Dec 2008; Erik Hahn (a_b) <erik_hahn@gmx.de> julius-4.1.ebuild:
+  Install japanese docs, remove USE flags with no matching configure switch
+  and dependencies on gtk-1 and glibc
+
   14 Nov 2008; Daniel Pinto dos Santos (danielpi) <danielpi@gmx.net>
   +julius-4.1.ebuild, +files/julius-4.1-makefile.patch,
   +files/julius-4.1-mkfacrash.patch, +files/julius-4.1-newParam.patch,

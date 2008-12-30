@@ -13,15 +13,18 @@ SRC_URI="mirror://sourceforge.jp/${PN}/33146/${P}.tar.gz"
 LICENSE="julius"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="alsa gtk gzip sndfile zlib"
+IUSE=""
+
+LANGS="ja"
+
+for LNG in ${LANGS}; do
+	IUSE="${IUSE} linguas_${LNG}"
+done
 
 DEPEND=">=sys-libs/readline-4.1
-	sys-libs/glibc
-	alsa? ( media-libs/alsa-lib )
-	gtk? ( x11-libs/gtk+:1 )
-	gzip? ( app-arch/gzip )
-	sndfile? ( media-libs/libsndfile )
-	zlib? ( sys-libs/zlib )"
+	media-libs/alsa-lib
+	media-libs/libsndfile
+	sys-libs/zlib"
 
 src_unpack() {
 	unpack ${A}
@@ -32,5 +35,10 @@ src_unpack() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
+	dodoc 00readme.txt Release.txt || die
+
+	for LNG in ${LINGUAS}; do
+		dodoc 00readme-${LNG}.txt Release-${LNG}.txt || die
+	done
 }
