@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Dec 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  gpredict-1.0_beta1.ebuild:
+  removed unneeded quotation
+
   30 Dec 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -gpredict-0.9.0.ebuild, -files/gpredict-0.9.0-goocanvas.patch,
   +gpredict-1.0_beta1.ebuild, +files/gpredict-1.0_beta1-doc.patch,
