@@ -18,7 +18,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	>=dev-libs/glib-2"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_unpack() {
 	unpack ${A}
