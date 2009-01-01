@@ -1,0 +1,8 @@
+# ChangeLog for games-rpg/planeshift-bin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Jan 2009; Erik Hahn (a_b) <erik_hahn@gmx.de>
+  +planeshift-bin-0.4.03.ebuild, +metadata.xml:
+  Add games-rpg/planeshift-bin (Bug #253383)
+

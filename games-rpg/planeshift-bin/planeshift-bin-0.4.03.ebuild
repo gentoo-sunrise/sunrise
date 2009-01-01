@@ -1,0 +1,40 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+inherit games
+
+DESCRIPTION="A 3D Fantasy MMORPG"
+HOMEPAGE="http://planeshift.it"
+SRC_URI="x86? ( mirror://planeshift/PlaneShift-v0.4.03-x86.bin )
+	amd64? ( mirror://planeshift/PlaneShift-v0.4.03-x64.bin )"
+
+LICENSE="GPL-3 PlaneShift"
+SLOT="0"
+KEYWORDS="-* ~x86" # amd64 might work as well, I just can't test it
+IUSE=""
+
+RESTRICT="strip"
+
+src_unpack() {
+	cp -L "${DISTDIR}/${A}" "${WORKDIR}" || die
+	chmod +x "${WORKDIR}/${A}" || die
+}
+
+src_install() {
+	"${WORKDIR}"/${A} \
+		--mode unattended \
+		--perms yes \
+		--usergroup games \
+		--prefix ${D}/${GAMES_PREFIX_OPT} || die
+
+	rm "${D}/${GAMES_PREFIX_OPT}"/PlaneShift/psupdater
+	rm "${D}/${GAMES_PREFIX_OPT}"/PlaneShift/psupdater.bin
+	rm "${D}/${GAMES_PREFIX_OPT}"/PlaneShift/uninstall
+
+	games_make_wrapper psclient "${GAMES_PREFIX_OPT}/PlaneShift/psclient"
+	make_desktop_entry psclient "Play PlaneShift"
+
+	games_make_wrapper pssetup "${GAMES_PREFIX_OPT}/PlaneShift/pssetup"
+	make_desktop_entry pssetup "PlaneShift setup"
+}
