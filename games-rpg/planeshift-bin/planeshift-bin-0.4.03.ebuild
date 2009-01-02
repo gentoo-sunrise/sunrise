@@ -26,7 +26,7 @@ src_install() {
 		--mode unattended \
 		--perms yes \
 		--usergroup games \
-		--prefix ${D}/${GAMES_PREFIX_OPT} || die
+		--prefix "${D}/${GAMES_PREFIX_OPT}" || die
 
 	rm "${D}/${GAMES_PREFIX_OPT}"/PlaneShift/psupdater
 	rm "${D}/${GAMES_PREFIX_OPT}"/PlaneShift/psupdater.bin
