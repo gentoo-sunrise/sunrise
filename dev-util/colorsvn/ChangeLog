@@ -3,6 +3,10 @@
 # $Header: $
 
   02 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  colorsvn-0.3.2.ebuild:
+  sed improved.
+
+  02 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   +colorsvn-0.3.2.ebuild, +metadata.xml:
   New Ebuild for bug 250750 thanks to henning.
 

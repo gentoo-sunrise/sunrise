@@ -20,8 +20,8 @@ src_unpack() {
 	cd "${S}"
 
 	# rxvt-unicode isn't listed by default
-	sed -i -e 's:rxvt:rxvt rxvt-unicode:' colorsvnrc-original || die "sed
-	failed"
+	sed -i -e 's:rxvt:rxvt rxvt-unicode:' \
+	colorsvnrc-original || die "sed failed"
 }
 
 src_install() {
