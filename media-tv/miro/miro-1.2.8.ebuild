@@ -51,10 +51,6 @@ src_compile() {
 	distutils_src_compile
 }
 
-src_test() {
-	./run.sh --unittest || die "At least one test failed"
-}
-
 src_install() {
 	# Make sure both READMEs get installed
 	mv README README.GTK-X11
