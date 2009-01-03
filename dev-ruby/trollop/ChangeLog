@@ -1,6 +1,10 @@
 # ChangeLog for dev-ruby/trollop
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Jan 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
+  -trollop-1.8.2.ebuild, +trollop-1.10.2.ebuild:
+  dev-ruby/trollop: version bump
 
   11 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> metadata.xml:
   Fix metadata.xml
