@@ -1,0 +1,8 @@
+# ChangeLog for games-action/meritous
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Jan 2009; Erik Hahn (a_b) <erik_hahn@gmx.de> +meritous-1.2.ebuild,
+  +files/Makefile-flags.patch, +metadata.xml:
+  Add games-action/meritous (Bug #253779)
+
