@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ IUSE="debug libevent static threads"
 
 DEPEND="dev-libs/openssl
 	>=net-libs/ldns-1.4.0
-	libevent? ( dev-libs/libevent )"
+	libevent? ( >=dev-libs/libevent-1.4.8 )"
 
 pkg_setup() {
 	enewgroup unbound
