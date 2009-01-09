@@ -55,7 +55,7 @@ src_install() {
 	dodoc doc/{AUTHOR,CREDITS,README.FIRST} || die "dodoc failed"
 	if use doc; then
 		dodoc doc/{cerberus2,elfsh-network-0.3,elfsh-ref}.txt \
-			doc/{,graphers,libelfsh-ref,rtld-multiarch}.txt || die "dodoc failed"
+			doc/{graphers,libelfsh-ref,rtld-multiarch}.txt || die "dodoc failed"
 		dodoc doc/{Changelog,ERESI.NEWHOOKS,eresirc.example} || die "dodoc failed"
 		dodoc doc/{KERNSH.bugs,libelfsh.i} || die "dodoc failed"
 	fi
