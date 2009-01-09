@@ -1,6 +1,10 @@
 # ChangeLog for media-video/aegisub
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  aegisub-2.1_pre1981.ebuild, aegisub-9999.ebuild:
+  Fix deps and some other things, still needs some amount of work
 
   10 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   aegisub-9999.ebuild:

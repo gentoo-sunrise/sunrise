@@ -1,7 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
 WX_GTK_VER="2.8"
 inherit eutils wxwidgets
 
@@ -10,20 +11,19 @@ MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="Advanced SSA/ASS subtitle editor"
 HOMEPAGE="http://malakith.net/aegiwiki/Main_Page"
-SRC_URI="http://www.mahou.org/~verm/aegisub/${MY_P}.tar.gz"
+SRC_URI="http://www.mahou.org/~verm/aegisub/archives/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa debug ffmpeg lua openal perl portaudio pulseaudio spell ruby"
+IUSE="alsa debug +ffmpeg lua openal perl pulseaudio spell ruby"
 
-RDEPEND="=x11-libs/wxGTK-2.8*
+RDEPEND="=x11-libs/wxGTK-2.8*[opengl]
 	media-libs/libass
 	media-libs/fontconfig
 	media-libs/freetype
 
 	alsa? (	media-libs/alsa-lib )
-	portaudio? ( =media-libs/portaudio-18* )
 	pulseaudio? ( media-sound/pulseaudio )
 	openal? ( media-libs/openal )
 
@@ -41,14 +41,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-pkg_setup() {
-	check_wxuse opengl
-}
-
-src_compile() {
-	econf "--with-libass --prefix=/usr" \
+src_configure() {
+	econf --with-libass \
 	$(use_with alsa) \
-	$(use_with portaudio) \
+	--without-portaudio \
 	$(use_with pulseaudio) \
 	$(use_with openal) \
 	$(use_with lua) \
@@ -57,7 +53,6 @@ src_compile() {
 	$(use_with ffmpeg) \
 	$(use_with spell hunspell) \
 	$(use_enable debug)
-	emake || die "emake failed"
 }
 
 src_install() {
