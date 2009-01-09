@@ -33,12 +33,11 @@ src_prepare() {
 }
 
 src_compile() {
-	CFLAGS="${CFLAGS} -DDATA_DIR=\\\"${GAMES_DATADIR}/meritous\\\""
-	emake CC=$(tc-getCC) default
+	CFLAGS="${CFLAGS} -DDATA_DIR=\\\"${GAMES_DATADIR}/meritous\\\"" \
+	emake CC=$(tc-getCC) default || die
 }
 
 src_install() {
-	dodir "${GAMES_DATADIR}/meritous" || die
 	insinto "${GAMES_DATADIR}/meritous" || die
 	doins -r dat/* || die
 	dogamesbin meritous || die
