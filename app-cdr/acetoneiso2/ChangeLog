@@ -1,6 +1,13 @@
 # ChangeLog for app-cdr/acetoneiso2
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jan 2009; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  +files/acetoneiso2-nostrip.patch, acetoneiso2-2.0.2.ebuild:
+  Migration to splitted QT4, fix license, bump to EAPI=2, deps cleanup,
+  dropped USE flags for fixing automagic deps (acetoneiso2 will warn about
+  missing apps at runtime), fix prestripping issue. Thanks to Christian
+  Ruppert and scarabeus for their help.
 
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added local USE flag description wrt GLEP 56
