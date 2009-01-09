@@ -4,7 +4,6 @@
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 
-app-accessibility/julius:gzip - Use gzip compression
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/collectd:hddtemp - Enable monitoring of disk temperatures (app-admin/hddtemp)
@@ -35,6 +34,7 @@ dev-lang/brainwash:char - Compile with support for unsigned character (instead o
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-libs/xml-security-c:xalan - Enable support for XSLT and XPath parsing by dev-libs/xalan-c
+dev-util/eresi:server - Build eresi server capability
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 games-board/dreamchess:music - Install the music pack
@@ -192,6 +192,7 @@ sys-fs/aufs:robr - Enable aufs readonly-branch
 sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
 sys-fs/ext3grep:largefile - Add support for files greater then 2gb on x86
 sys-fs/ext3grep:libcwd - Debuging support
+sys-fs/pysize:psyco - Adds psyco support
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
