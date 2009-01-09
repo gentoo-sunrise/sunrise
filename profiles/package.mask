@@ -22,6 +22,11 @@
 ##
 
 
+# Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es> (9 Jan 2009)
+# Mask mandriva-galaxy for removal in 30 day as upstream 
+# no longer maintains it
+x11-themes/mandriva-galaxy
+
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (27 Dez 2008)
 # Mask ebuilds with masked dep
 x11-plugins/wmarpstar
