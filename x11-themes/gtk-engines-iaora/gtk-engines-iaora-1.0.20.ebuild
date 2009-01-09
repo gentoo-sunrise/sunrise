@@ -18,7 +18,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="x11-themes/gnome-icon-theme"
 
-S="${WORKDIR}/ia_ora-gnome-${PV}"
+S=${WORKDIR}/ia_ora-gnome-${PV}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
