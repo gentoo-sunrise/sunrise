@@ -6,8 +6,8 @@ inherit games
 
 DESCRIPTION="A 3D Fantasy MMORPG"
 HOMEPAGE="http://planeshift.it"
-SRC_URI="x86? ( mirror://planeshift/PlaneShift-v0.4.03-x86.bin )
-	amd64? ( mirror://planeshift/PlaneShift-v0.4.03-x64.bin )"
+SRC_URI="x86? ( mirror://planeshift/PlaneShift-v${PV}-x86.bin )
+	amd64? ( mirror://planeshift/PlaneShift-v${PV}-x64.bin )"
 
 LICENSE="GPL-3 PlaneShift"
 SLOT="0"
