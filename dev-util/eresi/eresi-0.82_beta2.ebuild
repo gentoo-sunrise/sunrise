@@ -34,8 +34,7 @@ src_unpack() {
 		-e 's: -O2 : :g' \
 		-e "s: -g3 : ${CFLAGS} :" \
 		-e "/^LDFLAGS/s:=:=${LDFLAGS} :" \
-		$(find -name Makefile) \
-		|| die
+		$(find -name Makefile) || die
 }
 
 src_compile() {
@@ -53,20 +52,11 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc doc/AUTHOR || die "dodoc failed"
-	dodoc doc/CREDITS || die "dodoc failed"
-	dodoc README.FIRST || die "dodoc failed"
+	dodoc doc/{AUTHOR,CREDITS,README.FIRST} || die "dodoc failed"
 	if use doc; then
-		dodoc doc/cerberus2.txt || die "dodoc failed"
-		dodoc doc/Changelog || die "dodoc failed"
-		dodoc doc/elfsh-network-0.3.txt || die "dodoc failed"
-		dodoc doc/elfsh-ref.txt || die "dodoc failed"
-		dodoc doc/ERESI.NEWHOOKS || die "dodoc failed"
-		dodoc doc/eresirc.example || die "dodoc failed"
-		dodoc doc/graphers.txt || die "dodoc failed"
-		dodoc doc/KERNSH.bugs || die "dodoc failed"
-		dodoc doc/libelfsh.i || die "dodoc failed"
-		dodoc doc/libelfsh-ref.txt || die "dodoc failed"
-		dodoc doc/rtld-multiarch.txt || die "dodoc failed"
+		dodoc doc/{cerberus2,elfsh-network-0.3,elfsh-ref}.txt \
+			doc/{,graphers,libelfsh-ref,rtld-multiarch}.txt || die "dodoc failed"
+		dodoc doc/{Changelog,ERESI.NEWHOOKS,eresirc.example} || die "dodoc failed"
+		dodoc doc/{KERNSH.bugs,libelfsh.i} || die "dodoc failed"
 	fi
 }

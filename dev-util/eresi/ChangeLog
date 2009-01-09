@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  eresi-0.82_beta2.ebuild:
+  Adding some bash magic for less dodoc lines
+
   02 Jan 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   +files/0.82-parallel-make.patch, +eresi-0.82_beta2.ebuild, +metadata.xml:
   New ebuild for ERESI, to replace dev-util/elfsh. Bug #253436
