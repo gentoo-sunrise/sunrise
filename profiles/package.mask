@@ -27,14 +27,6 @@
 # no longer maintains it
 x11-themes/mandriva-galaxy
 
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (27 Dez 2008)
-# Mask ebuilds with masked dep
-x11-plugins/wmarpstar
-
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (27 Dez 2008)
-# Mask ebuilds with missing deps
-media-video/aegisub
-
 # Tiago Cunha (tcunha) <tcunha@gentoo.org> (10 Dec 2008)
 # Mask CVS ebuild
 =dev-util/tinyxml-9999
