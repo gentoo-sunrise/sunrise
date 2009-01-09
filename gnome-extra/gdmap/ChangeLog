@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  gdmap-0.8.1.ebuild:
+  Simplify, use DOCS var, remove default gnome2_src_install
+
+  09 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -gdmap-0.7.5.ebuild:
   Nuke old version
 

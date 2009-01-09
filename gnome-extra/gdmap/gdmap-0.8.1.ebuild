@@ -17,8 +17,4 @@ RDEPEND=">=x11-libs/gtk+-2.6.0
 	dev-libs/libxml2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
-
-src_install() {
-	gnome2_src_install
-	dodoc ChangeLog README NEWS AUTHORS
-}
+DOCS="ChangeLog README NEWS AUTHORS"
