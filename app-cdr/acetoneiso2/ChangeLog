@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Jan 2009; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  acetoneiso2-2.0.2.ebuild:
+  Update HOMEPAGE
+
+  09 Jan 2009; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
   +files/acetoneiso2-nostrip.patch, acetoneiso2-2.0.2.ebuild:
   Migration to splitted QT4, fix license, bump to EAPI=2, deps cleanup,
   dropped USE flags for fixing automagic deps (acetoneiso2 will warn about

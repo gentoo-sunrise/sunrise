@@ -6,7 +6,7 @@ EAPI=2
 inherit eutils qt4
 
 DESCRIPTION="Graphical tool to do a lot things with image files like extracting, mounting, encrypting."
-HOMEPAGE="http://sourceforge.net/projects/acetoneiso2/"
+HOMEPAGE="http://www.acetoneteam.org/"
 SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}_source.tar.bz2"
 
 LICENSE="GPL-3"
