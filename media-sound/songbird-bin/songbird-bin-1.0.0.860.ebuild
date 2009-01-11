@@ -57,12 +57,11 @@ RDEPEND="alsa? ( media-plugins/gst-plugins-alsa )
 	media-plugins/gst-plugins-neon
 	>=sys-libs/glibc-2.3.2
 	>=x11-libs/gtk+-2.0.0
-	>=virtual/xft-7.0
-	>=virtual/libstdc++-3.3"
+	x11-libs/libXft"
 
 S=${WORKDIR}/${MY_PN}
 
-RESTRICT="strip mirror"
+RESTRICT="strip"
 
 src_unpack() {
 	unpack ${A}
