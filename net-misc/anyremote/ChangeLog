@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/anyremote
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Jan 2009; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
+  -anyremote-4.13.ebuild, +anyremote-4.14.ebuild:
+  Version Bump
 
   09 Dec 2008; Markos Chandras (hwoarang) <gentoo@silverarrow.gr>
   -anyremote-4.12.ebuild, +anyremote-4.13.ebuild:
