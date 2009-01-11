@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/songbird-bin
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Jan 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
+  -songbird-bin-1.0.0_rc3.ebuild, +songbird-bin-1.0.0.860.ebuild:
+  Bump to 1.0.0.860
 
   23 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -songbird-bin-0.2.1.ebuild, +songbird-bin-1.0.0_rc3.ebuild,

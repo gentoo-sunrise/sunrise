@@ -1,11 +1,11 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit eutils versionator
 
 MY_PN="Songbird"
-MY_PV="${PV/_/}-856"
+MY_PV=$(replace_version_separator 3 '-')
 
 DESCRIPTION="A multimedia player, inspired by iTunes"
 HOMEPAGE="http://www.songbirdnest.com/"
@@ -62,7 +62,7 @@ RDEPEND="alsa? ( media-plugins/gst-plugins-alsa )
 
 S=${WORKDIR}/${MY_PN}
 
-RESTRICT="strip"
+RESTRICT="strip mirror"
 
 src_unpack() {
 	unpack ${A}
