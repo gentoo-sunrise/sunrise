@@ -5,6 +5,6 @@
   11 Jan 2009; Emery Hemingway <emery@lcom.net> +rivendell-1.2.1.ebuild,
   +files/rivendell-1.2.1-init.patch, +files/rivendell-1.2.1-sandbox.patch,
   +metadata.xml:
-  New ebuild for Rivendell, bug 24505. Thanks be to Ycarus, #gentoo-sunrise,
+  New ebuild for Rivendell, bug 94505. Thanks be to Ycarus, #gentoo-sunrise,
   and the incomprable Fred Gleason.
 
