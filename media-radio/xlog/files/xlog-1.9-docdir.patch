@@ -1,0 +1,25 @@
+--- data/doc/Makefile.am.orig	2009-01-11 18:27:28.000000000 +0100
++++ data/doc/Makefile.am	2009-01-11 18:28:21.000000000 +0100
+@@ -67,10 +67,9 @@
+ manual/xlog-pagesetupdialog.png \
+ manual/xlog-workedwindow.png
+ 
+-docdir = $(datadir)/doc/xlog
+ doc_DATA = $(DOC_FILES)
+ 
+-manualdir = $(datadir)/doc/xlog/manual
++manualdir = $(docdir)/manual
+ manual_DATA = $(MANUAL_FILES)
+ 
+ EXTRA_DIST = $(DOC_FILES) $(MANUAL_FILES) $(TEX_FILES)
+--- src/Makefile.am.orig	2009-01-11 19:56:43.000000000 +0100
++++ src/Makefile.am	2009-01-11 19:57:03.000000000 +0100
+@@ -12,7 +12,7 @@
+ 	-DDATADIR=\""$(datadir)"\" \
+ 	-DXLOG_LOCALEDIR=\""$(datadir)/locale"\" \
+ 	-DXLOG_DATADIR=\""$(datadir)/xlog"\" \
+-	-DXLOG_DOCDIR=\""$(datadir)/doc/xlog"\"
++	-DXLOG_DOCDIR=\""$(docdir)"\"
+ 
+ CLEANFILES = *~
+ 

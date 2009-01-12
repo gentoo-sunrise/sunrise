@@ -1,12 +1,12 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit autotools eutils fdo-mime
 
 DESCRIPTION="An amateur radio logging program"
-HOMEPAGE="http://pg4i.chronos.org.uk/"
-SRC_URI="http://pg4i.chronos.org.uk/download/${P}.tar.gz"
+HOMEPAGE="http://www.qsl.net/pg4i/linux/xlog.html"
+SRC_URI="http://www.qsl.net/pg4i/download/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -17,26 +17,34 @@ RDEPEND="media-libs/hamlib
 	=dev-libs/glib-2*
 	>=x11-libs/gtk+-2.12"
 DEPEND="${RDEPEND}
+	sys-devel/gettext
 	dev-util/pkgconfig"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	# Let portage handle updating mimie/desktop databases
-	epatch "${FILESDIR}/${P}-desktop-update.patch"
+	# Let portage handle updating mime/desktop databases,
+	# fix for wrong placed file,
+	# fix for respecting DESTDIR and
+	# and finally fix to respect docdir=...
+	epatch "${FILESDIR}/${P}-desktop-update.patch" \
+		"${FILESDIR}/${P}-key.patch" \
+		"${FILESDIR}/${P}-destdir.patch" \
+		"${FILESDIR}/${P}-docdir.patch"
 	mkdir -p "${S}"/m4	# make autoconf happy...
 	eautoreconf
 }
 
 src_compile() {
 	# mime-update causes file collisions if enabled
-	econf --disable-mime-update --disable-desktop-update
+	econf --disable-mime-update --disable-desktop-update \
+		--docdir=/usr/share/doc/${PF}
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS BUGS ChangeLog NEWS README
+	dodoc AUTHORS data/doc/THANKS NEWS README || die "dodoc failed"
 }
 
 pkg_postinst() {

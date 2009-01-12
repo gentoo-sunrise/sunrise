@@ -1,0 +1,14 @@
+--- Makefile.am.orig	2009-01-11 18:06:38.000000000 +0100
++++ Makefile.am	2009-01-11 18:08:23.000000000 +0100
+@@ -8,8 +8,8 @@
+ 
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+-	$(INSTALL_DATA) AUTHORS $(docdir)
+-	$(INSTALL_DATA) ChangeLog $(docdir)
+-	$(INSTALL_DATA) BUGS $(docdir)
++	$(INSTALL_DATA) AUTHORS $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) ChangeLog $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) BUGS $(DESTDIR)$(docdir)
+ 
+ ACLOCAL_AMFLAGS = -I m4
