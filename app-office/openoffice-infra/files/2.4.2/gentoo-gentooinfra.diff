@@ -1,0 +1,28 @@
+--- patches/src680/apply.orig	2008-07-12 22:09:40.000000000 +0600
++++ patches/src680/apply	2008-08-19 20:42:51.000000000 +0600
+@@ -134,6 +134,8 @@
+ #InfraUnix:  LinuxCommon, EMFPlus, CustomUserConfig, PostgreSQL, InfraPatches, InfraNotUbuntu,  InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, NotDebian, CustomKeyBinding
+ InfraUnix:  LinuxCommon, EMFPlus, CJK, OOXML, CustomUserConfig, PostgreSQL, InfraPatches, InfraNotUbuntu, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding
+ UbuntuInfra:  LinuxCommon, EMFPlus, SVGImport, UpdaterRemoval, UbuntuBased, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, DebianBaseOnly, UbuntuOnly, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraUbuntu
++GentooInfra: LinuxCommon, EMFPlus, CJK, OOXML, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, InfraNotUbuntu, NotDebian, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, \
++	     GentooOnly, Lockdown, CairoFonts, BerkeleyDB43, Gcc43
+ InfraSolaris:  LinuxCommon, EMFPlus, CJK, OOXML, CustomUserConfig, InfraPatches, InfraNotUbuntu, Infra1252toLocale, InfraSolaris, NotDebian, CustomKeyBinding
+ InfraWin32: Win32Common, EMFPlus, CJK, OOXML, CustomUserConfig, InfraPatches, InfraNotUbuntu, InfraWin32Patches, Infra1252toLocale, InfraNotSolaris, NotDebian, CustomKeyBinding
+ InfraFake: QuickStarter, WMF, SVGImport, UnitTesting, Layout, CJK, EMFPlus, Fpickers, LayoutDialogs, UnitBootstrap, AutoCorrectCapsLock
+@@ -1173,7 +1175,7 @@
+ # strictly required on SL10.1/SLED10 where the xulrunner-nss.pc is broken, n#195272
+ libxmlsec-system-nss.diff, i#69368, pmladek
+ 
+-# xulrunner-1.9.diff, i#86670
++xulrunner-1.9.diff, i#86670
+ 
+ # allow separate helpcontent build
+ 
+@@ -2252,6 +2254,7 @@
+ [ Gcc43 ]
+ # Make it compile with gcc 4.3
+ cws-gcc430two.diff, i#83276
++build-gcc43-missingincludes.diff
+ 
+ [ OxygenOfficePalettes ]
+ palette-enhanced-arrow.diff

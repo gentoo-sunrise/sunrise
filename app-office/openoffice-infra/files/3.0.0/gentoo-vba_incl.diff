@@ -1,0 +1,20 @@
+--- scripting/source/vbaevents/eventhelper.cxx.orig	2008-11-19 18:33:27.000000000 +0500
++++ scripting/source/vbaevents/eventhelper.cxx	2008-11-19 18:33:55.000000000 +0500
+@@ -3,7 +3,7 @@
+ #include <comphelper/proparrhlp.hxx>
+ #include <comphelper/propertycontainer.hxx>
+ 
+-#include <org/openoffice/vba/XVBAToOOEventDescGen.hpp>
++#include <XVBAToOOEventDescGen.hpp>
+ 
+ #include <com/sun/star/beans/XPropertySet.hpp>
+ #include <com/sun/star/beans/XIntrospection.hpp>
+@@ -27,7 +27,7 @@
+ #include <com/sun/star/awt/KeyEvent.hpp>
+ #include <com/sun/star/awt/MouseEvent.hpp>
+ 
+-#include <msforms/ReturnInteger.hpp>
++#include <ReturnInteger.hpp>
+ 
+ #include <sfx2/objsh.hxx>
+ #include <basic/sbstar.hxx>

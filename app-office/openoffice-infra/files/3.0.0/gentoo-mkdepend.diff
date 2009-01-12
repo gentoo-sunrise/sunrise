@@ -1,0 +1,11 @@
+--- soltools/mkdepend/makefile.mk.orig	2008-04-11 00:06:06.000000000 +0600
++++ soltools/mkdepend/makefile.mk	2008-10-25 22:25:48.000000000 +0600
+@@ -49,7 +49,7 @@
+ LIBSALCPPRT=
+ UWINAPILIB=
+ 
+-CDEFS+=-DNO_X11 -DXP_PC -DHW_THREADS
++CDEFS+=-Wno-implicit-function-declaration -DNO_X11 -DXP_PC -DHW_THREADS
+ 
+ OBJFILES=  \
+ 		$(OBJ)$/cppsetup.obj \

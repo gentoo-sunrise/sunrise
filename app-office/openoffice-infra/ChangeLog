@@ -1,0 +1,26 @@
+# ChangeLog for app-office/openoffice-infra
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Jan 2009; Yar Odin (yarodin) <yarodin@gmail.com> +files/2.4.2,
+  +files/2.4.2/build-gcc43-missingincludes.diff,
+  +files/2.4.2/gentoo-completion_matches.diff,
+  +files/2.4.2/gentoo-configure.diff, +files/2.4.2/gentoo-gentooinfra.diff,
+  +files/2.4.2/gentoo-mkdepend.diff, +files/2.4.2/gentoo-scripts.diff,
+  +files/3.0.0, +files/3.0.0/gentoo-ReturnInteger.hdl,
+  +files/gentoo-epm-3.7.patch.diff, +files/2.4.2/gentoo-macolor.diff,
+  +files/3.0.0/gentoo-ReturnInteger.hpp,
+  +files/3.0.0/gentoo-XVBAToOOEventDescGen.hdl,
+  +files/3.0.0/gentoo-XVBAToOOEventDescGen.hpp,
+  +files/3.0.0/gentoo-completion_matches.diff,
+  +files/3.0.0/gentoo-configure.diff, +files/3.0.0/gentoo-hunspell.diff,
+  +files/3.0.0/gentoo-infragentoo.diff, +files/3.0.0/gentoo-mkdepend.diff,
+  +files/3.0.0/gentoo-nojavanostax.diff, +files/3.0.0/gentoo-ru_dict.diff,
+  +files/3.0.0/gentoo-scripts.diff,
+  +files/3.0.0/gentoo-solenv_kde_mess.diff,
+  +files/3.0.0/gentoo-vba_incl.diff, +openoffice-infra-2.4.2.ebuild,
+  +openoffice-infra-3.0.0.ebuild, +files/gentoo-fixsandbox.diff,
+  +files/gentoo-system_pgsql.diff, +files/java-set-classpath.in,
+  +files/wrapper.in, +metadata.xml:
+  New Ebuild for bug 254572 thanks to Peter Volkov <pva@gentoo.org>
+

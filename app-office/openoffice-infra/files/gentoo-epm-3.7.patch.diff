@@ -1,0 +1,88 @@
+--- epm/epm-3.7.patch.orig	2008-09-21 21:01:59.000000000 +0600
++++ epm/epm-3.7.patch	2008-09-21 22:31:54.000000000 +0600
+@@ -98,8 +98,8 @@
+ *** misc/epm-3.7/configure	Thu Jul 24 03:20:54 2003
+ --- misc/build/epm-3.7/configure	Mon Nov 20 15:01:11 2006
+ ***************
+-*** 1238,1244 ****
+---- 1238,1249 ----
++*** 1238,1243 ****
++--- 1238,1248 ----
+   fi
+   fi;
+   
+@@ -107,11 +107,48 @@
+ + if test "${enable_fltk+set}" = set; then
+ +   enableval="$enable_fltk"
+ + fi;
+-  
+ + 
++  
+   # Check whether --with-docdir or --without-docdir was given.
+   if test "${with_docdir+set}" = set; then
+-    withval="$with_docdir"
++***************
++*** 2683,2690 ****
++    test -z "$as_dir" && as_dir=.
++    for ac_exec_ext in '' $ac_executable_extensions; do
++    if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++!     ac_cv_path_RPM="$as_dir/$ac_word$ac_exec_ext"
++!     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++      break 2
++    fi
++  done
++--- 2688,2695 ----
++    test -z "$as_dir" && as_dir=.
++    for ac_exec_ext in '' $ac_executable_extensions; do
++    if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++! #    ac_cv_path_RPM="$as_dir/$ac_word$ac_exec_ext"
++! #    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++      break 2
++    fi
++  done
++***************
++*** 2722,2729 ****
++    test -z "$as_dir" && as_dir=.
++    for ac_exec_ext in '' $ac_executable_extensions; do
++    if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++!     ac_cv_path_RPMBUILD="$as_dir/$ac_word$ac_exec_ext"
++!     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++      break 2
++    fi
++  done
++--- 2727,2734 ----
++    test -z "$as_dir" && as_dir=.
++    for ac_exec_ext in '' $ac_executable_extensions; do
++    if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++! #    ac_cv_path_RPMBUILD="$as_dir/$ac_word$ac_exec_ext"
++! #    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++      break 2
++    fi
++  done
+ ***************
+ *** 4904,4939 ****
+   fi
+@@ -410,8 +447,22 @@
+ *** misc/epm-3.7/epm.c	Tue Oct 28 15:48:30 2003
+ --- misc/build/epm-3.7/epm.c	Mon Nov 20 14:54:51 2006
+ ***************
++*** 184,194 ****
++  	     /*
++  	      * Use dpkg as the native format, if installed...
++  	      */
++- 
++- 	      if (access("/usr/bin/dpkg", 0))
++  		format = PACKAGE_RPM;
++- 	      else
++- 		format = PACKAGE_DEB;
++              }
++  #elif defined(__sgi)
++  	      format = PACKAGE_INST;
++--- 184,190 ----
++***************
+ *** 547,552 ****
+---- 547,553 ----
++--- 543,549 ----
+   {
+     puts(EPM_VERSION);
+     puts("Copyright 1999-2003 by Easy Software Products.");

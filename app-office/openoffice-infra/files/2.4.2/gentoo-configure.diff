@@ -1,0 +1,67 @@
+--- config_office/configure.in.orig	2008-11-22 13:40:23.000000000 +0500
++++ config_office/configure.in	2008-11-22 13:42:45.000000000 +0500
+@@ -103,6 +103,11 @@
+                           epm, however epm is useless for large scale
+                           package building.
+ ],,enable_epm="yes")
++AC_ARG_WITH(epm,
++[[  --with-epm[=internal|external]
++                          use internal or system epm.
++                          [default=internal]
++]],,with_epm=internal)
+ AC_ARG_WITH(package-format,
+ [  --with-package-format   specify package format(s) for OOo installsets.
+                           Default is "normal" one of the OS/Distribution.
+@@ -737,6 +742,9 @@
+ [  --with-alloc            Define which allocator to build with
+ 			                 (choices are oo, system, tcmalloc)
+ ],,)
++AC_ARG_ENABLE(gstreamer,
++[  --enable-gstreamer      Enables GStreamer avmedia backend
++],,)
+ 
+ BUILD_TYPE="OOo EXT"
+ 
+@@ -3204,12 +3212,12 @@
+       for a in "$RPM" rpmbuild rpm; do
+          $a --usage >/dev/null 2> /dev/null
+          if test $? -eq 0; then
+-            RPM=$a
++#            RPM=$a
+             break
+          else
+             $a --version >/dev/null 2> /dev/null
+             if test $? -eq 0; then
+-               RPM=$a
++#               RPM=$a
+                break
+             fi 
+          fi
+@@ -3222,7 +3230,8 @@
+        fi
+    fi
+    if echo "$PKGFORMAT" | $EGREP deb 2>&1 >/dev/null; then
+-      AC_PATH_PROG(DPKG, dpkg, no)
++#      AC_PATH_PROG(DPKG, dpkg, no)
++      DPKG=no
+       if test "$DPKG" = "no"; then
+          AC_MSG_ERROR([dpkg needed for deb creation. Install dpkg.])
+       fi
+@@ -3791,7 +3800,7 @@
+ fi
+ save_CFLAGS=$CFLAGS
+ save_LIBS=$LIBS
+-CFLAGS="-I`pg_config --includedir`"
++CFLAGS="-I`pg_config --includedir` -L`pg_config --libdir`"
+ AC_CHECK_HEADER([libpq-fe.h], [], [AC_MSG_ERROR([libpq-fe.h is needed])], [])
+ AC_HAVE_LIBRARY(pq, [], [AC_MSG_ERROR(libpq is needed)], [])
+ CFLAGS=$save_CFLAGS
+@@ -4048,7 +4057,7 @@
+ AC_MSG_CHECKING([whether to build Mozilla addressbook connectivity])
+ if test "$enable_mozilla" = "no"; then
+    AC_MSG_RESULT([no])
+-elif test "$with_system_mozilla" = "yes"; then
++elif test "$with_system_mozilla" = "yes" -o "$enable_kdeab" = "yes"; then
+    AC_MSG_RESULT([no, not possible with system-mozilla])
+ else
+    AC_MSG_RESULT([yes])
