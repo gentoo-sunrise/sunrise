@@ -1,0 +1,22 @@
+# This keeps the install script from playing outside the sandbox
+--- install-init.sh	2007-10-03 06:24:06.000000000 -0500
++++ install-init.sh.new	2009-01-09 00:04:14.000000000 -0600
+@@ -23,12 +23,12 @@
+ #
+ 
+ if test ! -f ./building-debian ; then
+-  mkdir -p /etc/init.d
+-  cp rivendell /etc/init.d/rivendell
+-  mkdir -p /etc/sysconfig
+-  cp rivendell.sys /etc/sysconfig/rivendell
+-  mkdir -p /var/run/rivendell
+-  chmod 777 /var/run/rivendell
++  mkdir -p ${DESTDIR}/etc/init.d
++  cp rivendell ${DESTDIR}/etc/init.d/rivendell
++  mkdir -p ${DESTDIR}/etc/sysconfig
++  cp rivendell.sys ${DESTDIR}/etc/sysconfig/rivendell
++  mkdir -p ${DESTDIR}/var/run/rivendell
++  chmod 777 ${DESTDIR}/var/run/rivendell
+   ldconfig
+ fi
+ 
