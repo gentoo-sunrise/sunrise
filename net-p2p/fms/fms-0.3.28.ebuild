@@ -6,7 +6,7 @@ inherit eutils cmake-utils
 
 DESCRIPTION="A spam-resistant message board application for Freenet"
 HOMEPAGE="http://freenetproject.org/tools.html"
-SRC_URI="http://individual.utoronto.ca/nezic/${PN}-src-${PV}.zip"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${PN}-src-${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,6 +24,12 @@ S=${WORKDIR}
 pkg_setup() {
 	enewgroup freenet
 	enewuser freenet -1 -1 /var/freenet freenet
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/{${P}-glibc-2.9,gcc-4.4-include}.patch
 }
 
 src_compile() {
