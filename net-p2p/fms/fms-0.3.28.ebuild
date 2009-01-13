@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ inherit eutils cmake-utils
 
 DESCRIPTION="A spam-resistant message board application for Freenet"
 HOMEPAGE="http://freenetproject.org/tools.html"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${PN}-src-${PV}.zip"
+SRC_URI="http://individual.utoronto.ca/nezic/${PN}-src-${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -15,7 +15,7 @@ IUSE=""
 
 DEPEND="virtual/libiconv
 	>=dev-libs/poco-1.2.9
-	dev-db/sqlite"
+	>=dev-db/sqlite-3.6.6.2"
 RDEPEND="${DEPEND}
 	net-p2p/freenet"
 
