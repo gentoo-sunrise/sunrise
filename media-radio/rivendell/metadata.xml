@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
-  <email>maintainer-wanted@gentoo.org</email>
-</maintainer>
+<herd>maintainer-wanted</herd>
 <!-- <longdescription>
  Rivendell  is a complete radio broadcast automation solution, with facilities 
  for the acquisition, management, scheduling and playout of audio content. It 
