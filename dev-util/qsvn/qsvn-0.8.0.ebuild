@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,8 +6,8 @@ EAPI="2"
 inherit cmake-utils
 
 DESCRIPTION="GUI frontend to the Subversion revision system"
-HOMEPAGE="http://ar.oszine.de/projects/qsvn/"
-SRC_URI="http://ar.oszine.de/projects/${PN}/chrome/site/${P}-src.tar.gz"
+HOMEPAGE="http://www.anrichter.net/projects/qsvn/"
+SRC_URI="http://www.anrichter.net/projects/${PN}/chrome/site/${P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
