@@ -1,0 +1,10 @@
+# ChangeLog for media-radio/drm
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Jan 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  +files/cvs_090102_drm-1.10.9.diff, +files/drm-qwt4.diff,
+  +drm-1.10.9.ebuild, +metadata.xml:
+  New ebuild for bug 254877 (based on former ebuild from Stefan Nickl
+  <snickl@snickl.freaks.de> from www.gentoo.de)
+

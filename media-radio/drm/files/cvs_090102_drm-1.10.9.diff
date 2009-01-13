@@ -1,0 +1,550 @@
+diff -Nur drm/common/Version.cpp /home/tb/drm/common/Version.cpp
+--- drm/common/Version.cpp	2008-12-22 11:31:24.000000000 +0100
++++ /home/tb/drm/common/Version.cpp	2008-12-19 10:32:38.000000000 +0100
+@@ -27,4 +27,4 @@
+ \******************************************************************************/
+ #include "Version.h"
+ 
+-char dream_version[] = "1.10.9";
++char dream_version[] = "1.10.9cvs";
+diff -Nur drm/common/datadecoding/Journaline.cpp /home/tb/drm/common/datadecoding/Journaline.cpp
+--- drm/common/datadecoding/Journaline.cpp	2007-06-13 00:30:57.000000000 +0200
++++ /home/tb/drm/common/datadecoding/Journaline.cpp	2008-12-26 21:04:53.000000000 +0100
+@@ -27,33 +27,12 @@
+ 
+ #include "Journaline.h"
+ 
+-
+-#ifdef HAVE_JOURNALINE
+-/* Implementation *************************************************************/
+-/* Set these to 1 for more debug information. Needed by Journaline library */
+-extern "C" {
+-extern int showDdNewsSvcDecErr;
+-extern int showDdNewsSvcDecInfo;
+-extern int showDdDabDgDecErr;
+-extern int showDdDabDgDecInfo;
+-}
+-
+-
+-int showDdNewsSvcDecErr = 0;
+-int showDdNewsSvcDecInfo = 0;
+-int showDdDabDgDecErr = 0;
+-int showDdDabDgDecInfo = 0;
+-
+ CJournaline::CJournaline() : dgdec(NULL), newsdec(NULL)
+ {
+ 	/* This will be the first call to the Journaline decoder open function, the
+ 	   pointer to the decoders must have a defined value (NULL) to avoid
+ 	   unpredictable behaviour in the "ResetOpenJournalineDecoder()" function */
+ 	ResetOpenJournalineDecoder();
+-	showDdNewsSvcDecErr = 0;
+-	showDdNewsSvcDecInfo = 0;
+-	showDdDabDgDecErr = 0;
+-	showDdDabDgDecInfo = 0;
+ }
+ 
+ CJournaline::~CJournaline()
+@@ -175,4 +154,3 @@
+ 		delete nml;
+ 	}
+ }
+-#endif
+diff -Nur drm/common/datadecoding/Journaline.h /home/tb/drm/common/datadecoding/Journaline.h
+--- drm/common/datadecoding/Journaline.h	2008-12-16 13:44:35.000000000 +0100
++++ /home/tb/drm/common/datadecoding/Journaline.h	2008-12-26 21:04:53.000000000 +0100
+@@ -30,13 +30,9 @@
+ 
+ #include "../GlobalDefinitions.h"
+ #include "../util/Vector.h"
+-
+-#ifdef HAVE_JOURNALINE
+ # include "journaline/NML.h"
+ # include "journaline/newssvcdec.h"
+ # include "journaline/dabdatagroupdecoder.h"
+-#endif
+-
+ 
+ /* Definitions ****************************************************************/
+ /* Definitions for links which objects are not yet received or items which
+@@ -62,7 +58,6 @@
+ };
+ 
+ 
+-#ifdef HAVE_JOURNALINE
+ class CJournaline
+ {
+ public:
+@@ -86,25 +81,5 @@
+ 		const unsigned long len, const unsigned char* buf, void* data)
+ 		{NEWS_SVC_DEC_putData(((CJournaline*) data)->newsdec, len, buf);}
+ };
+-#else
+-/* No Journaline implementation if library is not installed */
+-class CJournaline
+-{
+-public:
+-	CJournaline() {}
+-	virtual ~CJournaline() {}
+-
+-	void GetNews(int, CNews& News)
+-	{
+-		/* Show in GUI that Journaline decoder is not available */
+-		News.sTitle = "Dream Decoder Message";
+-		News.vecItem.Init(1);
+-		News.vecItem[0].iLink = JOURNALINE_IS_NO_LINK;
+-		News.vecItem[0].sText = "No Journaline decoder available.";
+-	}
+-	void AddDataUnit(CVector<_BINARY>&) {}
+-	void Reset() {}
+-};
+-#endif
+ 
+ #endif // !defined(JOURNALINE_H__3B0UBVE987346456363LIHGEW982__INCLUDED_)
+diff -Nur drm/common/datadecoding/journaline/NML.cpp /home/tb/drm/common/datadecoding/journaline/NML.cpp
+--- drm/common/datadecoding/journaline/NML.cpp	2008-12-17 11:16:06.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/NML.cpp	2008-12-26 21:04:53.000000000 +0100
+@@ -55,7 +55,7 @@
+ /// @file       NML.cpp
+ /// @author     Michael Reichenbächer <rbr@iis.fraunhofer.de>
+ ///
+-/// $Id: NML.cpp,v 1.2 2008/12/17 10:16:06 jcable Exp $
++/// $Id: NML.cpp,v 1.3 2008/12/26 20:04:53 jcable Exp $
+ ///
+ /// Module:     Journaline(R)
+ ///
+@@ -71,8 +71,8 @@
+ #include "Splitter.h"
+ #include "cpplog.h"
+ 
+-#ifdef WIN32
+-#pragma warning (disable: 4786)
++#ifdef _MSC_VER
++# pragma warning (disable: 4786)
+ #endif
+ 
+ static int Inflate(unsigned char *dest,
+diff -Nur drm/common/datadecoding/journaline/NML.h /home/tb/drm/common/datadecoding/journaline/NML.h
+--- drm/common/datadecoding/journaline/NML.h	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/NML.h	2008-12-26 21:04:53.000000000 +0100
+@@ -55,7 +55,7 @@
+ /// @file       NML.h
+ /// @author     Michael Reichenbächer <rbr@iis.fraunhofer.de>
+ ///
+-/// $Id: NML.h,v 1.1 2008/12/15 22:53:02 jcable Exp $
++/// $Id: NML.h,v 1.3 2008/12/26 20:04:53 jcable Exp $
+ ///
+ /// Module:     Journaline(R)
+ ///
+@@ -71,7 +71,7 @@
+ #define _NML_H_
+ 
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(push,3)
+ #pragma warning(disable:4018)
+ #pragma warning(disable:4100)
+@@ -83,7 +83,7 @@
+ #include <vector>
+ #include <ios>
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(pop)
+ #pragma warning(disable:4786)
+ #pragma warning(disable:4514)
+@@ -105,6 +105,7 @@
+  public:
+   virtual bool Convert(std::string & dest,
+                        const std::string & src) const = 0;
++  virtual ~NMLEscapeCodeHandler() {}
+ };
+ 
+ 
+diff -Nur drm/common/datadecoding/journaline/Splitter.cpp /home/tb/drm/common/datadecoding/journaline/Splitter.cpp
+--- drm/common/datadecoding/journaline/Splitter.cpp	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/Splitter.cpp	2008-12-26 18:18:08.000000000 +0100
+@@ -53,7 +53,7 @@
+ /// @file       Splitter.cpp
+ /// @author     Michael Reichenbächer <rbr@iis.fraunhofer.de>
+ ///
+-/// $Id: Splitter.cpp,v 1.1 2008/12/15 22:53:02 jcable Exp $
++/// $Id: Splitter.cpp,v 1.2 2008/12/26 17:18:08 jcable Exp $
+ ///
+ /// Module:     Journaline(R)
+ ///
+@@ -103,7 +103,7 @@
+ /// @param src   source string
+ /// @return      always returns true
+ bool Splitter::Split(std::vector<std::string> & dest,
+-                     const std::string & src)
++                     const std::string & src) const
+ {
+   std::string::size_type left, right;
+   dest.clear();
+diff -Nur drm/common/datadecoding/journaline/Splitter.h /home/tb/drm/common/datadecoding/journaline/Splitter.h
+--- drm/common/datadecoding/journaline/Splitter.h	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/Splitter.h	2008-12-26 21:04:53.000000000 +0100
+@@ -53,7 +53,7 @@
+ /// @file       Splitter.h
+ /// @author     Michael Reichenbächer <rbr@iis.fraunhofer.de>
+ ///
+-/// $Id: Splitter.h,v 1.1 2008/12/15 22:53:02 jcable Exp $
++/// $Id: Splitter.h,v 1.3 2008/12/26 20:04:53 jcable Exp $
+ ///
+ /// Module:     Journaline(R)
+ ///
+@@ -68,7 +68,7 @@
+ #ifndef _SPLITTER_H_
+ #define _SPLITTER_H_
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(push,3)
+ #pragma warning(disable:4514)
+ #pragma warning(disable:4786)
+@@ -77,7 +77,7 @@
+ #include <string>
+ #include <vector>
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(pop)
+ #pragma warning(disable:4786)
+ #pragma warning(disable:4514)
+@@ -91,11 +91,12 @@
+  public:
+   virtual bool Split(std::vector<std::string> & dest,
+                      const std::string & src) const = 0;
++  virtual ~StringSplitter() {}
+ };
+ 
+ 
+ /// line splitter algorithm
+-class Splitter
++class Splitter : public StringSplitter
+ {
+  public:
+   Splitter();
+@@ -103,7 +104,7 @@
+ 
+   virtual bool SetLineBreakCharacter(char lbc);
+   virtual bool Split(std::vector<std::string> & dest,
+-                     const std::string & src);
++                     const std::string & src) const;
+  private:
+   char _LineBreak;
+ };
+diff -Nur drm/common/datadecoding/journaline/cpplog.h /home/tb/drm/common/datadecoding/journaline/cpplog.h
+--- drm/common/datadecoding/journaline/cpplog.h	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/cpplog.h	2008-12-26 21:04:53.000000000 +0100
+@@ -50,14 +50,14 @@
+ #ifndef __CPP_LOG__
+ #define __CPP_LOG__
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(push,3)
+ #pragma warning(disable:4514)
+ #endif
+ 
+ #include <iostream>
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(pop)
+ #pragma warning(disable:4514)
+ #endif
+diff -Nur drm/common/datadecoding/journaline/crc_8_16.h /home/tb/drm/common/datadecoding/journaline/crc_8_16.h
+--- drm/common/datadecoding/journaline/crc_8_16.h	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/crc_8_16.h	2008-12-26 18:18:08.000000000 +0100
+@@ -56,7 +56,7 @@
+  *
+  * @file        crc_8_16.h
+  *
+- * $Id: crc_8_16.h,v 1.1 2008/12/15 22:53:02 jcable Exp $
++ * $Id: crc_8_16.h,v 1.2 2008/12/26 17:18:08 jcable Exp $
+  *
+  * Author:      Monica Redon Segrera and Nuria Llombart Juan
+  *
+@@ -70,8 +70,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <assert.h>
+-#include <malloc.h>
+-
+ 
+ #ifdef __cplusplus
+ extern "C"
+diff -Nur drm/common/datadecoding/journaline/dabdgdec_impl.c /home/tb/drm/common/datadecoding/journaline/dabdgdec_impl.c
+--- drm/common/datadecoding/journaline/dabdgdec_impl.c	2008-12-17 10:42:42.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/dabdgdec_impl.c	2008-12-26 21:04:53.000000000 +0100
+@@ -58,20 +58,25 @@
+ ***
+ ***
+ **/
+-#include <malloc.h>
+-#include <memory.h>
++#ifdef _MSC_VER
++# include <malloc.h>
++# include <memory.h>
++#else
++# include <stdlib.h>
++#endif
+ 
+ #include "dabdatagroupdecoder.h"
+ #include "dabdgdec_impl.h"
+ #include "log.h"
+ #include "crc_8_16.h"
+ 
+-extern int showDdDabDgDecInfo;
+-extern int showDdDabDgDecErr;
+-
+ #ifdef __cplusplus
+ extern "C"
+ #endif
++
++int showDdDabDgDecInfo;
++int showDdDabDgDecErr;
++
+ DAB_DATAGROUP_DECODER_t DAB_DATAGROUP_DECODER_createDec(
+ 	DAB_DATAGROUP_DECODER_data *data,
+ 	void	*arg
+diff -Nur drm/common/datadecoding/journaline/dabdgdec_impl.h /home/tb/drm/common/datadecoding/journaline/dabdgdec_impl.h
+--- drm/common/datadecoding/journaline/dabdgdec_impl.h	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/dabdgdec_impl.h	2008-12-26 21:04:53.000000000 +0100
+@@ -66,6 +66,9 @@
+ extern "C" {
+ #endif
+ 
++extern int showDdDabDgDecInfo;
++extern int showDdDabDgDecErr;
++
+ #define DAB_DGDEC_MAGIC_ID	0x49871
+ 
+ typedef struct
+diff -Nur drm/common/datadecoding/journaline/newsobject.cpp /home/tb/drm/common/datadecoding/journaline/newsobject.cpp
+--- drm/common/datadecoding/journaline/newsobject.cpp	2008-12-17 10:42:42.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/newsobject.cpp	2008-12-26 21:04:53.000000000 +0100
+@@ -61,9 +61,6 @@
+ #include "newsobject.h"
+ #include "cpplog.h"
+ 
+-extern int showDdNewsSvcDecInfo;
+-extern int showDdNewsSvcDecErr;
+-
+ NewsObject::NewsObject(unsigned long len, const unsigned char *buf,
+ 	struct timeval *creation_time) :
+ 		d_creation_time(*creation_time),
+diff -Nur drm/common/datadecoding/journaline/newsobject.h /home/tb/drm/common/datadecoding/journaline/newsobject.h
+--- drm/common/datadecoding/journaline/newsobject.h	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/newsobject.h	2008-12-27 16:36:07.000000000 +0100
+@@ -60,15 +60,12 @@
+ ***
+ ***
+ **/
+-#ifdef WIN32
+-#ifndef TIM_DEF
+-typedef struct timeval {
+-	long tv_sec;
+-	long tv_usec;
+-} timeval;
+-#endif
++#ifdef _MSC_VER
++# ifndef _WINSOCKAPI_
++#  include <winsock2.h>
++# endif
+ #else
+-#include <sys/time.h>
++# include <sys/time.h>
+ #endif
+ 
+ class NewsObject
+diff -Nur drm/common/datadecoding/journaline/newssvcdec_impl.cpp /home/tb/drm/common/datadecoding/journaline/newssvcdec_impl.cpp
+--- drm/common/datadecoding/journaline/newssvcdec_impl.cpp	2008-12-17 10:42:42.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/newssvcdec_impl.cpp	2008-12-26 21:25:21.000000000 +0100
+@@ -60,7 +60,7 @@
+ **/
+ 
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #define TIM_DEF
+ #include <wtypes.h>
+ #undef min
+@@ -71,7 +71,7 @@
+ #endif
+ 
+ 
+-#if defined(WIN32) && (_MSC_VER==1200)
++#if defined(_MSC_VER) && (_MSC_VER==1200)
+ // for Visual Studio 6.0, define min (algorithm) as _MIN
+ #define min _MIN
+ 
+@@ -80,8 +80,11 @@
+ 
+ #include <algorithm>
+ #include <time.h>
++#ifdef WIN32
++# include <windows.h> // for GetTickCount
++#endif
+ 
+-#if defined(WIN32) && (_MSC_VER==1200)
++#if defined(_MSC_VER) && (_MSC_VER==1200)
+ #pragma warning(default:4512)
+ #endif
+ 
+@@ -94,8 +97,8 @@
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+-extern int showDdNewsSvcDecInfo;
+-extern int showDdNewsSvcDecErr;
++int showDdNewsSvcDecInfo;
++int showDdNewsSvcDecErr;
+ #ifdef __cplusplus
+ }
+ #endif
+diff -Nur drm/common/datadecoding/journaline/newssvcdec_impl.h /home/tb/drm/common/datadecoding/journaline/newssvcdec_impl.h
+--- drm/common/datadecoding/journaline/newssvcdec_impl.h	2008-12-15 23:53:02.000000000 +0100
++++ /home/tb/drm/common/datadecoding/journaline/newssvcdec_impl.h	2008-12-26 21:04:53.000000000 +0100
+@@ -64,7 +64,7 @@
+ #include "newssvcdec.h"
+ 
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(push,3)
+ #pragma warning(disable:4100)
+ #pragma warning(disable:4514)
+@@ -73,7 +73,7 @@
+ #include <map>
+ #include <list>
+ 
+-#ifdef WIN32
++#ifdef _MSC_VER
+ #pragma warning(pop)
+ #pragma warning(disable:4100)
+ #endif
+@@ -83,6 +83,9 @@
+ extern "C" {
+ #endif
+ 
++extern int showDdNewsSvcDecInfo;
++extern int showDdNewsSvcDecErr;
++
+ #define NEWS_SVC_MAGIC_ID	0x786245
+ 
+ typedef std::map<unsigned long, NewsObject*> NEWS_SVC_DEC_IMPL_map_t;
+diff -Nur drm/common/sourcedecoders/AudioSourceDecoder.cpp /home/tb/drm/common/sourcedecoders/AudioSourceDecoder.cpp
+--- drm/common/sourcedecoders/AudioSourceDecoder.cpp	2007-06-13 00:30:59.000000000 +0200
++++ /home/tb/drm/common/sourcedecoders/AudioSourceDecoder.cpp	2008-12-30 10:51:21.000000000 +0100
+@@ -558,7 +558,7 @@
+ 	_BOOLEAN bGoodValues;
+ 
+ #ifdef USE_FAAD2_LIBRARY
+-	faacDecFrameInfo DecFrameInfo;
++	NeAACDecFrameInfo DecFrameInfo;
+ 	short *psDecOutSampleBuf;
+ #endif
+ 
+diff -Nur drm/configure.in /home/tb/drm/configure.in
+--- drm/configure.in	2008-12-22 11:31:12.000000000 +0100
++++ /home/tb/drm/configure.in	2008-12-26 23:22:28.000000000 +0100
+@@ -2,7 +2,7 @@
+ AC_PREREQ(2.50)
+ AC_INIT(common/GUI-QT/main.cpp)
+ 
+-AM_INIT_AUTOMAKE(drm,1.10.9)
++AM_INIT_AUTOMAKE(drm,1.10.9cvs)
+ 
+ AM_CONFIG_HEADER(config.h)
+ 
+@@ -36,8 +36,6 @@
+ 
+ AC_ARG_ENABLE( faac,[  --enable-faac     use faac library for encoding AAC audio], enable_faac=$enableval, enable_faac=yes)
+ 
+-AC_ARG_ENABLE( journaline,[  --enable-journaline     use journaline library], enable_journaline=$enableval, enable_journaline=yes)
+-
+ AC_ARG_ENABLE( hamlib,[  --enable-hamlib     use hamlib library], enable_hamlib=$enableval, enable_hamlib=yes)
+ 
+ AC_ARG_ENABLE( pcap,[  --enable-pcap     use pcap library], enable_pcap=$enableval, enable_pcap=yes)
+@@ -54,7 +52,6 @@
+ 	enable_qt=no
+ 	enable_faad2=no
+ 	enable_faac=no
+-	enable_journaline=no
+ 	enable_hamlib=no
+ 	enable_pcap=no
+ 	enable_sndfile=no
+@@ -122,8 +119,8 @@
+ AC_CHECK_LIB(rt, clock_gettime)
+ 
+ dnl fftw ------------------------------------------------------------------------
+-AC_SEARCH_LIBS(fftw_create_plan, dfftw fftw, , exit 1)
+-AC_SEARCH_LIBS(rfftw, drfftw rfftw, , exit 1)
++AC_SEARCH_LIBS([fftw_create_plan],[dfftw fftw], , exit 1)
++AC_SEARCH_LIBS([rfftw],[drfftw rfftw], , exit 1)
+ AC_CHECK_HEADERS(dfftw.h fftw.h)
+ AC_CHECK_HEADERS(drfftw.h rfftw.h)
+ 
+@@ -208,14 +205,6 @@
+ 	LIBS="$LIBS $libsndfile_LIBS"
+ fi
+ 
+-dnl PUT THIS AT THE END, because FhG Journaline library has undefined symbols
+-dnl Journaline (optional) -------------------------------------------------------
+-AC_CHECK_HEADERS(journaline/NML.h, , enable_journaline=no)
+-if test "x$enable_journaline" = xyes; then
+-	AC_DEFINE(HAVE_JOURNALINE, 1, [Define if you have libjournaline])
+-	LIBS="$LIBS -lfhgjournaline"
+-fi
+-
+ AC_CONFIG_FILES(Makefile linux/Makefile drm.spec)
+ AC_OUTPUT
+ echo
+@@ -232,6 +221,5 @@
+ echo "	AAC encoding supported:				$enable_faac"
+ echo "	pcap file format supported:			$enable_pcap"
+ echo "	libsndfile supported:				$enable_sndfile"
+-echo "	journaline supported:				$enable_journaline"
+ echo
+ echo
+diff -Nur drm/linux/Makefile.am /home/tb/drm/linux/Makefile.am
+--- drm/linux/Makefile.am	2008-12-16 00:31:29.000000000 +0100
++++ /home/tb/drm/linux/Makefile.am	2008-12-26 21:04:53.000000000 +0100
+@@ -27,10 +27,12 @@
+ 	../common/datadecoding/Journaline.cpp \
+ 	../common/datadecoding/epg/epgutil.cpp \
+     ../common/datadecoding/journaline/NML.cpp \
+-	../common/datadecoding/journaline/dabdgdec_impl.c \
+     ../common/datadecoding/journaline/Splitter.cpp \
+-    ../common/datadecoding/journaline/newsobject.cpp \
+     ../common/datadecoding/journaline/newssvcdec_impl.cpp \
++    ../common/datadecoding/journaline/newsobject.cpp \
++	../common/datadecoding/journaline/dabdgdec_impl.c \
++    ../common/datadecoding/journaline/crc_8_16.c \
++    ../common/datadecoding/journaline/log.c \
+ 	../common/FAC/FAC.cpp \
+ 	../common/matlib/MatlibSigProToolbox.cpp \
+ 	../common/matlib/MatlibStdToolbox.cpp \
+@@ -115,14 +117,14 @@
+ 	../common/datadecoding/epg/epgutil.h \
+     ../common/datadecoding/journaline/NML.h \
+     ../common/datadecoding/journaline/Splitter.h \
+-    ../common/datadecoding/journaline/cpplog.h \
+-    ../common/datadecoding/journaline/crc_8_16.h \
+-    ../common/datadecoding/journaline/dabdatagroupdecoder.h \
+-    ../common/datadecoding/journaline/dabdgdec_impl.h \
+-    ../common/datadecoding/journaline/log.h \
+     ../common/datadecoding/journaline/newsobject.h \
+     ../common/datadecoding/journaline/newssvcdec.h \
+     ../common/datadecoding/journaline/newssvcdec_impl.h \
++    ../common/datadecoding/journaline/dabdatagroupdecoder.h \
++    ../common/datadecoding/journaline/dabdgdec_impl.h \
++    ../common/datadecoding/journaline/crc_8_16.h \
++    ../common/datadecoding/journaline/log.h \
++    ../common/datadecoding/journaline/cpplog.h \
+ 	../common/FAC/FAC.h \
+ 	../common/matlib/Matlib.h \
+ 	../common/matlib/MatlibSigProToolbox.h \

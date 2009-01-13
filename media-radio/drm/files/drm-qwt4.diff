@@ -1,0 +1,11 @@
+--- configure.in.orig	2009-01-13 16:47:10.000000000 +0100
++++ configure.in	2009-01-13 17:19:24.000000000 +0100
+@@ -138,7 +138,7 @@
+ 
+ 	dnl qwt
+ 
+-	AC_HAVE_LIBRARY(qwt, ,exit 1)
++	AC_HAVE_LIBRARY(-l:libqwt.so.4, ,exit 1)
+ 
+ 	dnl check for at least version 4.2
+ 	AC_CHECK_HEADER(qwt/qwt_dial_needle.h, qwt_version_ok=yes, qwt_version_ok=no)
