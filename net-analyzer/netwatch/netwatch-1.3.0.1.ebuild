@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)
 
 src_install() {
-	dobin netresolv netwatch || die "dobin failed"
+	dosbin netresolv netwatch || die "dobin failed"
 
 	doman netwatch.1 || die "doman failed"
 	dodoc BUGS CHANGES README* TODO || die "dodoc failed"
