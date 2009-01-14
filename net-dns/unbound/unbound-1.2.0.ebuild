@@ -14,8 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug libevent static threads"
 
 DEPEND="dev-libs/openssl
-	>=net-libs/ldns-1.4.0
-	libevent? ( >=dev-libs/libevent-1.4.8 )"
+	>=net-libs/ldns-1.4.1
+	libevent? ( dev-libs/libevent )"
 
 pkg_setup() {
 	enewgroup unbound
