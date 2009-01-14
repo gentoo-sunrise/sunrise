@@ -24,11 +24,12 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	# Let portage handle updating mime/desktop databases,
-	# fix for wrong placed file,
+	# fixes for wrong placed file and bug in gui_countrymap.c
 	# fix for respecting DESTDIR and
 	# and finally fix to respect docdir=...
 	epatch "${FILESDIR}/${P}-desktop-update.patch" \
 		"${FILESDIR}/${P}-key.patch" \
+		"${FILESDIR}/${P}-map.patch" \
 		"${FILESDIR}/${P}-destdir.patch" \
 		"${FILESDIR}/${P}-docdir.patch"
 	mkdir -p "${S}"/m4	# make autoconf happy...
