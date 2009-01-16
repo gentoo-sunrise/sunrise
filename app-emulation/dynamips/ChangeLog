@@ -1,6 +1,12 @@
 # ChangeLog for app-emulation/dynamips
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Jan 2009; Duncan Lockwood (dunc) <dunc@lemonia.org>
+  +dynamips-0.2.8_rc2.ebuild,
+  +files/dynamips-0.2.8_rc2-parallel_build.patch:
+  New Ebuild for version 0.2.8_rc2 bug 154491. Includes Makefile patch to fix
+  parallel make. Thanks to everyone in #gentoo-sunrise for help
 
   02 Sep 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
   +dynamips-0.2.7.ebuild, +metadata.xml:

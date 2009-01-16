@@ -1,0 +1,21 @@
+--- Makefile.orig	2009-01-16 14:45:30.000000000 +0000
++++ Makefile		2009-01-16 15:02:47.000000000 +0000
+@@ -215,8 +215,7 @@
+ .PHONY: all
+ all: $(PROG) nvram_export
+ 
+-$(PROG): mips64_microcode_dump.inc ppc32_microcode_dump.inc \
+-	$(LEX_C) $(C_OBJS) $(A_OBJS)
++$(PROG): $(LEX_C) $(C_OBJS) $(A_OBJS)
+ 	@echo "Linking $@"
+ 	@$(CC) -o $@ $(C_OBJS) $(A_OBJS) $(LIBS)
+ 
+@@ -246,6 +245,8 @@
+ 	@echo "Building assembly definitions header file"
+ 	@./asmdefs
+ 
++dev_rom.o: mips64_microcode_dump.inc ppc32_microcode_dump.inc
++
+ nvram_export$(BIN_EXT): nvram_export.c
+ 	@echo "Linking $@"
+ 	@$(CC) -Wall $(CFLAGS) -o $@ nvram_export.c
