@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Drop unused useflag-description from metadata.xml
+
   09 Jan 2009; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
   acetoneiso2-2.0.2.ebuild:
   Update HOMEPAGE
