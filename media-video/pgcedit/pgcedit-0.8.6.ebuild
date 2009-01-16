@@ -1,16 +1,16 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils versionator
 
 MY_PN="PgcEdit"
-MY_P="${PN}_source"
+MY_P="${MY_PN}_source_$(get_after_major_version)"
 MY_PDOC="${MY_PN}_Manual_html"
 S="${WORKDIR}"
 
 DESCRIPTION="DVD IFO and Menu editor"
-SRC_URI="http://download.videohelp.com/r0lZ/${PN}/${MY_P}.zip
+SRC_URI="http://download.videohelp.com/r0lZ/${PN}/versions/${MY_P}.zip
 	http://download.videohelp.com/r0lZ/${PN}/versions/${MY_PDOC}.zip"
 HOMEPAGE="http://download.videohelp.com/r0lZ/pgcedit/index.html"
 
