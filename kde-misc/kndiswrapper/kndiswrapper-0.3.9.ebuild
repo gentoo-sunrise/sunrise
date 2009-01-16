@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
 inherit kde
 
 DESCRIPTION="A QT frontend for ndiswrapper"
