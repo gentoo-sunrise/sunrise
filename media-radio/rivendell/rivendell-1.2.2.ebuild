@@ -26,9 +26,7 @@ DEPEND="alsa? ( media-libs/alsa-lib )
 RDEPEND="pam? ( sys-libs/pam )
 	app-cdr/cdrkit
 	media-sound/cdparanoia
-	media-sound/mpg321
 	media-sound/sox
-	media-sound/vorbis-tools
 	net-ftp/lftp
 	net-misc/wget
 	sys-devel/bc"

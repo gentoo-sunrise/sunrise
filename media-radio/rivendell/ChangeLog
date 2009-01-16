@@ -3,6 +3,11 @@
 # $Header: $
 
   16 Jan 2009; Emery Hemingway (sandpaper) <emery@lcom.net>
+  rivendell-1.2.2.ebuild:
+  Changed cdrtools dependency to cdrkit to correct cdda2wav issue. Removed
+  dependencies made unnessecary by sox patch
+
+  16 Jan 2009; Emery Hemingway (sandpaper) <emery@lcom.net>
   +rivendell-1.2.2.ebuild, +files/rivendell-sox-14.patch,
   +files/rivendell-init.patch, +files/rivendell-sandbox.patch:
   Version bump. A patch to correct issues with using a current version of sox
