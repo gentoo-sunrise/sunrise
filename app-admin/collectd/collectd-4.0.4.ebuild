@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,13 +11,14 @@ SRC_URI="http://collectd.org/files/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="lm_sensors hddtemp mysql perl"
+IUSE="lm_sensors mysql perl"
 
 DEPEND="net-misc/curl
 	>=net-analyzer/rrdtool-1.2
-	hddtemp? ( app-admin/hddtemp )
+	app-admin/hddtemp
 	lm_sensors? ( >=sys-apps/lm_sensors-2.9.0 )
-	mysql? ( >=dev-db/mysql-4.1 )"
+	mysql? ( >=dev-db/mysql-4.1 )
+	perl? ( dev-lang/perl )"
 
 src_compile() {
 	econf $(use_enable lm_sensors sensors) $(use_enable mysql) \
