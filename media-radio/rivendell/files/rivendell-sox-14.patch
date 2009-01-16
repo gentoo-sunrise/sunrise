@@ -1,0 +1,404 @@
+# This patches three scripts to fix some sox version campatability issues and cut down 
+# audio conversion times. Some features are not fully functional but upstream will receive a
+# submission, and will hopefully support sox's improved capabilities.
+ 
+diff -urN rivendell-1.2.1/scripts/rd_export_file rivendell-1.2.1.new/scripts/rd_export_file
+--- rivendell-1.2.1/scripts/rd_export_file	2008-09-18 13:02:16.000000000 -0600
++++ rivendell-1.2.1.new/scripts/rd_export_file	2009-01-14 22:18:51.000000000 -0600
+@@ -79,13 +79,6 @@
+ CUSTOM_CMD=${13}
+ 
+ #
+-# Resampling Flag
+-#
+-if [ $SAMPRATE_IN != $SAMPRATE_OUT ] ; then
+-  RESAMPLE_FLAG="resample -q"
+-fi
+-
+-#
+ # MPEG Stuff
+ #
+ if [ $CHANS_OUT = 1 ] ; then
+@@ -121,22 +114,16 @@
+   mpg321 -q -w $WORK $FILE_IN
+ fi
+ 
+-#
+-# Get Peak Level
+-#
++SOX_OPTIONS="$FILE_IN -r $SAMPRATE_OUT -c $CHANS_OUT"
+ if [ $NORMAL_LEVEL != 0 ] ; then
+-  PEAK_LEVEL=`sox $WORK -e stat -v 2>&1 | grep -v ^sox` 
++  PEAK_LEVEL=`sox $WORK -n stat -v 2>&1`
+   SCALE=`echo "$NORMAL_LEVEL * $PEAK_LEVEL" | bc -l`
+-  if [ "$SCALE" == "1.00000000000000000000" ]; then
+-    SCALE="1"
+-  fi
+-  SOX_SCALE="-v $SCALE"
+-  chmod 644 $WORK
++  NORM_FLAG="norm vol $NORMAL_LEVEL"
+ fi
+ 
+ case "$FORMAT_OUT" in
+   0)  # PCM16
+-    sox $SOX_SCALE $WORK -r $SAMPRATE_OUT -c $CHANS_OUT "$FILE_OUT" $RESAMPLE_FLAG
++      sox $SOX_OPTIONS "$FILE_OUT" $NORM_FLAG
+   ;;
+ 
+   1)  # MPEG Layer 1
+@@ -144,32 +131,26 @@
+   ;;
+ 
+   2)  # Mpeg Layer 2
+-    sox $SOX_SCALE $WORK -r $SAMPRATE_OUT -c $CHANS_OUT -t wav - $RESAMPLE_FLAG | toolame -t 0 -s $TOOLAME_SAMPRATE -m $MPEG_MODE -b $BITRATE_OUT /dev/stdin "$FILE_OUT"
++    sox $SOX_OPTIONS -t wav $NORM_FLAG | toolame -t 0 -s $TOOLAME_SAMPRATE -m $MPEG_MODE -b $BITRATE_OUT /dev/stdin "$FILE_OUT"
+   ;;
+ 
+   3)  # MPEG Layer 3
+-    sox $SOX_SCALE $WORK -r $SAMPRATE_OUT -c $CHANS_OUT -t raw - $RESAMPLE_FLAG | lame --silent -r -x -s $SAMPRATE_OUT -m $MPEG_MODE $LAME_RATE - "$FILE_OUT"
+-  ;;
+-
+-  4)  # FLAC
+-    sox $SOX_SCALE $WORK -r $SAMPRATE_OUT -c $CHANS_OUT -t raw - $RESAMPLE_FLAG | flac -f --silent --best --endian=little --sign=signed --bps=16 --channels=$CHANS_OUT --sample-rate=$SAMPRATE_OUT --force-raw-format -o "$FILE_OUT" -
++    sox $SOX_OPTIONS -t raw - $NORM_FLAG | lame --silent -r -x -s $SAMPRATE_OUT -m $MPEG_MODE $LAME_RATE - "$FILE_OUT"
+   ;;
+ 
+-  5)  # OggVorbis
+-    sox $SOX_SCALE $WORK -r $SAMPRATE_OUT -c $CHANS_OUT -t raw - $RESAMPLE_FLAG | oggenc -r -B 16 -C $CHANS_OUT -R $SAMPRATE_OUT -q $QUALITY_OUT -o "$FILE_OUT" -
++  4)  # FLAC & OggVorbis
++    sox $SOX_OPTIONS -C $QUALITY_OUT "$FILE_OUT" $NORM_FLAG
+   ;;
+ 
+   *)  # Custom Format
+     if [ -z "$CUSTOM_CMD" ] ; then
+       rm -f $WORK
+-      rm -f $PEAK
+       exit 1
+     fi
+-    sox $SOX_SCALE $WORK -r $SAMPRATE_OUT -c $CHANS_OUT -t raw - $RESAMPLE_FLAG | $CUSTOM_CMD
++    sox $SOX_OPTIONS $NORM_FLAG | $CUSTOM_CMD
+   ;;
+ esac
+ 
+ rm -f $WORK
+-rm -f $PEAK
+ 
+ exit 0
+diff -urN rivendell-1.2.1/scripts/rd_import_file rivendell-1.2.1.new/scripts/rd_import_file
+--- rivendell-1.2.1/scripts/rd_import_file	2007-02-14 15:59:12.000000000 -0600
++++ rivendell-1.2.1.new/scripts/rd_import_file	2009-01-14 22:18:51.000000000 -0600
+@@ -70,169 +70,44 @@
+ PEAK=${10}
+ WORK=${11}
+ 
+-set -e
+-
+-EXTENSION_IN=`echo $FILE_IN | sed 's/.*\.\([a-zA-Z0-9]\)/\1/'`
+-
+-case "$EXTENSION_IN" in
+-    atx)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    ATX)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    tmc)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    TMC)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    mp2)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    MP2)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    mp3)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    MP3)
+-    function convert() {
+-       mpg321 -q --stereo -w $2 "$1"
+-    }
+-    ;;
+-    ogg)
+-    function convert() {
+-       ogg123 -q -d wav -f $2 "$1"
+-    }
+-    ;;
+-    OGG)
+-    function convert() {
+-       ogg123 -q -d wav -f $2 "$1"
+-    }
+-    ;;
+-    flac)
+-    function convert() {
+-      flac -f -s -d -o $2 "$1"
+-    }
+-    ;;
+-    FLAC)
+-    function convert() {
+-      flac -f -s -d -o $2 "$1"
+-    }
+-    ;;
+-    wav)
+-    if [ $FORMAT_IN = "0" ] ; then
+-      function convert() {
+-        cp "$1" $2
+-      }
+-    else 
+-      function convert() {
+-         mpg321 -q --stereo -w $2 "$1"
+-      }
+-    fi
+-    ;;
+-    WAV)
+-    if [ $FORMAT_IN = "0" ] ; then
+-      function convert() {
+-        cp "$1" $2
+-      }
+-    else 
+-      function convert() {
+-         mpg321 -q --stereo -w $2 "$1"
+-      }
+-    fi
+-    ;;
+-    *)
+-    echo "unsupported input format: $FILE_IN"
+-    exit 1
+-esac
+-
+-case "$FORMAT_OUT" in
+-    0)
+-    function masterize() {
+-	SOX_OPTIONS="$1 -t raw -s -w -c $CHANS_OUT -r $SAMPRATE_OUT -"
+-
+-	if [ $SAMPRATE_OUT -ne $SAMPRATE_IN ]; then
+-#	    SOX_OPTIONS="$SOX_OPTIONS resample -q"
+-	    SOX_OPTIONS="$SOX_OPTIONS resample"
+-	fi
+-    
+-	if [ $3 != 1  ]; then
+-	    SOX_OPTIONS="-v $3 $SOX_OPTIONS"
+-    fi
+-    sox $SOX_OPTIONS | rdfilewrite --channels=$4 --sample-rate=$5 $2
+-    }
+-    ;;
+-    1)
+-    function masterize() {
+-	SOX_OPTIONS="$1 -w -c $CHANS_OUT -r $SAMPRATE_OUT -t raw"
+-	if [ $3 != 1  ]; then
+-	    SOX_OPTIONS="-v $3 $SOX_OPTIONS"
+-        fi
+-
+-	SOX_OPTIONS="$SOX_OPTIONS -"
+-
+-	if [ $SAMPRATE_OUT -ne $SAMPRATE_IN ]; then
+-	    SOX_OPTIONS="$SOX_OPTIONS resample"
+-	fi
+-    
+-        if [ $CHANS_OUT = 1 ]; then
+-	    MODE="m"
+-        else
+-	    MODE="s"
+-        fi
+-        case "$SAMPRATE_OUT" in
+-	    32000)
+-		LAMERATE=32
+-	    ;;
+-	    44100)
+-		LAMERATE=44.1
+-	    ;;
+-	    48000)
+-		LAMERATE=48
+-            ;;
+-        esac
+-        LAME_OPTIONS="-t 0 -m $MODE -s $LAMERATE -b $BITRATE_OUT"
+-	sox $SOX_OPTIONS | toolame $LAME_OPTIONS /dev/stdin -W $2 > /dev/null 2> /dev/null
+-    }
+-    ;;
+-    *)
+-    echo "unsupported output format $FORMAT_OUT";
+-    ;;
+-esac
++rm -f $FILE_OUT
++cp "$FILE_IN" $WORK
+ 
+-convert "$FILE_IN" $WORK
+-# > /dev/null 2>&1
+-    
+-# TODO: extract the PEAK_LEVEL during the convertion
+-SCALE=1
+ if [ $NORMAL_LEVEL != 0 ]; then
+-    PEAK_LEVEL=`sox $WORK -t wav /dev/null stat -v 2>&1 | grep -v ^sox` 
+-    # grep avoid sox warning messages
+-    
+-    SCALE=`echo "$NORMAL_LEVEL * $PEAK_LEVEL" | bc -l`
+-    if [ "$SCALE" == "1.00000000000000000000" ]; then
+-	SCALE="1"
+-    fi
+-    chmod 644 $WORK
++  PEAK_LEVEL=`sox $WORK -n stat -v 2>&1`
++  SCALE=`echo "$NORMAL_LEVEL * $PEAK_LEVEL" | bc -l`
+ fi
+ 
+-rm -f $FILE_OUT
++if [ $FORMAT_OUT = 0 ] ; then
++  SOX_OPTIONS="$WORK -2 -c $CHANS_OUT -r $SAMPRATE_OUT -t raw -"
++  if [ $NORMAL_LEVEL != 0 ] ; then
++    SOX_OPTIONS="$SOX_OPTIONS vol $SCALE"
++  fi
++  sox $SOX_OPTIONS | rdfilewrite --channels=$CHANS_OUT --sample-rate=$SAMPRATE_OUT $FILE_OUT
++fi
+ 
+-masterize $WORK $FILE_OUT $SCALE $CHANS_OUT $SAMPRATE_OUT
+-# > /dev/null 2>&1
++if [ $FORMAT_OUT = 1 ] ; then
++  SOX_OPTIONS="$WORK -2 -c $CHANS_OUT -r $SAMPRATE_OUT -t raw -"
++  if [ $NORMAL_LEVEL != 0 ] ; then
++    SOX_OPTIONS="$SOX_OPTIONS vol $SCALE"
++  fi
++    
++  if [ $CHANS_OUT = 1 ]; then
++    MODE="m"
++  else
++    MODE="s"
++  fi
++  case "$SAMPRATE_OUT" in
++    32000)
++      LAMERATE=32
++    ;;
++    44100)
++      LAMERATE=44.1
++    ;;
++    48000)
++      LAMERATE=48
++    ;;
++    esac
++      LAME_OPTIONS="-t 0 -m $MODE -s $LAMERATE -b $BITRATE_OUT"
++      sox $SOX_OPTIONS | toolame $LAME_OPTIONS /dev/stdin -W $FILE_OUT > /dev/null 2> /dev/null
++fi
+\ No newline at end of file
+diff -urN rivendell-1.2.1/scripts/rd_rip_cd rivendell-1.2.1.new/scripts/rd_rip_cd
+--- rivendell-1.2.1/scripts/rd_rip_cd	2007-02-14 15:59:12.000000000 -0600
++++ rivendell-1.2.1.new/scripts/rd_rip_cd	2009-01-14 22:18:51.000000000 -0600
+@@ -69,52 +69,16 @@
+     PARANOIA_FLAG="-P 10"
+ fi
+ 
+-#
+-# Set Resample Algorithm
+-#
+-if [ $SAMPRATE -ne 44100 ]; then
+-    RESAMPLE_FLAG="resample"
+-#    RESAMPLE_FLAG="resample -q"
+-fi
+-
+ # ############################################################################
+ # Encode to PCM16
+ if [ $FORMAT = 0 ]; then
+-    if [ $NORMAL_LEVEL = "0" ]; then
+-# ############################################################################
+-# # No Normalization, do single pass
+-#	echo "SINGLE PASS, PCM, NO NORMALIZATION!"
+-	cdda2wav --quiet -D $RIPDEV -t $TRACK $PARANOIA_FLAG - | sox -t wav - -t raw -w -s -r $SAMPRATE -c $CHANS - $RESAMPLE_FLAG | rdfilewrite --channels=$CHANS --sample-rate=$SAMPRATE $WAVE
+-# ############################################################################
++	SOX_OPTIONS="-t wav - -t raw -2 -r $SAMPRATE -c $CHANS -"
++	if [ $NORMAL_LEVEL != 0 ] ; then
++	  SOX_OPTIONS="$SOX_OPTIONS norm vol $NORMAL_LEVEL"
++	fi
++	cdda2wav --quiet -D $RIPDEV -t $TRACK $PARANOIA_FLAG - | sox $SOX_OPTIONS | rdfilewrite --channels=$CHANS --sample-rate=$SAMPRATE $WAVE
+ 
+-# ############################################################################
+-# # Normalization needed, do two passes
+-    else
+-#
+-# Phase One - Rip to 44.1 Stereo WAV, get peak level data
+-#
+-#	echo "PASS ONE, PCM, NORMALIZATION!"
+-	cdda2wav --quiet -D $RIPDEV -t $TRACK $PARANOIA_FLAG - | sox -t wav - $WORK stat -v 2> $PEAK
+-
+-#
+-# Calculate Needed Gain
+-#
+-	PEAK_LEVEL=`cat $PEAK`
+-	RATIO=`echo $NORMAL_LEVEL*$PEAK_LEVEL | bc -l`
+-
+-#
+-# Phase Two - Encode audio to final destination
+-#
+-#	echo "PASS TWO, PCM, NORMALIZATION!"
+-	sox -v $RATIO $WORK -t raw -w -s -c $CHANS -r $SAMPRATE - $RESAMPLE_FLAG | rdfilewrite --channels=$CHANS --sample-rate=$SAMPRATE $WAVE
+-    
+-#
+-# Clean Up
+-#
+-	rm -f $PEAK
+ 	rm -f $WORK
+-# ############################################################################
+-    fi
+ fi
+ # ############################################################################
+ 
+@@ -137,41 +101,11 @@
+ 	    LAMERATE="48"
+ 	;;
+     esac
+-    if [ $NORMAL_LEVEL = "0" ]; then
+-# ############################################################################
+-# # No Normalization, do single pass
+-#	echo "SINGLE PASS, MPEG, NO NORMALIZATION!"
+-	cdda2wav --quiet -D $RIPDEV -t $TRACK $PARANOIA_FLAG - | sox -t wav - -t raw -r $SAMPRATE -c $CHANS - $RESAMPLE_FLAG | toolame -t 0 -W -m $MODE -b $BITRATE -s $LAMERATE - $WAVE
+-# ############################################################################
+-
+-# ############################################################################
+-# # Normalization needed, do two passes
+-    else
+-#
+-# Phase One - Rip to 44.1 Stereo WAV, get peak level data
+-#
+-#	echo "PASS ONE, MPEG, NORMALIZATION!"
+-	cdda2wav --quiet -D $RIPDEV -t $TRACK $PARANOIA_FLAG - | sox -t wav - $WORK stat -v 2> $PEAK
+-
+-#
+-# Calculate Needed Gain
+-#
+-	PEAK_LEVEL=`cat $PEAK`
+-	RATIO=`echo $NORMAL_LEVEL*$PEAK_LEVEL | bc -l`
+-
+-#
+-# Phase Two - Encode audio to final destination
+-#
+-#	echo "PASS TWO, MPEG, NORMALIZATION!"
+-	sox -v $RATIO $WORK -t raw -c $CHANS -r $SAMPRATE - $RESAMPLE_FLAG | toolame -t 0 -W -m $MODE -b $BITRATE -s $LAMERATE - $WAVE
+-    
+-#
+-# Clean Up
+-#
+-	rm -f $PEAK
+-	rm -f $WORK
+-# ############################################################################
+-    fi
++	SOX_OPTIONS="-t wav - -t raw -r $SAMPRATE -c $CHANS -"
++	if [ $NORMAL_LEVEL != 0 ] ; then
++	  SOX_OPTIONS="$SOX_OPTIONS norm vol $NORMAL_LEVEL"
++	fi
++	cdda2wav --quiet -D $RIPDEV -t $TRACK $PARANOIA_FLAG - | sox $SOX_OPTIONS | toolame -t 0 -W -m $MODE -b $BITRATE -s $LAMERATE - $WAVE
+ 
+ fi
+ 

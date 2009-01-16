@@ -1,0 +1,10 @@
+# There is no jack daemon
+--- rivendell-1.2.1/rivendell-gentoo	2007-10-05 08:31:21.000000000 -0600
++++ rivendell-1.2.1.new/rivendell-gentoo	2009-01-14 22:21:19.000000000 -0600
+@@ -26,7 +26,6 @@
+ ##
+ 
+ depend() {
+-        need jackd
+         use mysql
+ }
