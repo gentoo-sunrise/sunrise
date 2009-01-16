@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -rivendell-1.2.1.ebuild, -files/rivendell-1.2.1-init.patch,
+  -files/rivendell-1.2.1-sandbox.patch, rivendell-1.2.2.ebuild:
+  Drop old ebuild + patches, add DEPEND to RDEPEND
+
   16 Jan 2009; Emery Hemingway (sandpaper) <emery@lcom.net>
   rivendell-1.2.2.ebuild:
   Changed cdrtools dependency to cdrkit to correct cdda2wav issue. Removed

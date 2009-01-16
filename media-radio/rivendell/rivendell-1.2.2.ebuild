@@ -23,7 +23,8 @@ DEPEND="alsa? ( media-libs/alsa-lib )
 	media-libs/libvorbis
 	virtual/mysql
 	x11-libs/qt:3"
-RDEPEND="pam? ( sys-libs/pam )
+RDEPEND="${DEPEND}
+	pam? ( sys-libs/pam )
 	app-cdr/cdrkit
 	media-sound/cdparanoia
 	media-sound/sox
