@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  graphicsmagick-1.3.4.ebuild:
+  Move to EAPI-2 for openmp-usedep
+
   16 Jan 2009; Janne Rönkkö (jroo) <jroo@iki.fi>
   -graphicsmagick-1.3.3.ebuild, +graphicsmagick-1.3.4.ebuild:
   Version bumb to 1.3.4 for GraphicsMagick.

@@ -4,7 +4,7 @@
 
 inherit flag-o-matic
 
-EAPI=1
+EAPI=2
 
 MY_P=${P/graphicsm/GraphicsM}
 
@@ -26,6 +26,7 @@ DEPEND="bzip2? ( app-arch/bzip2 )
 	jpeg2k? ( >=media-libs/jasper-1.701.0 )
 	lcms? ( media-libs/lcms )
 	media-video/mpeg2vidcodec
+	openmp? ( sys-devel/gcc[openmp] )
 	perl? ( dev-lang/perl )
 	png? ( media-libs/libpng )
 	svg? ( dev-libs/libxml2 )
@@ -39,7 +40,7 @@ DEPEND="bzip2? ( app-arch/bzip2 )
 	imagemagick? ( !media-gfx/imagemagick )"
 S=${WORKDIR}/${MY_P}
 
-src_compile() {
+src_configure() {
 	local quantumDepth="--with-quantum-depth="
 	if use q16 ; then
 		quantumDepth="${quantumDepth}16"
@@ -83,8 +84,6 @@ src_compile() {
 		--without-trio \
 		--with-modules \
 		--enable-shared
-
-	emake || die "Build failed."
 }
 
 src_install() {
@@ -95,9 +94,4 @@ src_install() {
 pkg_postinst() {
 	elog "For RAW image suport please install media-gfx/dcraw."
 	elog "To read gnuplot files please install sci-visualization/gnuplot."
-	if use openmp && !( built_with_use sys-devel/gcc openmp ); then
-		elog "GraphicsMagick was not compiled with OpenMP."
-		elog "To get OpenMP support build your GCC with openmp USE flag."
-		elog "You need GCC 4.2.0 or greater for OpenMP."
-	fi
 }
