@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jan 2009; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
+  -anyremote-4.14.ebuild, +anyremote-4.15.ebuild:
+  Version Bump, using src_configure function to match EAPI-2 specifications
+
   11 Jan 2009; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
   -anyremote-4.13.ebuild, +anyremote-4.14.ebuild:
   Version Bump

@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 DESCRIPTION="Anyremote provides wireless Bluetooth or infrared remote control service, but works also with cable"
 HOMEPAGE="http://anyremote.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
@@ -19,9 +21,8 @@ DEPEND="${RDEPEND}"
 PDEPEND="kde? ( net-misc/kanyremote )
 	  gnome? ( net-misc/ganyremote )"
 
-src_compile() {
+src_configure() {
 	econf $(use_enable bluetooth bluez)
-	emake || die "emake failed"
 }
 
 src_install() {
