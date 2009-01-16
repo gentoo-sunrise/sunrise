@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,15 +14,14 @@ SRC_URI="http://mc.linuxinside.com/Releases/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT=0
 KEYWORDS="~amd64 ~x86"
-IUSE="7zip gpm nls ncurses pam slang"
+IUSE="gpm nls ncurses pam slang"
 
 RDEPEND="kernel_linux? ( >=sys-fs/e2fsprogs-1.19 )
 	ncurses? ( >=sys-libs/ncurses-5.2-r5 )
 	pam? ( >=sys-libs/pam-0.78-r3 net-nds/portmap )
 	gpm? ( >=sys-libs/gpm-1.19.3 )
 	slang? ( sys-libs/slang )
-	x86? ( 7zip? ( >=app-arch/p7zip-4.16 ) )
-	amd64? ( 7zip? ( >=app-arch/p7zip-4.16 ) )
+	>=app-arch/p7zip-4.16
 	!app-misc/mc"
 
 DEPEND="${RDEPEND}
@@ -33,10 +32,7 @@ S="${WORKDIR}/${MY_P}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	if ( use x86 || use amd64 ) && use 7zip; then
-		epatch "${FILESDIR}/${PV}/u7z.patch"
-	fi
-
+	epatch "${FILESDIR}/${PV}/u7z.patch"
 	epatch "${FILESDIR}/${PV}/ebuild-syntax.patch"
 	epatch "${FILESDIR}/${PV}/mc-menu.patch"
 	epatch "${FILESDIR}/${PV}/gcc34.patch"
