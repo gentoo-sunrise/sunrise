@@ -6,9 +6,7 @@
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
-app-admin/collectd:hddtemp - Enable monitoring of disk temperatures (app-admin/hddtemp)
 app-admin/vlogger:dbi - Enable support for DBI
-app-cdr/acetoneiso2:7zip - support for optional 7zip features
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
@@ -24,7 +22,6 @@ app-misc/heyu:ext0 - Support extended type 0 (shutter and shade) commands
 app-misc/heyu:ore - Support Oregon RF sensors
 app-misc/heyu:rfxm - Support RFXMeters
 app-misc/heyu:rfxs - Support RFXSensors
-app-misc/mc-mp:7zip - Add support for 7zip archives
 app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
 app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x and earlier file formats
@@ -114,7 +111,6 @@ media-gfx/synfigstudio:fmod - Enables support for using mod files for audio supp
 media-radio/ax25-tools:X - Enable some x based configuration tools.
 media-radio/drm:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the radio in use
 media-radio/fldigi:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio in use
-media-radio/gpredict:coverage - Enable coverage reports
 media-radio/grig:coverage - Enable coverage reports
 media-radio/grig:hardware - Enable hardware IO
 media-radio/unixcw:ncurses - Enables building the curses based morse code tutor program 'cwcp'.
