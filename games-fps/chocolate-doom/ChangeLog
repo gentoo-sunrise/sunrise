@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/chocolate-doom
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Jan 2009; Davide Cendron (scen) <scen@gentoo.org>
+  -chocolate-doom-1.1.1.ebuild, +chocolate-doom-1.2.1.ebuild:
+  Version bump
 
   30 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Add local useflags to metadata.xml (GLEP 56)
