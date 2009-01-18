@@ -27,8 +27,6 @@ src_unpack() {
 src_install() {
 	dobin basicdsp || die "dobin failed"
 	doman basicdsp.1 || die "doman failed"
-	insinto /usr/share/pixmaps
-	doins basicdsp_splash.xpm || die "doins failed"
 	dodoc README.txt || die "dodoc failed"
 	if use doc ; then
 		dodoc "${DISTDIR}"/BasicDSP_SPRAT.pdf || die "dodoc failed"

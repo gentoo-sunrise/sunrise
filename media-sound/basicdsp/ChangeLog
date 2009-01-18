@@ -4,6 +4,10 @@
 
   18 Jan 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   basicdsp-1.01.ebuild:
+  Drop XPM file. Gets compiled in.
+
+  18 Jan 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  basicdsp-1.01.ebuild:
   Fix for typo in pixmap directory
 
   18 Jan 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
