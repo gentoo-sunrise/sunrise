@@ -3,6 +3,10 @@
 # $Header: $
 
   18 Jan 2009; Davide Cendron (scen) <scen@gentoo.org>
+  uhexen2-1.4.4_pre4.ebuild:
+  Little cleanup
+
+  18 Jan 2009; Davide Cendron (scen) <scen@gentoo.org>
   +uhexen2-1.4.4_pre4.ebuild:
   Added 1.4.4 pre-release version
 

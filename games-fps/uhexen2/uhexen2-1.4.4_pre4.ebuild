@@ -24,15 +24,6 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="3dfx alsa asm cdaudio debug dedicated demo dynamic hexenworld gtk lights
 midi opengl optimize-cflags oss sdlaudio sdlcd tools"
 
-#QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
-#	${GAMES_BINDIR:1}/glhexen2
-#	${GAMES_BINDIR:1}/hexen2-demo
-#	${GAMES_BINDIR:1}/glhexen2-demo
-#	${GAMES_BINDIR:1}/hwcl
-#	${GAMES_BINDIR:1}/glhwcl
-#	${GAMES_BINDIR:1}/hwcl-demo
-#	${GAMES_BINDIR:1}/glhwcl-demo"
-
 UIDEPEND=">=media-libs/libsdl-1.2.7
 	>=media-libs/sdl-mixer-1.2.5
 	3dfx? ( media-libs/glide-v3 )
