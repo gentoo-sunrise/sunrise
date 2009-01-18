@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,14 +6,14 @@ inherit eutils
 
 DESCRIPTION="An authoritative only, high performance, open source name server"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/nsd"
-SRC_URI="http://www.nlnetlabs.nl/downloads/nsd/${P}.tar.gz"
+SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bind8-stats dnssec ipv6 largefile nsec3 nsid root-server runtime-checks tsig"
 
-DEPEND="tsig? ( >=dev-libs/openssl-0.9.8f )"
+DEPEND="tsig? ( dev-libs/openssl )"
 
 pkg_setup() {
 	if use runtime-checks; then
@@ -23,7 +23,8 @@ pkg_setup() {
 		ewarn "You enabled nsid USE flag, this is still experimental"
 	fi
 
-	enewuser nsd -1 -1 /var/lib/nsd
+	enewgroup nsd
+	enewuser nsd -1 -1 -1 nsd
 }
 
 src_compile() {
@@ -49,20 +50,23 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc doc/*
-	dodoc contrib/nsd.zones2nsd.conf
-	dodoc "${FILESDIR}"/nsd.cron
+	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS} || die "dodoc failed"
 
-	dobin nsdc.sh
+	insinto /usr/share/${PN}
+	doins "${FILESDIR}/nsd.cron" || die "doins failed"
+	doins contrib/nsd.zones2nsd.conf || die "doins failed"
 
-	newinitd "${FILESDIR}"/nsd.initd nsd
+	newinitd "${FILESDIR}"/nsd.initd nsd || die "newinitd failed"
+	newconfd "${FILESDIR}"/nsd.confd nsd || die "newconfd failed"
 
+	# database directory, writable by nsd for ixfr.db file
 	keepdir /var/db/nsd
-	fowners nsd /var/db/nsd
+	fowners nsd:nsd /var/db/nsd
 	fperms 750 /var/db/nsd
 
+	# zones directory, writable by root for 'nsdc patch'
 	keepdir /var/lib/nsd
-	fowners nsd /var/lib/nsd
+	fowners root:nsd /var/lib/nsd
 	fperms 750 /var/lib/nsd
 }
 
@@ -70,9 +74,6 @@ pkg_postinst() {
 	elog "If you are using bind and want to convert (or sync) bind zones"
 	elog "you should check out bind2nsd (http://bind2nsd.sourceforge.net)."
 	echo
-	elog "If you are upgrading from NSD 2, take a look at the provided"
-	elog "nsd.zones2nsd.conf script in the doc directory."
-	echo
 	elog "To automatically merge zone transfer changes back to NSD's"
-	elog "zone files using 'nsdc patch', try the nsd.cron in the doc directory"
+	elog "zone files using 'nsdc patch', try nsd.cron in /usr/share/${PN}"
 }

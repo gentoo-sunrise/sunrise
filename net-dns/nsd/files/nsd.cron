@@ -1,7 +1,10 @@
 #!/bin/sh 
+# Copyright 1999-2009 Gentoo Foundation 
+# Distributed under the terms of the GNU General Public License v2 
+# $Header: $ 
 # 
-NSDC_BIN="/usr/sbin/nsdc" 
+my_nsdc="/usr/sbin/nsdc" 
 
-if [[ -x ${NSDC_BIN} ]]; then 
-	${NSDC_BIN} update >>/dev/null 2>&1 
+if [[ -x ${my_nsdc} ]]; then 
+	${my_nsdc} patch 1>/dev/null
 fi

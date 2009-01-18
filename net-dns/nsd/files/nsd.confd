@@ -1,0 +1,2 @@
+# Location of the nsd configuration file. Leave empty for the default.
+#config_file="/etc/nsd/nsd.conf"

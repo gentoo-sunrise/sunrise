@@ -1,16 +1,17 @@
 #!/sbin/runscript 
-# Copyright 1999-2008 Gentoo Foundation 
+# Copyright 1999-2009 Gentoo Foundation 
 # Distributed under the terms of the GNU General Public License v2 
 # $Header: $ 
 #
-opts="${opts} reload configtest"
+opts="${opts} reload"
 description="NSD is an authoritative only, high performance, open source name server"
 description_start="Start the server"
 description_stop="Stop the server"
-description_configtest="Check the syntax of the configuration file"
-description_reload="Reload the database file"
+description_reload="Rebuild zone database and reload it"
 
-CONTROL="/usr/sbin/nsdc"
+config_file=${config_file:-/etc/nsd/nsd.conf}
+my_nsdc="/usr/sbin/nsdc"
+my_nsd_checkconf="/usr/sbin/nsd-checkconf"
 
 depend() { 
 	need net 
@@ -18,40 +19,56 @@ depend() {
 	provide auth-dns
 } 
 
-configtest() {
-	ebegin "Checking config"
-		if [ ! -e "/etc/nsd/nsd.conf" ]; then
-			eerror "You need to create an appropriate config file"
-			eerror "in /etc/nsd/ . An example can be found in /etc/nsd/nsd.conf.sample"
-			return 1
-		fi
+_checkconf() {
+	if [ ! -e "${config_file}" ]; then
+		eerror "You need to create an appropriate config file."
+		eerror "An example can be found in /etc/nsd/nsd.conf.sample"
+		return 1
+	fi
 
-		if ! nsd-checkconf "/etc/nsd/nsd.conf"; then
-			eerror "You have errors in your configfile"
-			return 1
-		fi
-	eend
+	if ! ${my_nsd_checkconf} "${config_file}"; then
+		eerror "You have errors in your configfile (${config_file})"
+		return 1
+	fi
+	return 0
+}
+
+_patch() {
+	local difffile=`${my_nsd_checkconf} -o difffile ${config_file}`
+	if test -s ${difffile}; then
+		ebegin "Patching NSD zone files"
+		${my_nsdc} patch > /dev/null
+		eend $?
+	fi
+}
+
+_rebuild() {
+	if ! ${my_nsdc} rebuild > /dev/null; then
+		eerror "There was an error rebuilding the database. Please review your zone files."
+		return 1
+	fi
+	return 0
 }
 
 start() { 
-	configtest || return 1
-
 	ebegin "Starting NSD"
-		${CONTROL} start
-		${CONTROL} running
+	_checkconf || return 1
+	${my_nsdc} start
+	${my_nsdc} running
 	eend $? 
 }
 
 stop() { 
 	ebegin "Stopping NSD"
-		${CONTROL} patch
-		${CONTROL} stop
+	_patch
+	${my_nsdc} stop
 	eend $? 
 } 
 
 reload() {
-	configtest || return 1
-	ebegin "Reloading NSD"
-		${CONTROL} reload
+	ebegin "Rebuilding and reloading NSD zone database"
+	_checkconf || return 1
+	_rebuild || return 1
+	${my_nsdc} reload
 	eend $? 
 }
