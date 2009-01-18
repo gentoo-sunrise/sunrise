@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/uhexen2
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jan 2009; Davide Cendron (scen) <scen@gentoo.org>
+  +uhexen2-1.4.4_pre4.ebuild:
+  Added 1.4.4 pre-release version
 
   30 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Add local useflags to metadata.xml (GLEP 56)
