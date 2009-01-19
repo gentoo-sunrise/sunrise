@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,6 +16,7 @@ LICENSE="as-is"
 DEPEND="sci-libs/blas-atlas
 	sci-libs/lapack-atlas
 	dev-python/numeric"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
