@@ -19,6 +19,7 @@ DEPEND="net-misc/curl
 	lm_sensors? ( >=sys-apps/lm_sensors-2.9.0 )
 	mysql? ( >=dev-db/mysql-4.1 )
 	perl? ( dev-lang/perl )"
+RDEPEND=${DEPEND}
 
 src_compile() {
 	econf $(use_enable lm_sensors sensors) $(use_enable mysql) \

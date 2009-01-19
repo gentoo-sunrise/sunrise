@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,6 +16,7 @@ IUSE="latex"
 DEPEND="latex? ( app-text/dvipng )
 	dev-python/PyQt
 	dev-python/pygame"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	distutils_src_unpack

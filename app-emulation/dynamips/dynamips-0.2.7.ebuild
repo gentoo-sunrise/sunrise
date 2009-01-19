@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: Exp $
 
@@ -12,6 +12,7 @@ KEYWORDS="~amd64"
 IUSE=""
 DEPEND="net-libs/libpcap
 	|| ( dev-libs/libelf dev-libs/elfutils )"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
@@ -30,6 +31,6 @@ src_compile() {
 
 src_install () {
 	dobin nvram_export dynamips || die
-	doman dynamips.1 hypervisor_mode.7 nvram_export.1
-	dodoc ChangeLog TODO README README.hypervisor
+	doman dynamips.1 hypervisor_mode.7 nvram_export.1 || die
+	dodoc ChangeLog TODO README README.hypervisor || die
 }

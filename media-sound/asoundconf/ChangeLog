@@ -8,6 +8,4 @@
 
   07 Dec 2007; Jakub Moc <jakub@gentoo.org> +metadata.xml,
   +asoundconf-1.0.14.ebuild:
-  New ebuild for Bug 198450, based on ebuilds provided by Carlos Cordoba in
-  Bug 201573
-
+  Based on ebuilds provided by Carlos Cordoba in  Bug 201573, new ebuild for Bug 198450

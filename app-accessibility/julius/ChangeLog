@@ -1,6 +1,10 @@
 # ChangeLog for app-accessibility/julius
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  julius-4.1.ebuild:
+  Add suggested RDEPEND=${DEPEND}
 
   30 Dec 2008; Erik Hahn (a_b) <erik_hahn@gmx.de> julius-4.1.ebuild:
   Install japanese docs, remove USE flags with no matching configure switch

@@ -1,6 +1,11 @@
 # ChangeLog for app-misc/freeme2
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  freeme2-9999.ebuild:
+  Add suggested RDEPEND=${DEPEND}, move eautoreconf to SVN_BOOTSTRAP and drop
+  src_unpack
 
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   freeme2-9999.ebuild:

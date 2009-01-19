@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,6 +25,7 @@ DEPEND=">=sys-libs/readline-4.1
 	media-libs/alsa-lib
 	media-libs/libsndfile
 	sys-libs/zlib"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
