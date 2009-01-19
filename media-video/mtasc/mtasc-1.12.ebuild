@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,20 +8,21 @@ ECVS_SERVER="cvs.motion-twin.com:/cvsroot"
 
 DESCRIPTION="The Motion-Twin ActionScript 2 Compiler"
 HOMEPAGE="http://www.mtasc.org"
-SRC_URI="http://www.mtasc.org/doc/mtasc/install.ml"
+SRC_URI="http://www.mtasc.org/doc/${PN}/install.ml"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-lang/ocaml"
+RDEPEND=${DEPEND}
 
-S="${WORKDIR}"
+S=${WORKDIR}
 
 src_unpack() {
 	cp "${DISTDIR}/install.ml" .
-	sed -i "/download();/d" install.ml
+	sed -i "/download();/d" install.ml || die
 
 	for M in extlib-dev swflib extc; do
 		ECVS_MODULE="ocaml/${M}"
@@ -41,10 +42,10 @@ src_install() {
 	# Don't install CVS directories.
 	find ocaml/mtasc/std{,8} -name "CVS" -exec rm -rf {} \; 2> /dev/null
 
-	dobin bin/mtasc bin/mtasc-byte
+	dobin bin/mtasc bin/mtasc-byte || die
 	insinto /usr/share/mtasc
-	doins -r ocaml/mtasc/std{,8}
-	dodoc ocaml/mtasc/doc/{Readme.linux,CHANGES.txt}
+	doins -r ocaml/mtasc/std{,8} || die
+	dodoc ocaml/mtasc/doc/{Readme.linux,CHANGES.txt} || die
 }
 
 pkg_postinst() {
