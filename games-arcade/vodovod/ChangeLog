@@ -1,6 +1,10 @@
 # ChangeLog for games-arcade/vodovod
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  vodovod-1.10.ebuild:
+  Add suggested RDEPEND=${DEPEND},  add die statements
 
   07 Feb 2008; (Tommy[D]) tommy100@gmx.de vodovod-1.10.ebuild:
   Fix KEYWORDS, only unstable is allowed at sunrise!
