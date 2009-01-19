@@ -1,6 +1,10 @@
 # ChangeLog for net-dns/inadyn-mt
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  inadyn-mt-02.12.24.ebuild:
+  Add suggested RDEPEND=${DEPEND}
 
   19 Dec 2008; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   +inadyn-mt-02.12.24.ebuild, +files/inadyn-mt.conf, +files/inadyn-mt.initd,
