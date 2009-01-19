@@ -1,6 +1,10 @@
 # ChangeLog for media-video/ripwrap
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ripwrap-0.20.ebuild:
+  Add suggested RDEPEND=${DEPEND}, use EAPI-2-useflags
 
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Fix metadata.xml
