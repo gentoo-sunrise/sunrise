@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,6 +17,7 @@ IUSE="doc"
 
 DEPEND="x11-libs/libqglviewer
 	|| ( x11-libs/qt-gui >=x11-libs/qt-4.3 )"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_PN}
 

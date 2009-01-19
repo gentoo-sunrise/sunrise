@@ -1,6 +1,10 @@
 # ChangeLog for sci-libs/candystore
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  candystore-0.0.3.ebuild:
+  Add suggested RDEPEND=${DEPEND}
 
   19 Nov 2008; Oliver Borm (oli) <oli.borm@web.de> -candystore-0.0.2.ebuild,
   +candystore-0.0.3.ebuild:
