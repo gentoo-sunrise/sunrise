@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EGIT_REPO_URI="http://www.ksplice.com/git/ksplice.git"
+EGIT_REPO_URI="http://${PN}.com/git/${PN}.git"
 
 inherit git
 
@@ -16,6 +16,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-lang/perl"
+RDEPEND="${DEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"

@@ -1,10 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 DESCRIPTION="Rebootless Linux kernel security updates"
 HOMEPAGE="http://www.ksplice.com/"
-SRC_URI="http://www.ksplice.com/dist/${P}-src.tar.gz"
+SRC_URI="http://${PN}.com/dist/${P}-src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
