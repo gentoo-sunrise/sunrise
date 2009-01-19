@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,8 +17,9 @@ DEPEND=">=media-sound/om-0.2.0
 	media-plugins/blop
 	media-libs/ladspa-sdk
 	media-libs/ladspa-cmt"
+RDEPEND=${DEPEND}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog NEWS THANKS README
+	dodoc AUTHORS ChangeLog NEWS THANKS README || die
 }
