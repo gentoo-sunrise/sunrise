@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/replimenu
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  replimenu-0.9.ebuild:
+  Remove empty DEPEND, simplify, add die statements
 
   19 Jun 2007; Kalev Lember (kalev) <kalev@smartlink.ee>
   +replimenu-0.9.ebuild, +metadata.xml:
