@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,6 +16,7 @@ IUSE="server"
 DEPEND=">=media-libs/libsdl-1.1.3
 	media-libs/sdl-mixer
 	media-libs/sdl-net"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	subversion_src_unpack

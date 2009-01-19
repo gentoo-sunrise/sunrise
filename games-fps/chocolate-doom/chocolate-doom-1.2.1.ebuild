@@ -16,6 +16,7 @@ IUSE="server"
 DEPEND=">=media-libs/libsdl-1.1.3
 	media-libs/sdl-mixer
 	media-libs/sdl-net"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
