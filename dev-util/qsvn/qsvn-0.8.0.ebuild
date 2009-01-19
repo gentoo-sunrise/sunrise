@@ -16,10 +16,11 @@ IUSE="debug"
 
 DEPEND="|| ( ( x11-libs/qt-gui:4[qt3support] x11-libs/qt-sql:4[sqlite] ) x11-libs/qt:4 )
 	dev-util/subversion"
+RDEPEND=${DEPEND}
 
 S="${WORKDIR}/${P}/src"
 
 src_install() {
 	cmake-utils_src_install
-	dodoc ../{ChangeLog,README}
+	dodoc ../{ChangeLog,README} || die
 }
