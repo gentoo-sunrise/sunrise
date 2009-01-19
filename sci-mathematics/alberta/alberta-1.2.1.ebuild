@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,12 +16,14 @@ IUSE=""
 
 DEPEND="virtual/blas
 	virtual/opengl"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P/.1}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
 	# A working version of the 1.2.1 patch provided by upstream
 	epatch "${WORKDIR}/${P}.patch"
 }
@@ -30,11 +32,11 @@ src_compile() {
 	# There exists no ebuild for gltools nor grape, disabling it
 	econf \
 		--without-gltools \
-		--without-grape || die "econf failed"
+		--without-grape
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README THANKS AUTHORS NEWS
+	dodoc README THANKS AUTHORS NEWS || die "dodoc failed"
 }
