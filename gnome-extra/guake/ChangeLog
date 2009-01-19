@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/guake
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  guake-0.3.1.ebuild, guake-9999.ebuild:
+  Add suggested RDEPEND=${DEPEND}, move to EAPI-2-usedeps
 
   04 Aug 2008; Isakov_AN <satana.hell@gmail.com> +guake-9999.ebuild:
   Add live git ebuild
