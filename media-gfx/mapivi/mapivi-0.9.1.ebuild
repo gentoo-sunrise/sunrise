@@ -1,11 +1,11 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 MY_P="${PN}091"
 DESCRIPTION="picture manager / organizer written in Perl/Tk"
 HOMEPAGE="http://mapivi.sourceforge.net/mapivi.shtml"
-SRC_URI="mirror://sourceforge/mapivi/${MY_P}.tgz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
 
 IUSE=""
 LICENSE="GPL-2"
@@ -19,21 +19,22 @@ DEPEND="dev-lang/perl
 	media-gfx/imagemagick
 	media-libs/jpeg
 	dev-perl/Image-MetaData-JPEG"
+RDEPEND=${DEPEND}
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	sed -i -e 's:$configdir/PlugIns:/usr/share/mapivi/plugins:' mapivi
+	sed -i -e 's:$configdir/PlugIns:/usr/share/mapivi/plugins:' mapivi || die
 }
 
 src_install() {
-	dobin mapivi
+	dobin mapivi || die
 
 	exeinto /usr/share/mapivi/plugins
-	doexe PlugIns/{Channel-Separator,Join-RGB,checkDir-plugin,filelist-plugin,test-plugin}
-	dodoc Changes.txt FAQ README Tips.txt ToDo
+	doexe PlugIns/{Channel-Separator,Join-RGB,checkDir-plugin,filelist-plugin,test-plugin} || die
+	dodoc Changes.txt FAQ README Tips.txt ToDo || die
 }
 
 pkg_postinst() {
