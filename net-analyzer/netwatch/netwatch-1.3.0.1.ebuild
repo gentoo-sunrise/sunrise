@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)
 
 src_install() {
-	dosbin netresolv netwatch || die "dobin failed"
+	dosbin netresolv netwatch || die "dosbin failed"
 
 	doman netwatch.1 || die "doman failed"
 	dodoc BUGS CHANGES README* TODO || die "dodoc failed"
