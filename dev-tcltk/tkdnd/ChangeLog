@@ -1,6 +1,10 @@
 # ChangeLog for dev-tcltk/tkdnd
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  tkdnd-1.0_alpha2.ebuild:
+  Add suggested RDEPEND=${DEPEND}, add die statements
 
   22 Jun 2006; Boris FAURE (aka billiob) <billiob@gmail.com> ChangeLog:
   New Ebuild for bug 137496, thanks to Boris Faure

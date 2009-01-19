@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,6 +18,7 @@ RESTRICT="test"
 
 DEPEND=">=dev-lang/tcl-8.4
 	>=dev-lang/tk-8.4"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_P}/unix/
 
@@ -29,5 +30,5 @@ src_unpack() {
 
 src_install() {
 	emake install DESTDIR="${D}" || die "emake install failed"
-	dodoc doc/* Readme.txt
+	dodoc doc/* Readme.txt || die
 }
