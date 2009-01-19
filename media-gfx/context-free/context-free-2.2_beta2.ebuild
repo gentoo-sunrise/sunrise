@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,8 +16,9 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="media-libs/libpng"
+RDEPEND=${DEPEND}
 
-S="${WORKDIR}/ContextFreeSource${MY_PV}"
+S=${WORKDIR}/ContextFreeSource${MY_PV}
 
 src_unpack() {
 	unpack ${A}
