@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,6 +14,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="app-arch/unzip"
+RDEPEND=""
 
 S="${WORKDIR}/${PN}"
 
@@ -31,9 +32,8 @@ src_install() {
 
 	cd "${S}/source/latex/SIstyle"
 	insinto "${TEXMF}/source/latex/SIstyle"
-	doins sistyle.dtx sistyle.ins
-	doins figs/fig{1,2}.*ps
+	doins sistyle.dtx sistyle.ins figs/fig{1,2}.*ps || die
 	cd figs/graphs_scr
 	insinto "${TEXMF}/source/latex/SIstyle/graphs_src"
-	doins *.mp MPfig.bat readme_figs.txt *.m
+	doins *.mp MPfig.bat readme_figs.txt *.m || die
 }
