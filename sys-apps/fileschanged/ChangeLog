@@ -1,6 +1,10 @@
 # ChangeLog for sys-apps/fileschanged
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  fileschanged-0.6.5.ebuild:
+  Add suggested RDEPEND=${DEPEND}, add die statements.
 
   21 Jun 2006; Alexandru Toma (analoguedragon) <flash3001@yahoo.com>
   ChangeLog:
