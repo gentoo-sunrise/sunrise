@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -34,6 +34,7 @@ DEPEND=">=dev-libs/boost-1.34
 	|| ( x11-libs/libX11 virtual/x11 )
 	|| ( ( x11-libs/qt-gui:4 x11-libs/qt-svg:4 ) =x11-libs/qt-4.3* )
 	xv? ( x11-libs/libXv )"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_P}
 
