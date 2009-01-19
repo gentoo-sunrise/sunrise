@@ -1,6 +1,10 @@
 # ChangeLog for kde-misc/kcpufreq
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  kcpufreq-0.3-r2.ebuild:
+  Add suggested RDEPEND=${DEPEND}, simplify
 
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added USE flag description wrt GLEP 56
