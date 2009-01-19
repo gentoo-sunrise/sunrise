@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  graphicsmagick-1.3.4.ebuild:
+  Add suggested RDEPEND=${DEPEND}
+
   16 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   graphicsmagick-1.3.4.ebuild:
   Move to EAPI-2 for openmp-usedep

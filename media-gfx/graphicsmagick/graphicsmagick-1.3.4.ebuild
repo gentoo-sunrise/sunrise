@@ -38,6 +38,7 @@ DEPEND="bzip2? ( app-arch/bzip2 )
 		x11-libs/libX11
 		x11-libs/libICE )
 	imagemagick? ( !media-gfx/imagemagick )"
+RDEPEND=${DEPEND}
 S=${WORKDIR}/${MY_P}
 
 src_configure() {
