@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,6 +25,7 @@ DEPEND=">=dev-libs/libsigc++-2.0.0
 	imagemagick? ( media-gfx/imagemagick )
 	openexr? ( media-libs/openexr )
 	truetype? ( >=media-libs/freetype-2.1.9 )"
+RDEPEND=${DEPEND}
 
 src_compile() {
 	econf \
@@ -41,7 +42,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
-	dodoc doc/*.txt
+	dodoc doc/*.txt || die
 	insinto /usr/share/${PN}/examples
-	doins examples/*.sif
+	doins examples/*.sif || die
 }
