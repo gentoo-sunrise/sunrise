@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,11 +18,9 @@ DEPEND=">=dev-games/ogre-1.4
 		>=media-libs/openal-0.0.8
 		media-libs/libvorbis
 		dev-games/ois"
+RDEPEND=${DEPEND}
 
-src_unpack() {
-	subversion_src_unpack
-	eautoreconf
-}
+ESVN_BOOTSTRAP="eautoreconf"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
