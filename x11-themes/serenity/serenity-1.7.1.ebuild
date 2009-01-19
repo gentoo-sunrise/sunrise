@@ -1,8 +1,9 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="1"
+
 inherit kde
 
 DESCRIPTION="KDE style and native window decoration"
@@ -17,5 +18,6 @@ IUSE=""
 DEPEND="|| ( kde-base/kwin:3.5 kde-base/kdebase:3.5 )
 	!x11-themes/serenity-decoration
 	!x11-themes/serenity-style"
+RDEPEND="${DEPEND}"
 
-need-kde 3.4
+need-kde 3.5
