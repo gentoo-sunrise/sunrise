@@ -17,6 +17,7 @@ IUSE="gtk ncurses psyco"
 DEPEND="gtk? ( dev-python/pygtk )
 	ncurses? ( sys-libs/ncurses )
 	psyco? ( dev-python/psyco )"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
