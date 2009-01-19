@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,14 +16,15 @@ IUSE=""
 DEPEND=">=dev-lang/tcl-7.6
 	>=dev-lang/tk-4.2
 	sys-libs/readline"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${PN}${PV}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/2.1-include-string.patch"
-	epatch "${FILESDIR}/2.1-gentoo-config.patch"
+	epatch "${FILESDIR}/2.1-include-string.patch" \
+	"${FILESDIR}/2.1-gentoo-config.patch"
 }
 
 src_compile() {
@@ -43,8 +44,6 @@ src_install() {
 	insinto /usr/lib/${PN}/Tcl || die
 	doins Tcl/* || die
 	exeinto /usr/lib/${PN}/Bin || die
-	doexe Bin/site.specific || die
-	doexe Bin/tkgofer.exe || die
-	dobin Bin/tkgofer # || die
+	doexe Bin/{site.specific,tkgofer.exe,tkgofer} || die
 	dodoc readme Doc/* || die
 }
