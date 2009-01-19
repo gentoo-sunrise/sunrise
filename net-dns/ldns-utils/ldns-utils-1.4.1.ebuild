@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
@@ -14,8 +14,9 @@ IUSE=""
 DEPEND="dev-libs/openssl
 	>=net-libs/ldns-${PV}
 	net-libs/libpcap"
+RDEPEND=${DEPEND}
 
-S="${WORKDIR}/ldns-${PV}"
+S=${WORKDIR}/ldns-${PV}
 
 DIRS="drill examples"
 
