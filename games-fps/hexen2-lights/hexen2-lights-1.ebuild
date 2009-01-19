@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,8 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND=""
-
 S=${WORKDIR}
 dir=${GAMES_DATADIR}/${MY_PN}
 
@@ -31,7 +29,7 @@ src_install() {
 		dosym "${dir}"/data1/maps/demo${i}.lit  "${dir}"/demo/data1/maps
 	done
 
-	dodoc *.txt
+	dodoc *.txt || die
 
 	prepgamesdirs
 }

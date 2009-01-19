@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/hexen2-lights
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  hexen2-lights-1.ebuild:
+  Drop emty DEPEND, add die statement
 
   25 Jul 2007; Davide Cendron (scen) <scen@gentoo.org>
   hexen2-lights-1.ebuild:
