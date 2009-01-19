@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,6 @@ EAPI="1"
 inherit qt4
 
 MY_P="GR-lida-${PV}"
-S="${WORKDIR}"/"${MY_P}"
 
 DESCRIPTION="Frontend for scummvm and dosbox"
 HOMEPAGE="http://www.laisladelabandoware.es"
@@ -21,8 +20,10 @@ DEPEND="|| ( ( x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-sql:4 )
 	=x11-libs/qt-4.3*:4 )
 	dosbox? ( games-emulation/dosbox )
 	scummvm? ( games-engines/scummvm )"
+RDEPEND=${DEPEND}
 
 QT4_BUILT_WITH_USE_CHECK="gif jpeg png sqlite3"
+S=${WORKDIR}/${MY_P}
 
 src_compile(){
 	eqmake4 "${PN}".pro
