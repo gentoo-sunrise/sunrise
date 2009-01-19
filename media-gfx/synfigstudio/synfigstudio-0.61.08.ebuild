@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,6 +15,7 @@ DEPEND=">=dev-cpp/gtkmm-2.4.0
 	>=media-gfx/synfig-${PV}
 	>=dev-libs/libsigc++-2.0
 	fmod? ( media-libs/fmod )"
+RDEPEND=${DEPEND}
 
 src_compile() {
 	econf $(use_with fmod libfmod )

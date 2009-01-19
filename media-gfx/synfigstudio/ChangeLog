@@ -1,6 +1,10 @@
 # ChangeLog for media-gfx/synfigstudio
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  synfigstudio-0.61.08.ebuild:
+  Add suggested RDEPEND=${DEPEND}
 
   17 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   synfigstudio-0.61.08.ebuild:
