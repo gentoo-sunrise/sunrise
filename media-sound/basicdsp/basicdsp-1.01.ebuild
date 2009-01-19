@@ -16,6 +16,7 @@ KEYWORDS="~x86"
 IUSE="doc"
 
 DEPEND=">=x11-libs/wxGTK-2.6.3"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack $A
