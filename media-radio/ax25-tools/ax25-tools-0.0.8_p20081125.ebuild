@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,6 +19,7 @@ DEPEND=">=dev-libs/libax25-0.0.5
 	X? ( x11-libs/libX11
 	    media-libs/mesa
 	    x11-libs/fltk )"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
