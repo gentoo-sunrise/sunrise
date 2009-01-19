@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,17 +16,18 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=">=sys-libs/pam-0.78-r3
 	>=app-crypt/mhash-0.9.1
 	>=dev-db/postgresql-7.3.6"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN/_/-}"
 
 src_install() {
 	insinto /etc
-	newins "${FILESDIR}/pam_pgsql.conf" pam_pgsql.conf
+	newins "${FILESDIR}/pam_pgsql.conf" pam_pgsql.conf || die "newins failed"
 	dopammod pam_pgsql.so
-	dodoc debian/changelog README CREDITS
+	dodoc debian/changelog CREDITS README || die "dodoc failed"
 }
 
 pkg_postinst() {
-	elog "From version 0.6 you can also use new style configuration (overrides"
-	elog "legacy values). See /usr/share/doc/${PF}/README for more info."
+	einfo "From version 0.6 you can also use new style configuration (overrides"
+	einfo "legacy values). See /usr/share/doc/${PF}/README for more info."
 }
