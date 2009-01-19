@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,13 +10,14 @@ MY_PN="${PN/im/IM}"
 DESCRIPTION="New Qt4-based Instant Messenger (ICQ)."
 HOMEPAGE="http://www.qutim.org"
 LICENSE="GPL-2"
-SRC_URI="http://www.qutim.org/download/${P/-/_}.tar.gz"
+SRC_URI="http://${PN}.org/download/${P/-/_}.tar.gz"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="|| ( x11-libs/qt-gui:4 =x11-libs/qt-4.3* )"
+DEPEND="|| ( x11-libs/qt-gui x11-libs/qt:4 )"
+RDEPEND="${DEPEND}"
 QT4_BUILT_WITH_USE_CHECK="png gif"
 
 S="${WORKDIR}/${P/-/_}"
