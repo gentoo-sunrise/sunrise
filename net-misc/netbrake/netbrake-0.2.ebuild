@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,6 +15,7 @@ KEYWORDS="~x86"
 IUSE="httpfs"
 
 DEPEND=""
+RDEPEND=""
 
 S=${WORKDIR}/${PN}
 
@@ -34,8 +35,8 @@ src_unpack() {
 }
 
 src_install() {
-	dolib libnetbrake.so.0.1
-	dobin netbrake
+	dolib libnetbrake.so.0.1 || die "dolib failed"
+	dobin netbrake || die "dobin failed"
 
-	dodoc AUTHORS CHANGES README THANKS TODO VERSION
+	dodoc AUTHORS CHANGES README THANKS TODO || die "dodoc failed"
 }
