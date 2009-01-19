@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="bind8-stats dnssec ipv6 largefile nsec3 nsid root-server runtime-checks tsig"
 
 DEPEND="tsig? ( dev-libs/openssl )"
-RDEPEND}${DEPEND}
+RDEPEND=${DEPEND}
 
 pkg_setup() {
 	if use runtime-checks; then
