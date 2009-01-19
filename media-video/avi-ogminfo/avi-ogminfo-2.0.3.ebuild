@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,13 +17,14 @@ DEPEND="dev-libs/libxml2
 	>=media-video/ffmpeg-0.4.9_p20050906
 	>=media-libs/libogg-1.1
 	>=media-libs/libvorbis-1.0"
+RDEPEND=${DEPEND}
 
 src_compile() {
-	econf $(use_enable nls) || die "econf failed"
+	econf $(use_enable nls)
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc Changelog README{,.en}
+	dodoc Changelog README{,.en} || die
 }
