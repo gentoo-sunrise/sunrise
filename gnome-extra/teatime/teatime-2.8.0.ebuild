@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,6 +22,7 @@ DEPEND=">=dev-libs/glib-2.6
 	>=gnome-base/gnome-vfs-2.4
 	>=gnome-base/gnome-panel-2.6
 	>=dev-libs/libxml2-2.6"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
