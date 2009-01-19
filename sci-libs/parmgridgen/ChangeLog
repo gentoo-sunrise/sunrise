@@ -1,6 +1,10 @@
 # ChangeLog for sci-libs/parmgridgen
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  parmgridgen-1.0.ebuild:
+  Add suggested RDEPEND=${DEPEND}, add die statement.
 
   20 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   parmgridgen-1.0.ebuild:

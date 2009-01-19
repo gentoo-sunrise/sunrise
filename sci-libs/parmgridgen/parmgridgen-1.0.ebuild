@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,6 +16,7 @@ SLOT="0"
 IUSE=""
 
 DEPEND="virtual/mpi"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MYP}
 
@@ -26,12 +27,12 @@ pkg_setup(){
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-autotools.patch
+
+	epatch "${FILESDIR}/${P}-autotools.patch"
 	eautoreconf
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README
-	dodoc Doc/*.pdf
+	dodoc README Doc/*.pdf || die "dodoc failed"
 }
