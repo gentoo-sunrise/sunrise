@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,12 +15,12 @@ IUSE=""
 
 DEPEND="dev-python/pygtk
 	>=dev-lang/python-2.4"
+RDEPEND=${DEPEND}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake failed"
-	dodoc NEWS TODO
-	cd "${PN}"
-	newbin pysdm.py pysdm || die "failed to create executable"
+	dodoc NEWS TODO || die
+	newbin ${PN}/pysdm.py pysdm || die "failed to create executable"
 }
 
 pkg_postinst() {
