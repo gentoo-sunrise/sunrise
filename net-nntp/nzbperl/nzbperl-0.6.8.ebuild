@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="nzb based nntp/usenet downloader in perl"
 HOMEPAGE="http://noisybox.net/computers/nzbperl/"
-SRC_URI="http://noisybox.net/computers/nzbperl/${P}.pl"
+SRC_URI="http://noisybox.net/computers/${PN}/${P}.pl"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,16 +21,12 @@ DEPEND="dev-lang/perl
 	virtual/perl-Term-ANSIColor
 	dev-perl/XML-DOM
 	ssl? ( dev-perl/IO-Socket-SSL )
-	ipv6? ( dev-perl/IO-Socket-INET6 )
-"
-
-src_unpack() {
-	:
-}
+	ipv6? ( dev-perl/IO-Socket-INET6 )"
+RDEPEND="${DEPEND}"
 
 src_install() {
-	newbin "${DISTDIR}/${P}.pl" ${PN}
-	dodoc "${FILESDIR}/${PN}rc.sample"
+	newbin "${DISTDIR}/${P}.pl" ${PN} || die "newbin failed"
+	dodoc "${FILESDIR}/${PN}rc.sample" || die "dodoc failed"
 }
 
 pkg_postinst() {
@@ -43,6 +39,6 @@ pkg_postinst() {
 		ewarn "so it is recommended that you build perl with ithreads enabled."
 	fi
 
-	elog "A sample config file has been copied into /usr/share/doc/${PF}"
-	elog "You may want to take it as a sample for your ~/.nzbperlrc"
+	einfo "A sample config file has been copied into /usr/share/doc/${PF}"
+	einfo "You may want to take it as a sample for your ~/.nzbperlrc"
 }
