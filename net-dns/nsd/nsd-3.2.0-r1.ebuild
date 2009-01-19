@@ -14,6 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="bind8-stats dnssec ipv6 largefile nsec3 nsid root-server runtime-checks tsig"
 
 DEPEND="tsig? ( dev-libs/openssl )"
+RDEPEND}${DEPEND}
 
 pkg_setup() {
 	if use runtime-checks; then
@@ -42,7 +43,7 @@ src_compile() {
 		$(use_enable nsid) \
 		$(use_enable root-server) \
 		$(use_enable runtime-checks checking) \
-		$(use_enable tsig) || die "econf failed"
+		$(use_enable tsig)
 
 	emake || die "emake failed"
 }
