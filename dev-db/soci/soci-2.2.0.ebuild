@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,18 +11,18 @@ HOMEPAGE="http://soci.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="Boost-1.0"
 SLOT="0"
-IUSE="debug firebird mysql postgres sqlite3 static"
+IUSE="debug firebird mysql postgres sqlite3"
 
 DEPEND="firebird? ( dev-db/firebird )
-		mysql? ( virtual/mysql )
-		postgres? ( virtual/postgresql-base )
-		sqlite3? ( =dev-db/sqlite-3* )"
+	mysql? ( virtual/mysql )
+	postgres? ( virtual/postgresql-base )
+	sqlite3? ( =dev-db/sqlite-3* )"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch \
-		"${FILESDIR}/${P}-sqlite_fix.patch" \
+	epatch "${FILESDIR}/${P}-sqlite_fix.patch" \
 		"${FILESDIR}/${P}-gcc43_glibc28.patch"
 }
 
@@ -40,6 +40,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc CHANGES README
-	dohtml -r doc/*
+	dodoc CHANGES README || die
+	dohtml -r doc/* || die
 }
