@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,6 +18,7 @@ DEPEND="mail-mta/postfix
 	dev-ruby/rubygems
 	dev-ruby/facets
 	dev-ruby/trollop"
+RDEPEND=${DEPEND}
 
 pkg_setup() {
 	enewgroup ${PN}
@@ -28,7 +29,7 @@ src_install() {
 	dosbin ${PN} || die "installing binary failed"
 	newinitd "${FILESDIR}"/${PVR}/${PN}.init ${PN}
 	newconfd "${FILESDIR}"/${PVR}/${PN}.conf ${PN}
-	"${S}"/${PN} --prefix "${D}" configure
+	"${S}"/${PN} --prefix "${D}" configure || die
 	keepdir /etc/postfix/postwhite
 }
 
