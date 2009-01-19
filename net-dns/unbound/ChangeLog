@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  unbound-1.2.0.ebuild:
+  Add suggested RDEPEND=${DEPEND}
+
   14 Jan 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -unbound-1.1.1-r1.ebuild, +unbound-1.2.0.ebuild:
   Version bump

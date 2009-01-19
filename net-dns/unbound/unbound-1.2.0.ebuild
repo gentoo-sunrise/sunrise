@@ -16,6 +16,7 @@ IUSE="debug libevent static threads"
 DEPEND="dev-libs/openssl
 	>=net-libs/ldns-1.4.1
 	libevent? ( dev-libs/libevent )"
+RDEPEND=${DEPEND}
 
 pkg_setup() {
 	enewgroup unbound
