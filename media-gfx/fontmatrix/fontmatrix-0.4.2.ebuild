@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,6 +18,7 @@ IUSE="debug"
 DEPEND="|| ( ( x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-svg:4 )
 	>=x11-libs/qt-4.3:4 )
 	>=media-libs/freetype-2"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${P}-Source
 B=${WORKDIR}/${PN}_build
