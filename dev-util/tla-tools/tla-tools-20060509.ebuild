@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,18 +14,18 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="dev-util/tla"
+RDEPEND=${DEPEND}
 
 ETLA_VERSION="miles@gnu.org--2006/tla-tools--devo--0"
 ETLA_ARCHIVES="http://mirrors.sourcecontrol.net/miles@gnu.org--2006"
 
 src_unpack() {
 	tla_src_unpack
-	cp -r "${DISTDIR}"/tla-tools--devo--0--patch-*/* "${S}"
+	cp -r "${DISTDIR}"/tla-tools--devo--0--patch-*/* "${S}" || die
 }
 
 src_compile() {
-	./configure \
-		--prefix /usr || die "./configure failed"
+	./configure --prefix /usr || die "./configure failed"
 	emake || die "make failed"
 }
 
