@@ -10,7 +10,7 @@ XDPVER=4
 
 inherit x-modular git
 
-EGIT_TREE="4a690f110e9416407ca6fc8b5743b5be69bc1cce"
+EGIT_TREE="6cb2ae2bf4451ce1b7fb63f8acbdcf6059a38a55"
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/nouveau/${PN}"
 
 DESCRIPTION="Nouveau video driver"
