@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,24 +24,25 @@ DEPEND="dev-python/dbus-python
 	dev-python/gnome-python-extras
 	dev-python/notify-python
 	>=dev-python/pygtk-2.10"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	distutils_src_unpack
 
 	sed -i -e "s:share/doc/specto:share/doc/${PF}:" \
-		"${S}"/setup.py "${S}"/spectlib/util.py
+		"${S}"/setup.py "${S}"/spectlib/util.py || die
 
 	# Replace some GNOME icons with their FreeDesktop equivalents
 	# so that it works with oxygen as a theme.
 	sed -i -e '/icon_theme\.load_icon/s:"error":"dialog-error":g' \
-		"${S}"/spectlib/*.py
+		"${S}"/spectlib/*.py || die
 	sed -i -e '/icon_theme\.load_icon/s:"reload":"view-refresh":g' \
-		"${S}"/spectlib/*.py
+		"${S}"/spectlib/*.py || die
 }
 
 src_install() {
 	distutils_src_install
-	dodoc data/doc/{AUTHORS,ChangeLog}
+	dodoc data/doc/{AUTHORS,ChangeLog} || die
 	rm -rf "${D}"/usr/share/doc/${PN}
 	for i in ${LANGS} ; do
 		use linguas_${i} || rm -rf "${D}"/usr/share/locale/${i}
