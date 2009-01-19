@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,11 +10,10 @@ SRC_URI="mirror://berlios/kasablanca/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-
-need-kde 3.4
 
 S=${WORKDIR}/${P/a//}
 
 DEPEND="|| ( kde-base/konqueror kde-base/kdebase )"
+RDEPEND=${DEPEND}
