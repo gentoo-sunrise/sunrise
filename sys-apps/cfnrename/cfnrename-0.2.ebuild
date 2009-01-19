@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,17 +12,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=sys-libs/ncurses-5.3"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
 	# Replace the CFLAGS with our own custom CFLAGS
-	sed -i -e "/^CFLAGS =/s:-g:${CFLAGS}:" \
-		Makefile || die "sed Makefile failed"
+	sed -i -e "s:^CFLAGS =:CFLAGS ?=:" Makefile || die "sed Makefile failed"
 }
 
 src_install() {
-	dodoc AUTHORS README TODO ChangeLog
-	dobin cfnrename
+	dodoc AUTHORS ChangeLog README TODO || die "dodoc failed"
+	dobin cfnrename || die "dobin failed"
 }
