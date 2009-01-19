@@ -1,10 +1,12 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=1
+
 inherit qt4
 
-MY_P="libQGLViewer-"${PV}
+MY_P="libQGLViewer-${PV}"
 
 DESCRIPTION="Simple 3D viewer class for Qt OpenGL applications"
 HOMEPAGE="http://www.libqglviewer.com"
@@ -16,7 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="virtual/opengl
-	>=x11-libs/qt-4.3"
+	|| ( x11-libs/qt:4 x11-libs/qt-gui )"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}/QGLViewer
 
@@ -41,7 +44,7 @@ src_install() {
 
 	if use doc ; then
 		dohtml -r ../doc/* || die "installing html files failed"
-		insinto /usr/share/doc/${PF}
-		doins -r ../examples || die "installing examples failed"
+		docinto examples
+		dodoc ../examples/* || die "installing examples failed"
 	fi
 }
