@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,6 +18,7 @@ DEPEND="dev-libs/openssl
 	dev-libs/log4shib
 	dev-libs/xerces-c
 	>=dev-libs/xml-security-c-1.3.0"
+RDEPEND=${DEPEND}
 
 src_unpack() {
 	unpack ${A}
@@ -31,5 +32,5 @@ src_unpack() {
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 
-	dodoc doc/NEWS.txt doc/NOTICE.txt doc/README.txt
+	dodoc doc/{NEWS,NOTICE,README}.txt || die
 }
