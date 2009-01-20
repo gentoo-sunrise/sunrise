@@ -6,7 +6,7 @@ inherit autotools subversion games
 
 DESCRIPTION="Doom port designed to act identically to the original game"
 HOMEPAGE="http://www.chocolate-doom.org/"
-ESVN_REPO_URI="https://chocolate-doom.svn.sourceforge.net/svnroot/chocolate-doom/trunk/chocolate-doom"
+ESVN_REPO_URI="https://${PN}.svn.sourceforge.net/svnroot/${PN}/trunk/${PN}"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -35,7 +35,6 @@ src_unpack() {
 }
 
 src_compile() {
-
 	egamesconf \
 		--disable-sdltest \
 		--disable-dependency-tracking \
@@ -67,10 +66,10 @@ src_install() {
 pkg_postinst() {
 	games_pkg_postinst
 
-	echo
-	elog "To play the original Doom levels, place doom.wad and/or doom2.wad"
-	elog "into "${GAMES_DATADIR}"/doom-data, then run: ${PN}"
-	elog
-	elog "To configure game options run:  chocolate-setup"
-	echo
+	einfo
+	einfo "To play the original Doom levels, place doom.wad and/or doom2.wad"
+	einfo "into "${GAMES_DATADIR}"/doom-data, then run: ${PN}"
+	einfo
+	einfo "To configure game options run:  chocolate-setup"
+	einfo
 }
