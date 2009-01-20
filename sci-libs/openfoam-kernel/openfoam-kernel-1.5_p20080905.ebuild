@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI=2
 
 inherit eutils versionator multilib toolchain-funcs
 
@@ -10,7 +12,7 @@ MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="OpenFOAM - kernel"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
-SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
+SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz -> ${MY_P}.General.tgz
 	http://omploader.org/vcWFz/${P}.patch"
 
 LICENSE="GPL-2"
@@ -18,32 +20,32 @@ SLOT="1.5"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="!=sci-libs/openfoam-${MY_PV}*
+RDEPEND="!=sci-libs/openfoam-${MY_PV}*
 	!=sci-libs/openfoam-bin-${MY_PV}*
 	=sci-libs/openfoam-wmake-${MY_PV}*
 	sci-libs/parmetis
 	sci-libs/parmgridgen"
+DEPEND="${RDEPEND}
+	>=sys-devel/gcc-4.1"
 
 S=${WORKDIR}/${MY_P}
+INSDIR="/usr/$(get_libdir)/${MY_PN}/${MY_P}"
 
 pkg_setup() {
+	# just to be sure the right profile is selected (gcc-config)
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
 		die "${PN} requires >=sys-devel/gcc-4.1 to compile."
 	fi
+	java-pkg-2_pkg_setup
 }
 
-src_unpack() {
-	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
-	unpack ./${MY_P}.General.tgz
-
-	cd "${S}"
-	epatch "${FILESDIR}"/${MY_P}-compile.patch
-
-	epatch "${DISTDIR}"/${P}.patch
+src_prepare() {
+	epatch "${FILESDIR}/${MY_P}-compile.patch"
+	epatch "${DISTDIR}/${P}.patch"
 }
 
 src_compile() {
-	cp -a /usr/$(get_libdir)/${MY_PN}/${MY_P}/etc/{bashrc,settings.sh} etc/. || die "cannot copy bashrc"
+	cp -a ${INSDIR}/etc/{bashrc,settings.sh} etc/. || die "cannot copy bashrc"
 
 	export FOAM_INST_DIR="${WORKDIR}"
 	source etc/bashrc
@@ -54,6 +56,6 @@ src_compile() {
 
 src_install() {
 	insopts -m0755
-	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/lib
-	doins -r lib/*
+	insinto ${INSDIR}
+	doins -r lib/ || die "doins failed"
 }

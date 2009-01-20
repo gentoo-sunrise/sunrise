@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI=2
 
 inherit eutils java-pkg-2 versionator multilib toolchain-funcs
 
@@ -10,7 +12,7 @@ MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="OpenFOAM - Kernel package"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
-SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
+SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz -> ${MY_P}.General.tgz
 	http://dev.gentooexperimental.org/~tommy/distfiles/${P}.patch"
 
 LICENSE="GPL-2"
@@ -18,29 +20,27 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="!=sci-libs/openfoam-${MY_PV}*
+RDEPEND="!=sci-libs/openfoam-${MY_PV}*
 	!=sci-libs/openfoam-bin-${MY_PV}*
 	<virtual/jdk-1.5
 	=sci-libs/openfoam-wmake-${MY_PV}*"
+DEPEND="${RDEPEND}
+	>=sys-devel/gcc-4.1"
 
 S=${WORKDIR}/${MY_P}
 INSDIR=/usr/$(get_libdir)/${MY_PN}/${MY_P}
 
 pkg_setup() {
+	# just to be sure the right profile is selected (gcc-config)
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
 		die "${PN} requires >=sys-devel/gcc-4.1 to compile."
 	fi
-
 	java-pkg-2_pkg_setup
 }
 
-src_unpack() {
-	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
-	unpack ./${MY_P}.General.tgz
-
-	cd "${S}"
-	epatch "${DISTDIR}"/${P}.patch
-	epatch "${FILESDIR}"/${PN}-compile-${PV}.patch
+src_prepare() {
+	epatch "${DISTDIR}/${P}.patch"
+	epatch "${FILESDIR}/${PN}-compile-${PV}.patch"
 }
 
 src_compile() {
@@ -68,6 +68,6 @@ src_compile() {
 
 src_install() {
 	insopts -m0755
-	insinto /usr/$(get_libdir)/${MY_PN}/${MY_P}/lib
-	doins -r lib/${WM_OPTIONS}/*
+	insinto ${INSDIR}/lib
+	doins -r lib/${WM_OPTIONS}/* || die "doins failed"
 }
