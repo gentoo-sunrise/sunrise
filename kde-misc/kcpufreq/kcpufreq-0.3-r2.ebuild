@@ -17,6 +17,7 @@ IUSE="+icon"
 DEPEND=">=sys-power/cpufrequtils-0.3-r1"
 RDEPEND=${DEPEND}
 
+need-kde 3.5
 S=${WORKDIR}/${PN}
 
 src_unpack() {
