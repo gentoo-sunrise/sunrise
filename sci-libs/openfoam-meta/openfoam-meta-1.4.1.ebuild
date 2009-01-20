@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -10,9 +10,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="!=sci-libs/openfoam-${PV}*
+RDEPEND="!=sci-libs/openfoam-${PV}*
 	!=sci-libs/openfoam-bin-${PV}*
 	=sci-libs/openfoam-kernel-${PV}*
 	=sci-libs/openfoam-solvers-${PV}*
 	=sci-libs/openfoam-utilities-${PV}*
 	=sci-libs/openfoam-wmake-${PV}*"
+DEPEND="${RDEPEND}"
