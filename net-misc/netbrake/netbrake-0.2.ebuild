@@ -14,9 +14,6 @@ KEYWORDS="~x86"
 
 IUSE="httpfs"
 
-DEPEND=""
-RDEPEND=""
-
 S=${WORKDIR}/${PN}
 
 src_unpack() {
