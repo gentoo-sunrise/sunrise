@@ -86,6 +86,8 @@ games-fps/vavoom-textures:heretic - Install Heretic resources
 games-fps/vavoom-textures:hexen - Install Hexen resources
 games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
+games-misc/fretsonfire:guitarhero - Enable Guitar Hero song importer
+games-misc/fretsonfire:psyco - Enable psyco python accelerator
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/timer-applet:sounds - Installs optional sound data
 kde-misc/kcpufreq:icon - Add icon for GUI applet (enabled by default)
