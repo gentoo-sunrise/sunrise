@@ -48,10 +48,6 @@ DEPEND="${UIDEPEND}
 S="${WORKDIR}/hexen2source-${MY_PV}"
 dir="${GAMES_DATADIR}/${MY_PN}"
 
-pkg_setup() {
-	games_pkg_setup
-}
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
@@ -348,7 +344,7 @@ src_install() {
 	head -9 "00_Patches/midi_with_sdlaudio-test.diff" > \
 	"docs/midi_with_sdlaudio.README" || die "make readme failed"
 
-	dodoc docs/*
+	dodoc docs/* || die
 
 	if ! use demo ; then
 		# Install updated game data
