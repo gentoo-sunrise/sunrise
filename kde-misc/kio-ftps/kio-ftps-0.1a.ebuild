@@ -13,6 +13,7 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
+need-kde 3.5
 S=${WORKDIR}/${P/a//}
 
 DEPEND="|| ( kde-base/konqueror kde-base/kdebase )"
