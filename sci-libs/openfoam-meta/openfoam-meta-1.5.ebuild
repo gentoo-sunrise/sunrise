@@ -16,4 +16,4 @@ RDEPEND="!=sci-libs/openfoam-${PV}*
 	=sci-libs/openfoam-solvers-${PV}*
 	=sci-libs/openfoam-utilities-${PV}*
 	=sci-libs/openfoam-wmake-${PV}*"
-DEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
