@@ -1,6 +1,11 @@
 # ChangeLog for sci-libs/openfoam-solvers
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  openfoam-solvers-1.4.1_p20080827.ebuild,
+  openfoam-solvers-1.5_p20080905.ebuild:
+  Added suggested DEPEND="${RDEPEND}", moved to EAPI 2, cleanup.
 
   08 Sep 2008; Oliver Borm (boroli) <oli.borm@web.de>
   -openfoam-solvers-1.5.ebuild, +openfoam-solvers-1.5_p20080905.ebuild,
