@@ -3,7 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='glew'>Enable GLEW OpenGL extension wrangler</flag>
 		<flag name='guitarhero'>Enable Guitar Hero song importer</flag>
 		<flag name='psyco'>Enable psyco python accelerator</flag>
 	</use>

@@ -17,11 +17,10 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN_URI}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="doc glew guitarhero psyco"
+IUSE="doc guitarhero psyco"
 
 # NOTES :
 # numeric is not mentionned but looks needed
-# glewpy is probably not needed anymore. Waiting for a confirmation.
 # pyopengl-2.0.0.44 (stable) makes the game crash with some configs
 DEPEND=""
 RDEPEND="dev-python/pygame
@@ -32,8 +31,7 @@ RDEPEND="dev-python/pygame
 	media-libs/sdl-mixer[vorbis]
 	doc? ( >=dev-python/epydoc-3.0.1 )
 	psyco? ( dev-python/psyco )
-	guitarhero? ( media-sound/vorbis-tools )
-	glew? ( dev-python/glewpy )"
+	guitarhero? ( media-sound/vorbis-tools )"
 
 S=${WORKDIR}/${MY_PN}-${PV}
 

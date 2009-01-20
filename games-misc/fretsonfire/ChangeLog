@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Jan 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  fretsonfire-1.3.110.ebuild, metadata.xml:
+  Updating dependency
+
+  20 Jan 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   +fretsonfire-1.3.110.ebuild, +metadata.xml:
   New Ebuild for bug 143388
 
