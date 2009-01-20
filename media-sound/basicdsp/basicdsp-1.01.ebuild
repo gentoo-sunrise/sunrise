@@ -7,8 +7,7 @@ inherit eutils
 DESCRIPTION="A program for experimenting with simple audio DSP algorithms"
 HOMEPAGE="http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/"
 SRC_URI="http://wwwhome.cs.utwente.nl/~ptdeboer/ham/${PN}/${P}.tgz
-	doc? ( http://wwwhome.cs.utwente.nl/~ptdeboer/ham/${PN}/BasicDSP_SPRAT.pdf
-	)"
+	doc? ( http://wwwhome.cs.utwente.nl/~ptdeboer/ham/${PN}/BasicDSP_SPRAT.pdf )"
 
 LICENSE="GPL-2"
 SLOT="0"
