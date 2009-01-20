@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
-COMMON_DEP="dev-java/sevenzip"
+COMMON_DEP="dev-java/lzma"
 
 RDEPEND=">=virtual/jre-1.5
 	${COMMON_DEP}"
@@ -25,7 +25,7 @@ DEPEND=">=virtual/jdk-1.5
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	java-pkg_jar-from sevenzip
+	java-pkg_jar-from lzma
 	cp "${FILESDIR}"/build.xml .
 }
 
