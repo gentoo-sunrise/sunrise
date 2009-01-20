@@ -10,7 +10,7 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +	<property name="je.location" location="${lib}/je.jar"/>
 +	<property name="fec.location" location="${lib}/fec.jar"/>
 +	<property name="ant.location" location="${lib}/ant.jar"/>
-+	<property name="sevenzip.location" location="${lib}/sevenzip.jar"/>
++	<property name="lzma.location" location="${lib}/lzma.jar"/>
 +	<property name="lzmajio.location" location="${lib}/lzmajio.jar"/>
 +	<property name="mersennetwister.location" location="${lib}/mersennetwister.jar"/>
  	<property name="javadoc" location="javadoc"/>
@@ -54,7 +54,7 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +				<pathelement location="${je.location}"/>
 +				<pathelement location="${fec.location}"/>
 +				<pathelement location="${ant.location}"/>
-+				<pathelement location="${sevenzip.location}"/>
++				<pathelement location="${lzma.location}"/>
 +				<pathelement location="${lzmajio.location}"/>
 +				<pathelement location="${mersennetwister.location}"/>
  				<pathelement location="gnu-crypto.jar"/>
@@ -69,7 +69,7 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +				<pathelement location="${je.location}"/>
 +				<pathelement location="${fec.location}"/>
 +				<pathelement location="${ant.location}"/>
-+				<pathelement location="${sevenzip.location}"/>
++				<pathelement location="${lzma.location}"/>
 +				<pathelement location="${lzmajio.location}"/>
 +				<pathelement location="${mersennetwister.location}"/>
  				<pathelement location="${junit.location}"/>
@@ -84,7 +84,7 @@ diff -ur freenet-old/build.xml freenet/build.xml
 +				<pathelement location="${je.location}"/>
 +				<pathelement location="${fec.location}"/>
 +				<pathelement location="${ant.location}"/>
-+				<pathelement location="${sevenzip.location}"/>
++				<pathelement location="${lzma.location}"/>
 +				<pathelement location="${lzmajio.location}"/>
 +				<pathelement location="${mersennetwister.location}"/>
  				<pathelement location="${junit.location}"/>

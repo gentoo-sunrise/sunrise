@@ -23,7 +23,7 @@ CDEPEND="dev-db/db-je:3.3
 	dev-java/java-service-wrapper
 	dev-java/db4o
 	dev-java/ant-core
-	dev-java/sevenzip
+	dev-java/lzma
 	dev-java/lzmajio
 	dev-java/mersennetwister"
 DEPEND=">=virtual/jdk-1.5
@@ -73,7 +73,7 @@ src_unpack() {
 	java-pkg_jar-from fec
 	java-pkg_jar-from db4o
 	java-pkg_jar-from ant-core ant.jar
-	java-pkg_jar-from sevenzip
+	java-pkg_jar-from lzma
 	java-pkg_jar-from lzmajio
 	java-pkg_jar-from mersennetwister
 }
