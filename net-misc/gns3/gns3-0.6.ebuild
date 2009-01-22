@@ -35,10 +35,8 @@ src_unpack() {
 
 src_install() {
 	distutils_src_install
-	doman   docs/man/gns3.1 \
-		|| die "Installing man pages failed"
-	insinto /usr/libexec/gns3
-	doins "${S}/pemu/pemuwrapper.py" \
-		|| die "Failed to install pemuwrapper.py"
+	doman   docs/man/${PN}.1 || die "Installing man pages failed"
+	insinto /usr/libexec/${PN}
+	doins "${S}/pemu/pemuwrapper.py" || die "Failed to install pemuwrapper.py"
 }
 
