@@ -29,5 +29,5 @@ src_unpack () {
 
 src_install () {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README NEWS ChangeLog AUTHORS
+	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"
 }
