@@ -12,10 +12,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sys-fs/e2fsprogs"
-
 DEPEND=${RDEPEND}
 
 src_install() {
-	dobin ufiformat
-	dodoc AUTHORS ChangeLog NEWS README
+	dobin ufiformat || die "dobin failed"
+	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"
 }
