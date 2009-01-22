@@ -1,6 +1,11 @@
 # ChangeLog for sys-fs/fuseiso
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jan 2009; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
+  -fuseiso-20070708.ebuild, +fuseiso-20070708-r1.ebuild,
+  +files/fuseiso-20070708-largerthan4gb.patch:
+  New ebuild fixing issues with large isos as described in msg 17 in bug 143307
 
   13 Aug 2007; Markus Ullmann <jokey@gentoo.org> -fuseiso-20061017.ebuild:
   Drop old
