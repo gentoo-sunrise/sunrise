@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>spark</herd>
-<longdescription>Spark is an Open Source, cross-platform IM client 
-optimized for businesses and organizations. It features built-in support for group chat, 
-telephony integration, and strong security. 
-It also offers a great end-user experience with features like in-line spell checking,
-group chat room bookmarks, and tabbed conversations.</longdescription>
+    <herd>maintainer-wanted</herd>
+    <longdescription>Spark is an Open Source, cross-platform IM client 
+	optimized for businesses and organizations. It features built-in support for group chat, 
+	telephony integration, and strong security. 
+	It also offers a great end-user experience with features like in-line spell checking,
+	group chat room bookmarks, and tabbed conversations.</longdescription>
 </pkgmetadata>
