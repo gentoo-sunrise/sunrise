@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  +fuseiso-20070708.ebuild:
+  Added missing die statement
+
   22 Jan 2009; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
   -fuseiso-20070708.ebuild, +fuseiso-20070708-r1.ebuild,
   +files/fuseiso-20070708-largerthan4gb.patch:
