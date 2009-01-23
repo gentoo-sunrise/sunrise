@@ -22,6 +22,12 @@ start() {
 	if [ "$IODINED_LISTENPORT" ]; then
 		ARGS="$ARGS -p $IODINED_LISTENPORT"
 	fi
+	if [ "$IODINED_EXTERN_IP" ]; then
+		ARGS="$ARGS -n $IODINED_EXTERN_IP"
+	fi
+	if [ "$IODINED_LOCAL_DNS_PORT" ]; then
+		ARGS="$ARGS -b $IODINED_LOCAL_DNS_PORT"
+	fi
 	if [ "$IODINED_LISTENIP" ]; then
 		ARGS="$ARGS -l $IODINED_LISTENIP"
 	fi
