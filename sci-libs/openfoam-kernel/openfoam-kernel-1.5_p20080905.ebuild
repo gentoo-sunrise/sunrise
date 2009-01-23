@@ -36,7 +36,6 @@ pkg_setup() {
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
 		die "${PN} requires >=sys-devel/gcc-4.1 to compile."
 	fi
-	java-pkg-2_pkg_setup
 }
 
 src_prepare() {
