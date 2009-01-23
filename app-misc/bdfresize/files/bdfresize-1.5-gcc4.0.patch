@@ -1,0 +1,12 @@
+=== modified file 'charresize.c'
+--- charresize.c	2009-01-04 11:06:42 +0000
++++ charresize.c	2009-01-04 11:06:47 +0000
+@@ -46,7 +46,6 @@
+ void
+ processChar(void)
+ {
+-  char	*malloc();
+   char	*srcimage;
+   int	*dstgray;
+ 
+
