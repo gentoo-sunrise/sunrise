@@ -1,6 +1,11 @@
 # ChangeLog for net-im/spark
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: 
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header:
+
+  24 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  spark-2.5.8.ebuild:
+  Dont use deprecated java-pkg.eclass, jdk should be in DEPEND, add some die
+  statements
 
   13 Jan 2009; Oleg Kluchkin <oleg.kluchkin@gmail.com> +spark-2.5.8.ebuild:
   Initial commit of Spark IM. Bug #194693 from Robert Piasek
