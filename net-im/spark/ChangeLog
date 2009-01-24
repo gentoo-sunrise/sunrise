@@ -4,5 +4,3 @@
 
   13 Jan 2009; Oleg Kluchkin <oleg.kluchkin@gmail.com> +spark-2.5.8.ebuild:
   Initial commit of Spark IM. Bug #194693 from Robert Piasek
-
-*spark-2.5.8 (13 Jan 2009)
