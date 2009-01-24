@@ -19,10 +19,9 @@ RDEPEND=${DEPEND}
 
 src_unpack () {
 	unpack ${A}
-
+	cd "${S}"
 	# applying patch from Red Hat bug 440436
 	# https://bugzilla.redhat.com/show_bug.cgi?id=440436
-	EPATCH_OPTS="-d ${S}"
 	EPATCH_SINGLE_MSG="Applying bug fix to access content in large ISO files"
 	epatch "${FILESDIR}/${P}-largerthan4gb.patch"
 }
