@@ -22,6 +22,11 @@
 ##
 
 
+# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
+# Mask because of recommended replacement of portage contolled
+# file, should fix in source instead
+net-im/spark
+
 # Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es> (9 Jan 2009)
 # Mask mandriva-galaxy for removal in 30 day as upstream 
 # no longer maintains it
