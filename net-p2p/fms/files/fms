@@ -4,6 +4,10 @@
 # $Header: $
 
 start() {
+	if [ "`ps -ef | grep 'fms --daemon'`" ]; then
+		eerror "FMS appears to still be running."
+		return 1
+	fi
 	cd /var/freenet/fms
 	su -s /bin/sh -c "./fms --daemon" freenet
 	eend $?
