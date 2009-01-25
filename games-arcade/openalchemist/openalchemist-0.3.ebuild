@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils games
 
@@ -13,22 +15,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-games/clanlib-0.8.0"
+RDEPEND=">=dev-games/clanlib-0.8.0[opengl,sdl]"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 S=${WORKDIR}/${P}-src
 
-pkg_setup() {
-	if ! built_with_use dev-games/clanlib opengl sdl ; then
-		eerror "${PN} needs opengl and sdl support in dev-games/clanlib"
-		die "Please emerge dev-games/clanlib with USE=\"opengl sdl\""
-	fi
-}
+DOCS="NEWS README TODO ChangeLog"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}/${P}-gentoo.patch"
 }
 
@@ -39,7 +34,7 @@ src_install() {
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins -r data skins || die "doins failed"
 
-	dodoc NEWS README TODO ChangeLog
+	dodoc ${DOCS} || die "dodoc failed"
 
 	newicon data/logo.png openalchemist.png
 	newicon data/logo_svg.svg openalchemist.svg
