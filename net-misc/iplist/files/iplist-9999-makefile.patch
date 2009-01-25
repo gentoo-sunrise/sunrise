@@ -1,0 +1,31 @@
+--- Makefile	2009-01-22 12:25:45.132342418 -0200
++++ Makefile.new	2009-01-24 23:04:52.386342346 -0200
+@@ -22,7 +22,7 @@
+ FLAGS= -Wall -Wextra -std=c++98 -D_REENTRANT
+ #CPPFLAGS = ${FLAGS} -g -DDEBUG
+ #CPPFLAGS = ${FLAGS} -g -pg -DDEBUG
+-CPPFLAGS = -O2 ${FLAGS} -DNDEBUG
++CPPFLAGS ?= -O2 ${FLAGS} -DNDEBUG
+ 
+ HEADERDIR = include
+ SRCDIR = src
+@@ -53,9 +53,16 @@
+ log.o: log.h nfq.h range.h iplist.h
+ 
+ install:
+-	install -p -m 755 $(FILENAME) $(DESTDIR)/usr/sbin/
+-	install -p -m 755 ipblock $(DESTDIR)/usr/sbin/
+-	install -p -m 644 ipblockUI.jar $(DESTDIR)/usr/share/java/
++	install -d $(DESTDIR)/usr/sbin/
++	install -p -c -m 755 $(FILENAME) $(DESTDIR)/usr/sbin/
++	install -d $(DESTDIR)/usr/sbin/
++	install -p -c -m 755 ipblock $(DESTDIR)/usr/sbin/
++	install -d $(DESTDIR)/etc/init.d/
++	install -p -c -m 755 gentoo/ipblock $(DESTDIR)/etc/init.d/
++	install -d $(DESTDIR)/etc/
++	install -p -c -m 644 ipblock.conf $(DESTDIR)/etc/
++	install -d $(DESTDIR)/etc/
++	install -p -c -m 644 ipblock.lists $(DESTDIR)/etc/
+ 
+ deb:
+ 	dpkg-buildpackage -rfakeroot -tc -D -us -uc
