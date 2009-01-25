@@ -3,11 +3,13 @@
 # $Header: $
 
 EAPI="1"
+
 inherit eutils games
 
+MY_PN="PlayOnLinux"
 DESCRIPTION="Set of scripts to easily configure wine for numerous Windows(tm) games."
 HOMEPAGE="http://playonlinux.com/"
-SRC_URI="http://www.playonlinux.com/script_files/PlayOnLinux/${PV}/PlayOnLinux_${PV}.tar.gz"
+SRC_URI="http://www.playonlinux.com/script_files/${MY_PN}/${PV}/${MY_PN}_${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -23,9 +25,7 @@ RDEPEND="dev-python/wxpython:2.8
 		app-arch/cabextract
 		x11-terms/xterm
 		app-emulation/wine
-		media-gfx/imagemagick
-		app-arch/lzma-utils"
-# lzma-utils is a run dep regarding playonlinux team
+		media-gfx/imagemagick"
 
 S=${WORKDIR}/${PN}
 
@@ -33,8 +33,8 @@ src_install() {
 	# all things without exec permissions
 	insinto "${GAMES_DATADIR}/${PN}"
 	doins -r "${S}/themes" \
-	"${S}/lang"	"${S}/lib" \
-	"${S}/etc" || die "installation failed"
+		"${S}/lang"	"${S}/lib" \
+		"${S}/etc" || die "installation failed"
 
 	# bin/ install
 	exeinto "${GAMES_DATADIR}/${PN}/bin"
@@ -77,6 +77,6 @@ src_install() {
 	dodoc CHANGELOG || die "doc installation failed"
 
 	doicon "${S}/etc/${PN}.png"
-	make_desktop_entry ${PN} "PlayOnLinux"
+	make_desktop_entry ${PN} ${MY_PN}
 	prepgamesdirs
 }
