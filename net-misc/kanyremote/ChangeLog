@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Jan 2009; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
+  -kanyremote-5.6.ebuild, +kanyremote-5.6.1.ebuild:
+  version bump
+
   20 Jan 2009; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
   -kanyremote-5.5.1.ebuild, +kanyremote-5.6.ebuild:
   version bump
