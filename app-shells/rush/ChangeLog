@@ -1,6 +1,10 @@
 # ChangeLog for app-shells/rush
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Jan 2009; Pavel Sanda (ps) <ps at twin.jikos.cz> -rush-1.4.ebuild,
+  +rush-1.5.ebuild:
+  Bump new version 1.5
 
   19 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> rush-1.4.ebuild:
   Add missing IUSE
