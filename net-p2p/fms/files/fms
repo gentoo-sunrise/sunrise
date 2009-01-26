@@ -4,13 +4,14 @@
 # $Header: $
 
 start() {
-	if [ "`ps -ef | grep 'fms --daemon'`" ]; then
-		eerror "FMS appears to still be running."
-		return 1
+	if pidof fms >/dev/null; then
+		eerror "FMS already running"
+		eend 1
+	else
+		cd /var/freenet/fms
+		su -s /bin/sh -c "./fms --daemon" freenet
+		eend $?
 	fi
-	cd /var/freenet/fms
-	su -s /bin/sh -c "./fms --daemon" freenet
-	eend $?
 }
 
 stop() {

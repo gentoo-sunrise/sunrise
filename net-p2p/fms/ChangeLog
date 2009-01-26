@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ,files/fms:
+  Fix initscript
+
   24 Jan 2009; Dennis Nezic <dennisn@dennisn.dyndns.org> -fms-0.3.28.ebuild,
   -files/fms-0.3.28-glibc-2.9.patch, +fms-0.3.29.ebuild,
   -files/gcc-4.4-include.patch, files/fms:
