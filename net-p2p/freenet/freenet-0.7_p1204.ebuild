@@ -26,7 +26,6 @@ CDEPEND="dev-db/db-je:3.3
 DEPEND=">=virtual/jdk-1.5
 	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.5
-	x86? ( net-libs/fec )
 	net-libs/nativebiginteger
 	${CDEPEND}"
 PDEPEND="net-libs/NativeThread
