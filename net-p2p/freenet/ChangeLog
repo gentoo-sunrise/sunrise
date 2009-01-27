@@ -3,6 +3,10 @@
 # $Header: $
 
   27 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -freenet-0.7_p1204.ebuild, +freenet-0.7_p1204-r1.ebuild:
+  Revision bump for dropped dep
+
+  27 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   freenet-0.7_p1204.ebuild, freenet-9999-r1.ebuild:
   Drop net-libs/fec dep, now included in dev-java/fec
 
