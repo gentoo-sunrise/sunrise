@@ -1,6 +1,10 @@
 # ChangeLog for dev-lang/esco
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  28 Jan 2009; Zasenko Sergey (und3f) <d3fin3@gmail.com> -esco-0.50.ebuild,
+  +esco-0.51.ebuild:
+  Version bump for esco, thanks to hwoarang, Ken69267, Tommy[D]
 
   12 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> esco-0.50.ebuild:
   Add missing die to emake

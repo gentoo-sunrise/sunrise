@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="ESoteric COmbine -- interpreter of esoteric programing languages"
+DESCRIPTION="ESoteric COmbine - interpreter of esoteric programing languages"
 HOMEPAGE="http://esco.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${PN}-src-${PV}.tgz"
 
@@ -16,5 +16,6 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README docs/README_RU.utf8 ChangeLog AUTHORS
+	dodoc README docs/README_RU.utf8 ChangeLog AUTHORS || die "dodoc failed"
 }
+
