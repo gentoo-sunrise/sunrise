@@ -22,7 +22,7 @@ PDEPEND="kde? ( net-misc/kanyremote )
 	  gnome? ( net-misc/ganyremote )"
 
 src_configure() {
-	econf $(use_enable bluetooth bluez)
+	econf $(use_enable bluetooth)
 }
 
 src_install() {
