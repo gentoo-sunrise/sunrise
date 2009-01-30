@@ -3,6 +3,10 @@
 # $Header: $
 
   30 Jan 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> xf86-video-nouveau-0.0.20090130.ebuild:
+  adjust dri for xorg-server-1.5.3, drop dri configure option
+
+  30 Jan 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -xf86-video-nouveau-0.0.20090121.ebuild,
   +xf86-video-nouveau-0.0.20090130.ebuild:
   new snapshot

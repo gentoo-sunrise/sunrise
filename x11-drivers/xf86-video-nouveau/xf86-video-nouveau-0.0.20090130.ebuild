@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 IUSE="dri"
 
 COMMON_DEPEND=">=x11-base/xorg-server-1.5
-	dri? ( x11-base/xorg-server[dri] )"
+	dri? ( || ( x11-base/xorg-server[dri] >=x11-base/xorg-server-1.5.3 ) )"
 DEPEND="${COMMON_DEPEND}
 	x11-misc/util-macros
 	x11-proto/fontsproto
@@ -37,8 +37,6 @@ DEPEND="${COMMON_DEPEND}
 # need x11-base/x11-drm until nouveau drm enters the kernel
 RDEPEND="${COMMON_DEPEND}
 	dri? ( >=x11-base/x11-drm-20070314[video_cards_nv] )"
-
-CONFIGURE_OPTIONS="$(use_enable dri)"
 
 src_unpack() {
 	x-modular_specs_check
