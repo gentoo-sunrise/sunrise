@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jan 2009; Tiago Cunha <tcunha@gentoo.org> ksplice-9999.ebuild:
+  Run eautoreconf when installing from the Git repository. From Daniel Black
+  <dragonheart@g.o>
+
   30 Jan 2009; Tiago Cunha <tcunha@gentoo.org> -ksplice-0.9.2.ebuild,
   +ksplice-0.9.6.ebuild:
   Version bump, remove old, thanks to Daniel Black <dragonheart@g.o>
