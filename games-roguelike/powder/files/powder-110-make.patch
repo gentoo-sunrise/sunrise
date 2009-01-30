@@ -1,0 +1,107 @@
+--- powder110_src/make/makerules.origin	2009-01-29 00:32:32.141421840 +0200
++++ powder110_src/make/makerules	2009-01-29 00:27:37.128428046 +0200
+@@ -1,11 +1,11 @@
+ .cpp.o:
+-	g++ -O3 -I . -DLINUX -c $< -o $@ $(CXXFLAGS)
++	$(CXX) -I . -DLINUX -c $< -o $@ $(CXXFLAGS)
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(OFILES)
+-	g++ -O3 -o $(TARGET) $(OFILES) $(CXXFLAGS)
++	$(CXX) -o $(TARGET) $(OFILES) $(CXXFLAGS)
+ 
+ clean:
+-	rm -f *.o
+-	rm -f $(TARGET)
++	$(RM) *.o
++	$(RM) $(TARGET)
+--- powder110_src/make/makerules.LINUX.origin	2009-01-28 21:59:57.499759608 +0200
++++ powder110_src/make/makerules.LINUX	2009-01-29 00:27:34.747275321 +0200
+@@ -1,5 +1,5 @@
+ .cpp.o:
+-	g++ -O3 -DLINUX -I ../../port/sdl `sdl-config --cflags` -c $< -o $@ $(CXXFLAGS)
++	$(CXX) -DLINUX -I ../../port/sdl `sdl-config --cflags` -c $< -o $@ $(CXXFLAGS)
+ 
+ all: $(TARGET)
+ 
+@@ -8,10 +8,10 @@
+ 	# http://www.trilithium.com/johan/2005/06/static-libstdc/
+ 	# and is to try and ensure we end up with a static link
+ 	# of stdc++.
+-	rm -f libstdc++.a
++	$(RM) libstdc++.a
+ 	ln -s `g++ -print-file-name=libstdc++.a`
+-	g++ -O3 -static-libgcc -L. -o $(TARGET) $(OFILES) `sdl-config --libs` $(CXXFLAGS)
++	$(CXX) -static-libgcc -L. -o $(TARGET) $(OFILES) `sdl-config --libs` $(CXXFLAGS)
+ 
+ clean:
+-	rm -f *.o
+-	rm -f $(TARGET)
++	$(RM) *.o
++	$(RM) $(TARGET)
+--- powder110_src/port/linux/Makefile.orig	2008-01-14 04:28:15.000000000 +0200
++++ powder110_src/port/linux/Makefile	2009-01-29 02:19:52.018078431 +0200
+@@ -38,19 +38,54 @@
+ 	 ../../gfx/all_bitmaps.o \
+ 	 ../../rooms/allrooms.o
+ 
+-include ../../make/makerules.LINUX
++PREMAKE_TRG = ../../support/map2c/map2c \
++			  ../../support/tile2c/tile2c \
++			  ../../support/bmp2c/bmp2c \
++			  ../../support/encyclopedia2c/encyclopedia2c \
++			  ../../support/enummaker/enummaker\
++			  ../../support/txt2c/txt2c
+ 
+-clean:
+-	cd ../.. ; rm -f *.o
+-	cd ../../gfx ; rm -f *.o
+-	rm -f *.o
+-	cd ../sdl ; rm -f *.o
+-	rm -f $(TARGET)
++all: $(TARGET)
++
++
++$(PREMAKE_TRG): 
++	$(MAKE) -C `dirname $@`
+ 
+-premake:
++premake: $(PREMAKE_TRG)
+ 	cd ../../rooms ; ./buildrooms.bash
+ 	cd ../../gfx ; ./rebuild.sh
+ 	cd ../.. ; support/enummaker/enummaker source.txt
+ 	cd ../.. ; support/txt2c/txt2c LICENSE.TXT license.cpp
+ 	cd ../.. ; support/txt2c/txt2c CREDITS.TXT credits.cpp
+ 	cd ../.. ; support/encyclopedia2c/encyclopedia2c encyclopedia.txt
++
++$(OFILES): premake
++	$(CXX) -DLINUX -I ../../port/sdl `sdl-config --cflags` -c $(patsubst %.o,%.cpp,$@) -o $@ $(CXXFLAGS)
++
++$(TARGET): $(OFILES)
++	$(CXX) -o $@ $(OFILES) `sdl-config --libs` $(CXXFLAGS)
++
++$(TARGET)-static: $(OFILES)
++	# This extra step is from:
++	# http://www.trilithium.com/johan/2005/06/static-libstdc/
++	# and is to try and ensure we end up with a static link
++	# of stdc++.
++	$(RM) libstdc++.a
++	ln -s `g++ -print-file-name=libstdc++.a`
++	$(CXX) -static-libgcc -L. -o $@ $(OFILES) `sdl-config --libs` $(CXXFLAGS)
++
++clean:
++	$(RM) *.o $(TARGET) libstdc++.a
++	cd ../../; $(RM) credits.cpp encyclopedia.cpp encyclopedia.h glbdef.cpp glbdef.h license.cpp
++	cd ../../gfx; $(RM) 
++	cd ../../gfx; $(RM) icon_sdl.bmp.c slug_and_blood.bmp.c slug_and_blood_hires.bmp.c classic/*.c adambolt/*.c nethack/*.c ascii/*.c akoimeexx/*.c
++	cd ../../rooms/; $(RM) *.cpp allrooms.h allrooms.o 
++	$(RM) 
++	$(RM) ../../*.o
++	$(RM) ../../gfx/*.o
++	$(RM) ../sdl/*.o
++	@for trgt in $$( echo "$(PREMAKE_TRG)" | tr -s ' ' '\n' ); do \
++		$(MAKE) clean -C `dirname $$trgt` ; \
++	done;
++
++.PHONY: all clean premake
