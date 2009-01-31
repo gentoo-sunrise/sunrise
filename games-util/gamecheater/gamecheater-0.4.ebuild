@@ -23,6 +23,6 @@ RDEPEND="${DEPEND}"
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc ChangeLog README || die "dodoc failed"
-	make_desktop_entry "${PN}" "Game Cheater" "/usr/share/games/${PN}/pixmaps/${PN}.png"
+	make_desktop_entry "${PN}" "Game Cheater" "${GAMES_DATADIR}/${PN}/pixmaps/${PN}.png"
 	prepgamesdirs
 }
