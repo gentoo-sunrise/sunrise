@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jan 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -rdup-0.6.6.ebuild, +rdup-0.7.0.ebuild:
+  versiom bump
+
   14 Jan 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
   +rdup-0.6.6.ebuild, +metadata.xml:
   New ebuild for rdup, see bug #196309
