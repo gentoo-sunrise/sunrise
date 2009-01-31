@@ -1,0 +1,9 @@
+# ChangeLog for games-util/gamecheater
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  31 Jan 2009; Maurício Moraes (morris) <morris@brgentoo.org>
+  +gamecheater/gamecheater-0.4.ebuild, +gamecheater-0.4.ebuild,
+  +gamecheater, +metadata.xml:
+  New Ebuild for bug 183856 thanks to Christian, scarabeus and Tommy
+
