@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,8 +16,9 @@ need_httpd_cgi
 need_php_httpd
 
 pkg_setup() {
-	local flag, activeflags=""
-	for flag in ${IUSE};
+	local flag
+	local activeflags
+	for flag in mysql mysqli postgres;
 	do
 		use ${flag} && activeflags="${activeflags} ${flag}"
 	done
