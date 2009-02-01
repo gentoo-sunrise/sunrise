@@ -3,6 +3,10 @@
 # $Header: $
 
   01 Feb 2009; Patrick Nagel (padde) <mail@patrick-nagel.net>
+  otrdecoder-bin-518.ebuild:
+  Version bump for otrdecoder-bin (fixed hard-coded version no. in ebuild).
+
+  01 Feb 2009; Patrick Nagel (padde) <mail@patrick-nagel.net>
   -otrdecoder-bin-514.ebuild, +otrdecoder-bin-518.ebuild:
   Version bump for otrdecoder-bin.
 

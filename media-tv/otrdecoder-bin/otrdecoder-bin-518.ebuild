@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_PV=514
-
 DESCRIPTION="Decoder for onlinetvrecorder.com (German)"
 HOMEPAGE="http://www.onlinetvrecorder.com/"
-SRC_URI="http://www.onlinetvrecorder.com/downloads/${PN}-linux-static-v${MY_PV}.tar.bz2"
+SRC_URI="http://www.onlinetvrecorder.com/downloads/${PN}-linux-static-v${PV}.tar.bz2"
 LICENSE="as-is"
 
 SLOT="0"
@@ -19,7 +17,7 @@ RDEPEND="X? ( gnome-base/libglade
 DEPEND=""
 
 RESTRICT="strip"
-S="${WORKDIR}/otrdecoder-bin-linux-static-v${MY_PV}"
+S="${WORKDIR}/otrdecoder-bin-linux-static-v${PV}"
 
 src_install() {
 	dobin otrdecoder
