@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=2
 
 DESCRIPTION="Utilities for Gentoo repository and overlay development"
 HOMEPAGE="http://gentooexperimental.org/~shillelagh/"
@@ -14,9 +16,7 @@ IUSE=""
 RDEPEND="dev-util/subversion
 	>=sys-apps/portage-2.1"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	sed -i -e 's:/sbin/functions.sh:/etc/init.d/functions.sh:' sunrise-commit || die "sed failed"
 }
 
