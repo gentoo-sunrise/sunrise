@@ -1,6 +1,10 @@
 # ChangeLog for media-tv/otrdecoder-bin
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Feb 2009; Patrick Nagel (padde) <mail@patrick-nagel.net>
+  -otrdecoder-bin-514.ebuild, +otrdecoder-bin-518.ebuild:
+  Version bump for otrdecoder-bin.
 
   03 Jul 2008; Christian Faulhammer <opfer@gentoo.org>
   -otrdecoder-bin-492.ebuild, +otrdecoder-bin-514.ebuild:
