@@ -156,10 +156,6 @@ games-fps/uhexen2-cvs
 # This is a svn checkout based ebuild until further changes
 ~app-backup/darbackup-0.7.27
 
-# Christian Faulhammer <opfer@gentoo.org> (05 Feb 2007)
-# live ebuilds should be masked
-~media-sound/ncmpc-9999
-
 # Jakub Moc <jakub@gentoo.org> (22 Dec 2006)
 # upstream now distributes an RPM-only version
 # so the ebuild needs a major work :(
