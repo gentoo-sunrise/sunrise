@@ -1,0 +1,9 @@
+# ChangeLog for dev-libs/lockdev
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Feb 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
+  +lockdev-1.0.3.1.2.ebuild, +files/lockdev.addautotools.patch,
+  +metadata.xml:
+  New ebuild for bug 257333 thanks to Christian (idl0r) and Tommy (Tommy[D])
+

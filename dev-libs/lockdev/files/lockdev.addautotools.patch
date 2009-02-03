@@ -1,0 +1,100 @@
+Adds an autotools build system to fix the many issues with the custom build
+system (ignoring CC, CFLAGS, DESTDIR, not installing the .so file properly).
+
+Contributed by Nick Fortino (nfortino@gmail.com) 2/1/2009
+
+--- lockdev-1.0.3-old/Makefile.am
++++ lockdev-1.0.3/Makefile.am
+@@ -0,0 +1 @@
++SUBDIRS = src docs
+--- lockdev-1.0.3-old/configure.ac
++++ lockdev-1.0.3/configure.ac
+@@ -0,0 +1,74 @@
++#                                               -*- Autoconf -*-
++# Process this file with autoconf to produce a configure script.
++pushdef([LOCKDEV_NAME],              [lockdev])
++pushdef([LOCKDEV_MAJOR_VERSION],     [1])
++pushdef([LOCKDEV_MINOR_VERSION],     [0])
++pushdef([LOCKDEV_MICRO_VERSION],     [3])
++pushdef([LOCKDEV_EXTRA_VERSION],     [])
++pushdef([LOCKDEV_CURRENT_INTERFACE], [1])
++pushdef([LOCKDEV_INTERFACE_AGE],     [0])
++pushdef([LOCKDEV_BINARY_AGE],        [0])
++pushdef([LOCKDEV_VERSION], LOCKDEV_MAJOR_VERSION.LOCKDEV_MINOR_VERSION.LOCKDEV_MICRO_VERSION[]LOCKDEV_EXTRA_VERSION)
++
++AC_PREREQ([2.63])
++AC_INIT([LOCKDEV_NAME], [LOCKDEV_VERSION], [BUG-REPORT-ADDRESS])
++AC_CONFIG_AUX_DIR([scripts])
++AM_INIT_AUTOMAKE
++AC_CONFIG_SRCDIR([config.h.in])
++AC_CONFIG_HEADERS([config.h])
++
++[LOCKDEV_MAJOR_VERSION]=LOCKDEV_MAJOR_VERSION
++[LOCKDEV_MINOR_VERSION]=LOCKDEV_MINOR_VERSION
++[LOCKDEV_MICRO_VERSION]=LOCKDEV_MICRO_VERSION
++[LOCKDEV_EXTRA_VERSION]=LOCKDEV_EXTRA_VERSION
++[LOCKDEV_CURRENT_INTERFACE]=LOCKDEV_CURRENT_INTERFACE
++[LOCKDEV_INTERFACE_AGE]=LOCKDEV_INTERFACE_AGE
++[LOCKDEV_BINARY_AGE]=LOCKDEV_BINARY_AGE
++[LOCKDEV_VERSION]=LOCKDEV_VERSION
++popdef([LOCKDEV_MAJOR_VERSION])
++popdef([LOCKDEV_MINOR_VERSION])
++popdef([LOCKDEV_MICRO_VERSION])
++popdef([LOCKDEV_EXTRA_VERSION])
++popdef([LOCKDEV_CURRENT_INTERFACE])
++popdef([LOCKDEV_INTERFACE_AGE])
++popdef([LOCKDEV_BINARY_AGE])
++popdef([LOCKDEV_NAME])
++popdef([LOCKDEV_VERSION])
++
++AC_SUBST([LOCKDEV_MAJOR_VERSION])
++AC_SUBST([LOCKDEV_MINOR_VERSION])
++AC_SUBST([LOCKDEV_MICRO_VERSION])
++AC_SUBST([LOCKDEV_CURRENT_INTERFACE])
++AC_SUBST([LOCKDEV_INTERFACE_AGE])
++AC_SUBST([LOCKDEV_BINARY_AGE])
++AC_SUBST([LOCKDEV_VERSION])
++
++# Checks for programs.
++AC_PROG_CXX
++AC_PROG_CC
++AC_PROG_CPP
++AC_PROG_INSTALL
++AC_PROG_LN_S
++AC_PROG_MAKE_SET
++AC_PROG_RANLIB
++AC_PROG_LIBTOOL
++
++# Checks for libraries.
++
++# Checks for header files.
++AC_CHECK_HEADERS([fcntl.h paths.h stdlib.h string.h sys/file.h sys/param.h unistd.h])
++
++# Checks for typedefs, structures, and compiler characteristics.
++AC_C_INLINE
++AC_TYPE_PID_T
++AC_CHECK_MEMBERS([struct stat.st_rdev])
++
++# Checks for library functions.
++AC_FUNC_FORK
++AC_FUNC_MALLOC
++AC_CHECK_FUNCS([strrchr])
++
++AC_CONFIG_FILES([Makefile
++                 docs/Makefile
++                 src/Makefile])
++AC_OUTPUT
+--- lockdev-1.0.3-old/docs/Makefile.am
++++ lockdev-1.0.3/docs/Makefile.am
+@@ -0,0 +1,2 @@
++man_MANS = lockdev.3
++
+--- lockdev-1.0.3-old/src/Makefile.am
++++ lockdev-1.0.3/src/Makefile.am
+@@ -0,0 +1,6 @@
++include_HEADERS = lockdev.h ttylock.h
++
++lib_LTLIBRARIES = liblockdev.la
++liblockdev_la_SOURCES = lockdev.c
++liblockdev_version = -version-info $(LOCKDEV_CURRENT_INTERFACE):$(LOCKDEV_INTERFACE_AGE):$(LOCKDEV_BINARY_AGE)
++liblockdev_la_LDFLAGS = $(liblockdev_version)
