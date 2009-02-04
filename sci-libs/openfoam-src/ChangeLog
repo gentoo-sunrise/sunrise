@@ -1,6 +1,10 @@
 # ChangeLog for sci-libs/openfoam-src
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Feb 2009; Oliver Borm (boroli) <oli.borm@web.de>
+  -openfoam-src-1.5_p20080905.ebuild, +openfoam-src-1.5_p20090204.ebuild:
+  Changed to EAPI=2 and added some new patches
 
   08 Sep 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   openfoam-src-1.5_p20080905.ebuild:
