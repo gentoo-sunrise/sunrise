@@ -13,7 +13,7 @@ MY_P="${MY_PN}-${MY_PV}"
 DESCRIPTION="OpenFOAM - kernel"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz -> ${MY_P}.General.tgz
-	http://omploader.org/vcWFz/${P}.patch"
+	http://omploader.org/vMTdrZA/${P}.patch"
 
 LICENSE="GPL-2"
 SLOT="1.5"
