@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Feb 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> xf86-video-nouveau-9999.ebuild:
+  bump required drm version, fix xorg-server dependency
+
   30 Jan 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> xf86-video-nouveau-0.0.20090130.ebuild:
   adjust dri for xorg-server-1.5.3, drop dri configure option
