@@ -73,10 +73,6 @@ x11-themes/mandriva-galaxy
 # Mask live ebuild
 =sys-fs/aufs-utils-9999
 
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Apr 2008)
-# Mask SVN ebuild
-~net-p2p/freenet-9999
-
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
 # Mask packages with masked deps
 =sci-libs/openfoam-kernel-1.4.1*
