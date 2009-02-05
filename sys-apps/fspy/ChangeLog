@@ -1,0 +1,8 @@
+# ChangeLog for sys-apps/fspy
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Feb 2009; Dennis Lichtenthaeler (pvbcharon) <charon@episode-iv.de>
+  +fspy-0.1.1.ebuild, +metadata.xml:
+  New Ebuild for bug 257759. Thanks to sleipnir, dunc and jokey for review
+
