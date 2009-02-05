@@ -40,6 +40,7 @@ games-engines
 games-fps
 games-misc
 games-puzzle
+games-roguelike
 games-rpg
 games-sports
 games-util
@@ -73,7 +74,6 @@ net-wireless
 net-zope
 sci-astronomy
 sci-biology
-sci-calculators
 sci-chemistry
 sci-electronics
 sci-libs
