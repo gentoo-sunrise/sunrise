@@ -18,5 +18,5 @@ src_compile() {
 
 src_install() {
 	dobin fspy || die "failed to install fspy binary"
-	dodoc README LICENSE || die "failed to install documentation"
+	dodoc README || die "failed to install documentation"
 }
