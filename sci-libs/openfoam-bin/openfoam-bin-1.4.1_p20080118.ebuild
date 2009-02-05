@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -33,6 +33,7 @@ DEPEND="!=sci-libs/openfoam-${MY_PV}*
 	!mpich? ( !lam? ( sys-cluster/openmpi ) )
 	lam? ( sys-cluster/lam-mpi )
 	mpich? ( sys-cluster/mpich2 )"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 

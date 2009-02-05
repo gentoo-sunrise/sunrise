@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -24,6 +24,7 @@ DEPEND="!=sci-libs/openfoam-${MY_PV}*
 	<virtual/jdk-1.5
 	=sci-libs/openfoam-kernel-${MY_PV}*
 	sci-libs/parmetis"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 INSDIR=/usr/$(get_libdir)/${MY_PN}/${MY_P}

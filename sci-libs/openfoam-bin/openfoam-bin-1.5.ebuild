@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -27,6 +27,7 @@ DEPEND="!=sci-libs/openfoam-${MY_PV}*
 	!=sci-libs/openfoam-wmake-${MY_PV}*
 	|| ( >sci-visualization/paraview-3.0 sci-visualization/opendx )
 	virtual/mpi"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
