@@ -28,10 +28,8 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${PN}
 
 src_prepare() {
-	# bring to a working state and fix configure.in so that it links to
-	# libqwt.so.4
-	epatch "${FILESDIR}/cvs_090102_drm-1.10.9.diff" \
-		"${FILESDIR}"/drm-qwt4.diff
+	# fix configure.in so that it links to libqwt.so.4
+	epatch "${FILESDIR}"/drm-qwt4.diff
 
 	# not packaged correctly
 	eautoreconf
@@ -53,6 +51,6 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake failed"
-	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"
+	dodoc AUTHORS ChangeLog NEWS README	|| die "dodoc failed"
 }
 
