@@ -18,7 +18,7 @@ HOMEPAGE="http://nouveau.freedesktop.org/"
 SRC_URI=""
 
 LICENSE="MIT"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 COMMON_DEPEND="|| ( >=x11-base/xorg-server-1.5[dri] >=x11-base/xorg-server-1.5.3 )"
@@ -31,11 +31,11 @@ DEPEND="${COMMON_DEPEND}
 	x11-proto/xproto
 	x11-proto/glproto
 	x11-proto/xf86driproto
-	>=x11-libs/libdrm-2.4"
+	>=x11-libs/libdrm-2.4.5"
 
 # need x11-base/x11-drm until nouveau drm enters the kernel
 RDEPEND="${COMMON_DEPEND}
-	>=x11-base/x11-drm-20070314[video_cards_nv]"
+	>=x11-base/x11-drm-20090204[video_cards_nv]"
 
 src_unpack() {
 	x-modular_specs_check
