@@ -1,6 +1,10 @@
 # ChangeLog for www-apps/obsidianmusic
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Feb 2009; Markos Chandras <hwoarang@gentoo.org>
+  obsidianmusic-2.0.5.4.ebuild:
+  Added empty KEYWORDS variable
 
   04 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
   obsidianmusic-2.0.5.4.ebuild:

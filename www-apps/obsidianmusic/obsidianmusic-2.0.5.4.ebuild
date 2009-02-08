@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,6 +8,7 @@ DESCRIPTION="amaroK Web Frontend"
 HOMEPAGE="http://amarokwebfront.sourceforge.net/"
 SRC_URI="mirror://sourceforge/amarokwebfront/${P}.tar.bz2"
 
+KEYWORDS=""
 LICENSE="GPL-2"
 IUSE="mysql postgres"
 
