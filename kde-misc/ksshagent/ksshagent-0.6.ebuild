@@ -7,7 +7,7 @@ inherit kde rpm
 KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="A front-end to ssh-agent which allow you to add, list and remove the keys from your agent."
-HOMEPAGE="http://hanz.nl/p/program"
+HOMEPAGE="http://kde-apps.org/content/show.php/Ksshagent?content=50967"
 SRC_URI="http://mirror.fraunhofer.de/opensuse.org/repositories/home:/jsakalos/openSUSE_10.2/src/${P}-1.3.src.rpm"
 LICENSE="GPL-2"
 SLOT="0"
