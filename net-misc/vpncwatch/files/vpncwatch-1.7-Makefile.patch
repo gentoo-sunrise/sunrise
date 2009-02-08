@@ -1,0 +1,12 @@
+--- Makefile	2008-02-04 09:44:34.000000000 +0100
++++ Makefile.new	2009-02-08 17:20:10.536039280 +0100
+@@ -13,7 +13,7 @@
+ CFLAGS = -D_GNU_SOURCE -O2 -Wall -Werror
+ 
+ vpncwatch: $(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS)
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+

@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/vpncwatch
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Feb 2009; justin Lecher (jlec) <jlec@j-schmitz.net> +metadata.xml,
+  +vpncwatch-1.7.ebuild:
+  Initial commit
+  Tracking bug is 258150
