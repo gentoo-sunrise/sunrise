@@ -1,0 +1,27 @@
+--- Makefile.old	2009-02-08 17:38:08.226620286 +0100
++++ Makefile	2009-02-08 17:53:04.181366093 +0100
+@@ -6,8 +6,13 @@ INSTALL_LIB =	$(INSTALL_PREFIX)/lib
+ INSTALL_INCLUDE = $(INSTALL_PREFIX)/include
+ INSTALL =	/usr/bin/install
+ 
+-INCLUDE =	-I/usr/devel/include 
+-CFLAGS =	-Wall -g -O2 $(INCLUDE) -MD
++INCLUDE ?=	-I/usr/devel/include 
++CFLAGS ?=	-Wall -g -O2 $(INCLUDE) -MD
++
++ifeq ($(shell sh -c 'uname -m 2>/dev/null'), x86_64)
++	CFLAGS += -fPIC
++endif
++	
+ # namespace
+ #CFLAGS +=	-DMYSQLW_NAMESPACE=mysqlw
+ CPPFLAGS =	$(CFLAGS)
+@@ -19,7 +24,7 @@ PROGS =		
+ all:		$(PROGS) libmysqlwrapped.a libmysqlwrapped.h
+ 
+ t:		t.o enum_t.o set_t.o
+-		g++ -o $@ $^ $(LIBS)
++		$(CXX) -o $@ $^ $(LIBS)
+ 		
+ LIBM =		Database.o Query.o StderrLog.o SysLog.o enum_t.o set_t.o 
+ libmysqlwrapped.a: \
