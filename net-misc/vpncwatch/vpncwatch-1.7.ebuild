@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils toolchain-funcs flag-o-matic
+inherit eutils toolchain-funcs
 
 DESCRIPTION="A keepalive daemon for vpnc on Linux systems."
 HOMEPAGE="http://code.google.com/p/vpncwatch/"
@@ -26,10 +26,7 @@ src_prepare() {
 }
 
 src_compile() {
-	append-flags -D_GNU_SOURCE
-	emake CC=$(tc-getCC) \
-		CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" || \
+	emake CC=$(tc-getCC) || \
 		die "compilation failed"
 }
 

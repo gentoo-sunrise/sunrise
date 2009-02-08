@@ -1,5 +1,14 @@
---- Makefile	2008-02-04 09:44:34.000000000 +0100
-+++ Makefile.new	2009-02-08 17:20:10.536039280 +0100
+--- Makefile    2008-02-04 09:44:34.000000000 +0100
++++ Makefile.new        2009-02-08 18:49:06.061291832 +0100
+@@ -10,7 +10,7 @@
+ OBJS = vpncwatch.o proc.o net.o
+ 
+ CC     ?= gcc
+-CFLAGS = -D_GNU_SOURCE -O2 -Wall -Werror
++CFLAGS += -D_GNU_SOURCE
+ 
+ vpncwatch: $(OBJS)
+        $(CC) $(CFLAGS) -o $@ $(OBJS)
 @@ -13,7 +13,7 @@
  CFLAGS = -D_GNU_SOURCE -O2 -Wall -Werror
  
