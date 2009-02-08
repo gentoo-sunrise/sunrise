@@ -3,6 +3,11 @@
 # $Header: $
 
   08 Feb 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> xf86-video-nouveau-0.0.20090130.ebuild,
+  xf86-video-nouveau-9999.ebuild:
+  more ebuild fixes
+
+  08 Feb 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> xf86-video-nouveau-9999.ebuild:
   oops, fix live ebuild
 
