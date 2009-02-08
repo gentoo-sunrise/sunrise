@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Feb 2009; Markos Chandras <hwoarang@gentoo.org> -anyremote-4.16.ebuild,
+  +anyremote-4.17.ebuild:
+  version bump
+
   29 Jan 2009; Markos Chandras (hwoarang) <hwoarang@silverarrow.gr>
   -anyremote-4.15.ebuild, +anyremote-4.16.ebuild:
   Version bump, replace bluez with bluetooth configure switch
