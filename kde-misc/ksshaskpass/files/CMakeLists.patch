@@ -1,0 +1,14 @@
+--- ksshaskpass-0.4.1.old/CMakeLists.txt	2009-02-08 20:00:44.182365404 +0100
++++ ksshaskpass-0.4.1/CMakeLists.txt	2009-02-08 19:58:37.083367014 +0100
+@@ -2,6 +2,11 @@ project(ksshaskpass) # the name of your 
+ 
+ cmake_minimum_required(VERSION 2.4.0)
+ 
++if(COMMAND cmake_policy)
++	cmake_policy(SET CMP0003 NEW)
++endif(COMMAND cmake_policy)
++
++
+ find_package(Qt3 REQUIRED) # find and setup Qt3 for this project
+ find_package(KDE3 REQUIRED) # find and setup KDE3 for this project
+ 
