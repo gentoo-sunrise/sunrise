@@ -18,4 +18,3 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README docs/README_RU.utf8 ChangeLog AUTHORS || die "dodoc failed"
 }
-
