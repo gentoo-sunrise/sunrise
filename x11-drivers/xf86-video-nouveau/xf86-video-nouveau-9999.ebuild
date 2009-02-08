@@ -10,6 +10,7 @@ XDPVER=4
 
 inherit x-modular git
 
+EGIT_TREE="ff52cac14e80f257c6c3e4367cd421b4813dc556"
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/nouveau/${PN}"
 
 DESCRIPTION="Nouveau video driver"
@@ -17,11 +18,10 @@ HOMEPAGE="http://nouveau.freedesktop.org/"
 SRC_URI=""
 
 LICENSE="MIT"
-KEYWORDS=""
-IUSE="dri"
+KEYWORDS="~amd64"
+IUSE=""
 
-COMMON_DEPEND=">=x11-base/xorg-server-1.5
-	dri? ( || ( x11-base/xorg-server[dri] >=x11-base/xorg-server-1.5.3 ) )"
+COMMON_DEPEND="|| ( >=x11-base/xorg-server-1.5[dri] >=x11-base/xorg-server-1.5.3 )"
 DEPEND="${COMMON_DEPEND}
 	x11-misc/util-macros
 	x11-proto/fontsproto
@@ -29,15 +29,13 @@ DEPEND="${COMMON_DEPEND}
 	x11-proto/videoproto
 	x11-proto/xextproto
 	x11-proto/xproto
-	dri? ( x11-proto/glproto
-			x11-proto/xf86driproto
-			>=x11-libs/libdrm-2.4.5 )"
+	x11-proto/glproto
+	x11-proto/xf86driproto
+	>=x11-libs/libdrm-2.4"
 
 # need x11-base/x11-drm until nouveau drm enters the kernel
 RDEPEND="${COMMON_DEPEND}
-	dri? ( >=x11-base/x11-drm-20090204[video_cards_nv] )"
-
-CONFIGURE_OPTIONS="$(use_enable dri)"
+	>=x11-base/x11-drm-20070314[video_cards_nv]"
 
 src_unpack() {
 	x-modular_specs_check
