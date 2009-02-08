@@ -4,7 +4,7 @@
 
 EAPI="1"
 
-inherit distutils
+inherit distutils eutils
 
 MY_P=${P/gns/GNS}-src
 
