@@ -18,7 +18,7 @@ IUSE=""
 DEPEND="media-libs/libsdl"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"/${MY_P}
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
@@ -26,7 +26,7 @@ src_unpack() {
 }
 
 src_compile() {
-	cd "${S}"/port/linux
+	cd port/linux
 	CXXFLAGS="${CXXFLAGS} -DCHANGE_WORK_DIRECTORY" emake || die
 }
 
