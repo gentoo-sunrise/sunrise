@@ -3,7 +3,6 @@
 # $Header: $
 
   31 Jan 2009; Maurício Moraes (morris) <morris@brgentoo.org>
-  +gamecheater/gamecheater-0.4.ebuild, +gamecheater-0.4.ebuild,
-  +gamecheater, +metadata.xml:
+  +gamecheater-0.4.ebuild, +metadata.xml:
   New Ebuild for bug 183856 thanks to Christian, scarabeus and Tommy
 
