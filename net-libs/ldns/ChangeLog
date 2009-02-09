@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Feb 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -ldns-1.4.1.ebuild, +ldns-1.5.0.ebuild:
+  version bump
+
   19 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   ldns-1.4.1.ebuild:
   Add suggested RDEPEND=${DEPEND}.
