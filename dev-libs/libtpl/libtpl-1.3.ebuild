@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -29,7 +29,6 @@ src_test() {
 
 	sed -i "/CFLAGS/s/-g/${CFLAGS}/" Makefile || die "sed cflags failed"
 	sed -i "s|/tmp/||g" *.c || die "sed tpl failed"
-	sed -i "\$a\exit \$num_failed" do_tests || die "sed exit code failed"
 
 	emake -j1 CC="$(tc-getCC)" || die "emake failed"
 
