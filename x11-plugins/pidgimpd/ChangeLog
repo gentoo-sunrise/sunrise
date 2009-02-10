@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Feb 2009; René Neumann (Necoro) <gentoo@necoro.eu>
+  -pidgimpd-1.0.1.ebuild, +pidgimpd-1.1.ebuild:
+  Version bump
+
   06 Feb 2009; René Neumann (Necoro) <gentoo@necoro.eu>
   +pidgimpd-1.0.1.ebuild, +metadata.xml:
   Added new ebuild as per bug #257844

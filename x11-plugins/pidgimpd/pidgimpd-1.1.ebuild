@@ -20,5 +20,5 @@ DEPEND="${RDEPEND}
 
 src_install () {
 	make DESTDIR="${D}" install || die "make install failed"
-	dodoc AUTHORS ChangeLog NEWS README TODO || die "dodoc failed"
+	dodoc AUTHORS README TODO || die "dodoc failed"
 }
