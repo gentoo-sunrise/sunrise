@@ -12,7 +12,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
 DEPEND="dev-libs/openssl"
-RDEPEND="${DEPEND}"
+RDEPEND=${DEPEND}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
