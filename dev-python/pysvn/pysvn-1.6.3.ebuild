@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,8 +19,17 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${P}/Source"
 
 src_unpack() {
+
+	python_version
+
 	unpack ${A}
 	cd "${S}"
+
+	# since pysvn-1.6.3: These sources are not compatible with python 2.5 - run
+	# the backport command to fix
+	if [[ "$PYVER_MAJOR" -lt 3 ]] && [[ "$PYVER_MINOR" -le 5 ]] ; then
+		python setup.py backport || die "backport failed"
+	fi
 
 	python setup.py configure || die "configure failed"
 
