@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/ruby-gpgme
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Feb 2009; Duncan Lockwood (dunc) <dunc@lemonia.org>
+  +ruby-gpgme-1.0.4.ebuild, +metadata.xml:
+  New Ebuild for bug 250503, thanks to Tommy[D] for review
+
