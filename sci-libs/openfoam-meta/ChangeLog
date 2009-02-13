@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Feb 2009; Oliver Borm (boroli) <oli.borm@web.de>
+  -openfoam-meta-1.4.1.ebuild:
+  Remove old version.
+
   20 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   openfoam-meta-1.4.1.ebuild, openfoam-meta-1.5.ebuild:
   Added suggested DEPEND="${RDEPEND}".
