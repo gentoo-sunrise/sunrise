@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Feb 2009; Oliver Borm (boroli) <oli.borm@web.de>
+  -candystore-0.0.3.ebuild, +candystore-0.0.5.ebuild:
+  Version bump
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   candystore-0.0.3.ebuild:
   Add suggested RDEPEND=${DEPEND}

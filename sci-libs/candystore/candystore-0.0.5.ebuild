@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND="x11-libs/libqglviewer
-	|| ( x11-libs/qt-gui >=x11-libs/qt-4.3 )"
+DEPEND="|| ( x11-libs/qt-gui >=x11-libs/qt-4.3 )"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_PN}
