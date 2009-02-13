@@ -73,21 +73,6 @@ x11-themes/mandriva-galaxy
 # Mask live ebuild
 =sys-fs/aufs-utils-9999
 
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
-# Mask packages with masked deps
-=sci-libs/openfoam-kernel-1.4.1*
-=sci-libs/openfoam-meta-1.4.1*
-=sci-libs/openfoam-solvers-1.4.1*
-=sci-libs/openfoam-src-1.4.1*
-
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (20 Mar 2008)
-# Masked until they follow the ebuild conventions
-# (sed -> patch)
-=sci-libs/openfoam-bin-1.4.1*
-=sci-libs/openfoam-utilities-1.4.1*
-=sci-libs/openfoam-wmake-1.4.1*
-=sci-libs/openfoam-1.4.1*
-
 # Juan Aguado <juantxorena@gmail.com> (16 Mar 2008)
 # Masking SVN ebuild
 =media-video/aegisub-9999
