@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Feb 2009; Robert Steen (Gandalf) <gandalf@vebbe.se> -fotoxx-5.9.ebuild,
+  +fotoxx-5.10.4.ebuild:
+  Version bumb for Fotoxx.
+
   22 Jan 2009; Robert Steen (Gandalf) <gandalf@vebbe.se> -fotoxx-5.8.ebuild,
   +fotoxx-5.9.ebuild:
   Version bumb for Fotoxx
