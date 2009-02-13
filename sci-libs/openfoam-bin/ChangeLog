@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Feb 2009; Oliver Borm (boroli) <oli.borm@web.de>
+  -openfoam-bin-1.4.1_p20080118.ebuild, -files/compile-1.4.1.patch:
+  Remove old version.
+
   05 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org>
   openfoam-bin-1.4.1_p20080118.ebuild, openfoam-bin-1.5.ebuild:
   Make repoman happy
