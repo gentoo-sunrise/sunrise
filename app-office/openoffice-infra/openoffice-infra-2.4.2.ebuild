@@ -500,10 +500,13 @@ src_install() {
 	local basecomponents="base calc draw impress math writer"
 	local allcomponents
 
+	allcomponents="${basecomponents}"
 	if use cups; then
-	    allcomponents="${basecomponents} extension printeradmin"
-	else
-	    allcomponents="${basecomponents} extension"
+	    allcomponents="${allcomponents} printeradmin"
+	fi
+
+	if use gtk || use gnome; then
+	    allcomponents="${allcomponents} qstart"
 	fi
 
 	dodir "${instdir}"
@@ -598,11 +601,6 @@ src_install() {
 
 	# Fix the permissions for security reasons
 #	chown -R root:0 "${D}"
-
-	# Fix lib handling for internal old python 2.3
-	if [[ ! -e /usr/$(get_libdir)/libpython2.3.so.1.0 ]]; then
-	    dolib.so "${D}"${instdir}/program/libpython2.3.so.1.0
-	fi
 
 	# Non-java weirdness see bug #99366
 	use !java && rm -f "${D}"${instdir}/program/javaldx

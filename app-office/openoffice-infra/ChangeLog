@@ -3,6 +3,10 @@
 # $Header: $
 
   15 Feb 2009; Yar Odin (yarodin) <yarodin@gmail.com>
+  openoffice-infra-2.4.2.ebuild:
+  Some additional fixes for openoffice-infra-2.4.2
+
+  15 Feb 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   -files/3.0.0/gentoo-ReturnInteger.hdl,
   -files/3.0.0/gentoo-XVBAToOOEventDescGen.hdl,
   -files/3.0.0/gentoo-XVBAToOOEventDescGen.hpp, +files/3.0.1,
