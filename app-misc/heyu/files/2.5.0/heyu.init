@@ -5,15 +5,13 @@
 
 start() {
 	ebegin "Starting heyu"
-	mkdir /var/tmp/heyu 2>/dev/null
-	chmod a=rwx /var/tmp/heyu
-	/usr/bin/heyu start >/dev/null
+	start-stop-daemon --start --quiet --exec /usr/bin/heyu --chuid heyu:heyu -- start >/dev/null
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping heyu"
-	/usr/bin/heyu stop
+	start-stop-daemon --stop --quiet --exec /usr/bin/heyu
 	eend $?
 }
 

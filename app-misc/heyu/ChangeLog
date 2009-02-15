@@ -1,6 +1,12 @@
 # ChangeLog for app-misc/heyu
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Feb 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com> -files/2.4.0,
+  -heyu-2.4.0.ebuild, -files/2.4.0/heyu.init, +heyu-2.5.0.ebuild,
+  +files/2.5.0, +files/2.5.0/heyu.init:
+  Version bump and various - including security relevant - improvements,
+  thanks to Tommy.
 
   12 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -files/2.3.2,
   -files/2.3.2/heyu.init:
