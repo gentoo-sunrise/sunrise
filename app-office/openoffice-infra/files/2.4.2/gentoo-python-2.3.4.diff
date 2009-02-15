@@ -1,0 +1,224 @@
+--- python/Python-2.3.4.patch.orig	2009-02-15 10:33:05.000000000 +0500
++++ python/Python-2.3.4.patch	2009-02-15 10:36:09.000000000 +0500
+@@ -155,6 +155,23 @@
+ *** misc/Python-2.3.4/Makefile.pre.in	Tue Nov 18 20:54:00 2003
+ --- misc/build/Python-2.3.4/Makefile.pre.in	Wed Oct 17 14:01:01 2007
+ ***************
++*** 56,62 ****
++  OPT=		@OPT@
++  BASECFLAGS=	@BASECFLAGS@
++  CFLAGS=		$(BASECFLAGS) $(OPT)
++! CPPFLAGS=	-I. -I$(srcdir)/Include
++  LDFLAGS=	@LDFLAGS@
++  LDLAST=		@LDLAST@
++  SGI_ABI=	@SGI_ABI@
++--- 56,62 ----
++  OPT=		@OPT@
++  BASECFLAGS=	@BASECFLAGS@
++  CFLAGS=		$(BASECFLAGS) $(OPT)
++! CPPFLAGS=	-D_FORTIFY_SOURCE=0 -I. -I$(srcdir)/Include
++  LDFLAGS=	@LDFLAGS@
++  LDLAST=		@LDLAST@
++  SGI_ABI=	@SGI_ABI@
++***************
+ *** 114,123 ****
+   RUNSHARED=       @RUNSHARED@
+   
+@@ -1540,7 +1557,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,48 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von _bsddb.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von _bsddb.mak
+ ! 
+ ! ..\Modules\_bsddb.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -1838,7 +1855,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,49 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von _csv.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von _csv.mak
+ ! 
+ ! ..\Modules\_csv.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -2136,7 +2153,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,53 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von _socket.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von _socket.mak
+ ! 
+ ! ..\Modules\socketmodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -2438,7 +2455,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,51 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von _sre.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von _sre.mak
+ ! 
+ ! ..\Modules\_sre.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -2738,7 +2755,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,50 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von _symtable.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von _symtable.mak
+ ! 
+ ! ..\Modules\symtablemodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -3036,7 +3053,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,50 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von _testcapi.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von _testcapi.mak
+ ! 
+ ! ..\Modules\_testcapimodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -3333,7 +3350,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,49 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von _tkinter.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von _tkinter.mak
+ ! 
+ ! ..\Modules\_tkinter.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -3641,7 +3658,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,50 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von bz2.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von bz2.mak
+ ! 
+ ! ..\Modules\bz2module.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -3890,7 +3907,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,50 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von datetime.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von datetime.mak
+ ! 
+ ! ..\Modules\datetimemodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -4191,7 +4208,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,5 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von make_versioninfo.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von make_versioninfo.mak
+ ! 
+ ! ..\PC\make_versioninfo.c : \
+ ! 	"..\Include\patchlevel.h"\
+@@ -4428,7 +4445,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,48 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von mmap.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von mmap.mak
+ ! 
+ ! ..\Modules\mmapmodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -4723,7 +4740,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,53 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von parser.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von parser.mak
+ ! 
+ ! ..\Modules\parsermodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -5025,7 +5042,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,85 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von pyexpat.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von pyexpat.mak
+ ! 
+ ! ..\Modules\pyexpat.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -5390,7 +5407,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,52 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von python.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von python.mak
+ ! 
+ ! ..\Modules\python.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -5725,7 +5742,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,5452 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von pythoncore.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von pythoncore.mak
+ ! 
+ ! ..\Modules\_codecsmodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -12624,7 +12641,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,52 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von pythonw.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von pythonw.mak
+ ! 
+ ! ..\PC\python_exe.rc : \
+ ! 	"..\PC\pycon.ico"\
+@@ -12943,7 +12960,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,48 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von select.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von select.mak
+ ! 
+ ! ..\Modules\selectmodule.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -13241,7 +13258,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,51 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von unicodedata.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von unicodedata.mak
+ ! 
+ ! ..\Modules\unicodedata.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -13539,7 +13556,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,2 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von w9xpopen.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von w9xpopen.mak
+ ! 
+ *** misc/Python-2.3.4/PCbuild/w9xpopen.mak	Wed Oct 17 13:58:38 2007
+ --- misc/build/Python-2.3.4/PCbuild/w9xpopen.mak	Wed Oct 17 14:01:02 2007
+@@ -13731,7 +13748,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,49 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von winreg.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von winreg.mak
+ ! 
+ ! ..\PC\_winreg.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -14045,7 +14062,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,48 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von winsound.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von winsound.mak
+ ! 
+ ! ..\PC\winsound.c : \
+ ! 	"..\Include\abstract.h"\
+@@ -14340,7 +14357,7 @@
+ *** 1 ****
+ ! dummy
+ --- 1,49 ----
+-! # Microsoft Developer Studio erstellte Abhängigkeitsdatei, einbezogen von zlib.mak
++! # Microsoft Developer Studio erstellte Abhï¿½ngigkeitsdatei, einbezogen von zlib.mak
+ ! 
+ ! ..\Modules\zlibmodule.c : \
+ ! 	"..\Include\abstract.h"\

@@ -11,7 +11,7 @@ inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 
 IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk oodict opengl pam"
 
 PATCHLEVEL="OOO300"
-MILESTONE="9"
+MILESTONE="15"
 OOOTAG=${PATCHLEVEL}_m${MILESTONE}
 OOOBUILDTAG=ooo300-m${MILESTONE}
 
@@ -63,6 +63,9 @@ COMMON_DEPEND="!app-office/openoffice-infra-bin
 	java? ( >=dev-java/bsh-2.0_beta4
 		>=dev-db/hsqldb-1.8.0.9 )
 	mono? ( >=dev-lang/mono-1.2.3.1 )
+	nsplugin? ( || ( net-libs/xulrunner:1.8 net-libs/xulrunner:1.9 =www-client/seamonkey-1* )
+		>=dev-libs/nspr-4.6.6
+		>=dev-libs/nss-3.11-r1 )
 	opengl? ( virtual/opengl
 		virtual/glu )
 	>=net-misc/neon-0.24.7
@@ -109,13 +112,9 @@ DEPEND="${COMMON_DEPEND}
 	>=net-misc/curl-7.12
 	sys-libs/zlib
 	sys-apps/coreutils
-	media-gfx/imagemagick
 	pam? ( sys-libs/pam )
 	!dev-util/dmake
 	>=dev-lang/python-2.3.4
-	nsplugin? ( || ( net-libs/xulrunner:1.8 net-libs/xulrunner:1.9 =www-client/seamonkey-1* )
-		>=dev-libs/nspr-4.6.6
-		>=dev-libs/nss-3.11-r1 )
 	java? ( || ( =virtual/jdk-1.6* =virtual/jdk-1.5* )
 		>=dev-java/ant-core-1.7 )
 	ldap? ( net-nds/openldap )
@@ -163,6 +162,12 @@ pkg_setup() {
 		ewarn " of the OpenOffice.org functionality (i.e. help) being disabled. "
 		ewarn " If something you need does not work for you, rebuild with "
 		ewarn " java in your USE-flags. "
+		ewarn
+	fi
+
+	if use !gtk && use !gnome; then
+		ewarn " If you want the OpenOffice.org systray quickstarter to work "
+		ewarn " activate the 'gtk' and 'gnome' use flags. "
 		ewarn
 	fi
 
@@ -232,7 +237,7 @@ src_unpack() {
 	# Patches from go-oo mainstream
 	cp -f "${FILESDIR}/${PV}/gentoo-nojavanostax.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/nojavanostax.diff" || die
 	cp -f "${FILESDIR}/${PV}/gentoo-hunspell.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/hunspell-one-dir-nocrash.diff" || die
-	cp -f "${FILESDIR}/${PV}/gentoo-solenv_kde_mess.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/solenv.workaround-for-the-kde-mess.diff" || die
+	cp -f "${FILESDIR}/${PV}/gentoo-buildfix-mono-2-2.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/buildfix-mono-2-2.diff" || die
 
 	cd "${WORKSRC}"; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras-templates.tar.bz2"
 	cd "${WORKSRC}"; rm -rf "extras/source/autotext/lang/ru/*" ; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras_ru.tar.bz2"
@@ -273,8 +278,6 @@ src_unpack() {
 	epatch "${FILESDIR}/gentoo-epm-3.7.patch.diff"
 	# fix handling of system libs for postgresql-base
 	epatch "${FILESDIR}/gentoo-system_pgsql.diff"
-	# fix sandbox
-	epatch "${FILESDIR}/gentoo-fixsandbox.diff"
 	# more stabillity on multiprocessing build
 	epatch "${FILESDIR}/${PV}/gentoo-vba_incl.diff"
 	cp -f "${FILESDIR}/${PV}/gentoo-ReturnInteger.hdl" "${WORKSRC}/scripting/source/vbaevents/ReturnInteger.hdl" || die
@@ -330,7 +333,7 @@ src_unpack() {
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_enable gnome gnome-vfs`"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_enable gnome lockdown`"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_enable gstreamer`"
-	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_enable gnome systray`"
+	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_enable gtk systray`"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_enable ldap`"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_enable opengl`"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} `use_with ldap openldap`"
@@ -412,6 +415,7 @@ src_compile() {
 		`use_enable odk` \
 		`use_enable pam` \
 		`use_with java` \
+		--with-system-jpeg \
 		--with-system-libxml \
 		--with-system-libwpd \
 		--with-system-hunspell \
@@ -432,6 +436,10 @@ src_compile() {
 		--enable-xrender-link \
 		--with-system-xrender \
 		--with-system-openssl \
+		--with-system-python \
+		--with-vba-package-format=builtin \
+		--without-gpc \
+		--without-agg \
 		--mandir=/usr/share/man \
 		--libdir=/usr/$(get_libdir) \
 		--with-use-shell=bash \
@@ -500,10 +508,13 @@ src_install() {
 	    gentoo_env_set_dst="linux-2.6-intel"
 	fi
 
+	allcomponents="${basecomponents}"
 	if use cups; then
-	    allcomponents="${basecomponents} printeradmin"
-	else
-	    allcomponents="${basecomponents}"
+	    allcomponents="${allcomponents} printeradmin"
+	fi
+
+	if use gtk || use gnome; then
+	    allcomponents="${allcomponents} qstart"
 	fi
 
 	dodir "${instdir}"
@@ -537,13 +548,12 @@ src_install() {
 	cd "${D}"${instdir}/share/xdg/
 
 	for i in ${allcomponents}; do
-		mv "${i}".desktop openoffice.org3-"${i}".desktop
 		if [[ "${i}" == "printeradmin" ]]; then
-		    sed -i -e s/openoffice.org3-/oo/g openoffice.org3-"${i}".desktop || die "Sed failed"
+		    sed -i -e s/openoffice.org3-/oo/g "${i}".desktop || die "Sed failed"
 		else
-		    sed -i -e s/openoffice.org3/ooffice/g openoffice.org3-"${i}".desktop || die "Sed failed"
+		    sed -i -e s/openoffice.org3/ooffice/g "${i}".desktop || die "Sed failed"
 		fi
-		domenu openoffice.org3-"${i}".desktop
+		domenu "${i}".desktop
 	done
 
 	# Icons
@@ -599,11 +609,6 @@ src_install() {
 	# Fix the permissions for security reasons
 #	chown -R root:0 "${D}"
 
-	# Fix lib handling for internal old python 2.3
-	if [[ ! -e /usr/$(get_libdir)/libpython2.3.so.1.0 ]]; then
-	    dolib.so "${D}"${instdir}/basis3.0/program/libpython2.3.so.1.0
-	fi
-
 	# Non-java weirdness see bug #99366
 	use !java && rm -f "${D}"${instdir}/ure/bin/javaldx
 
@@ -623,9 +628,6 @@ pkg_postinst() {
 
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
-	if use gtk || use gnome; then
-	    gnome2_icon_cache_update
-	fi
 
 	[[ -x /sbin/chpax ]] && [[ -e /usr/$(get_libdir)/openoffice/program/soffice.bin ]] && chpax -zm /usr/$(get_libdir)/openoffice/program/soffice.bin
 
@@ -674,8 +676,5 @@ pkg_postrm() {
 
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
-	if use gtk || use gnome; then
-	    gnome2_icon_cache_update
-	fi
 
 }

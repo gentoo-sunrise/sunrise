@@ -1,0 +1,31 @@
+--- patches/dev300/apply.orig	2009-02-07 16:05:00.000000000 +0500
++++ patches/dev300/apply	2009-02-14 11:27:27.000000000 +0500
+@@ -150,6 +150,7 @@
+ 
+ InfraUnix:  LinuxCommon, CJK, OOXML, CustomUserConfig, PostgreSQL, InfraPatches, NotInfraLinux, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, IntegrateExtensions
+ InfraLinux:  LinuxCommon, SVGImport, UpdaterRemoval, UbuntuBased, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, DebianBaseOnly, UbuntuOnly, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly, UbuntuIntrepidOnly 
++InfraGentoo: LinuxCommon, EMFPlus, SVGImport, UpdaterRemoval, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly, Gentoo
+ InfraSolaris:  LinuxCommon, CJK, OOXML, CustomUserConfig, InfraPatches, NotInfraLinux, Infra1252toLocale, InfraSolaris, NotDebian, CustomKeyBinding, IntegrateExtensions
+ InfraWin32: Win32Common, CJK, OOXML, CustomUserConfig, InfraPatches, NotInfraLinux, InfraWin32Patches, Infra1252toLocale, InfraNotSolaris, NotDebian, CustomKeyBinding, IntegrateExtensions
+ InfraFake: QuickStarter, WMF, SVGImport, UnitTesting, Layout, CJK, EMFPlus, Fpickers, LayoutDialogs, UnitBootstrap, AutoCorrectCapsLock
+@@ -1474,6 +1475,10 @@
+ [ GentooOnly ]
+ SectionOwner => aprosky
+ 
++# No java build
++nojavanostax.diff
++# Fix freezes with dict|hyph-stuff in one dir
++hunspell-one-dir-nocrash.diff
+ # Allow build to proceed with PaX enabled
+ gentoo-pax-fix.diff, aprosky
+ # support server-only versions of 64bit JDKs
+@@ -1555,6 +1560,9 @@
+ mono-climaker-config.diff
+ mono-climaker-bridgetest.diff
+ 
++# Buildfix with Mono 2.2, aprosky
++buildfix-mono-2-2.diff
++
+ [ VBAObjects ]
+ SectionOwner => noelpwer
+ 
