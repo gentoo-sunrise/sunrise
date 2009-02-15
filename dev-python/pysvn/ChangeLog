@@ -4,6 +4,11 @@
 
   15 Feb 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   pysvn-1.6.3.ebuild:
+  added >=dev-python/pycxx-5.5.0 depend to prevent pysvn from using the
+  provided one
+
+  15 Feb 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  pysvn-1.6.3.ebuild:
   added doc useflag, added src_test, improvements
 
   12 Feb 2009; Markus Rennings (mren) <mren@mrmx.de> -pysvn-1.6.2.ebuild,

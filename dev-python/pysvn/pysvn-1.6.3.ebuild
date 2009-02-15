@@ -13,8 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc examples"
 
-# add pycxx >= 5.5 if it has been bumped
-DEPEND="dev-util/subversion"
+DEPEND="dev-util/subversion
+	>=dev-python/pycxx-5.5.0"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P}/Source"
