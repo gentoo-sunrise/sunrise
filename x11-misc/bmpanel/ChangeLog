@@ -1,6 +1,13 @@
 # ChangeLog for x11-misc/bmpanel
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Feb 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  -bmpanel-0.9.27.ebuild, +bmpanel-0.9.27-r1.ebuild, +files/Makefile.patch,
+  -files/Makefile-no-strip.patch:
+  revision bump, added as-needed fix (merged together with the no-strip
+  patch), added missing die statements, do not force one of the libev*
+  packages (event loop from glibc would be default)
 
   27 Oct 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   bmpanel-0.9.27.ebuild:
