@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils python toolchain-funcs multilib
+inherit python toolchain-funcs
 
 DESCRIPTION="Object-oriented python bindings for subversion"
 HOMEPAGE="http://pysvn.tigris.org/"
@@ -11,26 +11,28 @@ SRC_URI="http://pysvn.barrys-emacs.org/source_kits/${P}.tar.gz"
 LICENSE="Apache-1.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="examples"
+IUSE="doc examples"
 
-DEPEND=">=dev-util/subversion-1.2.0"
+# add pycxx >= 5.5 if it has been bumped
+DEPEND="dev-util/subversion"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P}/Source"
 
 src_unpack() {
-
 	python_version
 
 	unpack ${A}
 	cd "${S}"
 
-	# since pysvn-1.6.3: These sources are not compatible with python 2.5 - run
+	# since pysvn-1.6.3: These sources are not compatible with python =< 2.5 - run
 	# the backport command to fix
-	if [[ "$PYVER_MAJOR" -lt 3 ]] && [[ "$PYVER_MINOR" -le 5 ]] ; then
+	if [ $PYVER_MAJOR -eq 2 ] && [ $PYVER_MINOR -lt 6 ]; then
+		einfo "prepare sources for python prior 2.6"
 		python setup.py backport || die "backport failed"
 	fi
 
+	# needed to generate the Makefile
 	python setup.py configure || die "configure failed"
 
 	# we want our CFLAGS as well
@@ -42,28 +44,39 @@ src_unpack() {
 		|| die "sed failed in Makefile"
 }
 
+src_test() {
+	vecho ">>> Test phase [test]: ${CATEGORY}/${PF}"
+	emake test || die "test-pysvn.so failed"
+	emake -C ../Tests || die "test failed"
+	vecho ">>> Test phase [none]: ${CATEGORY}/${PF}"
+}
+
 src_install() {
-	python_version
+	local sitedir="$(python_get_sitedir)/${PN}"
 
-	cd pysvn
-	exeinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
-	doexe _pysvn*.so
-	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/${PN}
-	doins __init__.py
+	cd pysvn/
 
-	cd "${S}/../Docs"
-	dohtml *.html *.js
+	exeinto ${sitedir}
+	doexe _pysvn*.so || die "doexe failed"
+	insinto ${sitedir}
+	doins __init__.py || die "doins failed"
+
+	cd ../
+
+	if use doc; then
+		dohtml -r ../Docs/ || die "dohtml failed"
+	fi
 
 	if use examples; then
-		insinto "/usr/share/doc/${PF}/Examples"
-		doins -r "${S}"/../Examples/*
+		docinto examples
+		dodoc ../Examples/Client/* || die "dodoc examples failed"
 	fi
 }
 
 pkg_postinst() {
-	python_mod_optimize "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	python_mod_optimize "$(python_get_sitedir)/${PN}"
 }
 
 pkg_postrm() {
-	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages/${PN}"
+	python_mod_cleanup "$(python_get_sitedir)/${PN}"
 }
