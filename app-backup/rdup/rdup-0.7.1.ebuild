@@ -14,8 +14,7 @@ IUSE=""
 DEPEND="app-arch/libarchive
 	dev-libs/glib
 	dev-libs/libpcre"
-
-RDEPEND="${DEPEND}"
+RDEPEND=${DEPEND}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
