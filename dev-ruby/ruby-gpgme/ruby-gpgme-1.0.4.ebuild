@@ -25,4 +25,3 @@ src_install() {
 		dodoc examples/* || die "Failed to install examples"
 	fi
 }
-
