@@ -6,8 +6,7 @@ EAPI="1"
 
 inherit eutils
 
-DESCRIPTION="a lightweight, NETWM compliant panel for
-X11 Window System."
+DESCRIPTION="a lightweight, NETWM compliant panel for X11 Window System."
 HOMEPAGE="http://nsf.110mb.com/bmpanel"
 SRC_URI="http://nsf.110mb.com/${PN}/${P}.tar.gz"
 
@@ -45,7 +44,7 @@ src_compile() {
 	use libevent && myconf="${myconf} --with-event"
 
 	einfo "./configure ${myconf}"
-	./configure ${myconf}
+	./configure ${myconf} || die "configure failed"
 	emake || die "emake failed"
 }
 
