@@ -15,4 +15,3 @@ src_install() {
 	dobin pmr || die "Failed to install binary"
 	doman doc/pmr.1 || die "Failed to install manpage"
 }
-
