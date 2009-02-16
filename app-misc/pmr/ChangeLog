@@ -1,0 +1,9 @@
+# ChangeLog for app-misc/pmr
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Feb 2009; Duncan Lockwood (dunc) <dunc@lemonia.org> +pmr-1.01.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 84568. Thanks to everyone in #gentoo-sunrise for
+  explaining things, and Tommy[D] for review
+
