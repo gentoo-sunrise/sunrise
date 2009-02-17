@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pyRXP
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Feb 2009; PERIER Romain (mrpouet) <mrpouet@tuxfamily.org>
+  +pyRXP-9999.ebuild, +metadata.xml:
+  Import from bug 39457, thanks to Tommy[D] for review
+
