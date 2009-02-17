@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bluetooth gnome kde"
 
-RDEPEND="bluetooth? ( net-wireless/bluez-libs net-wireless/bluez-utils )
+RDEPEND="bluetooth? ( || ( ( net-wireless/bluez-libs net-wireless/bluez-utils ) net-wireless/bluez ) )
 	x11-libs/libXtst"
 
 DEPEND="${RDEPEND}"
