@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<longdescription>
+  The Scheme->C compiler transforms R4RS Scheme to C, allowing either
+  stand-alone Scheme programs or mixture of compiled/interpreted
+  Scheme and other languages. Includes macros, records, foreign
+  function calls, interface to Xlib, call/cc, interpreter.
+</longdescription>
+</pkgmetadata>

@@ -1,0 +1,8 @@
+# ChangeLog for dev-lang/scheme2c
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Feb 2009; Andrei Barbu (andrei) <andrei@0xab.com>
+  +scheme2c-9999.ebuild, +metadata.xml:
+  Ebuild for bug 233197
+
