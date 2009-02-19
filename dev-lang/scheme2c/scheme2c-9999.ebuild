@@ -12,7 +12,7 @@ SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 IUSE="X doc"
 
 DEPEND="dev-libs/libsigsegv
@@ -28,10 +28,10 @@ src_compile() {
 
 	if use x86; then
 		emake forLINUX || die "Failed to set up Linux build"
-		pushd LINUX
+		cd LINUX
 	elif use amd64; then
 		emake forAMD64 || die "Failed to set up AMD64 build"
-		pushd AMD64
+		cd AMD64
 	else
 		die "Unimplemented architecture"
 	fi
@@ -41,7 +41,6 @@ src_compile() {
 	touch scrt/*.c
 	touch scsc/*.c
 
-	# emake does the wrong thing here, so we have to use make
 	emake -j1 all || die "Failed to compile"
 
 	if use X; then
@@ -49,15 +48,13 @@ src_compile() {
 		emake -C xlib -B sizeof.cdecl || die "cdecl couldn't run"
 		emake -C xlib all || die "xlib bindings failed to build"
 	fi
-
-	popd
 }
 
 src_install() {
 	if use x86; then
-		pushd LINUX
+		cd LINUX
 	elif use amd64; then
-		pushd AMD64
+		cd AMD64
 	else
 		die "Unimplemented architecture"
 	fi
@@ -76,10 +73,10 @@ src_install() {
 		newdoc xlib/doc.txt xlib.txt || die "Failed to install X documentation"
 	fi
 
-	popd
+	cd ..
 
-	cp doc/scc.l doc/scc.1
-	cp doc/sci.l doc/sci.1
+	cp doc/scc.l doc/scc.1 || die
+	cp doc/sci.l doc/sci.1 || die
 	doman doc/{scc,sci}.1 || die "Failed to install man pages"
 
 	if use doc; then
@@ -88,8 +85,8 @@ src_install() {
 
 	dodoc CHANGES README || die "Failed to install documentation"
 
-	dosed "s:.*sccomp:sccomp:g" /usr/bin/scc
-	dosed "s:-LIBDIR.*t:-LIBDIR /usr/$(get_libdir)/scheme2c/ \
-			   -I/usr/$(get_libdir)/scheme2c/:g" /usr/bin/scc
-	dosed "s:-scmh 40:-scmh 1000 -sch 10:g" /usr/bin/scc
+	dosed -e "s:.*sccomp:sccomp:g" \
+		-e"s:-LIBDIR.*t:-LIBDIR /usr/$(get_libdir)/scheme2c/ \
+		-I/usr/$(get_libdir)/scheme2c/:g" \
+		-e "s:-scmh 40:-scmh 1000 -sch 10:g" /usr/bin/scc || die
 }
