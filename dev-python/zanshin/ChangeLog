@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/zanshin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Feb 2009; Jacob Floyd (techgurufloyd) <techgurufloyd@gmail.com>
+  +zanshin-0.6.ebuild, +metadata.xml:
+  New Ebuild for bug 258901
+
