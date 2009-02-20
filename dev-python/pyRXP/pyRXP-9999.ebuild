@@ -15,14 +15,13 @@ IUSE="doc examples"
 
 DOCS="README"
 
-src_install()
-{
+src_install() {
 	if use doc;then
 	   DOCS="${DOCS} docs/*"
 	fi
 
 	distutils_src_install
-	
+
 	if use examples;then
 	   docinto examples
 	   dodoc examples/* || die "dodoc examples code failed"
