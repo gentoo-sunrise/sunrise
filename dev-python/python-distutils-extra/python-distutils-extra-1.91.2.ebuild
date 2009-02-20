@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils 
+inherit distutils
 
 DESCRIPTION="Enhancements to the Python build system"
 HOMEPAGE="http://packages.debian.org/sid/python-distutils-extra"
@@ -11,12 +11,12 @@ SRC_URI="mirror://debian/pool/main/p/${PN}/${PN}_${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="" 
+IUSE=""
 
 DEPEND=">=dev-util/intltool-0.35.5
-        dev-python/setuptools"
+	dev-python/setuptools"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/debian
+S="${WORKDIR}"/debian
 DOCS=doc/*
 
