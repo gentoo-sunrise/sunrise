@@ -1,0 +1,81 @@
+# ChangeLog for app-cdr/acetoneiso2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Feb 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  +acetoneiso-2.0.3_rc1.ebuild, +files/acetoneiso-nostrip.patch,
+  -files/acetoneiso2-nostrip.patch, -acetoneiso2-2.0.2.ebuild:
+  renamed from acetoneiso2, version bump to 2.0.3_rc1,
+  fixed dependencies, added optional documentation,
+  print some informations about optional packages
+
+  16 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Drop unused useflag-description from metadata.xml
+
+  09 Jan 2009; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  acetoneiso2-2.0.2.ebuild:
+  Update HOMEPAGE
+
+  09 Jan 2009; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
+  +files/acetoneiso2-nostrip.patch, acetoneiso2-2.0.2.ebuild:
+  Migration to splitted QT4, fix license, bump to EAPI=2, deps cleanup,
+  dropped USE flags for fixing automagic deps (acetoneiso2 will warn about
+  missing apps at runtime), fix prestripping issue. Thanks to Christian
+  Ruppert and scarabeus for their help.
+
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added local USE flag description wrt GLEP 56
+
+  04 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  acetoneiso2-2.0.2.ebuild:
+  eqmake4 dies on its own
+
+  04 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org>
+  -acetoneiso2-2.0.1.ebuild:
+  Remove old version
+
+  03 Aug 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
+  +acetoneiso2-2.0.2.ebuild:
+  Version bump to 2.0.2
+
+  16 Mar 2008; Jakub Moc <jakub@gentoo.org> acetoneiso2-2.0.1.ebuild:
+  Fix up dependencies a bit...
+
+  12 Mar 2008; (Tommy[D]) tommy100@gmx.de -acetoneiso2-2.0.0.ebuild:
+  Really drop it
+
+  12 Mar 2008; Arne Janbu (Ampheus) <admin@ampheus.de> Manifest:
+  Remove old version.
+
+  12 Mar 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
+  +acetoneiso2-2.0.1.ebuild:
+  Version bump to 2.0.1.
+
+  10 Mar 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
+  acetoneiso2-2.0.0.ebuild:
+  Changed dependency so we can use cdrtools or cdrkit if we want. Tanks
+  Marcello Magaldi.
+
+  30 Jan 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
+  acetoneiso2-2.0.0.ebuild:
+  Added sys-fs/fuseiso to DEPEND. Thanks to realmatrix.
+
+  27 Jan 2008; Jakub Moc <jakub@gentoo.org> -acetoneiso2-2.0_rc1.ebuild,
+  +acetoneiso2-2.0.0.ebuild:
+  Version bump, remove old
+
+  23 Jan 2008; Arne Janbu (Ampheus) <admin@ampheus.de>
+  acetoneiso2-2.0_rc1.ebuild:
+  Some cleaning and changed the description
+
+  18 Jan 2008; (Tommy[D]) tommy100@gmx.de ChangeLog:
+  Drop emtpy files dir
+
+  16 Jan 2008; (Tommy[D]) tommy100@gmx.de +acetoneiso2-2.0_rc1.ebuild,
+  -acetoneiso2-2.0-r1.ebuild:
+  Drop eutils.eclass, use PN in SRC_URI and correct ebuild naming
+
+  16 Jan 2008; Arne Janbu (Ampheus) <admin@ampheus.de> +metadata.xml,
+  +acetoneiso2-2.0-r1.ebuild:
+  New Ebuild for bug 197961
+
