@@ -1,0 +1,49 @@
+--- ../faust-0.9.9.4_orig/Makefile	2008-03-27 14:59:11.000000000 +0000
++++ Makefile	2009-02-19 20:50:53.000000000 +0000
+@@ -1,5 +1,8 @@
+ version := 0.9.9.4
+-prefix := /usr/local
++DESTDIR ?= /
++PREFIX ?= /usr/local
++destdir := $(DESTDIR)
++prefix := $(PREFIX)
+ arch   := $(wildcard architecture/*.*)
+ mfiles := $(wildcard examples/Makefile.*)
+ vname := faust-$(version)-$(shell date +%y%m%d.%H%M%S)
+@@ -16,7 +19,7 @@ help :
+ 	@echo "make parser : generate the parser from the lex and yacc files"
+ 	@echo "make clean : remove all object files"
+ 	@echo "make doc : generate the documentation using doxygen"
+-	@echo "make install : install the compiler and the architecture files in $(prefix)/bin $(prefix)/lib/faust"
++	@echo "make install : install the compiler and the architecture files in $(destdir)/$(prefix)/bin $(destdir)/$(prefix)/lib/faust"
+ 	@echo "make uninstall : undo what install did"
+ 	@echo "make dist : make a tar.gz file ready for distribution"
+ 	@echo "make log : make a changelog file"
+@@ -36,18 +39,18 @@ doc :
+ 
+ 
+ install :
+-	mkdir -p $(prefix)/lib/faust/
+-	install compiler/faust $(prefix)/bin
+-	install -m 0644 $(arch) $(prefix)/lib/faust/
+-	- test -d  $(prefix)/lib/faust/VST && rm -rf $(prefix)/lib/faust/VST
+-	cp -r architecture/VST $(prefix)/lib/faust/
+-	find $(prefix)/lib/faust/ -name CVS | xargs rm -rf
+-	install -m 0644 $(mfiles) $(prefix)/lib/faust/
++	mkdir -p $(destdir)/$(prefix)/lib/faust/
++	install -D compiler/faust $(destdir)/$(prefix)/bin/faust
++	install -m 0644 $(arch) $(destdir)/$(prefix)/lib/faust/
++	- test -d  $(destdir)/$(prefix)/lib/faust/VST && rm -rf $(destdir)/$(prefix)/lib/faust/VST
++	cp -r architecture/VST $(destdir)/$(prefix)/lib/faust/
++	find $(destdir)/$(prefix)/lib/faust/ -name CVS | xargs rm -rf
++	install -m 0644 $(mfiles) $(destdir)/$(prefix)/lib/faust/
+ 
+ 
+ uninstall :
+-	rm -rf $(prefix)/lib/faust/
+-	rm -f $(prefix)/bin/faust
++	rm -rf $(destdir)/$(prefix)/lib/faust/
++	rm -f $(destdir)/$(prefix)/bin/faust
+ 
+ dist :
+ 	$(MAKE) -C compiler clean

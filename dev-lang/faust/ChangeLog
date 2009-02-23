@@ -1,0 +1,9 @@
+# ChangeLog for dev-lang/faust
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Feb 2009; Duncan Lockwood (dunc) <dunc@lemonia.org>
+  +faust-0.9.9.4.ebuild, +files/faust-0.9.9.4_Makefile.patch, +metadata.xml:
+  New Ebuild for bug 90698. Thanks to volkmar and scarabeus for ebuild help
+  and scarabeus for review
+
