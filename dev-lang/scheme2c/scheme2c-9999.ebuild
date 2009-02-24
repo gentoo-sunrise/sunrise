@@ -12,7 +12,7 @@ SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 -*"
+KEYWORDS="" #only x32 and amd64 are tested and supported
 IUSE="X doc"
 
 DEPEND="dev-libs/libsigsegv
