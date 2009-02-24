@@ -27,7 +27,7 @@ src_unpack() {
 
 	# since pysvn-1.6.3: These sources are not compatible with python =< 2.5 - run
 	# the backport command to fix
-	if [ $PYVER_MAJOR -eq 2 ] && [ $PYVER_MINOR -lt 6 ]; then
+	if [[ $PYVER_MAJOR -eq 2 ]] && [[ $PYVER_MINOR -lt 6 ]]; then
 		einfo "prepare sources for python prior 2.6"
 		python setup.py backport || die "backport failed"
 	fi
