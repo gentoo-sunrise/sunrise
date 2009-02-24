@@ -12,7 +12,7 @@ SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~x86 ~amd64 -*"
 IUSE="X doc"
 
 DEPEND="dev-libs/libsigsegv
@@ -85,8 +85,8 @@ src_install() {
 
 	dodoc CHANGES README || die "Failed to install documentation"
 
-	dosed -e "s:.*sccomp:sccomp:g" \
-		-e"s:-LIBDIR.*t:-LIBDIR /usr/$(get_libdir)/scheme2c/ \
-		-I/usr/$(get_libdir)/scheme2c/:g" \
-		-e "s:-scmh 40:-scmh 1000 -sch 10:g" /usr/bin/scc || die
+	dosed "s:.*sccomp:sccomp:g" /usr/bin/scc || die
+	dosed "s:-LIBDIR.*t:-LIBDIR /usr/$(get_libdir)/scheme2c/ \
+			   -I/usr/$(get_libdir)/scheme2c/:g" /usr/bin/scc || die
+	dosed "s:-scmh 40:-scmh 1000 -sch 10:g" /usr/bin/scc || die
 }
