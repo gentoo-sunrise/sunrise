@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<longdescription lang="en">
+		EggTranslations is a flexible object-oriented resource loader that is
+		designed to work in projects that are distributed as Python eggs. Its main
+		goals are to support localization of resources (e.g. images, help files and
+		other documentation), and to allow localization of text in your application
+		by loading GNU gettext .mo files. However, you don't have to be dealing with
+		localizable resources to use EggTranslations: You can use it to organize
+		non-localizable resources, too.
+	</longdescription>
+</pkgmetadata>
+

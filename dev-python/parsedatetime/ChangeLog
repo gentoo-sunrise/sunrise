@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/parsedatetime
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Feb 2009; Jacob Floyd (techgurufloyd) <techgurufloyd@gmail.com>
+  +parsedatetime-0.8.7.ebuild, +metadata.xml:
+  Initial version of parsedatetime bug#258898. Created as a dependency for the
+  Chandler project.
+

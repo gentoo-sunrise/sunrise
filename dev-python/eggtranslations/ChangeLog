@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/eggtranslations
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Feb 2009; Jacob Floyd (techgurufloyd) <techgurufloyd@gmail.com>
+  +eggtranslations-1.2.ebuild, +metadata.xml:
+  Initial verision of the eggtranslations ebuild bug#258897. Created as a
+  dependency of the Chandler project.
+
