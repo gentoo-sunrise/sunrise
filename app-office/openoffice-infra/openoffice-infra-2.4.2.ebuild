@@ -9,7 +9,7 @@ EAPI="1"
 inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 kde-functions mono multilib
 
 
-IUSE="binfilter cups dbus debug eds firefox gnome gstreamer gtk java kde ldap mono odk oodict opengl pam seamonkey xulrunner"
+IUSE="binfilter cups dbus debug eds firefox gnome gstreamer gtk java kde ldap mono odk oodict opengl pam postgres seamonkey xulrunner"
 
 PATCHLEVEL="OOH680"
 MILESTONE="18"
@@ -28,11 +28,6 @@ SRC_URI="mirror://openoffice/stable/${PV}/${SRC}_core.tar.bz2
 	mirror://openoffice/stable/${PV}/${SRC}_binfilter.tar.bz2
 	odk? ( mirror://openoffice/stable/${PV}/${SRC}_sdk.tar.bz2
 		java? ( http://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll ) )
-	http://download.go-oo.org/SRC680/extras-2.tar.bz2
-	http://download.go-oo.org/SRC680/biblio.tar.bz2
-	http://download.go-oo.org/SRC680/lp_solve_5.5.0.10_source.tar.gz
-	http://download.go-oo.org/SRC680/oox.2008-02-29.tar.bz2
-	http://download.go-oo.org/SRC680/writerfilter.2008-02-29.tar.bz2
 	http://download.i-rs.ru/pub/openoffice/${PV}/ru/infra-ooo-files_2.4.2.tar.gz
 	http://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll"
 
@@ -151,7 +146,7 @@ DEPEND="${COMMON_DEPEND}
 	java? ( || ( =virtual/jdk-1.6* =virtual/jdk-1.5* =virtual/jdk-1.4* )
 		dev-java/ant-core )
 	ldap? ( net-nds/openldap )
-	virtual/postgresql-base"
+	postgres? ( virtual/postgresql-base )"
 
 PROVIDE="virtual/ooo"
 RESTRICT="strip" # the openoffice.org from infra-resource is already stripped
@@ -198,6 +193,13 @@ pkg_setup() {
 		ewarn " of the OpenOffice.org functionality (i.e. help) being disabled. "
 		ewarn " If something you need does not work for you, rebuild with "
 		ewarn " java in your USE-flags. "
+		ewarn
+	fi
+
+	if use !gtk && use !gnome; then
+		ewarn
+		ewarn " If you want the OpenOffice-Infra systray quickstarter to work "
+		ewarn " activate the 'gtk' and 'gnome' use flags. "
 		ewarn
 	fi
 
@@ -255,8 +257,8 @@ src_unpack() {
 	epatch "${FILESDIR}/${PV}/gentoo-scripts.diff"
 	# Missing includes for amd64 gcc43
 	cp -f "${FILESDIR}/${PV}/build-gcc43-missingincludes.diff" "${WORKDIR}"/infra-ooo-files_${PV}/patches/src680/
-	# Patch for using Gentoo specific goo team patches and GentooInfra distro target
-	epatch "${FILESDIR}/${PV}/gentoo-gentooinfra.diff"
+	# Patch for using Gentoo specific goo team patches InfraGentoo/InfraGentooPG distro targets
+	epatch "${FILESDIR}/${PV}/gentoo-infragentoo.diff"
 
 	mkdir -p "${WORKSRC}"/solver/680/unxlng${ARCH_VAR}6.pro/pck/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/extra_templates_*.zip "${WORKSRC}"/solver/680/unxlng${ARCH_VAR}6.pro/pck/
@@ -287,7 +289,13 @@ src_unpack() {
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/about.bmp    "${WORKSRC}"/default_images/introabout/
 
 	local patchconf
-	patchconf="--tag=${OOOBUILDTAG} --distro=GentooInfra --distro=Localize"
+	local distro
+	if use postgres; then
+	    distro=InfraGentooPG
+	else
+	    distro=InfraGentoo
+	fi
+	patchconf="--tag=${OOOBUILDTAG} --distro=${distro} --distro=Localize"
 	if use binfilter; then
 	    patchconf="${patchconf} --distro=Binfilter"
 	fi
@@ -303,18 +311,22 @@ src_unpack() {
 	epatch "${FILESDIR}/${PV}/gentoo-macolor.diff"
 	# completion_matches -> rl_completion_matches
 	epatch "${FILESDIR}/${PV}/gentoo-completion_matches.diff"
+	if use postgres; then
+	    # fix using of pg lib
+	    epatch "${FILESDIR}/${PV}/gentoo-configure-pg.diff"
+	fi
 	# enable/disable-gstreamer, disable scanning for rpm/dpkg and etc
 	epatch "${FILESDIR}/${PV}/gentoo-configure.diff"
 	# disable mkdepend warning
 	epatch "${FILESDIR}/${PV}/gentoo-mkdepend.diff"
 	# fix buildroot issue for rpm >=4.4.7
 	epatch "${FILESDIR}/gentoo-epm-3.7.patch.diff"
-	# fix handling of system libs for postgresql-base
-	epatch "${FILESDIR}/gentoo-system_pgsql.diff"
+	if use postgres; then
+	    # fix handling of system libs for postgresql-base
+	    epatch "${FILESDIR}/gentoo-system_pgsql.diff"
+	fi
 	# fix sandbox
 	epatch "${FILESDIR}/${PV}/gentoo-fixsandbox.diff"
-	# fix python 2.3.4 build
-	epatch "${FILESDIR}/${PV}/gentoo-python-2.3.4.diff"
 
 	# Use flag checks
 	if use java; then
@@ -430,6 +442,7 @@ src_compile() {
 		--disable-fontooo \
 		--disable-qadevooo \
 		--enable-sdext \
+		--with-system-jpeg \
 		--with-system-boost \
 		--with-system-curl \
 		--with-system-db \
@@ -437,6 +450,9 @@ src_compile() {
 		--with-system-icu \
 		--with-system-libxslt \
 		--with-system-vigra \
+		--with-system-zlib \
+		--with-system-stdlibs \
+		--with-system-python \
 		--without-stlport \
 		--mandir=/usr/share/man \
 		--libdir=/usr/$(get_libdir) \
@@ -599,6 +615,13 @@ src_install() {
 	doins "${WORKSRC}"/solver/680/unxlng"${ARCH_VAR}"6.pro/bin/sun-report-builder.oxt
 	doins "${WORKSRC}"/solver/680/unxlng"${ARCH_VAR}"6.pro/bin/minimizer/sun-presentation-minimizer.oxt
 
+	# Install PostgreSQL SDBC extension
+	if use postgres; then
+	    insinto /usr/$(get_libdir)/openoffice/share/extension/install
+	    doins "${WORKSRC}"/connectivity/unxlng"${ARCH_VAR}"6.pro/lib/postgresql-sdbc-0.7.5.zip
+	    fperms 444 /usr/$(get_libdir)/openoffice/share/extension/install/postgresql-sdbc-0.7.5.zip
+	fi
+
 	# Fix the permissions for security reasons
 #	chown -R root:0 "${D}"
 
@@ -614,6 +637,12 @@ src_install() {
 	    newins "${FILESDIR}/java-set-classpath.in" java-set-classpath
 	    fperms 755 /usr/$(get_libdir)/openoffice/program/java-set-classpath
 	fi
+
+}
+
+pkg_preinst() {
+
+	use java && java-pkg-2_pkg_preinst
 
 }
 
@@ -639,6 +668,11 @@ pkg_postinst() {
 	elog
 	elog " You can find extension in: /usr/$(get_libdir)/openoffice/share/extension/install "
 	elog
+	if use postgres; then
+	    elog " PostgreSQL SDBC extension provided in "
+	    elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
+	    elog
+	fi
 	use !oodict && elog " Spell checking is now provided through our own myspell-ebuilds, "
 	use !oodict && elog " if you want to use it, please install the correct myspell package "
 	use !oodict && elog " according to your language needs. "

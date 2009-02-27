@@ -48,15 +48,6 @@
        if test "$DPKG" = "no"; then
           AC_MSG_ERROR([dpkg needed for deb creation. Install dpkg.])
        fi
-@@ -3990,7 +4000,7 @@
- fi
- save_CFLAGS=$CFLAGS
- save_LIBS=$LIBS
--CFLAGS="-I`pg_config --includedir`"
-+CFLAGS="-I`pg_config --includedir` -L`pg_config --libdir`"
- AC_CHECK_HEADER([libpq-fe.h], [], [AC_MSG_ERROR([libpq-fe.h is needed])], [])
- AC_HAVE_LIBRARY(pq, [], [AC_MSG_ERROR(libpq is needed)], [])
- CFLAGS=$save_CFLAGS
 @@ -4171,7 +4181,7 @@
  AC_MSG_CHECKING([whether to build Mozilla addressbook connectivity])
  if test "$enable_mozilla" = "no"; then

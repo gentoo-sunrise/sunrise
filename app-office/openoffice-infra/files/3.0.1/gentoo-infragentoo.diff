@@ -1,14 +1,16 @@
---- patches/dev300/apply.orig	2009-02-07 16:05:00.000000000 +0500
-+++ patches/dev300/apply	2009-02-14 11:27:27.000000000 +0500
-@@ -150,6 +150,7 @@
+--- patches/dev300/apply.orig	2009-02-18 21:55:55.000000000 +0500
++++ patches/dev300/apply	2009-02-18 21:59:02.000000000 +0500
+@@ -150,6 +150,9 @@
  
  InfraUnix:  LinuxCommon, CJK, OOXML, CustomUserConfig, PostgreSQL, InfraPatches, NotInfraLinux, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, IntegrateExtensions
  InfraLinux:  LinuxCommon, SVGImport, UpdaterRemoval, UbuntuBased, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, DebianBaseOnly, UbuntuOnly, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly, UbuntuIntrepidOnly 
-+InfraGentoo: LinuxCommon, EMFPlus, SVGImport, UpdaterRemoval, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly, Gentoo
++InfraGentooBase: Gentoo, SVGImport, UpdaterRemoval, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, CustomUserConfig, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly
++InfraGentoo: InfraGentooBase
++InfraGentooPG: InfraGentooBase, InfraUnixPatchesPG, PostgreSQL
  InfraSolaris:  LinuxCommon, CJK, OOXML, CustomUserConfig, InfraPatches, NotInfraLinux, Infra1252toLocale, InfraSolaris, NotDebian, CustomKeyBinding, IntegrateExtensions
  InfraWin32: Win32Common, CJK, OOXML, CustomUserConfig, InfraPatches, NotInfraLinux, InfraWin32Patches, Infra1252toLocale, InfraNotSolaris, NotDebian, CustomKeyBinding, IntegrateExtensions
  InfraFake: QuickStarter, WMF, SVGImport, UnitTesting, Layout, CJK, EMFPlus, Fpickers, LayoutDialogs, UnitBootstrap, AutoCorrectCapsLock
-@@ -1474,6 +1475,10 @@
+@@ -1474,6 +1477,10 @@
  [ GentooOnly ]
  SectionOwner => aprosky
  
@@ -19,7 +21,7 @@
  # Allow build to proceed with PaX enabled
  gentoo-pax-fix.diff, aprosky
  # support server-only versions of 64bit JDKs
-@@ -1555,6 +1560,9 @@
+@@ -1555,6 +1562,9 @@
  mono-climaker-config.diff
  mono-climaker-bridgetest.diff
  
@@ -29,3 +31,24 @@
  [ VBAObjects ]
  SectionOwner => noelpwer
  
+@@ -1882,7 +1892,7 @@
+ sdbc-postgresql.diff
+ sdbc-postgresql-build-lst.diff
+ sdbc-postgresql-config_office.diff
+-# connectivity-workben-postgresql.diff
++connectivity-workben-postgresql.diff
+ gcc-4.3-postgresql.diff
+ 
+ 
+@@ -2807,8 +2817,10 @@
+ instset-prefer-langpacks.diff, thorsten
+ sfx2-remove-check-update-on-fileload.diff, kohei
+ 
+-[InfraUnixPatches]
++[InfraUnixPatchesPG]
+ connectivity-freebsd-libs.diff
++
++[InfraUnixPatches]
+ freebsd-store-alloca.diff
+ freebsd-gperf.diff, i#85469, rail
+ freebsd-writerfilter.diff

@@ -2,6 +2,15 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Feb 2009; Yar Odin (yarodin) <yarodin@gmail.com>
+  files/2.4.2/build-gcc43-missingincludes.diff,
+  files/2.4.2/gentoo-configure.diff, +files/2.4.2/gentoo-configure-pg.diff,
+  +files/2.4.2/gentoo-infragentoo.diff, files/3.0.1/gentoo-configure.diff,
+  openoffice-infra-2.4.2.ebuild, +files/3.0.1/gentoo-configure-pg.diff,
+  openoffice-infra-3.0.1.ebuild, files/3.0.1/gentoo-infragentoo.diff:
+  Added new use flag 'postgres', fix build of sdbc-postgres extension, some
+  code cleanup - for both versions of openoffice-infra: 2.4.2/3.0.1
+
   15 Feb 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   openoffice-infra-2.4.2.ebuild:
   Some additional fixes for openoffice-infra-2.4.2

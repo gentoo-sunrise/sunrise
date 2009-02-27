@@ -79,3 +79,13 @@
  
  namespace ooxml { namespace tokenmap { namespace elements {
  struct token { const char * name; TokenEnum_t nToken; };
+--- crashrep/source/unx/main.cxx.orig	2009-02-21 19:15:51.000000000 +0500
++++ crashrep/source/unx/main.cxx	2009-02-21 19:16:13.000000000 +0500
+@@ -45,6 +45,7 @@
+ #include <unistd.h>
+ #include <pwd.h>
+ #include <pthread.h>
++#include <limits.h>
+ 
+ #include <hash_map>
+ #include <vector>

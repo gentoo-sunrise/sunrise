@@ -1,0 +1,11 @@
+--- config_office/configure.in.orig	2008-10-26 12:57:20.000000000 +0500
++++ config_office/configure.in	2008-10-26 12:57:57.000000000 +0500
+@@ -3791,7 +3800,7 @@
+ fi
+ save_CFLAGS=$CFLAGS
+ save_LIBS=$LIBS
+-CFLAGS="-I`pg_config --includedir`"
++CFLAGS="-I`pg_config --includedir` -L`pg_config --libdir`"
+ AC_CHECK_HEADER([libpq-fe.h], [], [AC_MSG_ERROR([libpq-fe.h is needed])], [])
+ AC_HAVE_LIBRARY(pq, [], [AC_MSG_ERROR(libpq is needed)], [])
+ CFLAGS=$save_CFLAGS

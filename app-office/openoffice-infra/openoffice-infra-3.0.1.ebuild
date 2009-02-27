@@ -8,7 +8,7 @@ EAPI="1"
 
 inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 kde-functions mono multilib toolchain-funcs
 
-IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk oodict opengl pam"
+IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk oodict opengl pam postgres"
 
 PATCHLEVEL="OOO300"
 MILESTONE="15"
@@ -118,7 +118,7 @@ DEPEND="${COMMON_DEPEND}
 	java? ( || ( =virtual/jdk-1.6* =virtual/jdk-1.5* )
 		>=dev-java/ant-core-1.7 )
 	ldap? ( net-nds/openldap )
-	virtual/postgresql-base"
+	postgres? ( virtual/postgresql-base )"
 
 PROVIDE="virtual/ooo"
 RESTRICT="strip" # the openoffice.org from infra-resource is already stripped
@@ -166,7 +166,8 @@ pkg_setup() {
 	fi
 
 	if use !gtk && use !gnome; then
-		ewarn " If you want the OpenOffice.org systray quickstarter to work "
+		ewarn
+		ewarn " If you want the OpenOffice-Infra systray quickstarter to work "
 		ewarn " activate the 'gtk' and 'gnome' use flags. "
 		ewarn
 	fi
@@ -232,8 +233,9 @@ src_unpack() {
 	# Some fixes for our patchset
 	cd "${S}"
 	epatch "${FILESDIR}/${PV}/gentoo-scripts.diff"
-	# Patch for using Gentoo specific goo team patches and GentooInfra distro target
+	# Patch for using Gentoo specific goo team patches and InfraGentoo/InfraGentooPG distro targets
 	epatch "${FILESDIR}/${PV}/gentoo-infragentoo.diff"
+
 	# Patches from go-oo mainstream
 	cp -f "${FILESDIR}/${PV}/gentoo-nojavanostax.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/nojavanostax.diff" || die
 	cp -f "${FILESDIR}/${PV}/gentoo-hunspell.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/hunspell-one-dir-nocrash.diff" || die
@@ -260,14 +262,24 @@ src_unpack() {
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/backing*.png    "${WORKSRC}"/default_images/framework/res/
 
 	local patchconf
-	patchconf="--tag=${OOOBUILDTAG} --distro=InfraGentoo --distro=Localize"
+	local distro
+	if use postgres; then
+	    distro=InfraGentooPG
+	else
+	    distro=InfraGentoo
+	fi
+	patchconf="--tag=${OOOBUILDTAG} --distro=${distro} --distro=Localize"
 	if use binfilter; then
-		patchconf="${patchconf} --distro=Binfilter"
+	    patchconf="${patchconf} --distro=Binfilter"
 	fi
 
 	"${WORKDIR}"/infra-ooo-files_${PV}/bin/apply.pl  "${WORKDIR}"/infra-ooo-files_${PV}/patches/dev300 ${WORKSRC} ${patchconf}
 	"${WORKDIR}"/infra-ooo-files_${PV}/bin/transform --apply "${WORKDIR}"/infra-ooo-files_${PV} ${WORKSRC}
 
+	if use postgres; then
+	    # fix using of pg lib
+	    epatch "${FILESDIR}/${PV}/gentoo-configure-pg.diff"
+	fi
 	# enable/disable-gstreamer, disable scanning for rpm/dpkg and etc
 	epatch "${FILESDIR}/${PV}/gentoo-configure.diff"
 	# disable mkdepend warning
@@ -276,8 +288,10 @@ src_unpack() {
 	epatch "${FILESDIR}/${PV}/gentoo-completion_matches.diff"
 	# disable rpm
 	epatch "${FILESDIR}/gentoo-epm-3.7.patch.diff"
-	# fix handling of system libs for postgresql-base
-	epatch "${FILESDIR}/gentoo-system_pgsql.diff"
+	if use postgres; then
+	    # fix handling of system libs for postgresql-base
+	    epatch "${FILESDIR}/gentoo-system_pgsql.diff"
+	fi
 	# more stabillity on multiprocessing build
 	epatch "${FILESDIR}/${PV}/gentoo-vba_incl.diff"
 	cp -f "${FILESDIR}/${PV}/gentoo-ReturnInteger.hdl" "${WORKSRC}/scripting/source/vbaevents/ReturnInteger.hdl" || die
@@ -594,6 +608,13 @@ src_install() {
 	newbin "${FILESDIR}"/wrapper.in ooffice
 	sed -i -e s/LIBDIR/$(get_libdir)/g "${D}"/usr/bin/ooffice || die "Wrapper script failed"
 
+	# Install PostgreSQL SDBC extension
+	if use postgres; then
+	    insinto /usr/$(get_libdir)/openoffice/share/extension/install
+	    doins "${WORKSRC}"/connectivity/unxlng"${arch_var}"6.pro/lib/postgresql-sdbc-0.7.6.zip
+	    fperms 444 /usr/$(get_libdir)/openoffice/share/extension/install/postgresql-sdbc-0.7.6.zip
+	fi
+
 	# Component symlinks
 	for i in ${basecomponents}; do
 	    dosym "${instdir}"/program/s"${i}" /usr/bin/oo"${i}"
@@ -621,6 +642,12 @@ src_install() {
 	    newins "${FILESDIR}/java-set-classpath.in" java-set-classpath
 	    fperms 755 /usr/$(get_libdir)/openoffice/basis3.0/program/java-set-classpath
 	fi
+
+}
+
+pkg_preinst() {
+
+	use java && java-pkg-2_pkg_preinst
 
 }
 
@@ -668,6 +695,11 @@ pkg_postinst() {
 	elog " Please use the packages provided in "
 	elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
 	elog " instead of those from the SUN extension site. "
+	if use postgres; then
+	    elog
+	    elog " PostgreSQL SDBC extension provided in "
+	    elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
+	fi
 	elog
 
 }
