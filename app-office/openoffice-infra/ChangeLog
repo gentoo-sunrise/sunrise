@@ -3,6 +3,10 @@
 # $Header: $
 
   27 Feb 2009; Yar Odin (yarodin) <yarodin@gmail.com>
+  -files/2.4.2/gentoo-gentooinfra.diff:
+  delete useless patch for openoffice-infra 2.4.2
+
+  27 Feb 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   files/2.4.2/build-gcc43-missingincludes.diff,
   files/2.4.2/gentoo-configure.diff, +files/2.4.2/gentoo-configure-pg.diff,
   +files/2.4.2/gentoo-infragentoo.diff, files/3.0.1/gentoo-configure.diff,
