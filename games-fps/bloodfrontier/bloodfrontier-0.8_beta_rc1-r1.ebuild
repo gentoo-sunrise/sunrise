@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}-B1-RC1-linux.tar.bz2"
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="server"
 RESTRICT="strip"
 
 DEPEND="virtual/opengl
@@ -26,10 +26,9 @@ DEPEND="virtual/opengl
 	amd64? (
 		app-emulation/emul-linux-x86-sdl
 	)"
-RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
-dir="$(games_get_libdir)"/${PN}
+dir="${GAMES_DATADIR}"/${PN}
 
 QA_PRESTRIPPED="${dir:1}/bfclient
 		${dir:1}/bfserver"
@@ -37,35 +36,23 @@ QA_PRESTRIPPED="${dir:1}/bfclient
 src_install() {
 	use amd64 && multilib_toolchain_setup x86
 
-	exeinto "$(games_get_libdir)"/${PN}
-	doexe bin/bf{client,server} || die "doexe failed"
+	exeinto "${dir}"
+	doexe bin/bfclient || die "doexe failed"
 
-	insinto "${GAMES_DATADIR}"/${PN}
+	insinto "${dir}"
 	doins -r data || die "doins failed"
 
-	local x
-	for x in client server ; do
-		newgamesbin "${FILESDIR}"/wrapper ${PN}_${x}-bin || die
-		sed -i \
-			-e "s:@GENTOO_GAMESDIR@:${GAMES_DATADIR}/${PN}:g" \
-			-e "s:@GENTOO_EXEC@:$(games_get_libdir)/${PN}/bf${x}:g" \
-			"${D}/${GAMES_BINDIR}"/${PN}_${x}-bin \
-			|| die "sed failed"
-	done
+	games_make_wrapper bloodfrontier-client ./bfclient "${dir}" "${dir}"
+
+	if use server ; then
+		doexe bin/bfserver || die "doexe failed"
+		games_make_wrapper bloodfrontier-server ./bfserver "${dir}" "${dir}"
+	fi
 
 	dodoc readme.txt || die "dodoc failed"
 
 	doicon "${FILESDIR}"/"${PN}".png || die "doicon failed"
-	make_desktop_entry ${PN}_client-bin "Blood Frontier" ${PN}
+	make_desktop_entry bloodfrontier-client "Blood Frontier" ${PN}
 
 	prepgamesdirs
-}
-
-pkg_postinst() {
-	games_pkg_postinst
-
-	echo
-	elog "To play the game, run:"
-	elog " bloodfrontier_client-bin"
-	echo
 }

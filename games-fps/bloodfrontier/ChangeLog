@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Feb 2009; Michael Mair-Keimberger (d3vion) <miki3@gmx.net>
+  -bloodfrontier-0.8_beta_rc1.ebuild, +bloodfrontier-0.8_beta_rc1-r1.ebuild,
+  -files/wrapper, metadata.xml:
+  Updated to -r1, improved the ebuild
+
   12 Feb 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   bloodfrontier-0.8_beta_rc1.ebuild:
   RDEPEND assigned
