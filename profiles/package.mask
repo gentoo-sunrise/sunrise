@@ -27,11 +27,6 @@
 # file, should fix in source instead
 net-im/spark
 
-# Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es> (9 Jan 2009)
-# Mask mandriva-galaxy for removal in 30 day as upstream 
-# no longer maintains it
-x11-themes/mandriva-galaxy
-
 # Tiago Cunha (tcunha) <tcunha@gentoo.org> (10 Dec 2008)
 # Mask CVS ebuild
 =dev-util/tinyxml-9999
