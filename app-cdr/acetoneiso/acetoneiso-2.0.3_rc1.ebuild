@@ -20,7 +20,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 # remove the blocker after some time
-DEPEND="|| ( ( x11-libs/qt-gui:4 x11-libs/qt-webkit:4 ) x11-libs/qt:4 )
+DEPEND="x11-libs/qt-gui
+	x11-libs/qt-webkit
 	!app-cdr/acetoneiso2"
 RDEPEND="${DEPEND}"
 
