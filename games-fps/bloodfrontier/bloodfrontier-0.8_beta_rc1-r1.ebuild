@@ -26,6 +26,7 @@ DEPEND="virtual/opengl
 	amd64? (
 		app-emulation/emul-linux-x86-sdl
 	)"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 dir="${GAMES_DATADIR}"/${PN}
