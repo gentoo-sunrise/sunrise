@@ -14,7 +14,7 @@ ESVN_REPO_URI="https://spaceboyz.net/svn/${PN}/trunk/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="alsa debug +ffmpeg lua openal perl pulseaudio spell ruby"
 
 RDEPEND="=x11-libs/wxGTK-2.8*[opengl]

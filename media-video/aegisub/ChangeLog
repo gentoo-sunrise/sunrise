@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> aegisub-9999.ebuild:
+  Live ebuilds dont have keywords.
+
   09 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   aegisub-2.1_pre1981.ebuild, aegisub-9999.ebuild:
   Fix deps and some other things, still needs some amount of work
