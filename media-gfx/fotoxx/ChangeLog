@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Mar 2009; Robert Steen (Gandalf) <gandalf@vebbe.se> -fotoxx-6.1.ebuild:
+  Removed fotoxx-6.1 as the package has changed. Will be readded once a
+  "stable" version is released.
+
   02 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   fotoxx-6.1.ebuild:
   moved S definition above src_unpack and use it there too
