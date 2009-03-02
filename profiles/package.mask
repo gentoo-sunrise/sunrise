@@ -27,50 +27,10 @@
 # file, should fix in source instead
 net-im/spark
 
-# Tiago Cunha (tcunha) <tcunha@gentoo.org> (10 Dec 2008)
-# Mask CVS ebuild
-=dev-util/tinyxml-9999
-
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Aug 2008)
-# Mask SVN ebuild
-~media-gfx/leocad-9999
-
-# Tiago Cunha (tcunha) <me@tiagocunha.org> (06 Aug 2008)
-# Mask GIT ebuild
-=gnome-extra/guake-9999
-
-# Jack Miller (TheMoken) <jack@codezen.org> (05 Jul 2008)
-# Mask live ebuild
-~net-news/canto-9999
-
-# Chi-Thanh Christopher Nguyen (chithead) <chithanh@cs.tu-berlin.de> (19 Jun 2008)
-# Mask live ebuild
-=media-tv/em28xx-new-9999
-
-# Thomas Anderson (gentoofan23) <gentoofan23@gmail.com> (15 Jun 2008)
-# Mask live ebuild
-=app-misc/navit-9999
-
 # Geoff Clements (ContextSwitch) <geoff@electron.me.uk> (10 Jun 2008)
 # >=dev-db/dabo-0.8.4 now contains daboide
 # daboide will be deleted with next release of dabo
 =dev-db/daboide-0.7.1
-
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (30 Apr 2008)
-# Mask because of masked deps (>=evolution-2.22)
-=gnome-extra/evolution-rss-0.0.8
-
-# Tiago Cunha (tcunha) <me@tiagocunha.org> (27 Apr 2008)
-# Mask GIT ebuild
-=sys-apps/ksplice-9999
-
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (07 Apr 2008)
-# Mask live ebuild
-=sys-fs/aufs-utils-9999
-
-# Juan Aguado <juantxorena@gmail.com> (16 Mar 2008)
-# Masking SVN ebuild
-=media-video/aegisub-9999
 
 # Jakub Moc <jakub@gentoo.org> (16 Mar 2008)
 # svn version should be masked
