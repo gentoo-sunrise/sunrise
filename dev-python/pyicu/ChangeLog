@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pyicu
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Mar 2009; Jacob Floyd (techgurufloyd) <techgurufloyd@gmail.com>
+  +pyicu-0.8.1.ebuild, +metadata.xml:
+  New Ebuild for pyicu - bug#237888
+

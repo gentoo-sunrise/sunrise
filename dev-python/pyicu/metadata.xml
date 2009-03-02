@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<longdescription lang='en'>
+		A Python extension wrapping IBM's International Components for Unicode C++ library
+	</longdescription>
+	<upstream>
+		<changelog>http://svn.osafoundation.org/pyicu/trunk/CHANGES</changelog>
+		<bugs-to>https://bugzilla.osafoundation.org/</bugs-to>
+	</upstream>
+</pkgmetadata>
