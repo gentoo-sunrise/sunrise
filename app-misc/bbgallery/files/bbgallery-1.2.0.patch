@@ -1,0 +1,48 @@
+diff -u --new-file --recursive bbgallery-1.2.0/mkgallery.pl bbgallery-1.2.0.patched/mkgallery.pl
+--- bbgallery-1.2.0/mkgallery.pl	2003-03-16 00:07:00.000000000 +0100
++++ bbgallery-1.2.0.patched/mkgallery.pl	2006-06-10 20:26:49.000000000 +0200
+@@ -43,7 +43,7 @@
+     slide_delay  => 15,         # delay between two slides (sec)
+     meta         => 0,          # create meta index
+     metalink     => 1,          # create link to meta index in galleries
+-    gimp         => 1,          # use Gimp or ImageMagick to scale?
++    gimp         => 0,          # use Gimp or ImageMagick to scale?
+     quality      => 100,        # JPEG quality for scaled images
+     raw_captions => 0,          # omit underscore replacement for image captions?
+     short_dsc    => 1,          # enable short descriptions?
+@@ -54,7 +54,7 @@
+ my %P = %{$P};
+ my $version      = "%%%VERSION%%%";    # Version Number
+ my $instprefix   = "%%%INSTPREFIX%%%";
+-my $template_dir = "$instprefix/lib/bbgallery/template";
++my $template_dir = "$instprefix/share/bbgallery/template";
+ # ----------------------------------------------------------------------
+ #                     S U B R O U T I N E S
+ # ----------------------------------------------------------------------
+@@ -193,7 +193,7 @@
+    mkdir ( "$P{img_dir}/scaled", 0777 );
+ 
+    if ( $P{gimp} ) {
+-       system ( "$instprefix/lib/bbgallery/gimp_scale.pl -img_dir $P{img_dir} -out_dir $P{img_dir}/scaled " .
++       system ( "$instprefix/share/bbgallery/gimp_scale.pl -img_dir $P{img_dir} -out_dir $P{img_dir}/scaled " .
+ 		"-prefix sc_ -size $P{sc_size} -verbose $P{verbose} -force $P{force} -quality $P{quality}"  );
+    } else {
+        im_scale ( $P{img_dir}, "$P{img_dir}/scaled", "sc_", $P{sc_size}, $P{verbose}, $P{force}, $P{quality} );
+@@ -203,7 +203,7 @@
+ sub create_thumbs () {
+    mkdir ( "$P{img_dir}/thumbs", 0777 );
+    if ( $P{gimp} ) {
+-       system ( "$instprefix/lib/bbgallery/gimp_scale.pl -img_dir $P{img_dir} -out_dir $P{img_dir}/thumbs " .
++       system ( "$instprefix/share/bbgallery/gimp_scale.pl -img_dir $P{img_dir} -out_dir $P{img_dir}/thumbs " .
+ 		"-prefix th_ -size $P{th_size} -verbose $P{verbose} -force $P{force} -quality $P{quality}"  );
+    } else {
+        im_scale ( $P{img_dir},  "$P{img_dir}/thumbs", "th_", $P{th_size}, $P{verbose}, $P{force}, $P{quality} );
+@@ -643,7 +643,7 @@
+         --no-save         Do not save configuration in image direcorty	
+ 
+     For more detailed instructions point your browser to
+-    $instprefix/lib/bbgallery/doc/usage.html
++    $instprefix/share/bbgallery/doc/usage.html
+ 
+ END
+ }
