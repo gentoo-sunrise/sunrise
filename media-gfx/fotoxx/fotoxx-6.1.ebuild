@@ -20,18 +20,17 @@ RDEPEND="${DEPEND}
 	media-gfx/ufraw
 	media-gfx/printoxx"
 
+S=${WORKDIR}/${PN}
+
 src_unpack() {
 	unpack ${A}
-
-	cd "${PN}"
+	cd "${S}"
 
 	# Dynamically link freeimage instead of statically doing it.
 	sed -i \
 		-e "s:gthread-2.0\`:gthread-2.0\` -lfreeimage:" \
 		-e "s:libfreeimage\.a::" Makefile || die "sed Makefile failed"
 }
-
-S=${WORKDIR}/${PN}
 
 src_compile() {
 	emake PREFIX=/usr || die "build failed"
