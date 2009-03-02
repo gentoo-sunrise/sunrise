@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> ksplice-9999.ebuild:
+  Live ebuilds dont have keywords.
+
   30 Jan 2009; Tiago Cunha <tcunha@gentoo.org> ksplice-9999.ebuild:
   Run eautoreconf when installing from the Git repository. From Daniel Black
   <dragonheart@g.o>
