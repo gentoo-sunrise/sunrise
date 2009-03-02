@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> em28xx-new-9999.ebuild:
+  Live ebuilds dont have keywords.
+
   18 Feb 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de>
   -em28xx-new-0.0.20090125.196710605282964.ebuild,
