@@ -1,6 +1,12 @@
 # ChangeLog for app-misc/bbgallery
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  bbgallery-1.2.0-r2.ebuild, +files/bbgallery-1.2.0-path-fix.patch,
+  -files/bbgallery-1.2.0.patch:
+  fixed SRC_URI, renamed patch, made variable INSPATH local, added missing die
+  statements, added doc useflag
 
   21 Jul 2007; David Shakaryan <omp@gentoo.org> bbgallery-1.2.0-r2.ebuild:
   Fix whitespace.

@@ -6,12 +6,12 @@ inherit eutils
 
 DESCRIPTION="Webpage image gallery creation perl script"
 HOMEPAGE="http://bbgallery.sourceforge.net/"
-SRC_URI="mirror://sourceforge/bbgallery/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="doc"
 
 RDEPEND="dev-lang/perl
 	media-gfx/imagemagick
@@ -19,25 +19,30 @@ RDEPEND="dev-lang/perl
 	dev-perl/libwww-perl
 	dev-perl/HTML-Template
 	dev-perl/HTML-Parser"
-
 DEPEND=""
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/bbgallery-1.2.0.patch
+	epatch "${FILESDIR}/${P}-path-fix.patch"
 }
 
 src_install() {
-	INSPATH="/usr/share/bbgallery"
-	dobin bbgallery || die "dobin failed"
+	local inspath="/usr/share/${PN}"
+
+	dobin ${PN} || die "dobin failed"
 	newbin Contrib/JPG2jpg.pl JPG2jpg || die "newbin failed"
-	exeinto "${INSPATH}"
+
+	exeinto "${inspath}"
 	doexe gimp_scale.pl || die "doexe failed"
-	insinto "${INSPATH}"
-	doins -r template/
-	dosym "${INSPATH}"/template/monochrome "${INSPATH}"/template/default \
+
+	insinto "${inspath}"
+	doins -r template/ || die "doins failed"
+	dosym "${inspath}"/template/monochrome "${inspath}"/template/default \
 		|| die "dosym failed"
-	dodoc CHANGELOG CREDITS README
-	dohtml doc/*.html
+
+	dodoc CHANGELOG CREDITS README || die "dodoc failed"
+	if use doc; then
+		dohtml -r doc/ || die "dohtml failed"
+	fi
 }
