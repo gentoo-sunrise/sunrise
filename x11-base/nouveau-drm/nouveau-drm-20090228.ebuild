@@ -43,15 +43,10 @@ pkg_setup() {
 
 	# Determine which -core dir we build in.
 	get_drm_build_dir
-
-	return 0
 }
 
 src_unpack() {
 	git_src_unpack
-	cd "${WORKDIR}"
-
-	cd "${S}"
 
 	# Substitute new directory under /lib/modules/${KV_FULL}
 	cd "${SRC_BUILD}"
@@ -66,16 +61,12 @@ src_unpack() {
 }
 
 src_compile() {
-	unset LDFLAGS
-
-	cd "${S}"
 	# Building the programs. These are useful for developers and getting info from DRI and DRM.
 	#
 	# libdrm objects are needed for drmstat.
 	econf \
 		--enable-static \
-		--disable-shared \
-		|| die "libdrm configure failed."
+		--disable-shared
 	emake || die "libdrm build failed."
 
 	einfo "Building DRM in ${SRC_BUILD}..."
@@ -231,11 +222,6 @@ src_compile_linux() {
 	then
 		ewarn "Please disable in-kernel DRM support to use this package."
 	fi
-
-	# LINUXDIR is needed to allow Makefiles to find kernel release.
-	cd "${SRC_BUILD}"
-#	emake LINUXDIR="${KERNEL_DIR}" dristat || die "Building dristat failed."
-#	emake LINUXDIR="${KERNEL_DIR}" drmstat || die "Building drmstat failed."
 }
 
 src_compile_freebsd() {
