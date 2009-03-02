@@ -54,4 +54,3 @@ src_install() {
 		dodoc examples/*.sifz || die "dodoc examples failed"
 	fi
 }
-
