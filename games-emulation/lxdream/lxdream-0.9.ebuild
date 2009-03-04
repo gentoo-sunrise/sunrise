@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,21 +24,22 @@ RDEPEND="media-libs/alsa-lib
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	sys-devel/gettext"
+	sys-devel/gettext
+	virtual/os-headers"
 
 src_compile() {
 	econf \
 		$(use_enable debug trace) \
 		$(use_enable debug watch) \
 		$(use_with esd) \
-		$(use_with pulseaudio pulse) || die "configure failed"
+		$(use_with pulseaudio pulse)
 	emake || die "make failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	dodoc RELEASE_NOTES STATUS || die "dodoc failed"
-	newicon pixmaps/dcemu.gif ${PN}.gif
-	make_desktop_entry ${PN} ${PN/l/L} ${PN} || die "make_desktop_entry failed"
+	dodoc ChangeLog NEWS README || die "dodoc failed"
+	newicon pixmaps/dcemu.gif lxdream.gif || die "newicon failed"
+	make_desktop_entry lxdream Lxdream lxdream || die "make_desktop_entry failed"
 	prepgamesdirs
 }
