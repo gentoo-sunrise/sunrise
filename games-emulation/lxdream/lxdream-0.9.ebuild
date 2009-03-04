@@ -39,7 +39,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc ChangeLog NEWS README || die "dodoc failed"
-	newicon pixmaps/dcemu.gif lxdream.gif || die "newicon failed"
-	make_desktop_entry lxdream Lxdream lxdream || die "make_desktop_entry failed"
+	newicon pixmaps/dcemu.gif ${PN}.gif || die "newicon failed"
+	make_desktop_entry ${PN} ${PN/l/L} ${PN} || die "make_desktop_entry failed"
 	prepgamesdirs
 }
