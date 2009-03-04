@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  lxdream-0.9.ebuild:
+  added missing eutils inherit
+
   04 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -lxdream-0.8.4.ebuild, +lxdream-0.9.ebuild:
   version bump, fix dependencies, put "|| die" where it belongs

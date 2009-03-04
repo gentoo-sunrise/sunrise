@@ -4,7 +4,7 @@
 
 EAPI="1"
 
-inherit games
+inherit eutils games
 
 DESCRIPTION="An emulator for the Sega Dreamcast system"
 HOMEPAGE="http://lxdream.org/"
