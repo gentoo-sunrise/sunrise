@@ -1,6 +1,10 @@
 # ChangeLog for www-misc/surl
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Mar 2009; Nathan Smith (ndansmith) <nathan@ndansmith.net>
+  -surl-0.3.1.ebuild, +surl-1.2.ebuild:
+  Version bump for www-misc/surl
 
   10 Aug 2007; Nathan Smith <ndansmith@gmail.com> surl-0.3.1.ebuild:
   Changed website
