@@ -4,7 +4,7 @@
 
 inherit distutils
 
-DESCRIPTION="a command-line interface to http://metamark.net/"
+DESCRIPTION="A command-line interface to URL-shortening services"
 HOMEPAGE="http://sourceforge.net/projects/surl/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
@@ -12,7 +12,3 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~ppc ~x86 ~x86-fbsd"
 IUSE=""
-
-DEPEND=""
-
-RDEPEND="${DEPEND}"

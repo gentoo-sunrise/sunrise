@@ -3,6 +3,10 @@
 # $Header: $
 
   05 Mar 2009; Nathan Smith (ndansmith) <nathan@ndansmith.net>
+  surl-1.2.ebuild:
+  Removed useless {R}DEPEND lines
+
+  05 Mar 2009; Nathan Smith (ndansmith) <nathan@ndansmith.net>
   -surl-0.3.1.ebuild, +surl-1.2.ebuild:
   Version bump for www-misc/surl
 
