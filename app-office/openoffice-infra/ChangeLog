@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Mar 2009; Yar Odin (yarodin) <yarodin@gmail.com>
+  openoffice-infra-3.0.1.ebuild:
+  Some cleanups to the 3.0.1 ebuild, also switching to EAPI=2, mostly the work
+  of Peter Volkov <pva@gentoo.org> and Andreas Proschofsky <suka@gentoo.org>
+
   27 Feb 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   -files/2.4.2/gentoo-gentooinfra.diff:
   delete useless patch for openoffice-infra 2.4.2
