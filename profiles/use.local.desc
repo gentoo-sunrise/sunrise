@@ -32,6 +32,7 @@ app-text/cuneiform:imagemagick - Enables support of various input formats using 
 dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
+dev-lang/xharbour:allegro - Build Allegro-based GT driver
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-libs/xml-security-c:xalan - Enable support for XSLT and XPath parsing by dev-libs/xalan-c
