@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  bloodfrontier-0.8_beta_rc1-r1.ebuild:
+  fixed dependencies
+
   02 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org>
   bloodfrontier-0.8_beta_rc1-r1.ebuild:
   Make repoman happy.

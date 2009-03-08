@@ -16,38 +16,39 @@ KEYWORDS="~amd64 ~x86"
 IUSE="server"
 RESTRICT="strip"
 
-DEPEND="virtual/opengl
-	media-libs/libpng
-	x86? (
+DEPEND="x86? (
+		media-libs/libpng
 		media-libs/libsdl[opengl]
 		media-libs/sdl-mixer
 		media-libs/sdl-image[png]
 	)
 	amd64? (
+		app-emulation/emul-linux-x86-xlibs
+		app-emulation/emul-linux-x86-baselibs
 		app-emulation/emul-linux-x86-sdl
 	)"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
-dir="${GAMES_DATADIR}"/${PN}
+DIR="${GAMES_DATADIR}"/${PN}
 
-QA_PRESTRIPPED="${dir:1}/bfclient
-		${dir:1}/bfserver"
+QA_PRESTRIPPED="${DIR:1}/bfclient
+		${DIR:1}/bfserver"
 
 src_install() {
 	use amd64 && multilib_toolchain_setup x86
 
-	exeinto "${dir}"
+	exeinto "${DIR}"
 	doexe bin/bfclient || die "doexe failed"
 
-	insinto "${dir}"
+	insinto "${DIR}"
 	doins -r data || die "doins failed"
 
-	games_make_wrapper bloodfrontier-client ./bfclient "${dir}" "${dir}"
+	games_make_wrapper bloodfrontier-client ./bfclient "${DIR}" "${DIR}"
 
 	if use server ; then
 		doexe bin/bfserver || die "doexe failed"
-		games_make_wrapper bloodfrontier-server ./bfserver "${dir}" "${dir}"
+		games_make_wrapper bloodfrontier-server ./bfserver "${DIR}" "${DIR}"
 	fi
 
 	dodoc readme.txt || die "dodoc failed"
