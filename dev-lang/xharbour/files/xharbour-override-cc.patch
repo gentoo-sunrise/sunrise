@@ -1,0 +1,16 @@
+--- xharbour-1.0.0-beta1/config/linux/gcc.cf.orig2	2009-03-09 01:57:04.000000000 +0300
++++ xharbour-1.0.0-beta1/config/linux/gcc.cf	2009-03-09 01:59:07.000000000 +0300
+@@ -4,11 +4,13 @@
+ 
+ include $(TOP)$(ROOT)config/$(HB_ARCHITECTURE)/global.cf
+ 
++ifeq ($(HB_CMP),)
+ ifeq ($(HB_COMPILER),gpp)
+    HB_CMP = g++
+ else
+    HB_CMP = $(HB_COMPILER)
+ endif
++endif
+ 
+ OBJ_EXT = .o
+ EXE_EXT =

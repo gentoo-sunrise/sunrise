@@ -1,0 +1,43 @@
+Index: files/xharbour-override-cc.patch
+===================================================================
+--- files/xharbour-override-cc.patch	(revision 0)
++++ files/xharbour-override-cc.patch	(revision 0)
+@@ -0,0 +1,16 @@
++--- xharbour-1.0.0-beta1/config/linux/gcc.cf.orig2	2009-03-09 01:57:04.000000000 +0300
+++++ xharbour-1.0.0-beta1/config/linux/gcc.cf	2009-03-09 01:59:07.000000000 +0300
++@@ -4,11 +4,13 @@
++ 
++ include $(TOP)$(ROOT)config/$(HB_ARCHITECTURE)/global.cf
++ 
+++ifeq ($(HB_CMP),)
++ ifeq ($(HB_COMPILER),gpp)
++    HB_CMP = g++
++ else
++    HB_CMP = $(HB_COMPILER)
++ endif
+++endif
++ 
++ OBJ_EXT = .o
++ EXE_EXT =
+Index: xharbour-1.0.0_beta1.ebuild
+===================================================================
+--- xharbour-1.0.0_beta1.ebuild	(revision 8031)
++++ xharbour-1.0.0_beta1.ebuild	(working copy)
+@@ -34,6 +34,7 @@
+ 	"${FILESDIR}"/${PN}-as-needed.patch
+ 	"${FILESDIR}"/${PN}-fPIC.patch
+ 	"${FILESDIR}"/${PN}-mkinstdir.patch
++	"${FILESDIR}"/${PN}-override-cc.patch
+ 	"${FILESDIR}"/${PN}-parallel-make.patch
+ 	"${FILESDIR}"/${PN}-skip-static-utils.patch
+ )
+@@ -48,7 +49,8 @@
+ 		HB_WITHOUT_GTSLN=$(useq slang || echo yes) \
+ 		HB_MT=$(useq threads && echo MT) \
+ 		HB_WITHOUT_X11=$(useq X || echo yes) \
+-		HB_COMPILER="$(tc-getCC)" \
++		HB_COMPILER="gcc" \
++		HB_CMP="$(tc-getCC)" \
+ 		HB_ARCHITECTURE="$(uname -s | sed -e 's/-//g;y/BDFHLNOPSUX/bdfhlnopsux/;s/.*bsd/bsd/')" \
+ 		HB_GT_LIB="gtstd" \
+ 		HB_MULTI_GT="yes" \

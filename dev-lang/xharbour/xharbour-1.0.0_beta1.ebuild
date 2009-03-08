@@ -34,6 +34,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-as-needed.patch
 	"${FILESDIR}"/${PN}-fPIC.patch
 	"${FILESDIR}"/${PN}-mkinstdir.patch
+	"${FILESDIR}"/${PN}-override-cc.patch
 	"${FILESDIR}"/${PN}-parallel-make.patch
 	"${FILESDIR}"/${PN}-skip-static-utils.patch
 )
@@ -48,7 +49,8 @@ src_compile() {
 		HB_WITHOUT_GTSLN=$(useq slang || echo yes) \
 		HB_MT=$(useq threads && echo MT) \
 		HB_WITHOUT_X11=$(useq X || echo yes) \
-		HB_COMPILER="$(tc-getCC)" \
+		HB_COMPILER="gcc" \
+		HB_CMP="$(tc-getCC)" \
 		HB_ARCHITECTURE="$(uname -s | sed -e 's/-//g;y/BDFHLNOPSUX/bdfhlnopsux/;s/.*bsd/bsd/')" \
 		HB_GT_LIB="gtstd" \
 		HB_MULTI_GT="yes" \
