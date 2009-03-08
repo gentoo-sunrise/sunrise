@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Mar 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  xharbour-1.0.0_beta1.ebuild:
+  Add missing eclass, drop useless DEP, use tc-getCC for compiler, use dodoc,
+  whitespace
+
   08 Mar 2009; Phil Krylov (philkrylov) <phil.krylov@gmail.com>
   +xharbour-1.0.0_beta1.ebuild, +files/xharbour-as-needed.patch,
   +files/xharbour-fPIC.patch, +files/xharbour-mkinstdir.patch,

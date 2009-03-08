@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base
+inherit base toolchain-funcs
 
 MY_P=${P/_/-}
 DESCRIPTION="An extended implementation of the Clipper dialect of the xBase language family"
@@ -14,9 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="allegro doc gpm odbc slang threads X"
 
-RDEPEND="
-	sys-libs/ncurses
-	virtual/libc
+RDEPEND="sys-libs/ncurses
 	allegro? ( media-libs/allegro )
 	gpm? ( sys-libs/gpm )
 	odbc? ( dev-db/unixODBC )
@@ -50,7 +48,7 @@ src_compile() {
 		HB_WITHOUT_GTSLN=$(useq slang || echo yes) \
 		HB_MT=$(useq threads && echo MT) \
 		HB_WITHOUT_X11=$(useq X || echo yes) \
-		HB_COMPILER="gcc" \
+		HB_COMPILER="$(tc-getCC)" \
 		HB_ARCHITECTURE="$(uname -s | sed -e 's/-//g;y/BDFHLNOPSUX/bdfhlnopsux/;s/.*bsd/bsd/')" \
 		HB_GT_LIB="gtstd" \
 		HB_MULTI_GT="yes" \
@@ -75,8 +73,8 @@ src_install() {
 	export HB_LIB_INSTALL="${D}"/usr/lib/xharbour
 	emake install || die
 
-	dodir /etc/harbour
-	install -m644 source/rtl/gtcrs/hb-charmap.def "${D}"/etc/harbour/hb-charmap.def || die
+	insinto /etc/harbour
+	doins source/rtl/gtcrs/hb-charmap.def || die
 	cat > "${D}"/etc/harbour.cfg <<-EOF
 		CC=$(tc-getCC)
 		CFLAGS=-c -I${_DEFAULT_INC_DIR} ${CFLAGS}
