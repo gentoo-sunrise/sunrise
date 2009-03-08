@@ -7,6 +7,7 @@
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/vlogger:dbi - Enable support for DBI
+app-backup/rdup:path-encryption - Enables support for AES encryption of paths (not file contents) in the backup location
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
@@ -41,6 +42,7 @@ games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
 games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
+games-fps/bloodfrontier:server - Installs the Server Binary
 games-fps/chocolate-doom:server - Enable installation of server
 games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2:cdaudio - Enable cd audio playback support
