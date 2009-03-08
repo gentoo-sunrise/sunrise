@@ -34,7 +34,7 @@ src_compile() {
 		$(use_with fontconfig) \
 		$(use_with imagemagick) \
 		$(use_with dv libdv) \
-		$(use_with openexr ) \
+		$(use_with openexr) \
 		$(use_with truetype freetype) \
 		$(use_with jpeg) \
 		$(use_enable nls)
