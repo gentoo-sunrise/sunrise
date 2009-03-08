@@ -1,0 +1,37 @@
+--- configure.in~	2006-12-09 15:54:35.000000000 +0000
++++ configure.in	2006-12-09 15:55:09.000000000 +0000
+@@ -33,12 +33,6 @@
+ # Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
+ 
+-#KDE_SET_PREFIX
+-KDE_CHECK_FINAL
+-
+-dnl KDE_USE_QT
+-AC_PATH_KDE
+-
+ 
+ AC_OUTPUT([
+ Makefile
+@@ -49,11 +43,4 @@
+ metacity/Makefile
+ metacity/Galaxy2/Makefile
+ metacity/GalaxySquared/Makefile
+-thememdk/generic/Makefile
+-thememdk/generic/config/Makefile
+-thememdk/Makefile
+-thememdk/mandrake_client/Makefile
+-thememdk/mandrake_client2/Makefile
+-thememdk/mandrake_client3/Makefile
+-thememdk/thememdk/Makefile
+ ])
+--- Makefile.am~	2006-12-09 15:57:37.000000000 +0000
++++ Makefile.am	2006-12-09 15:57:52.000000000 +0000
+@@ -1,6 +1,6 @@
+ @SET_MAKE@
+ 
+-SUBDIRS = gtk-2.0 theme metacity thememdk
++SUBDIRS = gtk-2.0 theme metacity
+ 
+ dist: changelog
+ 

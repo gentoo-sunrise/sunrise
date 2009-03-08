@@ -1,0 +1,34 @@
+--- configure.in~	2004-05-06 15:46:09.000000000 +0100
++++ configure.in	2006-11-30 17:42:53.000000000 +0000
+@@ -27,13 +27,6 @@
+ AC_SUBST(GTK2_CFLAGS)
+ AC_SUBST(GTK2_LIBS)
+ 
+-AM_PATH_GTK(1.2.9, ,
+-        AC_MSG_ERROR([*** GTK+-1.2.9 not installed - please install first ***]))
+-AC_CHECK_LIB(gtk, gtk_style_set_prop_experimental, :,
+-             AC_MSG_ERROR([*** gtk_style_set_prop_experimental() not found; perhaps you have an old CVS version of GTK+ ***]),
+-             $GTK_LIBS)
+-AM_PATH_GDK_PIXBUF
+-
+ # Checks for header files.
+ AC_HEADER_STDC
+ 
+@@ -50,7 +43,6 @@
+ AC_OUTPUT([
+ Makefile
+ gtk-2.0/Makefile
+-gtk-1.2/Makefile
+ theme/Makefile
+ theme/Galaxy2/Makefile
+ theme/GalaxySquared/Makefile
+--- Makefile.am~	2003-04-30 09:36:22.000000000 +0100
++++ Makefile.am	2006-11-30 17:43:08.000000000 +0000
+@@ -1,6 +1,6 @@
+ @SET_MAKE@
+ 
+-SUBDIRS = gtk-2.0 gtk-1.2 theme metacity thememdk
++SUBDIRS = gtk-2.0 theme metacity thememdk
+ 
+ distclean-local:
+ 	rm -rf *.cache *~
