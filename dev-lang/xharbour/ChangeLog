@@ -1,0 +1,12 @@
+# ChangeLog for dev-lang/xharbour
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Mar 2009; Phil Krylov (philkrylov) <phil.krylov@gmail.com>
+  +xharbour-1.0.0_beta1.ebuild, +files/xharbour-as-needed.patch,
+  +files/xharbour-fPIC.patch, +files/xharbour-mkinstdir.patch,
+  +files/xharbour-parallel-make.patch,
+  +files/xharbour-skip-static-utils.patch, +metadata.xml:
+  New ebuild for bug 123975. Thanks to Clemens Dudek <cdudek@netway.at> and
+  Bel Zébute <mailto:stephane@gorfou.ca>.
+
