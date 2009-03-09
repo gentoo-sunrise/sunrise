@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pythonnurbs
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Mar 2009; Oliver Borm (boroli) <oli.borm@web.de>
+  -pythonnurbs-0.1.ebuild, +pythonnurbs-0.2.ebuild:
+  Version bump.
 
   24 Jun 2008; Oliver Borm (boroli) <oli.borm@web.de>
   pythonnurbs-0.1.ebuild:
