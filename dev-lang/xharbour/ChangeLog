@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com> -big.diff:
+  removed useless big.diff :)
+
   08 Mar 2009; Phil Krylov (philkrylov) <phil.krylov@gmail.com>
   xharbour-1.0.0_beta1.ebuild, +big.diff, +files/xharbour-override-cc.patch:
   Fixed tc-getCC usage and a typo in ChangeLog.
