@@ -1,0 +1,8 @@
+# ChangeLog for dev-scheme/schemik
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Mar 2009; Petr Pisar (petr_p) <petr.pisar@atlas.cz>
+  +schemik-1.2.34.1.ebuild, +metadata.xml:
+  New Ebuild for bug 261206
+
