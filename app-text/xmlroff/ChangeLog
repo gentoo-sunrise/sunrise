@@ -1,0 +1,9 @@
+# ChangeLog for app-text/xmlroff
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Mar 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +xmlroff-0.6.1.ebuild:
+  Initial xmlroff commit to sunrise. Bug #124339.
+  Thanks to kristian meier and b3hzat.
+
