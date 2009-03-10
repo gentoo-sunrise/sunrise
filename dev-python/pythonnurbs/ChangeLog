@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
+  pythonnurbs-0.2.ebuild:
+  fixed HOMEPAGE
+
   09 Mar 2009; Oliver Borm (boroli) <oli.borm@web.de>
   -pythonnurbs-0.1.ebuild, +pythonnurbs-0.2.ebuild:
   Version bump.
