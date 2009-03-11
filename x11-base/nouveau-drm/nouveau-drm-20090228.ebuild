@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="1.7"
 
 #EGIT_BRANCH="vblank-rework"
