@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python toolchain-funcs
+inherit eutils python toolchain-funcs
 
 DESCRIPTION="Object-oriented python bindings for subversion"
 HOMEPAGE="http://pysvn.tigris.org/"
@@ -23,10 +23,15 @@ src_unpack() {
 	python_version
 
 	unpack ${A}
+
+	# skip test test-06 if executed as root otherwise it will fail
+	cd "${S/Source/}"
+	epatch "${FILESDIR}/skip-root-test.patch"
+
 	cd "${S}"
 
-	# since pysvn-1.6.3: These sources are not compatible with python =< 2.5 - run
-	# the backport command to fix
+	# since pysvn-1.6.3: These sources are not compatible with python =< 2.5
+	# run the backport command to fix
 	if [[ $PYVER_MAJOR -eq 2 ]] && [[ $PYVER_MINOR -lt 6 ]]; then
 		einfo "prepare sources for python prior 2.6"
 		python setup.py backport || die "backport failed"

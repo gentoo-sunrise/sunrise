@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Mar 2009; Christian Ruppert <idl0r@gentoo.org> -pysvn-1.6.3.ebuild,
+  +pysvn-1.6.3-r1.ebuild, +files/skip-root-test.patch:
+  revbump, fix test-06 because it fails if executed as root, thanks to Patrick
+  Lauer
+
   16 Feb 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   pysvn-1.6.3.ebuild:
   revert pycxx depend until everything has been fixed
