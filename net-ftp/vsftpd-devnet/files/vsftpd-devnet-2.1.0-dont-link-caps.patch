@@ -1,0 +1,31 @@
+diff -ur vsf_findlibs.sh.orig vsf_findlibs.sh
+--- vsf_findlibs.sh.orig	2009-03-02 23:29:22.417771616 +0200
++++ vsf_findlibs.sh	2009-03-02 23:29:36.893762969 +0200
+@@ -48,14 +48,6 @@
+ # For older HP-UX...
+ locate_library "/usr/$lib/libsec.sl" && echo "-lsec";
+ 
+-# Look for libcap (capabilities)
+-if locate_library "/$lib/libcap.so.1"; then
+-  echo "/$lib/libcap.so.1";
+-else
+-  locate_library "/usr/$lib/libcap.so" && echo "-lcap";
+-  locate_library "/$lib/libcap.so" && echo "-lcap";
+-fi
+-
+ # Solaris needs this for nanosleep()..
+ locate_library "/$lib/libposix4.so" && echo "-lposix4";
+ locate_library "/usr/$lib/libposix4.so" && echo "-lposix4";
+diff -ur sysdeputil.c.orig sysdeputil.c
+--- sysdeputil.c.orig	2009-03-03 01:59:22.726752967 +0200
++++ sysdeputil.c	2009-03-03 01:59:34.383753897 +0200
+@@ -160,9 +160,6 @@
+ #include <crypt.h>
+ #endif
+ 
+-/* Prefer libcap based capabilities over raw syscall capabilities */
+-#include <sys/capability.h>
+-
+ #if defined(VSF_SYSDEP_HAVE_CAPABILITIES) && !defined(VSF_SYSDEP_HAVE_LIBCAP)
+ #include <linux/capability.h>
+ #include <sys/syscall.h>

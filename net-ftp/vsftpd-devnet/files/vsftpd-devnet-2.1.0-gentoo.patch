@@ -1,0 +1,70 @@
+diff -ur  vsftpd-2.1.0.orig/tunables.c  vsftpd-2.1.0/tunables.c
+--- tunables.c.orig	2009-02-28 23:57:49.223001571 +0200
++++ tunables.c	2009-02-28 23:58:05.659003616 +0200
+@@ -278,7 +278,7 @@
+   /* -rw------- */
+   tunable_chown_upload_mode = 0600;
+ 
+-  install_str_setting("/usr/share/empty", &tunable_secure_chroot_dir);
++  install_str_setting("/usr/share/vsftpd/empty", &tunable_secure_chroot_dir);
+   install_str_setting("ftp", &tunable_ftp_username);
+   install_str_setting("root", &tunable_chown_username);
+   install_str_setting("/var/log/xferlog", &tunable_xferlog_file);
+diff -ur vsftpd-2.1.0.orig/vsftpd.conf  vsftpd-2.1.0/vsftpd.conf
+--- vsftpd.conf.orig	2009-02-28 22:10:34.000000000 +0200
++++ vsftpd.conf	2009-02-28 22:21:27.000000000 +0200
+@@ -8,6 +8,10 @@
+ # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's
+ # capabilities.
+ #
++# Listen on IPv4. xinet users must set NO or comment out
++# otherwise it must be set YES
++listen=YES
++#
+ # Allow anonymous FTP? (Beware - allowed by default if you comment this out).
+ anonymous_enable=YES
+ #
+@@ -87,14 +91,14 @@
+ # useful for combatting certain DoS attacks.
+ #deny_email_enable=YES
+ # (default follows)
+-#banned_email_file=/etc/vsftpd.banned_emails
++#banned_email_file=/etc/vsftpd/banned_emails
+ #
+ # You may specify an explicit list of local users to chroot() to their home
+ # directory. If chroot_local_user is YES, then this list becomes a list of
+ # users to NOT chroot().
+ #chroot_list_enable=YES
+ # (default follows)
+-#chroot_list_file=/etc/vsftpd.chroot_list
++#chroot_list_file=/etc/vsftpd/chroot_list
+ #
+ # You may activate the "-R" option to the builtin ls. This is disabled by
+ # default to avoid remote users being able to cause excessive I/O on large
+@@ -102,10 +106,6 @@
+ # the presence of the "-R" option, so there is a strong case for enabling it.
+ #ls_recurse_enable=YES
+ #
+-# When "listen" directive is enabled, vsftpd runs in standalone mode and
+-# listens on IPv4 sockets. This directive cannot be used in conjunction
+-# with the listen_ipv6 directive.
+-listen=YES
+ #
+ # This directive enables listening on IPv6 sockets. To listen on IPv4 and IPv6
+ # sockets, you must run two copies of vsftpd whith two configuration files.
+diff -ur  vsftpd-2.1.0.orig/vsftpd.conf.5  vsftpd-2.1.0/vsftpd.conf.5
+--- vsftpd.conf.5.orig	2009-02-28 22:36:14.000000000 +0200
++++ vsftpd.conf.5	2009-02-28 22:40:00.000000000 +0200
+@@ -1141,10 +1141,10 @@
+ with an example. If you set
+ .BR user_config_dir
+ to be
+-.BR /etc/vsftpd_user_conf
++.BR /etc/vsftpd/user_conf
+ and then log on as the user "chris", then vsftpd will apply the settings in
+ the file
+-.BR /etc/vsftpd_user_conf/chris
++.BR /etc/vsftpd/user_conf/chris
+ for the duration of the session. The format of this file is as detailed in
+ this manual page! PLEASE NOTE that not all settings are effective on a
+ per-user basis. For example, many settings only prior to the user's session
