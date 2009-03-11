@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,5 +30,4 @@ src_install() {
 	newdoc "Change Log.txt" ChangeLog.txt || die "Doc install failed"
 	newdoc "Release Notes.txt" ReleaseNotes.txt || die "Doc install failed"
 	prepgamesdirs
-	prepalldocs
 }
