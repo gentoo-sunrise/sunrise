@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,28 +13,14 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~x86"
 
-RDEPEND=">=app-text/tetex-3.0"
+RDEPEND="virtual/latex-base"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 
 S=${WORKDIR}/${PN}
 SUPPLIER="public"
 
-src_compile() {
-	latex ledmac.ins
-	latex ledpar.ins
-	latex ledarab.ins
-}
-
 src_install() {
 	latex-package_src_doinstall sty
-	dodoc *pdf README
-}
-
-pkg_postinst() {
-	latex-package_rehash
-}
-
-pkg_postrm() {
-	latex-package_rehash
+	dodoc *.pdf README || die "dodoc failed"
 }

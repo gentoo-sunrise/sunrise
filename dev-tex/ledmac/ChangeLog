@@ -1,6 +1,9 @@
 # ChangeLog for dev-tex/ledmac
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Mar 2009; Christian Ruppert <idl0r@gentoo.org> ledmac-2005.ebuild:
+  Fixed dependency app-text/tetex to virtual/latex-base. Cleanup.
 
   09 Sep 2007; Pavel Sanda (ps) <ps at twin.jikos.cz> ledmac-2005.ebuild:
   Change download URI
