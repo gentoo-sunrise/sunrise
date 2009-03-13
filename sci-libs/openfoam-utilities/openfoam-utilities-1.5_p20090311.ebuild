@@ -13,8 +13,8 @@ MY_P="${MY_PN}-${MY_PV}"
 DESCRIPTION="OpenFOAM - utilities"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz -> ${MY_P}.General.tgz
-	http://omploader.org/vMTdrOQ/${P}.patch
-	http://omploader.org/vMTdrZA/openfoam-kernel-${PVR}.patch"
+	http://omploader.org/vMWRlMQ/${MY_P}-git-${PVR}.patch
+	http://omploader.org/vMWRlMA/${MY_P}-svn.patch"
 
 LICENSE="GPL-2"
 SLOT="1.5"
@@ -39,8 +39,9 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${MY_P}-compile.patch
-	epatch "${DISTDIR}"/${P}.patch
-	epatch "${DISTDIR}"/openfoam-kernel-${PVR}.patch
+	epatch "${DISTDIR}"/${MY_P}-svn.patch
+	epatch "${DISTDIR}"/${MY_PN}-git-${PVR}.patch
+	epatch "${FILESDIR}"/${MY_P}-ggi.patch
 
 	chmod +x applications/utilities/postProcessing/graphics/ensightFoamReader/Allwmake
 }
