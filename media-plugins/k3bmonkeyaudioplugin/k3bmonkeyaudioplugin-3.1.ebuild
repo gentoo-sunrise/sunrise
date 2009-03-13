@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+EAPI="2"
 
 DESCRIPTION="K3b Monkey's Audio Encoder and Decoder plugin"
 HOMEPAGE="http://www.k3b.org"
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="arts"
 RESTRICT="fetch"
 
-DEPEND="app-cdr/k3b
+DEPEND="app-cdr/k3b[arts?]
 	arts? ( kde-base/arts )"
 RDEPEND="${DEPEND}"
 
@@ -26,18 +26,11 @@ pkg_nofetch() {
 	einfo "from ${HOMEPAGE} and place it to ${DISTDIR}."
 }
 
-pkg_setup() {
-	if use arts && ! built_with_use app-cdr/k3b arts; then
-		die "Re-emerge app-cdr/k3b with USE=\"arts\"."
-	fi
-}
-
-src_compile() {
+src_configure() {
 	econf $(use_with arts)
-	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog README TODO
+	dodoc AUTHORS ChangeLog README TODO || die "dodoc failed"
 }
