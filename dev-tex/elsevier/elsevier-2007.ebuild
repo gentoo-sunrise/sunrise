@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~x86"
 
-RDEPEND=">=app-text/tetex-3.0"
+RDEPEND="virtual/latex-base"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 
@@ -24,13 +24,5 @@ S=${WORKDIR}/${PN}
 
 src_install() {
 	latex-package_src_doinstall cls bst
-	dodoc *pdf *tex README README-bst
-}
-
-pkg_postinst() {
-	latex-package_rehash
-}
-
-pkg_postrm() {
-	latex-package_rehash
+	dodoc *.pdf *.tex README README-bst || die "dodoc failed"
 }
