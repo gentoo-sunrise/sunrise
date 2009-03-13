@@ -13,7 +13,8 @@ MY_P="${MY_PN}-${MY_PV}"
 DESCRIPTION="OpenFOAM - kernel"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz -> ${MY_P}.General.tgz
-	http://omploader.org/vMTdrZA/${P}.patch"
+	http://omploader.org/vMWRlMQ/${MY_P}-git-${PVR}.patch
+	http://omploader.org/vMWRlMA/${MY_P}-svn.patch"
 
 LICENSE="GPL-2"
 SLOT="1.5"
@@ -40,7 +41,9 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/${MY_P}-compile.patch"
-	epatch "${DISTDIR}/${P}.patch"
+	epatch "${DISTDIR}"/${MY_P}-svn.patch
+	epatch "${DISTDIR}"/${MY_PN}-git-${PVR}.patch
+	epatch "${FILESDIR}"/${MY_P}-ggi.patch
 }
 
 src_compile() {
@@ -48,6 +51,8 @@ src_compile() {
 
 	export FOAM_INST_DIR="${WORKDIR}"
 	source etc/bashrc
+
+	wcleanLnIncludeAll || die "could not clean lnInclude dirs"
 
 	cd src
 	./Allwmake || die "could not build OpenFOAM kernel"
