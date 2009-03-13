@@ -1,0 +1,9 @@
+# ChangeLog for mail-filter/libdkim-exim
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Mar 2009; Brandon Turner (bltcoder) <bturner@bltweb.net>
+  +libdkim-exim-1.0.17.ebuild, +files/libdkim-1.0.17-tk-Makefile.patch,
+  +files/libdkim-1.0.17-tk-missing-includes.patch, +metadata.xml:
+  New ebuild for bug 205813 thanks to idl0r
+

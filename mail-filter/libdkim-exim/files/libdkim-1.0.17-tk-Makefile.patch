@@ -1,0 +1,43 @@
+--- libdkim-1.0.17-tk/src/Makefile.old	2008-04-02 13:37:25.000000000 +0200
++++ libdkim-1.0.17-tk/src/Makefile	2009-03-12 22:36:36.501590932 +0100
+@@ -1,8 +1,9 @@
+ # libdkim makefile for UNIX
+ #
+ 
+-CFLAGS  = -c -DOPENSSL_FIPS
+-LFLAGS  = 
++DESTDIR ?= /
++
++CFLAGS  += -fPIC
+ LIBS    = -lcrypto -lresolv
+ 
+ INCL	= -I /usr/include/openssl/
+@@ -13,19 +14,23 @@ OBJS = $(SRCS:.cpp=.o)
+ 
+ HDRS = dkim.h dns.h dkimbase.h dkimsign.h dkimverify.h
+ 
+-all: libdkim.a
++all: libdkim.so.1
+ 
+ libdkim.a: $(OBJS)
+ 	rm -f libdkim.a
+ 	ar cr libdkim.a $(OBJS)
+ 	ranlib libdkim.a
+ 
++libdkim.so.1: $(OBJS)
++	$(CXX) -shared -Wl,-soname,$@.1 $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
++
+ .cpp.o:
+-	g++ $(CFLAGS) -c $<
++	$(CXX) $(CFLAGS) -c $<
+ 
+ clean:
+-	rm  *.o libdkim.a
++	rm -f *.o libdkim.{a,so.1}
+ 
+ install: all
+-	cp -f libdkim.a ../lib/
+-	cp -f dkim.h ../include/
++	install -D -m 0755 libdkim.so.1 $(DESTDIR)/usr/lib/libdkim.so.1
++	ln -s libdkim.so.1 $(DESTDIR)/usr/lib/libdkim.so
++	install -D -m 0644 dkim.h $(DESTDIR)/usr/include/dkim.h

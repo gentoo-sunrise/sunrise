@@ -1,0 +1,32 @@
+--- libdkim-1.0.17-tk/src/dkimsign.cpp.old	2009-03-12 20:41:55.563590938 +0100
++++ libdkim-1.0.17-tk/src/dkimsign.cpp	2009-03-12 20:43:28.957899610 +0100
+@@ -17,7 +17,7 @@
+ #define _strnicmp strncasecmp 
+ #define _stricmp strcasecmp 
+ 
+-#include <string.h>
++#include <cstring>
+ #include <map>
+ 
+ #include "dkim.h"
+--- libdkim-1.0.17-tk/src/dkimverify.cpp.old	2009-03-12 20:41:46.993843535 +0100
++++ libdkim-1.0.17-tk/src/dkimverify.cpp	2009-03-12 20:43:07.727666823 +0100
+@@ -24,6 +24,7 @@
+ #include <assert.h>
+ #include <vector>
+ #include <algorithm>
++#include <cstring>
+ 
+ SignatureInfo::SignatureInfo()
+ {
+--- libdkim-1.0.17-tk/src/dkim.cpp.old	2009-03-12 20:51:14.122591687 +0100
++++ libdkim-1.0.17-tk/src/dkim.cpp	2009-03-12 20:51:24.879591678 +0100
+@@ -14,6 +14,8 @@
+ *  limitations under the License.
+ *****************************************************************************/
+ 
++#include <cstring>
++
+ #include "dkim.h"
+ #include "dkimsign.h"
+ #include "dkimverify.h"
