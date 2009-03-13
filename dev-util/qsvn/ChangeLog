@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2009; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
+  -qsvn-0.8.0.ebuild, +qsvn-0.8.1.ebuild:
+  Version bump
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   qsvn-0.8.0.ebuild:
   Add suggested RDEPEND=${DEPEND}, add die statements
