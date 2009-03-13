@@ -17,7 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 IUSE=""
-RDEPEND=""
 
 S="${WORKDIR}/${MY_PN}"
 
