@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/sshmenu
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Mar 2009; Christian Ruppert <idl0r@gentoo.org> sshmenu-3.15.ebuild:
+  "Note: We need to depend on dev-ruby/ruby-gnome2 until the issues in bug
+  #215329 are fixed." fixed. Added ~x86 keyword.
 
   29 Mar 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   sshmenu-3.15.ebuild:

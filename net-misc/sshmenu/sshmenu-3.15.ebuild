@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,16 +12,13 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~x86"
 IUSE="gnome"
 
-#Note: We need to depend on dev-ruby/ruby-gnome2
-#until the issues in bug #215329 are fixed.
 RDEPEND="dev-lang/ruby:1.8
 	dev-ruby/ruby-gtk2
 	gnome? ( dev-ruby/ruby-gconf2
-		dev-ruby/ruby-panel-applet2
-		dev-ruby/ruby-gnome2 )
+		dev-ruby/ruby-panel-applet2 )
 	|| ( net-misc/x11-ssh-askpass net-misc/gtk2-ssh-askpass )"
 
 src_unpack() {
