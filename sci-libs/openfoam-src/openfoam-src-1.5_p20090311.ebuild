@@ -13,7 +13,8 @@ MY_P="${MY_PN}-${MY_PV}"
 DESCRIPTION="OpenFOAM - sources"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
 SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz -> ${MY_P}.General.tgz
-	http://omploader.org/vMTdsOA/${P}.patch"
+	http://omploader.org/vMWRlMQ/${MY_P}-git-${PVR}.patch
+	http://omploader.org/vMWRlMA/${MY_P}-svn.patch"
 
 LICENSE="GPL-2"
 SLOT="1.5"
@@ -28,9 +29,15 @@ INSDIR="/usr/$(get_libdir)/${MY_PN}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${MY_P}-compile.patch
-	epatch "${DISTDIR}"/${P}.patch
+	epatch "${DISTDIR}"/${MY_P}-svn.patch
+	epatch "${DISTDIR}"/${MY_PN}-git-${PVR}.patch
+	epatch "${FILESDIR}"/${MY_P}-ggi.patch
 }
 
+src_compile() {
+	source ${INSDIR}/etc/bashrc
+	wcleanLnIncludeAll || die "could not clean lnInclude dirs"
+}
 src_install() {
 	insinto ${INSDIR}/src
 	doins -r src/*

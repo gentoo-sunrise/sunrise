@@ -1,0 +1,233 @@
+--- OpenFOAM-1.5/src/OpenFOAM/meshes/polyMesh/polyPatches/basic/coupled/coupledPolyPatch.H	2009-03-12 16:57:20.000000000 +0100
++++ OpenFOAM-1.5-dev/src/OpenFOAM/meshes/polyMesh/polyPatches/basic/coupled/coupledPolyPatch.H	2009-01-21 13:25:35.000000000 +0100
+@@ -54,9 +54,14 @@
+ :
+     public polyPatch
+ {
+-    // Private data
++protected:
++
++    // Protected data
++
++        // Alowing derived classes to create their own transformation
++        // HJ, 24/Oct/2008
+ 
+-        //- offset (distance) vector from one side of the couple to the other
++        //- Offset (distance) vector from one side of the couple to the other
+         mutable vectorField separation_;
+ 
+         //- Face transformation tensor
+--- OpenFOAM-1.5/src/OpenFOAM/meshes/primitiveMesh/PrimitivePatch/PrimitivePatch.H	2009-03-12 16:57:20.000000000 +0100
++++ OpenFOAM-1.5-dev/src/OpenFOAM/meshes/primitiveMesh/PrimitivePatch/PrimitivePatch.H	2009-01-21 13:25:37.000000000 +0100
+@@ -173,6 +173,11 @@
+         mutable Field<PointType>* pointNormalsPtr_;
+ 
+ 
++    // Static Private Data
++
++        static const bool nSquaredProjection_;
++
++
+     // Private Member Functions
+ 
+         //- Calculate edges of the patch
+@@ -412,6 +417,22 @@
+                 labelHashSet* setPtr = NULL
+             ) const;
+ 
++            //- Write VTK patch, HJ, 14/Jan/2009
++            static void writeVTK
++            (
++                const fileName& name,
++                const FaceListType& faces,
++                const Field<PointType>& points
++            );
++
++            //- Write VTK patch normals, HJ, 14/Jan/2009
++            static void writeVTKNormals
++            (
++                const fileName& name,
++                const FaceListType& faces,
++                const Field<PointType>& points
++            );
++
+ 
+         // Edit
+ 
+--- OpenFOAM-1.5/src/OpenFOAM/meshes/primitiveMesh/PrimitivePatch/PrimitivePatchCheck.C	2009-03-12 16:57:20.000000000 +0100
++++ OpenFOAM-1.5-dev/src/OpenFOAM/meshes/primitiveMesh/PrimitivePatch/PrimitivePatchCheck.C	2009-01-21 13:25:37.000000000 +0100
+@@ -30,6 +30,7 @@
+ #include "PrimitivePatch.H"
+ #include "Map.H"
+ #include "ListOps.H"
++#include "OFstream.H"
+ 
+ // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ 
+@@ -331,6 +332,166 @@
+ }
+ 
+ 
++template
++<
++    class Face,
++    template<class> class FaceList,
++    class PointField,
++    class PointType
++>
++void PrimitivePatch<Face, FaceList, PointField, PointType>::writeVTK
++(
++    const fileName& name,
++    const FaceListType& faces,
++    const Field<PointType>& points
++)
++{
++    // Write patch and points into VTK
++    OFstream mps(name + ".vtk");
++
++    mps << "# vtk DataFile Version 2.0" << nl
++        << name << ".vtk" << nl
++        << "ASCII" << nl
++        << "DATASET POLYDATA" << nl
++        << "POINTS " << points.size() << " float" << nl;
++
++    // Write points
++    List<float> mlpBuffer(3*points.size());
++
++    label counter = 0;
++    forAll (points, i)
++    {
++        mlpBuffer[counter++] = float(points[i].x());
++        mlpBuffer[counter++] = float(points[i].y());
++        mlpBuffer[counter++] = float(points[i].z());
++    }
++
++    forAll (mlpBuffer, i)
++    {
++        mps << mlpBuffer[i] << ' ';
++
++        if (i > 0 && (i % 10) == 0)
++        {
++            mps << nl;
++        }
++    }
++
++    // Write faces
++    label nFaceVerts = 0;
++
++    forAll (faces, faceI)
++    {
++        nFaceVerts += faces[faceI].size() + 1;
++    }
++    labelList mlfBuffer(nFaceVerts);
++
++    counter = 0;
++    forAll (faces, faceI)
++    {
++        const Face& f = faces[faceI];
++
++        mlfBuffer[counter++] = f.size();
++
++        forAll (f, fpI)
++        {
++            mlfBuffer[counter++] = f[fpI];
++        }
++    }
++    mps << nl;
++
++    mps << "POLYGONS " << faces.size() << ' ' << nFaceVerts << endl;
++
++    forAll (mlfBuffer, i)
++    {
++        mps << mlfBuffer[i] << ' ';
++
++        if (i > 0 && (i % 10) == 0)
++        {
++            mps << nl;
++        }
++    }
++    mps << nl;
++}
++
++
++template
++<
++    class Face,
++    template<class> class FaceList,
++    class PointField,
++    class PointType
++>
++void PrimitivePatch<Face, FaceList, PointField, PointType>::writeVTKNormals
++(
++    const fileName& name,
++    const FaceListType& faces,
++    const Field<PointType>& points
++)
++{
++    // Write patch and points into VTK
++    OFstream mps(name + ".vtk");
++
++    mps << "# vtk DataFile Version 2.0" << nl
++        << name << ".vtk" << nl
++        << "ASCII" << nl
++        << "DATASET POLYDATA" << nl
++        << "POINTS " << faces.size() << " float" << nl;
++
++    // Write points
++    List<float> mlPointBuffer(3*faces.size());
++
++    label counter = 0;
++    forAll (faces, i)
++    {
++        const vector c = faces[i].centre(points);
++
++        mlPointBuffer[counter++] = float(c.x());
++        mlPointBuffer[counter++] = float(c.y());
++        mlPointBuffer[counter++] = float(c.z());
++    }
++
++    forAll (mlPointBuffer, i)
++    {
++        mps << mlPointBuffer[i] << ' ';
++
++        if (i > 0 && (i % 10) == 0)
++        {
++            mps << nl;
++        }
++    }
++    mps << nl;
++
++    // Write normals
++    mps << "POINT_DATA " << faces.size() << nl
++        << "FIELD attributes " << 1 << nl
++        << "normals" << " 3 "
++        << faces.size() << " float" << nl;
++
++    List<float> mlNormalBuffer(3*faces.size());
++
++    counter = 0;
++    forAll (faces, i)
++    {
++        const vector n = faces[i].normal(points);
++
++        mlNormalBuffer[counter++] = float(n.x());
++        mlNormalBuffer[counter++] = float(n.y());
++        mlNormalBuffer[counter++] = float(n.z());
++    }
++
++    forAll (mlNormalBuffer, i)
++    {
++        mps << mlNormalBuffer[i] << ' ';
++
++        if (i > 0 && (i % 10) == 0)
++        {
++            mps << nl;
++        }
++    }
++    mps << nl;
++}
++
++
+ // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ 
+ } // End namespace Foam
