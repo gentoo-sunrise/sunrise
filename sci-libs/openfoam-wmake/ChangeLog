@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2009; Oliver Borm (boroli) <oli.borm@web.de>
+  -openfoam-wmake-1.5_p20080905.ebuild,
+  +openfoam-wmake-1.5_p20090311.ebuild:
+  Version bump
+
   20 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org> metadata.xml:
   Remove unused local useflags.
 

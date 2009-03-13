@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI=2
+
 inherit eutils versionator multilib toolchain-funcs
 
 MY_PN="OpenFOAM"
@@ -10,8 +12,9 @@ MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="OpenFOAM - wmake"
 HOMEPAGE="http://www.opencfd.co.uk/openfoam/"
-SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz
-	http://omploader.org/vcWF2/${P}.patch"
+SRC_URI="mirror://sourceforge/foam/${MY_P}.General.gtgz -> ${MY_P}.General.tgz
+	http://omploader.org/vMWRlMQ/${MY_P}-git-${PVR}.patch
+	http://omploader.org/vMWRlMA/${MY_P}-svn.patch"
 
 LICENSE="GPL-2"
 SLOT="1"
@@ -27,6 +30,7 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
+	# just to be sure the right profile is selected (gcc-config)
 	if ! version_is_at_least 4.1 $(gcc-version) ; then
 		die "${PN} requires >=sys-devel/gcc-4.1 to compile."
 	fi
@@ -39,14 +43,10 @@ pkg_setup() {
 	ewarn
 }
 
-src_unpack() {
-	ln -s "${DISTDIR}"/${MY_P}.General.gtgz ${MY_P}.General.tgz
-	unpack ./${MY_P}.General.tgz
-
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}"/${MY_P}-compile.patch
-
-	epatch "${DISTDIR}"/${P}.patch
+	epatch "${DISTDIR}"/${MY_P}-svn.patch
+	epatch "${DISTDIR}"/${MY_PN}-git-${PVR}.patch
 }
 
 src_compile() {
