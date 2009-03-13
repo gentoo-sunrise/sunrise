@@ -8,7 +8,7 @@ DESCRIPTION="A fast, free, high-quality, multi-platform XSL formatter"
 HOMEPAGE="http://xmlroff.org/"
 SRC_URI="http://xmlroff.org/download/${P}.tar.gz"
 
-LICENSE="sun-xmlroff"
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cairo debug doc svg truetype"
