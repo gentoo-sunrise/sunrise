@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ChangeLog:
+  LICENSE is as-is
+
   10 Mar 2009; Christian Ruppert <idl0r@gentoo.org> xmlroff-0.6.1.ebuild,
   +metadata.xml:
   added missing metadata.xml, fixed dependencies, added src_compile,
