@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=app-text/tetex-3.0"
+RDEPEND="virtual/latex-base"
 DEPEND="${RDEPEND}
 		media-fonts/culmus"
 
@@ -30,7 +30,7 @@ src_install() {
 		TEXMFDIR="${D}/usr/share/texmf/" pkginstall \
 		|| die "Install Failed!"
 
-	dodoc README
+	dodoc README || die "dodoc failed"
 }
 
 pkg_postinst() {

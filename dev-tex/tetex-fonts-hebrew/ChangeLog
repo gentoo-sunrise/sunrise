@@ -1,6 +1,10 @@
 # ChangeLog for dev-tex/tetex-fonts-hebrew
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Mar 2009; Christian Ruppert <idl0r@gentoo.org>
+  tetex-fonts-hebrew-0.2.ebuild:
+  Fixed dependency app-text/tetex to virtual/latex-base
 
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   tetex-fonts-hebrew-0.2.ebuild:
