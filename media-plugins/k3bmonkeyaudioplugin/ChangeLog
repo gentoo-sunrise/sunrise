@@ -4,6 +4,10 @@
 
   13 Mar 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   k3bmonkeyaudioplugin-3.1.ebuild:
+  add qt3 to the inherit to fix a sandbox issue. Thanks to Clemente Aguiar.
+
+  13 Mar 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  k3bmonkeyaudioplugin-3.1.ebuild:
   use eapi 2
 
   20 Apr 2008; Thomas Anderson <gentoofan23@gentoo.org>

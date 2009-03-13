@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+inherit qt3
+
 DESCRIPTION="K3b Monkey's Audio Encoder and Decoder plugin"
 HOMEPAGE="http://www.k3b.org"
 SRC_URI="mirror://sourceforge/k3b/${P}.tar.bz2"
