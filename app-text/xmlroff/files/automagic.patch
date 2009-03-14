@@ -1,0 +1,61 @@
+--- configure.ac.old	2009-03-14 10:11:23.433773837 +0100
++++ configure.ac	2009-03-14 10:51:28.760028278 +0100
+@@ -280,14 +280,20 @@ AC_SUBST(REBUILD)
+ FREETYPE_LIBS=
+ FREETYPE_CFLAGS=
+ have_freetype=false
+-AC_PATH_PROG(FREETYPE_CONFIG, freetype-config, no)
+-if test "x$FREETYPE_CONFIG" != "xno" ; then
+-  FREETYPE_CFLAGS=`$FREETYPE_CONFIG --cflags`
+-  FREETYPE_LIBS=`$FREETYPE_CONFIG --libs`
+ 
+-  AC_CHECK_LIB(freetype, FT_New_Face, have_freetype=true
+-	       ,:,$FREETYPE_LIBS)
++AC_ARG_WITH([freetype], AS_HELP_STRING([--without-freetype], [Build without freetype support (default: test)]))
++
++if test "x$with_freetype" != "xno"; then
++	AC_PATH_PROG(FREETYPE_CONFIG, freetype-config, no)
++	if test "x$FREETYPE_CONFIG" != "xno" ; then
++	  FREETYPE_CFLAGS=`$FREETYPE_CONFIG --cflags`
++	  FREETYPE_LIBS=`$FREETYPE_CONFIG --libs`
++
++	  AC_CHECK_LIB(freetype, FT_New_Face, have_freetype=true
++		       ,:,$FREETYPE_LIBS)
++	fi
+ fi
++
+ AC_SUBST(FREETYPE_LIBS)
+ AC_SUBST(FREETYPE_CFLAGS)
+ AM_CONDITIONAL(HAVE_FREETYPE, $have_freetype) 
+@@ -394,15 +400,23 @@ AM_CONDITIONAL(HAVE_CAIRO, $have_cairo)
+ AM_CONDITIONAL(HAVE_CAIRO_WIN32, $have_cairo_win32 && $have_win32)
+ AM_CONDITIONAL(HAVE_CAIRO_FREETYPE, $have_cairo_freetype && $have_freetype)
+ 
+-AH_TEMPLATE(HAVE_LIBRSVG,
+-	    [Whether Cairo can render SVG files])
+-have_librsvg=false
+-if $enable_cairo ; then
+-    PKG_CHECK_MODULES(LIBRSVG,
+-          librsvg-2.0 >= 2.4.0,
+-		  have_librsvg=true,
+-	  :)
++AC_ARG_WITH([svg], AS_HELP_STRING([--without-svg], [Build without svg support (default: test)]))
++
++if test "x$with_svg" != "xno"; then
++	AH_TEMPLATE(HAVE_LIBRSVG,
++		    [Whether Cairo can render SVG files])
++	have_librsvg=false
++	if $enable_cairo ; then
++	    PKG_CHECK_MODULES(LIBRSVG,
++	          librsvg-2.0 >= 2.4.0,
++			  have_librsvg=true,
++		  :)
++		if $have_librsvg; then
++			AC_DEFINE(HAVE_LIBRSVG, 1)
++		fi
++	fi
+ fi
++
+ AM_CONDITIONAL(HAVE_LIBRSVG, $have_librsvg)
+ AC_SUBST(HAVE_LIBRSVG, [$have_librsvg])
+ AC_SUBST(LIBRSVG_LIBS)

@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+inherit eutils autotools
+
 DESCRIPTION="A fast, free, high-quality, multi-platform XSL formatter"
 HOMEPAGE="http://xmlroff.org/"
 SRC_URI="http://xmlroff.org/download/${P}.tar.gz"
@@ -27,11 +29,23 @@ RDEPEND="x11-libs/gtk+
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+src_prepare() {
+	epatch "${FILESDIR}/automagic.patch"
+
+	eautoreconf
+}
+
 src_configure() {
+	local myconf
+
+	use debug && myconf="--enable-libfo-debug"
+
 	econf \
 		$(use_enable cairo) \
 		$(use_enable !cairo gp) \
-		$(use_enable debug libfo-debug)
+		$(use_with svg) \
+		$(use_with truetype freetype) \
+		${myconf}
 }
 
 src_install() {

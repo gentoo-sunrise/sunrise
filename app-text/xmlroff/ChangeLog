@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Mar 2009; Christian Ruppert <idl0r@gentoo.org> xmlroff-0.6.1.ebuild,
+  +files/automagic.patch:
+  Added automagic patch, fixed unrecognized --disable-libfo-debug.
+
   14 Mar 2009; Christian Ruppert <idl0r@gentoo.org> xmlroff-0.6.1.ebuild:
   fixed cairo dependency, use EAPI 2.
 
