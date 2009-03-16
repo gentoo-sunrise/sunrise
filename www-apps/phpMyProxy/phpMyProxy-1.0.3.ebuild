@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit webapp depend.php
 
@@ -10,22 +12,17 @@ HOMEPAGE="http://www.phpmyproxy.com/"
 SRC_URI="http://omploader.org/vejZx/${P/-/_}.zip"
 
 LICENSE="GPL-3"
-SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="app-arch/unzip"
+DEPEND="app-arch/unzip
+	dev-lang/php[curl]"
 RDEPEND=""
 
 S=${WORKDIR}/${P/-/_}
 
 need_php_httpd
 need_httpd_cgi
-
-pkg_setup() {
-	webapp_pkg_setup
-	require_php_with_use curl
-}
 
 src_install() {
 	webapp_src_preinst
