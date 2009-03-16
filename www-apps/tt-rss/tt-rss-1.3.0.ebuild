@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit eutils webapp depend.php depend.apache
 
 DESCRIPTION="Tiny Tiny RSS - A web-based news feed (RSS/Atom) aggregator using AJAX"
@@ -12,20 +14,11 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64"
 IUSE="mysql mysqli postgres"
 
+DEPEND="dev-lang/php[mysql?,mysqli?,postgres?]"
+RDEPEND="${DEPEND}"
+
 need_httpd_cgi
 need_php_httpd
-
-pkg_setup() {
-	local flag
-	local activeflags
-	for flag in mysql mysqli postgres;
-	do
-		use ${flag} && activeflags="${activeflags} ${flag}"
-	done
-	require_php_with_use ${activeflags}
-
-	webapp_pkg_setup
-}
 
 src_unpack() {
 	unpack ${A}
