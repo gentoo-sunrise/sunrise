@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit distutils
 
@@ -13,12 +15,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=x11-libs/vte-0.16"
+DEPEND=">=x11-libs/vte-0.16[python]"
 RDEPEND="${DEPEND}"
-
-pkg_setup() {
-	if ! built_with_use x11-libs/vte python ; then
-		eerror "You need to build x11-libs/vte with USE=python enabled."
-		die "You need to build x11-libs/vte with USE=python enabled."
-	fi
-}

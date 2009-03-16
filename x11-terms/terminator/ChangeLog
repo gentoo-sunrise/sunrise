@@ -1,6 +1,11 @@
 # ChangeLog for x11-terms/terminator
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
+  terminator-0.9.ebuild:
+  Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
+  for review
 
   08 Jul 2008; Ivan Toshkov (itoshkov) <ivan@toshkov.org>
   -terminator-0.8.1.ebuild, +terminator-0.9.ebuild:
