@@ -1,6 +1,11 @@
 # ChangeLog for dev-ruby/ruby-gd2
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
+  ruby-gd2-1.1.1.ebuild:
+  Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
+  for review
 
   08 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
   ruby-gd2-1.1.1.ebuild:
