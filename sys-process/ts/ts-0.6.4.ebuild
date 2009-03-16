@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,9 +11,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-DEPEND=""
-RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
@@ -30,10 +27,8 @@ src_compile() {
 }
 
 src_install() {
-	exeinto /usr/bin
-	doexe ts
-	doman ts.1
-	dodoc Changelog OBJECTIVES PORTABILITY PROTOCOL README TRICKS
+	emake PREFIX="${D}/usr" install || die "install failed"
+	dodoc Changelog OBJECTIVES PORTABILITY PROTOCOL README TRICKS || die
 }
 
 src_test() {
