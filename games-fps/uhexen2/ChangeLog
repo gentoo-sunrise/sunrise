@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
+  uhexen2-1.4.3.ebuild:
+  Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
+  for review
+
   20 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   uhexen2-1.4.4_pre4.ebuild:
   Drop default pkg_config and add die statement
