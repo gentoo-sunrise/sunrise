@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils php-lib-r1
 
@@ -14,14 +16,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
+DEPEND="dev-lang/php[pcre,postgres,xml]
+	doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="${DEPEND}"
 
 need_php5
-
-pkg_setup() {
-	require_php_with_use pcre postgres xml
-}
 
 src_compile() {
 	if use doc ; then
