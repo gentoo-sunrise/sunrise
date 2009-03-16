@@ -1,6 +1,13 @@
 # ChangeLog for net-analyzer/packetgarden
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
+  -packetgarden-1.0.ebuild, +packetgarden-1.0-r1.ebuild:
+  Revbump for silent upstream change.
+  Rename the source tarball to make future silent revbumps easy
+  Use EAPI 2
+  Thanks to Thomas Sachau for review
 
   07 Feb 2007; Santiago M. Mola <cooldwind@gmail.com>
   packetgarden-1.0.ebuild:

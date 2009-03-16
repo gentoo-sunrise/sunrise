@@ -1,14 +1,16 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils python
+EAPI="2"
+
+inherit base python
 
 MY_P="${P/-/_}_all"
 
 DESCRIPTION="captures information about how you use the internet and use it to grow a private world"
-HOMEPAGE="http://www.packetgarden.com/"
-SRC_URI="http://selectparks.net/~julian/pg/dists/${MY_P}.tar.gz"
+HOMEPAGE="http://selectparks.net/~julian/pg/"
+SRC_URI="http://selectparks.net/~julian/pg/dists/${MY_P}.tar.gz -> ${MY_P}-${PVR}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,31 +22,20 @@ RDEPEND="dev-python/dpkt
 	dev-python/imaging
 	dev-python/geoip-python
 	dev-python/pypcap
-	>=dev-python/soya-0.13_rc1
+	|| ( >=dev-python/soya-0.13_rc1[openal] =dev-python/soya-0.14 )
 	x11-libs/gksu"
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/trunk
 
-pkg_setup() {
-	if ! built_with_use dev-python/soya openal ; then
-		eerror "${PN} needs dev-python/soya built with openal USE flag enabled."
-		die "dev-python/soya without openal"
-	fi
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-launcher.patch"
-	epatch "${FILESDIR}/${P}-games-path.patch"
-}
+PATCHES=( "${FILESDIR}/${P}-launcher.patch"
+	"${FILESDIR}/${P}-games-path.patch" )
 
 src_install() {
-	newbin stop_capture packetgarden-stop
-	dobin packetgarden
+	newbin stop_capture packetgarden-stop || die
+	dobin packetgarden || die
 	insinto /usr/share/${PN}
-	doins -r config data guide labels logs stats pg_*.py
-	dodoc README_LINUX.txt
+	doins -r config data guide labels logs stats pg_*.py || die
+	dodoc README_LINUX.txt || die
 	keepdir /usr/share/${PN}/data/images/screenshots
 }
 
