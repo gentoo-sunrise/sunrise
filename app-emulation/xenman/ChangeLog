@@ -1,6 +1,11 @@
 # ChangeLog for app-emulation/xenman
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
+  xenman-0.4.2.2.ebuild:
+  Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
+  for review
 
   22 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added USE flag description wrt GLEP 56
