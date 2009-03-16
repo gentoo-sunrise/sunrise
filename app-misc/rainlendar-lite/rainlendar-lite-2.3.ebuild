@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils
 
@@ -17,21 +19,13 @@ IUSE=""
 
 RDEPEND="amd64? ( app-emulation/emul-linux-x86-gtklibs
 		    app-emulation/emul-linux-x86-xlibs )
-	x86? ( >=x11-libs/gtk+-2 )"
+	x86? ( x11-libs/gtk+:2[xinerama] )"
 
 S=${WORKDIR}/rainlendar2
 
 RESTRICT="mirror strip"
 
 QA_TEXTRELS="opt/rainlendar2/plugins/iCalendarPlugin.so"
-
-pkg_setup() {
-	if use x86 && ! built_with_use '=x11-libs/gtk+-2*' xinerama ; then
-		local diemsg="Please re-emerge x11-libs/gtk+ with the xinerama USE flag set"
-		eerror "${diemsg}"
-		die "${diemsg}"
-	fi
-}
 
 src_install() {
 	insinto /opt/rainlendar2
