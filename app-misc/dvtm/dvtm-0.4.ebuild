@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils savedconfig toolchain-funcs
 
@@ -12,16 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="unicode"
 
-DEPEND="sys-libs/ncurses"
+DEPEND="sys-libs/ncurses[unicode?]"
 RDEPEND=${DEPEND}
-
-pkg_setup() {
-	if use unicode && ! built_with_use sys-libs/ncurses unicode ; then
-		eerror "dvtm depends on sys-libs/ncurses compiled with unicode support,"
-		eerror "please re-emerge sys-libs/ncurses with the unicode USE flag enabled."
-		die "Missing unicode USE flag for sys-libs/ncurses"
-	fi
-}
 
 src_unpack() {
 	unpack ${A}

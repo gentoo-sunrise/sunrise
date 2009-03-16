@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/dvtm
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com> dvtm-0.4.ebuild:
+  Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
+  for review
 
   14 Mar 2008; Tiziano Müller <dev-zero@gentoo.org> +dvtm-0.4.ebuild,
   +metadata.xml:
