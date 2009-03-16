@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils webapp depend.php versionator
 
@@ -13,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc vhosts"
 DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
-	dev-lang/php
+	dev-lang/php[pcre,postgres,xml]
 	app-admin/pwgen
 	>=dev-php/awl-0.34
 	dev-perl/yaml
@@ -22,11 +24,6 @@ RDEPEND="www-servers/apache
 
 need_php5
 need_httpd
-
-pkg_setup() {
-	webapp_pkg_setup
-	require_php_with_use pcre postgres xml
-}
 
 src_compile() {
 	if use doc ; then
