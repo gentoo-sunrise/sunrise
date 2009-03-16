@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils flag-o-matic toolchain-funcs versionator games
 
@@ -31,10 +33,10 @@ QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
 	${GAMES_BINDIR:1}/glhwcl-demo"
 
 UIDEPEND=">=media-libs/libsdl-1.2.7
-	>=media-libs/sdl-mixer-1.2.5
 	3dfx? ( media-libs/glide-v3 )
 	alsa? ( >=media-libs/alsa-lib-1.0.7 )
-	midi? ( media-sound/timidity++ )
+	midi? ( >=media-libs/sdl-mixer-1.2.5[timidity] )
+	!midi? ( >=media-libs/sdl-mixer-1.2.5 )
 	opengl? ( virtual/opengl )"
 
 # Launcher depends from GTK+ libs
@@ -57,13 +59,7 @@ dir="${GAMES_DATADIR}/${MY_PN}"
 pkg_setup() {
 	games_pkg_setup
 
-	if use midi ; then
-		if ! built_with_use "media-libs/sdl-mixer" timidity ; then
-			eerror "Recompile media-libs/sdl-mixer with 'timidity' USE flag."
-			die "sdl-mixer without timidity support detected"
-		fi
-		use sdlaudio && ewarn "MIDI music does not work with sdlaudio."
-	else
+	if ! use midi ; then
 		ewarn "MIDI support disabled! MIDI music won't be played at all."
 		ewarn "If you want to hear it, recompile this package"
 		ewarn "with \"midi\" USE flag enabled."
