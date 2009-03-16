@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils
 
@@ -13,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="clickurl savepwd"
 
-DEPEND=">=dev-perl/gtk2-perl-1.100
+DEPEND="dev-lang/perl[ithreads]
+	>=dev-perl/gtk2-perl-1.100
 	>=dev-perl/gtk2-trayicon-0.03
 	>=dev-perl/libwww-perl-5.800
 	>=dev-perl/Crypt-SSLeay-0.49
@@ -23,14 +26,6 @@ DEPEND=">=dev-perl/gtk2-perl-1.100
 			>=dev-perl/Gtk2-Sexy-0.02 )
 	savepwd? ( >=dev-perl/Crypt-Simple-0.06 )"
 RDEPEND="${DEPEND}"
-
-pkg_setup() {
-	if ! built_with_use dev-lang/perl ithreads ; then
-		local msg="Please (re)emerge dev-lang/perl with the ithreads USE flag on"
-		eerror "${msg}"
-		die "${msg}"
-	fi
-}
 
 src_install() {
 	dobin checkgmail || die "dobin failed"
