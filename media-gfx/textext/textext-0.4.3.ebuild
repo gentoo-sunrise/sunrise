@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils
 
@@ -14,15 +16,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=media-gfx/inkscape-0.46
-	|| ( media-gfx/pdf2svg media-gfx/pstoedit )"
+	|| ( media-gfx/pdf2svg media-gfx/pstoedit[plotutils] )"
 DEPEND="${RDEPEND}"
-
-pkg_setup() {
-	if ! has_version media-gfx/pdf2svg && ! built_with_use media-gfx/pstoedit plotutils ; then
-		eerror "you need to emerge either media-gfx/pstoedit with plotutils support or media-gfx/pdf2svg."
-		die "Either remerge media-gfx/pstoedit with USE=\"plotutils\" or emerge media-gfx/pdf2svg"
-	fi
-}
 
 src_install() {
 	exeinto /usr/share/inkscape/extensions
