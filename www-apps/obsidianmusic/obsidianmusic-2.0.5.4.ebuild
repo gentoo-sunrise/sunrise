@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit webapp eutils depend.php
 
 DESCRIPTION="amaroK Web Frontend"
@@ -12,18 +14,12 @@ KEYWORDS=""
 LICENSE="GPL-2"
 IUSE="mysql postgres"
 
+DEPEND="dev-lang/php[mysql?,postgres?]"
+RDEPEND="${DEPEND}"
+
 S=${WORKDIR}/${PN}
 
 need_php
-
-pkg_setup () {
-	webapp_pkg_setup
-
-	local php_flags
-	use mysql && php_flags="${php_flags} mysql"
-	use postgres && php_flags="${php_flags} postgres"
-	require_php_with_use ${php_flags}
-}
 
 src_install() {
 	webapp_src_preinst
