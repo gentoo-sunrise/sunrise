@@ -16,6 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=media-gfx/inkscape-0.46
+	virtual/latex-base
 	|| ( media-gfx/pdf2svg media-gfx/pstoedit[plotutils] )"
 DEPEND="${RDEPEND}"
 
