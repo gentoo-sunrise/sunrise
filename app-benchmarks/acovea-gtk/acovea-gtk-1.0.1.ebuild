@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="unicode"
 
-RDEPEND=">app-benchmarks/acovea-5
+RDEPEND=">=app-benchmarks/acovea-5
 	dev-cpp/gtkmm:2.4"
 DEPEND="${RDEPEND}"
 
