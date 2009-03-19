@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Mar 2009; Markos Chandras <hwoarang@gentoo.org> -anyremote-4.17.ebuild,
+  +anyremote-4.18.ebuild:
+  Version bump,remove old
+
   17 Feb 2009; Markos Chandras <hwoarang@gentoo.org> anyremote-4.17.ebuild:
   Use net-wireless/bluez as bluetooth dependency
 
