@@ -2,19 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-info linux-mod versionator
+inherit linux-info linux-mod mercurial versionator
 
 printf -v EHG_REVISION '%012x' "$(get_version_component_range 4)"
+EHG_REPO_URI="http://mcentral.de/hg/~mrec/em28xx-new/"
 
 DESCRIPTION="next generation em28xx driver including dvb support"
 HOMEPAGE="http://mcentral.de/"
-SRC_URI="http://mcentral.de/hg/~mrec/${PN}/archive/${EHG_REVISION}.tar.gz"
+SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-S=${WORKDIR}/${PN}-${EHG_REVISION}
+S=${WORKDIR}/${PN}
 
 CONFIG_CHECK="VIDEO_V4L2 DVB_CORE"
 
@@ -25,10 +26,7 @@ pkg_setup() {
 		die "Kernel too old"
 	fi
 
-	ebegin "Checking for CONFIG_VIDEO_EM28XX disabled"
-	! linux_chkconfig_present VIDEO_EM28XX
-	eend $?
-	if [[ $? -ne 0 ]]; then
+	if linux_chkconfig_present VIDEO_EM28XX; then
 		ewarn "In-kernel em28xx drivers enabled, disable or remove them from"
 		ewarn "/lib/modules/${KV_FULL} if you experience problems."
 	fi
