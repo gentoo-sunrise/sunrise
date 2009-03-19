@@ -1,0 +1,9 @@
+# ChangeLog for mail-filter/libdkim
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Mar 2009; Brandon Turner (bltcoder) <bturner@bltweb.net>
+  +libdkim-1.0.19.ebuild, +files/libdkim-extra-options.patch,
+  +files/libdkim-gentoo.patch, +metadata.xml:
+  New Ebuild for bug 262919 thanks to hwoarang, Tommy[D]
+
