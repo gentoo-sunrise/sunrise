@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit versionator
+inherit versionator eutils
 
 MY_PV=$(replace_version_separator 3 '-')
 
@@ -20,6 +20,13 @@ DEPEND="${RDEPEND}
 	sys-kernel/linux-headers"
 
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	epatch "${FILESDIR}/${PN}.c.patch"
+}
 
 src_install() {
 	dosbin netresolv netwatch || die "dosbin failed"
