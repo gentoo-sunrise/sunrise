@@ -1,10 +1,25 @@
-# There is no jack daemon
---- rivendell-1.2.1/rivendell-gentoo	2007-10-05 08:31:21.000000000 -0600
-+++ rivendell-1.2.1.new/rivendell-gentoo	2009-01-14 22:21:19.000000000 -0600
-@@ -26,7 +26,6 @@
+--- rivendell-1.2.2/rivendell-gentoo	2007-10-05 09:31:21.000000000 -0500
++++ /etc/init.d/rivendell	2009-03-18 11:49:59.000000000 -0500
+@@ -26,17 +26,17 @@
  ##
  
  depend() {
 -        need jackd
-         use mysql
+-        use mysql
++	use mysql
  }
+ 
+ start() {
+         ebegin "Starting Rivendell"
+         ipcrm -M 0x5005 2> /dev/null
+-        start-stop-daemon --start --quiet --exec /usr/bin/caed
+-        start-stop-daemon --start --quiet --exec /usr/bin/ripcd
++        RDUSER=$(grep AudioOwner= /etc/rd.conf |sed 's/AudioOwner=//')
++        start-stop-daemon --start --quiet --chuid $RDUSER --exec /usr/bin/caed
++        start-stop-daemon --start --quiet --chuid $RDUSER --exec /usr/bin/ripcd
+         sleep 1
+-        start-stop-daemon --start --quiet --exec /usr/bin/rdcatchd
++        start-stop-daemon --start --quiet --chuid $RDUSER --exec /usr/bin/rdcatchd
+         eend $?
+ }
+ 
