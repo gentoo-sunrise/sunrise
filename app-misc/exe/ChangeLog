@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/exe
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Mar 2009; Andrés Becerra (be77c) <andres.becerra@gmail.com>
+  +exe-1.04.0.3532.ebuild, +metadata.xml:
+  New Ebuild for bug 95410.
+
