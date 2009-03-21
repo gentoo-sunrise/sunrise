@@ -1,0 +1,19 @@
+--- gentoo/ipblock	2009-01-21 22:26:17.000000000 -0200
++++ gentoo/ipblock.new	2009-03-21 04:01:16.400356378 -0300
+@@ -19,7 +19,7 @@
+ 	checkconfig || return 1
+ 	ebegin "Starting ipblock"
+ 
+-	ipblock -s &
++	ipblock -s
+ 	eend ${?}
+ }
+ 
+@@ -27,6 +27,6 @@
+ 	checkconfig || return 1
+ 	ebegin "Stopping ipblock"
+ 
+-	ipblock -d &
++	ipblock -d
+ 	eend ${?}
+ }
