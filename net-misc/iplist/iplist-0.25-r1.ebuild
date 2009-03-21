@@ -31,7 +31,6 @@ src_unpack() {
 
 src_install() {
 	if use java ; then
-		dodir "/usr/share/${PN}"
 		insinto "/usr/share/${PN}"
 		doins ipblockUI.jar || die "gui install failed"
 	fi

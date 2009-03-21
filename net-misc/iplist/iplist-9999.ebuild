@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils git linux-info
+inherit git linux-info
 
 EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}"
 EGIT_PROJECT="${PN}"
@@ -25,7 +25,6 @@ CONFIG_CHECK="NETFILTER_XT_MATCH_IPRANGE"
 
 src_install() {
 	if use java ; then
-		dodir "/usr/share/${PN}"
 		insinto "/usr/share/${PN}"
 		doins ipblockUI.jar || die "gui install failed"
 	fi

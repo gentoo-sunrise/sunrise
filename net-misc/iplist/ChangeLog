@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Mar 2009; Mauricio Moraes (tkmorris) <morris@brgentoo.org>
+  iplist-0.25-r1.ebuild, iplist-9999.ebuild:
+  dropped eutils inherit and dodir, thanks to idl0r for review :)
+
+  21 Mar 2009; Mauricio Moraes (tkmorris) <morris@brgentoo.org>
   -iplist-0.25.ebuild, +iplist-0.25-r1.ebuild,
   +files/iplist-0.25-init.patch, iplist-9999.ebuild,
   -files/iplist-9999-makefile.patch, +files/iplist-makefile.patch:
