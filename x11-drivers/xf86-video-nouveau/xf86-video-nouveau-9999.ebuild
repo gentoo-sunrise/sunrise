@@ -34,5 +34,5 @@ DEPEND="${COMMON_DEPEND}
 
 # need x11-base/x11-drm until nouveau drm enters the kernel
 RDEPEND="${COMMON_DEPEND}
-	|| ( x11-base/nouveau-drm x11-base/x11-drm[video_cards_nouveau] )"
+	>=x11-base/x11-drm-20090320[video_cards_nv]"
 
