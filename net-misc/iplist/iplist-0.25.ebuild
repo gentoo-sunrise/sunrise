@@ -14,9 +14,9 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="net-firewall/iptables
-		net-libs/libnetfilter_queue
-		net-libs/libnfnetlink
-		sys-libs/zlib"
+	net-libs/libnetfilter_queue
+	net-libs/libnfnetlink
+	sys-libs/zlib"
 DEPEND="${RDEPEND}"
 CONFIG_CHECK="NETFILTER_XT_MATCH_IPRANGE"
 
