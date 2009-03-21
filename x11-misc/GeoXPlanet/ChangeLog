@@ -1,6 +1,12 @@
 # ChangeLog for x11-misc/GeoXPlanet
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Mar 2009; Christian Ruppert <idl0r@gentoo.org>
+  -GeoXPlanet-0.4.5-r2.ebuild, +GeoXPlanet-0.4.5-r3.ebuild,
+  -files/GeoXPlanet-0.4.5-r2.patch, +files/GeoXPlanet-0.4.5.patch:
+  Bump EAPI to 2, added ~amd64 keyword, cleanup. Thanks to Nick Fortino
+  (nfortino) <nfortino@gmail.com>
 
   01 Sep 2008; Mike Kazantsev (MK_FG) <mk.fraggod@gmail.com>
   +GeoXPlanet-0.4.5-r2.ebuild, +files/GeoXPlanet-0.4.5-r2.patch,
