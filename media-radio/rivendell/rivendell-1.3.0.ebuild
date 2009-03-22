@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="1"
-inherit eutils
+inherit  base eutils
 
 DESCRIPTION="An automated system for acquisition, management, scheduling and playout of audio content."
 HOMEPAGE="http://rivendellaudio.org/"
@@ -11,7 +11,7 @@ SRC_URI="http://rivendellaudio.org/ftpdocs/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=" ~x86"
+KEYWORDS="~x86"
 IUSE="alsa jack pam"
 
 DEPEND="alsa? ( media-libs/alsa-lib )
@@ -35,29 +35,30 @@ RDEPEND="${DEPEND}
 	net-misc/wget
 	sys-devel/bc"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${PN}-init.patch"
-	epatch "${FILESDIR}/${PN}-sandbox.patch"
-	epatch "${FILESDIR}/${PN}-sox.patch"
-}
+PATCHES=( "${FILESDIR}/${PN}-init.patch"
+	"${FILESDIR}/${PN}-sandbox.patch"
+	"${FILESDIR}/${PN}-sox.patch" )
 
 src_compile() {
 	local myconf=""
+
 	use alsa || myconf="${myconf} --disable-alsa"
 	use jack || myconf="${myconf} --disable-jack"
 	use pam || myconf="${myconf} --disable-pam"
+
 	econf ${myconf}
 	emake || die
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
+
 	insinto /etc
 	doins conf/rd.conf-sample || die
+
 	keepdir /var/snd || die
 	fperms 777 /var/snd || die
+
 	dodoc AUTHORS ChangeLog NEWS README SupportedCards docs/*.txt || die
 	prepalldocs
 }
@@ -67,12 +68,12 @@ pkg_postinst() {
 	elog "their drivers and re-emerge this package. If you would"
 	elog "like the RDFeed RSS Podcast module to work, you'll need"
 	elog "www-servers/apache"
-	echo
+	einfo
 	einfo "If this is a fresh install you will need to modify"
 	einfo "the /etc/rd.conf file and use rdadmin to initialize"
 	einfo "the Rivendell database. Don't forget to make sure you"
 	einfo "start /etc/init.d/rivendell."
-	echo
+	einfo
 	ewarn "If this is an upgrade, run rdadmin to ensure your"
 	ewarn "database schema is up to date"
 }

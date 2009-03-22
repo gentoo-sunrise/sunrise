@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2009; Christian Ruppert <idl0r@gentoo.org> rivendell-1.2.2.ebuild,
+  rivendell-1.3.0.ebuild:
+  whitespace, readability
+
   20 Mar 2009; Emery Hemingway <emery@werenotkillers.com>
   +rivendell-1.3.0.ebuild, files/rivendell-init.patch,
   +files/rivendell-sox.patch:
