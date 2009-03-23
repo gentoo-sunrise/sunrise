@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Mar 2009; Sebastián Magrí (sebasmagri) <sebasmagri@gmail.com>
+  gr-lida-0.7.1.ebuild:
+  eapi2fy gr-lida ebuild regarding qt4.eclass changes. Thanks to scarabeus for
+  revision
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gr-lida-0.7.1.ebuild:
   Add suggested RDEPEND=${DEPEND}, simplify

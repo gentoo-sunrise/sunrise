@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
+
 inherit qt4
 
 MY_P="GR-lida-${PV}"
@@ -16,18 +17,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="dosbox scummvm"
 
-DEPEND="|| ( ( x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-sql:4 )
-	=x11-libs/qt-4.3*:4 )
+DEPEND="x11-libs/qt-core:4
+	x11-libs/qt-gui:4
+	x11-libs/qt-sql:4[sqlite]
 	dosbox? ( games-emulation/dosbox )
 	scummvm? ( games-engines/scummvm )"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
-QT4_BUILT_WITH_USE_CHECK="gif jpeg png sqlite3"
 S=${WORKDIR}/${MY_P}
 
-src_compile(){
+src_configure(){
 	eqmake4 "${PN}".pro
-	emake || die "Compile Failed"
 }
 
 src_install(){
