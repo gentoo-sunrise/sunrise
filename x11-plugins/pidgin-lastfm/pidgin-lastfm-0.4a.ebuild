@@ -19,8 +19,8 @@ RDEPEND="net-im/pidgin[perl]"
 
 src_install() {
 	insinto /usr/$(get_libdir)/pidgin
-	doins "${S}"/src/lastfm.pl
-	dodoc "${S}"/docs/* || die "Could not copy doc files."
+	doins src/lastfm.pl || die "doins latfm.pl failed"
+	dodoc docs/* || die "dodoc failed"
 }
 
 pkg_postinst() {

@@ -3,6 +3,10 @@
 # $Header: $
 
   24 Mar 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
+  pidgin-lastfm-0.4a.ebuild:
+  Stripped ${S} from doins/dodoc and corrected die messages.
+
+  24 Mar 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
   +pidgin-lastfm-0.4a.ebuild, +metadata.xml:
   New ebuild for pidgin-lastfm, bug #218862
 
