@@ -1,0 +1,8 @@
+# ChangeLog for x11-plugins/pidgin-lastfm
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Mar 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
+  +pidgin-lastfm-0.4a.ebuild, +metadata.xml:
+  New ebuild for pidgin-lastfm, bug #218862
+
