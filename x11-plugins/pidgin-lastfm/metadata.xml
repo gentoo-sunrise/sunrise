@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
-	<maintainer>
-		<email>gentoo@naturalnik.de</email>
-		<name>Dominik George</name>
-	</maintainer>
+	<herd>maintainer-wanted</herd>
 	<longdescription lang="en">
 		This package is a Pidgin (libpurple) plugin that shows data from your
 		Last.fm/Audioscrobbler profile in your instant messaging status.
