@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/fische
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Mar 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
+  +fische-2.0_beta2.ebuild, +metadata.xml:
+  New ebuild for bug 250589
+
