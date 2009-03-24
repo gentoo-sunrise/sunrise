@@ -8,7 +8,7 @@ inherit cmake-utils eutils
 
 MY_P=${P/_rc/-RC}
 
-DESCRIPTION="VoIP client featuring the SIP protocol"
+DESCRIPTION="Multi-protocol instant messenger and VoIP client"
 HOMEPAGE="http://www.qutecom.com/"
 SRC_URI="http://www.qutecom.com/downloads/${MY_P}.tar.gz http://omploader.org/vMTFvMg/qutecom_googlebreakpad_64.patch"
 
@@ -26,7 +26,7 @@ DEPEND=">=dev-libs/boost-1.34
 	portaudio? ( media-libs/portaudio )
 	media-libs/speex
 	media-video/ffmpeg
-	net-im/pidgin
+	net-im/pidgin[gnutls]
 	net-libs/gnutls
 	>=net-libs/libosip-3
 	>=net-libs/libeXosip-3
@@ -47,6 +47,7 @@ src_unpack() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}_wifo_phapi.patch
+	epatch "${FILESDIR}"/${PN}_libpurple_gnutls.patch
 	epatch "${DISTDIR}"/${PN}_googlebreakpad_64.patch
 
 	# fix broken CMake conf file
@@ -78,8 +79,4 @@ src_install() {
 	domenu wengophone/res/qutecom.desktop || die "domenu failed"
 	doicon wengophone/res/wengophone_64x64.png || die "doicon failed"
 
-	# workaround broken install scripts
-	cd "${WORKDIR}"/${PN}_build/release || die "cd failed"
-	insinto /usr/share/${PN}
-	doins -r {chat,css,config,lang,pics,sounds} || die "doins -r failed"
 }

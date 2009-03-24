@@ -2,6 +2,12 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -qutecom-2.2_rc3.ebuild,
+  +qutecom-2.2_rc3-r1.ebuild, +files/qutecom_libpurple_gnutls.patch:
+  update pidgin dependency and add patch for gnutls, unbreak double cmake
+  fix+workaround, update DESCRIPTION
+
   05 Mar 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   qutecom-2.2_rc3.ebuild:
   Fixing build and QA
