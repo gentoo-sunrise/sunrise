@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/babel
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Mar 2009; Bignaux Ronan <ronan@aimao.org> +babel-0.93.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 263504
+
