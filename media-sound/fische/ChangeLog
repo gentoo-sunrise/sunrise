@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Mar 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
+  fische-2.0_beta2.ebuild:
+  Added mmx/sse optimization
+
   24 Mar 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
   +fische-2.0_beta2.ebuild, +metadata.xml:
   New ebuild for bug 250589
