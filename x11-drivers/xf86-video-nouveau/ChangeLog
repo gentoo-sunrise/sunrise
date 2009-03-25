@@ -3,6 +3,11 @@
 # $Header: $
 
   25 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> xf86-video-nouveau-0.0.20090325.ebuild,
+  xf86-video-nouveau-9999.ebuild:
+  update dependencies once again for users which mix x11 and sunrise overlays
+
+  25 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -xf86-video-nouveau-0.0.20090318.ebuild,
   +xf86-video-nouveau-0.0.20090325.ebuild:
   new snapshot
