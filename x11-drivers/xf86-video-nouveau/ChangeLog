@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -xf86-video-nouveau-0.0.20090318.ebuild,
+  +xf86-video-nouveau-0.0.20090325.ebuild:
+  new snapshot
+
   21 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> xf86-video-nouveau-0.0.20090318.ebuild,
   xf86-video-nouveau-9999.ebuild:

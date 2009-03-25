@@ -10,7 +10,7 @@ GIT_ECLASS="git"
 
 inherit x-modular
 
-EGIT_TREE="cba114a4ffd8d834b8862f4ea9f8d02870608a38"
+EGIT_TREE="a8eab45c154559cee434b66f85240a0315245ff4"
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/nouveau/${PN}"
 
 DESCRIPTION="Nouveau video driver"
