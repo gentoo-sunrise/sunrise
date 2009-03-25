@@ -20,6 +20,6 @@ src_compile() {
 }
 
 src_install(){
-	einstall PREFIX=/usr MANDIR=/usr/share/man INFODIR=/usr/share/info "TARGET=${D}" || die "install failed"
+	emake install PREFIX=/usr MANDIR=/usr/share/man INFODIR=/usr/share/info "TARGET=${D}" || die "install failed"
 	dodoc CHANGES README || die
 }
