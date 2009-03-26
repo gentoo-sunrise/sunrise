@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2009; Tiago Cunha <tcunha@gentoo.org> -ksplice-0.9.6.ebuild,
+  +ksplice-0.9.7.ebuild:
+  Version bump, remove old.
+
   02 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> ksplice-9999.ebuild:
   Live ebuilds dont have keywords.
 
