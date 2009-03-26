@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2009; Tiago Cunha <tcunha@gentoo.org> metadata.xml:
+  Fix metadata.xml.
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   hexen2-lights-1.ebuild:
   Drop emty DEPEND, add die statement

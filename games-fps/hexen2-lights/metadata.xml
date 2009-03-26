@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd></herd>
+	<herd>maintainer-wanted</herd>
 	<longdescription lang="en">
 		These are colored light data for hexen2. They require Hammer of Thyrion
 		1.4.0 which has support for colored lights and external lit files.
