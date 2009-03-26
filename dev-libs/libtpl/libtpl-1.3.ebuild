@@ -8,7 +8,7 @@ DESCRIPTION="Serialize your C data quickly and easily"
 HOMEPAGE="http://tpl.sourceforge.net"
 SRC_URI="mirror://sourceforge/tpl/${P}.tar.bz2"
 
-LICENSE="BSD"
+LICENSE="BSD-1"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc"
 IUSE="perl test"
