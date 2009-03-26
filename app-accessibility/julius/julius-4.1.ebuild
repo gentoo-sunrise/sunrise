@@ -36,7 +36,7 @@ src_unpack() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc 00readme.txt Release.txt || die
 
 	for LNG in ${LINGUAS}; do
