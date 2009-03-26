@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ DESCRIPTION="An easy-to-use hash implementation for C programmers"
 HOMEPAGE="http://uthash.sourceforge.net"
 SRC_URI="mirror://sourceforge/uthash/${P}.tar.bz2"
 
-LICENSE="BSD"
+LICENSE="BSD-1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc"
 IUSE="test"
@@ -26,5 +26,5 @@ src_install() {
 	insinto /usr/include
 	doins src/uthash.h || die "doins failed"
 
-	dodoc ChangeLog doc/txt/userguide.txt || die "dodoc failed"
+	dodoc doc/txt/{ChangeLog,userguide}.txt || die "dodoc failed"
 }
