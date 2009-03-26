@@ -1,6 +1,9 @@
 # ChangeLog for games-util/glvis
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Mar 2009; Tiago Cunha <tcunha@gentoo.org> metadata.xml:
+  Fix metadata.xml.
 
   17 Feb 2008; (Tommy[D]) tommy100@gmx.de glvis-1.6.ebuild:
   Shorten description
