@@ -93,7 +93,6 @@ www-apps
 www-client
 www-misc
 www-servers
-x11-base
 x11-drivers
 x11-libs
 x11-misc
