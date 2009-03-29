@@ -1,6 +1,17 @@
 # ChangeLog for net-misc/igmpproxy
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Mar 2009; Christian Ruppert <idl0r@gentoo.org>
+  -igmpproxy-0.1_beta2.ebuild, +igmpproxy-0.1_beta2_p20090309.ebuild,
+  -files/igmpproxy-conf.d, files/igmpproxy-init.d,
+  -files/igmpproxy-remove-banner.patch:
+  Version bump to 0.1_beta2_p20090309, removed old. Removed rc config,
+  improved init script. Removed no-banner patch. Migrated to EAPI 2. Appended
+  Stanford to LICENSE. Added CONFIG_CHECK/linux-info to ensure we have
+  IP_MULTICAST and IP_MROUTE enabled. Force autotools to use /usr/sbin as
+  bindir since igmpproxy requires to be root. Special thanks to Constantin
+  Baranov (bug 233738) for his improvements.
 
   29 Sep 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
   +igmpproxy-0.1_beta2.ebuild, +files/igmpproxy-conf.d,
