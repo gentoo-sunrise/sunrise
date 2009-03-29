@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Mar 2009; Bignaux Ronan <ronan@aimao.org> ahcpd-0.5.ebuild:
+  remove useless MANDIR and INFODIR parameters for emake install
+
   25 Mar 2009; Bignaux Ronan <ronan@aimao.org> ahcpd-0.5.ebuild:
   change einstall to emake install
 
