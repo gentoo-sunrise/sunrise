@@ -1,0 +1,21 @@
+# ChangeLog for x11-base/nouveau-drm
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -nouveau-drm-20090228.ebuild,
+  +nouveau-drm-20090318.ebuild:
+  new snapshot
+
+  11 Mar 2009; Christian Ruppert <idl0r@gentoo.org>
+  nouveau-drm-20090228.ebuild:
+  fixed repoman complain: WANT_AUTOCONF redundantly set to default value "latest"
+
+  02 Mar 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> nouveau-drm-20090228.ebuild:
+  update per tommy's review
+
+  28 Feb 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> +nouveau-drm-20090228.ebuild, +metadata.xml:
+  new ebuild for bug 253705
+
