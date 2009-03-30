@@ -21,10 +21,6 @@
 ##   End example
 ##
 
-# Christian Ruppert (idl0r) <idl0r@gentoo.org> (29 Mar 2009)
-# Mask because of invalid/obsolete dependency media-libs/libpano12
-media-gfx/clens
-
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
 # Mask because of recommended replacement of portage contolled
 # file, should fix in source instead
