@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="media-gfx/ptlens-profiles
-	>=media-libs/libpano12-2.8.4"
+	>=media-libs/libpano13-2.8.4"
 RDEPEND="${DEPEND}"
 
 PTLENS_PROFILES="/usr/share/ptlens/profiles/profile.txt"
