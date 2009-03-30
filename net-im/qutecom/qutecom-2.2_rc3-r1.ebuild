@@ -10,7 +10,8 @@ MY_P=${P/_rc/-RC}
 
 DESCRIPTION="Multi-protocol instant messenger and VoIP client"
 HOMEPAGE="http://www.qutecom.com/"
-SRC_URI="http://www.qutecom.com/downloads/${MY_P}.tar.gz http://omploader.org/vMTFvMg/qutecom_googlebreakpad_64.patch"
+SRC_URI="http://www.qutecom.com/downloads/${MY_P}.tar.gz
+	http://omploader.org/vMTFvMg/qutecom_googlebreakpad_64.patch"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -32,7 +33,8 @@ DEPEND=">=dev-libs/boost-1.34
 	>=net-libs/libeXosip-3
 	net-misc/curl
 	|| ( x11-libs/libX11 virtual/x11 )
-	|| ( ( x11-libs/qt-gui:4 x11-libs/qt-svg:4 ) =x11-libs/qt-4.3* )
+	x11-libs/qt-gui
+	x11-libs/qt-svg
 	xv? ( x11-libs/libXv )"
 RDEPEND=${DEPEND}
 
@@ -42,7 +44,6 @@ src_unpack() {
 	# do not try to unpack googlebreakpad_64.patch
 	# TODO: the patch should be compressed, internal or external
 	unpack ${MY_P}.tar.gz
-	cd "${S}"
 }
 
 src_prepare() {
