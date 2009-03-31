@@ -55,6 +55,7 @@ pkg_setup() {
 	fi
 
 	# Check for applicability of lhash patch for NFS branch support
+	# Check if lhash Patch has to be applied
 	if use nfs && kernel_is ge 2 6 19 ; then
 		APPLY_LHASH_PATCH="n"
 		# If lhash patch is not applied
@@ -64,6 +65,7 @@ pkg_setup() {
 			APPLY_KERNEL_PATCH="y"
 		fi
 	fi
+
 
 	# If a patch has to be applied
 	if [[ ${APPLY_KERNEL_PATCH} == "y" ]] ; then
@@ -106,14 +108,14 @@ src_unpack(){
 		echo "CONFIG_AUFS_SYSAUFS = " >> priv_def.mk || die "unsetting sysaufs in priv_def.mk failed!"
 	fi
 
-	# Enable lhash in priv_def.mk
-	if use nfs && kernel_is ge 2 6 19 ; then
-		echo "CONFIG_AUFS_LHASH_PATCH = y" >> priv_def.mk || die "setting lhash in priv_def.mk failed!"
-	fi
-
 	# Enable nfsexport in priv_def.mk
 	if use nfsexport && kernel_is ge 2 6 18 ; then
 		echo "CONFIG_AUFS_EXPORT = y" >> priv_def.mk || die "setting export in priv_def.mk failed!"
+	fi
+
+	# Enable lhash Patch in priv_def.mk
+	if use nfs && kernel_is ge 2 6 19 ; then
+		echo "CONFIG_AUFS_LHASH_PATCH = y" >> priv_def.mk || die "setting lhash in priv_def.mk failed!"
 	fi
 
 	# Enable aufs readonly-branch in priv_def.mk
@@ -163,7 +165,7 @@ pkg_postinst() {
 	elog "modprobe aufs"
 	elog "For further information refer to the aufs man page"
 
-	if use sec_perm || use nfs; then
+	if use sec_perm || use nfs ; then
 		ewarn "Your kernel has been patched in order to export security"
 		ewarn "permissions.  You will need to recompile your kernel with"
 		ewarn "this new patch in order for ${PN} to function."

@@ -1,0 +1,40 @@
+Index: fs/namei.c
+===================================================================
+RCS file: /home/mszick/cvs/2.6.24-rc7/fs/namei.c,v
+retrieving revision 1.2
+diff -u -p -r1.2 namei.c
+--- fs/namei.c	11 Jan 2008 18:41:11 -0000	1.2
++++ fs/namei.c	11 Jan 2008 19:37:46 -0000
+@@ -1339,8 +1339,7 @@ int __user_path_lookup_open(const char _
+ 	return err;
+ }
+ 
+-static struct dentry *__lookup_hash(struct qstr *name,
+-		struct dentry *base, struct nameidata *nd)
++struct dentry *__lookup_hash(struct qstr *name, struct dentry *base, struct nameidata *nd)
+ {
+ 	struct dentry *dentry;
+ 	struct inode *inode;
+@@ -3108,6 +3107,7 @@ EXPORT_SYMBOL(follow_up);
+ EXPORT_SYMBOL(get_write_access); /* binfmt_aout */
+ EXPORT_SYMBOL(getname);
+ EXPORT_SYMBOL(lock_rename);
++EXPORT_SYMBOL(__lookup_hash);
+ EXPORT_SYMBOL(lookup_one_len);
+ EXPORT_SYMBOL(page_follow_link_light);
+ EXPORT_SYMBOL(page_put_link);
+Index: include/linux/namei.h
+===================================================================
+RCS file: /home/mszick/cvs/2.6.24-rc7/include/linux/namei.h,v
+retrieving revision 1.1.1.1
+diff -u -p -r1.1.1.1 namei.h
+--- include/linux/namei.h	21 Dec 2007 01:25:48 -0000	1.1.1.1
++++ include/linux/namei.h	11 Jan 2008 19:43:36 -0000
+@@ -81,6 +81,7 @@ extern struct file *lookup_instantiate_f
+ extern struct file *nameidata_to_filp(struct nameidata *nd, int flags);
+ extern void release_open_intent(struct nameidata *);
+ 
++struct dentry * __lookup_hash(struct qstr *name, struct dentry * base, struct nameidata *nd);
+ extern struct dentry *lookup_one_len(const char *, struct dentry *, int);
+ extern struct dentry *lookup_one_noperm(const char *, struct dentry *);
+ 
