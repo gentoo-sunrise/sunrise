@@ -6,7 +6,7 @@ inherit git linux-info
 
 EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}"
 EGIT_PROJECT="${PN}"
-EGIT_PATCHES=( "${PN}-makefile.patch" )
+EGIT_PATCHES=( "${FILESDIR}/${PN}-makefile.patch" )
 
 DESCRIPTION="Blocks connections from/to hosts listed in files using iptables."
 HOMEPAGE="http://iplist.sourceforge.net/"
