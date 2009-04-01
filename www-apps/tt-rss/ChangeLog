@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Apr 2009; Patrick Nagel (padde) <mail@patrick-nagel.net>
+  -tt-rss-1.3.0.ebuild, +tt-rss-1.3.2.ebuild:
+  Version bump for tt-rss
+
   16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
   tt-rss-1.3.0.ebuild:
   Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
