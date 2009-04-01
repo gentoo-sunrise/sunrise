@@ -1,0 +1,8 @@
+# ChangeLog for dev-cpp/hiberlite
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Apr 2009; Kyle Cavin (sonar) <kyle.cavin@ieee.org>
+  +hiberlite-0.6.ebuild, +metadata.xml:
+  New Ebuild for bug 264502
+
