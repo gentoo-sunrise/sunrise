@@ -1,0 +1,9 @@
+# ChangeLog for media-video/oggfwd
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Apr 2009; ArneBab <arne_bab@web.de> +oggfwd-0_pre6.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 253291 thanks to scarabeus, chithead, Tommy[D], billie,
+  idl0r and ohnobinki
+
