@@ -14,6 +14,7 @@ SLOT="3"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+PDEPEND="net-wireless/aircrack-ng"
 S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
