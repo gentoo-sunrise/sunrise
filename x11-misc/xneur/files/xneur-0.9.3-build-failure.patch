@@ -1,0 +1,23 @@
+libtool: compile:  i686-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I../.. -DPACKAGE_SYSCONFDIR_DIR=\"/etc/xneur\" -DPACKAGE_SHAREDIR_DIR=\"/usr/share/xneur\" -I../../lib/misc -I../../lib/x -Wall -Wextra -fPIC -std=gnu99 -O2 -march=i686 -pipe -mtune=i686 -march=pentium-m -ggdb -U_FORTIFY_SOURCE -MT libxnconfig_la-xnconfig.lo -MD -MP -MF .deps/libxnconfig_la-xnconfig.Tpo -c xnconfig.c  -fPIC -DPIC -o .libs/libxnconfig_la-xnconfig.o
+xnconfig.c:75: error: expected identifier or '(' before '__extension__'
+xnconfig.c:75: error: expected identifier or '(' before ')' token
+make[3]: *** [libxnconfig_la-xnconfig.lo] Error 1
+make[3]: Leaving directory `/var/tmp/portage/x11-apps/xneur-0.9.3/work/xneur-0.9.3/lib/config'
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory `/var/tmp/portage/x11-apps/xneur-0.9.3/work/xneur-0.9.3/lib'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/var/tmp/portage/x11-apps/xneur-0.9.3/work/xneur-0.9.3'
+make: *** [all] Error 2
+
+=== modified file 'lib/config/xnconfig.c'
+--- lib/config/xnconfig.c	2009-03-15 09:13:28 +0000
++++ lib/config/xnconfig.c	2009-03-15 10:11:41 +0000
+@@ -72,7 +72,6 @@
+ static int load_lang = -1;
+ 
+ pid_t getsid(pid_t pid);
+-char* strsep(char **stringp, const char *delim);
+ 
+ static char* get_word(char **string)
+ {
+
