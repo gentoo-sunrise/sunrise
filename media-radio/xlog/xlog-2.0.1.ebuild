@@ -27,11 +27,7 @@ src_unpack() {
 	# fixes for wrong placed file and bug in gui_countrymap.c
 	# fix for respecting DESTDIR and
 	# and finally fix to respect docdir=...
-	epatch "${FILESDIR}/${P}-desktop-update.patch" \
-		"${FILESDIR}/${P}-key.patch" \
-		"${FILESDIR}/${P}-map.patch" \
-		"${FILESDIR}/${P}-destdir.patch" \
-		"${FILESDIR}/${P}-docdir.patch"
+	epatch "${FILESDIR}/${PN}-1.9-desktop-update.patch"
 	mkdir -p "${S}"/m4	# make autoconf happy...
 	eautoreconf
 }

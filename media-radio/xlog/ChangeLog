@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> -xlog-1.9.ebuild,
+  -files/xlog-1.9-destdir.patch, -files/xlog-1.9-docdir.patch,
+  -files/xlog-1.9-key.patch, -files/xlog-1.9-map.patch, +xlog-2.0.1.ebuild:
+  Version bump
+
   14 Jan 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> xlog-1.9.ebuild,
   +files/xlog-1.9-map.patch:
   Added minor bugfix from upstream
