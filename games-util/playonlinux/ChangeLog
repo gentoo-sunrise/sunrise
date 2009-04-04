@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Apr 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  -playonlinux-3.3.1.ebuild, +playonlinux-3.4.ebuild:
+  version bump to 3.4
+
   18 Feb 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   -playonlinux-3.3.ebuild, +playonlinux-3.3.1.ebuild:
   Version bump: 3.3 -> 3.3.1
