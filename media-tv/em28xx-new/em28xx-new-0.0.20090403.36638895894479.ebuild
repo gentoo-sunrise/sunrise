@@ -6,6 +6,7 @@ inherit linux-info linux-mod mercurial versionator
 
 printf -v EHG_REVISION '%012x' "$(get_version_component_range 4)"
 EHG_REPO_URI="http://mcentral.de/hg/~mrec/em28xx-new/"
+EHG_PULL_CMD="hg pull --force --quiet" # necessary until bug 264921 is fixed
 
 DESCRIPTION="next generation em28xx driver including dvb support"
 HOMEPAGE="http://mcentral.de/"

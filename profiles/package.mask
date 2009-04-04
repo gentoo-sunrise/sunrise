@@ -21,11 +21,6 @@
 ##   End example
 ##
 
-# Chi-Thanh Christopher Nguyen (chithead) <chithanh@cs.tu-berlin.de> (04 Apr 2009)
-# Upstream replaced old repository which breaks pulling from hg
-# Mask until I think of a way around this
-media-tv/em28xx-new
-
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
 # Mask because of recommended replacement of portage contolled
 # file, should fix in source instead
