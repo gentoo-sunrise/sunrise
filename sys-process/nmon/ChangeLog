@@ -1,0 +1,8 @@
+# ChangeLog for sys-process/nmon
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Apr 2009; Piotr Szymaniak <lazy_bum@o2.pl> +nmon-12a.ebuild,
+  +metadata.xml:
+  Initial ebuild (bug #132948). Thanks to Tomáš Chvátal.
+
