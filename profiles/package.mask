@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com> (05 Apr 2009)
+# mozilla-weave-0.3 needs firefox-3.1 (beta release) which is masked
+>=www-plugins/mozilla-weave-0.3.0
+
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
 # Mask because of recommended replacement of portage contolled
 # file, should fix in source instead
