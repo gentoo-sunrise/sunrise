@@ -1,6 +1,10 @@
 # ChangeLog for dev-tex/mimetex
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Apr 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  +mimetex-1.70.ebuild, -mimetex-20070331.ebuild:
+  fix src_uri issue
 
   06 Nov 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   mimetex-20070331.ebuild:
