@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,9 +6,12 @@ inherit toolchain-funcs
 
 DESCRIPTION="mimetex lets you easily embed LaTeX math in your html and dynamic web pages"
 HOMEPAGE="http://www.forkosh.dreamhost.com/mimetex.html"
-SRC_URI="http://www.forkosh.com/${PN}.zip"
+# forkosh.com only provide mimetex.zip file that is breaking everything when
+# their is a version bump. I've hosted currente release into my server (volkmar)
+#SRC_URI="http://www.forkosh.com/${PN}.zip"
+SRC_URI="http://gentoo.oldworld.fr/distfiles/${P}.zip"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -20,9 +23,9 @@ S=${WORKDIR}
 
 src_compile() {
 	$(tc-getCC) ${CFLAGS} -DAA -o ${PN} mimetex.c gifsave.c -lm \
-		|| die "compile failed!"
+		|| die "compilation failed"
 }
 
 src_install() {
-	dobin ${PN}
+	dobin ${PN}.cgi || die "installation failed"
 }
