@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="A tool for resizing BDF format fonts"
 HOMEPAGE="http://openlab.jp/efont/dist/tools/bdfresize/"
-SRC_URI="http://openlab.jp/efont/dist/tools/bdfresize/${P}.tar.gz"
+SRC_URI="http://openlab.jp/efont/dist/tools/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,5 +22,5 @@ src_unpack() {
 src_install() {
 	dobin bdfresize || die
 	doman bdfresize.1 || die
-	dodoc ChangeLog AUTHORS README
+	dodoc ChangeLog AUTHORS README || die
 }

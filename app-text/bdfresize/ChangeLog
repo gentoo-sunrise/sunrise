@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  bdfresize-1.5.ebuild:
+  Use ${PN}, add die statement
+
   03 Apr 2009; Peter Volkov <pva@gentoo.org> +bdfresize-1.5.ebuild,
   +files/bdfresize-1.5-gcc4.0.patch, +metadata.xml:
   New Ebuild for bug 84269. Thank Michael for initial proposal.
