@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  aufs-20070402.ebuild, aufs-20080422.ebuild, aufs-20081208-r1.ebuild,
+  aufs-20090126.ebuild:
+  Add missing die statements
+
   31 Mar 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
   +files/aufs-lhash-2.6.19.patch, +files/aufs-lhash-2.6.22.patch,
   +files/aufs-lhash-2.6.24.patch, aufs-20081208-r1.ebuild,

@@ -151,8 +151,8 @@ src_install() {
 	cd util
 	exeinto /sbin
 	exeopts -m0500
-	doexe mount.aufs umount.aufs auplink aulchown
-	doman aufs.5
+	doexe mount.aufs umount.aufs auplink aulchown || die
+	doman aufs.5 || die
 	insinto /etc/default
 	newins etc_default_aufs aufs || die
 	linux-mod_src_install

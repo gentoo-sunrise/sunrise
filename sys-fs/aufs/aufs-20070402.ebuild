@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -110,8 +110,8 @@ src_unpack(){
 src_install() {
 	exeinto /sbin
 	exeopts -m0500
-	doexe mount.aufs umount.aufs auplink aulchown
-	doman aufs.5
+	doexe mount.aufs umount.aufs auplink aulchown || die
+	doman aufs.5 || die
 	linux-mod_src_install
 }
 
