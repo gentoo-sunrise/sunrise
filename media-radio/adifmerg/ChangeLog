@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  adifmerg-0.1.ebuild:
+  Move examples to examples docdir
+
   06 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   +adifmerg-0.1.ebuild, +metadata.xml:
   New ebuild for bug 265110. Thanks idl0r for help.
