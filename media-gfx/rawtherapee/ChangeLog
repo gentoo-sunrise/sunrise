@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  rawtherapee-2.4_rc2.ebuild:
+  Whitespace, use dobin, add Manifest
+
   05 Apr 2009; Marian Kyral (mkyral) <mkyral@email.cz>
   +rawtherapee-2.4_rc2.ebuild, +files/rawtherapee.desktop,
   +files/rawtherapee.png, +files/rtstart, +metadata.xml:

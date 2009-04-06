@@ -25,13 +25,13 @@ for lng in ${LANGS}; do
 	IUSE="${IUSE} linguas_${lng}"
 done
 
-RDEPEND=" x11-libs/gtk+:2
+RDEPEND="x11-libs/gtk+:2
 	( || ( >=dev-cpp/gtkmm-2.12[accessibility] >=dev-cpp/gtkmm-2.14.3 ) )
 	>=sys-libs/glibc-2.4
 	>=sys-devel/gcc-4.3.0
 	media-libs/jpeg
 	media-libs/tiff
-	media-libs/libpng "
+	media-libs/libpng"
 
 RESTRICT="strip"
 
@@ -42,8 +42,7 @@ src_install() {
 	doins "${FILESDIR}/rawtherapee.png" || die
 	insinto "/usr/share/applications"
 	doins "${FILESDIR}/rawtherapee.desktop" || die
-	exeinto "/usr/bin"
-	doexe "${FILESDIR}/rtstart" || die
+	dobin "${FILESDIR}/rtstart" || die
 
 	exeinto "/opt/${MY_PN}"
 	doexe rt librtengine.so rtstart rwz_sdk.so || die
