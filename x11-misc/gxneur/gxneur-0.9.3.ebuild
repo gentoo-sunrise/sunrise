@@ -4,15 +4,16 @@
 
 EAPI="2"
 
+inherit eutils autotools versionator
+
 DESCRIPTION="GTK based GUI for xneur"
 HOMEPAGE="http://www.xneur.ru/"
-if [[ "${PV}" =~ (_p)([0-9]+) ]] ; then
+if [[ ${PV} =~ (_p)([0-9]+) ]] ; then
 	inherit subversion
 	SRC_URI=""
 	MTSLPT_REV=${BASH_REMATCH[2]}
 	ESVN_REPO_URI="svn://xneur.ru:3690/xneur/${PN}/@${MTSLPT_REV}"
 else
-	inherit eutils autotools versionator
 	SRC_URI="http://dists.xneur.ru/release-${PV}/tgz/${P}.tar.bz2"
 fi
 
