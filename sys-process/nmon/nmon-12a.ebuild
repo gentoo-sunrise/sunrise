@@ -11,6 +11,7 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
+
 DEPEND="app-arch/unzip"
 RDEPEND="sys-apps/lsb-release
 	sys-libs/ncurses"
@@ -18,7 +19,9 @@ RDEPEND="sys-apps/lsb-release
 S=${WORKDIR}
 
 src_install() {
-	use x86 && ARCH=x86 || ARCH=x86_64
+	# also supports ppc?
+	use x86 && ARCH=x86
+	use amd64 && ARCH=x86_64
 
 	newbin nmon_${ARCH}_ubuntu810 nmon || die "newbin failed"
 }
