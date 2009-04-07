@@ -13,12 +13,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=x11-libs/gtk+-2.8"
+DEPEND=">=x11-libs/gtk+-2.8
+	media-libs/freeimage"
 RDEPEND="${DEPEND}
-	media-gfx/exiv2
-	>=media-gfx/printoxx-1.2"
-
-S=${WORKDIR}/${PN}
+	media-libs/exiftool
+	media-gfx/ufraw
+	x11-misc/xdg-utils
+	media-gfx/printoxx"
 
 src_compile() {
 	emake PREFIX=/usr || die "build failed"
