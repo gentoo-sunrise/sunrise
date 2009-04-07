@@ -17,11 +17,11 @@ S=${WORKDIR}/AdifMerg
 
 src_install() {
 	dobin adifmerg || die "dobin failed"
-	docinto examples
-	dodoc addqsoinfo calcpnts lqslget lqsoget || die "dodoc failed"
 	insinto /usr/share/${PN}
 	doins template.cab || die "doins failed"
 	doman doc/adifmerg.1 || die "doman failed"
 	dodoc CHANGELOG README || die "dodoc failed"
+	docinto examples
+	dodoc addqsoinfo calcpnts lqslget lqsoget || die "dodoc failed"
 }
 
