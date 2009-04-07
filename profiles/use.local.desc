@@ -197,3 +197,4 @@ x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/bmpanel:libev - Use the libev event loop interface
 x11-misc/bmpanel:libevent - Use the libevent event loop interface
+x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
