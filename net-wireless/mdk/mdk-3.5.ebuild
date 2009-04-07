@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 MY_P="${PN}${PV/./-v}"
 DESCRIPTION="Tool to bruteforce the SSID"
@@ -14,7 +14,7 @@ SLOT="3"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-PDEPEND="net-wireless/aircrack-ng"
+RDEPEND="net-wireless/aircrack-ng"
 S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
@@ -24,7 +24,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake -j1 || die "emake failed"
+	emake CC=$(tc-getCC) || die "emake failed"
 }
 
 src_install() {

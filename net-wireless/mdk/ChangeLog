@@ -7,4 +7,4 @@
   01 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   +files/3.5-Makefile.patch, +metadata.xml:
   Initial checkin to sunrise
-
+  Bug no. 265280

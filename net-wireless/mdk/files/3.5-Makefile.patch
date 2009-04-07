@@ -23,3 +23,15 @@
  LIBOSD		= $(OSD)/lib$(OSD).so
  
  
+@@ -10,9 +10,9 @@
+ LIBOSD		= $(OSD)/lib$(OSD).so
+ 
+ 
+-all: osd mdk3
++all: mdk3
+ 
+-osd:
++$(OSD)/libosdep.a:
+ 	$(MAKE) -C $(OSD)
+ 
+ $(LIBOSD):
