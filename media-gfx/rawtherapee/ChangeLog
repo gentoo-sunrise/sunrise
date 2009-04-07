@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  rawtherapee-2.4_rc2.ebuild:
+  Remove removed accessibility usedep of gtkmm, fixes bug 265374
+
   06 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   rawtherapee-2.4_rc2.ebuild:
   Whitespace, use dobin, add Manifest

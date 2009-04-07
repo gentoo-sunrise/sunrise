@@ -26,7 +26,7 @@ for lng in ${LANGS}; do
 done
 
 RDEPEND="x11-libs/gtk+:2
-	( || ( >=dev-cpp/gtkmm-2.12[accessibility] >=dev-cpp/gtkmm-2.14.3 ) )
+	( || ( >=dev-cpp/gtkmm-2.12 >=dev-cpp/gtkmm-2.14.3 ) )
 	>=sys-libs/glibc-2.4
 	>=sys-devel/gcc-4.3.0
 	media-libs/jpeg
