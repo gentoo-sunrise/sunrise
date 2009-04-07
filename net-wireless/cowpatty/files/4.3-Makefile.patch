@@ -1,0 +1,53 @@
+--- Makefile	2008-03-20 15:58:23.000000000 +0100
++++ Makefile.new	2009-04-07 12:33:38.000000000 +0200
+@@ -8,32 +8,24 @@
+ # <dragorn> make is a twisted beast
+ ##################################
+ LDLIBS		= -lpcap
+-CFLAGS		= -pipe -Wall -DOPENSSL 
+-CFLAGS		+= -O2
++CFLAGS		+= -DOPENSSL 
+ LDLIBS		+= -lcrypto
+-CFLAGS		+= -g3 -ggdb
+ #CFLAGS		+= -static
+ PROGOBJ		= md5.o sha1.o utils.o cowpatty.o genpmk.o
+ PROG		= cowpatty genpmk
+-BINDIR		= /usr/local/bin
++BINDIR		= /usr/bin
+ 
+-all: $(PROGOBJ) $(PROG)
++all: $(PROG)
+ 
+-cowpatty: common.h md5.c md5.h sha1.h cowpatty.c cowpatty.h sha1.c \
++cowpatty: $(PROGOBJ) common.h md5.c md5.h sha1.h cowpatty.c cowpatty.h sha1.c \
+             sha1.h utils.c utils.h
+-	$(CC) $(CFLAGS) cowpatty.c -o cowpatty utils.o md5.o sha1.o $(LDLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) cowpatty.c -o cowpatty utils.o md5.o sha1.o $(LDLIBS)
+ 
+-genpmk: genpmk.c cowpatty.h utils.h sha1.h common.h
+-	$(CC) $(CFLAGS) genpmk.c -o genpmk utils.o sha1.o $(LDLIBS)
++genpmk: $(PROGOBJ) genpmk.c cowpatty.h utils.h sha1.h common.h
++	$(CC) $(CFLAGS) $(LDFLAGS) genpmk.c -o genpmk utils.o sha1.o $(LDLIBS)
+ 
+-utils: utils.c utils.h
+-	$(CC) $(CFLAGS) utils.c -c
+-
+-md5: md5.c md5.h
+-	$(CC) $(CFLAGS) md5.c -c
+-
+-sha1: sha1.c sha1.h
+-	$(CC) $(CFLAGS) sha1.c -c
++%.o: %.c
++	$(CC) $(CFLAGS) -c $<
+ 
+ clean:
+ 	@rm $(PROGOBJ) $(PROG)
+@@ -45,7 +37,7 @@
+ 
+ install: all
+ 	install -d $(DESTDIR)$(BINDIR)
+-	install -m 755 $(PROG) $(BINDIR)$(DESTDIR)
++	install -m 755 $(PROG) $(DESTDIR)$(BINDIR)
+ 
+ love:
+ 	@echo "Not right now, I have a headache."
