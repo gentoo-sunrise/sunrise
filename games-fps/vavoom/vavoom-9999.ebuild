@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 
 WX_GTK_VER="2.8"
 
@@ -15,10 +15,8 @@ ESVN_REPO_URI="https://vavoom.svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro asm debug dedicated flac mad mikmod models music openal opengl
-+sdl textures tools vorbis wxwindows"
-
-QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
+IUSE="allegro asm debug dedicated flac mad mikmod +models +music openal +opengl
++sdl +textures tools +vorbis wxwindows"
 
 # From econf:  "Vavoom requires Allegro or SDL to compile"
 # SDL,like Allegro are *software* renderers in this game.
@@ -29,9 +27,9 @@ QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
 # (through "-opengl" switch). This switch is also added to the desktop entry,
 # if "opengl" USE flag is enabled
 
-SDLDEPEND=">=media-libs/libsdl-1.2
-	media-libs/sdl-mixer"
-ALLEGDEPEND=">=media-libs/allegro-4.0"
+SDLDEPEND=">=media-libs/libsdl-1.2[X,alsa,opengl?]
+	media-libs/sdl-mixer[timidity]"
+ALLEGDEPEND=">=media-libs/allegro-4.0[X,alsa]"
 OPENGLDEPEND="opengl? ( virtual/opengl )
 	sdl? ( ${SDLDEPEND} )
 	allegro? ( media-libs/allegrogl )
@@ -47,19 +45,21 @@ DEPEND="media-libs/libpng
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	openal? ( media-libs/openal )
-	wxwindows? ( =x11-libs/wxGTK-2.8* )"
+	wxwindows? ( x11-libs/wxGTK:2.8 )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
-PDEPEND="models? ( >=games-fps/vavoom-models-1.4.2 )
+PDEPEND="models? ( >=games-fps/vavoom-models-1.4.3 )
 	music? ( games-fps/vavoom-music )
 	textures? ( games-fps/vavoom-textures )"
 
 datadir=${GAMES_DATADIR}/${PN}
 
+CMAKE_IN_SOURCE_BUILD=true
+
 pkg_setup() {
 	games_pkg_setup
 
-	# Do some important check ...
+	# Print some warning if needed
 	if use sdl && use allegro ; then
 		echo
 		ewarn "Both 'allegro' and 'sdl' USE flags enabled. Using SDL as default."
@@ -68,41 +68,7 @@ pkg_setup() {
 		ewarn "Both 'allegro' and 'sdl' USE flags disabled. Using SDL as default."
 	fi
 
-	# Base graphic/sound/music support is enabled?
-	echo
-	einfo "Doing some sanity check..."
-
-	# Graphic/sound/opengl check
-	local backend="media-libs/libsdl"
-
-	if ! use sdl && use allegro ; then
-		backend="media-libs/allegro"
-	fi
-
-	local backendflags="X alsa"
-
-	if use opengl ; then
-		[[ "${backend}" == "media-libs/libsdl" ]] && backendflags="${backendflags} opengl"
-	else
-		ewarn "'opengl' USE flag disabled. OpenGL is recommended, for best graphics."
-	fi
-
-	local msg="Please rebuild ${backend} with ${backendflags} USE flag enabled"
-	if ! built_with_use ${backend} ${backendflags} ; then
-			eerror "${msg}"
-			die ${msg}
-	fi
-
-	# Music check
-	if ! use allegro && ! built_with_use media-libs/sdl-mixer timidity ; then
-		echo
-		eerror "MIDI Music support is not configured properly!"
-		eerror "Please rebuild sdl-mixer with USE 'timidity' enabled!"
-		die "music support error"
-	fi
-
-	echo
-	einfo "All is OK, let's build!"
+	! use opengl && ewarn "'opengl' USE flag disabled. OpenGL is recommended, for best graphics."
 }
 
 src_unpack() {
@@ -161,7 +127,7 @@ src_compile() {
 					$(cmake-utils_use_enable wxwindows LAUNCHER)
 					-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}"
 
-	cmake-utils_src_configurein
+	cmake-utils_src_configure
 
 	cmake-utils_src_make -j1
 }

@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Apr 2009; Davide Cendron (scen) <scen@gentoo.org> vavoom-9999.ebuild:
+  Sync live ebuild contents including latest changes in other one
+
   07 Apr 2009; Davide Cendron (scen) <scen@gentoo.org> -vavoom-1.29.ebuild,
   +vavoom-1.30.ebuild:
   Version bump. Also forced enabling of some USE, to improve the default
