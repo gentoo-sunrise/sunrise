@@ -1,6 +1,11 @@
 # ChangeLog for games-fps/vavoom
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Apr 2009; Davide Cendron (scen) <scen@gentoo.org> -vavoom-1.29.ebuild,
+  +vavoom-1.30.ebuild:
+  Version bump. Also forced enabling of some USE, to improve the default
+  installation of Vavoom
 
   09 Nov 2008; Davide Cendron (scen) <scen@gentoo.org> -vavoom-1.28.ebuild,
   +vavoom-1.29.ebuild:

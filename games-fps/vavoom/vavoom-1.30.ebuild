@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,10 +15,8 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro asm debug dedicated flac mad mikmod models music openal opengl
-+sdl textures tools vorbis wxwindows"
-
-QA_EXECSTACK="${GAMES_BINDIR:1}/${PN}"
+IUSE="allegro asm debug dedicated flac mad mikmod +models +music openal +opengl
++sdl +textures tools +vorbis wxwindows"
 
 # From econf:  "Vavoom requires Allegro or SDL to compile"
 # SDL,like Allegro are *software* renderers in this game.
@@ -55,6 +53,8 @@ PDEPEND="models? ( >=games-fps/vavoom-models-1.4.3 )
 	textures? ( games-fps/vavoom-textures )"
 
 datadir=${GAMES_DATADIR}/${PN}
+
+CMAKE_IN_SOURCE_BUILD=true
 
 pkg_setup() {
 	games_pkg_setup
@@ -127,7 +127,7 @@ src_compile() {
 					$(cmake-utils_use_enable wxwindows LAUNCHER)
 					-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}"
 
-	cmake-utils_src_configurein
+	cmake-utils_src_configure
 
 	cmake-utils_src_make -j1
 }
