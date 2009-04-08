@@ -12,7 +12,7 @@ SRC_URI="http://dev.gentooexperimental.org/~idl0r/distfiles/${P}.tar.bz2"
 
 LICENSE="GPL-2 Stanford"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~x86-fbsd"
 IUSE=""
 
 CONFIG_CHECK="IP_MULTICAST IP_MROUTE"
@@ -30,10 +30,6 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	newinitd "${FILESDIR}"/igmpproxy-init.d igmpproxy || die
-}
-
-pkg_postinst() {
-	elog "As IGMPproxy is logging much directly to syslog,"
-	elog "you should consider filtering to a separate file or drop it."
+	newinitd "${FILESDIR}"/igmpproxy-init.d ${PN} || die
+	newconfd "${FILESDIR}"/igmpproxy-conf.d ${PN} || die
 }
