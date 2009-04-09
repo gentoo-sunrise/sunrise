@@ -23,18 +23,9 @@ RDEPEND=">=virtual/jre-1.4.1"
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_install() {
-#	dodir /opt/smartcvs
 	insinto /opt/smartcvs
-	doins *
-	insinto /opt/smartcvs/bin
-	doins bin/*
-	insinto /opt/smartcvs/lib
-	doins lib/*
-	insinto /opt/smartcvs/sources
-	doins sources/*
-	exeinto /opt/smartcvs/bin
-	doexe bin/smartcvs.sh
-#	cp -dPR * ${D}/opt/smartcvs/
+	doins -r *
+	fperms +x /opt/smartcvs/bin/smartcvs.sh
 	dosym /opt/smartcvs/bin/smartcvs.sh /usr/bin/
 
 	for X in 32 48 64 128
@@ -44,7 +35,6 @@ src_install() {
 	done
 
 	make_desktop_entry ${PN}.sh "SmartCVS" ${PN}.png "Development;RevisionControl"
-	einfo "smartcvs is very much useless unless a GUI is available"
 }
 
 pkg_nofetch() {

@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Apr 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
+  smartcvs-7.0.7.ebuild, metadata.xml:
+  removed files dir, further changes after review by Tommy[D]
+
+  09 Apr 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
   +smartcvs-7.0.7.ebuild, +metadata.xml:
   New ebuild for smartcvs, bug 183328
 
