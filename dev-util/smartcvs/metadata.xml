@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd>no-herd</herd>
+  <herd>maintainer-wanted</herd>
   <longdescription>SmartCVS is a powerful GUI CVS client written in Java</longdescription>
-  <maintainer>
-  <email>maintainer-wanted@gentoo.org</email>
-  </maintainer>
 </pkgmetadata>
