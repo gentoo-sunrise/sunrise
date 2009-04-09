@@ -13,13 +13,15 @@ IUSE=""
 
 RDEPEND=">=gnome-base/libgnomeui-2.22.1
 	gnome-base/gconf
-	>=gnome-base/libglade-2.6.2
+	gnome-base/libglade
 	>=dev-libs/glib-2
 	>=x11-libs/gtk+-2
 	>=media-libs/gstreamer-0.10.20
 	dev-libs/libxslt
 	dev-libs/libxml2
-	x11-libs/pango"
+	x11-libs/pango
+	app-text/dvipng
+	virtual/latex-base"
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext
