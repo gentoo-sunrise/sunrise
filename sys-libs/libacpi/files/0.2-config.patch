@@ -1,0 +1,21 @@
+--- config.mk	2007-07-29 14:09:34.000000000 +0200
++++ config.mk.new	2009-04-10 21:02:50.000000000 +0200
+@@ -3,15 +3,14 @@
+ SONAME = libacpi.so.${SOVERSION}
+ 
+ # customize below to fit your system
+-PREFIX = /usr/local
++PREFIX = /usr/
+ MANPREFIX = ${PREFIX}/share/man
+ 
+ # flags
+-SOFLAGS = -shared -Wl,-soname,${SONAME}
+-CFLAGS += -fPIC -g --pedantic -Wall -Wextra
++SOFLAGS = $(LDFLAGS) -shared -Wl,-soname,${SONAME}
++CFLAGS += -fPIC 
+ 
+ # Compiler and linker
+-CC = cc
+ LD = ${CC}
+ AR = ar cr
+ RANLIB = ranlib
