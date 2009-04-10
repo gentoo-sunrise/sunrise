@@ -10,9 +10,7 @@ MY_P="${PN}_${PV/_rc/RC}"
 
 DESCRIPTION="Graphical tool to do a lot things with image files like extracting, mounting, encrypting."
 HOMEPAGE="http://www.acetoneteam.org/"
-# switch back to the sf.net mirror later, if the tarball is also vailable there
-#SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
-SRC_URI="http://www.acetoneteam.org/download/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}2/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -25,12 +23,9 @@ DEPEND="x11-libs/qt-gui
 	!app-cdr/acetoneiso2"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}/acetoneiso/"
+S="${WORKDIR}/${MY_P}/src/"
 
 src_prepare() {
-	# Fix prestripping bug 221745
-	epatch "${FILESDIR}/${PN}-nostrip.patch"
-
 	# unrar is called unrar-nonfree there
 	sed -i -e 's:unrar-nonfree:unrar:g' sources/compress.h locale/*.ts \
 		|| die "sed failed"
