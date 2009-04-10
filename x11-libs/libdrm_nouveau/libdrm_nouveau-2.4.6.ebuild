@@ -26,7 +26,7 @@ RDEPEND="dev-libs/libpthread-stubs
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${DRM_P}"
-PATCHES=( "${FILESDIR}/${DRM_P}-nouveau.patch" )
+PATCHES=( "${FILESDIR}/${DRM_P}-makefile.patch" )
 CONFIGURE_OPTIONS="--enable-udev --enable-nouveau-experimental-api"
 
 # FIXME, we should try to see how we can fit the --enable-udev configure flag
