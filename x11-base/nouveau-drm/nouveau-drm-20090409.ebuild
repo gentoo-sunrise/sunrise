@@ -5,7 +5,7 @@
 WANT_AUTOMAKE="1.7"
 
 #EGIT_BRANCH="vblank-rework"
-EGIT_TREE="eb50b755d5c6b6d981984d19cf7a450a39cd7151"
+EGIT_TREE="7fef575be8d275e575b05318ce8d1a9bf70f9adb"
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/mesa/drm"
 
 inherit eutils x11 linux-mod autotools git
