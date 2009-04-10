@@ -192,9 +192,9 @@ fi
 
 ebegin "Merging in changes..."
 if [[ "$opt_verbose" == "1" ]] ; then
-	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed --ignore-ancestry
+	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed
 else
-	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed -q --ignore-ancestry
+	svn merge sunrise@$reviewed_revision sunrise@$sunrise_revision reviewed -q
 fi
 eend ${?}
 
