@@ -1,0 +1,43 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+inherit eutils
+
+MY_PV=${PV//./_}
+MY_P=smartsvn-generic-${MY_PV}
+
+DESCRIPTION="SmartSVN"
+HOMEPAGE="http://www.syntevo.com/smartsvn/"
+SRC_URI="${MY_P}.tar.gz"
+SLOT="0"
+LICENSE="smartsvn"
+KEYWORDS="~amd64 ~x86"
+
+IUSE=""
+RESTRICT="fetch"
+
+RDEPEND=">=virtual/jre-1.4.1"
+
+S="${WORKDIR}/${PN}-${MY_PV}"
+
+src_install() {
+	insinto /opt/smartsvn
+	doins -r * || die "cannot install needed files"
+	fperms +x /opt/smartsvn/bin/smartsvn.sh || die "cannot make executable"
+	dosym /opt/smartsvn/bin/smartsvn.sh /usr/bin/smartsvn || die "cannot create symlink"
+
+	for X in 32 48 64 128
+	do
+		insinto /usr/share/icons/hicolor/${X}x${X}/apps
+		newins "${S}/bin/${PN}-${X}x${X}.png" "${PN}.png" || die "cannot install needed files"
+	done
+
+	make_desktop_entry "${PN}" "SmartSVN" ${PN}.png "Development;RevisionControl"
+}
+
+pkg_nofetch(){
+	einfo "Please download ${MY_P}.tar.gz from:"
+	einfo "${HOMEPAGE}download.html?file=smartsvn/${MY_P}.tar.gz"
+	einfo "and move/copy to ${DISTDIR}"
+}
