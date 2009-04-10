@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit eutils qt4
+inherit qt4
 
 MY_P="${PN}_${PV/_rc/RC}"
 
