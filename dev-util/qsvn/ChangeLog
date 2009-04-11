@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2009; Christian Ruppert <idl0r@gentoo.org> +files/gcc43.patch,
+  qsvn-0.8.1.ebuild:
+  Added gcc-4.3 patch because of missing include.
+
   13 Mar 2009; Christian Ruppert <idl0r@gentoo.org> qsvn-0.8.1.ebuild:
   removed x11-libs/qt:4 meta package dependency
 

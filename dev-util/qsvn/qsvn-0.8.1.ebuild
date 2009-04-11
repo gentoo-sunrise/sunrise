@@ -3,7 +3,8 @@
 # $Header: $
 
 EAPI="2"
-inherit cmake-utils
+
+inherit eutils cmake-utils
 
 DESCRIPTION="GUI frontend to the Subversion revision system"
 HOMEPAGE="http://www.anrichter.net/projects/qsvn/"
@@ -20,6 +21,10 @@ DEPEND="x11-libs/qt-gui:4[qt3support]
 RDEPEND=${DEPEND}
 
 S="${WORKDIR}/${P}/src"
+
+src_prepare() {
+	epatch "${FILESDIR}/gcc43.patch"
+}
 
 src_install() {
 	cmake-utils_src_install
