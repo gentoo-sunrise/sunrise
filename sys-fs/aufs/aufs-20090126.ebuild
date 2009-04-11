@@ -74,7 +74,8 @@ pkg_setup() {
 
 		# If the sec_perm patch has to be applied
 		if [[ ${APPLY_SEC_PERM_PATCH} == "y" ]] ; then
-			epatch "${FILESDIR}"/${PN}20081208-sec_perm-2.6.24.patch
+			epatch 
+"${FILESDIR}"/${PN}-20081208-sec_perm-2.6.24.patch
 		fi
 
 		# if the lhash patch has to be applied
