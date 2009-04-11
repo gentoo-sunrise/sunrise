@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  aufs-20090126.ebuild:
+  Fix patch naming
+
   06 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   aufs-20070402.ebuild, aufs-20080422.ebuild, aufs-20081208-r1.ebuild,
   aufs-20090126.ebuild:
