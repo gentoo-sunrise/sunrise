@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2009; Marian Kyral <mkyral@email.cz> rawtherapee-2.4_rc2.ebuild:
+  The English language file is always installed. Fix of missing labels 175963#c43
+
   07 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   rawtherapee-2.4_rc2.ebuild:
   Remove removed accessibility usedep of gtkmm, fixes bug 265374

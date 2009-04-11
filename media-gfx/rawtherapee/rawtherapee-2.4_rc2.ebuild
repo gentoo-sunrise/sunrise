@@ -51,12 +51,13 @@ src_install() {
 	doins -r options images profiles themes || die
 
 	insinto "/opt/${MY_PN}/languages"
+	doins "languages/english-us" || die # Always install english lang. file
+
 	for lng in ${LINGUAS}; do
 		case $lng in
 			cs) doins "languages/czech" || die ;;
 			da) doins "languages/dansk" || die ;;
 			de) doins "languages/deutsch" || die ;;
-			en_US) doins "languages/english-us" || die ;;
 			en_GB) doins "languages/english-uk" || die ;;
 			es) doins "languages/espanol" || die ;;
 			eu) doins "languages/euskara" || die ;;
