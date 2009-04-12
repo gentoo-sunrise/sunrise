@@ -7,7 +7,7 @@ inherit eutils
 MY_PV=${PV%.*}
 MY_DPV=${PV#*.*.*.}
 
-DESCRIPTION="Apt-Cacher NG is yet another implementation of a HTTP proxy for Debian/Ubuntu software packages written in C++"
+DESCRIPTION="Yet another implementation of a HTTP proxy for Debian/Ubuntu software packages written in C++"
 HOMEPAGE="http://www.unix-ag.uni-kl.de/~bloch/acng/"
 SRC_URI="mirror://debian/pool/main/a/${PN}/${PN}_${MY_PV}.orig.tar.gz
 	mirror://debian/pool/main/a/${PN}/${PN}_${MY_PV}-${MY_DPV}.diff.gz"
@@ -101,4 +101,5 @@ pkg_postinst() {
 		elog "filesystem."
 		elog "   Manual page  : man 8 acngfs"
 	fi
+	elog "Please note: this ebuild installs /etc/cron.daily/${PN} cron job."
 }
