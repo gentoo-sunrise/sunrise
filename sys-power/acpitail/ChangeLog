@@ -5,5 +5,5 @@
   12 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   +acpitail-0.1.ebuild, +metadata.xml:
   sys-power/acpitail added
-  bug 265847
+  bug 182600
 
