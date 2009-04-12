@@ -5,4 +5,4 @@
   12 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   +files/3.0.1-Makefile.patch, +yacpi-3.0.1.ebuild, +metadata.xml:
   sys-power/yacpi added
-  bug 265850
+  bug 163148
