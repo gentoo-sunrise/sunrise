@@ -1,0 +1,32 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rsync/files/rsyncd.init.d,v 1.5 2007/02/23 11:33:59 uberlord Exp $
+
+NAME="apt-cacher-ng"
+DAEMON="/usr/sbin/$NAME"
+RUNDIR="/var/run/$NAME"
+PIDFILE="$RUNDIR/$NAME.pid"
+SOCKETFILE="$RUNDIR/$NAME.socket"
+DAEMON_OPTS="$DAEMON_OPTS pidfile=$PIDFILE SocketPath=$SOCKETFILE foreground=0"
+
+depend() {
+	use net
+}
+
+start() {
+	ebegin "Starting $NAME"
+	start-stop-daemon --start --exec $DAEMON \
+	    --chuid $NAME --group $NAME \
+	    --pidfile $PIDFILE \
+	    -- $DAEMON_OPTS
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping $NAME"
+	start-stop-daemon --stop --retry 15 --exec $DAEMON \
+	    --pidfile $PIDFILE
+	rm -f $PIDFILE
+	eend $?
+}
