@@ -1,6 +1,10 @@
 # ChangeLog for media-tv/zattoo-bin
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  zattoo-bin-3.3.0.17284.ebuild:
+  Fix dependency
 
   09 Oct 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -zattoo-bin-3.1.0.11060.ebuild, +zattoo-bin-3.3.0.17284.ebuild:

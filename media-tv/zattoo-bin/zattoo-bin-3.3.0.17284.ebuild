@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,7 +23,7 @@ RDEPEND="app-crypt/mit-krb5
 	net-libs/libgssglue
 	<net-libs/xulrunner-1.9
 	net-misc/curl
-	net-www/netscape-flash
+	www-plugins/adobe-flash
 	>=sys-libs/glibc-2.4
 	x11-libs/gtkglext"
 
