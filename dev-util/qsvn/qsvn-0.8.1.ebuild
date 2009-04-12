@@ -17,6 +17,7 @@ IUSE="debug"
 
 DEPEND="x11-libs/qt-gui:4[qt3support]
 	x11-libs/qt-sql:4[sqlite]
+	x11-libs/qt-test:4
 	dev-util/subversion"
 RDEPEND=${DEPEND}
 
