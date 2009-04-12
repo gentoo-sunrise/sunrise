@@ -4,5 +4,12 @@
 
 *apt-cacher-ng-0.3.8.1-r1 (12 Apr 2009)
 
-  12 Apr 2009; Sergey Dryabzhinsky <sergey.dryabzhinsky@gmail.com> +apt-cacher-ng-0.3.8.1-r1.ebuild:
-  Version bump.
+  12 Apr 2009; Sergey Dryabzhinsky <sergey.dryabzhinsky@gmail.com> 
+  +apt-cacher-ng-0.3.8.1-r1.ebuild +metadata.xml
+  +files/apt-cacher-ng-0.3.8-respect-portage-qa-build-unstripped.patch
+  +files/cron.daily
+  +files/initd
+  +files/confd
+  +files/logrotate
+  
+  New ebuild for bug #265840
