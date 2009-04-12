@@ -8,4 +8,4 @@
   +files/0.2-Makefile.patch, +files/0.2-config.patch, +metadata.xml,
   libacpi-0.2:
   initial checkin
-  bug 265848
+  bug 182600
