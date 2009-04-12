@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/qshaderedit
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Apr 2009; Wilfried Holzke (justXi) <justXi@basefacility.org>
+  +qshaderedit-0.1.3.ebuild, +metadata.xml:
+  New Ebuild for bug 143256 thanks to Tommy[D]
+
