@@ -28,6 +28,7 @@ src_unpack() {
 	# fix for respecting DESTDIR and
 	# and finally fix to respect docdir=...
 	epatch "${FILESDIR}/${PN}-1.9-desktop-update.patch"
+	epatch "${FILESDIR}/${P}-adif.patch"
 	mkdir -p "${S}"/m4	# make autoconf happy...
 	eautoreconf
 }
