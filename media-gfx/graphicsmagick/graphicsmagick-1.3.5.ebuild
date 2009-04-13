@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit flag-o-matic
+inherit flag-o-matic perl-app
 
 EAPI=2
 
@@ -90,6 +90,9 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "Installation failed"
 	dodoc README.txt ChangeLog* || die "dodoc failed."
+
+	# Fix perllocal.pod file collision
+	use perl && fixlocalpod
 }
 
 pkg_postinst() {
