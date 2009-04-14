@@ -4,7 +4,7 @@
 
 NEED_PYTHON="2.4"
 
-inherit distutils git
+inherit git distutils
 
 DESCRIPTION="Ncurses RSS client"
 HOMEPAGE="http://www.codezen.org/canto/"
@@ -20,3 +20,7 @@ DEPEND="sys-libs/ncurses
 		dev-python/feedparser
 		dev-python/chardet"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	git_src_unpack
+}

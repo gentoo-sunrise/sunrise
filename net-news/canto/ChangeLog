@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2009; Christian Ruppert <idl0r@gentoo.org> canto-9999-r3.ebuild:
+  Changed inherit order and added src_unpack otherwise git eclass would
+  overwrite all distutils exports.
+
   03 Mar 2009; Jack Miller (TheMoken) <jack@codezen.org>
   -canto-0.5.7.ebuild, +canto-0.6.7.ebuild:
   Version bump.
