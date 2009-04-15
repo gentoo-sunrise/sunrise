@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
+
 inherit qt4
 
 DESCRIPTION="A simple program to send and receive data to and from a serial device."
@@ -13,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="x11-libs/qt-gui
+DEPEND="x11-libs/qt-gui:4
 	dev-libs/libserial"
 RDEPEND="${DEPEND}"
 
