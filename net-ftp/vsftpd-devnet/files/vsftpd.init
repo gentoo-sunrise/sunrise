@@ -50,13 +50,19 @@ start() {
 	checkconfig || return 1
 	ebegin "Starting ${SVCNAME}"
 	start-stop-daemon --start --exec ${VSFTPD_EXEC} \
-		--background -- "${VSFTPD_CONF}"
+		--background --make-pidfile --pidfile "${VSFTPD_PID}" \
+		-- "${VSFTPD_CONF}"
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping ${SVCNAME}"
-	start-stop-daemon --stop --name ${SVCNAME} 
+	if [ -f ${VSFTPD_PID} ]; then
+		start-stop-daemon --stop --pidfile ${VSFTPD_PID} 
+	else
+		ewarn "Couldn't found ${VSFTPD_PID} trying to stop over the process name ${SVCNAME}"
+		start-stop-daemon --stop --name ${SVCNAME}
+	fi
 	eend $?
 }
 

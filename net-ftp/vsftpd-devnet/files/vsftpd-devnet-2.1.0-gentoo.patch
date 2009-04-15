@@ -55,6 +55,15 @@ diff -ur vsftpd-2.1.0.orig/vsftpd.conf  vsftpd-2.1.0/vsftpd.conf
 diff -ur  vsftpd-2.1.0.orig/vsftpd.conf.5  vsftpd-2.1.0/vsftpd.conf.5
 --- vsftpd.conf.5.orig	2009-02-28 22:36:14.000000000 +0200
 +++ vsftpd.conf.5	2009-02-28 22:40:00.000000000 +0200
+@@ -150,7 +150,7 @@
+ the listener process. i.e. control will immediately be returned to the shell
+ which launched vsftpd.
+
+-Default: YES
++Default: NO
+ .TP
+ .B check_shell
+ Note! This option only has an effect for non-PAM builds of vsftpd. If disabled,
 @@ -1141,10 +1141,10 @@
  with an example. If you set
  .BR user_config_dir
