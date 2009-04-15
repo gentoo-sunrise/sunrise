@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/lvprog
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Apr 2009; Wilfried Holzke (justXi) <justXi@basefacility.org>
+  +lvprog-0.1.1_beta.ebuild, +metadata.xml:
+  New ebuild for bug 197717 thanks to idl0r
+
