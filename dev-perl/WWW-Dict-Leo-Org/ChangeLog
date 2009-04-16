@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  WWW-Dict-Leo-Org-1.34.ebuild:
+  dev-perl/HTML-TableParser as RDEPEND added
+
 * WWW-Dict-Leo-Org-1.34 (14 Apr 2009)
 
   14 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net> +metadata.xml:

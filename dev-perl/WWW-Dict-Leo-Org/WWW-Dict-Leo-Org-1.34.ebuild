@@ -12,6 +12,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-lang/perl"
+RDEPEND="dev-lang/perl
+	dev-perl/HTML-TableParser"
 DEPEND="${RDEPEND}"
 
