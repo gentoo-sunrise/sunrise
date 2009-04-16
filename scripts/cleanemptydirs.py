@@ -43,4 +43,4 @@ for key in PMASK.keys():
 
 for item in TOCHECK:
 	if not isdir(item):
-		print item, "is obsolete"
+		print "package.mask entry for '%s' is obsolete!" % str(item)
