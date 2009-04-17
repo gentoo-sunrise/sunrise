@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  ripwrap-0.20.ebuild:
+  QA quotes around EAPI version
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   ripwrap-0.20.ebuild:
   Add suggested RDEPEND=${DEPEND}, use EAPI-2-useflags
