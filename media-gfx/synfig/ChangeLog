@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  synfig-0.61.09.ebuild:
+  QA quotes around EAPI version
+
   08 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   synfig-0.61.09.ebuild:
   whitespace
