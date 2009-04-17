@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  openfoam-utilities-1.5_p20090311.ebuild:
+  QA quotes around EAPI version
+
   14 Mar 2009; Oliver Borm (boroli) <oli.borm@web.de>
   openfoam-utilities-1.5_p20090311.ebuild, files/OpenFOAM-1.5-compile.patch:
   Fixed typos
