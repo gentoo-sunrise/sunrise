@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="2"
 inherit git gnome2 autotools
 
 DESCRIPTION="Guake is a drop-down terminal for Gnome"

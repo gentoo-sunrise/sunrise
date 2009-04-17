@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net> guake-9999.ebuild:
+  QA quotes around EAPI version
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   guake-0.3.1.ebuild, guake-9999.ebuild:
   Add suggested RDEPEND=${DEPEND}, move to EAPI-2-usedeps
