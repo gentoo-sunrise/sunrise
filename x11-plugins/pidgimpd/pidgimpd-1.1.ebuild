@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="2"
 
 DESCRIPTION="PidgiMPD is a Pidgin plugin for monitoring/controlling MPD."
 HOMEPAGE="http://ayeon.org/projects/pidgimpd/"

@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  pidgimpd-1.1.ebuild:
+  QA quotes around EAPI version
+
   10 Feb 2009; René Neumann (Necoro) <gentoo@necoro.eu>
   -pidgimpd-1.0.1.ebuild, +pidgimpd-1.1.ebuild:
   Version bump
