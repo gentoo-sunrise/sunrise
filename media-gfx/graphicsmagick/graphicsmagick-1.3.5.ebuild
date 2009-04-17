@@ -4,7 +4,7 @@
 
 inherit flag-o-matic perl-app
 
-EAPI=2
+EAPI="2"
 
 MY_P=${P/graphicsm/GraphicsM}
 
