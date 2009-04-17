@@ -17,10 +17,11 @@ RDEPEND="dev-util/subversion
 	>=sys-apps/portage-2.1"
 
 src_prepare() {
-	sed -i -e 's:/sbin/functions.sh:/etc/init.d/functions.sh:' sunrise-commit || die "sed failed"
+	sed -i -e 's:/sbin/functions.sh:/etc/init.d/functions.sh:' sunrise-commit \
+		|| die "sed failed"
 }
 
 src_install() {
-	dobin sunrise-commit echangelog-tng || die
-	doman sunrise-commit.1
+	dobin sunrise-commit echangelog-tng || die "dobin failed"
+	doman sunrise-commit.1 || die "doman failed"
 }
