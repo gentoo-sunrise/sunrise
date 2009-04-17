@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Yar Odin (yarodin) <yarodin@gmail.com>
+  openoffice-infra-3.0.1.ebuild:
+  Change app-text/poppler to virtual/poppler at deps.
+
   06 Mar 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   openoffice-infra-3.0.1.ebuild:
   Some cleanups to the 3.0.1 ebuild, also switching to EAPI=2, mostly the work
