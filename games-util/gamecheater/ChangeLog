@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  gamecheater-0.4.ebuild:
+  QA quotes around EAPI version
+
   31 Jan 2009; Maurício Moraes (morris) <morris@brgentoo.org>
   +gamecheater-0.4.ebuild, +metadata.xml:
   New Ebuild for bug 183856 thanks to Christian, scarabeus and Tommy
