@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  digitizer-4.1.ebuild:
+  QA quotes around EAPI version
+
   19 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   digitizer-4.1.ebuild:
   Add suggested RDEPEND=${DEPEND}, use EAPI 1, fixed qt depend, package name
