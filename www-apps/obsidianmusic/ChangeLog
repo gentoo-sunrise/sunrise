@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
+  obsidianmusic-2.0.5.4.ebuild:
+  Removed unused eutils inherit. Added missing die statements. Removed LICENSE
+  from docs.
+
   16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
   obsidianmusic-2.0.5.4.ebuild:
   Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau

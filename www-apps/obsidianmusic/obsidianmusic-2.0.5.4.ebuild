@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit webapp eutils depend.php
+inherit webapp depend.php
 
 DESCRIPTION="amaroK Web Frontend"
 HOMEPAGE="http://amarokwebfront.sourceforge.net/"
@@ -24,13 +24,13 @@ need_php
 src_install() {
 	webapp_src_preinst
 
-	local docs="README CHANGELOG DISCLAIMER LICENSE"
-	dodoc ${docs}
-	rm -f ${docs} INSTALL DISCLAIMER obsidianmusic.kateprj
+	local docs="README CHANGELOG DISCLAIMER"
+	dodoc ${docs} || die "dodoc failed"
+	rm -f ${docs} INSTALL LICENSE obsidianmusic.kateprj
 	rm -r daemon
 
 	insinto "${MY_HTDOCSDIR}"
-	doins -r .
+	doins -r . || die "doins failed"
 	webapp_serverowned "${MY_HTDOCSDIR}"/inc/cache
 	webapp_configfile  "${MY_HTDOCSDIR}"/inc/config.php
 	webapp_configfile  "${MY_HTDOCSDIR}"/inc/auth.users.php
