@@ -24,9 +24,9 @@ need_php
 src_install() {
 	webapp_src_preinst
 
-	local docs="README CHANGELOG DISCLAIMER"
+	local docs="README CHANGELOG"
 	dodoc ${docs} || die "dodoc failed"
-	rm -f ${docs} INSTALL LICENSE obsidianmusic.kateprj
+	rm -f ${docs} DISCLAIMER INSTALL LICENSE obsidianmusic.kateprj
 	rm -r daemon
 
 	insinto "${MY_HTDOCSDIR}"

@@ -4,6 +4,10 @@
 
   18 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
   obsidianmusic-2.0.5.4.ebuild:
+  Removed DISCLAIMER from docs.
+
+  18 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
+  obsidianmusic-2.0.5.4.ebuild:
   Removed unused eutils inherit. Added missing die statements. Removed LICENSE
   from docs.
 
