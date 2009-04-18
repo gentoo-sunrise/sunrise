@@ -6,7 +6,7 @@ EAPI="1"
 
 DESCRIPTION="A Qt based window manager"
 HOMEPAGE="http://www.mynetcologne.de/~nc-lindenal/qlwm/
-http://www.alinden.mynetcologne.de/qlwm/"
+	http://www.alinden.mynetcologne.de/qlwm/"
 SRC_URI="http://www.alinden.mynetcologne.de/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 
@@ -14,15 +14,15 @@ SLOT="4"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="|| ( x11-libs/qt-gui:4 x11-libs/qt:4 )
-x11-libs/libX11
-x11-libs/libXext"
-
+DEPEND="x11-libs/qt-gui:4
+	x11-libs/libX11
+	x11-libs/libXext"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
 	# fix path to shared files
 	sed -i -e 's!^DEST .*$!DEST = /usr/share/'"${PN}-${SLOT}"'!' "Makefile" \
 	   || die "Cannot fix DEST variable for shared files"

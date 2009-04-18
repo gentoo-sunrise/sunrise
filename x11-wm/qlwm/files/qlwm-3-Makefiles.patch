@@ -1,0 +1,109 @@
+diff -Naurp -Naurp qlwm-3.1.old/dclock/Makefile qlwm-3.1/dclock/Makefile
+--- qlwm-3.1.old/dclock/Makefile	2004-01-26 15:14:57.000000000 +0100
++++ qlwm-3.1/dclock/Makefile	2009-04-18 19:00:05.883964330 +0200
+@@ -1,19 +1,19 @@
+ # Makefile for dclock
+ 
+ # Compiler
+-CXX  		= g++
+-CXXFLAGS	= -pipe -O2 ${CPPFLAGS} 
++CXX  		?= g++
++CXXFLAGS	?= -pipe -O2 ${CPPFLAGS} 
+ #CXXFLAGS	= -Wall -pipe
+ 
+ # include files
+ INCPATH		= -I$(QTDIR)/include
+ 
+ # libraries
+-LFLAGS		= -L$(QTDIR)/lib -pthread 
++LDFLAGS		+= -L$(QTDIR)/lib -pthread 
+ LIBS		= -lqt-mt
+ 
+ # Linker
+-LINK		= g++
++LINK		= ${CXX}
+ 
+ # Meta-object compiler
+ MOC		= $(QTDIR)/bin/moc
+@@ -36,7 +36,7 @@ SRCMOC  = moc_dclock.cpp
+ all: $(DESTDIR)$(TARGET)
+ 
+ $(DESTDIR)$(TARGET): $(OBJECTS) 
+-	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
++	$(LINK) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
+ 
+ depend:
+ 	makedepend *.cpp 2> /dev/null
+diff -Naurp -Naurp qlwm-3.1.old/mail/Makefile qlwm-3.1/mail/Makefile
+--- qlwm-3.1.old/mail/Makefile	2004-01-26 15:14:58.000000000 +0100
++++ qlwm-3.1/mail/Makefile	2009-04-18 18:59:12.206966659 +0200
+@@ -3,19 +3,19 @@
+ SHELL = /bin/sh
+ 
+ # Compiler
+-CXX  		= g++
+-CXXFLAGS	= -pipe -O2 ${CPPFLAGS}
++CXX  		?= g++
++CXXFLAGS	?= -pipe -O2 ${CPPFLAGS}
+ #CXXFLAGS	= -Wall -pipe
+ 
+ # include files
+ INCPATH		= -I$(QTDIR)/include
+ 
+ # libraries
+-LFLAGS		= -L$(QTDIR)/lib -pthread 
++LDFLAGS		+= -L$(QTDIR)/lib -pthread 
+ LIBS		= -lqt-mt
+ 
+ # Linker
+-LINK		= g++
++LINK		= ${CXX}
+ 
+ # Meta-object compiler
+ MOC		= $(QTDIR)/bin/moc
+@@ -38,7 +38,7 @@ SRCMOC  = moc_biff.cpp
+ all: conf.h $(DESTDIR)$(TARGET)
+ 
+ $(DESTDIR)$(TARGET): $(OBJECTS) 
+-	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
++	$(LINK) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
+ 
+ conf.h: Makefile
+ 	for i in /var/spool/mail /var/mail /usr/spool/mail /usr/mail ; do [ -d $${i} ] && break ; done ; \
+diff -Naurp -Naurp qlwm-3.1.old/src/Makefile qlwm-3.1/src/Makefile
+--- qlwm-3.1.old/src/Makefile	2004-01-26 15:14:58.000000000 +0100
++++ qlwm-3.1/src/Makefile	2009-04-18 18:58:56.528216463 +0200
+@@ -1,8 +1,8 @@
+ # Makefile for qlwm
+ 
+ # Compiler
+-CXX  		= g++
+-CXXFLAGS	= -pipe -O2 ${CPPFLAGS}
++CXX  		?= g++
++CXXFLAGS	?= -pipe -O2 ${CPPFLAGS}
+ #CXXFLAGS	= -Wall -pipe -DDEBUGMSG
+ #CXXFLAGS	= -pipe -DDEBUGMSG
+ 
+@@ -10,11 +10,11 @@ CXXFLAGS	= -pipe -O2 ${CPPFLAGS}
+ INCPATH		= -I/usr/X11R6/include -I$(QTDIR)/include
+ 
+ # libraries
+-LFLAGS		= -L/usr/X11R6/lib -L$(QTDIR)/lib -pthread
++LDFLAGS		+= -L/usr/X11R6/lib -L$(QTDIR)/lib -pthread
+ LIBS		= -lXext -lX11 -lm -lqt-mt
+ 
+ # Linker
+-LINK		= g++
++LINK		= ${CXX}
+ 
+ # Meta-object compiler
+ MOC		= $(QTDIR)/bin/moc
+@@ -37,7 +37,7 @@ SRCMOC  = moc_xwindow.cpp moc_winlist.cp
+ all: $(DESTDIR)$(TARGET)
+ 
+ $(DESTDIR)$(TARGET): $(OBJECTS) 
+-	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
++	$(LINK) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
+ 
+ depend:
+ 	makedepend *.cpp 2> /dev/null

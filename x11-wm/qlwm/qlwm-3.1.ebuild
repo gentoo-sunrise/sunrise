@@ -2,11 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
+
+inherit eutils toolchain-funcs
 
 DESCRIPTION="A Qt based window manager"
 HOMEPAGE="http://www.mynetcologne.de/~nc-lindenal/qlwm/
-http://www.alinden.mynetcologne.de/qlwm/"
+	http://www.alinden.mynetcologne.de/qlwm/"
 SRC_URI="http://www.alinden.mynetcologne.de/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 
@@ -15,14 +17,11 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="x11-libs/qt:3
-x11-libs/libX11
-x11-libs/libXext"
-
+	x11-libs/libX11
+	x11-libs/libXext"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	# fix path to shared files
 	sed -i -e 's!^DEST .*$!DEST = /usr/share/'"${PN}-${SLOT}"'!' "Makefile" \
 	   || die "Cannot fix DEST variable for shared files"
@@ -32,6 +31,12 @@ src_unpack() {
 	# fixing path/filename to qtconfig
 	sed -i -e 's!qtconfig!/usr/qt/3/bin/qtconfig!' "files/menuconfig" \
 	   || die "Cannot fix menu entry for qtconfig"
+
+	epatch "${FILESDIR}/${PN}-3-Makefiles.patch"
+}
+
+src_compile() {
+	emake CXX=$(tc-getCXX) || die "emake failed"
 }
 
 src_install() {

@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2009; Christian Ruppert <idl0r@gentoo.org> qlwm-3.1.ebuild,
+  +files/qlwm-3-Makefiles.patch, qlwm-4.3.ebuild:
+  Readability. Migrated to EAPI 2 and added Makefile patches for qlwm-3 to
+  allow user-defined CXX/LD-FLAGS.
+
   12 Apr 2009; Thomas Fischer (Sparki) <fischer@unix-ag.uni-kl.de>
   +qlwm-3.1.ebuild, +qlwm-4.3.ebuild, +metadata.xml:
   New Ebuilds for bug 265893
