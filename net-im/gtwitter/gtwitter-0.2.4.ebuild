@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,8 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=x11-libs/cairo-1.6.4-r1[X]
-	>=dev-dotnet/gnome-sharp-2
+	dev-dotnet/gnome-sharp
+	dev-dotnet/gconf-sharp
 	>=x11-libs/libsexy-0.1.11"
 
 DEPEND="${RDEPEND}
