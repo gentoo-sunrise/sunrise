@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
+
 inherit qt4
 
 DESCRIPTION="Twitter client for Linux using Qt4"
@@ -11,9 +13,10 @@ SRC_URI="http://launchpad.net/${PN}/trunk/${PV}/+download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
-DEPEND="x11-libs/qt-core
-	x11-libs/qt-gui
+DEPEND="x11-libs/qt-core:4
+	x11-libs/qt-gui:4
 	x11-libs/libnotify"
 RDEPEND="${DEPEND}"
 
