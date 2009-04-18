@@ -31,7 +31,3 @@ src_install() {
 
 	dodoc TODO || die "Failed to install TODO file!"
 }
-
-
-
-

@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2009; Christian Ruppert <idl0r@gentoo.org> serial-io-1.0.ebuild:
+  Whitespace.
+
   15 Apr 2009; Wilfried Holzke (justXi) <justXi@basefacility.org>
   serial-io-1.0.ebuild:
   Change dependency for serial-io, thanks to idl0r
