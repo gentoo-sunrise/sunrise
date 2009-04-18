@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${PN}"
 
 src_compile(){
-	qmake4
+	eqmake4
 	emake || die "emake failed"
 }
 
