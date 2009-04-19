@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> xlog-2.0.1.ebuild:
+  Fixed wrong comments in src_unpack
+
   12 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   ,xlog-2.0.1.ebuild, +files/xlog-2.0.1-adif.patch:
   fix for wrong ADIF output conversion

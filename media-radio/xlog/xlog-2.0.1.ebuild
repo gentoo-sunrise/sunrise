@@ -24,10 +24,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	# Let portage handle updating mime/desktop databases,
-	# fixes for wrong placed file and bug in gui_countrymap.c
-	# fix for respecting DESTDIR and
-	# and finally fix to respect docdir=...
 	epatch "${FILESDIR}/${PN}-1.9-desktop-update.patch"
+	# and patch wrong ADIF export
 	epatch "${FILESDIR}/${P}-adif.patch"
 	mkdir -p "${S}"/m4	# make autoconf happy...
 	eautoreconf
