@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  gpredict-1.0_beta2.ebuild, files/gpredict-1.0_beta2-doc.patch:
+  added installation of needed doc files
+
+  19 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -gpredict-1.0_beta1.ebuild, +gpredict-1.0_beta2.ebuild,
   -files/gpredict-1.0_beta1-doc.patch,
   -files/gpredict-1.0_beta1-goocanvas.patch,
