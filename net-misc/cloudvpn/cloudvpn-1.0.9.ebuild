@@ -12,7 +12,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-libs/openssl"
-DEPEND="dev-util/scons ${RDEPEND}"
+DEPEND="dev-util/scons
+	${RDEPEND}"
 
 src_compile () {
 	# dont pass make's -l option, as scons uses it differently.
