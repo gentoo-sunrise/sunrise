@@ -15,9 +15,9 @@ SLOT="0"
 KEYWORDS="~ppc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-libs/glib-2.14.0
+RDEPEND=">=dev-libs/glib-2.16.0
 	>=x11-libs/gtk+-2.12
-	>=x11-libs/goocanvas-0.8
+	>=x11-libs/goocanvas-0.9
 	net-misc/curl"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
@@ -29,19 +29,10 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# prevent gpredict from building goocanvas itself
-	epatch "${FILESDIR}/${P}-goocanvas.patch"
-	rm -rf goocanv8
-
 	# remove wrong doc location
 	epatch "${FILESDIR}/${P}-doc.patch"
 
 	eautoreconf
-}
-
-src_compile() {
-	econf --disable-coverage
-	emake || die "emake failed!"
 }
 
 src_install() {
