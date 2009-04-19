@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Apr 2009; Mirek Kratochvil ([exa]) <exa.exa@gmail.com>
+  +cloudvpn-1.0.9.ebuild:
+  version bump for bug 258859
+
   13 Feb 2009; Mirek Kratochvil ([exa]) <exa.exa@gmail.com>
   +cloudvpn-1.0.7.ebuild, +metadata.xml:
   new ebuild for bug #258859
