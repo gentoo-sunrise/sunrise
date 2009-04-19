@@ -4,11 +4,11 @@
 
 inherit autotools eutils
 
-MY_PV=${PV/_beta/b}
+MY_P="${PN}-${PV/_beta/b}"
 
 DESCRIPTION="A tool for tracking amateur radio satellites"
 HOMEPAGE="http://gpredict.oz9aec.net"
-SRC_URI="mirror://sourceforge/${PN}/${PN}-${MY_PV}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	sys-devel/gettext"
 
-S=${WORKDIR}/${PN}-${MY_PV}
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
@@ -38,6 +38,5 @@ src_unpack() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	make_desktop_entry ${PN} "GPredict" "/usr/share/pixmaps/gpredict/icons/gpredict-icon.png" Science
-	dosym /usr/portage/licenses/GPL-2 /usr/share/${PN}/COPYING || die "dosym died"
 	dodoc AUTHORS ChangeLog NEWS README TODO  || die "dodoc died"
 }
