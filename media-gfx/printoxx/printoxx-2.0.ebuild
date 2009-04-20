@@ -16,8 +16,6 @@ IUSE=""
 DEPEND=">=x11-libs/gtk+-2.8"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${PN}
-
 src_compile() {
 	emake PREFIX=/usr || die "build failed"
 }

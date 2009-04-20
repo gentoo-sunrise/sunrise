@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2009; Robert Steen (Gandalf) <gandalf@vebbe.se>
+  -printoxx-1.9.1.ebuild, +printoxx-2.0.ebuild:
+  Version bumb for Printoxx.
+
   02 Mar 2009; Robert Steen (Gandalf) <gandalf@vebbe.se>
   -printoxx-1.9.ebuild, +printoxx-1.9.1.ebuild:
   Version bumb for Printoxx.
