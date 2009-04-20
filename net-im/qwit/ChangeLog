@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2009; Christian Ruppert <idl0r@gentoo.org> qwit-0.6.ebuild:
+  Removed x11-libs/qt:4 meta package dependency.
+
   19 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   qwit-0.6.ebuild:
   Add suggested RDEPEND=${DEPEND}.
