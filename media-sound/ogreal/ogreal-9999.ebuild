@@ -7,11 +7,11 @@ inherit subversion autotools
 ESVN_REPO_URI="https://ogreal.svn.sourceforge.net/svnroot/ogreal/trunk/OgreAL-Eihort"
 
 DESCRIPTION="an OpenAL wrapper for Ogre"
-HOMEPAGE="http://sourceforge.net/projects/${PN}"
+HOMEPAGE="http://sourceforge.net/projects/ogreal"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=">=dev-games/ogre-1.4
