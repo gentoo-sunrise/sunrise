@@ -6,7 +6,7 @@ JAVA_PKG_IUSE="doc source"
 
 ESVN_REPO_URI="https://svn.tigase.org/reps/${PN}/trunk"
 
-inherit subversion java-pkg-2 eutils
+inherit subversion java-pkg-2
 
 DESCRIPTION="XML tools designed for XMPP."
 HOMEPAGE="http://www.tigase.org/en/project/xmltools"

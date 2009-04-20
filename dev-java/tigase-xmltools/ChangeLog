@@ -4,6 +4,10 @@
 
   20 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
   tigase-xmltools-9999_pre2.ebuild:
+  Removed unused eutils inherit.
+
+  20 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
+  tigase-xmltools-9999_pre2.ebuild:
   Live ebuilds shouldn't have KEYWORDS.
 
   06 Oct 2008; Mads Randstoft (mazzachre) <mads_randstoft@yahoo.dk>
