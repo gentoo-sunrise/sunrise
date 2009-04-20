@@ -1,10 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 JAVA_PKG_IUSE="doc source"
 
-ESVN_REPO_URI="https://svn.tigase.org/reps/tigase-xmltools/trunk"
+ESVN_REPO_URI="https://svn.tigase.org/reps/${PN}/trunk"
 
 inherit subversion java-pkg-2 eutils
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.tigase.org/en/project/xmltools"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=">=dev-java/ant-1.7
