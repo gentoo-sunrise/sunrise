@@ -1,8 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils kde
+EAPI="2"
+
+inherit kde
 
 DESCRIPTION="A program to create cross stitch patterns and charts"
 HOMEPAGE="http://kxstitch.sourceforge.net/"
@@ -13,15 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="imagemagick scanner"
 
-DEPEND="imagemagick? ( media-gfx/imagemagick )
+DEPEND="imagemagick? ( media-gfx/imagemagick[-nocxx] )
 	scanner? ( media-gfx/sane-backends )"
 RDEPEND="${DEPEND}"
-
-pkg_setup() {
-	if use imagemagick && built_with_use media-gfx/imagemagick nocxx ; then
-		eerror "Building kxstitch requires imagemagcik built without"
-		eerror "the nocxx use flag to build magick++ (the C++ API)."
-		eerror "Please re-emerge imagemagick with this use flag disabled."
-		die "imagemagick missing magick++"
-	fi
-}
