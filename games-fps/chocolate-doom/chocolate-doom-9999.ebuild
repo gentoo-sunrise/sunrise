@@ -6,11 +6,11 @@ inherit autotools subversion games
 
 DESCRIPTION="Doom port designed to act identically to the original game"
 HOMEPAGE="http://www.chocolate-doom.org/"
-ESVN_REPO_URI="https://${PN}.svn.sourceforge.net/svnroot/${PN}/trunk/${PN}"
+ESVN_REPO_URI="https://chocolate-doom.svn.sourceforge.net/svnroot/${PN}/trunk/${PN}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="server"
 
 DEPEND=">=media-libs/libsdl-1.1.3
