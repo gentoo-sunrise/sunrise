@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,10 +9,10 @@ HOMEPAGE="http://libgarmin.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
-ESVN_REPO_URI="http://libgarmin.svn.sourceforge.net/svnroot/libgarmin/libgarmin/dev"
+ESVN_REPO_URI="http://libgarmin.svn.sourceforge.net/svnroot/${PN}/${PN}/dev"
 ESVN_PROJECT="libgarmin"
 ##Upstream's bootstrap runs configure, which is evil
 ESVN_BOOTSTRAP="eautoreconf"

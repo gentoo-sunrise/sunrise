@@ -1,6 +1,9 @@
 # ChangeLog for dev-libs/libgarmin
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Apr 2009; Christian Ruppert <idl0r@gentoo.org> libgarmin-9999.ebuild:
+  Live ebuilds shouldn't have KEYWORDS.
 
   08 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   libgarmin-9999.ebuild:
