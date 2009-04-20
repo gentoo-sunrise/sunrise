@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  gpredict-1.0_beta2.ebuild:
+  Fix link to license from menu entry help->license
+
   19 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
   gpredict-1.0_beta2.ebuild:
   Simplify. Removed license symlink.
