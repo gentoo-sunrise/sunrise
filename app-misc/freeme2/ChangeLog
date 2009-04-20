@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2009; Christian Ruppert <idl0r@gentoo.org> freeme2-9999.ebuild:
+  Live ebuilds shouldn't have KEYWORDS. Added missing die statement.
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   freeme2-9999.ebuild:
   Add suggested RDEPEND=${DEPEND}, move eautoreconf to SVN_BOOTSTRAP and drop
