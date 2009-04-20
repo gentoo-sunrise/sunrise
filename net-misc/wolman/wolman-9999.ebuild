@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,10 +14,10 @@ SRC_URI=""
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
-DEPEND="|| ( x11-libs/qt-gui:4 =x11-libs/qt-4.3* )
+DEPEND="x11-libs/qt-gui:4
 	net-libs/libnet
 	net-libs/libpcap"
 RDEPEND="${DEPEND}
