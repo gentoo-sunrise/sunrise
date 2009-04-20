@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils subversion
 
@@ -11,22 +13,19 @@ HOMEPAGE="https://faracvs.cs.uni-magdeburg.de/projects/christsc-darbackup/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
+KEYWORDS=""
+IUSE="dar64"
 
-RDEPEND=">=app-backup/dar-2.2.6
+RDEPEND="!dar64? ( app-backup/dar[dar32] )
+	dar64? ( app-backup/dar[dar64] )
 	|| ( dev-util/bdelta dev-util/xdelta )
 	net-misc/openssh"
 
 pkg_setup() {
-	if ! built_with_use -o app-backup/dar dar32 dar64; then
-		die 'You must have either dar32 or dar64 useflags for app-backup/dar enabled.'
-	fi
-
 	enewgroup backup
 }
 
 src_install() {
-	dobin darbackup
-	doman darbackup.1
+	dobin darbackup || die "dobin failed"
+	doman darbackup.1 || die "doman failed"
 }
