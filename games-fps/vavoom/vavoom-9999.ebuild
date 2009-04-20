@@ -14,7 +14,7 @@ ESVN_REPO_URI="https://vavoom.svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="allegro asm debug dedicated flac mad mikmod +models +music openal +opengl
 +sdl +textures tools +vorbis wxwindows"
 
