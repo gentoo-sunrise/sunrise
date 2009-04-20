@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils vim-doc
+inherit vim-doc
 
 DESCRIPTION="A small utility which allows debugging from within vim"
 HOMEPAGE="http://clewn.sourceforge.net/"
@@ -26,7 +26,7 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ChangeLog README
+	dodoc ChangeLog README || die "dodoc failed"
 }
 
 pkg_postinst() {

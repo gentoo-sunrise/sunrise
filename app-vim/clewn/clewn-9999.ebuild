@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils subversion vim-doc
+inherit subversion vim-doc
 
 DESCRIPTION="A small utility which allows debugging from within vim"
 HOMEPAGE="http://clewn.sourceforge.net/"
@@ -12,7 +12,7 @@ ESVN_REPO_URI="https://svn.sourceforge.net/svnroot/${PN}/trunk"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS=""
 IUSE="debug"
 
 DEPEND=">=app-editors/gvim-7.0[netbeans]
@@ -26,7 +26,7 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ChangeLog README
+	dodoc ChangeLog README || die "dodoc failed"
 }
 
 pkg_postinst() {
