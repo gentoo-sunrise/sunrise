@@ -1,6 +1,10 @@
 # ChangeLog for dev-java/tigase-utils
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
+  tigase-utils-9999_pre2.ebuild:
+  Live ebuilds shouldn't have KEYWORDS.
 
   07 Oct 2008; Mads Randstoft (mazzachre) <mads_randstoft@yahoo.dk>
   +tigase-utils-9999_pre2.ebuild, +files/xmltoolsjar.patch, +metadata.xml:
