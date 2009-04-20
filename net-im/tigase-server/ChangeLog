@@ -1,6 +1,10 @@
 # ChangeLog for net-im/tigase-server
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
+  tigase-server-9999_pre4.ebuild:
+  Live ebuilds shouldn't have KEYWORDS. Added missing die statements.
 
   17 Nov 2008; Mads Randstoft (mazzachre) <mads_randstoft@yahoo.dk>
   -tigase-server-9999_pre3.ebuild, +tigase-server-9999_pre4.ebuild,
