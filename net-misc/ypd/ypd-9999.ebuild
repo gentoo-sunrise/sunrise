@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://repo.or.cz/ypd.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=""
