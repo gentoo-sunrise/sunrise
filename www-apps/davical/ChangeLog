@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Apr 2009; Christian Ruppert <idl0r@gentoo.org> davical-0.9.6.3.ebuild:
+  Removed unused inherits, added missing die statements.
+
   22 Apr 2009; lebarjack <francois.perichon@univ-lille2.fr>
   -davical-0.9.6.2.ebuild, -files/postinstall-en-0.9.6.2.txt,
   +davical-0.9.6.3.ebuild, +files/postinstall-en-0.9.6.3.txt:

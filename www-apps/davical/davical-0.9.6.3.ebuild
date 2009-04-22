@@ -4,15 +4,16 @@
 
 EAPI="2"
 
-inherit eutils webapp depend.php versionator
+inherit webapp depend.php
 
 DESCRIPTION="A CalDAV and iCal server"
 HOMEPAGE="http://davical.org/"
-SRC_URI="http://debian.mcmillan.net.nz/packages/davical/${PN}_${PV}.tar.gz"
+SRC_URI="http://debian.mcmillan.net.nz/packages/${PN}/${P/-/_}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc vhosts"
+
 DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
 	dev-lang/php[pcre,postgres,xml]
@@ -31,7 +32,7 @@ src_compile() {
 		phpdoc -c "docs/api/phpdoc.ini"
 		eend $? || die "Documentation failed to build"
 	fi
-	emake inc/always.php
+	emake inc/always.php || die "emake failed"
 	scripts/po/rebuild-translations.sh
 }
 
@@ -58,8 +59,9 @@ src_install() {
 		dohtml -r "docs/website/" || die "dohtml failed"
 	fi
 
-	insinto /etc/davical/
-	newins "${FILESDIR}/rscds.conf" calendar.example.com-conf.php
+	insinto /etc/${PN}
+	newins "${FILESDIR}/rscds.conf" calendar.example.com-conf.php \
+		|| die "newins failed"
 
 	webapp_postinst_txt en "${FILESDIR}/postinstall-en-${PV}.txt"
 	webapp_src_install
