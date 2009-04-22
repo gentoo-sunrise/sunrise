@@ -49,7 +49,7 @@ src_install () {
 	fi
 
 	dodoc {changes,readme,tutorial_gettingStarted,tutorial_ticpp}.txt || \
-		die	"dodoc failed"
+		die "dodoc failed"
 
 	if use doc ; then
 		dohtml -r docs/* || die "installing docs failed"
