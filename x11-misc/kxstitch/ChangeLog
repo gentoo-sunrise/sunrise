@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Apr 2009; Christian Ruppert <idl0r@gentoo.org> kxstitch-0.8.ebuild:
+  Reverted commit r8356 until the kde eclass is EAPI 2 ready.
+
   20 Apr 2009; Christian Ruppert <idl0r@gentoo.org> kxstitch-0.8.ebuild:
   Replaced build_with_use by EAPI 2 USE dependencies.
 
