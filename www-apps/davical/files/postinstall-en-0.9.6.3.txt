@@ -1,10 +1,13 @@
 You will need access to postgresql database to use davical.
 
-Read /usr/share/doc/www-apps/davical-0.9.6.2/INSTALL.gz for installation
-instructions. Full documentation and wiki on http://davical.org
+Read /usr/share/doc/www-apps/davical-${PV}/INSTALL.gz for installation
+instructions.
+Release notes are available at
+http://wiki.davical.org/w/Release_Notes/${PV}.
+Full documentation and wiki on http://davical.org
 
 If you are upgrading from a previous version of davical, don't forget to
 upgrade the database structure with
-	cd /usr/share/webapps/davical/0.9.6.2/sqlscripts/
+	cd /usr/share/webapps/davical/${PV}/sqlscripts/
 	chmod u+x update-davical-database
 	./update-davical-database -dbuser xxxxxxx -appuser xxxxxxx

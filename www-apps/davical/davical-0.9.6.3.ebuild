@@ -17,7 +17,7 @@ DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
 	dev-lang/php[pcre,postgres,xml]
 	app-admin/pwgen
-	>=dev-php/awl-0.34
+	>=dev-php/awl-0.36
 	dev-perl/yaml
 	dev-perl/DBI
 	dev-perl/DBD-Pg"
@@ -63,4 +63,9 @@ src_install() {
 
 	webapp_postinst_txt en "${FILESDIR}/postinstall-en-${PV}.txt"
 	webapp_src_install
+
+	fperms +x "${MY_SQLSCRIPTSDIR}/create-database.sh"
+	fperms +x "${MY_SQLSCRIPTSDIR}/update-davical-database"
+	fperms +x "${MY_SQLSCRIPTSDIR}/update-rscds-database"
+
 }
