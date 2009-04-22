@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils php-lib-r1
+inherit depend.php php-lib-r1
 
 DESCRIPTION="Andrew McMillan's web libraries: A collection of generic classes
 used by the davical calendar server"
@@ -25,7 +25,7 @@ need_php5
 src_compile() {
 	if use doc ; then
 		ebegin "Generating documentation"
-		phpdoc -c "docs/api/phpdoc.ini"
+		phpdoc -c "docs/api/phpdoc.ini" || die "phpdoc failed"
 		eend $? || die "Documentation failed to build"
 	fi
 }
