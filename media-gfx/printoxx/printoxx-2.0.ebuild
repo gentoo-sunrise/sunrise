@@ -4,7 +4,7 @@
 
 inherit eutils
 
-DESCRIPTION="Program for printing one or more image files with a user-defined page layout."
+DESCRIPTION="Program for printing one or more image files with a user-defined page layout"
 HOMEPAGE="http://kornelix.squarespace.com/printoxx"
 SRC_URI="http://kornelix.squarespace.com/storage/downloads/${P}.tar.gz"
 
