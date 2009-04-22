@@ -40,10 +40,6 @@ net-im/spark
 # Masking beta versions
 =app-misc/bsc-4.0.06_beta*
 
-# Felix Bechstein <f@ub0r.de> (28 Oct 2007)
-# svn version should be masked
-=net-misc/ypd-9999
-
 # Jakub Moc <jakub@gentoo.org> (27 Oct 2007)
 # Broken license. Asked upstream to address it.
 #
@@ -51,10 +47,6 @@ net-im/spark
 # because it installs precompiled junk to /usr/lib
 #
 media-tv/zattoo-bin
-
-# Felix Bechstein <f@ub0r.de> (22 Oct 2007)
-# svn version should be masked
-=media-sound/mtag-9999
 
 # Davide Cendron <scen@gentoo.org> (12 Jun 2007)
 # cvs (snapshot) version should be masked
