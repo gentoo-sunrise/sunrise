@@ -16,6 +16,9 @@ opt_noupdate=0
 opt_quiet=0
 opt_verbose=0
 
+DIFF="${DIFF:-diff}"
+DIFF_OPTS="${DIFF_OPTS:--Nur}"
+
 svn_up() {
 	if [[ "$opt_noupdate" == "0" ]] ; then
 		svn update $*
@@ -169,7 +172,7 @@ eend $?
 cd ..
 if [[ "$opt_quiet" == "0" ]] ; then
 	which diffstat >/dev/null 2>&1 && diff -Nur reviewed sunrise --exclude=.svn | diffstat
-	diff -Nur reviewed sunrise --exclude=Manifest --exclude=.svn --exclude=metadata.xml --exclude=digest-*
+	${DIFF} ${DIFF_OPTS} reviewed sunrise --exclude=Manifest --exclude=.svn --exclude=metadata.xml --exclude=digest-*
 fi
 ) | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
 
