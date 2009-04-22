@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -33,16 +33,6 @@ src_compile() {
 	emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" || die "Build failed"
 }
 
-# src_unpack is needed to apply some minor patched (for gcc-4.3). This will not be needed for >1.6
-src_unpack() {
-	unpack ${A}
-	cd "${S}"/openGLIGCexplorer
-	sed -i -e '23a\#include <cstdlib>' createworlddem.cpp || die "sed failed"
-	sed -i -e '30a\#include <cstring>' -e '30a\#include <cstdlib>' etopo2merger.cpp || die "sed failed"
-	sed -i -e '23a\#include <cstring>' -e '23a\#include <cstdlib>' merger.cpp || die "sed failed"
-	sed -i -e 's:<string>:<cstring>:g' optimizer.cpp || die "sed failed"
-}
-
 src_install() {
 	# create openGLIGCexplorer data dirs
 	keepdir /usr/share/${PN}/data/map
@@ -51,7 +41,7 @@ src_install() {
 	keepdir /usr/share/${PN}/data/waypoint
 
 	# install binaries and scripts
-	dobin GPLIGC/{GPLIGC.pl,gpsp2igc.pl,gpsp2kml.pl} \
+	dobin GPLIGC/{GPLIGC.pl,gpsp2igc.pl,gpsp2igcfile.pl,gpsp2kml.pl} \
 		openGLIGCexplorer/{openGLIGCexplorer,createworld,etopo2merger,optimizer}
 
 	# install perl modules and icons/pics and sample configuration

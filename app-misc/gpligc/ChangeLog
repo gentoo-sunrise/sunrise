@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/gpligc
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Apr 2009; Srebrodolskite <Hannes.Krueger@gmail.com> -gpligc-1.6.ebuild,
+  +gpligc-1.7.ebuild:
+  Version bump for gpligc
 
   04 Nov 2008; Srebrodolskite <Hannes.Krueger@uibk.ac.at> gpligc-1.6.ebuild:
   some sed's to the source add  gcc-4.3 compliance
