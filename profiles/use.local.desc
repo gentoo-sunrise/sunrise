@@ -7,6 +7,7 @@
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/vlogger:dbi - Enable support for DBI
+app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
 app-backup/rdup:path-encryption - Enables support for AES encryption of paths (not file contents) in the backup location
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
