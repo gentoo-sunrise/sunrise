@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/mtag
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Apr 2009; Christian Ruppert <idl0r@gentoo.org> mtag-3.ebuild,
+  mtag-9999.ebuild:
+  Removed unused eutils inherit, added cmake-utils. Added missing die statements.
 
   09 Nov 2007; Felix Bechstein (flx\) <f@ub0r.de> -mtag-2.ebuild,
   +mtag-3.ebuild:
