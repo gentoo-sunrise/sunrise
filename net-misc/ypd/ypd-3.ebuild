@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,9 +15,8 @@ DEPEND=""
 RDEPEND=""
 
 src_install() {
-	dobin src/ypd
-	dodir /etc/init.d/
-	newinitd "${FILESDIR}/ypd.rc" ypd
-	newconfd "${FILESDIR}/ypd.conf" ypd
-	dodoc README ChangeLog AUTHORS
+	dobin src/ypd || die "dobin failed"
+	newinitd "${FILESDIR}/ypd.rc" ypd || die "newinitd failed"
+	newconfd "${FILESDIR}/ypd.conf" ypd || die "newconfd failed"
+	dodoc README ChangeLog AUTHORS || die "dodoc failed"
 }
