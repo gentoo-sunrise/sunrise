@@ -5,7 +5,7 @@
 inherit eutils
 
 MY_PN="GPLIGC"
-MY_P=${MY_PN}-${PV}
+MY_P="${MY_PN}-${PV}-src"
 DESCRIPTION="provides IGC-file (GPS tracklog) evaluation and 3D visualisation"
 HOMEPAGE="http://gpligc.sf.net/"
 SRC_URI="http://pc12-c714.uibk.ac.at/GPLIGC/download/${MY_P}-src.tar.gz"
@@ -29,8 +29,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-	cd openGLIGCexplorer
-	emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" || die "Build failed"
+	emake -C openGLIGCexplorer CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" || die "Build failed"
 }
 
 src_install() {
@@ -40,38 +39,35 @@ src_install() {
 	keepdir /usr/share/${PN}/data/dem
 	keepdir /usr/share/${PN}/data/waypoint
 
+	# paths to perl modules have to be set in scripts/modules
+	sed -i -e "s:PREFIX:/usr:g" openGLIGCexplorer/.openGLIGCexplorerrc || die "sed failed"
+	sed -i -e "s:zzLIBDIRzz:/usr/share/${PN}/:g" GPLIGC/GPLIGC.pl || die "sed failed"
+	sed -i -e "s:zzLIBDIRzz:/usr/share/${PN}/:g" GPLIGC/GPLIGCwaypoints.pm || die "sed failed"
+
 	# install binaries and scripts
-	dobin GPLIGC/{GPLIGC.pl,gpsp2igc.pl,gpsp2igcfile.pl,gpsp2kml.pl} \
-		openGLIGCexplorer/{openGLIGCexplorer,createworld,etopo2merger,optimizer}
+	dobin GPLIGC/{GPLIGC,gpsp2igc,gpsp2igcfile,gpsp2kml}.pl \
+		openGLIGCexplorer/{openGLIGCexplorer,createworld,etopo2merger,optimizer} \
+			|| die "dobin failed"
 
 	# install perl modules and icons/pics and sample configuration
 	insinto /usr/share/${PN}
-	doins GPLIGC/{GPLIGCfunctions.pm,GPLIGCwaypoints.pm,gpligc.xbm,icon.png,logo.jpg,logos.gif,logos.jpg} \
-		openGLIGCexplorer/.openGLIGCexplorerrc
+	doins GPLIGC/{{GPLIGCfunctions,GPLIGCwaypoints}.pm,gpligc.xbm,icon.png,logo.jpg,logos.gif,logos.jpg} \
+		openGLIGCexplorer/.openGLIGCexplorerrc || die "doins failed"
 
-	dodoc doc/CHANGES
-
-	# at least this pdf is supposed to be used often, so its better left uncompressed
-	insinto /usr/share/doc/${P}
-	doins doc/GPLIGC_Manual.pdf
-
-	# paths to perl modules have to be set in scripts/modules
-	dosed "s:PREFIX:/usr:g" /usr/share/${PN}/.openGLIGCexplorerrc
-	dosed "s:zzLIBDIRzz:/usr/share/${PN}/:g" /usr/bin/GPLIGC.pl
-	dosed "s:zzLIBDIRzz:/usr/share/${PN}/:g" /usr/share/${PN}/GPLIGCwaypoints.pm
+	dodoc doc/{CHANGES,GPLIGC_Manual.pdf} || die "dodoc failed"
 
 	# some symlinks
-	dosym /usr/bin/GPLIGC.pl /usr/bin/GPLIGC
-	dosym /usr/bin/openGLIGCexplorer /usr/bin/ogie
+	dosym /usr/bin/GPLIGC.pl /usr/bin/GPLIGC || die "dosym failed"
+	dosym /usr/bin/openGLIGCexplorer /usr/bin/ogie || die "dosym failed"
 }
 
 pkg_postinst() {
-	echo
-	elog "Information about using and configuring GPLIGC and"
-	elog "openGLIGCexplorer (ogie) can be found in the provided manual:"
-	elog "/usr/share/doc/${P}/GPLIGC_Manual.pdf"
-	elog "Users should copy ogie's example configuration file from"
-	elog "/usr/share/${PN}/.openGLIGCexplorerrc to the own HOME directory"
-	elog "and edit it according to their needs."
-	echo
+	einfo
+	einfo "Information about using and configuring GPLIGC and"
+	einfo "openGLIGCexplorer (ogie) can be found in the provided manual:"
+	einfo "/usr/share/doc/${P}/GPLIGC_Manual.pdf"
+	einfo "Users should copy ogie's example configuration file from"
+	einfo "/usr/share/${PN}/.openGLIGCexplorerrc to the own HOME directory"
+	einfo "and edit it according to their needs."
+	einfo
 }
