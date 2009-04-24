@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Apr 2009; Matthew Schultz (mschultz) <mattsch@gmail.com> Manifest:
+  Fixed Manifest.  Filesize was wrong
+
   21 Apr 2009; Matthew Schultz (mschultz) <mattsch@gmail.com>
   +reorder-nameservers-1.4.ebuild, +metadata.xml:
   New ebuild for bug 250308.
