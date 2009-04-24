@@ -8,6 +8,7 @@
 
 * WWW-Dict-Leo-Org-1.34 (14 Apr 2009)
 
-  14 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net> +metadata.xml:
+  14 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  +metadata.xml, +ChangeLog, +Manifest, +WWW-Dict-Leo-Org-1.34.ebuild:
   Setup dev-perl/WWW-Dict-Leo-Org
   pending bug #266121
