@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="app-arch/unzip
-		>=virtual/jdk-1.4"
+	>=virtual/jdk-1.4"
 RDEPEND="virtual/jre"
 
 S="${WORKDIR}/${MY_P}"
