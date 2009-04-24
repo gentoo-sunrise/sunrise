@@ -20,5 +20,5 @@ src_install() {
 	doman ${PN}.8 || die "missing ${PN}.8"
 	dodoc TODO || die "missing TODO"
 	insinto /etc/logrotate.d
-        newins ${PN}.logrotate ${PN} || die "missing ${PN}.logrotate"
+		newins ${PN}.logrotate ${PN} || die "missing ${PN}.logrotate"
 }
