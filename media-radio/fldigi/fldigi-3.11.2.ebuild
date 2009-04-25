@@ -2,10 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit versionator
+
+MY_DOC_PN=${PN}-$(get_version_component_range 1-2)
+
 DESCRIPTION="Sound card based multimode software modem for Amateur Radio use."
 HOMEPAGE="http://www.w1hkj.com/Fldigi.html"
-SRC_URI="mirror://berlios/${PN}/${P}.tar.gz
-	doc? ( mirror://berlios/${PN}/${PN}-3.1.pdf )"
+SRC_URI="http://www.w1hkj.com/${PN}-distro/${P}.tar.gz
+	doc? ( http://www.w1hkj.com/${PN}-distro/${MY_DOC_PN}.pdf )"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -41,6 +45,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog README  || die "dodoc failed"
 	if use doc ; then
-		dodoc "${DISTDIR}"/${PN}-3.1.pdf || die "dodoc failed"
+		dodoc "${DISTDIR}"/${MY_DOC_PN}.pdf
 	fi
 }
+
