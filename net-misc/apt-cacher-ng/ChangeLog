@@ -2,6 +2,14 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*apt-cacher-ng-0.3.9.1 (25 Apr 2009)
+  25 Apr 2009; Sergey Dryabzhinsky <sergey.dryabzhinsky@gmail.com> 
+  +apt-cacher-ng-0.3.9.1.ebuild
+  +apt-cacher-ng-0.3.8.1-r2.ebuild
+  -apt-cacher-ng-0.3.8.1-r1.ebuild
+  Version bump,
+  -r1 to -r2: go into source directory and then apply patch
+
 *apt-cacher-ng-0.3.8.1-r1 (12 Apr 2009)
 
   12 Apr 2009; Sergey Dryabzhinsky <sergey.dryabzhinsky@gmail.com> 

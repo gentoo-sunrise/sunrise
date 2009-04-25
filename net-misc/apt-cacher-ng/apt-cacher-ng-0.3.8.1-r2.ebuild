@@ -34,7 +34,7 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	epatch "${WORKDIR}/${PN}_${MY_PV}-${MY_DPV}.diff" # Debian patchset number 1.2.3.x
-	epatch "${FILESDIR}/${PN}-${MY_PV}-respect-portage-qa-build-unstripped.patch" # Respect portage
+	cd "${S}" && epatch "${FILESDIR}/${PN}-${MY_PV}-respect-portage-qa-build-unstripped.patch" # Respect portage
 }
 
 src_compile() {
