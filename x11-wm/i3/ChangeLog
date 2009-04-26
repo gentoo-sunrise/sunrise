@@ -1,0 +1,8 @@
+# ChangeLog for x11-wm/i3
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Apr 2009; Andre-Patrick Bubel (moredread) <code@andre-bubel.de>
+  +i3-3a.ebuild, +metadata.xml:
+  New Ebuild for bug 267476 thanks to chithead, Ken69267, idl0r, Tommy[D]
+
