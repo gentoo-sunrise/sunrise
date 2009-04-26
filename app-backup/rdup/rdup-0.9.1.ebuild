@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools eutils
-
-DESCRIPTION="rdup is a utility inspired by rsync and the plan9 way of doing backups."
+DESCRIPTION="The only backup program that doesn't make backups."
 HOMEPAGE="http://www.miek.nl/projects/rdup"
 SRC_URI="http://www.miek.nl/projects/${PN}/${P}.tar.bz2"
 LICENSE="GPL-3"
@@ -18,14 +16,6 @@ DEPEND="app-arch/libarchive
 	dev-libs/libpcre
 	path-encryption? ( dev-libs/nettle )"
 RDEPEND=${DEPEND}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-configure-ac.patch"
-
-	eautoreconf
-}
 
 src_compile() {
 	econf $(use_with path-encryption nettle )
