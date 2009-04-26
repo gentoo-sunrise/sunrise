@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/uncrustify
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Apr 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
+  +uncrustify-0.52.ebuild, +uncrustify-9999.ebuild, +metadata.xml:
+  New ebuild for bug 208199. Thanks to Patrick Lauer and Thomas Sachau for review
+
