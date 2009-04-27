@@ -6,7 +6,8 @@
   <upstream>
     <maintainer status="active">
       <email>mattsch@gmail.com</email>
-      <description>Shell script that reorders nameserver entries if the primary nameserver is down</description>
+      <description>Lead Developer</description>
+      <name>Matthew Schultz</name>
     </maintainer>
   </upstream>
 </pkgmetadata>
