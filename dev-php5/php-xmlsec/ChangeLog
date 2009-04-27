@@ -1,0 +1,8 @@
+# ChangeLog for dev-php5/php-xmlsec
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Apr 2009; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +php-xmlsec-0.1.ebuild, +metadata.xml:
+  New ebuild for bug 242250.
+
