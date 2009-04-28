@@ -11,7 +11,7 @@ SRC_URI="http://code-bear.com/code/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="doc"
 
 DEPEND="doc? ( dev-python/epydoc )"
