@@ -14,8 +14,7 @@ MY_PN="xmlsec"
 
 DESCRIPTION="A native PHP-extension to the XML Signature and Encryption library"
 HOMEPAGE="http://edocs.phpclub.net/xmlsec/"
-SRC_URI="http://edocs.phpclub.net/${MY_PN}/${MY_PN}.zip
-	-> php-${MY_PN}-${PV}.zip"
+SRC_URI="http://edocs.phpclub.net/${MY_PN}/${MY_PN}.zip -> ${P}.zip"
 
 LICENSE="PHP-3.01"
 SLOT="0"
