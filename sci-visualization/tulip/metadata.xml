@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<use>
+		<flag name='stats'>Build with graph stats</flag>
+		<flag name='tlprender'>Build tlprender</flag>
+	</use>
+</pkgmetadata>
