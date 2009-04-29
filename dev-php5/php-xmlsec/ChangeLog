@@ -3,7 +3,7 @@
 # $Header: $
 
   29 Apr 2009; Matthew Schultz (mschultz) <mattsch@gmail.com>
-  +php-xmlsec-0_p20061020.ebuild:
+  +php-xmlsec-0_p20061020.ebuild, -php-xmlsec-0.1.ebuild:
   Simplified ebuild and fixed changelog
 
   27 Apr 2009; Matthew Schultz (mschultz) <mattsch@gmail.com>
