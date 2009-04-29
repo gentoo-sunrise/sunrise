@@ -1,0 +1,19 @@
+diff -Naur btscanner-2.1/configure.in btscanner-2.1.new/configure.in
+--- btscanner-2.1/configure.in	2005-11-21 14:56:56.000000000 +0100
++++ btscanner-2.1.new/configure.in	2009-04-29 21:50:42.000000000 +0200
+@@ -63,13 +63,7 @@
+ AC_HAVE_LIBRARY(xml2,,[AC_MSG_ERROR([libxml2 not found])])
+ 
+ # CFLAGS
+-CFLAGS="$CFLAGS -Wall -pthread -Wshadow -Wbad-function-cast \
+-  -Wformat -Wimplicit-function-dec -Wparentheses -Wsign-compare \
+-  -Wstrict-prototypes -Wtrigraphs -Wundef -Wuninitialized \
+-  -W -Wunused -Wformat-security -Wmissing-braces -Wbad-function-cast \
+-  -Wcast-qual -falign-functions -falign-labels -falign-loops\
+-  -pedantic -fstrict-aliasing -D_GNU_SOURCE -std=c99"
+-#  -fstack-check -fbounds-check"
++CFLAGS="$CFLAGS -D=_GNU_SOURCE -std=c99"
+ 
+ # cfg
+ AC_MSG_CHECKING(the location of the config file)
+

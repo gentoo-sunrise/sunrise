@@ -1,0 +1,9 @@
+# ChangeLog for net-wireless/btscanner
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Apr 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
+  +btscanner-2.1.ebuild, +files/btscanner-2.1-btscanner.xml.patch,
+  +files/btscanner-2.1-configure.in.patch, +metadata.xml:
+  New ebuild for bug #267865
+

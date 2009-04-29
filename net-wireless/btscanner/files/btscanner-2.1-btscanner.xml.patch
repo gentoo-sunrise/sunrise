@@ -1,0 +1,15 @@
+diff -Naur btscanner-2.1/btscanner.xml btscanner-2.1.new/btscanner.xml
+--- btscanner-2.1/btscanner.xml	2004-11-01 12:56:41.000000000 +0100
++++ btscanner-2.1.new/btscanner.xml	2009-04-29 17:37:30.000000000 +0200
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE btscanner SYSTEM "file:///usr/local/etc/btscanner.dtd">
++<!DOCTYPE btscanner SYSTEM "file:///usr/share/btscanner/btscanner.dtd">
+ <btscanner>
+ <files>
+ 	<log>btscanner.log</log>
+-	<oui>/usr/local/share/oui.txt</oui>
++	<oui>/usr/share/btscanner/oui.txt</oui>
+ 	<store>~/bts</store>
+ </files>
+
