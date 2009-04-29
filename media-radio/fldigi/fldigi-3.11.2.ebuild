@@ -45,7 +45,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog README  || die "dodoc failed"
 	if use doc ; then
-		dodoc "${DISTDIR}"/${MY_DOC_PN}.pdf
+		dodoc "${DISTDIR}"/${MY_DOC_PN}.pdf || die "dodoc failed"
 	fi
 }
 

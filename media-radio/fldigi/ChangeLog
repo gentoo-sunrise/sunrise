@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  fldigi-3.11.2.ebuild:
+  Add missing dodoc
+
   25 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -fldigi-3.10.ebuild, +fldigi-3.11.2.ebuild:
   Version bump
