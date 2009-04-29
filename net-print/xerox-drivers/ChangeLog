@@ -9,5 +9,6 @@
   appropriate version.
 
   26 Apr 2009; Matthew Schultz (mschultz) <mattsch@gmail.com> ChangeLog:
+  +xerox-drivers-0.1.ebuild, +metadata.xml:
   New ebuild for bug 219718.
 
