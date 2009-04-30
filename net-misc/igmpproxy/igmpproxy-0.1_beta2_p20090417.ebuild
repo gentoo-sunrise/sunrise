@@ -18,13 +18,8 @@ IUSE=""
 CONFIG_CHECK="IP_MULTICAST IP_MROUTE"
 
 src_prepare() {
-	# create necessary files
+	# Create necessary files.
 	eautoreconf
-}
-
-src_configure() {
-	# igmpproxy requires to be root
-	econf --bindir=/usr/sbin
 }
 
 src_install() {

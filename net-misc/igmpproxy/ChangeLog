@@ -2,6 +2,13 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*igmpproxy-0.1_beta2_p20090417 (30 Apr 2009)
+
+  30 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
+  -igmpproxy-0.1_beta2_p20090403.ebuild,
+  +igmpproxy-0.1_beta2_p20090417.ebuild:
+  Bump. src_configure has been removed since Constantin fixed bindir.
+
   08 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
   -igmpproxy-0.1_beta2_p20090309.ebuild,
   +igmpproxy-0.1_beta2_p20090403.ebuild, +files/igmpproxy-conf.d,
