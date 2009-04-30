@@ -4,11 +4,12 @@
 
 EAPI=1
 
-inherit qt4
+inherit qt4 git
+
+EGIT_REPO_URI="git://git.altlinux.org/people/cas/packages/cuneiform-qt.git"
 
 DESCRIPTION="Qt interface for Cuneiform"
 HOMEPAGE="http://www.altlinux.org/Cuneiform-Qt"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,12 +21,14 @@ DEPEND="x11-libs/qt-gui:4
 RDEPEND="${DEPEND}"
 
 src_compile () {
+	cd "${S}/cuneiform-qt"
 	sed 's:/share/apps/cuneiform-qt/:/share/cuneiform-qt/:' -i cuneiform-qt.pro || die "Cannot patch cuneiform-qt.pro"
 	PREFIX="/usr" eqmake4 || die "Cannot run qmake"
 	emake || die "Cannot run make"
 }
 
 src_install() {
+	cd "${S}/cuneiform-qt"
 	dodoc AUTHORS README TODO || die "Cannot install docs"
 	INSTALL_ROOT="${D}" emake install || die "Cannot install"
 }
