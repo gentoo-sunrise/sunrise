@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
+EAPI="1"
 
 inherit qt4
 
@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}"
 
 src_compile () {
 	sed 's:/share/apps/cuneiform-qt/:/share/cuneiform-qt/:' -i cuneiform-qt.pro || die "Cannot patch cuneiform-qt.pro"
-	PREFIX="/usr" eqmake4 || die "Cannot run qmake"
+	PREFIX="/usr" eqmake4
 	emake || die "Cannot run make"
 }
 
