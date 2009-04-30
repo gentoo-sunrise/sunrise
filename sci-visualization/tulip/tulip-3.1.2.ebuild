@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
+EAPI="1"
 
 inherit autotools multilib
 
@@ -35,24 +35,17 @@ src_unpack() {
 }
 
 src_compile() {
-	myconf=""
-	if use stats ; then
-		myconf="${myconf}  --enable-stats-gui"
-	fi
-	if use tlprender ; then
-		myconf="${myconf}  --enable-tlprender"
-	fi
-	myconf="${myconf} MOC=/usr/bin/moc UIC=/usr/bin/uic"
-	econf \
+	econf	$(use_enable tlprender) \
+		$(use_enable stats stat-gui) \
 		"--with-qt-includes=/usr/include/qt4" \
 		"--with-qt-libraries=/usr/$(get_libdir)/qt4" \
-		${myconf} \
+		"MOC=/usr/bin/moc UIC=/usr/bin/uic"
 	emake || die "make failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 	rm -r "${D}/usr/share/tulip"
-	dodoc TODO README AUTHORS INSTALL ChangeLog || die "dodoc failed"
+	dodoc TODO README AUTHORS ChangeLog || die "dodoc failed"
 }
 
