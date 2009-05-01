@@ -1,0 +1,9 @@
+# ChangeLog for www-plugins/nexus_personal_SE-bin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 May 2009; Christian Asseburg (Zoominee) <christian@asseburg.com>
+  +nexus_personal_SE-bin-4.10.0.21-r1.ebuild, +metadata.xml:
+  Initial import for bug 268117. Thanks to lots of clever people on the Gentoo
+  Sunrise IRC
+
