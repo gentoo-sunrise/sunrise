@@ -26,6 +26,7 @@ dev-lang
 dev-libs
 dev-perl
 dev-php
+dev-php5
 dev-python
 dev-ruby
 dev-scheme
@@ -47,7 +48,6 @@ games-sports
 games-util
 gnome-extra
 kde-misc
-mail-client
 mail-filter
 media-gfx
 media-libs
