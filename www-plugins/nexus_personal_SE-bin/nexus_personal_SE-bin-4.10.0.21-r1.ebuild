@@ -37,23 +37,18 @@ RESTRICT="strip"
 
 QA_TEXTRELS="opt/${P}/*.so"
 
-#This could be done for amd64 support.
-#pkg_setup() {
-#	if ! has_multilib_profile && use amd64; then
-#		die "Requires multilib on amd64."
-#	fi
-#}
-
 src_install() {
 	local id=/opt/${P}
 	local ubin=/usr/local/bin
+	local lib=$(get_abi_LIBDIR x86)
 
 	exeinto ${id}
 	doexe *.so personal.bin persadm || die "doexe failed."
-	make_wrapper personal ${id}/personal.bin \
-		${id} ${id} || die "make_wrapper failed."
-	make_wrapper persadm "${id}/persadm" \
-		${id} ${id} || die "make_wrapper failed."
+
+	make_wrapper personal ${id}/personal.bin ${id} ${id} \
+		|| die "make_wrapper failed."
+	make_wrapper persadm "${id}/persadm" ${id} ${id} || die "make_wrapper failed."
+
 	dosym /usr/bin/personal ${ubin}/personal || die "dosym failed."
 	dosym /usr/bin/persadm ${ubin}/persadm || die "dosym failed."
 
@@ -73,31 +68,28 @@ src_install() {
 
 	make_desktop_entry personal "Nexus Personal" ${PN} Utility
 
-	local ld=lib
-# amd64
-#	if has_multilib_profile; then
-#		local ld=$(get_abi_LIBDIR x86)
-#	fi
-	dosym ${id}/libplugins.so \
-		/usr/${ld}/nsbrowser/plugins/libnexuspersonal.so \
+	dosym ${id}/libplugins.so /usr/${lib}/nsbrowser/plugins/libnexuspersonal.so \
 		|| die "dosym failed."
 
-	dosym /usr/${ld}/libcurl.so ${id}/libcurl-gnutls.so.4 \
+	dosym /usr/${lib}/libcurl.so ${id}/libcurl-gnutls.so.4 \
 		|| die "dosym failed."
 
 	for i in ${BROWSERS}; do
-		if use $i; then
-			make_wrapper $i-nexus $i \
-				${id} ${id}
+		if use ${i}; then
+			make_wrapper ${i}-nexus ${i} ${id} ${id}
 		fi
 	done
 }
 
 pkg_postinst() {
+	einfo
 	for i in ${BROWSERS}; do
-		if use $i; then
-			einfo "Start $i-nexus for BankID plugin support."
+		if use ${i}; then
+			einfo "Run '${i}-nexus' for BankID plugin support."
 		fi
 	done
-	einfo "For all other browsers, export LD_LIBRARY_PATH=\$\{LD_LIBRARY_PATH\}\$\{LD_LIBRARY_PATH:+:\}${id} for BankID plugin support, then start your browser."
+	einfo "For all other browsers:"
+	einfo "\texport LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:${ROOT}opt/${P}\""
+	einfo "for BankID plugin support, then start your browser."
+	einfo
 }
