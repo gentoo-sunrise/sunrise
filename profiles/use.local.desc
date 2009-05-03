@@ -197,6 +197,7 @@ sys-fs/ext3grep:largefile - Add support for files greater then 2gb on x86
 sys-fs/ext3grep:libcwd - Debuging support
 sys-fs/pysize:psyco - Adds psyco support
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
+www-plugins/nexus_personal_SE-bin:epiphany - Enable support for www-client/epiphany
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/bmpanel:libev - Use the libev event loop interface
