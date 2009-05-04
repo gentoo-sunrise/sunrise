@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 May 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com> -files/2.5.0,
+  -heyu-2.5.0.ebuild, +heyu-2.6.0.ebuild, -files/2.5.0/heyu.init,
+  +files/heyu.init:
+  Version bump to 2.6.0 (bug 91396)
+
   15 Feb 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com> -files/2.4.0,
   -heyu-2.4.0.ebuild, -files/2.4.0/heyu.init, +heyu-2.5.0.ebuild,
   +files/2.5.0, +files/2.5.0/heyu.init:

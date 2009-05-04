@@ -13,9 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="kernel_Darwin kernel_FreeBSD kernel_linux cm17a dmx210 ext0 ore rfxm rfxs"
 
-DEPEND=""
-RDEPEND=""
-
 pkg_setup() {
 	enewgroup ${PN}
 	enewuser ${PN} -1 -1 /var/lib/${PN} "${PN},uucp"
@@ -48,8 +45,8 @@ src_compile() {
 
 src_install() {
 	dobin heyu || die "installing binary failed"
-	doman heyu.1 x10config.5 x10scripts.5 x10sched.5
-	newinitd "${FILESDIR}"/${PV}/heyu.init heyu
+	doman heyu.1 x10config.5 x10scripts.5 x10sched.5 || die "installing man pages failed"
+	newinitd "${FILESDIR}"/heyu.init heyu
 	insinto /etc/heyu
 	doins x10.*.sample || die "installing config samples failed"
 	diropts -m 0750 -o heyu
