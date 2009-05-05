@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils fdo-mime flag-o-matic multilib
-
 EAPI="2"
+
+inherit distutils eutils fdo-mime flag-o-matic python
 
 MY_P="${P/m/M}"
 DESCRIPTION="Open source video player"
@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND=" || ( >=dev-lang/python-2.5[sqlite]
-		=dev-python/pysqlite-2* )
+RDEPEND="|| ( >=dev-lang/python-2.5[sqlite]
+	=dev-python/pysqlite-2* )
 	dev-python/dbus-python
 	dev-python/gconf-python
 	dev-python/gnome-vfs-python
@@ -63,12 +63,11 @@ pkg_postinst() {
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
 
-	MOZSETUP="/usr/$(get_libdir)/python${PYVER}/site-packages/${PN}/mozsetup.py"
-	elog ""
+	elog
 	elog "To increase the font size of the main display area, add:"
 	elog "user_pref(\"font.minimum-size.x-western\", 15);"
 	elog ""
 	elog "to the following file:"
-	elog "${MOZSETUP}"
-	elog ""
+	elog "$(python_get_sitedir)/${PN}/mozsetup.py"
+	elog
 }
