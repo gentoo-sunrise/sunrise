@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,19 +30,19 @@ src_install() {
 	eend
 	cd "${D}"/"${INSTALLDIR}"/Linuxlib
 	einfo "Creating symlinks"
-	dosym "${D}"/opt/kylix3/libborqt-6.9-qt2.3.so libqt.so.2
-	dosym bplrtl.so.6.9.0 bplrtl.so.6.9
-	dosym dbxres.en.1.0 dbxres.en.1
-	dosym libmidas.so.1.0 libmidas.so.1
-	dosym libmysqlclient.so.10.0.0 libmysqlclient.so
-	dosym libqtintf-6.9.0-qt2.3.so libqtintf-6.9-qt2.3.so
-	dosym libsqlmy23.so.1.0 libsqlmy23.so
-	dosym libsqlmy23.so libsqlmy.so
-	dosym libsqlora.so.1.0 libsqlora.so
-	dosym libDbxSQLite.so.2.8.5 libDbxSQLite.so
-	dosym liblcms.so.1.0.9 liblcms.so
-	dosym libpng.so.2.1.0.12 libpng.so.2
-	dosym libstdc++.so.5.0.0 libstdc++.so.5
+	ln -sfn"${D}"/opt/kylix3/libborqt-6.9-qt2.3.so libqt.so.2
+	ln -sfn bplrtl.so.6.9.0 bplrtl.so.6.9
+	ln -sfn dbxres.en.1.0 dbxres.en.1
+	ln -sfn libmidas.so.1.0 libmidas.so.1
+	ln -sfn libmysqlclient.so.10.0.0 libmysqlclient.so
+	ln -sfn libqtintf-6.9.0-qt2.3.so libqtintf-6.9-qt2.3.so
+	ln -sfn libsqlmy23.so.1.0 libsqlmy23.so
+	ln -sfn libsqlmy23.so libsqlmy.so
+	ln -sfn libsqlora.so.1.0 libsqlora.so
+	ln -sfn libDbxSQLite.so.2.8.5 libDbxSQLite.so
+	ln -sfn liblcms.so.1.0.9 liblcms.so
+	ln -sfn libpng.so.2.1.0.12 libpng.so.2
+	ln -sfn libstdc++.so.5.0.0 libstdc++.so.5
 	dobin "${S}"/startdbd
 	ebegin "Creating Icons"
 	newicon "${S}"/Gfx/Icon48.xpm Icon48.xpm
