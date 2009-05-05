@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit flag-o-matic perl-app
-
 EAPI="2"
+
+inherit flag-o-matic perl-app
 
 MY_P=${P/graphicsm/GraphicsM}
 
