@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils savedconfig toolchain-funcs
+inherit savedconfig toolchain-funcs
 
 DESCRIPTION="Dynamic virtual terminal manager"
 HOMEPAGE="http://www.brain-dump.org/projects/dvtm/"
@@ -17,10 +17,7 @@ IUSE="unicode"
 DEPEND="sys-libs/ncurses[unicode?]"
 RDEPEND=${DEPEND}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	sed -i \
 		-e 's|FLAGS =|FLAGS +=|' \
 		-e 's|-I/usr/local/include||' \
@@ -46,15 +43,15 @@ src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
 
 	insinto /usr/share/${PN}
-	newins config.h ${PF}.config.h
+	newins config.h ${PF}.config.h || die "newins failed"
 
-	dodoc README
+	dodoc README || die "dodoc failed"
 
 	save_config config.h
 }
 
 pkg_postinst() {
-	elog "This ebuild has support for user defined configs"
-	elog "Please read this ebuild for more details and re-emerge as needed"
-	elog "if you want to add or remove functionality for ${PN}"
+	einfo "This ebuild has support for user defined configs"
+	einfo "Please read this ebuild for more details and re-emerge as needed"
+	einfo "if you want to add or remove functionality for ${PN}"
 }
