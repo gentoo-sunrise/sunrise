@@ -39,6 +39,11 @@ src_compile() {
 	emake || die "emake failed"
 }
 
+src_test() {
+	# upstream reports that the included test suite needs a networked test environment
+	true
+}
+
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	newinitd "${FILESDIR}/unbound.initd" unbound || die "newinitd failed"
