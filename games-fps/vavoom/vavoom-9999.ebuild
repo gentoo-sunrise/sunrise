@@ -71,9 +71,9 @@ pkg_setup() {
 	! use opengl && ewarn "'opengl' USE flag disabled. OpenGL is recommended, for best graphics."
 }
 
-src_unpack() {
+src_prepare() {
 	subversion_src_unpack
-	cd "${S}"
+	subversion_src_prepare
 
 	# Got rid of icon installation
 	sed -i \
