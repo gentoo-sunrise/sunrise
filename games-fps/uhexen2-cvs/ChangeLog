@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 May 2009; Christian Ruppert <idl0r@gentoo.org>
+  uhexen2-cvs-20080404.ebuild:
+  Use src_prepare instead of src_unpack, improved find call, added missing
+  die statements, replaced some elog calls by einfo.
+
   16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
   uhexen2-cvs-20080404.ebuild:
   Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
