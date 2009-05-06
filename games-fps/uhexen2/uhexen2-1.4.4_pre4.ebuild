@@ -48,10 +48,7 @@ DEPEND="${UIDEPEND}
 S="${WORKDIR}/hexen2source-${MY_PV}"
 dir="${GAMES_DATADIR}/${MY_PN}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	epatch "${S}/00_Patches/midi_with_sdlaudio-test.diff"
 	cd hexen2
 	epatch "${S}/00_Patches/external-music-file-support.diff"
@@ -353,7 +350,7 @@ src_install() {
 		# Patching should really be done by a future "hexen2-data" ebuild.
 		# But this works for now.
 		doins "${WORKDIR}"/update_xdelta.sh || die
-		dodoc "${WORKDIR}"/*.txt
+		dodoc "${WORKDIR}"/*.txt || die
 	fi
 
 	if use tools ; then
@@ -383,10 +380,10 @@ pkg_postinst() {
 	games_pkg_postinst
 
 	if use demo ; then
-		elog "uhexen2 has been compiled specifically to play the demo maps."
-		elog "Example command-line:"
-		elog "   hexen2-demo -width 1024 -height 768 -conwidth 640"
-		echo
+		einfo "uhexen2 has been compiled specifically to play the demo maps."
+		einfo "Example command-line:"
+		einfo "   hexen2-demo -width 1024 -height 768 -conwidth 640"
+		einfo
 	else
 		elog "To play the demo, emerge with the 'demo' USE flag."
 		elog
@@ -405,39 +402,39 @@ pkg_postinst() {
 		elog
 		elog "Example command-line:"
 		elog "   hexen2 -width 1024 -height 768 -conwidth 640"
-		echo
+		einfo
 	fi
 	if use gtk ; then
-		elog "You've also installed a nice graphical launcher. Simply run:"
-		elog
-		elog "   h2launcher"
-		elog
-		elog "to enjoy it :)"
-		echo
+		einfo "You've also installed a nice graphical launcher. Simply run:"
+		einfo
+		einfo "   h2launcher"
+		einfo
+		einfo "to enjoy it :)"
+		einfo
 	fi
 	if use tools ; then
 		if use hexenworld; then
-			elog "You've also installed some Hexenworld utility:"
-			elog
-			elog " - hwmquery (console app to query HW master servers)"
-			elog " - hwrcon (remote interface to HW rcon command)"
-			elog " - hwterm (HW remote console terminal)"
-			echo
+			einfo "You've also installed some Hexenworld utility:"
+			einfo
+			einfo " - hwmquery (console app to query HW master servers)"
+			einfo " - hwrcon (remote interface to HW rcon command)"
+			einfo " - hwterm (HW remote console terminal)"
+			einfo
 		fi
-		elog "You've also installed some Hexen2 utility"
-		elog "(useful for mod developing)"
-		elog
-		elog " - dhcc (old progs.dat compiler/decompiler)"
-		elog " - genmodel (3-D model grabber)"
-		elog " - hcc (HexenC compiler)"
-		elog " - hcc_old (old version of HexenC compiler)"
-		elog " - jsh2color (light colouring utility)"
-		elog " - maputils (Map compiling tools: bspinfo, light, qbsp, vis)"
-		elog " - qfiles (build pak files and regenerate bsp models)"
-		elog " - bsp2wal (extract all textures from a bsp file)"
-		elog " - lmp2pcx (convert hexen2 texture data into pcx and tga)"
-		elog
-		elog "See relevant documentation for further informations"
-		echo
+		einfo "You've also installed some Hexen2 utility"
+		einfo "(useful for mod developing)"
+		einfo
+		einfo " - dhcc (old progs.dat compiler/decompiler)"
+		einfo " - genmodel (3-D model grabber)"
+		einfo " - hcc (HexenC compiler)"
+		einfo " - hcc_old (old version of HexenC compiler)"
+		einfo " - jsh2color (light colouring utility)"
+		einfo " - maputils (Map compiling tools: bspinfo, light, qbsp, vis)"
+		einfo " - qfiles (build pak files and regenerate bsp models)"
+		einfo " - bsp2wal (extract all textures from a bsp file)"
+		einfo " - lmp2pcx (convert hexen2 texture data into pcx and tga)"
+		einfo
+		einfo "See relevant documentation for further informations"
+		einfo
 	fi
 }
