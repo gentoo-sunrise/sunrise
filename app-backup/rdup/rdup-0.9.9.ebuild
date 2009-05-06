@@ -9,16 +9,17 @@ LICENSE="GPL-3"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="path-encryption"
+IUSE="path-encryption test"
 
-DEPEND="app-arch/libarchive
+RDEPEND="app-arch/libarchive
 	dev-libs/glib
 	dev-libs/libpcre
 	path-encryption? ( dev-libs/nettle )"
-RDEPEND=${DEPEND}
+DEPEND="${RDEPEND}
+	test? ( dev-util/dejagnu )"
 
 src_compile() {
-	econf $(use_with path-encryption nettle )
+	econf $(use_with path-encryption nettle)
 
 	emake || die "emake failed"
 }

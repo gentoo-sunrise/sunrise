@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 May 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -rdup-0.9.1.ebuild, +rdup-0.9.9.ebuild:
+  version bump, adding dependency on dev-util/dejagnu for FEATURES=test
+
   26 Apr 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -rdup-0.9.0.ebuild, +rdup-0.9.1.ebuild:
   version bump
