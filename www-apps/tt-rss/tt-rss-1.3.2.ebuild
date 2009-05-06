@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils webapp depend.php depend.apache
+inherit webapp depend.php depend.apache
 
 DESCRIPTION="Tiny Tiny RSS - A web-based news feed (RSS/Atom) aggregator using AJAX"
 HOMEPAGE="http://tt-rss.org/"
@@ -20,17 +20,15 @@ RDEPEND="${DEPEND}"
 need_httpd_cgi
 need_php_httpd
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	# Customize config.php so that the right 'DB_TYPE' is already set (according to the USE flag)
 	einfo "Customizing config.php..."
 	mv config.php{-dist,} || die "Could not rename config.php-dist to config.php."
 	if ( use mysql || use mysqli ) && ! use postgres; then
-		sed -e "/define('DB_TYPE',/{s:pgsql:mysql:}" -i config.php
+		sed -e "/define('DB_TYPE',/{s:pgsql:mysql:}" -i config.php || die "sed failed"
 	fi
-	sed -e "/define('DB_TYPE',/{s:// \(or mysql\):// pgsql \1:}" -i config.php
+	sed -e "/define('DB_TYPE',/{s:// \(or mysql\):// pgsql \1:}" -i config.php \
+		|| die "sed failed"
 }
 
 src_install () {
