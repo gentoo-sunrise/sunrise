@@ -61,10 +61,10 @@ pkg_setup() {
 
 	# Print some warning if needed
 	if use sdl && use allegro ; then
-		echo
+		ewarn
 		ewarn "Both 'allegro' and 'sdl' USE flags enabled. Using SDL as default."
 	elif ! use sdl && ! use allegro ; then
-		echo
+		ewarn
 		ewarn "Both 'allegro' and 'sdl' USE flags disabled. Using SDL as default."
 	fi
 
@@ -174,26 +174,26 @@ pkg_postinst() {
 	elog "See documentation for further details."
 
 	if use wxwindows ; then
-		echo
-		elog "You've also installed a nice graphical launcher. Simply run:"
-		elog
-		elog "   vlaunch"
-		elog
-		elog "to enjoy it :)"
+		einfo
+		einfo "You've also installed a nice graphical launcher. Simply run:"
+		einfo
+		einfo "   vlaunch"
+		einfo
+		einfo "to enjoy it :)"
 	fi
 
 	if use tools; then
-		echo
-		elog "You have also installed some Vavoom-related utilities"
-		elog "(useful for mod developing):"
-		elog
-		elog " - acc (ACS Script Compiler)"
-		elog " - fixmd2 (MD2 models utility)"
-		elog " - vcc (Vavoom C Compiler)"
-		elog " - vlumpy (Vavoom Lump utility)"
-		elog
-		elog "See the Vavoom Wiki at http://vavoom-engine.com/wiki/ or"
-		elog "Vavoom Forum at http://www.vavoom-engine.com/forums/"
-		elog "for further help."
+		einfo
+		einfo "You have also installed some Vavoom-related utilities"
+		einfo "(useful for mod developing):"
+		einfo
+		einfo " - acc (ACS Script Compiler)"
+		einfo " - fixmd2 (MD2 models utility)"
+		einfo " - vcc (Vavoom C Compiler)"
+		einfo " - vlumpy (Vavoom Lump utility)"
+		einfo
+		einfo "See the Vavoom Wiki at http://vavoom-engine.com/wiki/ or"
+		einfo "Vavoom Forum at http://www.vavoom-engine.com/forums/"
+		einfo "for further help."
 	fi
 }

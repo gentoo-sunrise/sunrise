@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 May 2009; Christian Ruppert <idl0r@gentoo.org> vavoom-1.30.ebuild,
+  vavoom-9999.ebuild:
+  Use src_prepare instead of src_unpack, replaced some elog calls by einfo.
+
   20 Apr 2009; Christian Ruppert <idl0r@gentoo.org> vavoom-9999.ebuild:
   Live ebuilds shouldn't have KEYWORDS.
 
