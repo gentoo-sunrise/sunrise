@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 May 2009; termite <rb6@duke.edu> tulip-3.1.2.ebuild:
+  Fixed MOC/UIC - thanks to ffl@aber.ac.uk
+
   30 Apr 2009; termite <rb6@duke.edu> tulip-3.1.2.ebuild:
   ebuild polish, as requested
 

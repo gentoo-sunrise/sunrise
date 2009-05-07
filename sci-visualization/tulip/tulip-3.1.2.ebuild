@@ -39,7 +39,8 @@ src_compile() {
 		$(use_enable stats stat-gui) \
 		"--with-qt-includes=/usr/include/qt4" \
 		"--with-qt-libraries=/usr/$(get_libdir)/qt4" \
-		"MOC=/usr/bin/moc UIC=/usr/bin/uic"
+		"MOC=/usr/bin/moc" \
+		"UIC=/usr/bin/uic"
 	emake || die "make failed"
 }
 
