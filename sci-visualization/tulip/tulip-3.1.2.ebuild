@@ -40,7 +40,6 @@ src_compile() {
 		"--with-qt-includes=/usr/include/qt4" \
 		"--with-qt-libraries=/usr/$(get_libdir)/qt4" \
 		"MOC=/usr/bin/moc" \
-		"UIC=/usr/bin/uic"
 	emake || die "make failed"
 }
 
