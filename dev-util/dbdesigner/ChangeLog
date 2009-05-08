@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 May 2009; Christian Ruppert <idl0r@gentoo.org>
+  dbdesigner-4.0.5.4-r1.ebuild:
+  Fixed DEPEND/RDEPEND, whitespace. Add QA_TEXTRELS and QA_PRESTRIPPED. Fix
+  symlink. Cleanup.
+
   05 May 2009; Markos Chandras <hwoarang@gentoo.org>
   -dbdesigner-4.0.5.4.ebuild, +dbdesigner-4.0.5.4-r1.ebuild:
   Fixed ebuild. Bug #217254
