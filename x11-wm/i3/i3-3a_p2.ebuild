@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="${PN}-3.a"
+MY_P="${PN}-3.a-bf2"
 
 DESCRIPTION="An improved dynamic tiling window manager"
 HOMEPAGE="http://i3.zekjur.net/"
@@ -10,14 +10,14 @@ SRC_URI="http://i3.zekjur.net/downloads/${MY_P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="~x11-libs/xcb-util-0.3.3
+RDEPEND=">=x11-libs/xcb-util-0.3.3
 	>=x11-libs/libxcb-1.1.90.1
 	x11-libs/libX11"
 DEPEND="${RDEPEND}
-	app-text/asciidoc"
+	>=app-text/asciidoc-8.1.0"
 
 S="${WORKDIR}/${MY_P}"
 

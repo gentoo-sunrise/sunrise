@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 May 2009; Andre-Patrick Bubel (moredread) <code@andre-bubel.de>
+  -i3-3a.ebuild, +i3-3a_p2.ebuild:
+  Version bump for i3, thanks to scarabeus
+
   26 Apr 2009; Andre-Patrick Bubel (moredread) <code@andre-bubel.de>
   +i3-3a.ebuild, +metadata.xml:
   New Ebuild for bug 267476 thanks to chithead, Ken69267, idl0r, Tommy[D]
