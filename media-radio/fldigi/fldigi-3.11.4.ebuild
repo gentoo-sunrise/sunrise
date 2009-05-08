@@ -6,7 +6,7 @@ inherit versionator
 
 MY_DOC_PN=${PN}-$(get_version_component_range 1-2)
 
-DESCRIPTION="Sound card based multimode software modem for Amateur Radio use."
+DESCRIPTION="Sound card based multimode software modem for Amateur Radio use"
 HOMEPAGE="http://www.w1hkj.com/Fldigi.html"
 SRC_URI="http://www.w1hkj.com/${PN}-distro/${P}.tar.gz
 	doc? ( http://www.w1hkj.com/${PN}-distro/${MY_DOC_PN}.pdf )"
