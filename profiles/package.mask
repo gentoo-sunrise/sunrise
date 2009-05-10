@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (11 May 2009)
+# Moved to tree but on different category
+app-misc/rednotebook
+
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
 # Mask because of unsecure dir permissions set in the ebuild and
 # the maintainer wants to move it to proaudio overlay
