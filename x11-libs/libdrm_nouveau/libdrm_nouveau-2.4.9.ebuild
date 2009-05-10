@@ -5,7 +5,7 @@
 EAPI="2"
 
 # Must be before x-modular eclass is inherited
-SNAPSHOT="yes"
+#SNAPSHOT="yes"
 
 inherit x-modular
 
@@ -26,8 +26,13 @@ RDEPEND="dev-libs/libpthread-stubs
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${DRM_P}"
-PATCHES=( "${FILESDIR}/${DRM_P}-makefile.patch" )
-CONFIGURE_OPTIONS="--enable-udev --enable-nouveau-experimental-api"
+PATCHES=(
+	"${FILESDIR}"/${PV}-0001-nouveau-store-bo-handle-in-public-struct-in-bo_ref_.patch
+	"${FILESDIR}"/${PV}-0002-nouveau-write-posting-got-lost-somewhere-bring-it.patch
+	"${FILESDIR}"/${PV}-0003-libdrm-mode-align-subpixel-results.patch
+	"${FILESDIR}"/${PV}-0004-intel-NULL-fake-bo-block-when-freeing-in-evict_all.patch
+)
+CONFIGURE_OPTIONS="--enable-nouveau-experimental-api"
 
 # FIXME, we should try to see how we can fit the --enable-udev configure flag
 
