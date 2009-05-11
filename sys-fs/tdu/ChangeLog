@@ -1,0 +1,10 @@
+# ChangeLog for sys-fs/tdu
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*tdu-2008.05.07 (11 May 2009)
+
+  11 May 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  +files/2008.05.07-DESTDIR.patch, +tdu-2008.05.07.ebuild, +metadata.xml:
+  initial checkin to sunrise
+

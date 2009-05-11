@@ -1,0 +1,28 @@
+--- Makefile	2008-05-08 01:53:36.000000000 +0200
++++ Makefile.new	2009-05-10 20:29:19.092780888 +0200
+@@ -39,10 +39,10 @@
+ 
+ .PHONY: install
+ install: $(program)
+-	$(install) -d -m 0755 $(prefix)/bin
+-	$(install) -d -m 0755 $(prefix)/share/man/man1
+-	$(install) -m 0755 $(program) $(prefix)/bin
+-	$(install) -m 0644 tdu.1   $(prefix)/share/man/man1
++	$(install) -d -m 0755 $(DESTDIR)$(prefix)/bin
++	$(install) -d -m 0755 $(DESTDIR)$(prefix)/share/man/man1
++	$(install) -m 0755 $(program) $(DESTDIR)$(prefix)/bin
++	$(install) -m 0644 tdu.1   $(DESTDIR)$(prefix)/share/man/man1
+ 
+ .PHONY: tar
+ tar:
+--- Makefile	2009-05-10 20:46:13.396773979 +0200
++++ Makefile.new	2009-05-10 20:46:52.117816572 +0200
+@@ -35,7 +35,7 @@
+ 	splint -weak -posix-lib `pkg-config --cflags glib-2.0` *.c *.h
+ 
+ install = /usr/bin/install
+-prefix = /usr/local
++prefix = /usr
+ 
+ .PHONY: install
+ install: $(program)
