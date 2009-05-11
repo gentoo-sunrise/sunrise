@@ -19,5 +19,5 @@ S=$WORKDIR/${PN}-1-${PV}
 src_install() {
 	emake DESTDIR="${D}" install || die "emake intall failed"
 
-	dodoc AUTHORS BUGS ChangeLog NEWS README TODO || die "dodoc failed"
+	dodoc AUTHORS ChangeLog NEWS README TODO || die "dodoc failed"
 }
