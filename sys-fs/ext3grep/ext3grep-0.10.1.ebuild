@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils base
 
 DESCRIPTION="recover deleted files on an ext3 file system"
 HOMEPAGE="http://www.xs4all.nl/~carlo17/howto/undelete_ext3.html"
@@ -18,11 +18,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	debug? ( libcwd? ( dev-cpp/libcwd ) )"
 
-src_unpack(){
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/gcc-4.3.patch
-}
+PATCHES=( "${FILESDIR}"/gcc-4.3.patch )
 
 src_compile() {
 	local myconf
