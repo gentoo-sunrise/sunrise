@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,9 +11,9 @@ SRC_URI="http://ext3grep.googlecode.com/files/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
-IUSE="debug largefile libcwd mmap pch"
+IUSE="debug largefile libcwd pch"
 RDEPEND=""
 DEPEND="${RDEPEND}
 	debug? ( libcwd? ( dev-cpp/libcwd ) )"
@@ -29,13 +29,12 @@ src_compile() {
 
 	use debug && myconf="--disable-optimize"
 
-	econf \
+	econf ${myconf} \
 		$(use_enable libcwd) \
 		$(use_enable debug) \
-		${myconf} \
 		$(use_enable pch) \
 		$(use_enable largefile) \
-		$(use_enable mmap)
+		|| die "econd failed"
 
 	emake || die "emake failed"
 }
