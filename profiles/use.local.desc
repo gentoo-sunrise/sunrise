@@ -113,6 +113,7 @@ media-gfx/openscenegraph:jasper - Compile media-libs/jasper plugin
 media-gfx/openscenegraph:producer - Compile osgProducer
 media-gfx/openvrml:imagetexture - Support for image textures
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
+media-libs/liblqr:doc - Enable man pages for the library functions
 media-radio/ax25-tools:X - Enable some x based configuration tools.
 media-radio/drm:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the radio in use
 media-radio/fldigi:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio in use
