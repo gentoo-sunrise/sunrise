@@ -11,7 +11,7 @@ SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 NEED_PYTHON=2.5
 
 DEPEND="dev-python/setuptools"
-RDEPEND="${DEPENDS}"
+RDEPEND=""
 
 LICENSE="BSD"
 SLOT="0"
