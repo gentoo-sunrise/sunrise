@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils base
+inherit base
 
 DESCRIPTION="recover deleted files on an ext3 file system"
 HOMEPAGE="http://www.xs4all.nl/~carlo17/howto/undelete_ext3.html"
@@ -29,8 +29,7 @@ src_compile() {
 		$(use_enable libcwd) \
 		$(use_enable debug) \
 		$(use_enable pch) \
-		$(use_enable largefile) \
-		|| die "econd failed"
+		$(use_enable largefile)
 
 	emake || die "emake failed"
 }
