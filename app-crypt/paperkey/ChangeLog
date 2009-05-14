@@ -1,0 +1,8 @@
+# ChangeLog for app-crypt/paperkey
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 May 2009; Dennis Lichtenthaeler (pvbcharon) <charon@episode-iv.de>
+  +paperkey-1.0.ebuild, +metadata.xml:
+  Ebuild for bug 206945
+
