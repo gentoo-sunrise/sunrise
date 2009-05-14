@@ -3,6 +3,10 @@
 # $Header: $
 
   14 May 2009; Dennis Lichtenthaeler (pvbcharon) <charon@episode-iv.de>
+  gimp-texturize-plugin-2.1.ebuild:
+  Updating per idl0r's suggestions
+
+  14 May 2009; Dennis Lichtenthaeler (pvbcharon) <charon@episode-iv.de>
   +gimp-texturize-plugin-2.1.ebuild, +metadata.xml:
   New ebuild via bug 213837. Thanks to bonsaikitten.
 

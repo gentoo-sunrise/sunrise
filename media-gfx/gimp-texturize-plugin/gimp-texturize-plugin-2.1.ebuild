@@ -17,7 +17,7 @@ DEPEND="${RDEPEND}"
 S="$WORKDIR/gimp-texturize"
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "unable to install"
 
-	dodoc AUTHORS bugs ChangeLog COPYING NEWS README todo
+	dodoc AUTHORS bugs ChangeLog NEWS README todo || die "unable to install documentation"
 }
