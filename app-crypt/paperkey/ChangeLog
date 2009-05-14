@@ -3,6 +3,10 @@
 # $Header: $
 
   14 May 2009; Dennis Lichtenthaeler (pvbcharon) <charon@episode-iv.de>
+  -paperkey-1.0.ebuild, +paperkey-1.1.ebuild:
+  Updated to 1.1, thanks to jlec and idl0r
+
+  14 May 2009; Dennis Lichtenthaeler (pvbcharon) <charon@episode-iv.de>
   +paperkey-1.0.ebuild, +metadata.xml:
   Ebuild for bug 206945
 
