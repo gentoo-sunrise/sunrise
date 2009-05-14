@@ -30,7 +30,7 @@ src_unpack() {
 	cd "${S}"
 
 	# remove wrong doc location
-	epatch "${FILESDIR}/${P}-doc.patch"
+	epatch "${FILESDIR}/${PN}-1.0_beta2-doc.patch"
 
 	eautoreconf
 }
