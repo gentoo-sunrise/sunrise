@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 May 2009; Lars Hartmann (psychoschlumpf) <lars@chaotika.org> +Manifest:
+  New Ebuild for bug 178095
+
   14 May 2009; Lars Hartmann (psychoschlumpf) <lars@chaotika.org>
   +snake-0.4.2.ebuild, +metadata.xml:
   New Ebuild for bug 178095
