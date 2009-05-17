@@ -1,0 +1,8 @@
+# ChangeLog for games-fps/prey-data
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 May 2009; Robert Cernansky (HS) <openhs@users.sourceforge.net>
+  +prey-data-20090219.ebuild, +metadata.xml:
+  New ebuild for bug 270050 (game data), reviewed mainly by Tommy[D]
+
