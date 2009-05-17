@@ -15,7 +15,7 @@ IUSE="debug"
 
 DEPEND=">=virtual/postgresql-base-8.0
 	>=dev-libs/libevent-1.3"
-RDEPEND="${DEPENDS}"
+RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	enewgroup pgbouncer
@@ -29,6 +29,8 @@ src_unpack() {
 }
 
 src_compile() {
+	epatch "${FILESDIR}/modify-config-paths.patch"
+
 	econf \
 	$(use_enable debug) \
 	$(use_enable debug cassert)
@@ -45,6 +47,11 @@ src_install() {
 
 	dodoc README NEWS AUTHORS || die "Install failed"
 	dodoc doc/*.txt || die "Install failed"
+
+	# Create log/run directories and set owner to pgbouncer
+	keepdir /var/{run,log}/pgbouncer/
+	fperms 0700 /var/{run,log}/pgbouncer/
+	fowners pgbouncer:pgbouncer /var/{run,log}/pgbouncer/
 }
 
 pkg_postinst() {

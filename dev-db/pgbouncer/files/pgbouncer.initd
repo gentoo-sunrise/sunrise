@@ -4,8 +4,8 @@
 opts="start stop reload checkconfig"
 
 depend() {
-    need net
-    after postgresql
+	need net
+	after postgresql
 }
 
 checkconfig(){
@@ -15,31 +15,23 @@ checkconfig(){
 }
 
 start() {
-    checkconfig || return 1
-    ebegin "Starting pgbouncer as pgbouncer user"
+	checkconfig || return 1
+	ebegin "Starting pgbouncer"
 	
-#	if [ -f "/var/run/postgresql/pgbouncer.pid" ] ; then
-#		rm -f "/var/run/postgresql/pgbouncer.pid"
-#	fi
-    PIDFILE="/var/run/postgresql/pgbouncer.pid"
-    TIMEOUT=${TIMEOUT:-10}
-    PGBOUNCER_OPTS="-d -u pgbouncer /etc/pgbouncer.conf"
-    /usr/bin/pgbouncer ${PGBOUNCER_OPTS}
-	
-	let i=0
-	while [ ! -e "${PIDFILE}" ] && [ $i -lt ${TIMEOUT} ]; do
-	sleep 1 && i=$(expr $i + 1)
-	done
-	test $i -le ${TIMEOUT}		
-	eend $?
+	start-stop-daemon --start --pidfile /var/run/pgbouncer/pgbouncer.pid \
+		--exec /usr/bin/pgbouncer -- -d -u pgbouncer /etc/pgbouncer.conf
+	eend $? "Failed to start pgbouncer"
+
 }
 
 stop() {
-    ebegin "Stopping pgbouncer"
-    start-stop-daemon --stop --quiet --pidfile /var/run/postgresql/pgbouncer.pid
-    eend $?
+	ebegin "Stopping pgbouncer"
+	start-stop-daemon --stop --quiet --pidfile /var/run/pgbouncer/pgbouncer.pid
+	eend $?
 } 
+
 reload() {
-    ebegin "Reloading pgbouncer configuration"
-    start-stop-daemon --stop --pidfile /var/run/postgresql/pgbouncer.pid --signal HUP
+	ebegin "Reloading pgbouncer configuration"
+	kill -HUP `cat /var/run/pgbouncer/pgbouncer.pid`
+	eend $?
 }
