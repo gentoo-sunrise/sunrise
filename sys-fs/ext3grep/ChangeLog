@@ -6,13 +6,12 @@
   Removed unused eutils inherit, econf needs no die statement.
 
   11 May 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
-  ext3grep-0.10.1.ebuild:
   Make use of base eclass
 
 *ext3grep-0.10.1 (11 May 2009)
 
   11 May 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
-  +ext3grep-0.10.1.ebuild:
+  +ext3grep-0.10.1.ebuild, -ext3grep-0.10.0.ebuild:
   version bump Thanks hanno for updated ebuild
 
   12 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
