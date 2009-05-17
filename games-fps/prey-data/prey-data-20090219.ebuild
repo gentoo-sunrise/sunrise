@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 PROPERTIES="interactive"
-RESTRICT="strip bindist"
+RESTRICT="bindist"
 
 PDEPEND="games-fps/prey"
 
