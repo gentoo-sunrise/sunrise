@@ -20,7 +20,7 @@ RESTRICT="strip"
 
 UIDEPEND="virtual/opengl
 	openal? ( x86? ( media-libs/openal )
-			  amd64? ( app-emulation/emul-linux-x86-sdl ) )"
+		amd64? ( app-emulation/emul-linux-x86-sdl ) )"
 DEPEND="app-arch/unzip"
 RDEPEND="
 	opengl? ( ${UIDEPEND} )
