@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 DEPEND="
-		media-libs/libsdl[alsa]
+		media-libs/libsdl[alsa,X]
 		media-libs/sdl-gfx
 		media-libs/sdl-image[png]
 		media-libs/sdl-mixer
