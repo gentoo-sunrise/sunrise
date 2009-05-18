@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Petr Pisar <petr.pisar@atlas.cz> (18 May 2009)
+# Moved to lisp overlay (Bug #261206)
+<=dev-scheme/schemik-1.2.34.1
+
 # Markos Chandras <hwoarang@gentoo.org> (11 May 2009)
 # Moved to tree but on different category
 app-misc/rednotebook
