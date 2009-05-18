@@ -3,6 +3,10 @@
 # $Header: $
 
   18 May 2009; Mirek Kratochvil ([exa]) <exa.exa@gmail.com>
+  cloudvpn-1.99.4.ebuild, cloudvpn-9999.ebuild:
+  some fixes of cloudvpn ebuilds, bug #258859, big thanks to scarabeus
+
+  18 May 2009; Mirek Kratochvil ([exa]) <exa.exa@gmail.com>
   +cloudvpn-1.99.4.ebuild, +cloudvpn-9999.ebuild:
   version bump + git ebuild for CloudVPN, bug #258859
 

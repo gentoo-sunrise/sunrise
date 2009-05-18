@@ -16,17 +16,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=net-libs/gnutls-2.4"
-DEPEND="sys-devel/automake
-	${RDEPEND}"
+RDEPEND="net-libs/gnutls"
+DEPEND=" ${RDEPEND}
+	sys-devel/automake"
 
-src_compile() {
+src_prepare() {
 	./autogen.sh
-	./configure || die "configure failed!"
-	emake || die "emake failed!"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	dodoc README
+	dodoc README || die "doc'ing README failed"
 }
