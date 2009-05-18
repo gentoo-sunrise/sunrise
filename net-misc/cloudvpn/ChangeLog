@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 May 2009; Mirek Kratochvil ([exa]) <exa.exa@gmail.com>
+  +cloudvpn-1.99.4.ebuild, +cloudvpn-9999.ebuild:
+  version bump + git ebuild for CloudVPN, bug #258859
+
   19 Apr 2009; Christian Ruppert <idl0r@gentoo.org> -cloudvpn-1.0.7.ebuild,
   cloudvpn-1.0.9.ebuild:
   Removed old version.
