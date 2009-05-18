@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 May 2009; Momesso Andrea (TopperH) <momesso.andrea@gmail.com>
+  luckybackup-0.3.ebuild:
+  Added debug IUSE
+
   13 May 2009; Christian Ruppert <idl0r@gentoo.org>
   -luckybackup-0.2.2.ebuild:
   Removed old version.

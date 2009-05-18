@@ -12,7 +12,7 @@ SRC_URI="http://downloads.sourceforge.net/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="debug"
 
 DEPEND="x11-libs/qt-gui:4
 	net-misc/rsync"
