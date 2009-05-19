@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="An authoritative only, high performance, open source name server"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/nsd"
@@ -26,6 +26,14 @@ pkg_setup() {
 
 	enewgroup nsd
 	enewuser nsd -1 -1 -1 nsd
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-Makefile.in.patch"
+
+	eautoreconf
 }
 
 src_compile() {

@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -nsd-3.2.1.ebuild, +nsd-3.2.2.ebuild, +files/nsd-3.2.2-Makefile.in.patch:
+  version bump for security release 3.2.2, see
+  http://www.nlnetlabs.nl/publications/NSD_vulnerability_announcement.html
+
   19 Jan 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -nsd-3.2.0-r1.ebuild, +nsd-3.2.1.ebuild:
   version bump
