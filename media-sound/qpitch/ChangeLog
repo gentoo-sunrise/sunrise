@@ -3,6 +3,10 @@
 # $Header: $
 
   20 May 2009; Gökdeniz Karadağ (hayalci) <gokdenizk@gmail.com>
+  qpitch-1.0.1.ebuild:
+  Fixed cmake build. Thanks and cookiez go to scarabeus
+
+  20 May 2009; Gökdeniz Karadağ (hayalci) <gokdenizk@gmail.com>
   +qpitch-1.0.1.ebuild, +metadata.xml:
   New ebuid (bug #235630). Thanks to yngwin and hwoarang for thorough review
 

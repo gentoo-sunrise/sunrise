@@ -20,8 +20,6 @@ DEPEND="x11-libs/qt-gui:4
 	>=sci-libs/fftw-3.1.0"
 RDEPEND="${DEPEND}"
 
-CMAKE_IN_SOURCE_BUILD=1
-
 DOCS="README changelog"
 
 src_install() {
