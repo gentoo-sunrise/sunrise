@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 May 2009; Patrick Nagel (padde) <mail@patrick-nagel.net>
+  -tt-rss-1.3.2.ebuild, +tt-rss-1.3.3.ebuild:
+  Version bump for tt-rss
+
   06 May 2009; Christian Ruppert <idl0r@gentoo.org> tt-rss-1.3.2.ebuild:
   Removed unused eutils inherit, use src_prepare instead of src_unpack,
   added missing die statements.
