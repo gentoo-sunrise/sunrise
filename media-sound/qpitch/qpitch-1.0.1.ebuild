@@ -22,7 +22,3 @@ RDEPEND="${DEPEND}"
 
 DOCS="README changelog"
 
-src_install() {
-	cmake-utils_src_install
-	doman src/data/qpitch.1 || die "Could not install man page"
-}
