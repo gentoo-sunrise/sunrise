@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 May 2009; Markos Chandras <hwoarang@gentoo.org>
+  tinydownloader-0.2.0.ebuild:
+  Smaller description
+
   17 May 2009; Lars Hartmann (psychoschlumpf) <lars@chaotika.org>
   +tinydownloader-0.2.0.ebuild, +metadata.xml:
   New Ebuild for bug 148491

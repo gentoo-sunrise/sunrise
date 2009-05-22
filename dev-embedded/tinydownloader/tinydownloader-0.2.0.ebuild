@@ -4,8 +4,7 @@
 
 EAPI="2"
 
-DESCRIPTION="command line tool to download PIC code to Tiny Bootloader running
-on 16Fxxx through a serial cable"
+DESCRIPTION="Command Line Tool for downloading PIC code to 16Fxxx Tiny Bootloader"
 HOMEPAGE="http://tuomas.kulve.fi/projects/tinydownloader/"
 SRC_URI="http://tuomas.kulve.fi/debian/pool/etch/${PN}/t/${PN}_${PV}.tar.gz"
 
