@@ -6,12 +6,11 @@ EAPI="2"
 WX_GTK_VER="2.8"
 inherit eutils wxwidgets
 
-MY_PV="${PV/_pre/-dev-r}"
-MY_P="${PN}-${MY_PV}"
+MY_P=${P/_pre/-dev-r}
 
 DESCRIPTION="Advanced SSA/ASS subtitle editor"
-HOMEPAGE="http://malakith.net/aegiwiki/Main_Page"
-SRC_URI="http://www.mahou.org/~verm/aegisub/archives/${MY_P}.tar.gz"
+HOMEPAGE="http://www.aegisub.net"
+SRC_URI="http://www.mahou.org/~verm/aegisub/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,28 +21,29 @@ RDEPEND="=x11-libs/wxGTK-2.8*[opengl]
 	media-libs/libass
 	media-libs/fontconfig
 	media-libs/freetype
+	virtual/glu
 
 	alsa? (	media-libs/alsa-lib )
 	pulseaudio? ( media-sound/pulseaudio )
 	openal? ( media-libs/openal )
+	ffmpeg? ( media-video/ffmpeg )
 
 	perl? ( dev-lang/perl )
 	ruby? ( dev-lang/ruby )
 	lua? ( dev-lang/lua )
 
-	spell? ( app-text/hunspell )
-	ffmpeg? ( media-video/ffmpeg )"
+	spell? ( app-text/hunspell )"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	media-gfx/imagemagick
-	dev-libs/glib"
+	dev-libs/glib
+	sys-devel/gettext"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_configure() {
-	econf --with-libass \
-	$(use_with alsa) \
+	econf $(use_with alsa) \
 	--without-portaudio \
 	$(use_with pulseaudio) \
 	$(use_with openal) \
