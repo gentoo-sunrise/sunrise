@@ -40,7 +40,8 @@ src_unpack() {
 src_compile() {
 	local build="acng"
 	use fuse && build="${build} acngfs"
-	emake CURDIR="${S}" ${build} || die "make '${build}' failed!"
+	# -j1 fix race noted in bug #265840 comment #5
+	emake -j1 CURDIR="${S}" ${build} || die "make '${build}' failed!"
 }
 
 src_install() {

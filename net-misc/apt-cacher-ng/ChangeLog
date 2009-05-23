@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 May 2009; Sergey Dryabzhinsky <sergey.dryabzhinsky@gmail.com> 
+  +apt-cacher-ng-0.3.11.1-r1.ebuild
+  -apt-cacher-ng-0.3.11.1.ebuild
+  File creation race then make jobs more than 1
+
   10 May 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -apt-cacher-ng-0.3.10.1.ebuild:
   Drop old version
