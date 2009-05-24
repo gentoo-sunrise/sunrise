@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,7 @@ ERROR_USB="${P} requires Host-side USB support (CONFIG_USB)."
 ERROR_VIDEO_V4L1_COMPAT="${P} require support for the Video For Linux API 1 compatibility layer (CONFIG_VIDEO_V4L1_COMPAT)."
 MODULE_NAMES="ov51x-jpeg(media/video:)"
 BUILD_TARGETS="all"
-BUILD_PARAMS="KERNELDIR=${KV_DIR}"
+BUILD_PARAMS="KERNELDIR=${KERNEL_DIR}"
 
 src_install() {
 	linux-mod_src_install

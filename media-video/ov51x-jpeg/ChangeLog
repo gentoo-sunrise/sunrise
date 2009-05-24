@@ -1,6 +1,12 @@
 # ChangeLog for media-video/ov51x-jpeg
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*ov51x-jpeg-1.5.9-r1 (24 May 2009)
+
+  24 May 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  -ov51x-jpeg-1.5.9.ebuild, +ov51x-jpeg-1.5.9-r1.ebuild:
+  corrected KV_DIR --> KERNEL_DIR
 
   09 Nov 2008; Davide Cendron (scen) <scen@gentoo.org>
   -ov51x-jpeg-1.5.8.ebuild, +ov51x-jpeg-1.5.9.ebuild:
