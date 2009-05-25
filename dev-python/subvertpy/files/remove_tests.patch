@@ -1,0 +1,13 @@
+--- setup.py	2009-04-02 11:59:32.000000000 +0200
++++ setup_new.py	2009-04-02 11:59:45.000000000 +0200
+@@ -314,7 +314,7 @@
+           long_description="""
+           Alternative Python bindings for Subversion, split out from bzr-svn. The goal is to have complete, portable and "Pythonic" Python bindings. 
+           """,
+-          packages=['subvertpy', 'subvertpy.tests'],
++          packages=['subvertpy'],
+           ext_modules=subvertpy_modules("subvertpy"),
+           cmdclass = { 'install_lib': install_lib_with_dlls },
+           )
+
+

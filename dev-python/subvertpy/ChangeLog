@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/subvertpy
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 May 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  +subvertpy-0.6.6.ebuild, +files/remove_tests.patch, +metadata.xml:
+  New ebuild for bug 270201
+
