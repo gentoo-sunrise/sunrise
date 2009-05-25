@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 May 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -xf86-video-nouveau-0.0.20090514.ebuild,
+  +xf86-video-nouveau-0.0.20090524.ebuild:
+  new snapshot, drop util-macros dependency per remi on IRC
+
   15 May 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -xf86-video-nouveau-0.0.20090507.ebuild,
   +xf86-video-nouveau-0.0.20090514.ebuild:

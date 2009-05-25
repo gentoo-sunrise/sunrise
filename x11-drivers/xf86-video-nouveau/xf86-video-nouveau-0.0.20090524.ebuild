@@ -10,7 +10,7 @@ GIT_ECLASS="git"
 
 inherit x-modular
 
-EGIT_TREE="9656762ba186e91dd2b3b7f3f9427ba520982f9d"
+EGIT_TREE="db9ff958291416dd5b72d20d32d7412ec45c1e60"
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/nouveau/${PN}"
 
 DESCRIPTION="Nouveau video driver"
@@ -23,7 +23,6 @@ IUSE=""
 
 COMMON_DEPEND=">=x11-base/xorg-server-1.5.3[-minimal]"
 DEPEND="${COMMON_DEPEND}
-	x11-misc/util-macros
 	x11-proto/fontsproto
 	x11-proto/randrproto
 	x11-proto/renderproto
