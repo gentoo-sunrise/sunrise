@@ -1,0 +1,8 @@
+# ChangeLog for media-gfx/gimp-cmyk-plugin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 May 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+  +gimp-cmyk-plugin-0.5.3.ebuild, +files/installer.patch, +metadata.xml:
+  New ebuild for bug 24837, thanks to scarabeus, nikai, palatis, and dm.konrad
+
