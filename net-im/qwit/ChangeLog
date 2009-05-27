@@ -3,6 +3,10 @@
 # $Header: $
 
   27 May 2009; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  qwit-0.8.ebuild:
+  Fixed dodoc typo.
+
+  27 May 2009; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   -qwit-0.6.ebuild, +qwit-0.8.ebuild:
   Version bump for qwit.
 
