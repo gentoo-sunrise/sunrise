@@ -8,7 +8,7 @@ PV_MAJ=$(get_version_component_range 1-2)
 
 DESCRIPTION="An enterprise quality OCR engine developed in USSR/Russia in the 90's."
 HOMEPAGE="https://launchpad.net/cuneiform-linux"
-SRC_URI="http://launchpad.net/${PN}-linux/${PV_MAJ}/${PV_MAJ}/+download/${P}.tar.bz2"
+SRC_URI="http://launchpad.net/${PN}-linux/${PV_MAJ}/${PV_MAJ}/+download/${PN}-linux-${PV_MAJ}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -17,12 +17,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE="imagemagick debug"
 
 RDEPEND="imagemagick? ( media-gfx/imagemagick )"
-DEPEND=">=dev-util/cmake-2.6.0
+DEPEND=">=dev-util/cmake-2.6.2
 	${RDEPEND}"
 
 DOCS="readme.txt"
 
-S="${S}.0"
+S="${WORKDIR}/cf_linux-${PV_MAJ}.0"
 
 src_unpack(){
 	unpack ${A}

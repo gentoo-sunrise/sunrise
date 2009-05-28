@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 May 2009; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru>
+  -cuneiform-0.6.ebuild, +cuneiform-0.7.ebuild:
+  Version bump to 0.7
+
   06 Feb 2009; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru>
   -cuneiform-0.5.ebuild, +cuneiform-0.6.ebuild:
   Version bump to 0.6
