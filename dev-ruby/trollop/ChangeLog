@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 May 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
+  -trollop-1.10.2.ebuild, +trollop-1.13.ebuild:
+  version bump to 1.13 (bug 232644)
+
   03 Jan 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
   -trollop-1.8.2.ebuild, +trollop-1.10.2.ebuild:
   dev-ruby/trollop: version bump
