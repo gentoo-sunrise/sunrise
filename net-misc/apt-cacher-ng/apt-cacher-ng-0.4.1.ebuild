@@ -5,7 +5,7 @@
 inherit eutils
 
 MY_PV=${PV%.*}
-MY_DPV=${PV#*.*.*.}
+MY_DPV=${PV#*.*.}
 
 DESCRIPTION="Yet another implementation of a HTTP proxy for Debian/Ubuntu software packages written in C++"
 HOMEPAGE="http://www.unix-ag.uni-kl.de/~bloch/acng/"
