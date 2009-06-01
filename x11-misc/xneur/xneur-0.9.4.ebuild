@@ -8,7 +8,7 @@ inherit eutils autotools
 
 DESCRIPTION="In-place conversion of text typed in with a wrong keyboard layout (Punto Switcher replacement)"
 HOMEPAGE="http://www.xneur.ru/"
-if [[ "${PV}" =~ (_p)([0-9]+) ]] ; then
+if [[ ${PV} =~ (_p)([0-9]+) ]] ; then
 	inherit subversion
 	SRC_URI=""
 	MTSLPT_REV=${BASH_REMATCH[2]}
@@ -49,8 +49,6 @@ src_unpack() {
 
 src_prepare() {
 	rm ltmain.sh aclocal.m4	m4/{lt~obsolete,ltoptions,ltsugar,ltversion,libtool}.m4
-	epatch "${FILESDIR}/${P}-CFLAGS.patch"
-	epatch "${FILESDIR}/${P}-build-failure.patch"
 	sed -i -e "s/-Werror -g0//" configure.in
 	eautoreconf
 }
@@ -95,4 +93,8 @@ src_install() {
 pkg_postinst() {
 	elog "This is command line tool. If you are looking for GUI frontend just"
 	elog "emerge gxneur, which uses xneur transparently as backend."
+
+	ewarn "If you upgraded from <=xneur-0.9.3, you need to remove"
+	ewarn "dictionary files in the home directory:"
+	ewarn " $ rm ~/.xneur/{ru,en,be,etc.}/dict"
 }
