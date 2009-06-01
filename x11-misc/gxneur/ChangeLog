@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Jun 2009; Peter Volkov <pva@gentoo.org> -gxneur-0.9.3.ebuild,
+  +gxneur-0.9.4.ebuild:
+  Version bump.
+
   06 Apr 2009; Peter Volkov <pva@gentoo.org> gxneur-0.9.3.ebuild:
   Make eutils/versionator eclass globally inherited, thank Tommy for catching
   this.
