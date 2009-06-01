@@ -1,6 +1,11 @@
 # ChangeLog for net-mail/gmail-notify
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Jun 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+  -gmail-notify-1.6.1.ebuild, +gmail-notify-1.6.1.1.ebuild:
+  Version bump, added keyword, fixed bug relating to revdep-rebuild, and
+  improved ebuild form thanks to idl0r
 
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> gmail-notify-1.6.1.ebuild:
   Make this multilib friendly
