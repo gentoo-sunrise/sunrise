@@ -9,15 +9,15 @@ inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 
 
 IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk oodict opengl pam postgres"
 
-PATCHLEVEL="OOO300"
-MILESTONE="15"
+PATCHLEVEL="OOO310"
+MILESTONE="11"
 OOOTAG=${PATCHLEVEL}_m${MILESTONE}
-OOOBUILDTAG=ooo300-m${MILESTONE}
+OOOBUILDTAG=ooo310-m${MILESTONE}
 
 SRC=OOo_${PV}_src
 S=${WORKDIR}/infra-ooo-files_${PV}
 WORKSRC=${WORKDIR}/${OOOTAG}
-
+BASIS=basis3.1
 DESCRIPTION="OpenOffice-Infra, office suite with enhanced Russian support from Infra-Resource"
 
 SRC_URI="binfilter? ( mirror://openoffice/stable/${PV}/${SRC}_binfilter.tar.bz2 )
@@ -28,10 +28,10 @@ SRC_URI="binfilter? ( mirror://openoffice/stable/${PV}/${SRC}_binfilter.tar.bz2 
 	odk? ( java? ( http://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll ) )
 	http://download.i-rs.ru/pub/openoffice/${PV}/ru/infra-ooo-files_${PV}.tar.gz"
 
-LANGS1="ru uk"
+LANGS1="ru tr uk"
 LANGS="${LANGS1} en en_US"
 
-# proprt linguas handling
+# proper linguas handling
 for X in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${X}"
 done
@@ -47,6 +47,7 @@ COMMON_DEPEND="!app-office/openoffice-infra-bin
 	!app-office/openoffice-bin
 	x11-libs/libXaw
 	x11-libs/libXinerama
+	x11-libs/libXrandr
 	>=dev-lang/perl-5.0
 	dbus? ( >=dev-libs/dbus-glib-0.71 )
 	gnome? ( >=x11-libs/gtk+-2.10
@@ -61,7 +62,7 @@ COMMON_DEPEND="!app-office/openoffice-infra-bin
 	kde? ( kde-base/kdelibs:3.5 )
 	java? ( >=dev-java/bsh-2.0_beta4
 		>=dev-db/hsqldb-1.8.0.9 )
-	mono? ( >=dev-lang/mono-1.2.3.1 )
+	mono? ( || ( >dev-lang/mono-2.4-r1 <dev-lang/mono-2.4 ) )
 	nsplugin? ( || ( net-libs/xulrunner:1.8 net-libs/xulrunner:1.9 =www-client/seamonkey-1* )
 		>=dev-libs/nspr-4.6.6
 		>=dev-libs/nss-3.11-r1 )
@@ -140,7 +141,7 @@ pkg_setup() {
 
 	# Check if we have enough RAM and free diskspace to build this beast
 	CHECKREQS_MEMORY="512"
-	use debug && CHECKREQS_DISK_BUILD="8192" || CHECKREQS_DISK_BUILD="5120"
+	use debug && CHECKREQS_DISK_BUILD="8192" || CHECKREQS_DISK_BUILD="6144"
 	check_reqs
 
 	strip-linguas ${LANGS}
@@ -158,7 +159,7 @@ pkg_setup() {
 	if use !java; then
 		ewarn
 		ewarn " You are building with java-support disabled, this results in some "
-		ewarn " of the OpenOffice.org functionality (i.e. help) being disabled. "
+		ewarn " of the OpenOffice-Infra functionality (i.e. help) being disabled. "
 		ewarn " If something you need does not work for you, rebuild with "
 		ewarn " java in your USE-flags. "
 		ewarn
@@ -177,7 +178,7 @@ pkg_setup() {
 		eerror " Please remove it from your CFLAGS, using this globally causes "
 		eerror " all sorts of problems. "
 		eerror " After that you will also have to - at least - rebuild python otherwise "
-		eerror " the openoffice build will break. "
+		eerror " the openoffice-infra build will break. "
 		die
 	fi
 
@@ -219,19 +220,33 @@ src_prepare() {
 
 	# Some fixes for our patchset
 	cd "${S}"
-	epatch "${FILESDIR}/${PV}/gentoo-scripts.diff"
+	epatch "${FILESDIR}/${PV}/gentoo-infra-builder.diff"
+	epatch "${FILESDIR}/${PV}/gentoo-layout-simple-dialogs-svx.diff"
+	# fix vba parallel build
+	epatch "${FILESDIR}/${PV}/gentoo-vba-parallel-build.diff"
 	# Patch for using Gentoo specific goo team patches and InfraGentoo/InfraGentooPG distro targets
-	epatch "${FILESDIR}/${PV}/gentoo-infragentoo.diff"
+	epatch "${FILESDIR}/${PV}/gentoo-infra-gentoo.diff"
 
 	# Patches from go-oo mainstream
-	cp -f "${FILESDIR}/${PV}/gentoo-nojavanostax.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/nojavanostax.diff" || die
-	cp -f "${FILESDIR}/${PV}/gentoo-hunspell.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/hunspell-one-dir-nocrash.diff" || die
-	cp -f "${FILESDIR}/${PV}/gentoo-buildfix-mono-2-2.diff" "${WORKDIR}/infra-ooo-files_${PV}/patches/dev300/buildfix-mono-2-2.diff" || die
+	cp -f "${FILESDIR}/${PV}/buildfix-gcc44.diff" "${S}/patches/hotfixes" || die
+	cp -f "${FILESDIR}/${PV}/solenv.workaround-for-the-kde-mess.diff" "${S}/patches/hotfixes" || die
 
 	cd "${WORKSRC}"; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras-templates.tar.bz2"
-	cd "${WORKSRC}"; rm -rf "extras/source/autotext/lang/ru/*" ; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras_ru.tar.bz2"
-	"${WORKDIR}"/infra-ooo-files_${PV}/bin/enable-dict ru_RU "${WORKDIR}"/infra-ooo-files_${PV}/files/dict_ru_RU.tar.bz2 "${WORKSRC}"
-	"${WORKDIR}"/infra-ooo-files_${PV}/bin/enable-dict uk_UA "${WORKDIR}"/infra-ooo-files_${PV}/files/dict_uk_UA.tar.bz2 "${WORKSRC}"
+
+	local longlang
+	for i in ${LINGUAS_OOO}; do
+	    if [[ "${i}" == "ru" || "${i}" == "tr" ]]; then
+		cd "${WORKSRC}"; rm -rf "extras/source/autotext/lang/${i}/*" ; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras_${i}.tar.bz2"
+	    fi
+	    if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
+		if [[ "${i}" == "ru" ]]; then
+		    longlang="ru_RU"
+		else
+		    longlang="uk_UA"
+		fi
+		"${WORKDIR}"/infra-ooo-files_${PV}/bin/enable-dict "${longlang}" "${WORKDIR}/infra-ooo-files_${PV}/files/dict_${longlang}.tar.bz2" "${WORKSRC}"
+	    fi
+	done
 
 	# Infra branding
 	mkdir -p "${WORKSRC}"/{libwps,libwpg,libwpd,libsvg}/download/
@@ -268,24 +283,17 @@ src_prepare() {
 	epatch "${FILESDIR}/${PV}/gentoo-configure.diff"
 	# disable mkdepend warning
 	epatch "${FILESDIR}/${PV}/gentoo-mkdepend.diff"
-	# completion_matches -> rl_completion_matches
-	epatch "${FILESDIR}/${PV}/gentoo-completion_matches.diff"
 	# disable rpm
 	epatch "${FILESDIR}/gentoo-epm-3.7.patch.diff"
 	if use postgres; then
 	    # fix handling of system libs for postgresql-base
 	    epatch "${FILESDIR}/gentoo-system_pgsql.diff"
 	fi
-	# more stabillity on multiprocessing build
-	epatch "${FILESDIR}/${PV}/gentoo-vba_incl.diff"
-	cp -f "${FILESDIR}/${PV}/gentoo-ReturnInteger.hdl" "${WORKSRC}/scripting/source/vbaevents/ReturnInteger.hdl" || die
-	cp -f "${FILESDIR}/${PV}/gentoo-ReturnInteger.hpp" "${WORKSRC}/scripting/source/vbaevents/ReturnInteger.hpp" || die
-	cp -f "${FILESDIR}/${PV}/gentoo-XVBAToOOEventDescGen.hdl" "${WORKSRC}/scripting/source/vbaevents/XVBAToOOEventDescGen.hdl" || die
-	cp -f "${FILESDIR}/${PV}/gentoo-XVBAToOOEventDescGen.hpp" "${WORKSRC}/scripting/source/vbaevents/XVBAToOOEventDescGen.hpp" || die
-	# fix ru dict
 	epatch "${FILESDIR}/${PV}/gentoo-ru_dict.diff"
+	# don't strip libs
+	use debug && epatch "${FILESDIR}/${PV}/gentoo-dont_strip_libs.diff"
 
-	cd "${WORKSRC}/config_office"
+	cd "${WORKSRC}"
 
 	eautoreconf
 
@@ -298,6 +306,7 @@ src_configure() {
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-ant-home=${ANT_HOME}"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-jdk-home=$(java-config --jdk-home 2>/dev/null)"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-java-target-version=$(java-pkg_get-target)"
+		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-jvm-path=/usr/$(get_libdir)/"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-system-beanshell"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-system-hsqldb"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-beanshell-jar=$(java-pkg_getjar bsh bsh.jar)"
@@ -371,7 +380,9 @@ src_configure() {
 	filter-flags "-fstack-protector-all"
 	filter-flags "-ftracer"
 	filter-flags "-fforce-addr"
-	replace-flags "-O?" "-O2"
+
+	filter-flags "-O[s2-9]"
+
 	# not very clever to disable warning, but ... users afraid it
 	append-flags "-Wno-implicit"
 	append-flags "-fno-strict-aliasing"
@@ -396,11 +407,11 @@ src_configure() {
 	# workaround for --with-system-*
 	export PKG_CONFIG=pkg-config
 
-	cd "${WORKSRC}/config_office"
+	cd "${WORKSRC}"
 
 	# distro-configs are not hooked in infra build, passing configure options as commandline arguments
 	./configure \
-		--srcdir="${DISTDIR}" \
+		--srcdir="${WORKSRC}" \
 		--with-lang="${LINGUAS_OOO}" \
 		--with-build-version="${OOOTAG}" \
 		${GTKFLAG} \
@@ -485,6 +496,8 @@ src_compile() {
 }
 
 src_install() {
+
+	export PYTHONPATH=""
 
 	einfo "Preparing Installation ..."
 
@@ -599,7 +612,7 @@ src_install() {
 	    dosym "${instdir}"/program/spadmin /usr/bin/ooprinteradmin
 	fi
 	dosym "${instdir}"/program/soffice /usr/bin/soffice
-	dosym "${instdir}"/basis3.0/program/setofficelang /usr/bin/setofficelang
+	dosym "${instdir}"/"${BASIS}"/program/setofficelang /usr/bin/setofficelang
 	dosym "${instdir}"/program/unopkg  /usr/bin/unopkg
 
 	# Fix the permissions for security reasons
@@ -609,13 +622,16 @@ src_install() {
 	use !java && rm -f "${D}"${instdir}/ure/bin/javaldx
 
 	# record java libraries
-	use java && java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/basis3.0/program/classes/*.jar
+	if use java; then
+			java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/"${BASIS}"/program/classes/*.jar
+			java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/ure/share/java/*.jar
+	fi
 
 	# install java-set-classpath
 	if use java; then
-	    insinto /usr/$(get_libdir)/openoffice/basis3.0/program
+	    insinto /usr/$(get_libdir)/openoffice/"${BASIS}"/program
 	    newins "${FILESDIR}/java-set-classpath.in" java-set-classpath
-	    fperms 755 /usr/$(get_libdir)/openoffice/basis3.0/program/java-set-classpath
+	    fperms 755 /usr/$(get_libdir)/openoffice/"${BASIS}"/program/java-set-classpath
 	fi
 
 }
@@ -628,7 +644,7 @@ pkg_postinst() {
 	[[ -x /sbin/chpax ]] && [[ -e /usr/$(get_libdir)/openoffice/program/soffice.bin ]] && chpax -zm /usr/$(get_libdir)/openoffice/program/soffice.bin
 
 	# Add available & useful jars to openoffice classpath
-	use java && /usr/$(get_libdir)/openoffice/basis3.0/program/java-set-classpath $(java-config --classpath=jdbc-mysql 2>/dev/null) >/dev/null
+	use java && /usr/$(get_libdir)/openoffice/"${BASIS}"/program/java-set-classpath $(java-config --classpath=jdbc-mysql 2>/dev/null) >/dev/null
 
 	elog " To start OpenOffice-Infra, run:"
 	elog
@@ -670,12 +686,5 @@ pkg_postinst() {
 	    elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
 	fi
 	elog
-
-}
-
-pkg_postrm() {
-
-	fdo-mime_desktop_database_update
-	fdo-mime_mime_database_update
 
 }

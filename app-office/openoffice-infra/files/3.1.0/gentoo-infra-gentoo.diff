@@ -1,0 +1,54 @@
+--- patches/dev300/apply.orig	2009-05-31 13:47:16.000000000 +0600
++++ patches/dev300/apply	2009-05-31 13:47:59.000000000 +0600
+@@ -151,6 +151,9 @@
+ 
+ InfraUnix:  LinuxCommon, CJK, OOXML, CustomUserConfig, PostgreSQL, InfraPatches, NotInfraLinux, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, IntegrateExtensions
+ InfraLinux:  UbuntuJaunty, CustomUserConfig, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, InfraLinuxOnly
++InfraGentooBase: Gentoo, SVGImport, UpdaterRemoval, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, CustomUserConfig, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly
++InfraGentoo: InfraGentooBase
++InfraGentooPG: InfraGentooBase, InfraUnixPatchesPG, PostgreSQL
+ InfraSolaris:  LinuxCommon, CustomUserConfig, InfraPatches, NotInfraLinux, Infra1252toLocale, InfraSolaris, NotDebian, IntegrateExtensions
+ InfraWin32: Win32Common, CustomUserConfig, InfraPatches, NotInfraLinux, InfraWin32Patches, Infra1252toLocale, InfraNotSolaris, IntegrateExtensions
+ InfraFake: QuickStarter, WMF, SVGImport, UnitTesting, Layout, CJK, EMFPlus, Fpickers, LayoutDialogs, UnitBootstrap, AutoCorrectCapsLock
+@@ -1601,7 +1604,7 @@
+ sc-export-shape-macro-bindings.diff, n#304739, noelpwer
+ 
+ # export of hlink bindings for shapes
+-# sc-export-shape-hlink-bindings.diff, n#304739, noelpwer
++sc-export-shape-hlink-bindings.diff, n#304739, noelpwer
+ 
+ # attributes present in the vba streams can override the default shape name
+ # used for the control in the binary format
+@@ -1751,9 +1754,8 @@
+ vba-import-globaltemplate-customizations.diff
+ # fix problem with syntax like 'If LCase(str1) = str2 <> 0 Then'
+ vba-basic-if-compare-fix.diff, i#100600, n#488588, Fong
+-# fix parallel build problems in basic
+-# (probably obsoletes vba-parallel-build.diff)
+-vba-basic-parallel-build.diff
++# fix parallel build problems
++vba-parallel-build.diff
+ # fix parallel build problems in oovbaapi
+ vba-oovbaapi-parallel-build.diff
+ 
+@@ -2970,7 +2972,7 @@
+ xlsx-shared-import-and-export.diff
+ 
+ xlsx-arabic-export-crash.diff, n#497419, janneke
+-xlsx-export-notes-avoid-dereferencing-0-svx.diff, n#497417, janneke
++#xlsx-export-notes-avoid-dereferencing-0-svx.diff, n#497417, janneke
+ xlsx-export-set-xml-2007-flavour.diff, n#502090, janneke
+ xlsx-export-simple-autofilter.diff, n#497559, janneke
+ # hack to ignore writerfilter when odf-converter is present
+@@ -3090,8 +3092,10 @@
+ sfx2-remove-check-update-on-fileload.diff, kohei
+ default-system-fpicker.diff, michael
+ 
+-[InfraUnixPatches]
++[InfraUnixPatchesPG]
+ connectivity-freebsd-libs.diff
++
++[InfraUnixPatches]
+ freebsd-store-alloca.diff
+ freebsd-gperf.diff, i#85469, rail
+ freebsd-writerfilter.diff

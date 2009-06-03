@@ -1,17 +1,5 @@
---- config_office/configure.in.orig	2008-10-26 12:57:20.000000000 +0500
-+++ config_office/configure.in	2008-10-26 12:57:57.000000000 +0500
-@@ -105,6 +105,11 @@
-                           epm, however epm is useless for large scale
-                           package building.
- ],,enable_epm="yes")
-+AC_ARG_WITH(epm,
-+[[  --with-epm[=internal|external]
-+                          use internal or system epm.
-+                          [default=internal]
-+]],,with_epm=internal)
- AC_ARG_WITH(package-format,
- [  --with-package-format   specify package format(s) for OOo installsets.
-                           Default is "normal" one of the OS/Distribution.
+--- configure.in.orig	2008-10-26 12:57:20.000000000 +0500
++++ configure.in	2008-10-26 12:57:57.000000000 +0500
 @@ -808,6 +813,10 @@
    --disable-verbose       Decrease build verbosity.
  ],,)

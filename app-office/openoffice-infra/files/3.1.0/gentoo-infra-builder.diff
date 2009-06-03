@@ -1,25 +1,25 @@
---- bin/apply.pl.orig	2008-10-18 03:32:19.000000000 +0600
-+++ bin/apply.pl	2008-10-25 21:31:42.000000000 +0600
-@@ -767,7 +767,7 @@
+--- bin/apply.pl.orig	2009-05-30 14:14:39.000000000 +0600
++++ bin/apply.pl	2009-05-30 14:14:53.000000000 +0600
+@@ -918,7 +918,7 @@
      my $ver_line;
      my $is_old = 1;
  
--    open ($Patch, "gpatch --version|") || die "Can't run patch: $!";
+-    open ($Patch, "/usr/local/bin/gpatch --version|") || die "Can't run patch: $!";
 +    open ($Patch, "patch --version|") || die "Can't run patch: $!";
      $ver_line = <$Patch>;
      $ver_line =~ m/\s+(\d+)\.(\d+)\.(\d+)/ || die "Can't get patch version\n";
      if ($1 >= 2 && $2 >= 5 && $3 >= 9) {
-@@ -1118,7 +1118,7 @@
+@@ -1280,7 +1280,7 @@
  
      $opts = join ' ', @arguments;
-     my $base_args = " -l -p0 $opts -d $dest_dir";
--    $base_cmd = "gpatch";
-+    $base_cmd = "patch";
+     $patch_args = " -l -p0 $opts -d $dest_dir";
+-    $patch_cmd = "/usr/local/bin/gpatch";
++    $patch_cmd = "patch";
      if ($pieces) {
  	# nasty path mess
- 	$base_cmd = "$patch_dir/../../bin/sloppypatch.pl";
---- bin/enable-dict.orig	2008-10-18 11:48:50.000000000 +0600
-+++ bin/enable-dict	2008-10-25 21:31:52.000000000 +0600
+ 	$patch_cmd = "$patch_dir/../../bin/sloppypatch.pl";
+--- bin/enable-dict.orig	2009-05-30 13:44:33.000000000 +0600
++++ bin/enable-dict		2009-05-30 13:44:40.000000000 +0600
 @@ -6,7 +6,7 @@
  
  test -f $ARC || exit 1

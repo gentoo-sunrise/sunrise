@@ -2,6 +2,39 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com> -files/2.4.2,
+  -files/2.4.2/build-gcc43-missingincludes.diff,
+  -files/2.4.2/gentoo-completion_matches.diff,
+  -files/2.4.2/gentoo-configure.diff, -files/3.0.1,
+  -files/3.0.1/gentoo-ReturnInteger.hdl, -openoffice-infra-2.4.2.ebuild,
+  -files/2.4.2/gentoo-configure-pg.diff,
+  -files/2.4.2/gentoo-fixsandbox.diff,
+  -files/3.0.1/gentoo-ReturnInteger.hpp,
+  -files/3.0.1/gentoo-XVBAToOOEventDescGen.hpp,
+  -files/3.0.1/gentoo-completion_matches.diff,
+  -files/3.0.1/gentoo-configure.diff, +files/3.1.0/gentoo-configure-pg.diff,
+  -files/3.0.1/gentoo-buildfix-mono-2-2.diff,
+  -openoffice-infra-3.0.1.ebuild, -files/2.4.2/gentoo-infragentoo.diff,
+  -files/3.0.1/gentoo-XVBAToOOEventDescGen.hdl,
+  -files/3.0.1/gentoo-configure-pg.diff, -files/3.0.1/gentoo-hunspell.diff,
+  -files/3.0.1/gentoo-infragentoo.diff, -files/3.0.1/gentoo-mkdepend.diff,
+  -files/3.0.1/gentoo-nojavanostax.diff, -files/3.0.1/gentoo-ru_dict.diff,
+  -files/3.0.1/gentoo-scripts.diff,
+  -files/3.0.1/gentoo-solenv_kde_mess.diff,
+  -files/3.0.1/gentoo-vba_incl.diff, +files/3.1.0,
+  +files/3.1.0/buildfix-gcc44.diff, +files/3.1.0/gentoo-configure.diff,
+  +files/3.1.0/gentoo-dont_strip_libs.diff,
+  +files/3.1.0/gentoo-infra-builder.diff,
+  +files/3.1.0/gentoo-vba-parallel-build.diff,
+  +files/3.1.0/solenv.workaround-for-the-kde-mess.diff,
+  +openoffice-infra-3.1.0.ebuild, -files/2.4.2/gentoo-macolor.diff,
+  -files/2.4.2/gentoo-mkdepend.diff, -files/2.4.2/gentoo-scripts.diff,
+  +files/3.1.0/gentoo-infra-gentoo.diff,
+  -files/2.4.2/gentoo-python-2.3.4.diff,
+  +files/3.1.0/gentoo-layout-simple-dialogs-svx.diff,
+  +files/3.1.0/gentoo-mkdepend.diff, +files/3.1.0/gentoo-ru_dict.diff:
+  Version bump to 3.1.0
+
   17 Apr 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   openoffice-infra-3.0.1.ebuild:
   Change app-text/poppler to virtual/poppler at deps.
