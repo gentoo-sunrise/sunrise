@@ -15,6 +15,7 @@ IUSE=""
 
 RDEPEND="dev-python/gnome-python-extras
 	>=dev-python/pygtk-2.0"
+DEPEND=""
 
 S=${WORKDIR}/${PN}
 
