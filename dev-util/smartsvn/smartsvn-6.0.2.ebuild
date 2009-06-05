@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils java-pkg-2
 
 MY_PV=${PV//./_}
 MY_P=smartsvn-generic-${MY_PV}
@@ -22,10 +22,13 @@ RDEPEND=">=virtual/jre-1.4.1"
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_install() {
-	insinto /opt/smartsvn
+    local rdir="/opt/${PN}"
+	insinto ${rdir}
 	doins -r * || die "cannot install needed files"
-	fperms +x /opt/smartsvn/bin/smartsvn.sh || die "cannot make executable"
-	dosym /opt/smartsvn/bin/smartsvn.sh /usr/bin/smartsvn || die "cannot create symlink"
+
+	java-pkg_regjar ${rdir}/lib/${PN}.jar
+
+	java-pkg_dolauncher ${PN} "--java-args -Xmx256 --jar ${PN}.jar"
 
 	for X in 32 48 64 128
 	do

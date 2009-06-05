@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jun 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
+  -smartsvn-5.0.5.ebuild, +smartsvn-6.0.2.ebuild:
+  Version bump and few changes to include java-pkg-2
+
   10 Apr 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
   +smartsvn-5.0.5.ebuild, +metadata.xml:
   New ebuild for smartsvn, bug 183325, review by Tommy[D]
