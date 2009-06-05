@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jun 2009; Naohiro Aota <naota@elisp.net>
+  -ccs-tools-1.6.7_p20090401.ebuild, +ccs-tools-1.6.8_p20090528.ebuild:
+  Version bump for ccs-tools.
+
   30 May 2009; Naohiro Aota <naota@elisp.net>
   +ccs-tools-1.6.7_p20090401.ebuild, +files/50ccs-tools, +metadata.xml:
   New Ebuild for bug 271028 thanks to Thomas and _AxS_
