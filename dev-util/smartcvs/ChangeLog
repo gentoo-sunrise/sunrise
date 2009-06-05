@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jun 2009; Nikos Nikolaou <nikos@nikolaou.name> -smartcvs-7.0.7.ebuild,
+  +smartcvs-7.0.8.ebuild:
+  Version bump and few changes to include java-pkg-2, review by Tommy[D]
+
   09 Apr 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
   smartcvs-7.0.7.ebuild, metadata.xml:
   removed files dir, further changes after review by Tommy[D]
