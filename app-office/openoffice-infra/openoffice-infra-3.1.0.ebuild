@@ -345,6 +345,7 @@ src_configure() {
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable cups)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable dbus)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable eds evolution2)"
+	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gnome gconf)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gnome gnome-vfs)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gnome lockdown)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gstreamer)"

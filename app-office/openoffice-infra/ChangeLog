@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com>
+  openoffice-infra-3.1.0.ebuild:
+  Fix gconf issue
+
   03 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com> -files/2.4.2,
   -files/2.4.2/build-gcc43-missingincludes.diff,
   -files/2.4.2/gentoo-completion_matches.diff,
