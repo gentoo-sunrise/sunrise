@@ -1,6 +1,10 @@
 # ChangeLog for media-radio/fldigi
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jun 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  xastir-1.9.4.ebuild, +files/xastir-1.9.4-config.diff:
+  Fixes for missing dependency (bug 272822) and sandbox violation
 
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Remove global useflags from metadata.xml

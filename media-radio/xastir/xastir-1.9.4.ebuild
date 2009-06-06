@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="X Amateur Station Tracking and Information Reporting"
 HOMEPAGE="http://xastir.sourceforge.net/"
@@ -15,6 +15,7 @@ IUSE="festival gdal geotiff imagemagick"
 
 DEPEND="x11-libs/openmotif
 	x11-libs/libXpm
+	x11-apps/xfontsel
 	dev-libs/libpcre
 	net-misc/curl
 	sys-libs/db
@@ -34,7 +35,9 @@ src_unpack() {
 	# fix some scripts with DOS line endings
 	edos2unix scripts/toporama*
 	# fix for different install directory in scripts
-	epatch "${FILESDIR}/${P}-scripts.diff"
+	epatch "${FILESDIR}/${P}-scripts.diff" \
+	    "${FILESDIR}/${P}-config.diff"
+	eautoreconf
 }
 
 src_compile() {
