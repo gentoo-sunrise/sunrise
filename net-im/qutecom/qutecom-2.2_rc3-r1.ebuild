@@ -26,7 +26,7 @@ DEPEND=">=dev-libs/boost-1.34
 	media-libs/libsndfile
 	portaudio? ( media-libs/portaudio )
 	media-libs/speex
-	media-video/ffmpeg
+	<media-video/ffmpeg-0.5
 	net-im/pidgin[gnutls]
 	net-libs/gnutls
 	>=net-libs/libosip-3
