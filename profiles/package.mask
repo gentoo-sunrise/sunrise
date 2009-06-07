@@ -43,14 +43,6 @@ net-im/spark
 # Masking beta versions
 =app-misc/bsc-4.0.06_beta*
 
-# Jakub Moc <jakub@gentoo.org> (27 Oct 2007)
-# Broken license. Asked upstream to address it.
-#
-# Breaks media-video/ffmpeg (bug #197037)
-# because it installs precompiled junk to /usr/lib
-#
-media-tv/zattoo-bin
-
 # Davide Cendron <scen@gentoo.org> (12 Jun 2007)
 # cvs (snapshot) version should be masked
 games-fps/uhexen2-cvs
