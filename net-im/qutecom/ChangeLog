@@ -3,6 +3,12 @@
 # $Header: $
 
   07 Jun 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -qutecom-2.2_rc3-r1.ebuild,
+  +qutecom-2.2_p20090606.ebuild, -files/qutecom_libpurple_gnutls.patch,
+  -files/qutecom_wifo_phapi.patch:
+  version bump
+
+  07 Jun 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> qutecom-2.2_rc3-r1.ebuild:
   depend on old version of ffmpeg
 
