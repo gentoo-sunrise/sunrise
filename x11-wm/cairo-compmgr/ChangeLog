@@ -1,0 +1,10 @@
+# ChangeLog for x11-wm/cairo-compmgr
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jun 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+  +cairo-compmgr-0.2.93.ebuild,
+  +files/cairo-compmgr-0.2.93-glitz-code.patch,
+  +files/cairo-compmgr-0.2.93-glitz-tfp-undef.patch, +metadata.xml:
+  New ebuild for bug #271775, thanks to scarabeus for help on ebuild form
+
