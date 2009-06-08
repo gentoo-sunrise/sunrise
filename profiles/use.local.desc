@@ -185,8 +185,6 @@ sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and b
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
-sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:arm - Install the toolchain for the ARM arch
-sys-devel/scratchbox-toolchain-cs2005q3_2-glibc:i386 - Install the toolchain for the i386 arch
 sys-fs/aufs:fuse - Enable FUSE workaround
 sys-fs/aufs:hinotify - Add support for aufs inotify
 sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module run more efficiently
