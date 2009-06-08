@@ -22,7 +22,7 @@ RDEPEND=">=virtual/jre-1.4.1"
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_install() {
-    local rdir="/opt/${PN}"
+	local rdir="/opt/${PN}"
 	insinto ${rdir}
 	doins -r * || die "cannot install needed files"
 

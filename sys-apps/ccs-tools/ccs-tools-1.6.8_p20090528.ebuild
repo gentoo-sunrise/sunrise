@@ -22,7 +22,7 @@ S="${WORKDIR}/ccstools/"
 src_install() {
 	emake INSTALLDIR="${D}" install || die
 
-	rm ${D}/usr/lib/ccs/ccstools.conf || die
+	rm "${D}"/usr/lib/ccs/ccstools.conf || die
 	insinto /usr/lib/ccs/conf
 	doins ccstools.conf || die
 	dosym /usr/lib/ccs/conf/ccstools.conf /usr/lib/ccs/ccstools.conf || die
