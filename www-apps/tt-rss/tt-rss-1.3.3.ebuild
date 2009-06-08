@@ -20,6 +20,10 @@ RDEPEND="${DEPEND}"
 need_httpd_cgi
 need_php_httpd
 
+pkg_setup() {
+	webapp_pkg_setup
+}
+
 src_prepare() {
 	# Customize config.php so that the right 'DB_TYPE' is already set (according to the USE flag)
 	einfo "Customizing config.php..."
