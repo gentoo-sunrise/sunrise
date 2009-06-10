@@ -1,22 +1,29 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
+inherit eutils
+
 DESCRIPTION="Utility to modify HCI/SCI controls on Toshiba Laptops"
 HOMEPAGE="http://www.schwieters.org/toshset/"
-SRC_URI="mirror://debian/pool/main/t/${PN}/${PN}_${PV}.orig.tar.gz"
+SRC_URI="http://dev.gentooexperimental.org/~hwoarang/distfiles/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
-IUSE=""
+KEYWORDS="~amd64 ~x86"
+IUSE="debug"
 
 DEPEND=""
 RDEPEND=""
 
-src_unpack() {
-	unpack ${A}
+src_prepare() {
 	sed -i 's/CFLAGS = -march=i486 \(-Wall @OS_CFLAGS@ @DEBUGFLAGS@\)/CFLAGS := \1 ${CFLAGS}/' "${S}/Makefile.in" || die "sed failed"
+}
+
+src_configure(){
+	econf "${myconf} $(use_enable debug)"
 }
 
 src_install() {
