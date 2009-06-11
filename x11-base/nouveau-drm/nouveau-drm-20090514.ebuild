@@ -7,6 +7,7 @@ WANT_AUTOMAKE="1.7"
 #EGIT_BRANCH="vblank-rework"
 EGIT_TREE="f57d7f4b0b14972f92a83f155ae8033478aa7729"
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/mesa/drm"
+EGIT_PATCHES=( "${FILESDIR}/drm-fix-building-with-2.6.30.patch" )
 
 inherit eutils x11 linux-mod autotools git
 
