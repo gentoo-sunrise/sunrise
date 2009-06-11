@@ -21,9 +21,7 @@ RDEPEND="x11-libs/gtk+:2
 DEPEND="${RDEPEND}
 	>=x11-proto/glproto-1.4.9"
 
-pkg_setup() {
-	G2CONF="--disable-glitz --disable-glitz-tfp --enable-shave"
-}
+G2CONF="--disable-glitz --disable-glitz-tfp --enable-shave"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-glitz-tfp-undef.patch"

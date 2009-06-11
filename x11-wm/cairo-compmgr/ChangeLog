@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2009; Christian Ruppert <idl0r@gentoo.org>
+  cairo-compmgr-0.2.93.ebuild:
+  Moved G2CONF into the global scope.
+
   08 Jun 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
   +cairo-compmgr-0.2.93.ebuild,
   +files/cairo-compmgr-0.2.93-glitz-code.patch,
