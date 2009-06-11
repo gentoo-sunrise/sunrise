@@ -4,8 +4,6 @@
 
 EAPI="2"
 
-inherit eutils
-
 DESCRIPTION="Utility to modify HCI/SCI controls on Toshiba Laptops"
 HOMEPAGE="http://www.schwieters.org/toshset/"
 SRC_URI="http://dev.gentooexperimental.org/~hwoarang/distfiles/${P}.tgz"
@@ -23,10 +21,10 @@ src_prepare() {
 }
 
 src_configure(){
-	econf "${myconf} $(use_enable debug)"
+	econf $(use_enable debug)
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README
+	dodoc README || die
 }

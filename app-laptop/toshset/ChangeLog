@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2009; Christian Ruppert <idl0r@gentoo.org> toshset-1.75.ebuild:
+  Cleanup, remove unused inherit. Add missing die statement.
+
 *toshset-1.75 (10 Jun 2009)
 
   10 Jun 2009; Markos Chandras <hwoarang@gentoo.org> -toshset-1.72.ebuild,
