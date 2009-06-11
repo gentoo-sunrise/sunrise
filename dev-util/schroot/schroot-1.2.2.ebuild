@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${PN}.{pamfix,autotools,test}.patch"
+	epatch "${FILESDIR}/${PN}".{pamfix,autotools,tests}.patch
 	AT_M4DIR="m4" eautoreconf
 }
 

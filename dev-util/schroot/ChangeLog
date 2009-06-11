@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jun 2009; Christian Ruppert <idl0r@gentoo.org> schroot-1.2.2.ebuild:
+  Fix epatch call, thanks to dacook.
+
   10 May 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   schroot-1.2.2.ebuild:
   Simplify a bit more
