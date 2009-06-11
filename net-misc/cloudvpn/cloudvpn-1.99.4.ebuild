@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-inherit eutils autotools
+EAPI="2"
 
 DESCRIPTION="secure mesh networking VPN"
 HOMEPAGE="http://e-x-a.org/"
@@ -15,12 +14,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="net-libs/gnutls"
-DEPEND=" ${RDEPEND}
+DEPEND="${RDEPEND}
 	sys-devel/automake"
 
 src_prepare() {
-	rm -r src/stunproxy #incomplete, don't bother with it.
-	./autogen.sh
+	#incomplete, don't bother with it.
+	rm -r src/stunproxy
+
+	# eautoreconf doesn't work.
+	./autogen.sh || die
 }
 
 src_install() {

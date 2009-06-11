@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-inherit eutils autotools git
+inherit git
 
 DESCRIPTION="secure mesh networking VPN"
 HOMEPAGE="http://e-x-a.org/"
@@ -17,14 +16,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="net-libs/gnutls"
-DEPEND=" ${RDEPEND}
+DEPEND="${RDEPEND}
 	sys-devel/automake"
 
-src_prepare() {
-	./autogen.sh
-}
+EGIT_BOOTSTRAP="autogen.sh"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	dodoc README || die "doc'ing README failed"
+	dodoc README || die "dodoc README failed"
 }
