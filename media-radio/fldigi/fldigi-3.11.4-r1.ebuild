@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
 inherit versionator
 
 MY_DOC_PN=${PN}-$(get_version_component_range 1-2)
@@ -26,19 +28,21 @@ RDEPEND=">=x11-libs/fltk-1.1.7
 	portaudio? ( >=media-libs/portaudio-19_pre20071207 )
 	pulseaudio? ( media-sound/pulseaudio )
 	sndfile? ( >=media-libs/libsndfile-1.0.10 )
-	xmlrpc? ( dev-libs/xmlrpc-c )"
+	xmlrpc? ( || ( >=dev-libs/xmlrpc-c-1.18.2[abyss] dev-libs/xmlrpc-c )
+		dev-perl/RPC-XML
+		dev-perl/Term-ReadLine-Perl )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
 	dev-util/pkgconfig"
 
-src_compile() {
+src_configure() {
 	econf $(use_with sndfile) \
 		$(use_with portaudio) \
 		$(use_with hamlib) \
 		$(use_enable nls) \
 		$(use_with pulseaudio) \
-		$(use_with xmlrpc)
-	emake || die "emake failed"
+		$(use_with xmlrpc) \
+		--without-asciidoc
 }
 
 src_install() {
