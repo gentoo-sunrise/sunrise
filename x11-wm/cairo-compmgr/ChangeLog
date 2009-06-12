@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jun 2009; Christian Ruppert <idl0r@gentoo.org>
+  cairo-compmgr-9999.ebuild:
+  Simplify.
+
   12 Jun 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
   +cairo-compmgr-9999.ebuild,
   +files/cairo-compmgr-9999-glitz-tfp-undef.patch:

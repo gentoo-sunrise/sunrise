@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit autotools eutils git gnome2
+inherit autotools gnome2 git
 
 EGIT_REPO_URI="git://git.tuxfamily.org/gitroot/ccm/cairocompmgr.git"
 
@@ -25,11 +25,7 @@ DEPEND="${RDEPEND}
 
 G2CONF="--disable-glitz --disable-glitz-tfp --enable-shave"
 
-src_unpack() {
-	git_src_unpack
-}
+EGIT_PATCHES=( "${FILESDIR}/${P}-glitz-tfp-undef.patch" )
+AT_M4DIR="."
+EGIT_BOOTSTRAP="eautoreconf"
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}-glitz-tfp-undef.patch"
-	AT_M4DIR="." eautoreconf
-}
