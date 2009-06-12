@@ -5,10 +5,11 @@
 inherit cmake-utils versionator
 
 PV_MAJ=$(get_version_component_range 1-2)
+MY_P=${PN}-linux-${PV}
 
 DESCRIPTION="An enterprise quality OCR engine developed in USSR/Russia in the 90's."
 HOMEPAGE="https://launchpad.net/cuneiform-linux"
-SRC_URI="http://launchpad.net/${PN}-linux/${PV_MAJ}/${PV_MAJ}/+download/${PN}-linux-${PV_MAJ}.tar.bz2"
+SRC_URI="http://launchpad.net/${PN}-linux/${PV_MAJ}/${PV_MAJ}/+download/${MY_P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -22,7 +23,7 @@ DEPEND=">=dev-util/cmake-2.6.2
 
 DOCS="readme.txt"
 
-S="${WORKDIR}/cf_linux-${PV_MAJ}.0"
+S="${WORKDIR}/${MY_P}"
 
 src_unpack(){
 	unpack ${A}

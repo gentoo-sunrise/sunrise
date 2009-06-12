@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jun 2009; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru>
+  cuneiform-0.7.ebuild:
+  Ebuild cleanup
+
   12 Jun 2009; Aleksandr Yakimov (yaleks) <skyaleks@ya.ru> Manifest:
   Fix Manifest
 
