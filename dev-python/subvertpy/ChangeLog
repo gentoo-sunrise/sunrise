@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -subvertpy-0.6.6.ebuild, +subvertpy-0.6.7.ebuild:
+  Version bump. 0.6.6 -> 0.6.7
+
   25 May 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +subvertpy-0.6.6.ebuild, +files/remove_tests.patch, +metadata.xml:
   New ebuild for bug 270201
