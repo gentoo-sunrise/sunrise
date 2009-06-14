@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jun 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -unbound-1.2.1.ebuild, +unbound-1.3.0.ebuild, -files/chroot_howto.txt,
+  files/unbound.confd, files/unbound.initd, metadata.xml:
+  Version bump, including new init script
+
   06 May 2009; Tom Hendrikx (whyscream) <tom@whyscream.net>
   unbound-1.2.1.ebuild:
   Disable test suite since it does not work

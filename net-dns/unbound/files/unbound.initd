@@ -1,16 +1,18 @@
 #!/sbin/runscript
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-opts="start stop configtest"
+opts="start stop reload"
 description="Unbound is a validating, recursive and caching DNS resolver"
 description_start="Start the server"
 description_stop="Stop the server"
-description_configtest="Check the syntax of the configuration file"
+description_reload="Reload the server"
 
 config_file=${config_file:-/etc/unbound/unbound.conf}
-pid_file=${pid_file:-/var/run/unbound.pid}
+my_unbound_checkconf=/usr/sbin/unbound-checkconf
+my_unbound_control=/usr/sbin/unbound-control
+my_unbound_control_setup=/usr/sbin/unbound-control-setup
 
 depend() {
 	provide dns
@@ -18,27 +20,35 @@ depend() {
 	after auth-dns
 }
 
+_checkconf() {
+	if ! ${my_unbound_checkconf} "${config_file}" > /dev/null; then
+		eerror "You have errors in your configfile (${config_file})"
+		return 1
+	fi
+	return 0
+}
+
+_running() {
+	${my_unbound_control} -c ${config_file} status > /dev/null 2>&1
+}
+
 start() {
-	configtest || return 1
+	_checkconf || return 1
 
 	ebegin "Starting unbound"
-		unbound -c "${config_file}"
+	${my_unbound_control} -c ${config_file} start > /dev/null
+	_running
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping unbound"
-		start-stop-daemon --stop --pidfile="${pid_file}"
+	${my_unbound_control} -c ${config_file} stop > /dev/null
 	eend $?
 }
 
-configtest() {
-	ebegin "Checking config (${config_file})"
-		unbound-checkconf "${config_file}" > /dev/null 2>&1
-		local RESULT=$?
-		if test "$RESULT" != 0; then
-			eerror "`unbound-checkconf "${config_file}" 2>&1`"
-			eend 1
-		fi
-	eend "$RESULT"
+reload() {
+	ebegin "Reloading unbound"
+	${my_unbound_control} -c ${config_file} reload > dev/null
+	eend $?
 }
