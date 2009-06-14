@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jun 2009; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  -python-distutils-extra-1.91.2.ebuild,
+  +python-distutils-extra-1.92_pre67.ebuild:
+  Version bump for python-distutils-extra, thanks to mrpouet.
+
   24 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
   python-distutils-extra-1.91.2.ebuild:
   Fixed depends.
