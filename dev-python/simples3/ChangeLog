@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -simples3-0.2.ebuild, +simples3-0.3-r2.ebuild:
+  New version: 0.3-r2
+
   13 May 2009; Christian Ruppert <idl0r@gentoo.org> simples3-0.2.ebuild:
   RDEPEND fixed.
 
