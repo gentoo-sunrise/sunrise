@@ -26,7 +26,8 @@ src_unpack() {
 	# Let portage handle updating mime/desktop databases,
 	epatch "${FILESDIR}/${PN}-1.9-desktop-update.patch"
 	# and patch wrong ADIF export
-	epatch "${FILESDIR}/${P}-adif.patch"
+	epatch "${FILESDIR}/${PN}-2.0.1-adif.patch" \
+	    "${FILESDIR}/${P}-qsl.patch"
 	mkdir -p "${S}"/m4	# make autoconf happy...
 	eautoreconf
 }
