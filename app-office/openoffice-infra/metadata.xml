@@ -12,6 +12,6 @@ version</longdescription>
   <flag name='binfilter'>Enable support for legacy StarOffice 5.x and earlier
     file formats</flag>
   <flag name='odk'>Build the Office Development Kit</flag>
-  <flag name='oodict'>Use Open Office dicts instead of system</flag>
+  <flag name='infradicts'>Use all bundled dicts from Infra-Resource</flag>
 </use>
 </pkgmetadata>

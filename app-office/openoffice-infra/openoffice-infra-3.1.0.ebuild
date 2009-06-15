@@ -7,7 +7,7 @@ EAPI="2"
 
 inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 kde-functions mono multilib toolchain-funcs
 
-IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk oodict opengl pam postgres"
+IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk +infradicts opengl pam +postgres"
 
 PATCHLEVEL="OOO310"
 MILESTONE="11"
@@ -156,6 +156,18 @@ pkg_setup() {
 		export LINGUAS_OOO=$(echo ${LINGUAS} | sed -e 's/\ben\b/en_US/g;s/_/-/g')
 	fi
 
+	# dicts
+	if use infradicts; then
+		export DICTS_OOO="en-US ru uk"
+	else
+		for i in ${LINGUAS_OOO}; do
+			if [[ "${i}" != "tr" ]]; then
+			    DICTS_OOO="${DICTS_OOO} ${i}"
+			fi
+		done
+		export DICTS_OOO
+	fi
+
 	if use !java; then
 		ewarn
 		ewarn " You are building with java-support disabled, this results in some "
@@ -233,26 +245,27 @@ src_prepare() {
 
 	cd "${WORKSRC}"; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras-templates.tar.bz2"
 
-	local longlang
 	for i in ${LINGUAS_OOO}; do
-	    if [[ "${i}" == "ru" || "${i}" == "tr" ]]; then
-		cd "${WORKSRC}"; rm -rf "extras/source/autotext/lang/${i}/*" ; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras_${i}.tar.bz2"
-	    fi
-	    if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
-		if [[ "${i}" == "ru" ]]; then
-		    longlang="ru_RU"
-		else
-		    longlang="uk_UA"
+		if [[ "${i}" == "ru" || "${i}" == "tr" ]]; then
+			cd "${WORKSRC}"; rm -rf "extras/source/autotext/lang/${i}/*" ; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras_${i}.tar.bz2"
 		fi
-		"${WORKDIR}"/infra-ooo-files_${PV}/bin/enable-dict "${longlang}" "${WORKDIR}/infra-ooo-files_${PV}/files/dict_${longlang}.tar.bz2" "${WORKSRC}"
-	    fi
+	done
+	local longlang
+	for i in ${DICTS_OOO}; do
+		if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
+			if [[ "${i}" == "ru" ]]; then
+			    longlang="ru_RU"
+			else
+			    longlang="uk_UA"
+			fi
+			"${WORKDIR}"/infra-ooo-files_${PV}/bin/enable-dict "${longlang}" "${WORKDIR}/infra-ooo-files_${PV}/files/dict_${longlang}.tar.bz2" "${WORKSRC}"
+		fi
 	done
 
 	# Infra branding
-	mkdir -p "${WORKSRC}"/{libwps,libwpg,libwpd,libsvg}/download/
+	mkdir -p "${WORKSRC}"/{libwps,libwpg,libsvg}/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwps*.tar.gz   "${WORKSRC}"/libwps/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwpg*.tar.gz   "${WORKSRC}"/libwpg/download/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwpd*.tar.gz   "${WORKSRC}"/libwpd/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libsvg*.tar.gz   "${WORKSRC}"/libsvg/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/infra-logo-team.png   "${WORKSRC}"/default_images/sw/res/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/go-oo-team.png   "${WORKSRC}"/default_images/sw/res/
@@ -261,23 +274,34 @@ src_prepare() {
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/backing*.png    "${WORKSRC}"/default_images/framework/res/
 
 	local patchconf
+	patchconf="--tag=${OOOBUILDTAG} --distro=Localize"
+	local distros
 	local distro
 	if use postgres; then
-	    distro=InfraGentooPG
+		distros="InfraGentooPG"
 	else
-	    distro=InfraGentoo
+		distros="InfraGentoo"
 	fi
-	patchconf="--tag=${OOOBUILDTAG} --distro=${distro} --distro=Localize"
+	# add basic support of zemberek/tr
+	local dicts="${DICTS_OOO} tr"
+	for i in ${dicts}; do
+		if [[ "${i}" != "en-US" ]]; then
+		    distros="${distros} InfraDict${i}"
+		fi
+	done
+	for i in ${distros}; do
+		distro="${distro} --distro=${i}"
+	done
+	patchconf="${patchconf} ${distro}"
 	if use binfilter; then
-	    patchconf="${patchconf} --distro=Binfilter"
+		patchconf="${patchconf} --distro=Binfilter"
 	fi
-
 	"${WORKDIR}"/infra-ooo-files_${PV}/bin/apply.pl "${WORKDIR}"/infra-ooo-files_${PV}/patches/dev300 "${WORKSRC}" ${patchconf}
 	"${WORKDIR}"/infra-ooo-files_${PV}/bin/transform --apply "${WORKDIR}"/infra-ooo-files_${PV} "${WORKSRC}"
 
 	if use postgres; then
-	    # fix using of pg lib
-	    epatch "${FILESDIR}/${PV}/gentoo-configure-pg.diff"
+		# fix using of pg lib
+		epatch "${FILESDIR}/${PV}/gentoo-configure-pg.diff"
 	fi
 	# enable/disable-gstreamer, disable scanning for rpm/dpkg and etc
 	epatch "${FILESDIR}/${PV}/gentoo-configure.diff"
@@ -286,12 +310,13 @@ src_prepare() {
 	# disable rpm
 	epatch "${FILESDIR}/gentoo-epm-3.7.patch.diff"
 	if use postgres; then
-	    # fix handling of system libs for postgresql-base
-	    epatch "${FILESDIR}/gentoo-system_pgsql.diff"
+		# fix handling of system libs for postgresql-base
+		epatch "${FILESDIR}/gentoo-system_pgsql.diff"
 	fi
-	epatch "${FILESDIR}/${PV}/gentoo-ru_dict.diff"
 	# don't strip libs
 	use debug && epatch "${FILESDIR}/${PV}/gentoo-dont_strip_libs.diff"
+	# fix jfreereport cr issue
+	sed -i -e 's/\x0D$//' "${WORKSRC}"/jfreereport/patches/*.patch || die "sed failed"
 
 	cd "${WORKSRC}"
 
@@ -322,24 +347,22 @@ src_configure() {
 	fi
 
 	# Handle new dicts system
-	if use oodict ; then
-	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-myspell-dicts"
-	    local tempdicts=ENUS
-	    local tempdict
-	    for i in ${LINGUAS_OOO}; do
-		if [[ "${i}" != "en-US" ]]; then
-		    tempdict=$(ls ${WORKSRC}/dictionaries/ | grep ${i} | sed -e 's/_//g;s/\///g' | tr '[a-z]' '[A-Z]')
-		    tempdicts="${tempdicts},${tempdict}"
-		fi
-	    done
-	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-dict=${tempdicts}"
+	CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-myspell-dicts"
+	local dicts
+	if use infradicts; then
+		dicts="${DICTS_OOO}"
 	else
-	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --without-myspell-dicts"
-	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-system-dicts"
-	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-external-dict-dir=/usr/share/myspell"
-	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-external-hyph-dir=/usr/share/myspell"
-	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-external-thes-dir=/usr/share/myspell"
+		dicts="${LINGUAS_OOO}"
 	fi
+	local tempdicts=ENUS
+	local tempdict
+	for i in ${dicts}; do
+		if [[ "${i}" != "en-US" ]]; then
+			tempdict=$(ls ${WORKSRC}/dictionaries/ | grep ${i} | sed -e 's/_//g;s/\///g' | tr '[a-z]' '[A-Z]')
+			tempdicts="${tempdicts},${tempdict}"
+		fi
+	done
+	CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-dict=${tempdicts}"
 
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable binfilter)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable cups)"
@@ -465,9 +488,9 @@ src_compile() {
 
 	local gentoo_env_set
 	if [[ "${ARCH}" == "amd64" ]]; then
-	    gentoo_env_set="${WORKSRC}/LinuxX86-64Env.Set.sh"
+		gentoo_env_set="${WORKSRC}/LinuxX86-64Env.Set.sh"
 	else
-	    gentoo_env_set="${WORKSRC}/LinuxX86Env.Set.sh"
+		gentoo_env_set="${WORKSRC}/LinuxX86Env.Set.sh"
 	fi
 
 	source "${gentoo_env_set}"
@@ -479,19 +502,19 @@ src_compile() {
 	cd "${WORKSRC}"
 
 	for i in ${LINGUAS_OOO}; do
-	    if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
-		[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf
-	    fi
-	    if [[ "${i}" == "ru" ]]; then
-		[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf
-		[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf
-	    fi
+		if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
+			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf
+		fi
+		if [[ "${i}" == "ru" ]]; then
+			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf
+			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf
+		fi
 	done
 
 	if [[ "${JOBS}" != "1" ]]; then
-	    cd instsetoo_native ;  build.pl --checkmodules ; build.pl -P${JOBS} --all --html --dontgraboutput -- -P${JOBS} || die "Build failed"
+		cd instsetoo_native ;  build.pl --checkmodules ; build.pl -P${JOBS} --all --html --dontgraboutput -- -P${JOBS} || die "Build failed"
 	else
-	    dmake || die "Build failed"
+		dmake || die "Build failed"
 	fi
 
 }
@@ -509,11 +532,11 @@ src_install() {
 	local gentoo_env_set_dst
 
 	if [[ "${ARCH}" == "amd64" ]]; then
-	    arch_var="x"
-	    gentoo_env_set_dst="linux-2.6-x86_64"
+		arch_var="x"
+		gentoo_env_set_dst="linux-2.6-x86_64"
 	else
-	    arch_var="i"
-	    gentoo_env_set_dst="linux-2.6-intel"
+		arch_var="i"
+		gentoo_env_set_dst="linux-2.6-intel"
 	fi
 
 	allcomponents="${basecomponents}"
@@ -523,38 +546,49 @@ src_install() {
 	dodir "${instdir}"
 
 	cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice/native/install/en-US/"${gentoo_env_set_dst}"/buildroot/opt/* \
-	    "${D}"${instdir}
+		"${D}"${instdir}
 
 	for i in ${LINGUAS_OOO}; do
-	    if [[ "${i}" != "en-US" ]]; then
-		cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice_languagepack/native/install/"${i}"/"${gentoo_env_set_dst}"/buildroot/opt/* \
-		    "${D}"${instdir}
-	    fi
+		if [[ "${i}" != "en-US" ]]; then
+			cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice_languagepack/native/install/"${i}"/"${gentoo_env_set_dst}"/buildroot/opt/* \
+				"${D}"${instdir}
+		fi
 	done
 
+	# manual install Wiki Publisher, Report Builder, Presenter Screen (Console)  extensions
+	if use java; then
+		cp -f "${WORKSRC}"/swext/unxlng"${arch_var}"6.pro/bin/wiki-publisher.oxt "${D}"${instdir}/share/extension/install/
+		cp -f "${WORKSRC}"/reportbuilder/unxlng"${arch_var}"6.pro/bin/sun-report-builder.oxt "${D}"${instdir}/share/extension/install/
+	fi
+	cp -f "${WORKSRC}"/sdext/unxlng"${arch_var}"6.pro/bin/presenter-screen.oxt "${D}"${instdir}/share/extension/install/
+
 	# dict extensions
-	if use oodict; then
-	    rm -f "${D}"${instdir}/share/extension/install/dict-*.oxt
-	    insinto ${instdir}/share/extension/install
-	    local dictlang
-	    for i in ${LINGUAS_OOO}; do
+	local dicts
+	if use infradicts; then
+		dicts="${DICTS_OOO}"
+	else
+		dicts="${LINGUAS_OOO}"
+	fi
+	rm -f "${D}"${instdir}/share/extension/install/dict-*.oxt
+	insinto ${instdir}/share/extension/install
+	local dictlang
+	for i in ${dicts}; do
 		if [[ "${i}" == "en-US" ]]; then
-		    dictlang=en
+			dictlang=en
 		else
-		    dictlang=${i}
+			dictlang=${i}
 		fi
 		doins "${WORKSRC}"/dictionaries/unxlng"${arch_var}"6.pro/bin/dict-"${dictlang}".oxt
-	    done
-	fi
+	done
 
 	# Menu entries
 	cd "${D}"${instdir}/share/xdg/
 
 	for i in ${allcomponents}; do
 		if [[ "${i}" == "printeradmin" ]]; then
-		    sed -i -e s/openoffice.org3-/oo/g "${i}".desktop || die "Sed failed"
+			sed -i -e s/openoffice.org3-/oo/g "${i}".desktop || die "Sed failed"
 		else
-		    sed -i -e s/openoffice.org3/ooffice/g "${i}".desktop || die "Sed failed"
+			sed -i -e s/openoffice.org3/ooffice/g "${i}".desktop || die "Sed failed"
 		fi
 		domenu "${i}".desktop
 	done
@@ -564,29 +598,29 @@ src_install() {
 	doins -r "${WORKSRC}"/sysui/desktop/icons/{hicolor,locolor}
 	ecvs_clean "${D}/usr/share/icons"
 	for color in {hicolor,locolor}; do
-	    for sizes in "${D}"usr/share/icons/${color}/* ; do
-		for i in ${allcomponents}; do
-		    [[ -f "${sizes}"/apps/"${i}".png ]] && mv "${sizes}"/apps/"${i}".png "${sizes}"/apps/openofficeorg3-"${i}".png
+		for sizes in "${D}"usr/share/icons/${color}/* ; do
+			for i in ${allcomponents}; do
+				[[ -f "${sizes}"/apps/"${i}".png ]] && mv "${sizes}"/apps/"${i}".png "${sizes}"/apps/openofficeorg3-"${i}".png
+			done
 		done
-	    done
 	done
 
 	# Gnome icons
 	if use gnome; then
-	    mkdir -p "${D}"/usr/share/icons/gnome
-	    for size in {16x16,32x32,48x48}; do
-		if ! [[ -d "${D}"/usr/share/icons/gnome/"${size}" ]]; then
-		    mkdir -p "${D}"/usr/share/icons/gnome/"${size}"
-		    mkdir -p "${D}"/usr/share/icons/gnome/"${size}/apps"
-		fi
-		for i in ${allcomponents}; do
-		    dosym /usr/share/icons/hicolor/"${size}"/apps/openofficeorg3-"${i}".png /usr/share/icons/gnome/"${size}"/apps/openofficeorg3-"${i}".png
+		mkdir -p "${D}"/usr/share/icons/gnome
+		for size in {16x16,32x32,48x48}; do
+			if ! [[ -d "${D}"/usr/share/icons/gnome/"${size}" ]]; then
+				mkdir -p "${D}"/usr/share/icons/gnome/"${size}"
+				mkdir -p "${D}"/usr/share/icons/gnome/"${size}/apps"
+			fi
+			for i in ${allcomponents}; do
+				dosym /usr/share/icons/hicolor/"${size}"/apps/openofficeorg3-"${i}".png /usr/share/icons/gnome/"${size}"/apps/openofficeorg3-"${i}".png
+			done
 		done
-	    done
 	fi
 
 	for i in ${allcomponents}; do
-	    dosym /usr/share/icons/hicolor/48x48/apps/openofficeorg3-"${i}".png /usr/share/pixmaps/openofficeorg3-"${i}".png
+		dosym /usr/share/icons/hicolor/48x48/apps/openofficeorg3-"${i}".png /usr/share/pixmaps/openofficeorg3-"${i}".png
 	done
 
 	# Mime types
@@ -599,18 +633,18 @@ src_install() {
 
 	# Install PostgreSQL SDBC extension
 	if use postgres; then
-	    insinto /usr/$(get_libdir)/openoffice/share/extension/install
-	    doins "${WORKSRC}"/connectivity/unxlng"${arch_var}"6.pro/lib/postgresql-sdbc-0.7.6.zip
-	    fperms 444 /usr/$(get_libdir)/openoffice/share/extension/install/postgresql-sdbc-0.7.6.zip
+		insinto /usr/$(get_libdir)/openoffice/share/extension/install
+		doins "${WORKSRC}"/connectivity/unxlng"${arch_var}"6.pro/lib/postgresql-sdbc-0.7.6.zip
+		fperms 444 /usr/$(get_libdir)/openoffice/share/extension/install/postgresql-sdbc-0.7.6.zip
 	fi
 
 	# Component symlinks
 	for i in ${basecomponents}; do
-	    dosym "${instdir}"/program/s"${i}" /usr/bin/oo"${i}"
+		dosym "${instdir}"/program/s"${i}" /usr/bin/oo"${i}"
 	done
 
 	if use cups; then
-	    dosym "${instdir}"/program/spadmin /usr/bin/ooprinteradmin
+		dosym "${instdir}"/program/spadmin /usr/bin/ooprinteradmin
 	fi
 	dosym "${instdir}"/program/soffice /usr/bin/soffice
 	dosym "${instdir}"/"${BASIS}"/program/setofficelang /usr/bin/setofficelang
@@ -624,15 +658,15 @@ src_install() {
 
 	# record java libraries
 	if use java; then
-			java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/"${BASIS}"/program/classes/*.jar
-			java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/ure/share/java/*.jar
+		java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/"${BASIS}"/program/classes/*.jar
+		java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/ure/share/java/*.jar
 	fi
 
 	# install java-set-classpath
 	if use java; then
-	    insinto /usr/$(get_libdir)/openoffice/"${BASIS}"/program
-	    newins "${FILESDIR}/java-set-classpath.in" java-set-classpath
-	    fperms 755 /usr/$(get_libdir)/openoffice/"${BASIS}"/program/java-set-classpath
+		insinto /usr/$(get_libdir)/openoffice/"${BASIS}"/program
+		newins "${FILESDIR}/java-set-classpath.in" java-set-classpath
+		fperms 755 /usr/$(get_libdir)/openoffice/"${BASIS}"/program/java-set-classpath
 	fi
 
 }
@@ -655,36 +689,31 @@ pkg_postinst() {
 	elog
 	elog " oobase, oocalc, oodraw, ooimpress, oomath or oowriter"
 	elog
-	if use !oodict; then
-	    elog " Spell checking is now provided through your own myspell-ebuilds, "
-	    elog " if you want to use it, please install the correct myspell package "
-	    elog " according to your language needs. "
-	    elog " For example, for myspell and the russian language You should do "
-	    elog
-	    elog " emerge -av myspell-ru "
-	    elog
-	    elog " If You want to use internal openoffice extensions dicts re-emerge the package with "
-	    elog " USE=\"oodict\" "
-	else
-	    elog " Spell checking is now provided through OO own dicts extensions, "
-	    elog " please install the correct extension from /usr/$(get_libdir)/openoffice/share/extension/install/ "
-	    elog " via Extension Manager according to your language needs. "
+	if use infradicts; then
+		elog " If You dont want to build extensions for all bundled dicts from Infra-Resource "
+		elog " re-emerge the package with USE=\"-infradicts\" "
+		elog
 	fi
+	elog " Spell checking is now provided through OO own dicts extensions, "
+	elog " please install the correct extension from /usr/$(get_libdir)/openoffice/share/extension/install/ "
+	elog " via Extension Manager according to your language needs. "
 	elog
 	elog " Some aditional functionality can be installed via Extension Manager: "
 	elog " *) PDF Import "
 	elog " *) Presentation Console "
 	elog " *) Presentation Minimizer "
-	elog " *) Wiki Publisher "
-	elog " *) Report Builder "
+	if use java; then
+		elog " *) Wiki Publisher "
+		elog " *) Report Builder "
+	fi
 	elog
 	elog " Please use the packages provided in "
 	elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
 	elog " instead of those from the SUN extension site. "
 	if use postgres; then
-	    elog
-	    elog " PostgreSQL SDBC extension provided in "
-	    elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
+		elog
+		elog " PostgreSQL SDBC extension provided in "
+		elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
 	fi
 	elog
 

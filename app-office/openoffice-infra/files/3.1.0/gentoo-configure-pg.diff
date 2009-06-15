@@ -1,5 +1,5 @@
---- config_office/configure.in.orig	2008-10-26 12:57:20.000000000 +0500
-+++ config_office/configure.in	2008-10-26 12:57:57.000000000 +0500
+--- configure.in.orig	2008-10-26 12:57:20.000000000 +0500
++++ configure.in	2008-10-26 12:57:57.000000000 +0500
 @@ -3990,7 +4000,7 @@
  fi
  save_CFLAGS=$CFLAGS

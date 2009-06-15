@@ -2,6 +2,14 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com>
+  files/3.1.0/gentoo-configure-pg.diff, openoffice-infra-3.1.0.ebuild,
+  files/3.1.0/gentoo-infra-gentoo.diff, -files/3.1.0/gentoo-ru_dict.diff,
+  metadata.xml:
+  Close to original Infra-Resource build. Take your attention to use flags
+  changes: oodict - removed, infradicts - added, infradicts and postgres -
+  enabled by default. And a number of small fixes.
+
   05 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   openoffice-infra-3.1.0.ebuild:
   Fix gconf issue
