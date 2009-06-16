@@ -2,18 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools eutils
+inherit autotools versionator
+
+MY_P=${PN}-$(replace_version_separator 3 '-')
 
 DESCRIPTION="Basic AX.25 (Amateur Radio) administrative tools and daemons"
 HOMEPAGE="http://www.linux-ax25.org/"
-SRC_URI="http://omploader.org/veWxk/${P}.tar.gz"
+SRC_URI="http://www.linux-ax25.org/pub/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~ppc ~x86"
 IUSE="X"
 
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/${MY_P}
 
 DEPEND=">=dev-libs/libax25-0.0.5
 	X? ( x11-libs/libX11
