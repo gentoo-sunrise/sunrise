@@ -1,6 +1,10 @@
 # ChangeLog for app-antivirus/clamtk
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Jun 2009; keenblade <keenblade@gmail.com> -clamtk-3.04.ebuild,
+  +clamtk-4.13.ebuild:
+  Version bump. Thanks to Tommy[D], Fauli idl0r and chithead at #gentoo-sunrise
 
   12 Nov 2007; Jakub Moc <jakub@gentoo.org> -clamtk-3.00.ebuild,
   +clamtk-3.04.ebuild:
