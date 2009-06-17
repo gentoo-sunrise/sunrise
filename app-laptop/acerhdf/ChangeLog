@@ -2,6 +2,12 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*acerhdf-0.5.6 (17 Jun 2009)
+
+  17 Jun 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  -acerhdf-0.4.0.ebuild, +acerhdf-0.5.6.ebuild:
+  version bump and important fix to build against kernel of choice
+
 *acerhdf-0.4.0-r1 (12 May 2009)
 
   12 May 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
