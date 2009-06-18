@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -subvertpy-0.6.7.ebuild, +subvertpy-0.6.8.ebuild:
+  Version bump: subvertpy 0.6.7 -> 0.6.8
+
   13 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -subvertpy-0.6.6.ebuild, +subvertpy-0.6.7.ebuild:
   Version bump. 0.6.6 -> 0.6.7
