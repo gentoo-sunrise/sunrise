@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pottymouth
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  +pottymouth-1.1.4.ebuild, +metadata.xml:
+  New ebuild for bug 274612. Thanks to hwoarang!
+
