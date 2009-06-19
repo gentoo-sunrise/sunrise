@@ -27,8 +27,8 @@ app-misc/heyu:rfxs - Support RFXSensors
 app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
 app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x and earlier file formats
+app-office/openoffice-infra:infradicts - Use all bundled dicts from Infra-Resource
 app-office/openoffice-infra:odk - Build the Office Development Kit
-app-office/openoffice-infra:oodict - Use Open Office dicts instead of system
 app-text/cuneiform:imagemagick - Enables support of various input formats using media-gfx/imagemagick. Otherwise only uncompressed BMP files are supported. 
 dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - More precise calculations at the expense of speed
@@ -154,6 +154,7 @@ net-dns/nsd:nsid - Enable NSID support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:runtime-checks - Enable runtime checks
 net-dns/nsd:tsig - Enable TSIG support
+net-dns/unbound:chroot - Enable chroot by default (recommended)
 net-dns/unbound:libevent - Enable support for libevent
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
 net-libs/raknet:rakvoice - Enable RakNet RakVoice module
@@ -162,7 +163,6 @@ net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail passwo
 net-mail/fdm:tdb - Enable the Trivial Database (xdb) backend
 net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
 net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
-net-misc/clinkcc:mythtv - Enable MythTV support
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
 net-misc/gvpe:cipher-aes-192 - Enables aes-192 cipher
 net-misc/gvpe:cipher-aes-256 - Enables aes-256 cipher
