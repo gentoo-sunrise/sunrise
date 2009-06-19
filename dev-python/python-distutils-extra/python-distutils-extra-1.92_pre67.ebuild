@@ -4,7 +4,7 @@
 
 inherit distutils
 
-DESCRIPTION="You can integrate gettext support, themed icons and scrollkeeper based documentation in distutils."
+DESCRIPTION="You can integrate gettext support, themed icons and scrollkeeper based documentation in distutils"
 HOMEPAGE="https://launchpad.net/python-distutils-extra"
 SRC_URI="http://dev.gentooexperimental.org/~zerox/${P}.tar.bz2"
 
