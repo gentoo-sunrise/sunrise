@@ -16,5 +16,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools"
+RDEPEND="dev-lang/python"
 
 DOCS="README"
