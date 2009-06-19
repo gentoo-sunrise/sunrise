@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jun 2009; Christian Ruppert <idl0r@gentoo.org> pottymouth-1.1.4.ebuild:
+  Add RDEPEND. Fix python call in src_test. Use PN in SRC_URI.
+
   18 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +pottymouth-1.1.4.ebuild, +metadata.xml:
   New ebuild for bug 274612. Thanks to hwoarang!

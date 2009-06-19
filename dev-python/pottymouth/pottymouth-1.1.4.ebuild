@@ -9,7 +9,7 @@ inherit distutils
 MY_PN="PottyMouth"
 DESCRIPTION="A python library that scrubs untrusted text to valid, nice-looking, completely safe XHTML"
 HOMEPAGE="http://devsuki.com/pottymouth/"
-SRC_URI="http://devsuki.com/pottymouth/dist/${MY_PN}-${PV}.tar.gz"
+SRC_URI="http://devsuki.com/${PN}/dist/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -17,9 +17,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools"
+RDEPEND="dev-lang/python"
 
 S="${WORKDIR}/${MY_PN}-${PV}"
 
 src_test() {
-	python setup.py test || die "Tests failed"
+	distutils_python_version
+	${python} setup.py test || die "Tests failed"
 }
