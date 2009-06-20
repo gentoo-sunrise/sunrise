@@ -2,6 +2,12 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jun 2009; Naohiro Aota <naota@elisp.net> +ccs-sources-2.6.16.ebuild,
+  +ccs-sources-2.6.25.ebuild, +ccs-sources-2.6.26.ebuild,
+  +ccs-sources-2.6.27-r1.ebuild, +ccs-sources-2.6.28-r6.ebuild,
+  +ccs-sources-2.6.29-r5.ebuild:
+  add old versions thanks to Tommy[D]
+
   20 Jun 2009; Naohiro Aota <naota@elisp.net> +ccs-sources-2.6.30-r1.ebuild,
   +metadata.xml:
   New ebuild for bug 273199 thanks to Tommy[D], _AxS_, ssuomine, mrpouet, and
