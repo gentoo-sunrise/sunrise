@@ -2,4 +2,9 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>maintainer-wanted</herd>
+<use>
+  <flag name="pop">Support POP for mail retrieval</flag>
+  <flag name="sendmail">Support for <pkg>mail-mta/sendmail</pkg> as a mail transport agent</flag>
+  <flag name="smtp">Enable support for the SMTP protocol</flag>
+</use>
 </pkgmetadata>

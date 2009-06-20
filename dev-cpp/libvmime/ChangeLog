@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/libvmime
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Jun 2009; Håvard Wall <haavardw@ifi.uio.no> libvmime-0.9.0.ebuild,
+  +files/libvmime-0.9.0-gcc4_4.patch, metadata.xml:
+  compile with gcc-4.4, improved dependencies, new USE flags
 
   30 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -libvmime-0.8.1.ebuild, +libvmime-0.9.0.ebuild:
