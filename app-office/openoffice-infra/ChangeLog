@@ -2,6 +2,21 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com> +files/3.0.1,
+  +files/3.0.1/gentoo-completion_matches.diff,
+  +files/3.0.1/buildfix-mono-2-2.diff, +openoffice-infra-3.0.1.ebuild,
+  +files/3.0.1/gentoo-configure.diff, +files/3.0.1/gentoo-configure-pg.diff,
+  +files/3.0.1/gentoo-infragentoo.diff,
+  +files/3.0.1/hunspell-one-dir-nocrash.diff, openoffice-infra-3.1.0.ebuild,
+  +files/3.0.1/gentoo-scripts.diff, +files/3.0.1/nojavanostax.diff,
+  -files/3.1.0/buildfix-gcc44.diff,
+  -files/3.1.0/gentoo-dont_strip_libs.diff,
+  -files/3.1.0/gentoo-mkdepend.diff,
+  -files/3.1.0/gentoo-vba-parallel-build.diff, +files/buildfix-gcc44.diff,
+  +files/gentoo-dont_strip_libs.diff, +files/gentoo-mkdepend.diff,
+  +files/gentoo-vba-parallel-build.diff:
+  Readed 3.0.1 due a lot of regressions at 3.1.0
+
   15 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   files/3.1.0/gentoo-configure-pg.diff, openoffice-infra-3.1.0.ebuild,
   files/3.1.0/gentoo-infra-gentoo.diff, -files/3.1.0/gentoo-ru_dict.diff,

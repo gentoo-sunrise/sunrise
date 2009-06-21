@@ -9,15 +9,15 @@ inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 
 
 IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk +infradicts opengl pam +postgres"
 
-PATCHLEVEL="OOO310"
-MILESTONE="11"
+PATCHLEVEL="OOO300"
+MILESTONE="15"
 OOOTAG=${PATCHLEVEL}_m${MILESTONE}
-OOOBUILDTAG=ooo310-m${MILESTONE}
+OOOBUILDTAG=ooo300-m${MILESTONE}
 
 SRC=OOo_${PV}_src
 S=${WORKDIR}/infra-ooo-files_${PV}
 WORKSRC=${WORKDIR}/${OOOTAG}
-BASIS=basis3.1
+BASIS=basis3.0
 DESCRIPTION="OpenOffice-Infra, office suite with enhanced Russian support from Infra-Resource"
 
 SRC_URI="binfilter? ( mirror://openoffice/stable/${PV}/${SRC}_binfilter.tar.bz2 )
@@ -28,10 +28,10 @@ SRC_URI="binfilter? ( mirror://openoffice/stable/${PV}/${SRC}_binfilter.tar.bz2 
 	odk? ( java? ( http://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll ) )
 	http://download.i-rs.ru/pub/openoffice/${PV}/ru/infra-ooo-files_${PV}.tar.gz"
 
-LANGS1="ru tr uk"
+LANGS1="ru uk tr"
 LANGS="${LANGS1} en en_US"
 
-# proper linguas handling
+# proprt linguas handling
 for X in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${X}"
 done
@@ -47,7 +47,6 @@ COMMON_DEPEND="!app-office/openoffice-infra-bin
 	!app-office/openoffice-bin
 	x11-libs/libXaw
 	x11-libs/libXinerama
-	x11-libs/libXrandr
 	>=dev-lang/perl-5.0
 	dbus? ( >=dev-libs/dbus-glib-0.71 )
 	gnome? ( >=x11-libs/gtk+-2.10
@@ -62,7 +61,7 @@ COMMON_DEPEND="!app-office/openoffice-infra-bin
 	kde? ( kde-base/kdelibs:3.5 )
 	java? ( >=dev-java/bsh-2.0_beta4
 		>=dev-db/hsqldb-1.8.0.9 )
-	mono? ( || ( >dev-lang/mono-2.4-r1 <dev-lang/mono-2.4 ) )
+	mono? ( >=dev-lang/mono-1.2.3.1 )
 	nsplugin? ( || ( net-libs/xulrunner:1.8 net-libs/xulrunner:1.9 =www-client/seamonkey-1* )
 		>=dev-libs/nspr-4.6.6
 		>=dev-libs/nss-3.11-r1 )
@@ -141,7 +140,7 @@ pkg_setup() {
 
 	# Check if we have enough RAM and free diskspace to build this beast
 	CHECKREQS_MEMORY="512"
-	use debug && CHECKREQS_DISK_BUILD="8192" || CHECKREQS_DISK_BUILD="6144"
+	use debug && CHECKREQS_DISK_BUILD="8192" || CHECKREQS_DISK_BUILD="5120"
 	check_reqs
 
 	strip-linguas ${LANGS}
@@ -171,7 +170,7 @@ pkg_setup() {
 	if use !java; then
 		ewarn
 		ewarn " You are building with java-support disabled, this results in some "
-		ewarn " of the OpenOffice-Infra functionality (i.e. help) being disabled. "
+		ewarn " of the OpenOffice.org functionality (i.e. help) being disabled. "
 		ewarn " If something you need does not work for you, rebuild with "
 		ewarn " java in your USE-flags. "
 		ewarn
@@ -190,7 +189,7 @@ pkg_setup() {
 		eerror " Please remove it from your CFLAGS, using this globally causes "
 		eerror " all sorts of problems. "
 		eerror " After that you will also have to - at least - rebuild python otherwise "
-		eerror " the openoffice-infra build will break. "
+		eerror " the openoffice build will break. "
 		die
 	fi
 
@@ -232,16 +231,17 @@ src_prepare() {
 
 	# Some fixes for our patchset
 	cd "${S}"
-	epatch "${FILESDIR}/${PV}/gentoo-infra-builder.diff"
-	epatch "${FILESDIR}/${PV}/gentoo-layout-simple-dialogs-svx.diff"
+	epatch "${FILESDIR}/${PV}/gentoo-scripts.diff"
 	# fix vba parallel build
 	epatch "${FILESDIR}/gentoo-vba-parallel-build.diff"
 	# Patch for using Gentoo specific goo team patches and InfraGentoo/InfraGentooPG distro targets
-	epatch "${FILESDIR}/${PV}/gentoo-infra-gentoo.diff"
+	epatch "${FILESDIR}/${PV}/gentoo-infragentoo.diff"
 
 	# Patches from go-oo mainstream
+	cp -f "${FILESDIR}/${PV}/nojavanostax.diff" "${S}/patches/hotfixes" || die
+	cp -f "${FILESDIR}/${PV}/hunspell-one-dir-nocrash.diff" "${S}/patches/hotfixes" || die
+	cp -f "${FILESDIR}/${PV}/buildfix-mono-2-2.diff" "${S}/patches/hotfixes" || die
 	cp -f "${FILESDIR}/buildfix-gcc44.diff" "${S}/patches/hotfixes" || die
-	cp -f "${FILESDIR}/${PV}/solenv.workaround-for-the-kde-mess.diff" "${S}/patches/hotfixes" || die
 
 	cd "${WORKSRC}"; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras-templates.tar.bz2"
 
@@ -263,9 +263,10 @@ src_prepare() {
 	done
 
 	# Infra branding
-	mkdir -p "${WORKSRC}"/{libwps,libwpg,libsvg}/download/
+	mkdir -p "${WORKSRC}"/{libwps,libwpg,libwpd,libsvg}/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwps*.tar.gz   "${WORKSRC}"/libwps/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwpg*.tar.gz   "${WORKSRC}"/libwpg/download/
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwpd*.tar.gz   "${WORKSRC}"/libwpd/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libsvg*.tar.gz   "${WORKSRC}"/libsvg/download/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/infra-logo-team.png   "${WORKSRC}"/default_images/sw/res/
 	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/go-oo-team.png   "${WORKSRC}"/default_images/sw/res/
@@ -296,29 +297,32 @@ src_prepare() {
 	if use binfilter; then
 		patchconf="${patchconf} --distro=Binfilter"
 	fi
+
 	"${WORKDIR}"/infra-ooo-files_${PV}/bin/apply.pl "${WORKDIR}"/infra-ooo-files_${PV}/patches/dev300 "${WORKSRC}" ${patchconf}
 	"${WORKDIR}"/infra-ooo-files_${PV}/bin/transform --apply "${WORKDIR}"/infra-ooo-files_${PV} "${WORKSRC}"
 
 	if use postgres; then
-		# fix using of pg lib
-		epatch "${FILESDIR}/${PV}/gentoo-configure-pg.diff"
+	    # fix using of pg lib
+	    epatch "${FILESDIR}/${PV}/gentoo-configure-pg.diff"
 	fi
 	# enable/disable-gstreamer, disable scanning for rpm/dpkg and etc
 	epatch "${FILESDIR}/${PV}/gentoo-configure.diff"
 	# fix mkdepend
 	epatch "${FILESDIR}/gentoo-mkdepend.diff"
+	# completion_matches -> rl_completion_matches
+	epatch "${FILESDIR}/${PV}/gentoo-completion_matches.diff"
 	# disable rpm
 	epatch "${FILESDIR}/gentoo-epm-3.7.patch.diff"
 	if use postgres; then
-		# fix handling of system libs for postgresql-base
-		epatch "${FILESDIR}/gentoo-system_pgsql.diff"
+	    # fix handling of system libs for postgresql-base
+	    epatch "${FILESDIR}/gentoo-system_pgsql.diff"
 	fi
 	# don't strip libs
 	use debug && epatch "${FILESDIR}/gentoo-dont_strip_libs.diff"
 	# fix jfreereport cr issue
 	sed -i -e 's/\x0D$//' "${WORKSRC}"/jfreereport/patches/*.patch || die "sed failed"
 
-	cd "${WORKSRC}"
+	cd "${WORKSRC}/config_office"
 
 	eautoreconf
 
@@ -331,7 +335,6 @@ src_configure() {
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-ant-home=${ANT_HOME}"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-jdk-home=$(java-config --jdk-home 2>/dev/null)"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-java-target-version=$(java-pkg_get-target)"
-		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-jvm-path=/usr/$(get_libdir)/"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-system-beanshell"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-system-hsqldb"
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-beanshell-jar=$(java-pkg_getjar bsh bsh.jar)"
@@ -346,7 +349,6 @@ src_configure() {
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --without-system-mozilla"
 	fi
 
-	# Handle new dicts system
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-myspell-dicts"
 	local dicts
 	if use infradicts; then
@@ -368,7 +370,6 @@ src_configure() {
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable cups)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable dbus)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable eds evolution2)"
-	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gnome gconf)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gnome gnome-vfs)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gnome lockdown)"
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} $(use_enable gstreamer)"
@@ -431,11 +432,11 @@ src_configure() {
 	# workaround for --with-system-*
 	export PKG_CONFIG=pkg-config
 
-	cd "${WORKSRC}"
+	cd "${WORKSRC}/config_office"
 
 	# distro-configs are not hooked in infra build, passing configure options as commandline arguments
 	./configure \
-		--srcdir="${WORKSRC}" \
+		--srcdir="${DISTDIR}" \
 		--with-lang="${LINGUAS_OOO}" \
 		--with-build-version="${OOOTAG}" \
 		${GTKFLAG} \
@@ -488,9 +489,9 @@ src_compile() {
 
 	local gentoo_env_set
 	if [[ "${ARCH}" == "amd64" ]]; then
-		gentoo_env_set="${WORKSRC}/LinuxX86-64Env.Set.sh"
+	    gentoo_env_set="${WORKSRC}/LinuxX86-64Env.Set.sh"
 	else
-		gentoo_env_set="${WORKSRC}/LinuxX86Env.Set.sh"
+	    gentoo_env_set="${WORKSRC}/LinuxX86Env.Set.sh"
 	fi
 
 	source "${gentoo_env_set}"
@@ -502,26 +503,24 @@ src_compile() {
 	cd "${WORKSRC}"
 
 	for i in ${LINGUAS_OOO}; do
-		if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
-			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf
-		fi
-		if [[ "${i}" == "ru" ]]; then
-			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf
-			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf
-		fi
+	    if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
+		[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf
+	    fi
+	    if [[ "${i}" == "ru" ]]; then
+		[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf
+		[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf
+	    fi
 	done
 
 	if [[ "${JOBS}" != "1" ]]; then
-		cd instsetoo_native ;  build.pl --checkmodules ; build.pl -P${JOBS} --all --html --dontgraboutput -- -P${JOBS} || die "Build failed"
+	    cd instsetoo_native ;  build.pl --checkmodules ; build.pl -P${JOBS} --all --html --dontgraboutput -- -P${JOBS} || die "Build failed"
 	else
-		dmake || die "Build failed"
+	    dmake || die "Build failed"
 	fi
 
 }
 
 src_install() {
-
-	export PYTHONPATH=""
 
 	einfo "Preparing Installation ..."
 
@@ -532,11 +531,11 @@ src_install() {
 	local gentoo_env_set_dst
 
 	if [[ "${ARCH}" == "amd64" ]]; then
-		arch_var="x"
-		gentoo_env_set_dst="linux-2.6-x86_64"
+	    arch_var="x"
+	    gentoo_env_set_dst="linux-2.6-x86_64"
 	else
-		arch_var="i"
-		gentoo_env_set_dst="linux-2.6-intel"
+	    arch_var="i"
+	    gentoo_env_set_dst="linux-2.6-intel"
 	fi
 
 	allcomponents="${basecomponents}"
@@ -546,13 +545,13 @@ src_install() {
 	dodir "${instdir}"
 
 	cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice/native/install/en-US/"${gentoo_env_set_dst}"/buildroot/opt/* \
-		"${D}"${instdir}
+	    "${D}"${instdir}
 
 	for i in ${LINGUAS_OOO}; do
-		if [[ "${i}" != "en-US" ]]; then
-			cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice_languagepack/native/install/"${i}"/"${gentoo_env_set_dst}"/buildroot/opt/* \
-				"${D}"${instdir}
-		fi
+	    if [[ "${i}" != "en-US" ]]; then
+		cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice_languagepack/native/install/"${i}"/"${gentoo_env_set_dst}"/buildroot/opt/* \
+		    "${D}"${instdir}
+	    fi
 	done
 
 	# manual install Wiki Publisher, Report Builder, Presenter Screen (Console)  extensions
@@ -586,9 +585,9 @@ src_install() {
 
 	for i in ${allcomponents}; do
 		if [[ "${i}" == "printeradmin" ]]; then
-			sed -i -e s/openoffice.org3-/oo/g "${i}".desktop || die "Sed failed"
+		    sed -i -e s/openoffice.org3-/oo/g "${i}".desktop || die "Sed failed"
 		else
-			sed -i -e s/openoffice.org3/ooffice/g "${i}".desktop || die "Sed failed"
+		    sed -i -e s/openoffice.org3/ooffice/g "${i}".desktop || die "Sed failed"
 		fi
 		domenu "${i}".desktop
 	done
@@ -598,29 +597,29 @@ src_install() {
 	doins -r "${WORKSRC}"/sysui/desktop/icons/{hicolor,locolor}
 	ecvs_clean "${D}/usr/share/icons"
 	for color in {hicolor,locolor}; do
-		for sizes in "${D}"usr/share/icons/${color}/* ; do
-			for i in ${allcomponents}; do
-				[[ -f "${sizes}"/apps/"${i}".png ]] && mv "${sizes}"/apps/"${i}".png "${sizes}"/apps/openofficeorg3-"${i}".png
-			done
+	    for sizes in "${D}"usr/share/icons/${color}/* ; do
+		for i in ${allcomponents}; do
+		    [[ -f "${sizes}"/apps/"${i}".png ]] && mv "${sizes}"/apps/"${i}".png "${sizes}"/apps/openofficeorg3-"${i}".png
 		done
+	    done
 	done
 
 	# Gnome icons
 	if use gnome; then
-		mkdir -p "${D}"/usr/share/icons/gnome
-		for size in {16x16,32x32,48x48}; do
-			if ! [[ -d "${D}"/usr/share/icons/gnome/"${size}" ]]; then
-				mkdir -p "${D}"/usr/share/icons/gnome/"${size}"
-				mkdir -p "${D}"/usr/share/icons/gnome/"${size}/apps"
-			fi
-			for i in ${allcomponents}; do
-				dosym /usr/share/icons/hicolor/"${size}"/apps/openofficeorg3-"${i}".png /usr/share/icons/gnome/"${size}"/apps/openofficeorg3-"${i}".png
-			done
+	    mkdir -p "${D}"/usr/share/icons/gnome
+	    for size in {16x16,32x32,48x48}; do
+		if ! [[ -d "${D}"/usr/share/icons/gnome/"${size}" ]]; then
+		    mkdir -p "${D}"/usr/share/icons/gnome/"${size}"
+		    mkdir -p "${D}"/usr/share/icons/gnome/"${size}/apps"
+		fi
+		for i in ${allcomponents}; do
+		    dosym /usr/share/icons/hicolor/"${size}"/apps/openofficeorg3-"${i}".png /usr/share/icons/gnome/"${size}"/apps/openofficeorg3-"${i}".png
 		done
+	    done
 	fi
 
 	for i in ${allcomponents}; do
-		dosym /usr/share/icons/hicolor/48x48/apps/openofficeorg3-"${i}".png /usr/share/pixmaps/openofficeorg3-"${i}".png
+	    dosym /usr/share/icons/hicolor/48x48/apps/openofficeorg3-"${i}".png /usr/share/pixmaps/openofficeorg3-"${i}".png
 	done
 
 	# Mime types
@@ -633,14 +632,14 @@ src_install() {
 
 	# Install PostgreSQL SDBC extension
 	if use postgres; then
-		insinto /usr/$(get_libdir)/openoffice/share/extension/install
-		doins "${WORKSRC}"/connectivity/unxlng"${arch_var}"6.pro/lib/postgresql-sdbc-0.7.6.zip
-		fperms 444 /usr/$(get_libdir)/openoffice/share/extension/install/postgresql-sdbc-0.7.6.zip
+	    insinto /usr/$(get_libdir)/openoffice/share/extension/install
+	    doins "${WORKSRC}"/connectivity/unxlng"${arch_var}"6.pro/lib/postgresql-sdbc-0.7.6.zip
+	    fperms 444 /usr/$(get_libdir)/openoffice/share/extension/install/postgresql-sdbc-0.7.6.zip
 	fi
 
 	# Component symlinks
 	for i in ${basecomponents}; do
-		dosym "${instdir}"/program/s"${i}" /usr/bin/oo"${i}"
+	    dosym "${instdir}"/program/s"${i}" /usr/bin/oo"${i}"
 	done
 
 	if use cups; then

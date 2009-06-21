@@ -1,0 +1,82 @@
+--- patches/dev300/apply.orig	2009-06-20 22:08:01.000000000 +0600
++++ patches/dev300/apply	2009-06-20 22:08:36.000000000 +0600
+@@ -149,7 +149,13 @@
+ PlainLinux: PlainBuildFixes
+ 
+ InfraUnix:  LinuxCommon, CJK, OOXML, CustomUserConfig, PostgreSQL, InfraPatches, NotInfraLinux, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, IntegrateExtensions
+-InfraLinux:  LinuxCommon, SVGImport, UpdaterRemoval, UbuntuBased, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, DebianBaseOnly, UbuntuOnly, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly, UbuntuIntrepidOnly 
++InfraLinux:  LinuxCommon, SVGImport, UpdaterRemoval, UbuntuBased, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, DebianBaseOnly, UbuntuOnly, CustomUserConfig, PostgreSQL, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly, UbuntuIntrepidOnly
++InfraGentooBase: Gentoo, SVGImport, UpdaterRemoval, Layout, LayoutDialogs, CJK, OOXML, Split, Fpickers, QuickStarter, CustomUserConfig, NotInfraLinux, InfraPatches, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, CustomKeyBinding, InfraLinuxOnly
++InfraGentoo: InfraGentooBase
++InfraGentooPG: InfraGentooBase, InfraUnixPatchesPG, PostgreSQL
++InfraDictru: InfraDictRU
++InfraDictuk: InfraDictUK
++InfraDicttr: InfraDictTR
+ InfraSolaris:  LinuxCommon, CJK, OOXML, CustomUserConfig, InfraPatches, NotInfraLinux, Infra1252toLocale, InfraSolaris, NotDebian, CustomKeyBinding, IntegrateExtensions
+ InfraWin32: Win32Common, CJK, OOXML, CustomUserConfig, InfraPatches, NotInfraLinux, InfraWin32Patches, Infra1252toLocale, InfraNotSolaris, NotDebian, CustomKeyBinding, IntegrateExtensions
+ InfraFake: QuickStarter, WMF, SVGImport, UnitTesting, Layout, CJK, EMFPlus, Fpickers, LayoutDialogs, UnitBootstrap, AutoCorrectCapsLock
+@@ -1721,7 +1727,7 @@
+ vba-support-stoc-typeprovider-xexactname.diff, #no-upstream
+ 
+ #must ask kendy about this ( noelp )
+-vba-parallel-build.diff, #no-upstream
++#vba-parallel-build.diff, #no-upstream
+ #not so useful but perhaps we can build on it later
+ basic-speedup-fix.diff
+ 
+@@ -1882,7 +1888,7 @@
+ sdbc-postgresql.diff
+ sdbc-postgresql-build-lst.diff
+ sdbc-postgresql-config_office.diff
+-# connectivity-workben-postgresql.diff
++connectivity-workben-postgresql.diff
+ gcc-4.3-postgresql.diff
+ 
+ 
+@@ -2783,15 +2789,22 @@
+ sc-toogle-grid-menubar.diff
+ # problems with update update_jre.diff
+ 
++[InfraDictRU]
++dictionaries-ru-RU.diff
++
++[InfraDictUK]
++dict-uk.diff
++
++[InfraDictTR]
++extensions-zemberek.diff
++
+ [NotInfraLinux]
+ build-xterm-title.diff
+-no-ure-sdk.diff
++#no-ure-sdk.diff
+ enable-quickstart.diff
+ updates.diff
+ build-javainstaller2.diff
+ icons-galaxy-as-default.diff
+-dictionaries-ru-RU.diff
+-dict-uk.diff
+ extras-add-educate-officorr-misc-offimisc.diff
+ # javainstaller2-discard-rpm-warnings.diff, i#93243, rail
+ reportbuilder-no-license-infra.diff
+@@ -2800,15 +2813,18 @@
+ scp2_extensions-remove-SUN.diff
+ extensions-dont-install-by-default.diff
+ extensions-separate-java-based.diff
+-extensions-zemberek.diff
+ 
+ [InfraLinuxOnly]
+ scp2-3layer-nicer-paths.diff, i#90430, jholesov
+ instset-prefer-langpacks.diff, thorsten
+ sfx2-remove-check-update-on-fileload.diff, kohei
++# fix parallel build problems
++vba-parallel-build.diff
+ 
+-[InfraUnixPatches]
++[InfraUnixPatchesPG]
+ connectivity-freebsd-libs.diff
++
++[InfraUnixPatches]
+ freebsd-store-alloca.diff
+ freebsd-gperf.diff, i#85469, rail
+ freebsd-writerfilter.diff
