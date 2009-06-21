@@ -15,7 +15,8 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-util/subversion-1.4"
+RDEPEND=">=dev-util/subversion-1.4
+	dev-lang/python"
 DEPEND="${RDEPEND}
 	dev-python/setuptools
 	test? ( dev-python/nose )"
