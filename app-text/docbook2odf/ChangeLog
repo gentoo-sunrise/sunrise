@@ -1,0 +1,8 @@
+# ChangeLog for app-text/docbook2odf
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Jun 2009; Jakub Ondrusek (yak) <yak@gmx.co.uk>
+  +docbook2odf-0.244.ebuild, +metadata.xml:
+  New Ebuild for bug 136051 - docbook2odf
+
