@@ -9,7 +9,7 @@ SRC_URI="http://open.comsultia.com/docbook2odf/dwn/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}
