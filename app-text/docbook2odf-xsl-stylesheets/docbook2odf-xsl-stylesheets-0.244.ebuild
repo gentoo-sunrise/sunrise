@@ -12,9 +12,6 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
 S=${WORKDIR}/${MY_P}
 
 src_install() {
