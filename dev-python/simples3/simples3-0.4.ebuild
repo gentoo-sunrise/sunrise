@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+NEED_PYTHON=2.5
+
 inherit distutils
 
 DESCRIPTION="A fairly simple, decently quick python interface to Amazon's S3 storage service"
 HOMEPAGE="http://lericson.se/"
 SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
-
-NEED_PYTHON=2.5
 
 DEPEND="dev-python/setuptools"
 RDEPEND=""
