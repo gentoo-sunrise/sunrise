@@ -4,8 +4,7 @@
 
 inherit distutils
 
-MY_PN="PottyMouth"
-MY_P=${MY_PN}-${PV}
+MY_P=PottyMouth-${PV}
 DESCRIPTION="A python library that scrubs untrusted text to valid, nice-looking, completely safe XHTML"
 HOMEPAGE="http://devsuki.com/pottymouth/"
 SRC_URI="http://devsuki.com/${PN}/dist/${MY_P}.tar.gz"
