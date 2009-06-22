@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jun 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
+  docbook2odf-0.244.ebuild:
+  Drop DEPEND and add ~amd64 into KEYWORDS
+
   22 Jun 2009; Jakub Ondrusek (yak) <yak@gmx.co.uk>
   +docbook2odf-0.244.ebuild, +metadata.xml:
   New Ebuild for bug 136051 - docbook2odf

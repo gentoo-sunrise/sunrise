@@ -10,10 +10,9 @@ SRC_URI="http://open.comsultia.com/${PN}/dwn/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="examples kde"
 
-DEPEND=""
 RDEPEND="
 	>=app-text/docbook2odf-xsl-stylesheets-0.244
 	>=dev-lang/perl-5.8
