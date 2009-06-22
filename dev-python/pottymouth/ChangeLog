@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jun 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
+  pottymouth-1.1.4.ebuild:
+  Unquoted ${S} and add ${MY_P}
+
   22 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pottymouth-1.1.4.ebuild:
   Remove useless NEED_PYTHON
