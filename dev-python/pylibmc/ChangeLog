@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pylibmc-0.6.1.ebuild:
+  Add RDEPEND against dev-lang/python and remove src_install() since
+  benchmark.py is superfluous
+
   12 May 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +pylibmc-0.6.1.ebuild, +metadata.xml:
   Ebuild for bug 267143
