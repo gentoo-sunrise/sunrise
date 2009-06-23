@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools versionator
+inherit versionator
 
 MY_P=${PN}-$(replace_version_separator 3 '-')
 
@@ -17,17 +17,11 @@ IUSE="X"
 
 S=${WORKDIR}/${MY_P}
 
-DEPEND=">=dev-libs/libax25-0.0.5
+DEPEND="dev-libs/libax25
 	X? ( x11-libs/libX11
 	    media-libs/mesa
 	    x11-libs/fltk )"
 RDEPEND=${DEPEND}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	eautoreconf
-}
 
 src_compile() {
 	econf $(use_with X x)
