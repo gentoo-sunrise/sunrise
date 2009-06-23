@@ -4,8 +4,8 @@
 
 inherit linux-mod
 
-MY_PN="${PN}_kmod"
-MY_P="${MY_PN}-${PV}"
+MY_PN=${PN}_kmod
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="A kernelmodule which monitors the temperature of the aspire one netbook"
 HOMEPAGE="http://piie.net/index.php?section=acerhdf"
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=virtual/linux-sources-2.6.30"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${MY_PN}"
+S=${WORKDIR}/${MY_PN}
 
 BUILD_TARGETS="default"
 MODULE_NAMES="${PN}(:${S}:${S})"
