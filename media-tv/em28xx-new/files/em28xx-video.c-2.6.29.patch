@@ -1,0 +1,85 @@
+--- em28xx-video.c.orig	2009-04-22 15:19:52.775497497 +0200
++++ em28xx-video.c	2009-04-22 18:02:38.381164273 +0200
+@@ -578,9 +578,9 @@
+  * inits the device and starts isoc transfer
+  */
+ 
+-static int em28xx_v4l2_open(struct inode *inode, struct file *filp)
++static int em28xx_v4l2_open(struct file *filp)
+ {
+-	int minor = iminor(inode);
++	int minor = video_devdata(filp)->minor;
+ 	int errCode = 0;
+ 	int mode = V4L2_TUNER_ANALOG_TV;
+ 	int type = 0;
+@@ -880,7 +880,7 @@
+  * stops streaming and deallocates all resources allocated by the
+  * v4l2 calls and ioctls
+  */
+-static int em28xx_v4l2_close(struct inode *inode, struct file *filp)
++static int em28xx_v4l2_close(struct file *filp)
+ {
+ 	int errCode;
+ 	struct em28xx_fh *fh;
+@@ -1169,7 +1169,7 @@
+  * em28xx_v4l2_poll()
+  * will allocate buffers when called for the first time
+  */
+-static unsigned int em28xx_v4l2_poll(struct file *filp, poll_table *wait)
++static unsigned int em28xx_v4l2_poll(struct file *filp, struct poll_table_struct *wait)
+ {
+ 	unsigned int mask = 0;
+ 	struct em28xx_fh *fh = filp->private_data;
+@@ -1919,7 +1919,7 @@
+  * em28xx_v4l2_ioctl() via em28xx_video_do_ioctl(). Userspace
+  * copying is done already, arg is a kernel pointer.
+  */
+-static int em28xx_do_ioctl(struct inode *inode, struct file *filp,
++static int em28xx_do_ioctl(struct file *filp,
+ 			   struct em28xx *dev, unsigned int cmd, void *arg,
+ 			   v4l2_kioctl driver_ioctl)
+ {
+@@ -2436,7 +2436,7 @@
+  * em28xx_v4l2_ioctl. Userspace
+  * copying is done already, arg is a kernel pointer.
+  */
+-static int em28xx_video_do_ioctl(struct inode *inode, struct file *filp,
++static int em28xx_video_do_ioctl(struct file *filp,
+ 				 unsigned int cmd, void *arg)
+ {
+ 	struct em28xx_fh *fh = filp->private_data;
+@@ -2875,7 +2875,7 @@
+ 		return em28xx_do_ioctl(inode, filp, dev, cmd, arg,
+ 					em28xx_video_do_ioctl);
+ #else
+-		return em28xx_do_ioctl(inode, filp, dev, cmd, arg,
++		return em28xx_do_ioctl(filp, dev, cmd, arg,
+ 				       em28xx_v4l2_ioctl);
+ #endif
+ 	}
+@@ -2930,7 +2930,7 @@
+  * struct v4l2_ioctl_ops. The struct v4l2_ioctl_ops was introduced with commit
+  * http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=a399810ca69d9d4bd30ab8c1678c7439e567f90b
+  */
+-static int em28xx_v4l2_ioctl_fops(struct inode *inode, struct file *filp,
++static int em28xx_v4l2_ioctl_fops(struct file *filp,
+ 			     unsigned int cmd, unsigned long arg)
+ {
+ #if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 28)
+@@ -2940,7 +2940,7 @@
+ #endif
+ }
+ 
+-static struct file_operations em28xx_v4l_fops = {
++static struct v4l2_file_operations em28xx_v4l_fops = {
+ 	.owner = THIS_MODULE,
+ 	.open = em28xx_v4l2_open,
+ 	.release = em28xx_v4l2_close,
+@@ -2948,7 +2948,6 @@
+ 	.read = em28xx_v4l2_read,
+ 	.poll = em28xx_v4l2_poll,
+ 	.mmap = em28xx_v4l2_mmap,
+-	.llseek = no_llseek,
+ #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 11)
+ #if 0
+ 	.compat_ioctl   = v4l_compat_ioctl32,

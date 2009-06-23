@@ -2,15 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-info linux-mod mercurial versionator
+EAPI="2"
 
-printf -v EHG_REVISION '%012x' "$(get_version_component_range 4)"
-EHG_REPO_URI="http://mcentral.de/hg/~mrec/em28xx-new/"
-EHG_PULL_CMD="hg pull --force --quiet" # necessary until bug 264921 is fixed
+inherit linux-info linux-mod versionator
 
 DESCRIPTION="next generation em28xx driver including dvb support"
 HOMEPAGE="http://mcentral.de/"
-SRC_URI=""
+SRC_URI="http://upload.hasnoname.de/${PN}/${PN}-$(get_version_component_range 3).tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -33,6 +31,16 @@ pkg_setup() {
 	fi
 }
 
+src_prepare() {
+	if kernel_is eq 2 6 29; then
+		epatch "${FILESDIR}"/em28xx-new-video.c-2.6.29.patch
+	fi
+
+	if kernel_is ge 2 6 30; then
+		epatch "${FILESDIR}"/em28xx-new-2.6.30.patch
+	fi
+}
+
 src_compile() {
 	set_arch_to_kernel
 	emake || die "Compiling kernel modules failed"
@@ -42,6 +50,6 @@ src_install() {
 	insinto /lib/modules/${KV_FULL}/empia
 	local extglob_bak=$(shopt -p extglob)
 	shopt -s extglob # portage disables bash extglob in ebuilds
-	doins $(echo {!(precompiled)/,}*.ko)
+	doins $(echo {!(precompiled)/,}*.ko) || die "doins failed"
 	eval ${extglob_bak} # restore previous extglob status
 }
