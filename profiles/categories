@@ -86,6 +86,7 @@ sys-boot
 sys-cluster
 sys-devel
 sys-fs
+sys-kernel
 sys-libs
 sys-power
 sys-process
