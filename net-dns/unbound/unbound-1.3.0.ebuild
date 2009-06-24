@@ -18,7 +18,7 @@ IUSE="+chroot debug libevent python static threads"
 DEPEND="dev-libs/openssl
 	>=net-libs/ldns-1.5.1
 	libevent? ( dev-libs/libevent )"
-RDEPEND=${RDEPEND}
+RDEPEND=${DEPEND}
 
 pkg_setup() {
 	enewgroup unbound
