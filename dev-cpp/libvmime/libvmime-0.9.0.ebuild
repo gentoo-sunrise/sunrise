@@ -15,11 +15,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug doc examples +imap +maildir +pop sasl sendmail +smtp ssl"
 
 RDEPEND="virtual/libiconv
-         ssl? ( >=net-libs/gnutls-1.2.0 )
-         sasl? ( || ( net-libs/libgsasl net-misc/gsasl ) )
-         sendmail? ( || ( mail-mta/ssmtp mail-mta/sendmail ) )"
+	ssl? ( >=net-libs/gnutls-1.2.0 )
+	sasl? ( || ( net-libs/libgsasl net-misc/gsasl ) )
+	sendmail? ( || ( mail-mta/ssmtp mail-mta/sendmail ) )"
 DEPEND="${RDEPEND}
-        doc? ( app-doc/doxygen )"
+	doc? ( app-doc/doxygen )"
 
 src_unpack() {
 	unpack ${A}
@@ -35,13 +35,13 @@ src_unpack() {
 
 src_compile() {
 	econf $(use_enable debug) \
-          $(use_enable sasl) \
-          $(use_enable ssl tls) \
-          $(use_enable pop messaging-proto-pop3) \
-          $(use_enable smtp messaging-proto-smtp) \
-          $(use_enable imap messaging-proto-imap) \
-          $(use_enable maildir messaging-proto-maildir) \
-          $(use_enable sendmail messaging-proto-sendmail)
+		$(use_enable sasl) \
+		$(use_enable ssl tls) \
+		$(use_enable pop messaging-proto-pop3) \
+		$(use_enable smtp messaging-proto-smtp) \
+		$(use_enable imap messaging-proto-imap) \
+		$(use_enable maildir messaging-proto-maildir) \
+		$(use_enable sendmail messaging-proto-sendmail)
 
 	emake || die "emake failed"
 	if use doc ; then

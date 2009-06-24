@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jun 2009; Markos Chandras <hwoarang@gentoo.org> libvmime-0.9.0.ebuild:
+  removing whitespaces
+
   20 Jun 2009; Håvard Wall <haavardw@ifi.uio.no> libvmime-0.9.0.ebuild,
   +files/libvmime-0.9.0-gcc4_4.patch, metadata.xml:
   compile with gcc-4.4, improved dependencies, new USE flags
