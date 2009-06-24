@@ -1,0 +1,8 @@
+# ChangeLog for media-libs/bellagio
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Jun 2009; Håvard Wall <haavardw@ifi.uio.no> +bellagio-0.9.1.ebuild,
+  +metadata.xml:
+  New ebuild for bug 191149
+
