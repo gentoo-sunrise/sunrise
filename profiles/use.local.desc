@@ -30,6 +30,9 @@ app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x
 app-office/openoffice-infra:infradicts - Use all bundled dicts from Infra-Resource
 app-office/openoffice-infra:odk - Build the Office Development Kit
 app-text/cuneiform:imagemagick - Enables support of various input formats using media-gfx/imagemagick. Otherwise only uncompressed BMP files are supported. 
+dev-cpp/libvmime:pop - Support POP for mail retrieval
+dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
+dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
 dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
