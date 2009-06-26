@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Jun 2009; keenblade <keenblade@gmail.com> -clamtk-4.13.ebuild,
+  +clamtk-4.15.ebuild:
+  Version bump. Added Arabic language support
+
   16 Jun 2009; keenblade <keenblade@gmail.com> -clamtk-3.04.ebuild,
   +clamtk-4.13.ebuild:
   Version bump. Thanks to Tommy[D], Fauli idl0r and chithead at #gentoo-sunrise
