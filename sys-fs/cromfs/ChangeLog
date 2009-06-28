@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jun 2009; Jérôme Poulin (TiCPU) <jeromepoulin@gmail.com>
+  -cromfs-1.5.6.2.ebuild, +cromfs-1.5.8.7.ebuild:
+  Version bump
+
   31 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   cromfs-1.5.6.2.ebuild:
   fixed die message linewrap, DESCRIPTION cleanup, added die message for
