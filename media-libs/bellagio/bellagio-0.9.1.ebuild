@@ -2,9 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
+MY_P="libomxil-${P}"
+
 DESCRIPTION="An Open Source implementation of the OpenMAX Integration Layer"
 HOMEPAGE="http://omxil.sourceforge.net"
-SRC_URI="mirror://sourceforge/omxil/libomxil-${P}.tar.gz"
+SRC_URI="mirror://sourceforge/omxil/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -13,14 +17,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE="alsa doc fbcon ffmpeg jpeg mad vorbis"
 
 RDEPEND="media-libs/alsa-lib
-         mad? ( media-libs/libmad )
-         vorbis? ( media-libs/libvorbis )
-         ffmpeg? ( media-video/ffmpeg )"
+	mad? ( media-libs/libmad )
+	vorbis? ( media-libs/libvorbis )
+	ffmpeg? ( media-video/ffmpeg )"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/libomxil-${P}"
+S="${WORKDIR}/${MY_P}"
 
-src_compile() {
+src_configure() {
 	econf \
 		--docdir=/usr/share/doc/${PF} \
 		$(use_enable alsa) \
@@ -30,7 +34,6 @@ src_compile() {
 		$(use_enable jpeg) \
 		$(use_enable mad madcomponents) \
 		$(use_enable vorbis vorbiscomponents)
-	emake || die "emake failed"
 }
 
 src_install() {
