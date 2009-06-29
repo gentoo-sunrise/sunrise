@@ -1,0 +1,35 @@
+--- basic/source/classes/makefile.mk	2009-04-03 09:19:00.000000000 +0200
++++ basic/source/classes/makefile.mk	2009-04-03 09:14:42.000000000 +0200
+@@ -41,17 +41,20 @@ ENABLE_EXCEPTIONS=TRUE
+ 
+ .INCLUDE :  settings.mk
+ 
+-ALLTAR : \
++ALLTAR .SEQUENTIAL : \
+         $(MISC)$/$(TARGET).don \
+-        $(SLOTARGET)
++        $(MISC)$/$(TARGET).slo
+ 
+ $(MISC)$/$(TARGET).don : $(SOLARBINDIR)$/oovbaapi.rdb
+         +$(CPPUMAKER) -O$(OUT)$/inc -BUCR $(SOLARBINDIR)$/oovbaapi.rdb -X$(SOLARBINDIR)$/types.rdb && echo > $@
+         echo $@
+ 
++$(MISC)$/$(TARGET).slo : $(SLOTARGET)
++        echo $@
++
+ # --- Allgemein -----------------------------------------------------------
+ 
+-COMMON_SLOFILES=	\
++SLOFILES=	\
+ 	$(SLO)$/sb.obj       \
+ 	$(SLO)$/sbxmod.obj	\
+ 	$(SLO)$/image.obj	\
+@@ -60,8 +63,6 @@ COMMON_SLOFILES=	\
+ 	$(SLO)$/propacc.obj	\
+ 	$(SLO)$/disas.obj \
+ 	$(SLO)$/errobject.obj \
+-
+-SLOFILES=	$(COMMON_SLOFILES)	\
+ 	$(SLO)$/eventatt.obj
+ 
+ OBJFILES=	\

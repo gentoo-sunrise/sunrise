@@ -1,18 +1,38 @@
---- patches/vba/vba-parallel-build.diff.orig	2009-05-23 14:37:45.000000000 +0600
-+++ patches/vba/vba-parallel-build.diff	2009-05-31 15:26:39.000000000 +0600
-@@ -21,59 +21,36 @@
- +
- +$(OBJFILES) : $(MISC)$/$(TARGET).don
- +
+--- patches/vba/vba-parallel-build.diff.orig	2009-06-28 18:20:22.000000000 +0600
++++ patches/vba/vba-parallel-build.diff	2009-06-28 18:43:58.000000000 +0600
+@@ -1,79 +1,33 @@
+---- basic/source/classes/makefile.mk	2007-03-01 16:50:05.000000000 +0100
+-+++ basic/source/classes/makefile.mk	2007-03-01 16:50:39.000000000 +0100
+-@@ -53,10 +53,6 @@ ALLTAR : \
+-         $(MISC)$/$(TARGET).don \
+-         $(SLOTARGET)
++--- scripting/source/vbaevents/makefile.mk.orig		2009-05-31 14:11:28.000000000 +0600
+++++ scripting/source/vbaevents/makefile.mk				2009-05-31 15:25:22.000000000 +0600
++@@ -19,15 +19,6 @@
+  
+--$(MISC)$/$(TARGET).don : $(SOLARBINDIR)$/oovbaapi.rdb
+--        +$(CPPUMAKER) -O$(OUT)$/inc -BUCR $(SOLARBINDIR)$/oovbaapi.rdb -X$(SOLARBINDIR)$/types.rdb && echo > $@
+--        echo $@
+--
+- # --- Allgemein -----------------------------------------------------------
+- 
+- COMMON_SLOFILES=	\
+-@@ -85,3 +81,9 @@ LIB1OBJFILES = $(SLOFILES)
+- 
+- .INCLUDE :  target.mk
+- 
+-+$(MISC)$/$(TARGET).don : $(SOLARBINDIR)$/oovbaapi.rdb
+-+        +$(CPPUMAKER) -O$(OUT)$/inc -BUCR $(SOLARBINDIR)$/oovbaapi.rdb -X$(SOLARBINDIR)$/types.rdb && echo > $@
+-+        echo $@
+-+
+-+$(OBJFILES) : $(MISC)$/$(TARGET).don
+-+
 ---- sc/source/ui/vba/makefile.mk	2007-03-01 14:51:01.000000000 +0100
 -+++ sc/source/ui/vba/makefile.mk	2007-03-01 15:24:47.000000000 +0100
 -@@ -1,6 +1,6 @@
 --PRJ=../..$/..
 -+PRJ=..$/..$/..
-+--- scripting/source/vbaevents/makefile.mk.orig		2009-05-31 14:11:28.000000000 +0600
-++++ scripting/source/vbaevents/makefile.mk				2009-05-31 15:25:22.000000000 +0600
-+@@ -19,15 +19,6 @@
-  
+- 
 --PRJNAME=
 -+PRJNAME=sc
 - TARGET=vbaobj
@@ -45,12 +65,12 @@
 -+$(MISC)$/$(TARGET).don : $(SOLARBINDIR)$/oovbaapi.rdb
 -+        +$(CPPUMAKER) -O$(OUT)$/inc -BUCR $(SOLARBINDIR)$/oovbaapi.rdb -X$(SOLARBINDIR)$/types.rdb && echo > $@
 -+        echo $@
+-+
+-+$(OBJFILES) : $(MISC)$/$(TARGET).don
 ++ALLTAR : \
 ++        $(MISC)$/$(TARGET).don \
 ++        $(SLOTARGET)
  +
--+$(OBJFILES) : $(MISC)$/$(TARGET).don
--+
 ---- scripting/source/vbaevents/makefile.mk	2007-03-01 16:54:36.000000000 +0100
 -+++ scripting/source/vbaevents/makefile.mk	2007-03-01 16:56:15.000000000 +0100
 -@@ -24,9 +24,6 @@ ALLTAR : \

@@ -1,5 +1,5 @@
---- patches/dev300/apply.orig	2009-06-13 20:41:03.000000000 +0600
-+++ patches/dev300/apply	2009-06-13 20:41:21.000000000 +0600
+--- patches/dev300/apply.orig	2009-06-28 13:42:16.000000000 +0600
++++ patches/dev300/apply	2009-06-28 13:58:45.000000000 +0600
 @@ -151,6 +151,12 @@
  
  InfraUnix:  LinuxCommon, CJK, OOXML, CustomUserConfig, PostgreSQL, InfraPatches, NotInfraLinux, InfraUnixPatches, Infra1252toLocale, InfraNotSolaris, IntegrateExtensions
@@ -22,19 +22,16 @@
  
  # attributes present in the vba streams can override the default shape name
  # used for the control in the binary format
-@@ -1751,9 +1757,8 @@
- vba-import-globaltemplate-customizations.diff
- # fix problem with syntax like 'If LCase(str1) = str2 <> 0 Then'
- vba-basic-if-compare-fix.diff, i#100600, n#488588, Fong
--# fix parallel build problems in basic
--# (probably obsoletes vba-parallel-build.diff)
--vba-basic-parallel-build.diff
-+# fix parallel build problems
-+vba-parallel-build.diff
- # fix parallel build problems in oovbaapi
- vba-oovbaapi-parallel-build.diff
- 
-@@ -2970,7 +2975,7 @@
+@@ -1768,6 +1774,8 @@
+ # fix crash when attempting to use geometry attributes of
+ # control on sheet/document
+ vba-fix-control-shape-geom-fix.diff, n#500006
++#must ask kendy about this ( noelp )
++vba-parallel-build.diff, #no-upstrea
+ [ VBAUntested ]
+ SectionOwner => noelpwer
+ # needs more extensive testing, disable for 3.1
+@@ -2970,7 +2978,7 @@
  xlsx-shared-import-and-export.diff
  
  xlsx-arabic-export-crash.diff, n#497419, janneke
@@ -43,7 +40,7 @@
  xlsx-export-set-xml-2007-flavour.diff, n#502090, janneke
  xlsx-export-simple-autofilter.diff, n#497559, janneke
  # hack to ignore writerfilter when odf-converter is present
-@@ -3065,15 +3070,22 @@
+@@ -3065,15 +3073,22 @@
  sc-toogle-grid-menubar.diff
  infra-palette.diff
  
@@ -69,7 +66,7 @@
  extras-add-educate-officorr-misc-offimisc.diff
  reportbuilder-no-license-infra.diff
  wikipublisher-no-license-infra.diff
-@@ -3081,7 +3093,6 @@
+@@ -3081,7 +3096,6 @@
  scp2_extensions-remove-SUN.diff
  extensions-dont-install-by-default.diff
  extensions-separate-java-based.diff
@@ -77,7 +74,7 @@
  officecfg-create-backups.diff
  
  [InfraLinuxOnly]
-@@ -3090,8 +3101,10 @@
+@@ -3090,8 +3104,10 @@
  sfx2-remove-check-update-on-fileload.diff, kohei
  default-system-fpicker.diff, michael
  

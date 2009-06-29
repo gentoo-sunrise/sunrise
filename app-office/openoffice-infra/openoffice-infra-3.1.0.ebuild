@@ -125,7 +125,6 @@ PROVIDE="virtual/ooo"
 RESTRICT="strip" # the openoffice.org from infra-resource is already stripped
 
 pkg_setup() {
-
 	ewarn
 	ewarn " It is important to note that OpenOffice-Infra is a very fragile  "
 	ewarn " build when it comes to CFLAGS.  A number of flags have already "
@@ -158,11 +157,15 @@ pkg_setup() {
 
 	# dicts
 	if use infradicts; then
-		export DICTS_OOO="en-US ru uk"
+		export DICTS_OOO="en ru uk"
 	else
 		for i in ${LINGUAS_OOO}; do
 			if [[ "${i}" != "tr" ]]; then
-			    DICTS_OOO="${DICTS_OOO} ${i}"
+				if [[ "${i}" == "en-US" ]]; then
+					DICTS_OOO="${DICTS_OOO} en"
+				else
+					DICTS_OOO="${DICTS_OOO} ${i}"
+				fi
 			fi
 		done
 		export DICTS_OOO
@@ -210,24 +213,20 @@ pkg_setup() {
 
 	# sys-libs/db version used
 	local db_ver=$(db_findver '>=sys-libs/db-4.3')
-
 }
 
 src_unpack() {
-
 	unpack infra-ooo-files_${PV}.tar.gz
 	use binfilter && unpack ${SRC}_binfilter.tar.bz2
 	unpack ${SRC}_core.tar.bz2
 	unpack ${SRC}_l10n.tar.bz2
 	unpack ${SRC}_extensions.tar.bz2
 	unpack ${SRC}_system.tar.bz2
-
 }
 
 src_prepare() {
-
 	if use odk && use java; then
-	    cp -f "${DISTDIR}"/unowinreg.dll "${WORKSRC}"/external/unowinreg/
+		cp -f "${DISTDIR}"/unowinreg.dll "${WORKSRC}"/external/unowinreg/ || die "cp of unowinreg.dll failed"
 	fi
 
 	# Some fixes for our patchset
@@ -240,14 +239,15 @@ src_prepare() {
 	epatch "${FILESDIR}/${PV}/gentoo-infra-gentoo.diff"
 
 	# Patches from go-oo mainstream
-	cp -f "${FILESDIR}/buildfix-gcc44.diff" "${S}/patches/hotfixes" || die
-	cp -f "${FILESDIR}/${PV}/solenv.workaround-for-the-kde-mess.diff" "${S}/patches/hotfixes" || die
+	cp -f "${FILESDIR}/buildfix-gcc44.diff" "${S}/patches/hotfixes" || die "cp of hotfix patch failed"
+	cp -f "${FILESDIR}/${PV}/solenv.workaround-for-the-kde-mess.diff" "${S}/patches/hotfixes" || die "cp of hotfix patch failed"
 
-	cd "${WORKSRC}"; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras-templates.tar.bz2"
+	cd "${WORKSRC}"; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras-templates.tar.bz2" || die "untar failed"
 
 	for i in ${LINGUAS_OOO}; do
 		if [[ "${i}" == "ru" || "${i}" == "tr" ]]; then
-			cd "${WORKSRC}"; rm -rf "extras/source/autotext/lang/${i}/*" ; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras_${i}.tar.bz2"
+			cd "${WORKSRC}"; rm -rf "extras/source/autotext/lang/${i}/*" ; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras_${i}.tar.bz2" \
+			|| die "untar failed"
 		fi
 	done
 	local longlang
@@ -258,50 +258,47 @@ src_prepare() {
 			else
 			    longlang="uk_UA"
 			fi
-			"${WORKDIR}"/infra-ooo-files_${PV}/bin/enable-dict "${longlang}" "${WORKDIR}/infra-ooo-files_${PV}/files/dict_${longlang}.tar.bz2" "${WORKSRC}"
+			"${WORKDIR}"/infra-ooo-files_${PV}/bin/enable-dict "${longlang}" "${WORKDIR}/infra-ooo-files_${PV}/files/dict_${longlang}.tar.bz2" "${WORKSRC}" \
+			|| die "enable-dict failed"
 		fi
 	done
 
 	# Infra branding
-	mkdir -p "${WORKSRC}"/{libwps,libwpg,libsvg}/download/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwps*.tar.gz   "${WORKSRC}"/libwps/download/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwpg*.tar.gz   "${WORKSRC}"/libwpg/download/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libsvg*.tar.gz   "${WORKSRC}"/libsvg/download/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/infra-logo-team.png   "${WORKSRC}"/default_images/sw/res/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/go-oo-team.png   "${WORKSRC}"/default_images/sw/res/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/intro.bmp    "${WORKSRC}"/ooo_custom_images/nologo/introabout/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/about.bmp    "${WORKSRC}"/default_images/introabout/
-	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/backing*.png    "${WORKSRC}"/default_images/framework/res/
+	mkdir -p "${WORKSRC}"/{libwps,libwpg,libsvg}/download/ || die "mkdir failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwps*.tar.gz   "${WORKSRC}"/libwps/download/ || die "cp of libwps failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libwpg*.tar.gz   "${WORKSRC}"/libwpg/download/ || die "cp of libwpg failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/libsvg*.tar.gz   "${WORKSRC}"/libsvg/download/ || die "cp of libsvg failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/infra-logo-team.png   "${WORKSRC}"/default_images/sw/res/ || die "cp of *.png failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/files/go-oo-team.png   "${WORKSRC}"/default_images/sw/res/ || die "cp of *.png failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/intro.bmp    "${WORKSRC}"/ooo_custom_images/nologo/introabout/ || die "cp of *.png failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/about.bmp    "${WORKSRC}"/default_images/introabout/ || die "cp of *.png failed"
+	cp -f "${WORKDIR}"/infra-ooo-files_${PV}/res/infra/backing*.png    "${WORKSRC}"/default_images/framework/res/ || die "cp of *.png failed"
 
 	local patchconf
 	patchconf="--tag=${OOOBUILDTAG} --distro=Localize"
-	local distros
-	local distro
+	local distrodicts
 	if use postgres; then
-		distros="InfraGentooPG"
+		patchconf="${patchconf} --distro=InfraGentooPG"
 	else
-		distros="InfraGentoo"
+		patchconf="${patchconf} --distro=InfraGentoo"
 	fi
+	use binfilter && patchconf="${patchconf} --distro=Binfilter"
 	# add basic support of zemberek/tr
 	local dicts="${DICTS_OOO} tr"
 	for i in ${dicts}; do
-		if [[ "${i}" != "en-US" ]]; then
-		    distros="${distros} InfraDict${i}"
+		if [[ "${i}" != "en" ]]; then
+			distrodicts="${distrodicts} --distro=InfraDict${i}"
 		fi
 	done
-	for i in ${distros}; do
-		distro="${distro} --distro=${i}"
-	done
-	patchconf="${patchconf} ${distro}"
-	if use binfilter; then
-		patchconf="${patchconf} --distro=Binfilter"
-	fi
-	"${WORKDIR}"/infra-ooo-files_${PV}/bin/apply.pl "${WORKDIR}"/infra-ooo-files_${PV}/patches/dev300 "${WORKSRC}" ${patchconf}
-	"${WORKDIR}"/infra-ooo-files_${PV}/bin/transform --apply "${WORKDIR}"/infra-ooo-files_${PV} "${WORKSRC}"
+	[[ -n "${distrodicts}" ]] && patchconf="${patchconf} ${distrodicts}"
+	"${WORKDIR}"/infra-ooo-files_${PV}/bin/apply.pl "${WORKDIR}"/infra-ooo-files_${PV}/patches/dev300 "${WORKSRC}" ${patchconf} || die "apply failed"
+	"${WORKDIR}"/infra-ooo-files_${PV}/bin/transform --apply "${WORKDIR}"/infra-ooo-files_${PV} "${WORKSRC}" || die "transform failed"
 
 	if use postgres; then
 		# fix using of pg lib
 		epatch "${FILESDIR}/${PV}/gentoo-configure-pg.diff"
+		# fix handling of system libs for postgresql-base
+		epatch "${FILESDIR}/gentoo-system_pgsql.diff"
 	fi
 	# enable/disable-gstreamer, disable scanning for rpm/dpkg and etc
 	epatch "${FILESDIR}/${PV}/gentoo-configure.diff"
@@ -309,10 +306,6 @@ src_prepare() {
 	epatch "${FILESDIR}/gentoo-mkdepend.diff"
 	# disable rpm
 	epatch "${FILESDIR}/gentoo-epm-3.7.patch.diff"
-	if use postgres; then
-		# fix handling of system libs for postgresql-base
-		epatch "${FILESDIR}/gentoo-system_pgsql.diff"
-	fi
 	# don't strip libs
 	use debug && epatch "${FILESDIR}/gentoo-dont_strip_libs.diff"
 	# fix jfreereport cr issue
@@ -321,11 +314,9 @@ src_prepare() {
 	cd "${WORKSRC}"
 
 	eautoreconf
-
 }
 
 src_configure() {
-
 	# Use flag checks
 	if use java; then
 		CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-ant-home=${ANT_HOME}"
@@ -348,18 +339,10 @@ src_configure() {
 
 	# Handle new dicts system
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-myspell-dicts"
-	local dicts
-	if use infradicts; then
-		dicts="${DICTS_OOO}"
-	else
-		dicts="${LINGUAS_OOO}"
-	fi
 	local tempdicts=ENUS
-	local tempdict
-	for i in ${dicts}; do
-		if [[ "${i}" != "en-US" ]]; then
-			tempdict=$(ls ${WORKSRC}/dictionaries/ | grep ${i} | sed -e 's/_//g;s/\///g' | tr '[a-z]' '[A-Z]')
-			tempdicts="${tempdicts},${tempdict}"
+	for i in ${DICTS_OOO}; do
+		if [[ "${i}" != "en" ]]; then
+			tempdicts="${tempdicts},$(ls ${WORKSRC}/dictionaries/ | grep ${i} | sed -e 's/_//g;s/\///g' | tr '[a-z]' '[A-Z]')"
 		fi
 	done
 	CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-dict=${tempdicts}"
@@ -479,11 +462,9 @@ src_configure() {
 		--with-vendor="Infra-Resource" \
 		${CONFIGURE_ARGS} \
 		|| die "Configuration failed!"
-
 }
 
 src_compile() {
-
 	cd "${WORKSRC}"
 
 	local gentoo_env_set
@@ -495,19 +476,25 @@ src_compile() {
 
 	source "${gentoo_env_set}"
 
-	./bootstrap
+	./bootstrap || die "bootstrap failed"
 
-	cd transex3; build.pl --checkmodules ; build.pl -P${JOBS} --all --html --dontgraboutput -- -P${JOBS} && deliver.pl
+	cd transex3; build.pl --checkmodules ; build.pl -P${JOBS} --all --html --dontgraboutput -- -P${JOBS} && deliver.pl || die "build.pl failed"
 
 	cd "${WORKSRC}"
 
 	for i in ${LINGUAS_OOO}; do
 		if [[ "${i}" == "ru" || "${i}" == "uk" ]]; then
-			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf
+			if [ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf ]; then
+				"${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-vendor.sdf || die "localize failed"
+			fi
 		fi
 		if [[ "${i}" == "ru" ]]; then
-			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf
-			[ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf ] && "${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf
+			if [ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf ]; then
+				"${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}.sdf || die "localize failed"
+			fi
+			if [ -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf ]; then
+				"${WORKSRC}"/transex3/scripts/localize -m -l ${i} -f "${WORKDIR}"/infra-ooo-files_${PV}/sdf/${i}/${i}-patched.sdf || die "localize failed"
+			fi
 		fi
 	done
 
@@ -516,11 +503,9 @@ src_compile() {
 	else
 		dmake || die "Build failed"
 	fi
-
 }
 
 src_install() {
-
 	export PYTHONPATH=""
 
 	einfo "Preparing Installation ..."
@@ -546,44 +531,17 @@ src_install() {
 	dodir "${instdir}"
 
 	cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice/native/install/en-US/"${gentoo_env_set_dst}"/buildroot/opt/* \
-		"${D}"${instdir}
+		"${D}"${instdir} || "cp of dist failed"
 
 	for i in ${LINGUAS_OOO}; do
 		if [[ "${i}" != "en-US" ]]; then
 			cp -af "${WORKSRC}"/instsetoo_native/unxlng"${arch_var}"6.pro/OpenOffice_languagepack/native/install/"${i}"/"${gentoo_env_set_dst}"/buildroot/opt/* \
-				"${D}"${instdir}
+				"${D}"${instdir} || "cp of langpacks failed"
 		fi
-	done
-
-	# manual install Wiki Publisher, Report Builder, Presenter Screen (Console)  extensions
-	if use java; then
-		cp -f "${WORKSRC}"/swext/unxlng"${arch_var}"6.pro/bin/wiki-publisher.oxt "${D}"${instdir}/share/extension/install/
-		cp -f "${WORKSRC}"/reportbuilder/unxlng"${arch_var}"6.pro/bin/sun-report-builder.oxt "${D}"${instdir}/share/extension/install/
-	fi
-	cp -f "${WORKSRC}"/sdext/unxlng"${arch_var}"6.pro/bin/presenter-screen.oxt "${D}"${instdir}/share/extension/install/
-
-	# dict extensions
-	local dicts
-	if use infradicts; then
-		dicts="${DICTS_OOO}"
-	else
-		dicts="${LINGUAS_OOO}"
-	fi
-	rm -f "${D}"${instdir}/share/extension/install/dict-*.oxt
-	insinto ${instdir}/share/extension/install
-	local dictlang
-	for i in ${dicts}; do
-		if [[ "${i}" == "en-US" ]]; then
-			dictlang=en
-		else
-			dictlang=${i}
-		fi
-		doins "${WORKSRC}"/dictionaries/unxlng"${arch_var}"6.pro/bin/dict-"${dictlang}".oxt
 	done
 
 	# Menu entries
 	cd "${D}"${instdir}/share/xdg/
-
 	for i in ${allcomponents}; do
 		if [[ "${i}" == "printeradmin" ]]; then
 			sed -i -e s/openoffice.org3-/oo/g "${i}".desktop || die "Sed failed"
@@ -600,7 +558,9 @@ src_install() {
 	for color in {hicolor,locolor}; do
 		for sizes in "${D}"usr/share/icons/${color}/* ; do
 			for i in ${allcomponents}; do
-				[[ -f "${sizes}"/apps/"${i}".png ]] && mv "${sizes}"/apps/"${i}".png "${sizes}"/apps/openofficeorg3-"${i}".png
+				if [[ -f "${sizes}"/apps/"${i}".png ]]; then
+					mv "${sizes}"/apps/"${i}".png "${sizes}"/apps/openofficeorg3-"${i}".png || die "mv failed"
+				fi
 			done
 		done
 	done
@@ -610,8 +570,8 @@ src_install() {
 		mkdir -p "${D}"/usr/share/icons/gnome
 		for size in {16x16,32x32,48x48}; do
 			if ! [[ -d "${D}"/usr/share/icons/gnome/"${size}" ]]; then
-				mkdir -p "${D}"/usr/share/icons/gnome/"${size}"
-				mkdir -p "${D}"/usr/share/icons/gnome/"${size}/apps"
+				mkdir -p "${D}"/usr/share/icons/gnome/"${size}" || die "mkdir failed"
+				mkdir -p "${D}"/usr/share/icons/gnome/"${size}/apps"|| die "mkdir failed"
 			fi
 			for i in ${allcomponents}; do
 				dosym /usr/share/icons/hicolor/"${size}"/apps/openofficeorg3-"${i}".png /usr/share/icons/gnome/"${size}"/apps/openofficeorg3-"${i}".png
@@ -631,48 +591,54 @@ src_install() {
 	newbin "${FILESDIR}"/wrapper.in ooffice || die
 	sed -i -e s/LIBDIR/$(get_libdir)/g "${D}"/usr/bin/ooffice || die "Wrapper script failed"
 
-	# Install PostgreSQL SDBC extension
+	# Component symlinks
+	for i in ${basecomponents}; do
+		dosym "${instdir}"/program/s"${i}" /usr/bin/oo"${i}"
+	done
+
+	use cups && dosym "${instdir}"/program/spadmin /usr/bin/ooprinteradmin
+	dosym "${instdir}"/program/soffice /usr/bin/soffice
+	dosym "${instdir}"/"${BASIS}"/program/setofficelang /usr/bin/setofficelang
+	dosym "${instdir}"/program/unopkg  /usr/bin/unopkg
+
+	# dict extensions
+	rm -f "${D}"${instdir}/share/extension/install/dict-*.oxt || die "rm dict-*.oxt failed"
+	insinto ${instdir}/share/extension/install
+	for i in ${DICTS_OOO}; do
+		doins "${WORKSRC}"/dictionaries/unxlng"${arch_var}"6.pro/bin/dict-"${i}".oxt
+	done
+
+	# manual install PostgreSQL SDBC extension
 	if use postgres; then
 		insinto /usr/$(get_libdir)/openoffice/share/extension/install
 		doins "${WORKSRC}"/connectivity/unxlng"${arch_var}"6.pro/lib/postgresql-sdbc-0.7.6.zip
 		fperms 444 /usr/$(get_libdir)/openoffice/share/extension/install/postgresql-sdbc-0.7.6.zip
 	fi
 
-	# Component symlinks
-	for i in ${basecomponents}; do
-		dosym "${instdir}"/program/s"${i}" /usr/bin/oo"${i}"
-	done
+	# manual install Presenter Screen (Console) extension
+	cp -f "${WORKSRC}"/sdext/unxlng"${arch_var}"6.pro/bin/presenter-screen.oxt "${D}"${instdir}/share/extension/install/ \
+	|| die "cp of presenter-screen failed"
 
-	if use cups; then
-		dosym "${instdir}"/program/spadmin /usr/bin/ooprinteradmin
-	fi
-	dosym "${instdir}"/program/soffice /usr/bin/soffice
-	dosym "${instdir}"/"${BASIS}"/program/setofficelang /usr/bin/setofficelang
-	dosym "${instdir}"/program/unopkg  /usr/bin/unopkg
-
-	# Fix the permissions for security reasons
-#	chown -R root:0 "${D}"
-
-	# Non-java weirdness see bug #99366
-	use !java && rm -f "${D}"${instdir}/ure/bin/javaldx
-
-	# record java libraries
 	if use java; then
+		# manual install Wiki Publisher, Report Builder extensions
+		cp -f "${WORKSRC}"/swext/unxlng"${arch_var}"6.pro/bin/wiki-publisher.oxt "${D}"${instdir}/share/extension/install/ \
+		|| die "cp of wiki-publisher failed"
+		cp -f "${WORKSRC}"/reportbuilder/unxlng"${arch_var}"6.pro/bin/sun-report-builder.oxt "${D}"${instdir}/share/extension/install/ \
+		|| die "cp of sun-report-builder  failed"
+		# record java libraries
 		java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/"${BASIS}"/program/classes/*.jar
 		java-pkg_regjar "${D}"/usr/$(get_libdir)/openoffice/ure/share/java/*.jar
-	fi
-
-	# install java-set-classpath
-	if use java; then
+		# install java-set-classpath
 		insinto /usr/$(get_libdir)/openoffice/"${BASIS}"/program
 		newins "${FILESDIR}/java-set-classpath.in" java-set-classpath
 		fperms 755 /usr/$(get_libdir)/openoffice/"${BASIS}"/program/java-set-classpath
+	else
+		# Non-java weirdness see bug #99366
+		rm -f "${D}"${instdir}/ure/bin/javaldx || die "rm javaldx failed"
 	fi
-
 }
 
 pkg_postinst() {
-
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
 
@@ -682,11 +648,9 @@ pkg_postinst() {
 	use java && /usr/$(get_libdir)/openoffice/"${BASIS}"/program/java-set-classpath $(java-config --classpath=jdbc-mysql 2>/dev/null) >/dev/null
 
 	elog " To start OpenOffice-Infra, run:"
-	elog
 	elog " $ ooffice"
 	elog
 	elog " Also, for individual components, you can use any of:"
-	elog
 	elog " oobase, oocalc, oodraw, ooimpress, oomath or oowriter"
 	elog
 	if use infradicts; then
@@ -716,5 +680,4 @@ pkg_postinst() {
 		elog " /usr/$(get_libdir)/openoffice/share/extension/install/ "
 	fi
 	elog
-
 }
