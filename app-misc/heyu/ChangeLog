@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jun 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
+  -heyu-2.6.0.ebuild, +heyu-2.7.0.ebuild:
+  Version bump for bug 91396
+
   09 May 2009; Christian Ruppert <idl0r@gentoo.org> heyu-2.6.0.ebuild:
   Use EPI 2. Use src_configure instead of src_compile. sed and
   domanimproved, readability.
