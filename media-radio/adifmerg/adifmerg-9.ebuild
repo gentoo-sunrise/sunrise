@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+MY_P="${PN}${PV}"
+
 DESCRIPTION="A small conversion and check utility for ADIF files"
 HOMEPAGE="http://jaakko.home.cern.ch/jaakko/Soft/"
-SRC_URI="http://jaakko.home.cern.ch/jaakko/Soft/${PN}.tgz"
+SRC_URI="http://jaakko.home.cern.ch/jaakko/Soft/${MY_P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -13,7 +15,7 @@ IUSE=""
 
 RDEPEND="dev-lang/perl"
 
-S=${WORKDIR}/AdifMerg
+S=${WORKDIR}/${MY_P}
 
 src_install() {
 	dobin adifmerg || die "dobin failed"
