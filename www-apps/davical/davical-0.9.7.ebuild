@@ -8,7 +8,7 @@ inherit webapp depend.php
 
 DESCRIPTION="A CalDAV and iCal server"
 HOMEPAGE="http://davical.org/"
-SRC_URI="http://debian.mcmillan.net.nz/packages/${PN}/${P/-/_}.tar.gz"
+SRC_URI="http://debian.mcmillan.net.nz/debian/dists/lenny/awm/source/${P/-/_}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
@@ -18,7 +18,7 @@ DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
 	dev-lang/php[pcre,postgres,xml]
 	app-admin/pwgen
-	>=dev-php/awl-0.36
+	>=dev-php/awl-0.37
 	dev-perl/yaml
 	dev-perl/DBI
 	dev-perl/DBD-Pg"
