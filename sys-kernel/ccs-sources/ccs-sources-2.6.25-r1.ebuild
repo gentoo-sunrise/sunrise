@@ -4,13 +4,13 @@
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="7"
+K_GENPATCHES_VER="11"
 
 inherit eutils kernel-2
 detect_version
 detect_arch
 
-CCS_TGP="ccs-patch-1.6.8-20090528"
+CCS_TGP="ccs-patch-1.6.8-20090703"
 CCS_TGP_SRC="mirror://sourceforge.jp/tomoyo/30297/${CCS_TGP}.tar.gz"
 
 DESCRIPTION="TOMOYO Linux sources for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
