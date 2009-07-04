@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="${PN}${PV}"
+MY_P=${P/-}
 
 DESCRIPTION="A small conversion and check utility for ADIF files"
 HOMEPAGE="http://jaakko.home.cern.ch/jaakko/Soft/"
@@ -10,8 +10,8 @@ SRC_URI="http://jaakko.home.cern.ch/jaakko/Soft/${MY_P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
-IUSE=""
+KEYWORDS="~amd64 ~x86"
+IUSE="examples"
 
 RDEPEND="dev-lang/perl"
 
@@ -23,7 +23,9 @@ src_install() {
 	doins template.cab || die "doins failed"
 	doman doc/adifmerg.1 || die "doman failed"
 	dodoc CHANGELOG README || die "dodoc failed"
-	docinto examples
-	dodoc addqsoinfo calcpnts lqslget lqsoget || die "dodoc failed"
-}
 
+	if use examples; then
+		docinto examples
+		dodoc addqsoinfo calcpnts lqslget lqsoget || die "dodoc failed"
+	fi
+}
