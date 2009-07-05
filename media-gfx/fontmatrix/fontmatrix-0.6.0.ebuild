@@ -15,25 +15,25 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="|| ( ( x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-svg:4 )
-	>=x11-libs/qt-4.3:4 )
-	>=media-libs/freetype-2"
-RDEPEND=${DEPEND}
+RDEPEND="x11-libs/qt-core:4
+	x11-libs/qt-gui:4
+	x11-libs/qt-svg:4
+	x11-libs/qt-webkit:4
+	media-libs/freetype:2"
+DEPEND=${RPEDEND}
 
 S=${WORKDIR}/${P}-Source
-B=${WORKDIR}/${PN}_build
 
 src_compile() {
 	local mycmakeargs="-DOWN_SHAPER=1"
 	cmake-utils_src_compile
-	cd "${B}"
-	emake || die "emake failed"
 }
 
 src_install() {
-	dobin "${B}"/src/${PN} || die
-	doicon "${S}/${PN}.png"
-	make_desktop_entry ${PN} "Fontmatrix" ${PN}.png
+	dobin "${CMAKE_BUILD_DIR}"/src/${PN} || die
+	doman ${PN}.1 || die
+	domenu ${PN}.desktop || die
+	dodoc ChangeLog TODO || die
 }
 
 pkg_postinst() {
