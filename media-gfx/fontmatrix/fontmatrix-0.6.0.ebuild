@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 
-inherit cmake-utils qt4
+inherit qt4 cmake-utils
 
 DESCRIPTION="A font manager"
 HOMEPAGE="http://www.fontmatrix.net/"
@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND="x11-libs/qt-core:4
-	x11-libs/qt-gui:4
+RDEPEND="x11-libs/qt-gui:4
 	x11-libs/qt-svg:4
 	x11-libs/qt-webkit:4
 	media-libs/freetype:2"
@@ -24,9 +23,9 @@ DEPEND=${RPEDEND}
 
 S=${WORKDIR}/${P}-Source
 
-src_compile() {
+src_configure() {
 	local mycmakeargs="-DOWN_SHAPER=1"
-	cmake-utils_src_compile
+	cmake-utils_src_configure
 }
 
 src_install() {
