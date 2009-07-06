@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2009; Markos Chandras <hwoarang@gentoo.org> heyu-2.7.0.ebuild:
+  Eapi2fy it and clean up
+
   30 Jun 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
   -heyu-2.6.0.ebuild, +heyu-2.7.0.ebuild:
   Version bump for bug 91396

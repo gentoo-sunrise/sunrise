@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit eutils toolchain-funcs
 
-DESCRIPTION="Utility to control and program CM11A, CM17A and CM12U X10 interfaces."
+DESCRIPTION="Utility to control and program CM11A, CM17A and CM12U X10 interfaces"
 HOMEPAGE="http://heyu.tanj.com"
 SRC_URI="http://heyu.tanj.com/download/${P}.tgz"
 
@@ -22,7 +24,7 @@ pkg_setup() {
 	epause
 }
 
-src_compile() {
+src_configure() {
 	mv x10config.sample x10.conf.sample
 	"${S}"/Configure \
 		$(use kernel_FreeBSD && echo "freebsd")	\
@@ -35,28 +37,27 @@ src_compile() {
 		$(use rfxm || echo "-norfxm")		\
 		$(use rfxs || echo "-norfxs")		\
 		|| die "configure failed"
-	sed -i "s/CC\s*=.*/CC = $(tc-getCC)/" "${S}"/Makefile || die "adjustment of CC failed"
-	sed -i "s/CFLAGS\s*=.*/CFLAGS = ${CFLAGS} \$(DFLAGS)/" "${S}"/Makefile || die "adjustment of CFLAGS failed"
-	sed -i -r 's%^(DFLAGS.+)-DSYSBASEDIR=\\"[^\]+\\"%\1%' "${S}"/Makefile || die "removing DSYSBASEDIR from DFLAGS failed"
-	sed -i -r 's%^(DFLAGS\s*=\s*)%\1-DSYSBASEDIR=\\"/var/lib/heyu\\" %' "${S}"/Makefile || die "adding DSYSBASEDIR to DFLAGS failed"
-	sed -i -r 's%^(DFLAGS.+)-DSPOOLDIR=\\"[^\]+\\"%\1%' "${S}"/Makefile || die "removing DSPOOLDIR from DFLAGS failed"
-	sed -i -r 's%^(DFLAGS\s*=\s*)%\1-DSPOOLDIR=\\"/var/lib/heyu\\" %' "${S}"/Makefile || die "adding DSPOOLDIR to DFLAGS failed"
-	sed -i -r 's%^(DFLAGS.+)-DLOCKDIR=\\"[^\]+\\"%\1%' "${S}"/Makefile || die "removing DLOCKDIR from DFLAGS failed"
-	sed -i -r 's%^(DFLAGS\s*=\s*)%\1-DLOCKDIR=\\"/var/lock\\" %' "${S}"/Makefile || die "adding DLOCKDIR to DFLAGS failed"
+	sed -i -r -e "s/CC\s*=.*/CC = $(tc-getCC)/" "${S}"/Makefile \
+	-e "s/CFLAGS\s*=.*/CFLAGS = ${CFLAGS} \$(DFLAGS)/" \
+	-e 's%^(DFLAGS.+)-DSYSBASEDIR=\\"[^\]+\\"%\1%' \
+	-e 's%^(DFLAGS\s*=\s*)%\1-DSYSBASEDIR=\\"/var/lib/heyu\\" %' \
+	-e 's%^(DFLAGS.+)-DSPOOLDIR=\\"[^\]+\\"%\1%' \
+	-e 's%^(DFLAGS\s*=\s*)%\1-DSPOOLDIR=\\"/var/lib/heyu\\" %' \
+	-e 's%^(DFLAGS.+)-DLOCKDIR=\\"[^\]+\\"%\1%' \
+	-e 's%^(DFLAGS\s*=\s*)%\1-DLOCKDIR=\\"/var/lock\\" %' "${S}"/Makefile || die "adjusting Makefile failed"
 	sed -i -r 's%(LOG_DIR.*?)NONE%\1/var/log/heyu%' "${S}"/x10.conf.sample || die "changing LOG_DIR failed"
-	emake || die "make failed"
 }
 
 src_install() {
 	dobin heyu || die "installing binary failed"
-	doman heyu.1 x10config.5 x10scripts.5 x10sched.5 || die "installing man pages failed"
+	doman heyu.1 x10{config,scripts,sched}.5 || die "installing man pages failed"
 	newinitd "${FILESDIR}"/heyu.init heyu
 	insinto /etc/heyu
 	doins x10.*.sample || die "installing config samples failed"
 	diropts -m 0750 -o heyu
 	dodir /var/log/heyu  || die "creating log directory failed"
-	dosym /etc/heyu/x10.conf /var/lib/heyu/x10.conf
-	dosym /etc/heyu/x10.sched /var/lib/heyu/x10.sched
+	dosym /etc/heyu/x10.conf /var/lib/heyu/x10.conf || die "dosym failed"
+	dosym /etc/heyu/x10.sched /var/lib/heyu/x10.sched || die "dosym failed"
 }
 
 pkg_postinst() {
