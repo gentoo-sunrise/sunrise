@@ -1,0 +1,22 @@
+diff -Naur gpspoint-2.030521/src/main.cpp gpspoint-2.030521-gcc43/src/main.cpp
+--- gpspoint-2.030521/src/main.cpp	2003-05-21 09:44:33.000000000 +0200
++++ gpspoint-2.030521-gcc43/src/main.cpp	2009-07-07 23:48:06.000000000 +0200
+@@ -21,6 +21,7 @@
+ #include "tracklist.h"
+ #include "date_time_type.h"
+ 
++#include <cstdlib>
+ #include <string>
+ #include <fstream>
+ #include <signal.h>
+diff -Naur gpspoint-2.030521/src/posixserial.cpp gpspoint-2.030521-gcc43/src/posixserial.cpp
+--- gpspoint-2.030521/src/posixserial.cpp	2003-04-14 18:23:33.000000000 +0200
++++ gpspoint-2.030521-gcc43/src/posixserial.cpp	2009-07-07 23:46:20.000000000 +0200
+@@ -20,6 +20,7 @@
+ 
+ 
+ #include <fstream>
++#include <cstring>
+ 
+ #define V_TIME 5  //  wait V_TIME for characters on serial port
+ 

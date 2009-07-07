@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/gpspoint
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jul 2009; Srebrodolskite <Hannes.Krueger@gmail.com>
+  gpspoint-2.030521.ebuild, +files/gpspoint-2.030521-gcc43.patch:
+  patch for gcc-4.3 added
 
   31 Oct 2007; Jakub Moc <jakub@gentoo.org> gpspoint-2.030521.ebuild:
   Remove default src_compile, do not dodoc INSTALL COPYING
