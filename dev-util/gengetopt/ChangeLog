@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/gengetopt
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jul 2009; Srebrodolskite <Hannes.Krueger@gmail.com>
+  -gengetopt-2.22.1.ebuild, +gengetopt-2.22.2.ebuild:
+  Version bump for gengetopt
 
   05 Nov 2008; Srebrodolskite <Hannes.Krueger@uibk.ac.at>
   -gengetopt-2.21.ebuild, +gengetopt-2.22.1.ebuild:
