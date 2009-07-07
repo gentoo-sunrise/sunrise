@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -fldigi-3.11.5.ebuild, +fldigi-3.11.6.ebuild:
+  Maintanance release
+
   18 Jun 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -fldigi-3.11.4-r1.ebuild, +fldigi-3.11.5.ebuild:
   maintainance release
