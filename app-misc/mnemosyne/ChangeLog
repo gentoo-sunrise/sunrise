@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jul 2009; Lubos Kolouch (kolcon) <lubos.kolouch@gmail.com>
+  -mnemosyne-1.1.1.ebuild, +mnemosyne-1.2.1.ebuild:
+  mnemosyne 1.2.1
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   mnemosyne-1.1.1.ebuild:
   Add suggested RDEPEND=${DEPEND}

@@ -2,11 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
 inherit distutils
 
 DESCRIPTION="Sophisticated flash-card tool also used for long-term memory research"
 HOMEPAGE="http://www.mnemosyne-proj.org/"
-SRC_URI="mirror://sourceforge/${PN}-proj/${P}-r1.tgz"
+SRC_URI="mirror://sourceforge/${PN}-proj/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,9 +19,7 @@ DEPEND="latex? ( app-text/dvipng )
 	dev-python/pygame"
 RDEPEND=${DEPEND}
 
-src_unpack() {
-	distutils_src_unpack
-
+src_prepare() {
 	if ! use latex ; then
 	sed -i \
 		-e "s/process_latex(latex_command):/process_latex(latex_command):\n    return latex_command/" \
