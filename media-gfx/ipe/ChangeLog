@@ -1,6 +1,10 @@
 # ChangeLog for media-gfx/ipe
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ipe-6.0_pre31.ebuild:
+  Move from monolithic to split qt dependencies
 
   06 Nov 2008; Christian Schlotter (schlotter) <again@gmx.de>
   ipe-6.0_pre31.ebuild:
