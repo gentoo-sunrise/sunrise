@@ -25,6 +25,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "The drill binary and the ldns-* utilities were moved into their own"
-	ewarn "package. If you need them, install net-dns/ldns-utils."
+	einfo "The drill binary and the ldns-* utilities were moved into their own"
+	einfo "package. If you need them, install net-dns/ldns-utils."
 }
