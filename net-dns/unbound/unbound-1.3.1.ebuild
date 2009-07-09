@@ -15,10 +15,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+chroot debug libevent python static threads"
 
-DEPEND="dev-libs/openssl
+RDEPEND="dev-libs/openssl
 	>=net-libs/ldns-1.5.1
 	libevent? ( dev-libs/libevent )"
-RDEPEND=${DEPEND}
+DEPEND="${RDEPEND}
+	python? ( dev-lang/swig )"
+
 
 pkg_setup() {
 	enewgroup unbound
@@ -68,7 +70,7 @@ pkg_postinst() {
 
 	# unbound-control-setup tests for *.key existance, so copy that behaviour 
 	if ! test -f ${key_dir}/unbound_server.key && ! test -f ${key_dir}/unbound_control.key; then
-		ewarn "With unbound-1.3.0, we use a new initd script based on unbound-contol."
+		ewarn "Since unbound-1.3.0, we use a new initd script based on unbound-contol."
 		ewarn "The initd script needs SSL keys. To generate these, please run the"
 		ewarn "following command before (re)starting Unbound:"
 		ewarn "emerge --config =${PF}"
@@ -78,15 +80,8 @@ pkg_postinst() {
 
 pkg_config() {
 	local key_dir="${ROOT}etc/unbound"
-	local key_files="unbound_control.key unbound_control.pem unbound_server.key unbound_server.pem"
 
 	ebegin "Generating SSL keys for unbound-control"
 	/usr/sbin/unbound-control-setup -d ${key_dir}
-	eend $?
-
-	ebegin "Adjusting file permissions"
-	local username=`/usr/sbin/unbound-checkconf -o username`
-	cd ${key_dir}
-	chown ${username} ${key_files}
 	eend $?
 }
