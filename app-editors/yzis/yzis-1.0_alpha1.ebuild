@@ -1,6 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
+
+inherit cmake-utils
 
 MY_P=${P/_/-}
 
@@ -13,24 +17,16 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="dev-util/cmake"
-RDEPEND=">=dev-lang/lua-5.1
+DDEPEND=">=dev-lang/lua-5.1
 	sys-libs/ncurses
-	>=x11-libs/qt-4.1.0"
+	x11-libs/qt-gui:4"
+RDEPEND="${RDEPEND}"
 
+DOCS="ChangeLog README"
 
-src_compile() {
-	cmake -DENABLE_TESTS=OFF \
+src_configure() {
+	mycmakeargs="${mycmakeargs}  -DENABLE_TESTS=OFF \
 		-DENABLE_LIBYZISRUNNER=OFF \
-		-DDCMAKE_BUILD_TYPE=Release \
-		${MY_P} || die "CMake failed."
-
-	emake || die "Build failed."
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "Install failed."
-
-	cd ${MY_P}
-	dodoc ChangeLog README || die "dodoc failed."
+		-DDCMAKE_BUILD_TYPE=Release "
+	cmake-utils_src_configure
 }
