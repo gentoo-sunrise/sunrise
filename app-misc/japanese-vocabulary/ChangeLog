@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/japanese-vocabulary
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
+  japanese-vocabulary-0.6.ebuild:
+  Drop qt metapackage from dependencies, EAPI2fy it, clean up
 
   21 Mar 2008; Jakub Moc <jakub@gentoo.org> japanese-vocabulary-0.6.ebuild:
   Fix pkg_postrm

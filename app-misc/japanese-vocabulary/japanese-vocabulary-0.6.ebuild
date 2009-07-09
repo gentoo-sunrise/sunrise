@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 inherit eutils qt4 toolchain-funcs
 
 KEYWORDS="~x86"
@@ -16,15 +16,14 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=x11-libs/qt-4.2:4"
+DEPEND="x11-libs/qt-gui:4
+	x11-libs/qt-sql:4[sqlite]"
 RDEPEND="${DEPEND}"
 
-QT4_BUILT_WITH_USE_CHECK="sqlite3"
 S=${WORKDIR}/${PN}
 
-src_compile() {
+src_configure() {
 	eqmake4 ${MY_PN}.pro
-	emake || die "emake failed"
 }
 
 src_install() {
