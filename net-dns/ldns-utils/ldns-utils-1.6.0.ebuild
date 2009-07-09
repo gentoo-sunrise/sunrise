@@ -24,8 +24,8 @@ src_compile() {
 	for dir in ${DIRS}; do
 		einfo "Building in ${dir}"
 		cd "${dir}"
-			econf
-			emake || die "emake in ""${dir}"" failed"
+		econf
+		emake || die "emake in ""${dir}"" failed"
 		cd ..
 	done
 }
