@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit qt4
 
@@ -13,12 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=x11-libs/qt-4.3.3"
+RDEPEND="x11-libs/qt-gui:4"
 DEPEND="${RDEPEND}"
 
-src_compile() {
-	qmake || die "qmake failed"
-	emake || die "emake failed"
+src_configure() {
+	eqmake4
 }
 
 src_install() {
