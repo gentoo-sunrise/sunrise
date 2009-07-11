@@ -24,4 +24,3 @@ DEPEND=">=dev-python/pygtk-2.6.1
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/exe"
-
