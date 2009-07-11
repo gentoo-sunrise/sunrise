@@ -1,0 +1,9 @@
+# ChangeLog for games-fps/tremfusion
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Jul 2009; keenblade <keenblade@gmail.com> +tremfusion-9999.ebuild,
+  +metadata.xml:
+  Initial ebuild. Thanks to Tommy[D] and chithead at #gentoo-sunrise and
+  tremfusion dev Amanieu
+
