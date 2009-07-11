@@ -4,6 +4,5 @@
 
   11 Jul 2009; keenblade <keenblade@gmail.com> +tremfusion-9999.ebuild,
   +metadata.xml:
-  Initial ebuild. Thanks to Tommy[D] and chithead at #gentoo-sunrise and
-  tremfusion dev Amanieu
-
+  Initial ebuild for bug 265048. Thanks to Tommy[D] and chithead at 
+  #gentoo-sunrise and tremfusion dev Amanieu
