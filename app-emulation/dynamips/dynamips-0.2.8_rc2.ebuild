@@ -40,4 +40,3 @@ src_install () {
 	dodoc ChangeLog TODO README README.hypervisor \
 		|| die "Installing docs failed"
 }
-
