@@ -32,4 +32,3 @@ src_install() {
 	dodoc AUTHORS README TODO || die "Cannot install docs"
 	INSTALL_ROOT="${D}" emake install || die "Cannot install"
 }
-
