@@ -17,7 +17,7 @@ DESCRIPTION="TOMOYO Linux sources for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
 HOMEPAGE="http://tomoyo.sourceforge.jp/index.html.en"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI} ${CCS_TGP_SRC}"
 KEYWORDS="~amd64 ~x86"
-DEPEND=""
+IUSE=""
 RDEPEND="sys-apps/ccs-tools"
 
 K_EXTRAEINFO="Before booting with TOMOYO enabled kernel, you need to
