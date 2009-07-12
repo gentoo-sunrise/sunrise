@@ -28,4 +28,3 @@ G2CONF="--disable-glitz --disable-glitz-tfp --enable-shave"
 EGIT_PATCHES=( "${FILESDIR}/${P}-glitz-tfp-undef.patch" )
 AT_M4DIR="."
 EGIT_BOOTSTRAP="eautoreconf"
-
