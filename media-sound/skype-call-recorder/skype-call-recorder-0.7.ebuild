@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,27 +15,10 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND="
-	|| (
-		x11-libs/qt-gui:4[dbus]
-		=x11-libs/qt-4.3*:4
-	)
+DEPEND="x11-libs/qt-gui:4[dbus]
 	media-sound/lame
 	media-libs/id3lib
 	>=media-libs/libvorbis-1.2.0
 	sys-apps/dbus"
-DEPEND="${RDEPEND}
-	>=dev-util/cmake-2.4.8"
-
-QT4_BUILT_WITH_USE_CHECK="dbus"
-
-pkg_setup() {
-	qt4_pkg_setup
-
-	if built_with_use net-im/skype qt-static; then
-		ewarn "WARNING: net-im/skype was built with the 'qt-static' USE flag!  Skype Call"
-		ewarn "Recorder won't be able to connect to Skype!  Reinstall Skype without"
-		ewarn "'qt-static' to make it work."
-	fi
-}
-
+RDEPEND="${RDEPEND}
+	net-im/skype[-qt-static]"
