@@ -20,4 +20,3 @@ RDEPEND="dev-lang/python"
 src_test() {
 	${python} setup.py test || die "Tests failed"
 }
-
