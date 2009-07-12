@@ -52,4 +52,3 @@ src_install() {
 		dodoc "${DISTDIR}"/${MY_DOC_PN}.pdf || die "dodoc failed"
 	fi
 }
-
