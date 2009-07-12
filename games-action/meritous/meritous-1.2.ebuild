@@ -23,10 +23,9 @@ DEPEND="media-libs/libsdl
 	media-libs/sdl-mixer"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	cd "${S}"
 	epatch "${DISTDIR}"/data-dir.patch
 	epatch "${FILESDIR}"/Makefile-flags.patch
 	sed -ie 's/gcc/$(CC)/' Makefile || die "sed Makefile failed"
@@ -38,7 +37,7 @@ src_compile() {
 }
 
 src_install() {
-	insinto "${GAMES_DATADIR}/meritous" || die
+	insinto "${GAMES_DATADIR}/meritous"
 	doins -r dat/* || die
 	dogamesbin meritous || die
 	dodoc readme.txt || die
