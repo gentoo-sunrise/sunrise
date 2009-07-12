@@ -32,4 +32,3 @@ src_install() {
 		dodoc "${DISTDIR}"/BasicDSP_SPRAT.pdf || die "dodoc failed"
 	fi
 }
-
