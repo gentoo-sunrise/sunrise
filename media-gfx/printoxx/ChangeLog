@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  printoxx-2.0.1.ebuild:
+  Add missing quotes
+
   23 Jun 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
   printoxx-2.0.1.ebuild:
   Drop ${PREFIX} in src_compile and clean-up COPYING and README from src_install

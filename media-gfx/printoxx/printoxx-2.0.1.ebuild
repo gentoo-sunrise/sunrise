@@ -25,5 +25,5 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" PREFIX=/usr install || die "emake install failed"
 	make_desktop_entry ${PN} "Printoxx" /usr/share/${PN}/icons/${PN}.png "Application;Graphics;2DGraphics;"
-	rm ${D}/usr/share/doc/${PN}/{COPYING,README} || die "Clean-up unnecessary docs failed"
+	rm "${D}"/usr/share/doc/${PN}/{COPYING,README} || die "Clean-up unnecessary docs failed"
 }
