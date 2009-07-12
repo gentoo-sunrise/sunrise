@@ -1,6 +1,10 @@
 # ChangeLog for sci-visualization/jps2ps
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  jps2ps-0.18.ebuild:
+  Whitespace, add missing die statement
 
   11 Sep 2008; Nuno J. Silva (njsg) <nunojsg@gmail.com> -jps2ps-0.17.ebuild,
   +jps2ps-0.18.ebuild:

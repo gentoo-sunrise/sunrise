@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,12 +17,10 @@ IUSE=""
 RDEPEND="dev-lang/perl
 	virtual/ghostscript"
 
-
 src_install() {
-
 	insinto /usr/$(get_libdir)/syracuse/app
 
-	doins -r "${WORKDIR}"/jps2ps
+	doins -r "${WORKDIR}"/jps2ps || die
 
 	# Fix permissions
 	fperms guo=rx /usr/$(get_libdir)/syracuse/app/jps2ps/{jps2ps,filtre-file,jpshash,exp2rpn,lit_appels,lit_cles}.pl
