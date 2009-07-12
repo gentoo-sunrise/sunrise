@@ -16,13 +16,11 @@ PROPERTIES="interactive"
 RESTRICT="bindist"
 
 PDEPEND="games-fps/prey"
-
 S=${WORKDIR}
 
 GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/prey
 Ddir=${D}/${dir}
-
 
 src_install() {
 	cdrom_get_cds Setup/Data/Base/pak000.pk4 \
