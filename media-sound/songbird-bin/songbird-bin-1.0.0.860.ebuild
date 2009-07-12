@@ -97,4 +97,3 @@ pkg_postinst() {
 	einfo "disable gnome support"
 	echo
 }
-
