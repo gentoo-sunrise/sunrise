@@ -15,5 +15,3 @@ IUSE=""
 
 RDEPEND="dev-lang/perl"
 DEPEND="${RDEPEND}"
-
-
