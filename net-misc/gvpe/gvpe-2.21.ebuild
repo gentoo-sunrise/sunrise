@@ -16,7 +16,6 @@ IUSE="nls tcp +compression dns icmp http-proxy
 	cipher-aes-128 cipher-aes-192 +cipher-aes-256 cipher-blowfish
 	digset-sha512 digset-sha256 digset-sha1 +digset-ripemd160 digset-md5 digset-md4-insecure"
 
-
 DEPEND="dev-libs/libev
 	>=dev-libs/openssl-0.9.7c
 	nls? ( sys-devel/gettext )
