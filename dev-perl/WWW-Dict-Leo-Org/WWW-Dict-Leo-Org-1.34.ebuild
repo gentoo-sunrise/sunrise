@@ -15,4 +15,3 @@ IUSE=""
 RDEPEND="dev-lang/perl
 	dev-perl/HTML-TableParser"
 DEPEND="${RDEPEND}"
-
