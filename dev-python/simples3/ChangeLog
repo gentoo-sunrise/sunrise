@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -simples3-0.4.ebuild, +simples3-0.5.ebuild:
+  Version bump
+
   16 Jun 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -simples3-0.3-r2.ebuild, +simples3-0.4.ebuild:
   Version bump: simples3 0.4
