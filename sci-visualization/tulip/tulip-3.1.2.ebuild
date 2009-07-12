@@ -39,7 +39,7 @@ src_compile() {
 		$(use_enable stats stat-gui) \
 		"--with-qt-includes=/usr/include/qt4" \
 		"--with-qt-libraries=/usr/$(get_libdir)/qt4" \
-		"MOC=/usr/bin/moc" \
+		"MOC=/usr/bin/moc"
 	emake || die "make failed"
 }
 
@@ -48,4 +48,3 @@ src_install() {
 	rm -r "${D}/usr/share/tulip"
 	dodoc TODO README AUTHORS ChangeLog || die "dodoc failed"
 }
-
