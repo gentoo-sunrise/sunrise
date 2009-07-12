@@ -42,7 +42,6 @@ src_unpack() {
 	use psyco || epatch "${FILESDIR}/psyco-${PV}"-automagic.patch
 }
 
-
 src_install() {
 	distutils_src_install
 
