@@ -37,7 +37,7 @@ src_configure() {
 		$(use rfxm || echo "-norfxm")		\
 		$(use rfxs || echo "-norfxs")		\
 		|| die "configure failed"
-	sed -i -r -e "s/CC\s*=.*/CC = $(tc-getCC)/" "${S}"/Makefile \
+	sed -i -r -e "s/CC\s*=.*/CC = $(tc-getCC)/" \
 	-e "s/CFLAGS\s*=.*/CFLAGS = ${CFLAGS} \$(DFLAGS)/" \
 	-e 's%^(DFLAGS.+)-DSYSBASEDIR=\\"[^\]+\\"%\1%' \
 	-e 's%^(DFLAGS\s*=\s*)%\1-DSYSBASEDIR=\\"/var/lib/heyu\\" %' \
