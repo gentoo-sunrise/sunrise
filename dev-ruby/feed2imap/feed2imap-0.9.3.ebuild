@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,17 +15,12 @@ IUSE=""
 
 DEPEND="dev-ruby/ruby-feedparser
 		dev-ruby/rubymail"
-
 RDEPEND="${DEPEND}"
-
 USE_RUBY="ruby18 ruby19"
 
 src_install() {
 	${RUBY} setup.rb install --prefix="${D}" "$@" \
 		${RUBY_ECONF} || die "setup.rb install failed"
-
 	cd "${S}"
-	dodoc ChangeLog README
+	dodoc ChangeLog README || die
 }
-
-
