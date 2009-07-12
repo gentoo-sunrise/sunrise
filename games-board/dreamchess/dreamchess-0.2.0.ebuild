@@ -49,4 +49,3 @@ src_install() {
 	make_desktop_entry ${PN} "DreamChess" ${PN}.png
 	prepgamesdirs
 }
-
