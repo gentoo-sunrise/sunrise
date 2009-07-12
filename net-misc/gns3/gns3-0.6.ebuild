@@ -20,10 +20,8 @@ IUSE=""
 DEPEND="x11-libs/qt-gui:4
 	x11-libs/qt-svg:4
 	>=dev-python/PyQt4-4.1"
-
 RDEPEND="${DEPEND}
 	>=app-emulation/dynamips-0.2.8_rc2"
-
 S=${WORKDIR}/${MY_P}
 
 src_unpack() {
@@ -39,4 +37,3 @@ src_install() {
 	insinto /usr/libexec/${PN}
 	doins "${S}/pemu/pemuwrapper.py" || die "Failed to install pemuwrapper.py"
 }
-
