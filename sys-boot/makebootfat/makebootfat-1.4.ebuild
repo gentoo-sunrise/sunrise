@@ -14,7 +14,6 @@ IUSE=""
 RDEPEND="sys-boot/syslinux"
 DEPEND="${RDEPEND}"
 
-
 src_install() {
 	emake DESTDIR="${D}" install || \
 		die "installation failed"
@@ -27,4 +26,3 @@ src_install() {
 	dohtml doc/{authors,history,makebootfat,readme}.html \
 		|| die "no html"
 }
-
