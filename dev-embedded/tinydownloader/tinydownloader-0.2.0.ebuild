@@ -18,4 +18,3 @@ src_install() {
 	dodoc AUTHORS README TODO debian/changelog || die
 	doman tinydownloader.1 || die
 }
-
