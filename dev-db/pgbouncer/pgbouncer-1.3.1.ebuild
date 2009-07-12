@@ -6,7 +6,7 @@ inherit autotools eutils
 
 DESCRIPTION="Lightweight connection pooler for PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/projects/pgbouncer/"
-SRC_URI="http://pgfoundry.org/frs/download.php/2092/${P}.tgz"
+SRC_URI="http://pgfoundry.org/frs/download.php/2284/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -32,8 +32,8 @@ src_compile() {
 	epatch "${FILESDIR}/modify-config-paths.patch"
 
 	econf \
-	$(use_enable debug) \
-	$(use_enable debug cassert)
+		$(use_enable debug) \
+		$(use_enable debug cassert)
 
 	emake || die "emake failed"
 }
@@ -42,8 +42,8 @@ src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 
 	insinto /etc
-	newins "${S}/etc/pgbouncer.ini" pgbouncer.conf || die "Install failed"
-	newinitd "${FILESDIR}/pgbouncer.initd" "${PN}" || die "Install failed"
+	newins "${S}"/etc/pgbouncer.ini pgbouncer.conf || die "Install failed"
+	newinitd "${FILESDIR}"/pgbouncer.initd "${PN}" || die "Install failed"
 
 	dodoc README NEWS AUTHORS || die "Install failed"
 	dodoc doc/*.txt || die "Install failed"
