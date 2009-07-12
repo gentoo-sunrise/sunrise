@@ -21,7 +21,6 @@ RDEPEND="dev-libs/openssl
 DEPEND="${RDEPEND}
 	python? ( dev-lang/swig )"
 
-
 pkg_setup() {
 	enewgroup unbound
 	enewuser unbound -1 -1 -1 unbound
@@ -76,7 +75,6 @@ pkg_postinst() {
 		ewarn "emerge --config =${PF}"
 	fi
 }
-
 
 pkg_config() {
 	local key_dir="${ROOT}etc/unbound"
