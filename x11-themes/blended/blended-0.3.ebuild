@@ -7,7 +7,6 @@ EAPI="1"
 inherit kde
 ARTS_REQUIRED="never"
 
-
 MY_P="Blended-${PV}"
 DESCRIPTION="Blended KDE Native Window Decoration style"
 HOMEPAGE="http://www.kde-look.org/content/show.php?content=32613"
@@ -18,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 DEPEND="|| ( kde-base/kwin:3.5 kde-base/kdebase:3.5 )"
 RDEPEND="${DEPEND}"
