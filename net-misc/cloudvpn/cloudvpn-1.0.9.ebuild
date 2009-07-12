@@ -24,4 +24,3 @@ src_install () {
 	dobin cloudvpn extras/initscripts/cloudctl || die
 	doman extras/man/cloudvpn.1 || die
 }
-
