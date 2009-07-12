@@ -66,7 +66,6 @@ pkg_setup() {
 		fi
 	fi
 
-
 	# If a patch has to be applied
 	if [[ ${APPLY_KERNEL_PATCH} == "y" ]] ; then
 		ewarn "Patching your kernel..."
