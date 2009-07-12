@@ -14,7 +14,6 @@ IUSE="debug profile"
 DEPEND=">=dev-libs/cyrus-sasl-2"
 RDEPEND="${DEPEND}"
 
-
 src_compile() {
 	econf \
 		$(use_enable debug) \
