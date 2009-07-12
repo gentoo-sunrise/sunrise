@@ -22,4 +22,3 @@ src_install() {
 	emake DESTDIR="${D}/usr" install || die "install failed"
 	dodoc CHANGELOG README || die "dodoc failed"
 }
-
