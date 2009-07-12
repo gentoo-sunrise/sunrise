@@ -38,4 +38,3 @@ src_install() {
 		dohtml NetwatchKeyCommands.html || die "dohtml failed"
 	fi
 }
-
