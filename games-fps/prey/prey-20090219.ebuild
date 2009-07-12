@@ -37,7 +37,6 @@ QA_TEXTRELS="${dir:1}/pb/pbcl.so
 	${dir:1}/pb/pbag.so
 	${dir:1}/pb/pbsv.so"
 
-
 pkg_setup() {
 	games_pkg_setup
 
@@ -45,14 +44,11 @@ pkg_setup() {
 	has_multilib_profile && ABI="x86"
 }
 
-
 src_unpack() {
 	unzip "${DISTDIR}/prey-installer-${UPSTREAM_PV}.bin"
 }
 
-
 src_install() {
-
 	# installation of files that goes to ${dir}
 	insinto "${dir}"
 	exeinto "${dir}"
@@ -99,7 +95,6 @@ src_install() {
 
 	prepgamesdirs
 }
-
 
 pkg_postinst() {
 	games_pkg_postinst
