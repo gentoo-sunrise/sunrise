@@ -1,0 +1,8 @@
+# ChangeLog for sci-geosciences/aweather
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Jul 2009; Andy Spencer <andy753421@gmail.com> +aweather-0.1.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 277479 submitted by Andy Spencer.
+
