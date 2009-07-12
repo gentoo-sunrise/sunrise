@@ -1,0 +1,8 @@
+# ChangeLog for dev-db/pgmemcache
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  +pgmemcache-2.0_rc1.ebuild, +metadata.xml:
+  Ebuild for bug 277524. Many thanks to Tommy[D]
+
