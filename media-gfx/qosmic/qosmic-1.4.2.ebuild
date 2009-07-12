@@ -36,4 +36,3 @@ src_install() {
 	dodoc README README-LUA || die "dodoc failed"
 	make_desktop_entry qosmic "Qosmic" qosmicicon.xpm "KDE;Qt;Graphics"
 }
-
