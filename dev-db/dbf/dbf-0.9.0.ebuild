@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ MY_PN="${PN}-core"
 MY_P="${MY_PN}-${PV}"
 DESCRIPTION="Command line tool to convert dBASE (III, IV, 5.0) files to CSV or SQL"
 HOMEPAGE="http://developer.berlios.de/projects/dbf/"
-SRC_URI="mirror://berlios/dbf/${MY_P}.src.zip"
+SRC_URI="mirror://berlios/${PN}/${MY_P}.src.zip"
 
 LICENSE="LGPL-2"
 SLOT="0"
@@ -19,7 +19,6 @@ DEPEND="${RDEPEND}
 	dev-perl/XML-Parser
 	doc? ( app-text/docbook-sgml-utils )
 	dev-util/pkgconfig"
-
 
 S=${WORKDIR}/${MY_PN}
 
