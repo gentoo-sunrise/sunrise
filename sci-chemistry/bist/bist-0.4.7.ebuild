@@ -28,7 +28,6 @@ src_unpack() {
 	use amd64 && epatch "${FILESDIR}/wrap_bracket_dialog-amd64.patch"
 }
 
-
 src_install() {
 	dobin bist || die "bist install failed"
 	#install bist plug-ins
