@@ -15,15 +15,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug test"
 
-
-
 RDEPEND="x11-libs/qt-gui:4[qt3support]
 	x11-libs/qt-sql:4[sqlite]
 	dev-util/subversion"
 DEPEND="${RDEPEND}
 	test? ( x11-libs/qt-test:4 )"
 
-S="${WORKDIR}/${P}/src"
+S=${WORKDIR}/${P}/src
 
 src_install() {
 	cmake-utils_src_install
