@@ -49,6 +49,7 @@ games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
 games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
 games-fps/bloodfrontier:server - Installs the Server Binary
 games-fps/chocolate-doom:server - Enable installation of server
+games-fps/tremfusion:tty - Enables text based game client
 games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2:cdaudio - Enable cd audio playback support
 games-fps/uhexen2:demo - Install the demo files (hexen2-demodata) and configure for use
