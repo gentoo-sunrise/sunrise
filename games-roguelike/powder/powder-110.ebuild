@@ -35,4 +35,3 @@ src_install() {
 	dodoc README.TXT CREDITS.TXT || die "dodoc failed"
 	prepgamesdirs
 }
-
