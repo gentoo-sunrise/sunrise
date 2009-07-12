@@ -34,7 +34,5 @@ src_install() {
 	insinto /usr/share/color/icc
 	doins -r sRGB || die "doins failed installing sRGB icc profiles"
 	cd "${WORKDIR}/Adobe ICC Profiles (end-user)"
-	doins -r CMYK || die "doins failed installing Adobe CMYK icc profiles"
-	doins -r RGB || die "doins failed installing Adobe RGB icc profiles"
+	doins -r CMYK RGB || die "doins failed installing Adobe CMYK and RGB icc profiles"
 }
-
