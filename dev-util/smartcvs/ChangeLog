@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  smartcvs-7.0.8.ebuild:
+  Whitespace, add die statement
+
   05 Jun 2009; Nikos Nikolaou <nikos@nikolaou.name> -smartcvs-7.0.7.ebuild,
   +smartcvs-7.0.8.ebuild:
   Version bump and few changes to include java-pkg-2, review by Tommy[D]

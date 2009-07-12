@@ -13,7 +13,6 @@ SRC_URI="${MY_P}.tar.gz"
 SLOT="0"
 LICENSE="smartcvs"
 KEYWORDS="~amd64 ~x86"
-
 IUSE=""
 
 RESTRICT="fetch"
@@ -25,18 +24,14 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 src_install() {
 	local rdir="/opt/${PN}"
 	insinto ${rdir}
-	doins -r *
-
+	doins -r * || die
 	java-pkg_regjar ${rdir}/lib/${PN}.jar
-
 	java-pkg_dolauncher ${PN} "--java-args -Xmx256 --jar ${PN}.jar"
-
 	for X in 32 48 64 128
 	do
 		insinto /usr/share/icons/hicolor/${X}x${X}/apps
 		newins "${S}/bin/${PN}-${X}x${X}.png" "${PN}.png" || die "cannot install needed files"
 	done
-
 	make_desktop_entry ${PN}.sh "SmartCVS" ${PN}.png "Development;RevisionControl"
 }
 
@@ -45,5 +40,3 @@ pkg_nofetch() {
 	einfo "http://www.syntevo.com/smartcvs/download.html?file=smartcvs%2Fsmartcvs-generic-${MY_PV}.tar.gz"
 	einfo "and move/copy to ${DISTDIR}"
 }
-
-
