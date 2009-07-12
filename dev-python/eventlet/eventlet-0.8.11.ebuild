@@ -11,11 +11,11 @@ SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples ssl"
+IUSE="examples"
 
 RDEPEND="dev-lang/python
 	dev-python/greenlet
-	ssl? ( dev-python/pyopenssl )"
+	dev-python/pyopenssl"
 DEPEND="${RDEPEND}
 	dev-python/setuptools"
 

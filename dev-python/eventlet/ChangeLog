@@ -3,6 +3,11 @@
 # $Header: $
 
   12 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  eventlet-0.8.11.ebuild:
+  Remove ssl use flag since PyOpenSSL should be a required dendency. Thanks to
+  Tommy[D]
+
+  12 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +eventlet-0.8.11.ebuild, +metadata.xml:
   Ebuild for bug 276315. Thanks to ssuominen and Tommy[D]
 
