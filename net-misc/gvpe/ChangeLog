@@ -1,6 +1,9 @@
 # ChangeLog for net-misc/gvpe
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> gvpe-2.21.ebuild:
+  Whitespace, drop unneeded dodir, use PN in SRC_URI
 
   25 Sep 2008; Plamen Kosseff (blackdestiny) <p.kosseff{AT}gmail.org>
   -gvpe-2.2.ebuild, -files/configure.gvpe-2.2.patch, +gvpe-2.21.ebuild,

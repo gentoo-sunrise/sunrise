@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 EAPI="1"
@@ -7,12 +7,11 @@ inherit eutils linux-info
 
 DESCRIPTION="GNU Virtual Private Ethernet"
 HOMEPAGE="http://savannah.gnu.org/projects/gvpe"
-SRC_URI="http://ftp.gnu.org/gnu/gvpe/${P}.tar.gz"
+SRC_URI="http://ftp.gnu.org/gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 IUSE="nls tcp +compression dns icmp http-proxy
 	cipher-aes-128 cipher-aes-192 +cipher-aes-256 cipher-blowfish
 	digset-sha512 digset-sha256 digset-sha1 +digset-ripemd160 digset-md5 digset-md4-insecure"
@@ -22,7 +21,6 @@ DEPEND="dev-libs/libev
 	>=dev-libs/openssl-0.9.7c
 	nls? ( sys-devel/gettext )
 	virtual/linux-sources"
-
 RDEPEND=">=dev-libs/openssl-0.9.7c"
 
 src_compile() {
@@ -59,8 +57,6 @@ src_compile() {
 	    die;
 	fi
 
-
-
 	#add proper support for --disable in the configure scrip
 	epatch "${FILESDIR}/configure.${P}.patch"
 
@@ -80,7 +76,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodir /etc/gvpe
 	dodoc AUTHORS NEWS README TODO || die
 	newinitd "${FILESDIR}/gvpe.rc" gvpe || die
 	newconfd "${FILESDIR}/gvpe.confd" gvpe || die
