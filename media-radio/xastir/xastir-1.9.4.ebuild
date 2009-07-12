@@ -28,7 +28,6 @@ DEPEND="x11-libs/openmotif
 	festival? ( app-accessibility/festival )"
 RDEPEND="${DEPEND}"
 
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
