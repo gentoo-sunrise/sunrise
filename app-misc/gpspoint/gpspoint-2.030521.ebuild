@@ -23,6 +23,11 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-gcc43.patch"
 }
 
+src_compile() {
+	econf
+	emake -j1 || die "emake failed"
+}
+
 src_install() {
 	make DESTDIR="${D}" install || die "installation failed"
 	dodoc AUTHORS NEWS README TODO
