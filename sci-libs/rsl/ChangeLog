@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jul 2009; Markos Chandras <hwoarang@gentoo.org> rsl-1.40.ebuild:
+  Eapi2fy it
+
   12 Jul 2009; Andy Spencer <andy753421@gmail.com> +rsl-1.40.ebuild,
   +files/rsl-automake.patch, +files/rsl-gzip.patch,
   +files/rsl-type_str.patch, +files/rsl-valgrind.patch,

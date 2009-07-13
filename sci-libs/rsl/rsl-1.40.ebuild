@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit eutils autotools
 
 DESCRIPTION="Radar Software Library"
@@ -19,9 +21,7 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/rsl-v${PV}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}/${PN}-"{warnings,automake,type_str,valgrind}".patch"
 	eautoreconf
 }
