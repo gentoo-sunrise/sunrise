@@ -1,0 +1,31 @@
+Index: pdfedit-0.4.1/src/kernel/cpdf.cc
+===================================================================
+--- pdfedit-0.4.1.orig/src/kernel/cpdf.cc	2008-11-19 23:15:28.000000000 +0100
++++ pdfedit-0.4.1/src/kernel/cpdf.cc	2008-11-19 23:16:59.000000000 +0100
+@@ -2347,7 +2347,7 @@ using namespace std;
+ 		instance->file = file;
+ 		kernelPrintDbg(debug::DBG_INFO, "Instance created successfully openMode=" << openMode);
+ 		return instance;
+-	}catch(exception &e)
++	}catch(std::exception &e)
+ 	{
+ 		kernelPrintDbg(DBG_CRIT, "Pdf instance creation failed. cause="<<e.what());
+ 		string what=string("CPdf open failed. reason=")+e.what();
+@@ -2631,7 +2631,7 @@ using namespace utils;
+ 		try
+ 		{
+ 			minPos = getNodePosition(*this, newValue, &nodeCountCache);
+-		}catch(exception &e)
++		}catch(std::exception &e)
+ 		{
+ 			// position can't be determined
+ 			// no special handling is needed, minPos keeps its value
+@@ -2690,7 +2690,7 @@ using namespace utils;
+ 				kernelPrintDbg(DBG_WARN, "page with original position="<<i->first<<" is ambiguous. Invalidating.");
+ 				// page position is ambiguous and so it has to be invalidate
+ 				i->second->invalidate();
+-			}catch(exception & e)
++			}catch(std::exception & e)
+ 			{
+ 				kernelPrintDbg(DBG_CRIT, "Unexpected error. cause="<<e.what());
+ 				assert(!"Possibly bug.");

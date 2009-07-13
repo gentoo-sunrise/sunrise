@@ -1,6 +1,10 @@
 # ChangeLog for app-text/pdfedit
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jul 2009; Markos Chandras <hwoarang@gentoo.org> pdfedit-0.4.1.ebuild,
+  +files/boost_compile.patch:
+  Eapi2fy it. Apply patch to fix boost compilation problems ( bug 277723 )
 
   17 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   pdfedit-0.4.1.ebuild:

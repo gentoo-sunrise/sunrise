@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit qt3
 
@@ -19,9 +21,12 @@ DEPEND="${RDEPEND}
 	dev-libs/boost
 	doc? ( app-doc/doxygen )"
 
-src_compile(){
+src_prepare() {
+	epatch "${FILESDIR}/boost_compile.patch"
+}
+
+src_configure() {
 	econf $(use_enable doc doxygen-doc) $(use_enable doc advanced-doc)
-	emake || die "emake failed"
 }
 
 src_install() {
