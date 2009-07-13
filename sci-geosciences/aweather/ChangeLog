@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jul 2009; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Adding maintainer-wanted as herd
+
   12 Jul 2009; Andy Spencer <andy753421@gmail.com> +aweather-0.1.ebuild,
   +metadata.xml:
   New Ebuild for bug 277479 submitted by Andy Spencer.
