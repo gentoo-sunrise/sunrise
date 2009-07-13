@@ -32,6 +32,7 @@ src_install() {
 	dobin "${CMAKE_BUILD_DIR}"/src/${PN} || die
 	doman ${PN}.1 || die
 	domenu ${PN}.desktop || die
+	doicon ${PN}.png
 	dodoc ChangeLog TODO || die
 }
 
