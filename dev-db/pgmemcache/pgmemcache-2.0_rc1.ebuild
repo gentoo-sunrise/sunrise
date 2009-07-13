@@ -23,5 +23,5 @@ S=${WORKDIR}/${PN}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	dodoc README.pgmemcache NEWS || die "install failed"
+	dodoc README.pgmemcache NEWS || die "install documentation failed"
 }
