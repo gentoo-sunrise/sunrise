@@ -1,0 +1,11 @@
+# ChangeLog for sys-apps/aeuio
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Jul 2009; Michael J Evans (MJEvans) <mjevans1983@gmail.com>
+  +aeuio-0.0.3.ebuild, +metadata.xml:
+  First ebuild for bug 277329 about aeuio, a portable, extendable,
+  initrd/initramfs builder supporting mdadm, lvm, and end user extensions for
+  the root filesystem. Thank you Thomas Sachau, Markos Chandras and Romain
+  Perier.
+
