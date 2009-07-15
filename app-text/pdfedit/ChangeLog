@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jul 2009; Peter Volkov <pva@gentoo.org> -pdfedit-0.4.1.ebuild,
+  +pdfedit-0.4.2.ebuild, -files/boost_compile.patch:
+  Version bump. Fixed build issue reported in bug #277723 by Andrew Savchenko.
+  Some cleanups.
+
   13 Jul 2009; Markos Chandras <hwoarang@gentoo.org> pdfedit-0.4.1.ebuild,
   +files/boost_compile.patch:
   Eapi2fy it. Apply patch to fix boost compilation problems ( bug 277723 )
