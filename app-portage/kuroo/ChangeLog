@@ -1,0 +1,146 @@
+# ChangeLog for app-portage/kuroo
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Jul 2009; Andrew Schenck (galiven) <lane_andrew@hotmail.com>
+  +kuroo-0.82.0.ebuild, +metadata.xml:
+  New version that works with current stable and unstable Portages (bug #277235)
+
+  22 May 2008; Ingmar Vanhassel <ingmar@gentoo.org> kuroo-0.80.2-r1.ebuild,
+  kuroo-0.81_rc1.ebuild:
+  Instruct users to add FEATURES=\"metadata-transfer\", since
+  >=sys-apps/portage-2.1.5 doesnt have this on by default anymore and Kuroo
+  doesnt function properly without it. Thanks to Billy DeVincentis in bug
+  220175.
+
+  26 Apr 2008; nixnut <nixnut@gentoo.org> kuroo-0.81_rc1.ebuild:
+  Stable on ppc wrt bug 218768
+
+  26 Apr 2008; Dawid WÄgliÅski <cla@gentoo.org> kuroo-0.81_rc1.ebuild:
+  Stable on x86 (bug #218768)
+
+  21 Apr 2008; Ferris McCormick <fmccor@gentoo.org> kuroo-0.81_rc1.ebuild:
+  Sparc stable --- Bug #218768 --- appears to work fine.
+
+  21 Apr 2008; Wulf C. Krueger <philantrop@gentoo.org>
+  +files/kuroo-0.81_rc1-gcc43.patch, kuroo-0.81_rc1.ebuild:
+  Added a patch for gcc 4.3 compatibility as kindly provided by Nikos
+  Chantziaras on bug 217877. Marked stable on amd64.
+
+  19 Feb 2008; Ingmar Vanhassel <ingmar@gentoo.org> kuroo-0.80.2-r1.ebuild,
+  kuroo-0.81_rc1.ebuild:
+  Update kde-base/* dependencies so that KDE 4 doesn't satisfy it. bug 206528.
+
+  19 Feb 2008; Ingmar Vanhassel <ingmar@gentoo.org> -kuroo-0.80.31.ebuild:
+  Old.
+
+*kuroo-0.81_rc1 (31 Aug 2007)
+
+  31 Aug 2007; Wulf C. Krueger <philantrop@gentoo.org> -kuroo-0.80.3.ebuild,
+  +kuroo-0.81_rc1.ebuild:
+  Removed the obsolete 0.80.3.
+  Added 0.81_rc1 as per bug 190837. It has several bugfixes and some minor new
+  features.
+  Thanks to David Carlos Manuelda (new upstream developer) for providing the
+  ebuild!
+
+*kuroo-0.80.31 (20 Aug 2007)
+
+  20 Aug 2007; Wulf C. Krueger <philantrop@gentoo.org>
+  +files/kuroo-desktop-file.patch, kuroo-0.80.2-r1.ebuild,
+  kuroo-0.80.3.ebuild, +kuroo-0.80.31.ebuild:
+  Added kuroo-0.80.31 which includes further fixes for bug 188267. 
+  Corrected the desktop file for all versions to be standards-compliant. 
+  Upstream changes: 
+  - Parsing arch correctly from emerge --info.
+
+  14 Aug 2007; Tobias Scherbaum <dertobi123@gentoo.org>
+  kuroo-0.80.2-r1.ebuild:
+  ppc stable, bug #188378
+
+  10 Aug 2007; Gustavo Zacarias <gustavoz@gentoo.org>
+  kuroo-0.80.2-r1.ebuild:
+  Stable on sparc wrt #188378
+
+  10 Aug 2007; Wulf C. Krueger <philantrop@gentoo.org>
+  kuroo-0.80.2-r1.ebuild:
+  Marked stable on amd64 as per bug 188378.
+
+*kuroo-0.80.3 (10 Aug 2007)
+
+  10 Aug 2007; Wulf C. Krueger <philantrop@gentoo.org> -kuroo-0.71.0.ebuild,
+  -kuroo-0.80.1.ebuild, -kuroo-0.80.2.ebuild, +kuroo-0.80.3.ebuild:
+  Added kuroo-0.80.3 which includes the fixes for bug 188267. Upstream
+  changes: - Fixed crash when loading queue packages and changed emerge syntax
+  color=n . - Disabled size cache and scanning because of changes in portage.
+  Removed obsolete ebuilds.
+
+  19 Feb 2007; RaÃºl Porcel <armin76@gentoo.org> kuroo-0.80.2-r1.ebuild:
+  x86 stable wrt bug 144084
+
+*kuroo-0.80.2-r1 (16 Aug 2006)
+
+  16 Aug 2006; Carsten Lohrke <carlo@gentoo.org> +kuroo-0.80.2-r1.ebuild:
+  Add kdesu dependency, bug #135196.
+
+*kuroo-0.80.2 (13 May 2006)
+
+  13 May 2006; Carsten Lohrke <carlo@gentoo.org> +kuroo-0.80.2.ebuild:
+  Version bump.
+
+*kuroo-0.80.1 (11 Apr 2006)
+
+  11 Apr 2006; Marcus D. Hanwell <cryos@gentoo.org> -kuroo-0.80.0.ebuild,
+  +kuroo-0.80.1.ebuild:
+  Version bump, thanks to Karim Ryde <karim@bredband.net>.
+
+  29 Mar 2006; Marcus D. Hanwell <cryos@gentoo.org> -kuroo-0.70.1.ebuild:
+  Clean out old version.
+
+*kuroo-0.80.0 (29 Mar 2006)
+
+  29 Mar 2006; Marcus D. Hanwell <cryos@gentoo.org> +kuroo-0.80.0.ebuild:
+  Version bump, closes bug 122007.
+
+*kuroo-0.71.0 (23 Nov 2005)
+
+  23 Nov 2005; Marcus D. Hanwell <cryos@gentoo.org>
+  -kuroo-0.71.0_rc2.ebuild, +kuroo-0.71.0.ebuild:
+  Version bump.
+
+*kuroo-0.71.0_rc2 (13 Nov 2005)
+
+  13 Nov 2005; Marcus D. Hanwell <cryos@gentoo.org>
+  -kuroo-0.71.0_beta1.ebuild, +kuroo-0.71.0_rc2.ebuild:
+  Version bump.
+
+*kuroo-0.71.0_beta1 (31 Oct 2005)
+
+  31 Oct 2005; Marcus D. Hanwell <cryos@gentoo.org> -kuroo-0.60.0.ebuild,
+  +kuroo-0.71.0_beta1.ebuild:
+  Added new beta version (p.masked), and removed obsolete version.
+
+*kuroo-0.70.1 (18 Sep 2005)
+
+  18 Sep 2005; Caleb Tennis <caleb@gentoo.org> +kuroo-0.70.1.ebuild:
+  Version bump from bug #105413
+
+  17 Aug 2005; Gregorio Guidi <greg_g@gentoo.org> kuroo-0.60.0.ebuild:
+  Add dependency on kdiff3 (#102809).
+
+*kuroo-0.60.0 (10 May 2005)
+
+  10 May 2005; Marcus D. Hanwell <cryos@gentoo.org> -kuroo-0.54.0.ebuild,
+  +kuroo-0.60.0.ebuild:
+  Version bump, closes bug 91404.
+
+*kuroo-0.54.0 (15 Mar 2005)
+
+  15 Mar 2005; Gregorio Guidi <greg_g@gentoo.org> -kuroo-0.53.0.ebuild,
+  +kuroo-0.54.0.ebuild:
+  New version (#82017).
+
+*kuroo-0.53.0 (28 Jan 2005)
+
+  28 Jan 2005; Gregorio Guidi <greg_g@gentoo.org> :
+  Moving from app-portage/guitoo to app-portage/kuroo, and version bump.
