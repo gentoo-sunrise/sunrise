@@ -35,3 +35,9 @@ pkg_setup() {
 		die "This version of ${PN} needs at least kernel version 2.6.30 selected"
 	fi
 }
+
+pkg_postinst() {
+	linux-mod_pkg_postinst
+	einfo "The module now starts with kernel mode off"
+	einfo "Read here http://piie.net/files/acerhdf_README.txt how to switch it on"
+}
