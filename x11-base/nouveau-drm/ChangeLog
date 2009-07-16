@@ -3,6 +3,10 @@
 # $Header: $
 
   16 Jul 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> nouveau-drm-20090715.ebuild:
+  add I2C_ALGOBIT to config check
+
+  16 Jul 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -nouveau-drm-20090514.ebuild,
   +nouveau-drm-20090715.ebuild:
   new snapshot
