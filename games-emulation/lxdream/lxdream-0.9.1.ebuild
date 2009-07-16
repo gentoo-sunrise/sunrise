@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/os-headers"
 
-src_compile() {
+src_configure() {
 	econf \
 		$(use_enable debug trace) \
 		$(use_enable debug watch) \
@@ -36,7 +36,6 @@ src_compile() {
 		$(use_with esd) \
 		$(use_with pulseaudio pulse) \
 		$(use_with sdl)
-	emake || die "make failed"
 }
 
 src_install() {

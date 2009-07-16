@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  lxdream-0.9.1.ebuild:
+  Move econf to src_configure
+
   15 Jul 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -lxdream-0.9.ebuild, +lxdream-0.9.1.ebuild:
   version bump, add profile and sdl USE flags
