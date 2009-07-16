@@ -3,6 +3,10 @@
 # $Header: $
 
   16 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  xml-security-c-1.5.0.ebuild, +files/CVE-2009-0217-fix.patch:
+  Security fix for CVE-2009-0217
+
+  16 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -xml-security-c-1.4.0.ebuild, +xml-security-c-1.5.0.ebuild:
   Version bump
 

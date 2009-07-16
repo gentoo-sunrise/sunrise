@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit autotools eutils
+
 DESCRIPTION="Apache C++ XML security libraries."
 HOMEPAGE="http://santuario.apache.org/"
 SRC_URI="http://xml.apache.org/security/dist/c-library/${P}.tar.gz"
@@ -16,6 +18,13 @@ RDEPEND="=dev-libs/xerces-c-2*
 	dev-libs/openssl"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/CVE-2009-0217-fix.patch
+	eautoreconf
+}
 
 src_compile () {
 	econf $(use_with xalan)
