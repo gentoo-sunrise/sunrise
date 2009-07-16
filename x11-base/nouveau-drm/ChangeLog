@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jul 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -nouveau-drm-20090514.ebuild,
+  +nouveau-drm-20090715.ebuild:
+  new snapshot
+
   11 Jun 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> +files/drm-fix-building-with-2.6.30.patch,
   nouveau-drm-20090514.ebuild:
