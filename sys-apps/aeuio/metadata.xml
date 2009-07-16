@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
-  <email>mjevans1983@gmail.com</email>
-</maintainer>
+<herd>maintainer-wanted</herd>
  <longdescription>A simple, customizable, /etc inspired initrd or initramfs creator that supports root on mdadm / lvm.</longdescription>
 </pkgmetadata>
