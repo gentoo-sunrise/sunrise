@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Jul 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  -acerhdf-0.5.16.ebuild, +acerhdf-0.5.16-r2.ebuild:
+  version bump
+
   16 Jul 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   -acerhdf-0.5.6.ebuild, -acerhdf-0.5.13-r1.ebuild, acerhdf-0.5.16.ebuild:
   Old version cleanup and warning about start mode added

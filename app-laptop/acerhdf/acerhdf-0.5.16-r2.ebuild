@@ -9,7 +9,7 @@ MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="A kernelmodule which monitors the temperature of the aspire one netbook"
 HOMEPAGE="http://piie.net/index.php?section=acerhdf"
-SRC_URI="http://piie.net/files/${MY_P}.tar.gz"
+SRC_URI="http://piie.net/files/${MY_P}-2.tar.gz"
 
 LICENSE="GPL-2"
 
