@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<longdescription lang="en">
+		YAGF is a graphical interface for the cuneiform text recognition program on the Linux platform. With YAGF you can scan images via XSane, perform images preprocessing and recognize texts using cuneiform from a single command centre.
+	</longdescription>
+</pkgmetadata>
+
