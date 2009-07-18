@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jul 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> nouveau-drm-20090715.ebuild:
+  warn if vesafb or uvesafb are detected
+
   16 Jul 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> nouveau-drm-20090715.ebuild:
   add I2C_ALGOBIT to config check
