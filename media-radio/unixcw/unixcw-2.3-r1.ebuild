@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,8 +20,9 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-destdir.patch
-	epatch "${FILESDIR}"/${P}-config.patch
+	epatch "${FILESDIR}"/${P}-destdir.patch \
+		"${FILESDIR}"/${P}-config.patch \
+		"${FILESDIR}"/${P}-parallel-make.patch
 	eautoreconf
 }
 

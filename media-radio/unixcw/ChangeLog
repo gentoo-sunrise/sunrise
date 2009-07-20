@@ -1,6 +1,10 @@
 # ChangeLog for media-radio/unixcw
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  unixcw-2.3-r1.ebuild, +files/unixcw-2.3-parallel-make.patch:
+  Fix parallel make issue
 
   14 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Add USE flag description to metadata.xml wrt GLEP 56
