@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit versionator
-
-MY_P=${PN}-$(replace_version_separator 3 '-')
+MY_P=${P/_/-}
 
 DESCRIPTION="Basic AX.25 (Amateur Radio) administrative tools and daemons"
 HOMEPAGE="http://www.linux-ax25.org/"
