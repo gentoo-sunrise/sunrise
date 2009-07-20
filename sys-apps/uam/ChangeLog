@@ -1,0 +1,8 @@
+# ChangeLog for sys-apps/uam
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Jul 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +uam-0.0.2_p1.ebuild, +metadata.xml:
+  New ebuild for uam (bug #278363).
+
