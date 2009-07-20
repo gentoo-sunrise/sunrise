@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jul 2009; Andy Spencer <andy753421@gmail.com +aweather-9999.ebuild:
+  Adding Subversion ebuild for AWeather
+
   16 Jul 2009; Andy Spencer <andy753421@gmail.com -aweather-0.1.ebuild,
   +aweather-0.1.1.ebuild:
   Version bump for AWeather - removes gvfs dependencies.
