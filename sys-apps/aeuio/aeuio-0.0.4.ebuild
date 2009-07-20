@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="0"
 inherit base
 
 DESCRIPTION="Make an initramfs/initrd with root on crypto, lvm, mdadm, etc."
@@ -14,7 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=""
 RDEPEND="sys-apps/busybox"
 
 pkg_postinst() {

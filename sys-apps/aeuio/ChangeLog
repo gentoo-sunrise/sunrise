@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Jul 2009; Michael J Evans (MJEvans) <mjevans1983@gmail.com>
+  aeuio-0.0.4.ebuild:
+  Per Thomas Sachau, remove EAPI="0" and empty DEPEND= lines.
+
+  20 Jul 2009; Michael J Evans (MJEvans) <mjevans1983@gmail.com>
   -aeuio-0.0.3.ebuild, +aeuio-0.0.4.ebuild, metadata.xml:
   Version bump for aeuio: a portable, extendable, initrd/initramfs builder
   supporting mdadm, lvm, cryptsetup, and end user extensions for the root
