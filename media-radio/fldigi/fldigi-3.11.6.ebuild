@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc hamlib nls portaudio pulseaudio sndfile xmlrpc"
 
-RDEPEND=">=x11-libs/fltk-1.1.7
+RDEPEND="x11-libs/fltk:1.1
 	dev-libs/libxml2
 	media-libs/libsamplerate
 	media-libs/jpeg
