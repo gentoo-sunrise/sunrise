@@ -15,7 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="scanner"
 
-DEPEND="x11-libs/qt-gui:4"
+DEPEND="x11-libs/qt-gui:4
+		app-text/aspell"
+
 RDEPEND="${DEPEND}
 	app-text/cuneiform
 	scanner? ( media-gfx/xsane )"
