@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  unixcw-2.3-r1.ebuild, +files/unixcw-2.3--as-needed.patch,
+  +files/unixcw-2.3-ldflags.patch:
+  Fix ignored LDFLAGS and --as-needed problems
+
   20 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   unixcw-2.3-r1.ebuild, +files/unixcw-2.3-parallel-make.patch:
   Fix parallel make issue

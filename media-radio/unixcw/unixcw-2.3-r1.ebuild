@@ -22,7 +22,9 @@ src_unpack() {
 
 	epatch "${FILESDIR}"/${P}-destdir.patch \
 		"${FILESDIR}"/${P}-config.patch \
-		"${FILESDIR}"/${P}-parallel-make.patch
+		"${FILESDIR}"/${P}-parallel-make.patch \
+		"${FILESDIR}"/${P}--as-needed.patch \
+		"${FILESDIR}"/${P}-ldflags.patch
 	eautoreconf
 }
 
