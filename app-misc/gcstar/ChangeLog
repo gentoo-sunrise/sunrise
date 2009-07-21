@@ -1,6 +1,10 @@
 # ChangeLog for media-video/gcstar
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Jul 2009; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  gcstar-1.4.3.ebuild:
+  Update dependency (Compress-Zlib got masked)
 
   19 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gcstar-1.4.3.ebuild:
