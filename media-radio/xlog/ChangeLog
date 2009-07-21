@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -xlog-2.0.2.ebuild, +xlog-2.0.3.ebuild:
+  Bugfix release. See Changelog for details
+
   14 Jun 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -xlog-2.0.1.ebuild, +xlog-2.0.2.ebuild, +files/xlog-2.0.2-qsl.patch:
   Minor version bump. Fix for wrong ADIF export of QSL data.

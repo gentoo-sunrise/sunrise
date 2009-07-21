@@ -6,7 +6,7 @@ inherit autotools eutils fdo-mime
 
 DESCRIPTION="An amateur radio logging program"
 HOMEPAGE="http://www.qsl.net/pg4i/linux/xlog.html"
-SRC_URI="http://www.qsl.net/pg4i/download/${P}.tar.gz"
+SRC_URI="http://pg4i.chronos.org.uk/download/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -27,8 +27,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-1.9-desktop-update.patch"
 	# and patch wrong ADIF export
 	epatch "${FILESDIR}/${PN}-2.0.1-adif.patch" \
-	    "${FILESDIR}/${P}-qsl.patch"
-	mkdir -p "${S}"/m4	# make autoconf happy...
+	    "${FILESDIR}/${PN}-2.0.2-qsl.patch"
 	eautoreconf
 }
 
