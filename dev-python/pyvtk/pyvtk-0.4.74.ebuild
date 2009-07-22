@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit distutils
 
@@ -17,3 +19,8 @@ SLOT="0"
 IUSE=""
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}.patch
+}

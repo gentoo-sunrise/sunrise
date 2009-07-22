@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pyvtk
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jul 2009; Oliver Borm (boroli) <oli.borm@web.de> pyvtk-0.4.74.ebuild,
+  +files/pyvtk-0.4.74.patch:
+  Patch to read also vtk-file versions 1 and 3
 
   25 Feb 2008; Oliver Borm (boroli) <oli.borm@web.de> +pyvtk-0.4.74.ebuild,
   +metadata.xml:
