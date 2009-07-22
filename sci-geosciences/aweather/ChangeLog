@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -aweather-9999.ebuild:
+  Drop live ebuild (no dev ok, interactive, no use of autotools eclass,...)
+
   20 Jul 2009; Andy Spencer <andy753421@gmail.com +aweather-9999.ebuild:
   Adding Subversion ebuild for AWeather
 
