@@ -6,8 +6,7 @@ EAPI="2"
 
 inherit distutils
 
-MY_PN="PyVTK"
-MY_P="${MY_PN}-${PV}"
+MY_P=PyVTK-${PV}
 
 DESCRIPTION="Tools for manipulating VTK files in Python"
 HOMEPAGE="http://cens.ioc.ee/projects/pyvtk/"
@@ -18,9 +17,8 @@ KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE=""
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	cd "${S}"
 	epatch "${FILESDIR}"/${P}.patch
 }
