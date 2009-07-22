@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  openoffice-infra-3.0.1.ebuild, openoffice-infra-3.1.0.ebuild:
+  Fix dependency (virtual/perl-IO-Compress-Base and virtual/perl-Compress-Zlib
+  got masked)
+
   29 Jun 2009; Yar Odin (yarodin) <yarodin@gmail.com>
   +files/3.0.1/vba-basic-parallel-build.diff, openoffice-infra-3.0.1.ebuild,
   openoffice-infra-3.1.0.ebuild, files/3.1.0/gentoo-infra-gentoo.diff,
