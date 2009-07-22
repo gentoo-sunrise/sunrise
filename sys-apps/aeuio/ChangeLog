@@ -13,13 +13,6 @@
   filesystem. Thank you Kenneth Prugh, sedzimir, ssuominen, and yngwin for
   ebuild review and suggestions.
 
-  20 Jul 2009; Michael J Evans (MJEvans) <mjevans1983@gmail.com>
-  -aeuio-0.0.3.ebuild, +aeuio-0.0.4.ebuild, metadata.xml:
-  Version bump for aeuio: a portable, extendable, initrd/initramfs builder
-  supporting mdadm, lvm, cryptsetup, and end user extensions for the root
-  filesystem. Thank you Kenneth Prugh, sedzimir, ssuominen, and yngwin for
-  ebuild review and suggestions.
-
   16 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Use maintainer-wanted as herd, drop maintainer (thats for main tree)
 
