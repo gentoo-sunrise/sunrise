@@ -177,4 +177,3 @@ pkg_config() {
 		fi
 	done
 }
-
