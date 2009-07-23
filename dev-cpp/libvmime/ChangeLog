@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jul 2009; Tiziano Müller <dev-zero@gentoo.org> libvmime-0.9.0.ebuild:
+  Use EAPI-2 and virtuals.
+
   24 Jun 2009; Markos Chandras <hwoarang@gentoo.org> libvmime-0.9.0.ebuild:
   removing whitespaces
 

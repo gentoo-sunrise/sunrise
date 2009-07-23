@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
+
 inherit eutils
 
 DESCRIPTION="Library for working with MIME messages and Internet messaging services like IMAP, POP or SMTP"
@@ -16,15 +17,12 @@ IUSE="debug doc examples +imap +maildir +pop sasl sendmail +smtp ssl"
 
 RDEPEND="virtual/libiconv
 	ssl? ( >=net-libs/gnutls-1.2.0 )
-	sasl? ( || ( net-libs/libgsasl net-misc/gsasl ) )
-	sendmail? ( || ( mail-mta/ssmtp mail-mta/sendmail ) )"
+	sasl? ( virtual/gsasl )
+	sendmail? ( virtual/mta )"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	sed -i \
 		-e "s|doc/\${PACKAGE_TARNAME}|doc/${PF}|" \
 		-e "s|doc/\$(GENERIC_LIBRARY_NAME)|doc/${PF}|" \
@@ -33,7 +31,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-gcc4_4.patch"
 }
 
-src_compile() {
+src_configure() {
 	econf $(use_enable debug) \
 		$(use_enable sasl) \
 		$(use_enable ssl tls) \
@@ -42,8 +40,10 @@ src_compile() {
 		$(use_enable imap messaging-proto-imap) \
 		$(use_enable maildir messaging-proto-maildir) \
 		$(use_enable sendmail messaging-proto-sendmail)
+}
 
-	emake || die "emake failed"
+src_compile() {
+	default
 	if use doc ; then
 		doxygen vmime.doxygen || die "doxygen failed"
 	fi
