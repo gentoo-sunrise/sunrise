@@ -4,7 +4,7 @@
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="4"
+K_GENPATCHES_VER="5"
 
 inherit eutils kernel-2
 detect_version
