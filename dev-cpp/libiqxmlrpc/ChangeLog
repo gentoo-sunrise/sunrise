@@ -1,6 +1,13 @@
 # ChangeLog for dev-cpp/libiqxmlrpc
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Jul 2009; Tiziano Müller <dev-zero@gentoo.org>
+  -libiqxmlrpc-0.8.7.ebuild,
+  -files/0.8.7-boost_test_framework_detection.patch,
+  +files/0.8.9-boost_test_framework_detection.patch,
+  +libiqxmlrpc-0.8.9.ebuild:
+  Version bump. Changed deps. Updated Homepage. EAPI-2 usage. Respect LDFLAGS.
 
   21 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
   libiqxmlrpc-0.8.7.ebuild:
