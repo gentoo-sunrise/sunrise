@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<use>
+		<flag name='extra'>Enable following plugins: autoresponder,
+			polchat, rivchat, rot13, xmsg.</flag>
+		<flag name='gadu'>Enable Gadu-Gadu protocol support (requires
+			<pkg>net-libs/libgadu</pkg>).</flag>
+		<flag name='gif'>GIF token support for Gadu-Gadu protocol.</flag>
+		<flag name='gnutls'>Enable SSL/TLS support through GnuTLS (for jabber
+			plugin). If 'ssl' is set too, GnuTLS will be used.</flag>
+		<flag name='gpg'>Enable jabber message encryption through
+			<pkg>app-crypt/gpgme</pkg>.</flag>
+		<flag name='inotify'>Enable inotify-based filesystem moniotoring support
+			for xmsg&amp;mail plugins.</flag>
+		<flag name='irc'>Enable IRC protocol support.</flag>
+		<flag name='jogger'>Enable support for Jogger.pl jabber bot message
+			parsing plugin.</flag>
+		<flag name='jpeg'>JPEG token support for Gadu-Gadu protocol.</flag>
+		<flag name='mail'>Enable mailbox/maildir monitoring plugin.</flag>
+		<flag name='minimal'>Don't build following plugins: ioctld, logs,
+			rc.</flag>
+		<flag name='oracle'>Support logging messages into Oracle database.</flag>
+		<flag name='pcap'>Enable Gadu-Gadu protocol sniffer plugin (requires
+			<pkg>net-libs/libpcap</pkg>).</flag>
+		<flag name='remote'>Enable remote UI plugin allowing to connect to
+			running EKG2 using <pkg>net-im/ekg2-remote</pkg>.</flag>
+		<flag name='sim'>Enable 'sim' plugin which provides asymmetric
+			encryption of messages used by few unofficial Gadu-Gadu clients
+			(requires <pkg>dev-libs/openssl</pkg>).</flag>
+		<flag name='sms'>Enable SMS sending plugin.</flag>
+		<flag name='sqlite3'>Support logging messages into SQLite3 database.
+			If 'sqlite' is set too, SQLite3 will be used.</flag>
+		<flag name='sqlite'>Support logging messages into SQLite2 database.
+			If 'sqlite3' is set too, it will be used instead.</flag>
+		<flag name='srv'>Use SRV-capable resolver through libresolv.</flag>
+		<flag name='ssl'>Enable SSL/TLS support through OpenSSL (for jabber
+			plugin). If 'gnutls' is set too, it will be used instead.</flag>
+		<flag name='static'>Link statically with plugins instead of installing
+			them as shared libraries (external libraries can still be linked
+			dynamically).</flag>
+		<flag name='web'>Enable httprc_xajax WebUI plugin.</flag>
+	</use>
+</pkgmetadata>
