@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Jul 2009; Pavel Sanda (ps) <ps at twin.jikos.cz> -pdfedit-0.4.2.ebuild,
+  +pdfedit-0.4.3.ebuild:
+  Version bump for pdfedit-0.4.3
+
   15 Jul 2009; Peter Volkov <pva@gentoo.org> -pdfedit-0.4.1.ebuild,
   +pdfedit-0.4.2.ebuild, -files/boost_compile.patch:
   Version bump. Fixed build issue reported in bug #277723 by Andrew Savchenko.
