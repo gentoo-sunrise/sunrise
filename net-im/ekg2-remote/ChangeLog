@@ -1,0 +1,8 @@
+# ChangeLog for net-im/ekg2-remote
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Jul 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +ekg2-remote-99999999.ebuild, +metadata.xml:
+  Live ebuild for EKG2 IM remote client (additional ebuild for bug #187330).
+

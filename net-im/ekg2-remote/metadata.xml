@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<use>
+		<flag name='gnutls'>Enable SSL/TLS support through GnuTLS. If 'ssl'
+			is set too, GnuTLS will be used.</flag>
+		<flag name='static'>Link statically with plugins instead of installing
+			them as shared libraries (external libraries can still be linked
+			dynamically).</flag>
+		<flag name='ssl'>Enable SSL/TLS support through OpenSSL. If 'gnutls'
+			is set too, it will be used instead.</flag>
+	</use>
+</pkgmetadata>
