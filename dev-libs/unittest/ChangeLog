@@ -1,0 +1,9 @@
+# ChangeLog for dev-libs/unittest
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  +unittest-0.50.62.ebuild, +files/makefile-remove-test.patch,
+  +metadata.xml:
+  New ebuild, bug 273257. Thanks to scarabeus
+
