@@ -1,0 +1,24 @@
+diff -dupr Mupen64Plus-1-5-src.old/glide64/Combine.cpp Mupen64Plus-1-5-src/glide64/Combine.cpp
+--- Mupen64Plus-1-5-src.old/glide64/Combine.cpp	2009-01-04 19:47:08.000000000 +0100
++++ Mupen64Plus-1-5-src/glide64/Combine.cpp	2009-07-27 16:54:40.737065400 +0200
+@@ -11873,7 +11873,7 @@ void InitCombine ()
+   LOG ("InitCombine() ");
+   memset(&cmb, 0, sizeof(cmb));
+   const char *extensions = grGetString (GR_EXTENSION);
+-  if (char * extstr = strstr(extensions, "COMBINE")) {
++  if (const char * extstr = strstr(extensions, "COMBINE")) {
+     if (!strncmp(extstr, "COMBINE", 7)) {
+       LOG ("extensions ");
+       cmb.grColorCombineExt = (GRCOLORCOMBINEEXT) grGetProcAddress("grColorCombineExt");
+diff -dupr Mupen64Plus-1-5-src.old/glide64/Main.cpp Mupen64Plus-1-5-src/glide64/Main.cpp
+--- Mupen64Plus-1-5-src.old/glide64/Main.cpp	2009-07-27 16:49:30.596192066 +0200
++++ Mupen64Plus-1-5-src/glide64/Main.cpp	2009-07-27 16:49:42.492067819 +0200
+@@ -784,7 +784,7 @@ BOOL InitGfx (BOOL evoodoo_using_window)
+   printf("bebefore2\n");
+   if (settings.fb_hires)
+   {
+-    if (char * extstr = strstr(extensions, "TEXTUREBUFFER")) 
++    if (const char * extstr = strstr(extensions, "TEXTUREBUFFER")) 
+     {
+       if (!strncmp(extstr, "TEXTUREBUFFER", 13)) 
+       {

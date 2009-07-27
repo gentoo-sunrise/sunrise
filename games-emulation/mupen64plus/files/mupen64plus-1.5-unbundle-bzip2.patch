@@ -1,0 +1,38 @@
+diff -dupr Mupen64Plus-1-5-src.old/Makefile Mupen64Plus-1-5-src/Makefile
+--- Mupen64Plus-1-5-src.old/Makefile	2009-01-04 19:47:07.000000000 +0100
++++ Mupen64Plus-1-5-src/Makefile	2009-07-27 17:12:55.984193344 +0200
+@@ -111,13 +111,6 @@ OBJ_CORE = \
+ 	main/savestates.o \
+ 	main/zip/ioapi.o \
+ 	main/zip/unzip.o \
+-	main/bzip2/bzlib.o \
+-	main/bzip2/crctable.o \
+-	main/bzip2/decompress.o \
+-	main/bzip2/compress.o \
+-	main/bzip2/randtable.o \
+-	main/bzip2/huffman.o \
+-	main/bzip2/blocksort.o \
+ 	main/lzma/buffer.o \
+ 	main/lzma/io.o \
+ 	main/lzma/main.o \
+@@ -246,7 +239,7 @@ SHARE = $(shell grep CONFIG_PATH config.
+ # set primary objects and libraries for all outputs
+ ALL = mupen64plus $(PLUGINS)
+ OBJECTS = $(OBJ_CORE) $(OBJ_DYNAREC) $(OBJ_OPENGL)
+-LIBS = $(SDL_LIBS) $(LIBGL_LIBS)
++LIBS = $(SDL_LIBS) $(LIBGL_LIBS) -lbz2
+ 
+ # add extra objects and libraries for selected options
+ ifeq ($(DBG), 1)
+diff -dupr Mupen64Plus-1-5-src.old/main/rom.c Mupen64Plus-1-5-src/main/rom.c
+--- Mupen64Plus-1-5-src.old/main/rom.c	2009-01-04 19:47:07.000000000 +0100
++++ Mupen64Plus-1-5-src/main/rom.c	2009-07-27 17:29:55.918067662 +0200
+@@ -28,7 +28,7 @@
+ #include <zlib.h>
+ 
+ #include "zip/unzip.h"
+-#include "bzip2/bzlib.h"
++#include <bzlib.h>
+ #include "lzma/lzmadec.h"
+ #include "7zip/7zExtract.h"
+ #include "7zip/7zCrc.h"
