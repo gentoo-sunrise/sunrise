@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
 inherit distutils
 
 DESCRIPTION="A networking library that achieves high scalability by using non-blocking io"
@@ -18,6 +20,10 @@ RDEPEND="dev-lang/python
 	dev-python/pyopenssl"
 DEPEND="${RDEPEND}
 	dev-python/setuptools"
+
+src_prepare() {
+	epatch "${FILESDIR}/remove-assert-parenthesis.patch"
+}
 
 src_install() {
 	distutils_src_install
