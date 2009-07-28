@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jul 2009; Christian Asseburg <christian@asseburg.com>
+  -nexus_personal_SE-bin-4.10.0.21-r1.ebuild,
+  +nexus_personal_SE-bin-4.10.2.16-r1.ebuild:
+  Version bump, the package was updated on server.
+
   03 May 2009; Christian Ruppert <idl0r@gentoo.org>
   nexus_personal_SE-bin-4.10.0.21-r1.ebuild:
   Cleanup. Use get_abi_LIBDIR instead of lib. Minor improvements.

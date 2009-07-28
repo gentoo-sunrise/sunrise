@@ -52,9 +52,6 @@ src_install() {
 	dosym /usr/bin/personal ${ubin}/personal || die "dosym failed."
 	dosym /usr/bin/persadm ${ubin}/persadm || die "dosym failed."
 
-	insinto ${id}
-	doins res.zip || die "doins failed."
-
 	if use doc; then
 		dohtml *.htm || die "dohtml failed."
 		dodoc *.txt || die "dodoc failed."
