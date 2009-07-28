@@ -19,13 +19,11 @@ S=${WORKDIR}/${MY_P}
 
 src_install() {
 	dobin adifmerg || die "dobin failed"
-	insinto /usr/share/${PN}
-	doins template.cab || die "doins failed"
 	doman doc/adifmerg.1 || die "doman failed"
 	dodoc CHANGELOG README || die "dodoc failed"
 
 	if use examples; then
-		docinto examples
-		dodoc addqsoinfo calcpnts lqslget lqsoget || die "dodoc failed"
+		insinto /usr/share/${PN}
+		doins -r script || die "doins failed"
 	fi
 }
