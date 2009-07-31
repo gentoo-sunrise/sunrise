@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/scons-1.2.0-r1
 	test? ( dev-libs/unittest )"
 
-S=${WORKDIR}/${PN}-mongo-b57918b3a468ba5882f226fc54e00321c20d7f0d
+S=${WORKDIR}/${PN}-mongo-6dc201583a91ae97f547fbff748019dfbc8ea1d4
 
 pkg_setup() {
 	sconsopts=$(echo "${MAKEOPTS}" | sed -ne "/-j/ { s/.*\(-j[0-9]\+\).*/\1/; p }")
