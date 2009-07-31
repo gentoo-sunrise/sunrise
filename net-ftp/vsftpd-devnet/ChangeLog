@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jul 2009; KostyaSha (integer) <gentoo.integer@gmail.com>
+  +vsftpd-devnet-2.1.2_p1.ebuild:
+  version bump
+
   15 Apr 2009; KostyaSha (integer) <gentoo.integer@gmail.com>
   vsftpd-devnet-2.1.0_p1.ebuild, files/vsftpd-devnet-2.1.0-gentoo.patch,
   files/vsftpd.init:
