@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/python-virtkey
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  31 Jul 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +python-virtkey-0.50.ebuild, +metadata.xml:
+  New ebuild for python-virtkey (bug #248256). Thanks to Denilson for
+  suggestions.
+
