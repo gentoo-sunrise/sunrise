@@ -26,8 +26,6 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${PN}-mongo-6dc201583a91ae97f547fbff748019dfbc8ea1d4
 
 pkg_setup() {
-	sconsopts=$(echo "${MAKEOPTS}" | sed -ne "/-j/ { s/.*\(-j[0-9]\+\).*/\1/; p }")
-
 	enewgroup mongodb
 	enewuser mongodb -1 /sbin/nologin /var/lib/${PN} mongodb
 }
@@ -37,11 +35,11 @@ src_prepare() {
 }
 
 src_compile() {
-	scons ${sconsopts} all || die "Compile failed"
+	scons ${MAKEOPTS} all || die "Compile failed"
 }
 
 src_install() {
-	scons install --prefix="${D}"/usr || die "Install failed"
+	scons ${MAKEOPTS} install --prefix="${D}"/usr || die "Install failed"
 
 	for x in /var/{lib,log,run}/${PN}; do
 		dodir "${x}" || die "Install failed"
@@ -55,5 +53,5 @@ src_install() {
 }
 
 src_test() {
-	scons ${sconsopts} smoke test || die "Tests failed"
+	scons ${MAKEOPTS} smoke test || die "Tests failed"
 }
