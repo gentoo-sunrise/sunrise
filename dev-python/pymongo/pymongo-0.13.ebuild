@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
-RDEPEND="|| ( =dev-lang/python-2.5*
+RDEPEND="|| ( >=dev-lang/python-2.5
 		( =dev-lang/python-2.4* >=dev-python/celementtree-1.0.5 ) )"
 DEPEND="dev-python/setuptools
 	doc? ( dev-python/epydoc )

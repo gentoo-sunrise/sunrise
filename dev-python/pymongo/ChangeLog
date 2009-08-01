@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pymongo-0.13.ebuild:
+  Pymongo supports Python 2.6 as well. Thanks to Tommy[D]
+
   31 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +pymongo-0.13.ebuild, +metadata.xml:
   New ebuild for bug 279804. Thanks to scarabeus
