@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-mod
+inherit linux-mod versionator
 
 MY_PN=${PN}_kmod
-MY_P=${MY_PN}-${PV}
+MY_P=${MY_PN}-$(replace_version_separator 3 - ${PV})
 
 DESCRIPTION="A kernelmodule which monitors the temperature of the aspire one netbook"
 HOMEPAGE="http://piie.net/index.php?section=acerhdf"
-SRC_URI="http://piie.net/files/${MY_P}-3.tar.gz"
+SRC_URI="http://piie.net/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 
