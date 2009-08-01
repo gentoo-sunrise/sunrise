@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2009; Dimitris Mandalidis (mandas) <mandas@users.sourceforge.net>
+  +libmail-0.3.ebuild, metadata.xml:
+  New Ebuild for bug 270065, credits to sedzimir and chithead
+
   17 May 2009; Dimitris Mandalidis (mandas) <mandas@users.sourceforge.net>
   +libmail-0.2.ebuild, +metadata.xml:
   New Ebuild for bug 270065
