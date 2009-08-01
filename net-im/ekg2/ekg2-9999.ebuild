@@ -26,36 +26,36 @@ IUSE="dbus extra gadu gif gnutls gpg gpm gsm gtk icq idn inotify irc
 
 RDEPEND="
 	dbus? ( sys-apps/dbus )
-	gpg? ( >=app-crypt/gpgme-1.0.0 )
-	gsm? ( >=media-sound/gsm-1.0.12-r1 )
-	gtk? ( >=x11-libs/gtk+-2.4 )
+	gpg? ( app-crypt/gpgme )
+	gsm? ( media-sound/gsm )
+	gtk? ( x11-libs/gtk+:2 )
 	idn? ( net-dns/libidn )
 	nls? ( virtual/libintl )
 	oracle?	( dev-db/oracle-instantclient-basic )
 	pcap? ( net-libs/libpcap )
-	perl? ( >=dev-lang/perl-5.2 )
-	python?	( >=dev-lang/python-2.3.3 )
+	perl? ( dev-lang/perl )
+	python?	( dev-lang/python )
 	readline? ( sys-libs/readline )
-	rss? ( >=dev-libs/expat-1.95.6 )
+	rss? ( dev-libs/expat )
 	ruby? ( dev-lang/ruby )
-	sim? ( >=dev-libs/openssl-0.9.6m )
+	sim? ( dev-libs/openssl )
 	xosd? ( x11-libs/xosd )
-	gadu? ( >=net-libs/libgadu-1.7.0
+	gadu? ( net-libs/libgadu
 		gif? ( media-libs/giflib )
-		jpeg? ( >=media-libs/jpeg-6b-r2 ) )
-	jabber? ( >=dev-libs/expat-1.95.6
-		gnutls? ( >=net-libs/gnutls-1.0.17 )
-		!gnutls? ( ssl? ( >=dev-libs/openssl-0.9.6m ) )
+		jpeg? ( media-libs/jpeg ) )
+	jabber? ( dev-libs/expat
+		gnutls? ( net-libs/gnutls )
+		!gnutls? ( ssl? ( dev-libs/openssl ) )
 		zlib? ( sys-libs/zlib ) )
 	!minimal? (
 		zlib? ( sys-libs/zlib ) )
 	ncurses? ( sys-libs/ncurses[unicode?]
-		gpm? ( >=sys-libs/gpm-1.20.1 )
-		spell? ( >=app-text/aspell-0.50.5 ) )
+		gpm? ( sys-libs/gpm )
+		spell? ( app-text/aspell ) )
 	sqlite3? ( dev-db/sqlite:3 )
 	!sqlite3? ( sqlite? ( dev-db/sqlite:0 ) )"
 
-DEPEND=">=dev-util/scons-0.97
+DEPEND="dev-util/scons
 	${RDEPEND}"
 
 pkg_setup() {
