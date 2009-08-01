@@ -1,9 +1,0 @@
-# ChangeLog for media-fonts/dina-font
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  01 Aug 2009; Justin (yoosty) <yoosty69 at netzero.net>
-  +dina-font-2.89.ebuild, +metadata.xml:
-  New Ebuild for the Dina font. Bug 279534. Thanks to Jibz from
-  donationcoder.com for creating the font\!
-
