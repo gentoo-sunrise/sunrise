@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  mupen64plus-1.5.ebuild, +files/mupen64plus-1.5-flags.patch:
+  Drop custom-cflags and add a patch to drop default CFLAGS/STRIP instead of
+  using sed. Thanks to Tommy[D] for suggestions.
+
   27 Jul 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +mupen64plus-1.5.ebuild, +files/mupen64plus-1.5-glide64-gcc44.patch,
   +files/mupen64plus-1.5-plugindir.patch,

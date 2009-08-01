@@ -15,7 +15,7 @@ SRC_URI="http://mupen64plus.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="custom-cflags +gtk libsamplerate lirc qt4 sse"
+IUSE="+gtk libsamplerate lirc qt4 sse"
 
 # GTK+ is currently required by plugins even if no GUI support is enabled
 RDEPEND="virtual/opengl
@@ -57,31 +57,18 @@ src_prepare() {
 	# first prepare to replace plugin path
 	epatch "${FILESDIR}"/${P}-plugindir.patch
 
+	# disable stripping, don't replace CFLAGS
+	epatch "${FILESDIR}"/${P}-flags.patch
+
 	# and then do real path replace
 	sed -i \
 		-e "s:/usr/local/share/mupen64plus:${GAMES_DATADIR}/mupen64plus:" \
 		-e "s:%PUT_PLUGIN_PATH_HERE%:$(games_get_libdir)/${PN}/plugins/:" \
 		main/main.c || die "sed failed"
 
-	# set right CFLAGS and disable stripping
-	local march
-	march="$(get-flag "-march")"
-	sed -i \
-		-e "s:STRIP.*= .*$:STRIP = true:" \
-		-e "s:CFLAGS += -march=.*$:CFLAGS += ${march}:" \
-		pre.mk glide64/Makefile || die "sed failed"
-
 	# replace absolute icon path with relative one
 	sed -i -e "s:^Icon=.*$:Icon=${PN}:" \
 		${PN}.desktop.in || die "sed failed"
-
-	# prevent use of environment CFLAGS
-	sed -i -e '1i CFLAGS =' pre.mk || die "sed failed"
-
-	if use custom-cflags; then
-		sed -i -e "s:CFLAGS += -pipe .*$:CFLAGS += ${CFLAGS}:" \
-			pre.mk || die "sed failed"
-	fi
 }
 
 get_opts() {
