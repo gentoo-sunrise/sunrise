@@ -28,7 +28,7 @@ src_install() {
 	insinto /usr/include/${PN}
 	doins include/* || die "Install failed"
 
-	dolib.a	lib/libunittest.a
+	dolib.a	lib/libunittest.a || die
 }
 
 src_test() {
