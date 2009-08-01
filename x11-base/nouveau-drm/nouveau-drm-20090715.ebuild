@@ -35,7 +35,7 @@ pkg_setup() {
 src_compile() {
 	cd nouveau || die "cd failed"
 	set_arch_to_kernel
-	emake || die "Compiling kernel modules failed"
+	emake LINUXDIR="${KERNEL_DIR}" || die "Compiling kernel modules failed"
 }
 
 src_install() {
