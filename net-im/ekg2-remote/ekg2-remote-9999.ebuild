@@ -16,15 +16,15 @@ KEYWORDS=""
 IUSE="gnutls gpm gtk ncurses readline spell ssl static unicode"
 
 RDEPEND="
-	gtk? ( >=x11-libs/gtk+-2.4 )
+	gtk? ( x11-libs/gtk+:2 )
 	readline? ( sys-libs/readline )
-	gnutls?	( >=net-libs/gnutls-1.0.17 )
-	!gnutls? ( ssl? ( >=dev-libs/openssl-0.9.6m ) )
+	gnutls?	( net-libs/gnutls )
+	!gnutls? ( ssl? ( dev-libs/openssl ) )
 	ncurses? ( sys-libs/ncurses[unicode?]
-		gpm? ( >=sys-libs/gpm-1.20.1 )
-		spell? ( >=app-text/aspell-0.50.5 ) )"
+		gpm? ( sys-libs/gpm )
+		spell? ( app-text/aspell ) )"
 
-DEPEND=">=dev-util/scons-0.97
+DEPEND="dev-util/scons
 	${RDEPEND}"
 
 pkg_setup() {

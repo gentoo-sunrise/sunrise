@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  ekg2-remote-9999.ebuild:
+  Simplify DEPEND/RDEPEND.
+
   01 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   +ekg2-remote-9999.ebuild, -ekg2-remote-99999999.ebuild:
   Rename to -9999, four digits should be enough
