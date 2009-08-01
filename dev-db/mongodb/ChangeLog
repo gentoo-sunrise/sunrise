@@ -4,6 +4,10 @@
 
   01 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   mongodb-0.9.7.ebuild:
+  Die if doman fails. Thanks to Tommy[D]
+
+  01 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  mongodb-0.9.7.ebuild:
   Remove scons hack since MAKEOPTS are safe to pass. Thanks to Tommy[D]
 
   31 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>

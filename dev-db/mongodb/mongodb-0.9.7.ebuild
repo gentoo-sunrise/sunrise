@@ -46,7 +46,7 @@ src_install() {
 		fowners mongodb:mongodb "${x}"
 	done
 
-	doman debian/mongo*.1
+	doman debian/mongo*.1 || die "Install failed"
 
 	newinitd "${FILESDIR}/${PN}.initd" ${PN} || die "Install failed"
 	newconfd "${FILESDIR}/${PN}.confd" ${PN} || die "Install failed"
