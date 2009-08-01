@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2009; Markos Chandras <hwoarang@gentoo.org>
+  ekg2-remote-99999999.ebuild:
+  Ebuild clean up
+
   25 Jul 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +ekg2-remote-99999999.ebuild, +metadata.xml:
   Live ebuild for EKG2 IM remote client (additional ebuild for bug #187330).
