@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>maintainer-wanted</herd>
+	<longdescription>Dina is a monospace bitmap font, primarily aimed at programmers. It is relatively compact to allow a lot of code on screen, while (hopefully) clear enough to remain readable even at high resolutions.</longdescription>
+</pkgmetadata>
