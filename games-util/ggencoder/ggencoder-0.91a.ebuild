@@ -5,17 +5,16 @@
 EAPI="2"
 inherit eutils qt4
 
-DESCRIPTION="Utility to encode and decode Game Genie (tm) codes."
+DESCRIPTION="Utility to encode and decode Game Genie (tm) codes"
 HOMEPAGE="http://games.technoplaza.net/ggencoder/qt/"
 SRC_URI="http://games.technoplaza.net/${PN}/qt/history/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="debug doc"
 
-DEPEND="x11-libs/qt-core:4
-	x11-libs/qt-gui:4"
+DEPEND="x11-libs/qt-gui:4[debug?]"
 RDEPEND="${DEPEND}"
 
 S="${S}/source"
@@ -26,7 +25,6 @@ src_configure() {
 
 src_install() {
 	dobin ${PN} || die "dobin failed"
-
 	cd ..
 	dodoc docs/ggencoder.txt || die "dodoc failed"
 

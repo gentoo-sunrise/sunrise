@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Aug 2009; Markos Chandras <hwoarang@gentoo.org> ggencoder-0.91a.ebuild:
+  Add debug use flag, simplify DEPEND, clean up
+
   02 Aug 2009; John Ratliff (jdratlif) <webmaster@technoplaza.net>
   +ggencoder-0.91a.ebuild, +metadata.xml:
   New ebuild for bug 65476
