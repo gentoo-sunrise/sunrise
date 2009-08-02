@@ -19,7 +19,7 @@ RDEPEND="x11-libs/qt-gui:4[qt3support]
 	x11-libs/qt-sql:4[sqlite]
 	dev-util/subversion"
 DEPEND="${RDEPEND}
-	test? ( x11-libs/qt-test:4 )"
+	x11-libs/qt-test"
 
 S=${WORKDIR}/${P}/src
 
