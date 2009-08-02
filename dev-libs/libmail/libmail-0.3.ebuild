@@ -11,8 +11,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="apop debug gnutls profile sasl"
 
-DEPEND="
-	gnutls? ( >=net-libs/gnutls-2 )
+DEPEND="gnutls? ( >=net-libs/gnutls-2 )
 	sasl? ( >=dev-libs/cyrus-sasl-2 )"
 RDEPEND="${DEPEND}"
 
@@ -22,7 +21,7 @@ src_compile() {
 		$(use_enable debug ) \
 		$(use_enable gnutls tls) \
 		$(use_enable profile ) \
-		$(use_enable sasl) || die "econf failed"
+		$(use_enable sasl)
 	emake || die "emake failed"
 }
 
