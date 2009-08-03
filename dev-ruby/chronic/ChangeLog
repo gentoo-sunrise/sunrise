@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/chronic
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Aug 2009; CS Shyam Sundar (CS3) <csshyamsundar@gmail.com> ChangeLog:
+  New
+  Ebuild for bug 280143 thanks to scarabeus, idl0r, a3li, tommy[D] & sedzimir
+
