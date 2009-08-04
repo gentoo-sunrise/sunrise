@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
+  -i3-3a_p2.ebuild, +i3-3b.ebuild:
+  Version bump for i3, thanx to scarabeus,moredread and wohnout
+
   08 May 2009; Andre-Patrick Bubel (moredread) <code@andre-bubel.de>
   -i3-3a.ebuild, +i3-3a_p2.ebuild:
   Version bump for i3, thanks to scarabeus

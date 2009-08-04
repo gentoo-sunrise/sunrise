@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="${PN}-3.a-bf2"
+inherit versionator
+
+MY_PV="$(get_major_version).$(get_version_component_range 2)"
+MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="An improved dynamic tiling window manager"
 HOMEPAGE="http://i3.zekjur.net/"
@@ -15,7 +18,8 @@ IUSE=""
 
 RDEPEND=">=x11-libs/xcb-util-0.3.3
 	>=x11-libs/libxcb-1.1.90.1
-	x11-libs/libX11"
+	x11-libs/libX11
+	dev-libs/libev"
 DEPEND="${RDEPEND}
 	>=app-text/asciidoc-8.1.0"
 
