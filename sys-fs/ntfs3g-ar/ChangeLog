@@ -1,0 +1,9 @@
+# ChangeLog for sys-fs/ntfs3g-ar
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Aug 2009; P. Levine <plevine457@verizon.net>
+  +ntfs3g-ar-2009.4.4_pre16.ebuild, +files/10-ntfs3g.fdi.2009,
+  +metadata.xml:
+  New Ebuild for bug 235966 thanks to TommyD and chutzpah
+
