@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2009; CS Shyam Sundar (CS3) <csshyamsundar@gmail.com>
+  god-0.7.13.ebuild:
+  Updated Description in Ebuild for bug 280131 - thanks to hwoarang
+
   04 Aug 2009; Markos Chandras <hwoarang@gentoo.org> god-0.7.13.ebuild:
   Use a better description
 

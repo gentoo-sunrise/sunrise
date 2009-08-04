@@ -5,7 +5,7 @@
 USE_RUBY="ruby18"
 inherit gems
 
-DESCRIPTION="Monitoring framework based on Ruby"
+DESCRIPTION="Ruby monitoring framework which replaces monit"
 HOMEPAGE="http://god.rubyforge.org/"
 
 LICENSE="MIT"
