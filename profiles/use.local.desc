@@ -14,6 +14,28 @@ app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
 app-emulation/xenman:lvm2 - Enable lvm2 support
+app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
+app-misc/2gis-data:astr - The map of Astrakhan for app-misc/2gis
+app-misc/2gis-data:barn - The map of Barnaul for app-misc/2gis
+app-misc/2gis-data:biysk - The map of Biysk for app-misc/2gis
+app-misc/2gis-data:chel - The map of Chelyabinsk for app-misc/2gis
+app-misc/2gis-data:ekb - The map of Ekaterinburg for app-misc/2gis
+app-misc/2gis-data:irk - The map of Irkutsk for app-misc/2gis
+app-misc/2gis-data:kaz - The map of Kazan for app-misc/2gis
+app-misc/2gis-data:kem - The map of Kemerovo for app-misc/2gis
+app-misc/2gis-data:kras - The map of Krasnoyarsk for app-misc/2gis
+app-misc/2gis-data:kur - The map of Kurgan for app-misc/2gis
+app-misc/2gis-data:nkuz - The map of Novokuznetsk for app-misc/2gis
+app-misc/2gis-data:nnov - The map of N_Novgorod for app-misc/2gis
+app-misc/2gis-data:nsk - The map of Novosibirsk for app-misc/2gis
+app-misc/2gis-data:nvar - The map of Nizhnevartovsk for app-misc/2gis
+app-misc/2gis-data:odes - The map of Odessa for app-misc/2gis
+app-misc/2gis-data:omsk - The map of Omsk for app-misc/2gis
+app-misc/2gis-data:perm - The map of Perm for app-misc/2gis
+app-misc/2gis-data:sam - The map of Samara for app-misc/2gis
+app-misc/2gis-data:tim - The map of Tyumen for app-misc/2gis
+app-misc/2gis-data:tom - The map of Tomsk for app-misc/2gis
+app-misc/2gis-data:ufa - The map of Ufa for app-misc/2gis
 app-misc/ccpublisher:zope - Install zope stuff
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
@@ -222,8 +244,6 @@ sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
 sys-fs/aufs:robr - Enable aufs readonly-branch
 sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
-sys-fs/ext3grep:largefile - Add support for files greater then 2gb on x86
-sys-fs/ext3grep:libcwd - Debuging support
 sys-fs/pysize:psyco - Adds psyco support
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 www-plugins/nexus_personal_SE-bin:epiphany - Enable support for www-client/epiphany
