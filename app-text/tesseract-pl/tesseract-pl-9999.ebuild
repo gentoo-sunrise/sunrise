@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
 ESVN_REPO_URI="http://tesseract-polish.googlecode.com/svn/trunk/tessdata/"
 
 inherit subversion

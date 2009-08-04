@@ -4,6 +4,10 @@
 
   04 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   tesseract-pl-9999.ebuild:
+  Remove EAPI=2, it isn't needed anymore.
+
+  04 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  tesseract-pl-9999.ebuild:
   Upstream has moved docfiles into tessdata/, updating the ebuild to match new
   repo layout.
 
