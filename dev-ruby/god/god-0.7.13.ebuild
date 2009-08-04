@@ -5,7 +5,7 @@
 USE_RUBY="ruby18"
 inherit gems
 
-DESCRIPTION="Ruby process monitor. Replaces monit"
+DESCRIPTION="Monitoring framework based on Ruby"
 HOMEPAGE="http://god.rubyforge.org/"
 
 LICENSE="MIT"
