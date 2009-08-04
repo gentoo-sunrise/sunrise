@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  tesseract-pl-9999.ebuild:
+  Upstream has moved docfiles into tessdata/, updating the ebuild to match new
+  repo layout.
+
   30 Jul 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +tesseract-pl-9999.ebuild, +metadata.xml:
   Live ebuild for bug #279669 (upstream doesn't provide releases nor snapshots).
