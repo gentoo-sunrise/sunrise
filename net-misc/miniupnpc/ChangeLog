@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/miniupnpc
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  miniupnpc-1.2.ebuild:
+  Adding ~amd64 to KEYWORDS.
 
   12 Nov 2008; Alexander Krastelev (wirefa11) <alex@netrc.net>
   +miniupnpc-1.2.ebuild, +metadata.xml:
