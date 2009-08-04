@@ -17,7 +17,7 @@ IUSE="doc"
 
 RDEPEND="dev-util/subversion"
 DEPEND="${RDEPEND}
-	doc? ( app-text/xmlto 
+	doc? ( app-text/xmlto
 	>=app-text/asciidoc-8.4 )"
 
 src_prepare() {
@@ -26,7 +26,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable doc man)	
+	econf $(use_enable doc man)
 }
 
 src_install() {
