@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Aug 2009; Michael Groh (brot) <schnitzelkuchen@googlemail.com>
+  navit-9999.ebuild:
+  added --disable-svg2png, removed the version of the cegui dep, changed from
+  ./autogen.sh to eautoreconf
+
   02 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> navit-9999.ebuild:
   Live ebuilds dont have keywords.
 

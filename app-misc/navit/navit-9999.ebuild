@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="1"
-inherit subversion
+inherit autotools subversion
 
 DESCRIPTION="An open-source car navigation system with a routing engine."
 HOMEPAGE="http://www.navit-project.org"
@@ -14,24 +14,30 @@ SLOT="0"
 KEYWORDS=""
 IUSE="dbus garmin gps gtk nls python sdl speechd"
 
-COMMON_DEPEND="dev-libs/glib:2
+RDEPEND="dev-libs/glib:2
 	garmin? ( dev-libs/libgarmin )
 	gtk? ( x11-libs/gtk+:2
 		x11-misc/xkbd )
 	sdl? ( media-libs/libsdl
 		media-libs/sdl-image
-		>=dev-games/cegui-0.5
+		dev-games/cegui
 		media-libs/quesoglc )
 	python? ( dev-lang/python )
 	dbus? ( sys-apps/dbus )
 	gps? ( sci-geosciences/gpsd )
 	speechd? ( app-accessibility/speechd )"
-DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig"
-RDEPEND="${COMMON_DEPEND}"
 
-ESVN_REPO_URI="https://navit.svn.sourceforge.net/svnroot/navit/trunk/navit"
-ESVN_BOOTSTRAP="./autogen.sh"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
+
+
+ESVN_REPO_URI="http://navit.svn.sourceforge.net/svnroot/navit/trunk/navit"
+
+src_unpack() {
+	subversion_src_unpack
+	autopoint -f || die "autopoint failed"
+	eautoreconf
+}
 
 src_compile() {
 	econf $(use_enable garmin) \
@@ -43,7 +49,8 @@ src_compile() {
 		$(use_enable python binding-python) \
 		$(use_enable speechd speech-speechd) \
 		--disable-graphics-qt-painter \
-		--disable-samplemap
+		--disable-samplemap \
+		--disable-svg2png
 
 	emake || die "Make failed"
 }
