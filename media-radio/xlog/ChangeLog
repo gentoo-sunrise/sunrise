@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Aug 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> xlog-2.0.3.ebuild:
+  New Homepage and SRC_URI
+
   21 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -xlog-2.0.2.ebuild, +xlog-2.0.3.ebuild:
   Bugfix release. See Changelog for details

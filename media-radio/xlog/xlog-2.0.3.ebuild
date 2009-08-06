@@ -5,8 +5,8 @@
 inherit autotools eutils fdo-mime
 
 DESCRIPTION="An amateur radio logging program"
-HOMEPAGE="http://www.qsl.net/pg4i/linux/xlog.html"
-SRC_URI="http://pg4i.chronos.org.uk/download/${P}.tar.gz"
+HOMEPAGE="http://www.nongnu.org/xlog"
+SRC_URI="http://savannah.nongnu.org/download/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
