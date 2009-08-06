@@ -35,8 +35,7 @@ src_prepare() {
 
 src_compile() {
 	emake || die "emake compile die"
-	cd man
-	emake || die "emake man die"
+	emake -C man || die "emake man die"
 }
 
 src_install() {
