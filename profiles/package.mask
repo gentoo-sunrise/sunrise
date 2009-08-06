@@ -87,7 +87,3 @@ sci-mathematics/alberta
 # Patrick Zimmermann <patrick@zakweb.de> (28 Jun 2006)
 # Has dependencies that are masked
 games-fps/unreal-tournament-operationnapali
-
-# Jakub Moc <jakub@gentoo.org> (09 Jun 2006)
-# This is for testing only, upstream not active ATM
-=app-misc/mc-mp-4.1.40_pre9
