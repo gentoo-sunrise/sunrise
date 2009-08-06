@@ -17,12 +17,11 @@ IUSE="debug hal suid"
 
 [[ ${KERNEL} == "linux" ]] && IUSE="${IUSE} fuse"
 
-RDEPEND="hal? ( sys-apps/hal )"
-
-DEPEND="${RDEPEND}
-	!sys-fs/ntfs3g
+RDEPEND="hal? ( sys-apps/hal )
 	!kernel_linux? ( sys-fs/fuse )
-	fuse? ( sys-fs/fuse )"
+	kernel_linux? ( fuse? ( sys-fs/fuse ) )"
+
+DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -38,7 +37,7 @@ pkg_setup() {
 src_compile() {
 	local myconf
 
-	use fuse && myconf="--with-fuse=external"
+	use kernel_linux && use fuse && myconf="--with-fuse=external"
 
 	econf \
 		--docdir="/usr/share/doc/${PF}" \
@@ -55,7 +54,7 @@ src_install() {
 	prepalldocs || die "prepalldocs failed"
 	dodoc AUTHORS ChangeLog CREDITS || die "dodoc failed"
 
-	use suid && fperms u+s "/bin/${MY_PN}" || die "could not chage file permisions"
+	use suid && { fperms u+s "/bin/${PN/3g-ar/-3g}" || die "could not change file permisions"; }
 
 	if use hal; then
 		insinto /etc/hal/fdi/policy/
@@ -71,7 +70,7 @@ pkg_postinst() {
 	ewarn "http://pagesperso-orange.fr/b.andre/advanced-ntfs-3g.html"
 	ewarn
 
-	if  use fuse || ! use kernel_linux ; then
+	if  ! use kernel_linux || use kernel_linux && use fuse  ; then
 		ewarn
 		ewarn "ntfs-3g has been built with external FUSE support."
 		ewarn "If your system's FUSE package gets updated please rebuild ntfs-3g,"
