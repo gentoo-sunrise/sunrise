@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Aug 2009; Michael Groh (brot) <schnitzelkuchen@googlemail.com>
+  navit-9999.ebuild:
+  dev-util/cvs added to DEPEND
+
   05 Aug 2009; Michael Groh (brot) <schnitzelkuchen@googlemail.com>
   navit-9999.ebuild:
   added --disable-svg2png, removed the version of the cegui dep, changed from

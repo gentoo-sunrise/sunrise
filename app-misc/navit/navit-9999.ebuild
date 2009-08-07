@@ -28,7 +28,8 @@ RDEPEND="dev-libs/glib:2
 	speechd? ( app-accessibility/speechd )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	dev-util/cvs"
 
 
 ESVN_REPO_URI="http://navit.svn.sourceforge.net/svnroot/navit/trunk/navit"
