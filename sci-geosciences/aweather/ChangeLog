@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Aug 2009; Andy Spencer <andy753421@gmail.com -aweather-0.1.1.ebuild,
+  +aweather-0.2.1.ebuild, +aweather-9999.ebuild:
+  Version bump to 0.2.1 and adding live ebuild
+
   22 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -aweather-9999.ebuild:
   Drop live ebuild (no dev ok, interactive, no use of autotools eclass,...)

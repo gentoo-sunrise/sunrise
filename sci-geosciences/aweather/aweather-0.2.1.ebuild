@@ -18,6 +18,6 @@ RDEPEND=">=net-libs/libsoup-2.26
 	x11-libs/gtkglext
 	sci-libs/rsl"
 DEPEND="${RDEPEND}
-	doc? ( >=dev-util/gtk-doc-1 )"
+	doc? ( dev-util/gtk-doc )"
 
 DOCS="ChangeLog README TODO"
