@@ -1,0 +1,10 @@
+# ChangeLog for media-video/qnapi
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +qnapi-0.1.6_rc2.ebuild, +files/qnapi-0.1.6_rc2-gentoo.diff,
+  +metadata.xml:
+  New ebuild for qnapi (bug #219706). Thanks to all Bugzilla thread
+  contributors and scarabeus.
+
