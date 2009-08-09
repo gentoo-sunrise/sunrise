@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/ruby-git
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Aug 2009; CS Shyam Sundar (CS3) <csshyamsundar@gmail.com>
+  +ruby-git-1.2.2.ebuild, +metadata.xml:
+  New Ebuild for bug 280863 thanks to sedzimir & scarabeus
+
