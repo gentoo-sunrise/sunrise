@@ -2,6 +2,12 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  ntfs3g-ar-2009.4.4_pre16.ebuild, metadata.xml:
+  Cleaned up the ebuild, fixed DESCRIPTION and HOMEPAGE, readded ntfs3g
+  blocker, removed FUSE bundling support (in favor of always using system-wide
+  install).
+
   11 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +Manifest:
   Add missing Manifest
 
