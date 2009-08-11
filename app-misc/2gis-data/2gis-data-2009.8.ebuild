@@ -53,9 +53,8 @@ my_add_town tim Tyumen 2006 11
 my_add_town tom Tomsk 2004 12
 my_add_town ufa Ufa 2008 3
 
-
 pkg_setup() {
-	check_license ${PORTDIR_OVERLAY}/licenses/${LICENSE}
+	check_license "${FILESDIR/files}"/../../licenses/${LICENSE}
 }
 
 src_install() {
