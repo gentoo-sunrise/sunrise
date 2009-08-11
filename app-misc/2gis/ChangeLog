@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  2gis-3.0.5.4.ebuild:
+  Fix check_license with some working workaround
+
   03 Aug 2009; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
   +2gis-3.0.5.4.ebuild, +metadata.xml:
   New Ebuild for bug #280034, thanks to ssuominen and Tommy[D]
