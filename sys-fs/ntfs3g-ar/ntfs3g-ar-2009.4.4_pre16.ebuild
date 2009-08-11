@@ -19,7 +19,7 @@ IUSE="debug hal suid"
 
 RDEPEND="hal? ( sys-apps/hal )
 	!kernel_linux? ( sys-fs/fuse )
-	kernel_linux? ( fuse? ( sys-fs/fuse ) )"
+	fuse? ( sys-fs/fuse )"
 
 DEPEND="${RDEPEND}"
 
@@ -37,7 +37,7 @@ pkg_setup() {
 src_compile() {
 	local myconf
 
-	use kernel_linux && use fuse && myconf="--with-fuse=external"
+	( !kernel_linux || use fuse ) && myconf="--with-fuse=external"
 
 	econf \
 		--docdir="/usr/share/doc/${PF}" \
@@ -70,7 +70,7 @@ pkg_postinst() {
 	ewarn "http://pagesperso-orange.fr/b.andre/advanced-ntfs-3g.html"
 	ewarn
 
-	if  ! use kernel_linux || use kernel_linux && use fuse  ; then
+	if  ! use kernel_linux || use fuse  ; then
 		ewarn
 		ewarn "ntfs-3g has been built with external FUSE support."
 		ewarn "If your system's FUSE package gets updated please rebuild ntfs-3g,"
