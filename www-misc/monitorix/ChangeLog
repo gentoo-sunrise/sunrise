@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2009; Markus Rennings (mren) <mren@mrmx.de> +Manifest:
+  forgot Manifest
+
   11 Aug 2009; Markus Rennings (mren) <mren@mrmx.de>
   +files/1.3.1-evms.patch, +monitorix-1.3.1.ebuild,
   +files/monitorix.conf.patch, +metadata.xml:
