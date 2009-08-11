@@ -51,8 +51,8 @@ src_install() {
 	doman man/man5/${PN}.conf.5 || die "doman failed"
 
 	insinto "${MY_HTDOCSDIR}"
-	doins envelope.png logo_bot_black.png logo_bot_white.png logo_top.jpg ||
-			die "doins failed"
+	doins envelope.png logo_bot_black.png logo_bot_white.png logo_top.jpg \
+		monitorixico.png || die "doins failed"
 	dodir "${MY_HTDOCSDIR}/imgs" || die "dodir failed"
 	webapp_serverowned "${MY_HTDOCSDIR}/imgs"
 
