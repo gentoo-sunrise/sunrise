@@ -15,18 +15,16 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bzip2 cxx debug fpx imagemagick jbig +jpeg +jpeg2k lcms openmp
+IUSE="bzip2 cxx debug fpx gs imagemagick jbig +jpeg +jpeg2k lcms openmp
 	perl +png q16 q32 +svg +threads tiff +truetype X wmf zlib"
 
 DEPEND="bzip2? ( app-arch/bzip2 )
 	fpx? ( media-libs/libfpx )
-	virtual/ghostscript
+	gs? ( virtual/ghostscript )
 	jbig? ( media-libs/jbigkit )
 	jpeg? ( media-libs/jpeg )
 	jpeg2k? ( >=media-libs/jasper-1.701.0 )
 	lcms? ( media-libs/lcms )
-	media-video/mpeg2vidcodec
-	openmp? ( sys-devel/gcc[openmp] )
 	perl? ( dev-lang/perl )
 	png? ( media-libs/libpng )
 	svg? ( dev-libs/libxml2 )
@@ -79,7 +77,7 @@ src_configure() {
 		--disable-gprof \
 		--enable-largefile \
 		--without-included-ltdl \
-		--without-gslib \
+		$( use_with gs gslib ) \
 		--without-dps \
 		--without-umem \
 		--without-trio \
@@ -97,5 +95,14 @@ src_install() {
 
 pkg_postinst() {
 	elog "For RAW image suport please install media-gfx/dcraw."
+	elog "For mpeg suport please install media-video/mpeg2vidcodec."
 	elog "To read gnuplot files please install sci-visualization/gnuplot."
+	if use openmp; then
+		elog "You have enabled OpenMP for GraphicsMagick. Note that you"
+		elog "will need at least GCC version 4.2.0 compiled with openmp"
+		elog "USE flag for OpenMP support in GraphicsMagick. If your current"
+		elog "GCC has not been compiled with openmp USE flag you'll need"
+		elog "to first compile GCC with openmp USE flag and then re-emerge"
+		elog "GraphicsMagick."
+	fi
 }

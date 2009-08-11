@@ -4,6 +4,7 @@
 	<herd>maintainer-wanted</herd>
 	<use>
 		<flag name='fpx'>Enable FlashPix support</flag>
+		<flag name='gs'>Enable Ghostscript library support</flag>
 		<flag name='imagemagick'>Enable ImageMagick command compatibility</flag>
 		<flag name='openmp'>Build support for the OpenMP (support parallel
 			computing)</flag>

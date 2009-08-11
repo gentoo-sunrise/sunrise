@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2009; Janne Rönkkö (jroo) <jroo@iki.fi>
+  -graphicsmagick-1.3.5.ebuild, +graphicsmagick-1.3.6.ebuild, metadata.xml:
+  Version bump for GM 1.3.6.
+
   05 May 2009; Christian Ruppert <idl0r@gentoo.org>
   graphicsmagick-1.3.5.ebuild:
   Fixed EAPI definition.
