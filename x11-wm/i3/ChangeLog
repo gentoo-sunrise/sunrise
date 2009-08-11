@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-9999.ebuild:
+  Change einfo to elog, thanks to sedzimir
+
   11 Aug 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-3b.ebuild,
   i3-9999.ebuild:
   Add doc flag in i3-9999,remove obsolete code in i3-3b, thanks to idl0r and

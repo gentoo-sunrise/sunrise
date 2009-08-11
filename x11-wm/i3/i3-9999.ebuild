@@ -47,5 +47,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	use doc && einfo "Documentation in html is in /etc/share/doc/${P}"
+	use doc && elog "Documentation in html is in /etc/share/doc/${P}"
 }
