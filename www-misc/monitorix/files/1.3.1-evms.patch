@@ -1,0 +1,47 @@
+--- monitorix.pl.orig	2009-08-05 14:47:05.000000000 +0200
++++ monitorix.pl	2009-08-11 18:26:42.000000000 +0200
+@@ -81,6 +81,7 @@
+ our @PC_MAIL;
+ our $IPTABLES;
+ our $PVS = "pvs";
++our $EVMS = "evms_query";
+ 
+ # The current two locations where the configuration file can reside.
+ if(-f "/etc/monitorix.conf") {
+@@ -1069,7 +1070,7 @@
+ 	my @monthlist = ("Desembre",
+ 	   		"Gener",
+ 	   		"Febrer",
+-	   		"Març",
++	   		"MarÃ§",
+ 	   		"Abril",
+ 	   		"Maig",
+ 	   		"Juny",
+@@ -3038,6 +3039,7 @@
+ 		my $lvm_disk;
+ 		my $is_cciss;
+ 		my $is_md;
++		my $found = 0;
+ 	
+ 		$root_disk = `df -P / | grep / | awk -F " " '{ print \$1 }'`;
+ 		chomp($root_disk);
+@@ -3048,6 +3050,11 @@
+ 			$root_disk =~ s/.$//;
+ 			$is_cciss = 1;
+ 		}
++		if($root_disk =~ m/\/dev\/evms\//) {
++			$root_disk = `$EVMS disks $root_disk`;
++			$found = 1;
++		}
++		if(!$found) {
+ 		if(stat("/proc/mdstat")) {
+ 			my $tmp;
+ 			my $md_root_disk = $root_disk;
+@@ -3100,6 +3107,7 @@
+ 			}
+ 
+ 		}
++		}
+ 	}
+ 
+ 	chomp($ROOT_TOTAL,
