@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://code.stapelberg.de/i3"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="doc"
 
 RDEPEND="x11-libs/libxcb
 	x11-libs/xcb-util
@@ -36,12 +36,16 @@ src_prepare() {
 src_compile() {
 	emake || die "emake compile die"
 	emake -C man || die "emake man die"
+	use doc && { emake -C docs || die "emake docs die" ; }
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install die"
-
-	dodoc GOALS TODO CMDMODE docs/hacking-howto docs/userguide || die "dodoc die"
+	dodoc GOALS TODO CMDMODE || die "dodoc die"
 	doman man/i3.1 || die "doman die"
-	dohtml -r website/* || die "dohtml die"
+	use doc && { dohtml -r website/* docs/*.html || die "dohtml die" ; }
+}
+
+pkg_postinst() {
+	use doc && einfo "Documentation in html is in /etc/share/doc/${P}"
 }

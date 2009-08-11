@@ -33,10 +33,5 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc GOALS TODO || die "dodoc ${PN} failed"
-
 	doman man/${PN}.1 || die "doman ${PN} failed"
-
-	echo -e "#!/bin/sh\n/usr/bin/${PN}" > "${T}/${PN}"
-	exeinto /etc/X11/Sessions
-	doexe "${T}/${PN}" || die "doexe ${PN} failes"
 }
