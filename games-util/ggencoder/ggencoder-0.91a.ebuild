@@ -32,4 +32,3 @@ src_install() {
 		dohtml -r apidocs/html/* || die "dohtml failed"
 	fi
 }
-
