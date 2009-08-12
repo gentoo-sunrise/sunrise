@@ -17,4 +17,3 @@ IUSE="doc"
 
 RDEPEND="dev-util/git"
 DEPEND="${RDEPEND}"
-
