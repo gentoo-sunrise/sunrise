@@ -20,7 +20,7 @@ RDEPEND="app-emulation/wine
 	data? ( app-misc/2gis-data )"
 
 pkg_setup() {
-	check_license "${FILESDIR/files}"/../../licenses/${LICENSE}
+	check_license "${FILESDIR%/files}"/../../licenses/${LICENSE}
 }
 
 src_install() {
