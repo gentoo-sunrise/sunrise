@@ -20,4 +20,3 @@ RDEPEND="media-libs/libsdl[X]
 	 media-libs/sdl-mixer"
 DEPEND="${RDEPEND}
 	dev-ruby/rake"
-
