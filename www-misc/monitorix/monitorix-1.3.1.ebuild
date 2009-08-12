@@ -28,7 +28,6 @@ RDEPEND="net-analyzer/rrdtool[perl]
 
 need_httpd_cgi
 
-
 src_prepare() {
 	local IDATE=$(date +'%Y-%m-%d')
 	epatch "${FILESDIR}/${PN}.conf.patch"
