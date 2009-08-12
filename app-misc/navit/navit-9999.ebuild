@@ -31,7 +31,6 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	dev-util/cvs"
 
-
 ESVN_REPO_URI="http://navit.svn.sourceforge.net/svnroot/navit/trunk/navit"
 
 src_unpack() {
