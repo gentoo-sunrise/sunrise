@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -eventlet-0.8.12.ebuild, +eventlet-0.8.13.ebuild:
+  New version and test additions. Thanks to Tommy[D]
+
   27 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -eventlet-0.8.11.ebuild, +eventlet-0.8.12.ebuild,
   +files/remove-assert-parenthesis.patch:

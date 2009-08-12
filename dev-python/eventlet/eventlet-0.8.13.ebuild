@@ -13,16 +13,22 @@ SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples"
+IUSE="examples test"
 
 RDEPEND="dev-lang/python
 	dev-python/greenlet
 	dev-python/pyopenssl"
 DEPEND="${RDEPEND}
-	dev-python/setuptools"
+	dev-python/setuptools
+	test? ( || ( dev-lang/python[sqlite] dev-python/pysqlite ) )"
 
 src_prepare() {
 	epatch "${FILESDIR}/remove-assert-parenthesis.patch"
+}
+
+src_test() {
+	cd greentest
+	PYTHONPATH=.. ${python} runall.py || die "Tests failed"
 }
 
 src_install() {
