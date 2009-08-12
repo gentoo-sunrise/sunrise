@@ -15,5 +15,3 @@ IUSE=""
 
 RDEPEND="dev-ruby/hoe"
 DEPEND="${RDEPEND}"
-
-
