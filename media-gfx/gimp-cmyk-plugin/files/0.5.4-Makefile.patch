@@ -1,0 +1,51 @@
+--- separate+-0.5.4/Makefile	2009-07-20 02:42:00.000000000 +0200
++++ separate+-0.5.4/Makefile.new	2009-08-12 16:20:56.000000000 +0200
+@@ -27,9 +27,9 @@
+ #                                            remove "-DSEPARATE_SEPARATE".
+ CM = -DENABLE_COLOR_MANAGEMENT
+ NLS = -DENABLE_NLS -DGETTEXT_PACKAGE="\"$(GETTEXT_PACKAGE)\""
+-CFLAGS = $(GIMP_INCLUDE) $(GTK_INCLUDE) $(LCMS_INCLUDE) -O3 -Wall $(CM) $(NLS) \
++CFLAGS += $(GIMP_INCLUDE) $(GTK_INCLUDE) $(LCMS_INCLUDE) $(CM) $(NLS) \
+          -DSEPARATE_SEPARATE -DUSE_ICC_BUTTON
+-LDFLAGS = $(GIMP_LIB) $(GTK_LIB) $(LCMS_LIB) $(TIFF_LIB)
++LIBS = $(GIMP_LIB) $(GTK_LIB) $(LCMS_LIB) $(TIFF_LIB)
+ 
+ SOURCES = $(SEPARATE_SOURCES) $(IMPORT_SOURCES) \
+           $(ICC_COLORSPACE_SOURCES) $(EXTRA_SOURCES)
+@@ -68,21 +68,21 @@
+ clean: clean-plugins clean-catalogs
+ 
+ catalogs:
+-	cd po && $(MAKE)
++	$(MAKE) -C po
+ 
+ plugins: $(TARGETS)
+ 
+ separate: $(SEPARATE_OBJECTS)
+-	$(CC) $(SEPARATE_OBJECTS) -o $@ $(LDFLAGS)
++	$(CC) $(LDFLAGS) $(SEPARATE_OBJECTS) -o $@ $(LIBS)
+ 
+ separate_import: $(IMPORT_OBJECTS)
+-	$(CC) $(IMPORT_OBJECTS) -o $@ $(LDFLAGS)
++	$(CC) $(LDFLAGS) $(IMPORT_OBJECTS) -o $@ $(LIBS)
+ 
+ icc_colorspace: $(ICC_COLORSPACE_OBJECTS)
+-	$(CC) $(ICC_COLORSPACE_OBJECTS) -o $@ $(LDFLAGS)
++	$(CC) $(LDFLAGS) $(ICC_COLORSPACE_OBJECTS) -o $@ $(LIBS)
+ 
+ install-catalogs:
+-	cd po && $(MAKE) install
++	$(MAKE) -C po install
+ 
+ install-plugins: $(TARGETS)
+ 	install -c $^ "$(INSTALLDIR)"
+--- separate+-0.5.4/Makefile	2009-08-12 16:21:22.000000000 +0200
++++ separate+-0.5.4/Makefile.new	2009-08-12 16:22:16.000000000 +0200
+@@ -85,6 +85,7 @@
+ 	$(MAKE) -C po install
+ 
+ install-plugins: $(TARGETS)
++	mkdir -p "$(INSTALLDIR)"
+ 	install -c $^ "$(INSTALLDIR)"
+ 
+ install: install-plugins install-catalogs
