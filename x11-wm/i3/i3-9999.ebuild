@@ -44,8 +44,5 @@ src_install() {
 	dodoc GOALS TODO CMDMODE || die "dodoc die"
 	doman man/i3.1 || die "doman die"
 	use doc && { dohtml -r website/* docs/*.html || die "dohtml die" ; }
-}
-
-pkg_postinst() {
 	use doc && elog "Documentation in html is in /etc/share/doc/${P}"
 }
