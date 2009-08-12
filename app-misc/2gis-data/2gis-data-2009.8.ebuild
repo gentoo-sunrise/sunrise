@@ -54,7 +54,7 @@ my_add_town tom Tomsk 2004 12
 my_add_town ufa Ufa 2008 3
 
 pkg_setup() {
-	check_license "${FILESDIR/files}"/../../licenses/${LICENSE}
+	check_license "${FILESDIR%/files}"/../../licenses/${LICENSE}
 }
 
 src_install() {
