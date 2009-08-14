@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Aug 2009; Markus Rennings (mren) <mren@mrmx.de> monitorix-1.3.1.ebuild:
+  forgot webapp_pkg_postinst; added ~x86 keyword, thx to David for testing
+
   11 Aug 2009; Markus Rennings (mren) <mren@mrmx.de> monitorix-1.3.1.ebuild:
   added a png
 

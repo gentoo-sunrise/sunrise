@@ -11,7 +11,7 @@ HOMEPAGE="http://www.monitorix.org/"
 SRC_URI="http://www.monitorix.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="evms hddtemp lm_sensors"
 
 DEPEND="sys-apps/sed"
@@ -66,11 +66,13 @@ src_install() {
 
 pkg_postinst() {
 	elog "Before starting the ${PN} init script make sure you edited the "
-	elog "config file"
+	elog "config file."
 	elog
 	elog "This package is run via /etc/cron.d and therefore uses root "
 	elog "privileges. The graphs are created at runtime directly to "
 	elog "the imgs/ directory inside the dir you installed the app to "
 	elog "with webapp-config. These are created with the privileges "
 	elog "of the webserver user account."
+
+	webapp_pkg_postinst
 }
