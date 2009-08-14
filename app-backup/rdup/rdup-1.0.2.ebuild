@@ -9,25 +9,30 @@ LICENSE="GPL-3"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="path-encryption test"
+IUSE="test"
 
 RDEPEND="app-arch/libarchive
 	dev-libs/glib
 	dev-libs/libpcre
-	path-encryption? ( dev-libs/nettle )"
+	dev-libs/nettle"
 DEPEND="${RDEPEND}
 	test? ( dev-util/dejagnu )"
 
-src_compile() {
-	econf $(use_with path-encryption nettle)
+pkg_setup() {
+	# warning to upgraders
+	if has_version ${CATEGORY}/${PN}; then
+		ewarn "In rdup 1.0.2, the rdup-simple script is moved from /usr/lib[64]/rdup to /usr/bin"
+		ewarn "Please be sure to update your scripts or crontabs accordingly."
+	fi
+}
 
+src_compile() {
+	econf
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-
-	dosym ../lib/rdup/rdup-simple.sh /usr/bin/rdup-simple || die "dosym failed"
 
 	dodoc AUTHORS ChangeLog DESIGN README || die "dodoc failed"
 }
