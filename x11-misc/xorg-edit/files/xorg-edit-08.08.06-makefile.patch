@@ -1,0 +1,46 @@
+--- libxorgedit/Makefile	2008-08-05 18:46:23.000000000 +0200
++++ libxorgedit/Makefile.new	2009-08-15 17:52:26.000000000 +0200
+@@ -6,10 +6,10 @@
+ OUTPUT = ../libxorgedit.a
+ 
+ # compiler
+-CXX = g++
++CXX ?= g++
+ 
+ # C++ compiler flags (-g -O2 -Wall)
+-CXXFLAGS = -Wall -Wextra -O3
++#CXXFLAGS = -Wall -Wextra -O3
+ 
+ # implementation
+ 
+--- xorgedit/Makefile	2008-08-06 20:29:54.000000000 +0200
++++ xorgedit/Makefile.new	2009-08-15 20:11:11.000000000 +0200
+@@ -18,23 +18,23 @@
+ INCLUDES = -I../
+ 
+ # C++ compiler flags (-g -O2 -Wall)
+-CXXFLAGS = `wx-config --cxxflags` -O3
++CXXFLAGS += `wx-config --cxxflags`
+ 
+ # compiler
+-CXX = `wx-config --cxx`
++CXX ?= `wx-config --cxx`
+ 
+ # library paths
+-LIBS = -L../ -lm -lxorgedit
++LIBS = -L../ -lm -lxorgedit `wx-config --libs`
+ 
+ # compile flags
+-LDFLAGS = `wx-config --libs`
++#LDFLAGS = `wx-config --libs`
+ 
+ # implementation
+ 
+ all: $(OUTPUT)
+ 
+ $(OUTPUT): $(OBJECTS)
+-	$(CXX) -o $(OUTPUT) $(OBJECTS) $(LIBS) $(LDFLAGS)
++	$(CXX) $(LDFLAGS) -o $(OUTPUT) $(OBJECTS) $(LIBS)
+ 
+ $(OBJECTS): $(SOURCES)
+ 	$(CXX) $(INCLUDES) -c $(SOURCES) $(CXXFLAGS)

@@ -1,6 +1,13 @@
 # ChangeLog for x11-misc/xorg-edit
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*xorg-edit-08.08.06 (15 Aug 2009)
+
+  15 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  -xorg-edit-07.06.15.ebuild, -files/xorg-edit-07.06.15-makefile.patch,
+  +xorg-edit-08.08.06.ebuild, +files/xorg-edit-08.08.06-makefile.patch:
+  version bump
 
   13 Jan 2008; Jakub Moc <jakub@gentoo.org> xorg-edit-07.06.15.ebuild:
   Fix wxGTK handling
