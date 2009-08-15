@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd> not sure yet </herd>
+<maintainer>
+  <email>maintainer-wanted@gentoo.org</email>
+  <name>maintainer-wanted</name>
+</maintainer>
+<longdescription>
+  The Globus Toolkit - grid middleware package
+</longdescription>
+<use>
+  <flag name='condor'>Condor-G scheduler support</flag>
+  <flag name='lsf'>Platform LSF support</flag>
+  <flag name='pbs'>Portable Batch System support</flag>
+
+  <flag name='i18n'>        Internationalization libraries</flag>
+  <flag name='prewsgram'>   Pre-webservices GRAM</flag>
+  <flag name='gridftp'>     GridFTP</flag>
+  <flag name='gridway'>     GridWay DRMAA Library</flag>
+  <flag name='prews'>       Pre-WS GRAM, MDS2, and GridFTP</flag>
+  <flag name='wsjava'>      Java WS Core</flag>
+  <flag name='wsc'>         C WS core</flag>
+  <flag name='wsmds'>       MDS4</flag>
+  <flag name='wsdel'>       Delegation Service</flag>
+  <flag name='wsrft'>       Reliable File Transfer service</flag>
+  <flag name='wsgram'>      GRAM4</flag>
+  <flag name='wscas'>       Community Authorization Service</flag>
+  <flag name='wstests'>     Tests for java webservices</flag>
+  <flag name='wsctests'>    Tests for C webservices</flag>
+  <flag name='prews-test'>  Tests for pre-webservices components</flag>
+  <flag name='rls'>         Replica Location Service</flag>
+
+</use>
+</pkgmetadata>
+

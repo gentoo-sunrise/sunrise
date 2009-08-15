@@ -1,0 +1,11 @@
+--- ./source-trees/gsi/gaa_callbacks/gaa_simple/test/Makefile.in	2009-08-13 07:22:15.882621388 -0600
++++ ./source-trees/gsi/gaa_callbacks/gaa_simple/test/Makefile.in	2009-08-13 07:22:49.067486988 -0600
+@@ -68,7 +68,7 @@
+ gaa_test_with_assertion_file_OBJECTS =  \
+ 	$(am_gaa_test_with_assertion_file_OBJECTS)
+ gaa_test_with_assertion_file_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-DEFAULT_INCLUDES = -I. -I$(srcdir)
++DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(srcdir)/../../gaa_gss_generic/source/
+ depcomp =
+ am__depfiles_maybe =
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
