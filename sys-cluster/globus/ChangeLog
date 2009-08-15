@@ -2,6 +2,14 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Aug 2009; John (EBo) David <ebo@users.sourceforge.net> files/22globus,
+  files/globus-init.d:
+  updated globus init.d script
+
+  15 Aug 2009; John (EBo) David <ebo@users.sourceforge.net> files/22globus,
+  files/globus-init.d:
+  updated globus init.d script
+
   15 Aug 2009; John (EBo) David <ebo@users.sourceforge.net> +files/22globus,
   +globus-4.2.1.ebuild, +files/gaa_test.patch, +files/globus-init.d,
   +files/gwd_open.patch, +metadata.xml:
