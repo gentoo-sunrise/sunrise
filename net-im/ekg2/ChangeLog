@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  ekg2-9999.ebuild:
+  Depend on gettext instead of libintl as we need to compile the .po files.
+
   01 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   ekg2-9999.ebuild:
   Simplify DEPEND/RDEPEND.

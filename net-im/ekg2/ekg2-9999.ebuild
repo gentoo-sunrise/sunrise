@@ -30,7 +30,7 @@ RDEPEND="
 	gsm? ( media-sound/gsm )
 	gtk? ( x11-libs/gtk+:2 )
 	idn? ( net-dns/libidn )
-	nls? ( virtual/libintl )
+	nls? ( sys-devel/gettext )
 	oracle?	( dev-db/oracle-instantclient-basic )
 	pcap? ( net-libs/libpcap )
 	perl? ( dev-lang/perl )
