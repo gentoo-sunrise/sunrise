@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Aug 2009; Rafael Ostertag (rafi) <rafi@guengel.ch> yapet-0.4-r1.ebuild:
+  Changed DEPEND and RDEPEND to include libintl, not gettext
+
   15 Aug 2009; Rafael Ostertag (rafi) <rafi@guengel.ch>
   +yapet-0.4-r1.ebuild, +metadata.xml:
   New Ebuild for bug 281028 thanks to chithead, jlec, ssuominen, Tommy [D],

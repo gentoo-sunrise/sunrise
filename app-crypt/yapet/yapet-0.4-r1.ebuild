@@ -21,10 +21,10 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="nls"
 
-RDEPEND=">=sys-libs/ncurses-5.6
+RDEPEND="nls? ( virtual/libintl )
+	>=sys-libs/ncurses-5.6
 	>=dev-libs/openssl-0.9.7"
-DEPEND="nls? ( sys-devel/gettext )
-	${RDEPEND}"
+DEPEND="${RDEPEND}"
 
 PATCHES=(
 	"${DISTDIR}/yapet_csv2yapet-${PV}.diff"
