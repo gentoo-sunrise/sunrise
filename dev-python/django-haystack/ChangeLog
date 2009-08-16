@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/django-haystack
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +django-haystack-9999.ebuild, +metadata.xml:
+  New ebuild for dev-python/django-haystack (bug #281096).
+
