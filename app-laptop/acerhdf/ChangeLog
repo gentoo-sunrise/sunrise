@@ -3,6 +3,10 @@
 # $Header: $
 
   16 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  acerhdf-0.5.16.4.ebuild:
+  fixed post install message
+
+  16 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   -acerhdf-0.4.0-r1.ebuild, acerhdf-0.5.16.4.ebuild:
   Cleanup
 
