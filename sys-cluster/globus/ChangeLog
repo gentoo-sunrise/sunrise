@@ -6,16 +6,6 @@
   files/globus-init.d:
   updated globus init.d script
 
-  15 Aug 2009; John (EBo) David <ebo@users.sourceforge.net> files/22globus,
-  files/globus-init.d:
-  updated globus init.d script
-
-  15 Aug 2009; John (EBo) David <ebo@users.sourceforge.net> +files/22globus,
-  +globus-4.2.1.ebuild, +files/gaa_test.patch, +files/globus-init.d,
-  +files/gwd_open.patch, +metadata.xml:
-  New Ebuild for bug 51149 thanks to Tommy[D], sedzimir and the people over at
-  sunrise
-
   15 Aug 2009; John (EBo) David <ebo@users.sourceforge.net> +files/22globus,
   +globus-4.2.1.ebuild, +files/gaa_test.patch, +files/globus-init.d,
   +files/gwd_open.patch, +metadata.xml:
