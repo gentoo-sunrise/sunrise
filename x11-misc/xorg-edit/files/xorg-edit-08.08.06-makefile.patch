@@ -49,8 +49,8 @@
  # implementation
  
 --- Makefile	2008-08-06 20:29:24.000000000 +0200
-+++ Makefile.new	2009-08-16 12:53:07.000000000 +0200
-@@ -8,7 +8,8 @@
++++ Makefile.new	2009-08-16 13:01:36.000000000 +0200
+@@ -8,10 +8,11 @@
  
  # implementation
  all:
@@ -58,5 +58,28 @@
 +	+make -C libxorgedit
 +	+make -C xorgedit
  
- install:
- 	cd libxorgedit && make && cd ../xorgedit && make install && cd ..
+-install:
+-	cd libxorgedit && make && cd ../xorgedit && make install && cd ..
++install: all
++	+make -C xorgedit install
+ 
+ clean:
+ 	cd libxorgedit && make clean && cd ../xorgedit && make clean && cd ..
+--- xorgedit/Makefile	2009-08-16 13:05:03.000000000 +0200
++++ xorgedit/Makefile.new	2009-08-16 13:06:24.000000000 +0200
+@@ -43,10 +43,11 @@
+ 	rm -f $(OBJECTS) $(OUTPUT)
+ 
+ install: all
+-	mkdir -p $(INSTALLPATH)/lib/xorgedit/
+-	cp -r ../options $(INSTALLPATH)/lib/xorgedit/
+-	cp -r ../de_DE $(INSTALLPATH)/lib/xorgedit/
+-	cp $(OUTPUT) $(INSTALLPATH)/lib/xorgedit/
++	mkdir -p $(INSTALLPATH)/xorgedit/
++	cp -r ../options $(INSTALLPATH)/xorgedit/
++	cp -r ../de_DE $(INSTALLPATH)/xorgedit/
++	mkdir -p $(INSTALLPATH)/../bin
++	cp $(OUTPUT) $(INSTALLPATH)/../bin/
+ 
+ uninstall:
+ 	rm -rf $(INSTALLPATH)/lib/xorgedit/
