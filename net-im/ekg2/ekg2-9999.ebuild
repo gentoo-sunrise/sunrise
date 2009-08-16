@@ -30,7 +30,7 @@ RDEPEND="
 	gsm? ( media-sound/gsm )
 	gtk? ( x11-libs/gtk+:2 )
 	idn? ( net-dns/libidn )
-	nls? ( sys-devel/gettext )
+	nls? ( virtual/libintl )
 	oracle?	( dev-db/oracle-instantclient-basic )
 	pcap? ( net-libs/libpcap )
 	perl? ( dev-lang/perl )
@@ -56,6 +56,7 @@ RDEPEND="
 	!sqlite3? ( sqlite? ( dev-db/sqlite:0 ) )"
 
 DEPEND="dev-util/scons
+	nls? ( sys-devel/gettext )
 	${RDEPEND}"
 
 pkg_setup() {
