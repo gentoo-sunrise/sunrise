@@ -40,6 +40,5 @@ pkg_postinst() {
 	linux-mod_pkg_postinst
 	einfo "The module now starts with kernel mode off"
 	einfo "Add options acerhdf kernelmode=1 to your"
-	einfo "/etc/modprobe.d/acerhdf.conf and run update-modules"
-	einfo "to enable it at loadtime"
+	einfo "/etc/modprobe.d/acerhdf.conf to enable it at loadtime"
 }
