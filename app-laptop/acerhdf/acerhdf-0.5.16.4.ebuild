@@ -39,5 +39,6 @@ pkg_setup() {
 pkg_postinst() {
 	linux-mod_pkg_postinst
 	einfo "The module now starts with kernel mode off"
-	einfo "Read here http://piie.net/files/acerhdf_README.txt how to switch it on"
+	einfo "Add options acerhdf kernelmode=on to your"
+	einfo "/etc/modprobe.d/acerhdf.conf to aenable it at loadtime"
 }
