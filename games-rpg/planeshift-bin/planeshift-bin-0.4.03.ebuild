@@ -11,7 +11,7 @@ SRC_URI="x86? ( mirror://planeshift/PlaneShift-v${PV}-x86.bin )
 
 LICENSE="GPL-3 PlaneShift"
 SLOT="0"
-KEYWORDS="~amd64 ~x86" # amd64 might work as well, I just can't test it
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RESTRICT="strip"
