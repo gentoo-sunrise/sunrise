@@ -11,14 +11,14 @@ SRC_URI="x86? ( mirror://planeshift/PlaneShift-v${PV}-x86.bin )
 
 LICENSE="GPL-3 PlaneShift"
 SLOT="0"
-KEYWORDS="-* ~x86" # amd64 might work as well, I just can't test it
+KEYWORDS="~amd64 ~x86" # amd64 might work as well, I just can't test it
 IUSE=""
 
 RESTRICT="strip"
 
 src_unpack() {
-	cp -L "${DISTDIR}/${A}" "${WORKDIR}" || die
-	chmod +x "${WORKDIR}/${A}" || die
+	cp -L "${DISTDIR}/${A}" "${WORKDIR}" || die "Copy ${A} to ${WORKDIR}"
+	chmod +x "${WORKDIR}/${A}" || die "chmod die"
 }
 
 src_install() {
@@ -26,7 +26,7 @@ src_install() {
 		--mode unattended \
 		--perms yes \
 		--usergroup games \
-		--prefix "${D}/${GAMES_PREFIX_OPT}" || die
+		--prefix "${D}/${GAMES_PREFIX_OPT}" || die "Installer of Planeshift die"
 
 	rm "${D}/${GAMES_PREFIX_OPT}"/PlaneShift/psupdater
 	rm "${D}/${GAMES_PREFIX_OPT}"/PlaneShift/psupdater.bin
