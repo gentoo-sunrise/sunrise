@@ -3,5 +3,6 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
+		<flag name='sha2'>Enable SHA256 and SHA512 RRSIG support</flag>
 	</use>
 </pkgmetadata>

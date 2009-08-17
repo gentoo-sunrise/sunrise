@@ -4,15 +4,36 @@
 
 DESCRIPTION="ldns is a library with the aim to simplify DNS programing in C"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/ldns/"
+LICENSE="BSD"
+
+IUSE="doc examples sha2 ssl"
+KEYWORDS="~amd64 ~x86"
+SLOT="0"
 SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
 
-LICENSE="BSD"
-SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="examples"
+RDEPEND="ssl? ( dev-libs/openssl )"
+DEPEND="${RDEPEND}
+	doc? ( app-doc/doxygen )"
 
-DEPEND="dev-libs/openssl"
-RDEPEND=${DEPEND}
+pkg_setup() {
+	if use sha2; then
+		if ! use ssl; then
+			die "For sha2 support, you have to enable ssl USE flag too"
+		fi
+		ewarn "You enabled sha2 USE flag, this is still experimental"
+	fi
+}
+
+src_compile() {
+	econf \
+	$(use_enable sha2) \
+	$(use_with ssl)
+
+	emake || die "emake failed"
+	if use doc; then
+		emake doxygen || die "emake doc failed"
+	fi
+}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
@@ -21,6 +42,10 @@ src_install() {
 	if use examples; then
 		docinto examples
 		dodoc examples/* || die "dodoc for examples failed"
+	fi
+
+	if use doc; then
+		dohtml doc/html/* || die "dohtml failed"
 	fi
 }
 
