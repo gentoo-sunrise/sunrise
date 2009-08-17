@@ -6,12 +6,12 @@ inherit eutils
 
 DESCRIPTION="An authoritative only, high performance, open source name server"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/nsd"
-LICENSE="BSD"
-
-IUSE="bind8-stats dnssec ipv6 largefile nsec3 nsid root-server runtime-checks tsig"
-KEYWORDS="~amd64 ~x86"
 SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
+
+LICENSE="BSD"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="bind8-stats dnssec ipv6 largefile nsec3 nsid root-server runtime-checks tsig"
 
 DEPEND="tsig? ( dev-libs/openssl )"
 RDEPEND=${DEPEND}
