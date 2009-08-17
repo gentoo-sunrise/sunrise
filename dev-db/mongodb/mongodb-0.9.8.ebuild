@@ -23,15 +23,16 @@ DEPEND="${RDEPEND}
 	>=dev-util/scons-1.2.0-r1
 	test? ( dev-libs/unittest )"
 
-S=${WORKDIR}/${PN}-mongo-6dc201583a91ae97f547fbff748019dfbc8ea1d4
+S=${WORKDIR}/${PN}-mongo-75a58367af664525db5e7226db81082be19e4f06
 
 pkg_setup() {
 	enewgroup mongodb
-	enewuser mongodb -1 /sbin/nologin /var/lib/${PN} mongodb
+	enewuser mongodb -1 -1 /var/lib/${PN} mongodb
 }
 
 src_prepare() {
 	epatch "${FILESDIR}"/modify-*.patch
+	epatch "${FILESDIR}/server-238-fix.patch"
 }
 
 src_compile() {
