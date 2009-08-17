@@ -66,13 +66,16 @@ src_install() {
 
 pkg_postinst() {
 	elog "Before starting the ${PN} init script make sure you edited the "
-	elog "config file."
+	elog "config file. After that you can start ${PN} by running"
+	elog "\t/etc/init.d/${PN} start"
+	elog "If you want to start it automatically on boot run"
+	elog "\trc-update add ${PN} default"
 	elog
 	elog "This package is run via /etc/cron.d and therefore uses root "
-	elog "privileges. The graphs are created at runtime directly to "
-	elog "the imgs/ directory inside the dir you installed the app to "
-	elog "with webapp-config. These are created with the privileges "
-	elog "of the webserver user account."
+	elog "privileges to collect the informations. The graphs are created "
+	elog "at runtime directly to the imgs/ directory inside the dir you "
+	elog "installed the app to with webapp-config. These are created "
+	elog "with the privileges of the webserver user account."
 
 	webapp_pkg_postinst
 }
