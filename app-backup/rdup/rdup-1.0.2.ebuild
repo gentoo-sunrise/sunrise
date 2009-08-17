@@ -5,8 +5,8 @@
 DESCRIPTION="The only backup program that doesn't make backups"
 HOMEPAGE="http://www.miek.nl/projects/rdup"
 SRC_URI="http://www.miek.nl/projects/${PN}/${P}.tar.bz2"
-LICENSE="GPL-3"
 
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
