@@ -1,0 +1,12 @@
+--- GNS3-0.6.1-src.orig/src/GNS3/Ui/ConfigurationPages/Page_PreferencesPemu.py	2009-05-13 10:57:54.000000000 +0100
++++ GNS3-0.6.1-src/src/GNS3/Ui/ConfigurationPages/Page_PreferencesPemu.py	2009-08-17 17:08:50.000000000 +0100
+@@ -54,8 +54,7 @@
+             if sys.platform.startswith('win'):
+                 self.conf.pemuwrapper_path = unicode('C:\Program Files\GNS3\pemuwrapper.exe')
+             else:
+-                path = os.getcwd() + '/pemu/pemuwrapper.py'
+-                self.conf.pemuwrapper_path = unicode(path, errors='replace')
++                self.conf.pemuwrapper_path = unicode('/usr/libexec/gns3/pemuwrapper.py')
+         
+         # Default path to working directory
+         if self.conf.pemuwrapper_workdir == '':
