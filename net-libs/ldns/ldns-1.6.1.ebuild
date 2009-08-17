@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
-DESCRIPTION="ldns is a library with the aim to simplify DNS programing in C"
+DESCRIPTION="A library with the aim to simplify DNS programing in C"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/ldns/"
-LICENSE="BSD"
-
-IUSE="doc examples sha2 ssl"
-KEYWORDS="~amd64 ~x86"
-SLOT="0"
 SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
+
+LICENSE="BSD"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="doc examples sha2 ssl"
 
 RDEPEND="ssl? ( dev-libs/openssl )"
 DEPEND="${RDEPEND}
