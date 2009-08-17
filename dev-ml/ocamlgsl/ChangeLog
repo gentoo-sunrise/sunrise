@@ -6,7 +6,3 @@
   +ocamlgsl-0.6.0.ebuild, +files/ocaml-3.11.patch, +metadata.xml:
   New Ebuild for dev-ml/ocamlgsl (bug #280939)
 
-  17 Aug 2009; Guillaume Horel (thrasibule) <guillaume.horel@gmail.com>
-  +ocamlgsl-0.6.0.ebuild, +files/ocaml-3.11.patch, +metadata.xml:
-  New Ebuild for dev-ml/ocamlgsl (bug #280939)
-
