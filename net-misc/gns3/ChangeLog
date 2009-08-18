@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -files/gns3-0.6_set_dynamips_path.patch,
+  -files/gns3-0.6_set_pemu_path.patch:
+  Drop old patches
+
   17 Aug 2009; Duncan Lockwood (dunc) <dunc@lemonia.org> -gns3-0.6.ebuild,
   +gns3-0.6.1.ebuild, +files/gns3-0.6.1_set_dynamips_path.patch,
   +files/gns3-0.6.1_set_pemu_path.patch:
