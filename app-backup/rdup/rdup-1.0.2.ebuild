@@ -11,12 +11,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-DEPEND="app-arch/libarchive
+RDEPEND="app-arch/libarchive
 	dev-libs/glib
 	dev-libs/libpcre
-	dev-libs/nettle
+	dev-libs/nettle"
+DEPEND="${RDEPEND}
 	test? ( dev-util/dejagnu )"
-RDEPEND=${DEPEND}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
