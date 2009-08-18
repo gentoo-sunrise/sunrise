@@ -36,5 +36,5 @@ src_install() {
 	if use examples ; then
 		insinto /usr/share/doc/${PF}
 		doins -r examples || die "Install failed"
-	fi;
+	fi
 }
