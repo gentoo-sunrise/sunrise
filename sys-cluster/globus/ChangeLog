@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  globus-4.2.1.ebuild:
+  Add workaround for pkg_postrm
+
   18 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Fix metadata.xml
 

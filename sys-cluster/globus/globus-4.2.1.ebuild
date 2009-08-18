@@ -173,7 +173,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	if [ -z has_version ]; then
+	if ! [[ -e "${GLOBUS}"/bin/globus-start-container ]]; then
 		ewarn "Globus builds and installs files into ${GLOBUS}"
 		ewarn "after package installation.  After uninstalling"
 		ewarn "you may want to manually remove all or part of the Globus"
