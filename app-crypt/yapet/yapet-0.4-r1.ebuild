@@ -25,19 +25,9 @@ RDEPEND="nls? ( virtual/libintl )
 DEPEND="${RDEPEND}"
 
 src_unpack() {
-	local patchset=(
-		"${DISTDIR}/yapet_csv2yapet-${PV}.diff"
-		"${DISTDIR}/yapet_cfgfile-${PV}.diff"
-		"${DISTDIR}/yapet_vikeys-${PV}.diff"
-	)
-
 	unpack "${P}.tar.bz2"
 	cd "${S}"
-
-	for x in ${patchset[@]}; do
-		epatch ${x}
-	done
-
+	epatch "${DISTDIR}"/${PN}_{csv2yapet,cfgfile,vikeys}-${PV}.diff
 	eautoreconf
 	econf --enable-terminal-title \
 		--enable-csv2yapet \
