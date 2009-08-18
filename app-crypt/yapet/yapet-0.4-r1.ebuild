@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-AT_NOELIBTOOLIZE=yes
-
-inherit eutils autotools
+inherit eutils
 
 DESCRIPTION="A curses (text) based password encryption tool"
 HOMEPAGE="http://www.guengel.ch/myapps/yapet/"
@@ -28,7 +26,6 @@ src_unpack() {
 	unpack "${P}.tar.bz2"
 	cd "${S}"
 	epatch "${DISTDIR}"/${PN}_{csv2yapet,cfgfile,vikeys}-${PV}.diff
-	eautoreconf
 	econf --enable-terminal-title \
 		--enable-csv2yapet \
 		--disable-source-doc \
