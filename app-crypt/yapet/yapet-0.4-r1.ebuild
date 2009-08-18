@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-
 AT_NOELIBTOOLIZE=yes
 
-inherit base eutils autotools
+inherit eutils autotools
 
 DESCRIPTION="A curses (text) based password encryption tool"
 HOMEPAGE="http://www.guengel.ch/myapps/yapet/"
@@ -18,7 +16,7 @@ SRC_URI="${URI_PREFIX}${P}.tar.bz2
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="nls"
 
 RDEPEND="nls? ( virtual/libintl )
@@ -26,18 +24,21 @@ RDEPEND="nls? ( virtual/libintl )
 	>=dev-libs/openssl-0.9.7"
 DEPEND="${RDEPEND}"
 
-PATCHES=(
-	"${DISTDIR}/yapet_csv2yapet-${PV}.diff"
-	"${DISTDIR}/yapet_cfgfile-${PV}.diff"
-	"${DISTDIR}/yapet_vikeys-${PV}.diff"
-)
+src_unpack() {
+	local patchset=(
+		"${DISTDIR}/yapet_csv2yapet-${PV}.diff"
+		"${DISTDIR}/yapet_cfgfile-${PV}.diff"
+		"${DISTDIR}/yapet_vikeys-${PV}.diff"
+	)
 
-src_prepare() {
-	base_src_prepare
+	unpack "${P}.tar.bz2"
+	cd "${S}"
+
+	for x in ${patchset[@]}; do
+		epatch ${x}
+	done
+
 	eautoreconf
-}
-
-src_configure() {
 	econf --enable-terminal-title \
 		--enable-csv2yapet \
 		--disable-source-doc \
