@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-WX_GTK_VER="2.8"
-
 inherit base multilib toolchain-funcs wxwidgets
 
 DESCRIPTION="GUI to edit XServer-file xorg.conf easily"
@@ -12,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}_src.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="x11-libs/wxGTK"
@@ -27,6 +25,6 @@ src_compile() {
 }
 
 src_install() {
-	emake INSTALLPATH="${D}"/usr/$(get_libdir) install || die "Installation failed"
+	emake DESTDIR="${D}" INSTALLPATH="/usr/$(get_libdir)" install || die "Installation failed"
 	dodoc CHANGELOG README || die "nothing to read"
 }

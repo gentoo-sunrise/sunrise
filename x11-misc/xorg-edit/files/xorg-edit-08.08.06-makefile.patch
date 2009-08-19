@@ -75,11 +75,11 @@
 -	cp -r ../options $(INSTALLPATH)/lib/xorgedit/
 -	cp -r ../de_DE $(INSTALLPATH)/lib/xorgedit/
 -	cp $(OUTPUT) $(INSTALLPATH)/lib/xorgedit/
-+	mkdir -p $(INSTALLPATH)/xorgedit/
-+	cp -r ../options $(INSTALLPATH)/xorgedit/
-+	cp -r ../de_DE $(INSTALLPATH)/xorgedit/
-+	mkdir -p $(INSTALLPATH)/../bin
-+	cp $(OUTPUT) $(INSTALLPATH)/../bin/
++	mkdir -p $(DESTDIR)/$(INSTALLPATH)/xorgedit/
++	cp -r ../options $(DESTDIR)/$(INSTALLPATH)/xorgedit/
++	cp -r ../de_DE $(DESTDIR)/$(INSTALLPATH)/xorgedit/
++	mkdir -p $(DESTDIR)/$(INSTALLPATH)/../bin
++	cp $(OUTPUT) $(DESTDIR)/$(INSTALLPATH)/../bin/
  
  uninstall:
  	rm -rf $(INSTALLPATH)/lib/xorgedit/
