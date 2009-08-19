@@ -12,22 +12,22 @@ SRC_URI="http://oandrieu.nerim.net/ocaml/gsl/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ocaml-3.10
 	>=sci-libs/gsl-1.9"
-RDEPEND="${DEPEND}"
+RDEPEND=${DEPEND}
 
 PATCHES=( "${FILESDIR}/ocaml-3.11.patch" )
 
 src_compile() {
-	emake -j1 || die "compilation failed"
+	emake CFLAGS="${CFLAGS}" || die "emake failed"
 }
 
 src_install() {
 	findlib_src_preinst
-	emake install-findlib -j1 || die "make install failed"
+	emake install-findlib || die "make install failed"
 
 	dodoc README NEWS NOTES || die "docs install failed"
 	doinfo *.info* || die "info install failed"
