@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -mongodb-0.9.8.ebuild, +mongodb-0.9.9.ebuild, -files/server-238-fix.patch:
+  Version bump
+
   17 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -mongodb-0.9.7.ebuild, +mongodb-0.9.8.ebuild, +files/server-238-fix.patch:
   Version bump
