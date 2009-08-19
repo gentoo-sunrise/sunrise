@@ -93,12 +93,3 @@ src_install() {
 	einfo "Updating ownership and permissions..."
 	fowners -R globus:globus * || die "fowners failed"
 }
-
-pkg_postrm() {
-	if [ -z has_version ]; then
-		ewarn "Globus builds and installs files into ${GLOBUS}"
-		ewarn "after package installation.  After uninstalling"
-		ewarn "you may want to manually remove all or part of the Globus"
-		ewarn "installation directory ${GLOBUS}."
-	fi
-}
