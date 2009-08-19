@@ -144,8 +144,7 @@ src_install() {
 	doins quickstart.html || die "install quickstart.html died"
 
 	einfo "linking globus_packages directory"
-	dosym "${ROOT}${GLOBUS}"/etc/gpt/packages \
-		  "${ROOT}${GLOBUS}"/etc/globus_packages \
+	dosym gpt/packages ${GLOBUS}/etc/globus_packages \
 			|| die "generating symbolic link died"
 
 	einfo "Updating ownership and permissions..."
@@ -173,7 +172,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	if ! [[ -e "${GLOBUS}"/bin/globus-start-container ]]; then
+	if ! [[ -e "${ROOT}${GLOBUS}"/bin/globus-start-container ]]; then
 		ewarn "Globus builds and installs files into ${GLOBUS}"
 		ewarn "after package installation.  After uninstalling"
 		ewarn "you may want to manually remove all or part of the Globus"
