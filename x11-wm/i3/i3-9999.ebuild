@@ -10,27 +10,29 @@ DESCRIPTION="An improved dynamic tiling window manager"
 HOMEPAGE="http://i3.zekjur.net/"
 SRC_URI=""
 EGIT_REPO_URI="git://code.stapelberg.de/i3"
+EGIT_BRANCH="next"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc"
+IUSE="debug doc"
 
-RDEPEND="x11-libs/libxcb
-	x11-libs/xcb-util
+RDEPEND=">=x11-libs/libxcb-1.1.93
+	>=x11-libs/xcb-util-0.3.3
 	x11-libs/libX11
 	dev-libs/libev"
 DEPEND="${RDEPEND}
-	x11-proto/xcb-proto
+	>=x11-proto/xcb-proto-1.3
 	>=app-text/asciidoc-8.3
 	app-text/xmlto
 	app-text/docbook-xml-dtd"
 
 src_prepare() {
+	use debug || { sed -i -e "s:DEBUG=1:DEBUG=0:" common.mk || die "sed die - debug" ; }
 	sed -i \
 		-e "s:/usr/local/include:/usr/include:" \
 		-e "s:/usr/local/lib:/usr/$(get_libdir):" \
-		Makefile || die "sed die"
+		common.mk || die "sed die"
 }
 
 src_compile() {
@@ -43,6 +45,8 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install die"
 	dodoc GOALS TODO CMDMODE || die "dodoc die"
 	doman man/i3.1 || die "doman die"
-	use doc && { dohtml -r website/* docs/*.html || die "dohtml die" ; }
-	use doc && elog "Documentation in html is in /etc/share/doc/${P}"
+	if use doc; then
+		dohtml -r docs/*.html || die "dohtml die"
+		elog "Documentation in html is in /etc/share/doc/${P}"
+	fi
 }
