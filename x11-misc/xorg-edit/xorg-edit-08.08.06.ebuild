@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base toolchain-funcs wxwidgets
+inherit base multilib toolchain-funcs wxwidgets
 
 DESCRIPTION="GUI to edit XServer-file xorg.conf easily"
 HOMEPAGE="http://www.deesaster.org/progxorg.php"
