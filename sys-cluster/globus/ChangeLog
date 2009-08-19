@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  globus-4.2.1.ebuild:
+  Adjust pkg_postrm
+
   19 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   globus-4.2.1.ebuild:
   Support ${ROOT} in postrm. Use relative symlink to gpt/packages to make it
