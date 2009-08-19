@@ -6,7 +6,7 @@ EAPI="2"
 
 # The globus-build tools do not require java to be installed, BUT
 # configure still expects it...
-inherit eutils java-pkg-2 java-utils-2
+inherit eutils
 
 MY_P="gt${PV}-all-source-installer"
 
@@ -22,20 +22,9 @@ KEYWORDS="~x86"
 
 IUSE="condor iodbc lsf odbc pbs"
 
-RDEPEND="
-	dev-java/ant
-	sys-libs/zlib
-	dev-lang/perl
-	app-admin/sudo
-	dev-libs/openssl
-	dev-db/postgresql
-	dev-perl/XML-Parser
-	virtual/mpi
-	iodbc? ( dev-db/libiodbc )
-	odbc? ( !iodbc? ( dev-db/unixODBC ) )"
+RDEPEND="dev-lang/perl"
 
-DEPEND=">=virtual/jdk-1.5
-	${RDEPEND}"
+DEPEND=${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
@@ -86,7 +75,7 @@ src_install() {
 	# The supplied Makefile install violates standard practices.  The
 	# following simulates a "make DESTDIR=${D}" and moves the built
 	# programs/files into ${D}
-	mv "${S}"/build/* "${D}/" || die "mv failed"
+	cp -dpR "${S}"/build/* "${D}/" || die "mv failed"
 
 	doenvd "${T}"/21globus-build || die "install env.d/globus-build died"
 

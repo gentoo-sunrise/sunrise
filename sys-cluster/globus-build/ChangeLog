@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  globus-build-4.2.1.ebuild:
+  Drop java eclasses, drop most unneeded dependencies, use cp instead of mv
+
   19 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   globus-build-4.2.1.ebuild:
   Remove postrm, it's broken currently, it seems more related to
