@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base multilib toolchain-funcs wxwidgets
+inherit base toolchain-funcs wxwidgets
 
 DESCRIPTION="GUI to edit XServer-file xorg.conf easily"
 HOMEPAGE="http://www.deesaster.org/progxorg.php"
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="x11-libs/wxGTK"
-RDEPEND="${DEPEND}"
+RDEPEND=${DEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${P}-makefile.patch
@@ -25,6 +25,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" INSTALLPATH="/usr/$(get_libdir)" install || die "Installation failed"
-	dodoc CHANGELOG README || die "nothing to read"
+	emake DESTDIR="${D}" INSTALLPATH="/usr/$(get_libdir)" install \
+		|| die "Installation failed"
+	dodoc CHANGELOG README || die "dodoc failed"
 }
