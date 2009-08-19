@@ -24,7 +24,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-libs/unittest )"
 
 S=${WORKDIR}/${PN}-mongo-2869e47ae388c1a2f5cd388d654defd2788b057c
-RESTRICT="mirror"
 
 pkg_setup() {
 	enewgroup mongodb
