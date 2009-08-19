@@ -57,10 +57,19 @@ src_install() {
 	# The supplied Makefile install violates standard practices.  The
 	# following simulates a "make DESTDIR=${D}" and moves the built
 	# programs/files into ${D}
-	cp -dpR "${S}"/build/* "${D}/" || die "mv failed"
+	mv -f "${S}"/build/* "${D}/" || die "mv failed"
 
 	doenvd "${T}"/21globus-build || die "install env.d/globus-build died"
 
 	einfo "Updating ownership and permissions..."
 	fowners -R globus:globus * || die "fowners failed"
+}
+
+pkg_postrm() {
+	if ! [[ -e /opt/globus4/sbin/gpt-build ]] && ! has_version sys-cluster/globus ; then
+		ewarn "Globus builds and installs files into ${GLOBUS}"
+		ewarn "after package installation.  After uninstalling"
+		ewarn "you may want to manually remove all or part of the Globus"
+		ewarn "installation directory ${GLOBUS}."
+	fi
 }

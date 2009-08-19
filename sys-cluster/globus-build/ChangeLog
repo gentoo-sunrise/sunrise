@@ -3,6 +3,10 @@
 # $Header: $
 
   19 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  globus-build-4.2.1.ebuild:
+  Use mv -f, readd pkg_postrm with workaround
+
+  19 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   globus-build-4.2.1.ebuild, metadata.xml:
   Even more cleanup, useflags dont seem to be used for globus-build
 
