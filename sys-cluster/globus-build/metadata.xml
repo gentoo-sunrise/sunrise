@@ -5,9 +5,4 @@
 <longdescription>
   The Globus Toolkit - grid middleware package build tools
 </longdescription>
-<use>
-  <flag name='condor'>Condor-G scheduler support</flag>
-  <flag name='lsf'>Platform LSF support</flag>
-  <flag name='pbs'>Portable Batch System support</flag>
-</use>
 </pkgmetadata>

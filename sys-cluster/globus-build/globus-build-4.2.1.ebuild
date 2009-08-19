@@ -20,7 +20,7 @@ LICENSE="GTPL"
 SLOT="4"
 KEYWORDS="~x86"
 
-IUSE="condor iodbc lsf odbc pbs"
+IUSE=""
 
 RDEPEND="dev-lang/perl"
 
@@ -44,26 +44,8 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconfig
-
-	# should we use odbc with iodbc or unixodbc
-	if use iodbc ; then
-		myconfig="--with-iodbc-libs=$(iodbc-config --prefix)/lib"
-		myconfig="${myconfig} --with-iodbc-includes=$(iodbc-config --prefix)/include/iodbc"
-	elif use odbc ; then
-		myconfig="--with-unixodbc-libs=/usr/lib"
-		myconfig="${myconfig} --with-unixodbc-includes=/usr/include/unixodbc"
-	fi
-
-	# even though globus does not use java we still need all the junk to
-	# make configure happy...
-	java-pkg_switch-vm
-
 	econf --prefix="${S}/build/${GLOBUS}" \
-		  --with-gptlocation="${S}/build/${GLOBUS}" \
-		  $(use_enable condor wsgram-condor) \
-		  $(use_enable lsf wsgram-lsf) \
-		  $(use_enable pbs wsgram-pbs) ${myconfig}
+		  --with-gptlocation="${S}/build/${GLOBUS}"
 }
 
 src_compile() {
