@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Aug 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> +i3-3c.ebuild:
+  Version bump
+
   12 Aug 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-9999.ebuild:
   pkg_inst remove, thanks to idl0r
 
