@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit eutils
 
 DESCRIPTION="An authoritative only, high performance, open source name server"
@@ -28,7 +30,7 @@ pkg_setup() {
 	enewuser nsd -1 -1 -1 nsd
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		--with-dbfile=/var/db/nsd/nsd.db \
 		--with-difffile=/var/db/nsd/ixfr.db \
@@ -44,37 +46,35 @@ src_compile() {
 		$(use_enable root-server) \
 		$(use_enable runtime-checks checking) \
 		$(use_enable tsig)
-
-	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS} || die "dodoc failed"
-
+	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS} \
+		|| die "dodoc failed"
 	insinto /usr/share/${PN}
-	doins "${FILESDIR}/nsd.cron" || die "doins failed"
-	doins contrib/nsd.zones2nsd.conf || die "doins failed"
+	doins "${FILESDIR}/${PN}.cron" || die "doins failed"
+	doins contrib/${PN}.zones2${PN}.conf || die "doins failed"
 
-	newinitd "${FILESDIR}"/nsd.initd nsd || die "newinitd failed"
-	newconfd "${FILESDIR}"/nsd.confd nsd || die "newconfd failed"
+	newinitd "${FILESDIR}"/${PN}.initd ${PN} || die "newinitd failed"
+	newconfd "${FILESDIR}"/${PN}.confd ${PN} || die "newconfd failed"
 
-	# database directory, writable by nsd for ixfr.db file
-	keepdir /var/db/nsd
-	fowners nsd:nsd /var/db/nsd
-	fperms 750 /var/db/nsd
+	# database directory, writable by ${PN} for ixfr.db file
+	keepdir /var/db/${PN}
+	fowners ${PN}:${PN} /var/db/${PN}
+	fperms 750 /var/db/${PN}
 
-	# zones directory, writable by root for 'nsdc patch'
-	keepdir /var/lib/nsd
-	fowners root:nsd /var/lib/nsd
-	fperms 750 /var/lib/nsd
+	# zones directory, writable by root for '${PN}c patch'
+	keepdir /var/lib/${PN}
+	fowners root:${PN} /var/lib/${PN}
+	fperms 750 /var/lib/${PN}
 }
 
 pkg_postinst() {
 	elog "If you are using bind and want to convert (or sync) bind zones"
-	elog "you should check out bind2nsd (http://bind2nsd.sourceforge.net)."
+	elog "you should check out bind2${PN} (http://bind2${PN}.sourceforge.net)."
 	echo
-	elog "To automatically merge zone transfer changes back to NSD's"
-	elog "zone files using 'nsdc patch', try nsd.cron in /usr/share/${PN}"
+	elog "To automatically merge zone transfer changes back to ${PN}'s"
+	elog "zone files using '${PN}c patch', try ${PN}.cron in /usr/share/${PN}"
 }
