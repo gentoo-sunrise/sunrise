@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
-
 inherit eutils perl-module
 
 DESCRIPTION="A frontend for ClamAV using Gtk2-perl"
@@ -37,24 +35,24 @@ src_unpack() {
 	perlinfo
 	sed -i -e "s:'/usr/lib':'${VENDOR_LIB}':"  clamtk \
 		|| die "sed failed"
-	gunzip clamtk.1.gz || die "gunzip failed"
+	gunzip ${PN}.1.gz || die "gunzip failed"
 }
 
 src_install() {
-	dobin clamtk || die
+	dobin ${PN} || die "dobin failed"
 
-	doicon clamtk.png
-	domenu clamtk.desktop
+	doicon ${PN}.png || die "doicon failed"
+	domenu ${PN}.desktop || die "domenu failed"
 
-	dodoc CHANGES README || die
-	doman clamtk.1 || die
+	dodoc CHANGES README || die "dodoc failed"
+	doman ${PN}.1 || die "doman failed"
 
 	# The custom Perl modules
 	perlinfo
 	insinto ${VENDOR_LIB}/ClamTk
-	doins lib/*.pm || die
+	doins lib/*.pm || die "doins failed"
 
 	if use nls ; then
-		domo po/*.mo || die
+		domo po/*.mo || die "domo failed"
 	fi
 }
