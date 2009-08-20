@@ -9,7 +9,6 @@ app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/vlogger:dbi - Enable support for DBI
 app-arch/zpaq:doc - Install ZPAQ specification along with compressor.
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
-app-backup/rdup:path-encryption - Enables support for AES encryption of paths (not file contents) in the backup location
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
@@ -52,7 +51,6 @@ app-misc/navit:speechd - Enable speech output for routing notifications
 app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x and earlier file formats
 app-office/openoffice-infra:infradicts - Use all bundled dicts from Infra-Resource
 app-office/openoffice-infra:odk - Build the Office Development Kit
-app-text/cuneiform:imagemagick - Enables support of various input formats using media-gfx/imagemagick. Otherwise only uncompressed BMP files are supported. 
 dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
@@ -170,6 +168,7 @@ media-video/ripwrap:mp2 - Add mp2 support
 media-video/ripwrap:mp4 - Add mp4 support
 media-video/ushare:dlna - Add DLNA (media-libs/libdlna) support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
+net-dns/ldns-utils:sha2 - Enable SHA256 and SHA512 RRSIG support
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:dnssec - Enable DNSSEC support
 net-dns/nsd:largefile - Enable largefile support
@@ -205,6 +204,7 @@ net-im/ekg2:web - Enable httprc_xajax WebUI plugin.
 net-im/ekg2-remote:gnutls - Enable SSL/TLS support through GnuTLS. If 'ssl' is set too, GnuTLS will be used.
 net-im/ekg2-remote:ssl - Enable SSL/TLS support through OpenSSL. If 'gnutls' is set too, it will be used instead.
 net-im/ekg2-remote:static - Link statically with plugins instead of installing them as shared libraries (external libraries can still be linked dynamically).
+net-libs/ldns:sha2 - Enable SHA256 and SHA512 RRSIG support
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
 net-libs/raknet:rakvoice - Enable RakNet RakVoice module
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
@@ -234,6 +234,25 @@ sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and b
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
+sys-cluster/globus:condor - Condor-G scheduler support
+sys-cluster/globus:gridftp -  GridFTP
+sys-cluster/globus:gridway -  GridWay DRMAA Library
+sys-cluster/globus:i18n -  Internationalization libraries
+sys-cluster/globus:lsf - Platform LSF support
+sys-cluster/globus:pbs - Portable Batch System support
+sys-cluster/globus:prews -  Pre-WS GRAM, MDS2, and GridFTP
+sys-cluster/globus:prews-test -  Tests for pre-webservices components
+sys-cluster/globus:prewsgram -  Pre-webservices GRAM
+sys-cluster/globus:rls -  Replica Location Service
+sys-cluster/globus:wsc -  C WS core
+sys-cluster/globus:wscas -  Community Authorization Service
+sys-cluster/globus:wsctests -  Tests for C webservices
+sys-cluster/globus:wsdel -  Delegation Service
+sys-cluster/globus:wsgram -  GRAM4
+sys-cluster/globus:wsjava -  Java WS Core
+sys-cluster/globus:wsmds -  MDS4
+sys-cluster/globus:wsrft -  Reliable File Transfer service
+sys-cluster/globus:wstests -  Tests for java webservices
 sys-fs/aufs:fuse - Enable FUSE workaround
 sys-fs/aufs:hinotify - Add support for aufs inotify
 sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module run more efficiently
