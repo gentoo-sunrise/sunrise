@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  ekg2-remote-9999.ebuild:
+  Update live ebuild to support SKIPCHECKS introduced by upstream lately.
+
   01 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   ekg2-remote-9999.ebuild:
   Simplify DEPEND/RDEPEND.

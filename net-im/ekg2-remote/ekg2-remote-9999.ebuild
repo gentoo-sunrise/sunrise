@@ -98,7 +98,7 @@ src_configure() {
 
 	scons PLUGINS=$(build_plugin_list) REMOTE=only REMOTE_SSL=$(make_rssl) \
 		$(use ncurses && make_deps NCURSES gpm spell:aspell) \
-		HARDDEPS=1 $(use_var unicode) $(use_var static) \
+		HARDDEPS=1 SKIPCHECKS=1 $(use_var unicode) $(use_var static) \
 		PREFIX=/usr LIBDIR="\$EPREFIX/$(get_libdir)" \
 		PLUGINDIR='$LIBDIR/ekg2-remote/plugins' DOCDIR="\$DATAROOTDIR/doc/${PF}" \
 		DISTNOTES="emdzientoo ebuild ${PVR}, USE=${USE}" \
