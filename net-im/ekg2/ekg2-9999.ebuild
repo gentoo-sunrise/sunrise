@@ -192,7 +192,7 @@ src_configure() {
 	# DISTNOTES -> are displayed with /version, helpful for upstream bug reports
 
 	scons PLUGINS=$(build_plugin_list) $(build_addopts_list) \
-		HARDDEPS=1 $(use_var unicode) $(use_var nls) \
+		HARDDEPS=1 SKIPCHECKS=1 $(use_var unicode) $(use_var nls) \
 		$(use_var static) $(use_var idn) $(use_var srv RESOLV) \
 		PREFIX=/usr LIBDIR="\$EPREFIX/$(get_libdir)" \
 		DOCDIR="\$DATAROOTDIR/doc/${PF}" \
