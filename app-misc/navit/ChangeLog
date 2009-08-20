@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Aug 2009; Michael Groh (brot) <schnitzelkuchen@googlemail.com>
+  navit-9999.ebuild:
+  Changed to EAPI 2 to add the svg useflag, so the internal GUI works again.
+  Thanks to ohnobinki for the help :)
+
   07 Aug 2009; Michael Groh (brot) <schnitzelkuchen@googlemail.com>
   navit-9999.ebuild:
   dev-util/cvs added to DEPEND

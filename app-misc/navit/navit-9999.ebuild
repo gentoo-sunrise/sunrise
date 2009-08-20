@@ -2,17 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 inherit autotools subversion
 
-DESCRIPTION="An open-source car navigation system with a routing engine."
+DESCRIPTION="An open-source car navigation system with a routing engine"
 HOMEPAGE="http://www.navit-project.org"
 SRC_URI=""
 
 LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="dbus garmin gps gtk nls python sdl speechd"
+IUSE="dbus garmin gps gtk nls python sdl speechd svg"
 
 RDEPEND="dev-libs/glib:2
 	garmin? ( dev-libs/libgarmin )
@@ -29,17 +29,30 @@ RDEPEND="dev-libs/glib:2
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	dev-util/cvs"
+	dev-util/cvs
+	svg? ( || ( gnome-base/librsvg media-gfx/imagemagick[png,svg] ) )"
 
 ESVN_REPO_URI="http://navit.svn.sourceforge.net/svnroot/navit/trunk/navit"
 
-src_unpack() {
-	subversion_src_unpack
+src_prepare() {
 	autopoint -f || die "autopoint failed"
 	eautoreconf
 }
 
-src_compile() {
+src_configure() {
+
+	local myconf
+
+	if use svg; then
+	 if has_version gnome-base/librsvg; then
+	   myconf="--with-svg2png-use-rsvg-convert"
+	 else
+	   myconf="--with-svg2png-use-convert"
+	 fi
+	else
+	 myconf="--disable-svg2png"
+	fi
+
 	econf $(use_enable garmin) \
 		$(use_enable gps libgps) \
 		$(use_enable gtk gui-gtk) \
@@ -50,7 +63,7 @@ src_compile() {
 		$(use_enable speechd speech-speechd) \
 		--disable-graphics-qt-painter \
 		--disable-samplemap \
-		--disable-svg2png
+		${myconf}
 
 	emake || die "Make failed"
 }
