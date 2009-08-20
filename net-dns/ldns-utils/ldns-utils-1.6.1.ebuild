@@ -2,22 +2,24 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
-EAPI=2
+EAPI="2"
+
+MY_P=${PN/-utils}-${PV}
 
 DESCRIPTION="Set of utilities to simplify various dns(sec) tasks."
 HOMEPAGE="http://www.nlnetlabs.nl/projects/ldns/"
-SRC_URI="http://www.nlnetlabs.nl/downloads/ldns/ldns-${PV}.tar.gz"
+SRC_URI="http://www.nlnetlabs.nl/downloads/ldns/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="sha2 ssl"
+IUSE="examples sha2 ssl"
 
 DEPEND=">=net-libs/ldns-${PV}[sha2?,ssl?]
 	net-libs/libpcap"
 RDEPEND=${DEPEND}
 
-S=${WORKDIR}/ldns-${PV}
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	if use sha2; then
@@ -32,18 +34,23 @@ src_configure() {
 	cd "${S}"/drill
 	econf $(use_with ssl)
 
-	cd "${S}"/examples
-	econf $(use_enable sha2) $(use_with ssl)
+	if use examples; then
+		cd "${S}"/examples
+		econf $(use_enable sha2) $(use_with ssl)
+	fi
 }
 
 src_compile() {
 	emake -C drill || die "emake for drill failed"
-	emake -C examples || die "emake for examples failed"
+	if use examples; then
+		emake -C examples || die "emake for examples failed"
+	fi
 }
 
 src_install() {
 	emake -C drill DESTDIR="${D}" install || die "emake install for drill failed"
-	emake -C examples DESTDIR="${D}" install || die "emake install for examples failed"
-
+	if use examples; then
+		emake -C examples DESTDIR="${D}" install || die "emake install for examples failed"
+	fi
 	dodoc Changelog README || die "Adding documentation failed"
 }
