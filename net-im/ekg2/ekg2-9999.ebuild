@@ -9,6 +9,7 @@ inherit multilib perl-module subversion
 
 DESCRIPTION="Text-based, multi-protocol instant messenger"
 HOMEPAGE="http://www.ekg2.org"
+SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"

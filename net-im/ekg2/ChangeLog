@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  ekg2-9999.ebuild:
+  Readd SRC_URI.
+
+  21 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   ekg2-0.3_pre20090821.ebuild:
   Change tarball name to make it distinct from autotools snapshots.
 
