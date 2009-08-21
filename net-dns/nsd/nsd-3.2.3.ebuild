@@ -53,28 +53,28 @@ src_install() {
 
 	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS} \
 		|| die "dodoc failed"
-	insinto /usr/share/${PN}
-	doins "${FILESDIR}/${PN}.cron" || die "doins failed"
-	doins contrib/${PN}.zones2${PN}.conf || die "doins failed"
+	insinto /usr/share/nsd
+	doins "${FILESDIR}/nsd.cron" || die "doins failed"
+	doins contrib/nsd.zones2nsd.conf || die "doins failed"
 
-	newinitd "${FILESDIR}"/${PN}.initd ${PN} || die "newinitd failed"
-	newconfd "${FILESDIR}"/${PN}.confd ${PN} || die "newconfd failed"
+	newinitd "${FILESDIR}"/nsd.initd nsd || die "newinitd failed"
+	newconfd "${FILESDIR}"/nsd.confd nsd || die "newconfd failed"
 
-	# database directory, writable by ${PN} for ixfr.db file
-	keepdir /var/db/${PN}
-	fowners ${PN}:${PN} /var/db/${PN}
-	fperms 750 /var/db/${PN}
+	# database directory, writable by nsd for ixfr.db file
+	keepdir /var/db/nsd
+	fowners nsd:nsd /var/db/nsd
+	fperms 750 /var/db/nsd
 
-	# zones directory, writable by root for '${PN}c patch'
-	keepdir /var/lib/${PN}
-	fowners root:${PN} /var/lib/${PN}
-	fperms 750 /var/lib/${PN}
+	# zones directory, writable by root for 'nsdc patch'
+	keepdir /var/lib/nsd
+	fowners root:nsd /var/lib/nsd
+	fperms 750 /var/lib/nsd
 }
 
 pkg_postinst() {
 	elog "If you are using bind and want to convert (or sync) bind zones"
-	elog "you should check out bind2${PN} (http://bind2${PN}.sourceforge.net)."
+	elog "you should check out bind2nsd (http://bind2nsd.sourceforge.net)."
 	echo
-	elog "To automatically merge zone transfer changes back to ${PN}'s"
-	elog "zone files using '${PN}c patch', try ${PN}.cron in /usr/share/${PN}"
+	elog "To automatically merge zone transfer changes back to nsd's"
+	elog "zone files using 'nsdc patch', try nsd.cron in /usr/share/nsd"
 }
