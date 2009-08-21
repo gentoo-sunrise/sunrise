@@ -7,6 +7,7 @@ inherit autotools subversion
 
 DESCRIPTION="An open-source car navigation system with a routing engine"
 HOMEPAGE="http://www.navit-project.org"
+SRC_URI=""
 
 LICENSE="LGPL-2"
 SLOT="0"
