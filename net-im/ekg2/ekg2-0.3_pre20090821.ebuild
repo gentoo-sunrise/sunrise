@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit multilib perl-module
 
-MY_P="ekg2-${PV#*_pre}"
+MY_P="${PN}-${PV#*_pre}-scons"
 
 DESCRIPTION="Text-based, multi-protocol instant messenger"
 HOMEPAGE="http://www.ekg2.org"
