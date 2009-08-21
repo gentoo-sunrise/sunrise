@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Aug 2009; Lars Hartmann (psychoschlumpf) <lars@chaotika.org>
+  -snake-0.4.2-r1.ebuild, +snake-0.5.1.ebuild:
+  Version bump for games-arcade/snake, Thanks to Manuel Lausch
+
   17 May 2009; Lars Hartmann (psychoschlumpf) <lars@chaotika.org>
   -snake-0.4.2.ebuild, +snake-0.4.2-r1.ebuild:
   games-arcade/snake: added missing use dependency
