@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Aug 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
+  navit-9999.ebuild:
+  Drop emake call into src_configure(), which was the bad place and already
+  inherited from ebuild.sh, add dodoc into src_install()
+
   20 Aug 2009; Michael Groh (brot) <schnitzelkuchen@googlemail.com>
   navit-9999.ebuild:
   Changed to EAPI 2 to add the svg useflag, so the internal GUI works again.

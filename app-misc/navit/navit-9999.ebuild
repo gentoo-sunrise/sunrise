@@ -7,7 +7,6 @@ inherit autotools subversion
 
 DESCRIPTION="An open-source car navigation system with a routing engine"
 HOMEPAGE="http://www.navit-project.org"
-SRC_URI=""
 
 LICENSE="LGPL-2"
 SLOT="0"
@@ -64,10 +63,9 @@ src_configure() {
 		--disable-graphics-qt-painter \
 		--disable-samplemap \
 		${myconf}
-
-	emake || die "Make failed"
 }
 
 src_install () {
 	emake DESTDIR="${D}" install || die "Install failed"
+	dodoc AUTHORS ChangeLog README || die "dodoc failed"
 }
