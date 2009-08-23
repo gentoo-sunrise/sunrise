@@ -21,8 +21,9 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${PN}-amd64.patch"
-	epatch "${FILESDIR}/${PN}-as-needed.patch"
+	epatch "${FILESDIR}/${PN}-amd64.patch" \
+		"${FILESDIR}/${PN}-as-needed.patch" \
+		"${FILESDIR}/${PN}-include.patch"
 
 	use "tilt" || sed -i -e "s:-D_ENABLE_TILT::" config.mk.in
 	use "force" || sed -i -e "s:-D_ENABLE_FORCE::" config.mk.in

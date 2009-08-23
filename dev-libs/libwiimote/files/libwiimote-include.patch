@@ -1,0 +1,11 @@
+--- Makefile.in	2009-08-23 15:18:46.000000000 +0200
++++ Makefile.in.new	2009-08-23 15:22:23.000000000 +0200
+@@ -6,7 +6,7 @@
+ exec_prefix = @exec_prefix@
+ libdir = @libdir@
+ includedir = @includedir@
+-libwiimote_includedir = $(includedir)/libcwiimote-$(PACKAGE_VERSION)/libcwiimote
++libwiimote_includedir = $(includedir)/libcwiimote
+ 
+ INSTALL = @INSTALL@
+ 

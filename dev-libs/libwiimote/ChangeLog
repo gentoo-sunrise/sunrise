@@ -3,6 +3,10 @@
 # $Header: $
 
   23 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  libwiimote-0.4.ebuild, +files/libwiimote-include.patch:
+  fixed for include path - upstream contacted
+
+  23 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   files/libwiimote-as-needed.patch:
   QA unknown configure options removed
   LDFLAGS and as-needed respected
