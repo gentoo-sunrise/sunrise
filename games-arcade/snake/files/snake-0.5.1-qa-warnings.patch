@@ -1,0 +1,86 @@
+ src/config.cpp |   12 +++++++-----
+ src/config.h   |   10 +++++-----
+ src/snake.cpp  |    2 +-
+ 3 files changed, 13 insertions(+), 11 deletions(-)
+
+diff --git a/src/config.cpp b/src/config.cpp
+index 815414b..cb66599 100644
+--- a/src/config.cpp
++++ b/src/config.cpp
+@@ -153,17 +153,19 @@ void config::save()
+ 	configfile.close();
+ }
+ 
+-const unsigned int config::get_feldbreite() const
++/* In this case a copy of an unsigned int is returned and not a reference or a pointer
++ * so no side effect (so "const unsigned int" doesn't make sense) */
++unsigned int config::get_feldbreite() const
+ {
+ 		return feldbreite;
+ }
+ 
+-const unsigned int config::get_feldhohe() const
++unsigned int config::get_feldhohe() const
+ {
+ 		return feldhohe;
+ }
+ 
+-const unsigned int config::get_feldgrose() const
++unsigned int config::get_feldgrose() const
+ {
+ 	return feldbreite * feldhohe;
+ }
+@@ -173,7 +175,7 @@ const std::string & config::get_datapath() const
+ 	return datapath;
+ }
+ 
+-const unsigned int config::get_quadsize() const
++unsigned int config::get_quadsize() const
+ {
+ 	return quadsize;
+ }
+@@ -188,7 +190,7 @@ const std::string & config::get_version() const
+ 	return version;
+ }
+ 
+-const unsigned int config::get_maxplayer() const
++unsigned int config::get_maxplayer() const
+ {
+ 	return maxplayer;
+ }
+diff --git a/src/config.h b/src/config.h
+index 71bb76e..4a93c83 100644
+--- a/src/config.h
++++ b/src/config.h
+@@ -37,13 +37,13 @@ class config
+ public:
+ 	config();
+ 	~config();
+-	const unsigned int get_feldbreite() const; //const für den Rückgabetyp entfernen (gcc 4 ungrad warnt)
+-	const unsigned int get_feldhohe() const;
+-	const unsigned int get_feldgrose() const;
++	unsigned int get_feldbreite() const; //const für den Rückgabetyp entfernen (gcc 4 ungrad warnt)
++	unsigned int get_feldhohe() const;
++	unsigned int get_feldgrose() const;
+ 	const std::string & get_datapath() const; 
+-	const unsigned int get_quadsize() const;
++	unsigned int get_quadsize() const;
+ 	const std::string & get_version() const;
+-	const unsigned int get_maxplayer() const;
++	unsigned int get_maxplayer() const;
+ 	config_player *get_player(int);  // Variablenname
+ 	std::string get_filepath(std::string);
+ 	void save(); // hier const
+diff --git a/src/snake.cpp b/src/snake.cpp
+index d7d3f91..d930a30 100644
+--- a/src/snake.cpp
++++ b/src/snake.cpp
+@@ -174,7 +174,7 @@ int snake::step()
+ 				SDL_Surface *font_src = 0;
+ 				char titel[256];
+ 				sprintf(titel, "Punkte: %d", punkte);
+-				SDL_Color color = {255,255,255};
++				SDL_Color color = {255,255,255, 255};
+ 				font_src = TTF_RenderText_Solid(pFont, titel, color);  // hat irgendwie ein bug
+ 				// font_src = TTF_RenderText_Blended(pFont, titel, color);  // drum den workaround
+ 				if (font_src == 0)

@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit games
+inherit eutils games toolchain-funcs
 
 DESCRIPTION="snake like game"
 HOMEPAGE="http://www.hs.no-ip.info/software/snake.html"
@@ -12,7 +12,7 @@ SRC_URI="http://www.hs.no-ip.info/software/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 DEPEND="
 		media-libs/libsdl[alsa,X]
@@ -23,6 +23,14 @@ DEPEND="
 "
 RDEPEND=${DEPEND}
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-{clean-up-Makefile,qa-warnings}.patch
+}
+src_compile() {
+	emake CC=$(tc-getCXX)         \
+		my_CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}" || die "emake failed"
+}
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	prepgamesdirs

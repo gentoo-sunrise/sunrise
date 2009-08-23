@@ -1,0 +1,78 @@
+ Makefile |   54 +++++++++++++++++-------------------------------------
+ 1 files changed, 17 insertions(+), 37 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 69e39ea..d1ac825 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,8 +1,11 @@
+-OBJS = main.o snake.o config.o playground.o queue_key.o config-player.o
+-CC = g++
+-DEBUG = -g
+-CFLAGS = -Wall -c -I/usr/include/SDL $(DEBUG)
+-LFLAGS = -Wall -L/usr/lib -lSDL -lpthread -lSDL_image -lSDL_gfx -lSDL_ttf -lSDL_mixer  $(DEBUG)
++CC=g++
++my_CXXFLAGS=
++CXXFLAGS=-W -Wall `pkg-config sdl --cflags` $(my_CXXFLAGS)
++LIBS=`pkg-config sdl --libs` -lSDL_image -lSDL_gfx -lSDL_ttf -lSDL_mixer
++LDFLAGS=
++
++SRC=$(wildcard src/*.cpp)
++OBJ=$(SRC:.cpp=.o)
+ 
+ ifndef GAMES_BINDIR
+ GAMES_BINDIR=/usr/games/bin
+@@ -12,44 +15,21 @@ ifndef GAMES_DATADIR
+ GAMES_DATADIR=/usr/share/games
+ endif
+ 
+-CFLAGS+=-DBINDIR="\"$(GAMES_BINDIR)\""
+-CFLAGS+=-DDATADIR="\"$(GAMES_DATADIR)\""
+-
+-Release: snake
+-Debug: snake
+-
+-snake : $(OBJS)
+-	$(CC) $(LFLAGS) $(OBJS) -o snake
+-
+-main.o : src/main.cpp src/config.h src/snake.h
+-	$(CC) $(CFLAGS) src/main.cpp
+-
+-snake.o : src/snake.cpp src/snake.h src/config.h src/definitions.h src/koordinate.h src/playground.h src/queue_key.h
+-	$(CC) $(CFLAGS) src/snake.cpp
+-
+-config.o : src/config.cpp src/config.h src/config-player.h
+-	$(CC) $(CFLAGS) src/config.cpp
++CXXFLAGS+=-DBINDIR="\"$(GAMES_BINDIR)\""
++CXXFLAGS+=-DDATADIR="\"$(GAMES_DATADIR)\""
+ 
+-playground.o : src/playground.cpp src/playground.h src/definitions.h src/config.h
+-	$(CC) $(CFLAGS) src/playground.cpp
+-
+-queue_key.o : src/queue_key.cpp src/queue_key.h src/definitions.h
+-	$(CC) $(CFLAGS) src/queue_key.cpp
+-
+-config-player.o : src/config-player.cpp src/config-player.h src/config.h src/definitions.h
+-	$(CC) $(CFLAGS) src/config-player.cpp
++all: snake
+ 
++snake: $(OBJ)
++	$(CC) $(CXXFLAGS) $^ -o $@ $(LDFLAGS) $(LIBS)
++%.o: src/%.cpp src/%.h
+ clean:
+-	rm *.o *~ snake
+-
+-
++	rm -f $(OBJ) *~ snake
+ install:
+ 	mkdir -p $(DESTDIR)/$(GAMES_BINDIR)/
+ 	install -g games -m 750 ./snake $(DESTDIR)/$(GAMES_BINDIR)/
+ 	mkdir -p $(DESTDIR)/$(GAMES_DATADIR)/snake/
+ 	install -g games -m 640 ./src/res/* $(DESTDIR)/$(GAMES_DATADIR)/snake/
+-
+-
+ uninstall:
+-	rm -r $(GAMES_DATADIR)/snake
+-	rm $(GAMES_BINDIR)/snake
++	rm -rf $(GAMES_DATADIR)/snake
++	rm -f  $(GAMES_BINDIR)/snake
