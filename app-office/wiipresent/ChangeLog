@@ -6,4 +6,4 @@
   +wiipresent-0.7.5.2.ebuild, +files/0.7.5.2-LDFLAGS.patch,
   +files/0.7.5.2-include.patch, +metadata.xml:
   New ebuild -- written by me
-
+  pendiong bug is 282476
