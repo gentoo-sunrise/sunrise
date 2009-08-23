@@ -19,3 +19,14 @@
  
  all: subdirs
  
+--- src/Makefile.in	2007-03-10 15:46:36.000000000 +0100
++++ src/Makefile.in.new	2009-08-23 10:07:27.000000000 +0200
+@@ -33,7 +33,7 @@
+ all: libcwiimote.a libcwiimote.so
+ 
+ libcwiimote.so: $(SOURCES) $(HEADERS)
+-	$(CC) $(CFLAGS) $(INCLUDES) $(SOURCES) -shared -o $@  $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -Wl,-soname,$@.0.4 $(INCLUDES) $(SOURCES) -shared -o $@  $(LIBS)
+ 	@cp $@ $(LIBDIR)
+ 
+ libcwiimote.a: $(SOURCES) $(HEADERS)

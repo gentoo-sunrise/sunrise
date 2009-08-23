@@ -30,14 +30,6 @@ src_unpack() {
 	eautoreconf
 }
 
-src_compile() {
-	econf \
-		$(use_enable force) \
-		$(use_enable tilt)
-
-	emake || die "emake failed"
-}
-
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS NEWS README TODO || die "dodoc failed"

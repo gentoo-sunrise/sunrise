@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  files/libwiimote-as-needed.patch:
+  QA unknown configure options removed
+  LDFLAGS and as-needed respected
+
   20 Apr 2009; Christian Ruppert <idl0r@gentoo.org> libwiimote-0.4.ebuild,
   libwiimote-9999.ebuild:
   Live ebuilds shouldn't have KEYWORDS. Added missing die statements.
