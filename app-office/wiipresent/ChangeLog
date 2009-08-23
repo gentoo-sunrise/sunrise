@@ -1,0 +1,9 @@
+# ChangeLog for app-office/wiipresent
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  +wiipresent-0.7.5.2.ebuild, +files/0.7.5.2-LDFLAGS.patch,
+  +files/0.7.5.2-include.patch, +metadata.xml:
+  New ebuild -- written by me
+

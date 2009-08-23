@@ -1,0 +1,20 @@
+--- Makefile	2009-08-20 18:51:40.000000000 +0200
++++ Makefile.new	2009-08-23 15:37:19.000000000 +0200
+@@ -11,14 +11,15 @@
+ CC = cc
+ CFLAGS = -Wall -O2
+ OPTFLAGS = -I /usr/include/libcwiimote -D_ENABLE_TILT -D_ENABLE_FORCE -D_DISABLE_BLOCKING_UPDATE
+-LDFLAGS= -lm -lX11 -lXtst -lcwiimote -lbluetooth -L/usr/X11R6/$(lib)
++LIBS= -lm -lX11 -lXtst -lcwiimote -lbluetooth -L/usr/X11R6/$(lib)
+ 
+ .PHONY: all install docs clean
+ 
+ all: wiipresent docs
+ 
+ wiipresent: wiipresent.c
+-	$(CC) $(CFLAGS) $(OPTFLAGS) $(LDFLAGS) wiipresent.c -o wiipresent
++	$(CC) $(CFLAGS) $(OPTFLAGS) -c $<
++	$(CC) $(CFLAGS) $(OPTFLAGS) $(LDFLAGS) $@.o -o $@ $(LIBS)
+ 
+ install:
+ 	install -Dp -m0755 wiipresent $(DESTDIR)$(bindir)/wiipresent
