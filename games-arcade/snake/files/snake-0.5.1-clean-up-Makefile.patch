@@ -1,28 +1,26 @@
- Makefile |   54 +++++++++++++++++-------------------------------------
- 1 files changed, 17 insertions(+), 37 deletions(-)
+ Makefile |   52 +++++++++++++++-------------------------------------
+ 1 files changed, 15 insertions(+), 37 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 69e39ea..d1ac825 100644
+index 69e39ea..660e12a 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -1,8 +1,11 @@
+@@ -1,8 +1,9 @@
 -OBJS = main.o snake.o config.o playground.o queue_key.o config-player.o
 -CC = g++
 -DEBUG = -g
 -CFLAGS = -Wall -c -I/usr/include/SDL $(DEBUG)
 -LFLAGS = -Wall -L/usr/lib -lSDL -lpthread -lSDL_image -lSDL_gfx -lSDL_ttf -lSDL_mixer  $(DEBUG)
 +CC=g++
-+my_CXXFLAGS=
-+CXXFLAGS=-W -Wall `pkg-config sdl --cflags` $(my_CXXFLAGS)
++CPPFLAGS=`pkg-config sdl --cflags`
 +LIBS=`pkg-config sdl --libs` -lSDL_image -lSDL_gfx -lSDL_ttf -lSDL_mixer
-+LDFLAGS=
 +
 +SRC=$(wildcard src/*.cpp)
 +OBJ=$(SRC:.cpp=.o)
  
  ifndef GAMES_BINDIR
  GAMES_BINDIR=/usr/games/bin
-@@ -12,44 +15,21 @@ ifndef GAMES_DATADIR
+@@ -12,44 +13,21 @@ ifndef GAMES_DATADIR
  GAMES_DATADIR=/usr/share/games
  endif
  
@@ -43,8 +41,8 @@ index 69e39ea..d1ac825 100644
 -
 -config.o : src/config.cpp src/config.h src/config-player.h
 -	$(CC) $(CFLAGS) src/config.cpp
-+CXXFLAGS+=-DBINDIR="\"$(GAMES_BINDIR)\""
-+CXXFLAGS+=-DDATADIR="\"$(GAMES_DATADIR)\""
++CPPFLAGS += -DBINDIR="\"$(GAMES_BINDIR)\""
++CPPFLAGS += -DDATADIR="\"$(GAMES_DATADIR)\""
  
 -playground.o : src/playground.cpp src/playground.h src/definitions.h src/config.h
 -	$(CC) $(CFLAGS) src/playground.cpp
@@ -57,7 +55,7 @@ index 69e39ea..d1ac825 100644
 +all: snake
  
 +snake: $(OBJ)
-+	$(CC) $(CXXFLAGS) $^ -o $@ $(LDFLAGS) $(LIBS)
++	$(CC) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@ $(LDFLAGS) $(LIBS)
 +%.o: src/%.cpp src/%.h
  clean:
 -	rm *.o *~ snake

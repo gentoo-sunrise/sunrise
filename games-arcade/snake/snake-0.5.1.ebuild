@@ -27,9 +27,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-{clean-up-Makefile,qa-warnings}.patch
 }
 src_compile() {
-	emake CC=$(tc-getCXX)         \
-		my_CXXFLAGS="${CXXFLAGS}" \
-		LDFLAGS="${LDFLAGS}" || die "emake failed"
+	emake CC=$(tc-getCXX) || die "emake failed"
 }
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
