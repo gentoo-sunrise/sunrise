@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/scons-1.2.0-r1
 	test? ( dev-libs/unittest )"
 
-S=${WORKDIR}/${PN}-mongo-2869e47ae388c1a2f5cd388d654defd2788b057c
+S=${WORKDIR}/${PN}-mongo-b3e717fc3c2fe68da1508e45989ccd2ddbd1c822
 
 pkg_setup() {
 	enewgroup mongodb
