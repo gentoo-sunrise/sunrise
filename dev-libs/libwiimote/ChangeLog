@@ -2,6 +2,12 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
+  libwiimote-0.4.ebuild:
+  Drop unpack phase because already implicitly defined by src_unpack(),
+  replace src_unpack() by src_prepare(), clean-up epatch line, drop pkgconfig
+  from DEPEND (AC_CHECK_LIB does not use it), drop quotes into DEPEND
+
   23 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   libwiimote-0.4.ebuild, +files/libwiimote-include.patch:
   fixed for include path - upstream contacted

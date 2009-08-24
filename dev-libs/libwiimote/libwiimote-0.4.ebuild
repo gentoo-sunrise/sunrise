@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit eutils autotools
 
 DESCRIPTION="Library to connect to the Nintendo Wii remote"
@@ -14,20 +16,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples force tilt"
 
 RDEPEND="net-wireless/bluez-libs
-		net-wireless/bluez-utils"
-DEPEND="${RDEPEND}
-		dev-util/pkgconfig"
+	net-wireless/bluez-utils"
+DEPEND=${RDEPEND}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${PN}-amd64.patch" \
-		"${FILESDIR}/${PN}-as-needed.patch" \
-		"${FILESDIR}/${PN}-include.patch"
-
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-{amd64,as-needed,include}.patch
 	use "tilt" || sed -i -e "s:-D_ENABLE_TILT::" config.mk.in
 	use "force" || sed -i -e "s:-D_ENABLE_FORCE::" config.mk.in
-
 	eautoreconf
 }
 
