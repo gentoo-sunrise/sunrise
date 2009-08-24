@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -eventlet-0.8.14.ebuild, +eventlet-0.8.15.ebuild:
+  Version bump
+
   15 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -eventlet-0.8.13.ebuild, +eventlet-0.8.14.ebuild:
   Version bump
