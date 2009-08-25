@@ -14,14 +14,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
 RDEPEND="|| ( >=dev-lang/python-2.5
-			( =dev-lang/python-2.4* >=dev-python/celementtree-1.0.5 ) )"
+	( =dev-lang/python-2.4* >=dev-python/celementtree-1.0.5 ) )"
 DEPEND="${RDEPEND}
 	dev-python/setuptools
 	doc?  ( dev-python/epydoc )
-	test? (
-	dev-python/nose
-	dev-db/mongodb
-	)"
+	test? (	dev-python/nose
+		dev-db/mongodb )"
 
 src_install() {
 	distutils_src_install
