@@ -15,7 +15,7 @@ EHG_PROJECT="${P}"
 SRC_URI="http://www.tremfusion.net/downloads/z-tremfusion-menu-${MENU_PK3_VER}.pk3"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="dedicated openal +opengl tty +vorbis"
 
 UIDEPEND="openal? ( media-libs/openal )
