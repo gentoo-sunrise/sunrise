@@ -27,14 +27,6 @@
 sys-cluster/globus-build
 sys-cluster/globus
 
-# Thomas Sachau <tommy@gentoo.org> (01 Aug 2009)
-# Masked because of masked dependency dev-libs/tdb (see package.mask in gentoo-x86)
-net-mail/fdm
-
-# Thomas Sachau <tommy@gentoo.org> (12 Jul 2009)
-# Masked because of masked dependency sys-apps/realtime-lsm (see package.mask in gentoo-x86)
-media-sound/oss2jack
-
 # Christian Ruppert <idl0r@gentoo.org> (19 June 2009)
 # Masked because of masked dependency media-libs/freeimage (see package.mask in gentoo-x86)
 media-gfx/fotoxx
