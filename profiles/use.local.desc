@@ -209,7 +209,6 @@ net-libs/raknet:autopatcher - Enable RakNet autopatcher support
 net-libs/raknet:rakvoice - Enable RakNet RakVoice module
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
-net-mail/fdm:tdb - Enable the Trivial Database (xdb) backend
 net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
 net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
