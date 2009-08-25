@@ -1,8 +1,0 @@
-# ChangeLog for dev-ruby/webrat
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  04 Aug 2009; CS Shyam Sundar (CS3) <csshyamsundar@gmail.com>
-  +webrat-0.4.4.ebuild, +metadata.xml:
-  New Ebuild for bug 280286 - thanks to hwoarang
-
