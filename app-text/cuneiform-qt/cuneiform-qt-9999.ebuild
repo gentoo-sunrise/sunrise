@@ -13,7 +13,7 @@ HOMEPAGE="http://www.altlinux.org/Cuneiform-Qt"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="x11-libs/qt-gui:4
