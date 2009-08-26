@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Aug 2009; Peter Volkov <pva@gentoo.org> -xneur-0.9.4.ebuild,
+  +xneur-0.9.5.ebuild, +files/xneur-0.9.5-gcc44.patch:
+  Version bump. Dropped subversion support code from ebuild (not used anyway).
+  New USE flag: libnotify.
+
   01 Jun 2009; Peter Volkov <pva@gentoo.org> -xneur-0.9.3.ebuild,
   -files/xneur-0.9.3-CFLAGS.patch, -files/xneur-0.9.3-build-failure.patch,
   +xneur-0.9.4.ebuild:
