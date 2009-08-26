@@ -15,24 +15,27 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="dbus"
 
-RDEPEND=">=mail-client/evolution-2.22
+RDEPEND=">=mail-client/evolution-2.24
 	>=gnome-base/gconf-2
 	net-libs/libsoup:2.4
-	>=x11-libs/gtk+-2.4
-	>=gnome-base/libgnome-2.14
-	>=gnome-base/libgnomeui-2
+	dev-libs/glib:2
+	gnome-base/libglade
+	gnome-extra/gtkhtml:3.14
+	x11-libs/gtk+:2
+	gnome-base/libgnome
+	gnome-base/libgnomeui
 	>=gnome-extra/evolution-data-server-1.2
-	|| ( net-libs/xulrunner www-client/seamonkey
+	|| ( net-libs/xulrunner:1.9 www-client/seamonkey
 		www-client/mozilla-firefox )
 	dbus? ( dev-libs/dbus-glib )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	>=dev-util/intltool-0.21
+	>=dev-util/intltool-0.35
 	sys-devel/libtool
 	sys-devel/gettext"
 
 DOCS="AUTHORS ChangeLog FAQ NEWS README TODO"
 
 pkg_setup() {
-	G2CONF="${G2CONF} $(use_enable dbus)"
+	! use dbus && G2CONF="${G2CONF} $(use_enable dbus)"
 }
