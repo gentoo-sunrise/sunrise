@@ -21,12 +21,12 @@ RDEPEND="dev-lang/perl[ithreads]
 	dev-perl/libwww-perl
 	dev-perl/Crypt-SSLeay
 	dev-perl/XML-Simple
-        clickurl? ( dev-perl/Gtk2-Sexy )
+	clickurl? ( dev-perl/Gtk2-Sexy )
 	savepwd? ( dev-perl/Crypt-Simple )"
 
 src_prepare() {
 	# This patch combines changes from svn revisions r30, r33 and r36
-	epatch "${FILESDIR}"/gmail-login-procedure-fix.patch
+	epatch "${FILESDIR}"/${P}-gmail-login-procedure-fix.patch
 }
 
 src_install() {
