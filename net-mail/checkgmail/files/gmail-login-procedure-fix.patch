@@ -1,0 +1,47 @@
+diff -dupr checkgmail-1.13.orig/checkgmail checkgmail-1.13/checkgmail
+--- checkgmail-1.13.orig/checkgmail	2009-08-25 23:48:18.615575505 +0200
++++ checkgmail-1.13/checkgmail	2009-08-26 00:13:05.535569237 +0200
+@@ -682,6 +682,7 @@ sub http_check {
+ 		
+ 	# set up the useragent ....
+ 	$ua = LWP::UserAgent->new();
++	$ua->requests_redirectable (['GET', 'HEAD', 'POST']);
+ 	
+ 	# set time-out - defaults to 90 seconds or $delay, whichever is shorter
+ 	$ua->timeout($delay/1000<90 ? $delay/1000 : 90);	
+@@ -716,14 +717,21 @@ sub http_check {
+ 			unless ($hosted) {
+ 				# Normal Gmail login action ...
+ 				$error = http_get("https://www.google.com/accounts/ServiceLoginAuth?ltmpl=yj_wsad&ltmplcache=2&continue=https%3A%2F%2Fmail.google.com%2Fmail%3F&service=mail&rm=false&ltmpl=yj_wsad&Email=$URI_user&Passwd=$URI_passwd&rmShown=1&null=Sign+in", "LOGIN");
+-				# $cookie_jar->scan(\&scan_at);
++
++				$cookie_jar->scan(\&scan_at);
++				unless ($error || !$gmail_sid || !$gmail_gausr) {
++					$error = http_get("https://mail.google.com/mail/?pli=1&auth=$gmail_sid&gausr=$gmail_gausr", 'LOGIN');
++				}
++
+ 				# $error = http_get("https://mail.google.com/mail?nsr=0&auth=$gmail_sid&gausr=$gmail_gausr", "LOGIN");
+ 	
+ 			} else {
+ 				# hosted domains work differently ...
+ 				# First we POST a login
+-				$error = http_get("https://www.google.com/a/$hosted/LoginAction|at=null&continue=http%3A%2F%2Fmail.google.com%2Fa%2F$hosted&service=mail&userName=$URI_user&password=$URI_passwd", "POST");
+-				
++				# $error = http_get("https://www.google.com/a/$hosted/LoginAction|at=null&continue=http%3A%2F%2Fmail.google.com%2Fa%2F$hosted&service=mail&userName=$URI_user&password=$URI_passwd", "POST");
++				# thanks to Olinto Neto for this fix for hosted domains:
++				$error = http_get("https://www.google.com/a/$hosted/LoginAction2|at=null&continue=http%3A%2F%2Fmail.google.com%2Fa%2F$hosted&service=mail&Email=$URI_user&Passwd=$URI_passwd", "POST");
++
+ 				# Then we grab the HID ("Hosted ID"?) cookie
+ 				$cookie_jar->scan(\&scan_at);
+ 				
+@@ -840,8 +848,10 @@ sub http_get {
+ 		if ($http =~ m/location\.replace\("(.*)"\)/) {
+ 			my $new_addr = $1;
+ 			$new_addr =~ s/\\u003d/=/g;
++			$new_addr =~ s/\\x3d/=/g;
+ 			$new_addr =~ s/\\075/=/g;
+ 			$new_addr =~ s/\\46/&/g;
++			$new_addr =~ s/\\x26/&/g;
+ 			$new_addr =~ s/\\75/=/g;
+ 			return unless $new_addr =~ m/^http/i;
+ 			

@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Aug 2009; Grygoriy Fuchedzhy (gry) <grygoriy.fuchedzhy@gmail.com>
+  -checkgmail-1.13.ebuild, +checkgmail-1.13-r1.ebuild,
+  +files/gmail-login-procedure-fix.patch:
+  Fixed login procedure for checkgmail-1.13
+
   16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
   checkgmail-1.13.ebuild:
   Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
