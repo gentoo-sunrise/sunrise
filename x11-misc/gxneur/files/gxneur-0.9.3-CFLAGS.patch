@@ -1,3 +1,8 @@
+This patch was reported upstream already, but it looks like upstream is not
+interested in feedback. I've pinged them another time, let's see how it goes.
+
+http://lists.net.ru/pipermail/xneur/2008-November/000909.html
+
 === modified file 'configure.in'
 --- configure.in	2009-03-15 10:29:29 +0000
 +++ configure.in	2009-03-15 10:29:44 +0000
