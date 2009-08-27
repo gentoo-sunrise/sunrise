@@ -13,7 +13,7 @@ SRC_URI="http://gnome.eu.org/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="dbus"
+IUSE="dbus webkit"
 
 RDEPEND=">=mail-client/evolution-2.24
 	>=gnome-base/gconf-2
@@ -27,15 +27,15 @@ RDEPEND=">=mail-client/evolution-2.24
 	>=gnome-extra/evolution-data-server-1.2
 	|| ( net-libs/xulrunner:1.9 www-client/seamonkey
 		www-client/mozilla-firefox )
-	dbus? ( dev-libs/dbus-glib )"
+	dbus? ( dev-libs/dbus-glib )
+	webkit? ( net-libs/webkit-gtk )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	>=dev-util/intltool-0.35
-	sys-devel/libtool
+	dev-util/intltool
 	sys-devel/gettext"
 
 DOCS="AUTHORS ChangeLog FAQ NEWS README TODO"
 
 pkg_setup() {
-	! use dbus && G2CONF="${G2CONF} $(use_enable dbus)"
+	G2CONF="${G2CONF} $(use_enable dbus) $(use_enable webkit)"
 }
