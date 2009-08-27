@@ -17,6 +17,7 @@ IUSE="evms hddtemp lm_sensors"
 DEPEND="sys-apps/sed"
 RDEPEND="net-analyzer/rrdtool[perl]
 	net-mail/metamail
+	dev-perl/libwww-perl
 	evms? ( sys-fs/evms )
 	hddtemp? ( app-admin/hddtemp )
 	lm_sensors? ( sys-apps/lm_sensors )
