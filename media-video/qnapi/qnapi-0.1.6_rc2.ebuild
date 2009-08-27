@@ -8,10 +8,10 @@ WANT_CMAKE="no"
 
 inherit eutils gnome2-utils kde4-base qt4
 
-MY_P="${P/_rc/-rc}"
+MY_P=${P/_rc/-rc}
 
 DESCRIPTION="Automatic subtitle downloader using Napiprojekt database"
-HOMEPAGE="http://krzemin.iglu.cz/qnapi"
+HOMEPAGE="http://krzemin.iglu.cz/software/qnapi"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="gnome kde3"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 DEPEND="x11-libs/qt-core
 	x11-libs/qt-gui
@@ -29,7 +29,7 @@ RDEPEND="${DEPEND}
 	app-arch/p7zip"
 
 # fix install paths, remove unneeded files, general cleanup
-PATCHES=("${FILESDIR}/${P}-gentoo.diff")
+PATCHES=( "${FILESDIR}/${P}-gentoo.diff" )
 
 pkg_setup() {
 	use kde && kde4-base_pkg_setup # get KDEDIR for KDE4
@@ -45,7 +45,7 @@ src_configure() {
 	# Dolphin for KDE3 is being dropped (bug #280633),
 	# d3lphin isn't yet in portage.
 
-	KDE4DIR="${KDEDIR}" INTEGRATION_TARGETS="${integr}" eqmake4 || die "eqmake4 failed."
+	KDE4DIR="${KDEDIR}" INTEGRATION_TARGETS="${integr}" eqmake4
 }
 
 src_compile() {
