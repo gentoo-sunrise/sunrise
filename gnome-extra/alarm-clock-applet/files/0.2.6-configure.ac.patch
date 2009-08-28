@@ -1,0 +1,44 @@
+--- configure.ac	2009-08-28 21:12:22.000000000 +0200
++++ configure.ac.new	2009-08-28 21:46:46.000000000 +0200
+@@ -50,18 +50,35 @@
+    libgnome-2.0 >= $LIBGNOME_REQUIRED
+    libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED])
+ 
+-# Check for libnotify (optional)
++# support for libnotify
+ LIBNOTIFY_CFLAGS=
+ LIBNOTIFY_LIBS=
+-PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED,
+-		  HAVE_LIBNOTIFY="yes", HAVE_LIBNOTIFY="no")
+ 
+-if test "x$HAVE_LIBNOTIFY" = "xyes"; then
+-	AC_DEFINE(HAVE_LIBNOTIFY, 1, [libnotify available])
++# enable support even if not specifically asked for
++AC_ARG_ENABLE(libnotify, [  --enable-libnotify   enable libnotify support], [
++			enable_libnotify=$enableval], [
++			enable_libnotify="yes"
++])
++
++if test "$enable_libnotify" = "no"
++then
++	HAVE_LIBNOTIFY="no"
++	echo "Disabling libnotify support"
++else
++	PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED,
++	HAVE_LIBNOTIFY="yes", HAVE_LIBNOTIFY="no")
++				  
++	if test "x$HAVE_LIBNOTIFY" = "xyes"
++	then
++		AC_DEFINE(HAVE_LIBNOTIFY, 1, [libnotify available])
++	fi
+ fi
+-
++				  
++AM_CONDITIONAL(LIBNOTIFY, test -n "$LIBNOTIFY_LIBS")
++					  
+ AC_SUBST(LIBNOTIFY_CFLAGS)
+ AC_SUBST(LIBNOTIFY_LIBS)
++					  
+ 
+ # GConf
+ AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
