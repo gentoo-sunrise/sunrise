@@ -1,6 +1,6 @@
 --- configure.ac	2009-08-28 21:12:22.000000000 +0200
-+++ configure.ac.new	2009-08-28 21:46:46.000000000 +0200
-@@ -50,18 +50,35 @@
++++ configure.ac.new	2009-08-29 01:42:42.000000000 +0200
+@@ -50,16 +50,32 @@
     libgnome-2.0 >= $LIBGNOME_REQUIRED
     libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED])
  
@@ -32,13 +32,9 @@
 +		AC_DEFINE(HAVE_LIBNOTIFY, 1, [libnotify available])
 +	fi
  fi
--
-+				  
+ 
 +AM_CONDITIONAL(LIBNOTIFY, test -n "$LIBNOTIFY_LIBS")
-+					  
++
  AC_SUBST(LIBNOTIFY_CFLAGS)
  AC_SUBST(LIBNOTIFY_LIBS)
-+					  
  
- # GConf
- AC_PATH_PROG(GCONFTOOL, gconftool-2, no)

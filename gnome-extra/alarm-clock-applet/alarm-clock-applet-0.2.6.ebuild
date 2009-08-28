@@ -17,17 +17,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE="libnotify"
 
 RDEPEND="
-	>=dev-libs/glib-2.13
-	>=x11-libs/gtk+-2.11.0
-	>=gnome-base/gnome-panel-2
-	>=gnome-base/gnome-vfs-2.15.4
-	>=gnome-base/gconf-2.8.0
-	>=gnome-base/libgnome-2.8
-	>=gnome-base/libgnomeui-2.8
-	>=x11-themes/gnome-icon-theme-2.15
-	>=gnome-base/libglade-2.4.0
-	>=media-libs/gstreamer-0.10.2
-	libnotify? ( >=x11-libs/libnotify-0.3.2 )
+	dev-libs/glib:2
+	x11-libs/gtk+:2
+	gnome-base/gnome-panel
+	gnome-base/gnome-vfs:2
+	gnome-base/gconf:2
+	gnome-base/libgnome
+	gnome-base/libgnomeui
+	x11-themes/gnome-icon-theme
+	gnome-base/libglade:2.0
+	media-libs/gstreamer:0.10
+	libnotify? ( x11-libs/libnotify )
 "
 
 DEPEND="${RDEPEND}
