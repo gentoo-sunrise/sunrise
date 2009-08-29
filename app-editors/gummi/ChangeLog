@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Aug 2009; Alexander van der Mey (alexandervdm)
+  <alexvandermey@gmail.com> Manifest:
+  Filesize error in the Manifest file fixed
+
   27 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   gummi-0.1f.ebuild:
   Whitespace & retab, drop empty DEPEND, adjust variable order to match
