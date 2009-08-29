@@ -20,19 +20,19 @@ RDEPEND="
 	dev-libs/glib:2
 	x11-libs/gtk+:2
 	gnome-base/gnome-panel
-	gnome-base/gnome-vfs:2
-	gnome-base/gconf:2
+	gnome-base/gnome-vfs
+	gnome-base/gconf
 	gnome-base/libgnome
 	gnome-base/libgnomeui
 	x11-themes/gnome-icon-theme
-	gnome-base/libglade:2.0
-	media-libs/gstreamer:0.10
+	gnome-base/libglade
+	media-libs/gstreamer
 	libnotify? ( x11-libs/libnotify )
 "
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.12
-	>=app-text/gnome-doc-utils-0.3.2
+	dev-util/pkgconfig
+	app-text/gnome-doc-utils
 	dev-util/intltool
 "
 
