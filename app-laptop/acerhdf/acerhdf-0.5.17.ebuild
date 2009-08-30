@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit linux-mod versionator
+inherit linux-mod
 
 MY_PN=${PN}_kmod
-MY_P=${MY_PN}-$(replace_version_separator 3 - ${PV})
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="A kernelmodule which monitors the temperature of the aspire one netbook"
 HOMEPAGE="http://piie.net/index.php?section=acerhdf"
