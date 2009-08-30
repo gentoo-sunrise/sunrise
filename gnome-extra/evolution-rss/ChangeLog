@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  +files/0.1.4-configure.patch, evolution-rss-0.1.4.ebuild:
+  Fix for dbus configure
+
   27 Aug 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
   evolution-rss-0.1.4.ebuild:
   Add webkit USE-flag (see configure.ac), drop libtool from DEPEND (see base

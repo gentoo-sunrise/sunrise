@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 
-inherit gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="An RSS reader plugin for Evolution"
 HOMEPAGE="http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin"
@@ -38,4 +38,10 @@ DOCS="AUTHORS ChangeLog FAQ NEWS README TODO"
 
 pkg_setup() {
 	G2CONF="${G2CONF} $(use_enable dbus) $(use_enable webkit)"
+}
+
+src_prepare() {
+	gnome2_src_prepare
+	epatch "${FILESDIR}"/${PV}-configure.patch
+	eautoreconf
 }
