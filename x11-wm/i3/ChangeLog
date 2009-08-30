@@ -3,6 +3,9 @@
 # $Header: $
 
   30 Aug 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-9999.ebuild:
+  reorder variable
+
+  30 Aug 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-9999.ebuild:
   Add man page for i3-msg
 
   20 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -i3-3b.ebuild:

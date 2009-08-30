@@ -4,13 +4,14 @@
 
 EAPI="2"
 
+EGIT_BRANCH="next"
+
 inherit git multilib
 
 DESCRIPTION="An improved dynamic tiling window manager"
 HOMEPAGE="http://i3.zekjur.net/"
 SRC_URI=""
 EGIT_REPO_URI="git://code.stapelberg.de/i3"
-EGIT_BRANCH="next"
 
 LICENSE="BSD"
 SLOT="0"
