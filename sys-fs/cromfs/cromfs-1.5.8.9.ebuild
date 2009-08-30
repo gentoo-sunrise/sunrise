@@ -8,7 +8,7 @@ SRC_URI="http://bisqwit.iki.fi/src/arch/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="static"
 
 DEPEND=">=sys-fs/fuse-2.5.2"

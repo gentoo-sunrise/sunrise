@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Aug 2009; Jérôme Poulin (TiCPU) <jeromepoulin@gmail.com>
+  -cromfs-1.5.8.7.ebuild, +cromfs-1.5.8.9.ebuild:
+  Version bump for sys-fs/comfs 1.5.8.7 => 1.5.8.9, also tested on and added
+  ~amd64 in keywords.
+
   28 Jun 2009; Jérôme Poulin (TiCPU) <jeromepoulin@gmail.com>
   -cromfs-1.5.6.2.ebuild, +cromfs-1.5.8.7.ebuild:
   Version bump
