@@ -3,6 +3,10 @@
 # $Header: $
 
   30 Aug 2009; Russell Harmon (eatnumber1) <russ@eatnumber1.com>
+  pidgin-botsentry-1.3.0.ebuild:
+  Fixed coding style issues.
+
+  30 Aug 2009; Russell Harmon (eatnumber1) <russ@eatnumber1.com>
   +pidgin-botsentry-1.3.0.ebuild, +metadata.xml:
   New Ebuild for bug 283039 for the Botsentry plugin for Pidgin
 

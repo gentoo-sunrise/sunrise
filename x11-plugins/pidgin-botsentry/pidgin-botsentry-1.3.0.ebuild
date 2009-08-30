@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+MY_P="bot-sentry-${PV}"
 DESCRIPTION="A Pidgin plugin to prevent Instant Message spam"
 HOMEPAGE="http://sourceforge.net/projects/pidgin-bs/"
-SRC_URI="mirror://sourceforge/pidgin-bs/bot-sentry-${PV}.tar.bz2"
+SRC_URI="mirror://sourceforge/pidgin-bs/${MY_P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -16,7 +17,7 @@ RDEPEND="net-im/pidgin
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-S="${WORKDIR}"/bot-sentry-${PV}
+S=${WORKDIR}/${MY_P}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Failed install phase"
