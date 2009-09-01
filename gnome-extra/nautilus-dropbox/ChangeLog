@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/nautilus-dropbox
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  +nautilus-dropbox-0.6.1.ebuild, +metadata.xml:
+  New Ebuild for bug 237433
+
