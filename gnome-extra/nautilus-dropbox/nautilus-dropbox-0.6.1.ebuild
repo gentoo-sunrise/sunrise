@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-
 inherit eutils gnome2
 
 DESCRIPTION="Store, Sync and Share Files Online"
@@ -13,6 +11,7 @@ SRC_URI="http://www.getdropbox.com/download?dl=packages/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 RDEPEND="gnome-base/nautilus
 	dev-python/pygtk
@@ -22,8 +21,6 @@ RDEPEND="gnome-base/nautilus
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
-
-IUSE=""
 
 DOCS="AUTHORS ChangeLog NEWS README"
 
@@ -39,10 +36,9 @@ src_install () {
 	# Allow only for users in the dropbox group
 	# see http://forums.getdropbox.com/topic.php?id=3329&replies=5#post-22898
 	local extensiondir="$(pkg-config --variable=extensiondir libnautilus-extension)"
-	fowners root:dropbox "${extensiondir}"/libnautilus-dropbox.{a,la,so} || die
-	"fowners failed"
-	fperms o-rwx "${extensiondir}"/libnautilus-dropbox.{a,la,so} || die "fperms
-	failed"
+	[ -z ${extensiondir} ] && die "pkg-config unable to get nautilus extensions dir"
+	fowners root:dropbox "${extensiondir}"/libnautilus-dropbox.{a,la,so} || die "fowners failed"
+	fperms o-rwx "${extensiondir}"/libnautilus-dropbox.{a,la,so} || die "fperms failed"
 }
 
 pkg_postinst () {

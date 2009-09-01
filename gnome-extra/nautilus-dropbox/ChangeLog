@@ -3,6 +3,10 @@
 # $Header: $
 
   01 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  nautilus-dropbox-0.6.1.ebuild:
+  Fixed ebuild, thanks to sedzimir and [equilibrium]
+
+  01 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   +nautilus-dropbox-0.6.1.ebuild, +metadata.xml:
   New Ebuild for bug 237433
 
