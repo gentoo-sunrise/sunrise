@@ -39,6 +39,3 @@ src_configure() {
 
 	econf --datadir=/usr/share/spyview
 }
-
-
-
