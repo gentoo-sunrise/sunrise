@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Sep 2009; Markus Rennings (mren) <mren@mrmx.de>
+  -files/1.3.1-evms.patch, -monitorix-1.3.1.ebuild, +monitorix-1.3.2.ebuild,
+  -files/monitorix.conf.patch:
+  version bump; patches are not needed anymore, they're included upstream
+
   27 Aug 2009; Markus Rennings (mren) <mren@mrmx.de> monitorix-1.3.1.ebuild:
   added missing dep, thx to David for the hint
 

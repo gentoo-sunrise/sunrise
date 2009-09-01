@@ -31,10 +31,9 @@ need_httpd_cgi
 
 src_prepare() {
 	local IDATE=$(date +'%Y-%m-%d')
-	epatch "${FILESDIR}/${PN}.conf.patch"
-	sed -i -e "s|\(our \$IDATE = \"\)01 Jan 2000|\1${IDATE}|" ${PN}.conf \
-		|| die "sed failed"
-	epatch "${FILESDIR}/${PV}-evms.patch"
+	sed -i -e "s|\(our \$IDATE = \"\)01 Jan 2000|\1${IDATE}|" \
+		   -e "s|\(our \$OSTYPE = \"Linux-\)RHFC|\1Gentoo|" ${PN}.conf \
+		   || die "sed failed"
 }
 
 src_install() {
