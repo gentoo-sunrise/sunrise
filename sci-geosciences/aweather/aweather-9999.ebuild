@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools gnome2 subversion
+EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/aweather"
+EGIT_BOOTSTRAP="gtkdocize && eautoreconf"
+
+inherit autotools gnome2 git
 
 DESCRIPTION="A weather monitoring program"
 HOMEPAGE="http://lug.rose-hulman.edu/wiki/AWeather"
@@ -27,8 +30,3 @@ DOCS="ChangeLog README TODO"
 
 # Fix for gtk-doc bug
 MAKEOPTS="${MAKEOPTS} -j1"
-
-ESVN_REPO_URI="https://lug.rose-hulman.edu/svn/proj-aweather/trunk"
-# Tell SVN to accept the self-signed certificate from the server
-ESVN_OPTIONS="--non-interactive --trust-server-cert"
-ESVN_BOOTSTRAP="gtkdocize && eautoreconf"
