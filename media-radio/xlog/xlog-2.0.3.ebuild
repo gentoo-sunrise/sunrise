@@ -10,7 +10,7 @@ SRC_URI="http://savannah.nongnu.org/download/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="media-libs/hamlib
