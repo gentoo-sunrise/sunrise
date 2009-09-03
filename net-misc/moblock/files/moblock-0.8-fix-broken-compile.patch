@@ -1,0 +1,11 @@
+diff -ru orig/MoBlock-0.8/MoBlock.c new/MoBlock-0.8/MoBlock.c
+--- orig/MoBlock-0.8/MoBlock.c	2009-09-03 13:41:05.216725283 -0500
++++ new/MoBlock-0.8/MoBlock.c	2009-09-03 13:41:17.353386581 -0500
+@@ -24,6 +24,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <limits.h>
+ #include <unistd.h>
+ #include <netinet/in.h>
+ #include <string.h>

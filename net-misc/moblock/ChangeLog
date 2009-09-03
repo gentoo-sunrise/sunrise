@@ -1,6 +1,56 @@
 # ChangeLog for net-misc/moblock
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*moblock-0.8-r2 (03 Sep 2009)
+
+  03 Sep 2009; Daniel Santos (dansan) <daniel.santos@pobox.com>
+  +files/moblock-0.8-fix-broken-compile.patch, -files/0.8-r1/confd,
+  -files/0.8-r1/initd, +files/0.8-r2/init.d, +files/0.8-r2/logrotate,
+  +files/0.8-r2/moblock.minimal.example, files/moblock-0.8-makefile.patch,
+  +files/0.8-r2/moblock.normal.example,
+  +files/moblock-0.8-rename-stats-file.patch, -files/0.8-r1/moblock-stats,
+  -files/0.8-r1/moblock-update, +files/0.8-r2/moblock.paranoid.example,
+  +files/0.8-r2/moblock-stats, +files/0.8-r2/moblock-update,
+  -moblock-0.8-r1.ebuild, +moblock-0.8-r2.ebuild,
+  +files/moblock-0.8-fix-nfq_unbind_pf-error.patch, metadata.xml:
+  See bug #143535 for discussion and history.
+  * Fixed broken scripts by sourcing functions.sh from /etc/init.d instead
+    of /sbin since it was moved in >sys-apps/baselayout-2.0.0 (thanks also
+    to Zorzo Luca <lucazorzo@gmail.com> and Santiago M. Mola)
+  * Fix compiler error "'INT_MIN' undeclared here (not in a function)" by
+    manually including limits.h, although this appears to have been a bug
+    in sys-kernel/linux-headers (thanks also to Zorzo Luca).
+  * Fix error "iptables: No chain/target/match by that name" by adding
+    NETFILTER_XT_MATCH_STATE to CONFIG_CHECK (thanks to Zorzo Luca).
+  * Fix error "error during nfq_unbind_pf()" on 2.6.23 and later kernels
+    (it is actually expected now and ignored).
+  * Added options to specify additional white and black list ranges via
+    {WHITE,BLACK}_IP_{IN,OUT,FORWARD} variables in conf.d (thanks to Alan
+    Pastor <t7gt7g@gmail.com> and From Gabriel Devenyi <ace@staticwave.ca>).
+  * moblock-update will spend less time on servers that are down (happens a
+    lot). This can be tweaked via WGET_EXTRA_OPTIONS in /etc/conf.d/moblock.
+  * Modified the overall scheme that moblock-update uses so we can include
+    iblocklist.org as a mirror, which likes to prepends "bt_" to their file
+    names.
+  * Renamed "templist" blocklist to "badpeers" in conf.d to match change on
+    servers.
+  * Added new blocklists "gnutella" and "webexploit-forumspam" to conf.d.
+  * Added new files /etc/conf.d/moblock.{minimal,normal,parinoid}.example.
+    By default, the "normal" version is copied to /etc/conf.d/moblock during
+    install.
+  * Added USE flag "logrotate" USE flag that installs an
+    /etc/logrotate/moblock file and pulls in app-admin/logrotate (thanks to
+    Peter Avramucz <muczyjoe@gmail.com> and Marc Elser
+    <melser_regs@gmxpro.net>)
+  * Added USE flag "network-cron" which installs a link to moblock-update in
+    /etc/cron-weekly.
+  * Added USE flag "paranoid" use flag that changes the cron job to daily
+    and causes the parinoid configuration file to be used in conf.d.
+  * Modified moblock-stats slightly because in some cases tail is claiming
+    it can't find file - (dash) when redirecting that file to it.
+  * Modified ebuild to restart moblock after install if moblock is running.
+  eat me
 
   21 Mar 2008; Jakub Moc <jakub@gentoo.org> moblock-0.8-r1.ebuild:
   Fix pkg_postinst

@@ -1,5 +1,5 @@
 #!/sbin/runscript
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -59,7 +59,29 @@ start() {
 	for PORT in ${WHITE_UDP_FORWARD}; do
 		iptables -I MOBLOCK_FW -p udp --dport ${PORT} -j ACCEPT
 	done
-
+	
+	# IP Blacklisting
+	for IP in ${BLACK_IP_IN}; do
+		iptables -I MOBLOCK_IN --source ${IP} -j DROP
+	done
+	for IP in ${BLACK_IP_OUT}; do
+		iptables -I MOBLOCK_OUT --source ${IP} -j DROP
+	done
+	for IP in ${BLACK_IP_FORWARD}; do
+		iptables -i MOBLOCK_FORWARD --source ${IP} -j DROP
+	done
+ 	
+	# IP whitelisting
+	for IP in ${WHITE_IP_IN}; do
+		iptables -I MOBLOCK_IN --source ${IP} -j RETURN
+	done
+	for IP in ${WHITE_IP_OUT}; do
+		iptables -I MOBLOCK_OUT --destination ${IP} -j RETURN
+	done
+	for IP in ${WHITE_IP_FORWARD}; do
+		iptables -I MOBLOCK_FW --source ${IP} -j RETURN
+		iptables -I MOBLOCK_FW --destination $IP -j RETURN
+	done
 
 	# Loopback traffic fix
 
@@ -98,7 +120,6 @@ cleanup_iptables() {
 }
 
 stop() {
-	
 	ebegin "Stopping MoBlock"
 	start-stop-daemon --stop --pidfile ${PIDFILE}
 	eend ${?}

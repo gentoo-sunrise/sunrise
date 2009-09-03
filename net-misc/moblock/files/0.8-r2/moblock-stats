@@ -1,11 +1,20 @@
 #!/bin/bash
-
+# Copyright 1999-2009 Gentoo Foundation
+#           2008-2009 Daniel Santos (daniel.santos@pobox.com)
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+#
+# Output statistics from MoBlock daemon.
+#
 # This script is screwy enough that it deserves some documentation.  To get
 # statistics from the moblock daemon, you send it SIGUSR2 (man signal(7) for
 # more info).  This causes moblock to output the statistics to
-# /var/log/MoBlock.stats.  So this suicidal script sends SIGUSR2 to Moblock,
+# /var/log/moblock.stats.  So this suicidal script sends SIGUSR2 to Moblock,
 # scrapes the .stats file and sends SIGINT to it's self when it finds text
-# that indicates the end of the report has been reached.
+# that indicates the end of the report has been reached. tail is started
+# with --pid=$$ so we're sure it dies when we do and read_stat_log will
+# actually terminate normally, after telling it's parent to go away (typical
+# teen).
 #
 # It's screwy, but effective.
 
@@ -13,7 +22,7 @@ source /etc/conf.d/moblock
 source /etc/init.d/functions.sh
 
 moblock_pidfile=/var/run/moblock.pid
-stat_log_name=/var/log/MoBlock.stats
+stat_log_name=/var/log/moblock.stats
 
 die () {
 	eerror "$@"
@@ -26,7 +35,7 @@ read_stat_log() {
 			echo 
 			einfo End of statistics
 			echo
-			kill -s INT $1
+			kill -s SIGINT $1
 			return
 		else
 			echo "$REPLY"
@@ -38,10 +47,10 @@ if [ ! -f "${moblock_pidfile}" ]; then
 	die "MoBlock not running."
 fi
 
-tail --pid=$$ --lines=0 -f < ${stat_log_name} | read_stat_log $$ &
+tail --pid=$$ --lines=0 -f ${stat_log_name} | read_stat_log $$ &
 
-# Make sure tail starts before we send SIGUSR2
-sleep 0.125
+# Try to make sure tail starts before we send SIGUSR2
+sleep 0.5
 echo
 einfo Requesting stats from MoBlock daemon...
 echo

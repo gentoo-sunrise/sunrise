@@ -1,0 +1,53 @@
+diff -ru orig/MoBlock-0.8/MoBlock.c new/MoBlock-0.8/MoBlock.c
+--- orig/MoBlock-0.8/MoBlock.c	2006-03-22 11:44:31.000000000 -0600
++++ new/MoBlock-0.8/MoBlock.c	2009-09-03 13:30:49.153576912 -0500
+@@ -313,7 +313,7 @@
+ 			reopen_logfile();
+ 			break;
+ 		case SIGUSR2:
+-			fprintf(logfile,"Got SIGUSR2! Dumping stats to /var/log/MoBlock.stats\n");
++			fprintf(logfile,"Got SIGUSR2! Dumping stats to /var/log/moblock.stats\n");
+ 			ll_log();
+ 			break;
+ 		case SIGHUP:
+diff -ru orig/MoBlock-0.8/README new/MoBlock-0.8/README
+--- orig/MoBlock-0.8/README	2006-03-22 11:44:31.000000000 -0600
++++ new/MoBlock-0.8/README	2009-09-03 13:24:36.766806206 -0500
+@@ -145,11 +145,11 @@
+ 
+    kill -TERM <MoBlockPid>
+ 
+-   While shutting down it will dump some stats to /var/log/MoBlock.stats
++   While shutting down it will dump some stats to /var/log/moblock.stats
+    To obtain stats about blocked ranges while it's running:
+ 
+    kill -USR1 <MoBlockPid>	# write stats to logfile
+-   kill -USR2 <MoBlockPid>      # write stats to /var/log/MoBlock.stats
++   kill -USR2 <MoBlockPid>      # write stats to /var/log/moblock.stats
+ 
+ ** NEW: to reload the blocklist while MoBlock is running send to it the
+    HUP signal:
+diff -ru orig/MoBlock-0.8/rbt.c new/MoBlock-0.8/rbt.c
+--- orig/MoBlock-0.8/rbt.c	2006-03-22 11:44:31.000000000 -0600
++++ new/MoBlock-0.8/rbt.c	2009-09-03 13:24:36.770138392 -0500
+@@ -144,9 +144,9 @@
+     FILE *fp;
+     time_t tp;
+     
+-    fp=fopen("/var/log/MoBlock.stats","a");
++    fp=fopen("/var/log/moblock.stats","a");
+     if ( fp == NULL ) {
+-        fprintf(stderr,"Error opening stats file /var/log/MoBlock.stats\n");
++        fprintf(stderr,"Error opening stats file /var/log/moblock.stats\n");
+         perror("ll_log");
+         return;
+     }
+@@ -160,7 +160,7 @@
+     }
+     fprintf(fp,"----------------------------------------\n");
+     if ( fclose(fp) != 0 ) {
+-        perror("Error closing stats file /var/log/MoBlock.stats");
++        perror("Error closing stats file /var/log/moblock.stats");
+         return;
+     }
+ }

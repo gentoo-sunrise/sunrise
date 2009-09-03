@@ -1,0 +1,21 @@
+diff -ru orig/MoBlock-0.8/MoBlock.c new/MoBlock-0.8/MoBlock.c
+--- orig/MoBlock-0.8/MoBlock.c	2009-09-03 13:37:35.346736734 -0500
++++ new/MoBlock-0.8/MoBlock.c	2009-09-03 13:40:24.963491807 -0500
+@@ -33,6 +33,7 @@
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include <linux/netfilter_ipv4.h>
++#include <linux/version.h>
+ #include <signal.h>
+ #include <regex.h>
+ 
+@@ -502,7 +503,9 @@
+ 
+ 	if (nfq_unbind_pf(h, AF_INET) < 0) {
+ 		fprintf(logfile, "error during nfq_unbind_pf()\n");
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 23)
+ 		exit(-1);
++#endif
+ 	}
+ 
+ 	if (nfq_bind_pf(h, AF_INET) < 0) {

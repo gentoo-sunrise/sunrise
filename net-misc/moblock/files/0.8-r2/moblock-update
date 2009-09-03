@@ -1,0 +1,281 @@
+#!/bin/bash
+# Copyright 1999-2009 Gentoo Foundation
+#           2008-2009 Daniel Santos (daniel.santos@pobox.com)
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+#
+# Update script for moblock.
+#
+# The general contract of this script is that it will attempt to download all
+# blocklists.  If a blocklist fails to download, or download correctly (i.e.,
+# partial dl, etc.), and an older version of the list exists, it will not be
+# overwritten.  If one or more blocklists fail to download, but a previous
+# version of that list is present in the cache, the script will re-compile the
+# master list anyway and return zero.  However, if any of the list specified
+# in BLOCKLISTS are not present (or usable), the script will *not* replace the
+# existing master list, if there is one, and will not attempt to create one if
+# there wasn't one already.
+#
+# This assures that under no condition, the update results in a less secure
+# blocklist (aside from items being removed from one of the updated blocklists
+# themselves).  At the same time, if any of the lists can be updated at all
+# then it will be done.  These rules are especially important since some of
+# the lists seem to be unavailable quite a lot of the time.
+
+source /etc/conf.d/moblock
+source /etc/init.d/functions.sh
+
+log_file=/var/log/moblock-update.log
+tmp_dir=/tmp/moblock-update.$$ 
+
+typeset -i successful_dl_count=0
+typeset -i failed_dl_count=0
+typeset -i FAIL=0
+
+cleanup() {
+	rm -rf ${tmp_dir}
+	log_msg "$0 exiting.
+
+-------------------------------------------------------------------------------
+
+
+"
+}
+
+die() {
+	eend 1
+	eerror "Update failed: $@" | tee -a ${log_file}
+	eerror "Blocklist NOT updated. See /var/log/moblock-update.log for details."
+	cleanup
+	exit 1;
+}
+
+log_msg() {
+	echo -e "$(date): $@" >> ${log_file}
+}
+
+init() {
+	if [ -z "${BLOCKLISTURLS}" ]; then
+		eerror "There is no BLOCKLISTURLS defined in /etc/conf.d/moblock."
+		eindent
+		eerror "Please set this variable to the list of servers you wish to"
+		eerror "download from."
+		eoutdent
+		
+		FAIL=1
+	fi
+
+	if [ -z "${BLOCKLISTS}" ]; then
+		eerror "There is no BLOCKLISTS defined in /etc/conf.d/moblock."
+		eindent
+		eerror "Please set this variable to the lists you wish to use."
+		eoutdent
+		
+		FAIL=1
+	fi
+
+	if [ -z "${BLOCKLISTFILE}" ]; then
+		eerror "There is no BLOCKLISTFILE defined in /etc/conf.d/moblock."
+		eindent
+		eerror "Please set this variable to the file you wish to output the"
+		eerror "merged block list to."
+		eoutdent
+		
+		FAIL=1
+	fi
+
+	if [ -z "${BLOCKLISTDIR}" ]; then
+		eerror "There is no BLOCKLISTDIR defined in /etc/conf.d/moblock."
+		eindent
+		eerror "Please set this variable to the directory you wish to store"
+		eerror "the downloaded lists in."
+		eoutdent
+		
+		FAIL=1
+	fi
+
+	[ ${FAIL} -eq 0 ] || die "invalid configuration"
+}
+
+# Retrieves a single list file.
+#
+# Iterate through servers (url patterns) until we get one to work or they all
+# fail. This function copies existing list files to a temp directory first,
+# then uses wget with the --timestamping (-N) option to attempt download the
+# updated version over the temp copy.  This way, we only download if there is
+# really a newer version of the list file (which --timestamping would do
+# anyway) and, if a download begins and subsequently fails, we never clobber
+# existing list files with incomplete versions (which wget with --timestamping
+# could otherwise do).  The only downside to this approach is that we will
+# stop going through the list of servers when we find the first one that has
+# the file.  If, however, this file is older than a version on a server
+# further down in the list, we will never reach it because we consider a
+# download attempt where wget determined that the existing file is up to date
+# to be a successful attempt.  The only alternative to this is to check every
+# mirror, which just isn't an acceptable practice.
+#
+# In short, this function has the following guarantees:
+# * Files will only be downloaded when there is really a newer version
+#   available.
+# * Existing files are never clobbered until an updated version is completely
+#   and sucessfully downloaded.
+#
+# Returns:
+#   zero on success.
+#   non-zero on (normal) failure.
+#   calls die on catastrophic (unexpected) failure.
+getAFile() {
+	# output from wget is saved to tmp_log, but used only if a download fails
+	local tmp_log=${tmp_dir}/${1}.wget.log
+	# the list file name
+	local fn="${1}.${BLOCKLISTSUFFIX}"
+	local tmp_file="${tmp_dir}/${fn}"
+
+	# copy current list file (if it exists) to temp directory
+	if [ -f "${BLOCKLISTDIR}/${fn}" ]; then
+		cp -p "${BLOCKLISTDIR}/${fn}" "${tmp_dir}/${fn}" || die "cp failed."
+		# IBlocklist.org hack part 1: deal with file names having the "bt_"
+		# prefix appended to them.
+		cp -p "${tmp_dir}/${fn}" "${tmp_dir}/bt_${fn}" || die "cp failed."
+		log_msg "last modified $(stat -c %y ${BLOCKLISTDIR}/${fn})."
+	else
+		log_msg "file missing."
+	fi
+
+
+	for url_pattern in ${BLOCKLISTURLS}; do
+		local url="$(echo "${url_pattern}" |
+			sed "s/BLOCKLIST/${1}/g" |
+			sed "s/SUFFIX/${BLOCKLISTSUFFIX}/g")"
+		log_msg "Trying ${url}"
+
+		# Call wget with minimal failure tollerance so we don't hold up an
+		# update if a server is down, since we'll just proceed to the next one
+		# anyway.
+		if wget ${WGET_EXTRA_OPTIONS} \
+				--directory-prefix=${tmp_dir} \
+				--timestamping \
+				--append-output=${tmp_log} \
+				"${url}"; then
+
+			# IBlocklist.org hack part 2
+			if [ -f "${tmp_dir}/bt_${fn}" ]; then
+				if [    "${tmp_dir}/bt_${fn}" -nt "${tmp_dir}/${fn}" ]; then
+					mv	"${tmp_dir}/bt_${fn}"     "${tmp_dir}/${fn}" || die "mv failed"
+				else
+					rm  "${tmp_dir}/bt_${fn}"
+				fi
+			fi
+
+			# If we got a newer version of the file then move it over,
+			# otherwise, we'll save ourselves the IO
+			if [   "${tmp_dir}/${fn}" -nt "${BLOCKLISTDIR}/${fn}" ]; then
+				mv "${tmp_dir}/${fn}"     "${BLOCKLISTDIR}/${fn}" || die "mv failed"
+				log_msg "updated, new date is $(stat -c %y ${BLOCKLISTDIR}/${fn})."
+				echo -e " updated \c"
+			else
+				echo -e " current \c"
+				log_msg "current"
+			fi
+			rm "${tmp_log}"
+
+			return 0
+		fi
+	done
+
+	log_msg "Failed to download ${fn}.
+${BAD}wget output ---------->${NORMAL}
+$(cat ${tmp_log})
+${BAD}<---------- end of wget output${NORMAL}"
+	rm ${tmp_log}
+	return 1
+}
+
+getFiles() {
+	einfo Downloading lists...
+	eindent
+
+	for i in "$@"; do
+		ebegin "Checking ${i}" | tee -a ${log_file}
+		echo >> ${log_file}
+
+		if getAFile $i; then
+			successful_dl_count=${successful_dl_count}+1
+			eend 0 | tee -a ${log_file}
+		else
+			failed_dl_count=${failed_dl_count}+1
+			eend 1 | tee -a ${log_file}
+		fi
+	done
+
+	eoutdent
+
+	if [ ${failed_dl_count} -ne 0 ]; then
+		if [ ${successful_dl_count} -eq 0 ]; then
+			die "All downloads failed"
+		else
+			ewarn "WARNING: ${failed_dl_count} downloads failed!  See /var/log/moblock-update.log" \
+				| tee -a ${log_file}
+			ewarn "for details.  Previous blocklists will be used failed items." \
+				| tee -a ${log_file}
+		fi
+	fi
+}
+
+mergeFiles() {
+	einfo Unpacking and merging lists...
+	eindent
+
+	local new_p2p_file=${tmp_dir}/new.p2p
+
+	for i in ${BLOCKLISTS}; do
+		ebegin Merging ${i} | tee -a ${log_file}
+
+		gunzip -c ${BLOCKLISTDIR}/${i}.${BLOCKLISTSUFFIX} >> ${new_p2p_file} 2>>${log_file} \
+			|| die "Failed to extract list '${i}'"
+
+		eend $? | tee -a ${log_file}
+	done
+
+	mv ${new_p2p_file} ${BLOCKLISTFILE} || die "mv failed"
+
+	eoutdent
+}
+
+reloadList() {
+	moblock_pid=$(cat /var/run/moblock.pid 2>/dev/null)
+
+	if ps -p ${moblock_pid} > /dev/null 2>&1; then
+		einfo "Reloading block list"
+		# Force writing stats here since SIGHUP will reset them.
+		kill -s USR2 ${moblock_pid}
+		sleep 1
+		kill -s HUP ${moblock_pid}
+		eend $? 
+	fi
+}
+
+main() {
+	mkdir -p ${BLOCKLISTDIR} || die "Failed to create dir ${BLOCKLISTDIR}."
+	mkdir -p ${tmp_dir} || die "Failed to create dir ${tmp_dir}"
+
+	einfo "Updating moblock..." | tee -a ${log_file}
+	eindent
+	log_msg "$0 initiated."
+
+	getFiles ${BLOCKLISTS} ${WHITELISTS}
+	mergeFiles
+	reloadList | tee -a ${log_file}
+
+	eoutdent
+	if [ ${failed_dl_count} -eq 0 ]; then
+		einfo "MoBlock update completed successfully." | tee -a ${log_file}
+	else
+		ewarn "MoBlock update partially successful." | tee -a ${log_file}
+	fi
+	cleanup
+}
+
+main
+
+# vim: set ts=4
