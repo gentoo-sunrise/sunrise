@@ -17,7 +17,8 @@ RDEPEND="gnome-base/nautilus
 	dev-python/pygtk
 	dev-python/docutils
 	net-misc/wget
-	x11-libs/libnotify"
+	x11-libs/libnotify
+	x11-libs/libXinerama"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
