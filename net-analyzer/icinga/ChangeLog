@@ -1,0 +1,8 @@
+# ChangeLog for net-analyzer/icinga
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Sep 2009; Tom Lane [lan3y] <lan3y@live.co.uk> +icinga-0.8.0.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 271339
+
