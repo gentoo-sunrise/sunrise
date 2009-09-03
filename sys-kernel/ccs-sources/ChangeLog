@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Sep 2009; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.29-r7.ebuild,
+  +ccs-sources-2.6.29-r8.ebuild, -ccs-sources-2.6.30-r4.ebuild,
+  +ccs-sources-2.6.30-r5.ebuild:
+  Version bumped.
+
   23 Jul 2009; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.30-r3.ebuild,
   +ccs-sources-2.6.30-r4.ebuild:
   version bumped.
