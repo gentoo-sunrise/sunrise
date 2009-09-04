@@ -23,7 +23,7 @@
 
 # Thomas Sachau <tommy@gentoo.org> (05 Sep 2009)
 # Masked because of masked dependency dev-python/mmpython (see package.mask in main tree)
-et-zope/plonemultimedia
+net-zope/plonemultimedia
 
 # Thomas Sachau <tommy@gentoo.org> (20 Aug 2009)
 # Globus packages need some more work, globus-build does include different per-modules
