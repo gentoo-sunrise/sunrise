@@ -4,7 +4,6 @@
 
 inherit eutils linux-info toolchain-funcs
 
-
 MY_P=MoBlock-${PV}
 
 DESCRIPTION="Blocks connections from/to hosts listed in a file in peerguardian format using iptables"
@@ -17,48 +16,39 @@ KEYWORDS="~amd64 ~x86"
 IUSE="logrotate network-cron paranoid"
 
 DEPEND="net-libs/libnetfilter_queue
-		net-libs/libnfnetlink"
+	net-libs/libnfnetlink"
 RDEPEND="${DEPEND}
-		net-firewall/iptables"
+	net-firewall/iptables"
 
 S=${WORKDIR}/${MY_P}
 
 CONFIG_CHECK="NETFILTER NETFILTER_XTABLES NETFILTER_XT_TARGET_NFQUEUE
-		IP_NF_IPTABLES IP_NF_FILTER NETFILTER_XT_MATCH_STATE"
+	IP_NF_IPTABLES IP_NF_FILTER NETFILTER_XT_MATCH_STATE"
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}/${P}-makefile.patch"
-	epatch "${FILESDIR}/${P}-rename-stats-file.patch"
-	epatch "${FILESDIR}/${P}-fix-nfq_unbind_pf-error.patch"
-	epatch "${FILESDIR}/${P}-fix-broken-compile.patch"
+	epatch "${FILESDIR}"/${P}-{makefile,rename-stats-file,fix-nfq_unbind_pf-error,fix-broken-compile}.patch
 }
 
 src_compile() {
-	cd "${S}" || die
 	emake CC=$(tc-getCC) || die "emake failed"
 }
 
 src_install() {
 	dosbin moblock || die
 
-	dosbin "${FILESDIR}/${PVR}/moblock-update" || die
-	dosbin "${FILESDIR}/${PVR}/moblock-stats" || die
+	dosbin "${FILESDIR}/${PVR}/moblock-{update,stats}" || die
 
 	newinitd "${FILESDIR}/${PVR}/init.d" moblock || die
-	doconfd "${FILESDIR}/${PVR}/moblock.paranoid.example" || die
-	doconfd "${FILESDIR}/${PVR}/moblock.normal.example" || die
-	doconfd "${FILESDIR}/${PVR}/moblock.minimal.example" || die
+	doconfd "${FILESDIR}/${PVR}/moblock.{paranoid,normal,minimal}.example" || die
 	if use paranoid; then
 		newconfd "${FILESDIR}/${PVR}/moblock.paranoid.example" moblock || die
 	else
 		newconfd "${FILESDIR}/${PVR}/moblock.normal.example" moblock || die
 	fi
 
-	dodir /var/db/moblock || die
+	dodir /var/{db,cache}/moblock || die
 	touch "${D}/var/db/moblock/guarding.p2p" || die
-
-	keepdir /var/cache/moblock || die
 
 	if use network-cron; then
 		if use paranoid; then
@@ -93,7 +83,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	if ! has_version ${CATEGORY}/${PN} && [[ -d ${ROOT}/var/cache/moblock ]] ; then
+	if ! [[ -e ${ROOT}/usr/sbin/moblock ]] && [[ -d ${ROOT}/var/cache/moblock ]] ; then
 		elog "Removing leftover cache..."
 		rm -rf "${ROOT}/var/cache/moblock" ||
 			ewarn "Failed to remove ${ROOT}/var/cache/moblock"
