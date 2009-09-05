@@ -22,10 +22,6 @@ DEPEND="${RDEPEND}
 	dev-python/setuptools
 	test? ( || ( dev-lang/python[sqlite] dev-python/pysqlite ) )"
 
-src_prepare() {
-	epatch "${FILESDIR}/remove-assert-parenthesis.patch"
-}
-
 src_test() {
 	cd greentest
 	PYTHONPATH=.. ${python} runall.py || die "Tests failed"
