@@ -11,13 +11,16 @@ SRC_URI="http://proj.mgorny.alt.pl/${PN}/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="pinentry"
 
-DEPEND="<dev-libs/libmirage-1.2"
-RDEPEND="${DEPEND}"
+DEPEND="dev-libs/libmirage
+	pinentry? ( dev-libs/libassuan )"
+RDEPEND="${DEPEND}
+	pinentry? ( app-crypt/pinentry )"
 
 src_configure() {
-	emake configure || die 'configure failed'
+	econf \
+		$(use_with pinentry assuan)
 }
 
 src_install() {
