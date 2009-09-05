@@ -13,12 +13,13 @@ SRC_URI="mirror://berlios/${PN}/${MY_P}-i586.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="logrotate network-cron paranoid"
+IUSE="logrotate network-cron"
 
 DEPEND="net-libs/libnetfilter_queue
 	net-libs/libnfnetlink"
 RDEPEND="${DEPEND}
-	net-firewall/iptables"
+	net-firewall/iptables
+	logrotate? ( app-admin/logrotate )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -35,27 +36,17 @@ src_compile() {
 }
 
 src_install() {
-	dosbin moblock || die
-
-	dosbin "${FILESDIR}/${PVR}/moblock-{update,stats}" || die
+	dosbin "${FILESDIR}/${PVR}/"moblock-{update,stats} moblock || die
 
 	newinitd "${FILESDIR}/${PVR}/init.d" moblock || die
-	doconfd "${FILESDIR}/${PVR}/moblock.{paranoid,normal,minimal}.example" || die
-	if use paranoid; then
-		newconfd "${FILESDIR}/${PVR}/moblock.paranoid.example" moblock || die
-	else
-		newconfd "${FILESDIR}/${PVR}/moblock.normal.example" moblock || die
-	fi
+	doconfd "${FILESDIR}/${PVR}/"moblock.{paranoid,normal,minimal}.example || die
+	newconfd "${FILESDIR}/${PVR}/moblock.normal.example" moblock || die
 
 	dodir /var/{db,cache}/moblock || die
 	touch "${D}/var/db/moblock/guarding.p2p" || die
 
 	if use network-cron; then
-		if use paranoid; then
-			dosym /usr/sbin/moblock-update /etc/cron.daily/moblock-update || die
-		else
-			dosym /usr/sbin/moblock-update /etc/cron.weekly/moblock-update || die
-		fi
+		dosym /usr/sbin/moblock-update /etc/cron.weekly/moblock-update || die
 	fi
 
 	if use logrotate; then
@@ -68,10 +59,9 @@ src_install() {
 
 pkg_postinst() {
 	if use network-cron; then
-		local cron_interval="$(use paranoid && echo daily || echo weekly)";
-		elog "The script /usr/sbin/moblock-update will be run ${cron_interval} to update your"
+		elog "The script /usr/sbin/moblock-update will be run weekly to update your"
 		elog "blocklists.  You can change this by moving or removing the symlink"
-		elog "/etc/cron.${cron_interval}/moblock-update or re-installing MoBlock without the"
+		elog "/etc/cron.weekly/moblock-update or re-installing MoBlock without the"
 		elog "network-cron USE flag."
 	else
 		elog "Run moblock-update to update your block list.  To have this happen"
@@ -79,7 +69,7 @@ pkg_postinst() {
 	fi
 	elog ""
 	elog "You can view or change your blocklist(s) and other options by editing"
-	elog "/etc/conf.d/moblock."
+	elog "/etc/conf.d/moblock. Example configuration files are also in /etc/conf.d/."
 }
 
 pkg_postrm() {

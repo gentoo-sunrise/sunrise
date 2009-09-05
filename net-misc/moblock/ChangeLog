@@ -2,6 +2,12 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Sep 2009; Daniel Santos (dansan) <daniel.santos@pobox.com>
+  moblock-0.8-r2.ebuild, metadata.xml:
+  * Removed paranoid USE flag
+  * Re-added app-admin/logrotate to RDEPEND
+  * Fixed quoted text intended for bash expansion
+
   04 Sep 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   moblock-0.8-r2.ebuild:
   Cleanup, fix pkg_postrm check
