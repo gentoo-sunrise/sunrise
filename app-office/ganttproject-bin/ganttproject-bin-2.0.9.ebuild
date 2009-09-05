@@ -5,7 +5,7 @@
 inherit eutils java-pkg-2
 
 MY_P=${PN/-bin}-${PV}
-DESCRIPTION="A tool for creating a project schedule by means of Gantt chart and resource load chart."
+DESCRIPTION="A tool for creating a project schedule by means of Gantt chart and resource load chart"
 HOMEPAGE="http://ganttproject.sourceforge.net/"
 SRC_URI="mirror://sourceforge/ganttproject/${MY_P}.zip"
 
