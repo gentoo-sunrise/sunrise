@@ -1,0 +1,39 @@
+diff -ur kmttg-0.6k-original/src/com/tivo/kmttg/main/config.java kmttg-0.6k/src/com/tivo/kmttg/main/config.java
+--- kmttg-0.6k-original/src/com/tivo/kmttg/main/config.java	2009-09-04 02:32:36.000000000 -0400
++++ kmttg-0.6k/src/com/tivo/kmttg/main/config.java	2009-09-06 01:22:33.005185340 -0400
+@@ -299,23 +299,30 @@
+          }
+       }      
+       
++      // multi-user settings patch for SVN r497
++      String settingsDir = System.getProperty("user.home") + s + ".kmttg";
++      (new File(settingsDir)).mkdir();
++      
+       // Try and get MAK from ~/.tivodecode_mak
+       String result = getMakFromFile();
+       if (result != null) MAK = result;
+      
+       // These files all should reside along side jar file
+-      configIni    = programDir + s + "config.ini";
+-      autoIni      = programDir + s + "auto.ini";
+-      autoLog      = programDir + s + "auto.log";
+-      autoHistory  = programDir + s + "auto.history";
+-      encProfDir   = programDir + s + "encode";
++      configIni    = settingsDir + s + "config.ini";
++      autoIni      = settingsDir + s + "auto.ini";
++      autoLog      = settingsDir + s + "auto.log";
++      autoHistory  = settingsDir + s + "auto.history";
++      encProfDir   = "/usr/share/kmttg/encode"; // gentoo ebuild hack!!
+       
+       // File to store/restore GUI settings
++      /*
+       gui_settings = programDir + s + ".kmttg_settings";
+       if (file.isDir(System.getProperty("user.home"))) {
+          // Centralize this non-critical file instead of localizing it
+          gui_settings = System.getProperty("user.home") + s + ".kmttg_settings";
+       }
++      */
++      gui_settings = settingsDir + s + "kmttg_settings";
+       
+       // Non-executable defaults
+       tivoFileNameFormat = "[title] ([monthNum]_[mday]_[year])";
