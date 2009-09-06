@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/gsmartcontrol
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  +gsmartcontrol-0.8.5.ebuild, +metadata.xml:
+  New Ebuild for bug 244192, thanks to Sam Kingston
+
