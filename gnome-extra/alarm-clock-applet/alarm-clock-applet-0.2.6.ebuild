@@ -27,14 +27,12 @@ RDEPEND="
 	x11-themes/gnome-icon-theme
 	gnome-base/libglade
 	media-libs/gstreamer
-	libnotify? ( x11-libs/libnotify )
-"
+	libnotify? ( x11-libs/libnotify )"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	app-text/gnome-doc-utils
-	dev-util/intltool
-"
+	dev-util/intltool"
 
 src_prepare() {
 	epatch "${FILESDIR}/${PV}-configure.ac.patch"
