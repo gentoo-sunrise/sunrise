@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  dxcc-20080225.ebuild:
+  tested on amd64
+
   07 Apr 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   +dxcc-20080225.ebuild, +files/Makefile.patch, +metadata.xml:
   New ebuild for bug 265350. Thanks Tommy for help.
