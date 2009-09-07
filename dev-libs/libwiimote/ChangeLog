@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Sep 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  +files/libwiimote-hci.patch:
+  tilt and force aren't supported as configure option in 9999
+  We can depend on newer BlueZ (>3) in both ebuilds
+
   24 Aug 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
   libwiimote-0.4.ebuild:
   Drop unpack phase because already implicitly defined by src_unpack(),

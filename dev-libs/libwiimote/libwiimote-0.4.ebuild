@@ -15,12 +15,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples force tilt"
 
-RDEPEND="net-wireless/bluez-libs
-	net-wireless/bluez-utils"
+RDEPEND="
+	|| ( net-wireless/bluez
+		( >=net-wireless/bluez-libs-3
+		net-wireless/bluez-utils ) )"
 DEPEND=${RDEPEND}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-{amd64,as-needed,include}.patch
+	epatch "${FILESDIR}"/${PN}-{amd64,as-needed,include,hci}.patch
 	use "tilt" || sed -i -e "s:-D_ENABLE_TILT::" config.mk.in
 	use "force" || sed -i -e "s:-D_ENABLE_FORCE::" config.mk.in
 	eautoreconf

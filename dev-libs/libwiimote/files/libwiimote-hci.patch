@@ -1,0 +1,12 @@
+hci_remote_name is deprecated in BlueZ >2
+--- configure.in	2009-09-07 20:09:50.181034970 +0200
++++ configure.in.new	2009-09-07 20:11:00.872007806 +0200
+@@ -10,7 +10,7 @@
+ AC_PROG_INSTALL
+ 
+ # Checks for BlueZ.
+-AC_CHECK_LIB([bluetooth], [hci_remote_name],
++AC_CHECK_LIB([bluetooth], [hci_read_remote_name],
+ 	     [], [AC_MSG_ERROR([We require BlueZ])])
+ 
+ AC_CONFIG_FILES([config.mk

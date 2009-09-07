@@ -13,9 +13,9 @@ HOMEPAGE="http://libwiimote.sourceforge.net"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="examples force tilt"
+IUSE="examples"
 
-RDEPEND="net-wireless/bluez-libs"
+RDEPEND="|| ( net-wireless/bluez-libs net-wireless/bluez )"
 DEPEND="${RDEPEND}
 		dev-util/pkgconfig"
 
@@ -23,14 +23,6 @@ src_unpack() {
 	subversion_src_unpack
 	epatch "${FILESDIR}/${P}-ldflags.patch"
 	eautoreconf
-}
-
-src_compile() {
-	econf \
-		$(use_enable force) \
-		$(use_enable tilt)
-
-	emake || die "emake failed"
 }
 
 src_install() {
