@@ -27,7 +27,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install installconf || die "emake install failed"
+	emake -j1 DESTDIR="${D}" install installconf || die "emake install failed"
 
 	# Make the document installation more Gentoo like
 	rm -rf "${D}"/usr/share/doc/ax25-tools || die "clean-up doc failed"
