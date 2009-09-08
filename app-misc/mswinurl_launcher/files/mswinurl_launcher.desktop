@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MS Windows URL file launcher
+Comment=Python script to parse and launch .url files (html links) from MS Windows
+NoDisplay=true
+Terminal=false
+TryExec=mswinurl_launcher.py
+Exec=mswinurl_launcher.py %F
+Icon=text-html
+MimeType=text/x-uri;

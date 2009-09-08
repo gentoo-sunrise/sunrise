@@ -1,0 +1,9 @@
+# ChangeLog for app-misc/mswinurl_launcher
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Sep 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+  +mswinurl_launcher-1.0.ebuild, +files/mswinurl_launcher.desktop,
+  +metadata.xml:
+  New package for bug #283698 - thanks to ssuominen for the ebuild help
+
