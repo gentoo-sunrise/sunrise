@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2009; Alexander van der Mey<alexvandermey@gmail.com>
+  -gummi-0.1f.ebuild, +gummi-0.2b.ebuild:
+  Version bump for Gummi
+
   29 Aug 2009; Alexander van der Mey (alexandervdm)
   <alexvandermey@gmail.com> Manifest:
   Filesize error in the Manifest file fixed
