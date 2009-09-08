@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  greenlet-0.2.ebuild, +files/fix_setuptools.patch:
+  Add a patch that avoids ez_setup behavior
+
   12 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +greenlet-0.2.ebuild, +metadata.xml:
   Ebuild for bug 276314. Thanks to ssuominen and Tommy[D]

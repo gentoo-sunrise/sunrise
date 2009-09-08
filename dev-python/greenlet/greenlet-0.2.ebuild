@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
 inherit distutils
 
 DESCRIPTION="Lightweight in-process concurrent programming"
@@ -16,6 +18,10 @@ IUSE="test"
 DEPEND="dev-python/setuptools
 	test? ( dev-python/nose )"
 RDEPEND="dev-lang/python"
+
+src_prepare() {
+	epatch "${FILESDIR}/fix_setuptools.patch" || die "Patch failed"
+}
 
 src_test() {
 	${python} setup.py test || die "Tests failed"
