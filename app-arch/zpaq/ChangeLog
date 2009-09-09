@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Sep 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -zpaq-1.02.ebuild, +zpaq-1.03a.ebuild:
+  Version bump.
+
   17 Jul 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +zpaq-1.02.ebuild, +metadata.xml:
   New ebuild for bug #278021. Thanks to lazy_bum, TomJBE & Tommy[D] for

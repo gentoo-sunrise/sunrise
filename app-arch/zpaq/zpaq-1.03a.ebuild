@@ -6,8 +6,8 @@ inherit toolchain-funcs
 
 MY_P="${PN}${PV/./}"
 DESCRIPTION="Unified compressor for PAQ algorithms"
-HOMEPAGE="http://cs.fit.edu/~mmahoney/compression/#zpaq"
-SRC_URI="http://cs.fit.edu/~mmahoney/compression/${MY_P}.zip"
+HOMEPAGE="http://mattmahoney.net/dc/#zpaq"
+SRC_URI="http://mattmahoney.net/dc/${MY_P}.zip"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -17,8 +17,8 @@ IUSE="doc"
 src_compile() {
 	# Upstream doesn't provide any Makefile
 
-	"$(tc-getCXX)" ${CXXFLAGS} ${MY_P}.cpp -o zpaq || die 'compiling zpaq failed'
-	"$(tc-getCXX)" ${CXXFLAGS} un${MY_P}.cpp -o unzpaq || die 'compiling unzpaq failed'
+	"$(tc-getCXX)" ${CXXFLAGS} ${MY_P%?}.cpp -o zpaq || die 'compiling zpaq failed'
+	"$(tc-getCXX)" ${CXXFLAGS} un${MY_P%?}.cpp -o unzpaq || die 'compiling unzpaq failed'
 }
 
 src_install() {
