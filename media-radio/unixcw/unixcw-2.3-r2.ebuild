@@ -10,7 +10,7 @@ SRC_URI="ftp://metalab.unc.edu/pub/Linux/apps/ham/morse/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="ncurses qt3 suid"
 
 RDEPEND="ncurses? ( sys-libs/ncurses )
@@ -24,7 +24,8 @@ src_unpack() {
 		"${FILESDIR}"/${P}-config.patch \
 		"${FILESDIR}"/${P}-parallel-make.patch \
 		"${FILESDIR}"/${P}--as-needed.patch \
-		"${FILESDIR}"/${P}-ldflags.patch
+		"${FILESDIR}"/${P}-ldflags.patch \
+		"${FILESDIR}"/${P}-fPIC.patch
 	eautoreconf
 }
 

@@ -26,3 +26,14 @@
  distclean mostlyclean maintainer-clean:
 -	$(DESCEND)
 +	+$(DESCEND)
+--- src/cwlib/Makefile.orig	2009-09-08 14:07:37.000000000 +0200
++++ src/cwlib/Makefile	2009-09-08 14:10:05.000000000 +0200
+@@ -65,7 +65,7 @@
+ 	rm -f signatures functions
+ 
+ # Build the unit test.
+-cwlibtest: cwlibtest.o
++cwlibtest: cwlibtest.o libcw.a libcw.so.0.0.0
+ 	$(CC) -o cwlibtest cwlibtest.o -L. -lcw -lm
+ 
+ # Build the pkgconfig metadata file.

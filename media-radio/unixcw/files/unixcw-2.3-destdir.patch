@@ -1,6 +1,6 @@
 --- Makefile.inc.in.org	2008-05-01 09:49:18.000000000 +0200
 +++ Makefile.inc.in	2008-05-01 09:49:40.000000000 +0200
-@@ -42,9 +42,9 @@
+@@ -42,9 +42,10 @@
  INSTALL		= @INSTALL@
  INSTALL_PROGRAM	= @INSTALL_PROGRAM@
  INSTALL_DATA	= @INSTALL_DATA@
@@ -11,4 +11,6 @@
  bindir		= @bindir@
 -mandir		= @mandir@
 +mandir		= $(DESTDIR)@mandir@
- libdir		= @libdir@
+-libdir		= @libdir@
++libdir		= $(DESTDIR)@libdir@
++datarootdir	= @datarootdir@
