@@ -9,6 +9,7 @@ app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/vlogger:dbi - Enable support for DBI
 app-arch/zpaq:doc - Install ZPAQ specification along with compressor.
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
+app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-dicts/ktranslator:festival - Enable festival support
 app-dicts/ktranslator:lowmem - Disable optimizations for searches
 app-dicts/ktranslator:ocr - Enable GOCR support
@@ -230,7 +231,6 @@ net-misc/gvpe:icmp - Enables icmp transport support
 net-misc/gvpe:tcp - Enables tcp transport support
 net-misc/moblock:logrotate - Use app-admin/logrotate to rotate log files
 net-misc/moblock:network-cron - Adds monthly cronjob to update blocklist files
-net-misc/moblock:paranoid - Use paranoid blocklist file and update daily
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
