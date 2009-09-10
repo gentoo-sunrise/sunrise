@@ -16,14 +16,8 @@ IUSE=""
 DEPEND="dev-util/desktop-file-utils"
 RDEPEND="dev-lang/python"
 
-S=${WORKDIR}
-
-src_unpack() {
-	cp "${DISTDIR}/${A}" "${S}" || die "could not copy ${A} to ${S}"
-}
-
 src_install() {
-	dobin ${PN}.py || die
+	dobin "${DISTDIR}"/${PN}.py || die
 	domenu "${FILESDIR}/${PN}.desktop" || die
 }
 

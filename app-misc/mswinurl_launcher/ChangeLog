@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Sep 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  mswinurl_launcher-1.0.ebuild:
+  Drop src_unpack and S assignment, use DISTDIR in src_install directly
+
   08 Sep 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
   +mswinurl_launcher-1.0.ebuild, +files/mswinurl_launcher.desktop,
   +metadata.xml:
