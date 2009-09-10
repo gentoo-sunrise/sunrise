@@ -60,7 +60,6 @@
   * Modified moblock-stats slightly because in some cases tail is claiming
     it can't find file - (dash) when redirecting that file to it.
   * Modified ebuild to restart moblock after install if moblock is running.
-  eat me
 
   21 Mar 2008; Jakub Moc <jakub@gentoo.org> moblock-0.8-r1.ebuild:
   Fix pkg_postinst
