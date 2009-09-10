@@ -20,11 +20,3 @@ IUSE="debug"
 RDEPEND="media-sound/amarok:4"
 
 S=${WORKDIR}/${PN}
-
-
-
-
-
-
-
-
