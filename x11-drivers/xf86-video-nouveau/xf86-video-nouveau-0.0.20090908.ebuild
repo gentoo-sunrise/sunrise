@@ -32,6 +32,6 @@ DEPEND="${COMMON_DEPEND}
 	x11-proto/xproto
 	>=x11-libs/libdrm-2.4.13"
 
-# need x11-base/x11-drm until nouveau drm enters the kernel
+# need x11-base/nouveau-drm until nouveau drm enters the kernel
 RDEPEND="${COMMON_DEPEND}
-	|| ( x11-base/x11-drm[video_cards_nouveau] x11-base/nouveau-drm )"
+	x11-base/nouveau-drm"
