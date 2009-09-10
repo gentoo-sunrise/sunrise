@@ -21,4 +21,3 @@ IUSE=""
 src_test() {
 	${python} tests.py || die "Tests failed"
 }
-
