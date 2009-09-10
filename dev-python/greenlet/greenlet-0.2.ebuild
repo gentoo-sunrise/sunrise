@@ -20,7 +20,7 @@ DEPEND="dev-python/setuptools
 RDEPEND="dev-lang/python"
 
 src_prepare() {
-	epatch "${FILESDIR}/fix_setuptools.patch" || die "Patch failed"
+	epatch "${FILESDIR}/fix_setuptools.patch"
 }
 
 src_test() {
