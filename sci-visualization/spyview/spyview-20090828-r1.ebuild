@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit base flag-o-matic
+inherit base flag-o-matic eutils
 
 DESCRIPTION="Interactive plotting program"
 HOMEPAGE="http://kavli.nano.tudelft.nl/~gsteele/spyview/"
@@ -12,7 +12,7 @@ SRC_URI="http://kavli.nano.tudelft.nl/~gsteele/${PN}/versions/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 COMMON_DEPEND=">=dev-libs/boost-1.36
@@ -27,6 +27,10 @@ RDEPEND="${COMMON_DEPEND}
 	sci-visualization/gnuplot"
 
 S=${WORKDIR}/spyview-2009-08-28-23_55
+
+src_prepare() {
+	epatch "${FILESDIR}/spyview-20090828-cmaps.patch"
+}
 
 src_configure() {
 	append-cflags $(fltk-config --cflags)

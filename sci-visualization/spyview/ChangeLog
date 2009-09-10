@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Sep 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -spyview-20090828.ebuild, +spyview-20090828-r1.ebuild,
+  +files/spyview-20090828-cmaps.patch:
+  Tested and small problem fixed on x86, added keyword.
+
   01 Sep 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   spyview-20090828.ebuild:
   Removed whitespace in ebuild, added Manifest
