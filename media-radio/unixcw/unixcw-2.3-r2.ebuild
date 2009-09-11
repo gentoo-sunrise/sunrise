@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools eutils
+inherit autotools eutils multilib
 
 DESCRIPTION="A package of programs that fit together to form a morse code tutor program."
 HOMEPAGE="http://radio.linux.org.au/?sectpat=morse"
@@ -30,7 +30,8 @@ src_unpack() {
 }
 
 src_compile() {
-	econf $(use_enable ncurses) \
+	econf --libdir=/usr/$(get_libdir) \
+		$(use_enable ncurses) \
 		$(use_enable qt3)
 	emake || die "emake failed"
 }
