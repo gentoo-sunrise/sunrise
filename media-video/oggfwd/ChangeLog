@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Sep 2009; ArneBab <arne_bab@web.de> +oggfwd-0_pre9.ebuild:
+  Updated to bzr snapshot revision 9. Careful: commandline param changes: -D
+  -> -d.
+
   02 Apr 2009; ArneBab <arne_bab@web.de> +oggfwd-0_pre6.ebuild,
   +metadata.xml:
   New Ebuild for bug 253291 thanks to scarabeus, chithead, Tommy[D], billie,
