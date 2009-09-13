@@ -1,0 +1,1 @@
+datadir="/usr/share"

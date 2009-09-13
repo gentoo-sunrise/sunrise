@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/pymonitorix
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Sep 2009; Markus Rennings (mren) <mren@mrmx.de>
+  +pymonitorix-0.1.0.ebuild, +files/config.py, +metadata.xml:
+  initial commit, new ebuild for bug 284627
+
