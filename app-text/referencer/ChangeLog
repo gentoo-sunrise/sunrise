@@ -1,0 +1,10 @@
+# ChangeLog for app-text/referencer
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Sep 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  +referencer-1.1.6-r2.ebuild, +metadata.xml:
+  Initial commit of referencer, a gnome reference management program - see bug
+  164750. Thanks go to Sebastian Pipping, Jean-Marc Hengen, Mirko Briemle, and
+  Damien Thébault.
+
