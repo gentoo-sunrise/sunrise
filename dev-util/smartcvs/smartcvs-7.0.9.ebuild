@@ -32,7 +32,7 @@ src_install() {
 		insinto /usr/share/icons/hicolor/${X}x${X}/apps
 		newins "${S}/bin/${PN}-${X}x${X}.png" "${PN}.png" || die "cannot install needed files"
 	done
-	make_desktop_entry ${PN}.sh "SmartCVS" ${PN}.png "Development;RevisionControl"
+	make_desktop_entry ${PN} "SmartCVS" ${PN}.png "Development;RevisionControl"
 }
 
 pkg_nofetch() {
