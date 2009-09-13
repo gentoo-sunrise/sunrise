@@ -1,0 +1,22 @@
+diff -r -U 8 spyview-2009-09-10-00_02.orig/spyview/spyview.C spyview-2009-09-10-00_02/spyview/spyview.C
+--- spyview-2009-09-10-00_02.orig/spyview/spyview.C	2009-09-09 13:20:18.000000000 +0200
++++ spyview-2009-09-10-00_02/spyview/spyview.C	2009-09-10 16:54:32.000000000 +0200
+@@ -124,17 +124,17 @@
+ 	}
+       else if (fl_filename_isdir((path+namelist[i]->d_name).c_str()))
+ 	subdirs.push_back(namelist[i]->d_name);
+       if ((count != 0) && (count%30 == 0))
+ 	pretty_path += "More/";
+    }
+   for(subdirs_t::iterator i = subdirs.begin(); i != subdirs.end(); i++)
+     {
+-      if(*i == "./" || *i == "../")
++      if(*i == "./" || *i == "../" || *i == "")
+ 	continue;
+       find_cmaps(path+*i,pretty_path+*i);
+     }
+ }
+ 
+ int add_file(const char *name)
+ {
+   // We store the actual filenames in a STL vector of strings

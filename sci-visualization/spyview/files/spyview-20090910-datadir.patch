@@ -1,0 +1,23 @@
+diff -r -U 8 spyview-2009-09-10-00_02.orig/spyview/Makefile.am spyview-2009-09-10-00_02/spyview/Makefile.am
+--- spyview-2009-09-10-00_02.orig/spyview/Makefile.am	2009-09-09 23:58:08.000000000 +0200
++++ spyview-2009-09-10-00_02/spyview/Makefile.am	2009-09-10 17:52:17.000000000 +0200
+@@ -89,12 +89,14 @@
+ %.C: %.fl
+ 	@FLUID@ -c -o $(basename $<).C -h $(basename $<).h $<
+ 
+ %.h: %.fl
+ 	@FLUID@ -c -o $(basename $<).C -h $(basename $<).h $<
+ 
+ #Manual rules to install colormap files
+ install-data-local:
+-	$(INSTALL) -d $(datadir)
+-	$(INSTALL_DATA) help.txt $(datadir)
+-	$(INSTALL) -d $(datadir)/html
+-	$(INSTALL_DATA) html/*.html $(datadir)/html
+\ Kein Zeilenumbruch am Dateiende.
++	$(INSTALL) -d $(DESTDIR)$(datadir)
++	$(INSTALL_DATA) help.txt $(DESTDIR)$(datadir)
++	$(INSTALL) -d $(DESTDIR)$(datadir)/html
++# not sure what exactly you are trying to install here... ah
++#	$(INSTALL_DATA) html/*.html $(DESTDIR)$(datadir)/html
++#

@@ -1,0 +1,24 @@
+diff -U 9 -r spyview-2009-09-10-00_02.orig/spyview/spyview.C spyview-2009-09-10-00_02/spyview/spyview.C
+--- spyview-2009-09-10-00_02.orig/spyview/spyview.C	2009-09-09 13:20:18.000000000 +0200
++++ spyview-2009-09-10-00_02/spyview/spyview.C	2009-09-11 23:47:14.000000000 +0200
+@@ -843,19 +843,19 @@
+     {
+       spypal->win->show();
+       colormap_callback = spypal_cb;
+       spypal_cb();
+       return;
+     }
+   else
+     colormap_callback = NULL;
+ 
+-  assert(index > 0);
++  assert(index >= 0); //lets see what this does
+   assert(index < cmapfiles.size());
+ 
+   //info("userdata for %s is %d\n", cmapch->value(), index);
+   const char *filename = cmapfiles[index].c_str();
+   //info("loading file _%s_ from index %d, text _%s_\n", cmapfiles[index].c_str(), index, cmapch->text(cmapch->value()));
+   pixel **image;
+   pixval maxval;
+   int rows, cols;
+ 
