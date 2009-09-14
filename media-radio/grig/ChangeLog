@@ -1,6 +1,10 @@
 # ChangeLog for media-radio/grig
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Sep 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> grig-0.7.2.ebuild,
+  metadata.xml:
+  add ~amd64 keyword, drop unneeded USE flag and beautify doc installation
 
   22 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added USE flag description wrt GLEP 56
