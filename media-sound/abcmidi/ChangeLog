@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/abcmidi
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Sep 2009; Roman Zimmermann (mereandor) <mereandor@gmail.org>
+  +abcmidi-2009.07.22.ebuild, +metadata.xml:
+  New Ebuild for bug 76017 thanks to José Romildo Malaquias
+
