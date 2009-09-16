@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Sep 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
+  rawtherapee-2.4.1.ebuild:
+  Add a slot for gtkmm in RDEPEND (2.4), drop gtk+:2 from RDEPEND (gtkmm is a
+  binding of gtk+ so it always will depend on it)
+
   13 Sep 2009; Marian Kyral (mkyral) <mkyral@email.cz>
   -rawtherapee-2.4_rc2.ebuild, +rawtherapee-2.4.1.ebuild:
   Version bump

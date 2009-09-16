@@ -25,8 +25,7 @@ for lng in ${LANGS}; do
 	IUSE="${IUSE} linguas_${lng}"
 done
 
-RDEPEND="x11-libs/gtk+:2
-	>=dev-cpp/gtkmm-2.12
+RDEPEND="dev-cpp/gtkmm:2.4
 	>=sys-libs/glibc-2.4
 	media-libs/jpeg
 	media-libs/tiff
@@ -38,9 +37,9 @@ S=${WORKDIR}/${MY_PN}${MY_PV}
 
 src_install() {
 	insinto "/usr/share/pixmaps"
-	doins "${FILESDIR}/rawtherapee.png" || die
+	doins "${FILESDIR}/${PN}.png" || die
 	insinto "/usr/share/applications"
-	doins "${FILESDIR}/rawtherapee.desktop" || die
+	doins "${FILESDIR}/${PN}.desktop" || die
 	dobin "${FILESDIR}/rtstart" || die
 
 	exeinto "/opt/${MY_PN}"
