@@ -1,0 +1,9 @@
+# ChangeLog for net-wireless/coova-chilli
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Sep 2009; Vitor Brandão (noisebleed) <vitorbrandao.pt@gmail.com>
+  +coova-chilli-1.0.11.ebuild, +files/chilli, +files/firewall.iptables,
+  +metadata.xml:
+  New Ebuild for bug 217141. Thanks to Laurento Frittella
+

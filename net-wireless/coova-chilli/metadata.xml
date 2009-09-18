@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<longdescription>
+CoovaChilli is an open-source software access controller, based on the 
+popular (but now defunct) ChilliSpot project, and is actively maintained 
+by an original ChilliSpot contributor.
+
+CoovaChilli is a feature rich software access controller that provides a 
+captive portal / walled-garden environment and uses RADIUS for access 
+provisioning and accounting
+</longdescription>
+</pkgmetadata>
