@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Sep 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -oggfwd-0_pre6.ebuild:
+  Drop old version, plese remember to use svn mv
+
   11 Sep 2009; ArneBab <arne_bab@web.de> +oggfwd-0_pre9.ebuild:
   Updated to bzr snapshot revision 9. Careful: commandline param changes: -D
   -> -d.
