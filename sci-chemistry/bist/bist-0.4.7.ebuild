@@ -19,8 +19,7 @@ RDEPEND="net-misc/curl
 	sci-libs/gsl
 	>=sci-chemistry/openbabel-2.2.0
 	>=media-libs/plotutils-2.5"
-DEPEND="${RDEPEND}
-	>=sys-devel/gcc-4.2"
+DEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
