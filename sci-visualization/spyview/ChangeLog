@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Sep 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -spyview-20090828-r1.ebuild, -files/spyview-20090828-cmaps.patch:
+  Removed old version
+
+  20 Sep 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   spyview-20090910.ebuild:
   Re-added ~x86 since there is no obvious reason why it should not work
 
