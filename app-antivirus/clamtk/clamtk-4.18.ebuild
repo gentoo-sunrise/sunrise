@@ -12,7 +12,7 @@ LICENSE="Artistic GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-LANGS="ar cs da de el en_GB es fr gl hr it ja ko ms nl nn pl pt_BR ro ru sk sl sv tr zh_CN"
+LANGS="ar cs da de el en_GB es fr gl hr hu it ja ko ms nb nl nn pl pt_BR ro ru sk sl sv tr zh_CN"
 IUSE="nls"
 for i in ${LANGS}; do
 	IUSE="${IUSE} linguas_${i}"
@@ -24,7 +24,6 @@ RDEPEND=">=dev-perl/gtk2-perl-1.140
 	dev-perl/libwww-perl
 	dev-perl/Net-DNS
 	dev-perl/Date-Calc
-	dev-perl/Config-Tiny
 	dev-util/desktop-file-utils
 	>=app-antivirus/clamav-0.90
 	nls? ( dev-perl/Locale-gettext )"
