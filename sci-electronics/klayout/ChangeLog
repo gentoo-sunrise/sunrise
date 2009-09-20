@@ -6,5 +6,5 @@
   +klayout-0.18.1.ebuild, +files/klayout-0.18.1-Makefile.conf.linux-gentoo,
   +files/klayout-0.18.1-configureonly.patch, +metadata.xml:
   New application, viewer and editor for integrated circuit layouts. Thanks to
-  Andreas Krinke and _AxS_ for the ebuild
+  Andreas Krinke and _AxS_ for the ebuild. See bug 259291.
 
