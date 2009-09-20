@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit autotools eutils
+
 MY_P=${P/_/-}
 
 DESCRIPTION="Basic AX.25 (Amateur Radio) administrative tools and daemons"
@@ -21,13 +23,20 @@ DEPEND="dev-libs/libax25
 		x11-libs/fltk )"
 RDEPEND=${DEPEND}
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-parallel-make.patch"
+	eautoreconf
+}
+
 src_compile() {
 	econf $(use_with X x)
 	emake || die "emake failed"
 }
 
 src_install() {
-	emake -j1 DESTDIR="${D}" install installconf || die "emake install failed"
+	emake DESTDIR="${D}" install installconf || die "emake install failed"
 
 	# Make the document installation more Gentoo like
 	rm -rf "${D}"/usr/share/doc/ax25-tools || die "clean-up doc failed"
