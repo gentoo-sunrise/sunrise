@@ -50,6 +50,7 @@ games-util
 gnome-extra
 kde-misc
 mail-filter
+media-fonts
 media-gfx
 media-libs
 media-plugins
@@ -91,7 +92,6 @@ sys-kernel
 sys-libs
 sys-power
 sys-process
-www-apache
 www-apps
 www-client
 www-misc
