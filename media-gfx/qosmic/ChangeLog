@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Sep 2009; David Bitseff (useer) <dbitsef@zipcon.net>
+  qosmic-1.4.6.ebuild:
+  QA quotes around EAPI version.
+
+  20 Sep 2009; David Bitseff (useer) <dbitsef@zipcon.net>
   -qosmic-1.4.2.ebuild, +qosmic-1.4.6.ebuild:
   Updated ebuild for qosmic.  Thanks to Tommy[D] and ssuominen.
 
