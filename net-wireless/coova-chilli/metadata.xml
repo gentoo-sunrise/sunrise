@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
+<herd>maintainer-wanted</herd>
 <longdescription>
 CoovaChilli is an open-source software access controller, based on the 
 popular (but now defunct) ChilliSpot project, and is actively maintained 
