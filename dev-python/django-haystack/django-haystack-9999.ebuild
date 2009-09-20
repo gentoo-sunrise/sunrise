@@ -16,4 +16,4 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-python/django
-	<dev-python/Whoosh-0.2"
+	>=dev-python/Whoosh-0.3"
