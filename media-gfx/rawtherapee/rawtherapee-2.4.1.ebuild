@@ -26,7 +26,6 @@ for lng in ${LANGS}; do
 done
 
 RDEPEND="dev-cpp/gtkmm:2.4
-	>=sys-libs/glibc-2.4
 	media-libs/jpeg
 	media-libs/tiff
 	media-libs/libpng"
