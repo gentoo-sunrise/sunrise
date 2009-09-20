@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI="2"
-NEED_PYTHON=2.4
 
 inherit eutils multilib python
 
@@ -17,8 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="media-video/ffmpeg"
+DEPEND="dev-lang/python"
+RDEPEND="${DEPEND}
+	media-video/ffmpeg"
 
 S="${WORKDIR}/wmcbrine"
 
@@ -57,4 +57,3 @@ pkg_postinst() {
 	elog "	# rc-update add pytivo default"
 	elog "as root."
 }
-
