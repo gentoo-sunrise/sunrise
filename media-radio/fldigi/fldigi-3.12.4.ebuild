@@ -15,7 +15,7 @@ SRC_URI="http://www.w1hkj.com/${PN}-distro/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc hamlib nls portaudio pulseaudio sndfile xmlrpc"
 
 RDEPEND="x11-libs/fltk:1.1
@@ -26,7 +26,7 @@ RDEPEND="x11-libs/fltk:1.1
 	portaudio? ( >=media-libs/portaudio-19_pre20071207 )
 	pulseaudio? ( media-sound/pulseaudio )
 	sndfile? ( >=media-libs/libsndfile-1.0.10 )
-	xmlrpc? ( || ( >=dev-libs/xmlrpc-c-1.18.2[abyss] dev-libs/xmlrpc-c )
+	xmlrpc? ( || ( >=dev-libs/xmlrpc-c-1.18.02[abyss] <dev-libs/xmlrpc-c-1.18.02 )
 		dev-perl/RPC-XML
 		dev-perl/Term-ReadLine-Perl )"
 DEPEND="${RDEPEND}
