@@ -12,14 +12,15 @@ SRC_URI="http://dag.wieers.com/home-made/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
-RDEPEND="dev-libs/libwiimote[tilt,force]"
+RDEPEND="=dev-libs/libwiimote-9999*"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PV}-include.patch \
+	epatch \
+		"${FILESDIR}"/${PV}-include.patch \
 		"${FILESDIR}"/${PV}-LDFLAGS.patch
 }
 
