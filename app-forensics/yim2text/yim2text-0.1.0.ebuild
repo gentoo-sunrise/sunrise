@@ -12,7 +12,7 @@ SRC_URI="http://www.1vs0.com/code/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
