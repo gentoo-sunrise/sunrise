@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
+  -songbird-bin-1.0.0.860.ebuild, +songbird-bin-1.2.0.1146.ebuild:
+  Version bump to songbird-bin 1.2.0.1146
+
   11 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   songbird-bin-1.0.0.860.ebuild:
   Remove mirror restrict and dep on gcc-3.3 libs, virtual/xft -> x11-libs/libXft
