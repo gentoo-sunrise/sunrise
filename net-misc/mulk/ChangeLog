@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/mulk
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
+  +mulk-0.5.0_beta.ebuild, +metadata.xml:
+  New Ebuild for bug 273119
+
