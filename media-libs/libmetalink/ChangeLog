@@ -1,0 +1,8 @@
+# ChangeLog for media-libs/libmetalink
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
+  +libmetalink-0.0.3.ebuild, +metadata.xml:
+  Add polished ebuild from bug 273118
+
