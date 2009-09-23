@@ -24,6 +24,11 @@ src_prepare() {
 		-e 's|-L/usr/local/lib||' \
 		-e 's|-Os||' \
 		config.mk || die "sed config.mk failed"
+	use unicode || {
+		sed -i \
+			-e 's|-lncursesw|-lncurses|' \
+			config.mk || die "sed config.mk failed"
+	}
 	sed -i \
 		-e '/strip/d' \
 		Makefile || die "sed Makefile failed"
@@ -34,7 +39,6 @@ src_prepare() {
 src_compile() {
 	local msg=""
 	local target="dvtm"
-	use unicode && target="unicode"
 	use savedconfig && msg=", please check the configfile"
 	emake CC=$(tc-getCC) ${target} || die "emake failed${msg}"
 }
