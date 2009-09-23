@@ -7,7 +7,7 @@ inherit eutils qt4 versionator
 
 MY_PV="$(replace_version_separator 3 '.')"
 DESCRIPTION="BSCommander is a Qt based file manager"
-HOMEPAGE="http://www.beesoft.org/bsc.html"
+HOMEPAGE="http://www.beesoft.org/index.php?id=bsc"
 SRC_URI="http://www.beesoft.org/download/${PN}_${MY_PV}_src.tar.gz"
 
 LICENSE="GPL-2"

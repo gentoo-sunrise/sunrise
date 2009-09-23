@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/bsc
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
+  bsc-2.27.ebuild, bsc-4.0.06_beta.ebuild:
+  Fix homepage link
 
   24 Jan 2008; Jakub Moc <jakub@gentoo.org> +bsc-4.0.06_beta.ebuild:
   Version bump; masked as this beta still needs work.
