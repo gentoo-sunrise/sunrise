@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
+  -gummi-0.2f.ebuild, +gummi-0.3b.ebuild:
+  Trivial bump to 0.3b
+
   15 Sep 2009; Alexander van der Mey <alexvandermey@gmail.com>
   -gummi-0.2b.ebuild, +gummi-0.2f.ebuild:
   Version bump for gummi
