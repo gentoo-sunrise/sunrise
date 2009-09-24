@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  nautilus-dropbox-0.6.1.ebuild:
+  Added kernel configuration option check. Ebuild improvement, thanks to
+  ssuominen
+
   03 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   nautilus-dropbox-0.6.1.ebuild:
   Added libXinerama dep to ebuild

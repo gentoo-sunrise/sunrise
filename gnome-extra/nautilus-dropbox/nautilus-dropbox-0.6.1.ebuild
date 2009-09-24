@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils gnome2
+EAPI="2"
+
+inherit eutils linux-info gnome2
 
 DESCRIPTION="Store, Sync and Share Files Online"
 HOMEPAGE="http://www.getdropbox.com/"
@@ -25,25 +27,25 @@ DEPEND="${RDEPEND}
 
 DOCS="AUTHORS ChangeLog NEWS README"
 
+CONFIG_CHECK="INOTIFY_USER"
+
 pkg_setup () {
+	linux-info_pkg_setup
+
 	# create the group for the daemon, if necessary
 	# truthfully this should be run for any dropbox plugin
 	enewgroup dropbox
 }
 
-src_install () {
-	gnome2_src_install
+pkg_postinst () {
+	gnome2_pkg_postinst
 
 	# Allow only for users in the dropbox group
 	# see http://forums.getdropbox.com/topic.php?id=3329&replies=5#post-22898
 	local extensiondir="$(pkg-config --variable=extensiondir libnautilus-extension)"
 	[ -z ${extensiondir} ] && die "pkg-config unable to get nautilus extensions dir"
-	fowners root:dropbox "${extensiondir}"/libnautilus-dropbox.{a,la,so} || die "fowners failed"
-	fperms o-rwx "${extensiondir}"/libnautilus-dropbox.{a,la,so} || die "fperms failed"
-}
-
-pkg_postinst () {
-	gnome2_pkg_postinst
+	chown root:dropbox "${ROOT}${extensiondir}"/libnautilus-dropbox.{a,la,so} || die "fowners failed"
+	chmod o-rwx "${ROOT}${extensiondir}"/libnautilus-dropbox.{a,la,so} || die "fperms failed"
 
 	elog "Add any users who wish to have access to the dropbox nautilus"
 	elog "plugin to the group 'dropbox'."
