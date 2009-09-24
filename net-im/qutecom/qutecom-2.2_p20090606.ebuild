@@ -29,7 +29,7 @@ DEPEND=">=dev-libs/boost-1.34
 	>=net-libs/libosip-3
 	>=net-libs/libeXosip-3
 	net-misc/curl
-	|| ( x11-libs/libX11 virtual/x11 )
+	x11-libs/libX11
 	x11-libs/qt-gui
 	x11-libs/qt-svg
 	xv? ( x11-libs/libXv )"
