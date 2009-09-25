@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Sep 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -digitizer-4.1.ebuild, +digitizer-4.1-r1.ebuild:
+  Ported ebuild to EAPI=2.
+
   17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   digitizer-4.1.ebuild:
   QA quotes around EAPI version

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 
 inherit versionator qt3
 MY_PV=$(replace_version_separator 1 '_')
@@ -22,9 +22,8 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/engauge"
 
-src_compile() {
+src_configure() {
 	eqmake3 digitizer.pro
-	emake || die "make failed"
 }
 
 src_install() {
