@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils
+inherit eutils base
 
 DESCRIPTION="Bist, the chemical drawing tool"
 HOMEPAGE="http://www.autistici.org/interzona/index.php?mod=03_Bist"
@@ -25,18 +25,6 @@ RDEPEND="net-misc/curl
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	use amd64 && epatch "${FILESDIR}/wrap_bracket_dialog-amd64.patch"
-}
-
-src_install() {
-	dobin bist || die "bist install failed"
-
-	#install bist plug-ins
-	insinto /usr/lib/bist/plugin
-	doins plugin/*.so || die "make plugin failed"
-
-	dodoc AUTHORS TODO || die
-	cd doc
-	doman  man/bist.1 || die
-	dohtml *.html *.png *jpg || die
+	use amd64 && epatch "${FILESDIR}/${P}-bracket.patch"
+	epatch "${FILESDIR}/${P}-install.patch"
 }
