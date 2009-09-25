@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  +nautilus-dropbox-0.6.1-r1.ebuild, metadata.xml:
+  Highly improvement into ebuild. Thanks to Mauro '[equilibrium]' Toffanin
+
   24 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   nautilus-dropbox-0.6.1.ebuild:
   Added kernel configuration option check. Ebuild improvement, thanks to
