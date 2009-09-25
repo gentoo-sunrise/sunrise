@@ -13,7 +13,7 @@ SRC_URI="http://www.getdropbox.com/download?dl=packages/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="static-libs"
+IUSE=""
 
 RDEPEND="gnome-base/nautilus
 	dev-python/pygtk
@@ -38,7 +38,7 @@ pkg_setup () {
 }
 
 src_configure () {
-	econf $(use_enable static-libs static)
+	econf --disable-static
 }
 
 src_install () {
@@ -47,9 +47,7 @@ src_install () {
 	local extensiondir="$(pkg-config --variable=extensiondir libnautilus-extension)"
 	[ -z ${extensiondir} ] && die "pkg-config unable to get nautilus extensions dir"
 
-	if ! use static-libs; then
-		rm "${D}${extensiondir}"/lib${PN}.la || die "rm .la file failed"
-	fi
+	rm "${D}${extensiondir}"/lib${PN}.{a,la} || die "rm .{a,la} file failed"
 }
 
 pkg_postinst () {
@@ -60,10 +58,6 @@ pkg_postinst () {
 	local extensiondir="$(pkg-config --variable=extensiondir libnautilus-extension)"
 	[ -z ${extensiondir} ] && die "pkg-config unable to get nautilus extensions dir"
 
-	if use static-libs; then
-		chown root:dropbox "${ROOT}${extensiondir}"/lib${PN}.{a,la} || die "chown failed"
-		chmod o-rwx "${ROOT}${extensiondir}"/lib${PN}.{a,la} || die "chmod failed"
-	fi
 	chown root:dropbox "${ROOT}${extensiondir}"/lib${PN}.so || die "chown failed"
 	chmod o-rwx "${ROOT}${extensiondir}"/lib${PN}.so || die "chmod failed"
 
