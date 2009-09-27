@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="Graphical user interface for smartctl"
 HOMEPAGE="http://gsmartcontrol.berlios.de"
@@ -15,11 +15,18 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-cpp/gtkmm:2.4
+RDEPEND="
+	dev-cpp/gtkmm:2.4
 	dev-libs/libpcre
 	sys-apps/smartmontools"
-
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-DOCS="AUTHORS.txt ChangeLog NEWS README.txt"
+G2CONF="--docdir=/usr/share/doc/${P}"
+
+src_prepare() {
+	gnome2_src_prepare
+	epatch "${FILESDIR}"/${PV}-fixdocs.patch
+	eautoreconf
+}
+
