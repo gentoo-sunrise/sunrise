@@ -25,5 +25,5 @@ src_compile() {
 
 src_install() {
 	dobin ${PN} || die "dobin failed"
-	doman ${PN}.1
+	doman ${PN}.1 || die "doman failed"
 }
