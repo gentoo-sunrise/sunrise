@@ -22,3 +22,10 @@ RDEPEND="dev-lang/python
 	dev-python/simplejson"
 
 S=${WORKDIR}/${MY_P}
+
+src_install() {
+	distutils_src_install
+
+	doinitd rc-scripts/init.d/spawn || die "Install failed"
+	doconfd rc-scripts/conf.d/spawn || die "Install failed"
+}
