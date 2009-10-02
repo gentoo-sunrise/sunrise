@@ -1,0 +1,56 @@
+--- ngput/p3dimage.cpp.org
++++ ngput/p3dimage.cpp 
+@@ -30,6 +30,7 @@
+ ***************************************************************************/
+ 
+ #include <stdlib.h>
++#include <cstring>
+ 
+ #include <ngpcore/p3ddefs.h>
+ #include <ngpcore/p3dtypes.h>
+
+--- ngput/p3dospath.cpp.org
++++ ngput/p3dospath.cpp 
+@@ -30,6 +30,9 @@
+ ***************************************************************************/
+ 
+ #include <stdlib.h>
++#include <cstring>
++#include <climits>
++#include <cstdio>
+ 
+ #include <string>
+ 
+--- ngpshot/ngpshot.cpp.org
++++ ngpshot/ngpshot.cpp 
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <cstring>
+ 
+ #include <new>
+ #include <string>
+
+--- ngpshot/p3dshaders.cpp.org
++++ ngpshot/p3dshaders.cpp 
+@@ -19,6 +19,8 @@
+ ***************************************************************************/
+ 
+ #include <vector>
++#include <cstdio>
++#include <cstdlib>
+ 
+ #include <ngput/p3dglext.h>
+ 
+--- ngpview/ngpview.cpp.org 
++++ ngpview/ngpview.cpp 
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <cstring>
+ 
+ #include <ngput/p3dglext.h>
+ 
+
