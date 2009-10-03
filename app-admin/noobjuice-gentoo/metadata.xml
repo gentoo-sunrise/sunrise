@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+  <email>bob.shaffer.2@gmail.com</email>
+  <description>Developer maintained</description>
+</maintainer>
+<longdescription>These are the Gentoo base system plugins for the NoobJuice application which include administration interfaces for managing kernel configurations, GRUB bootloader configuration, user administration, basic package management (with portage), and service startup (runlevel) configuration.</longdescription>
+</pkgmetadata>
