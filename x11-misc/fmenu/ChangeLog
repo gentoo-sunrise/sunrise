@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/fmenu
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Oct 2009; Tim Weber (Scytale) scy-gentoo@scytale.name
+  +fmenu-0.1.ebuild, +metadata.xml:
+  New ebuild for bug 287493, x11-misc/fmenu.
+
