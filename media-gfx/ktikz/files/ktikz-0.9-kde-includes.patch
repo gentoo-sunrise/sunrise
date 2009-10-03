@@ -1,0 +1,25 @@
+diff -Naur ktikz-0.9/src/configgeneralwidget.cpp ktikz-0.9/src/configgeneralwidget.cpp
+--- ktikz-0.9/src/configgeneralwidget.cpp	2009-09-13 12:40:40.000000000 +0200
++++ ktikz-0.9/src/configgeneralwidget.cpp	2009-10-03 18:53:13.000000000 +0200
+@@ -21,6 +21,7 @@
+ #include "configgeneralwidget.h"
+ #ifdef KTIKZ_USE_KDE
+ #include <KMessageBox>
++#include <KLocale>
+ #else
+ #include <QMessageBox>
+ #endif
+diff -Naur ktikz-0.9/src/ktikzapplication.cpp ktikz-0.9/src/ktikzapplication.cpp
+--- ktikz-0.9/src/ktikzapplication.cpp	2009-09-13 12:40:40.000000000 +0200
++++ ktikz-0.9/src/ktikzapplication.cpp	2009-10-03 18:53:53.000000000 +0200
+@@ -21,7 +21,8 @@
+ #include "ktikzapplication.h"
+ 
+ #ifdef KTIKZ_USE_KDE
+-
++#include <KCmdLineArgs>
++#include <KUrl>
+ #else
+ #include <QFileInfo>
+ #endif
+
