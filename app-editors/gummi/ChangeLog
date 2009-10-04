@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  gummi-0.3b.ebuild:
+  ${PN}-${PV} -> ${P}
+
   23 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
   -gummi-0.2f.ebuild, +gummi-0.3b.ebuild:
   Trivial bump to 0.3b

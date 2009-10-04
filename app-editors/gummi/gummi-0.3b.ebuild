@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="Simple LaTeX editor for GTK+ users"
 HOMEPAGE="http://code.google.com/p/gummi/"
-SRC_URI="http://gummi.googlecode.com/files/${PN}-${PV}.tar.gz"
+SRC_URI="http://gummi.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="|| ( MIT BEER-WARE )"
 SLOT="0"
