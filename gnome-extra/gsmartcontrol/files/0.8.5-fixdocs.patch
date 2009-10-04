@@ -1,6 +1,6 @@
 --- Makefile.am	2009-09-05 16:39:32.000000000 +0200
 +++ Makefile.am.new	2009-09-27 08:13:42.000000000 +0200
-@@ -14,17 +14,8 @@
+@@ -14,17 +14,7 @@
  
  # These will be installed into docdir.
  # Some of these files are actually needed for compilation (see src/res/Makefile.am).
@@ -15,7 +15,6 @@
 -	LICENSE_pcrecpp.txt \
 -	LICENSE_whatever.txt \
 -	LICENSE_zlib.txt
-+dist_doc_DATA = AUTHORS.txt ChangeLog NEWS README.txt \
-+	LICENSE_gsmartcontrol.txt
++dist_doc_DATA = AUTHORS.txt ChangeLog NEWS README.txt
  
  # nobase_ preserves their directory names.
