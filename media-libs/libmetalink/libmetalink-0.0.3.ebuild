@@ -8,7 +8,7 @@ inherit base
 
 DESCRIPTION="Library for handling Metalink files"
 HOMEPAGE="http://launchpad.net/libmetalink"
-SRC_URI="http://code.launchpad.net/${PN}/trunk/${PV}/+download/${PN}-${PV}.tar.bz2"
+SRC_URI="http://code.launchpad.net/${PN}/trunk/${PV}/+download/${P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
