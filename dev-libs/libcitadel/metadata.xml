@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>maintainer-wanted</herd>
+	<maintainer>
+		<email>themgt@mail.ru</email>
+		<name>the_mgt</name>
+		<description>You can find me as the_mgt on freenode,
+			usually I am on the channel citadel there</description>
+	</maintainer>
+	<longdescription>libcitadel contains code which is shared across all
+		the components which make up the Citadel system. It is needed
+		by mail-mta/citadel and www-servers/webcit
+	</longdescription>
+	<upstream>
+		<maintainer>
+			<email>IGnatiusTFoobar@uncensored.citadel.org</email>
+			<name>IGnatius T Foobar</name>
+		</maintainer>
+		<doc>http://www.citadel.org/doku.php/doku.php?id=documentation:start</doc>
+		<bugs-to>http://bugzilla.citadel.org/</bugs-to>
+	</upstream>
+</pkgmetadata>
