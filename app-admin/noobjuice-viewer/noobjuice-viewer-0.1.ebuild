@@ -6,17 +6,16 @@ EAPI="2"
 
 inherit qt4
 
-DESCRIPTION="Viewer for the NoobJuice plugin-based GUI for Gentoo system administration."
+DESCRIPTION="Viewer for the NoobJuice plugin-based GUI for Gentoo system administration"
 HOMEPAGE="http://bobshaffer.net/?page=project_noobjuice_viewer"
 SRC_URI="http://bobshaffer.net/projects/files/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="x11-libs/qt-core:4
-	x11-libs/qt-gui:4"
+DEPEND="x11-libs/qt-gui:4"
 RDEPEND="${DEPEND}"
 S="${WORKDIR}"/noobjuice
 
@@ -27,4 +26,3 @@ src_configure() {
 src_install() {
 	emake INSTALL_ROOT="${D}" install || die "emake install failed"
 }
-
