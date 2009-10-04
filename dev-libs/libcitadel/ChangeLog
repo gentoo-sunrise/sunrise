@@ -2,13 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -libcitadel-7.63.ebuild, metadata.xml:
+  Nuke old version, fix metadata.xml and Changelog
+
   04 Oct 2009; the_mgt themgt@mail.ru +libcitadel-7.63.ebuild,
   +libcitadel-7.66.ebuild, +metadata.xml:
   New Ebuild for bug 286323, blocking bug 62119 and 123139. Thanks for the
   reviews and help to the people of #gentoo-sunrise
-
-*libcitadel-7.66 (04 Oct 2009)
-  
-  04 Oct 2009; the_mgt themgt@mail.ru metadata.xml, libcitadel-7.66 :
-  Initial import.  Ebuild submitted by the_mgt themgt@mail.ru.
-  Overhauled the whole shebang to match sunrise standards.
