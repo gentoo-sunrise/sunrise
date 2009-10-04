@@ -230,6 +230,8 @@ net-misc/gvpe:icmp - Enables icmp transport support
 net-misc/gvpe:tcp - Enables tcp transport support
 net-misc/moblock:logrotate - Use app-admin/logrotate to rotate log files
 net-misc/moblock:network-cron - Adds monthly cronjob to update blocklist files
+net-misc/mulk:checksum - Enable checksum verification for Metalink from dev-libs/openssl
+net-misc/mulk:metalink - Enable support for media-libs/libmetalink
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
