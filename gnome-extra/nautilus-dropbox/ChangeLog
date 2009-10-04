@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -nautilus-dropbox-0.6.1.ebuild:
+  Nuke old version
+
   02 Oct 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   nautilus-dropbox-0.6.1-r1.ebuild:
   Now using find to remove all .la files
