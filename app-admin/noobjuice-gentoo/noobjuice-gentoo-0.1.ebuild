@@ -32,4 +32,3 @@ src_install() {
 	insinto /usr/lib/noobjuice/plugins
 	doins libnoobjuice-gentoo.so || die "libnoobjuice-gentoo.so not found"
 }
-
