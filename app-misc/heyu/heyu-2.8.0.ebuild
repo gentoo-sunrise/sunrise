@@ -7,8 +7,8 @@ EAPI="2"
 inherit eutils toolchain-funcs
 
 DESCRIPTION="Utility to control and program CM11A, CM17A and CM12U X10 interfaces"
-HOMEPAGE="http://heyu.tanj.com"
-SRC_URI="http://heyu.tanj.com/download/${P}.tgz"
+HOMEPAGE="http://www.heyu.org"
+SRC_URI="http://www.heyu.org/download/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
