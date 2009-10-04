@@ -24,8 +24,8 @@ DEPEND="${RDEPEND}"
 src_prepare() {
 	epatch \
 		"${FILESDIR}"/${PV}-callback.patch \
-		"${FILESDIR}"/${PV}-asneeded.patch
-	mkdir m4
+		"${FILESDIR}"/${PV}-asneeded.patch \
+		"${FILESDIR}"/${PV}-aclocal.patch
 	eautoreconf
 }
 
