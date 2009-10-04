@@ -1,0 +1,10 @@
+# ChangeLog for www-servers/webcit
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Oct 2009; the_mgt themgt@mail.ru +webcit-7.66.ebuild,
+  +files/as-needed.patch, +files/webcit.conf.d, +files/webcit.init.d,
+  +metadata.xml:
+  New Ebuild for bug 123139. Thanks for the reviews and help to the people of
+  #gentoo-sunrise
+
