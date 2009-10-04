@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Oct 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
+  -trollop-1.14.ebuild, +trollop-1.15.ebuild:
+  Version bump to 1.15.
+
   30 Jun 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
   -trollop-1.13.ebuild, +trollop-1.14.ebuild:
   Version bump for bug 232644
