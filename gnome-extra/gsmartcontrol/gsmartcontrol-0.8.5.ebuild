@@ -29,4 +29,3 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PV}-fixdocs.patch
 	eautoreconf
 }
-
