@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Oct 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  mongodb-1.0.0.ebuild:
+  Adapt to upstream tarball rename
+
   28 Aug 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -mongodb-0.9.10.ebuild, +mongodb-1.0.0.ebuild:
   Version bump
