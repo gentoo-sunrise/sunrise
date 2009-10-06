@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Oct 2009; Bob Shaffer II (dm-madman) <bob.shaffer.2@gmail.com>
+  +noobjuice-viewer-0.2.ebuild:
+  Version bump for noobjuice-viewer, new help system added.
+
   04 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   noobjuice-viewer-0.1.ebuild, metadata.xml:
   Drop unneeded qt-core, sort KEYWORDS, fix metadata.xml
