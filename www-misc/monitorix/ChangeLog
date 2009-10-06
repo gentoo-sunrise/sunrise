@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Oct 2009; Markus Rennings (mren) <mren@mrmx.de> monitorix-1.4.0.ebuild:
+  added the example alert script and a hint for it in postinst message, thx to
+  alexandervdm and Tommy[D] for review
+
   05 Oct 2009; Markus Rennings (mren) <mren@mrmx.de>
   -monitorix-1.3.2.ebuild, +monitorix-1.4.0.ebuild:
   version bump

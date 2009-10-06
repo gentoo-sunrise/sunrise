@@ -46,7 +46,8 @@ src_install() {
 	insinto /etc
 	doins ${PN}.conf || die "doins failed"
 
-	dodoc Changes ${PN}-apache.conf README{,.nginx} TODO || die "dodoc failed"
+	dodoc Changes ${PN}-apache.conf README{,.nginx} TODO \
+		${PN}-alert.sh || die "dodoc failed"
 	doman man/man5/${PN}.conf.5 || die "doman failed"
 
 	insinto "${MY_HTDOCSDIR}"
@@ -76,6 +77,11 @@ pkg_postinst() {
 	elog "at runtime directly to the imgs/ directory inside the dir you "
 	elog "installed the app to with webapp-config. These are created "
 	elog "with the privileges of the webserver user account."
+	elog
+	elog "If you want to use the alert function (introduced in ${PN}-1.4.0), you "
+	elog "need to enable it in the config and provide a path to a script "
+	elog "which should be run in an alert case. An example script is provided "
+	elog "with this package."
 
 	webapp_pkg_postinst
 }
