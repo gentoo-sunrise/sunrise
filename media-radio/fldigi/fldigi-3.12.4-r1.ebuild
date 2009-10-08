@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc hamlib nls portaudio pulseaudio sndfile xmlrpc"
 
-RDEPEND="x11-libs/fltk:1.1
+RDEPEND="|| ( >=x11-libs/fltk-1.1.9:1.1[threads] <x11-libs/fltk-1.1.9:1.1 )
 	media-libs/libsamplerate
 	media-libs/libpng
 	x11-misc/xdg-utils
