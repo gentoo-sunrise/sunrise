@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-COMMON_DEPEND=">=dev-libs/boost-1.36
+COMMON_DEPEND=">=dev-libs/boost-1.35
 	media-libs/netpbm
 	>=x11-libs/fltk-1.1.9:1.1
 	virtual/ghostscript"
@@ -26,9 +26,9 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	sci-visualization/gnuplot"
 
-S=${WORKDIR}/spyview-2009-09-10-00_02
+S=${WORKDIR}/spyview-2009-10-08-16_58
 
-PATCHES=( "${FILESDIR}"/${P}-{cmaps,fltkjpeg,datadir,assert}.patch )
+PATCHES=( "${FILESDIR}"/${P}-datadir.patch )
 
 src_prepare() {
 	base_src_prepare
