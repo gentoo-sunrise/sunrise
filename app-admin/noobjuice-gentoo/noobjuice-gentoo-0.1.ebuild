@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit qt4
+inherit multilib qt4
 
 DESCRIPTION="The Gentoo base system plugins for the NoobJuice system administration GUI"
 HOMEPAGE="http://bobshaffer.net/?page=project_noobjuice_gentoo"
@@ -29,6 +29,6 @@ src_configure() {
 }
 
 src_install() {
-	insinto /usr/lib/noobjuice/plugins
+	insinto /usr/$(get_libdir)/noobjuice/plugins
 	doins libnoobjuice-gentoo.so || die "libnoobjuice-gentoo.so not found"
 }
