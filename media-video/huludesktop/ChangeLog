@@ -1,0 +1,8 @@
+# ChangeLog for media-video/huludesktop
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Oct 2009; Joseph Van Swearingen (Zythran) <jovie1024@yahoo.com>
+  +huludesktop-0.9.3.ebuild, +metadata.xml:
+  New Ebuild for bug 288372.  Thanks chiiph and jlec.
+
