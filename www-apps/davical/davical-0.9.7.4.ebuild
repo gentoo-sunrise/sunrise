@@ -18,7 +18,7 @@ DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
 	dev-lang/php[pcre,postgres,xml]
 	app-admin/pwgen
-	>=dev-php/awl-0.37
+	>=dev-php/awl-0.38
 	dev-perl/yaml
 	dev-perl/DBI
 	dev-perl/DBD-Pg"
