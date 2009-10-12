@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Oct 2009; Alexander van der Mey <alexvandermey@gmail.com>
+  -gummi-0.3b.ebuild, +gummi-0.4.0.ebuild:
+  Version bump for Gummi
+
   04 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gummi-0.3b.ebuild:
   ${PN}-${PV} -> ${P}
