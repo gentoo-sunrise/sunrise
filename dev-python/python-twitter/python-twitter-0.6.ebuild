@@ -15,8 +15,7 @@ IUSE=""
 
 pkg_postinst() {
 	python_version
-	python_mod_optimize \
-		/usr/$(get_libdir)/python${PYVER}/site-packages/python_twitter-${PV}-py${PYVER}.egg/
+	python_mod_optimize $(python_get_sitedir)/python_twitter-${PV}-py${PYVER}.egg/
 }
 
 pkg_postrm() {
