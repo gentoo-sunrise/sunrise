@@ -27,4 +27,3 @@ src_install() {
 	emake INSTALL_ROOT="${D}" install || die "emake install failed"
 	dohtml doc/* || die "unable to install documentation"
 }
-
