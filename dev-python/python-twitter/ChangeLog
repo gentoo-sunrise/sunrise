@@ -4,6 +4,10 @@
 
   13 Oct 2009; Markos Chandras <hwoarang@gentoo.org>
   python-twitter-0.6.ebuild:
+  Remove useless whitespace
+
+  13 Oct 2009; Markos Chandras <hwoarang@gentoo.org>
+  python-twitter-0.6.ebuild:
   Use python_get_sitedir function
 
   05 Oct 2009; Tomas Touceda (chiiph) <chiiph@gmail.org>
