@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND="dev-python/setuptools"
 RDEPEND="dev-lang/python
-	dev-python/eventlet
+	>=dev-python/eventlet-0.9
 	dev-python/pastedeploy
 	dev-python/simplejson"
 
