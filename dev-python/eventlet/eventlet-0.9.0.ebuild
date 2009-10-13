@@ -20,17 +20,19 @@ RDEPEND="dev-lang/python
 	dev-python/pyopenssl"
 DEPEND="${RDEPEND}
 	dev-python/setuptools
-	test? ( || ( dev-lang/python[sqlite] dev-python/pysqlite ) )"
+	test? (
+		|| ( dev-lang/python[sqlite] dev-python/pysqlite )
+		dev-python/nose )"
+
+DOCS="README README.twisted NEWS"
 
 src_test() {
-	cd greentest
-	PYTHONPATH=.. ${python} runall.py || die "Tests failed"
+	nosetests || die "Tests failed"
 }
 
 src_install() {
 	distutils_src_install
 	if use examples ; then
-		insinto /usr/share/doc/${PF}
-		doins -r examples || die "Install failed"
+		dodoc examples/* || die "Install failed"
 	fi
 }
