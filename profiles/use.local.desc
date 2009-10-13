@@ -123,6 +123,7 @@ gnome-extra/alarm-clock-applet:libnotify - Enables support for libnotify notific
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 gnome-extra/timer-applet:sounds - Installs optional sound data
 kde-misc/kcpufreq:icon - Add icon for GUI applet (enabled by default)
+mail-mta/citadel:pic - Build position-independent executables
 media-gfx/exact-image:agg - Adds Anti-Grain Geometry supportx11-libs/agg
 media-gfx/exact-image:swig - Adds Swig support dev-lang/swig
 media-gfx/fim:postscript - Install a postscript wrapper script
@@ -134,12 +135,6 @@ media-gfx/graphicsmagick:imagemagick - Enable ImageMagick command compatibility
 media-gfx/graphicsmagick:openmp - Build support for the OpenMP (support parallel computing)
 media-gfx/graphicsmagick:q16 - Set quantum depth to 16
 media-gfx/graphicsmagick:q32 - Set quantum depth to 32
-media-gfx/openscenegraph:coin - Compile media-libs/coin plugin
-media-gfx/openscenegraph:gdal - Compile sci-libs/gdal plugin
-media-gfx/openscenegraph:introspection - Compile osgIntrospection
-media-gfx/openscenegraph:inventor - Compile media-libs/openinventor plugin
-media-gfx/openscenegraph:jasper - Compile media-libs/jasper plugin
-media-gfx/openscenegraph:producer - Compile osgProducer
 media-gfx/openvrml:imagetexture - Support for image textures
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
 media-radio/ax25-tools:X - Enable some x based configuration tools.
