@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Oct 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -spawning-0.8.12, +spawning-0.9.1.ebuild:
+  Version bump
+
   30 Sep 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -spawning-0.8.10.ebuild, +spawning-0.8.12.ebuild:
   Version bump, now with init script support
