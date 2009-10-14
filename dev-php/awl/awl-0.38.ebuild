@@ -9,7 +9,7 @@ inherit depend.php php-lib-r1
 DESCRIPTION="Andrew McMillan's web libraries: A collection of generic classes
 used by the davical calendar server"
 HOMEPAGE="http://andrew.mcmillan.net.nz/projects/awl"
-SRC_URI="http://debian.mcmillan.net.nz/packages/awl/awl_${PV}.tar.gz"
+SRC_URI="http://debian.mcmillan.net.nz/packages/awl/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
