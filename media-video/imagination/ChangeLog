@@ -1,0 +1,9 @@
+# ChangeLog for media-video/imagination
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Oct 2009; Alexander van der Mey (alexandervdm)
+  <alexvandermey@gmail.com> +imagination-2.1.ebuild,
+  +files/imagination-2.1-transitions.patch, +metadata.xml:
+  New ebuild for bug 282517, thanks to Tommy[D] and chiiph
+
