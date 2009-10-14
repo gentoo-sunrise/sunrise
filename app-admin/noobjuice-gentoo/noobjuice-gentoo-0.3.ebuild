@@ -13,13 +13,15 @@ SRC_URI="http://bobshaffer.net/projects/files/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc"
 
 DEPEND="x11-libs/qt-gui:4"
 RDEPEND="${DEPEND}
 	app-admin/noobjuice-viewer
-	~app-portage/eix-0.18.0
+	>=app-portage/eix-0.18.0
 	app-portage/gentoolkit
+	app-portage/layman
+	>=app-admin/eselect-1.2.3
 	x11-terms/xterm"
 
 S="${WORKDIR}/noobjuice-gentoo"
@@ -31,4 +33,7 @@ src_configure() {
 src_install() {
 	insinto /usr/$(get_libdir)/noobjuice/plugins
 	doins libnoobjuice-gentoo.so || die "libnoobjuice-gentoo.so not found"
+	if use doc ; then
+		dohtml doc/* || die "failed to install documentation"
+	fi
 }
