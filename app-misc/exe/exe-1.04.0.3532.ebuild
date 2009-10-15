@@ -19,7 +19,7 @@ DEPEND=">=dev-python/pygtk-2.6.1
 	>=dev-python/nevow-0.4.1
 	>=dev-python/twisted-2.0.1
 	>=dev-python/twisted-web-0.5.0
-	>=net-zope/zopeinterface-3.0.1
+	>=net-zope/zope-interface-3.0.1
 	>=dev-lang/python-2.4.1"
 RDEPEND="${DEPEND}"
 
