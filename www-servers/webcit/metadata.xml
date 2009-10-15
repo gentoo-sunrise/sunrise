@@ -2,12 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
-	<maintainer>
-		<email>themgt@mail.ru</email>
-		<name>the_mgt</name>
-		<description>You can find me as the_mgt on freenode,
-			usually I am on the channel citadel there</description>
-	</maintainer>
 	<longdescription>WebCit is the modern AJAX-style web interface to the
 		Citadel groupware/email/jabber server. It offers comfortable
 		editing facilities for calender and contacts, BBS style
