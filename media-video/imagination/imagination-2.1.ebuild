@@ -14,7 +14,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=">=x11-libs/gtk+-2.12.11
-        >=media-sound/sox-14.2.0"
+	>=media-sound/sox-14.2.0"
 
 RDEPEND="${DEPEND}
 	media-video/ffmpeg"
@@ -28,7 +28,7 @@ src_unpack() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	
+
 	dodoc AUTHORS NEWS README TODO || die "dodoc failed"
 	doicon icons/48x48/${PN}.png
 }
