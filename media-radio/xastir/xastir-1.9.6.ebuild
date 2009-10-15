@@ -35,7 +35,7 @@ src_unpack() {
 	edos2unix scripts/toporama*
 	# fix for different install directory in scripts
 	epatch "${FILESDIR}/${P}-scripts.diff" \
-	    "${FILESDIR}/${P}-config.diff"
+		"${FILESDIR}"/${PN}-1.9.4-config.diff
 	eautoreconf
 }
 
