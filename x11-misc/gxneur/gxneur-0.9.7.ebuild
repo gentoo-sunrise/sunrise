@@ -23,7 +23,6 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.20"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-0.9.3-CFLAGS.patch"
 	rm ltmain.sh aclocal.m4	m4/{lt~obsolete,ltoptions,ltsugar,ltversion,libtool}.m4
 	sed -i "s/-Werror -g0//" configure.in || die
 	eautoreconf

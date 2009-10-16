@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Oct 2009; Peter Volkov <pva@gentoo.org>
+  -files/gxneur-0.9.3-CFLAGS.patch, -gxneur-0.9.5.ebuild,
+  +gxneur-0.9.7.ebuild:
+  Version bump. Patch finally went upstream.
+
   26 Aug 2009; Peter Volkov <pva@gentoo.org>
   files/gxneur-0.9.3-CFLAGS.patch, -gxneur-0.9.4.ebuild,
   +gxneur-0.9.5.ebuild:
