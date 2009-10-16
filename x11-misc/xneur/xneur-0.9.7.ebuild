@@ -13,13 +13,12 @@ SRC_URI="http://dists.xneur.ru/release-${PV}/tgz/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="aplay debug +gstreamer +imlib libnotify nls openal xosd +pcre spell xpm"
+IUSE="aplay debug gstreamer libnotify nls openal xosd pcre +spell"
 
 # Sound does not works here with media-sound/alsa-utils-1.0.16
-RDEPEND=">=x11-libs/libX11-1.1
+RDEPEND="sys-libs/zlib
+	>=x11-libs/libX11-1.1
 	x11-libs/libXtst
-	imlib? ( media-libs/imlib2 )
-	!imlib? ( xpm? ( x11-libs/libXpm ) )
 	gstreamer? ( >=media-libs/gstreamer-0.10.6 )
 	!gstreamer? ( openal? ( >=media-libs/freealut-1.0.1 )
 				  !openal? ( aplay? ( >=media-sound/alsa-utils-1.0.17 ) ) )
@@ -34,7 +33,8 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.20"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-gcc44.patch"
+	# Fixes error/warning: no newline at end of file
+	find . -name '*.c' -exec sed '${/[^ ]/s:$:\n:}' -i '{}' \;
 	rm ltmain.sh aclocal.m4	m4/{lt~obsolete,ltoptions,ltsugar,ltversion,libtool}.m4
 	sed -i -e "s/-Werror -g0//" configure.in
 	eautoreconf
@@ -53,15 +53,8 @@ src_configure() {
 		elog "Using aplay for sound output."
 		myconf="--with-sound=aplay"
 	else
+		elog "Sound support disabled."
 		myconf="--with-sound=no"
-	fi
-
-	if use imlib2; then
-		myconf="${myconf} --with-image=imlib2"
-	elif use xpm; then
-		myconf="${myconf} --with-image=xpm"
-	else
-		myconf="${myconf} --with-image=no"
 	fi
 
 	econf ${myconf} \
