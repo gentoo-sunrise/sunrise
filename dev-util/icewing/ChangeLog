@@ -1,0 +1,9 @@
+# ChangeLog for dev-util/icewing
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Oct 2009; Patrick Holthaus (pholthau)
+  <patrick.holthaus@uni-bielefeld.de> +icewing-9999.ebuild, +metadata.xml:
+  New Ebuild for bug #288838, thanks to Tommy[D], hwoarang, frostwork, and
+  chithead for reviews
+
