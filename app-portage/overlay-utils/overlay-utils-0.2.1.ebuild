@@ -6,7 +6,7 @@ EAPI="2"
 
 DESCRIPTION="Utilities for Gentoo repository and overlay development"
 HOMEPAGE="http://gentooexperimental.org/~shillelagh/"
-SRC_URI="http://gentooexperimental.org/~shillelagh/${P}.tar.bz2"
+SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -15,11 +15,6 @@ IUSE=""
 
 RDEPEND="dev-util/subversion
 	>=sys-apps/portage-2.1"
-
-src_prepare() {
-	sed -i -e 's:/sbin/functions.sh:/etc/init.d/functions.sh:' sunrise-commit \
-		|| die "sed failed"
-}
 
 src_install() {
 	dobin sunrise-commit echangelog-tng || die "dobin failed"
