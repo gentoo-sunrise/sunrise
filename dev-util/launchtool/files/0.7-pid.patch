@@ -1,0 +1,11 @@
+--- configure.ac	2009-10-17 10:31:55.000000000 +0200
++++ configure.ac.new	2009-10-17 10:34:54.000000000 +0200
+@@ -32,7 +32,7 @@
+ AC_LANG([C++])
+ 
+ dnl Directory containing pidfiles
+-piddir="${localstatedir}/run"
++piddir="/var/run"
+ AC_SUBST(piddir)
+ 
+ dnl Set DOC_DIR in config.h and in Makefile.*

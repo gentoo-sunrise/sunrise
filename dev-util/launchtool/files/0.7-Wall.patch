@@ -1,0 +1,11 @@
+--- configure.ac	2003-02-07 17:35:36.000000000 +0100
++++ configure.ac.new	2009-10-17 10:24:14.000000000 +0200
+@@ -48,7 +48,7 @@
+ dnl Look for libpopt
+ AC_CHECK_LIB(popt, poptGetContext)
+ 
+-CXXFLAGS="$CXXFLAGS -Wall -DPID_DIR='\"$piddir\"'"
++CXXFLAGS="$CXXFLAGS -DPID_DIR='\"$piddir\"'"
+ 
+ AC_CONFIG_FILES([
+ Makefile
