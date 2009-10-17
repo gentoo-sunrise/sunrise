@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Oct 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -xf86-video-nouveau-0.0.20090908.ebuild,
+  +xf86-video-nouveau-0.0.20091011.ebuild:
+  new snapshot
+
   10 Sep 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> xf86-video-nouveau-0.0.20090908.ebuild:
   adjust dependency, x11-drm is not going to support nouveau
