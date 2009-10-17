@@ -3,6 +3,11 @@
 # $Header: $
 
   17 Oct 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -files/drm-fix-building-with-2.6.30.patch,
+  +files/nouveau-drm-20091016-Makefile:
+  add Makefile, remove old patch
+
+  17 Oct 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -nouveau-drm-20090908.ebuild,
   +nouveau-drm-20091016.ebuild:
   new snapshot, switch to master branch, use external Makefile
