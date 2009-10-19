@@ -63,6 +63,8 @@ dev-libs/libmail:apop - Enables the APOP authentication method
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-util/eresi:server - Build eresi server capability
+dev-util/icewing:grabber - Build the grabber plug-in
+dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 games-board/dreamchess:music - Install the music pack
