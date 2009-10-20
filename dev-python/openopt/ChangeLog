@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/openopt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Oct 2009; Jean-Francis Roy (jeanfrancis) <jeanfrancisroy@gmail.com>
+  +openopt-0.25.ebuild, +metadata.xml:
+  New Ebuild for bug 289363 thanks for jlec, chiiph and Tommy[D]
+
