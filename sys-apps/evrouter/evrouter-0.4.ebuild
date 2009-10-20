@@ -15,10 +15,10 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="x11-libs/libX11
-		x11-libs/libXext
-		x11-libs/libxcb
-		x11-libs/libXau
-		x11-libs/libXdmcp"
+	x11-libs/libXext
+	x11-libs/libxcb
+	x11-libs/libXau
+	x11-libs/libXdmcp"
 
 RDEPEND="${DEPEND}"
 
@@ -31,6 +31,6 @@ src_unpack() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc src/example || die
+	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc src/example || die "dodoc failed"
 }
