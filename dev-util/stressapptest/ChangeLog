@@ -1,0 +1,12 @@
+# ChangeLog for dev-util/stressapptest
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*stressapptest-1.0.0 (20 Oct 2009)
+
+  20 Oct 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  +files/1.0.0-flags.patch, +files/1.0.0-nolicense.patch,
+  +stressapptest-1.0.0.ebuild, +metadata.xml:
+  Written by me
+  bug 289320
+
