@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Oct 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> xwxapt-1.2.ebuild:
+  tested on amd64
+
   20 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> Manifest:
   New Manifest needed due to change in upstream package
 
