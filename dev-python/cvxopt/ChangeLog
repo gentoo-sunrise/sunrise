@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/cvxopt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Oct 2009; Jean-Francis Roy (jeanfrancis) <jeanfrancisroy@gmail.com>
+  +cvxopt-1.1.1.ebuild, +metadata.xml:
+  New Ebuild for bug 230457 thanks for François Bissey, chiiph, ohnobinki and
+  jbergstroem
+
