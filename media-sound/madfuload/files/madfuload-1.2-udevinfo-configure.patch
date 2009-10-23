@@ -1,0 +1,11 @@
+--- madfuload-1.2/configure.orig	2009-10-23 09:14:23.000000000 +0200
++++ madfuload-1.2/configure	2009-10-23 09:14:35.000000000 +0200
+@@ -2808,7 +2808,7 @@
+ 
+ echo "$as_me:$LINENO: checking for udev version" >&5
+ echo $ECHO_N "checking for udev version... $ECHO_C" >&6
+-udev_ver=`udevinfo -V | awk '{ print $3 }'`
++udev_ver=`udevadm info -V`
+ if test -n "$udev_ver"; then
+   echo "$as_me:$LINENO: result: $udev_ver" >&5
+ echo "${ECHO_T}$udev_ver" >&6
