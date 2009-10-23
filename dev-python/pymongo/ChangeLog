@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Oct 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pymongo-1.0.ebuild, +pymongo-1.1.ebuild:
+  Version bump
+
   30 Sep 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pymongo-0.16.ebuild, +pymongo-1.0.ebuild:
   Version bump
