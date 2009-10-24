@@ -10,7 +10,7 @@ DESCRIPTION="Open-Source Software Implementation of a DRM-Receiver"
 HOMEPAGE="http://drm.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE="hamlib sndfile"
