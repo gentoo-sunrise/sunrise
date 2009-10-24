@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Oct 2009; Andy Spencer <andy753421@gmail.com> -aweather-0.2.1.ebuild,
+  +aweather-0.2.2.ebuild:
+  Version bump for aweather-0.2.2
+
   02 Sep 2009; Andy Spencer <andy753421@gmail.com aweather-9999.ebuild:
   Migrating from Subversion to Git
 
