@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Oct 2009; Alexander van der Mey <alexvandermey@gmail.com>
+  -gummi-0.4.0.ebuild, +gummi-0.4.1.ebuild:
+  Version bump - fix for python >=2.6.3
+
   12 Oct 2009; Alexander van der Mey <alexvandermey@gmail.com>
   -gummi-0.3b.ebuild, +gummi-0.4.0.ebuild:
   Version bump for Gummi
