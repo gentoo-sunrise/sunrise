@@ -2,14 +2,17 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Oct 2009; Andy Spencer <andy753421@gmail.com> ChangeLog, Manifest:
+  Fixing email addresses in the ChangeLog (I'm and idiot and forgot the >)
+
   24 Oct 2009; Andy Spencer <andy753421@gmail.com> -aweather-0.2.1.ebuild,
   +aweather-0.2.2.ebuild:
   Version bump for aweather-0.2.2
 
-  02 Sep 2009; Andy Spencer <andy753421@gmail.com aweather-9999.ebuild:
+  02 Sep 2009; Andy Spencer <andy753421@gmail.com> aweather-9999.ebuild:
   Migrating from Subversion to Git
 
-  07 Aug 2009; Andy Spencer <andy753421@gmail.com -aweather-0.1.1.ebuild,
+  07 Aug 2009; Andy Spencer <andy753421@gmail.com> -aweather-0.1.1.ebuild,
   +aweather-0.2.1.ebuild, +aweather-9999.ebuild:
   Version bump to 0.2.1 and adding live ebuild
 
@@ -17,10 +20,10 @@
   -aweather-9999.ebuild:
   Drop live ebuild (no dev ok, interactive, no use of autotools eclass,...)
 
-  20 Jul 2009; Andy Spencer <andy753421@gmail.com +aweather-9999.ebuild:
+  20 Jul 2009; Andy Spencer <andy753421@gmail.com> +aweather-9999.ebuild:
   Adding Subversion ebuild for AWeather
 
-  16 Jul 2009; Andy Spencer <andy753421@gmail.com -aweather-0.1.ebuild,
+  16 Jul 2009; Andy Spencer <andy753421@gmail.com> -aweather-0.1.ebuild,
   +aweather-0.1.1.ebuild:
   Version bump for AWeather - removes gvfs dependencies.
 
