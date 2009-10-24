@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Oct 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> -drm-1.11a.ebuild,
+  +drm-1.12a.ebuild:
+  Version bump
+
   03 May 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> -drm-1.11.ebuild,
   +drm-1.11a.ebuild:
   Minor bugfix release

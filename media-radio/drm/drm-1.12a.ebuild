@@ -6,9 +6,11 @@ EAPI="2"
 
 inherit autotools eutils
 
+MY_P=${P/./-}
+
 DESCRIPTION="Open-Source Software Implementation of a DRM-Receiver"
 HOMEPAGE="http://drm.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${PV}/${MY_P}.tar.gz"
 
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
@@ -30,8 +32,6 @@ S=${WORKDIR}/${PN}
 src_prepare() {
 	# fix configure.in so that it links to libqwt.so.4
 	epatch "${FILESDIR}"/drm-qwt4.diff
-
-	# not packaged correctly
 	eautoreconf
 }
 
@@ -53,3 +53,4 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake failed"
 	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"
 }
+
