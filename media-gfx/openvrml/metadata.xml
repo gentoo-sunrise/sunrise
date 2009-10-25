@@ -3,6 +3,7 @@
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
 	<use>
-		<flag name='imagetexture'>Support for image textures</flag>
+		<flag name='xembed'>Build the XEmbed container control</flag>
+		<flag name='player'>Build the openvrml-player Gnome application</flag>
 	</use>
 </pkgmetadata>
