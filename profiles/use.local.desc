@@ -62,6 +62,7 @@ dev-lang/xharbour:allegro - Build Allegro-based GT driver
 dev-libs/libmail:apop - Enables the APOP authentication method
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
+dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
 dev-util/eresi:server - Build eresi server capability
 dev-util/icewing:grabber - Build the grabber plug-in
 dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
