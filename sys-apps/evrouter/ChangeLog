@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Oct 2009; Tomáš Chvátal <scarabeus@gentoo.org> evrouter-0.4.ebuild:
+  Move to eapi 2. Remove useless stuff. Upstream should be noted to fix
+  their packaging next time (to remove eautoreconf step).
+
   20 Oct 2009; Markos Chandras <hwoarang@gentoo.org> evrouter-0.4.ebuild:
   Remove whitespaces
 

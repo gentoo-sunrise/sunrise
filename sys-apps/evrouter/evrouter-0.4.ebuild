@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils autotools
+EAPI="2"
+
+inherit autotools
 
 DESCRIPTION="An input event router"
 HOMEPAGE="http://www.bedroomlan.org/~alexios/coding_evrouter.html"
@@ -22,11 +24,7 @@ DEPEND="x11-libs/libX11
 
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${PF}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	eautoreconf
 }
 
