@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -gnormalize-0.63.ebuild, gnormalize-0.63-r1.ebuild:
+  Nuke old version
+
   24 Oct 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   +gnormalize-0.63-r1.ebuild:
   Fixed DEPEND. Fixed ebuild, now installing manual. Thanks to Mauro Toffanin
