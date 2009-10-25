@@ -1,0 +1,8 @@
+# ChangeLog for app-arch/lcab
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Oct 2009; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> +lcab-1.0_beta12.ebuild, +metadata.xml:
+  New Ebuild for bug 236342, thanks to tommy[d]
+
