@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/concurrence
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Oct 2009; Poluhin Vladislav (nuklea) <nuklea@gmail.com>
+  +concurrence-0.3.1.ebuild, +metadata.xml:
+  New Ebuild for bug #290554
+
