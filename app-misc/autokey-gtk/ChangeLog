@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/autokey-gtk
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Oct 2009; Roelof Wobben <rwobben@hotmail.com>
+  +autokey-gtk-0.60.7a.ebuild, +metadata.xml:
+  New Ebuild thanks to Tommy[D] and John R Graham
+
