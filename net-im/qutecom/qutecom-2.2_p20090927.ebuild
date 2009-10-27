@@ -42,8 +42,7 @@ src_configure() {
 		$(cmake-utils_use_enable oss PHAPI_AUDIO_OSS_SUPPORT) \
 		$(cmake-utils_use_enable xv WENGOPHONE_XV_SUPPORT) \
 		-DLIBPURPLE_INTERNAL=OFF \
-		-DPORTAUDIO_INTERNAL=OFF
-		-DCMAKE_VERBOSE_MAKEFILE=ON "
+		-DPORTAUDIO_INTERNAL=OFF "
 
 	cmake-utils_src_configure
 }
