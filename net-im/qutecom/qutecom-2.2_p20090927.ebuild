@@ -8,14 +8,14 @@ inherit cmake-utils eutils
 
 DESCRIPTION="Multi-protocol instant messenger and VoIP client"
 HOMEPAGE="http://www.qutecom.com/"
-SRC_URI="http://omploader.org/vMXNucg/${P}.tar.lzma"
+SRC_URI="http://omploader.org/vMm11aA/${P}.tar.lzma"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE="alsa debug oss portaudio xv"
 
-DEPEND=">=dev-libs/boost-1.34
+RDEPEND=">=dev-libs/boost-1.34
 	dev-libs/glib
 	dev-libs/openssl
 	alsa? ( media-libs/alsa-lib )
@@ -33,7 +33,8 @@ DEPEND=">=dev-libs/boost-1.34
 	x11-libs/qt-gui
 	x11-libs/qt-svg
 	xv? ( x11-libs/libXv )"
-RDEPEND=${DEPEND}
+DEPEND="${RDEPEND}
+	|| ( app-arch/xz-utils app-arch/lzma-utils )"
 
 src_configure() {
 	local mycmakeargs="$(cmake-utils_use_enable portaudio PORTAUDIO_SUPPORT) \
@@ -41,7 +42,8 @@ src_configure() {
 		$(cmake-utils_use_enable oss PHAPI_AUDIO_OSS_SUPPORT) \
 		$(cmake-utils_use_enable xv WENGOPHONE_XV_SUPPORT) \
 		-DLIBPURPLE_INTERNAL=OFF \
-		-DPORTAUDIO_INTERNAL=OFF "
+		-DPORTAUDIO_INTERNAL=OFF
+		-DCMAKE_VERBOSE_MAKEFILE=ON "
 
 	cmake-utils_src_configure
 }
