@@ -68,6 +68,5 @@ src_install() {
 
 	fperms +x "${MY_SQLSCRIPTSDIR}/create-database.sh"
 	fperms +x "${MY_SQLSCRIPTSDIR}/update-davical-database"
-	fperms +x "${MY_SQLSCRIPTSDIR}/update-rscds-database"
 
 }
