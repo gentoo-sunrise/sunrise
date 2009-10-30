@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Oct 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  qnapi-0.1.6_rc2.ebuild, metadata.xml:
+  Drop kde3 and fix QA issues.
+
   27 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   qnapi-0.1.6_rc2.ebuild:
   eqmake4 (much like econf) does not need the '|| die' statement. Updated

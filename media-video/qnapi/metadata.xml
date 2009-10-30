@@ -4,7 +4,6 @@
 	<herd>maintainer-wanted</herd>
 	<use>
 		<flag name='kde'>Enable KDE4 menu integration.</flag>
-		<flag name='kde3'>Enable KDE3 Konqueror menu integration.</flag>
 		<flag name='gnome'>Enable GNOME menu integration.</flag>
 	</use>
 </pkgmetadata>

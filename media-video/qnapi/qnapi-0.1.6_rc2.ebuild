@@ -4,7 +4,7 @@
 
 EAPI="2"
 KDE_REQUIRED="optional"
-WANT_CMAKE="no"
+CMAKE_REQUIRED="false"
 
 inherit eutils gnome2-utils kde4-base qt4
 
@@ -17,14 +17,13 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome kde3"
+IUSE="gnome"
 
 S=${WORKDIR}/${MY_P}
 
 DEPEND="x11-libs/qt-core
 	x11-libs/qt-gui
-	gnome? ( gnome-base/gconf )
-	kde3? ( <kde-base/kdelibs-4 )"
+	gnome? ( gnome-base/gconf )"
 RDEPEND="${DEPEND}
 	app-arch/p7zip"
 
@@ -41,10 +40,6 @@ src_configure() {
 
 	use gnome && integr="gnome_integration"
 	use kde && integr="${integr} kde4_integration"
-	use kde3 && integr="${integr} konqueror_integration"
-	# Dolphin for KDE3 is being dropped (bug #280633),
-	# d3lphin isn't yet in portage.
-
 	KDE4DIR="${KDEDIR}" INTEGRATION_TARGETS="${integr}" eqmake4
 }
 
@@ -64,9 +59,9 @@ pkg_preinst() {
 
 pkg_postinst() {
 	use gnome && gnome2_gconf_install
-	use kde || use kde3 && kde4-base_pkg_postinst
+	use kde && kde4-base_pkg_postinst
 }
 
 pkg_postrm() {
-	use kde || use kde3 && kde4-base_pkg_postrm
+	use kde && kde4-base_pkg_postrm
 }
