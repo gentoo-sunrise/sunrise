@@ -32,4 +32,3 @@ pkg_postinst () {
 	einfo " If you want to start the deamon every time Gentoo starts,"
 	einfo " you should run rc-update add autokey default"
 }
-

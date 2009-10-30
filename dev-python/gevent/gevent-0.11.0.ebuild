@@ -26,8 +26,7 @@ src_install() {
 	fi
 
 	if use examples; then
-		docinto examples 
+		docinto examples
 		dodoc examples/* || die "dodoc failed"
 	fi
 }
-

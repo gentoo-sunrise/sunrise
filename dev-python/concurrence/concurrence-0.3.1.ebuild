@@ -17,7 +17,6 @@ DEPEND=">=dev-lang/python-2.5
 	dev-python/setuptools"
 RDEPEND="${DEPEND}"
 
-
 src_install() {
 	distutils_src_install
 
@@ -34,4 +33,3 @@ src_install() {
 src_test() {
 	PYTHONPATH="build/lib" "${python}" setup.py test || die "Tests failed"
 }
-
