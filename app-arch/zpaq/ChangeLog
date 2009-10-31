@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Oct 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -zpaq-1.04.ebuild, +zpaq-1.09.ebuild, metadata.xml:
+  Version bump.
+
   20 Sep 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   -zpaq-1.03a.ebuild, +zpaq-1.04.ebuild:
   Version bump.
