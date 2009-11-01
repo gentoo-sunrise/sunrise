@@ -1,0 +1,8 @@
+# ChangeLog for app-arch/zpaq-extras
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Nov 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +zpaq-extras-0_p20091101.ebuild, +metadata.xml:
+  Additional ebuild to bug #278021.
+
