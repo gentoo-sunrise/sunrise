@@ -21,7 +21,7 @@ src_install() {
 	distutils_src_install
 
 	if use doc; then
-		dodoc doc/*
+		dodoc doc/* || die
 	fi
 
 	if use examples; then
