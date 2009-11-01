@@ -7,7 +7,6 @@
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/vlogger:dbi - Enable support for DBI
-app-arch/zpaq:doc - Install ZPAQ specification along with compressor.
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-dicts/ktranslator:festival - Enable festival support
