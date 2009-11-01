@@ -2,7 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Nov 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ChangeLog,
+  Manifest:
+  Add missing bugnumber to ChangeLog
+
   26 Oct 2009; Roelof Wobben <rwobben@hotmail.com>
   +autokey-gtk-0.60.7a.ebuild, +metadata.xml:
   New Ebuild thanks to Tommy[D] and John R Graham
-
+  for bug 290502
