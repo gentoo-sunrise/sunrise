@@ -5,10 +5,10 @@
 inherit distutils
 
 DESCRIPTION="Simple LaTeX editor for GTK+ users"
-HOMEPAGE="http://code.google.com/p/gummi/"
-SRC_URI="http://gummi.googlecode.com/files/${P}.tar.gz"
+HOMEPAGE="http://gummi.midnightcoding.org"
+SRC_URI="http://dev.midnightcoding.org/redmine/attachments/download/6/${P}.tar.gz"
 
-LICENSE="|| ( MIT BEER-WARE )"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
