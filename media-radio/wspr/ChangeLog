@@ -1,0 +1,8 @@
+# ChangeLog for media-radio/wspr
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> +wspr-1.12.ebuild,
+  +metadata.xml:
+  New ebuild for bug 291186. Thanks Tommy[D] for thorough review and help.
+
