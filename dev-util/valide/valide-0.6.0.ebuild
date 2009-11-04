@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-db/sqlite:3
-	>=dev-lang/vala-0.7.3
+	>=dev-lang/vala-0.7.5
 	dev-libs/glib:2
 	dev-libs/libunique
 	dev-libs/libxml2

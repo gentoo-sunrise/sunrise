@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Nov 2009; Serhij Stasyuk (sstass) <stas@onlineua.net>
+  -valide-0.5.1.ebuild, +valide-0.6.0.ebuild:
+  Version bump for dev-util/valide. Thanks to ssuominen, Tommy[D]. Changed
+  required dev-lang/vala version to 0.7.5
+
   31 Jul 2009; Serhij Stasyuk (sstass) <stas@onlineua.net>
   +valide-0.5.1.ebuild, +metadata.xml:
   New Ebuild for bug 279458. Thanks to ssuominen, Tommy[D]
