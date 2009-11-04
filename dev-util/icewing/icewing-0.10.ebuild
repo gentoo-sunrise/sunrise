@@ -4,17 +4,15 @@
 
 EAPI="2"
 
-inherit cmake-utils subversion
+inherit cmake-utils
 
 DESCRIPTION="Integrated Communication Environment Which Is Not Gesten"
 HOMEPAGE="http://icewing.sf.net"
-SRC_URI=""
-
-ESVN_REPO_URI="http://icewing.svn.sourceforge.net/svnroot/icewing/iceWing/trunk"
+SRC_URI="mirror://sourceforge/${PN}/${PV}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 # need to add xcf, dacs, mvimpact as use-flags (and packages)
 IUSE="debug ffmpeg +grabber ieee1394 jpeg png readline +unicap"
 
