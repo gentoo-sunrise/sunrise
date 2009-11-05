@@ -1,0 +1,9 @@
+# ChangeLog for media-video/bombono-dvd
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Nov 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  +bombono-dvd-0.5.2.ebuild, +files/bombono-dvd-0.5.2-twolame.patch,
+  +metadata.xml:
+  New application, see bug 291478. Thanks to Ilya Muravjov.
+
