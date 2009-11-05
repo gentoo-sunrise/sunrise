@@ -10,7 +10,7 @@ SRC_URI="http://ayeon.org/projects/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="net-im/pidgin[gtk]
