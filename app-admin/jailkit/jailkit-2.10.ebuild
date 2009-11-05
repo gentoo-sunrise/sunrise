@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+EAPI="2"
+
+inherit autotools eutils
 
 DESCRIPTION="Allows you to easily put programs and users in a chrooted environment"
 HOMEPAGE="http://olivier.sessink.nl/jailkit/"
@@ -13,15 +15,11 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-destdir.patch"
-	epatch "${FILESDIR}/${P}-nostrip.patch"
+src_prepare() {
+	epatch \
+		"${FILESDIR}/${P}-ldflags.patch" \
+		"${FILESDIR}/${P}-pyc.patch"
+	eautoreconf
 }
 
 src_install() {
