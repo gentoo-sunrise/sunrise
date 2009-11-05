@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2009; Jacek Sowiński <mruwek.gentoo@vcf.pl> -canto-0.7.4.ebuild,
+  +canto-0.7.5.ebuild:
+  Version bump for canto
+
   18 Aug 2009; Jacek Sowiński <mruwek.gentoo@vcf.pl> -canto-0.6.7.ebuild,
   +canto-0.7.4.ebuild:
   Version bump.
