@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Nov 2009; Serhij Stasyuk (sstass) <stas@onlineua.net>
+  -instead-0.9.ebuild, +instead-0.9.3.ebuild:
+  Version bump to 0.9.3, mirror should be playable now.
+
   24 Sep 2009; A.C.Heron (cmpayc) <acheron@front.ru> +instead-9999.ebuild:
   Live SVN ebuild
 
