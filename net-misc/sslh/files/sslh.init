@@ -22,8 +22,3 @@ stop() {
 		--pidfile /var/run/sslh/sslh.pid
 	eend $?
 }
-
-restart() {
-	stop
-	start
-}
