@@ -39,4 +39,3 @@ src_compile() {
 src_install() {
 	scons install || die
 }
-
