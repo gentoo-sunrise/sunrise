@@ -1,8 +1,0 @@
-# ChangeLog for games-mud/kildclient
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  22 Apr 2009; Michele R. Marino (vee) <rauggy@gmail.com>
-  +kildclient-2.8.1.ebuild, +metadata.xml:
-  New ebuild for bug 266567. Thanks to idl0r, volkmar and Tommy[D]
-
