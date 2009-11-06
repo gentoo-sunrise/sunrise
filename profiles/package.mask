@@ -33,10 +33,6 @@ www-servers/webcit
 sys-cluster/globus-build
 sys-cluster/globus
 
-# Christian Ruppert <idl0r@gentoo.org> (19 June 2009)
-# Masked because of masked dependency media-libs/freeimage (see package.mask in gentoo-x86)
-media-gfx/fotoxx
-
 # Petr Pisar <petr.pisar@atlas.cz> (18 May 2009)
 # Moved to lisp overlay (Bug #261206)
 <=dev-scheme/schemik-1.2.34.1
