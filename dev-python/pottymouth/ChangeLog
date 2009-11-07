@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Nov 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pottymouth-1.1.4.ebuild, +pottymouth-1.1.5.ebuild:
+  Version bump and abi support
+
   22 Jun 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   pottymouth-1.1.4.ebuild:
   Drop MY_PN, set MY_P directly
