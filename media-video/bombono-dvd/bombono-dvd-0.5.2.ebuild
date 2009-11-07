@@ -32,10 +32,11 @@ PATCHES=( "${FILESDIR}/${P}-twolame.patch" )
 
 src_compile() {
 	# scons uses -l differently -> remove it
-	scons CXX="$(tc-getCXX)" ${MAKEOPTS/-l[0-9]} DESTDIR="${D}" PREFIX="/usr" \
-		|| die 'Please add "${S}/scons.config" when filing bugs reports!'
+	scons CC="$(tc-getCC)" CXX="$(tc-getCXX)" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		${MAKEOPTS/-l[0-9]} DESTDIR="${D}" PREFIX="/usr" \
+		|| die 'Please add "${S}/config.opts" when filing bugs reports!'
 }
 
 src_install() {
-	scons install || die
+	scons install || die 'Please add "${S}/config.opts" when filing bugs reports!'
 }
