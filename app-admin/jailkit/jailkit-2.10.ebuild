@@ -18,16 +18,17 @@ IUSE=""
 src_prepare() {
 	epatch \
 		"${FILESDIR}/${P}-ldflags.patch" \
-		"${FILESDIR}/${P}-pyc.patch" \
-		"${FILESDIR}/${P}-destdir.patch"
+		"${FILESDIR}/${P}-pyc.patch"
 	eautoreconf
 }
 
 src_install() {
-	dodir /etc
-	cp /etc/shells "${D}"/etc/shells || die
 	emake DESTDIR="${D}" install || die "emake install failed"
-	doinitd "${FILESDIR}/jailkit" || die
+	doinitd "${FILESDIR}/jailkit"
+}
+
+pkg_postinst() {
+	elog "Don't forget to add /usr/sbin/jk_chrootsh to /etc/shells."
 }
 
 pkg_postrm() {
