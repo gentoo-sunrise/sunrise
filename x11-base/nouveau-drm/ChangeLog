@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2009; Mounir Lamouri <volkmar@gentoo.org>
+  nouveau-drm-20091016.ebuild:
+  Keywording for ppc
+
   17 Oct 2009; Chi-Thanh Christopher Nguyen (chithead)
   <chithanh@cs.tu-berlin.de> -files/drm-fix-building-with-2.6.30.patch,
   +files/nouveau-drm-20091016-Makefile:

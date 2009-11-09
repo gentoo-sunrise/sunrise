@@ -12,7 +12,7 @@ SRC_URI="http://omploader.org/vMms3bw/${P}.tar.gz"
 
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE=""
 
