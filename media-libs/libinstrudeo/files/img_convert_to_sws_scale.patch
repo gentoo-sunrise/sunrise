@@ -70,9 +70,9 @@ Index: libinstrudeo-0.1.4/src/libinstrudeo/isdffmpegexporter.h
  #include <libinstrudeo/isdexporter.h>
  
 +extern "C" {
- #include <ffmpeg/avcodec.h>
- #include <ffmpeg/avformat.h>
-+#include <ffmpeg/swscale.h>
+ #include <libavcodec/avcodec.h>
+ #include <libavformat/avformat.h>
++#include <libswscale/swscale.h>
 +}
  
  using namespace std;
