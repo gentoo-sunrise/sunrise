@@ -18,7 +18,7 @@ HOMEPAGE="http://nouveau.freedesktop.org/"
 SRC_URI=""
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 COMMON_DEPEND=">=x11-base/xorg-server-1.5.3[-minimal]"
