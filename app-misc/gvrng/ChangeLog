@@ -1,0 +1,9 @@
+# ChangeLog for app-misc/gvrng
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Nov 2009; Andrés Becerra Sandoval (bec) <andres.becerra@gmail.com>
+  +files/01_gui_gtk_path.patch, +gvrng-4.1.ebuild, +files/gvrng.desktop,
+  +metadata.xml:
+  New Ebuild for bug 222437
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=GvRng
+GenericName=Guido van Robot NG
+Comment=Guido van Robot NG
+Icon=/usr/share/gvrng/bitmaps/robot.svg
+Exec=/usr/bin/gvrng
+Terminal=false
+Categories=Application;Development;

@@ -1,0 +1,11 @@
+--- gvrng.py.orig	2008-05-16 15:28:05.000000000 -0500
++++ gvrng.py	2008-05-16 15:28:36.000000000 -0500
+@@ -88,7 +88,7 @@
+ Text.set_Intro(LocaleMesg[1])# and the intro text
+ 
+ # when the frontend is not in sitepackages, as is the case for the org install
+-sys.path.append('gui-gtk')
++sys.path.append('/usr/share/gvrng/gui-gtk')
+ 
+ import gvr_gtk # the frontend to use
+ 
