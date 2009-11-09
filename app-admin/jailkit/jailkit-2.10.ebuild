@@ -18,7 +18,8 @@ IUSE=""
 src_prepare() {
 	epatch \
 		"${FILESDIR}/${P}-ldflags.patch" \
-		"${FILESDIR}/${P}-pyc.patch"
+		"${FILESDIR}/${P}-pyc.patch" \
+		"${FILESDIR}/${P}-noshells.patch"
 	eautoreconf
 }
 
@@ -28,7 +29,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Don't forget to add /usr/sbin/jk_chrootsh to /etc/shells."
+	ebegin "Updating /etc/shells"
+	( grep -v "^/usr/sbin/jk_chroots$" "${ROOT}"etc/shells; echo "/usr/sbin/jk_chroots" ) > "${T}"/shells
+	mv -f "${T}"/shells "${ROOT}"etc/shells
+	eend $?
 }
 
 pkg_postrm() {
