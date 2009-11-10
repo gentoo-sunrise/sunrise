@@ -22,6 +22,9 @@ need_php_httpd
 
 pkg_setup() {
 	webapp_pkg_setup
+	use mysql && require_php_with_use mysql
+	use mysqli && require_php_with_use mysqli
+	use postgres && require_php_with_use postgres
 }
 
 src_prepare() {
@@ -35,7 +38,7 @@ src_prepare() {
 		|| die "sed failed"
 }
 
-src_install () {
+src_install() {
 	webapp_src_preinst
 
 	insinto "/${MY_HTDOCSDIR}"
@@ -47,4 +50,8 @@ src_install () {
 
 	webapp_postinst_txt en "${FILESDIR}"/postinstall-en.txt
 	webapp_src_install
+}
+
+pkg_postinst() {
+	webapp_pkg_postinst
 }
