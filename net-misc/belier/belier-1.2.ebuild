@@ -4,7 +4,7 @@
 
 inherit distutils
 
-DESCRIPTION="Ssh connection generation tool"
+DESCRIPTION="SSH connection generation tool"
 HOMEPAGE="http://www.ohmytux.com/belier/"
 SRC_URI="http://www.ohmytux.com/${PN}/${P}.tar.gz"
 

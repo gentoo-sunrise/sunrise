@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Nov 2009; Cédric Cabessa (ced_c) <ced@ryick.net> -belier-1.0.ebuild,
+  +belier-1.2.ebuild:
+  version bump for net-misc/belier (1.0 to 1.2)
+
   14 Jul 2009; Cédric Cabessa (ced_c) <ced@ryick.net> +belier-1.0.ebuild,
   +metadata.xml:
   New Ebuild for bug 277827 thanks to Tommy[D]
