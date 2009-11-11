@@ -17,3 +17,5 @@ IUSE=""
 
 DEPEND=">=x11-libs/vte-0.16[python]"
 RDEPEND="${DEPEND}"
+
+S="${WORKDIR}"/${PV}
