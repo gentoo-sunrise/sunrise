@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit eutils
 
 DESCRIPTION="The Guido van Robot Programming Language"
@@ -22,9 +24,7 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/GvRng_${PV}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}" || die "Failed to change path to sources"
+src_prepare() {
 	epatch "${FILESDIR}"/01_gui_gtk_path.patch
 }
 
