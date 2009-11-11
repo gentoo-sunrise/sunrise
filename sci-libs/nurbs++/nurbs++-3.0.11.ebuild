@@ -2,39 +2,46 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit libtool eutils
+EAPI="2"
 
-DESCRIPTION="This C++ library provides the basic methods for Non-Uniform Rational B-Splines (NURBS)."
-HOMEPAGE="http://libnurbs.sourceforge.net/"
-SRC_URI="mirror://sourceforge/libnurbs/${P}.tar.bz2
-	http://dev.gentooexperimental.org/~jokey/sunrise-dist/${P}-gcc-4.1.patch.bz2"
+inherit autotools eutils
+
+DESCRIPTION="Non Uniform Rational Basis Spline (NURBS) library for C++"
+HOMEPAGE="http://libnurbs.sourceforge.net/index.shtml"
+SRC_URI="mirror://sourceforge/libnurbs/${P}.tar.bz2"
 
 LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug doc"
 
-DEPEND="dev-lang/perl"
+DEPEND="dev-lang/perl
+	doc? ( app-doc/doxygen ) "
 RDEPEND=""
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${WORKDIR}"/${P}-gcc-4.1.patch
-	epatch "${FILESDIR}"/${P}-gcc-4.3.patch
-	elibtoolize
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-gcc-4.3.patch.bz2
+	epatch "${FILESDIR}"/${P}-gcc-4.4.patch
+	epatch "${FILESDIR}"/${P}-linker.patch
+	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		--without-x \
 		$(use_enable debug) \
-		$(use_enable debug verbose-exception) \
+		$(use_enable debug verbose-exception)
+}
 
-	emake || die "emake failed!"
+src_compile() {
+	emake || die 'emake failed'
+	if use doc ; then
+		doxygen || die 'doxygen failed'
+	fi
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed!"
-	dodoc AUTHORS ChangeLog NEWS README
+	dodoc AUTHORS ChangeLog README
+	use doc && dohtml -r html/*
 }

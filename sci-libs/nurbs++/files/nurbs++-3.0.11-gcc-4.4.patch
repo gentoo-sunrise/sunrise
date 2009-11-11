@@ -1,0 +1,59 @@
+--- nurbs/nurbs.h	2009-06-06 12:17:03.000000000 +1000
++++ nurbs/nurbs.h.new	2009-06-06 12:16:55.000000000 +1000
+@@ -105,8 +105,8 @@
+       
+       // Basis functions
+       T basisFun(T u, int i, int p=-1) const ;
+-      void basisFuns(T u, int span, Vector<T>& N) const ;
+-      void dersBasisFuns(int n,T u, int span, Matrix<T>& N) const;
++      void basisFuns(T u, int span, Vector<T>& Nd)const ;
++      void dersBasisFuns(int n,T u, int span, Matrix<T>& Nd) const;
+       
+       // Knot functions
+       T minKnot() const //! the minimal value for the knot vector
+--- nurbs/nurbsS.cpp	2009-06-05 23:18:28.000000000 +1000
++++ nurbs/nurbsS.cpp.new	2009-06-05 23:21:09.000000000 +1000
+@@ -4082,7 +4082,7 @@
+ 
+   char front[1024] ;
+ 
+-  char *ext ;
++  const char *ext ;
+   ext = strstr(filename,".rib") ;
+   if(ext){
+     for(i=0;i<1024;++i){
+--- nurbs/nurbsS.h	2009-06-06 12:18:02.000000000 +1000
++++ nurbs/nurbsS.h.new	2009-06-06 12:17:58.000000000 +1000
+@@ -99,8 +99,8 @@
+   virtual HPoint_nD<T,N> operator()(T u, T v) const ;
+ 
+   void basisFuns(T u, T v, int spanU, int spanV, Vector<T>& Nu, Vector<T>& Nv) const ;
+-  void basisFunsU(T u, int span, Vector<T>& N) const ;
+-  void basisFunsV(T u, int span, Vector<T>& N) const ;
++  void basisFunsU(T u, int span, Vector<T>& Nd) const ;
++  void basisFunsV(T u, int span, Vector<T>& Nd) const ;
+   void dersBasisFuns(T u, T v, int dU, int dV,int uspan, int vspan,Matrix<T> & Niku, Matrix<T>& Njkv ) const ; 
+ 
+   // Derivative functions
+@@ -135,8 +135,8 @@
+   int skinU(NurbsCurveArray<T,N>& ca, int degU);
+   void sweep(const NurbsCurve<T,N>& t, const NurbsCurve<T,N>& C, const NurbsCurve<T,N>& Sv, int K,int useAy=0, int invAz=0) ;
+   void sweep(const NurbsCurve<T,N>& t, const NurbsCurve<T,N>& C, int K,int useAy=0, int invAz=0) ;
+-  void makeFromRevolution(const NurbsCurve<T,N>& profile, const Point_nD<T,N>& S, const Point_nD<T,N>& T, double theta) ;
+-  void makeFromRevolution(const NurbsCurve<T,N>& profile, const Point_nD<T,N>& S, const Point_nD<T,N>& T) ;
++  void makeFromRevolution(const NurbsCurve<T,N>& profile, const Point_nD<T,N>& S, const Point_nD<T,N>& Ta, double theta) ;
++  void makeFromRevolution(const NurbsCurve<T,N>& profile, const Point_nD<T,N>& S, const Point_nD<T,N>& Ta) ;
+   void makeFromRevolution(const NurbsCurve<T,N>& profile) ;
+ 
+   void makeSphere(const Point_nD<T,N>& O, T r) ; 
+--- nurbs/nurbsGL.cpp	2009-06-06 15:12:23.000000000 +1000
++++ nurbs/nurbsGL.cpp.new	2009-06-06 15:12:20.000000000 +1000
+@@ -1459,7 +1459,7 @@
+ NurbsGL* readNurbsObject(const char* filename) {
+   NurbsGL *temp ;
+   // guess the type of the curve first, if that doesn't work try all of them
+-  char* ext ; 
++  const char* ext ; 
+   //ext = strstr(filename,".n()ca") ;
+   //if(ext){
+   //  openByType = OPENCURVEARRAY ;      
