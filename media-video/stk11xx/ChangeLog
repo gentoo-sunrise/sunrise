@@ -1,0 +1,10 @@
+# ChangeLog for media-video/stk11xx
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Nov 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +stk11xx-2.1.0.ebuild, +files/stk11xx-v4l_compat_ioctl32.diff,
+  +metadata.xml:
+  New ebuild for bug #178946, thanks to Krzysztof Magusiak and other Bugzilla
+  thread contributors.
+
