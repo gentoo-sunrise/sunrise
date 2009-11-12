@@ -9,7 +9,6 @@ inherit eutils games mercurial toolchain-funcs
 MENU_PK3_VER="0.99r3"
 DESCRIPTION="An enhanced modification of the free software first person shooter Tremulous, based on ioquake3"
 HOMEPAGE="https://www.tremfusion.net/"
-EHG_REVISION="trem-compat"
 EHG_REPO_URI="http://tremfusion.net/hg/${PN}"
 EHG_PROJECT="${P}"
 SRC_URI="http://www.tremfusion.net/downloads/z-tremfusion-menu-${MENU_PK3_VER}.pk3"
