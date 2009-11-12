@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Nov 2009; keenblade <keenblade@gmail.com> -clamtk-4.18.ebuild,
+  +clamtk-4.20.ebuild:
+  Version bump. Added language file bg
+
   20 Sep 2009; keenblade <keenblade@gmail.com> -clamtk-4.17.ebuild,
   +clamtk-4.18.ebuild:
   Version bump. Removed unneeded dependency dev-perl/Config-Tiny. Added
