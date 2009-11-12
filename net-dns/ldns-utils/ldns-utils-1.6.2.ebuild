@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples sha2 ssl"
 
 DEPEND=">=net-libs/ldns-${PV}[sha2?,ssl?]
-	net-libs/libpcap"
+	examples? ( net-libs/libpcap )"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_P}
@@ -26,7 +26,6 @@ pkg_setup() {
 		if ! use ssl; then
 			die "For sha2 support, you have to enable ssl USE flag too"
 		fi
-		ewarn "You enabled sha2 USE flag, this is still experimental"
 	fi
 }
 
