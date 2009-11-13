@@ -1,0 +1,185 @@
+#!/sbin/runscript
+# Distributed under the terms of the GNU General Public License v3
+# Written by Bernhard Tittelbach based on examples from Gentoo, openvpn and anytun debian init.rd script
+
+depend() {
+  need net
+  use dns
+  after bootmisc
+}
+
+DAEMON=/usr/sbin/anytun
+ANYTUNCONFIG=/usr/bin/anytun-config
+CONTROLDAEMON=/usr/bin/anytun-controld
+NAME=anytun
+DESC=anytun
+CONFIG_DIR=/etc/anytun
+VARCONFIG_DIR=/var/run/anytun-controld
+VARRUN_DIR=/var/run/anytun
+
+VPN=${SVCNAME#*.}
+[ "$VPN" = "$SVCNAME" ] && VPN=""
+
+# Include anytun defaults if available
+if [ -f /etc/default/anytun ] ; then
+  . /etc/default/anytun
+fi
+
+test -x $DAEMON || exit 1
+
+
+start_vpn () {
+  STATUS="OK"
+  if [ -f $CONFIG_DIR/$NAME/config ] ; then
+    POSTUP=''
+    test -f  $CONFIG_DIR/$NAME/post-up.sh && POSTUP="-x $CONFIG_DIR/$NAME/post-up.sh"
+    CHROOTDIR=`grep '^chroot' < $CONFIG_DIR/$NAME/config | sed 's/chroot\s*//'`
+    if [ -n "$CHROOTDIR" ] ; then
+      test -d $CHROOTDIR || mkdir -p $CHROOTDIR
+    fi
+    test -d $VARRUN_DIR || mkdir -p $VARRUN_DIR
+    DAEMONARG=`sed 's/#.*//' < $CONFIG_DIR/$NAME/config | grep -e '\w' | sed  's/^/--/' | tr '\n' ' '`
+    $DAEMON --write-pid $VARRUN_DIR/$NAME.pid $POSTUP \
+      $DAEMONOPTS $DAEMONARG || STATUS="FAILED"
+  else
+    eerror "no config found"
+    return 1
+  fi
+  start_configd
+  return 0
+}
+stop_vpn () {
+  kill `cat $PIDFILE` || true
+  rm $PIDFILE
+  stop_configd
+}
+
+start_configd () {
+  if [ -d $CONFIG_DIR/$NAME/conf.d ] ; then
+    test -d $VARCONFIG_DIR || mkdir -p $VARCONFIG_DIR
+    chmod 700 $VARCONFIG_DIR
+    rm -f $VARCONFIG_DIR/$NAME 2>/dev/null
+    for CLIENTNAME in `ls $CONFIG_DIR/$NAME/conf.d`; do
+      DAEMONARG=`sed 's/#.*//'  <  $CONFIG_DIR/$NAME/conf.d/$CLIENTNAME | grep -e '\w' | sed  's/^/ --/' | xargs echo`
+      $ANYTUNCONFIG $DAEMONARG >> $VARCONFIG_DIR/$NAME
+    done
+    CONTROLHOST=`sed 's/#.*//'  <  $CONFIG_DIR/$NAME/config | grep -e 'control-host' | sed  's/^/ --/'`
+    $CONTROLDAEMON -f $VARCONFIG_DIR/$NAME $DAEMONOPTS $CONTROLHOST \
+      --write-pid $VARCONFIG_DIR/$NAME.pid
+    # rm -f $VARCONFIG_DIR/$NAME
+  fi
+}
+stop_configd () {
+  if [ -d $CONFIG_DIR/$NAME/conf.d ] ; then
+    kill `cat $VARCONFIG_DIR/$NAME.pid` || true
+    rm $VARCONFIG_DIR/$NAME.pid
+  fi 
+}
+
+start () {
+  if test -z "$VPN" ; then
+    if [ -f $CONFIG_DIR/autostart ] ; then
+      for NAME in `sed 's/#.*//'  <  $CONFIG_DIR/autostart | grep -e '\w'`; do
+        ebegin "Starting ${DESC} VPN: ${NAME}"
+        start_vpn
+  	eend $?
+      done
+    else
+      eerror "no config found"
+      return 1;
+    fi
+  else
+      NAME="$VPN"
+      ebegin "Starting ${DESC} VPN: ${NAME}"
+      start_vpn
+      eend $?
+  fi
+}
+
+stop () {
+  if test -z "$VPN" ; then
+    for PIDFILE in `ls $VARRUN_DIR/*.pid 2> /dev/null`; do
+      NAME=`echo $PIDFILE | cut -c17-`
+      NAME=${NAME%%.pid}
+      ebegin "Stopping ${DESC} VPN: ${NAME}"
+      stop_vpn
+      eend $?
+    done
+  else
+    if test -e $VARRUN_DIR/${VPN}.pid ; then
+      PIDFILE=`ls $VARRUN_DIR/${VPN}.pid 2> /dev/null`
+      NAME=`echo $PIDFILE | cut -c17-`
+      NAME=${NAME%%.pid}
+      ebegin "Stopping ${DESC} VPN: ${NAME}"
+      stop_vpn
+      eend $?
+    else
+      eerror " failure: No such tunnel is running: $VPN"
+    fi
+  fi
+}
+
+reload () {
+  if test -z "$VPN" ; then
+    for PIDFILE in `ls $VARRUN_DIR/*.pid 2> /dev/null`; do
+      NAME=`echo $PIDFILE | cut -c17-`
+      NAME=${NAME%%.pid}
+      if [ -d $CONFIG_DIR/$NAME/conf.d ] ; then
+	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        stop_vpn
+        start_vpn
+	eend $?
+      else
+	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        stop_configd
+        start_configd
+	eend $?
+      fi
+    done
+  else
+    if test -e $VARRUN_DIR/${VPN}.pid ; then
+      PIDFILE=`ls $VARRUN_DIR/${VPN}.pid 2> /dev/null`
+      NAME=`echo $PIDFILE | cut -c17-`
+      NAME=${NAME%%.pid}
+      if [ -d $CONFIG_DIR/$NAME/conf.d ] ; then
+	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        stop_vpn
+        start_vpn
+	eend $?
+      else
+	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        stop_configd
+        start_configd
+	eend $?
+      fi
+    else
+      eerror "failure: No such tunnel is running: $VPN"
+    fi
+  fi
+}
+
+restart () {
+  if test -z "$VPN" ; then
+    for PIDFILE in `ls $VARRUN_DIR/*.pid 2> /dev/null`; do
+      NAME=`echo $PIDFILE | cut -c17-`
+      NAME=${NAME%%.pid}
+      ebegin "Restarting ${DESC} VPN: ${NAME}"
+      stop_vpn
+      start_vpn
+      eend $?
+    done
+  else
+    if test -e $VARRUN_DIR/${VPN}.pid ; then
+      PIDFILE=`ls $VARRUN_DIR/${VPN}.pid 2> /dev/null`
+      NAME=`echo $PIDFILE | cut -c17-`
+      NAME=${NAME%%.pid}
+      ebegin "Restarting ${DESC} VPN: ${NAME}"
+      stop_vpn
+      start_vpn
+      eend $?
+    else
+      eerror "failure: No such tunnel is running: $VPN"
+    fi
+  fi
+}
+

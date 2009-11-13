@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>anytun</herd>
+<longdescription>Anytun is an implementation of the Secure Anycast Tunneling Protocol. It provides similary functionality to openvpn but with less overhead, more flexible configuration and the ability use an anycast ip and therefore mulitple endpoints at the same time.</longdescription>
+<use>
+  <flag name='examples'>Install example configuration into /usr/share/doc/...</flag>
+  <flag name='gcrypt'>Prefer <pkg>dev-libs/libgcrypt</pkg> over
+	  <pkg>dev-libs/openssl</pkg> for encryption
+  </flag>
+</use>
+</pkgmetadata>
