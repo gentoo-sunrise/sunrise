@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Nov 2009; Tomas Touceda (chiiph) <chiiph@gmail.com> grin-1.1.1.ebuild:
+  Minor updates, thanks to billie
+
   13 Nov 2009; Tomas Touceda (chiiph) <chiiph@gmail.com> +grin-1.1.1.ebuild,
   +metadata.xml:
   New ebuild for bug 293100. Thanks to dilfridge and Tommy[D]

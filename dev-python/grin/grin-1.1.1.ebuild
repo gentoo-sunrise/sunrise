@@ -14,14 +14,9 @@ KEYWORDS="~x86"
 IUSE=""
 
 src_install() {
+	DOCS="README.txt THANKS.txt"
 	distutils_src_install
-
-	dodoc README.txt THANKS.txt || die "dodoc failed"
 
 	insinto /usr/share/doc/${PF}
 	doins -r examples || die "doins failed"
-}
-
-pkg_postrm() {
-	python_mod_cleanup
 }
