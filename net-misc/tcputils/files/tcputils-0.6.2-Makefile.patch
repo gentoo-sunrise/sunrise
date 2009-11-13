@@ -1,0 +1,25 @@
+diff -r -u tcputils-0.6.2.orig/Makefile tcputils-0.6.2/Makefile
+--- tcputils-0.6.2.orig/Makefile	1998-04-14 19:54:54.000000000 +0200
++++ tcputils-0.6.2/Makefile	2009-11-13 23:14:02.000000000 +0100
+@@ -1,19 +1,9 @@
+-# Linux RedHat 5.0 has header files that generates warnings when compiling
+-# with -pedantic, so we leave that out per default.
+-CC = gcc -Wall #-pedantic
+-INCLUDE-FLAGS =
+-COPT = -g -O2
+-LDFLAGS = ${COPT}
+-CFLAGS = ${COPT} ${INCLUDE-FLAGS}
++
+ RANLIB = ranlib
+ INSTALL = install -c
+ MKDIR_P = mkdir -p
+-# Solaris 2 needs to link with "-lsocket -lnsl".  For other unices you might
+-# need to comment out those libraries.
+-NETLIBS = -lsocket -lnsl
+ 
+-# Where to install things.
+-prefix = /usr/local
++prefix = /usr
+ bindir = ${prefix}/bin
+ mandir = ${prefix}/man
+ man1dir = ${mandir}/man1
