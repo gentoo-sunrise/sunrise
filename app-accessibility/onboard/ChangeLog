@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Nov 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -onboard-0.91.2.ebuild, +onboard-0.92.0.ebuild:
+  Version bump.
+
   04 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +onboard-0.91.2.ebuild, +metadata.xml:
   New ebuild for onboard (bug #166876). Thanks to Dustin Spicuzza & Denilson.
