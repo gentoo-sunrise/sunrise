@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v3
 # Written by Bernhard Tittelbach based on examples from Gentoo, openvpn and anytun debian init.rd script
 
+opts="${opts} reload"
 depend() {
   need net
   use dns

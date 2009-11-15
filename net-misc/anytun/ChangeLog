@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v3
 # $Header: $
 
+  15 Nov 2009; Bernhard Tittelbach (xro) <xro@gmx.net>
+  files/anytun-0.3.1.init:
+  added opt reload to init script
+
   13 Nov 2009; Bernhard Tittelbach (xro) <xro@gmx.net> +anytun-0.3.1.ebuild,
   +files/anytun-0.3.1.init, +metadata.xml:
   New Ebuild for bug 292356.
