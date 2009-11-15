@@ -1,0 +1,15 @@
+diff -r -u dhex_0.55.orig/Makefile dhex_0.55/Makefile
+--- dhex_0.55.orig/Makefile	2004-03-17 00:00:23.000000000 +0100
++++ dhex_0.55/Makefile	2009-11-14 20:39:03.000000000 +0100
+@@ -1,10 +1,4 @@
+-CC=gcc
+-#CFLAGS=-DLINUX=1 -O3 -Wall -I/homes/tdettbar/local/include
+-#CFLAGS=-DHPUX=1 -O3 -Wall -I/homes/tdettbar/local/include
+-CFLAGS=-DFREEBSD=1 -O3 -Wall -I/homes/tdettbar/local/include
+-#CFLAGS=-DSOLARIS=1 -O3 -Wall -I/homes/tdettbar/local/include
+-#CFLAGS=-DIRIX=1 -O3 -Wall -I/homes/tdettbar/local/include
+-LDFLAGS=-L/homes/tdettbar/local/lib
++
+ LIBS=-lncurses
+ 
+ CFILES=ui.c gpl.c main.c 
