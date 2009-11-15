@@ -38,11 +38,6 @@ sys-cluster/globus
 <=dev-scheme/schemik-1.2.34.1
 
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
-# Mask because of unsecure dir permissions set in the ebuild and
-# the maintainer wants to move it to proaudio overlay
->=media-radio/rivendell-1.3.0
-
-# Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
 # Mask because of recommended replacement of portage contolled
 # file, should fix in source instead
 net-im/spark
