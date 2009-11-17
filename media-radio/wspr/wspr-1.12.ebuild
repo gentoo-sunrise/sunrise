@@ -42,7 +42,7 @@ src_prepare() {
 	# drop hardcoded libdir path, 
 	# switch LDFLAGS naming to LIBDIRS (see above comment).
 	sed -i -e "s/, f2py/, f2py${PYVER}/" \
-		-e "s:-L/usr/local/lib \${LDFLAGS}:-L/usr/$(get_libdir):" \
+		-e "s:-L/usr/local/lib:-L/usr/$(get_libdir):" \
 		-e "s/(Makefile)/(Makefile setup.py)/" \
 		-e "s/LDFLAGS/LIBDIRS/g" \
 		configure.ac || die "sed failed"
