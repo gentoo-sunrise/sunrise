@@ -20,14 +20,14 @@ RDEPEND=">=dev-libs/boost-1.35
 DEPEND="${RDEPEND}
 	<app-text/asciidoc-8.5.0" # asciidoc a2x >= 8.5.0 requires an -L switch not	present in lower versions
 
-S="${WORKDIR}/${P}/src"
+S=${S}/src
 
 src_compile() {
 	local myconf=""
 	use gcrypt || myconf="--use-ssl-crypto"
 	# anytun's configure right now only takes 1! option (no --prefix etc), so econf would be too
 	# much for your little script and the build would fail
-	#econf ${myconf} || die "configure failed"
+	#econf ${myconf}
 	./configure ${myconf} || die "configure failed"
 
 	emake || die "make failed"
@@ -46,7 +46,7 @@ src_install() {
 	cd man/
 	doman anyrtpproxy.8 anytun-config.8 anytun-controld.8 anytun-showtables.8 anytun.8 || die "failed to install manpages"
 
-	cd "../../"
+	cd ../../
 	insinto /usr/share/${P}/wireshark-lua/
 	doins wireshark-lua/* || die "failed to install wireshark-lua contrib script"
 
@@ -59,10 +59,9 @@ src_install() {
 }
 
 pkg_config() {
-	[ -e "${ROOT}"/etc/anytun ] && die "${ROOT}/etc/anytun/ already present, rm -R it first "
-	if [ ! -d "${ROOT}"/usr/share/doc/${PF}/etc-anytun-examples/ ]; then
+	[ -e "${ROOT}"/etc/anytun ] && die "${ROOT}/etc/anytun/ already present, rm -R it first"
+	[ ! -d "${ROOT}"/usr/share/doc/${PF}/etc-anytun-examples/ ] && \
 		die "can't copy example configs since examples were not installed (reemerge with USE=\"examples\")"
-	fi
 	mkdir -p "${ROOT}"/etc/anytun/ || die "couldn't mkdir ${ROOT}/etc/anytun/"
 	cp -r "${ROOT}"/usr/share/doc/${PF}/etc-anytun-examples/* "${ROOT}"/etc/anytun/ || die "failed to copy examples"
 }
