@@ -5,7 +5,7 @@
 inherit mercurial toolchain-funcs
 
 DESCRIPTION="simple pointer warp"
-HOMEPAGE="http://tools.suckless.org/view/x+tools"
+HOMEPAGE="http://tools.suckless.org/swarp"
 SRC_URI=""
 EHG_REPO_URI=http://suckless.org/cgi-bin/hgwebdir.cgi/${PN}
 

@@ -5,7 +5,7 @@
 inherit toolchain-funcs
 
 DESCRIPTION="simple pointer warp"
-HOMEPAGE="http://tools.suckless.org/view/x+tools"
+HOMEPAGE="http://tools.suckless.org/swarp"
 SRC_URI="http://suckless.org/download/${P}.tar.gz"
 
 LICENSE="MIT"
