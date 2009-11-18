@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="1"
-inherit qt4 eutils
+inherit eutils toolchain-funcs qt4
 
 DESCRIPTION="A drawing editor which creates figures for inclusion in LaTeX documents and makes PDF presentations."
 HOMEPAGE="http://tclab.kaist.ac.kr/ipe/"
@@ -14,22 +14,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="seamonkey"
 
-DEPEND=">=x11-libs/qt-core-4.2:4
-	>=x11-libs/qt-gui-4.2:4
+DEPEND=">=x11-libs/qt-core-4.5:4
+	>=x11-libs/qt-gui-4.5:4
 	>=media-libs/freetype-2.1.8
 	>=x11-libs/cairo-1.8.0
 	>=dev-lang/lua-5.1
-	>=x11-libs/qt-core-4.5
-	>=x11-libs/qt-gui-4.5"
+	app-text/texlive-core"
 
 RDEPEND="${DEPEND}
-	virtual/latex-base
 	!seamonkey? ( || ( www-client/mozilla-firefox
 		www-client/mozilla-firefox-bin ) )
 	seamonkey? ( || ( www-client/seamonkey
 		www-client/seamonkey-bin ) )"
 
-S="${WORKDIR}/${P}/src"
+S=${S}/src
 
 search_urw_fonts() {
 	local texmfdist="$(kpsewhich -var-value=TEXMFDIST)"	# colon-separated list of paths
@@ -59,16 +57,15 @@ src_compile() {
 	local myconf
 	use seamonkey && myconf="IPEBROWSER=seamonkey"
 	# fix detection of lua
-	sed -i -e 's/lua5.1/lua/g' config.mak
+	sed -i -e 's/lua5.1/lua/g' config.mak || die
 	# don't strip installed binaries
-	sed -i -e 's/install -s/install/' common.mak
+	sed -i -e 's/install -s/install/' common.mak || die
 
 	# -j1, since there are no deps in the Makefiles on libipe
-	emake -j1 $myconf IPEPREFIX="/usr" IPEDOCDIR="/usr/share/doc/${PF}" || die "emake failed"
+	emake -j1 CXX=$(tc-getCXX) $myconf IPEPREFIX="/usr" IPEDOCDIR="/usr/share/doc/${PF}" || die "emake failed"
 }
 
 src_install() {
 	emake install IPEPREFIX="/usr" IPEDOCDIR="/usr/share/doc/${PF}" INSTALL_ROOT="${D}" || die "emake install failed"
-	cd "${WORKDIR}/${P}"
-	dodoc install.txt news.txt readme.txt
+	dodoc ../{news,readme}.txt || die
 }

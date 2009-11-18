@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Nov 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ipe-7.0.8.ebuild:
+  Fix deps, add missing die, fix g++ call for crosscompile, cleanup
+
   09 Nov 2009; Andrés Becerra Sandoval (bec) <andres.becerra@gmail.com>
   -ipe-6.0_pre31.ebuild, +ipe-7.0.8.ebuild:
   Version bump for ipe
