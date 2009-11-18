@@ -1,0 +1,14 @@
+--- pytyrant.py	2009-03-13 07:58:17.000000000 +0100
++++ pytyrant.py.new	2009-10-09 17:43:07.000000000 +0200
+@@ -512,8 +512,10 @@
+ 
+ 
+ def main():
++    import sys
+     import doctest
+-    doctest.testmod()
++    n_fail, n_run = doctest.testmod()
++    sys.exit(int(bool(n_fail)))
+ 
+ 
+ if __name__ == '__main__':

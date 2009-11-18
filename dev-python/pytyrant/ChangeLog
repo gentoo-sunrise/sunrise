@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pytyrant
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Nov 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  +pytyrant-1.1.17.ebuild, +files/return_test_status.patch, +metadata.xml:
+  New ebuild for bug 288330. Thanks to Fauli
+
