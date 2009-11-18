@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit linux-info cmake-utils
+inherit cmake-utils linux-info multilib
 
 DESCRIPTION="Input event scripting utility that has special support for fancy keyboards, mice, USB dials and more"
 HOMEPAGE="http://gizmod.sourceforge.net"
