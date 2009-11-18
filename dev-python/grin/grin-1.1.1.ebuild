@@ -14,7 +14,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 src_install() {
-	DOCS="README.txt THANKS.txt"
+	local DOCS="README.txt THANKS.txt"
 	distutils_src_install
 
 	insinto /usr/share/doc/${PF}
