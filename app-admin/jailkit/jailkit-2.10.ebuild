@@ -34,8 +34,3 @@ pkg_postinst() {
 	mv -f "${T}"/shells "${ROOT}"etc/shells
 	eend $?
 }
-
-pkg_postrm() {
-	elog "If you want to keep your system clean, don't forget to remove"
-	elog "the line containing /usr/sbin/jk_chrootsh from /etc/shells."
-}
