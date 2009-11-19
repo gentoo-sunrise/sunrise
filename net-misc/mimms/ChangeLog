@@ -1,0 +1,9 @@
+# ChangeLog for net-misc/mimms
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Nov 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +mimms-3.2.1.ebuild, +metadata.xml:
+  New Ebuild for bug 293650, including fixes suggested on IRC by Johan
+  Bergström. Intended as a replacement for net-misc/mmsclient.
+
