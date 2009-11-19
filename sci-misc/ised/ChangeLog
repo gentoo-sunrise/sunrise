@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Nov 2009; Jure Varlec (exzombie) <jure.varlec@gmail.com>
+  -ised-2.1.0.ebuild, +ised-2.2.0.ebuild:
+  Version bump for ised
+
   26 Oct 2009; Jure Varlec (exzombie) <jure.varlec@gmail.com>
   +ised-2.1.0.ebuild, +metadata.xml:
   New Ebuild for bug #290615. Thanks to Tommy[D], bonsaikitten and the_mgt
