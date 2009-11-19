@@ -51,7 +51,3 @@ src_install() {
 	webapp_postinst_txt en "${FILESDIR}"/postinstall-en.txt
 	webapp_src_install
 }
-
-pkg_postinst() {
-	webapp_pkg_postinst
-}
