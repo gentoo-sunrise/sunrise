@@ -158,29 +158,3 @@ reload () {
     fi
   fi
 }
-
-restart () {
-  if test -z "$VPN" ; then
-    for PIDFILE in `ls $VARRUN_DIR/*.pid 2> /dev/null`; do
-      NAME=`echo $PIDFILE | cut -c17-`
-      NAME=${NAME%%.pid}
-      ebegin "Restarting ${DESC} VPN: ${NAME}"
-      stop_vpn
-      start_vpn
-      eend $?
-    done
-  else
-    if test -e $VARRUN_DIR/${VPN}.pid ; then
-      PIDFILE=`ls $VARRUN_DIR/${VPN}.pid 2> /dev/null`
-      NAME=`echo $PIDFILE | cut -c17-`
-      NAME=${NAME%%.pid}
-      ebegin "Restarting ${DESC} VPN: ${NAME}"
-      stop_vpn
-      start_vpn
-      eend $?
-    else
-      eerror "failure: No such tunnel is running: $VPN"
-    fi
-  fi
-}
-
