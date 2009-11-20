@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit kde-functions eutils
+inherit eutils
 
 DESCRIPTION="A toolkit that automaticaly converts DocBook to OASIS OpenDocument"
 HOMEPAGE="http://open.comsultia.com/docbook2odf/"
@@ -11,7 +11,7 @@ SRC_URI="http://open.comsultia.com/${PN}/dwn/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples kde"
+IUSE="examples"
 
 RDEPEND="
 	>=app-text/docbook2odf-xsl-stylesheets-0.244
@@ -24,13 +24,6 @@ RDEPEND="
 "
 
 src_install() {
-	if use kde; then
-		set-kdedir
-		insinto ${KDEDIR}/share/apps/konqueror/servicemenus/
-		doins bindings/desktop/*.desktop \
-			|| die "Could not add Konqueror service menus."
-	fi
-
 	if use examples; then
 		docinto examples
 		dodoc examples/* || die "Could not install examples"
