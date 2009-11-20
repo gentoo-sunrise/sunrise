@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=KmPg2 Profiler
-Type=Application
-Comment=A graphical MPEG2 encoder frontend, for producing 100% DVD compatible MPEG2 streams.
-Exec=kmdr-executor @KDEDIR@/bin/KmPg2Profiler.kmdr
-TryExec=kmdr-executor
-Icon=dvd_unmount
-Categories=Qt;KDE;AudioVideo;
