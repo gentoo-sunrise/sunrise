@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=MimeType
-Name=KTIGCC
-Icon=application-x-tigcc-project
-Patterns=*.tpr;*.TPR;
-Comment=TIGCC Project
-DefaultApp=ktigcc
