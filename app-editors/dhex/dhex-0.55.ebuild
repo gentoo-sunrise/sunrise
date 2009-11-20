@@ -22,7 +22,6 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
-
 src_prepare() {
 	epatch "${FILESDIR}/${P}-Makefile.patch"
 }
