@@ -3,6 +3,9 @@
 # $Header: $
 
   20 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
+  simplify sed expression
+
+  20 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
   added || die to insinto
 
   19 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> -wspr-1.12.ebuild,

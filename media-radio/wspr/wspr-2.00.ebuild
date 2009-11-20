@@ -36,7 +36,6 @@ src_prepare() {
 	# upstream confused LIBDIRS with LDFLAGS in Makefile. f2py wants only
 	# LIBDIRS as parameter and takes LDFLAGS only from environment.
 	sed -i \
-		-e "s/@LDFLAGS@/@LIBDIRS@/" \
 		-e "s/LDFLAGS/LIBDIRS/g" \
 		Makefile.in || die "sed failed"
 
