@@ -14,10 +14,9 @@ SRC_URI="ftp://ftp.free.fr/pub/Distributions_Linux/MandrivaLinux/official/2007.0
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="kde"
+IUSE=""
 
-DEPEND=">=x11-libs/gtk+-2.0
-	kde? ( || ( kde-base/kwin:3.5 kde-base/kdebase:3.5 ) )"
+DEPEND=">=x11-libs/gtk+-2.0"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/galaxy-${PV}
@@ -25,8 +24,7 @@ S=${WORKDIR}/galaxy-${PV}
 src_unpack() {
 	rpm_src_unpack
 	cd "${S}"
-	epatch "${FILESDIR}"/remove-gtk1.patch
-	use kde || epatch "${FILESDIR}"/remove-kde.patch
+	epatch "${FILESDIR}"/remove-{gtk1,kde}.patch
 	eautoreconf
 }
 

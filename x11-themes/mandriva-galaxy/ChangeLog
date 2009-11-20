@@ -1,6 +1,10 @@
 # ChangeLog for x11-themes/mandriva-galaxy
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Nov 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  mandriva-galaxy-1.0.4.ebuild:
+  Drop kde useflag with dependencies on removed 3.5 packages
 
   04 Feb 2007; Pacho Ramos (pacho) <pacho@condmat1.ciencias.uniovi.es>
   +files/remove-gtk1.patch, +mandriva-galaxy-1.0.4.ebuild,
