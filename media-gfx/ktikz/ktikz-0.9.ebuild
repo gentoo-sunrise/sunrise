@@ -12,7 +12,7 @@ SRC_URI="http://www.hackenberger.at/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug kde"
+IUSE="debug"
 
 DEPEND="x11-libs/qt-gui:4
 	|| ( app-text/poppler-bindings[qt4] dev-libs/poppler-qt4 )
@@ -31,11 +31,7 @@ src_prepare() {
 }
 
 src_configure() {
-	if use kde ; then
-		KDECONFIG="CONFIG+=usekde"
-	else
-		KDECONFIG="CONFIG-=usekde"
-	fi
+	KDECONFIG="CONFIG-=usekde"
 	eqmake4 ${PN}.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
 }
 
