@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
+  added || die to insinto
+
   19 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> -wspr-1.12.ebuild,
   +wspr-2.00.ebuild:
   Version bump

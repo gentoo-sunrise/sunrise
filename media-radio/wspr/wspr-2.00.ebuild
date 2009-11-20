@@ -62,5 +62,5 @@ src_install() {
 	dobin wspr || die "dobin failed"
 	dodoc BUGS WSPR_*.TXT || die "dodoc failed"
 	insinto /usr/share/${PN}
-	doins hamlib_rig_numbers
+	doins hamlib_rig_numbers || die "doins failed"
 }
