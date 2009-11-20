@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org> ktikz-0.9.ebuild,
+  -files/ktikz-0.9-kde-includes.patch:
+  Drop even the not-required patch.
+
   20 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org> ktikz-0.9.ebuild:
   Drop kde useflag since it wants kde4 and is was not using kde4-base eclass
   detection scripts.

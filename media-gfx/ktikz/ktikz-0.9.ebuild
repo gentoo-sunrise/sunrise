@@ -26,8 +26,6 @@ src_prepare() {
 	sed -i -e '72,79d' src/src.pro || die "sed failed"
 	# ... and libs are not equal ldflags, make that sure:
 	sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
-
-	epatch "${FILESDIR}/${P}-kde-includes.patch"
 }
 
 src_configure() {
