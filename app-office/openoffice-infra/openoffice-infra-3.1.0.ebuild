@@ -5,9 +5,9 @@
 WANT_AUTOMAKE="1.9"
 EAPI="2"
 
-inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 kde-functions mono multilib toolchain-funcs
+inherit autotools check-reqs db-use eutils fdo-mime flag-o-matic java-pkg-opt-2 mono multilib toolchain-funcs
 
-IUSE="binfilter cups dbus debug eds gnome gstreamer gtk kde ldap mono nsplugin odk +infradicts opengl pam +postgres"
+IUSE="binfilter cups dbus debug eds gnome gstreamer gtk ldap mono nsplugin odk +infradicts opengl pam +postgres"
 
 PATCHLEVEL="OOO310"
 MILESTONE="11"
@@ -59,7 +59,6 @@ COMMON_DEPEND="!app-office/openoffice-infra-bin
 	eds? ( >=gnome-extra/evolution-data-server-1.2 )
 	gstreamer? ( >=media-libs/gstreamer-0.10
 			>=media-libs/gst-plugins-base-0.10 )
-	kde? ( kde-base/kdelibs:3.5 )
 	java? ( >=dev-java/bsh-2.0_beta4
 		>=dev-db/hsqldb-1.8.0.9 )
 	mono? ( || ( >dev-lang/mono-2.4-r1 <dev-lang/mono-2.4 ) )
@@ -238,7 +237,6 @@ src_prepare() {
 
 	# Patches from go-oo mainstream
 	cp -f "${FILESDIR}/buildfix-gcc44.diff" "${S}/patches/hotfixes" || die "cp of hotfix patch failed"
-	cp -f "${FILESDIR}/${PV}/solenv.workaround-for-the-kde-mess.diff" "${S}/patches/hotfixes" || die "cp of hotfix patch failed"
 
 	cd "${WORKSRC}"; tar xjf "${WORKDIR}/infra-ooo-files_${PV}/files/extras-templates.tar.bz2" || die "untar failed"
 
@@ -407,8 +405,6 @@ src_configure() {
 	local GTKFLAG="--disable-gtk --disable-cairo --without-system-cairo"
 	{ use gtk || use gnome; } && GTKFLAG="--enable-gtk --enable-cairo --with-system-cairo"
 
-	use kde && set-kdedir 3
-
 	# workaround for --with-system-*
 	export PKG_CONFIG=pkg-config
 
@@ -419,9 +415,9 @@ src_configure() {
 		--srcdir="${WORKSRC}" \
 		--with-lang="${LINGUAS_OOO}" \
 		--with-build-version="${OOOTAG}" \
+		--disable-kde \
 		${GTKFLAG} \
 		$(use_enable mono) \
-		$(use_enable kde) \
 		$(use_enable debug symbols) \
 		$(use_enable odk) \
 		$(use_enable pam) \

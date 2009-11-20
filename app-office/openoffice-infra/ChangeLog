@@ -2,6 +2,17 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/3.0.1/buildfix-mono-2-2.diff,
+  -files/3.0.1/gentoo-completion_matches.diff,
+  -files/3.0.1/gentoo-configure.diff, -openoffice-infra-3.0.1.ebuild,
+  -files/3.0.1/gentoo-configure-pg.diff,
+  -files/3.0.1/gentoo-infragentoo.diff, -files/3.0.1/gentoo-scripts.diff,
+  -files/3.0.1/hunspell-one-dir-nocrash.diff,
+  -files/3.0.1/nojavanostax.diff, openoffice-infra-3.1.0.ebuild,
+  -files/3.0.1/vba-basic-parallel-build.diff:
+  Drop optional kde support. Also drop old ebuild
+
   22 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   openoffice-infra-3.0.1.ebuild, openoffice-infra-3.1.0.ebuild:
   Fix dependency (virtual/perl-IO-Compress-Base and virtual/perl-Compress-Zlib
