@@ -30,7 +30,6 @@ test -x $DAEMON || exit 1
 
 
 start_vpn () {
-  STATUS="OK"
   if [ -f $CONFIG_DIR/$NAME/config ] ; then
     POSTUP=''
     test -f  $CONFIG_DIR/$NAME/post-up.sh && POSTUP="-x $CONFIG_DIR/$NAME/post-up.sh"
@@ -40,8 +39,8 @@ start_vpn () {
     fi
     test -d $VARRUN_DIR || mkdir -p $VARRUN_DIR
     DAEMONARG=`sed 's/#.*//' < $CONFIG_DIR/$NAME/config | grep -e '\w' | sed  's/^/--/' | tr '\n' ' '`
-    $DAEMON --write-pid $VARRUN_DIR/$NAME.pid $POSTUP \
-      $DAEMONOPTS $DAEMONARG || STATUS="FAILED"
+    start-stop-daemon --start --pidfile $VARRUN_DIR/${NAME}.pid --exec $DAEMON -- --write-pid $VARRUN_DIR/${NAME}.pid $POSTUP \
+      $DAEMONOPTS $DAEMONARG || return 1 
   else
     eerror "no config found"
     return 1
@@ -50,8 +49,8 @@ start_vpn () {
   return 0
 }
 stop_vpn () {
-  kill `cat $PIDFILE` || true
-  rm $PIDFILE
+  start-stop-daemon --stop --pidfile $PIDFILE --exec $DAEMON --oknodo
+  rm -f $PIDFILE
   stop_configd
 }
 
@@ -65,15 +64,14 @@ start_configd () {
       $ANYTUNCONFIG $DAEMONARG >> $VARCONFIG_DIR/$NAME
     done
     CONTROLHOST=`sed 's/#.*//'  <  $CONFIG_DIR/$NAME/config | grep -e 'control-host' | sed  's/^/ --/'`
-    $CONTROLDAEMON -f $VARCONFIG_DIR/$NAME $DAEMONOPTS $CONTROLHOST \
-      --write-pid $VARCONFIG_DIR/$NAME.pid
-    # rm -f $VARCONFIG_DIR/$NAME
+    start-stop-daemon --start --pidfile $VARCONFIG_DIR/${NAME}.pid --exec $CONTROLDAEMON \
+      -- -f $VARCONFIG_DIR/$NAME $DAEMONOPTS $CONTROLHOST --write-pid $VARCONFIG_DIR/${NAME}.pid
   fi
 }
 stop_configd () {
   if [ -d $CONFIG_DIR/$NAME/conf.d ] ; then
-    kill `cat $VARCONFIG_DIR/$NAME.pid` || true
-    rm $VARCONFIG_DIR/$NAME.pid
+    start-stop-daemon --stop --pidfile $VARCONFIG_DIR/${NAME}.pid --exec $CONTROLDAEMON --oknodo 
+    rm -f $VARCONFIG_DIR/${NAME}.pid
   fi 
 }
 
