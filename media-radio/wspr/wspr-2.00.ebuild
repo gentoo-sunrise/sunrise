@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit autotools distutils flag-o-matic multilib python
 
-MY_P=${P/00/00.r1714}
+MY_P=${P}.r1714
 
 DESCRIPTION="Weak Signal Propagation Reporter"
 HOMEPAGE="http://www.physics.princeton.edu/pulsar/K1JT/wspr.html"
