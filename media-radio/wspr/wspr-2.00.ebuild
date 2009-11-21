@@ -26,7 +26,8 @@ RDEPEND="
 	media-libs/hamlib
 	media-libs/portaudio
 	media-libs/libsamplerate"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	sys-devel/gcc[fortran]"
 
 S="${WORKDIR}/${MY_P}"
 
