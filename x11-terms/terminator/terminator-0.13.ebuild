@@ -22,5 +22,6 @@ S=${WORKDIR}/${PV}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-without-icon-cache.patch
+	use libnotify || epatch "${FILESDIR}"/${PV}-libnotify.patch
 	distutils_src_prepare
 }
