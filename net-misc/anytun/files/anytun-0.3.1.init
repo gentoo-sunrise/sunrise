@@ -81,7 +81,7 @@ start () {
       for NAME in `sed 's/#.*//'  <  $CONFIG_DIR/autostart | grep -e '\w'`; do
         ebegin "Starting ${DESC} VPN: ${NAME}"
         start_vpn
-  	eend $?
+        eend $?
       done
     else
       eerror "no config found"
@@ -124,15 +124,15 @@ reload () {
       NAME=`echo $PIDFILE | cut -c17-`
       NAME=${NAME%%.pid}
       if [ -d $CONFIG_DIR/$NAME/conf.d ] ; then
-	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        ebegin "Reloading ${DESC} VPN: ${NAME}"
         stop_vpn
         start_vpn
-	eend $?
+        eend $?
       else
-	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        ebegin "Reloading ${DESC} VPN: ${NAME}"
         stop_configd
         start_configd
-	eend $?
+        eend $?
       fi
     done
   else
@@ -141,15 +141,15 @@ reload () {
       NAME=`echo $PIDFILE | cut -c17-`
       NAME=${NAME%%.pid}
       if [ -d $CONFIG_DIR/$NAME/conf.d ] ; then
-	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        ebegin "Reloading ${DESC} VPN: ${NAME}"
         stop_vpn
         start_vpn
-	eend $?
+        eend $?
       else
-	ebegin "Reloading ${DESC} VPN: ${NAME}"
+        ebegin "Reloading ${DESC} VPN: ${NAME}"
         stop_configd
         start_configd
-	eend $?
+        eend $?
       fi
     else
       eerror "failure: No such tunnel is running: $VPN"
