@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
+  use fortran.eclass
+
   21 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
   added dependency on gcc[fortran]
 

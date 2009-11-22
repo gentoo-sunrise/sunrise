@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit autotools distutils flag-o-matic multilib python
+inherit autotools distutils flag-o-matic multilib python fortran
 
 MY_P=${P}.r1714
 
@@ -26,8 +26,7 @@ RDEPEND="
 	media-libs/hamlib
 	media-libs/portaudio
 	media-libs/libsamplerate"
-DEPEND="${RDEPEND}
-	sys-devel/gcc[fortran]"
+DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
