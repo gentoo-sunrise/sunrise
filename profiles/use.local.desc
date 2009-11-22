@@ -9,9 +9,6 @@ app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/vlogger:dbi - Enable support for DBI
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
-app-dicts/ktranslator:festival - Enable festival support
-app-dicts/ktranslator:lowmem - Disable optimizations for searches
-app-dicts/ktranslator:ocr - Enable GOCR support
 app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
 app-misc/2gis-data:astr - The map of Astrakhan for app-misc/2gis
@@ -124,7 +121,6 @@ games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/alarm-clock-applet:libnotify - Enables support for libnotify notification system
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 gnome-extra/timer-applet:sounds - Installs optional sound data
-kde-misc/kcpufreq:icon - Add icon for GUI applet (enabled by default)
 mail-mta/citadel:pic - Build position-independent executables
 media-gfx/exact-image:agg - Adds Anti-Grain Geometry supportx11-libs/agg
 media-gfx/exact-image:swig - Adds Swig support dev-lang/swig
@@ -167,7 +163,6 @@ media-video/ripwrap:mp2 - Add mp2 support
 media-video/ripwrap:mp4 - Add mp4 support
 media-video/ushare:dlna - Add DLNA (media-libs/libdlna) support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
-net-dns/ldns-utils:sha2 - Enable SHA256 and SHA512 RRSIG support
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:dnssec - Enable DNSSEC support
 net-dns/nsd:largefile - Enable largefile support
@@ -203,7 +198,6 @@ net-im/ekg2:web - Enable httprc_xajax WebUI plugin.
 net-im/ekg2-remote:gnutls - Enable SSL/TLS support through GnuTLS. If 'ssl' is set too, GnuTLS will be used.
 net-im/ekg2-remote:ssl - Enable SSL/TLS support through OpenSSL. If 'gnutls' is set too, it will be used instead.
 net-im/ekg2-remote:static - Link statically with plugins instead of installing them as shared libraries (external libraries can still be linked dynamically).
-net-libs/ldns:sha2 - Enable SHA256 and SHA512 RRSIG support
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
 net-libs/raknet:rakvoice - Enable RakNet RakVoice module
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
