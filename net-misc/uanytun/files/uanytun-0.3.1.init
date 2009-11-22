@@ -1,0 +1,90 @@
+#!/sbin/runscript
+# Distributed under the terms of the GNU General Public License v3
+# Written by Bernhard Tittelbach based on examples from Gentoo, openvpn and uanytun debian initrd script
+
+depend() {
+  need net
+  use dns
+  after bootmisc
+}
+
+DAEMON=/usr/sbin/uanytun
+CONFIG_DIR=/etc/uanytun
+NAME=uanytun
+DESC=uanytun
+VARRUN_PREFIX=/var/run/uanytun
+
+VPN=${SVCNAME#*.}
+[ "$VPN" = "$SVCNAME" ] && VPN=""
+
+test -x $DAEMON || exit 1
+
+# Include uanytun defaults if available
+if [ -f /etc/default/uanytun ] ; then
+  . /etc/default/uanytun
+fi
+
+start_vpn () {
+  if [ -f $CONFIG_DIR/$NAME/config ] ; then
+    POSTUP=''
+    test -f  $CONFIG_DIR/$NAME/post-up.sh && POSTUP="-x $CONFIG_DIR/$NAME/post-up.sh"
+    CHROOTDIR=`grep '^chroot' < $CONFIG_DIR/$NAME/config | sed 's/chroot\s*//'`
+    if [ -n "$CHROOTDIR" ] ; then
+      test -d $CHROOTDIR || mkdir -p $CHROOTDIR
+    fi
+    DAEMONARG=`sed 's/#.*//' < $CONFIG_DIR/$NAME/config | grep -e '\w' | sed  's/^/--/' | tr '\n' ' '`
+    start-stop-daemon --start --pidfile $VARRUN_PREFIX.${NAME}.pid --exec \
+    $DAEMON -- --write-pid $VARRUN_PREFIX.${NAME}.pid $POSTUP $DAEMONARG || return 1 
+  else
+    eerror "no config found"
+    return 1
+  fi
+  return 0
+}
+stop_vpn () {
+  start-stop-daemon --stop --pidfile $PIDFILE --exec $DAEMON --oknodo
+  rm -f $PIDFILE
+}
+
+start () {
+  if test -z "$VPN" ; then
+    if [ -f $CONFIG_DIR/autostart ] ; then
+      for NAME in `sed 's/#.*//'  <  $CONFIG_DIR/autostart | grep -e '\w'`; do
+        ebegin "Starting ${DESC} VPN: ${NAME}"
+        start_vpn
+        eend $?
+      done
+    else
+      eerror "no config found"
+      return 1
+    fi
+  else
+    NAME="$VPN"
+    ebegin "Starting ${DESC} VPN: ${NAME}"
+    start_vpn
+    eend $?
+  fi
+}
+
+stop () {
+  if test -z "$VPN" ; then
+    for PIDFILE in `ls $VARRUN_PREFIX.*.pid 2> /dev/null`; do
+      NAME=`echo $PIDFILE | cut -c18-`
+      NAME=${NAME%%.pid}
+      ebegin "Stopping ${DESC} VPN: ${NAME}"
+      stop_vpn
+      eend $?
+    done
+  else
+    if test -e $VARRUN_PREFIX.${VPN}.pid ; then
+      PIDFILE=`ls $VARRUN_PREFIX.${VPN}.pid 2> /dev/null`
+      NAME=`echo $PIDFILE | cut -c18-`
+      NAME=${NAME%%.pid}
+      ebegin "Stopping ${DESC} VPN: ${NAME}"
+      stop_vpn
+      eend $?
+    else
+      eerror " failure: No such tunnel is running: $VPN"
+    fi
+  fi
+}
