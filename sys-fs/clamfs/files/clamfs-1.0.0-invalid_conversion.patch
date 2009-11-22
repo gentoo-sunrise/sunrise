@@ -1,0 +1,11 @@
+--- trunk/src/clamfs.cxx	2009/02/07 14:10:50	84
++++ trunk/src/clamfs.cxx	2009/11/15 13:51:09	85
+@@ -526,7 +526,7 @@
+      * Check extension ACL
+      */
+     if (extensions != NULL) {
+-        char *ext = rindex(path, '.'); /* find last dot */
++        const char *ext = rindex(path, '.'); /* find last dot */
+         if (ext != NULL) {
+             ++ext; /* omit dot */
+             extum_t::const_iterator extumConstIter;
