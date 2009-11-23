@@ -17,7 +17,7 @@ DEPEND="sys-fs/fuse
 	dev-cpp/commoncpp2
 	dev-libs/rlog
 	dev-libs/poco"
-RDEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack ${A}

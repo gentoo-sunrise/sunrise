@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Nov 2009; Tomas Touceda (chiiph) <chiiph@gmail.com>
+  clamfs-1.0.0.ebuild:
+  Fix RDEPEND
+
   22 Nov 2009; Marcin Miroslaw <bug@mejor.pl> +clamfs-1.0.0.ebuild,
   +files/clamfs-1.0.0-invalid_conversion.patch, +metadata.xml:
   Initial commit, bug #259863. Thanks to Ishan Arora for proposal of ebuild.
