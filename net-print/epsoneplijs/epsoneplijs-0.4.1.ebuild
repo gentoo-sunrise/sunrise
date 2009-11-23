@@ -31,7 +31,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	insinto /usr/share/ppd/
 	doins foomatic_PPDs/* || die "doins failed"
