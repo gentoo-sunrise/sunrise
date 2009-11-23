@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Nov 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Fix metadata.xml
+
   23 Nov 2009; Tomas Touceda (chiiph) <chiiph@gmail.com>
   uanytun-0.3.1.ebuild:
   Fix newinitd line to use  and quote
