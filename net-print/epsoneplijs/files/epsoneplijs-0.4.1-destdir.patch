@@ -1,0 +1,27 @@
+diff -ur epsoneplijs-0.4.1-orig/Makefile epsoneplijs-0.4.1/Makefile
+--- epsoneplijs-0.4.1-orig/Makefile	2009-11-22 20:03:51.532553239 +0100
++++ epsoneplijs-0.4.1/Makefile	2009-11-22 20:00:47.156550621 +0100
+@@ -99,7 +99,8 @@
+ 	[ -d libieee1284 ] && (cd libieee1284 ; make clean) || true
+ 
+ install: all
+-	$(INSTALL) ijs_server_epsonepl$(EXE) -c $(bindir)/ijs_server_epsonepl$(EXE)
++	/bin/mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL) ijs_server_epsonepl$(EXE) -c $(DESTDIR)$(bindir)/ijs_server_epsonepl$(EXE)
+ 
+ uninstall:
+ 	$(RM) $(bindir)/ijs_server_epsonepl$(EXE)
+
+diff -ur epsoneplijs-0.4.1-orig/Makefile.in epsoneplijs-0.4.1/Makefile.in
+--- epsoneplijs-0.4.1-orig/Makefile.in	2009-11-22 20:04:02.908552279 +0100
++++ epsoneplijs-0.4.1/Makefile.in	2009-11-22 20:02:22.715549011 +0100
+@@ -99,7 +99,8 @@
+ 	[ -d libieee1284 ] && (cd libieee1284 ; make clean) || true
+ 
+ install: all
+-	$(INSTALL) ijs_server_epsonepl$(EXE) -c $(bindir)/ijs_server_epsonepl$(EXE)
++	/bin/mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL) ijs_server_epsonepl$(EXE) -c $(DESTDIR)$(bindir)/ijs_server_epsonepl$(EXE)
+ 
+ uninstall:
+ 	$(RM) $(bindir)/ijs_server_epsonepl$(EXE)

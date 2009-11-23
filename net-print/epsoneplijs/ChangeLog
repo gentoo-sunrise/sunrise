@@ -1,0 +1,9 @@
+# ChangeLog for net-print/epsoneplijs
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Nov 2009; Marco Simeone (rael86) <ing.marcosimeone@gmail.com>
+  +epsoneplijs-0.4.1.ebuild, +files/epsoneplijs-0.4.1-destdir.patch,
+  +metadata.xml:
+  New Ebuild for bug 70337 thanks to Tommy[D], hwoarang and ohnobinki
+
