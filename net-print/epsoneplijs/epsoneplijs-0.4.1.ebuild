@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="Epson EPL-5x00L/EPL-6x00L Printer Driver for ghostscript"
 HOMEPAGE="http://sourceforge.net/projects/epsonepl"
-SRC_URI="http://mesh.dl.sourceforge.net/sourceforge/epsonepl/${P}.tgz"
+SRC_URI="mirror://sourceforge/epsonepl/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
