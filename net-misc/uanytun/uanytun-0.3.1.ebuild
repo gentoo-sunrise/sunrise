@@ -35,9 +35,9 @@ src_compile() {
 src_install() {
 	#make target install-bin is buggy
 	dosbin uanytun || die "failed to copy/install an executable"
-	newinitd "${FILESDIR}/${PN}-0.3.1.init" uanytun || die "failed to copy/install initrd script"
+	newinitd "${FILESDIR}/${P}.init" uanytun || die "failed to copy/install initrd script"
 
-	emake install-man DESTDIR=${D} || die "failed to install manpages"
+	emake install-man DESTDIR="${D}" || die "failed to install manpages"
 
 	cd ../
 	dodoc AUTHORS ChangeLog README || die "failed to install docs"
