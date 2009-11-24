@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Nov 2009; Bernhard Tittelbach (xro) <xro@gmx.net>
+  files/uanytun-0.3.1.init:
+  indentation. 2 more spaces go a long way for readability
+
   23 Nov 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Fix metadata.xml
 

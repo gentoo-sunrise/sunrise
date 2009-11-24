@@ -34,7 +34,7 @@ start_vpn () {
     fi
     DAEMONARG=`sed 's/#.*//' < $CONFIG_DIR/$NAME/config | grep -e '\w' | sed  's/^/--/' | tr '\n' ' '`
     start-stop-daemon --start --pidfile $VARRUN_PREFIX.${NAME}.pid --exec \
-    $DAEMON -- --write-pid $VARRUN_PREFIX.${NAME}.pid $POSTUP $DAEMONARG || return 1 
+      $DAEMON -- --write-pid $VARRUN_PREFIX.${NAME}.pid $POSTUP $DAEMONARG || return 1 
   else
     eerror "no config found"
     return 1
