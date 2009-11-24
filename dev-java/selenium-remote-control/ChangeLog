@@ -1,8 +1,0 @@
-# ChangeLog for dev-java/selenium-remote-control
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  24 Nov 2009; Matthew Schultz (mschultz) <mattsch@gmail.com>
-  +selenium-remote-control-1.0.1.ebuild, +metadata.xml:
-  New ebuild for bug 294308.
-
