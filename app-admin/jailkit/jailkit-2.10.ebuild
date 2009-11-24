@@ -25,12 +25,12 @@ src_prepare() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	doinitd "${FILESDIR}/jailkit"
+	doinitd "${FILESDIR}/jailkit" ||  die "doinit install failed"
 }
 
 pkg_postinst() {
 	ebegin "Updating /etc/shells"
-	( grep -v "^/usr/sbin/jk_chroots$" "${ROOT}"etc/shells; echo "/usr/sbin/jk_chroots" ) > "${T}"/shells
+	{ grep -v "^/usr/sbin/jk_chrootsh$" "${ROOT}"etc/shells; echo "/usr/sbin/jk_chrootsh"; } > "${T}"/shells
 	mv -f "${T}"/shells "${ROOT}"etc/shells
 	eend $?
 }
