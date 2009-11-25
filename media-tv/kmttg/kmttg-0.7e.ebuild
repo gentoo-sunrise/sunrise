@@ -9,7 +9,7 @@ inherit eutils java-pkg-2 java-ant-2
 
 DESCRIPTION="A free multi-platform replacement for the TiVo Desktop software."
 HOMEPAGE="http://code.google.com/p/kmttg/"
-SRC_URI="http://omploader.org/vMmFqbA/${P}.tar.bz2"
+SRC_URI="http://omploader.org/vMnVneA/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -31,7 +31,8 @@ src_install() {
 	java-pkg_dolauncher kmttg --java_args "-Djava.net.preferIPv4Stack=true -Xmx256m"
 
 	insinto /usr/share/${PN}/encode
-	doins release/encode/*.enc || die
+	doins release/encode/*.enc
 
 	use source && java-pkg_dosrc src/com
 }
+

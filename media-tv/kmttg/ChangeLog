@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Nov 2009; John Ratliff <webmaster@technoplaza.net> -kmttg-0.6k.ebuild,
+  +kmttg-0.7e.ebuild:
+  Version bump for kmttg
+
   10 Sep 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   kmttg-0.6k.ebuild:
   Add missing die to doins
