@@ -23,7 +23,7 @@ RDEPEND=">=virtual/jre-1.5
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-	java-pkg_newjar "${S}"/selenium-server-${PV}/selenium-server.jar
+	java-pkg_newjar selenium-server-${PV}/selenium-server.jar
 	java-pkg_dolauncher
 }
 
