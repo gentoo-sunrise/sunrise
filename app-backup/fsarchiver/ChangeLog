@@ -1,0 +1,9 @@
+# ChangeLog for app-backup/fsarchiver
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Nov 2009; Marcin Miroslaw <bug@mejor.pl> +fsarchiver-0.6.1.ebuild,
+  +files/fsarchiver-0.6.1-configure.patch, +metadata.xml:
+  Initial commit, bug 261106, thanks to fdupoux for proposal of ebuild and to
+  ohnobinki for configure patch
+
