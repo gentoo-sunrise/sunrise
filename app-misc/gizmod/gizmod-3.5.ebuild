@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit cmake-utils linux-info multilib
+inherit cmake-utils linux-info
 
 DESCRIPTION="Input event scripting utility that has special support for fancy keyboards, mice, USB dials and more"
 HOMEPAGE="http://gizmod.sourceforge.net"
@@ -14,11 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="libvisual"
 RDEPEND="x11-libs/libXext
-	>=dev-libs/boost-1.34[python]
 	amd64? ( >=dev-libs/boost-1.36[python] )
+	|| ( dev-libs/boost:0 dev-libs/boost[python] )
 	x11-libs/libICE
 	media-libs/alsa-lib
-	libvisual? ( >=media-libs/libvisual-0.4.0 )"
+	libvisual? ( media-libs/libvisual )"
 DEPEND="${RDEPEND}"
 
 CONFIG_CHECK="INPUT_EVDEV INOTIFY INOTIFY_USER"
@@ -47,16 +47,20 @@ options can only be built directly into the kernel.
 "
 
 src_prepare() {
-	# straighten up the paths
+	## straighten up the paths
 	sed -i CMakeLists.txt -e /DefineInstallationPaths/d || die "sed: removal of DefineInstallationPaths failed"
-	sed -i libGizmod/CMakeLists.txt -e 's:lib$:${LIB_INSTALL_DIR}:' || die "sed: replacing lib with LIB_INSTALL_DIR failed"
+	sed -i libGizmod/CMakeLists.txt -e 's:lib$:lib${LIB_SUFFIX}:' || die "sed: replacing lib with LIB_INSTALL_DIR failed"
 }
 
 src_configure() {
 	local mycmakeargs="
 		-DSYSCONF_INSTALL_DIR=/etc
-		-DLIB_INSTALL_DIR=/usr/$(get_libdir)
 		$(cmake-utils_use_build libvisual VIS_PLUGIN)
 	"
 	cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
+	newinitd "${FILESDIR}/gizmod.rc" gizmod || die "init script install failed"
 }
