@@ -3,6 +3,10 @@
 # $Header: $
 
   26 Nov 2009; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  inadyn-mt-02.14.10.ebuild, metadata.xml:
+  minor fixes to metadata, ebuild
+
+  26 Nov 2009; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   -inadyn-mt-02.12.24.ebuild, +inadyn-mt-02.14.10.ebuild,
   files/inadyn-mt.initd, metadata.xml:
   Version bump, thanks to Fauli,chithead & ohnobinki

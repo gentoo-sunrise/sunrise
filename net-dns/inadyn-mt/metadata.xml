@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd></herd>
-<maintainer>
-	<email>maintainer-wanted@gentoo.org</email>
-</maintainer>
+<herd>maintainer-wanted</herd>
 <use>
 	<flag name='async'>Enable asyncronous gethostbyname calls. Requires USE=threads</flag>
 </use>

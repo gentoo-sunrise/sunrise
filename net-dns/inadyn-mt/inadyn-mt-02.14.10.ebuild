@@ -17,7 +17,6 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="+threads +async"
 
-DEPEND=""
 RDEPEND="!net-dns/inadyn"
 
 S=${WORKDIR}/${PN}/${MY_P}
