@@ -12,7 +12,7 @@ SRC_URI="http://github.com/scy/${PN}/tarball/v${PV} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="xinerama"
 
 DEPEND="x11-libs/libX11

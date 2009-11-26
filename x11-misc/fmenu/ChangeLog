@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Nov 2009; Tim Weber (Scytale) <scy-gentoo@scytale.name>
+  fmenu-0.1.ebuild:
+  Added ~amd64. Comment #4 on bug #287493 suggests it's working, and I don't
+  see why it shouldn't.
+
   03 Oct 2009; Tim Weber (Scytale) scy-gentoo@scytale.name
   +fmenu-0.1.ebuild, +metadata.xml:
   New ebuild for bug 287493, x11-misc/fmenu.
