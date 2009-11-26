@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>maintainer-wanted</herd>
+<use>
+	<flag name='debug'>Enables debug compile and link flags</flag>
+	<flag name='daemon'>Enables build daemon binaries</flag>
+	<flag name='pam'>Enables build with pam support</flag>
+	<flag name='tools'>Enables build tools</flag>
+</use>
+</pkgmetadata>

@@ -1,0 +1,8 @@
+# ChangeLog for dev-libs/libcgroup
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Nov 2009; Tomas Touceda (chiiph) <chiiph@gmail.com>
+  +libcgroup-0.34.ebuild, +metadata.xml:
+  New ebuild for bug 294717. Thanks to dilfridge and Tommy[D].
+
