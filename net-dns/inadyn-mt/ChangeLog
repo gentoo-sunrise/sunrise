@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Nov 2009; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  -inadyn-mt-02.12.24.ebuild, +inadyn-mt-02.14.10.ebuild,
+  files/inadyn-mt.initd, metadata.xml:
+  Version bump, thanks to Fauli,chithead & ohnobinki
+
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   inadyn-mt-02.12.24.ebuild:
   Add suggested RDEPEND=${DEPEND}

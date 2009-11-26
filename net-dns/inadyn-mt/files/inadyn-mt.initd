@@ -13,7 +13,7 @@ start() {
 	ebegin "Starting inadyn"
 	start-stop-daemon --start --chuid inadyn-mt --exec /usr/sbin/inadyn-mt \
 	    --pidfile /var/run/inadyn-mt.pid --make-pidfile --background \
-	    -- --syslog --input_file /etc/conf.d/inadyn-mt
+	    -- --syslog --input_file /etc/inadyn-mt.conf
 	eend $?
 }
 
