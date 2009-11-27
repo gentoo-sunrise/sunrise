@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/geany-plugins
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Nov 2009; Marco Simeone (rael86) <ing.marcosimeone@gmail.com>
+  +geany-plugins-0.18.ebuild, +metadata.xml:
+  New Ebuild for bug 294864 thanks to Tommy
+
