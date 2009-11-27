@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Nov 2009; Justin Riley <justin.t.riley@gmail.com> gizmod-3.5.ebuild,
+  +files/gizmod-3.5-libvisual.patch:
+  Added patch to enforce libvisual USE flag. Thanks to Tommy[D] for the catch
+
   25 Nov 2009; Justin Riley <justin.t.riley@gmail.com> gizmod-3.5.ebuild,
   +files/gizmod.rc:
   Added init script, changed LIB_INSTALL_DIR to LIB_SUFFIX which removed need
