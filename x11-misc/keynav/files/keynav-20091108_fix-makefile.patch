@@ -1,0 +1,46 @@
+--- a/keynav-20091108/Makefile	2009-11-08 16:04:23.000000000 -0500
++++ b/keynav-20091108/Makefile	2009-11-26 11:44:05.336699998 -0500
+@@ -1,5 +1,5 @@
+-CFLAGS=`pkg-config --cflags xcb-shape xinerama x11 xtst 2> /dev/null || echo -I/usr/X11R6/include -I/usr/local/include`
+-LDFLAGS=`pkg-config --libs xcb-shape xinerama x11 xtst 2> /dev/null || echo -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXtst -lXinerama` 
++CFLAGS+= $(shell pkg-config --cflags xcb-shape xinerama x11 xtst 2> /dev/null || echo -I/usr/X11R6/include -I/usr/local/include)
++LDFLAGS+= $(shell pkg-config --libs xcb-shape xinerama x11 xtst 2> /dev/null || echo -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXtst -lXinerama)
+ 
+ #CFLAGS+=-g
+ OTHERFILES=README CHANGELIST COPYRIGHT \
+@@ -7,17 +7,19 @@
+ 
+ #MICROVERSION?=00
+ 
++.PHONY: all
++
+ all: keynav
+ 
+ clean:
+ 	rm *.o || true;
+-	make -C xdotool clean || true
++	$(MAKE) -C xdotool clean || true
+ 
+ keynav: xdo.o keynav.o
+-	gcc $(LDFLAGS) xdo.o keynav.o -o $@
++	$(CC) $(CFLAGS) xdo.o keynav.o -o $@ $(LDFLAGS)
+ 
+ xdo.o:
+-	make -C xdotool xdo.o
++	$(MAKE) -C xdotool xdo.o
+ 	cp xdotool/xdo.o .
+ 
+ #NAME=keynav-`date +%Y%m%d`.$(MICROVERSION);
+--- a/keynav-20091108/xdotool/Makefile	2009-11-08 16:01:30.000000000 -0500
++++ b/keynav-20091108/xdotool/Makefile	2009-11-26 11:37:19.769691350 -0500
+@@ -13,8 +13,8 @@
+ DEFAULT_LIBS=-L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXtst
+ DEFAULT_INC=-I/usr/X11R6/include -I/usr/local/include
+ 
+-LIBS=`pkg-config --libs x11 xtst 2> /dev/null || echo "$(DEFAULT_LIBS)"`
+-INC=`pkg-config --cflags x11 xtst 2> /dev/null || echo "$(DEFAULT_INC)"`
++LIBS=$(shell pkg-config --libs x11 xtst 2> /dev/null || echo "$(DEFAULT_LIBS)")
++INC=$(shell pkg-config --cflags x11 xtst 2> /dev/null || echo "$(DEFAULT_INC)")
+ 
+ CFLAGS+=$(INC)
+ LDFLAGS+=$(LIBS)
