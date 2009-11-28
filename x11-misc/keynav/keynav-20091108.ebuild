@@ -3,9 +3,10 @@
 # $Header: $
 
 EAPI="2"
+
 inherit eutils
 
-DESCRIPTION="Make pointer-driven interfaces easier and faster for users to operate."
+DESCRIPTION="Make pointer-driven interfaces easier and faster for users to operate"
 HOMEPAGE="http://www.semicomplete.com/projects/keynav/"
 SRC_URI="http://semicomplete.googlecode.com/files/${P}.tar.gz"
 
@@ -15,21 +16,23 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="
-	x11-proto/xproto"
-DEPEND="${RDEPEND}
 	x11-libs/libX11
 	x11-libs/libXinerama
 	x11-libs/libXext
 	x11-libs/libXtst"
+DEPEND="
+	x11-proto/xproto
+	${RDEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}_etc-config.patch"
-	epatch "${FILESDIR}/${P}_fix-makefile.patch"
+	epatch \
+		"${FILESDIR}/${P}_etc-config.patch" \
+		"${FILESDIR}/${P}_fix-makefile.patch"
 }
 
 src_install() {
-	dodoc README CHANGELIST
-	dobin keynav
+	dodoc README CHANGELIST || die "Unable to install documentation"
+	dobin keynav || die "Unable to install keynav binary"
 	insinto /etc
-	doins keynavrc
+	doins keynavrc || die "Unable to install keynavrc"
 }
