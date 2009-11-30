@@ -8,6 +8,8 @@ app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/vlogger:dbi - Enable support for DBI
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
+app-backup/fsarchiver:gcrypt - Enables cryptography support via libgcrypt
+app-backup/fsarchiver:lzma - Enables LZMA compression
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
@@ -55,11 +57,17 @@ dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
 dev-lang/xharbour:allegro - Build Allegro-based GT driver
+dev-libs/libcgroup:daemon - Enables build daemon binaries
+dev-libs/libcgroup:debug - Enables debug compile and link flags
+dev-libs/libcgroup:pam - Enables build with pam support
+dev-libs/libcgroup:tools - Enables build tools
 dev-libs/libmail:apop - Enables the APOP authentication method
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
 dev-util/eresi:server - Build eresi server capability
+dev-util/geany-plugins:enchant - Enable spell checking using enchant
+dev-util/geany-plugins:gtkspell - Use gtkspell for dictionary support
 dev-util/icewing:grabber - Build the grabber plug-in
 dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
@@ -127,12 +135,6 @@ media-gfx/exact-image:swig - Adds Swig support dev-lang/swig
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:cluster - Add support for cluster rendering
-media-gfx/graphicsmagick:fpx - Enable FlashPix support
-media-gfx/graphicsmagick:gs - Enable Ghostscript library support
-media-gfx/graphicsmagick:imagemagick - Enable ImageMagick command compatibility
-media-gfx/graphicsmagick:openmp - Build support for the OpenMP (support parallel computing)
-media-gfx/graphicsmagick:q16 - Set quantum depth to 16
-media-gfx/graphicsmagick:q32 - Set quantum depth to 32
 media-gfx/openvrml:player - Build the openvrml-player Gnome application
 media-gfx/openvrml:xembed - Build the XEmbed container control
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
@@ -163,6 +165,7 @@ media-video/ripwrap:mp2 - Add mp2 support
 media-video/ripwrap:mp4 - Add mp4 support
 media-video/ushare:dlna - Add DLNA (media-libs/libdlna) support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
+net-dns/inadyn-mt:async - Enable asyncronous gethostbyname calls. Requires USE=threads
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:dnssec - Enable DNSSEC support
 net-dns/nsd:largefile - Enable largefile support
