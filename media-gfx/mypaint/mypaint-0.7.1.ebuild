@@ -28,5 +28,5 @@ src_compile() {
 
 src_install () {
 	scons prefix="${D}/usr" install || die "scons install failed"
-	doicon desktop/mypaint_48.png
+	doicon desktop/mypaint_48.png || die "failed to install icon"
 }
