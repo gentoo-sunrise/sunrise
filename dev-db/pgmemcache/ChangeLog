@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Nov 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pgmemcache-2.0_rc1.ebuild, +pgmemcache-2.0.0.ebuild:
+  Version bump
+
   13 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
   pgmemcache-2.0_rc1.ebuild:
   Rephrase die statement
