@@ -1,0 +1,57 @@
+#!/sbin/runscript
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+opts="${opts}"
+
+# this next comment is important, don't remove it - it has to be somewhere in 
+# the init script to kill off a warning that doesn't apply to us
+# svc_start svc_stop   
+
+depend() {
+	need net iptables
+	use modules
+}
+
+load_modules() {
+	if [ "${MODULES}" != "none" ]; then
+		ebegin "Loading modules for Vuurmuur"
+		local module
+		echo -n "   "
+		for module in `echo ${MODULES}`; do
+			modprobe ${module}
+			echo -n "${module} "
+		done
+		echo
+		eend $?
+	fi
+}
+
+start() {
+	if load_modules ; then
+		ebegin "Starting Vuurmuur"
+		if test ! -f ${CONFIG}; then
+			eerror "Configuration file, ${CONFIG} does not exist."
+			eend 2
+			return 2
+		fi
+		start-stop-daemon --start ${QUIET+--quiet} --exec /usr/bin/vuurmuur -- ${OPTIONS}
+		eend $?
+		ebegin "Starting Vuurmuur Log"
+		start-stop-daemon --start ${QUIET+--quiet} --exec /usr/bin/vuurmuur_log
+		eend $?
+	else
+		eend 1
+		return 1
+	fi
+}
+
+stop() {
+	ebegin "Stopping Vuurmuur"
+	start-stop-daemon --stop ${QUIET+--quiet} --pidfile /var/run/vuurmuur.pid
+	eend $?
+	ebegin "Stopping Vuurmuur Log"
+	start-stop-daemon --stop ${QUIET+--quiet} --exec /usr/bin/vuurmuur_log
+	eend $?
+}
+
