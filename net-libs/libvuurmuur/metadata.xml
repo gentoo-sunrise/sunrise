@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>maintainer-wanted</herd>
+  <longdescription lang="en">
+	  Vuurmuur is a firewall manager built on top of iptables on Linux.
+	
+	  It has a simple and easy to learn user interface that allows both simple 
+	  and complex configurations. The configuration can be fully made through 
+	  an Ncurses GUI, which allows secure remote administration over SSH or on 
+	  the console. Vuurmuur supports traffic shaping and has powerful monitoring 
+	  features, which allow the administrator to look at the logs, connections 
+	  and bandwidth usage in realtime.
+
+		This ebuild contains the libraries and shared components for Vuurmuur.
+  </longdescription>
+</pkgmetadata>

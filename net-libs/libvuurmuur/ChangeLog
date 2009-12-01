@@ -1,0 +1,9 @@
+# ChangeLog for net-libs/libvuurmuur
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Dec 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
+  +files/libvuurmuur-plugin-0.7.patch, +libvuurmuur-0.8_beta2.ebuild,
+  +metadata.xml:
+  Initial ebuild for bug 115696 thanks to TigerP and fredl.
+
