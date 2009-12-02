@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Dec 2009; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
+  -2gis-3.0.5.4.ebuild, +2gis-3.0.6.1.ebuild:
+  Version bump
+
   12 Aug 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   2gis-3.0.5.4.ebuild:
   Fix 'working workaround' to support overlay paths containing 'files'.
