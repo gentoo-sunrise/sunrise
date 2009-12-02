@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/pymox
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Dec 2009; Marco Simeone (rael86) <ing.marcosimeone@gmail.com>
+  +pymox-0.5.1.ebuild, +metadata.xml:
+  New Ebuild for bug 295344 thanks to scarabeus
+
