@@ -2,6 +2,13 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Dec 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -klayout-0.18.2.ebuild, -files/klayout-0.18.2-Makefile.conf.linux-gentoo,
+  -files/klayout-0.18.2-configureonly.patch, +klayout-0.19.1.ebuild,
+  +files/klayout-0.19.1-Makefile.conf.linux-gentoo,
+  +files/klayout-0.19.1-configureonly.patch:
+  Version bump.
+
   07 Nov 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   -klayout-0.18.1.ebuild, -files/klayout-0.18.1-Makefile.conf.linux-gentoo,
   -files/klayout-0.18.1-configureonly.patch, +klayout-0.18.2.ebuild,
