@@ -18,8 +18,6 @@ RDEPEND="gnome? ( dev-python/gnome-python )
 	libnotify? ( dev-python/notify-python )
 	>=x11-libs/vte-0.16[python]"
 
-S=${WORKDIR}/${PV}
-
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-without-icon-cache.patch
 	use libnotify || epatch "${FILESDIR}"/${PV}-libnotify.patch
