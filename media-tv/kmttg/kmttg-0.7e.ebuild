@@ -23,6 +23,7 @@ RDEPEND="encode? ( media-video/ffmpeg )
 DEPEND=">=virtual/jdk-1.5"
 
 src_prepare() {
+	java-pkg-2_src_prepare
 	epatch "${FILESDIR}/${PN}-settings.patch"
 }
 
@@ -31,8 +32,7 @@ src_install() {
 	java-pkg_dolauncher kmttg --java_args "-Djava.net.preferIPv4Stack=true -Xmx256m"
 
 	insinto /usr/share/${PN}/encode
-	doins release/encode/*.enc
+	doins release/encode/*.enc || die
 
 	use source && java-pkg_dosrc src/com
 }
-
