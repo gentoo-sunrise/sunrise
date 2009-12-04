@@ -32,6 +32,12 @@ pkg_setup() {
 	fi
 }
 
+src_prepare() {
+	if kernel_is ge 2 6 32; then
+		epatch ${FILESDIR}/${P}-nodename_to_devnode.patch # bug 295633
+	fi
+}
+
 src_compile() {
 	set_arch_to_kernel
 	emake LINUXDIR="${KERNEL_DIR}" NOUVEAUROOTDIR="${PWD}" -f "${FILESDIR}"/${P}-Makefile || die "Compiling kernel modules failed"

@@ -2,6 +2,13 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2009; Chi-Thanh Christopher Nguyen (chithead)
+  <chithanh@cs.tu-berlin.de> -nouveau-drm-20091016.ebuild,
+  -files/nouveau-drm-20091016-Makefile, +nouveau-drm-20091204.ebuild,
+  +files/nouveau-drm-20091204-Makefile,
+  +files/nouveau-drm-20091204-nodename_to_devnode.patch:
+  new snapshot
+
   09 Nov 2009; Mounir Lamouri <volkmar@gentoo.org>
   nouveau-drm-20091016.ebuild:
   Keywording for ppc

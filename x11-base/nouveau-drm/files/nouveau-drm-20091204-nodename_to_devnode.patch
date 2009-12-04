@@ -1,0 +1,21 @@
+diff -ruN nouveau-0.0.15+git20090823.old/drivers/gpu/drm/drm_sysfs.c nouveau-0.0.15+git20090823/drivers/gpu/drm/drm_sysfs.c
+--- nouveau-0.0.15+git20090823.old/drivers/gpu/drm/drm_sysfs.c	2009-12-03 01:27:32.394110430 +0000
++++ nouveau-0.0.15+git20090823/drivers/gpu/drm/drm_sysfs.c	2009-12-03 01:42:05.502859645 +0000
+@@ -71,7 +71,7 @@
+ 		       CORE_MINOR, CORE_PATCHLEVEL, CORE_DATE);
+ }
+ 
+-static char *drm_nodename(struct device *dev)
++static char *drm_devnode(struct device *dev, mode_t *mode)
+ {
+ 	return kasprintf(GFP_KERNEL, "dri/%s", dev_name(dev));
+ }
+@@ -107,7 +107,7 @@
+ 	if (err)
+ 		goto err_out_class;
+ 
+-	class->nodename = drm_nodename;
++	class->devnode = drm_devnode;
+ 
+ 	return class;
+ 
