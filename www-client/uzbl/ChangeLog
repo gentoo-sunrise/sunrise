@@ -1,8 +1,0 @@
-# ChangeLog for www-client/uzbl
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  08 Nov 2009; Tomas Touceda (chiiph) <chiiph@gmail.com> +uzbl-9999.ebuild,
-  +files/9999-Makefile.patch, +metadata.xml:
-  New ebuild for bug 270995. Thanks to ohnobinki and Tommy[D]
-
