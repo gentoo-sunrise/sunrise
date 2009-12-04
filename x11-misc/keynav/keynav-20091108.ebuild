@@ -15,18 +15,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="
-	x11-libs/libX11
+RDEPEND="x11-libs/libX11
 	x11-libs/libXinerama
 	x11-libs/libXext
 	x11-libs/libXtst"
-DEPEND="
-	x11-proto/xproto
+DEPEND="x11-proto/xproto
 	${RDEPEND}"
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}/${P}_etc-config.patch" \
+	epatch "${FILESDIR}/${P}_etc-config.patch" \
 		"${FILESDIR}/${P}_fix-makefile.patch"
 }
 

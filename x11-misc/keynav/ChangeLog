@@ -7,5 +7,4 @@
   Fixed issues with keynav ebuild
 
   27 Nov 2009; Russell Harmon (eatnumber1) <russ@eatnumber1.com> ChangeLog:
-  New ebuild for keynav
-
+  New ebuild for keynav, bug 294727
