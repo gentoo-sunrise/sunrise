@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Dec 2009; Bernhard Tittelbach (xro) <xro@gmx.net>
+  -uanytun-0.3.1.ebuild, +uanytun-0.3.2.ebuild:
+  New Version 0.3.2. ebuild changes to reflect improvements in uanytun build
+  system. thanks to gentoo-sunrise people for their patience
+
   25 Nov 2009; Bernhard Tittelbach (xro) <xro@gmx.net>
   files/uanytun-0.3.1.init:
   changed indentation to tabs on request.
