@@ -8,7 +8,7 @@ inherit gems
 
 DESCRIPTION="Git Library for Ruby"
 HOMEPAGE="http://github.com/schacon/ruby-git/"
-SRC_URI="http://gems.rubyforge.org/gems/git-${PV}.gem -> ${P}.gem"
+SRC_URI="mirror://rubygems/git-${PV}.gem -> ${P}.gem"
 
 LICENSE="MIT"
 SLOT="0"
