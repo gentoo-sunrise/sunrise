@@ -17,12 +17,6 @@ IUSE=""
 
 FORTRAN="gfortran"
 
-src_prepare() {
-	# make Makefile.am respect $DESTDIR
-	epatch "${FILESDIR}/${P}-Makefile.patch"
-	eautoreconf
-}
-
 src_install() {
 	emake DESTDIR="${D}" docdir=/usr/share/doc/${PF} install \
 		|| die "make install failed"
