@@ -2,4 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>maintainer-wanted</herd>
+        <use>
+                <flag name='schematics'>Use sci-electronics/geda for schematics editing</flag>
+                <flag name='waveform'>Use sci-electronics/gwave for waveform display</flag>
+	</use>
 </pkgmetadata>

@@ -1,6 +1,11 @@
 # ChangeLog for sci-electronics/gspiceui
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Dec 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -gspiceui-0.9.65.ebuild, +gspiceui-0.9.98.ebuild, metadata.xml:
+  Version bump, plus conversion to EAPI 2 and more improvements. Thanks to
+  Rafael G. Martins.
 
   19 Nov 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -gspiceui-0.8.90.ebuild, +gspiceui-0.9.65.ebuild:
