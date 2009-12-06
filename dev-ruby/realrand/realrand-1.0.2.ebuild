@@ -7,7 +7,7 @@ inherit ruby gems
 USE_RUBY="ruby18"
 DESCRIPTION="Generate real random numbers in Ruby."
 HOMEPAGE="http://realrand.rubyforge.org/"
-SRC_URI="http://gems.rubyforge.org/gems/${P}.gem"
+SRC_URI="mirror://rubygems/${P}.gem"
 
 LICENSE="Ruby"
 SLOT="0"

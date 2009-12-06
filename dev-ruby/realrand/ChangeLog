@@ -1,6 +1,10 @@
 # ChangeLog for dev-ruby/realrand
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  realrand-1.0.2.ebuild:
+  Use mirror://
 
   07 Jan 2007; Jakub Moc <jakub@gentoo.org> realrand-1.0.2.ebuild:
   einfo -> elog
