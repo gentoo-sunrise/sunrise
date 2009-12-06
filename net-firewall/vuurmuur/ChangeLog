@@ -1,9 +1,0 @@
-# ChangeLog for net-firewall/vuurmuur
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  01 Dec 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
-  +vuurmuur-0.8_beta2.ebuild, +files/vuurmuur.conf, +files/vuurmuur.init,
-  +metadata.xml:
-  Initial ebuild for bug 115697 thanks to TigerP and fredl.
-
