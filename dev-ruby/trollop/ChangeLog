@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  trollop-1.15.ebuild:
+  Use mirror://
+
   04 Oct 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
   -trollop-1.14.ebuild, +trollop-1.15.ebuild:
   Version bump to 1.15.

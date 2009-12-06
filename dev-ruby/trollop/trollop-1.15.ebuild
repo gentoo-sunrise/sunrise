@@ -6,7 +6,7 @@ inherit ruby gems
 
 DESCRIPTION="Advanced commandline option parser with implicit --help generator."
 HOMEPAGE="http://trollop.rubyforge.org"
-SRC_URI="http://gems.rubyforge.org/gems/${P}.gem"
+SRC_URI="mirror://rubygems/${P}.gem"
 
 LICENSE="Ruby"
 SLOT="0"
