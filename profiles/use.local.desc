@@ -232,6 +232,8 @@ net-misc/uanytun:examples - Install example configuration into /usr/share/doc/..
 net-misc/uanytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
+sci-electronics/gspiceui:schematics - Use sci-electronics/geda for schematics editing
+sci-electronics/gspiceui:waveform - Use sci-electronics/gwave for waveform display
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
