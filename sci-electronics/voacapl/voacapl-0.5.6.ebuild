@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit autotools eutils fortran
+inherit fortran
 
 DESCRIPTION="HF propagation prediction tool"
 HOMEPAGE="http://www.qsl.net/hz1jw/voacapl/index.html"
