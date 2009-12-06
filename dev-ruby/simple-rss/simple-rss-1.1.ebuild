@@ -7,7 +7,7 @@ inherit ruby gems
 USE_RUBY="ruby18"
 DESCRIPTION="A simple, flexible, extensible, and liberal RSS and Atom reader for Ruby."
 HOMEPAGE="http://rubyforge.org/projects/simple-rss"
-SRC_URI="http://gems.rubyforge.org/gems/${P}.gem"
+SRC_URI="mirror://rubygems/${P}.gem"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

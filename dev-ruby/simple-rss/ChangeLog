@@ -1,6 +1,10 @@
 # ChangeLog for dev-ruby/simple-rss
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  simple-rss-1.1.ebuild:
+  Use mirror://
 
   11 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
   +simple-rss-1.1.ebuild, +metadata.xml:
