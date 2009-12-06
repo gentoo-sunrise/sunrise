@@ -11,7 +11,7 @@ MY_P="gd2-${PV}"
 
 DESCRIPTION="Ruby bindings for the GD 2.x graphics library."
 HOMEPAGE="http://gd2.rubyforge.org/"
-SRC_URI="http://gems.rubyforge.org/gems/${MY_P}.gem"
+SRC_URI="mirror://rubygems/${MY_P}.gem"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ruby-gd2-1.1.1.ebuild:
+  Use mirror://
+
   16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
   ruby-gd2-1.1.1.ebuild:
   Update ebuild to use EAPI 2. Thanks to Cristian Ruppert and Thomas Sachau
