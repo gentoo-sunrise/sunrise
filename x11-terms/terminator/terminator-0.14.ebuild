@@ -12,14 +12,12 @@ SRC_URI="http://launchpad.net/${PN}/trunk/${PV}/+download/${PN}_${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome libnotify"
+IUSE="gnome"
 
 RDEPEND="gnome? ( dev-python/gnome-python )
-	libnotify? ( dev-python/notify-python )
 	>=x11-libs/vte-0.16[python]"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-without-icon-cache.patch
-	use libnotify || epatch "${FILESDIR}"/${PV}-libnotify.patch
 	distutils_src_prepare
 }
