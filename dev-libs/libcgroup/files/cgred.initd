@@ -1,0 +1,41 @@
+#!/sbin/runscript
+#
+# CGroups Rules Engine Daemon
+#
+# This is a daemon for automatically classifying processes into cgroups based
+# on UID/GID.
+#
+opts="${opts} reload"
+
+CGRULESENGD="/usr/sbin/cgrulesengd"
+PID_FILE=${PIF_FILE:-"/var/run/cgred.pid"}
+
+depend() {
+	need cgconfig localmount
+	use logger
+}
+
+start() {
+	local options="${NODAEMON} ${LOG}"
+	if [[ -n "${LOG_FILE}" ]]; then
+		options="${options} --log-file=${LOG_FILE}"
+	fi
+
+	ebegin "Starting CGroup Rules Engine Daemon"
+	start-stop-daemon --start --exec "${CGRULESENGD}" \
+		--pidfile "${PID_FILE}" -- ${options} >/dev/null
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping CGroup Rules Engine Daemon"
+	start-stop-daemon --stop --exec "${CGRULESENGD}" --pidfile "${PID_FILE}"
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading CGroup Rules Engine Daemon"
+	start-stop-daemon --stop --signal USR2 --oknodo \
+		--exec "${CGRULESENGD}" --pidfile "${PID_FILE}"
+	eend $?
+}
