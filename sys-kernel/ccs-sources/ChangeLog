@@ -2,6 +2,18 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2009; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.16-r2.ebuild,
+  +ccs-sources-2.6.16-r3.ebuild, -ccs-sources-2.6.25-r2.ebuild,
+  +ccs-sources-2.6.25-r3.ebuild, -ccs-sources-2.6.26-r2.ebuild,
+  +ccs-sources-2.6.26-r3.ebuild, -ccs-sources-2.6.27-r3.ebuild,
+  +ccs-sources-2.6.27-r4.ebuild, -ccs-sources-2.6.28-r8.ebuild,
+  +ccs-sources-2.6.28-r9.ebuild, -ccs-sources-2.6.29-r9.ebuild,
+  +ccs-sources-2.6.29-r10.ebuild, -ccs-sources-2.6.30-r8.ebuild,
+  +ccs-sources-2.6.30-r9.ebuild, -ccs-sources-2.6.31-r4.ebuild,
+  +ccs-sources-2.6.31-r5.ebuild, -ccs-sources-2.6.32.ebuild,
+  +ccs-sources-2.6.32-r1.ebuild:
+  ccs-patch version bumped.
+
   05 Dec 2009; Naohiro Aota <naota@elisp.net> +ccs-sources-2.6.32.ebuild:
   Version bumped.
 
