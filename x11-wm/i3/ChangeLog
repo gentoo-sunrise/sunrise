@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-3d.ebuild,
+  i3-9999.ebuild:
+  Doman change. Thx Tommy[D]
+
   12 Nov 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> -i3-3c.ebuild,
   +i3-3d.ebuild:
   Version bump to i3-3.d

@@ -23,7 +23,8 @@ RDEPEND=">=x11-libs/xcb-util-0.3.3
 	x11-libs/libX11
 	dev-libs/libev"
 DEPEND="${RDEPEND}
-	>=app-text/asciidoc-8.1.0"
+	>=app-text/asciidoc-8.1.0
+	>=x11-proto/xcb-proto-1.3"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -38,5 +39,5 @@ src_prepare() {
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc GOALS TODO || die "dodoc ${PN} failed"
-	doman man/${PN}.1 || die "doman ${PN} failed"
+	doman man/*.1 || die "doman ${PN} failed"
 }

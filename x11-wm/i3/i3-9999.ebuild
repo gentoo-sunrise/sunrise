@@ -45,7 +45,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install die"
 	dodoc GOALS TODO CMDMODE || die "dodoc die"
-	doman man/i3.1 man/i3-msg.1 || die "doman die"
+	doman man/*.1 || die "doman die"
 	if use doc; then
 		dohtml -r docs/*.html || die "dohtml die"
 		elog "Documentation in html is in /etc/share/doc/${P}"
