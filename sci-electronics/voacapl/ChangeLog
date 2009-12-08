@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  voacapl-0.5.6.ebuild:
+  tested on x86
+
   06 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   voacapl-0.5.6.ebuild:
   Drop unused eclasses

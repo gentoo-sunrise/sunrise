@@ -12,7 +12,7 @@ SRC_URI="http://www.qsl.net/hz1jw/${PN}/downloads/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 FORTRAN="gfortran"
