@@ -1,0 +1,8 @@
+# ChangeLog for kde-misc/dikt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Dec 2009; Andrew Fedorov <dmmdrs@mail.ru> +dikt-1k.ebuild,
+  +metadata.xml:
+  New ebuild for bug 296200
+
