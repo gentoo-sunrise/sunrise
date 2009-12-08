@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
+  -smartsvn-6.0.5.ebuild, +smartsvn-6.0.9.ebuild:
+  version bump
+
   13 Sep 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
   -smartsvn-6.0.2.ebuild, +smartsvn-6.0.5.ebuild:
   Version bump commit ok by bonsaikitten
