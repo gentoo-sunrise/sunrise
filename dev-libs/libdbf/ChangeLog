@@ -1,6 +1,10 @@
 # ChangeLog for dev-libs/libdbf
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Dec 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  libdbf-0.0.1.ebuild:
+  Added ~amd64 keyword
 
   30 Dec 2008; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   +libdbf-0.0.1.ebuild, +metadata.xml:
