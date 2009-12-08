@@ -10,7 +10,7 @@ SRC_URI="mirror://berlios/${PN}/${MY_P}.src.zip"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="doc"
 
 RDEPEND="dev-libs/libdbf"

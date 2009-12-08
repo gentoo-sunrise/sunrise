@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  dbf-0.9.0.ebuild:
+  Added ~amd64 keyword
+
   11 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> dbf-0.9.0.ebuild:
   Whitespace, use PN in SRC_URI
 
