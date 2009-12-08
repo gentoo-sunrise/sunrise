@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2009; Oliver Borm (boroli) <oli.borm@web.de>
+  files/nurbs++-3.0.11-linker.patch:
+  fixed linker.patch for compilation
+
   11 Nov 2009; Oliver Borm (boroli) <oli.borm@web.de> nurbs++-3.0.11.ebuild,
   -files/nurbs++-3.0.11-gcc-4.3.patch,
   +files/nurbs++-3.0.11-gcc-4.3.patch.bz2,

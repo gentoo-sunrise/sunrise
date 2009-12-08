@@ -5,10 +5,10 @@
  lib_LTLIBRARIES = libnurbsf.la libnurbsd.la
  libnurbsf_la_SOURCES = $(float_sources)
 -libnurbsf_la_LDFLAGS = $(ldflags)
-+libnurbsf_la_LDFLAGS = $(ldflags) -lmatrix -lmatrixN -lmatrixI
++libnurbsf_la_LDFLAGS = $(ldflags) -L../matrix/.libs -lmatrix -L../numerical/.libs -lmatrixN -L../image/.libs -lmatrixI
  libnurbsd_la_SOURCES = $(double_sources)
 -libnurbsd_la_LDFLAGS = $(ldflags)
-+libnurbsd_la_LDFLAGS = $(ldflags) -lmatrix -lmatrixN -lmatrixI
++libnurbsd_la_LDFLAGS = $(ldflags) -L../matrix/.libs -lmatrix -L../numerical/.libs -lmatrixN -L../image/.libs -lmatrixI
  
 --- image/Makefile.am	2002-05-14 06:04:34.000000000 +1000
 +++ image/Makefile.am.new	2009-07-09 00:21:55.000000000 +1000
@@ -17,7 +17,7 @@
  lib_LTLIBRARIES = libmatrixI.la
  libmatrixI_la_SOURCES = color.cpp image_.cpp  rec_filter_.cpp filter_.cpp
 -libmatrixI_la_LDFLAGS = -version-info 1:0:0
-+libmatrixI_la_LDFLAGS = -version-info 1:0:0 -lmatrix
++libmatrixI_la_LDFLAGS = -version-info 1:0:0 -L../matrix/.libs -lmatrix
 
 --- numerical/Makefile.am	2002-05-14 06:04:38.000000000 +1000
 +++ numerical/Makefile.am.new	2009-07-09 00:22:24.000000000 +1000
@@ -26,7 +26,7 @@
  lib_LTLIBRARIES = libmatrixN.la
  libmatrixN_la_SOURCES = matrixMat_.cpp fft_.cpp chebexp_.cpp intccq_.cpp statistic_.cpp
 -libmatrixN_la_LDFLAGS = -version-info 1:0:0
-+libmatrixN_la_LDFLAGS = -version-info 1:0:0 -lmatrix
++libmatrixN_la_LDFLAGS = -version-info 1:0:0 -L../matrix/.libs -lmatrix
  
 --- Doxyfile.in    2009-11-11 09:20:32.000000000 +0100
 +++ Doxyfile.in.new       2009-11-11 09:20:14.000000000 +0100
