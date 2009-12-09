@@ -8,7 +8,7 @@ inherit linux-info linux-mod
 
 DESCRIPTION="Nouveau DRM Kernel Modules for X11"
 HOMEPAGE="http://nouveau.freedesktop.org/"
-SRC_URI="http://omploader.org/vMms3bw/${P}.tar.gz"
+SRC_URI="http://omploader.org/vMnlldQ/${P}.tar.gz"
 
 LICENSE="X11"
 SLOT="0"
