@@ -8,7 +8,7 @@ SRC_URI="mirror://berlios/dbf/${P}.src.zip"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 RDEPEND=""
