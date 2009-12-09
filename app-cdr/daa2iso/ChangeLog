@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Dec 2009; Seth McClain (psymin) <psymin@auralfixation.org>
+  daa2iso-0.1.7e.ebuild:
+  added direct include for toolchain-funcs
+
+  09 Dec 2009; Seth McClain (psymin) <psymin@auralfixation.org>
   +daa2iso-0.1.7e.ebuild, +files/daa2iso-0.1.7e-buildsystem.patch,
   +metadata.xml:
   New Ebuild for bug 257346 thanks to Thomas and everyone on IRC

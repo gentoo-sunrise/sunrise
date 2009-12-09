@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="2"
-inherit base
+inherit base toolchain-funcs
 
 DESCRIPTION="Program for converting the DAA and GBI files (used by PowerISO and gBurner) to ISO"
 HOMEPAGE="http://aluigi.org/mytoolz.htm"
