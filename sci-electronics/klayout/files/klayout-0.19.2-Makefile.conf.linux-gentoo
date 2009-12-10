@@ -22,3 +22,21 @@ LOPT_SO=-shared -fPIC -o
 LIBS=-L$(QTLIB) -lQtGui -lQtCore -lQtXml -lrt -lstdc++ -lcrypt
 
 LINK=$(CXX)
+
+# The details for the install target (needed since 0.19.2)
+
+.PHONY: install
+install:
+	mkdir -p $(INSTALL_BINDIR)
+	cp main/$(EXEC_NAME) $(INSTALL_BINDIR)
+	for bin in $(OTHER_BIN) ; \
+	do \
+	  cp main/$$bin $(INSTALL_BINDIR) ; \
+	done
+	for plugin in $(PLUGINS) ; \
+	do \
+	  cp $$plugin/*.so $(INSTALL_BINDIR) ; \
+	done
+	chmod 755 $(INSTALL_BINDIR) $(INSTALL_BINDIR)/*
+
+

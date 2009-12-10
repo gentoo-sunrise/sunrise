@@ -55,7 +55,7 @@ src_compile() {
 	cd build.linux-gentoo
 	tc-export CC CXX AR LD RANLIB
 	export AR="${AR} -r"
-	emake || die "Build failed"
+	emake all || die "Build failed"
 }
 
 src_install() {
