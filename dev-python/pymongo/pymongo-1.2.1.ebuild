@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+SUPPORT_PYTHON_ABIS=1
+
 inherit distutils
 
 DESCRIPTION="Python driver for MongoDB"
@@ -20,6 +22,8 @@ DEPEND="${RDEPEND}
 	doc?  ( dev-python/sphinx )
 	test? (	dev-python/nose
 		dev-db/mongodb )"
+
+RESTRICT_PYTHON_ABIS="3*"
 
 src_compile() {
 	distutils_src_compile

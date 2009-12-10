@@ -3,6 +3,10 @@
 # $Header: $
 
   10 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pymongo-1.2.1.ebuild:
+  Add SUPPORT_PYTHON_ABIS
+
+  10 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pymongo-1.1.2.ebuild, +pymongo-1.2.1.ebuild:
   Version bump. Docs are now generated with sphinx instead of epydoc
 
