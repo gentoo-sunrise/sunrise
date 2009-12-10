@@ -1,0 +1,39 @@
+diff -rup nvidia-bl-dkms-0.14.0.orig/Makefile nvidia-bl-dkms-0.14.0/Makefile
+--- nvidia-bl-dkms-0.14.0.orig/Makefile	2009-05-26 11:06:07.000000000 +0200
++++ nvidia-bl-dkms-0.14.0/Makefile	2009-12-07 21:14:49.000000000 +0100
+@@ -1,31 +1,6 @@
+-NAME	= nvidia_bl
+-VERSION	= 0.14.0
+-SRC	= usr/src
++MODULE_NAME=nvidia_bl
++obj-m    := $(MODULE_NAME).o
+ 
+-TARBALL	= $(NAME)-$(VERSION).dkms.tar.gz
+-PATCH	= ./scripts/patch-name-version.sh $(NAME) $(VERSION)
+-
+-all:	$(SRC)/$(TARBALL)
+-
+-$(SRC)/$(TARBALL): $(SRC)/dkms_source_tree/$(NAME).c
+-	(cd $(SRC); tar cvfz $(TARBALL) dkms*)
+-
+-clean:
+-	rm -f $(SRC)/$(TARBALL)
+-
+-distclean: clean
+-	rm -rf *-stamp debian/$(NAME)-dkms debian/*.log debian/files
+-
+-install: $(SRC)/$(TARBALL)
+-	install -d "$(DESTDIR)/$(SRC)"
+-	(cd $(SRC); install -m 644 $(NAME)-$(VERSION).dkms.tar.gz "$(DESTDIR)/$(SRC)")
+-
+-bump:
+-	$(PATCH) debian/postinst
+-	$(PATCH) debian/postrm
+-	$(PATCH) debian/prerm
+-	$(PATCH) debian/rules
+-	$(PATCH) debian/postinst
+-	$(PATCH) usr/src/dkms_source_tree/dkms.conf
+-	chmod 0755 debian/rules
++all:
++	make -C /lib/modules/`uname -r`/build M=`pwd`/usr/src/dkms_source_tree/
+ 
