@@ -50,6 +50,8 @@ app-misc/navit:speechd - Enable speech output for routing notifications
 app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x and earlier file formats
 app-office/openoffice-infra:infradicts - Use all bundled dicts from Infra-Resource
 app-office/openoffice-infra:odk - Build the Office Development Kit
+app-text/cb2bib:lzo - compile with lzo support
+app-text/cb2bib:poll - use clipboard polling
 dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
