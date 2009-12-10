@@ -17,17 +17,23 @@ RDEPEND="|| ( >=dev-lang/python-2.5
 	( =dev-lang/python-2.4* >=dev-python/celementtree-1.0.5 ) )"
 DEPEND="${RDEPEND}
 	dev-python/setuptools
-	doc?  ( dev-python/epydoc )
+	doc?  ( dev-python/sphinx )
 	test? (	dev-python/nose
 		dev-db/mongodb )"
+
+src_compile() {
+	distutils_src_compile
+
+	if use doc; then
+		mkdir html
+		sphinx-build doc html || die "building docs failed"
+	fi
+}
 
 src_install() {
 	distutils_src_install
 
-	if use doc; then
-		epydoc --config=epydoc-config || die "epydoc failed"
-		dohtml -r html/* || die "Installing docs failed"
-	fi
+	use doc && dohtml -r html/*
 }
 
 src_test() {
