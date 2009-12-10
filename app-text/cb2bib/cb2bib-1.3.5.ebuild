@@ -15,7 +15,7 @@ LICENSE="GPL-3"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug +lzo +poll"
 
-DEPEND=">=x11-libs/qt-webkit-4.4:4
+DEPEND=">=x11-libs/qt-webkit-4.5.3:4[debug?]
 	x11-libs/libX11
 	x11-proto/xproto
 	lzo? ( dev-libs/lzo )"
