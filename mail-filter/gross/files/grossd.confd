@@ -1,0 +1,9 @@
+# default configuration file
+CONF_FILE="/etc/mail/gross/grossd.conf"
+
+# default pid file
+GROSS_PID="/var/run/grossd/grossd.pid"
+
+# Additional options for the grossd
+# see grossd(8) for more information.
+# GROSSD_OPTS=""

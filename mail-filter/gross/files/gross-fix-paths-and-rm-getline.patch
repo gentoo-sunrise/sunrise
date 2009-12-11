@@ -1,0 +1,48 @@
+diff -ur gross-1.0.2-orig/doc/examples/grossd.conf gross-1.0.2/doc/examples/grossd.conf
+--- gross-1.0.2-orig/doc/examples/grossd.conf	2009-09-20 15:57:57.000000000 +0200
++++ gross-1.0.2/doc/examples/grossd.conf	2009-12-08 10:59:34.000000000 +0100
+@@ -69,13 +69,8 @@
+ # DEFAULT: status_port = 5522
+ 
+ # 'statefile' is the full path of the file that the server will use to
+-# store the state information. 
+-# statefile = /var/db/grossd.state
+-
+-# 'pidfile' is the full path of the file grossd writes its pid into.
+-# You can set parameter 'check', if you want to keep grossd
+-# from starting if pidfile already exists.
+-# pidfile = /var/run/grossd.pid;check
++# store the state information.
++# statefile = /var/db/grossd/grossd.state
+ 
+ # 'log_method' is used to list all the possible logging facilities.
+ # currently only syslog is implemented
+diff -ur gross-1.0.2-orig/include/utils.h gross-1.0.2/include/utils.h
+--- gross-1.0.2-orig/include/utils.h	2009-09-20 15:57:55.000000000 +0200
++++ gross-1.0.2/include/utils.h	2009-12-08 10:27:04.000000000 +0100
+@@ -39,7 +39,6 @@
+ #endif /* ! USE_GETTIMEOFDAY */
+ 
+ int readline(int fd, void *vptr, size_t maxlen);
+-int getline(int fd, char *line, size_t maxlen);
+ ssize_t readn(int fd, void *vptr, size_t n);
+ ssize_t writen(int fd, const void *vptr, size_t n);
+ ssize_t writeline(int fd, const char *line);
+diff -ur gross-1.0.2-orig/man/grossd.conf.5.in gross-1.0.2/man/grossd.conf.5.in
+--- gross-1.0.2-orig/man/grossd.conf.5.in	2009-09-20 15:57:57.000000000 +0200
++++ gross-1.0.2/man/grossd.conf.5.in	2009-12-08 10:27:04.000000000 +0100
+@@ -266,10 +266,10 @@
+ .PP
+ Main section:
+ .PP
+-  GROSS_QUERY = sender=$sender_address\e\en\e\e
+-    recipient=$local_part@$domain\e\en\e\e
+-    client_address=$sender_host_address\e\en\e\e
+-    grossd_mode=single\e\en\e\en
++  GROSS_QUERY = sender=$sender_address\\n\\
++    recipient=$local_part@$domain\\n\\
++    client_address=$sender_host_address\\n\\
++    grossd_mode=single\\n\\n
+ .PP
+ Acl section:
+ .PP

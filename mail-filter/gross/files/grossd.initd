@@ -1,0 +1,40 @@
+#!/sbin/runscript
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	use logger net
+	before mta
+}
+
+checkconfig() {
+	if [ ! -r "${CONF_FILE}" ]
+	then
+		eerror "You need a gross configuration file in ${CONF_FILE}"
+		return 1
+	fi
+	/usr/sbin/grossd -C -f "${CONF_FILE}" >/dev/null 2>&1
+	return
+}
+
+start() {
+	checkconfig || return 1
+	ebegin "Starting ${SVCNAME}"
+	start-stop-daemon \
+		--start \
+		--name grossd \
+		--pid "${GROSS_PID}" \
+		--exec /usr/sbin/grossd -- -P ${GROSS_PID} -f "${CONF_FILE}" ${GROSSD_OPTS}
+	eend ${?} "Failed to start ${SVCNAME}"
+}
+
+stop() {
+	ebegin "Shutting down ${SVCNAME}"
+	start-stop-daemon \
+		--stop \
+		--quiet \
+		--name grossd \
+		--pidfile "${GROSS_PID}"
+	eend ${?} "Failed to stop ${SVCNAME}"
+}

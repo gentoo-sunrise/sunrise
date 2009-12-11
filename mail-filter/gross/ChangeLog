@@ -1,0 +1,11 @@
+# ChangeLog for mail-filter/gross
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Dec 2009; Marcin Miroslaw <bug@mejor.pl> +gross-1.0.2.ebuild,
+  +files/gross-fix-paths-and-rm-getline.patch, +files/grossd.confd,
+  +files/grossd.initd, +metadata.xml:
+  Initial commit, bug #247568. Many thanks to Stevan Bajic for base init
+  script,ebuild and information. Thanks to sedzimir and other people from
+  #gentoo-sunrise.
+
