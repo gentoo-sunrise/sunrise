@@ -4,11 +4,10 @@
 
 EAPI="2"
 
-inherit autotools
+inherit autotools multilib
 
-MY_PN="Vuurmuur"
 MY_PV=${PV/_beta/beta}
-MY_P="${MY_PN}-${MY_PV}"
+MY_P="Vuurmuur-${MY_PV}"
 
 DESCRIPTION="Frontend for iptables featuring easy to use command line utils, rule- and logdaemons"
 HOMEPAGE="http://www.vuurmuur.org"
@@ -16,75 +15,59 @@ SRC_URI="ftp://ftp.vuurmuur.org/releases/${MY_PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="logrotate"
 
-RDEPEND="=net-libs/libvuurmuur-${PV}
-	>=sys-libs/ncurses-5
+DEPEND="=net-libs/libvuurmuur-${PV}
+	>=sys-libs/ncurses-5"
+RDEPEND="${DEPEND}
 	logrotate? ( app-admin/logrotate )"
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${MY_P}/${PN}-${MY_PV}"
 
 src_unpack() {
-	unpack ${A}
-	cd "${S}"
+	default
+	cd ${MY_P}
 	for component in vuurmuur vuurmuur_conf; do
-		unpack "./${component}-${MY_PV}.tar.gz"
-	done
-}
-
-src_prepare() {
-	for component in vuurmuur vuurmuur_conf; do
-		cd "${S}/${component}-${MY_PV}"
-		eautoreconf
+		unpack "./${component}-${MY_PV}.tar.gz"   # upstream supplies tarball inside tarball
 	done
 }
 
 src_configure() {
-	cd "${S}/vuurmuur-${MY_PV}"
 	econf \
 		--with-libvuurmuur-includes=/usr/include \
-		--with-libvuurmuur-libraries=/usr/lib
-	
-	cd "${S}/vuurmuur_conf-${MY_PV}"
+		--with-libvuurmuur-libraries=/usr/$(get_libdir)
+	cd "../vuurmuur_conf-${MY_PV}"
 	econf \
 		--with-libvuurmuur-includes=/usr/include \
-		--with-libvuurmuur-libraries=/usr/lib \
+		--with-libvuurmuur-libraries=/usr/$(get_libdir) \
 		--with-localedir=/usr/share/locale \
 		--with-widec=yes
 }
 
 src_compile() {
-	for component in vuurmuur vuurmuur_conf; do
-		cd "${S}/${component}-${MY_PV}"
-		emake || die "compiling ${component} failed"
-	done
+	default
+	emake -C "../vuurmuur_conf-${MY_PV}" || die "compiling vuurmuur_conf failed"
 }
 
 src_install() {
-	cd "${S}/vuurmuur-${MY_PV}"
 	emake DESTDIR="${D}" install || die "installing vuurmuur failed"
 
 	newinitd "${FILESDIR}"/vuurmuur.init vuurmuur || die "installing init failed"
 	newconfd "${FILESDIR}"/vuurmuur.conf vuurmuur || die "installing conf failed"
-	
-	insopts -m0600
-	insinto /etc/vuurmuur
-	newins config/config.conf.sample config.conf || die "installing config.conf failed"
-	insopts -m0644
 
 	if use logrotate; then
 		insinto /etc/logrotate.d
 		newins scripts/vuurmuur-logrotate vuurmuur || die "installing logrotate config failed"
 	fi
 
-	cd "${S}/vuurmuur_conf-${MY_PV}"
+	insopts -m0600
+	insinto /etc/vuurmuur
+	newins config/config.conf.sample config.conf || die "installing config.conf failed"
+
+	cd "../vuurmuur_conf-${MY_PV}"
+
 	emake DESTDIR="${D}" install || die "installing vuurmuur_conf failed"
-	
-	# needed until the wizard scripts are copied by make
-	insopts -m0755
-	insinto /usr/share/scripts
-	doins scripts/*.sh || die "installing vuurmuur scripts failed"
 }
 
 pkg_postinst() {
