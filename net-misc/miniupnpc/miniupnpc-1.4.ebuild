@@ -2,7 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="UPnP client library and a simple UPnP client."
+EAPI="2"
+
+inherit eutils
+
+DESCRIPTION="UPnP client library and a simple UPnP client"
 SRC_URI="http://miniupnp.free.fr/files/${P}.tar.gz"
 HOMEPAGE="http://miniupnp.free.fr/"
 
@@ -11,7 +15,11 @@ KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE=""
 
-src_install () {
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-cflags.diff
+}
+
+src_install() {
 	emake PREFIX="${D}" install || die "install failed"
 	dodoc README Changelog.txt || die "install failed"
 	doman man3/* || die "install failed"
