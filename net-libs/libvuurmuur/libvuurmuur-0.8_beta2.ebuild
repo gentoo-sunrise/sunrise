@@ -4,40 +4,38 @@
 
 EAPI="2"
 
-inherit autotools
+inherit autotools multilib
 
-MY_PN="Vuurmuur"
 MY_PV=${PV/_beta/beta}
-MY_P="${MY_PN}-${MY_PV}"
+MY_P="Vuurmuur-${MY_PV}"
 
-DESCRIPTION="Libraries and plugins needed by Vuurmuur"
+DESCRIPTION="Libraries and plugins required by Vuurmuur"
 HOMEPAGE="http://www.vuurmuur.org"
 SRC_URI="ftp://ftp.vuurmuur.org/releases/${MY_PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="net-firewall/iptables"
+DEPEND="net-firewall/iptables"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}/${PN}-${MY_PV}"
 
 src_unpack() {
-	unpack ${A}
+	default
 	cd "${MY_P}"
 	unpack "./libvuurmuur-${MY_PV}.tar.gz"
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/libvuurmuur-plugin-0.7.patch   # no longer needed as of >0.8_beta2
+	epatch "${FILESDIR}"/libvuurmuur-plugin-0.7.patch   # no longer needed for >0.8_beta2
 	eautoreconf
 }
 
 src_configure() {
-	econf \
-		--with-plugindir=/usr/lib \
-		--with-shareddir=/usr/share
+	econf --with-plugindir=/usr/$(get_libdir)
 }
 
 src_install() {
