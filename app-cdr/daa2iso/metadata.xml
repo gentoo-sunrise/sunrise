@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd>media-optical</herd>
+  <herd>maintainer-wanted</herd>
   <longdescription>
     daa2iso is a program for converting the DAA and GBI files (used by PowerISO and gBurner) to ISO
   </longdescription>

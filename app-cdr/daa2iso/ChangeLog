@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Fix metadata.xml
+
   09 Dec 2009; Seth McClain (psymin) <psymin@auralfixation.org>
   daa2iso-0.1.7e.ebuild:
   added direct include for toolchain-funcs
