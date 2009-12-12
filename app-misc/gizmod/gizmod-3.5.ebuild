@@ -49,6 +49,8 @@ options can only be built directly into the kernel.
 src_prepare() {
 	# patch gizmod to properly obey libvisual use flag
 	epatch "${FILESDIR}"/${P}-libvisual.patch
+	# patch for gcc-4.4*
+	epatch "${FILESDIR}"/${P}-gcc44.patch
 	## straighten up the paths
 	sed -i CMakeLists.txt -e /DefineInstallationPaths/d || die "sed: removal of DefineInstallationPaths failed"
 	sed -i libGizmod/CMakeLists.txt -e 's:lib$:lib${LIB_SUFFIX}:' || die "sed: replacing lib with LIB_INSTALL_DIR failed"
