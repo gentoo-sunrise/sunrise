@@ -3,6 +3,10 @@
 # $Header: $
 
   12 Dec 2009; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  files/portage-hooks:
+  Fix portage-hooks script, review by Tommy[D]
+
+  12 Dec 2009; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   +portage-hooks-0.1.ebuild, +files/portage-hooks, +metadata.xml:
   New Ebuil for bug 258386, review by Tommy[D]
 

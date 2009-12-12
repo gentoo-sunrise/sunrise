@@ -1,10 +1,10 @@
 LOCAL_DIR="/etc/portage/hooks"
 
-if [[ -d \$LOCAL_DIR/\$EBUILD_PHASE.d ]] ; then
-        einfo "Running \$EBUILD_PHASE phase hooks"
-        for script in \$LOCAL_DIR/\$EBUILD_PHASE.d/*
+if [[ -d ${LOCAL_DIR}/${EBUILD_PHASE}.d ]] ; then
+        einfo "Running ${EBUILD_PHASE} phase hooks"
+        for script in ${LOCAL_DIR}/${EBUILD_PHASE}.d/*
         do
-                \$script
+                ${script}
         done
         einfo "..done"
 
