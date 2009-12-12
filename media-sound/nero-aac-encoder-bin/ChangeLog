@@ -4,5 +4,5 @@
 
   11 Dec 2009; Iurii Zaikin (yzaikin) <punloh@yahoo.com>
   +nero-aac-encoder-bin-1.3.3.0.ebuild, +metadata.xml:
-  New Ebuild for bug for 296289 thanks ohnobinki, hwoarang, Tommy[D]_
+  New Ebuild for bug 296289 thanks ohnobinki, hwoarang, Tommy[D]_
 
