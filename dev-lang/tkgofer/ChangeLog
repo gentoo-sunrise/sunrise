@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  tkgofer-2.1-r1.ebuild:
+  Add missing die
+
   08 Dec 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   -tkgofer-2.1.ebuild, +tkgofer-2.1-r1.ebuild:
   Now using get_libdir from multilib.eclass; added ~amd64 keyword; install

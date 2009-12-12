@@ -46,6 +46,6 @@ src_install() {
 	doins Tcl/* || die
 	exeinto ${lib}/Bin || die
 	doexe Bin/{site.specific,tkgofer.exe} || die
-	dobin Bin/tkgofer
+	dobin Bin/tkgofer || die
 	dodoc readme Doc/* || die
 }
