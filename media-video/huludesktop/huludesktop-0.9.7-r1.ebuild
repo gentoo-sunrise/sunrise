@@ -8,8 +8,8 @@ inherit eutils multilib rpm
 
 DESCRIPTION="Hulu desktop"
 HOMEPAGE="http://www.hulu.com/labs/hulu-desktop-linux"
-SRC_URI="amd64? ( http://download.hulu.com/${PN}.x86_64.rpm -> ${P}.x86_64.rpm )
-		x86? ( http://download.hulu.com/${PN}.i386.rpm -> ${P}.i386.rpm )"
+SRC_URI="amd64? ( http://download.hulu.com/${PN}-x86_64.rpm -> ${P}-x86_64.rpm )
+		x86? ( http://download.hulu.com/${PN}-i386.rpm -> ${P}-i386.rpm )"
 
 LICENSE="Hulu-EULA"
 SLOT="0"

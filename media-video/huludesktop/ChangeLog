@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Dec 2009; Joseph Van Swearingen (Zythran) <jovie1024@yahoo.com>
+  -huludesktop-0.9.7.ebuild, +huludesktop-0.9.7-r1.ebuild:
+  Archive name changed with last version bump and the old name still resolved
+  to version 0.9.6. This release should properly pull in 0.9.7.
+
   09 Dec 2009; Joseph Van Swearingen (Zythran) <jovie1024@yahoo.com>
   -huludesktop-0.9.6.ebuild, +huludesktop-0.9.7.ebuild:
   Version bump
