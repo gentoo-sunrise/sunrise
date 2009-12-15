@@ -1,0 +1,8 @@
+# ChangeLog for media-video/image2mpeg
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Dec 2009; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  +image2mpeg-1.02.ebuild, +metadata.xml:
+  New Ebuild for bug 137362
+
