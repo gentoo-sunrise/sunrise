@@ -26,7 +26,7 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	sci-visualization/gnuplot"
 
-S=${WORKDIR}/spyview-2009-12-09-10_53
+S=${WORKDIR}/spyview-2009-12-14-09_17
 
 PATCHES=( "${FILESDIR}"/${P}-datadir.patch )
 
