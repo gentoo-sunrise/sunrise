@@ -4,7 +4,9 @@
 
 EAPI=2
 
-inherit eutils
+inherit eutils versionator
+
+MY_PATCHVER=$(get_version_component_range 1-2)
 
 DESCRIPTION="A high-performance, open source, schema-free document-oriented database"
 HOMEPAGE="http://www.mongodb.org"
@@ -31,7 +33,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/modify-*.patch
+	epatch "${FILESDIR}"/modify-*-${MY_PATCHVER}.patch
 }
 
 src_compile() {

@@ -3,6 +3,12 @@
 # $Header: $
 
   15 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  mongodb-1.0.1.ebuild, +files/modify-post-strip-1.0.patch,
+  +files/modify-testing-1.0.patch, -files/modify-post-strip.patch,
+  -files/modify-testing.patch:
+  Rename patches for 1.0.x branch so it's easier to follow
+
+  15 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +mongodb-1.2.0.ebuild, +files/modify-post-strip-1.2.patch,
   +files/modify-testing-1.2.patch:
   New version of MongoDB
