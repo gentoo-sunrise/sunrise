@@ -1,0 +1,10 @@
+  To finish the installation, login to
+  http://${VHOST_HOSTNAME}${VHOST_APPDIR}
+  and follow the directions.
+
+  Make sure that php's safemode is disabled.
+
+  You also must make sure that your server can
+  write to the attachments and cache subdirectories.
+  The installation instructions will remind you to
+  do so.

@@ -1,0 +1,39 @@
+diff -u /var/tmp/portage/www-apps/flyspray-0.9.9.6/work.x86/includes/class.database.php /tmp/buffer-content-5978U1d
+--- a/includes/class.database.php	2009-04-19 10:22:30.000000000 -0400
++++ b/includes/class.database.php	2009-12-14 18:54:57.000000000 -0500
+@@ -16,7 +16,8 @@
+     die('Do not access this file directly.');
+ }
+ 
+-require_once dirname(dirname(__FILE__)) . '/adodb/adodb.inc.php';
++set_include_path(get_include_path() . ':' . dirname(dirname(__FILE__)));
++require_once 'adodb/adodb.inc.php';
+ 
+ class Database
+ {
+
+diff -u /var/tmp/portage/www-apps/flyspray-0.9.9.6/work.amd64/setup/index.php /tmp/buffer-content-5978h_j
+--- a/setup/index.php	2009-04-24 20:20:26.000000000 -0400
++++ b/setup/index.php	2009-12-14 19:33:48.000000000 -0500
+@@ -8,9 +8,9 @@
+ 
+ @set_time_limit(0);
+ session_start();
+-//do it fastest as possible.
++//do it as fast as possible.
+ ini_set('memory_limit', '64M');
+-
++set_include_path(get_include_path() . ':' . dirname(dirname(__FILE__)));
+ 
+ if (is_readable ('../flyspray.conf.php') && count(parse_ini_file('../flyspray.conf.php')) > 0)
+ {
+@@ -88,7 +88,7 @@
+    function Setup()
+    {
+       // Look for ADOdb
+-      $this->mAdodbPath         = APPLICATION_PATH . '/adodb/adodb.inc.php';
++      $this->mAdodbPath         = 'adodb/adodb.inc.php';
+       $this->mProductName       = 'Flyspray';
+       $this->mMinPasswordLength	= 8;
+ 
+

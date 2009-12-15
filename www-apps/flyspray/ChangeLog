@@ -1,0 +1,10 @@
+# ChangeLog for www-apps/flyspray
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Dec 2009; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> +flyspray-0.9.9.6.ebuild,
+  +files/flyspray-0.9.9.6-system-adodb.patch, +files/postinstall-en.txt,
+  +metadata.xml:
+  New ebuild for bug 91078, thanks to tommy[d] and sedzimir
+
