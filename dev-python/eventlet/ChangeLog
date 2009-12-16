@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -eventlet-0.9.0.ebuild, +eventlet-0.9.2.ebuild:
+  Version bump. Tests still fail without twisted, upstream notified
+
   13 Oct 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -eventlet-0.8.16.ebuild, +eventlet-0.9.0.ebuild:
   Version bump, fix deps and use nose for testing. Note: Tests fail because of
