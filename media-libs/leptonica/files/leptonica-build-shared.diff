@@ -1,0 +1,32 @@
+Simple patch to build shared library using autotools.
+Additionally removes inappropriate declaration of 'CFLAGS'.
+
+diff -dupr leptonlib-1.62.orig/src/Makefile.am leptonlib-1.62/src/Makefile.am
+--- leptonlib-1.62.orig/src/Makefile.am	2009-12-16 18:49:59.800517773 +0100
++++ leptonlib-1.62/src/Makefile.am	2009-12-16 18:50:19.629265044 +0100
+@@ -6,10 +6,10 @@ SUBDIRS =
+ MAKE = make -f Makefile
+ AM_CFLAGS = -D_BSD_SOURCE -DANSI -fPIC
+ AM_CPPFLAGS = $(ENDIANNESS)
+-CFLAGS = -O2
++AM_LDFLAGS = -shared
+ 
+-lib_LIBRARIES = liblept.a
+-liblept_a_SOURCES = adaptmap.c \
++lib_LTLIBRARIES = liblept.la
++liblept_la_SOURCES = adaptmap.c \
+  affine.c affinecompose.c \
+  arithlow.c arrayaccess.c \
+  bardecode.c \
+diff -dupr leptonlib-1.62.orig/configure.ac leptonlib-1.62/configure.ac
+--- leptonlib-1.62.orig/configure.ac	2009-12-16 18:54:31.012265321 +0100
++++ leptonlib-1.62/configure.ac	2009-12-16 18:55:06.954265636 +0100
+@@ -114,7 +114,7 @@ AC_C_BIGENDIAN
+ 
+ # Check where all the following programs are and set
+ # variables accordingly:
+-AC_PROG_RANLIB
++AC_PROG_LIBTOOL
+ # AC_PROG_LN_S
+ # AC_PATH_PROG(MV, mv)
+ # AC_PATH_PROG(CP, cp)
