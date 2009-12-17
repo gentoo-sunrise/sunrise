@@ -3,6 +3,10 @@
 # $Header: $
 
   17 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pymongo-1.2.1.ebuild, +pymongo-1.3.ebuild:
+  Version bump
+
+  17 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pymongo-1.2.1.ebuild:
   dohtml needs die. Thanks to Tommy[D] for acting ebuild ninja
 
