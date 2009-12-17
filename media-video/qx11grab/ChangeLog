@@ -1,0 +1,10 @@
+# ChangeLog for media-video/qx11grab
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*qx11grab-0.1.8 (17 Dec 2009)
+
+  17 Dec 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
+  +qx11grab-0.1.8.ebuild, +Changelog, +metadata.xml:
+  Initial commit f qx11grab for bug 297309
+
