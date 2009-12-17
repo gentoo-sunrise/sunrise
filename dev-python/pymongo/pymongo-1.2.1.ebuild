@@ -37,7 +37,7 @@ src_compile() {
 src_install() {
 	distutils_src_install
 
-	use doc && dohtml -r html/*
+	use doc && dohtml -r html/* || die "Error installing docs"
 }
 
 src_test() {
