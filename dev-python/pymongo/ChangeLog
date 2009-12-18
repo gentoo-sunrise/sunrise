@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pymongo-1.3.ebuild:
+  Actually test all use-flag combinations before committing. Thanks to
+  Tommy[D] for spotting
+
   17 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pymongo-1.2.1.ebuild, +pymongo-1.3.ebuild:
   Version bump
