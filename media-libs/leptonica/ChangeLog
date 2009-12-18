@@ -3,6 +3,10 @@
 # $Header: $
 
   18 Dec 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -leptonica-1.62.ebuild, +leptonica-1.63.ebuild:
+  Version bump. Install documentation as plaintext.
+
+  18 Dec 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   files/leptonica-build-shared.diff:
   Use more correct method to disable building static lib.
 
