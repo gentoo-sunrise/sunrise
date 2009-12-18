@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Dec 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  files/leptonica-build-shared.diff:
+  Use more correct method to disable building static lib.
+
   16 Dec 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +leptonica-1.62.ebuild, +files/leptonica-build-shared.diff, +metadata.xml:
   New ebuild for bug #297101. Thanks to ohnobinki&Tommy[D] for suggestions.
