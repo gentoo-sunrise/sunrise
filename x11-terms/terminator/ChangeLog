@@ -4,7 +4,7 @@
 
   07 Dec 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   -files/0.14-libnotify.patch, terminator-0.14.ebuild:
-  Fixed problems with libnotify
+  Removed libnotify support as upstream did drop it in 0.14 release
 
   03 Dec 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   -terminator-0.13.ebuild, -files/terminator-0.13-without-icon-cache.patch,
