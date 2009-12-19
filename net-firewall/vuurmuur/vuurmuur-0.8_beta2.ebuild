@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit autotools multilib
+inherit multilib
 
 MY_PV=${PV/_beta/beta}
 MY_P="Vuurmuur-${MY_PV}"
@@ -78,6 +78,6 @@ pkg_postinst() {
 	elog "BEFORE you start the daemon in order not to lock yourself"
 	elog "out. The necessary steps are:"
 	elog "1) vuurmuur_conf"
-	elog "2) /etc/init.d/vuurmuur start"	
+	elog "2) /etc/init.d/vuurmuur start"
 	elog "3) rc-update add vuurmuur default"
 }

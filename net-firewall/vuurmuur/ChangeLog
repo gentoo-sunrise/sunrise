@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  vuurmuur-0.8_beta2.ebuild, metadata.xml:
+  Remove unused autotools inherit, add missing logrotate USE description to
+  metadata.xml, fix whitespace
+
   11 Dec 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
   vuurmuur-0.8_beta2.ebuild:
   Improved ebuild for bug 115697
