@@ -22,5 +22,3 @@ src_install() {
 	emake install DESTDIR="${D}" || die "install fail"
 	dodoc AUTHORS ChangeLog || die "doc install fail"
 }
-
-
