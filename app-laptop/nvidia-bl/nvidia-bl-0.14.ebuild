@@ -13,18 +13,13 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-S="${WORKDIR}/${PN}-dkms-${PV}.0"
+S="${WORKDIR}/${PN}-dkms-${PV}.0/usr/src/dkms_source_tree"
 
-MODULE_NAMES="nvidia_bl(kernel/drivers::${S}/usr/src/dkms_source_tree/)"
+MODULE_NAMES="nvidia_bl(kernel/drivers)"
 
 pkg_setup() {
 	kernel_is -lt 2 6 29 && die "kernel 2.6.29 or higher is required"
 	linux-mod_pkg_setup
-	BUILD_PARAMS="-C ${KV_DIR} M=${S}/usr/src/dkms_source_tree"
+	BUILD_PARAMS="-C ${KV_DIR} M=${S}"
 	BUILD_TARGETS="nvidia_bl.ko"
-}
-
-src_unpack() {
-	unpack ${A}
-	epatch "${FILESDIR}/nvidia-bl-makefile.patch"
 }
