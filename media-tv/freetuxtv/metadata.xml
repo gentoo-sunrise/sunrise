@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<!-- 
+$Header: /var/cvsroot/gentoo-x86/skel.metadata.xml,v 1.18 2008/07/28 19:27:05 cardoe Exp $
+
+This is the example metadata file.
+The root element of this file is <pkgmetadata>. Within this element a 
+number of subelements are allowed: herd, maintainer, and 
+longdescription. herd is a required subelement.
+
+For a full description look at:
+http://www.gentoo.org/proj/en/devrel/handbook/handbook.xml?part=2&chap=4
+
+
+Before committing, please remove the comments from this file. They are 
+not relevant for general metadata.xml files.
+-->
+<pkgmetadata>
+<herd>maintainer-wanted</herd>
+<longdescription>
+	WebTV player for french people to watch ADSL TV from ISP's
+</longdescription>
+<use>
+	<flag name='nls'>Enable native language support (using intltool)</flag>
+</use>
+</pkgmetadata>
