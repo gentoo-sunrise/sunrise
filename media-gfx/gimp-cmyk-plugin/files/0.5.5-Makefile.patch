@@ -1,0 +1,22 @@
+diff --git a/Makefile b/Makefile
+index 8a99981..46940a7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ GIMP_VER = 2.4
+ 
+ PREFIX      = /usr
+-INSTALLDIR  = $(PREFIX)/lib/gimp/2.0/plug-ins
++INSTALLDIR  = $(PREFIX)/GENTOOLIBDIR/gimp/2.0/plug-ins
+ #INSTALLDIR = $(HOME)/.gimp-$(GIMP_VER)/plug-ins
+ 
+ GTK_INCLUDE  = `pkg-config gtk+-2.0 --cflags`
+@@ -87,7 +87,7 @@ install-catalogs:
+ 
+ install-plugins: $(TARGETS)
+ 	install -d "$(INSTALLDIR)"
+-	install -c -s $^ "$(INSTALLDIR)"
++	install -c $^ "$(INSTALLDIR)"
+ 
+ install: install-plugins install-catalogs
+ 

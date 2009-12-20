@@ -2,13 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base toolchain-funcs
+EAPI="2"
+
+inherit base multilib toolchain-funcs
 
 MY_P="separate+-${PV}"
+SFNUM="42977"
 
 DESCRIPTION="Gimp CMYK plug-in."
 HOMEPAGE="http://cue.yellowmagic.info/softwares/separate.html"
-SRC_URI="mirror://sourceforge.jp/separate-plus/41810/${MY_P}.zip
+SRC_URI="mirror://sourceforge.jp/separate-plus/${SFNUM}/${MY_P}.zip
 	 http://download.adobe.com/pub/adobe/iccprofiles/win/AdobeICCProfilesCS4Win_end-user.zip"
 
 LICENSE="GPL-2 Adobe"
@@ -17,6 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="media-libs/lcms
+	media-libs/jpeg
 	media-libs/tiff
 	media-gfx/gimp"
 DEPEND="${RDEPEND}"
@@ -26,6 +30,13 @@ S="${WORKDIR}/${MY_P}"
 PATCHES=(
 	"${FILESDIR}"/${PV}-Makefile.patch
 	)
+
+src_prepare() {
+	base_src_prepare
+	sed \
+		-e "s:GENTOOLIBDIR:$(get_libdir):g" \
+		-i Makefile
+}
 
 src_compile() {
 	emake \

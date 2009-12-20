@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Dec 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  +gimp-cmyk-plugin-0.5.5.ebuild, -files/0.5.4-Makefile.patch,
+  +files/0.5.5-Makefile.patch, -gimp-cmyk-plugin-0.5.4.ebuild:
+  Version bump, including jpeg support
+
   12 Aug 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   +files/0.5.4-Makefile.patch, -gimp-cmyk-plugin-0.5.3.ebuild,
   +gimp-cmyk-plugin-0.5.4.ebuild, -files/installer.patch:
