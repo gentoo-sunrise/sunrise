@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2009; Andrew Fedorov <dmmdrs@mail.ru> -dikt-1k.ebuild,
+  +dikt-1l.ebuild:
+  Version bump
+
   08 Dec 2009; Andrew Fedorov <dmmdrs@mail.ru> +dikt-1k.ebuild,
   +metadata.xml:
   New ebuild for bug 296200
