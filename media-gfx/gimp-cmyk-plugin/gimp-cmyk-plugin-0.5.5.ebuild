@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit base multilib toolchain-funcs
+inherit multilib toolchain-funcs
 
 MY_P="separate+-${PV}"
 SFNUM="42977"
@@ -27,21 +27,13 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=(
-	"${FILESDIR}"/${PV}-Makefile.patch
-	)
-
 src_prepare() {
-	base_src_prepare
-	sed \
-		-e "s:GENTOOLIBDIR:$(get_libdir):g" \
-		-i Makefile
+	epatch "${FILESDIR}"/${PV}-Makefile.patch
+	sed -e "s:GENTOOLIBDIR:$(get_libdir):g" -i Makefile || die
 }
 
 src_compile() {
-	emake \
-		CC="$(tc-getCC)" \
-		|| die "compilation failed"
+	emake CC="$(tc-getCC)" 	|| die "compilation failed"
 }
 
 src_install() {
