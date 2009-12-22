@@ -161,6 +161,7 @@ media-sound/scala-bin:midi - MIDI support
 media-sound/songbird-bin:faac - Add faac support
 media-sound/songbird-bin:faad - Add faad support
 media-sound/songbird-bin:ugly - Add ugly support
+media-tv/freetuxtv:nls - Enable native language support (using intltool)
 media-video/image2mpeg:devil - Enable image loading via DevIL
 media-video/pgcedit:video - Add support for video preview
 media-video/qnapi:gnome - Enable GNOME menu integration.
