@@ -1,6 +1,10 @@
 # ChangeLog for media-server/ushare
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ushare-1.1a.ebuild:
+  Add ~amd64 keyword as requested in bug 281259
 
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added local USE flag description wrt GLEP 56
