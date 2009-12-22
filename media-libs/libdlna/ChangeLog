@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  libdlna-0.2.3.ebuild:
+  Add die to dodoc
+
   22 Dec 2009; Peter Volkov <pva@gentoo.org> libdlna-0.2.3.ebuild,
   +files/libdlna-0.2.3-libavcodec-libavformat-include-paths.patch:
   Fixed build issue with ffmpeg-5, added missed dependency on ffmpeg, tested
