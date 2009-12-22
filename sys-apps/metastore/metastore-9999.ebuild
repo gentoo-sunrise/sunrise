@@ -10,7 +10,7 @@ EGIT_REPO_URI="git://git.hardeman.nu/metastore.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS=""
 IUSE=""
 
 src_install() {
