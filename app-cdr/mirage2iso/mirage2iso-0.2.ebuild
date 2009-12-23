@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+inherit toolchain-funcs
+
 DESCRIPTION="CD/DVD image converter using libmirage"
 HOMEPAGE="http://proj.mgorny.alt.pl/mirage2iso/"
 SRC_URI="http://proj.mgorny.alt.pl/${PN}/${P}.tar.bz2"
@@ -19,6 +21,7 @@ RDEPEND="${DEPEND}
 	pinentry? ( app-crypt/pinentry )"
 
 src_configure() {
+	tc-export CC
 	econf \
 		$(use_with pinentry assuan)
 }
