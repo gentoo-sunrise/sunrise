@@ -1,0 +1,8 @@
+# ChangeLog for sys-apps/ultracopier
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Dec 2009; BRULE Herman <alpha_one_x86@first-world.info>
+  +ultracopier-0.2.0.9.ebuild, +metadata.xml:
+  New Ebuild for bug 292390 thanks to Tommy[D] and all people in #gentoo-sunrise
+
