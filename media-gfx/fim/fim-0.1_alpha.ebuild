@@ -18,7 +18,7 @@ RDEPEND="gif? ( media-libs/giflib )
 	jpeg? ( >=media-libs/jpeg-6b )
 	png? ( media-libs/libpng )
 	tiff? ( media-libs/tiff )
-	postscript? ( virtual/ghostscript media-libs/tiff )
+	postscript? ( app-text/ghostscript-gpl media-libs/tiff )
 	screen? ( app-misc/screen )
 	sys-libs/readline"
 
