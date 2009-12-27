@@ -16,7 +16,7 @@ KEYWORDS="" #only x32 and amd64 are tested and supported
 IUSE="X doc"
 
 DEPEND="dev-libs/libsigsegv
-	   doc? ( virtual/ghostscript )
+	   doc? ( app-text/ghostscript-gpl )
 	   X? ( x11-libs/libX11 )"
 RDEPEND="${DEPEND}"
 
