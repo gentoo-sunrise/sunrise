@@ -15,7 +15,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="dev-lang/perl
-	virtual/ghostscript"
+	app-text/ghostscript-gpl"
 
 src_install() {
 	insinto /usr/$(get_libdir)/syracuse/app
