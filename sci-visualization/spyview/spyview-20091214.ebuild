@@ -18,7 +18,7 @@ IUSE=""
 COMMON_DEPEND=">=dev-libs/boost-1.35
 	media-libs/netpbm
 	>=x11-libs/fltk-1.1.9:1.1
-	virtual/ghostscript"
+	app-text/ghostscript-gpl"
 
 DEPEND="${COMMON_DEPEND}
 	sys-apps/groff"

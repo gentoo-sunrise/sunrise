@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Dec 2009; Peter Volkov <pva@gentoo.org> spyview-20091214.ebuild:
+  virtual/ghostscript->app-text/ghostscript-gpl: ghostscript-gpl is the only
+  implementation left in the tree.
+
   15 Dec 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   -spyview-20091209.ebuild, -files/spyview-20091209-datadir.patch,
   +spyview-20091214.ebuild, +files/spyview-20091214-datadir.patch:
