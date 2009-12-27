@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/omnetpp
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Dec 2009; Peter Volkov <pva@gentoo.org> omnetpp-3.3.ebuild:
+  virtual/ghostscript->app-text/ghostscript-gpl: ghostscript-gpl is the only
+  implementation left in the tree.
 
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> omnetpp-3.3.ebuild:
   Fix dependencies

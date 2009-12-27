@@ -17,7 +17,7 @@ RDEPEND="=dev-lang/tcl-8.4*
 	=dev-lang/tk-8.4*
 	dev-lang/perl
 	dev-libs/libxslt
-	virtual/ghostscript
+	app-text/ghostscript-gpl
 	media-gfx/imagemagick
 	media-gfx/graphviz"
 DEPEND="${RDEPEND}
