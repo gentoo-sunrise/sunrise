@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Dec 2009; Peter Volkov <pva@gentoo.org> epsoneplijs-0.4.1.ebuild:
+  virtual/ghostscript->app-text/ghostscript-gpl: ghostscript-gpl is the only
+  implementation left in the tree.
+
   23 Nov 2009; Marco Simeone (rael86) <ing.marcosimeone@gmail.com>
   epsoneplijs-0.4.1.ebuild, files/epsoneplijs-0.4.1-destdir.patch:
   Fixes to SRC_URI and patch: thanks to Tommy[D]

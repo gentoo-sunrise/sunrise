@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="usb"
 
 DEPEND="net-print/cups
-	virtual/ghostscript
+	app-text/ghostscript-gpl
 	net-print/foomatic-filters
 	usb? ( virtual/libusb )"
 RDEPEND="${DEPEND}"
