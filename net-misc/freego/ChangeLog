@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/freego
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Dec 2009; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
+  +freego-4.ebuild, +metadata.xml:
+  New Ebuild for bug 298011 thanks to Fauli, darkside_, chtihead and Tommy
+
