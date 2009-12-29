@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Dec 2009; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
+  freego-4.ebuild, metadata.xml:
+  A small fix thanks to sedzimir and metadata.xml updated
+
+  29 Dec 2009; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   +freego-4.ebuild, +metadata.xml:
   New Ebuild for bug 298011 thanks to Fauli, darkside_, chtihead and Tommy
 

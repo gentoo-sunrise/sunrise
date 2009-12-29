@@ -5,8 +5,7 @@
 EAPI="2"
 
 inherit qt4
-MY_PN="FreeGo"
-MY_P=${MY_PN}${PV}
+MY_P="FreeGo${PV}"
 
 DESCRIPTION="Tool for users of Free, a French ISP, to manage their accounts"
 HOMEPAGE="http://www.free-go.net/"
@@ -26,20 +25,18 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	sed -i -e \
 		's:PREFIX.*=.*:PREFIX=/usr:' ${MY_P}.pro \
-		|| die "sed failed"
+		|| die
 }
 
 src_compile() {
 	eqmake4 ${MY_P}.pro
-	emake || die "emake failed"
+	emake || die
 }
 
 src_install() {
-	emake \
-		INSTALL_ROOT="${D}" \
-		install || die "emake install failed"
+	emake INSTALL_ROOT="${D}" install || die
 
-	dobin ${MY_PN}
+	dobin FreeGo
 	if use doc ; then
 		dodoc "Guide d'utilisation de FreeGo.pdf" || die
 	fi;
