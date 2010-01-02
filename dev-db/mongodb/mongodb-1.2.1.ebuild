@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,7 +24,7 @@ RDEPEND="dev-lang/spidermonkey
 DEPEND="${RDEPEND}
 	>=dev-util/scons-1.2.0-r1"
 
-S=${WORKDIR}/${PN}-mongo-2add01f
+S=${WORKDIR}/${PN}-mongo-45992de
 
 pkg_setup() {
 	enewgroup mongodb
