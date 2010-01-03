@@ -3,6 +3,10 @@
 # $Header: $
 
   03 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  +tucan-9999.ebuild:
+  Added tucan live-ebuild
+
+  03 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   tucan-0.3.9.ebuild:
   Fixed description and header.
 
