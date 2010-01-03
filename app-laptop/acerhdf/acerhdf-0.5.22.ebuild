@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,6 +26,7 @@ BUILD_TARGETS="default"
 MODULE_NAMES="${PN}(:${S}:${S})"
 MODULESD_ACERHDF_DOCS="README.txt"
 BUILD_PARAMS="KDIR=${KERNEL_DIR}"
+CONFIG_CHECK="!ACERHDF ~THERMAL ~THERMAL_HWMON ~ACPI"
 
 pkg_setup() {
 	linux-mod_pkg_setup
