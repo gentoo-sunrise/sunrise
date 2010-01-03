@@ -3,6 +3,10 @@
 # $Header: $
 
   03 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  tucan-0.3.9.ebuild:
+  Fixed description and header.
+
+  03 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   +tucan-0.3.9.ebuild, +metadata.xml:
   New Ebuild for bug 261907
 
