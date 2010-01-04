@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,9 +30,7 @@ RDEPEND="net-analyzer/rrdtool[perl]
 need_httpd_cgi
 
 src_prepare() {
-	local IDATE=$(date +'%Y-%m-%d')
-	sed -i -e "s|\(our \$IDATE = \"\)01 Jan 2000|\1${IDATE}|" \
-		   -e "s|\(our \$OSTYPE = \"Linux-\)RHFC|\1Gentoo|" ${PN}.conf \
+	sed -i -e "s|\(our \$OSTYPE = \"Linux-\)RHFC|\1Gentoo|" ${PN}.conf \
 		   || die "sed failed"
 }
 
@@ -51,8 +49,7 @@ src_install() {
 	doman man/man5/${PN}.conf.5 || die "doman failed"
 
 	insinto "${MY_HTDOCSDIR}"
-	doins envelope.png logo_bot_black.png logo_bot_white.png logo_top.jpg \
-		monitorixico.png || die "doins failed"
+	doins logo_bot.png logo_top.png monitorixico.png || die "doins failed"
 	dodir "${MY_HTDOCSDIR}/imgs" || die "dodir failed"
 	webapp_serverowned "${MY_HTDOCSDIR}/imgs"
 
