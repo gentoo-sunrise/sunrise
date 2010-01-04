@@ -14,11 +14,11 @@ DESCRIPTION="Manages automatically downloads and uploads from one-click hosting 
 HOMEPAGE="http://tucaneando.com/"
 SRC_URI="http://forja.rediris.es/frs/download.php/1470/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-
 IUSE="gtk"
+
 RDEPEND="dev-lang/python
 	gtk? ( dev-python/pygtk
 		gnome-base/librsvg )
@@ -28,8 +28,8 @@ RDEPEND="dev-lang/python
 src_install() {
 	emake DESTDIR="${D}"/usr install || die "emake install failed"
 	dodoc CHANGELOG README || die "dodoc failed"
-	newicon media/tucan.svg "${PN}.svg" || die "newicon failed"
 	if use gtk ; then
+		newicon media/tucan.svg "${PN}.svg" || die "newicon failed"
 		make_desktop_entry tucan Tucan
 	fi
 }
