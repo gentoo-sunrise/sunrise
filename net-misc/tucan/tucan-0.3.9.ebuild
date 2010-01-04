@@ -31,3 +31,13 @@ src_install() {
 		make_desktop_entry tucan Tucan
 	fi
 }
+
+pkg_postinst() {
+	if ! use gtk ; then
+		ewarn "Please be aware that Tucan curses interface is still under"
+		ewarn "development."
+		ewarn
+		ewarn "You should use 'tucan --cli' for curses interface or"
+		ewarn "simply use 'tucan --daemon' to use it daemonized."
+	fi
+}
