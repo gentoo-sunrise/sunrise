@@ -3,6 +3,10 @@
 # $Header: $
 
   04 Jan 2010; Russell Harmon (eatnumber1) <russ@eatnumber1.com>
+  -keynav-20091108.ebuild:
+  Remove keynav-20091108
+
+  04 Jan 2010; Russell Harmon (eatnumber1) <russ@eatnumber1.com>
   +keynav-20091231.04.ebuild:
   Version bump keynav to 20091231.04. Thanks to Russell Harmon
 
