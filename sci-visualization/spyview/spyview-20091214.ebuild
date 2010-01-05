@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header $
 
@@ -28,10 +28,8 @@ RDEPEND="${COMMON_DEPEND}
 
 S=${WORKDIR}/spyview-2009-12-14-09_17
 
-PATCHES=( "${FILESDIR}"/${P}-datadir.patch )
-
 src_prepare() {
-	base_src_prepare
+	epatch "${FILESDIR}"/${P}-{datadir,includes}.patch
 
 	append-cflags $(fltk-config --cflags)
 	append-cxxflags $(fltk-config --cxxflags) -I/usr/include/netpbm
