@@ -4,6 +4,10 @@
 
   05 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   tucan-0.3.9.ebuild, tucan-9999.ebuild:
+  Reverted back to doicon, my bad
+
+  05 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  tucan-0.3.9.ebuild, tucan-9999.ebuild:
   Reverted back to newicon
 
   04 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
