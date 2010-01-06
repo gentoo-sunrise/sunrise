@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit qt4
+inherit qt4-r2
 
 DESCRIPTION="Tool for extracting unformatted bibliographic references"
 HOMEPAGE="http://www.molspaces.com/cb2bib/"
@@ -21,36 +21,35 @@ DEPEND=">=x11-libs/qt-webkit-4.5.3:4[debug?]
 	lzo? ( dev-libs/lzo )"
 RDEPEND="${DEPEND}"
 
-PATCHES=( "${FILESDIR}/${P}"-{disable-cbpoll,noqmake}.patch )
+src_prepare() {
+	# we need to make these two scripts executable before running qmake
+	# then qmake picks that up and installs them with $(INSTALL_PROGRAM), 
+	# i.e. executable. :]
+	#
+	chmod +x c2bscripts/c2bimport || die
+	chmod +x c2bscripts/c2bciter || die
+}
 
 src_configure() {
-	# The non-standard configure script has only few options, not a matching 
-	# --enable for every --disable, and uses _ instead of - as separator...
-	# So do things manually...
 	# We need to unset QTDIR here, else we may end up with qt3 if it is installed.
 	QTDIR="" ./configure \
-		$(use lzo  || echo --disable_lzo) \
-		$(use poll || echo --disable_cbpoll) \
+		$(use_enable lzo) \
+		$(use_enable poll cbpoll) \
 		--qmakepath /usr/bin/qmake \
 		--prefix /usr \
 		--bindir /usr/bin \
 		--datadir /usr/share \
 		--desktopdatadir /usr/share/applications \
-		--icondir /usr/share/pixmaps || die "cb2bib provided configure failed"
+		--icondir /usr/share/pixmaps \
+		--disable-qmake-call || die "cb2bib provided configure failed"
 
-	# configure is patched not to run qmake itself but just write the commandline 
-	# parameters into a file "qmake-additional-args"
+	# configure writes the additional qmake commandline parameters into a 
+	# file "qmake-additional-args"
 	eqmake4 ${PN}.pro $(cat qmake-additional-args)
 }
 
 src_install() {
 	emake INSTALL_ROOT="${D}" install || die "emake install failed"
-
-	# qmake or src.pro defect: scripts are installed by $(INSTALL_FILE)
-	# instead of $(INSTALL_PROGRAM), and thus the executable bit becomes
-	# cleared
-	fperms +x "/usr/bin/c2bimport" || die
-	fperms +x "/usr/bin/c2bciter"  || die
 }
 
 pkg_postinst() {
