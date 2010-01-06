@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,7 @@ GIT_ECLASS="git"
 
 inherit x-modular
 
-EGIT_TREE="60a394222b410da8bb832935fc525132218b4d94"
+EGIT_COMMIT="6992d0e7a0cb3c32b16af0b724246e44f7a35d7e"
 EGIT_REPO_URI="git://anongit.freedesktop.org/git/nouveau/${PN}"
 
 DESCRIPTION="Nouveau video driver"
@@ -30,7 +30,7 @@ DEPEND="${COMMON_DEPEND}
 	x11-proto/xextproto
 	x11-proto/xf86driproto
 	x11-proto/xproto
-	>=x11-libs/libdrm-2.4.16"
+	>=x11-libs/libdrm-2.4.17"
 
 # need x11-base/nouveau-drm until nouveau drm enters the kernel
 RDEPEND="${COMMON_DEPEND}
