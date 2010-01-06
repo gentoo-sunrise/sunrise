@@ -1,0 +1,22 @@
+--- tofu	2009-02-13 18:38:12.000000000 +0100
++++ tofu.ok	2010-01-06 11:41:48.999277683 +0100
+@@ -387,7 +387,7 @@
+ sub edit {
+     # Edit the content of the given tasks
+     # edit STACK TASKS
+-    my ($ed, $do, $stk, @tsk) = (&confetti ("editor", "vi"), 0, @_);
++    my ($ed, $do, $stk, @tsk) = (&confetti ("editor", "$ENV{EDITIOR}"), 0, @_);
+     my %ttl = &title($stk, "Untitled", @tsk); &explode($stk, 1, @tsk); # We get the titles and generate the files.
+     if (&confetti ("global-edition", "0")) {
+         # The entire tasks list is given as argument.
+@@ -624,8 +624,8 @@
+ #       
+ #       last            ---     select the last task added in the stack.
+ #       max=<n>         ---     limit the selection to <n> tasks maximum.
+-#       n°              ---     select explicitely the task <n°>.
+-#       -n°             ---     select all of the tasks but not <n°>.
++#       n               ---     select explicitely the task <n>.
++#       -n              ---     select all of the tasks but not <n>.
+ #       next            ---     call and select the next task in the stack.
+ #       pr=<priorities> ---     select the tasks with the given priorities.
+ #       top             ---     call in the selection the current top task.
