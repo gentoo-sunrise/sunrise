@@ -1,6 +1,10 @@
 # ChangeLog for sys-kernel/ccs-sources
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jan 2010; Naohiro Aota <naota@elisp.net> +ccs-sources-2.6.31-r7.ebuild,
+  +ccs-sources-2.6.32-r3.ebuild:
+  gentoo-patch version bumped.
 
   22 Dec 2009; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.16-r3.ebuild,
   +ccs-sources-2.6.16-r4.ebuild, -ccs-sources-2.6.25-r3.ebuild,
