@@ -5,7 +5,7 @@
      # Edit the content of the given tasks
      # edit STACK TASKS
 -    my ($ed, $do, $stk, @tsk) = (&confetti ("editor", "vi"), 0, @_);
-+    my ($ed, $do, $stk, @tsk) = (&confetti ("editor", "$ENV{EDITIOR}"), 0, @_);
++    my ($ed, $do, $stk, @tsk) = (&confetti ("editor", "$ENV{EDITOR}"), 0, @_);
      my %ttl = &title($stk, "Untitled", @tsk); &explode($stk, 1, @tsk); # We get the titles and generate the files.
      if (&confetti ("global-edition", "0")) {
          # The entire tasks list is given as argument.
