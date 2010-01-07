@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND="dev-lang/php[pcre,postgres,xml]
+DEPEND="dev-lang/php[pcre,pdo,postgres,xml]
 	doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="${DEPEND}"
 
