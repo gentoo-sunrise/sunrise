@@ -1,6 +1,11 @@
 # ChangeLog for www-apps/davical
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2010; lebarjack <francois.perichon@univ-lille2.fr>
+  -davical-0.9.7.6.ebuild, -files/postinstall-en-0.9.7.6.txt,
+  +davical-0.9.8.ebuild, +files/postinstall-en-0.9.8.txt:
+  Version bump, now depends on php with pdo
 
   28 Oct 2009; lebarjack <francois.perichon@univ-lille2.fr>
   -davical-0.9.7.4.ebuild, -files/postinstall-en-0.9.7.4.txt,

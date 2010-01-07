@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,9 +16,9 @@ IUSE="doc vhosts"
 
 DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
-	dev-lang/php[pcre,postgres,xml]
+	dev-lang/php[pcre,pdo,postgres,xml]
 	app-admin/pwgen
-	>=dev-php/awl-0.38
+	>=dev-php/awl-0.39
 	dev-perl/yaml
 	dev-perl/DBI
 	dev-perl/DBD-Pg"
