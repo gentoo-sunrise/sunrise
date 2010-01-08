@@ -3,6 +3,10 @@
 # $Header: $
 
   08 Jan 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
+  +files/fyre_file_dialog_pause_fix.patch:
+  Patch forgotten. Thanks to ohnobinki
+
+  08 Jan 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   fyre-1.0.1.ebuild, metadata.xml:
   Some fixes. Thanks to ohnobinki and Tommy
 
