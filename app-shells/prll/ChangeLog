@@ -1,0 +1,9 @@
+# ChangeLog for app-shells/prll
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jan 2010; Jure Varlec (exzombie) <jure.varlec@gmail.com>
+  +prll-0.2.ebuild, +files/prll-0.2-makefile.patch, +metadata.xml:
+  New ebuild for bug #299798. Thanks to dilfridge and Tommy[D]. Also thanks to
+  Wizzleby for amd64 testing.
+
