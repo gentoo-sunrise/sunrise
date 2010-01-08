@@ -17,10 +17,6 @@ IUSE=""
 
 RDEPEND="dev-lang/perl"
 
-src_prepare()	{
-	epatch "${FILESDIR}"/${P}-editor-and-mispell-fix.patch
-}
-
 src_configure() { true; }
 
 src_install() {
