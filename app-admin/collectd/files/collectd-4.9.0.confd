@@ -5,8 +5,8 @@
 # Nice value used to launch collectd, to change priority of the process. As
 # you usually will want to run it in background, a default of 5 is used.
 #
-
 #COLLECTD_NICELVL='5'
+
 # Location of configuration file. Modify if you don't like the standard one.
 #
 #COLLECTD_CFGFILE='/etc/collectd.conf'

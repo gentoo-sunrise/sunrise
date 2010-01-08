@@ -2,4 +2,102 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>maintainer-wanted</herd>
+	<use>
+<!--
+Yes I know many of the use flag descriptions are not particularly useful right now. Will fill in
+something more descriptive soon... dilfridge
+-->
+		<flag name='cd_apache'>Build the apache input plugin (transferred bytes, handled requests, detailed scoreboard statistics)</flag>
+		<flag name='cd_apcups'>Build the apcups input plugin (UPS charge, load, input/output/battery voltage, etc.)</flag>
+		<flag name='cd_apple_sensors'>Build the apple_sensors input plugin (temperature, fanspeed and voltage)</flag>
+		<flag name='cd_ascent'>Build the ascent input plugin (statistics about a free server for World of Warcraft)</flag>
+		<flag name='cd_battery'>Build the battery input plugin (charge, current and voltage of ACPI and PMU based laptop batteries)</flag>
+		<flag name='cd_bind'>Build the bind input plugin (name server and resolver statistics)</flag>
+		<flag name='cd_conntrack'>Build the conntrack input plugin (number of nf_conntrack entries)</flag>
+		<flag name='cd_contextswitch'>Build the contextswitch input plugin (number of context switches done by the operating system)</flag>
+		<flag name='cd_cpu'>Build the cpu input plugin (time spent in the system, user, nice, idle, and related states)</flag>
+		<flag name='cd_cpufreq'>Build the cpufreq input plugin (CPU frequency, for laptops with speedstep or similar)</flag>
+		<flag name='cd_csv'>Build the csv output plugin (write to comma separated values (CSV) files)</flag>
+		<flag name='cd_curl'>Build the curl input plugin (parse statistics from websites using regular expressions)</flag>
+		<flag name='cd_dbi'>Build the dbi input plugin (executes SQL statements on databases and interprets the reply)</flag>
+		<flag name='cd_df'>Build the df input plugin (mountpoint usage)</flag>
+		<flag name='cd_disk'>Build the disk input plugin (sectors read/written, number of read/write actions, average completion time of IO-operations)</flag>
+		<flag name='cd_dns'>Build the dns input plugin</flag>
+		<flag name='cd_email'>Build the email input plugin</flag>
+		<flag name='cd_entropy'>Build the entropy input plugin</flag>
+		<flag name='cd_exec'>Build the exec input/output plugin</flag>
+		<flag name='cd_filecount'>Build the filecount input plugin</flag>
+		<flag name='cd_fscache'>Build the fscache input plugin</flag>
+		<flag name='cd_gmond'>Build the gmond input plugin</flag>
+		<flag name='cd_hddtemp'>Build the hddtemp input plugin</flag>
+		<flag name='cd_interface'>Build the interface input plugin</flag>
+		<flag name='cd_ipmi'>Build the ipmi input plugin</flag> 
+		<flag name='cd_iptables'>Build the iptables input plugin</flag> 
+		<flag name='cd_ipvs'>Build the ipvs input plugin</flag> 
+		<flag name='cd_irq'>Build the irq input plugin</flag> 
+		<flag name='cd_java'>Build the java input plugin</flag> 
+		<flag name='cd_libvirt'>Build the libvirt input plugin</flag> 
+		<flag name='cd_load'>Build the load input plugin</flag> 
+		<flag name='cd_logfile'>Build the logfile output plugin</flag>
+		<flag name='cd_madwifi'>Build the madwifi input plugin</flag> 
+		<flag name='cd_match_empty_counter'>Build the match_empty_counter filter plugin</flag>
+		<flag name='cd_match_hashed'>Build the match_hashed filter plugin</flag>
+		<flag name='cd_match_regex'>Build the match_regex filter plugin</flag>
+		<flag name='cd_match_timediff'>Build the match_timediff filter plugin</flag>
+		<flag name='cd_match_value'>Build the match_value filter plugin</flag>
+		<flag name='cd_mbmon'>Build the mbmon input plugin</flag> 
+		<flag name='cd_memcachec'>Build the memcachec input plugin</flag>
+		<flag name='cd_memcached'>Build the memcached input plugin</flag> 
+		<flag name='cd_memory'>Build the memory input plugin</flag> 
+		<flag name='cd_multimeter'>Build the multimeter input plugin</flag> 
+		<flag name='cd_mysql'>Build the mysql input plugin</flag> 
+		<flag name='cd_netlink'>Build the netlink input plugin</flag> 
+		<flag name='cd_network'>Build the network input/output plugin</flag> 
+		<flag name='cd_nfs'>Build the nfs input plugin</flag> 
+		<flag name='cd_nginx'>Build the nginx input plugin</flag> 
+		<flag name='cd_notify_desktop'>Build the notify_desktop output plugin</flag>
+		<flag name='cd_notify_email'>Build the notify_email output plugin</flag>
+		<flag name='cd_ntpd'>Build the ntpd input plugin</flag> 
+		<flag name='cd_nut'>Build the nut input plugin</flag> 
+		<flag name='cd_olsrd'>Build the olsrd input plugin</flag>
+		<flag name='cd_onewire'>Build the onewire input plugin</flag> 
+		<flag name='cd_openvpn'>Build the openvpn input plugin</flag> 
+		<flag name='cd_oracle'>Build the oracle input plugin</flag> 
+		<flag name='cd_perl'>Build the perl language binding plugin</flag> 
+		<flag name='cd_postgresql'>Build the postgresql input plugin</flag> 
+		<flag name='cd_powerdns'>Build the powerdns input plugin</flag> 
+		<flag name='cd_processes'>Build the processes input plugin</flag> 
+		<flag name='cd_protocols'>Build the protocols input plugin</flag> 
+		<flag name='cd_python'>Build the python language binding plugin</flag> 
+		<flag name='cd_routeros'>Build the routeros input plugin</flag>
+		<flag name='cd_rrdcached'>Build the rrdcached input/output plugin</flag> 
+		<flag name='cd_rrdtool'>Build the rrdtool output plugin</flag>
+		<flag name='cd_sensors'>Build the sensors input plugin</flag> 
+		<flag name='cd_serial'>Build the serial input plugin</flag> 
+		<flag name='cd_snmp'>Build the snmp input plugin</flag> 
+		<flag name='cd_swap'>Build the swap input plugin</flag> 
+		<flag name='cd_syslog'>Build the syslog output plugin</flag>
+		<flag name='cd_table'>Build the table input plugin</flag> 
+		<flag name='cd_tail'>Build the tail input plugin</flag> 
+		<flag name='cd_tape'>Build the tape input plugin</flag> 
+		<flag name='cd_target_notification'>Build the target_notification filter plugin</flag>
+		<flag name='cd_target_replace'>Build the target_replace filter plugin</flag>
+		<flag name='cd_target_scale'>Build the target_scale filter plugin</flag>
+		<flag name='cd_target_set'>Build the target_set filter plugin</flag>
+		<flag name='cd_tcpconns'>Build the tcpconns input plugin</flag> 
+		<flag name='cd_teamspeak2'>Build the teamspeak2 input plugin</flag> 
+		<flag name='cd_ted'>Build the ted input plugin</flag> 
+		<flag name='cd_thermal'>Build the thermal input plugin</flag>
+		<flag name='cd_tokyotyrant'>Build the tokyotyrant input plugin</flag> 
+		<flag name='cd_uptime'>Build the uptime input plugin</flag> 
+		<flag name='cd_unixsock'>Build the unixsock output plugin</flag>
+		<flag name='cd_users'>Build the users input plugin</flag> 
+		<flag name='cd_uuid'>Build the uuid plugin</flag>
+		<flag name='cd_vmem'>Build the vmem input plugin</flag> 
+		<flag name='cd_vserver'>Build the vserver input plugin</flag> 
+		<flag name='cd_wireless'>Build the wireless input plugin</flag> 
+		<flag name='cd_write_http'>Build the write_http output plugin</flag>
+		<flag name='cd_zfs_arc'>Build the zfs_arc input plugin</flag>
+		<flag name='contrib'>Install user-contributed files in the doc directory</flag>
+	</use>
 </pkgmetadata>
