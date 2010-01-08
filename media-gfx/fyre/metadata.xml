@@ -8,6 +8,6 @@
 		efficient rendering of high-resolution, high quality images.
 	</longdescription>
 	<use>
-		<flag name='cluster'>Add support for cluster rendering</flag>
+		<flag name='gnet'>Add support for cluster rendering</flag>
 	</use>
 </pkgmetadata>

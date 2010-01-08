@@ -1,45 +1,51 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-GCONF_DEBUG="no"
-SCROLLKEEPER_UPDATE="no"
+EAPI="2"
 
-inherit gnome2
+GCONF_DEBUG="no"
+SCROLLKEEPER_UPDATE="0"
+
+inherit gnome2 eutils
 
 DESCRIPTION="Fyre renders and animates Peter de Jong maps"
-SRC_URI="http://flapjack.navi.cx/releases/fyre/${P}.tar.bz2"
 HOMEPAGE="http://fyre.navi.cx/"
+SRC_URI="http://releases.navi.cx/${PN}/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
-IUSE="cluster openexr"
+KEYWORDS="~x86"
+IUSE="gnet openexr"
 
-RDEPEND=">=dev-libs/glib-2.0
-	>=gnome-base/libglade-2.4
-	>=x11-libs/gtk+-2.0
-	cluster? ( >=net-libs/gnet-2.0 )
+RDEPEND="dev-libs/glib:2
+	gnome-base/libglade
+	x11-libs/gtk+:2
+	gnet? ( net-libs/gnet )
 	openexr? ( media-libs/openexr )"
 DEPEND="${RDEPEND}
 	dev-util/desktop-file-utils
-	>=dev-util/pkgconfig-0.9
+	dev-util/pkgconfig
 	x11-misc/shared-mime-info"
 
 pkg_setup() {
-	G2CONF="$(use_enable cluster gnet) $(use_enable openexr)"
+	G2CONF="$(use_enable gnet) $(use_enable openexr)"
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}_file_dialog_pause_fix.patch
 }
 
 src_install() {
-	#...=/bin/true prevents the makefile from updating mime and .desktop
+	#...=/bin/true prevents the makefile from updating mime and .desktop 
 	# databases on its own
 	emake DESTDIR="${D}" \
 		update_xdgmime=/bin/true update_fdodesktop=/bin/true \
-		install || die "install failed"
-	dodoc AUTHORS ChangeLog README TODO
+		install || die
+	dodoc AUTHORS ChangeLog README TODO || die
 
-	if use cluster; then
-		newconfd "${FILESDIR}/"${P}-conf fyre
-		newinitd "${FILESDIR}/"${P}-init fyre
+	if use gnet; then
+		newconfd "${FILESDIR}/${P}-conf" ${PN} || die
+		newinitd "${FILESDIR}/${P}-init" ${PN} || die
 	fi
 }
