@@ -1,10 +1,10 @@
-# Copyright 2007-2009 Gentoo Foundation
+# Copyright 2007-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit multilib toolchain-funcs
+inherit eutils multilib toolchain-funcs
 
 MY_P="separate+-${PV}"
 SFNUM="42977"

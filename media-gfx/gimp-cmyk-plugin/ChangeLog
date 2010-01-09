@@ -1,6 +1,10 @@
 # ChangeLog for media-gfx/gimp-cmyk-plugin
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jan 2010; Justin Lecher (jlec) <jlec@j-schmitz.net>
+  gimp-cmyk-plugin-0.5.5.ebuild:
+  missing eutils.eclass added
 
   22 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gimp-cmyk-plugin-0.5.5.ebuild:
