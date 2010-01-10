@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,7 +21,7 @@ RDEPEND="amd64? ( sys-devel/gcc[multilib]
 RESTRICT="fetch"
 
 pkg_nofetch() {
-	einfo "You need to download the file ${SRC_URI} from"
+	einfo "You need to (re)download the file ${SRC_URI} from"
 	einfo "http://www.nero.com/eng/downloads-nerodigital-nero-aac-codec.php"
 	einfo "and put it to /usr/portage/distfiles manually"
 	einfo "due to license restrictions."
