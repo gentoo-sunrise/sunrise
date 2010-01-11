@@ -12,7 +12,5 @@
 	<use>
 		<flag name='ncurses'>Enables building the curses based morse code tutor
 			program 'cwcp'.</flag>
-		<flag name='qt3'>Enables building the Qt based morse code tutor program
-			'xcwcp'.</flag>
 	</use>
 </pkgmetadata>

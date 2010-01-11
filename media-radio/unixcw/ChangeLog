@@ -1,6 +1,10 @@
 # ChangeLog for media-radio/unixcw
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Jan 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -unixcw-2.3-r2.ebuild, +unixcw-2.3-r3.ebuild, metadata.xml:
+  drop qt3 support
 
   11 Sep 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   unixcw-2.3-r2.ebuild:
