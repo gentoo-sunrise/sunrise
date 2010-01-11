@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit eutils
 
-DESCRIPTION="Manages automatically downloads and uploads from one-click hosting sites like RapidShare"
+DESCRIPTION="Manages automatic downloads and uploads from one-click hosting sites like RapidShare"
 HOMEPAGE="http://tucaneando.com/"
 SRC_URI="http://forja.rediris.es/frs/download.php/1470/${P}.tar.gz"
 

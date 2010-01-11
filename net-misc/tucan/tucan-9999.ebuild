@@ -6,13 +6,14 @@ EAPI="2"
 
 inherit eutils subversion
 
+# There's no other way to checkout the repository.
+# The certificated used by https protocol is provided by
+# GTE CyberTrust Global Root (ca-certificates).
 ESVN_REPO_URI="https://forja.rediris.es/svn/cusl3-tucan/trunk/"
-ESVN_PROJECT="tucan-svn"
-ESVN_STORE_DIR="${D}/svn-src"
 
-DESCRIPTION="Manages automatically downloads and uploads from one-click hosting sites like RapidShare"
+DESCRIPTION="Manages automatic downloads and uploads from one-click hosting sites like RapidShare"
 HOMEPAGE="http://tucaneando.com/"
-SRC_URI="http://forja.rediris.es/frs/download.php/1470/${P}.tar.gz"
+SRC_URI=""
 
 LICENSE="GPL-3"
 SLOT="0"
