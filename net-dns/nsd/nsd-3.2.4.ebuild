@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -34,7 +34,7 @@ src_configure() {
 	econf \
 		--with-dbfile=/var/db/nsd/nsd.db \
 		--with-difffile=/var/db/nsd/ixfr.db \
-		--with-pidfile=/var/run/nsd.pid \
+		--with-pidfile=/var/run/nsd/nsd.pid \
 		--with-xfrdfile=/var/db/nsd/xfrd.state \
 		--with-zonesdir=/var/lib/nsd \
 		$(use_enable bind8-stats) \
@@ -53,6 +53,7 @@ src_install() {
 
 	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS} \
 		|| die "dodoc failed"
+
 	insinto /usr/share/nsd
 	doins "${FILESDIR}/nsd.cron" || die "doins failed"
 	doins contrib/nsd.zones2nsd.conf || die "doins failed"
@@ -61,14 +62,18 @@ src_install() {
 	newconfd "${FILESDIR}"/nsd.confd nsd || die "newconfd failed"
 
 	# database directory, writable by nsd for ixfr.db file
-	keepdir /var/db/nsd
+	dodir /var/db/nsd
 	fowners nsd:nsd /var/db/nsd
 	fperms 750 /var/db/nsd
 
 	# zones directory, writable by root for 'nsdc patch'
-	keepdir /var/lib/nsd
+	dodir /var/lib/nsd
 	fowners root:nsd /var/lib/nsd
 	fperms 750 /var/lib/nsd
+
+	# pid dir, writable by nsd
+	dodir /var/run/nsd
+	fowners nsd:nsd /var/run/nsd
 }
 
 pkg_postinst() {
