@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jan 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com> metadata.xml:
+  metadata.xml corrected. Thanks to Tommy
+
   07 Jan 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   +freego-4.ebuild, +metadata.xml:
   New Ebuild according to bug 298011. Thanks to ohnobinki, _AxS_ and Tommy
