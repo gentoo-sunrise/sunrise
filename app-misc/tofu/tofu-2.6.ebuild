@@ -4,8 +4,6 @@
 
 EAPI="2"
 
-inherit eutils
-
 DESCRIPTION="Plain (stupid) text-based todo manager"
 HOMEPAGE="http://requiescant.tuxfamily.org/tofu/index.html"
 SRC_URI="http://requiescant.tuxfamily.org/${PN}/${P}.tar.gz"
@@ -17,7 +15,8 @@ IUSE=""
 
 RDEPEND="dev-lang/perl"
 
-src_configure() { true; }
+# configure script is broken
+src_configure() { :; }
 
 src_install() {
 	dodoc CHANGELOG PLAY playground.pl README || die "dodoc failed"

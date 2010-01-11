@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jan 2010; Marcin Miroslaw <bug@mejor.pl> tofu-2.6.ebuild:
+  Dropped unneeded inherit.
+
   08 Jan 2010; Marcin Miroslaw <bug@mejor.pl> -tofu-2.5.ebuild,
   -files/tofu-2.5-editor-and-mispell-fix.patch, +tofu-2.6.ebuild:
   Version bump, dropping patches, it's fixed in upstream
