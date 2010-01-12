@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit base flag-o-matic eutils autotools multilib
+inherit base flag-o-matic eutils multilib
 
 DESCRIPTION="Interactive plotting program"
 HOMEPAGE="http://kavli.nano.tudelft.nl/~gsteele/spyview/"
@@ -26,10 +26,10 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	sci-visualization/gnuplot"
 
-S=${WORKDIR}/spyview-2009-12-14-09_17
+S=${WORKDIR}/spyview-2010-01-09-17_39
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-{datadir,includes}.patch
+	epatch "${FILESDIR}"/${P}-includes.patch
 
 	append-cflags $(fltk-config --cflags)
 	append-cxxflags $(fltk-config --cxxflags) -I/usr/include/netpbm
@@ -38,8 +38,6 @@ src_prepare() {
 	# this one leads to an insane amount of warnings
 
 	append-ldflags -L/usr/$(get_libdir)/fltk-1.1
-
-	eautoreconf
 }
 
 src_configure() {
