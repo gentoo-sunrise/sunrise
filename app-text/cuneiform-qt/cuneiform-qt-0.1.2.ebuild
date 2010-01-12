@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 
-inherit qt4
+inherit qt4-r2
 
 DESCRIPTION="Qt interface for Cuneiform"
 HOMEPAGE="http://www.altlinux.org/Cuneiform-Qt"
@@ -19,13 +19,10 @@ DEPEND="x11-libs/qt-gui:4
 	app-text/cuneiform"
 RDEPEND="${DEPEND}"
 
+DOCS="AUTHORS README TODO"
+
 src_compile () {
 	sed 's:/share/apps/cuneiform-qt/:/share/cuneiform-qt/:' -i cuneiform-qt.pro || die "Cannot patch cuneiform-qt.pro"
 	PREFIX="/usr" eqmake4
 	emake || die "Cannot run make"
-}
-
-src_install() {
-	dodoc AUTHORS README TODO || die "Cannot install docs"
-	INSTALL_ROOT="${D}" emake install || die "Cannot install"
 }
