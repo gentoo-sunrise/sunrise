@@ -1,6 +1,10 @@
 # ChangeLog for app-admin/noobjuice-gentoo
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org>
+  noobjuice-gentoo-0.3.ebuild:
+  Migrate to qt4-r2 eclass
 
   14 Oct 2009; Bob Shaffer II (dm-madman) <bob.shaffer.2@gmail.com>
   -noobjuice-gentoo-0.1.ebuild, +noobjuice-gentoo-0.3.ebuild, metadata.xml:

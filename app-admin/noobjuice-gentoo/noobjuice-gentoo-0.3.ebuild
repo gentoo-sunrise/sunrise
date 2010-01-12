@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit multilib qt4
+inherit multilib qt4-r2
 
 DESCRIPTION="The Gentoo base system plugins for the NoobJuice system administration GUI"
 HOMEPAGE="http://bobshaffer.net/?page=project_noobjuice_gentoo"
@@ -25,10 +25,6 @@ RDEPEND="${DEPEND}
 	x11-terms/xterm"
 
 S="${WORKDIR}/noobjuice-gentoo"
-
-src_configure() {
-	eqmake4
-}
 
 src_install() {
 	insinto /usr/$(get_libdir)/noobjuice/plugins
