@@ -6,6 +6,98 @@
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
+app-admin/collectd:cd_apache - Build the apache input plugin (transferred bytes, handled requests, detailed scoreboard statistics)
+app-admin/collectd:cd_apcups - Build the apcups input plugin (UPS charge, load, input/output/battery voltage, etc.)
+app-admin/collectd:cd_apple_sensors - Build the apple_sensors input plugin (temperature, fanspeed and voltage)
+app-admin/collectd:cd_ascent - Build the ascent input plugin (statistics about a free server for World of Warcraft)
+app-admin/collectd:cd_battery - Build the battery input plugin (charge, current and voltage of ACPI and PMU based laptop batteries)
+app-admin/collectd:cd_bind - Build the bind input plugin (name server and resolver statistics)
+app-admin/collectd:cd_conntrack - Build the conntrack input plugin (number of nf_conntrack entries)
+app-admin/collectd:cd_contextswitch - Build the contextswitch input plugin (number of context switches done by the operating system)
+app-admin/collectd:cd_cpu - Build the cpu input plugin (time spent in the system, user, nice, idle, and related states)
+app-admin/collectd:cd_cpufreq - Build the cpufreq input plugin (CPU frequency, for laptops with speedstep or similar)
+app-admin/collectd:cd_csv - Build the csv output plugin (write to comma separated values (CSV) files)
+app-admin/collectd:cd_curl - Build the curl input plugin (parse statistics from websites using regular expressions)
+app-admin/collectd:cd_dbi - Build the dbi input plugin (executes SQL statements on databases and interprets the reply)
+app-admin/collectd:cd_df - Build the df input plugin (mountpoint usage)
+app-admin/collectd:cd_disk - Build the disk input plugin (sectors read/written, number of read/write actions, average completion time of IO-operations)
+app-admin/collectd:cd_dns - Build the dns input plugin
+app-admin/collectd:cd_email - Build the email input plugin
+app-admin/collectd:cd_entropy - Build the entropy input plugin
+app-admin/collectd:cd_exec - Build the exec input/output plugin
+app-admin/collectd:cd_filecount - Build the filecount input plugin
+app-admin/collectd:cd_fscache - Build the fscache input plugin
+app-admin/collectd:cd_gmond - Build the gmond input plugin
+app-admin/collectd:cd_hddtemp - Build the hddtemp input plugin
+app-admin/collectd:cd_interface - Build the interface input plugin
+app-admin/collectd:cd_ipmi - Build the ipmi input plugin
+app-admin/collectd:cd_iptables - Build the iptables input plugin
+app-admin/collectd:cd_ipvs - Build the ipvs input plugin
+app-admin/collectd:cd_irq - Build the irq input plugin
+app-admin/collectd:cd_java - Build the java input plugin
+app-admin/collectd:cd_libvirt - Build the libvirt input plugin
+app-admin/collectd:cd_load - Build the load input plugin
+app-admin/collectd:cd_logfile - Build the logfile output plugin
+app-admin/collectd:cd_madwifi - Build the madwifi input plugin
+app-admin/collectd:cd_match_empty_counter - Build the match_empty_counter filter plugin
+app-admin/collectd:cd_match_hashed - Build the match_hashed filter plugin
+app-admin/collectd:cd_match_regex - Build the match_regex filter plugin
+app-admin/collectd:cd_match_timediff - Build the match_timediff filter plugin
+app-admin/collectd:cd_match_value - Build the match_value filter plugin
+app-admin/collectd:cd_mbmon - Build the mbmon input plugin
+app-admin/collectd:cd_memcachec - Build the memcachec input plugin
+app-admin/collectd:cd_memcached - Build the memcached input plugin
+app-admin/collectd:cd_memory - Build the memory input plugin
+app-admin/collectd:cd_multimeter - Build the multimeter input plugin
+app-admin/collectd:cd_mysql - Build the mysql input plugin
+app-admin/collectd:cd_netlink - Build the netlink input plugin
+app-admin/collectd:cd_network - Build the network input/output plugin
+app-admin/collectd:cd_nfs - Build the nfs input plugin
+app-admin/collectd:cd_nginx - Build the nginx input plugin
+app-admin/collectd:cd_notify_desktop - Build the notify_desktop output plugin
+app-admin/collectd:cd_notify_email - Build the notify_email output plugin
+app-admin/collectd:cd_ntpd - Build the ntpd input plugin
+app-admin/collectd:cd_nut - Build the nut input plugin
+app-admin/collectd:cd_olsrd - Build the olsrd input plugin
+app-admin/collectd:cd_onewire - Build the onewire input plugin
+app-admin/collectd:cd_openvpn - Build the openvpn input plugin
+app-admin/collectd:cd_oracle - Build the oracle input plugin
+app-admin/collectd:cd_perl - Build the perl language binding plugin
+app-admin/collectd:cd_postgresql - Build the postgresql input plugin
+app-admin/collectd:cd_powerdns - Build the powerdns input plugin
+app-admin/collectd:cd_processes - Build the processes input plugin
+app-admin/collectd:cd_protocols - Build the protocols input plugin
+app-admin/collectd:cd_python - Build the python language binding plugin
+app-admin/collectd:cd_routeros - Build the routeros input plugin
+app-admin/collectd:cd_rrdcached - Build the rrdcached input/output plugin
+app-admin/collectd:cd_rrdtool - Build the rrdtool output plugin
+app-admin/collectd:cd_sensors - Build the sensors input plugin
+app-admin/collectd:cd_serial - Build the serial input plugin
+app-admin/collectd:cd_snmp - Build the snmp input plugin
+app-admin/collectd:cd_swap - Build the swap input plugin
+app-admin/collectd:cd_syslog - Build the syslog output plugin
+app-admin/collectd:cd_table - Build the table input plugin
+app-admin/collectd:cd_tail - Build the tail input plugin
+app-admin/collectd:cd_tape - Build the tape input plugin
+app-admin/collectd:cd_target_notification - Build the target_notification filter plugin
+app-admin/collectd:cd_target_replace - Build the target_replace filter plugin
+app-admin/collectd:cd_target_scale - Build the target_scale filter plugin
+app-admin/collectd:cd_target_set - Build the target_set filter plugin
+app-admin/collectd:cd_tcpconns - Build the tcpconns input plugin
+app-admin/collectd:cd_teamspeak2 - Build the teamspeak2 input plugin
+app-admin/collectd:cd_ted - Build the ted input plugin
+app-admin/collectd:cd_thermal - Build the thermal input plugin
+app-admin/collectd:cd_tokyotyrant - Build the tokyotyrant input plugin
+app-admin/collectd:cd_unixsock - Build the unixsock output plugin
+app-admin/collectd:cd_uptime - Build the uptime input plugin
+app-admin/collectd:cd_users - Build the users input plugin
+app-admin/collectd:cd_uuid - Build the uuid plugin
+app-admin/collectd:cd_vmem - Build the vmem input plugin
+app-admin/collectd:cd_vserver - Build the vserver input plugin
+app-admin/collectd:cd_wireless - Build the wireless input plugin
+app-admin/collectd:cd_write_http - Build the write_http output plugin
+app-admin/collectd:cd_zfs_arc - Build the zfs_arc input plugin
+app-admin/collectd:contrib - Install user-contributed files in the doc directory
 app-admin/vlogger:dbi - Enable support for DBI
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
 app-backup/fsarchiver:gcrypt - Enables cryptography support via libgcrypt
@@ -50,8 +142,6 @@ app-misc/navit:speechd - Enable speech output for routing notifications
 app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x and earlier file formats
 app-office/openoffice-infra:infradicts - Use all bundled dicts from Infra-Resource
 app-office/openoffice-infra:odk - Build the Office Development Kit
-app-text/cb2bib:lzo - compile with lzo support
-app-text/cb2bib:poll - use clipboard polling
 dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
@@ -133,11 +223,9 @@ gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 gnome-extra/timer-applet:sounds - Installs optional sound data
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
-media-gfx/exact-image:agg - Adds Anti-Grain Geometry supportx11-libs/agg
-media-gfx/exact-image:swig - Adds Swig support dev-lang/swig
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
-media-gfx/fyre:cluster - Add support for cluster rendering
+media-gfx/fyre:gnet - Add support for cluster rendering
 media-gfx/openvrml:player - Build the openvrml-player Gnome application
 media-gfx/openvrml:xembed - Build the XEmbed container control
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
@@ -146,7 +234,6 @@ media-radio/drm:hamlib - Enables support by the Hamlib amateur radio rig control
 media-radio/fldigi:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio in use
 media-radio/grig:hardware - Enable hardware IO
 media-radio/unixcw:ncurses - Enables building the curses based morse code tutor program 'cwcp'.
-media-radio/unixcw:qt3 - Enables building the Qt based morse code tutor program 'xcwcp'.
 media-radio/xastir:festival - Enable text to speech synthesizer
 media-radio/xastir:gdal - Support for some further map formats
 media-radio/xastir:geotiff - Install geotiff support. Allows using USGS DRG topo maps or other types of geotiff mapes/images
