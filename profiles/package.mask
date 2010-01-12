@@ -21,6 +21,14 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (12 Jan 2010)
+# Masked due to unexisting dependencies ( x11-libs/qwt:0 )
+media-radio/drm
+
+# Markos Chandras <hwoarang@gentoo.org> (12 Jan 2010)
+# Masked due to masked dependencies ( dev-python/PyQt )
+app-misc/mnemosyne
+
 # Thomas Sachau <tommy@gentoo.org> (20 Nov 2009)
 # masked because of masked dependency
 # x11-libs/kylixlibs3-borqt (see main tree fro details)
