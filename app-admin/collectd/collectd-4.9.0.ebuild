@@ -73,7 +73,7 @@ COMMON_DEPEND="
 	cd_perl?		( dev-lang/perl[ithreads] sys-devel/libperl[ithreads] )
 	cd_postgres?		( >=virtual/postgresql-base-8.2 )
 	cd_python?		( || ( dev-lang/python:2.4  dev-lang/python:2.5 dev-lang/python:2.6 ) )
-	cd_rrdcached?		( >=net-analyzer/rrdtool-1.3 )
+	cd_rrdcached?		( >=net-analyzer/rrdtool-1.4 )
 	cd_rrdtool?		( >=net-analyzer/rrdtool-1.2.27 )
 	cd_sensors?		( sys-apps/lm_sensors )
 	cd_snmp?		( net-analyzer/net-snmp )

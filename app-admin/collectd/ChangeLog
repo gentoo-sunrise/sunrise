@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Jan 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  collectd-4.9.0.ebuild:
+  Corrected the rrdtool dependency of the rrdcached plugin
+
   08 Jan 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   -collectd-4.0.4.ebuild, -files/collectd-4.0.4.confd,
   -files/collectd-4.0.4.initd, +collectd-4.9.0.ebuild,
