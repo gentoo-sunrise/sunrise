@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/monkeystudio
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org>
+  monkeystudio-1.5.2.ebuild:
+  Migrate to qt4-r2 eclass
 
   09 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
   monkeystudio-1.5.2.ebuild:

@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
-inherit qt4
+inherit qt4-r2
 
 MY_PN="${PN}-src"
 
@@ -27,11 +27,6 @@ src_prepare() {
 	sed -i \
 		-e 's#/build/#build/#g' \
 		"${S}/monkey.pro" || die "build-dir fix failed"
-}
-
-src_compile() {
-	eqmake4
-	emake || die "emake failed"
 }
 
 src_install() {
