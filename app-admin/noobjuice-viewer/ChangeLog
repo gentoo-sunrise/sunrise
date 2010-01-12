@@ -1,6 +1,10 @@
 # ChangeLog for app-admin/noobjuice-viewer
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org>
+  noobjuice-viewer-0.3.ebuild:
+  Migrate to qt4-r2 eclass
 
   14 Oct 2009; Bob Shaffer II (dm-madman) <bob.shaffer.2@gmail.com>
   -noobjuice-viewer-0.2.ebuild, +noobjuice-viewer-0.3.ebuild:
