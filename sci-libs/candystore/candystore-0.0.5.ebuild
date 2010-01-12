@@ -1,8 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit qt4
+EAPI="2"
+
+inherit qt4-r2
 
 MY_PN="CandyStore"
 
@@ -15,14 +17,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND="|| ( x11-libs/qt-gui >=x11-libs/qt-4.3 )"
+DEPEND="x11-libs/qt-gui:4"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_PN}
 
-src_compile() {
+src_configure() {
 	eqmake4 ${MY_PN}.pro -o Makefile PREFIX=/usr
-	emake || die "emake failed"
 }
 
 src_install() {
