@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit eutils qt4
+inherit eutils qt4-r2
 
 DESCRIPTION="A QT4-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
@@ -21,6 +21,8 @@ DEPEND="x11-libs/qt-gui:4
 	dev-tex/pgf"
 RDEPEND="${DEPEND}"
 
+DOCS="Changelog TODO"
+
 src_prepare() {
 	# don't install desktop icon (and cause sandbox violation)
 	sed -i -e '72,79d' src/src.pro || die "sed failed"
@@ -34,10 +36,7 @@ src_configure() {
 }
 
 src_install() {
-	emake INSTALL_ROOT="${D}" install || die "emake install failed"
-
-	dodoc Changelog TODO || die "Cannot install documentation"
-
+	qt4-r2_src_install
 	newicon src/images/${PN}-128.png ${PN}.png || die "Cannot install icon"
 	make_desktop_entry ${PN} KtikZ ${PN} Graphics \
 		|| die "Cannot create desktop entry"

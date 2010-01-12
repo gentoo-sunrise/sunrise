@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/ktikz
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org> ktikz-0.9.ebuild:
+  Migrate to qt4-r2 eclass
 
   20 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org> ktikz-0.9.ebuild,
   -files/ktikz-0.9-kde-includes.patch:
