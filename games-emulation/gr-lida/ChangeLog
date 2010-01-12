@@ -1,6 +1,9 @@
 # ChangeLog for games-emulation/gr-lida
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org> gr-lida-0.7.1.ebuild:
+  Migrate to qt4-r2 eclass
 
   30 Mar 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gr-lida-0.7.1.ebuild:
