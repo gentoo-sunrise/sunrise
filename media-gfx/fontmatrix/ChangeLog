@@ -1,6 +1,10 @@
 # ChangeLog for media-gfx/fontmatrix
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org>
+  fontmatrix-0.6.0.ebuild:
+  Migrate to qt4-r2 eclass
 
   13 Jul 2009; Markus Rennings (mren) <mren@mrmx.de>
   fontmatrix-0.6.0.ebuild:

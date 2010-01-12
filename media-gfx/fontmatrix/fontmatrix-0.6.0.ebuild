@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit qt4 cmake-utils
+inherit qt4-r2 cmake-utils
 
 DESCRIPTION="A font manager"
 HOMEPAGE="http://www.fontmatrix.net/"
