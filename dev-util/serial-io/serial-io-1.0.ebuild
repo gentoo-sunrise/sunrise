@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 
-inherit qt4
+inherit qt4-r2
 
 DESCRIPTION="A simple program to send and receive data to and from a serial device."
 HOMEPAGE="http://www.sourceforge.net/projects/serial-io/"
@@ -19,15 +19,6 @@ DEPEND="x11-libs/qt-gui:4
 	dev-libs/libserial"
 RDEPEND="${DEPEND}"
 
+DOCS="TODO"
+
 S="${WORKDIR}/${PN}"
-
-src_compile() {
-	eqmake4
-	emake || die "emake failed"
-}
-
-src_install() {
-	emake INSTALL_ROOT="${D}" install || die "emake install failed"
-
-	dodoc TODO || die "Failed to install TODO file!"
-}
