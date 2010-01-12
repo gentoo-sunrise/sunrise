@@ -1,6 +1,9 @@
 # ChangeLog for app-misc/bsc
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org> bsc-4.0.06_beta.ebuild:
+  Migrate to qt4-r2 eclass
 
   23 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
   bsc-2.27.ebuild, bsc-4.0.06_beta.ebuild:

@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
-inherit eutils qt4 versionator
+EAPI="2"
+inherit eutils qt4-r2 versionator
 
 MY_PV="$(replace_version_separator 3 '.')"
 DESCRIPTION="BSCommander is a Qt based file manager"
@@ -22,18 +22,11 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	sed -i -e "/^CXXFLAGS.*/s:-pipe -O4:${CXXFLAGS}:" \
 		Makefile || die "sed failed on Makefile"
 	sed -i -e "/^QMAKE_CXXFLAGS_RELEASE.*/s:-O4:${CXXFLAGS}:" \
 		${PN}.pro || die "sed failed on ${PN}.pro"
-}
-
-src_compile() {
-	eqmake4 bsc.pro
-	emake || die "make failed"
 }
 
 src_install() {
