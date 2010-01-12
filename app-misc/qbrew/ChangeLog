@@ -1,6 +1,9 @@
 # ChangeLog for app-misc/qbrew
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2010; Markos Chandras <hwoarang@gentoo.org> qbrew-0.4.1.ebuild:
+  Migrate to qt4-r2 eclass
 
   04 Aug 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> qbrew-0.4.1.ebuild:
   eqmake4 dies on its own
