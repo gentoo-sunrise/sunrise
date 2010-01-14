@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,9 +22,4 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS ChangeLog DESIGN README || die "dodoc failed"
-}
-
-pkg_postinst() {
-	elog "In rdup 1.0.2, the rdup-simple script is moved from /usr/lib/rdup"
-	elog "to /usr/bin. Please be sure to update your scripts or crontabs accordingly."
 }
