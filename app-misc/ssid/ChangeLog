@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/ssid
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  ssid-0.1.ebuild:
+  General cleanup, updated URIs, tested on amd64.
 
   23 Jan 2007; Christian Faulhammer <opfer@gentoo.org> ssid-9999.ebuild:
   add some quotes
