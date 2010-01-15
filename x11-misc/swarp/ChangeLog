@@ -3,6 +3,11 @@
 # $Header: $
 
   15 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -swarp-9999.ebuild:
+  Dropping live version as it differs from stable one only by copyright list,
+  and there has been no change for more than three years.
+
+  15 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   swarp-0.1.ebuild:
   General polishing and SRC_URI update.
 
