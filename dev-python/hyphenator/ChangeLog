@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  hyphenator-0.5.1.ebuild:
+  Tested on x86.
+
   10 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +hyphenator-0.5.1.ebuild, +metadata.xml:
   New ebuild for dev-python/hyphenator (bug #300382).
