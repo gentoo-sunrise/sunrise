@@ -1,12 +1,12 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit toolchain-funcs
 
-DESCRIPTION="simple pointer warp"
+DESCRIPTION="Simple mouse pointer warp"
 HOMEPAGE="http://tools.suckless.org/swarp"
-SRC_URI="http://suckless.org/download/${P}.tar.gz"
+SRC_URI="http://dl.suckless.org/tools/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,21 +21,23 @@ src_unpack() {
 	cd "${S}"
 
 	sed -i \
-		-e "s/.*strip.*//" \
+		-e "/strip/d" \
 		Makefile || die "sed failed"
 
 	sed -i \
-		-e "s/CFLAGS = -Os/CFLAGS +=/" \
-		-e "s/LDFLAGS =/LDFLAGS +=/" \
+		-e "s/^CFLAGS = -Os/CFLAGS +=/" \
+		-e "s/^LDFLAGS =/LDFLAGS +=/" \
+		-e "/^CC/d" \
 		config.mk || die "sed failed"
 }
 
 src_compile() {
-	emake CC=$(tc-getCC) || die "emake failed"
+	tc-export CC
+	emake || die "emake failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
+	emake DESTDIR="${D}" PREFIX=/usr install || die "emake install failed"
 
-	dodoc README
+	dodoc README || die "dodoc failed"
 }

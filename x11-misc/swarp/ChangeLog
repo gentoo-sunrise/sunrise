@@ -1,6 +1,10 @@
 # ChangeLog for x11-misc/swarp
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  swarp-0.1.ebuild:
+  General polishing and SRC_URI update.
 
   18 Nov 2009; Justin Lecher (jlec) <jlec@j-schmitz.net> swarp-0.1.ebuild,
   swarp-9999.ebuild:
