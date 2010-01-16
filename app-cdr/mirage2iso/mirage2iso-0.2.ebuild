@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="CD/DVD image converter using libmirage"
 HOMEPAGE="http://proj.mgorny.alt.pl/mirage2iso/"
-SRC_URI="http://proj.mgorny.alt.pl/${PN}/${P}.tar.bz2"
+SRC_URI="http://dl.mgorny.alt.pl/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="pinentry"
 
 DEPEND="dev-libs/libmirage
-	pinentry? ( dev-libs/libassuan )"
+	pinentry? ( <dev-libs/libassuan-2 )"
 RDEPEND="${DEPEND}
 	pinentry? ( app-crypt/pinentry )"
 
