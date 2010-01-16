@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/formbuild
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Jan 2010; Søren Dalby Larsen (sdlarsen) <sdlarsen@gmail.com>
+  +formbuild-2.2.0.ebuild, +metadata.xml:
+  New Ebuild for bug 298430 thanks to yngwin, Ken69267 and Tommy[D]
+
