@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,7 @@ MY_P="${PN}-${PV#*_pre}-scons"
 
 DESCRIPTION="Text-based, multi-protocol instant messenger"
 HOMEPAGE="http://www.ekg2.org"
-SRC_URI="http://proj.mgorny.alt.pl/ekg2/${MY_P}.tar.lzma"
+SRC_URI="http://dl.mgorny.alt.pl/ekg2/${MY_P}.tar.lzma"
 
 LICENSE="GPL-2"
 SLOT="0"
