@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="Simple udev-based automounter for removable USB media"
 HOMEPAGE="http://proj.mgorny.alt.pl/uam/"
-SRC_URI="http://proj.mgorny.alt.pl/${PN}/${P}.tar.bz2"
+SRC_URI="http://dl.mgorny.alt.pl/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
