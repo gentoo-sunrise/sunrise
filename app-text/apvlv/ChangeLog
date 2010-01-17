@@ -1,0 +1,8 @@
+# ChangeLog for app-text/apvlv
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Jan 2010; Eric Smith (gentooer) <eric225125@gmail.com>
+  +apvlv-0.0.9.ebuild, +metadata.xml:
+  New Ebuild for bug 257378
+
