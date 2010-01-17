@@ -308,8 +308,8 @@ src_install() {
 
 	keepdir /var/lib/${PN} || die
 
-	newinitd "${FILESDIR}/${P}.initd" ${PN} || die
-	newconfd "${FILESDIR}/${P}.confd" ${PN} || die
+	newinitd "${FILESDIR}/${PN}.initd" ${PN} || die
+	newconfd "${FILESDIR}/${PN}.confd" ${PN} || die
 }
 
 collectd_rdeps() {
