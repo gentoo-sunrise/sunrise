@@ -1,0 +1,10 @@
+# ChangeLog for media-gfx/argyllcms
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Jan 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  +argyllcms-1.1.0_rc4.ebuild, +metadata.xml:
+  New application, see bug 125774. Thanks go to Guillaume Castagnino and all
+  the previous authors of the ebuild (see bug 125774 for details), and to
+  chiiph, ohnobinki, and hwoarang for reviewing on IRC.
+
