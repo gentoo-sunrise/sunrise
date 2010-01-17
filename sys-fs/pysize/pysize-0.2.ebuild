@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -40,6 +40,8 @@ src_unpack() {
 	fi
 
 	use psyco || epatch "${FILESDIR}/psyco-${PV}"-automagic.patch
+
+	epatch "${FILESDIR}"/${PV}-setuptools-automagic.patch
 }
 
 src_install() {
