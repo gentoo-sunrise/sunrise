@@ -6,10 +6,9 @@ EAPI="2"
 
 inherit kde4-base
 
-MY_P=${P/_rc/~RC}
 DESCRIPTION="A simple media player for KDE"
 HOMEPAGE="http://bangarangkde.wordpress.com"
-SRC_URI="http://bangarangissuetracking.googlecode.com/files/${MY_P}.tar.gz"
+SRC_URI="http://bangarangissuetracking.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
