@@ -26,10 +26,10 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	sci-visualization/gnuplot"
 
-S=${WORKDIR}/spyview-2010-01-11-21_47
+S=${WORKDIR}/spyview-2010-01-17-11_53
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-includes.patch
+	epatch "${FILESDIR}"/${PN}-includes.patch
 
 	append-cflags $(fltk-config --cflags)
 	append-cxxflags $(fltk-config --cxxflags) -I/usr/include/netpbm
