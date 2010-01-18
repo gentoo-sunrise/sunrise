@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jan 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -argyllcms-1.1.0_rc4.ebuild, +argyllcms-1.1.0.ebuild:
+  Version bump.
+
   17 Jan 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   +argyllcms-1.1.0_rc4.ebuild, +metadata.xml:
   New application, see bug 125774. Thanks go to Guillaume Castagnino and all

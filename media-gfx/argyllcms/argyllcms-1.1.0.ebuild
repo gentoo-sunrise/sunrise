@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="Argyll_V${PV/_rc/_RC}"
+MY_P="Argyll_V${PV}"
 DESCRIPTION="Open source, ICC compatible color management system"
 HOMEPAGE="http://www.argyllcms.com/"
 SRC_URI="http://www.argyllcms.com/${MY_P}_src.zip"
