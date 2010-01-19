@@ -1,8 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=2
+SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
@@ -15,14 +16,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples test"
 
-RDEPEND="dev-lang/python
-	dev-python/greenlet
-	dev-python/pyopenssl"
+RDEPEND="dev-python/greenlet
+	<dev-lang/python-2.6? ( dev-python/pyopenssl )"
+
 DEPEND="${RDEPEND}
 	dev-python/setuptools
 	test? (
 		|| ( dev-lang/python[sqlite] dev-python/pysqlite )
 		dev-python/nose )"
+
+RESTRICT_PYTHON_ABIS="3*"
 
 DOCS="README README.twisted NEWS"
 

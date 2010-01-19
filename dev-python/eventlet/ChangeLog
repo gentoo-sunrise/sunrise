@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/eventlet
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -eventlet-0.9.2.ebuild, +eventlet-0.9.3.ebuild:
+  Version bump. Add support for ABI
 
   16 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -eventlet-0.9.0.ebuild, +eventlet-0.9.2.ebuild:
