@@ -3,6 +3,11 @@
 # $Header: $
 
   19 Jan 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> build-0.3.5.ebuild:
+  SLOT build because packages which use it have /usr/include/build-${SLOT}
+  hard-coded into them.
+
+  19 Jan 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> +build-0.3.5.ebuild, +metadata.xml:
   New ebuild for bug 301247 thanks to original author dev-zero and reviewers
   chiiph, tommy, yngwin
