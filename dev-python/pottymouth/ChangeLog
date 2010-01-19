@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pottymouth
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jan 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pottymouth-1.2.0.ebuild, +pottymouth-1.2.1.ebuild:
+  Version bump, minor rewrite of test function
 
   01 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pottymouth-1.1.5.ebuild, +pottymouth-1.2.0.ebuild:

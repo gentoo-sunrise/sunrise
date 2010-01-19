@@ -1,9 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_PYTHON=2.4
-SUPPORT_PYTHON_ABIS=1
+SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
@@ -24,5 +23,9 @@ RESTRICT_PYTHON_ABIS="3*"
 S=${WORKDIR}/${MY_P}
 
 src_test() {
-	${python} test.py || die "Tests failed"
+	testing() {
+		PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" test.py || die "Tests failed"
+	}
+	python_execute_function testing
+
 }
