@@ -26,7 +26,7 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	sci-visualization/gnuplot"
 
-S=${WORKDIR}/spyview-2010-01-17-11_53
+S=${WORKDIR}/spyview-2010-01-18-21_58
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-includes.patch
