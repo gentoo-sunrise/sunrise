@@ -11,7 +11,7 @@ SRC_URI="http://apvlv.googlecode.com/files/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug"
 
 DEPEND="x11-libs/gtk+:2
 	virtual/poppler-glib[cairo]"
@@ -19,9 +19,9 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	econf \
-		--with-docdir="/usr/share/doc/${PF}" \
 		--with-mandir="/usr/share/man" \
-		--disable-dependency-tracking
+		--disable-dependency-tracking \
+		$(use_enable debug)
 }
 
 src_install() {
