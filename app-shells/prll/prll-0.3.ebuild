@@ -15,13 +15,9 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-src_prepare() {
-	epatch "${FILESDIR}"/prll-0.2-makefile.patch
-}
-
 src_install() {
 	dobin ${PN}_jobserver || die "installation failed"
 	insinto /etc/profile.d/
 	doins ${PN}.sh || die "installation failed"
-	dodoc AUTHORS README || die "dodoc failed"
+	dodoc ChangeLog AUTHORS README || die "dodoc failed"
 }
