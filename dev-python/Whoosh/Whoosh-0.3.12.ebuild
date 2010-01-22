@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit distutils
 
-DESCRIPTION="Fast, pure-Python full text indexing, search, and spell checking library"
+DESCRIPTION="Fast, pure-Python full text indexing, search and spell checking library"
 HOMEPAGE="http://whoosh.ca"
 SRC_URI="http://pypi.python.org/packages/source/W/${PN}/${P}.tar.gz"
 
