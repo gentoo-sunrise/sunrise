@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -205,6 +205,9 @@ src_configure() {
 
 src_compile() {
 	# SKIPCONF -> no need to reconfigure
+
+	# fix for LFS bug and gpgme (see bug #302097 and bug #277890)
+	use gpg && use x86 && append-flags -D_FILE_OFFSET_BITS=64
 
 	scons SKIPCONF=1 ${MAKEOPTS} || die "scons failed"
 

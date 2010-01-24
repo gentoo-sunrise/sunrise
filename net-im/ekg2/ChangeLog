@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> ekg2-9999.ebuild:
+  Temporary (?) fix for LFS issue in gpgme (see bug #302097 and bug #277890
+  for details).
+
   16 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   ekg2-0.3_pre20090821.ebuild:
   Update SRC_URI.
