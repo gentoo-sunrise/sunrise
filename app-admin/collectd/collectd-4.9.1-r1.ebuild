@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit linux-info
+inherit linux-info perl-app
 
 DESCRIPTION="A small daemon which collects system performance statistics - with a near-infinite number of plugins"
 HOMEPAGE="http://collectd.org"
@@ -298,6 +298,8 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+
+	fixlocalpod
 
 	dodoc AUTHORS ChangeLog NEWS README TODO || die
 
