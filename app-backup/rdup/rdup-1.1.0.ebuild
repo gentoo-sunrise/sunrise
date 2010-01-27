@@ -2,6 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
+inherit eutils
+
 DESCRIPTION="The only backup program that doesn't make backups"
 HOMEPAGE="http://www.miek.nl/projects/rdup"
 SRC_URI="http://www.miek.nl/projects/${PN}/${P}.tar.bz2"
@@ -18,8 +22,12 @@ RDEPEND="app-arch/libarchive
 DEPEND="${RDEPEND}
 	test? ( dev-util/dejagnu )"
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-fix-gnupg-tests.patch
+}
+
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc AUTHORS ChangeLog DESIGN README || die "dodoc failed"
+	dodoc AUTHORS ChangeLog README RELEASE-NOTES-1.1 || die "dodoc failed"
 }

@@ -1,0 +1,39 @@
+From: Miek Gieben <miek@miek.nl>
+Date: Wed, 27 Jan 2010 17:15:05 +0000 (+0100)
+Subject: exit when no .gnupg is found
+X-Git-Url: http://www.miek.nl/cgi-bin/gitweb.cgi?p=rdup.git;a=commitdiff_plain;h=4868641f45c800cd7372bb669cbe004dd70377ee;hp=7d7bed8ccbc40b63debf6f7e3a61237ddde422ad
+
+exit when no .gnupg is found
+---
+
+diff --git a/testsuite/rdup/rdup.simple.helper b/testsuite/rdup/rdup.simple.helper
+index eaafc02..7c61192 100755
+--- a/testsuite/rdup/rdup.simple.helper
++++ b/testsuite/rdup/rdup.simple.helper
+@@ -9,6 +9,10 @@ if ! which gpg 2>/dev/null 1>&2; then
+     exit 0
+ fi
+ 
++if [ ! -d ~/.gnupg ]; then
++    exit 0
++fi
++
+ # test rdup-simple with mcrypt and path enryption
+ rm -f ~/.rdup/list.$(uname -n).tmp
+ rm -f ~/.rdup/timestamp.$(uname -n).tmp
+diff --git a/testsuite/rdup/rdup.simple3.helper b/testsuite/rdup/rdup.simple3.helper
+index 79beaea..8e6c76d 100755
+--- a/testsuite/rdup/rdup.simple3.helper
++++ b/testsuite/rdup/rdup.simple3.helper
+@@ -9,6 +9,10 @@ if ! which gpg 2>/dev/null 1>&2; then
+     exit 0
+ fi
+ 
++if [ ! -d ~/.gnupg ]; then
++    exit 0
++fi
++
+ # test rdup-simple with mcrypt and path enryption
+ rm -f ~/.rdup/list.$(uname -n).tmp
+ rm -f ~/.rdup/timestamp.$(uname -n).tmp
+
