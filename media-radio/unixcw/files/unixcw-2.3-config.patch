@@ -80,7 +80,7 @@
 +			AC_MSG_ERROR([Qt4 libs not found])
 +		])
 +	dnl Look for moc, either on $PATH or in $QTDIR/bin
-+	AC_PATH_PROG(QTMOC, moc, , $QTDIR/bin:$PATH)
++	AC_PATH_PROG(QTMOC, moc, , $PATH:$QTDIR/bin)
 +	if test -n "$QTMOC" ; then
 +		dnl if libs and moc found
 +		SUBDIRS="$SUBDIRS xcwcp"

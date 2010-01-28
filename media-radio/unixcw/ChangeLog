@@ -3,6 +3,10 @@
 # $Header: $
 
   28 Jan 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  files/unixcw-2.3-config.patch:
+  fix a small problem if qt3 is still installed
+
+  28 Jan 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -unixcw-2.3-r3.ebuild, +unixcw-2.3-r4.ebuild,
   files/unixcw-2.3-config.patch:
   ported 'xcwcp' to qt4
