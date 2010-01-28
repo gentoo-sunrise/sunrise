@@ -1,0 +1,9 @@
+# ChangeLog for dev-util/eclim
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Jan 2010; Eric Smith (gentooer) <eric225125@gmail.com>
+  +eclim-1.5.4.ebuild, +files/eclim-1.5.4_fix_build_gant.patch,
+  +metadata.xml:
+  New ebuild for bug 218776
+
