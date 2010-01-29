@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ DEPEND=""
 RDEPEND=""
 
 src_install() {
-	dobin newmail
-	doman newmail.1
-	dodoc AUTHORS README
+	dobin newmail || die "dobin failed"
+	doman newmail.1 || die "doman failed"
+	dodoc AUTHORS README || die "dodoc failed"
 }
