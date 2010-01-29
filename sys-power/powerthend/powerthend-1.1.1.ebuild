@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=2
 
 DESCRIPTION="Daemon to control the speed and voltage of CPUs"
 HOMEPAGE="http://powerthend.scheissname.de/"
@@ -11,9 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	sed -i "s:-O2:${CFLAGS}:" Makefile
 }
 
@@ -23,7 +23,7 @@ src_compile() {
 
 src_install() {
 	dosbin powerthend || die "dosbin failed"
-	dodoc README
+	dodoc README || die "dodoc failed"
 
 	newconfd "${FILESDIR}/powerthend.confd" powerthend
 	newinitd "${FILESDIR}/powerthend.rc" powerthend
