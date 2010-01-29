@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
+
 inherit eutils qt4-r2 versionator
 
 MY_PV="$(replace_version_separator 3 '.')"
@@ -20,7 +21,7 @@ DEPEND=">=x11-libs/qt-4.3.2:4
 	x11-libs/libXext"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_prepare() {
 	sed -i -e "/^CXXFLAGS.*/s:-pipe -O4:${CXXFLAGS}:" \
@@ -30,10 +31,11 @@ src_prepare() {
 }
 
 src_install() {
-	dobin ${PN}
+	dobin ${PN} || die "dobin failed"
 
 	insinto /usr/share/${PN}
-	doins help.en.html
+	# shouldn't it be dohtml?
+	doins help.en.html || die "doins failed"
 
 	newicon BeesoftCommander.png ${PN}.png
 	make_desktop_entry ${PN} BSCommander ${PN} "FileManager;Utility;Qt"

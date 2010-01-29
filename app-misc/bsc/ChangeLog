@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> bsc-2.27.ebuild,
+  bsc-4.0.06_beta.ebuild:
+  Added missing dies.
+
   12 Jan 2010; Markos Chandras <hwoarang@gentoo.org> bsc-4.0.06_beta.ebuild:
   Migrate to qt4-r2 eclass
 

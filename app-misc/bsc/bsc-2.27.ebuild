@@ -1,8 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI=1
+
 inherit eutils qt3
 
 DESCRIPTION="BSCommander is a Qt based file manager"
@@ -19,7 +20,7 @@ DEPEND=">=x11-libs/qt-3.3:3
 	x11-libs/libXext"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_compile() {
 	eqmake3 bsc.pro -o Makefile
@@ -27,13 +28,13 @@ src_compile() {
 }
 
 src_install() {
-	dobin ${PN}
+	dobin ${PN} || die "dobin failed"
 
 	insinto /usr/share/${PN}/images
-	doins images/*
+	doins images/* || die "doins failed"
 
 	insinto /usr/share/${PN}/lang
-	doins *.qm
+	doins *.qm || die "doins failed"
 
 	newicon BeesoftCommander.png ${PN}.png
 	make_desktop_entry ${PN} BSCommander ${PN}.png "FileManager;Utility;Qt"
