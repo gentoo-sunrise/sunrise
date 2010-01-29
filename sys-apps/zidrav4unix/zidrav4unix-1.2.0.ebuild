@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=2
 
 inherit toolchain-funcs
 
@@ -13,9 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	sed -i \
 		-e "s:g++:$(tc-getCXX):" \
 		-e "s:-O2:${CXXFLAGS}:" \
@@ -23,7 +23,7 @@ src_unpack() {
 }
 
 src_install() {
-	dodoc README TODO Changelog zidrav.txt
-	doman zidrav.1
-	dobin zidrav
+	dodoc README TODO Changelog zidrav.txt || die "dodoc failed"
+	doman zidrav.1 || die "doman failed"
+	dobin zidrav || die "dobin failed"
 }

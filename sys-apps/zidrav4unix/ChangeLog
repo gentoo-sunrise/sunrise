@@ -1,6 +1,9 @@
 # ChangeLog for sys-apps/zidrav4unix
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> zidrav4unix-1.2.0.ebuild:
+  Added missing || dies, added src_prepare (and EAPI=2 declaration).
 
   06 Jul 2006; Josu López Fernández <zamorate@zamorate.net> ChangeLog:
   Respect correct CXX. Changed the way of respecting CXXFLAGS. Added ~amd64
