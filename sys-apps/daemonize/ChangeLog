@@ -1,6 +1,10 @@
 # ChangeLog for sys-apps/daemonize
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> -daemonize-1.5.1.ebuild,
+  +daemonize-1.5.6.ebuild:
+  Version bump. Added missing || dies.
 
   16 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   daemonize-1.5.1.ebuild:
