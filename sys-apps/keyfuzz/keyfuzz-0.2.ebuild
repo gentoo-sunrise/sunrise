@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,7 +21,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin src/keyfuzz
-	use doc && dodoc README
-	doman man/*
+	dobin src/keyfuzz || die "dobin failed"
+	use doc && dodoc README || die "dodoc failed"
+	doman man/* || die "doman failed"
 }
