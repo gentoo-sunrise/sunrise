@@ -28,6 +28,9 @@ S=${WORKDIR}/${MY_P}
 eclipse_home="${ROOT}/usr/$(get_libdir)/eclipse-3.5"
 
 pkg_setup() {
+	ewarn "Eclim can only use Eclipse plugins that are installed system-wide."
+	ewarn "Please make sure necessary plugins are installed in ${eclipse_home}."
+
 	if use java ; then
 		mypkg_plugins="jdt,ant,maven"
 	fi
