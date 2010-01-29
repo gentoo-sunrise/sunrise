@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=2
 
 inherit eutils
 
@@ -17,20 +19,18 @@ RDEPEND="virtual/qmail
 	dev-lang/perl"
 DEPEND=""
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}/qmqtool-perlpath.patch"
 }
 
 src_install() {
-	dodoc README FAQ ChangeLog
+	dodoc README FAQ ChangeLog || die "dodoc failed"
 
 	docinto contrib/argus
-	dodoc contrib/argus/*
+	dodoc contrib/argus/* || die "dodoc failed"
 
 	docinto contrib/cricket
-	dodoc contrib/cricket/*
+	dodoc contrib/cricket/* || die "dodoc failed"
 
-	dobin qmqtool
+	dobin qmqtool || die "dobin failed"
 }

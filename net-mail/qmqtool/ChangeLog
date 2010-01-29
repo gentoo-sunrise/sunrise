@@ -1,6 +1,9 @@
 # ChangeLog for net-mail/qmqtool
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> qmqtool-1.12.ebuild:
+  Added missing dies, added src_prepare and EAPI declaration.
 
   20 Jun 2006; David CHANIAL <david@chanial.com> ChangeLog:
   New Ebuild for Bug 137305 thanks to MySelf (David CHANIAL)
