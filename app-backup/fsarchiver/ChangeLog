@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2010; Marcin Miroslaw <bug@mejor.pl> -fsarchiver-0.6.5.ebuild,
+  +fsarchiver-0.6.6.ebuild:
+  Bump to 0.6.6
+
   08 Jan 2010; Marcin Miroslaw <bug@mejor.pl> -fsarchiver-0.6.1.ebuild,
   -files/fsarchiver-0.6.1-configure.patch, +fsarchiver-0.6.3.ebuild,
   +fsarchiver-0.6.5.ebuild:
