@@ -1,16 +1,22 @@
 #!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
 depend() {
-  need mpd
+	use mpd
 }
 
 start() {
-  start-stop-daemon --start -c mpd --quiet --exec /usr/bin/davempd.pl /etc/davemp.conf  
-  eend $?
+	ebegin "Starting davemp"
+	start-stop-daemon --start --user mpd --background \
+		--make-pidfile --pidfile /var/run/davemp.pid \
+		--exec /usr/bin/davempd.pl -- /etc/davemp.conf
+	eend $?
 }
 
 stop() {
-  killall davempd.pl
-  eend $?
+	ebegin "Stopping davemp"
+	start-stop-daemon --stop --pidfile /var/run/davemp.pid
+	eend $?
 }
-

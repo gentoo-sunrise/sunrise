@@ -1,0 +1,14 @@
+Disable background davemp to simplify killing it with start-stop-daemon.
+It is just simpler than implementing pidfile support.
+
+diff -dupr davemp-1.23.orig/davempd.pl davemp-1.23/davempd.pl
+--- davemp-1.23.orig/davempd.pl	2010-01-28 19:49:52.423815302 +0100
++++ davemp-1.23/davempd.pl	2010-01-28 19:51:44.745814314 +0100
+@@ -63,6 +63,6 @@
+     $server->port('4691');
+ }
+ print "Server started on port " . $server->port . "\n";
+-$server->background;
++$server->run;
+ 
+ exit 0;

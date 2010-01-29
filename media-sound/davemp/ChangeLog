@@ -1,6 +1,13 @@
 # ChangeLog for media-sound/davemp
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -davemp-1.23.ebuild, +davemp-1.23-r1.ebuild,
+  +files/davemp-1.23-json-fix.diff,
+  +files/davemp-1.23-run-in-foreground.diff, files/davemp:
+  Cleanup, fixes and new init.d script. Changing LICENSE to match gentoo-x86
+  name. Dropping mpd RDEPEND as it can be used with remote mpd.
 
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   davemp-1.23.ebuild:
