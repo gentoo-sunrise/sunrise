@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,8 @@ inherit flag-o-matic
 
 DESCRIPTION="A framework and services to support system-level performance monitoring and performance management"
 HOMEPAGE="http://oss.sgi.com/projects/pcp/"
-SRC_URI="ftp://oss.sgi.com/projects/pcp/download/${P}-2.src.tar.gz"
+#SRC_URI="ftp://oss.sgi.com/projects/pcp/download/${P}-2.src.tar.gz"
+SRC_URI="http://www.sourcefiles.org/Monitoring/Detection/${P}-2.src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

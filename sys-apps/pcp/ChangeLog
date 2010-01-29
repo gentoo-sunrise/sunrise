@@ -1,6 +1,9 @@
 # ChangeLog for sys-apps/pcp
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> pcp-2.5.0.ebuild:
+  Fixed SRC_URI, this needs a bump.
 
   08 Oct 2006; DrChandra (DrChandra) <gentooperson@yahoo.com> +metadata.xml:
   New Ebuild for bug 150504
