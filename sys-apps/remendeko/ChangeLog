@@ -1,6 +1,9 @@
 # ChangeLog for sys-apps/remendeko
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> remendeko-0.3.0.ebuild:
+  Added missing || dies, added src_prepare (and EAPI=2 declaration).
 
   10 Dec 2006; Jakub Moc <jakub@gentoo.org> remendeko-0.3.0.ebuild:
   Remove RESTRICT="strip"

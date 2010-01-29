@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=2
 
 inherit toolchain-funcs
 
@@ -21,17 +23,13 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_PN}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	sed -i \
 		-e "s:^\(CC   = \).*$:\1$(tc-getCC):" \
 		-e "s:^\(CFLAGS = \).*$:\1${CFLAGS} -Wall:" \
 		-e "s:^\(CFLAGSGUI = \).*$:\1${CFLAGS} -DUSEGUI -Wall \
 			`pkg-config gtk+-2.0 gthread-2.0 --cflags`:" \
 		Makefile || die "sed Makefile failed"
-
 }
 
 src_compile() {
@@ -43,7 +41,7 @@ src_compile() {
 }
 
 src_install() {
-	dodoc CHANGELOG
-	dobin rdko
-	use gtk && dobin gredeko
+	dodoc CHANGELOG || die "dodoc failed"
+	dobin rdko || die "dobin failed"
+	use gtk && dobin gredeko || die "dobin failed"
 }
