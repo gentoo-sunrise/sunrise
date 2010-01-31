@@ -24,7 +24,7 @@ RDEPEND="dev-lang/spidermonkey
 DEPEND="${RDEPEND}
 	>=dev-util/scons-1.2.0-r1"
 
-S=${WORKDIR}/${PN}-mongo-45992de
+S=${WORKDIR}/${PN}-mongo-8a4fb8b
 
 pkg_setup() {
 	enewgroup mongodb
