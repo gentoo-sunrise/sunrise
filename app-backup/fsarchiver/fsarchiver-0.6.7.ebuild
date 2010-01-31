@@ -17,10 +17,10 @@ IUSE="debug gcrypt lzma lzo static"
 
 DEPEND="sys-libs/zlib
 	app-arch/bzip2
+	dev-libs/libgcrypt
 	>=sys-fs/e2fsprogs-1.41.4
 	lzma? ( >=app-arch/xz-utils-4.999.9_beta )
 	lzo? ( >=dev-libs/lzo-2.02 )
-	gcrypt? ( dev-libs/libgcrypt )
 	static? ( lzma? ( app-arch/xz-utils[static-libs] ) )"
 RDEPEND="${DEPEND}"
 
@@ -34,7 +34,6 @@ src_prepare() {
 src_configure() {
 	econf $(use_enable lzma) \
 	$(use_enable lzo) \
-	$(use_enable gcrypt crypto) \
 	$(use_enable static) \
 	$(use_enable debug devel)
 }
