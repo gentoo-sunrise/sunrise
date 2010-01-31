@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils linux-mod
 
@@ -131,7 +133,8 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
-	built_with_use -o =${CATEGORY}/${PF} ksize nfs && DO_CHECK="y"
+	[[ $(has_version "${CATEGORY}/${PF}"[ksize]) || $(has_version
+	"${CATEGORY}"/"${PF}"[nfs])  ]] && DO_CHECK="y"
 }
 
 pkg_postrm() {

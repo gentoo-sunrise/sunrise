@@ -1,6 +1,9 @@
 # ChangeLog for sys-fs/aufs
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  31 Jan 2010; Markos Chandras <hwoarang@gentoo.org> aufs-20070402.ebuild:
+  Drop depcreated built_with_use function call
 
   11 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   aufs-20090126.ebuild:
