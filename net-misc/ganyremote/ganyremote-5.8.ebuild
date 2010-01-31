@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils
 
@@ -11,9 +13,9 @@ SRC_URI="mirror://sourceforge/anyremote/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="bluetooth"
 
-DEPEND=" net-misc/anyremote
+DEPEND=" net-misc/anyremote[bluetooth=]
 	dev-python/pygtk
 	dev-python/pybluez "
 RDEPEND="${DEPEND}"
@@ -22,11 +24,4 @@ src_install() {
 	emake install DESTDIR="${D}" || die "emake install failed"
 	make_desktop_entry ${PN} ${PN} ${PN}.png "Network;RemoteAccess"
 	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"
-}
-
-pkg_postinst() {
-	if ! built_with_use net-misc/anyremote bluetooth ; then
-		ewarn "If you want to use bluetooth with ganyremote, you need to "
-		ewarn "compile net-misc/anyremote with bluetooth use flag."
-	fi
 }
