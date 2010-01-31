@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jan 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -eventlet-0.9.3.ebuild, +eventlet-0.9.4.ebuild:
+  Version bump
+
   19 Jan 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -eventlet-0.9.2.ebuild, +eventlet-0.9.3.ebuild:
   Version bump. Add support for ABI
