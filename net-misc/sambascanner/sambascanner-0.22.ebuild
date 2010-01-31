@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit autotools eutils toolchain-funcs
 
@@ -16,16 +18,12 @@ IUSE="debug linguas_de"
 
 RDEPEND=">=net-fs/samba-3"
 DEPEND="${RDEPEND}
+	sys-libs/glibc[nptl]
 	sys-devel/gettext"
 
 S=${WORKDIR}/${MY_P}
 
-src_unpack() {
-	if ! built_with_use --missing true sys-libs/glibc nptl; then
-		die "Sambascanner requires an NPTL system"
-	fi
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	if use debug; then
 		#prevent configure from completely replacing our CFLAGS
 		sed 's:CFLAGS="-O0 -g -pthread":CFLAGS="${CFLAGS} -g -pthread":' -i configure.ac
@@ -33,8 +31,11 @@ src_unpack() {
 	fi
 }
 
-src_compile() {
+src_configure() {
 	econf CFLAGS="${CFLAGS} -pthread" $(use_enable debug)
+}
+
+src_compile() {
 	emake CC=$(tc-getCC) || die "emake failed"
 }
 
