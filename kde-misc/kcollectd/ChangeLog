@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Jan 2010; Markos Chandras <hwoarang@gentoo.org> kcollectd-0.8.2.ebuild:
+  Remove useless blank line
+
   12 Jan 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   +kcollectd-0.8.2.ebuild, +metadata.xml:
   New application, see bug 300771. Thanks to hwoarang for reviewing.

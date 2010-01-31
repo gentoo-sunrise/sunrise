@@ -20,4 +20,3 @@ DEPEND="dev-libs/boost
 	net-analyzer/rrdtool"
 RDEPEND="${DEPEND}
 	|| ( app-admin/collectd[cd_rrdtool] app-admin/collectd[cd_rrdcached] )"
-
