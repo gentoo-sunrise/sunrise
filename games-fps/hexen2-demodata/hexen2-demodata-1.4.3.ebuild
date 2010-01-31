@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit eutils games
 
@@ -30,13 +32,11 @@ src_install() {
 pkg_postinst() {
 	games_pkg_postinst
 
-	if has_version "games-fps/uhexen2" ; then
-		if ! built_with_use "games-fps/uhexen2" demo ; then
+	if has_version "games-fps/uhexen2[-demo]" ; then
 			ewarn "emerge uhexen2 with its 'demo' USE flag, so that"
 			ewarn "it uses the demo data directory. Or run it with:"
 			ewarn "   uhexen2 -game demo"
 			echo
-		fi
 	else
 		einfo "This is just the demo data. To play, emerge a client"
 		einfo "such as uhexen2 with its 'demo' USE flag."
