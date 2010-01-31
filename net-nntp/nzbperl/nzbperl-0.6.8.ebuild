@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,7 +30,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	if ! built_with_use dev-lang/perl ithreads; then
+	if has_version dev-lang/perl[-ithreads]; then
 		ewarn "WARNING: dev-lang/perl was built with ithreads disabled, please start nzbperl"
 		ewarn "with --dthreadct 0 to use single-threaded nzbperl OR remerge dev-lang/perl"
 		ewarn "with ithreads in your USE flags."
