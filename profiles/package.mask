@@ -21,6 +21,13 @@
 ##   End example
 ##
 
+# John (EBo) David <ebo@users.sourceforge.net> (1 Feb 2010)
+# Globus is being replaced by Nimbus, and I do not expect to have time
+# to maintain this as my research is heading elsewhere.  It will be
+# removed in 30 days unless a new maintainer is found.
+sys-cluster/globus
+sys-cluster/globus-build
+
 # Markos Chandras <hwoarang@gentoo.org> (31 Jan 2010)
 # Masking because of masked dependencies
 # virtual/jdk-1.4*
