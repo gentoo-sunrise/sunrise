@@ -1,0 +1,8 @@
+# ChangeLog for games-board/qbriscola
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Feb 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  +qbriscola-1.1.ebuild, +metadata.xml:
+  New Ebuild for bug 302106
+
