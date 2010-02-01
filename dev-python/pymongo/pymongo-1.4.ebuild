@@ -1,8 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-SUPPORT_PYTHON_ABIS=1
+EAPI="2"
+SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
