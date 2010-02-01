@@ -112,6 +112,7 @@ app-misc/2gis-data:chel - The map of Chelyabinsk for app-misc/2gis
 app-misc/2gis-data:ekb - The map of Ekaterinburg for app-misc/2gis
 app-misc/2gis-data:irk - The map of Irkutsk for app-misc/2gis
 app-misc/2gis-data:kaz - The map of Kazan for app-misc/2gis
+app-misc/2gis-data:kdar - The map of Krasnodar for app-misc/2gis
 app-misc/2gis-data:kem - The map of Kemerovo for app-misc/2gis
 app-misc/2gis-data:kras - The map of Krasnoyarsk for app-misc/2gis
 app-misc/2gis-data:kur - The map of Kurgan for app-misc/2gis
