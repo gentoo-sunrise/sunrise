@@ -1,0 +1,15 @@
+--- setup.py.orig	2010-02-01 21:38:42.000000000 +0100
++++ setup.py	2010-02-01 21:40:09.000000000 +0100
+@@ -27,9 +27,9 @@
+ 
+   def __init__ (self, *args):
+     self.without_gettext = False
+-    self.without_icon_cache = False
+-    self.without_mime_database = False
+-    self.without_desktop_database = False
++    self.without_icon_cache = True
++    self.without_mime_database = True
++    self.without_desktop_database = True
+     Distribution.__init__(self, *args)
+ 
+ 
