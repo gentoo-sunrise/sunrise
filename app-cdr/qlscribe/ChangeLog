@@ -1,0 +1,8 @@
+# ChangeLog for app-cdr/qlscribe
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Feb 2010; Mario Fetka <mario.fetka@gmail.com> +qlscribe-0.14.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 263236 thx to David Pyke for Bug Squashing
+
