@@ -21,8 +21,9 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 
+DOCS="README"
+
 src_install() {
 	cmake-utils_src_install
-	dodoc README || die
 	prepgamesdirs
 }
