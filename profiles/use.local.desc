@@ -102,6 +102,7 @@ app-admin/vlogger:dbi - Enable support for DBI
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
 app-backup/fsarchiver:gcrypt - Enables cryptography support via libgcrypt
 app-backup/fsarchiver:lzma - Enables LZMA compression
+app-cdr/liblightscribe:multilib - Installs the lib into the right dir on amd64
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
