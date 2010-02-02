@@ -1,0 +1,9 @@
+# ChangeLog for x11-misc/redshift
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Feb 2010; Kacper Kowalik (Xarthisius) <xarthisius.kk@gmail.com>
+  +redshift-1.1.ebuild, +metadata.xml:
+  New Ebuild for bug 303173 thanks to scarabeus for review and nephros for
+  reporting
+
