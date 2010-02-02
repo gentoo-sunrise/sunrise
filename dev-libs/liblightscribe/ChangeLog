@@ -1,0 +1,12 @@
+# ChangeLog for dev-libs/liblightscribe
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Feb 2010; Mario Fetka <mario.fetka@gmail.com>
+  liblightscribe-1.18.11.1.ebuild:
+  add block on old location
+
+  01 Feb 2010; Mario Fetka <mario.fetka@gmail.com>
+  +liblightscribe-1.18.11.1.ebuild, +metadata.xml:
+  New Ebuild for bug 152031  thx to wschlich@g.o  for the initial ebuild
+
