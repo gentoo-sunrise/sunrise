@@ -1,6 +1,11 @@
 # ChangeLog for app-accessibility/onboard
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Feb 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -onboard-0.92.0.ebuild, +onboard-0.92.0-r1.ebuild:
+  Add RDEPEND on cairo[svg]. This should fix issue reported on
+  http://bugs.gentoo.org/show_bug.cgi?id=166876#c21
 
   14 Nov 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   -onboard-0.91.2.ebuild, +onboard-0.92.0.ebuild:

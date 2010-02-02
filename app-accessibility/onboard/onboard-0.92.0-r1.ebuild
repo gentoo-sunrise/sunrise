@@ -1,14 +1,14 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils eutils versionator
+EAPI=2
 
-MY_PV="$(get_version_component_range 1-2)"
+inherit distutils eutils versionator
 
 DESCRIPTION="Simple on-screen Keyboard with macros and easy layout creation"
 HOMEPAGE="https://launchpad.net/onboard"
-SRC_URI="http://launchpad.net/${PN}/${MY_PV}/${PV}/+download/${P}.tar.gz"
+SRC_URI="http://launchpad.net/${PN}/$(get_version_component_range 1-2)/${PV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,7 +18,8 @@ IUSE=""
 DEPEND=">=dev-python/python-distutils-extra-2.4"
 RDEPEND="dev-python/gconf-python
 	dev-python/pyxml
-	dev-python/python-virtkey"
+	dev-python/python-virtkey
+	x11-libs/cairo[svg]"
 
 PYTHON_MODNAME="Onboard"
 
