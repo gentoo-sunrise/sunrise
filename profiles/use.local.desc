@@ -102,7 +102,6 @@ app-admin/vlogger:dbi - Enable support for DBI
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
 app-backup/fsarchiver:gcrypt - Enables cryptography support via libgcrypt
 app-backup/fsarchiver:lzma - Enables LZMA compression
-app-cdr/liblightscribe:multilib - Installs the lib into the right dir on amd64
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
@@ -149,12 +148,14 @@ dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport ag
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
 dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - More precise calculations at the expense of speed
+dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
 dev-lang/xharbour:allegro - Build Allegro-based GT driver
 dev-libs/libcgroup:daemon - Enables build daemon binaries
 dev-libs/libcgroup:debug - Enables debug compile and link flags
 dev-libs/libcgroup:pam - Enables build with pam support
 dev-libs/libcgroup:tools - Enables build tools
+dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
 dev-libs/libmail:apop - Enables the APOP authentication method
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
