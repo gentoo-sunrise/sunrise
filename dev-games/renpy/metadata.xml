@@ -11,4 +11,13 @@
 	<use>
 		<flag name='development'>Install IDE for game developers and an empty game template</flag>
 	</use>
+	<upstream>
+		<maintainer status='active'>
+			<email>pytom@bishoujo.us</email>
+			<name>PyTom</name>
+		</maintainer>
+		<changelog>https://launchpad.net/renpy/+announcements</changelog>
+		<doc>http://renpy.org/wiki/renpy/doc</doc>
+		<bugs-to>https://bugs.launchpad.net/renpy</bugs-to>
+	</upstream>
 </pkgmetadata>
