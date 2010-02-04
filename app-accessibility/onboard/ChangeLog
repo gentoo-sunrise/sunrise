@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Feb 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  onboard-0.92.0-r1.ebuild:
+  Tested on x86.
+
   02 Feb 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   -onboard-0.92.0.ebuild, +onboard-0.92.0-r1.ebuild:
   Add RDEPEND on cairo[svg]. This should fix issue reported on
