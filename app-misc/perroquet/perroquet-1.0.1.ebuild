@@ -21,7 +21,7 @@ DEPEND="${RDEPEND}
 	dev-python/gst-python
 	dev-perl/XML-Parser"
 
-src_prepare() {
-	# No other way to disable some options
-	epatch "${FILESDIR}/${P}-setup-options.patch"
+src_install() {
+	python_src_install --without-icon-cache --without-mime-database \
+		--without-desktop-database
 }
