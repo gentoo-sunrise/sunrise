@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND="x11-libs/gtk+:2
-	virtual/poppler-glib[cairo]"
+	app-text/poppler[cairo]"
 RDEPEND="${DEPEND}"
 
 src_configure() {
