@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -34,7 +34,7 @@ src_unpack() {
 	# fix some scripts with DOS line endings
 	edos2unix scripts/toporama*
 	# fix for different install directory in scripts
-	epatch "${FILESDIR}/${P}-scripts.diff" \
+	epatch "${FILESDIR}/${PN}-1.9.6-scripts.diff" \
 		"${FILESDIR}"/${PN}-1.9.4-config.diff
 	eautoreconf
 }
