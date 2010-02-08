@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="VoriaETL is a multiplatform class and template library which
-complements and supplements the C++ STL"
+DESCRIPTION="VoriaETL is a multiplatform class and template library which complements and supplements the C++ STL"
 
 HOMEPAGE="http://www.synfig.com/"
 
