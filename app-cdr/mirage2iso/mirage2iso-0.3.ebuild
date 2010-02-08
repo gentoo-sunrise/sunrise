@@ -28,7 +28,7 @@ src_configure() {
 	# we have to explicitly pass --bindir to workaround bugs in configure script
 	# (EPREFIX in parent environment causes confusion), fixed in r115
 	econf \
-		--bindir=/usr/bin \
+		--bindir="${EPREFIX}"/usr/bin \
 		$(use_with pinentry assuan)
 }
 
