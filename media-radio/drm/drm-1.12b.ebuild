@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -32,6 +32,7 @@ S=${WORKDIR}/${PN}
 src_prepare() {
 	# fix configure.in so that it links to libqwt.so.4
 	epatch "${FILESDIR}"/drm-qwt4.diff
+	epatch "${FILESDIR}"/${PV}-gcc4.4.patch
 	eautoreconf
 }
 

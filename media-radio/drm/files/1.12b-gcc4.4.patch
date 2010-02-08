@@ -1,0 +1,12 @@
+diff --git a/common/datadecoding/journaline/NML.cpp b/common/datadecoding/journaline/NML.cpp
+index 75d1150..b792666 100644
+--- a/common/datadecoding/journaline/NML.cpp
++++ b/common/datadecoding/journaline/NML.cpp
+@@ -67,6 +67,7 @@
+ //////////////////////////////////////////////////////////////////////////////
+ 
+ #include <cstdlib>
++#include <stdio.h>
+ #include <cstring>
+ #include <zlib.h>
+ #include "NML.h"
