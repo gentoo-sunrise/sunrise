@@ -44,7 +44,7 @@ src_configure() {
 		echo 'int main(void) {return 0;}' > striptest.c
 		"${CXX}" ${CXXFLAGS} striptest.c -o striptest \
 			${LDFLAGS} ${stripflag} || stripflag=
-		
+
 		sed -i -e "s:%LDFLAGS%:${LDFLAGS}${stripflag}:" zpaqmake || die
 	fi
 }
