@@ -42,16 +42,16 @@ src_configure() {
 		local stripflag=' -Wl,--strip-all'
 		# check whether the default compiler supports -Wl,--strip-all
 		echo 'int main(void) {return 0;}' > striptest.c
-		"${CXX}" ${CXXFLAGS} striptest.c -o striptest \
-			${LDFLAGS} ${stripflag} || stripflag=
+		"${CXX}" ${CXXFLAGS} ${LDFLAGS} ${stripflag} \
+			striptest.c -o striptest || stripflag=
 
 		sed -i -e "s:%LDFLAGS%:${LDFLAGS}${stripflag}:" zpaqmake || die
 	fi
 }
 
 src_compile() {
-	"${CXX}" ${CXXFLAGS} -DNDEBUG zpaq.cpp -o zpaq ${LDFLAGS} || die
-	"${CXX}" ${CXXFLAGS} lzppre.cpp -o lzppre ${LDFLAGS} || die
+	"${CXX}" ${CXXFLAGS} -DNDEBUG ${LDFLAGS} zpaq.cpp -o zpaq || die
+	"${CXX}" ${CXXFLAGS} ${LDFLAGS} lzppre.cpp -o lzppre || die
 
 	if use optimization; then
 		# provide precompiled stub

@@ -3,6 +3,10 @@
 # $Header: $
 
   08 Feb 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  zpaq-1.10.ebuild, files/zpaqmake.in:
+  Fix linker arguments order.
+
+  08 Feb 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   -zpaq-1.09.ebuild, +zpaq-1.10.ebuild, +files/zpaqmake.in, metadata.xml:
   Version bump. Support for ZPAQ's self-optimization.
 
