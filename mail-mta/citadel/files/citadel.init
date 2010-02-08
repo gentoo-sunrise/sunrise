@@ -17,15 +17,15 @@ SENDCOMMAND="/usr/sbin/sendcommand"
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0
 
-svc_start() {
+start() {
 	ebegin "Starting citserver"
 	start-stop-daemon --start --exec /usr/sbin/citserver -- ${CITSERVER_OPTS}
 	eend $?
 }
 
-svc_stop() {
+stop() {
 	ebegin "Stopping citserver"
-	start-stop-daemon --stop --quiet --pidfile ${PIDFILE}
+	${SENDCOMMAND} DOWN &>/dev/null
 	eend $?
 }
 
