@@ -7,14 +7,14 @@ depend() {
 	need net
 }
 
-svc_start() {
+start() {
 	ebegin "Starting WebCit"
         start-stop-daemon --start --quiet --background \
 		--exec /usr/sbin/webcit -- $WEBCIT_OPTS
 	eend $? "Failed to start WebCit"
 }
 
-svc_stop() {
+stop() {
 	ebegin "Stopping WebCit"
 	start-stop-daemon --stop --quiet \
 		--exec /usr/sbin/webcit
