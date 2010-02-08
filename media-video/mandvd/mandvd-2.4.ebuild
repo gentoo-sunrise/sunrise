@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="2"
 inherit eutils qt3
 
 MY_P="ManDVD-${PV}"
@@ -31,24 +31,19 @@ RDEPEND="${DEPEND}
 	>=media-video/dvdauthor-0.6.11
 	>=media-video/dvd-slideshow-0.7.5
 	>=media-video/mjpegtools-1.8.0
-	>=media-video/mplayer-1.0_pre8
+	>=media-video/mplayer-1.0_pre8[encode]
 	>=media-video/transcode-1.0.2"
 
-pkg_setup() {
-	if ! built_with_use media-video/mplayer encode ; then
-		eerror "${PN} needs mencoder to work."
-		eerror "Re-emerge media-video/mplayer with USE=encode."
-		die "Re-emerge media-video/mplayer with USE=encode."
-	fi
+src_configure() {
+	eqmake3
 }
 
 src_compile() {
-	eqmake3
 	emake || die "emake failed"
 }
 
 src_install() {
-	dobin ${PN}
-	newicon ${PN}ico.png ${PN}.png
-	make_desktop_entry ${PN} ${PN} ${PN}.png "AudioVideo;QT"
+	dobin ${PN} || die
+	newicon ${PN}ico.png ${PN}.png || die
+	make_desktop_entry ${PN} ${PN} ${PN}.png "AudioVideo;QT" || die
 }

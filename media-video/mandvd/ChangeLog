@@ -1,6 +1,9 @@
 # ChangeLog for media-video/mandvd
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Feb 2010; Justin Lecher (jlec) <jlec@gentoo.org> mandvd-2.4.ebuild:
+  EAPI=2, fixed built_with_use, empty line
 
   04 Dec 2007; Jakub Moc <jakub@gentoo.org> mandvd-2.4.ebuild:
   Switch to EAPI-1 and slotted deps
