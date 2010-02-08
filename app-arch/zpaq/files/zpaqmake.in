@@ -1,0 +1,6 @@
+#!/bin/sh
+# based on zpaqmake.bat from zpaq
+
+exec "${CXX:-%CXX%}" ${CXXFLAGS-%CXXFLAGS%} -DNDEBUG -DOPT \
+	"$1".cpp -I/usr/include/zpaq /usr/%LIBDIR%/zpaq/zpaq.o \
+	-o "$1".exe ${LDFLAGS-%LDFLAGS%}
