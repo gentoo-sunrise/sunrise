@@ -14,7 +14,7 @@ SRC_URI="http://dl.mgorny.alt.pl/ekg2/${MY_P}.tar.lzma"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="dbus extra gadu gif gnutls gpg gpm gsm gtk icq idn inotify irc
 	jabber jogger jpeg mail minimal ncurses nls nntp oracle oss pcap
 	perl python readline remote rss ruby sim sms spell
