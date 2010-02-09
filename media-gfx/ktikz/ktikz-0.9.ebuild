@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND="x11-libs/qt-gui:4
-	virtual/poppler-qt4
+	app-text/poppler[qt4]
 	virtual/latex-base
 	dev-texlive/texlive-latexextra
 	dev-tex/pgf"

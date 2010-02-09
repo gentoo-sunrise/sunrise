@@ -4,7 +4,7 @@
 
   09 Feb 2010; Justin Lecher (jlec) <jlec@gentoo.org> ktikz-0.9.ebuild:
   DEP corrected: || (app-text/poppler-bindings[qt4] dev-libs/poppler-qt4 ) to
-  virtual/poppler-qt4
+  app-text/poppler[qt4]
 
   12 Jan 2010; Markos Chandras <hwoarang@gentoo.org> ktikz-0.9.ebuild:
   Migrate to qt4-r2 eclass
