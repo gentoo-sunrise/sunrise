@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Feb 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  -unixcw-2.3-r4.ebuild, +unixcw-2.3-r5.ebuild,
+  +files/unixcw-2.3-audio.patch:
+  Fix some audio problems: sometimes alsa oss emulation handles mixer settings
+  wrong and restoration of original audio volume level after finish of cw,
+  cwcp and xcwcp
+
   28 Jan 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   files/unixcw-2.3-config.patch:
   fix a small problem if qt3 is still installed
