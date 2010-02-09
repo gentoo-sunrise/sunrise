@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Feb 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
+  unixcw-2.3-r5.ebuild:
+  Missed changes to ebuild body for last commit (rev. 10012)
+
+  09 Feb 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   -unixcw-2.3-r4.ebuild, +unixcw-2.3-r5.ebuild,
   +files/unixcw-2.3-audio.patch:
   Fix some audio problems: sometimes alsa oss emulation handles mixer settings

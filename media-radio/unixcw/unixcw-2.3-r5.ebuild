@@ -27,7 +27,8 @@ src_prepare() {
 		"${FILESDIR}"/${P}-parallel-make.patch \
 		"${FILESDIR}"/${P}--as-needed.patch \
 		"${FILESDIR}"/${P}-ldflags.patch \
-		"${FILESDIR}"/${P}-fPIC.patch
+		"${FILESDIR}"/${P}-fPIC.patch \
+		"${FILESDIR}"/${P}-audio.patch
 	if use qt4 ; then
 		epatch "${DISTDIR}"/${P}-qt3to4.patch
 	fi
@@ -64,7 +65,7 @@ pkg_postinst() {
 		ewarn "PC speaker for morse sidetone output. You can alternativly"
 		ewarn "drop USE=suid and use sudo."
 	else
-		elog "Be aware that 'cw', 'cwcp'i and 'xcwcp' needs root access ifi"
+		elog "Be aware that 'cw', 'cwcp' and 'xcwcp' needs root access ifi"
 		elog "you want to use the PC speaker for morse sidetone output."
 		elog "You can call the programs via sudo for that (see 'man sudo')."
 	fi
