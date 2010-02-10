@@ -45,10 +45,6 @@ media-video/mandvd
 media-sound/skype-call-recorder
 
 # Markos Chandras <hwoarang@gentoo.org> (12 Jan 2010)
-# Masked due to unexisting dependencies ( x11-libs/qwt:0 )
-media-radio/drm
-
-# Markos Chandras <hwoarang@gentoo.org> (12 Jan 2010)
 # Masked due to masked dependencies ( dev-python/PyQt )
 app-misc/mnemosyne
 
