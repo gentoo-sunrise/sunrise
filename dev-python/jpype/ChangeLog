@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/jpype
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Feb 2010; Oliver Borm (boroli) <oli.borm@web.de> +jpype-0.5.4.1.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 304325, thanks to ssuominen
+
