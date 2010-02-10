@@ -21,13 +21,13 @@ IUSE="examples"
 RDEPEND=""
 DEPEND="app-arch/unzip"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}"/${MY_P}
 
 src_install() {
 	distutils_src_install
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}/examples
-		doins -r {examples,test}
+		doins -r {examples,test} || die
 	fi
 }
