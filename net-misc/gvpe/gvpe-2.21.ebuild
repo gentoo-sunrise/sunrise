@@ -7,7 +7,7 @@ inherit eutils linux-info
 
 DESCRIPTION="GNU Virtual Private Ethernet"
 HOMEPAGE="http://savannah.gnu.org/projects/gvpe"
-SRC_URI="http://ftp.gnu.org/gnu/${PN}/${P}.tar.gz"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
