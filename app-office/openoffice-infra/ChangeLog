@@ -1,6 +1,10 @@
 # ChangeLog for app-office/openoffice-infra
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Feb 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  openoffice-infra-3.1.0.ebuild:
+  Fix poppler dep
 
   20 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org>
   -files/3.0.1/buildfix-mono-2-2.diff,
