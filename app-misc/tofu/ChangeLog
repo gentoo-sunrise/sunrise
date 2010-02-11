@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Feb 2010; Ulrich Mueller <ulm@gentoo.org> tofu-2.6.ebuild:
+  License X11 replaced by MIT and removed from portage tree, bug 298556.
+
   11 Jan 2010; Marcin Miroslaw <bug@mejor.pl> tofu-2.6.ebuild:
   Dropped unneeded inherit.
 

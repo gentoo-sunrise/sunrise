@@ -8,7 +8,7 @@ DESCRIPTION="Plain (stupid) text-based todo manager"
 HOMEPAGE="http://requiescant.tuxfamily.org/tofu/index.html"
 SRC_URI="http://requiescant.tuxfamily.org/${PN}/${P}.tar.gz"
 
-LICENSE="|| ( MIT X11 )"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
