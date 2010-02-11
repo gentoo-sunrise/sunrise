@@ -1,0 +1,19 @@
+--- makefile.orig	2010-01-08 21:00:08.308682429 +0100
++++ makefile	2010-01-08 21:01:19.164681390 +0100
+@@ -4,7 +4,6 @@
+ CC = gcc
+ OPTIONS=-g -Wall
+ LDLIBS=-lc -lm
+-CFLAGS=
+ 
+ # FreeBSD
+ ifeq ("FreeBSD", "$(UNAME_S)")
+@@ -22,7 +21,7 @@
+ # Linux
+ ifeq ("Linux", "$(UNAME_S)")
+ LDLIBS=-lm
+-CFLAGS=`getconf LFS_CFLAGS`
++CFLAGS += `getconf LFS_CFLAGS`
+ endif
+ 
+ UFTP_OBJ=uftp.o uftp_common.o
