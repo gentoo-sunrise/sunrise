@@ -15,13 +15,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=virtual/poppler-0.5.0
+RDEPEND=">=app-text/poppler-0.12.3-r3
 	>=dev-cpp/gtkmm-2.8
 	>=dev-cpp/libgnomeuimm-2.14.0
 	>=dev-cpp/gnome-vfsmm-2.14.0
 	>=dev-cpp/libglademm-2.6.0
 	>=dev-cpp/gconfmm-2.14.0
-	virtual/poppler-glib
 	dev-libs/boost
 	dev-lang/python"
 

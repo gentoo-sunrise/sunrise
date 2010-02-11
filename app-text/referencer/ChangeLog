@@ -1,6 +1,10 @@
 # ChangeLog for app-text/referencer
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Feb 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  referencer-1.1.6-r2.ebuild:
+  Fix poppler dep
 
   13 Sep 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   +referencer-1.1.6-r2.ebuild, +metadata.xml:
