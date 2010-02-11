@@ -3,6 +3,11 @@
 # $Header: $
 
   11 Feb 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  -sshmenu-3.15.ebuild, -files/sshmenu-3.15-fixmultilib.patch,
+  +sshmenu-3.18.ebuild, +files/sshmenu-3.18-fixmultilib.patch:
+  Version bump, thanks to dilfridge
+
+  11 Feb 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   sshmenu-3.15.ebuild:
   Fix dep, net-misc/gtk2-ssh-askpass was removed, there isnt on tree
 
