@@ -8,10 +8,9 @@ DESCRIPTION="A utility to limit the bandwidth used by a process."
 HOMEPAGE="http://www.hping.org/netbrake/"
 SRC_URI="http://www.hping.org/${PN}/${P}.tar.gz"
 
-LICENSE="X11"
+LICENSE="MIT BSD GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-
 IUSE="httpfs"
 
 S=${WORKDIR}/${PN}
