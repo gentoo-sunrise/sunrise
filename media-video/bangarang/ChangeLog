@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Feb 2010; Jens Pranaitis (jensp) <jens@chaox.net>
+  -bangarang-1.0.ebuild, +bangarang-1.0.1.ebuild:
+  version bump for bangarang
+
   18 Jan 2010; Jens Pranaitis (jensp) <jens@chaox.net>
   -bangarang-1.0_rc.ebuild, +bangarang-1.0.ebuild:
   Bumped bangarang to 1.0, thanks Tommy[D]
