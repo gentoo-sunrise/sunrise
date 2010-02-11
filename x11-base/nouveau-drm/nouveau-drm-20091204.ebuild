@@ -10,10 +10,9 @@ DESCRIPTION="Nouveau DRM Kernel Modules for X11"
 HOMEPAGE="http://nouveau.freedesktop.org/"
 SRC_URI="http://omploader.org/vMnlldQ/${P}.tar.gz"
 
-LICENSE="X11"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-
 IUSE=""
 
 DEPEND="virtual/linux-sources
