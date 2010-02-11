@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils
+inherit toolchain-funcs
 
 DESCRIPTION="a loop-free distance-vector routing protocol"
 HOMEPAGE="http://www.pps.jussieu.fr/~jch/software/babel/"
@@ -15,11 +15,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+src_prepare() {
+	sed -e 's:/man/:/share/man/:' \
+		-e '/^PREFIX/{s:=.*:= /usr:;}' -i Makefile || die
+}
+
 src_compile() {
-	emake PREFIX=/usr "CDEBUGFLAGS=${CFLAGS}" all || die "build failed"
+	emake \
+		CC=$(tc-getCC) \
+		"CDEBUGFLAGS=${CFLAGS}" \
+		all || die "build failed"
 }
 
 src_install(){
-	emake install PREFIX=/usr "TARGET=${D}" || die "install failed"
+	emake "TARGET=${D}" install || die "install failed"
 	dodoc CHANGES README || die
 }

@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Feb 2010; Peter Volkov <pva@gentoo.org> -babel-0.95.ebuild,
+  +babeld-0.98.ebuild:
+  Version bump. Install manpages correctly and respect CC. babel
+  was renamed to babeld.
+
   27 Apr 2009; Bignaux Ronan <ronan@aimao.org> -babel-0.93.ebuild,
   +babel-0.95.ebuild:
   Version bump for babel
