@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/sshmenu
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Feb 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  sshmenu-3.15.ebuild:
+  Fix dep
 
   13 Mar 2009; Christian Ruppert <idl0r@gentoo.org> sshmenu-3.15.ebuild:
   "Note: We need to depend on dev-ruby/ruby-gnome2 until the issues in bug

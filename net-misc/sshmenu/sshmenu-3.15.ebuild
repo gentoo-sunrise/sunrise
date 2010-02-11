@@ -16,7 +16,7 @@ KEYWORDS="~x86"
 IUSE="gnome"
 
 RDEPEND="dev-lang/ruby:1.8
-	dev-ruby/ruby-gtk2
+	>=dev-ruby/ruby-gtk2-0.1.18
 	gnome? ( dev-ruby/ruby-gconf2
 		dev-ruby/ruby-panel-applet2 )
 	|| ( net-misc/x11-ssh-askpass net-misc/gtk2-ssh-askpass )"
