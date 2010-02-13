@@ -2,10 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
+
 ESVN_REPO_URI="http://toxygen.net/svn/ekg2/trunk"
 
-inherit multilib perl-module subversion
+inherit flag-o-matic multilib perl-module subversion
 
 DESCRIPTION="Text-based, multi-protocol instant messenger"
 HOMEPAGE="http://www.ekg2.org"
@@ -208,7 +209,7 @@ src_compile() {
 	# SKIPCONF -> no need to reconfigure
 
 	# fix for LFS bug and gpgme (see bug #302097 and bug #277890)
-	use gpg && use x86 && append-flags -D_FILE_OFFSET_BITS=64
+	use x86 && use gpg && append-flags -D_FILE_OFFSET_BITS=64
 
 	scons SKIPCONF=1 ${MAKEOPTS} || die "scons failed"
 
