@@ -1,0 +1,8 @@
+# ChangeLog for kde-misc/kaya
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Feb 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  +kaya-0.2.ebuild, +metadata.xml:
+  New application, see bug 275943. Thanks to Karel Volný and Tommy[D].
+
