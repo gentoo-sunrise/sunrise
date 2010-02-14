@@ -2,10 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
 inherit versionator
 
 MY_P=${PN}-$(replace_all_version_separators '-')
-DESCRIPTION="A simple, lightweight tool for sniping ebay auctions."
+DESCRIPTION="A simple, lightweight tool for sniping ebay auctions"
 HOMEPAGE="http://esniper.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
 
@@ -15,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-libs/openssl
-		>=net-misc/curl-7.12"
+	|| ( >=net-misc/curl-7.12[ssl] >=net-misc/curl-7.12[openssl] )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}

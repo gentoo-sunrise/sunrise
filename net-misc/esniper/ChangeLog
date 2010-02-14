@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/esniper
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Feb 2010; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
+  -esniper-2.19.0.ebuild, +esniper-2.22.0.ebuild:
+  New version to handle ebay login changes, added ~amd64
 
   29 Nov 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
   -esniper-2.17.1.ebuild, +esniper-2.19.0.ebuild:
