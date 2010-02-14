@@ -1,6 +1,10 @@
 # ChangeLog for dev-db/pgmemcache
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Feb 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pgmemcache-2.0.0.ebuild, +pgmemcache-2.0.1.ebuild:
+  Version bump. Bump req's and download url
 
   30 Nov 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pgmemcache-2.0_rc1.ebuild, +pgmemcache-2.0.0.ebuild:
