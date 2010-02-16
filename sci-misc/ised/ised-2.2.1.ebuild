@@ -4,7 +4,7 @@
 
 EAPI=2
 
-DESCRIPTION="A tool for generating sequences and arithmetic evaluation of stream data."
+DESCRIPTION="A tool for generating sequences and arithmetic evaluation of stream data"
 HOMEPAGE="http://ised.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
