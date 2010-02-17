@@ -33,11 +33,6 @@ sys-cluster/globus-build
 # virtual/jdk-1.4*
 app-text/writer2latex
 
-# Markos Chandras <hwoarang@gentoo.org> (31 Jan 2010)
-# Unmaintained. Replaced by media-video/2mandvd. 
-# Pending removal in 15 days ( 15 Feb 2010 )
-media-video/mandvd
-
 # Markos Chandras <hwoarang@gentoo.org> (12 Jan 2010)
 # Masked because it requires skype[-qt-static] but qt-static 
 # is forced on x86 profiles.
