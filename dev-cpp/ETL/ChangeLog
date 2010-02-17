@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Feb 2010; Diego Barrios Romero (eldruin) <eldruin@gmail.com>
+  +ETL-9999.ebuild:
+  New live ebuild for ETL
+
   27 Jan 2010; Diego Barrios Romero (eldruin) <eldruin@gmail.com>
   -ETL-0.04.12.ebuild, +ETL-0.04.13.ebuild:
   Version bump for ETL
