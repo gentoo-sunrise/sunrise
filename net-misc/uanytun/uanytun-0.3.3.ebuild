@@ -41,7 +41,7 @@ src_install() {
 	#as long as README just contains path to examples, only install it with examples
 	use examples || rm -f "${D}"/etc/${PN}/README
 
-	newinitd "${FILESDIR}/${PN}-0.3.1.init" ${PN} || die "failed to copy/install initrd script"
+	newinitd "${FILESDIR}/${PN}-0.3.3.init" ${PN} || die "failed to copy/install initrd script"
 
 	cd ../
 	dodoc AUTHORS ChangeLog README || die "failed to install docs"

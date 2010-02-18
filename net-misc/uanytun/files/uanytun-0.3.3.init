@@ -12,7 +12,7 @@ DAEMON=/usr/sbin/uanytun
 CONFIG_DIR=/etc/uanytun
 NAME=uanytun
 DESC=uanytun
-VARRUN_PREFIX=/var/run/uanytun
+VARRUN_PREFIX=/var/run/$NAME
 
 VPN=${SVCNAME#*.}
 [ "$VPN" = "$SVCNAME" ] && VPN=""
@@ -20,21 +20,21 @@ VPN=${SVCNAME#*.}
 test -x $DAEMON || exit 1
 
 # Include uanytun defaults if available
-if [ -f /etc/default/uanytun ] ; then
-	. /etc/default/uanytun
+if [ -f /etc/conf.d/uanytun ] ; then
+	. /etc/conf.d/uanytun
 fi
 
 start_vpn () {
-	if [ -f $CONFIG_DIR/$NAME/config ] ; then
+	if [ -f $CONFIG_DIR/$VPNNAME/config ] ; then
 		POSTUP=''
-		test -f  $CONFIG_DIR/$NAME/post-up.sh && POSTUP="-x $CONFIG_DIR/$NAME/post-up.sh"
-		CHROOTDIR=`grep '^chroot' < $CONFIG_DIR/$NAME/config | sed 's/chroot\s*//'`
+		test -f  $CONFIG_DIR/$VPNNAME/post-up.sh && POSTUP="-x $CONFIG_DIR/$VPNNAME/post-up.sh"
+		CHROOTDIR=`grep '^chroot' < $CONFIG_DIR/$VPNNAME/config | sed 's/chroot\s*//'`
 		if [ -n "$CHROOTDIR" ] ; then
 			test -d $CHROOTDIR || mkdir -p $CHROOTDIR
 		fi
-		DAEMONARG=`sed 's/#.*//' < $CONFIG_DIR/$NAME/config | grep -e '\w' | sed  's/^/--/' | tr '\n' ' '`
-		start-stop-daemon --start --pidfile $VARRUN_PREFIX.${NAME}.pid --exec \
-			$DAEMON -- --write-pid $VARRUN_PREFIX.${NAME}.pid $POSTUP $DAEMONARG || return 1 
+		DAEMONARG=`sed 's/#.*//' < $CONFIG_DIR/$VPNNAME/config | grep -e '\w' | sed  's/^/--/' | tr '\n' ' '`
+		start-stop-daemon --start --pidfile $VARRUN_PREFIX.${VPNNAME}.pid --exec \
+			$DAEMON -- --write-pid $VARRUN_PREFIX.${VPNNAME}.pid $POSTUP $DAEMONOPTS $DAEMONARG || return 1 
 	else
 		eerror "no config found"
 		return 1
@@ -49,8 +49,8 @@ stop_vpn () {
 start () {
 	if test -z "$VPN" ; then
 		if [ -f $CONFIG_DIR/autostart ] ; then
-			for NAME in `sed 's/#.*//'  <  $CONFIG_DIR/autostart | grep -e '\w'`; do
-				ebegin "Starting ${DESC} VPN: ${NAME}"
+			for VPNNAME in `sed 's/#.*//'  <  $CONFIG_DIR/autostart | grep -e '\w'`; do
+				ebegin "Starting ${DESC} VPN: ${VPNNAME}"
 				start_vpn
 				eend $?
 			done
@@ -59,8 +59,8 @@ start () {
 			return 1
 		fi
 	else
-		NAME="$VPN"
-		ebegin "Starting ${DESC} VPN: ${NAME}"
+		VPNNAME="$VPN"
+		ebegin "Starting ${DESC} VPN: ${VPNNAME}"
 		start_vpn
 		eend $?
 	fi
@@ -69,18 +69,16 @@ start () {
 stop () {
 	if test -z "$VPN" ; then
 		for PIDFILE in `ls $VARRUN_PREFIX.*.pid 2> /dev/null`; do
-			NAME=`echo $PIDFILE | cut -c18-`
-			NAME=${NAME%%.pid}
-			ebegin "Stopping ${DESC} VPN: ${NAME}"
+			VPNNAME=`basename $PIDFILE .pid`
+			ebegin "Stopping ${NAME} VPN: ${VPNNAME}"
 			stop_vpn
 			eend $?
 		done
 	else
 		if test -e $VARRUN_PREFIX.${VPN}.pid ; then
 			PIDFILE=`ls $VARRUN_PREFIX.${VPN}.pid 2> /dev/null`
-			NAME=`echo $PIDFILE | cut -c18-`
-			NAME=${NAME%%.pid}
-			ebegin "Stopping ${DESC} VPN: ${NAME}"
+			VPNNAME=`basename $PIDFILE .pid`
+			ebegin "Stopping ${NAME} VPN: ${VPNNAME}"
 			stop_vpn
 			eend $?
 		else
