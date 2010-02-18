@@ -1,5 +1,9 @@
 # ChangeLog for media-gfx/openvrml
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 2002-2010 Gentoo Foundation; Distributed under the GPL v2
+
+  18 Feb 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -openvrml-0.18.3.ebuild, +openvrml-0.18.5.ebuild:
+  Version bump.
 
   25 Oct 2009; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   -openvrml-0.16.6-r1.ebuild, +openvrml-0.18.3.ebuild,
