@@ -44,13 +44,14 @@ src_install() {
 	keepdir /var/run/anytun || die "failed to mkdir"
 	keepdir /var/run/anytun-controld || die "failed to mkdir"
 
-	newinitd "${FILESDIR}/${PN}-0.3.1.init" ${PN} || die "failed to copy/install initrd script"
+	newinitd "${FILESDIR}/${PN}-0.3.3.init" ${PN} || die "failed to copy/install initrd script"
 
 	cd ../
 	dodoc AUTHORS ChangeLog README || die "failed to install docs"
 
-	insinto /usr/share/${P}/wireshark-lua/
-	doins wireshark-lua/satp.lua || die "failed to install wireshark-lua contrib script"
+	#forgotten in current upstream package
+	#insinto /usr/share/${P}/wireshark-lua/
+	#doins wireshark-lua/satp.lua || die "failed to install wireshark-lua contrib script"
 }
 
 pkg_config() {
@@ -72,5 +73,7 @@ pkg_postinst() {
 	elog "# ln -s /etc/init.d/${PN} /etc/init.d/${PN}.client1"
 	elog
 	elog "You can disect anytun traffic using wireshark by plugging the script"
-	elog " /usr/share/${P}/wireshark-lua/satp.lua into wireshark"
+	elog "satp.lua into wireshark. Get it here:"
+	elog " http://svn.anytun.org/anytun-common/trunk/wireshark-lua/satp.lua"
+	#elog " /usr/share/${P}/wireshark-lua/satp.lua into wireshark"
 }
