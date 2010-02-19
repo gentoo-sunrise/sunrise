@@ -2,15 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="2"
 
-inherit eutils versionator
+inherit eutils
 
-MY_PATCHVER=$(get_version_component_range 1-2)
+MY_P=${PN}-src-r${PV}
 
 DESCRIPTION="A high-performance, open source, schema-free document-oriented database"
 HOMEPAGE="http://www.mongodb.org"
-SRC_URI="http://github.com/mongodb/mongo/tarball/r${PV} -> ${P}.tar.gz"
+SRC_URI="http://downloads.mongodb.org/src/${MY_P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
@@ -24,7 +24,7 @@ RDEPEND="dev-lang/spidermonkey
 DEPEND="${RDEPEND}
 	>=dev-util/scons-1.2.0-r1"
 
-S=${WORKDIR}/${PN}-mongo-8a4fb8b
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	enewgroup mongodb
@@ -32,7 +32,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/modify-*-${MY_PATCHVER}.patch
+	epatch "${FILESDIR}"/modify-*.patch
 }
 
 src_compile() {
