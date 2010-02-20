@@ -4,7 +4,7 @@
 
 inherit eutils python multilib
 
-DESCRIPTION="FTP client in Python and GTK."
+DESCRIPTION="FTP client in Python and GTK"
 HOMEPAGE="http://foff.sourceforge.net/"
 SRC_URI="mirror://sourceforge/foff/${P}.tar.gz"
 
