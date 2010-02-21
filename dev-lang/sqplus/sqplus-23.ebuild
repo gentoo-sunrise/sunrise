@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RDEPEND="=dev-lang/squirrel-2.1.1"
+RDEPEND=">=dev-lang/squirrel-2.1.1"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 

@@ -1,6 +1,9 @@
 # ChangeLog for dev-lang/sqplus
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Feb 2010; Markos Chandras <hwoarang@gentoo.org> sqplus-23.ebuild:
+  Adjust squirrel dependency
 
   07 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> sqplus-23.ebuild:
   Added app-arch/unzip to DEPEND
