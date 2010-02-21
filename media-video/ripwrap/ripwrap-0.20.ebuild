@@ -12,14 +12,13 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="aac mp2 mp3 x264 mp4"
+IUSE="aac mp3 x264 mp4"
 
 DEPEND="dev-lang/perl
 	dev-perl/gtk2-perl
 	>=media-video/lsdvd-0.10
 	media-video/mplayer[encode]
 	aac? ( media-video/mplayer[aac] )
-	mp2? ( media-video/mplayer[mp2] )
 	mp3? ( media-video/mplayer[mp3] )
 	mp4? ( media-video/gpac )
 	x264? ( media-video/mplayer[x264] )"

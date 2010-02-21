@@ -14,7 +14,6 @@
 		ways.
 	</longdescription>
 	<use>
-		<flag name='mp2'>Add mp2 support</flag>
 		<flag name='mp4'>Add mp4 support</flag>
 	</use>
 </pkgmetadata>

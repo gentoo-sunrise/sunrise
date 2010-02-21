@@ -1,6 +1,10 @@
 # ChangeLog for media-video/ripwrap
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Feb 2010; Markos Chandras <hwoarang@gentoo.org> ripwrap-0.20.ebuild,
+  metadata.xml:
+  Drop mp2 use flag
 
   17 Apr 2009; Justin Lecher (jlec) <jlec@j-schmitz.net>
   ripwrap-0.20.ebuild:
