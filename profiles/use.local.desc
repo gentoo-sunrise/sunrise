@@ -257,7 +257,6 @@ media-video/image2mpeg:devil - Enable image loading via DevIL
 media-video/pgcedit:video - Add support for video preview
 media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
-media-video/ripwrap:mp2 - Add mp2 support
 media-video/ripwrap:mp4 - Add mp4 support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
 net-dns/inadyn-mt:async - Enable asyncronous gethostbyname calls. Requires USE=threads
