@@ -17,17 +17,24 @@ IUSE="ssl"
 DEPEND=">=dev-libs/libical-0.43
 	>=dev-libs/libcitadel-${PV}
 	ssl? ( >=dev-libs/openssl-0.9.6 )"
-
 RDEPEND="${DEPEND}"
+
+WWWDIR="/usr/share/citadel-webcit"
+
+pkg_setup() {
+	#Homedir needs to be the same as --with-datadir
+	einfo "Adding Citadel User/Group"
+	enewgroup webcit
+	enewuser webcit -1 -1 ${WWWDIR} webcit
+}
 
 src_configure() {
 	econf \
-		--with-included-gettext \
 		$(use_with ssl) \
 		--with-libical \
 		--without-newt \
 		--prefix=/usr/sbin/ \
-		--with-wwwdir=/usr/share/citadel-webcit \
+		--with-wwwdir="${WWWDIR}" \
 		--with-localedir=/usr/share/ \
 		--with-editordir=/usr/share/citadel-webcit/tiny_mce/ \
 		--with-rundir=/var/run/citadel \

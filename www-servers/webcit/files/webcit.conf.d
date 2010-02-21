@@ -10,6 +10,9 @@ WEBCIT_OPTS=""
 ##WebCit defaults to port 2000.
 #WEBCIT_OPTS="${WEBCIT_OPTS} -p 2000"
 
+##[-u username] Lets Webcit drop root privileges and run as a useraccount.
+#WEBCIT_OPTS="${WEBCIT_OPTS} -u webcit"
+
 ##[-t tracefile] Where you want WebCit to log information.
 WEBCIT_OPTS="${WEBCIT_OPTS} -t /var/log/webcit"
 
@@ -18,11 +21,11 @@ WEBCIT_OPTS="${WEBCIT_OPTS} -t /var/log/webcit"
 #WEBCIT_OPTS="${WEBCIT_OPTS} -c"
 
 ##[-s] Causes WebCit to present an HTTPS web service.
-WEBCIT_OPTS="${WEBCIT_OPTS} -s"
+#WEBCIT_OPTS="${WEBCIT_OPTS} -s"
 
 ##[-f] Tells WebCit to follow "X-Forwarded-For:" HTTP headers
 #WEBCIT_OPTS="${WEBCIT_OPTS} -f"
 
 ##[remotehost [remoteport]] IP address and port of your Citadel server.
 ##Defaults to localhost 504
-WEBCIT_OPTS="${WEBCIT_OPTS} 127.0.0.1"
+#WEBCIT_OPTS="${WEBCIT_OPTS} 127.0.0.1"
