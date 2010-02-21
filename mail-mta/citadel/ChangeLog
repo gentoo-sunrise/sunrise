@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Feb 2010; the_mgt themgt@mail.ru -citadel-7.71.ebuild,
+  +citadel-7.72.ebuild:
+  Version bump for citadel, enewuser line fixed. Bugfix/maintenance update
+  http://easyinstall.citadel.org/releasenotes-7.72.txt
+
   08 Feb 2010; the_mgt themgt@mail.ru -citadel-7.66.ebuild,
   +citadel-7.71.ebuild, ,files/citadel.init:
   Version bump to current 7.71 version. Corrected and improved init script

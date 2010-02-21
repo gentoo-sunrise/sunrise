@@ -20,7 +20,6 @@ DEPEND="=dev-libs/libcitadel-${PV}
 	ldap? ( >=net-nds/openldap-2.0.27 )
 	pam? ( sys-libs/pam )
 	ssl? ( >=dev-libs/openssl-0.9.6 )"
-
 RDEPEND="${DEPEND}
 	net-mail/mailbase
 	!mailwrapper? ( !virtual/mta !net-mail/mailwrapper )
@@ -36,7 +35,7 @@ pkg_setup() {
 	#Homedir needs to be the same as --with-datadir
 	einfo "Adding Citadel User/Group"
 	enewgroup citadel
-	enewuser citadel -1 /dev/null ${MESSAGEBASE} citadel,mail
+	enewuser citadel -1 -1 ${MESSAGEBASE} citadel,mail
 }
 
 src_configure() {
