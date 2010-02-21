@@ -19,5 +19,5 @@ src_install() {
 	dobin ${PN}_jobserver || die "installation failed"
 	insinto /etc/profile.d/
 	doins ${PN}.sh || die "installation failed"
-	dodoc ChangeLog AUTHORS README || die "dodoc failed"
+	dodoc ChangeLog AUTHORS README NEWS || die "dodoc failed"
 }
