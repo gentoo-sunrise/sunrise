@@ -101,7 +101,6 @@ app-admin/collectd:contrib - Install user-contributed files in the doc directory
 app-admin/vlogger:dbi - Enable support for DBI
 app-arch/zpaq:optimization - Install additional files required to support ZPAQ's optimized compression mode.
 app-backup/darbackup:dar64 - Enables --enable-mode=64 option, which replace infinite by 64 bit integers
-app-backup/fsarchiver:gcrypt - Enables cryptography support via libgcrypt
 app-backup/fsarchiver:lzma - Enables LZMA compression
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-emulation/xenman:lvm2 - Enable lvm2 support
