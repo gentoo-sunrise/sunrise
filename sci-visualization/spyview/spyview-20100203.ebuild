@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-COMMON_DEPEND=">=dev-libs/boost-1.35
+COMMON_DEPEND=">=dev-libs/boost-1.39
 	media-libs/netpbm
 	>=x11-libs/fltk-1.1.9:1.1
 	app-text/ghostscript-gpl"
@@ -26,7 +26,7 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	sci-visualization/gnuplot"
 
-S=${WORKDIR}/spyview-2010-01-30-10_35
+S=${WORKDIR}/spyview-2010-02-03-11_57
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-includes.patch
