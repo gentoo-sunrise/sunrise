@@ -28,11 +28,6 @@
 sys-cluster/globus
 sys-cluster/globus-build
 
-# Markos Chandras <hwoarang@gentoo.org> (31 Jan 2010)
-# Masking because of masked dependencies
-# virtual/jdk-1.4*
-app-text/writer2latex
-
 # Markos Chandras <hwoarang@gentoo.org> (12 Jan 2010)
 # Masked because it requires skype[-qt-static] but qt-static 
 # is forced on x86 profiles.
