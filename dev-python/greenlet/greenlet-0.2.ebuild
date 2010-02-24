@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="Lightweight in-process concurrent programming"
 HOMEPAGE="http://undefined.org/python/#greenlet"
@@ -24,5 +24,5 @@ src_prepare() {
 }
 
 src_test() {
-	${python} setup.py test || die "Tests failed"
+	"${python}" setup.py test || die "Tests failed"
 }
