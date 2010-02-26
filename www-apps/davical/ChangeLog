@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Feb 2010; lebarjack <francois.perichon@univ-lille2.fr>
+  -davical-0.9.8.1.ebuild, -files/postinstall-en-0.9.8.1.txt,
+  +davical-0.9.8.3.ebuild, +files/postinstall-en-0.9.8.3.txt:
+  New version for davical
+
   11 Feb 2010; lebarjack <francois.perichon@univ-lille2.fr>
   -davical-0.9.8.ebuild, +davical-0.9.8.1.ebuild,
   +files/postinstall-en-0.9.8.1.txt, -files/postinstall-en-0.9.8.txt:

@@ -18,13 +18,17 @@ DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="www-servers/apache
 	dev-lang/php[pcre,pdo,postgres,xml]
 	app-admin/pwgen
-	>=dev-php/awl-0.40
+	>=dev-php/awl-0.41
 	dev-perl/yaml
 	dev-perl/DBI
 	dev-perl/DBD-Pg"
 
 need_php5
 need_httpd
+
+pkg_setup() {
+	webapp_pkg_setup
+}
 
 src_compile() {
 	if use doc ; then
