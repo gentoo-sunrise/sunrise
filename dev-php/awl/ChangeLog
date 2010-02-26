@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Feb 2010; lebarjack <francois.perichon@univ-lille2.fr>
+  -awl-0.40.ebuild, +awl-0.41.ebuild:
+  New version for the awl library
+
   11 Feb 2010; lebarjack <francois.perichon@univ-lille2.fr>
   -awl-0.39.ebuild, +awl-0.40.ebuild:
   New version for the awl library
