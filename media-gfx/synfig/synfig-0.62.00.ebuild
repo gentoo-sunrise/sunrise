@@ -43,4 +43,3 @@ src_install() {
 	insinto /usr/share/${PN}/examples
 	doins examples/*.si{f,fz} || die "Doins failed!"
 }
-
