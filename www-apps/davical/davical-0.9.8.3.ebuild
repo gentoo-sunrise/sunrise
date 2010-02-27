@@ -26,10 +26,6 @@ RDEPEND="www-servers/apache
 need_php5
 need_httpd
 
-pkg_setup() {
-	webapp_pkg_setup
-}
-
 src_compile() {
 	if use doc ; then
 		ebegin "Generating documentation"
