@@ -33,10 +33,12 @@ src_install() {
 	for X in 32 48 64 128
 	do
 		insinto /usr/share/icons/hicolor/${X}x${X}/apps
-		newins "${S}/bin/${PN}-${X}x${X}.png" "${PN}.png" || die "cannot install needed files"
+		newins "${S}/bin/${PN}-${X}.png" "${PN}.png" || die "cannot install needed files"
+		insinto /usr/share/icons/hicolor/scalable/apps
+		newins "${S}/bin/${PN}.svg" "${PN}.svg" || die "cannot install needed files"
 	done
 
-	make_desktop_entry "${PN}" "SmartSVN" ${PN}.png "Development;RevisionControl"
+	make_desktop_entry "${PN}" "SmartSVN" ${PN} "Development;RevisionControl" || die "cannot create desktop entry"
 }
 
 pkg_nofetch(){
