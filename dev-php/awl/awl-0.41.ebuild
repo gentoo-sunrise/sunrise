@@ -25,7 +25,7 @@ need_php5
 src_compile() {
 	if use doc ; then
 		ebegin "Generating documentation"
-		phpdoc -c "docs/api/phpdoc.ini" || die "phpdoc failed"
+		phpdoc -c "docs/api/phpdoc.ini"
 		eend $? || die "Documentation failed to build"
 	fi
 }

@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Feb 2010; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  awl-0.41.ebuild:
+  need to "|| die" only once per error
+
   26 Feb 2010; lebarjack <francois.perichon@univ-lille2.fr>
   -awl-0.40.ebuild, +awl-0.41.ebuild:
   New version for the awl library
