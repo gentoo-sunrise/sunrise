@@ -33,4 +33,4 @@ S="${WORKDIR}/${MY_P}/module"
 
 # RENPY_DEPS_INSTALL is a double-colon separated list of directories that
 # contains all core renpy dependencies. This is usually /usr.
-export RENPY_DEPS_INSTALL="${ROOT}"/usr
+export RENPY_DEPS_INSTALL="${ROOT}usr"
