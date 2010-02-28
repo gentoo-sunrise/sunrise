@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/geany-plugins
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  28 Feb 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> geany-plugins-0.18.ebuild:
+  Fix {R,}DEPEND on dev-util/geany to be more general.
 
   27 Nov 2009; Marco Simeone (rael86) <ing.marcosimeone@gmail.com>
   +geany-plugins-0.18.ebuild, +metadata.xml:
