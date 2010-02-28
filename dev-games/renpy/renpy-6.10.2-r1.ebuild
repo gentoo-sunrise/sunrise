@@ -16,7 +16,6 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~x86"
 IUSE="development doc examples"
 
-DEPEND=""
 RDEPEND="dev-python/pygame[X]
 	>=dev-games/renpy-modules-${PV}"
 
@@ -69,7 +68,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_mod_optimize "${ROOT}/${GAMES_DATADIR}/${P}"
+	python_mod_optimize "${GAMES_DATADIR}/${P}"
 	if use development; then
 		elog "You need to emerge app-editors/jedit to easily use renpy development interface."
 	fi
@@ -77,5 +76,5 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	python_mod_cleanup "${ROOT}/${GAMES_DATADIR}/${P}"
+	python_mod_cleanup "${GAMES_DATADIR}/${P}"
 }
