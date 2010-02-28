@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Feb 2010; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.32-r5.ebuild,
+  +ccs-sources-2.6.32-r6.ebuild, +ccs-sources-2.6.33.ebuild:
+  kernel version bumped.
+
   10 Feb 2010; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.32-r4.ebuild,
   +ccs-sources-2.6.32-r5.ebuild:
   gentoo-patch version bumped.
