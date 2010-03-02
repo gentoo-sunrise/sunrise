@@ -8,7 +8,7 @@
 	</target>
 	
 	<target name="compile" depends="init">
-		<javac srcdir="src" destdir="lib"/>
+		<javac encoding="UTF-8" srcdir="src" destdir="lib"/>
 	</target>
 	
 	<target name="jar" depends="compile">
