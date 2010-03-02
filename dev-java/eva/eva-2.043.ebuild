@@ -28,7 +28,6 @@ S=${WORKDIR}
 
 src_prepare() {
 	cp "${FILESDIR}"/build-${PV}.xml build.xml || die "copying build.xml failed"
-	mv resources lib/ || die "failed to move resources"
 }
 
 src_install() {

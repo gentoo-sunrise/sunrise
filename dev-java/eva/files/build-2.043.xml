@@ -2,9 +2,12 @@
 <project name="eva2" default="jar" basedir=".">
 	<target name="init">
 		<mkdir dir="docs"/>
+		<copy todir="lib/resources">
+			<fileset dir="resources"/>
+		</copy>
 	</target>
 	
-	<target name="compile">
+	<target name="compile" depends="init">
 		<javac srcdir="src" destdir="lib"/>
 	</target>
 	
