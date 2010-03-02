@@ -1,0 +1,8 @@
+# ChangeLog for dev-java/eva
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Mar 2010; Oliver Borm (boroli) <oli.borm@web.de> +eva-2.043.ebuild,
+  +files/build-2.043.xml, +metadata.xml:
+  New Ebuild for bug 304327, thanks to Serkan
+

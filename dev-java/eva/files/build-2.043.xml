@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="eva2" default="jar" basedir=".">
+	<target name="init">
+		<mkdir dir="docs"/>
+	</target>
+	
+	<target name="compile">
+		<javac srcdir="src" destdir="lib"/>
+	</target>
+	
+	<target name="jar" depends="compile">
+		<jar jarfile="EvA2Base.jar" basedir="lib"/>
+	</target>
+	
+	<target name="javadoc" depends="init">
+		<javadoc sourcepath="src" destdir="docs">
+			<arg value="-encoding"/>
+			<arg value="UTF-8"/>
+		</javadoc>
+	</target>
+</project>
