@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Mar 2010; keenblade <keenblade@gmail.com> -clamtk-4.23.ebuild,
+  +clamtk-4.24.ebuild:
+  Version bump. Added language file th
+
   23 Jan 2010; keenblade <keenblade@gmail.com> -clamtk-4.22.ebuild,
   +clamtk-4.23.ebuild:
   Version bump
