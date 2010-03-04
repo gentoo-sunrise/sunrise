@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (4 Mar 2010)
+# Qt3 application. Masking due to pending removal of Qt3.
+# It will be removed from sunrise in 2010-04-04
+app-crypt/mypasswordsafe
+
 # John (EBo) David <ebo@users.sourceforge.net> (1 Feb 2010)
 # Globus is being replaced by Nimbus, and I do not expect to have time
 # to maintain this as my research is heading elsewhere.  It will be
