@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/despotify
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Mar 2010; Carles Pagès (page) <page@cubata.homelinux.net>
+  +despotify-9999.ebuild, +metadata.xml:
+  New live ebuild for despotify (bug 307795)
+
