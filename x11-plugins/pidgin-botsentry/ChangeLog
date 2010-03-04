@@ -1,6 +1,10 @@
 # ChangeLog for x11-plugins/pidgin-botsentry
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  pidgin-botsentry-1.3.0.ebuild:
+  Add ~x86 keyword
 
   02 Sep 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
   pidgin-botsentry-1.3.0.ebuild:
