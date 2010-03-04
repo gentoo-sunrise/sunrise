@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="Multiple GNOME terminals in one window"
 HOMEPAGE="http://www.tenshu.net/terminator/"
