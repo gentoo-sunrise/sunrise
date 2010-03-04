@@ -1,6 +1,10 @@
 # ChangeLog for sys-apps/ksplice
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  -ksplice-0.9.7.ebuild, +ksplice-0.9.9.ebuild:
+  Version bump to ksplice-0.9.9, add ~x86 keyword
 
   26 Mar 2009; Tiago Cunha <tcunha@gentoo.org> -ksplice-0.9.6.ebuild,
   +ksplice-0.9.7.ebuild:
