@@ -4,7 +4,7 @@
 
 inherit python
 
-DESCRIPTION="Dragbox is a GTK tool for connecting the commandline with the desktop environment."
+DESCRIPTION="Dragbox is a GTK tool for connecting the commandline with the desktop environment"
 HOMEPAGE="http://kaizer.se/wiki/dragbox/"
 SRC_URI="http://kaizer.se/publicfiles/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
