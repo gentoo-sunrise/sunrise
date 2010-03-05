@@ -1,0 +1,8 @@
+# ChangeLog for dev-libs/findlocale
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Mar 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> +findlocale-0.47.ebuild, +metadata.xml:
+  New ebuild for bug 307825, thanks to chiiph.
+
