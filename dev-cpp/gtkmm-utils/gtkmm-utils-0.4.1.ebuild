@@ -7,8 +7,8 @@ inherit versionator
 MY_PVM=$(get_version_component_range 1-2)
 
 DESCRIPTION="Utility functions, classes and widgets written on top of gtkmm and glibmm."
-HOMEPAGE="http://live.gnome.org/gtkmm_utils"
-SRC_URI="http://download.savannah.gnu.org/releases/${PN}/${MY_PVM}/${P}.tar.bz2"
+HOMEPAGE="http://code.google.com/p/gtkmm-utils/"
+SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 LICENSE="LGPL-2"
 
 SLOT="0"
