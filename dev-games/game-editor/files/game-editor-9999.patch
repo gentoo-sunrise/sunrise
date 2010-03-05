@@ -1,0 +1,76 @@
+diff -ruN -x .svn game_editor-origin/gameEditor/FunctionPanel.cpp game_editor-fixed/gameEditor/FunctionPanel.cpp
+--- game_editor-origin/gameEditor/FunctionPanel.cpp	2010-03-02 15:50:39.000000000 +0100
++++ game_editor-fixed/gameEditor/FunctionPanel.cpp	2010-03-02 15:41:02.000000000 +0100
+@@ -210,7 +210,7 @@
+ 	EditorDirectory editDir;
+ 
+ 	TiXmlDocument doc;
+-	if(!doc.LoadFile("functions.xml")) return false;
++	if(!doc.LoadFile("/usr/share/games/game-editor/functions.xml")) return false;
+ 	
+ 	//Check tree
+ 	TiXmlElement* root = NULL;
+@@ -1213,4 +1213,4 @@
+ }
+ 
+ 
+-#endif
+\ No newline at end of file
++#endif
+diff -ruN -x .svn game_editor-origin/gameEditor/makefile.editor game_editor-fixed/gameEditor/makefile.editor
+--- game_editor-origin/gameEditor/makefile.editor	2010-03-02 15:50:39.000000000 +0100
++++ game_editor-fixed/gameEditor/makefile.editor	2010-03-02 15:46:13.000000000 +0100
+@@ -10,7 +10,7 @@
+ CFLAGS = $(INCS) $(TARGET) -DNO_STDIO_REDIRECT -DNO_LONG_LONG -DNO_DIRENT -DNO_FCNTL -DNO_STAT -DNO_UNISTD -DNO_TERMIOS -DNO_PIPE -DNO_POSIX -DNO_LONGLONG -DNO_HISTORY $(BUILD_TYPE) $(GAMEEDITOR_TYPE)
+ 
+ ifeq (,$(findstring LLVM,$(TARGET)))
+-        LIBSYSTEM = -lstdc++ -lpthread -lX11 /usr/lib32/libXext.so
++        LIBSYSTEM = -lstdc++ -lpthread -lX11 /usr/lib/libXext.so
+         CL=$(CC)
+         CLFLAGS=$(CFLAGS)
+ else
+diff -ruN -x .svn game_editor-origin/gameEngine/EditBox.cpp game_editor-fixed/gameEngine/EditBox.cpp
+--- game_editor-origin/gameEngine/EditBox.cpp	2010-03-02 15:52:30.000000000 +0100
++++ game_editor-fixed/gameEngine/EditBox.cpp	2010-03-02 15:43:46.000000000 +0100
+@@ -264,7 +264,7 @@
+ 		EditorDirectory dir;
+ 
+ 		icon = new Actor("ged_VariableSelector_icon", this);
+-		icon->AddAnimation("icon", "b_xy.png", 1, 1);
++		icon->AddAnimation("icon", "/usr/share/games/game-editor/b_xy.png", 1, 1);
+ 		icon->SetPos(9 + (Width() - icon->Width()) / 2, 10 + (Height() - icon->Height()) / 2);
+ 		icon->getSprite()->SetHitTest(false);	
+ 	}
+diff -ruN -x .svn game_editor-origin/gameEngine/GameControl.cpp game_editor-fixed/gameEngine/GameControl.cpp
+--- game_editor-origin/gameEngine/GameControl.cpp	2010-03-02 15:52:30.000000000 +0100
++++ game_editor-fixed/gameEngine/GameControl.cpp	2010-03-02 15:42:06.000000000 +0100
+@@ -859,7 +859,7 @@
+ 
+ #define EDITOR_FRAME_RATE 120 //Use >= 60 to avoid flick in editor mode
+ 
+-gedString EDITOR_DAT("editor.dat");
++gedString EDITOR_DAT("/usr/share/games/game-editor/editor.dat");
+ 
+ gedString AXIS_NAME("Axis");
+ gedString REGION_NAME("gedRegion");
+diff -ruN -x .svn game_editor-origin/wxGameEditor/Behavior/wxJigsawEditor/wxJigsawEditorMainFrame.cpp game_editor-fixed/wxGameEditor/Behavior/wxJigsawEditor/wxJigsawEditorMainFrame.cpp
+--- game_editor-origin/wxGameEditor/Behavior/wxJigsawEditor/wxJigsawEditorMainFrame.cpp	2010-03-02 15:52:23.000000000 +0100
++++ game_editor-fixed/wxGameEditor/Behavior/wxJigsawEditor/wxJigsawEditorMainFrame.cpp	2010-03-02 15:40:36.000000000 +0100
+@@ -535,7 +535,7 @@
+ 
+ void wxJigsawEditorMainFrame::LoadConfig()
+ {
+-	wxString configFileName = wxT("config.xml");
++	wxString configFileName = wxT("/usr/share/game/game-editor/config.xml");
+ 	if(wxFileExists(configFileName))
+ 	{
+ 		m_XmlIO.DeserializeFromXml(configFileName);
+@@ -544,7 +544,7 @@
+ 
+ void wxJigsawEditorMainFrame::SaveConfig()
+ {
+-	wxString configFileName = wxT("config.xml");
++	wxString configFileName = wxT("/usr/share/game/game-editor/config.xml");
+ 	m_XmlIO.SerializeToXml(configFileName, true);
+ }
+ 
