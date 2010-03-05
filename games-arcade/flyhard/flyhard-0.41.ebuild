@@ -4,7 +4,7 @@
 
 inherit games
 
-DESCRIPTION="a game resembling Thrust, but with lots of shooting and puzzles"
+DESCRIPTION="A game resembling Thrust, but with lots of shooting and puzzles"
 HOMEPAGE="http://www.markboyd.me.uk/games/flyhard/flyhard.html"
 SRC_URI="http://www.markboyd.me.uk/games/flyhard/${P}.tar.gz"
 

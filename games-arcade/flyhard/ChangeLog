@@ -1,6 +1,10 @@
 # ChangeLog for games-arcade/flyhard
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  -flyhard-0.3.ebuild, +flyhard-0.41.ebuild:
+  Version bump to flyhard-0.41
 
   04 Dec 2007; Jakub Moc <jakub@gentoo.org> flyhard-0.3.ebuild:
   Add ~amd64 keyword
