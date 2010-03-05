@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/autokey-gtk
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  -autokey-gtk-0.60.7a.ebuild, +autokey-gtk-0.61.3.ebuild:
+  Version bump to autokey-gtk-0.61.3
 
   01 Nov 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ChangeLog,
   Manifest:
