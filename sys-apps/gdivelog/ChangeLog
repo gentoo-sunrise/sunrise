@@ -1,6 +1,10 @@
 # ChangeLog for sys-apps/gdivelog
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  gdivelog-0.5.1.ebuild:
+  Remove dot from DESCRIPTION
 
   16 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   gdivelog-0.5.1.ebuild, -FIXME:

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="SCUBA dive logging application, with extendable plugin support."
+DESCRIPTION="SCUBA dive logging application, with extendable plugin support"
 HOMEPAGE="http://gdivelog.sourceforge.net/"
 SRC_URI="mirror://sourceforge/gdivelog/${P}.tar.bz2"
 
