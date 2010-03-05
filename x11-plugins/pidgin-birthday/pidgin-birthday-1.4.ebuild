@@ -5,7 +5,7 @@
 EAPI="2"
 
 MY_P="birthday_reminder-${PV}"
-DESCRIPTION="Pidgin Birthday Reminder reminds you of your buddies birthdays"
+DESCRIPTION="Plugin for Pidgin that reminds you of your buddies birthdays"
 HOMEPAGE="https://sourceforge.net/projects/pidgin-birthday"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
