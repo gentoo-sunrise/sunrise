@@ -4,13 +4,13 @@
 
 inherit games
 
-DESCRIPTION="Tactics Squad is a real-time tactical game set in a futuristic environment."
+DESCRIPTION="Tactics Squad is a real-time tactical game set in a futuristic environment"
 HOMEPAGE="http://sourceforge.net/projects/tacticsgame/"
 SRC_URI="mirror://sourceforge/${PN}/Tactics_Squad_${PV}_Linux.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="media-libs/libsdl
