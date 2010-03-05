@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="A simple utility that allows you to easily rename multiple files."
+DESCRIPTION="A simple utility that allows you to easily rename multiple files"
 HOMEPAGE="http://home.hccnet.nl/paul.schuurmans/linux/"
 SRC_URI="http://home.hccnet.nl/paul.schuurmans/linux/download/${P}.tar.gz"
 LICENSE="GPL-2"

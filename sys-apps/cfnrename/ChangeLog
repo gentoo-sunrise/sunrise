@@ -1,6 +1,10 @@
 # ChangeLog for sys-apps/cfnrename
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  cfnrename-0.2.ebuild:
+  Remove dot from DESCRIPTION
 
   19 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   cfnrename-0.2.ebuild:
