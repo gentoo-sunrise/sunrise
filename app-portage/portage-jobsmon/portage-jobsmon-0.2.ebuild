@@ -4,7 +4,6 @@
 
 EAPI=2
 
-PYTHON_DEPEND=2
 PYTHON_USE_WITH=ncurses
 inherit python
 
@@ -20,7 +19,7 @@ IUSE=""
 RDEPEND="dev-python/pyinotify"
 
 src_configure() {
-	python_convert_shebangs 2 ${P}.py
+	python_convert_shebangs $(python_get_version) ${P}.py
 }
 
 src_install() {
