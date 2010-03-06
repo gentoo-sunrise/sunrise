@@ -34,6 +34,7 @@ dev-scheme
 dev-tcltk
 dev-tex
 dev-util
+dev-vcs
 games-action
 games-arcade
 games-board
