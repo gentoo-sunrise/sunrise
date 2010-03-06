@@ -3,6 +3,10 @@
 # $Header: $
 
   06 Mar 2010; Stefan Behte (Craig) <craig@gentoo.org>
+  -logstalgia-0.9.2.ebuild:
+  drop logstalgia-0.9.2, bug #242414
+
+  06 Mar 2010; Stefan Behte (Craig) <craig@gentoo.org>
   +logstalgia-0.9.9.ebuild:
   bump logstalgia to version 0.9.9, bug #242414
 
