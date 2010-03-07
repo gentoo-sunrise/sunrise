@@ -6,7 +6,7 @@ MY_P="extended_blist_sort-${PV}"
 
 DESCRIPTION="Pidgin plugin that provides several new sort options for the buddy list"
 HOMEPAGE="http://freakazoid.teamblind.de/2008/12/13/pidgin-extended-buddy-list-sort-plugin/"
-SRC_URI="http://freakazoid.teamblind.de/downloads/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/p-extblistsort/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,4 +19,5 @@ S=${WORKDIR}/${MY_P}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc AUTHORS ChangeLog README || die
 }

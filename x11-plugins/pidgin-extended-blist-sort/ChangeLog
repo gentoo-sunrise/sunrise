@@ -3,6 +3,11 @@
 # $Header: $
 
   07 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  -pidgin-extended-blist-sort-1.4.ebuild,
+  +pidgin-extended-blist-sort-1.6.ebuild:
+  Version bump to 1.6
+
+  07 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   pidgin-extended-blist-sort-1.4.ebuild:
   Remove dot from DESCRIPTION
 
