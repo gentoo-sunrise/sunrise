@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Mar 2010; Roman Zimmermann (torotil) <torotil@gmail.com>
+  -abcmidi-2009.12.21.ebuild, -files/abcmidi-2009.12.21_gentoo.patch,
+  +abcmidi-2010.02.09.ebuild, +files/abcmidi-2010.02.09_gentoo.patch:
+  version bump and switch to sourceforge mirrors
+
   04 Jan 2010; Russell Harmon (eatnumber1) <russ@eatnumber1.com>
   -abcmidi-2009.07.22.ebuild:
   Remove abcmidi-2009.07.22

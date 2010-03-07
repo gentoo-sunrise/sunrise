@@ -9,7 +9,7 @@ inherit eutils toolchain-funcs
 MY_PV="${PV//./-}"
 DESCRIPTION="Programs for processing ABC music notation files"
 HOMEPAGE="http://abc.sourceforge.net/abcMIDI/"
-SRC_URI="http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-${MY_PV}.zip"
+SRC_URI="mirror://sourceforge/abc/abcMIDI-${MY_PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
