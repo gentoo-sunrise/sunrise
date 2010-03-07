@@ -4,7 +4,7 @@
 
 MY_P="extended_blist_sort-${PV}"
 
-DESCRIPTION="Pidgin plugin that provides several new sort options for the buddy list."
+DESCRIPTION="Pidgin plugin that provides several new sort options for the buddy list"
 HOMEPAGE="http://freakazoid.teamblind.de/2008/12/13/pidgin-extended-buddy-list-sort-plugin/"
 SRC_URI="http://freakazoid.teamblind.de/downloads/${MY_P}.tar.gz"
 

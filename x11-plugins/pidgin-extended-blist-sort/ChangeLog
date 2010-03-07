@@ -1,6 +1,10 @@
 # ChangeLog for x11-plugins/pidgin-extended-blist-sort
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  pidgin-extended-blist-sort-1.4.ebuild:
+  Remove dot from DESCRIPTION
 
   26 Mar 2009; Dominik George (natureshadow) <gentoo@naturalnik.de>
   +pidgin-extended-blist-sort-1.4.ebuild, +metadata.xml:
