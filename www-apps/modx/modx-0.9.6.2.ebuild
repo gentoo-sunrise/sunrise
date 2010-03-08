@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit webapp
 
-DESCRIPTION="The Ajax CMS for today. And tomorrow."
+DESCRIPTION="The Ajax CMS for today. And tomorrow"
 HOMEPAGE="http://www.modxcms.com/"
 SRC_URI="http://www.modxcms.com/assets/snippets/filedownload/download.php?path=YnVpbGRz&fileName=${P}.tar.gz
 -> ${P}.tar.gz"

@@ -1,6 +1,10 @@
 # ChangeLog for www-apps/modx
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  modx-0.9.6.2.ebuild:
+  Removed dot in description
 
   05 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   modx-0.9.6.2.ebuild:
