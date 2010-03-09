@@ -6,18 +6,20 @@ EAPI="2"
 
 inherit eutils subversion
 
-ESVN_REPO_URI="https://faracvs.cs.uni-magdeburg.de/svn/christsc/${PN}/${PN}/branches/${PV}"
+ESVN_REPO_URI="https://faracvs.cs.uni-magdeburg.de/svn/christsc-${PN}/${PN}/branches/${PV}"
+ESVN_USER="anonymous"
+ESVN_PASSWORD="anonymous"
+ESVN_OPTIONS="--non-interactive"
 
-DESCRIPTION="a wrapper script for creating backups using dar"
+DESCRIPTION="Wrapper script for app-backup/dar to make backups easier"
 HOMEPAGE="https://faracvs.cs.uni-magdeburg.de/projects/christsc-darbackup/"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="dar64"
+IUSE=""
 
-RDEPEND="!dar64? ( app-backup/dar[dar32] )
-	dar64? ( app-backup/dar[dar64] )
+RDEPEND="app-backup/dar
 	|| ( dev-util/bdelta dev-util/xdelta )
 	net-misc/openssh"
 
@@ -26,6 +28,6 @@ pkg_setup() {
 }
 
 src_install() {
-	dobin darbackup || die "dobin failed"
-	doman darbackup.1 || die "doman failed"
+	dobin ${PN} || die "dobin failed"
+	doman ${PN}.1 || die "doman failed"
 }

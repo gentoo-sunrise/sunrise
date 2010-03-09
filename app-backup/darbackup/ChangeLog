@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/darbackup
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Mar 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> darbackup-0.7.27.ebuild, metadata.xml:
+  Fixed ESVN_REPO_URI to a working upstream URL, remove interactivity, remove
+  pointless dar64 useflag; thanks to sedzimir.
 
   20 Apr 2009; Christian Ruppert <idl0r@gentoo.org> darbackup-0.7.27.ebuild,
   metadata.xml:
