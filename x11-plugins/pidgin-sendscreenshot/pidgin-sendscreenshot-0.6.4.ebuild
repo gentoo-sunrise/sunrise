@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit versionator base
+inherit base versionator
 
 MY_P=${PN}-$(replace_version_separator 2 '-')
 
