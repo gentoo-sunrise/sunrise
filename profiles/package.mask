@@ -94,14 +94,6 @@ app-antivirus/kav4fileservers
 # ATM and upstream activity ceased - see Bug 156736
 app-portage/rep-rebuild
 
-# Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
-# svn version should be masked
-=x11-misc/swarp-9999
-
-# Jakub Moc <jakub@gentoo.org> (11 Dec 2006)
-# svn version should be masked
-=app-misc/ssid-9999
-
 # Jakub Moc <jakub@gentoo.org> (31 Jul 2006)
 # masked as it needs testing with other virtual/blas providers
 # (blas-atlas, blas-reference, and acml)
