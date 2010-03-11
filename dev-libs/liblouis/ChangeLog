@@ -5,8 +5,3 @@
   02 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   +liblouis-1.8.0.ebuild, +metadata.xml:
   New ebuild for bug 305899, thanks to Tommy[d]
-
-  02 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
-  +liblouis-1.8.0.ebuild, +metadata.xml:
-  New ebuild for bug 305899, thanks to Tommy[d]
-
