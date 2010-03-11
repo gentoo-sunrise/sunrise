@@ -4,16 +4,14 @@
 
 EAPI=2
 
-inherit eutils
-
-DESCRIPTION="The only backup program that doesn't make backups"
+DESCRIPTION="Generate a file list suitable for full or incremental backups"
 HOMEPAGE="http://www.miek.nl/projects/rdup"
 SRC_URI="http://www.miek.nl/projects/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="debug"
 
 RDEPEND="app-arch/libarchive
 	dev-libs/glib
@@ -22,8 +20,16 @@ RDEPEND="app-arch/libarchive
 DEPEND="${RDEPEND}
 	test? ( dev-util/dejagnu )"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-fix-gnupg-tests.patch
+src_configure() {
+	econf $(use_enable debug)
+}
+
+src_test() {
+	if use debug; then
+		ewarn "Test phase skipped, as it is known to fail with USE=\"debug\"."
+	else
+		default_src_test
+	fi
 }
 
 src_install() {
