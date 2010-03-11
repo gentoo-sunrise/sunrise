@@ -18,10 +18,6 @@ IUSE=""
 
 RDEPEND="dev-python/pyinotify"
 
-src_configure() {
-	python_convert_shebangs $(python_get_version) ${P}.py
-}
-
 src_install() {
 	newbin ${P}.py ${PN} || die
 }
