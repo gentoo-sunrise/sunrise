@@ -1,0 +1,71 @@
+--- src/ant/build.gant	2010-03-06 20:25:35.000000000 +0100
++++ src/ant/build.gant.new	2010-03-11 00:37:38.666832375 +0100
+@@ -216,7 +216,7 @@
+ }
+ 
+ target(name: 'deploy'){
+-  depends('deploy.eclipse', 'deploy.resources', 'deploy.vim')
++  depends('deploy.eclipse', 'deploy.vim')
+ }
+ 
+ target(name: 'deploy.eclipse'){
+@@ -226,31 +226,6 @@
+ 
+   mkdir(dir: '${eclim.plugins}')
+ 
+-  // if the eclim version has changed, stop eclimd before deploying
+-  pluginsDir = new File(binding.getVariable('eclim.plugins'))
+-  existing = null
+-  pluginsDir.eachDirMatch(~/org\.eclim_.*/){
+-    file -> existing = file
+-  }
+-
+-  if (existing != null && existing.getName() != "org.eclim_${version}"){
+-    echo('###\n# New eclim version, shutting down old version...###')
+-    instances = new File(binding.getVariable('user.home') + '/.eclim/.eclimd_instances')
+-    if (instances.exists()){
+-      instances.eachLine { line ->
+-        port = line.replaceFirst(/.*:/, '')
+-        echo("#  shutdown: ${line}")
+-        eclim('-command shutdown', port=port, failonerror=false)
+-      }
+-    }
+-    echo('###')
+-  }
+-
+-  delete(includeemptydirs: true){
+-    fileset(dir: '${eclim.plugins}', includes: 'org.eclim*/**/*')
+-    dirset(dir: '${eclim.plugins}', includes: 'org.eclim*')
+-  }
+-
+   copy(todir: '${eclim.plugins}'){
+     fileset(dir: '${build.plugins}', includes: '**/*')
+   }
+@@ -263,14 +238,6 @@
+   }else{
+     chmod(dir: '${eclim.plugins}/org.eclim_${eclim.version}/bin',
+         includes: '**/*', excludes: '*.sed', perm: 'ugo+x')
+-    // java symlink support sucks, especially if the link is broken
+-    exec(executable: 'rm'){
+-      arg(line: '${eclipse.home}/eclim ${eclipse.home}/eclimd')
+-    }
+-    symlink(link: '${eclipse.home}/eclim',
+-        resource: 'plugins/org.eclim_${eclim.version}/bin/eclim')
+-    symlink(link: '${eclipse.home}/eclimd',
+-        resource: 'plugins/org.eclim_${eclim.version}/bin/eclimd')
+   }
+ 
+   replace(file: '${eclim.plugins}/org.eclim_${eclim.version}/plugin.properties',
+@@ -282,12 +249,6 @@
+   }
+ }
+ 
+-target(name: 'deploy.resources'){
+-  copy(todir: '${user.home}/.eclim/resources', overwrite: true){
+-    fileset(dir: 'src/resources', includes: '**/*')
+-  }
+-}
+-
+ target(name: 'deploy.vim'){
+   depends('build.vim')
+ 

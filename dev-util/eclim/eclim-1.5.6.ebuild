@@ -62,10 +62,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# Fix a bug caused by incorrect version detection
-	sed -i "s/execute('git', 'describe')/'${PV}'/" \
-		"${S}"/src/ant/build.gant || die "sed failed"
-
 	# Fix up the installation process
 	epatch "${FILESDIR}"/${P}_fix_build_gant.patch
 }
