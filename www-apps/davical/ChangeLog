@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Mar 2010; lebarjack <francois.perichon@univ-lille2.fr>
+  -davical-0.9.8.3.ebuild, -files/postinstall-en-0.9.8.3.txt,
+  +davical-0.9.8.4.ebuild, +files/postinstall-en-0.9.8.4.txt:
+  New version for davical
+
   27 Feb 2010; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   davical-0.9.8.3.ebuild:
   drop unnecessary pkg_setup
