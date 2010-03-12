@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Mar 2010; lebarjack <francois.perichon@univ-lille2.fr>
+  -awl-0.41.ebuild, +awl-0.42.ebuild:
+  New version for the awl library
+
   27 Feb 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> awl-0.41.ebuild:
   Directly die with failing command
 
