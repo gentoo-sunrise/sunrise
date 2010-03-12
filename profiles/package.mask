@@ -34,13 +34,6 @@ media-video/palantir-client
 net-firewall/tuxguardian
 x11-wm/qlwm:3
 
-# John (EBo) David <ebo@users.sourceforge.net> (1 Feb 2010)
-# Globus is being replaced by Nimbus, and I do not expect to have time
-# to maintain this as my research is heading elsewhere.  It will be
-# removed in 30 days unless a new maintainer is found.
-sys-cluster/globus
-sys-cluster/globus-build
-
 # Thomas Sachau <tommy@gentoo.org> (20 Nov 2009)
 # masked because of masked dependency
 # app-misc/tracker (see main tree fro details)
@@ -52,12 +45,6 @@ gnome-extra/paperbox
 # installed as external ebuilds instead
 # masking until this is fixed
 www-servers/webcit
-
-# Thomas Sachau <tommy@gentoo.org> (20 Aug 2009)
-# Globus packages need some more work, globus-build does include different per-modules
-# masking them until they are ready
-sys-cluster/globus-build
-sys-cluster/globus
 
 # Petr Pisar <petr.pisar@atlas.cz> (18 May 2009)
 # Moved to lisp overlay (Bug #261206)
