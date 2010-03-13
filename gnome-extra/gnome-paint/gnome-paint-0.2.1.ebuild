@@ -17,4 +17,3 @@ IUSE=""
 
 DEPEND=">=x11-libs/gtk+-2.16:2"
 RDEPEND="${DEPEND}"
-
