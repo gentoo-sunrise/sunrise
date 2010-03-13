@@ -155,7 +155,6 @@ dev-libs/libcgroup:debug - Enables debug compile and link flags
 dev-libs/libcgroup:pam - Enables build with pam support
 dev-libs/libcgroup:tools - Enables build tools
 dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
-dev-libs/libmail:apop - Enables the APOP authentication method
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
@@ -331,25 +330,6 @@ sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' an
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
-sys-cluster/globus:condor - Condor-G scheduler support
-sys-cluster/globus:gridftp -  GridFTP
-sys-cluster/globus:gridway -  GridWay DRMAA Library
-sys-cluster/globus:i18n -  Internationalization libraries
-sys-cluster/globus:lsf - Platform LSF support
-sys-cluster/globus:pbs - Portable Batch System support
-sys-cluster/globus:prews -  Pre-WS GRAM, MDS2, and GridFTP
-sys-cluster/globus:prews-test -  Tests for pre-webservices components
-sys-cluster/globus:prewsgram -  Pre-webservices GRAM
-sys-cluster/globus:rls -  Replica Location Service
-sys-cluster/globus:wsc -  C WS core
-sys-cluster/globus:wscas -  Community Authorization Service
-sys-cluster/globus:wsctests -  Tests for C webservices
-sys-cluster/globus:wsdel -  Delegation Service
-sys-cluster/globus:wsgram -  GRAM4
-sys-cluster/globus:wsjava -  Java WS Core
-sys-cluster/globus:wsmds -  MDS4
-sys-cluster/globus:wsrft -  Reliable File Transfer service
-sys-cluster/globus:wstests -  Tests for java webservices
 sys-fs/aufs:fuse - Enable FUSE workaround
 sys-fs/aufs:hinotify - Add support for aufs inotify
 sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module run more efficiently
