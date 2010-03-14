@@ -64,6 +64,10 @@ pkg_setup() {
 src_prepare() {
 	# Fix up the installation process
 	epatch "${FILESDIR}"/${P}_fix_build_gant.patch
+
+	# Fix nailgun Makefile
+	sed -i -e '/CFLAGS=/d' -e 's/${CFLAGS}/& ${LDFLAGS}/' \
+		src/nailgun/Makefile || die "sed failed"
 }
 
 src_install() {
