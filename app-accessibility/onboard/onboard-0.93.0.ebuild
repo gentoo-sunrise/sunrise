@@ -4,7 +4,11 @@
 
 EAPI=2
 
-inherit distutils eutils versionator
+PYTHON_DEPEND=2
+SUPPORT_PYTHON_ABIS=1
+RESTRICT_PYTHON_ABIS="3.*" # due to python-distutils-extra
+
+inherit gnome2-utils distutils versionator
 
 DESCRIPTION="Simple on-screen Keyboard with macros and easy layout creation"
 HOMEPAGE="https://launchpad.net/onboard"
@@ -15,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-python/python-distutils-extra-2.4"
+DEPEND="dev-python/python-distutils-extra"
 RDEPEND="dev-python/gconf-python
 	dev-python/pyxml
 	dev-python/python-virtkey
@@ -23,9 +27,16 @@ RDEPEND="dev-python/gconf-python
 
 PYTHON_MODNAME="Onboard"
 
-src_install()
-{
-	distutils_src_install
+pkg_preinst() {
+	gnome2_icon_savelist
+}
 
-	domenu data/*.desktop || die "domenu failed."
+pkg_postinst() {
+	distutils_pkg_postinst
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	distutils_pkg_postrm
+	gnome2_icon_cache_update
 }
