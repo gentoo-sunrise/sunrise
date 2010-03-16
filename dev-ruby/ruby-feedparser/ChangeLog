@@ -1,6 +1,11 @@
 # ChangeLog for dev-ruby/ruby-feedparser
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -ruby-feedparser-0.6.ebuild,
+  +ruby-feedparser-0.7.ebuild:
+  Bump to ruby-feedparser-0.7. Upgrade to use ruby-ng eclass.
 
   26 Nov 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -ruby-feedparser-0.2.ebuild:
