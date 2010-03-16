@@ -1,6 +1,10 @@
 # ChangeLog for app-laptop/nvidia-bl
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2010; Emilio Coppa (ercoppa) <ercoppa@gmail.com>
+  -nvidia-bl-0.14.ebuild, +nvidia-bl-0.16.4.ebuild:
+  Version bump for nvidia-bl
 
   19 Dec 2009; Emilio Coppa (ercoppa) <ercoppa@gmail.org>
   +nvidia-bl-0.14.ebuild, -nvidia-bl-0.14-r2.ebuild,

@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-S="${WORKDIR}/${PN}-dkms-${PV}.0/usr/src/dkms_source_tree"
+S="${WORKDIR}/${PN}-dkms-${PV}/usr/src/dkms_source_tree"
 
 MODULE_NAMES="nvidia_bl(kernel/drivers)"
 
