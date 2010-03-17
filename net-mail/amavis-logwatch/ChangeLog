@@ -1,0 +1,8 @@
+# ChangeLog for net-mail/amavis-logwatch
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Mar 2010; Michael Orlitzky <michael@orlitzky.com>
+  +amavis-logwatch-1.50.02.ebuild, +metadata.xml:
+  New ebuild to address bug 309077.
+
