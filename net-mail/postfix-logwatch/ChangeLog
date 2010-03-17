@@ -1,0 +1,8 @@
+# ChangeLog for net-mail/postfix-logwatch
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Mar 2010; Michael Orlitzky <michael@orlitzky.com>
+  +postfix-logwatch-1.39.03.ebuild, +metadata.xml:
+  New ebuild to address bug 309075.
+
