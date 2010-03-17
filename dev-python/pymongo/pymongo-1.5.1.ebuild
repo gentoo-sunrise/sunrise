@@ -4,6 +4,7 @@
 
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
+DISTUTILS_SRC_TEST="nosetests"
 
 inherit distutils
 
@@ -41,9 +42,4 @@ src_install() {
 	if use doc; then
 		dohtml -r html/* || die "Error installing docs"
 	fi
-}
-
-src_test() {
-	einfo "${PN} tests assume that you have a mongodb running on localhost:27017"
-	PYTHONPATH=build/lib ${python} setup.py test || die "Tests failed"
 }
