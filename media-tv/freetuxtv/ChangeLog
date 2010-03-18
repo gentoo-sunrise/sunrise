@@ -1,6 +1,10 @@
 # ChangeLog for media-tv/freetuxtv
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Mar 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
+  freetuxtv-0.4.1.ebuild, +freetuxtv-0.4.2.ebuild:
+  ~adm64 keyword added and version bump 0.4.2
 
   20 Dec 2009; Christophe LEFEBVRE (chtof) <chtof62@gmail.com> metadata.xml:
   metadata.xml updated
