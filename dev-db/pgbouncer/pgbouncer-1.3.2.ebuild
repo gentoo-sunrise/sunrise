@@ -2,19 +2,21 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit autotools eutils
 
 DESCRIPTION="Lightweight connection pooler for PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/projects/pgbouncer/"
-SRC_URI="http://pgfoundry.org/frs/download.php/2284/${P}.tgz"
+SRC_URI="http://pgfoundry.org/frs/download.php/2608/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug doc"
 
 DEPEND=">=virtual/postgresql-base-8.0
-	>=dev-libs/libevent-1.3"
+	dev-libs/libevent"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
@@ -22,20 +24,15 @@ pkg_setup() {
 	enewuser pgbouncer -1 -1 -1 pgbouncer
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
+	epatch "${FILESDIR}/modify-config-paths.patch"
 	eautoreconf -f
 }
 
-src_compile() {
-	epatch "${FILESDIR}/modify-config-paths.patch"
-
+src_configure() {
 	econf \
 		$(use_enable debug) \
 		$(use_enable debug cassert)
-
-	emake || die "emake failed"
 }
 
 src_install() {
@@ -45,10 +42,9 @@ src_install() {
 	newins "${S}"/etc/pgbouncer.ini pgbouncer.conf || die "Install failed"
 	newinitd "${FILESDIR}"/pgbouncer.initd "${PN}" || die "Install failed"
 
-	dodoc README NEWS AUTHORS || die "Install failed"
-	dodoc doc/*.txt || die "Install failed"
+	use doc && dodoc README NEWS AUTHORS || die "Install failed"
+	use doc && dodoc doc/*.txt || die "Install failed"
 
-	# Create log/run directories and set owner to pgbouncer
 	keepdir /var/{run,log}/pgbouncer/
 	fperms 0700 /var/{run,log}/pgbouncer/
 	fowners pgbouncer:pgbouncer /var/{run,log}/pgbouncer/

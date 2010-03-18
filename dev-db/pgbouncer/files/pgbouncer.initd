@@ -1,27 +1,18 @@
 #!/sbin/runscript
-# pgbouncer	Start the PgBouncer PostgreSQL pooler
 
-opts="start stop reload checkconfig"
+opts="start stop reload"
 
 depend() {
 	need net
 	after postgresql
 }
 
-checkconfig(){
-	test -f /etc/pgbouncer.conf
-	result=$?
-	eend $result
-}
-
 start() {
-	checkconfig || return 1
 	ebegin "Starting pgbouncer"
 	
 	start-stop-daemon --start --pidfile /var/run/pgbouncer/pgbouncer.pid \
 		--exec /usr/bin/pgbouncer -- -d -u pgbouncer /etc/pgbouncer.conf
 	eend $? "Failed to start pgbouncer"
-
 }
 
 stop() {
