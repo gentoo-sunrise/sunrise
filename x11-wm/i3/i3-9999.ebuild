@@ -21,7 +21,8 @@ IUSE="debug doc"
 RDEPEND=">=x11-libs/libxcb-1.1.93
 	>=x11-libs/xcb-util-0.3.3
 	x11-libs/libX11
-	dev-libs/libev"
+	dev-libs/libev
+	dev-libs/yajl"
 DEPEND="${RDEPEND}
 	>=x11-proto/xcb-proto-1.3
 	>=app-text/asciidoc-8.3
