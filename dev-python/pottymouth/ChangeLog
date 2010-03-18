@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pottymouth-1.2.1.ebuild, +pottymouth-1.2.2.ebuild:
+  Version bump. Change homepage and depend, fix so docs are installed in the
+  right location
+
   19 Jan 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pottymouth-1.2.0.ebuild, +pottymouth-1.2.1.ebuild:
   Version bump, minor rewrite of test function
