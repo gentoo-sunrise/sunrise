@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Mar 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> ruby-feedparser-0.7.ebuild:
+  Ebuild now actually works.
+
   16 Mar 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> -ruby-feedparser-0.6.ebuild,
   +ruby-feedparser-0.7.ebuild:

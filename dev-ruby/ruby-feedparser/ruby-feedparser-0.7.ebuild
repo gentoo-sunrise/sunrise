@@ -16,11 +16,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-each_ruby_src_install() {
-	${RUBY} setup.rb install --prefix="${D}" "$@" \
-		${RUBY_ECONF} || die "setup.rb install failed"
+each_ruby_configure() {
+	${RUBY} setup.rb config || die
 }
 
-all_ruby_src_install() {
+each_ruby_install() {
+	${RUBY} setup.rb install --prefix="${D}" || die
+}
+
+all_ruby_install() {
 	dodoc ChangeLog README || die
 }
