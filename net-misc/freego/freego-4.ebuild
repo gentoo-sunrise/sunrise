@@ -14,24 +14,28 @@ SRC_URI="http://www.freego.fr/logiciel/linux/sources/${MY_P}-src.zip"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 RDEPEND="x11-libs/qt-gui:4"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	sed -i -e 's:PREFIX.*=.*:PREFIX=/usr:' ${MY_P}.pro || die
+	sed -i -e '/PREFIX\t=.*/d' ${MY_P}.pro || die
+}
+
+src_configure() {
+	eqmake4 PREFIX=/usr
 }
 
 src_install() {
-	emake INSTALL_ROOT="${D}" install || die
+	qt4-r2_src_install
 
 	dobin FreeGo || die
 	if use doc; then
-		dodoc "Guide d'utilisation de FreeGo.pdf" || die
+		dodoc *.pdf || die
 	fi
 }
