@@ -1,6 +1,11 @@
 # ChangeLog for net-news/feed2imap
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Mar 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -feed2imap-0.7.ebuild,
+  +feed2imap-0.9.4.ebuild:
+  Bump to feed2imap-0.9.4. Convert to use ruby-ng eclass.
 
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   feed2imap-0.7.ebuild:
