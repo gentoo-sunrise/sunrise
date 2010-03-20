@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit qt4
+inherit qt4-r2
 
 MY_P=${P}-src
 
@@ -21,12 +21,3 @@ DEPEND="x11-libs/qt-gui:4"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
-
-src_configure() {
-	eqmake4 ${PN}.pro
-}
-
-src_install(){
-	emake INSTALL_ROOT="${D}" install || die "emake install failed"
-	dodoc README || die "dodoc failed"
-}

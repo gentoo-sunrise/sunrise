@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Mar 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  -qwit-0.8.ebuild, +qwit-0.10.ebuild:
+  Version bump of qwit-0.8. Versions <1 should be left in the overlay until v1
+  becomes stable. Upgrading to v1, for users, would mean to lose all the
+  preferences/cache.
+
   15 Mar 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   +qwit-1.0_beta.ebuild:
   Version bump of qwit
