@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Mar 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  qwit-0.10.ebuild:
+  Fixed typo in ebuild description and added AUTHORS to DOCS
+
+  20 Mar 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   -qwit-0.8.ebuild, +qwit-0.10.ebuild:
   Version bump of qwit-0.8. Versions <1 should be left in the overlay until v1
   becomes stable. Upgrading to v1, for users, would mean to lose all the
