@@ -18,4 +18,4 @@ DEPEND="dev-libs/gmime
 	"
 RDEPEND="${DEPEND}"
 
-DOCS=( "AUTHORS" "HACKING" "TODO" )
+DOCS=( "AUTHORS" "HACKING" "NEWS" "TODO" )
