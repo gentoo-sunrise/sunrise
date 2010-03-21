@@ -18,9 +18,10 @@ IUSE="gtk"
 DEPEND="x11-libs/libX11[xcb]
 	x11-libs/libXxf86vm
 	x11-libs/libxcb
+	sys-devel/gettext
 	gtk? ( dev-python/pygtk )"
 RDEPEND="${DEPEND}"
-DOCS="README NEWS AUTHORS ChangeLog"
+DOCS=( "README" "NEWS" "AUTHORS" "ChangeLog" )
 
 src_configure() {
 	econf --enable-randr \
