@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit gnome2
+inherit eutils gnome2
 
 DESCRIPTION="A graphical tool for changing the Bashs behaviour"
 HOMEPAGE="http://www.nanolx.org/"
@@ -24,11 +24,16 @@ DEPEND="x11-libs/vte[python]
 	usb? ( sys-apps/usbutils )"
 RDEPEND="${DEPEND}"
 
-DOCS=( AUTHORS ChangeLog README TODO )
+DOCS="AUTHORS ChangeLog README TODO"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}.patch"
+}
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install die"
 	if use doc; then
 		dohtml documentation/* || die "documentation installation failed"
 	fi
+	gnome2_src_install
 }
+

@@ -1,0 +1,38 @@
+diff -uaNr bashstyle-ng-7.10-orig/Makefile.in bashstyle-ng-7.10/Makefile.in
+--- bashstyle-ng-7.10-orig/Makefile.in	2010-03-21 20:22:56.000000000 +0100
++++ bashstyle-ng-7.10/Makefile.in	2010-03-21 20:31:48.000000000 +0100
+@@ -134,20 +134,20 @@
+ 	@install -m644 translations/mo/bs-ng-de.mo $(DESTDIR)/usr/share/locale/de/LC_MESSAGES/bashstyle-ng.mo
+ 	@install -m644 translations/mo/bs-ng-it.mo $(DESTDIR)/usr/share/locale/it/LC_MESSAGES/bashstyle-ng.mo
+ 	@install -m644 translations/mo/bs-ng-ru.mo $(DESTDIR)/usr/share/locale/ru/LC_MESSAGES/bashstyle-ng.mo
+-	@if test ! $(GCONF_DISABLE) ; then \
+-		echo$(EARGS) "$(MAGENTA)deregistering:	$(SMOOTHBLUE)deprecated gconf schemas" ; \
+-		GCONF_CONFIG_SOURCE=xml:merged:/etc/gconf/gconf.xml.defaults \
+-			gconftool-2 --makefile-uninstall-rule data/deprecated.schemas >/dev/null ; \
+-	fi
+-	@if test ! $(GCONF_DISABLE) ; then \
+-		echo$(EARGS) "$(MAGENTA)registering:	$(SMOOTHBLUE)gconf schemas" ; \
+-		GCONF_CONFIG_SOURCE=xml:merged:/etc/gconf/gconf.xml.defaults \
+-			gconftool-2 --makefile-install-rule data/bashstyle.schemas >/dev/null ; \
+-	fi
+-	@if test ! $(CACHE_DISABLE) ; then \
+-		echo$(EARGS) "$(MAGENTA)updating:	$(SMOOTHBLUE)icon cache" ; \
+-		gtk-update-icon-cache -f /usr/share/icons/hicolor >/dev/null ; \
+-	fi
++	#@if test ! $(GCONF_DISABLE) ; then \
++	#	echo$(EARGS) "$(MAGENTA)deregistering:	$(SMOOTHBLUE)deprecated gconf schemas" ; \
++	#	GCONF_CONFIG_SOURCE=xml:merged:/etc/gconf/gconf.xml.defaults \
++	#		gconftool-2 --makefile-uninstall-rule data/deprecated.schemas >/dev/null ; \
++	#fi
++	#@if test ! $(GCONF_DISABLE) ; then \
++	#	echo$(EARGS) "$(MAGENTA)registering:	$(SMOOTHBLUE)gconf schemas" ; \
++	#	GCONF_CONFIG_SOURCE=xml:merged:/etc/gconf/gconf.xml.defaults \
++	#		gconftool-2 --makefile-install-rule data/bashstyle.schemas >/dev/null ; \
++	#fi
++	#@if test ! $(CACHE_DISABLE) ; then \
++	#	echo$(EARGS) "$(MAGENTA)updating:	$(SMOOTHBLUE)icon cache" ; \
++	#	gtk-update-icon-cache -f /usr/share/icons/hicolor >/dev/null ; \
++	#fi
+ 	@if test ! $(KILL_DISABLE) ; then \
+ 		echo$(EARGS) "$(RED)killing:	$(SMOOTHBLUE)gconf daemon" ; \
+ 		killall -qw gconfd-2 >/dev/null || exit 0; \

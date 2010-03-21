@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  bashstyle-ng-7.10.ebuild, +files/bashstyle-ng-7.10.patch:
+  Access violations fixed (in sandbox), thanks to jlec
+
+  21 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   +bashstyle-ng-7.10.ebuild, +metadata.xml:
   New Ebuild for bug 310549, thanks to jlec
 
