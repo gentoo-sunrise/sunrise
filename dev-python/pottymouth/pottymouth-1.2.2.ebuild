@@ -24,7 +24,7 @@ RESTRICT_PYTHON_ABIS="3*"
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	sed -i -e "s/python-pottymouth/${P}/g" "${S}"/setup.py || die "sed failed"
+	sed -i -e "s/python-pottymouth/${PF}/g" "${S}"/setup.py || die "sed failed"
 }
 
 src_test() {
