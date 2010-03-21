@@ -18,7 +18,7 @@ KEYWORDS=""
 
 IUSE=""
 RDEPEND="sci-visualization/gnuplot[gd]
-	 dev-util/git"
+	 dev-vcs/git"
 
 src_prepare() {
 	sed "s:basedir = os.path.dirname(os.path.abspath(__file__)):basedir = '/usr/share/gitstats':g" \
