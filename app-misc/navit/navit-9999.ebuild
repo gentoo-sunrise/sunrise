@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -29,7 +29,7 @@ RDEPEND="dev-libs/glib:2
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	dev-vcs/cvs
+	dev-util/cvs
 	svg? ( || ( gnome-base/librsvg media-gfx/imagemagick[png,svg] ) )"
 
 ESVN_REPO_URI="http://navit.svn.sourceforge.net/svnroot/navit/trunk/navit"
