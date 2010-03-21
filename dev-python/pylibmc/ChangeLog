@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pylibmc
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pylibmc-1.0_alpha.ebuild, +pylibmc-1.0_beta.ebuild:
+  Version bump. Fix dependencies
 
   30 Dec 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pylibmc-0.9.2.ebuild, +pylibmc-1.0_alpha.ebuild:

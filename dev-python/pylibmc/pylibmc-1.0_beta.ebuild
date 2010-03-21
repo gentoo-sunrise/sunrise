@@ -15,10 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-libs/libmemcached-0.26
-	dev-lang/python"
-DEPEND="${RDEPEND}
-	dev-python/setuptools"
+RDEPEND=">=dev-libs/libmemcached-0.32"
+DEPEND="${RDEPEND}"
+
 RESTRICT_PYTHON_ABIS="3.*"
 
 S=${WORKDIR}/${MY_P}
