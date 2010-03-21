@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN/-audacious-remote/audacious}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="net-im/pidgin[gtk]
@@ -19,5 +19,5 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	emake install DESTDIR="${D}" || die
-	dodoc AUTHORS ChangeLog INSTALL || die
+	dodoc AUTHORS ChangeLog || die
 }
