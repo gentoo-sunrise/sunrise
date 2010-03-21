@@ -3,6 +3,11 @@
 # $Header: $
 
   21 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  bashstyle-ng-7.10.ebuild, +files/bashstyle-ng-7.10-gconf-update.patch,
+  -files/bashstyle-ng-7.10.patch:
+  Patch file renamed and KEYWORDS sorted
+
+  21 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   bashstyle-ng-7.10.ebuild, +files/bashstyle-ng-7.10.patch:
   Access violations fixed (in sandbox), thanks to jlec
 

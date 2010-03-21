@@ -12,7 +12,7 @@ SRC_URI="http://download.tuxfamily.org/bashstyleng/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="acpi dmi doc pci pdf usb"
 
 DEPEND="x11-libs/vte[python]
@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}"
 DOCS="AUTHORS ChangeLog README TODO"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}.patch"
+	epatch "${FILESDIR}/${P}-gconf-update.patch"
 }
 
 src_install() {
@@ -36,4 +36,3 @@ src_install() {
 	fi
 	gnome2_src_install
 }
-
