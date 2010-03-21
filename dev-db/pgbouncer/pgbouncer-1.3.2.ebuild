@@ -42,7 +42,7 @@ src_install() {
 	newins "${S}"/etc/pgbouncer.ini pgbouncer.conf || die "Install failed"
 	newinitd "${FILESDIR}"/pgbouncer.initd "${PN}" || die "Install failed"
 
-	use doc && dodoc README NEWS AUTHORS || die "Install failed"
+	dodoc README NEWS AUTHORS || die "Install failed"
 	use doc && dodoc doc/*.txt || die "Install failed"
 
 	keepdir /var/{run,log}/pgbouncer/
