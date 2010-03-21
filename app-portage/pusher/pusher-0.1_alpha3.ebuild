@@ -18,8 +18,8 @@ IUSE="doc subversion" #"cvs doc git paludis pkgcore subversion"
 DEPEND=">=app-portage/gentoolkit-dev-0.2.6.6
 	>=sys-apps/portage-2.1
 	subversion? ( dev-python/pysvn )"
-	#cvs?        ( dev-util/cvs )
-	#git?        ( dev-util/git )
+	#cvs?        ( dev-vcs/cvs )
+	#git?        ( dev-vcs/git )
 	#paludis?    ( sys-apps/paludis )
 	#pkgcore?    ( sys-apps/pkgcore )
 RDEPEND="${DEPEND}"

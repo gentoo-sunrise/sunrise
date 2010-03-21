@@ -1,6 +1,10 @@
 # ChangeLog for app-portage/pusher
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org>
+  pusher-0.1_alpha3.ebuild:
+  dev-util/git -> dev-vcs/git
 
   09 Jul 2007; Alex Tarkovsky <alextarkovsky@gmail.com>
   -pusher-0.1_alpha2.ebuild, +pusher-0.1_alpha3.ebuild:
