@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>maintainer-wanted</herd>
+<use>
+	<flag name='acpi'>Enable support for apci informations</flag>
+	<flag name='doc'>Installs other html documentation</flag>	
+	<flag name='dmi'>Enable support for <pkg>sys-apps/dmidecode</pkg></flag>
+	<flag name='pci'>Enable support for pci informations</flag>
+	<flag name='usb'>Enable support for usb informations</flag>	
+</use>
+</pkgmetadata>

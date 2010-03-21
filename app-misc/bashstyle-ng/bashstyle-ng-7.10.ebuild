@@ -1,0 +1,34 @@
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+EAPI="2"
+
+inherit gnome2
+
+DESCRIPTION="A graphical tool for changing the Bashs behaviour"
+HOMEPAGE="http://www.nanolx.org/"
+SRC_URI="http://download.tuxfamily.org/bashstyleng/${P}.tar.bz2"
+
+LICENSE="GPL-3"
+SLOT="0"
+KEYWORDS="~x86 ~amd64"
+IUSE="acpi dmi doc pci pdf usb"
+
+DEPEND="x11-libs/vte[python]
+	sys-devel/gettext
+	acpi? ( sys-power/acpi )
+	dmi? ( sys-apps/dmidecode )
+	pci? ( sys-apps/pciutils )
+	pdf? ( app-text/ghostscript-gpl )
+	usb? ( sys-apps/usbutils )"
+RDEPEND="${DEPEND}"
+
+DOCS=( AUTHORS ChangeLog README TODO )
+
+src_install() {
+	emake DESTDIR="${D}" install || die "emake install die"
+	if use doc; then
+		dohtml documentation/* || die "documentation installation failed"
+	fi
+}
