@@ -15,5 +15,5 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
 
-RDEPEND="dev-util/git"
+RDEPEND="dev-vcs/git"
 DEPEND="${RDEPEND}"
