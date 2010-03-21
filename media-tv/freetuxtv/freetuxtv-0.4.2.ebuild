@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 src_configure() {
-	econf $(use_enable nls) || die
+	econf $(use_enable nls)
 }
 
 src_install(){
