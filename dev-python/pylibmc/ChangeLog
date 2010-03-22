@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pylibmc-1.0_beta.ebuild, +pylibmc-1.0.ebuild:
+  Version bump
+
   21 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pylibmc-1.0_alpha.ebuild, +pylibmc-1.0_beta.ebuild:
   Version bump. Fix dependencies
