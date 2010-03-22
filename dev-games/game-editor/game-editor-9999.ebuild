@@ -12,7 +12,7 @@ ESVN_REPO_URI="https://game-editor.svn.sourceforge.net/svnroot/game-editor/trunk
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="x11-libs/libXext

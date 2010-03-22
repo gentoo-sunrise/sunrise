@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  game-editor-9999.ebuild:
+  Keyword removed for live ebuild
+
+  22 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   game-editor-9999.ebuild, -files/game-editor-9999.patch:
   Patch file removed and fix src_prepare
 
