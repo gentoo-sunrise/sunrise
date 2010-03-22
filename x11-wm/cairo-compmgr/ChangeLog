@@ -1,6 +1,14 @@
 # ChangeLog for x11-wm/cairo-compmgr
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Mar 2010; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+  -cairo-compmgr-0.2.93.ebuild,
+  -files/cairo-compmgr-0.2.93-glitz-code.patch,
+  -files/cairo-compmgr-0.2.93-glitz-tfp-undef.patch,
+  +cairo-compmgr-0.3.0.ebuild:
+  Version bump. glitz stripped out by upstream so no patching necessary,
+  thanks to ruthenium for the notice
 
   12 Jun 2009; Christian Ruppert <idl0r@gentoo.org>
   cairo-compmgr-9999.ebuild:
