@@ -3,6 +3,10 @@
 # $Header: $
 
   23 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pgmemcache-2.0.2.ebuild:
+  Use proper depend (suggested by upstream)
+
+  23 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pgmemcache-2.0.1.ebuild, +pgmemcache-2.0.2.ebuild:
   Version bump
 

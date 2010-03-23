@@ -12,7 +12,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/postgresql-base-8.3
-	>=dev-libs/libmemcached-0.31"
+	>=dev-libs/libmemcached-0.38"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
