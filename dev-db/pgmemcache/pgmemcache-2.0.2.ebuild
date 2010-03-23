@@ -2,13 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit versionator
-
-MY_PV=$(delete_version_separator '_')
-MY_P=${PN}_${MY_PV/rc/RC}
 DESCRIPTION="A PostgreSQL API based on libmemcached to interface with memcached"
 HOMEPAGE="http://pgfoundry.org/projects/pgmemcache"
-SRC_URI="http://pgfoundry.org/frs/download.php/2565/${MY_P}.tar.bz2"
+SRC_URI="http://pgfoundry.org/frs/download.php/2604/${PN}_${PV}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
