@@ -6,7 +6,7 @@ inherit distutils
 SUPPORT_PYTHON_ABIS="1"
 
 DESCRIPTION="Libmemcached wrapper written as a Python extension"
-HOMEPAGE="http://lericson.blogg.se/code/category/pylibmc.html"
+HOMEPAGE="http://sendapatch.se/projects/pylibmc/"
 SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
