@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pgbouncer-1.3.2.ebuild:
+  Fix broken doc IUSE, install docs in proper dir
+
   21 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pgbouncer-1.3.2.ebuild:
   Only use IUSE=doc for extra docs

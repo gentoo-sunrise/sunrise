@@ -32,20 +32,23 @@ src_prepare() {
 src_configure() {
 	econf \
 		$(use_enable debug) \
-		$(use_enable debug cassert)
+		$(use_enable debug cassert) \
+		--docdir=/usr/share/doc/${PF}
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 
 	insinto /etc
-	newins "${S}"/etc/pgbouncer.ini pgbouncer.conf || die "Install failed"
+	newins etc/pgbouncer.ini pgbouncer.conf || die "Install failed"
 	newinitd "${FILESDIR}"/pgbouncer.initd "${PN}" || die "Install failed"
 
 	dodoc README NEWS AUTHORS || die "Install failed"
-	use doc && dodoc doc/*.txt || die "Install failed"
+	if use doc ; then
+		dodoc doc/*.txt || die "Install failed"
+	fi
 
-	keepdir /var/{run,log}/pgbouncer/
+	dodir /var/{run,log}/pgbouncer/
 	fperms 0700 /var/{run,log}/pgbouncer/
 	fowners pgbouncer:pgbouncer /var/{run,log}/pgbouncer/
 }
