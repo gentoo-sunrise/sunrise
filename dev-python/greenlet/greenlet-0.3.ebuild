@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="2"
+SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils eutils
+inherit distutils
 
 DESCRIPTION="Lightweight in-process concurrent programming"
 HOMEPAGE="http://undefined.org/python/#greenlet"
@@ -17,12 +18,11 @@ IUSE="test"
 
 DEPEND="dev-python/setuptools
 	test? ( dev-python/nose )"
-RDEPEND="dev-lang/python"
-
-src_prepare() {
-	epatch "${FILESDIR}/fix_setuptools.patch"
-}
+RDEPEND=""
 
 src_test() {
-	"${python}" setup.py test || die "Tests failed"
+	testing() {
+		PYTHONPATH=".:$(dir -d build-${PYTHON_ABI}/lib*)" "$(PYTHON)" setup.py test || die "Tests failed"
+	}
+	python_execute_function testing
 }
