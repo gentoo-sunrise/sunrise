@@ -12,9 +12,9 @@ SRC_URI="http://tt-rss.org/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64"
-IUSE="mysql mysqli postgres"
+IUSE="mysql postgres"
 
-DEPEND="dev-lang/php[mysql?,mysqli?,postgres?]"
+DEPEND="dev-lang/php[mysql?,postgres?]"
 RDEPEND="${DEPEND}"
 
 need_httpd_cgi
@@ -23,7 +23,6 @@ need_php_httpd
 pkg_setup() {
 	webapp_pkg_setup
 	use mysql && require_php_with_use mysql
-	use mysqli && require_php_with_use mysqli
 	use postgres && require_php_with_use postgres
 }
 
@@ -31,7 +30,7 @@ src_prepare() {
 	# Customize config.php so that the right 'DB_TYPE' is already set (according to the USE flag)
 	einfo "Customizing config.php..."
 	mv config.php{-dist,} || die "Could not rename config.php-dist to config.php."
-	if ( use mysql || use mysqli ) && ! use postgres; then
+	if use mysql && ! use postgres; then
 		sed -e "/define('DB_TYPE',/{s:pgsql:mysql:}" -i config.php || die "sed failed"
 	fi
 	sed -e "/define('DB_TYPE',/{s:// \(or mysql\):// pgsql \1:}" -i config.php \
