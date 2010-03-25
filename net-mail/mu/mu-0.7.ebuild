@@ -19,3 +19,9 @@ DEPEND="dev-libs/gmime
 RDEPEND="${DEPEND}"
 
 DOCS=( "AUTHORS" "HACKING" "NEWS" "TODO" )
+
+pkg_postinst() {
+	elog "Note: the Xapian database is no longer stored as ~/.mu/xapian-0.6"
+	elog "but instead simply as ~/.mu/xapian. You can remove the older"
+	elog "~/.mu/xapian-0.6 directory to save some disk space"
+}

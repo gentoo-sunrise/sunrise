@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Mar 2010; Cédric Cabessa (ced_c) <ced@ryick.net> mu-0.7.ebuild:
+  add postinst elog about migration from 0.6
+
   20 Mar 2010; Cédric Cabessa (ced_c) <ced@ryick.net> -mu-0.6.ebuild,
   +mu-0.7.ebuild:
   Version bump, add NEWS in DOCS
