@@ -25,7 +25,7 @@
 # Qt3 applications. Masking due to pending removal of Qt3.
 # They will be removed from sunrise in 2010-04-04
 app-crypt/mypasswordsafe
-app-misc/bsc
+=app-misc/bsc-2*
 app-text/pdfedit
 media-gfx/f4l
 media-sound/mediatagtools
