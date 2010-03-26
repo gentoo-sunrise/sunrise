@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> +yajl-9999.ebuild:
+  Add live ebuild. Thx chithead
+
 *yajl-1.0.9 (18 Mar 2010)
 
   18 Mar 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
