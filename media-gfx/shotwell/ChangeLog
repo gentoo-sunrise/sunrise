@@ -1,0 +1,8 @@
+# ChangeLog for media-gfx/shotwell
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Mar 2010; Andreas Nüßlein (nutz) <nutz@noova.de>
+  +shotwell-0.5.0.ebuild, +metadata.xml:
+  New Ebuild for bug #309615, thanks hollow, Tommy[D], jbergstroem, yngwin
+
