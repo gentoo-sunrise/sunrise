@@ -126,6 +126,11 @@ app-misc/2gis-data:sam - The map of Samara for app-misc/2gis
 app-misc/2gis-data:tim - The map of Tyumen for app-misc/2gis
 app-misc/2gis-data:tom - The map of Tomsk for app-misc/2gis
 app-misc/2gis-data:ufa - The map of Ufa for app-misc/2gis
+app-misc/bashstyle-ng:acpi - Enable support for apci informations
+app-misc/bashstyle-ng:dmi - Enable support for sys-apps/dmidecode
+app-misc/bashstyle-ng:doc - Installs other html documentation
+app-misc/bashstyle-ng:pci - Enable support for pci informations
+app-misc/bashstyle-ng:usb - Enable support for usb informations
 app-misc/ccpublisher:zope - Install zope stuff
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
@@ -293,8 +298,10 @@ net-im/ekg2-remote:ssl - Enable SSL/TLS support through OpenSSL. If 'gnutls' is 
 net-im/ekg2-remote:static - Link statically with plugins instead of installing them as shared libraries (external libraries can still be linked dynamically).
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
 net-libs/raknet:rakvoice - Enable RakNet RakVoice module
+net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
+net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
 net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
