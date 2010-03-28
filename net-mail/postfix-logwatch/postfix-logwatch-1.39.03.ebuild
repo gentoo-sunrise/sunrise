@@ -3,8 +3,8 @@
 # $Header: $
 
 DESCRIPTION="A log analyzer for postfix"
-HOMEPAGE="http://www.mikecappella.com/logwatch/"
-SRC_URI="${HOMEPAGE}/release/${P}.tgz"
+HOMEPAGE="http://logreporters.sourceforge.net/"
+SRC_URI="mirror://sourceforge/logreporters/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
