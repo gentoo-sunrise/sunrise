@@ -3,6 +3,10 @@
 # $Header: $
 
   28 Mar 2010; Michael Orlitzky <michael@orlitzky.com>
+  -postfix-logwatch-1.39.03.ebuild, +postfix-logwatch-1.39.04.ebuild:
+  Version bump to support the latest Postfix development release.
+
+  28 Mar 2010; Michael Orlitzky <michael@orlitzky.com>
   postfix-logwatch-1.39.03.ebuild:
   Project moved to Sourceforge, update URIs.
 
