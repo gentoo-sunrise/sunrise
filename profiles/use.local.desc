@@ -336,6 +336,7 @@ sci-electronics/gspiceui:waveform - Use sci-electronics/gwave for waveform displ
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
+sys-apps/pyrenamer:music - Enable support for renaming music
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-fs/aufs:fuse - Enable FUSE workaround
 sys-fs/aufs:hinotify - Add support for aufs inotify
