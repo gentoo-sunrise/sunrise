@@ -18,7 +18,6 @@ IUSE="debug linguas_de"
 
 RDEPEND=">=net-fs/samba-3"
 DEPEND="${RDEPEND}
-	sys-libs/glibc[nptl]
 	sys-devel/gettext"
 
 S=${WORKDIR}/${MY_P}
@@ -41,9 +40,9 @@ src_compile() {
 
 src_install() {
 	# sambascanner's make install is broken
-	dobin src/sambascanner bin/sambaretrieve src/smblister
+	dobin src/sambascanner bin/sambaretrieve src/smblister || die
 	insinto /usr/share/${PN}/
-	doins -r db
+	doins -r db || die
 	use linguas_de && domo i18n/de.mo
-	dodoc AUTHORS ChangeLog README sambascannerrc-example db/db.conf.sample
+	dodoc AUTHORS ChangeLog README sambascannerrc-example db/db.conf.sample || die
 }

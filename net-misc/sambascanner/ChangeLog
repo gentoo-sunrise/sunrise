@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org>
+  sambascanner-0.22.ebuild:
+  Missing die added, all recent stable glibc are nptl aware
+
   31 Jan 2010; Markos Chandras <hwoarang@gentoo.org>
   sambascanner-0.22.ebuild:
   Migrate to EAPI2 in order to replace deprecated built_with_use calls
