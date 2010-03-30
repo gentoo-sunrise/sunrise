@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+PYTHON_DEPEND="2:2.5"
+
 inherit distutils
 SUPPORT_PYTHON_ABIS="1"
 
