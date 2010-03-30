@@ -27,7 +27,9 @@ DEPEND="${RDEPEND}
 	>=x11-proto/xcb-proto-1.3
 	>=app-text/asciidoc-8.3
 	app-text/xmlto
-	app-text/docbook-xml-dtd"
+	app-text/docbook-xml-dtd
+	sys-devel/bison
+	sys-devel/flex"
 
 src_prepare() {
 	use debug || { sed -i -e "s:DEBUG=1:DEBUG=0:" common.mk || die "sed die - debug" ; }

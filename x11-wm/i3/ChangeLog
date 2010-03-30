@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Mar 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> -i3-3d.ebuild,
+  +i3-3e.ebuild, i3-9999.ebuild:
+  version bump , build dep fix
+
   18 Mar 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-9999.ebuild,
   ,C:
   add dep to live ebuild

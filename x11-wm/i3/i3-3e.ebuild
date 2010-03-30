@@ -21,10 +21,13 @@ IUSE=""
 RDEPEND=">=x11-libs/xcb-util-0.3.3
 	>=x11-libs/libxcb-1.1.90.1
 	x11-libs/libX11
-	dev-libs/libev"
+	dev-libs/libev
+	dev-libs/yajl"
 DEPEND="${RDEPEND}
 	>=app-text/asciidoc-8.1.0
-	>=x11-proto/xcb-proto-1.3"
+	>=x11-proto/xcb-proto-1.3
+	sys-devel/flex
+	sys-devel/bison"
 
 S="${WORKDIR}/${MY_P}"
 
