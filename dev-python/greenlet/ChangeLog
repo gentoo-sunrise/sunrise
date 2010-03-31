@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  greenlet-0.3.ebuild:
+  Add PYTHON_DEPEND and an additional doc
+
   24 Mar 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -greenlet-0.2.ebuild, +greenlet-0.3.ebuild, -files/fix_setuptools.patch:
   Version bump. Add Python 3 support

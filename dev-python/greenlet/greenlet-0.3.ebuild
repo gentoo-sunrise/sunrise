@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+PYTHON_DEPEND="*"
+
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
 
@@ -25,4 +27,8 @@ src_test() {
 		PYTHONPATH=".:$(dir -d build-${PYTHON_ABI}/lib*)" "$(PYTHON)" setup.py test || die "Tests failed"
 	}
 	python_execute_function testing
+}
+
+src_install() {
+	dodoc doc/greenlet.txt || die
 }
