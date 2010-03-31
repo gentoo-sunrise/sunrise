@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+PYTHON_DEPEND="2"
+
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
 
@@ -24,7 +26,7 @@ RESTRICT_PYTHON_ABIS="3*"
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	sed -i -e "s/python-pottymouth/${PF}/g" "${S}"/setup.py || die "sed failed"
+	sed -i -e "s/python-pottymouth/${PF}/g" setup.py || die "sed failed"
 }
 
 src_test() {
