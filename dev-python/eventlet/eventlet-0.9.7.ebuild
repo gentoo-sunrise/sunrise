@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+PYTHON_DEPEND="2"
+
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
 
@@ -26,7 +28,7 @@ DEPEND="${RDEPEND}
 		|| ( dev-lang/python[sqlite] dev-python/pysqlite )
 		dev-python/nose )"
 
-RESTRICT_PYTHON_ABIS="3*"
+RESTRICT_PYTHON_ABIS="3.*"
 
 DOCS="README README.twisted NEWS"
 
