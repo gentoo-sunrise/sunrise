@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Apr 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
+  -2gis-data-2010.3.ebuild, +2gis-data-2010.4.ebuild, metadata.xml:
+  Version bump, added Rostov and Vladivostok maps
+
   01 Mar 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
   -2gis-data-2010.2.ebuild, +2gis-data-2010.3.ebuild:
   Version bump

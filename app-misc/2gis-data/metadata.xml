@@ -21,9 +21,11 @@
 		<flag name='odes'>The map of Odessa for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='omsk'>The map of Omsk for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='perm'>The map of Perm for <pkg>app-misc/2gis</pkg></flag>
+		<flag name='rost'>The map of Rostov-na-Donu for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='sam'>The map of Samara for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='tim'>The map of Tyumen for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='tom'>The map of Tomsk for <pkg>app-misc/2gis</pkg></flag>
+		<flag name='vlad'>The map of Vladivostok for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='ufa'>The map of Ufa for <pkg>app-misc/2gis</pkg></flag>
 	</use>
 </pkgmetadata>

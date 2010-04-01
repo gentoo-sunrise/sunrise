@@ -50,9 +50,11 @@ my_add_town nvar Nizhnevartovsk 2006 5
 my_add_town odes Odessa 2007 2
 my_add_town omsk Omsk 2004 8
 my_add_town perm Perm 2007 12
+my_add_town rost Rostov 2010 3
 my_add_town sam Samara 2008 7
 my_add_town tim Tyumen 2006 11
 my_add_town tom Tomsk 2004 12
+my_add_town vlad Vladivostok 2010 3
 my_add_town ufa Ufa 2008 3
 
 pkg_setup() {
