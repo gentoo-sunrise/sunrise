@@ -4,6 +4,7 @@
 
 EAPI="2"
 
+PYTHON_DEPEND="2"
 inherit autotools distutils flag-o-matic multilib python fortran
 
 MY_P=${P}.r1714
@@ -31,8 +32,6 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	python_version
-
 	# upstream confused LIBDIRS with LDFLAGS in Makefile. f2py wants only
 	# LIBDIRS as parameter and takes LDFLAGS only from environment.
 	sed -i \
@@ -41,7 +40,7 @@ src_prepare() {
 
 	# drop hardcoded libdir path, 
 	# switch LDFLAGS naming to LIBDIRS (see above comment).
-	sed -i -e "s/, f2py/, f2py${PYVER}/" \
+	sed -i -e "s/, f2py/, f2py$(python_get_version)/" \
 		-e "s:-L/usr/local/lib:-L/usr/$(get_libdir):" \
 		-e "s/LDFLAGS/LIBDIRS/g" \
 		configure.ac || die "sed failed"

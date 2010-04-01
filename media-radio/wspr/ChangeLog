@@ -1,6 +1,9 @@
 # ChangeLog for media-radio/wspr
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Apr 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
+  fix for changes in python.eclass
 
   25 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   fix metadata.xml
