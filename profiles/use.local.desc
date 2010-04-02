@@ -122,10 +122,12 @@ app-misc/2gis-data:nvar - The map of Nizhnevartovsk for app-misc/2gis
 app-misc/2gis-data:odes - The map of Odessa for app-misc/2gis
 app-misc/2gis-data:omsk - The map of Omsk for app-misc/2gis
 app-misc/2gis-data:perm - The map of Perm for app-misc/2gis
+app-misc/2gis-data:rost - The map of Rostov-na-Donu for app-misc/2gis
 app-misc/2gis-data:sam - The map of Samara for app-misc/2gis
 app-misc/2gis-data:tim - The map of Tyumen for app-misc/2gis
 app-misc/2gis-data:tom - The map of Tomsk for app-misc/2gis
 app-misc/2gis-data:ufa - The map of Ufa for app-misc/2gis
+app-misc/2gis-data:vlad - The map of Vladivostok for app-misc/2gis
 app-misc/bashstyle-ng:acpi - Enable support for apci informations
 app-misc/bashstyle-ng:dmi - Enable support for sys-apps/dmidecode
 app-misc/bashstyle-ng:doc - Installs other html documentation
@@ -345,6 +347,7 @@ sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
 sys-fs/aufs:robr - Enable aufs readonly-branch
 sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
+sys-fs/ntfs3g-ar:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
 sys-fs/pysize:psyco - Adds psyco support
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
