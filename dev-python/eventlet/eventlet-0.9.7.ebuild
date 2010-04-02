@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-PYTHON_DEPEND="2"
-
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
 
