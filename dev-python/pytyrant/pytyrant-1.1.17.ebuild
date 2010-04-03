@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 DEPEND="test? ( net-misc/tokyotyrant )"
+RDEPEND=""
 
 RESTRICT_PYTHON_ABIS="3.*"
 
