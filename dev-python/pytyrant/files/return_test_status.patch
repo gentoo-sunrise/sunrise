@@ -1,3 +1,5 @@
+See http://code.google.com/p/pytyrant/issues/detail?id=9
+
 --- pytyrant.py	2009-03-13 07:58:17.000000000 +0100
 +++ pytyrant.py.new	2009-10-09 17:43:07.000000000 +0200
 @@ -512,8 +512,10 @@

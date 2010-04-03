@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pytyrant
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pytyrant-1.1.17.ebuild, files/return_test_status.patch:
+  Bring pytyrant up to date. Fix proper testing and inherit
 
   18 Nov 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +pytyrant-1.1.17.ebuild, +files/return_test_status.patch, +metadata.xml:
