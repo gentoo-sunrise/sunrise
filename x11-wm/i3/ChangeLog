@@ -6,8 +6,7 @@
   +i3-3e.ebuild, i3-9999.ebuild:
   version bump , build dep fix
 
-  18 Mar 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-9999.ebuild,
-  ,C:
+  18 Mar 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-9999.ebuild:
   add dep to live ebuild
 
   07 Dec 2009; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> i3-3d.ebuild,
