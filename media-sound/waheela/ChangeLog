@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/waheela
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Apr 2010; Daniel Pinto dos Santos (danielpi) <danielpi@gmx.net>
+  -waheela-0.2.2.ebuild, +waheela-0.3.ebuild:
+  Version bump for waheela, thanks to Tommy for reviewing
 
   07 Sep 2009; Daniel Pinto dos Santos (danielpi) <danielpi@gmx.net>
   +waheela-0.2.2.ebuild, +metadata.xml:
