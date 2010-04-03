@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Apr 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  keyfuzz-0.2.ebuild:
+  Switch to EAPI-2, remove linebreak for description, remove useless die for
+  econf
+
   30 Mar 2010; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   keyfuzz-0.2.ebuild:
   always install README, add ~amd64 keyword
