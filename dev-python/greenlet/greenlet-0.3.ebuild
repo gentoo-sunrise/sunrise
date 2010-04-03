@@ -29,5 +29,7 @@ src_test() {
 }
 
 src_install() {
+	distutils_src_install
+
 	dodoc doc/greenlet.txt || die
 }
