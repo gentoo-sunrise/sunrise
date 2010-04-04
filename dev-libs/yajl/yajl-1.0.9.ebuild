@@ -16,7 +16,15 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
+CMAKE_IN_SOURCE_BUILD="1"
+
 src_prepare() {
-	cd "${WORKDIR}"/lloyd-yajl-*
+	cd "${WORKDIR}"/lloyd-${PN}-*
 	S=$(pwd)
+
+	epatch "${FILESDIR}"/${PN}-*
+}
+
+src_test() {
+	emake test || die
 }
