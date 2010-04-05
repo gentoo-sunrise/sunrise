@@ -36,18 +36,19 @@ src_install() {
 	local rtdir='runtimes/air/linux/Adobe AIR/Versions/1.0'
 
 	# remove the broken symlinks
-	rm -r "${rtdir}"/Resources/nss3/{0d,1d,None} || die "cleaning symlinks failed"
-	if use x86; then rm -r "${rtdir}"/Resources/lib{curl,flashplayer}.so \
-		|| die "sym"; fi
+	rm -r "${rtdir}"/Resources/nss3/{0d,1d,None} || die "removing cruft failed"
+	if use x86; then
+		rm "${rtdir}"/Resources/lib{curl,flashplayer}.so || die "removing cruft failed"
+	fi
 
 	insinto /${sdkdir}
 	doins -r * || die "doins failed"
 
-	cd "${D}" || die "cd ${D} failed"
+	cd "${D}"
 	fperms 0755 ${sdkdir}/bin/* ${sdkdir}/"${rtdir}"/{libCore.so,Resources/lib*.so*} \
 		|| die "chmod failed"
 
-	use x86 && make_wrapper adl /${sdkdir}/bin/adl . /usr/lib:/usr/lib/nss:/usr/lib/nspr /opt/bin
+	use x86 && make_wrapper adl /${sdkdir}/bin/adl . /usr/lib/nss:/usr/lib/nspr:/opt/netscape/plugins /opt/bin
 	use amd64 && make_wrapper adl /${sdkdir}/bin/adl . /usr/lib32:/usr/lib32/nss:/usr/lib32/nspr /opt/bin
 
 	exeinto /opt/bin
@@ -59,13 +60,6 @@ src_install() {
 
 	insinto /usr/share/mime/packages
 	doins "${FILESDIR}"/${PN}.xml || die "doins failed"
-
-	if use x86; then
-		dosym /usr/lib/libcurl.so ${sdkdir}/"${rtdir}"/Resources/libcurl.so \
-		&& dosym /opt/netscape/plugins/libflashplayer.so \
-		${sdkdir}/"${rtdir}"/Resources/libflashplayer.so \
-		|| die "dosym failed"
-	fi
 }
 
 pkg_postinst() {
