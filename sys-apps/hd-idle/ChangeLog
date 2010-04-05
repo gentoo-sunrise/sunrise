@@ -1,0 +1,8 @@
+# ChangeLog for sys-apps/hd-idle
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Apr 2010; Matthias Treydte <waldheinz@gmail.com> +hd-idle-1.01.ebuild,
+  +files/hd-idle-conf, +files/hd-idle-init, +metadata.xml:
+  New Ebuild for bug #218821 thanks to hangfire, chiiph and Tommy[D]
+
