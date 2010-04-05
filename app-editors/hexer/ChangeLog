@@ -1,0 +1,8 @@
+# ChangeLog for app-editors/hexer
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Apr 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  +hexer-0.1.5.ebuild, +metadata.xml:
+  New package, bug 313039 thanks to jlec, mjo and Tommy[D]
+
