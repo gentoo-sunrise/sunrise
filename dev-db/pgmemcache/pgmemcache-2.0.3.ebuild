@@ -4,7 +4,7 @@
 
 DESCRIPTION="A PostgreSQL API based on libmemcached to interface with memcached"
 HOMEPAGE="http://pgfoundry.org/projects/pgmemcache"
-SRC_URI="http://pgfoundry.org/frs/download.php/2604/${PN}_${PV}.tar.bz2"
+SRC_URI="http://pgfoundry.org/frs/download.php/2637/${PN}_${PV}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
