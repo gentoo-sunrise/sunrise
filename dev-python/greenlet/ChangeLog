@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -greenlet-0.3.ebuild, +greenlet-0.3.1.ebuild:
+  Version bump
+
   03 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   greenlet-0.3.ebuild:
   Add missing distutils_src_install. ouch. spotted by Tommy[D], thanks
