@@ -4,8 +4,7 @@
 
 EAPI="2"
 PYTHON_DEPEND="2"
-RESTRICT_PYTHON_ABIS="3.*"
-
+SUPPORT_PYTHON_ABIS="1"
 inherit distutils
 
 DESCRIPTION="Google Contacts wrapper for mutt"
@@ -18,3 +17,5 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-python/gdata"
+
+RESTRICT_PYTHON_ABIS="3.*"

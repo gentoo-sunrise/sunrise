@@ -3,6 +3,10 @@
 # $Header: $
 
   07 Apr 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  goobook-1.2.ebuild:
+  Added SUPPORT_PYTHON_ABIS=1. Thanks to chtof
+
+  07 Apr 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   +goobook-1.2.ebuild, +metadata.xml:
   New Ebuild for bug 313643
 
