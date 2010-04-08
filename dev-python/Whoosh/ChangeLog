@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  Whoosh-0.3.18.ebuild:
+  Add support for Python ABIs and adjust the Python depend.
+
   07 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   -Whoosh-0.3.15.ebuild, +Whoosh-0.3.18.ebuild:
   Version bump.

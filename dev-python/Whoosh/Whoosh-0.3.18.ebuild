@@ -2,6 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+SUPPORT_PYTHON_ABIS=1
+PYTHON_DEPEND=2
+RESTRICT_PYTHON_ABIS="3.*"
+
 inherit distutils
 
 DESCRIPTION="Fast, pure-Python full text indexing, search and spell checking library"
