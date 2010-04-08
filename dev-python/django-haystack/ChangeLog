@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  django-haystack-1.0.1.ebuild:
+  Add support for Python ABIs and adjust the Python depend.
+
   07 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   -django-haystack-9999.ebuild:
   Drop the live version (it should have been dropped as soon as the release
