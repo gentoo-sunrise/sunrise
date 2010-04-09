@@ -12,7 +12,7 @@ SRC_URI="http://download.2gis.ru/arhives/2GISShell-${PV}.orig.zip"
 
 LICENSE="2Gis-ru"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="+data"
 
 DEPEND="app-arch/unzip"
