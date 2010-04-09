@@ -6,5 +6,5 @@
   +files/phctool-0.5.2.2_all_paths_tool_no_sudo.patch,
   +files/phctool-0.5.2.2_all_paths_tool_sudo.patch,
   +files/phctool-0.5.2.2_all_paths_tray.patch, +metadata.xml:
-  New Ebuild (userland) for bug 272212
+  New Ebuild (userland) for bug 283472
 
