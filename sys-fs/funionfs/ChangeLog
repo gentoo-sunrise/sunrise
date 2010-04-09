@@ -1,6 +1,10 @@
 # ChangeLog for sys-fs/funionfs
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -funionfs-0.4.2.ebuild, +funionfs-0.4.3.ebuild:
+  Version bump, cleanup and keywording for amd64.
 
   18 Oct 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
   Redigest
