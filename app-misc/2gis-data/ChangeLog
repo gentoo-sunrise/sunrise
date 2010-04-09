@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Apr 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
+  2gis-data-2010.4.ebuild:
+  Adding ~amd64 keyword. Thanks Kirin Yuri for testing.
+
   01 Apr 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
   -2gis-data-2010.3.ebuild, +2gis-data-2010.4.ebuild, metadata.xml:
   Version bump, added Rostov and Vladivostok maps
