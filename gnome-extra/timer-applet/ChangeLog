@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/timer-applet
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  -timer-applet-2.0.1.ebuild, +timer-applet-2.1.2.ebuild, metadata.xml:
+  Version bump for bug 131669, python usage changed
 
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added USE flag description wrt GLEP 56
