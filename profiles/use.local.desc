@@ -98,6 +98,7 @@ app-admin/collectd:cd_wireless - Build the wireless input plugin
 app-admin/collectd:cd_write_http - Build the write_http output plugin
 app-admin/collectd:cd_zfs_arc - Build the zfs_arc input plugin
 app-admin/collectd:contrib - Install user-contributed files in the doc directory
+app-admin/elektra:coverage - Turn on code coverage analysis tools
 app-admin/vlogger:dbi - Enable support for DBI
 app-arch/zpaq:optimization - Install additional files required to support ZPAQ's optimized compression mode.
 app-backup/fsarchiver:lzma - Enables LZMA compression
@@ -229,7 +230,6 @@ games-misc/fretsonfire:psyco - Enable psyco python accelerator
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/alarm-clock-applet:libnotify - Enables support for libnotify notification system
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
-gnome-extra/timer-applet:sounds - Installs optional sound data
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
 media-gfx/fim:postscript - Install a postscript wrapper script
@@ -350,6 +350,7 @@ sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
 sys-fs/ntfs3g-ar:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
 sys-fs/pysize:psyco - Adds psyco support
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
+sys-power/phctool:sudo - Enable support for sudo to run gui from non-root user
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 www-plugins/nexus_personal_SE-bin:epiphany - Enable support for www-client/epiphany
 x11-libs/pdcurses:latin1 - Add support for latin1 characters
