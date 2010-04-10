@@ -4,13 +4,11 @@
 
 EAPI="2"
 
-inherit base versionator
-
-MY_P=${PN}-$(replace_version_separator 2 '-')
+inherit base
 
 DESCRIPTION="Pidgin plugin to capture a rectangular area of your screen and send it"
-HOMEPAGE="http://raoulito.info/plugins/pidgin_screenshot/"
-SRC_URI="http://raoulito.info/plugins/${PN/-send/_}/${MY_P}.tar.gz"
+HOMEPAGE="http://code.google.com/p/pidgin-sendscreenshot"
+SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,7 +18,5 @@ IUSE=""
 DEPEND="net-im/pidgin[gtk]
 	net-misc/curl"
 RDEPEND="${DEPEND}"
-
-S=${WORKDIR}/${MY_P}
 
 DOCS=( AUTHORS ChangeLog README )
