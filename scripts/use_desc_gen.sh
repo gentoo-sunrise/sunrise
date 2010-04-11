@@ -5,22 +5,20 @@
 # $Id: use_desc_gen.sh,v 1.6 2008/08/23 21:28:28 robbat2 Exp $
 
 usage() {
-	prog=$(basename $1)
-
-	echo "${prog} /path/to/portage/tree"
+	echo "$(basename "$1") /path/to/portage/tree"
 	exit 1;
 }
 
 if [ $# -ne 1 ]; then
-	usage $0;
+	usage "$0";
 fi
 
 if [ "x${1}" = "x-h" -o "x${1}" = "x--help" ]; then
-	usage $0;
+	usage "$0";
 fi
 
 if [ ! -f "${1}/profiles/use.local.desc" ]; then
-	usage $0;
+	usage "$0";
 fi
 
 pid=$(echo $$)
@@ -36,19 +34,19 @@ pid=$(echo $$)
 #cat "${1}/profiles/use.local.desc" | sed '1,/# The following categories/d;/# End of metadata categories/,$d;s/^..//' > /tmp/${pid}.categories
 
 # take comments from existing use.local.desc
-grep '^#' "${1}/profiles/use.local.desc" > /tmp/${pid}.use.local.desc
-echo "" >> /tmp/${pid}.use.local.desc
+grep '^#' "${1}/profiles/use.local.desc" > /tmp/${pid}.use.local.desc || exit 2
+echo "" >> /tmp/${pid}.use.local.desc || exit 2
 
 # use list from step #1 to filter current use.local.desc and add un-converted categories to new use.local.desc
 #grep -v -f /tmp/${pid}.grep "${1}/profiles/use.local.desc" > /tmp/${pid}.new.use
 
 # the secret sauce, append to new use.local.desc
-python scripts/use_desc_gen.py --repo_path "${1}" > /tmp/${pid}.new.use
+python scripts/use_desc_gen.py --repo_path "${1}" > /tmp/${pid}.new.use || exit 2
 
 # let's keep it sorted: use major category, minor category, and package name
 # as primary, secondary, and tertiary sort keys, respectively
 sort -t: -k1,1 -k2 /tmp/${pid}.new.use | sort -s -t/ -k1,1 \
-    >> /tmp/${pid}.use.local.desc
+    >> /tmp/${pid}.use.local.desc || exit 2
 
 # clean up
 #rm -rf /tmp/${pid}.categories
