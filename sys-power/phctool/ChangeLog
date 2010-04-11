@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Fix metadata.xml (wrong herd)
+
   09 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> +phctool-0.5.2.2.ebuild,
   +files/phctool-0.5.2.2_all_paths_tool_no_sudo.patch,
   +files/phctool-0.5.2.2_all_paths_tool_sudo.patch,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd>no-herd</herd>
+  <herd>maintainer-wanted</herd>
   <use>
     <flag name="sudo">Enable support for sudo to run gui from non-root user</flag>
   </use>
