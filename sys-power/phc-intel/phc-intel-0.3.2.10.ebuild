@@ -17,8 +17,8 @@ IUSE=""
 
 S="${WORKDIR}/${P%.*}-${P##*.}"
 
-CONFIG_CHECK="!CONFIG_X86_ACPI_CPUFREQ"
-ERROR_CONFIG_X86_ACPI_CPUFREQ="CONFIG_X86_ACPI_CPUFREQ has to be set to Module or Not set to enable the replacement of acpi-cpufreq with phc-intel."
+CONFIG_CHECK="~!X86_ACPI_CPUFREQ"
+ERROR_X86_ACPI_CPUFREQ="CONFIG_X86_ACPI_CPUFREQ has to be configured to Module or Not set to enable the replacement of acpi-cpufreq with phc-intel."
 
 MODULE_NAMES="phc-intel(misc:)"
 BUILD_PARAMS="KERNELSRC=\"${KERNEL_DIR}\""
@@ -28,4 +28,9 @@ src_prepare() {
 	if kernel_is -ge 2 6 33 ; then
 		sed -i -e "s:include/linux/utsrelease.h:include/generated/utsrelease.h:" Makefile || die
 	fi
+}
+
+src_install() {
+	linux-mod_src_install
+	dodoc README || die
 }

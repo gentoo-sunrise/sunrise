@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  phc-intel-0.3.2.10.ebuild:
+  Corrected CONFIG_* check, added dodoc README
+
   09 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
   +phc-intel-0.3.2.10.ebuild, +metadata.xml:
   New Ebuild for bug 283472
