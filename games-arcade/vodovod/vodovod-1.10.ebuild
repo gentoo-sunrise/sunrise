@@ -11,7 +11,7 @@ SRC_URI="http://download.gna.org/${PN}/${P}-src.tar.gz"
 S=${WORKDIR}/${P}-src
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="media-libs/libsdl
@@ -23,6 +23,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	sed -e 's:"\(data/[^"]*\)":"'${GAMES_DATADIR}'/'${PN}'/\1":g' -i *.cpp || die
+	epatch "${FILESDIR}/${P}-gcc4.3.patch"
 }
 
 src_install() {
