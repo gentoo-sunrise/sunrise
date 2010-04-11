@@ -4,9 +4,9 @@
 
 inherit games toolchain-funcs
 
-DESCRIPTION="arcade-like boat racing game combining platform jumpers and elastomania / x-moto like games"
+DESCRIPTION="Arcade-like boat racing game combining platform jumpers and elastomania / x-moto like games"
 HOMEPAGE="http://bloboats.dy.fi/"
-SRC_URI="http://mirror.kapsi.fi/bloboats.dy.fi/${P}.tar.gz"
+SRC_URI="http://koti.mbnet.fi/makegho/c/blobtrox/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -34,6 +34,6 @@ src_unpack(){
 }
 
 src_install(){
-	emake PREFIX="${D}" install || die "emake install failed"
+	emake PREFIX="${D}" install || die
 	prepgamesdirs
 }

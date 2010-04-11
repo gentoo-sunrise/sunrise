@@ -1,6 +1,11 @@
 # ChangeLog for games-arcade/bloboats
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Apr 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
+  bloboats-1.0.1.ebuild:
+  Mirror 1 unavailable (access denied) : SRC_URI changed for Mirror 2 ; Even
+  with a good SRC_URI, I have a blackscreen when I launch the game...
 
   06 Apr 2007; Nathan Smith (ndansmith) <ndansmith@gmail.com>
   bloboats-1.0.1.ebuild:
