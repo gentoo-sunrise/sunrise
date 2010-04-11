@@ -6,7 +6,7 @@ EAPI=2
 
 inherit linux-info linux-mod
 
-DESCRIPTION="Processor Hardwae Control for Intel CPUs"
+DESCRIPTION="Processor Hardware Control for Intel CPUs"
 HOMEPAGE="http://www.linux-phc.org/"
 SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=87 -> ${P}.tar.bz2"
 

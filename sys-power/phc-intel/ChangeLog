@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  phc-intel-0.3.2.10.ebuild:
+  Typo.
+
   11 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
   phc-intel-0.3.2.10.ebuild:
   Corrected CONFIG_* check, added dodoc README
