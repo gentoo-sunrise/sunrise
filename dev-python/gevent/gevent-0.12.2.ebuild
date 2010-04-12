@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+EAPI=2
+NEED_PYTHON=2.5
+
+inherit distutils 
 
 DESCRIPTION="Python network library that uses greenlet and libevent for easy and scalable concurrency"
 HOMEPAGE="http://gevent.org/"
@@ -13,20 +16,31 @@ KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="doc examples"
 
-DEPEND=">=dev-lang/python-2.5
+DEPEND="dev-libs/libevent
 	>=dev-python/greenlet-0.2
-	dev-python/setuptools"
+	doc? ( dev-python/sphinx )"
 RDEPEND="${DEPEND}"
+
+src_compile() {
+	distutils_src_compile
+
+	if use doc; then
+		cd "${S}/doc"
+		PYTHONPATH=".." emake html || die "Building documentation failed"
+	fi
+}
 
 src_install() {
 	distutils_src_install
 
 	if use doc; then
-		dodoc doc/* || die "dodoc failed"
+		dohtml -r doc/_build/html/*
 	fi
 
 	if use examples; then
-		docinto examples
-		dodoc examples/* || die "dodoc failed"
+		insinto /usr/share/doc/${PF}
+		doins -r examples || die "doins failed"
 	fi
+
+	dodoc LICENSE LICENSE.pyevent TODO || die "dodoc failed"
 }
