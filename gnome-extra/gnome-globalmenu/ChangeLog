@@ -1,0 +1,9 @@
+# ChangeLog for gnome-extra/gnome-globalmenu
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +files/50gnome-globalmenu, +gnome-globalmenu-0.7.9.ebuild, +metadata.xml:
+  New ebuild for bug #205203. Thanks to Serhij S. Stasyuk and other ebuild
+  contributors.
+
