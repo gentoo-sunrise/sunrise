@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -rdup-1.1.3.ebuild, +rdup-1.1.5.ebuild:
+  version bump
+
   25 Mar 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -rdup-1.1.2.ebuild, +rdup-1.1.3.ebuild:
   version bump
