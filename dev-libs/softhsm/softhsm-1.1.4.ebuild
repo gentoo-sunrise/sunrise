@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit autotools base eutils
+inherit base
 
 DESCRIPTION="A software PKCS#11 implementation"
 HOMEPAGE="http://www.opendnssec.org/"
@@ -15,19 +15,12 @@ IUSE="debug"
 SLOT="0"
 LICENSE="BSD"
 
-RDEPEND=">=dev-libs/botan-1.8.5[threads]
-	>=dev-db/sqlite-3.4.2"
+RDEPEND="dev-libs/botan[threads]
+	dev-db/sqlite:3"
 
 DEPEND="${RDEPEND}"
 
 DOCS=( "AUTHORS" "NEWS" "README" )
-
-src_prepare() {
-	# fixes for broken configure switches
-	epatch "${FILESDIR}"/"${P}"-r2797.patch
-	epatch "${FILESDIR}"/"${P}"-r2798.patch
-	eautoreconf
-}
 
 src_configure() {
 	local myconf

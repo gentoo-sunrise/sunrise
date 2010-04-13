@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -softhsm-1.1.3.ebuild, -files/softhsm-1.1.3-r2797.patch,
+  -files/softhsm-1.1.3-r2798.patch, +softhsm-1.1.4.ebuild:
+  version bump
+
   14 Feb 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
   +softhsm-1.1.3.ebuild, +files/softhsm-1.1.3-r2797.patch,
   +files/softhsm-1.1.3-r2798.patch, +metadata.xml:
