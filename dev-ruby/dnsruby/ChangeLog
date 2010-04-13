@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -dnsruby-1.43.ebuild, +dnsruby-1.46.ebuild:
+  version bump, fixed doc and test USE flags
+
   14 Feb 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
   +dnsruby-1.43.ebuild, +metadata.xml:
   Initial import of dnsruby, see bug #303803. Thanks to Honoone on #gentoo-ruby for ruby support
