@@ -1,0 +1,9 @@
+# ChangeLog for app-text/mupdf
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> +mupdf-940.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 280469, thanks to Manu Wächter for the 
+  inital ebuild.
+
