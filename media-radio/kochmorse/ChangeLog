@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2010; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Fix metadata.xml file
+
   12 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> +kochmorse-0.99.6.ebuild,
   +metadata.xml:
   New Ebuild for bug 311871
