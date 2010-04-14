@@ -230,6 +230,7 @@ games-misc/fretsonfire:psyco - Enable psyco python accelerator
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/alarm-clock-applet:libnotify - Enables support for libnotify notification system
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
+gnome-extra/gnome-globalmenu:xfce - Build the Xfce panel applet.
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
 media-gfx/fim:postscript - Install a postscript wrapper script
