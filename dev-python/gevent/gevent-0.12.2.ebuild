@@ -5,7 +5,7 @@
 EAPI=2
 NEED_PYTHON=2.5
 
-inherit distutils 
+inherit distutils
 
 DESCRIPTION="Python network library that uses greenlet and libevent for easy and scalable concurrency"
 HOMEPAGE="http://gevent.org/"
@@ -42,5 +42,5 @@ src_install() {
 		doins -r examples || die "doins failed"
 	fi
 
-	dodoc LICENSE LICENSE.pyevent TODO || die "dodoc failed"
+	dodoc LICENSE.pyevent TODO || die "dodoc failed"
 }
