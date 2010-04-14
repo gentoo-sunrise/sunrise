@@ -26,4 +26,3 @@ each_ruby_test() {
 	#${RUBY} -I lib test/ts_dnsruby.rb || die "test failed"
 	${RUBY} -I lib test/ts_offline.rb || die "test failed"
 }
-
