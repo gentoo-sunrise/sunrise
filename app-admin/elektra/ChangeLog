@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> elektra-0.7.0.ebuild:
+  pimped DESCRIPTION, use base.eclass, shortened single line if statements
+
   08 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> +elektra-0.7.0.ebuild,
   +metadata.xml:
   New Ebuild for bug 63417

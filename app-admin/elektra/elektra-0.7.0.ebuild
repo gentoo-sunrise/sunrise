@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
-DESCRIPTION="Provides an alternative back-end for configuration files"
+inherit base
+
+DESCRIPTION="Hierarchical configuration backend, providing consistent API and possibility to share configuration"
 HOMEPAGE="http://elektra.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
@@ -20,6 +22,8 @@ DEPEND="${RDEPEND}
 	app-text/docbook-xsl-stylesheets
 	dev-libs/libxslt
 	doc? ( app-doc/doxygen )"
+
+DOCS=( AUTHORS ChangeLog NEWS README TODO )
 
 src_configure() {
 	# berkeleydb, daemon, fstab, gconf, python do not work
@@ -42,14 +46,9 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README TODO || die
-	if ! use doc ; then
-		rm -r "${D}"/usr/share/doc/${PF}/api-html || die
-	fi
-	if ! use examples ; then
-		rm -r "${D}"/usr/share/doc/${PF}/scripts || die
-	fi
+	base_src_install
+	use doc || { rm -r "${D}"/usr/share/doc/${PF}/api-html || die ; }
+	use examples || { rm -r "${D}"/usr/share/doc/${PF}/scripts || die ; }
 
 	# collision with media-libs/allegro
 	mv -v "${D}"/usr/share/man/man3/key.3 "${D}"/usr/share/man/man3/elektra-key.3 || die
