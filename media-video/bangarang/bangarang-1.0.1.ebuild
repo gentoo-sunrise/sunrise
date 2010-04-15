@@ -15,6 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="kde-base/kdemultimedia-kioslaves"
+DEPEND="media-libs/taglib"
+RDEPEND="${DEPEND}
+	kde-base/kdemultimedia-kioslaves"
 
 S=${WORKDIR}/${PN}-${PN}

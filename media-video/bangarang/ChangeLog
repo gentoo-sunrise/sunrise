@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Apr 2010; Jens Pranaitis (jensp) <jens@chaox.net>
+  bangarang-1.0.1.ebuild:
+  Added missing dependency to bangarang, thanks Francois Chenier for reporting
+
   11 Feb 2010; Jens Pranaitis (jensp) <jens@chaox.net>
   -bangarang-1.0.ebuild, +bangarang-1.0.1.ebuild:
   version bump for bangarang
