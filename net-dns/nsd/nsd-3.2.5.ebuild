@@ -22,10 +22,6 @@ pkg_setup() {
 	if use runtime-checks; then
 		ewarn "You enabled runtime-checks USE flag, this could lead to a reduced service level"
 	fi
-	if use nsid; then
-		ewarn "You enabled nsid USE flag, this is still experimental"
-	fi
-
 	enewgroup nsd
 	enewuser nsd -1 -1 -1 nsd
 }
