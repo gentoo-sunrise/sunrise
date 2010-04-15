@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<longdescription>
+		A computer mystery/romance set five minutes into the future of 1988.
+		Crawl BBSes, uncover conspiracies, commit telephone fraud, fall in love.
+		Welcome to the 20th century.
+	</longdescription>
+	<upstream>
+		<maintainer status='active'>
+			<email>scout@scoutshonour.com</email>
+			<name>Christine Sarah Love</name>
+		</maintainer>
+	</upstream>
+</pkgmetadata>
