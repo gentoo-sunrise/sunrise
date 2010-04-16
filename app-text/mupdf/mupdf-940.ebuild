@@ -26,14 +26,13 @@ DEPEND="${RDEPEND}
 	dev-util/ftjam"
 
 src_compile() {
-	local my_param
 	cat <<EOF >> Jamrules
 LINKFLAGS = ${LDFLAGS} ;
 OPTIM = ${CFLAGS} ;
 ALL_LOCATE_TARGET = [ FDirName \$(TOP) build ] ;
 EOF
-	my_param=""
-	use cjk || my_param="${my_param} '-sDEFINES=NOCJK'"
+	local my_param=""
+	use cjk || my_param="'-sDEFINES=NOCJK'"
 	use jbig && my_param="${my_param} '-sHAVE_JBIG2DEC=yes'"
 	use jpeg2k && my_param="${my_param} '-sHAVE_JASPER=yes'"
 	jam ${my_param} || die
