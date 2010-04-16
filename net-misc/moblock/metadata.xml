@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>maintainer-wanted</herd>
+<herd>no-herd</herd>
+<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
   <use>
     <flag name="logrotate">Use <pkg>app-admin/logrotate</pkg> to rotate log files</flag>
     <flag name="network-cron">Adds monthly cronjob to update blocklist files</flag>

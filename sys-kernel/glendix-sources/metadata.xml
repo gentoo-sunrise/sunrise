@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>maintainer-wanted</herd>
+	<herd>no-herd</herd>
+<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<longdescription>
         Glendix is a port of Plan 9 operating system ideas into
         Linux.  glendix-sources is based on gentoo-sources to take
