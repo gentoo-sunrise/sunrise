@@ -1,6 +1,11 @@
 # ChangeLog for media-tv/pytivo-wmcbrine
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Apr 2010; John Ratliff (jdratlif) <webmaster@technoplaza.net>
+  -pytivo-wmcbrine-20091112.ebuild, +pytivo-wmcbrine-20100412.ebuild,
+  files/pyTivo.initd.sh:
+  Version bump for pytivo-wmcbrine, thanks to sedzimir
 
   04 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   pytivo-wmcbrine-20091112.ebuild:

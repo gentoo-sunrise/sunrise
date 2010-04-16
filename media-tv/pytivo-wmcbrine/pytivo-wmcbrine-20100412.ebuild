@@ -8,7 +8,7 @@ inherit eutils multilib python
 
 DESCRIPTION="An HMO and GoBack server for Tivo."
 HOMEPAGE="http://pytivo.sourceforge.net/"
-SRC_URI="http://omploader.org/vMnV5aQ/${P}.tar.gz"
+SRC_URI="http://omploader.org/vNDY5Nw/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

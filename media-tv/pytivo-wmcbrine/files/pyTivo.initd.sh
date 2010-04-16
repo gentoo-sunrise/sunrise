@@ -22,10 +22,3 @@ stop() {
 		--pidfile /var/run/pytivo.pid
 	eend $?
 }
-
-restart() {
-	stop
-	sleep 2
-	start
-}
-
