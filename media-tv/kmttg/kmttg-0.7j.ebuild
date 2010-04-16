@@ -9,7 +9,7 @@ inherit eutils java-pkg-2 java-ant-2
 
 DESCRIPTION="A free multi-platform replacement for the TiVo Desktop software."
 HOMEPAGE="http://code.google.com/p/kmttg/"
-SRC_URI="http://omploader.org/vMzY3ZQ/${P}.tar.bz2"
+SRC_URI="http://omploader.org/vNDYxOQ/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
