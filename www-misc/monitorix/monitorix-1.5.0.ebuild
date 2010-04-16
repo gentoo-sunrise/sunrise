@@ -79,6 +79,9 @@ pkg_postinst() {
 	elog "need to enable it in the config and provide a path to a script "
 	elog "which should be run in an alert case. An example script is provided "
 	elog "with this package."
+	elog
+	elog "If you don't use sendmail be sure to set 'ENABLE_MAIL' to 'N' in the"
+	elog "config file."
 
 	webapp_pkg_postinst
 }
