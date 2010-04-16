@@ -11,7 +11,7 @@ DESCRIPTION="Python network library that uses greenlet and libevent for easy and
 HOMEPAGE="http://gevent.org/"
 SRC_URI="http://pypi.python.org/packages/source/g/gevent/${P}.tar.gz"
 
-LICENSE="MIT"
+LICENSE="as-is MIT"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="doc examples"
@@ -34,7 +34,7 @@ src_install() {
 	distutils_src_install
 
 	if use doc; then
-		dohtml -r doc/_build/html/*
+		dohtml -r doc/_build/html/* || die
 	fi
 
 	if use examples; then
@@ -42,5 +42,5 @@ src_install() {
 		doins -r examples || die "doins failed"
 	fi
 
-	dodoc LICENSE.pyevent TODO || die "dodoc failed"
+	dodoc TODO || die "dodoc failed"
 }
