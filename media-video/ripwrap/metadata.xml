@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>no-herd</herd>
-<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<longdescription>
 		RipWrap is a Gtk2::Perl application for encoding from various video
 		formats (including DVD's) to various formats. It neatly wraps MPlayer

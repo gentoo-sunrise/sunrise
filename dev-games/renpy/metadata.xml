@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>no-herd</herd>
-<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<longdescription>
 	Ren'Py is a free and cross-platform visual novel engine that helps you use words,
 	pictures, and sounds to tell stories with the computer.

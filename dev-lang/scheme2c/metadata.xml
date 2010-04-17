@@ -7,7 +7,6 @@
   Scheme and other languages. Includes macros, records, foreign
   function calls, interface to Xlib, call/cc, interpreter.
 </longdescription>
-<herd>
-maintainer-wanted
-</herd>
+<herd>no-herd</herd>
+<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 </pkgmetadata>

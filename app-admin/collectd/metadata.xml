@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>no-herd</herd>
-<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<use>
 <!--
 Yes I know many of the use flag descriptions are not particularly useful right now. Will fill in

@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>no-herd</herd>
-<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<use>
 		<flag name='astr'>The map of Astrakhan for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='barn'>The map of Barnaul for <pkg>app-misc/2gis</pkg></flag>

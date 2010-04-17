@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>no-herd</herd>
-<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<use>
 		<flag name='dssi'>Enables support for DSSI plugins</flag>
 		<flag name='patch-loader'>Installs a command line patch loading client</flag>
