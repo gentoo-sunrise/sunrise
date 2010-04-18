@@ -1,0 +1,8 @@
+# ChangeLog for media-libs/oyranos
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> +oyranos-0.1.9.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 287353
+
