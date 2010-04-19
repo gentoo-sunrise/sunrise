@@ -1,6 +1,13 @@
 # ChangeLog for media-sound/songbird-bin
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  -files/songbird-bin-1.0.0_rc2-symlink.patch,
+  -songbird-bin-1.2.0.1146.ebuild, +files/songbird-bin-1.2.0-symlink.patch,
+  +songbird-bin-1.4.3.1438.ebuild:
+  Version bump to songbird-bin 1.4.3.1438, end of development notice, thanks
+  to all contributors on bug 139019
 
   22 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
   -songbird-bin-1.0.0.860.ebuild, +songbird-bin-1.2.0.1146.ebuild:
