@@ -40,7 +40,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# remove X11R6/g++ from include/lib paths
 	sed -i -e 's:/X11R6::' configure{,.sh} {,fl_i18n/}makefile.in || die
-	sed -i -e 's: -I/usr/include/g++ : :' fl_i18n/makefile.in
+	sed -i -e 's: -I/usr/include/g++ : :' fl_i18n/makefile.in || die
 
 	# leave custom flags untouched, do not remove -O1 from LDFLAGS=-Wl,-O1
 	sed -i -e 's:STRIPOPT="sed s/-O.//":STRIPOPT="cat":' configure || die
@@ -52,7 +52,7 @@ src_prepare() {
 	# force version number at /usr/share/doc
 	sed -i -e 's:$(datadir)/doc/$(TARGET):\0-$(VERSION):' makefile.in || die
 
-	# configure.sh calls doxygen --help which is not needed w/o USE=doc, silence QA 
+	# configure.sh calls doxygen --help which is not needed w/o USE=doc, silence QA
 	use doc || { sed -i -e 's:doxygen:#\0:' configure.sh || die ; }
 }
 
