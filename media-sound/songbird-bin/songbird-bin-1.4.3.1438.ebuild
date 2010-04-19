@@ -11,8 +11,7 @@ MY_PV=$(replace_version_separator 3 '-')
 
 DESCRIPTION="A multimedia player, inspired by iTunes"
 HOMEPAGE="http://www.songbirdnest.com/"
-SRC_URI="amd64? (
-http://download.songbirdnest.com/installer/linux/x86_64/${MY_PN}_${MY_PV}_linux-x86_64.tar.gz  )
+SRC_URI="amd64? ( http://download.songbirdnest.com/installer/linux/x86_64/${MY_PN}_${MY_PV}_linux-x86_64.tar.gz  )
 	x86? ( http://download.songbirdnest.com/installer/linux/i686/${MY_PN}_${MY_PV}_linux-i686.tar.gz ) "
 
 LICENSE="GPL-2"
