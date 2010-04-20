@@ -2,6 +2,19 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2010; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.16-r4.ebuild,
+  +ccs-sources-2.6.16-r5.ebuild, -ccs-sources-2.6.25-r4.ebuild,
+  +ccs-sources-2.6.25-r5.ebuild, -ccs-sources-2.6.26-r4.ebuild,
+  +ccs-sources-2.6.26-r5.ebuild, -ccs-sources-2.6.27-r5.ebuild,
+  +ccs-sources-2.6.27-r6.ebuild, -ccs-sources-2.6.28-r10.ebuild,
+  +ccs-sources-2.6.28-r11.ebuild, -ccs-sources-2.6.29-r11.ebuild,
+  +ccs-sources-2.6.29-r12.ebuild, -ccs-sources-2.6.30-r10.ebuild,
+  +ccs-sources-2.6.30-r11.ebuild, -ccs-sources-2.6.31-r8.ebuild,
+  +ccs-sources-2.6.31-r9.ebuild, -ccs-sources-2.6.32-r6.ebuild,
+  +ccs-sources-2.6.32-r7.ebuild, -ccs-sources-2.6.33.ebuild,
+  +ccs-sources-2.6.33-r1.ebuild:
+  TOMOYO and genpatch version bumped.
+
   28 Feb 2010; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.32-r5.ebuild,
   +ccs-sources-2.6.32-r6.ebuild, +ccs-sources-2.6.33.ebuild:
   kernel version bumped.

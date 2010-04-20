@@ -10,7 +10,7 @@ inherit eutils kernel-2
 detect_version
 detect_arch
 
-CCS_TGP="ccs-patch-1.7.1-20091220"
+CCS_TGP="ccs-patch-1.7.2-20100412"
 CCS_TGP_SRC="mirror://sourceforge.jp/tomoyo/43375/${CCS_TGP}.tar.gz"
 
 DESCRIPTION="TOMOYO Linux sources for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
