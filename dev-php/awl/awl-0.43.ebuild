@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
 inherit depend.php php-lib-r1
 
 DESCRIPTION="Andrew McMillan's web libraries: A collection of generic classes
 used by the davical calendar server"
 HOMEPAGE="http://andrew.mcmillan.net.nz/projects/awl"
-SRC_URI="http://debian.mcmillan.net.nz/packages/awl/${P}.tar.gz"
+SRC_URI="http://debian.mcmillan.net.nz/packages/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
