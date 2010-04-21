@@ -10,3 +10,10 @@ If you are upgrading from a previous version of davical, don't forget to
 upgrade the database structure with
 	cd /usr/share/webapps/davical/${PVR}/sqlscripts/
 	./update-davical-database -dbuser xxxxxxx -appuser xxxxxx
+
+If you are upgrading from a version <= 0.9.8.4 please note inc/ and locale/
+have been moved away from the htdocs directory and placed into hostroot for
+safety reasons. Update you include_path accordingly.
+
+You may have to configure the locale path in the davical configuration file.
+(add a $c->locale_path = '/path/to/the/locales';)
