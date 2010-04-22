@@ -1,6 +1,11 @@
 # ChangeLog for gnome-extra/alarm-clock-applet
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  -files/0.2.6-configure.ac.patch, -alarm-clock-applet-0.2.6.ebuild,
+  +alarm-clock-applet-0.3.0.ebuild, metadata.xml:
+  Version bump to 0.3.0
 
   06 Sep 2009; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   alarm-clock-applet-0.2.6.ebuild:
