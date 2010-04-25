@@ -1,6 +1,11 @@
 # ChangeLog for x11-libs/pdcurses
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  25 Apr 2010; Denilson (CrazyTB) <denilsonsa@gmail.com>
+  -pdcurses-2.8.ebuild, -files/pdcurses-2.8-configure.patch,
+  +pdcurses-3.4.ebuild, +files/pdcurses-3.4-configure.patch, metadata.xml:
+  Version bump to 3.4, bug 94414, thanks to binki, chithead, Xarthisius and xmw
 
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Add local useflags to metadata.xml (GLEP 56)

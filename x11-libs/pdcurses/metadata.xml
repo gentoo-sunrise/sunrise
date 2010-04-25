@@ -4,7 +4,6 @@
 	<herd>no-herd</herd>
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<use>
-		<flag name='latin1'>Add support for latin1 characters</flag>
 		<flag name='nextaw'>Use neXtaw instead of Xaw</flag>
 	</use>
 </pkgmetadata>
