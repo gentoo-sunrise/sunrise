@@ -2,23 +2,29 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
 inherit eutils
 
-DESCRIPTION="textext is an inkscape extension, which embed re-editable LaTeX objects in SVG drawings"
-HOMEPAGE="http://www.elisanet.fi/ptvirtan/software/textext/"
-SRC_URI="http://www.elisanet.fi/ptvirtan/software/textext/${P}.tar.gz"
+DESCRIPTION="Inkscape extension to embed re-editable LaTeX objects in SVG drawings"
+HOMEPAGE="http://pav.iki.fi/software/textext/"
+SRC_URI="http://pav.iki.fi/software/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=media-gfx/inkscape-0.46
+DEPEND=""
+RDEPEND="media-gfx/inkscape
 	virtual/latex-base
 	|| ( media-gfx/pdf2svg media-gfx/pstoedit[plotutils] )"
-DEPEND="${RDEPEND}"
+
+src_prepare() {
+	# Patch from upstream
+	# http://bitbucket.org/pv/textext/changeset/2a376a0465a4
+	epatch "${FILESDIR}/${P}-md5-to-hashlib.patch"
+}
 
 src_install() {
 	exeinto /usr/share/inkscape/extensions
