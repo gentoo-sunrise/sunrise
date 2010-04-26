@@ -1,0 +1,9 @@
+# ChangeLog for media-plugins/gimp-normalmap
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Apr 2010; Denilson (CrazyTB) <denilsonsa@gmail.com>
+  +gimp-normalmap-1.2.2.ebuild, +metadata.xml:
+  New package, wrt bug 187052, many thanks to Dennis Schridde, binki,
+  chithead, Tommy[D]
+
