@@ -1,0 +1,10 @@
+# ChangeLog for dev-embedded/palm-novacom
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  +palm-novacom-1.0.55.ebuild, +files/palm-novacom-1.0.55-initd,
+  +files/palm-novacom-1.0.55-novacom.sh,
+  +files/palm-novacom-1.0.55-novacomd.sh, +metadata.xml:
+  New Ebuild for bug 278769
+

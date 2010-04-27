@@ -1,0 +1,25 @@
+#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License, v2 or later
+# $Header: $
+
+depend() {
+	use logger
+}
+
+start() {
+	ebegin "Starting Palm novacom daemon"
+	start-stop-daemon --start \
+		--make-pidfile \
+		--pidfile /var/run/novacomd.pid \
+		--background \
+		--exec /usr/sbin/novacomd -- 
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping Palm novacom daemon"
+	start-stop-daemon --stop \
+		--pidfile /var/run/novacomd.pid
+	eend $?
+}
