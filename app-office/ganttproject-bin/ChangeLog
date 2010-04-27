@@ -1,6 +1,10 @@
 # ChangeLog for app-office/ganttproject-bin
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Apr 2010; Justin Lecher <jlec@gentoo.org>
+  -ganttproject-bin-2.0.9.ebuild, +ganttproject-bin-2.0.10.ebuild:
+  Version BUmp, SRC_URI change
 
   24 Apr 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -ganttproject-bin-2.0.7.ebuild:
