@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Apr 2010; Justin Lecher <jlec@gentoo.org> -guake-0.4.0.ebuild:
+  InCvs, only leaving the live version
+
   07 Feb 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   guake-0.4.0.ebuild, guake-9999.ebuild:
   Copyright header changed.
