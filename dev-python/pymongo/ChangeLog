@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pymongo-1.5.2.ebuild, +pymongo-1.6.ebuild:
+  Version bump
+
   06 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pymongo-1.5.1.ebuild, +pymongo-1.5.2.ebuild:
   Version bump. Add PYTHON_DEPEND
