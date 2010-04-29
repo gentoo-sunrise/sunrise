@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -feed2imap-0.9.4.ebuild,
+  +feed2imap-1.0.ebuild:
+  Bump to feed2imap-1.0.
+
   19 Mar 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> -feed2imap-0.7.ebuild,
   +feed2imap-0.9.4.ebuild:
