@@ -5,8 +5,8 @@
 EAPI=2
 
 DESCRIPTION="a lightweight PDF viewer and toolkit written in portable C"
-HOMEPAGE="http://ccxvii.net/mupdf/"
-SRC_URI="http://ccxvii.net/${PN}/download/${PN}-r${PV}.tar.gz"
+HOMEPAGE="http://mupdf.com/"
+SRC_URI="http://${PN}.com/download/${PN}-r${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

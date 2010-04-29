@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> mupdf-940.ebuild:
+  HOMEPAGE and SRC_URI updated
+
   16 Apr 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> mupdf-940.ebuild:
   Define my_param var and make it local in the same line, drop empty var
 
