@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  palm-novacom-1.0.55.ebuild:
+  Changed wrong target name of novacomd wrapper; added QA_PRESTRIPPED
+
   27 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
   +palm-novacom-1.0.55.ebuild, +files/palm-novacom-1.0.55-initd,
   +files/palm-novacom-1.0.55-novacom.sh,

@@ -20,6 +20,9 @@ RDEPEND="virtual/libusb:0"
 
 S=${WORKDIR}
 
+QA_PRESTRIPPED="/opt/palm-novacom/novacom
+	/opt/palm-novacom/novacomd"
+
 src_unpack() {
 	unpack ${A}
 	unpack ./data.tar.gz
@@ -32,9 +35,9 @@ src_install() {
 	dobin opt/Palm/novacom/novaterm || die
 	newbin "${FILESDIR}/${P}-novacom.sh" novacom || die
 
-	newsbin "${FILESDIR}/${P}-novacomd.sh" novcomd || die
+	newsbin "${FILESDIR}/${P}-novacomd.sh" novacomd || die
 
-	newinitd "${FILESDIR}"/${P}-initd novacom || die
+	newinitd "${FILESDIR}/${P}-initd" novacom || die
 }
 
 pkg_postinst() {
