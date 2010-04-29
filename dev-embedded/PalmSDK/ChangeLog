@@ -1,0 +1,9 @@
+# ChangeLog for dev-embedded/PalmSDK
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  +PalmSDK-1.4.1.427.ebuild, +files/PalmSDK-palm-emulator.png,
+  +metadata.xml:
+  New Ebuild for bug 278769
+
