@@ -353,7 +353,6 @@ sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sle
 sys-power/phctool:sudo - Enable support for sudo to run gui from non-root user
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 www-plugins/nexus_personal_SE-bin:epiphany - Enable support for www-client/epiphany
-x11-libs/pdcurses:latin1 - Add support for latin1 characters
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/bmpanel:libev - Use the libev event loop interface
 x11-misc/bmpanel:libevent - Use the libevent event loop interface
