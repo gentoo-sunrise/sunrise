@@ -32,7 +32,7 @@ SDLDEPEND=">=media-libs/libsdl-1.2[X,alsa,opengl?]
 ALLEGDEPEND=">=media-libs/allegro-4.0[X,alsa]"
 OPENGLDEPEND="opengl? ( virtual/opengl )
 	sdl? ( ${SDLDEPEND} )
-	allegro? ( media-libs/allegrogl )
+	allegro? ( media-libs/allegro[opengl] )
 	!sdl? ( !allegro? ( ${SDLDEPEND} ) )"
 DEPEND="media-libs/libpng
 	media-libs/jpeg

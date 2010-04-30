@@ -1,6 +1,11 @@
 # ChangeLog for games-fps/vavoom
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2010; Markos Chandras <hwoarang@gentoo.org> vavoom-1.30.ebuild,
+  vavoom-9999.ebuild:
+  Update allegro dependency since allegrogl is masked and has been replaced with
+  allegro[opengl]
 
   06 May 2009; Christian Ruppert <idl0r@gentoo.org> vavoom-1.30.ebuild,
   vavoom-9999.ebuild:
