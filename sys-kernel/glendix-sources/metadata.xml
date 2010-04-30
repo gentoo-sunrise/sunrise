@@ -3,6 +3,10 @@
 <pkgmetadata>
 	<herd>no-herd</herd>
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<use>
+		<flag name='deblob'>Remove binary blobs from kernel sources to provide libre
+	license compliance.</flag>
+	</use>
 	<longdescription>
         Glendix is a port of Plan 9 operating system ideas into
         Linux.  glendix-sources is based on gentoo-sources to take
