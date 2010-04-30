@@ -1,0 +1,8 @@
+# ChangeLog for sci-physics/KRT
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +KRT-2009.11.20.09.34.38.ebuild, +files/KRT.xpm, +metadata.xml:
+  New ebuild for bug #317363.
+
