@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Apr 2010; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Add deblob use flag description and remanifest
+
   20 Apr 2010; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.16-r4.ebuild,
   +ccs-sources-2.6.16-r5.ebuild, -ccs-sources-2.6.25-r4.ebuild,
   +ccs-sources-2.6.25-r5.ebuild, -ccs-sources-2.6.26-r4.ebuild,
