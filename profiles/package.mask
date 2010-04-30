@@ -26,7 +26,10 @@
 # the following packages are masked for removal in 30 days due to 
 # unsatisfied dependencies
 dev-python/pysparse
+games-misc/fretsonfire
+media-sound/pykaraoke
 sci-libs/cantera
+
 
 # Nathan Phillip Brink <ohnobinki@ohnopublishing.net> (29 Apr 2010)
 # Masked for removal in 30 days.
