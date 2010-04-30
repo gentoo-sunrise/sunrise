@@ -21,6 +21,13 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (30 Apr 2010)
+# dev-python/numeric is masked for removal ( bug #181653 ) so 
+# the following packages are masked for removal in 30 days due to 
+# unsatisfied dependencies
+dev-python/pysparse
+sci-libs/cantera
+
 # Nathan Phillip Brink <ohnobinki@ohnopublishing.net> (29 Apr 2010)
 # Masked for removal in 30 days.
 # upstream is dead: http://sf.net/projects/surl hasn't had
