@@ -1,0 +1,9 @@
+# ChangeLog for dev-perl/perl-xyne-arch
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Apr 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> +perl-xyne-arch-2010.04.27.1.ebuild,
+  +metadata.xml:
+  New ebuild for bug 317823, dep of arch's reflector script.
+
