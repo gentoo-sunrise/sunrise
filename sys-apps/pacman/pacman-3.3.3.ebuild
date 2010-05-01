@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
 inherit autotools
 
@@ -15,11 +15,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="debug doc test"
 
-RDEPEND="app-arch/libarchive
+COMMON_DEPEND="app-arch/libarchive
 	virtual/libiconv
 	virtual/libintl
 	sys-devel/gettext"
-DEPEND="${RDEPEND}
+RDEPEND="${COMMON_DEPEND}
+	app-arch/xz-utils"
+DEPEND="${COMMON_DEPEND}
 	doc? ( app-doc/doxygen )
 	test? ( dev-lang/python )"
 
@@ -33,7 +35,9 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --disable-git-version \
+	econf \
+		--localstatedir=/var \
+		--disable-git-version \
 		--disable-internal-download \
 		$(use_enable debug) \
 		$(use_enable doc) \
@@ -42,4 +46,11 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+
+	dodir /etc/pacman.d || die
+}
+
+pkg_postinst() {
+	einfo "Please see http://ohnopub.net/~ohnobinki/gentoo/arch/ for information"
+	einfo "about setting up an archlinux chroot."
 }
