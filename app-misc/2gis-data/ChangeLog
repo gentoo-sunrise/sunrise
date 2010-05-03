@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 May 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
+  -2gis-data-2010.4.ebuild, +2gis-data-2010.5.ebuild:
+  Version bump
+
   09 Apr 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
   2gis-data-2010.4.ebuild:
   Adding ~amd64 keyword. Thanks Kirin Yuri for testing.
