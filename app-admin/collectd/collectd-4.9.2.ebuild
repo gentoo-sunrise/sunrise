@@ -58,7 +58,7 @@ COMMON_DEPEND="
 	cd_gmond?		( sys-cluster/ganglia )
 	cd_ipmi?		( >=sys-libs/openipmi-2.0.11 )
 	cd_iptables?		( net-firewall/iptables )
-	cd_java?		( virtual/jre )
+	cd_java?		( virtual/jre dev-java/java-config-wrapper )
 	cd_libvirt?		( app-emulation/libvirt dev-libs/libxml2 )
 	cd_memcachec?		( dev-libs/libmemcached )
 	cd_mysql?		( >=virtual/mysql-5.0 )
@@ -291,6 +291,11 @@ src_configure() {
 			myconf="${myconf} $(use_enable cd_${plugin} ${plugin})"
 		fi
 	done
+
+	# Need JAVA_HOME for java.
+	if use cd_java; then
+		myconf="${myconf} --with-java=$(java-config -g JAVA_HOME)"
+	fi
 
 	# Finally, run econf.
 	KERNEL_DIR="${KERNEL_DIR}" econf --config-cache --without-included-ltdl --localstatedir=/var ${myconf}
