@@ -19,7 +19,7 @@ RDEPEND="dev-lang/perl
 S=${WORKDIR}/${PN}
 
 src_install() {
-  dobin ${PN} || die
+	dobin ${PN} || die
 
-  doman man/* || die
+	doman man/* || die
 }

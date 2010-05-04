@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 May 2010; Michael Weber (xmw) <gentoo@xmw.de> reflector-5.0.ebuild:
+  QA, removed leading space
+
   30 Apr 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> +reflector-5.0.ebuild, +metadata.xml:
   New ebuild for bug 317831.
