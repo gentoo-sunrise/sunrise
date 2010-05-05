@@ -1,6 +1,10 @@
 # ChangeLog for games-rpg/penumbra-collection
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2010; Robert Cernansky (HS) <openhs@users.sourceforge.net>
+  penumbra-collection-1.0.ebuild:
+  Depend either on xz-utils or lzma-utils. Thanks to Arun Raghavan for reporting.
 
   19 Jul 2009; Robert Cernansky (HS) <openhs@users.sourceforge.net>
   +penumbra-collection-1.0.ebuild, +metadata.xml:
