@@ -2,11 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+PYTHON_DEPEND="2"
+
 inherit distutils
 
-DESCRIPTION="a gui tool for changing settings for Grub, Grub2, Usplash and Splashy"
+DESCRIPTION="A gui tool for changing settings for Grub, Grub2, Usplash and Splashy"
 HOMEPAGE="http://web.telia.com/~u88005282/sum/index.html"
-SRC_URI="mirror://sourceforge/startup-manager/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/startup-manager/${PN}_${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

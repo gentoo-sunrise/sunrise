@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/startupmanager
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 May 2010; Justin Lecher <jlec@gentoo.org>
+  -startupmanager-1.9.10.ebuild, +startupmanager-1.9.13.ebuild:
+  Version Bump
 
   16 Apr 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
   startupmanager-1.9.10.ebuild:
