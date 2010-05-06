@@ -1,5 +1,0 @@
-
-  07 Mar 2010; Roman Zimmermann (torotil) <torotil@gmail.com>
-  +iwlwifi-1000-ucode-128.50.3.1.ebuild, +metadata.xml:
-  Initial commit for iwlwifi-1000-ucode (bug 296352)
-
