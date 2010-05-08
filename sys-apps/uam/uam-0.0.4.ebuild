@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils multilib
 
 DESCRIPTION="Simple udev-based automounter for removable USB media"
 HOMEPAGE="http://proj.mgorny.alt.pl/uam/"
@@ -16,10 +16,14 @@ IUSE=""
 DEPEND=""
 RDEPEND="sys-fs/udev"
 
-src_install() {
-	emake DESTDIR="${D}" install || die 'emake install failed'
+src_compile() {
+	emake LIBDIR=/$(get_libdir) || die
+}
 
-	dodoc NEWS README TODO || die 'dodoc failed'
+src_install() {
+	emake LIBDIR=/$(get_libdir) DESTDIR="${D}" install || die
+
+	dodoc NEWS README TODO || die
 }
 
 pkg_postinst() {
