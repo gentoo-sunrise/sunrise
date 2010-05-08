@@ -21,6 +21,14 @@
 ##   End example
 ##
 
+# Michael Weber <gentoo@xmw.de> (08 May 2010)
+# Masked for removal in 30 days.
+# According to it's author (AllenJB in #gentoo-surise today) 
+# app-text/pastebin-it is no longer maintained by him,
+# no longer hosted on his server and he cannot provide the 
+# source for an alternative hosting location.
+app-text/pastebin-it
+
 # Markos Chandras <hwoarang@gentoo.org> (30 Apr 2010)
 # dev-python/numeric is masked for removal ( bug #181653 ) so 
 # the following packages are masked for removal in 30 days due to 
