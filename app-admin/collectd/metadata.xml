@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
-	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
-	<use>
+        <herd>no-herd</herd>
+        <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+        <use>
 <!--
 Yes I know many of the use flag descriptions are not particularly useful right now. Will fill in
 something more descriptive soon... dilfridge
@@ -20,6 +20,7 @@ something more descriptive soon... dilfridge
 		<flag name='cd_cpufreq'>Build the cpufreq input plugin (CPU frequency, for laptops with speedstep or similar)</flag>
 		<flag name='cd_csv'>Build the csv output plugin (write to comma separated values (CSV) files)</flag>
 		<flag name='cd_curl'>Build the curl input plugin (parse statistics from websites using regular expressions)</flag>
+		<flag name='cd_curl_xml'>Build the curl_xml input plugin</flag>
 		<flag name='cd_dbi'>Build the dbi input plugin (executes SQL statements on databases and interprets the reply)</flag>
 		<flag name='cd_df'>Build the df input plugin (mountpoint usage)</flag>
 		<flag name='cd_disk'>Build the disk input plugin (sectors read/written, number of read/write actions, average completion time of IO-operations)</flag>
@@ -50,6 +51,7 @@ something more descriptive soon... dilfridge
 		<flag name='cd_memcachec'>Build the memcachec input plugin</flag>
 		<flag name='cd_memcached'>Build the memcached input plugin</flag> 
 		<flag name='cd_memory'>Build the memory input plugin</flag> 
+		<flag name='cd_modbus'>Build the modbus input plugin</flag> 
 		<flag name='cd_multimeter'>Build the multimeter input plugin</flag> 
 		<flag name='cd_mysql'>Build the mysql input plugin</flag> 
 		<flag name='cd_netlink'>Build the netlink input plugin</flag> 
