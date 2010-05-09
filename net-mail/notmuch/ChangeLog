@@ -1,0 +1,8 @@
+# ChangeLog for net-mail/notmuch
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 May 2010; Cédric Cabessa (ced_c) <ced@ryick.net>
+  +notmuch-0.3.1.ebuild, +metadata.xml:
+  New ebuild for notmuch, bug #318499. Many thanks to Tommy[D] and Ramonster
+
