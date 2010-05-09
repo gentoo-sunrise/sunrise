@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/sw-notify-send
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 May 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +sw-notify-send-0.1.ebuild, +metadata.xml:
+  New ebuild for bug #318961, a system-wide notify-send wrapper.
+
