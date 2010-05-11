@@ -8,7 +8,7 @@ inherit autotools eutils
 
 DESCRIPTION="Lightweight connection pooler for PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/projects/pgbouncer/"
-SRC_URI="http://pgfoundry.org/frs/download.php/2608/${P}.tgz"
+SRC_URI="http://pgfoundry.org/frs/download.php/2677/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
