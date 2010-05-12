@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 May 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  -gogglesmm-0.10.21.ebuild, +gogglesmm-0.10.22.ebuild,
+  gogglesmm-9999.ebuild:
+  Version bump, minor fix
+
   06 May 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   +gogglesmm-0.10.21.ebuild, +gogglesmm-9999.ebuild, +metadata.xml:
   New ebuild, bug 234994. Thanks to binki, xmw, hwoarang, Tommy and others :)

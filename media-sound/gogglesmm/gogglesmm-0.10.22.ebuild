@@ -10,7 +10,7 @@ MY_P=musicmanager-${PV}
 
 DESCRIPTION="Lightweight FOX music collection manager and player"
 HOMEPAGE="http://gogglesmm.googlecode.com/"
-SRC_URI="http://${P}.googlecode.com/files/${MY_P}.tar.bz2"
+SRC_URI="http://${PN}.googlecode.com/files/${MY_P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"

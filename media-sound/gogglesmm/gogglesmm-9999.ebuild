@@ -10,7 +10,7 @@ MY_P=musicmanager-${PV}
 
 DESCRIPTION="Lightweight FOX music collection manager and player"
 HOMEPAGE="http://gogglesmm.googlecode.com/"
-ESVN_REPO_URI="http://${P}.googlecode.com/svn/trunk"
+ESVN_REPO_URI="http://${PN}.googlecode.com/svn/trunk"
 
 LICENSE="GPL-3"
 SLOT="0"
