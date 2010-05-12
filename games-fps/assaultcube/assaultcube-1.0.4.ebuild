@@ -54,15 +54,17 @@ src_prepare() {
 	winicontoppm icon.ico | ppmtoxpm > ${PN}.xpm || die
 
 	epatch "${DISTDIR}"/${P}-Makefile.patch
-	epatch "${DISTDIR}"/${P}-enet.patch
+	if has_version "=net-libs/enet-1.2" ; then
+		epatch "${DISTDIR}"/${P}-enet.patch
+	fi
 
 	sed -i -e "/^CUBE_DIR=/d ; 2iCUBE_DIR=${GAMES_DATADIR}/${PN}" ${PN}.sh server.sh || die
 	sed -i -e "s:\${CUBE_DIR}/bin_unix/\${SYSTEM_NAME}\${MACHINE_NAME}:$(games_get_libdir)/${PN}/ac_:" ${PN}.sh server.sh || die
 }
 
 src_compile() {
+	tc-export CXX
 	emake -C source/src \
-		CC="$(tc-getCXX)" \
 		CXXOPTFLAGS="${CXXFLAGS}" \
 		$(use opengl && echo client) \
 		$(use dedicated && echo server) || die

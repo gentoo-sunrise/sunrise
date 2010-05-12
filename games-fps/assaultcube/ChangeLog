@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 May 2010; Michael Weber (xmw) <gentoo@xmw.de> assaultcube-1.0.4.ebuild:
+  The enet.patch is only needed for the exact version 1.2 of enet, thanks to
+  Paul Hartman <gentoo@h5n.us> for the report. Corrected typo in passing
+  toolchains CXX to build system.
+
   01 May 2010; Michael Weber (xmw) <gentoo@xmw.de>
   +assaultcube-1.0.4.ebuild, +metadata.xml:
   New Ebuild for bug 162945
