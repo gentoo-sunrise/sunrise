@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=1
 inherit gnome2
 
 DESCRIPTION="A weather monitoring program"
@@ -11,13 +12,11 @@ SRC_URI="http://lug.rose-hulman.edu/proj/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="doc"
+IUSE="debug"
 
-RDEPEND=">=net-libs/libsoup-2.26
-	>=x11-libs/gtk+-2.16
-	x11-libs/gtkglext
+RDEPEND="=sci-libs/libgis-${PV}
+	x11-libs/gtk+:2
 	sci-libs/rsl"
-DEPEND="${RDEPEND}
-	doc? ( dev-util/gtk-doc )"
+DEPEND="${RDEPEND}"
 
 DOCS="ChangeLog README TODO"

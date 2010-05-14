@@ -5,7 +5,8 @@
 EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/aweather"
 EGIT_BOOTSTRAP="eautoreconf"
 
-inherit autotools git
+EAPI=1
+inherit autotools gnome2 git
 
 DESCRIPTION="A weather monitoring program"
 HOMEPAGE="http://lug.rose-hulman.edu/wiki/AWeather"
@@ -14,14 +15,11 @@ SRC_URI=""
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="debug"
 
 RDEPEND="~sci-libs/libgis-9999
-	>=x11-libs/gtk+-2.16
+	x11-libs/gtk+:2
 	sci-libs/rsl"
 DEPEND="${RDEPEND}"
 
-src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
-	dodoc ChangeLog README TODO || die
-}
+DOCS="ChangeLog README TODO"
