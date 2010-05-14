@@ -1,0 +1,13 @@
+#!/sbin/runscript
+
+depend() {
+	need net dbus
+}
+
+start() {
+	start-stop-daemon --start --exec /usr/libexec/ubuntuone-syncdaemon --make-pidfile --pidfile /var/run/u1sd.pid -u $U1SD_USER -g $U1SD_GROUP
+}
+
+stop() {
+	start-stop-daemon --stop --exec /usr/libexec/ubuntuone-syncdaemon --pidfile /var/run/u1sd.pid
+}
