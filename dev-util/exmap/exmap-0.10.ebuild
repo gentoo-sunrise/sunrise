@@ -28,7 +28,7 @@ src_prepare() {
 	# patch find_task_by_pid to pid_task and &proc_root to NULL
 	epatch "${FILESDIR}/${P}-kernel.patch"
 
-	# use $(MAKE), remove -g on CXXFLAGS, clean up CXX/LD invocations/
+	# use $(MAKE), remove -g on CXXFLAGS, clean up CXX/LD invocations
 	epatch "${FILESDIR}/${P}-makefiles.patch"
 
 	# somthing strange between linux-mod supplied ARCH and old kernels
@@ -39,6 +39,9 @@ src_prepare() {
 
 	# new gcc include behavior
 	epatch "${FILESDIR}/${P}-gcc.patch"
+
+	# gcc4.5 fails on return false as std::string
+	epatch "${FILESDIR}/${P}-gcc45.patch"
 
 	# fix for 64bit from http://www.kdedevelopers.org/node/4166
 	epatch "${FILESDIR}/${P}-fix64bit.patch"
