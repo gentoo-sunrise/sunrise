@@ -37,6 +37,9 @@ pkg_postinst() {
 	elog "Note that uam doesn't provide any way to allow unprivileged user to"
 	elog "manually umount devices. You may use pumount from sys-apps/pmount"
 	elog "for that. Otherwise, remember to sync before removing your USB stick."
+	elog
+	elog "If you'd like to receive libnotify-based notifications, you need"
+	elog "to install the [x11-misc/sw-notify-send] tool."
 
 	ebegin "Calling udev to reload its rules"
 	udevadm control --reload-rules
