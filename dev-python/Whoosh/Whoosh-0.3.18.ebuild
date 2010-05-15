@@ -6,7 +6,7 @@ SUPPORT_PYTHON_ABIS=1
 PYTHON_DEPEND=2
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+inherit distutils python
 
 DESCRIPTION="Fast, pure-Python full text indexing, search and spell checking library"
 HOMEPAGE="http://bitbucket.org/mchaput/whoosh/wiki/Home"
