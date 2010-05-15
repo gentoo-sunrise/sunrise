@@ -1,0 +1,8 @@
+# ChangeLog for games-action/lugaru
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 May 2010; Jens Pranaitis (jensp) <jens@chaox.net> +lugaru-9999.ebuild,
+  +metadata.xml:
+  New ebuild for bug 319817, thanks xmw and hwoarang
+
