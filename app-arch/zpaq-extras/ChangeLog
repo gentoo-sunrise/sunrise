@@ -1,6 +1,10 @@
 # ChangeLog for app-arch/zpaq-extras
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 May 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -zpaq-extras-0_p20091101.ebuild, +zpaq-extras-0_p20100426.ebuild:
+  Version bump (adding fast.cfg).
 
   01 Nov 2009; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +zpaq-extras-0_p20091101.ebuild, +metadata.xml:

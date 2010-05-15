@@ -10,7 +10,8 @@ SRC_URI="http://mattmahoney.net/dc/bwt_j3.zip
 	http://mattmahoney.net/dc/bwt_slowmode1.zip
 	http://mattmahoney.net/dc/bmp_j4.zip
 	http://mattmahoney.net/dc/exe_j1.zip
-	http://mattmahoney.net/dc/jpg_test2.zip"
+	http://mattmahoney.net/dc/jpg_test2.zip
+	http://mattmahoney.net/dc/fast.cfg"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -40,5 +41,5 @@ src_install() {
 	doexe bin/* || die 'dobin failed'
 
 	insinto /usr/share/zpaq
-	doins *.cfg || die 'doins failed'
+	doins *.cfg "${DISTDIR}"/*.cfg || die 'doins failed'
 }
