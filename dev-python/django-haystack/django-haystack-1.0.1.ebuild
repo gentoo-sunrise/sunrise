@@ -6,7 +6,7 @@ SUPPORT_PYTHON_ABIS=1
 PYTHON_DEPEND=2
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+inherit distutils python
 
 DESCRIPTION="Modular search for django"
 HOMEPAGE="http://haystacksearch.org"
