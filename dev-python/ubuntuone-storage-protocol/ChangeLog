@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/ubuntuone-storage-protocol
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 May 2010; Maxim (maksbotan) <kolmax94@gmail.com>
+  +ubuntuone-storage-protocol-1.2.0.ebuild, +metadata.xml:
+  New Ebuild for bug 319857
+
