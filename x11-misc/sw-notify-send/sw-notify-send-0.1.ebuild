@@ -14,8 +14,12 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="sys-process/procps"
-RDEPEND="${DEPEND}
-	x11-libs/libnotify"
+RDEPEND="${DEPEND}"
+
+# The lack of x11-libs/libnotify RDEPEND is intentional. The tool supports
+# calling 'notify-send' from within a chroot running libnotify-enabled system
+# where the host system is libnotify-free. Not to mention that running
+# a libnotify notification daemon implies having libnotify installed.
 
 src_compile() {
 	"$(tc-getCC)" ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} ${P}.c -o ${PN} -lproc || die
