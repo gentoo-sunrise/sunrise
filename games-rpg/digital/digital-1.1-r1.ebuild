@@ -13,7 +13,7 @@ SRC_URI="http://digital.artfulgamer.com/${P}.tar.bz2
 
 LICENSE="CCPL-Attribution-ShareAlike-NonCommercial-3.0"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-games/renpy:6.10"
