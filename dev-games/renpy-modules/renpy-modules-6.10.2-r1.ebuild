@@ -16,7 +16,7 @@ SRC_URI="http://www.renpy.org/dl/${PV}/${MY_P}-source.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="media-libs/libpng
