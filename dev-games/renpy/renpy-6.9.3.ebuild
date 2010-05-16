@@ -13,7 +13,7 @@ SRC_URI="http://www.renpy.org/dl/${PV}/${P}-source.tar.bz2"
 
 LICENSE="MIT"
 SLOT="$(get_version_component_range 1-2)"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-python/pygame[X]
