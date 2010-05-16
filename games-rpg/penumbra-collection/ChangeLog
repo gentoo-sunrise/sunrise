@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 May 2010; Robert Cernansky (HS) <openhs@users.sourceforge.net>
+  -penumbra-collection-1.0.ebuild, +penumbra-collection-1.1.ebuild:
+  Version bump. Make cache files newer than models to avoid crashes like
+  reported in #278326 comment #6. No need for bundled libopenal anymore.
+
   05 May 2010; Robert Cernansky (HS) <openhs@users.sourceforge.net>
   penumbra-collection-1.0.ebuild:
   Depend either on xz-utils or lzma-utils. Thanks to Arun Raghavan for reporting.

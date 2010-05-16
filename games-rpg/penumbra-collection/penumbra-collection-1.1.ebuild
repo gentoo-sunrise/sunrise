@@ -49,6 +49,11 @@ pkg_nofetch() {
 src_unpack() {
 	unpack_makeself || die "unpack installator"
 
+	# give proper extension to subarchive so unpack recognizes it
+	mv subarch subarch.tar.lzma || die "rename subarch"
+
+	unpack ./subarch.tar.lzma || die "unpack install archive"
+
 	# give proper extension to install archive so unpack recognizes it
 	mv instarchive_all instarchive_all.tar.lzma || \
 		die "rename instarchive_all"
@@ -61,9 +66,10 @@ src_install() {
 	# perform instalation for each episode; note that Requiem is extension of
 	# Black Plague so it has no dedicated directory at this level
 	for episodeDir in Overture BlackPlague; do
+		local destDir="${dir}/${episodeDir}"
 
 		# install game data files
-		insinto "${dir}/${episodeDir}"
+		insinto ${destDir}
 
 		# >install every directory recursively except lib
 		for directory in \
@@ -75,7 +81,7 @@ src_install() {
 		doins ${episodeDir}/*.cfg || die "doins .cfg files"
 
 		# install libraries and executables
-		exeinto "${dir}/${episodeDir}"
+		exeinto ${destDir}
 		doexe ${episodeDir}/openurl.sh ${episodeDir}/*.bin || \
 			die "doexe binaries"
 
@@ -84,14 +90,16 @@ src_install() {
 			exeinto "${dir}/${episodeDir}/lib"
 			for library in \
 				libfltk.so.1.1 \
-				libopenal.so.1.3.253 \
 				libCgGL.so \
 				libCg.so; do
 				doexe ${episodeDir}/lib/${library} || die "doexe libraries"
 			done
-			dosym libopenal.so.1.3.253 "${dir}/${episodeDir}/lib/libopenal.so.1"
 		fi
 
+		# make sure that cache files are newer than models otherwise the game
+		# tries to regenerate them which sometimes causes a crash (as reported
+		# in bug #278326 comment #6)
+		touch ${D}/${destDir}/core/*cache/*
 	done
 
 	# install icons
