@@ -38,6 +38,11 @@ pkg_postinst() {
 	elog "manually umount devices. You may use pumount from sys-apps/pmount"
 	elog "for that. Otherwise, remember to sync before removing your USB stick."
 	elog
+	elog "Another feature uam is not capable of is mounting removable media"
+	elog "in fixed drives, like CDs and floppies. You might, however, be able"
+	elog "to mount them as an unprivileged user using appropriate fstab entries"
+	elog "or sys-apps/pmount."
+	elog
 	elog "If you'd like to receive libnotify-based notifications, you need"
 	elog "to install the [x11-misc/sw-notify-send] tool."
 
