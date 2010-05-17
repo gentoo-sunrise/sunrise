@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 May 2010; Alexander van der Mey <alexvandermey@gmail.com>
+  -gummi-0.4.5.ebuild, +gummi-0.4.8.ebuild:
+  Version bump for Gummi, thanks to chithead & binki for review
+
   28 Jan 2010; Alexander van der Mey <alexvandermey@gmail.com>
   -gummi-0.4.2.ebuild, +gummi-0.4.5.ebuild:
   Version bump for Gummi
