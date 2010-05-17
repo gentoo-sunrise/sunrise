@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/depot_tools
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 May 2010; Maxim (maksbotan) <kolmax94@gmail.com>
+  +depot_tools-9999.ebuild, +metadata.xml:
+  New ebuild for bug 320227
+
