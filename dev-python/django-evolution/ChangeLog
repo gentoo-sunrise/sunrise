@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/django-evolution
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 May 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  +django-evolution-0_pre176.ebuild, +metadata.xml:
+  New Ebuild for bug 318997
+
