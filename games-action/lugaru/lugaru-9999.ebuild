@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit games mercurial cmake-utils
+inherit games cmake-utils mercurial
 
 DESCRIPTION="A cross platform 3d action adventure"
 HOMEPAGE="http://www.wolfire.com/lugaru"
@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/${PN}
 
 src_configure() {
-	mycmakeargs="-DCMAKE_INSTALL_PREFIX=${GAMES_PREFIX_OPT}/${PN}"
+	local mycmakeargs=(-DCMAKE_INSTALL_PREFIX="${GAMES_PREFIX_OPT}"/${PN})
 	cmake-utils_src_configure
 }
 
