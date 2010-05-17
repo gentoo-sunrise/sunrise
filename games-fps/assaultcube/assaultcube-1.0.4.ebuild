@@ -11,9 +11,7 @@ HOMEPAGE="http://assault.cubers.net"
 MY_PN="AssaultCube"
 MY_PV_BASE=1.0.2
 SRC_URI="mirror://sourceforge/actiongame/${MY_PN}_v${MY_PV_BASE}.tar.bz2
-	mirror://sourceforge/actiongame/${MY_PN}_v${PV}-Update.tar.bz2
-	https://sourceforge.net/tracker/download.php?group_id=123597&atid=697091&file_id=372520&aid=2995297 -> ${P}-Makefile.patch
-	https://sourceforge.net/tracker/download.php?group_id=123597&atid=697091&file_id=372519&aid=2995297 -> ${P}-enet.patch"
+	mirror://sourceforge/actiongame/${MY_PN}_v${PV}-Update.tar.bz2"
 
 LICENSE="ZLIB"
 SLOT="0"
@@ -27,11 +25,10 @@ RDEPEND="opengl? (
 		media-libs/openal
 		media-libs/sdl-image
 		virtual/opengl
-		x11-libs/libX11
-	)"
+		x11-libs/libX11 )"
 DEPEND="${RDEPEND}
 	media-libs/netpbm
-	net-libs/enet"
+	>=net-libs/enet-1.2.1"
 
 S=${WORKDIR}/${MY_PN}_v${MY_PV_BASE}
 
@@ -49,25 +46,24 @@ src_unpack() {
 }
 
 src_prepare() {
-	rm -r bin_unix/* source/include source/enet || die
+	rm -r bin_unix/* source/include || die
 	find packages -name readme.txt -delete || die
 	winicontoppm icon.ico | ppmtoxpm > ${PN}.xpm || die
 
-	epatch "${DISTDIR}"/${P}-Makefile.patch
-	if has_version "=net-libs/enet-1.2" ; then
-		epatch "${DISTDIR}"/${P}-enet.patch
-	fi
-
-	sed -i -e "/^CUBE_DIR=/d ; 2iCUBE_DIR=${GAMES_DATADIR}/${PN}" ${PN}.sh server.sh || die
-	sed -i -e "s:\${CUBE_DIR}/bin_unix/\${SYSTEM_NAME}\${MACHINE_NAME}:$(games_get_libdir)/${PN}/ac_:" ${PN}.sh server.sh || die
+	sed -i -e "/^CUBE_DIR=/d ; 2iCUBE_DIR=$(games_get_libdir)/${PN}" ${PN}.sh server.sh || die
+	sed -i -e "s:bin_unix/\${SYSTEM_NAME}\${MACHINE_NAME}:ac_:" ${PN}.sh server.sh || die
+	sed -i -e "s:cd \${CUBE_DIR}:cd ${GAMES_DATADIR}/${PN}:" ${PN}.sh server.sh || die
 }
 
 src_compile() {
 	tc-export CXX
-	emake -C source/src \
-		CXXOPTFLAGS="${CXXFLAGS}" \
-		$(use opengl && echo client) \
-		$(use dedicated && echo server) || die
+	emake -C source/src CXXOPTFLAGS="${CXXFLAGS}" libenet || die
+	if use opengl ; then
+		emake -C source/src CXXOPTFLAGS="${CXXFLAGS}" client || die
+	fi
+	if use dedicated ; then
+		emake -C source/src CXXOPTFLAGS="${CXXFLAGS}" server || die
+	fi
 }
 
 src_install() {
@@ -89,6 +85,7 @@ src_install() {
 	doins ${PN}.xpm || die
 
 	if use doc ; then
+		rm -r docs/autogen || die
 		dohtml -r docs/* || die
 	fi
 
