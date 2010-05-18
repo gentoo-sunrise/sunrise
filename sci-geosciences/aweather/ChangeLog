@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 May 2010; Andy Spencer <andy753421@gmail.com> -aweather-0.4.ebuild,
+  +aweather-0.4.1.ebuild:
+  Version bump for aweather-0.4.1
+
   14 May 2010; Andy Spencer <andy753421@gmail.com> -aweather-0.2.2.ebuild,
   +aweather-0.4.ebuild, aweather-9999.ebuild:
   Version bump for aweather-0.4 (now depends libgis) and update live ebuild
