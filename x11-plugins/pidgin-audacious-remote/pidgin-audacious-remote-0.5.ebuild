@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="net-im/pidgin[gtk]
-	>=media-sound/audacious-1.5"
+	>=media-sound/audacious-2.2"
 RDEPEND="${DEPEND}"
 
 src_install() {
