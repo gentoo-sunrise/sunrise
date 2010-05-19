@@ -8,7 +8,7 @@ inherit linux-info linux-mod
 
 DESCRIPTION="Processor Hardware Control for Intel CPUs"
 HOMEPAGE="http://www.linux-phc.org/"
-SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=87 -> ${P}.tar.bz2"
+SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=92 -> ${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,14 +21,8 @@ CONFIG_CHECK="~!X86_ACPI_CPUFREQ"
 ERROR_X86_ACPI_CPUFREQ="CONFIG_X86_ACPI_CPUFREQ has to be configured to Module or Not set to enable the replacement of acpi-cpufreq with phc-intel."
 
 MODULE_NAMES="phc-intel(misc:)"
-BUILD_PARAMS="KERNELSRC=\"${KERNEL_DIR}\""
+BUILD_PARAMS="KERNELSRC=\"${KERNEL_DIR}\" -j1"
 BUILD_TARGETS="prepare all"
-
-src_prepare() {
-	if kernel_is -ge 2 6 33 ; then
-		sed -i -e "s:include/linux/utsrelease.h:include/generated/utsrelease.h:" Makefile || die
-	fi
-}
 
 src_install() {
 	linux-mod_src_install

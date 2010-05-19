@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 May 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  -phc-intel-0.3.2.10.ebuild, +phc-intel-0.3.2.11.ebuild:
+  Version bump. Kernel 2.6.33 and above (utsrelease.h) support now in
+  upstream. Thanks to erik for the information.
+
   11 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   phc-intel-0.3.2.10.ebuild:
   Typo.
