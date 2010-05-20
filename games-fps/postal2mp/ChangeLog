@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 May 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  postal2mp-1409.ebuild:
+  amd64 added
+
   11 May 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   +postal2mp-1409.ebuild, +metadata.xml:
   New Ebuild for bug 319125 thanks to Tommy[D]
