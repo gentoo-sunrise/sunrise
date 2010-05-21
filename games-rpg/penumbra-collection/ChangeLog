@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 May 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  penumbra-collection-1.1.ebuild:
+  Add missing quotes
+
   16 May 2010; Robert Cernansky (HS) <openhs@users.sourceforge.net>
   -penumbra-collection-1.0.ebuild, +penumbra-collection-1.1.ebuild:
   Version bump. Make cache files newer than models to avoid crashes like

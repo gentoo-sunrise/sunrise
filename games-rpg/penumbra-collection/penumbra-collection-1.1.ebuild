@@ -99,7 +99,7 @@ src_install() {
 		# make sure that cache files are newer than models otherwise the game
 		# tries to regenerate them which sometimes causes a crash (as reported
 		# in bug #278326 comment #6)
-		touch ${D}/${destDir}/core/*cache/*
+		touch "${D}"/${destDir}/core/*cache/*
 	done
 
 	# install icons
