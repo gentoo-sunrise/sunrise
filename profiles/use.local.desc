@@ -243,9 +243,6 @@ media-gfx/synfigstudio:fmod - Enables support for using mod files for audio supp
 media-radio/ax25-tools:X - Enable some x based configuration tools.
 media-radio/grig:hardware - Enable hardware IO
 media-radio/unixcw:ncurses - Enables building the curses based morse code tutor program 'cwcp'.
-media-radio/xastir:festival - Enable text to speech synthesizer
-media-radio/xastir:gdal - Support for some further map formats
-media-radio/xastir:geotiff - Install geotiff support. Allows using USGS DRG topo maps or other types of geotiff mapes/images
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
