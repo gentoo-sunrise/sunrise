@@ -39,11 +39,11 @@ RDEPEND="mono? (
 	net-libs/webkit-gtk"
 
 DEPEND="doc? (
-		app-text/gnome-doc-utils 
-		dev-util/gtk-doc 
+		app-text/gnome-doc-utils
+		dev-util/gtk-doc
 	)
-	dev-util/intltool 
-	${RDEPEND}" 
+	dev-util/intltool
+	${RDEPEND}"
 
 src_prepare(){
 	epatch "${FILESDIR}"/libubuntuone-optional-bindings.patch

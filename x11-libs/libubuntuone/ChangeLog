@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 May 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  libubuntuone-0.3.1.ebuild:
+  Remove trailing whitespaces
+
   14 May 2010; Maxim (maksbotan) <kolmax94@gmail.com> +files/u1-syncdaemon,
   +libubuntuone-0.3.1.ebuild, +files/libubuntuone-optional-bindings.patch,
   +metadata.xml:
