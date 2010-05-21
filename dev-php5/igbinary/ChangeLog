@@ -1,0 +1,8 @@
+# ChangeLog for dev-php5/igbinary
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 May 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  +igbinary-1.0.2.ebuild, +metadata.xml:
+  New ebuild for bug 320867. Thanks, Tommy[D]
+
