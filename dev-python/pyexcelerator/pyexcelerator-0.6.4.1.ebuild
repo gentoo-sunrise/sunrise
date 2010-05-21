@@ -13,9 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-DEPEND="app-arch/bzip2"
-RDEPEND=""
-
 src_install() {
 	distutils_src_install
 

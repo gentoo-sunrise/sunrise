@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 May 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pyexcelerator-0.6.4.1.ebuild:
+  No need to DEPEND against bzip2 since it is in the system profile. Brought
+  up by Tommy[D]
+
   19 May 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +pyexcelerator-0.6.4.1.ebuild, +metadata.xml:
   New ebuild for bug #111612 - thanks chithead
