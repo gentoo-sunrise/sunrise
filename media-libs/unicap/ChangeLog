@@ -1,6 +1,13 @@
 # ChangeLog for media-libs/unicap
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 May 2010; Matt Whitlock (whitslack) <matt@whitlock.name>
+  -unicap-0.9.7.ebuild, +unicap-0.9.8.ebuild, metadata.xml:
+  new version: media-libs/unicap-0.9.8 (bug 175881)
+  
+  Note: Upstream split the unicap library into three parts. This is one of
+  them, along with media-libs/unicapgtk and media-libs/ucil.
 
   14 Oct 2009; Matt Whitlock (whitslack) <matt@whitlock.name>
   -unicap-0.9.3.ebuild, +unicap-0.9.7.ebuild:

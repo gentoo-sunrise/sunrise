@@ -6,4 +6,7 @@
 	<longdescription>unicap provides a uniform interface to video capture
 	devices. It allows applications to use any supported video capture device
 	via a single API.</longdescription>
+	<use>
+		<flag name="libv4l">Use libv4l to communicate with v4l2 devices</flag>
+	</use>
 </pkgmetadata>
