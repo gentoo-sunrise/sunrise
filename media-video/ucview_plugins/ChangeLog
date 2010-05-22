@@ -1,0 +1,8 @@
+# ChangeLog for media-video/ucview_plugins
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 May 2010; Matt Whitlock (whitslack) <matt@whitlock.name>
+  +ucview_plugins-1.0.ebuild, +metadata.xml:
+  new ebuild: media-libs/ucview_plugins-1.0 (bug 244586)
+
