@@ -3,6 +3,11 @@
 # $Header: $
 
   22 May 2010; Matt Whitlock (whitslack) <matt@whitlock.name>
+  ucview_plugins-1.0.ebuild:
+  fixed Manifest (upstream replaced a distfile without renaming); run
+  eautoreconf to fix libtool version mismatch error
+
+  22 May 2010; Matt Whitlock (whitslack) <matt@whitlock.name>
   +ucview_plugins-1.0.ebuild, +metadata.xml:
   new ebuild: media-libs/ucview_plugins-1.0 (bug 244586)
 

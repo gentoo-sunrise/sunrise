@@ -4,6 +4,8 @@
 
 EAPI=2
 
+inherit autotools
+
 DESCRIPTION="Plugins for UCView image capture application"
 HOMEPAGE="http://unicap-imaging.org/"
 SRC_URI="http://unicap-imaging.org/downloads/${P}.tar.gz"
@@ -19,9 +21,8 @@ DEPEND=">=media-video/ucview-0.30
 RDEPEND=${DEPEND}
 
 src_prepare() {
-	# remove unneeded (and not installed) header include
-	sed -e 's|^#include <ucview/ucview\.h>$|//\0|' \
-			-i ucview_debayer_plugin/src/debayer_plugin.c || die
+	mkdir -p ucview_{debayer,histogram,videoplay}_plugin/m4
+	eautoreconf
 }
 
 src_configure() {
