@@ -18,6 +18,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="sys-libs/ncurses[unicode]
-	dev-python/feedparser
 	dev-python/chardet"
 RDEPEND="${DEPEND}"
