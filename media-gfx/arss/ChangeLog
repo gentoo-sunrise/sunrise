@@ -1,0 +1,8 @@
+# ChangeLog for media-gfx/arss
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 May 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +arss-0.2.3.ebuild, +metadata.xml:
+  New Ebuild for bug 321463 thanks to hwoarang
+
