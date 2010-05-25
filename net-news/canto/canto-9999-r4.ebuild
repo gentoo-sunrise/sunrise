@@ -19,7 +19,6 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="sys-libs/ncurses[unicode]
-		dev-python/feedparser
 		dev-python/chardet"
 RDEPEND="${DEPEND}"
 
