@@ -1,6 +1,10 @@
 # ChangeLog for media-libs/liblqr
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  25 May 2010; Justin Lecher <jlec@gentoo.org>
+  -gimp-lqr-plugin-0.6.1.ebuild, +gimp-lqr-plugin-0.7.0.ebuild:
+  Version Bump
 
   08 Apr 2009; Piotr Szymaniak <lazy_bum@o2.pl>
   +gimp-lqr-plugin-0.6.1.ebuild, +metadata.xml:

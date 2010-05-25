@@ -4,7 +4,7 @@
 
 DESCRIPTION="Content-aware resizing for the GIMP"
 HOMEPAGE="http://liquidrescale.wikidot.com/"
-SRC_URI="${HOMEPAGE}/local--files/en:download-page/${P}.tar.bz2"
+SRC_URI="${HOMEPAGE}/local--files/en:download-page-sources/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
