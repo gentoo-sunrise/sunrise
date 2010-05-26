@@ -1,0 +1,8 @@
+# ChangeLog for media-gfx/simple-scan
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 May 2010; Fabian Köster (maestro_alubia) <f.koester@tarent.de>
+  +simple-scan-2.31.1.ebuild, +metadata.xml:
+  New Ebuild for bug 320737 thanks to sedzimir, BiNkl and Tommy[D]
+
