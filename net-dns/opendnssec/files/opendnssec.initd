@@ -1,0 +1,93 @@
+#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+# for openrc
+description="An open-source turn-key solution for DNSSEC"
+
+checkconf_binary=/usr/bin/ods-kaspcheck
+signerd_binary=/usr/sbin/ods-signer
+signerd_pidfile=/var/lib/run/opendnssec/signerd.pid
+enforcerd_binary=/usr/sbin/ods-enforcerd
+enforcerd_pidfile=/var/lib/run/opendnssec/enforcerd.pid
+eppclientd_binary=/usr/sbin/eppclientd
+eppclientd_pidfile=/var/lib/run/opendnssec/eppclientd.pid
+
+depend() {
+	need net
+	use logger
+}
+
+checkconfig() {
+	if [ -x "${checkconf_binary}" ]; then
+		output=$(${checkconf_binary})
+		echo $output
+
+		errors=$(echo $output | grep ERROR | wc -l)
+		if [ $errors -gt 0 ]; then
+			ewarn "$errors error(s) found in OpenDNSSEC configuration."
+		fi
+		return $errors
+	fi
+	return
+}
+
+start_signerd() {
+	ebegin "Starting OpenDNSSEC Signer"
+	start-stop-daemon --start --exec "${signerd_binary}" --pidfile "${signerd_pidfile}" -- start > /dev/null
+	eend $?
+}
+
+stop_signerd() {
+	ebegin "Stopping OpenDNSSEC Signer"
+	start-stop-daemon --stop --exec "${signerd_binary}" --pidfile "${signerd_pidfile}" -- stop > /dev/null
+	eend $?
+}
+
+start_enforcerd() {
+	ebegin "Starting OpenDNSSEC Enforcer"
+	start-stop-daemon --start --exec "${enforcerd_binary}" --pidfile "${enforcerd_pidfile}" > /dev/null
+	eend $?
+}
+
+stop_enforcerd() {
+	ebegin "Stopping OpenDNSSEC Enforcer"
+	start-stop-daemon --stop --exec "${enforcerd_binary}" --pidfile "${enforcerd_pidfile}" > /dev/null
+	eend $?
+}
+
+start_eppclientd() {
+	if [ -x "${eppclientd_binary}" ]; then
+		ebegin "Starting OpenDNSSEC Eppclient"
+		start-stop-daemon --start --exec "${eppclientd_binary}" --pidfile "${eppclientd_pidfile}" > /dev/null
+		eend $?
+	fi
+}
+
+stop_eppclientd() {
+	if [ -f "${eppclientd_pidfile}" ]; then
+		ebegin "Stopping OpenDNSSEC Eppclient"
+		start-stop-daemon --stop --exec "${eppclientd_binary}" --pidfile "${eppclientd_pidfile}" > /dev/null
+		eend $?
+	fi
+}
+
+start() {
+	checkconfig || return $?
+	start_signerd || return $?
+	start_enforcerd || return $?
+	start_eppclientd || return $?
+}
+
+stop() {
+	stop_enforcerd || return $?
+	stop_signerd || return $?
+	stop_eppclientd || return $?
+}
+
+restart() {
+	checkconfig || return $?
+	svc_stop
+	svc_start
+}
