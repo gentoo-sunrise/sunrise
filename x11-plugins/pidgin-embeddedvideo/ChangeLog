@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 May 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  pidgin-embeddedvideo-1.1.2.ebuild:
+  added ~amd64
+
   05 Feb 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   +pidgin-embeddedvideo-1.1.2.ebuild, +metadata.xml:
   New Ebuild for bug 303233 - thanks to hwoarang and sedzimir
