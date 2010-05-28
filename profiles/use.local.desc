@@ -240,6 +240,7 @@ media-gfx/fyre:gnet - Add support for cluster rendering
 media-gfx/openvrml:player - Build the openvrml-player Gnome application
 media-gfx/openvrml:xembed - Build the XEmbed container control
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
+media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
 media-radio/ax25-tools:X - Enable some x based configuration tools.
 media-radio/grig:hardware - Enable hardware IO
 media-radio/unixcw:ncurses - Enables building the curses based morse code tutor program 'cwcp'.
@@ -270,6 +271,11 @@ net-dns/nsd:nsid - Enable NSID support
 net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:runtime-checks - Enable runtime checks
 net-dns/nsd:tsig - Enable TSIG support
+net-dns/opendnssec:auditor - Enables auditing capabilities for OpenDNSSEC
+net-dns/opendnssec:eppclient - Enables support for automatic submission of DNSSEC keys to an upstream epp server
+net-dns/opendnssec:external-hsm - Enables support for storing DNSSEC keys through an arbitrary non-portage PKCS#11 interface, specified through an environment variable
+net-dns/opendnssec:opensc - Enables support for storing DNSSEC keys through a dev-libs/opensc PKCS#11 interface
+net-dns/opendnssec:softhsm - Enables support for storing DNSSEC keys in a dev-libs/softhsm PKCS#11 object
 net-firewall/vuurmuur:logrotate - Install support files for logrotate
 net-im/ekg2:extra - Enable following plugins: autoresponder, polchat, rivchat, rot13, xmsg.
 net-im/ekg2:gadu - Enable Gadu-Gadu protocol support (requires net-libs/libgadu).
