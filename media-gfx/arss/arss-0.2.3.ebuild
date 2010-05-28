@@ -9,16 +9,17 @@ MY_P=${P}-src
 DESCRIPTION="Analysis & Resynthesis Sound Spectrograph"
 HOMEPAGE="http://arss.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
-
 KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="sci-libs/fftw"
 RDEPEND="${DEPEND}"
 
-CMAKE_IN_SOURCE_BUILD="TRUE"
 S=${WORKDIR}/${MY_P}/src
+
+CMAKE_IN_SOURCE_BUILD="TRUE"
 
 DOCS="../AUTHORS ../ChangeLog"
