@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-libs/xmlsec[ssl]
+DEPEND="dev-libs/xmlsec[openssl]
 	dev-libs/libgcrypt"
 RDEPEND="${DEPEND}"
 

@@ -1,6 +1,10 @@
 # ChangeLog for dev-php5/php-xmlsec
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  28 May 2010; Justin Lecher <jlec@gentoo.org>
+  php-xmlsec-0_p20061020.ebuild:
+  dev-libs/xmlsec changed USE ssl to openssl
 
   29 Apr 2009; Matthew Schultz (mschultz) <mattsch@gmail.com>
   +php-xmlsec-0_p20061020.ebuild, -php-xmlsec-0.1.ebuild:
