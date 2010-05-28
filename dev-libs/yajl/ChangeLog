@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 May 2010; Justin Lecher <jlec@gentoo.org> -yajl-1.0.9.ebuild:
+  InCvs
+
   04 Apr 2010; Tomáš Chvátal <scarabeus@gentoo.org> yajl-1.0.9.ebuild,
   +files/yajl-fix_cmakelists.patch, +files/yajl-fix_tests.patch:
   Fixup yajl cmakelist files.
