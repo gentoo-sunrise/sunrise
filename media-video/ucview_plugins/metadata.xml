@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>maintainer-wanted</herd>
-	<longdescription>UCView is a video capture and display program
-	based on the unicap video imaging library.</longdescription>
+<herd>no-herd</herd>
+<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+<longdescription>
+	UCView is a video capture and display program
+	based on the unicap video imaging library.
+</longdescription>
 </pkgmetadata>
