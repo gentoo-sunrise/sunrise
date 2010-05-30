@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/autoupnp
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 May 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  +autoupnp-0.3.ebuild, +metadata.xml:
+  New ebuild for bug #322057.
+
