@@ -8,8 +8,7 @@ inherit linux-info linux-mod
 
 DESCRIPTION="Processor Hardware Control for Intel CPUs"
 HOMEPAGE="http://www.linux-phc.org/"
-SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=92 -> ${P}.tar.bz2
-	http://xmw.de/mirror/${PN}/${P}.tar.bz2"
+SRC_URI="http://xmw.de/mirror/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,13 +21,13 @@ CONFIG_CHECK="~!X86_ACPI_CPUFREQ"
 ERROR_X86_ACPI_CPUFREQ="CONFIG_X86_ACPI_CPUFREQ has to be configured to Module or Not set to enable the replacement of acpi-cpufreq with phc-intel."
 
 MODULE_NAMES="phc-intel(misc:)"
-BUILD_PARAMS="KERNELSRC=\"${KERNEL_DIR}\" -j1"
+BUILD_PARAMS="KERNELSRC=\"${KERNEL_DIR}\""
 BUILD_TARGETS="prepare all"
 
 pkg_setup() {
-	if kernel_is lt 2 6 33 ; then
-		eerror "Your kernel version is no longer supported by this version of ${PN}."
-		eerror "Please use a previous version of ${PN} or a newer kernel."
+	if kernel_is gt 2 6 32 ; then
+		eerror "Your kernel version is not supported by this version of ${PN}."
+		eerror "Please use a newer version for kernels 2.6.33 and above."
 		die
 	fi
 }
