@@ -20,12 +20,13 @@ DEPEND="app-arch/unzip"
 RDEPEND=""
 
 src_prepare() {
+	tc-export CXX
 	# make it FHS-friendly
 	sed -e 's:^pcomp :&/usr/libexec/zpaq/:' -i *.cfg || die
 
 	if use optimization; then
 		sed \
-			-e "s:%CXX%:$(tc-getCXX):" \
+			-e "s:%CXX%:${CXX}:" \
 			-e "s:%CXXFLAGS%:${CXXFLAGS}:" \
 			-e "s:%LIBDIR%:$(get_libdir):" \
 			"${FILESDIR}"/zpaqmake.in > zpaqmake || die
@@ -33,8 +34,6 @@ src_prepare() {
 }
 
 src_configure() {
-	tc-export CXX
-
 	if use optimization; then
 		# NOTE: zpaqmake is used in runtime by zpaq to compile profiles
 		# please do not complain about stripping, it's not for build time
@@ -42,7 +41,7 @@ src_configure() {
 		local stripflag=' -Wl,--strip-all'
 		# check whether the default compiler supports -Wl,--strip-all
 		echo 'int main(void) {return 0;}' > striptest.c
-		"${CXX}" ${CXXFLAGS} ${LDFLAGS} ${stripflag} \
+		${CXX} ${CXXFLAGS} ${LDFLAGS} ${stripflag} \
 			striptest.c -o striptest || stripflag=
 
 		sed -i -e "s:%LDFLAGS%:${LDFLAGS}${stripflag}:" zpaqmake || die
@@ -50,12 +49,12 @@ src_configure() {
 }
 
 src_compile() {
-	"${CXX}" ${CXXFLAGS} -DNDEBUG ${LDFLAGS} zpaq.cpp -o zpaq || die
-	"${CXX}" ${CXXFLAGS} ${LDFLAGS} lzppre.cpp -o lzppre || die
+	${CXX} ${CXXFLAGS} -DNDEBUG ${LDFLAGS} zpaq.cpp -o zpaq || die
+	${CXX} ${CXXFLAGS} ${LDFLAGS} lzppre.cpp -o lzppre || die
 
 	if use optimization; then
 		# provide precompiled stub
-		"${CXX}" -c ${CXXFLAGS} -DNDEBUG -DOPT zpaq.cpp -o zpaq.o || die
+		${CXX} -c ${CXXFLAGS} -DNDEBUG -DOPT zpaq.cpp -o zpaq.o || die
 	fi
 }
 
