@@ -1,6 +1,10 @@
 # ChangeLog for x11-misc/xneur
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Jun 2010; Peter Volkov <pva@gentoo.org> -xneur-0.9.7.ebuild,
+  +xneur-0.9.9.ebuild:
+  Version bump, thank Alex Rodionov for report in bug #169494.
 
   16 Oct 2009; Peter Volkov <pva@gentoo.org> -xneur-0.9.5.ebuild,
   -files/xneur-0.9.5-gcc44.patch, +xneur-0.9.7.ebuild:

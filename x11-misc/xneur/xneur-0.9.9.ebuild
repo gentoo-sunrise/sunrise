@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
 
 inherit eutils autotools
 
@@ -67,7 +67,7 @@ src_configure() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "emake install failed"
+	emake install DESTDIR="${ED}" || die "emake install failed"
 	dodoc AUTHORS ChangeLog README NEWS TODO || die
 }
 
