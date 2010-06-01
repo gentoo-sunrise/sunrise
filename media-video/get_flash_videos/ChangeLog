@@ -1,0 +1,8 @@
+# ChangeLog for media-video/get_flash_videos
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Jun 2010; Maxime de Roucy (maxime1986) <maxime.deroucy@gmail.com>
+  +get_flash_videos-1.21.ebuild, +metadata.xml:
+  New Ebuild for bug 318929
+
