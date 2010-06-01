@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Jun 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
+  -2gis-data-2010.5.ebuild, +2gis-data-2010.6.ebuild:
+  Version bump
+
   03 May 2010; Leonid Evdokimov (darkk) <leon@darkk.net.ru>
   -2gis-data-2010.4.ebuild, +2gis-data-2010.5.ebuild:
   Version bump
