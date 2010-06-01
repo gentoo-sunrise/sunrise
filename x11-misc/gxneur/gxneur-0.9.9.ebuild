@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
 
 inherit eutils autotools versionator
 
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
 RDEPEND=">=x11-misc/xneur-$(get_version_component_range 1-2)
-	 >=x11-libs/gtk+-2.0.0
+	 >=x11-libs/gtk+-2.18:2
 	 >=sys-devel/gettext-0.16.1
 	 >=gnome-base/libglade-2.6.0"
 DEPEND="${RDEPEND}
@@ -33,8 +33,8 @@ src_configure() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die
+	emake install DESTDIR="${ED}" || die
 	dodoc AUTHORS ChangeLog NEWS || die
-	doicon pixmaps/gxneur.png
-	make_desktop_entry "${PN}" "${PN}" ${PN} "GTK;Gnome;Utility;TrayIcon"
+#	doicon pixmaps/gxneur.png
+#	make_desktop_entry "${PN}" "${PN}" ${PN} "GTK;Gnome;Utility;TrayIcon"
 }
