@@ -2,10 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=1
+
 inherit eutils
 
 MY_PN="GPLIGC"
-MY_P="${MY_PN}-${PV}-src"
+MY_P="${MY_PN}-${PV}"
 DESCRIPTION="provides IGC-file (GPS tracklog) evaluation and 3D visualisation"
 HOMEPAGE="http://gpligc.sf.net/"
 SRC_URI="http://pc12-c714.uibk.ac.at/GPLIGC/download/${MY_P}-src.tar.gz"
