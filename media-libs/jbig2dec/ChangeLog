@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de> jbig2dec-0.11.ebuild:
+  Tested on ~x86, keyword added
+
   29 May 2010; Michael Weber (xmw) <gentoo@xmw.de> +jbig2dec-0.11.ebuild,
   +metadata.xml:
   New Ebuild for bug 321997
