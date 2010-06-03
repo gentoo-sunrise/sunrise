@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/python-gudev
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +python-gudev-147.1.ebuild, +metadata.xml:
+  New Ebuild for bug 322557 thanks to hwoarang
+
