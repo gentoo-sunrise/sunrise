@@ -20,13 +20,11 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc guitarhero psyco"
 
 # NOTES :
-# numeric is not mentionned but looks needed
 # pyopengl-2.0.0.44 (stable) makes the game crash with some configs
 DEPEND=""
 RDEPEND="dev-python/pygame
 	>=dev-python/pyopengl-2.0.1.09-r1
 	dev-python/imaging
-	dev-python/numeric
 	dev-python/numpy
 	media-libs/sdl-mixer[vorbis]
 	doc? ( >=dev-python/epydoc-3.0.1 )

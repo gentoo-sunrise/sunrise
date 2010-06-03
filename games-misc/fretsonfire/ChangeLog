@@ -1,6 +1,10 @@
 # ChangeLog for games-misc/fretsonfire
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Jun 2010; Markos Chandras <hwoarang@gentoo.org>
+  fretsonfire-1.3.110.ebuild:
+  Remove numeric dependency as it is not needed
 
   20 Jan 2009; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   fretsonfire-1.3.110.ebuild, metadata.xml:
