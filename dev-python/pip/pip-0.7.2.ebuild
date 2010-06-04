@@ -8,7 +8,7 @@ inherit bash-completion distutils
 
 DESCRIPTION="pip is a replacement for easy_install"
 HOMEPAGE="http://pip.openplans.org"
-SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="http://pypi.python.org/packages/source/p/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
@@ -24,17 +24,17 @@ src_install() {
 	export PYTHONPATH="${S}:${PYTHONPATH}"
 
 	if use bash-completion; then
-		./scripts/pip completion --bash > "${COMPLETION}" || die
+		./pip/__init__.py completion --bash > "${COMPLETION}" || die
 		dobashcompletion "${COMPLETION}" ${PN}
 	fi
 
 	if use zsh-completion; then
-		./scripts/pip completion --zsh > "${COMPLETION}" || die
+		./pip/__init__.py completion --zsh > "${COMPLETION}" || die
 		insinto /usr/share/zsh/site-functions
 		newins "${COMPLETION}" _pip || die
 	fi
 
 	if use doc; then
-		dohtml -r docs/_build/* || die
+		dodoc docs/*.txt || die
 	fi
 }
