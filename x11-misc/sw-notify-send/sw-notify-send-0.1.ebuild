@@ -22,9 +22,10 @@ RDEPEND="${DEPEND}"
 # a libnotify notification daemon implies having libnotify installed.
 
 src_compile() {
-	"$(tc-getCC)" ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} ${P}.c -o ${PN} -lproc || die
+	tc-export CC
+	emake LDLIBS=-lproc ${P} || die
 }
 
 src_install() {
-	dobin ${PN} || die
+	newbin ${P} ${PN} || die
 }

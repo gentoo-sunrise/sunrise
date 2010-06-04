@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jun 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  sw-notify-send-0.1.ebuild:
+  Use emake to compile the executable.
+
   15 May 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   sw-notify-send-0.1.ebuild:
   Drop unnecessary libnotify RDEPEND.
