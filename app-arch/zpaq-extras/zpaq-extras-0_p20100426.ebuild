@@ -22,24 +22,20 @@ DEPEND="app-arch/unzip"
 RDEPEND=""
 
 src_compile() {
-	local _prog
-
-	mkdir bin
-	for _prog in bwtpre bwt_ jpeg_jo exe_jo; do
-		"$(tc-getCXX)" ${CXXFLAGS} ${_prog}.cpp -o bin/${_prog} \
-			|| die "compiling ${_prog} failed"
-	done
+	tc-export CXX
+	progs='bwtpre bwt_ jpeg_jo exe_jo'
+	emake ${progs} || die
 
 	sed \
 		-e 's:^pcomp zpaq r:pcomp /usr/bin/zpaq r/usr/share/zpaq/:' \
 		-e 's:^pcomp \([^/]\):pcomp /usr/libexec/zpaq/\1:' \
-		-i *.cfg || die 'sed failed'
+		-i *.cfg || die
 }
 
 src_install() {
 	exeinto /usr/libexec/zpaq
-	doexe bin/* || die 'dobin failed'
+	doexe ${progs} || die
 
 	insinto /usr/share/zpaq
-	doins *.cfg "${DISTDIR}"/*.cfg || die 'doins failed'
+	doins *.cfg "${DISTDIR}"/fast.cfg || die
 }
