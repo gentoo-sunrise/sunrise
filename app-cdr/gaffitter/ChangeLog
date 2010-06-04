@@ -1,9 +1,0 @@
-# ChangeLog for app-cdr/gaffitter
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  27 Nov 2009; Marcin Miroslaw <bug@mejor.pl> +gaffitter-0.6.0.ebuild,
-  +metadata.xml:
-  Initial commit, bug 268935, thanks to Etienne Buira for initial ebuild,
-  thanks to chiiph and Tommy
-
