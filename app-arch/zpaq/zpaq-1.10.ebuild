@@ -24,13 +24,7 @@ src_prepare() {
 	# make it FHS-friendly
 	sed -e 's:^pcomp :&/usr/libexec/zpaq/:' -i *.cfg || die
 
-	if use optimization; then
-		sed \
-			-e "s:%CXX%:${CXX}:" \
-			-e "s:%CXXFLAGS%:${CXXFLAGS}:" \
-			-e "s:%LIBDIR%:$(get_libdir):" \
-			"${FILESDIR}"/zpaqmake.in > zpaqmake || die
-	fi
+	use optimization && printf '#define OPT\n#include "zpaq.cpp"' > zpaqstub.cpp
 }
 
 src_configure() {
@@ -40,22 +34,24 @@ src_configure() {
 
 		local stripflag=' -Wl,--strip-all'
 		# check whether the default compiler supports -Wl,--strip-all
-		echo 'int main(void) {return 0;}' > striptest.c
-		${CXX} ${CXXFLAGS} ${LDFLAGS} ${stripflag} \
-			striptest.c -o striptest || stripflag=
+		echo 'int main(void) {return 0;}' > striptest.cpp
+		emake LDFLAGS+="${stripflag}" striptest \
+			|| stripflag=
 
-		sed -i -e "s:%LDFLAGS%:${LDFLAGS}${stripflag}:" zpaqmake || die
+		sed \
+			-e "s:%CXX%:${CXX}:" \
+			-e "s:%CXXFLAGS%:${CXXFLAGS}:" \
+			-e "s:%LIBDIR%:$(get_libdir):" \
+			-e "s:%LDFLAGS%:${LDFLAGS}${stripflag}:" \
+			"${FILESDIR}"/zpaqmake.in > zpaqmake || die
 	fi
 }
 
 src_compile() {
-	${CXX} ${CXXFLAGS} -DNDEBUG ${LDFLAGS} zpaq.cpp -o zpaq || die
-	${CXX} ${CXXFLAGS} ${LDFLAGS} lzppre.cpp -o lzppre || die
+	local optstub=
+	use optimization && optstub=zpaqstub.o
 
-	if use optimization; then
-		# provide precompiled stub
-		${CXX} -c ${CXXFLAGS} -DNDEBUG -DOPT zpaq.cpp -o zpaq.o || die
-	fi
+	emake CPPFLAGS+=-DNDEBUG zpaq lzppre ${optstub} || die
 }
 
 src_install() {
@@ -67,7 +63,7 @@ src_install() {
 		insinto /usr/include/zpaq
 		doins zpaq.h || die
 		insinto /usr/$(get_libdir)/zpaq
-		doins zpaq.o || die
+		doins zpaqstub.o || die
 	fi
 
 	# Preprocessors

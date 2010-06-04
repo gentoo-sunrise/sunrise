@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jun 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  zpaq-1.10.ebuild, files/zpaqmake.in:
+  Use single sed for zpaqmake, use emake to compile executables. Due to the
+  limitations of implicit make rules, zpaq.o needed to be renamed to
+  zpaqstub.o.
+
   31 May 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   zpaq-1.10.ebuild:
   Declare CXX earlier and do not quote it.
