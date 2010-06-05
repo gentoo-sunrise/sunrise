@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de> +mupdf-0.6.ebuild,
+  +files/mupdf-0.6-buildsystem.patch, -mupdf-1170.ebuild,
+  -files/mupdf-1170-buildsystem.patch:
+  Version bump, cleaned up the CFLAGS situation in the build system.
+
   02 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de> -mupdf-940.ebuild,
   +mupdf-1170.ebuild, +files/mupdf-1170-buildsystem.patch:
   Version bump. ftjam build system replaced by Makefile

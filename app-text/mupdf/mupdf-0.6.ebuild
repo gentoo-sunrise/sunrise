@@ -4,12 +4,12 @@
 
 EAPI=2
 
-inherit eutils multilib toolchain-funcs
+inherit eutils flag-o-matic multilib toolchain-funcs
 
 DESCRIPTION="a lightweight PDF viewer and toolkit written in portable C"
 HOMEPAGE="http://mupdf.com/"
-SRC_URI="http://${PN}.com/download/${PN}-r${PV}.tar.gz
-	http://xmw.de/mirror/${PN}/${PN}-r${PV}.tar.gz"
+SRC_URI="http://${PN}.com/download/source/${P}-source.tar.gz
+	http://xmw.de/mirror/${PN}/${P}-source.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -32,10 +32,12 @@ src_prepare() {
 }
 
 src_compile() {
+	use x86 && append-cflags -DARCH_X86
+	use amd64 && append-cflags -DARCH_X86_64
+
 	my_pdfexe=
-	if ! use X ; then
-		my_pdfexe="PDFVIEW_EXE="
-	fi
+	use X || my_pdfexe="PDFVIEW_EXE="
+
 	emake build=release ${my_pdfexe} CC="$(tc-getCC)" || die
 }
 
