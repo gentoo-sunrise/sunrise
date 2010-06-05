@@ -1,8 +1,0 @@
-# ChangeLog for media-video/rtmpdump
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  30 May 2010; Maxime de Roucy (maxime1986) <maxime.deroucy@gmail.com>
-  +rtmpdump-2.2d.ebuild, +metadata.xml:
-  New Ebuild for bug 299819 (thanks to Alec M.)
-
