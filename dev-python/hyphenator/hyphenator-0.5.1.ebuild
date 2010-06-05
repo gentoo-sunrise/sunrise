@@ -2,7 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+SUPPORT_PYTHON_ABIS=1
+PYTHON_DEPEND=2
+RESTRICT_PYTHON_ABIS="3.*"
+
+inherit distutils python
 
 DESCRIPTION="Hyphenate text using myspell dictionaries"
 HOMEPAGE="http://code.google.com/p/python-hyphenator/"
