@@ -1,0 +1,8 @@
+# ChangeLog for dev-cpp/stringencoders
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Jun 2010; Dagg Stompler (daggs1) <stompdagger1@yahoo.com>
+  +stringencoders-3.10.3.ebuild, +metadata.xml:
+  New Ebuild for bug #321881 thanks to guys at #gentoo-sunrise
+
