@@ -261,8 +261,6 @@ media-video/pgcedit:video - Add support for video preview
 media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
 media-video/ripwrap:mp4 - Add mp4 support
-media-video/rtmpdump:gnutls - Use GnuTLS library instead of the default OpenSSL
-media-video/rtmpdump:polarssl - Use PolarSSL library instead of the default OpenSSL
 net-dialup/iwar:iax2 - Enable iax2 protocol support
 net-dns/inadyn-mt:async - Enable asyncronous gethostbyname calls. Requires USE=threads
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
