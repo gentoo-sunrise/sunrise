@@ -19,7 +19,7 @@ IUSE=""
 RDEPEND=">=dev-libs/libmemcached-0.32"
 DEPEND="${RDEPEND}"
 
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 src_test() {
 	testing() {
