@@ -29,8 +29,6 @@ DEPEND="${RDEPEND}
 
 RESTRICT_PYTHON_ABIS="3.*"
 
-DOCS="README README.twisted NEWS"
-
 src_compile() {
 	distutils_src_compile
 
@@ -42,7 +40,7 @@ src_compile() {
 
 src_test() {
 	testing() {
-		PYTHONPATH="." nosetests-${PYTHON_ABI} || die "Tests failed"
+		"$(PYTHON)" tests/nosewrapper.py
 	}
 	python_execute_function testing
 }

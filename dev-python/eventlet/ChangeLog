@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -eventlet-0.9.7.ebuild, +eventlet-0.9.9.ebuild:
+  Version bump
+
   03 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   eventlet-0.9.7.ebuild:
   Reintroduce PYTHON_DEPEND
