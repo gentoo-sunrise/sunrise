@@ -25,5 +25,5 @@ S=${WORKDIR}/nzjrs-${PN}-5fac65a
 DOCS="AUTHORS NEWS README"
 
 src_prepare() {
-        eautoreconf
+	eautoreconf
 }
