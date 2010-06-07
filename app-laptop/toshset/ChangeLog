@@ -1,6 +1,11 @@
 # ChangeLog for app-laptop/toshset
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  -toshset-1.75.ebuild, +toshset-1.76.ebuild:
+  Version bump, cleanup, new SRC_URI, better {C,LD}FLAGS handling. Thanks to
+  xmv, hwoarang
 
   11 Jun 2009; Christian Ruppert <idl0r@gentoo.org> toshset-1.75.ebuild:
   Cleanup, remove unused inherit. Add missing die statement.
