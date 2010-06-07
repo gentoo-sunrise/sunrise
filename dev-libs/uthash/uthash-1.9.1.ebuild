@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/uthash/${P}.tar.bz2"
 
 LICENSE="BSD-1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="test"
 
 DEPEND="test? ( dev-lang/perl )"
@@ -24,7 +24,7 @@ src_test() {
 
 src_install() {
 	insinto /usr/include
-	doins src/ut{hash,list}.h || die "doins failed"
+	doins src/*.h || die "doins failed"
 
-	dodoc doc/txt/{ChangeLog,userguide,utlist}.txt || die "dodoc failed"
+	dodoc doc/txt/{ChangeLog,userguide,ut*}.txt || die "dodoc failed"
 }
