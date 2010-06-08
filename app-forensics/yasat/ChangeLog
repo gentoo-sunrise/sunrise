@@ -1,8 +1,0 @@
-# ChangeLog for app-forensics/yasat
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  04 Jun 2010; Corentin LABBE (montjoie) <corentin.labbe@geomatys.fr>
-  +yasat-286.ebuild, +metadata.xml:
-  New Ebuild for bug 322455
-
