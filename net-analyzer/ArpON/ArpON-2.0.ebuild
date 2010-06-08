@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI="1"
+inherit cmake-utils
 
 DESCRIPTION="ArpON (Arp handler inspectiON) is a portable Arp handler."
 
@@ -19,14 +20,3 @@ DEPEND="dev-libs/libdnet
 	net-libs/libpcap"
 
 RDEPEND=${DEPEND}
-
-src_compile() {
-	emake gentoo || die "emake Gentoo failed"
-}
-
-src_install() {
-	dosbin arpon  || die "arpon installation failed"
-	doman man8/arpon.8 || die "arpon man installation failed"
-	dodoc AUTHORS  CHANGELOG TODO || die
-	dohtml man8/html/*.html doc/*.png || die
-}
