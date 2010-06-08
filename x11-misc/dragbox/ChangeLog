@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jun 2010; Markos Chandras <hwoarang@gentoo.org> dragbox-0.4.0.ebuild:
+  Add missing dependencies
+
   04 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   dragbox-0.4.0.ebuild:
   Dot removed in the description

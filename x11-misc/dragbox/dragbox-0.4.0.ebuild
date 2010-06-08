@@ -14,6 +14,9 @@ IUSE=""
 
 DEPEND="dev-python/pygtk
 	gnome-base/libglade
+	dev-python/gnome-vfs-python
+	dev-python/libgnome-python
+	dev-python/gconf-python
 	sys-apps/dbus
 	x11-libs/gtk+"
 RDEPEND="${DEPEND}"
