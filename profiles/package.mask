@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Michael Weber <gentoo@xmw.de> (08 Jun 2010)
+# Dead upstream. Doesn't build.
+# Masked for removal in 30 days. Bug #237944
+x11-misc/dragbox
+
 # Markos Chandras <hwoarang@gentoo.org> (05 Jun 2010)
 # Dead upstream. Website and distfile don't exist anymore
 # Masked for removal in 30 days. Bug #231227
