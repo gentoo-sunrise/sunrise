@@ -24,7 +24,7 @@ src_prepare() {
 	# make it FHS-friendly
 	sed -e 's:^pcomp :&/usr/libexec/zpaq/:' -i *.cfg || die
 
-	use optimization && printf '#define OPT\n#include "zpaq.cpp"' > zpaqstub.cpp
+	use optimization && printf '#define OPT\n#include "zpaq.cpp"\n' > zpaqstub.cpp
 }
 
 src_configure() {

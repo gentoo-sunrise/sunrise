@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jun 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  zpaq-1.10.ebuild:
+  Add missing trailing newline to the generated zpaqstub.cpp.
+
   04 Jun 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   zpaq-1.10.ebuild, files/zpaqmake.in:
   Use single sed for zpaqmake, use emake to compile executables. Due to the
