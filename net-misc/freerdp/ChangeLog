@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/freerdp
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Jun 2010; Nils Andresen (nils) <andresen.nils@googlemail.com>
+  +freerdp-9999.ebuild, +metadata.xml:
+  FreeRdp First ebuild, thanks to xmw
+

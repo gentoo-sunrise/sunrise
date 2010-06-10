@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<longdescription>FreeRDP is a fork of the rdesktop project that intends to rapidly start moving forward and implement features that rdesktop lacks the most.</longdescription>
+</pkgmetadata>
