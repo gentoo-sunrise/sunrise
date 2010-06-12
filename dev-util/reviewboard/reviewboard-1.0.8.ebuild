@@ -19,11 +19,14 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-python/django
+	dev-python/djblets
 	dev-python/flup
+	dev-python/imaging
 	dev-python/imaging
 	dev-python/paramiko
 	dev-python/pygments
 	dev-python/python-memcached
+	dev-python/pytz
 	|| ( ( www-servers/apache
 		|| ( www-apache/mod_fastcgi www-apache/mod_python ) )
 		www-servers/lighttpd )"
