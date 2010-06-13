@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Markus Ullmann <jokey@gentoo.org> (13 Jun 2010)
+# Lost pvm dependencies
+sci-biology/tgi-tools
+
 # Markos Chandras <hwoarang@gentoo.org> (13 Jun 2010)
 # Requires portaudio-18* which is no longer on tree
 # Masked for removal in 30 days
