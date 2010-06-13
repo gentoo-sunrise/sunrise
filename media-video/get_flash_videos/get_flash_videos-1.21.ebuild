@@ -12,7 +12,7 @@ SRC_URI="http://omploader.org/vNGdjYQ/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="dev-perl/WWW-Mechanize
 	perl-core/Module-CoreList"
