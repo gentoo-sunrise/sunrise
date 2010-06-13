@@ -1,6 +1,9 @@
 # ChangeLog for dev-util/smartcvs
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jun 2010; Markus Ullmann <jokey@gentoo.org> smartcvs-7.0.9.ebuild:
+  Improve description
 
   13 Sep 2009; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
   -smartcvs-7.0.8.ebuild, +smartcvs-7.0.9.ebuild:

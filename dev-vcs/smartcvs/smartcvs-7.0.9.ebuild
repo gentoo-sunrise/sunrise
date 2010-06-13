@@ -7,7 +7,7 @@ inherit eutils java-pkg-2
 MY_PV=${PV//./_}
 MY_P=smartcvs-generic-${MY_PV}
 
-DESCRIPTION="SmartCVS"
+DESCRIPTION="A powerful CVS GUI with compare/merge support"
 HOMEPAGE="http://www.syntevo.com/smartcvs/"
 SRC_URI="${MY_P}.tar.gz"
 SLOT="0"
