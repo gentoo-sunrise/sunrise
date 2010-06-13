@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=2
 
 WX_GTK_VER="2.8"
-inherit autotools wxwidgets
+inherit autotools eutils wxwidgets
 
 MY_PV="${PV/_pre/-dev-r}"
 MY_P="${PN}-${MY_PV}"
@@ -28,7 +28,7 @@ RDEPEND="=x11-libs/wxGTK-2.8*[X]
 	media-libs/freetype
 
 	alsa? (	media-libs/alsa-lib )
-	portaudio? ( =media-libs/portaudio-18* )
+	portaudio? ( =media-libs/portaudio-19* )
 	pulseaudio? ( media-sound/pulseaudio )
 	openal? ( media-libs/openal )
 
@@ -48,6 +48,13 @@ S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
 	check_wxuse opengl
+}
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/${P}-do-not-verify-audiolibs.patch
+	eautoreconf
 }
 
 src_configure() {
