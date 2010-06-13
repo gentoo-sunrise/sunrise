@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	# Removing pre-configured CXXFLAGS from Makefile. The Makefile then only appends 
+	# Removing pre-configured CXXFLAGS from Makefile. The Makefile then only appends
 	# the flags required for wxwidgets to the Gentoo preset.
 	sed -i \
 		-e "s:CXXFLAGS = -O -pipe:CXXFLAGS += :" \
