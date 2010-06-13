@@ -37,7 +37,7 @@ src_prepare() {
 }
 
 src_install() {
-	#...=/bin/true prevents the makefile from updating mime and .desktop 
+	#...=/bin/true prevents the makefile from updating mime and .desktop
 	# databases on its own
 	emake DESTDIR="${D}" \
 		update_xdgmime=/bin/true update_fdodesktop=/bin/true \
