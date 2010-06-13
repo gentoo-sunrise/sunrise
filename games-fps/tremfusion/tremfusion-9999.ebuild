@@ -26,7 +26,7 @@ RDEPEND="opengl? ( ${UIDEPEND} )
 	!opengl? ( !dedicated? ( ${UIDEPEND} ) )
 	media-libs/freetype
 	net-misc/curl
-	|| ( games-fps/tremulous games-fps/tremulous-bin )"
+	games-fps/tremulous"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 
