@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="net-wireless/bluez-libs
+DEPEND="net-wireless/bluez
 	sys-libs/ncurses
 	dev-lang/perl
 	dev-libs/libxml2"
