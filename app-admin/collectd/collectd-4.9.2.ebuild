@@ -57,10 +57,10 @@ COMMON_DEPEND="
 	cd_dns?			( net-libs/libpcap )
 	cd_gmond?		( sys-cluster/ganglia )
 	cd_ipmi?		( >=sys-libs/openipmi-2.0.11 )
-	cd_iptables?		( net-firewall/iptables )
+	cd_iptables?	( net-firewall/iptables )
 	cd_java?		( virtual/jre dev-java/java-config-wrapper )
 	cd_libvirt?		( app-emulation/libvirt dev-libs/libxml2 )
-	cd_memcachec?		( dev-libs/libmemcached )
+	cd_memcachec?	( dev-libs/libmemcached )
 	cd_mysql?		( >=virtual/mysql-5.0 )
 	cd_netlink?		( sys-apps/iproute2 )
 	cd_network?		( dev-libs/libgcrypt )
@@ -71,15 +71,15 @@ COMMON_DEPEND="
 	cd_onewire?		( sys-fs/owfs )
 	cd_oracle?		( >=dev-db/oracle-instantclient-basic-11.1.0.7.0 )
 	cd_perl?		( dev-lang/perl[ithreads] sys-devel/libperl[ithreads] )
-	cd_postgres?		( >=virtual/postgresql-base-8.2 )
+	cd_postgresql?	( >=virtual/postgresql-base-8.2 )
 	cd_python?		( || ( dev-lang/python:2.4  dev-lang/python:2.5 dev-lang/python:2.6 ) )
-	cd_rrdcached?		( >=net-analyzer/rrdtool-1.4 )
+	cd_rrdcached?	( >=net-analyzer/rrdtool-1.4 )
 	cd_rrdtool?		( >=net-analyzer/rrdtool-1.2.27 )
 	cd_sensors?		( sys-apps/lm_sensors )
 	cd_snmp?		( net-analyzer/net-snmp )
-	cd_tokyotyrant?		( net-misc/tokyotyrant )
-	cd_uuid? 		( sys-apps/hal )
-	cd_write_http?		( net-misc/curl )
+	cd_tokyotyrant?	( net-misc/tokyotyrant )
+	cd_uuid?		( sys-apps/hal )
+	cd_write_http?	( net-misc/curl )
 
 	kernel_FreeBSD?	(
 		cd_disk?	( >=sys-libs/libstatgrab-0.16 )
@@ -233,7 +233,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# There's some strange prefix handling in the default config file, resulting in 
+	# There's some strange prefix handling in the default config file, resulting in
 	# paths like "/usr/var/..."
 	sed -i -e "s:@prefix@/var:/var:g" src/collectd.conf.in || die
 }
