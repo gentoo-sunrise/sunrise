@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=2
 
 WX_GTK_VER="2.8"
-inherit autotools eutils wxwidgets
+inherit autotools wxwidgets
 
 MY_PV="${PV/_pre/-dev-r}"
 MY_P="${PN}-${MY_PV}"
