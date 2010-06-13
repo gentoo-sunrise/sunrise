@@ -12,8 +12,7 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~x86"
 RDEPEND=">=virtual/jre-1.5
-	|| ( net-p2p/freenet
-	net-p2p/freenet-bin )"
+	net-p2p/freenet"
 DEPEND=">=virtual/jdk-1.5
 	dev-java/ant"
 S="${WORKDIR}/frost-wot"

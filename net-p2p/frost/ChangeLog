@@ -1,6 +1,9 @@
 # ChangeLog for net-p2p/frost
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jun 2010; Markus Ullmann <jokey@gentoo.org> frost-20080304.ebuild:
+  Fix up depspec
 
   04 Mar 2008; (Tommy[D]) tommy100@gmx.de -frost-20080229.ebuild,
   +frost-20080304.ebuild:
