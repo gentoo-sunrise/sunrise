@@ -45,7 +45,7 @@ src_unpack() {
 
 	# Let portage control stripping
 	sed -i '/^LINK[[:space:]]*=[[:space:]]*/ s/-Wl,-s//' Makefile
-	# disabling background by default 
+	# disabling background by default
 	sed -i 's/background = 1/background = 0/' tunables.c
 }
 
