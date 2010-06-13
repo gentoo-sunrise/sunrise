@@ -23,7 +23,7 @@ DEPEND=">=x11-libs/qt-core-4.5:4
 
 RDEPEND="${DEPEND}
 	!seamonkey? ( || ( www-client/mozilla-firefox
-		www-client/mozilla-firefox-bin ) )
+		www-client/firefox-bin ) )
 	seamonkey? ( || ( www-client/seamonkey
 		www-client/seamonkey-bin ) )"
 
