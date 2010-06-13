@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de> reviewboard-1.0.8.ebuild:
+  Added missing dep dev-python/django-evolution, thanks to Sean Harmer
+  <sh@theharmers.co.uk> for the hint.
+
   12 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de>
   -reviewboard-1.0.7.ebuild, +reviewboard-1.0.8.ebuild:
   Version bump to 1.0.8, thanks to Sean Harmer <sh@theharmers.co.uk> for the
