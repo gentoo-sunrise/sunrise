@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc examples test"
 
 RDEPEND="dev-python/greenlet
-	<dev-lang/python-2.6? ( dev-python/pyopenssl )"
+	|| ( ( <dev-lang/python-2.6 ( dev-python/pyopenssl ) ) >=dev-lang/python-2.6 )"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools
