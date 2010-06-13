@@ -22,6 +22,11 @@
 ##
 
 # Markus Ullmann <jokey@gentoo.org> (13 Jun 2010)
+# Mask live versions, they're both broken
+app-office/wiipresent
+=dev-libs/libwiimote-9999
+
+# Markus Ullmann <jokey@gentoo.org> (13 Jun 2010)
 # Lost pvm dependencies
 sci-biology/tgi-tools
 
