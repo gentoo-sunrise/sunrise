@@ -3,6 +3,9 @@
 # $Header: $
 
   13 Jun 2010; Markus Ullmann <jokey@gentoo.org> aegisub-2.1.8.ebuild:
+  Fix useflags and do proper EAPI2 handling
+
+  13 Jun 2010; Markus Ullmann <jokey@gentoo.org> aegisub-2.1.8.ebuild:
   Unused inherit
 
   13 Jun 2010; Christian Schmidt <schmidt@digadd.de>
