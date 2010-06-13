@@ -26,9 +26,8 @@
 sci-biology/tgi-tools
 
 # Markos Chandras <hwoarang@gentoo.org> (13 Jun 2010)
-# Requires portaudio-18* which is no longer on tree
-# Masked for removal in 30 days
-=media-video/aegisub-2.1.6_pre2939
+# Sandbox violations, Christian Schmidt promised to fix
+=media-video/aegisub-2.1.8
 
 # Christian Schmidt <schmidt@digadd.de> (13 Jun 2010)
 # Requires wxGTK 2.9+ which is not in portage and build
