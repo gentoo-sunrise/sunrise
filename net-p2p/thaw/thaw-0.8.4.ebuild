@@ -18,8 +18,7 @@ CDEPEND="dev-java/jmdns
 	dev-java/bcprov"
 RDEPEND="${CDEPEND}
 	>=virtual/jre-1.4
-	|| ( net-p2p/freenet
-	net-p2p/freenet-bin )"
+	net-p2p/freenet"
 DEPEND="${CDEPEND}
 	>=virtual/jdk-1.4
 	dev-java/ant

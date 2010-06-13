@@ -1,6 +1,9 @@
 # ChangeLog for net-p2p/thaw
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jun 2010; Markus Ullmann <jokey@gentoo.org> thaw-0.8.4.ebuild:
+  Fix up depspec
 
   12 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -thaw-0.8.2.ebuild, +thaw-0.8.4.ebuild:
