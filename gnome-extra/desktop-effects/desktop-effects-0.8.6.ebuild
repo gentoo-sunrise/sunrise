@@ -38,7 +38,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# adds the format string to gtk_message_dialog_new 
+	# adds the format string to gtk_message_dialog_new
 	epatch "${FILESDIR}/${P}-gtk-2.20-fix.patch"
 
 	#Gentoo doesn't have compiz-gtk, replace it and add gconf to start string
