@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jun 2010; Markus Ullmann <jokey@gentoo.org> smartsvn-6.5.4.ebuild:
+  Improve description
+
   27 Feb 2010; Nikos Nikolaou (nxnikos) <nikos@nikolaou.name>
   -smartsvn-6.0.9.ebuild, +smartsvn-6.5.4.ebuild:
   version bump, extra svg icon, ok to commit by Tommy[D]

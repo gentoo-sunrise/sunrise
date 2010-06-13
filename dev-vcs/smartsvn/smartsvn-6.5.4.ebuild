@@ -7,7 +7,7 @@ inherit eutils java-pkg-2
 MY_PV=${PV//./_}
 MY_P=smartsvn-generic-${MY_PV}
 
-DESCRIPTION="SmartSVN"
+DESCRIPTION="GUI to SVN with extensive merge support and commit wizard"
 HOMEPAGE="http://www.syntevo.com/smartsvn/"
 SRC_URI="${MY_P}.tar.gz"
 SLOT="0"
