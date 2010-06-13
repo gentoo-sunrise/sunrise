@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="
-	dev-lang/python[tk]
+RDEPEND="dev-lang/python[tk]
 	dev-python/numpy
 	dev-python/imaging[tk]
 	dev-python/pmw
@@ -38,7 +37,7 @@ src_prepare() {
 		-e "s/LDFLAGS/LIBDIRS/g" \
 		Makefile.in || die "sed failed"
 
-	# drop hardcoded libdir path, 
+	# drop hardcoded libdir path,
 	# switch LDFLAGS naming to LIBDIRS (see above comment).
 	sed -i -e "s/, f2py/, f2py$(python_get_version)/" \
 		-e "s:-L/usr/local/lib:-L/usr/$(get_libdir):" \
