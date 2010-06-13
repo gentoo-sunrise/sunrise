@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Jun 2010; Christian Schmidt <schmidt@digadd.de>
+  +aegisub-2.1.8.ebuild -aegisub-2.1.6_pre2939.ebuild
+  stable version; ebuild from bug 174191
+
   22 May 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -aegisub-2.1_pre1981.ebuild, +aegisub-2.1.6_pre2939.ebuild:
   Version bump on user request, compiles, no further tests done

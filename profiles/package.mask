@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Christian Schmidt <schmidt@digadd.de> (13 Jun 2010)
+# Requires wxGTK 2.9+ which is not in portage and build
+# problems with wxGTK 9999
+=media-video/aegisub-9999
+
 # Markos Chandras <hwoarang@gentoo.org> (05 Jun 2010)
 # Dead upstream. Website and distfile don't exist anymore
 # Masked for removal in 30 days. Bug #231227
