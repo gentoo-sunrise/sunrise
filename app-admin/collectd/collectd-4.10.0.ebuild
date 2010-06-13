@@ -235,7 +235,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# There's some strange prefix handling in the default config file, resulting in 
+	# There's some strange prefix handling in the default config file, resulting in
 	# paths like "/usr/var/..."
 	sed -i -e "s:@prefix@/var:/var:g" src/collectd.conf.in || die
 }
