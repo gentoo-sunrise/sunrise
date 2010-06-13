@@ -1,6 +1,9 @@
 # ChangeLog for sys-auth/pam_pgsql
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Jun 2010; Markus Ullmann <jokey@gentoo.org> pam_pgsql-1.0.0.ebuild:
+  Fix up depspec
 
   19 Jan 2009; Christian Ruppert (idl0r) <spooky85@gmail.com>
   pam_pgsql-1.0.0.ebuild:

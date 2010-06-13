@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=sys-libs/pam-0.78-r3
 	>=app-crypt/mhash-0.9.1
-	>=dev-db/postgresql-7.3.6"
+	dev-db/postgresql-base"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN/_/-}"
