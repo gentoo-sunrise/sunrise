@@ -24,7 +24,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# make documentation location Gentoo like    
+	# make documentation location Gentoo like
 	epatch "${FILESDIR}"/opensaml_doc.diff
 	eautoreconf
 }
