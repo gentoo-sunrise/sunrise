@@ -1,0 +1,8 @@
+# ChangeLog for kde-misc/pyrad
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Jun 2010; Arne Babenhauserheide (ArneBab) <arne_bab@web.de>
+  +pyrad-0.4.3.ebuild, +metadata.xml:
+  New Ebuild for bug 298675, thanks to jokey.
+
