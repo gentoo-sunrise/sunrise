@@ -33,7 +33,7 @@ src_prepare() {
 }
 
 src_compile() {
-	emake CC="$(tc-getCC)" 	|| die "compilation failed"
+	emake CC="$(tc-getCC)" || die "compilation failed"
 }
 
 src_install() {
