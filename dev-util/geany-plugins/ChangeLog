@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jun 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -geany-plugins-0.18.ebuild,
+  +geany-plugins-0.19.ebuild:
+  Bumped to geany-plugins-0.19. Added the LINGUAS variable which I forgot
+  before. Thanks to few_ for the notice that there's a new geany.
+
   28 Feb 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> geany-plugins-0.18.ebuild:
   Fix {R,}DEPEND on dev-util/geany to be more general.

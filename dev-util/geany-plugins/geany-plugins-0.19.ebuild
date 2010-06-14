@@ -15,6 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="enchant gtkspell lua nls"
 
+LINGUAS="be ca da de es fr gl ja pt pt_BR ru tr zh_CN"
+
 RDEPEND="=dev-util/geany-0.18*
 	enchant? ( app-text/enchant )
 	gtkspell? ( app-text/gtkspell )
