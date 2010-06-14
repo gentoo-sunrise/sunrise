@@ -1,6 +1,10 @@
 # ChangeLog for sci-electronics/voacapl
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Jun 2010; Thomas Beierlein <tomjbe@gentoo.org> -voacapl-0.5.6.ebuild,
+  +voacapl-0.5.7.ebuild:
+  Version bump.
 
   08 Dec 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   voacapl-0.5.6.ebuild:
