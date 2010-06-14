@@ -20,6 +20,7 @@ IUSE=""
 DOCS="AUTHORS"
 
 DEPEND="x11-libs/qt-gui:4"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	dev-libs/qoauth"
 
 S=${WORKDIR}/${MY_P}

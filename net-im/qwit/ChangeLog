@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jun 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  -qwit-1.0_beta.ebuild, +qwit-1.1_beta.ebuild:
+  Version bump, added dev-libs/qoauth dependancy
+
   20 Mar 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   qwit-0.10.ebuild:
   Fixed typo in ebuild description and added AUTHORS to DOCS
