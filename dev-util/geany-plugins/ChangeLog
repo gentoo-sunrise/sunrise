@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> geany-plugins-0.19.ebuild:
+  Fixed DEPEND on geany to match the version of geany-plugins.
+  geany-plugins-0.19 was trying to depend on geany-0.18. Thanks again to few_
+  for noting this.
+
   14 Jun 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> -geany-plugins-0.18.ebuild,
   +geany-plugins-0.19.ebuild:

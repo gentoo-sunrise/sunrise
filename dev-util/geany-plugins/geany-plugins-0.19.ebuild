@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit base
+inherit base versionator
 
 DESCRIPTION="A collection of different plugins for Geany"
 HOMEPAGE="http://plugins.geany.org/geany-plugins"
@@ -17,7 +17,7 @@ IUSE="enchant gtkspell lua nls"
 
 LINGUAS="be ca da de es fr gl ja pt pt_BR ru tr zh_CN"
 
-RDEPEND="=dev-util/geany-0.18*
+RDEPEND="=dev-util/geany-$(get_version_component_range 1-2)*
 	enchant? ( app-text/enchant )
 	gtkspell? ( app-text/gtkspell )
 	lua? ( dev-lang/lua )"
