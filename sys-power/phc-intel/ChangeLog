@@ -3,6 +3,11 @@
 # $Header: $
 
   15 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  -phc-intel-0.3.2.11.ebuild, +phc-intel-0.3.2.12.1.ebuild:
+  Version bump, make prepare no longer needed, fixed pkg_setup issue with
+  linux-mod
+
+  15 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de>
   phc-intel-0.3.2.10.ebuild:
   Upstream readded the download location, SRC_URI updated
 
