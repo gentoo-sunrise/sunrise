@@ -8,7 +8,8 @@ inherit linux-info linux-mod
 
 DESCRIPTION="Processor Hardware Control for AMD K8 CPUs"
 HOMEPAGE="http://www.linux-phc.org/"
-SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=83 -> ${P}.tar.gz"
+SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=83 -> ${P}.tar.gz
+	http://xmw.de/mirror/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
