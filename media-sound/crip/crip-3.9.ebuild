@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="A terminal-based ripper/encoder/tagger tool for creating Ogg Vorbis and FLAC files."
 HOMEPAGE="http://bach.dynet.com/crip/index.html"
