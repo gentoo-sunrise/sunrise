@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jun 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -build-0.3.5.ebuild, +build-0.3.7.ebuild:
+  Bump to build-0.3.7. Update HOMEPAGE and SRC_URI to reflect new project
+  hosting.
+
   19 Jan 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> build-0.3.5.ebuild:
   SLOT build because packages which use it have /usr/include/build-${SLOT}

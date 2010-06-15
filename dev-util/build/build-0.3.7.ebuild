@@ -8,8 +8,8 @@ inherit versionator
 
 SLOT=$(get_version_component_range 1-2)
 DESCRIPTION="A massively-parallel software build system implemented on top of GNU make"
-HOMEPAGE="http://kolpackov.net/projects/build/"
-SRC_URI="ftp://kolpackov.net/pub/projects/${PN}/${SLOT}/${P}.tar.bz2"
+HOMEPAGE="http://codesynthesis.com/projects/build/"
+SRC_URI="http://codesynthesis.com/download/${PN}/${SLOT}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64"
