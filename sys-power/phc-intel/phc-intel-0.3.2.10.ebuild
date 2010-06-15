@@ -8,7 +8,8 @@ inherit linux-info linux-mod
 
 DESCRIPTION="Processor Hardware Control for Intel CPUs"
 HOMEPAGE="http://www.linux-phc.org/"
-SRC_URI="http://xmw.de/mirror/${PN}/${P}.tar.bz2"
+SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=87 -> ${P}.tar.bz2
+	http://xmw.de/mirror/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
