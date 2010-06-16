@@ -1,0 +1,9 @@
+# ChangeLog for app-mobilephone/series60-remote
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Jun 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  +series60-remote-0.3.93.ebuild, +metadata.xml:
+  New Ebuild for bug 324349. Thank you at Walter 'DaK_TaLeS' Da Col for the
+  rough ebuild
+
