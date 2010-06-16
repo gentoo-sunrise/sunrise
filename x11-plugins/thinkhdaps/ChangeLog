@@ -1,0 +1,8 @@
+# ChangeLog for x11-plugins/thinkhdaps
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de> +thinkhdaps-0.2.1.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 324111
+
