@@ -17,11 +17,12 @@ IUSE=""
 
 RDEPEND="dev-db/sqlite:3
 	>=dev-lang/vala-0.7.8
+	>=dev-libs/gdl-2.28
 	dev-libs/glib:2
 	dev-libs/libunique
 	dev-libs/libxml2
 	>=x11-libs/gtk+-2.18.0:2
-	x11-libs/gtksourceview:2.0"
+	>=x11-libs/gtksourceview-2.10"
 DEPEND="${RDEPEND}
 	dev-lang/python"
 
