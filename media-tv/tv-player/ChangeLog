@@ -3,6 +3,10 @@
 # $Header: $
 
   16 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  tv-player-9999.ebuild:
+  Added net-misc/mimms as blocker
+
+  16 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   +tv-player-9999.ebuild, +metadata.xml:
   New Ebuild for bug 304197 thanks to hwoarang
 

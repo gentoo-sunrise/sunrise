@@ -22,6 +22,7 @@ EBZR_REPO_URI="lp:tv-player"
 DEPEND="dev-python/pygtk
 	media-video/flvstreamer
 	media-libs/libmms
+	!net-misc/mimms
 	media-libs/gst-plugins-base
 	media-libs/gst-plugins-good
 	media-libs/gst-plugins-ugly
