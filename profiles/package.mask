@@ -93,3 +93,7 @@ sci-mathematics/alberta
 # Patrick Zimmermann <patrick@zakweb.de> (28 Jun 2006)
 # Has dependencies that are masked
 games-fps/unreal-tournament-operationnapali
+
+# Laurento Frittella <laurento.frittella@gmail.com> (16 Jun 2010)
+# masked as it bundles net-misc/mimms package. bad security practice
+media-tv/tv-player
