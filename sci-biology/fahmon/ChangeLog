@@ -1,6 +1,10 @@
 # ChangeLog for sci-biology/fahmon
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Jun 2010; Justin Lecher <jlec@gentoo.org> -fahmon-2.3.4.ebuild,
+  +fahmon-2.3.99.1.ebuild:
+  Version BUmp, added missing dep on libcurl
 
   04 Mar 2009; Rasmus Ljungmann Pedersen (Ljungmann) <rasmuslp@gmail.com>
   +fahmon-2.3.4.ebuild, +metadata.xml:

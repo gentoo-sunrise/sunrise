@@ -17,7 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/wxGTK:${WX_GTK_VER}[X]"
+RDEPEND="
+	x11-libs/wxGTK:${WX_GTK_VER}[X]
+	net-misc/curl"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
