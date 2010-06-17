@@ -6,7 +6,7 @@ EAPI="2"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="A Python application to manage your S60 3rd Edition mobile phone"
 HOMEPAGE="http://series60-remote.sourceforge.net/"
@@ -25,3 +25,12 @@ RDEPEND="obex? ( app-mobilephone/obexftp[python] )
 RESTRICT_PYTHON_ABIS="3.*"
 
 DOCS="TODO Changelog"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-menufix.patch"
+	distutils_src_prepare
+}
+
+src_compile() {
+	{ :; }
+}

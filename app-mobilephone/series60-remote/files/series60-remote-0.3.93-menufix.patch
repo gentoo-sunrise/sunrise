@@ -1,0 +1,10 @@
+Index: pc/series60-remote.desktop
+===================================================================
+--- pc/series60-remote.desktop.orig
++++ pc/series60-remote.desktop
+@@ -6,4 +6,4 @@ Icon=phone
+ Comment=Application to manage your S60 mobile phone
+ Comment[de]=Software-Suite zum Verwalten eines S60 Mobiltelefons
+ MimeType=
+-Categories=Network;Office;
++Categories=Office;
