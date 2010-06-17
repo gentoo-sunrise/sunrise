@@ -40,11 +40,6 @@ sci-biology/tgi-tools
 =media-video/aegisub-9999
 
 # Markos Chandras <hwoarang@gentoo.org> (05 Jun 2010)
-# Dead upstream. Website and distfile don't exist anymore
-# Masked for removal in 30 days. Bug #231227
-sci-misc/gcam
-
-# Markos Chandras <hwoarang@gentoo.org> (05 Jun 2010)
 # Masking live ebuilds for packages that exist on portage
 # tree until maintainers resolve this with respected herds
 =dev-libs/yajl-9999
