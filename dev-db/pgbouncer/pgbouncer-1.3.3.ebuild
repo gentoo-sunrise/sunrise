@@ -6,6 +6,8 @@ EAPI="2"
 
 inherit autotools eutils
 
+RESTRICT="test"
+
 DESCRIPTION="Lightweight connection pooler for PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/projects/pgbouncer/"
 SRC_URI="http://pgfoundry.org/frs/download.php/2677/${P}.tgz"
