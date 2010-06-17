@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Jun 2010; Justin Lecher <jlec@gentoo.org> -phc-intel-0.3.2.10.ebuild:
+  Only one version per package is allowed in sunrise
+
   15 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de>
   +phc-intel-0.3.199.3_pre.ebuild:
   Added highly experimental prerelease for future phc-intel-0.4
