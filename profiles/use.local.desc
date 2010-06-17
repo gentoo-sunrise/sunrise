@@ -149,6 +149,8 @@ app-misc/heyu:rfxm - Support RFXMeters
 app-misc/heyu:rfxs - Support RFXSensors
 app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
+app-mobilephone/series60-remote:obex - Enable *.sis files transfer and file browser
+app-mobilephone/series60-remote:stats - Enable statistics graph visualization
 app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x and earlier file formats
 app-office/openoffice-infra:infradicts - Use all bundled dicts from Infra-Resource
 app-office/openoffice-infra:odk - Build the Office Development Kit
@@ -337,8 +339,6 @@ net-misc/uanytun:examples - Install example configuration into /usr/share/doc/..
 net-misc/uanytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
-sci-electronics/gspiceui:schematics - Use sci-electronics/geda for schematics editing
-sci-electronics/gspiceui:waveform - Use sci-electronics/gwave for waveform display
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
