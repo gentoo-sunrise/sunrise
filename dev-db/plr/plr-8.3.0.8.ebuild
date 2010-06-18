@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-lang/R
-	=virtual/postgresql-server-${SLOT}*"
+	=dev-db/postgresql-server-${SLOT}*"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/contrib/${PN}"

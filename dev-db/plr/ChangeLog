@@ -1,6 +1,10 @@
 # ChangeLog for dev-db/plr
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  plr-8.2.0.10.ebuild, plr-8.3.0.8.ebuild:
+  Migrating away from deprecated postgres virtuals
 
   04 Jun 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca> ChangeLog:
   Initial commit for bug #272610; thanks to idl0r for help with ebuild form
