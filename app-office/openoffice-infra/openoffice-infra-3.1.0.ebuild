@@ -116,7 +116,7 @@ DEPEND="${COMMON_DEPEND}
 	java? ( || ( =virtual/jdk-1.6* =virtual/jdk-1.5* )
 		>=dev-java/ant-core-1.7 )
 	ldap? ( net-nds/openldap )
-	postgres? ( virtual/postgresql-base )"
+	postgres? ( dev-db/postgresql-base )"
 
 PROVIDE="virtual/ooo"
 RESTRICT="strip" # the openoffice.org from infra-resource is already stripped
