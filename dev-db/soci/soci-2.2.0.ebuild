@@ -15,7 +15,7 @@ IUSE="debug firebird mysql postgres sqlite3"
 
 DEPEND="firebird? ( dev-db/firebird )
 	mysql? ( virtual/mysql )
-	postgres? ( virtual/postgresql-base )
+	postgres? ( dev-db/postgresql-base )
 	sqlite3? ( =dev-db/sqlite-3* )"
 RDEPEND=${DEPEND}
 
