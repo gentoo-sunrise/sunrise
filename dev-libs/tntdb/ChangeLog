@@ -1,6 +1,10 @@
 # ChangeLog for dev-libs/tntdb
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  tntdb-1.0.1.ebuild:
+  Migrating away from deprecated postgres virtuals
 
   17 Nov 2008; Tiziano Müller <dev-zero@gentoo.org> -tntdb-0.9.4.ebuild,
   +tntdb-1.0.1.ebuild:
