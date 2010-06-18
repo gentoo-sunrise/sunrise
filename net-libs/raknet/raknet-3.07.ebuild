@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="autopatcher doc rakvoice"
 
-RDEPEND="autopatcher? ( virtual/postgresql-base app-arch/bzip2 )
+RDEPEND="autopatcher? ( dev-db/postgresql-base app-arch/bzip2 )
 	rakvoice? ( media-libs/speex )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
