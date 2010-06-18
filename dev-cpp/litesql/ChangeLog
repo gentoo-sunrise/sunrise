@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/litesql
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  litesql-0.3.2.ebuild:
+  Migrating away from deprecated postgres virtuals
 
   18 Jun 2008; Tiziano Müller <dev-zero@gentoo.org> litesql-0.3.2.ebuild,
   +files/litesql-0.3.2-gcc43_glibc28.patch:
