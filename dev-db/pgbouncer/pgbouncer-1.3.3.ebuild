@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc"
 
-DEPEND=">=virtual/postgresql-base-8.0
+DEPEND=">=dev-db/postgresql-base-8.0
 	dev-libs/libevent"
 RDEPEND="${DEPEND}"
 

@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pgbouncer-1.3.3.ebuild:
+  Migrating away from deprecated postgres virtuals
+
   17 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pgbouncer-1.3.3.ebuild:
   RESTRICT test suite
