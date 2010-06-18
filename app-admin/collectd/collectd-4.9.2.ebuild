@@ -71,7 +71,7 @@ COMMON_DEPEND="
 	cd_onewire?		( sys-fs/owfs )
 	cd_oracle?		( >=dev-db/oracle-instantclient-basic-11.1.0.7.0 )
 	cd_perl?		( dev-lang/perl[ithreads] sys-devel/libperl[ithreads] )
-	cd_postgresql?	( >=virtual/postgresql-base-8.2 )
+	cd_postgresql?	( >=dev-db/postgresql-base-8.2 )
 	cd_python?		( || ( dev-lang/python:2.4  dev-lang/python:2.5 dev-lang/python:2.6 ) )
 	cd_rrdcached?	( >=net-analyzer/rrdtool-1.4 )
 	cd_rrdtool?		( >=net-analyzer/rrdtool-1.2.27 )

@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  collectd-4.9.2.ebuild, collectd-4.10.0.ebuild:
+  Migrating away from deprecated postgres virtuals
+
   13 Jun 2010; Markus Ullmann <jokey@gentoo.org> collectd-4.9.2.ebuild,
   collectd-4.10.0.ebuild:
   Fix up whitespace an useflag consistency
