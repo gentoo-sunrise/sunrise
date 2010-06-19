@@ -3,4 +3,7 @@
 <pkgmetadata>
 <herd>no-herd</herd>
 <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<use>
+		<flag name='webcam'>Enable support for webcam</flag>
+	</use>
 </pkgmetadata>

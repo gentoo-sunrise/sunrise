@@ -1,6 +1,10 @@
 # ChangeLog for net-im/emesene
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jun 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  -emesene-1.5.1.ebuild, +emesene-1.6.2.ebuild, metadata.xml:
+  Version bump, ebuild improvement
 
   18 Oct 2009; Alexander van der Mey <alexvandermey@gmail.com>
   -emesene-1.0.1.ebuild, +emesene-1.5.1.ebuild:
