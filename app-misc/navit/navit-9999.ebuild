@@ -29,7 +29,7 @@ RDEPEND="dev-libs/glib:2
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	dev-util/cvs
+	dev-vcs/cvs
 	svg? ( || ( gnome-base/librsvg media-gfx/imagemagick[png,svg] ) )"
 
 ESVN_REPO_URI="http://navit.svn.sourceforge.net/svnroot/navit/trunk/navit"
