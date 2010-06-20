@@ -13,7 +13,7 @@ SRC_URI="http://www.linux-phc.org/forum/download/file.php?id=86 -> ${P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 S=${WORKDIR}/test-release-$(replace_version_separator 3 '-' $(get_version_component_range 1-4))
