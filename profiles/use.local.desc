@@ -304,6 +304,7 @@ net-im/ekg2:web - Enable httprc_xajax WebUI plugin.
 net-im/ekg2-remote:gnutls - Enable SSL/TLS support through GnuTLS. If 'ssl' is set too, GnuTLS will be used.
 net-im/ekg2-remote:ssl - Enable SSL/TLS support through OpenSSL. If 'gnutls' is set too, it will be used instead.
 net-im/ekg2-remote:static - Link statically with plugins instead of installing them as shared libraries (external libraries can still be linked dynamically).
+net-im/emesene:webcam - Enable support for webcam
 net-libs/raknet:autopatcher - Enable RakNet autopatcher support
 net-libs/raknet:rakvoice - Enable RakNet RakVoice module
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
