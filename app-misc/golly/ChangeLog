@@ -1,0 +1,10 @@
+# ChangeLog for app-misc/golly
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Jun 2010; Maks Verver (Soultaker) <maksverver@geocities.com>
+  +golly-2.1.ebuild, +files/golly-2.1-perl-ldopts.patch,
+  +files/golly-2.1-python-amd64.patch,
+  +files/golly-separate-data-directory.patch, +metadata.xml:
+  New Ebuild for bug 323219
+

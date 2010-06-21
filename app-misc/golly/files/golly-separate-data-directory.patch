@@ -1,0 +1,62 @@
+--- golly-2.1-src.old/wxgolly.cpp	2009-09-07 02:35:55.000000000 +0200
++++ golly-2.1-src.new/wxgolly.cpp	2010-06-08 17:34:51.000000000 +0200
+@@ -195,42 +195,6 @@
+ 
+ // -----------------------------------------------------------------------------
+ 
+-void SetAppDirectory(const char* argv0)
+-{
+-   #ifdef __WXMSW__
+-      // on Windows we need to reset current directory to app directory if user
+-      // dropped file from somewhere else onto app to start it up (otherwise we
+-      // can't find Help files)
+-      wxString appdir = wxStandardPaths::Get().GetDataDir();
+-      wxString currdir = wxGetCwd();
+-      if ( currdir.CmpNoCase(appdir) != 0 )
+-         wxSetWorkingDirectory(appdir);
+-      // avoid VC++ warning
+-      wxUnusedVar(argv0);
+-   #elif defined(__WXMAC__)
+-      // wxMac has set current directory to location of .app bundle so no need
+-      // to do anything
+-   #else // assume Unix
+-      // user might have started app from a different directory so find
+-      // last "/" in argv0 and change cwd if "/" isn't part of "./" prefix
+-      unsigned int pos = strlen(argv0);
+-      while (pos > 0) {
+-         pos--;
+-         if (argv0[pos] == '/') break;
+-      }
+-      if ( pos > 0 && !(pos == 1 && argv0[0] == '.') ) {
+-         char appdir[2048];
+-         if (pos < sizeof(appdir)) {
+-            strncpy(appdir, argv0, pos);
+-            appdir[pos] = 0;
+-            wxSetWorkingDirectory(wxString(appdir,wxConvLocal));
+-         }
+-      }
+-   #endif
+-}
+-
+-// -----------------------------------------------------------------------------
+-
+ void GollyApp::SetFrameIcon(wxFrame* frame)
+ {
+    // set frame icon
+@@ -280,13 +244,12 @@
+       wxSystemOptions::SetOption(wxMAC_TEXTCONTROL_USE_MLTE, 1);
+    #endif
+ 
+-   // get current working directory before calling SetAppDirectory
++   // get current working directory before changing to data directory
+    wxString initdir = wxFileName::GetCwd();
+    if (initdir.Last() != wxFILE_SEP_PATH) initdir += wxFILE_SEP_PATH;
+ 
+-   // make sure current working directory contains application otherwise
+-   // we can't open Help files
+-   SetAppDirectory( wxString(argv[0]).mb_str(wxConvLocal) );
++   // change to data directory
++   wxSetWorkingDirectory(wxString("/usr/share/golly", wxConvLocal));
+ 
+    // now set global gollydir for use in GetPrefs and elsewhere
+    gollydir = wxFileName::GetCwd();
