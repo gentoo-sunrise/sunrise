@@ -15,7 +15,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="amarok audacious banshee exaile mpd mplayer rhythmbox totem tvtime vlc"
+IUSE="amarok audacious banshee exaile mpd mplayer quodlibet rhythmbox totem tvtime vlc"
 
 DEPEND="dev-python/dbus-python
 	dev-python/imaging
@@ -33,6 +33,7 @@ RDEPEND="${DEPEND}
 		>=dev-python/python-mpd-0.2
 	)
 	mplayer? ( media-video/mplayer )
+	quodlibet? ( >=media-sound/quodlibet-2.2 )
 	rhythmbox? (
 		>=media-sound/rhythmbox-0.11.5
 		dev-python/gconf-python
@@ -41,7 +42,7 @@ RDEPEND="${DEPEND}
 	tvtime? ( >=media-tv/tvtime-0.9.11 )
 	vlc? ( >=media-video/vlc-0.9[dbus] )"
 
-DOCS="doc/AUTHORS doc/CHANGES doc/README doc/api.html doc/shutdown-system.example doc/volume.example"
+DOCS="doc/AUTHORS doc/CHANGES doc/README doc/api.html"
 
 src_compile() {
 	local adapter
@@ -60,4 +61,7 @@ pkg_postinst() {
 
 	einfo "The JAR and JAD files for your mobile phone or other J2ME device can"
 	einfo "be found in /usr/share/${P}/client."
+	einfo
+	einfo "For the usage info take a look at:"
+	einfo "${HOMEPAGE}/wiki/GettingStarted#Usage"
 }

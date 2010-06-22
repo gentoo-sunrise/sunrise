@@ -9,6 +9,7 @@
 		<flag name='banshee'>Enable Banshee media player support</flag>
 		<flag name='exaile'>Enable Exaile media player support</flag>
 		<flag name='mpd'>Enable Music Player Daemon support</flag>
+		<flag name='quodlibet'>Enable Quod Libet media player support</flag>
 		<flag name='rhythmbox'>Enable Rhythmbox media player support</flag>
 		<flag name='totem'>Enable Totem media player support</flag>
 		<flag name='tvtime'>Enable Tvtime support</flag>

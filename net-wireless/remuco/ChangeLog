@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  -remuco-0.9.2.ebuild, +remuco-0.9.3.ebuild, metadata.xml:
+  Version bump and some cleanups
+
+  22 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   +remuco-0.9.2.ebuild, +metadata.xml:
   New Ebuild for bug 276587 thanks to hwoarang, xmv and Tommy[D]
 
