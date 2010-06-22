@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-RDEPEND="dev-util/subversion
+RDEPEND="dev-vcs/subversion
 	>=sys-apps/portage-2.1"
 
 src_install() {
