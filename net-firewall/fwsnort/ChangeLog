@@ -1,0 +1,8 @@
+# ChangeLog for net-firewall/fwsnort
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Jun 2010; Dane Smith (smithdanea) <smithdanea@gmail.com>
+  +fwsnort-1.1.ebuild, +metadata.xml:
+  New ebuild for bug 236346.
+
