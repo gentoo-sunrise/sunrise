@@ -3,6 +3,10 @@
 # $Header: $
 
   22 Jun 2010; Dane Smith (smithdanea) <smithdanea@gmail.com>
+  fwsnort-1.1.ebuild:
+  Removed fperms from fwsnort.
+
+  22 Jun 2010; Dane Smith (smithdanea) <smithdanea@gmail.com>
   +fwsnort-1.1.ebuild, +metadata.xml:
   New ebuild for bug 236346.
 

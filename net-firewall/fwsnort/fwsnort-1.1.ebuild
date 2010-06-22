@@ -26,7 +26,6 @@ src_install(){
 	doins deps/snort_rules/*.rules || die
 
 	dosbin ${PN} || die
-	fperms 500 /usr/sbin/${PN} || die
 	doman *.8 || die
 	dodoc README ChangeLog TODO || die
 }
