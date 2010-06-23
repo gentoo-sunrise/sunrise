@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  -remuco-0.9.3.ebuild, +remuco-0.9.3-r1.ebuild:
+  Binary clients have been dropped
+
   23 Jun 2010; Justin Lecher <jlec@gentoo.org> remuco-0.9.3.ebuild:
   python.eclass is inherited by distutils.eclass, resort ebuild
 

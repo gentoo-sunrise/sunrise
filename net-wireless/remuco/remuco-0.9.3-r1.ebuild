@@ -3,16 +3,16 @@
 # $Header: $
 
 EAPI=2
-
-PYTHON_DEPEND="2:2.5"
+PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+inherit distutils python
 
+MY_P=${PN}-source-${PV}
 DESCRIPTION="A server and J2ME client to control various media players"
 HOMEPAGE="http://code.google.com/p/remuco"
-SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
-
+SRC_URI="http://${PN}.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -23,6 +23,7 @@ DEPEND="dev-python/dbus-python
 	dev-python/pybluez
 	dev-python/pygobject
 	dev-python/pyxdg"
+
 RDEPEND="${DEPEND}
 	amarok? ( >=media-sound/amarok-2.0 )
 	audacious? ( >=media-sound/audacious-1.5.1 )
@@ -42,18 +43,17 @@ RDEPEND="${DEPEND}
 	tvtime? ( >=media-tv/tvtime-0.9.11 )
 	vlc? ( >=media-video/vlc-0.9[dbus] )"
 
-RESTRICT_PYTHON_ABIS="3.*"
-
+S=${WORKDIR}/${MY_P}
 DOCS="doc/AUTHORS doc/CHANGES doc/README doc/api.html"
 
 src_compile() {
 	local adapter
-	export REMUCO_CLIENT_DEST="share/${P}/client"
-	export REMUCO_COMPONENTS="client"
+	export REMUCO_COMPONENTS
 
 	for adapter in ${IUSE}; do
-		use ${adapter} && REMUCO_COMPONENTS="${REMUCO_COMPONENTS},${adapter}"
+		use ${adapter} && REMUCO_COMPONENTS+="${adapter},"
 	done
+	REMUCO_COMPONENTS=${REMUCO_COMPONENTS%,}
 
 	distutils_src_compile
 }
@@ -61,8 +61,9 @@ src_compile() {
 pkg_postinst() {
 	distutils_pkg_postinst
 
-	einfo "The JAR and JAD files for your mobile phone or other J2ME device can"
-	einfo "be found in /usr/share/${P}/client."
+	echo
+	einfo "Both MIDP and Android clients can be found in the official binary tarball:"
+	einfo "http://${PN}.googlecode.com/files/${P}.tar.gz"
 	einfo
 	einfo "For the usage info take a look at:"
 	einfo "${HOMEPAGE}/wiki/GettingStarted#Usage"
