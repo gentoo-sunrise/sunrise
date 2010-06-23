@@ -3,15 +3,16 @@
 # $Header: $
 
 EAPI=2
+
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils python
+inherit distutils
 
 DESCRIPTION="A server and J2ME client to control various media players"
 HOMEPAGE="http://code.google.com/p/remuco"
 SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -22,7 +23,6 @@ DEPEND="dev-python/dbus-python
 	dev-python/pybluez
 	dev-python/pygobject
 	dev-python/pyxdg"
-
 RDEPEND="${DEPEND}
 	amarok? ( >=media-sound/amarok-2.0 )
 	audacious? ( >=media-sound/audacious-1.5.1 )
@@ -41,6 +41,8 @@ RDEPEND="${DEPEND}
 	totem? ( >=media-video/totem-2.22 )
 	tvtime? ( >=media-tv/tvtime-0.9.11 )
 	vlc? ( >=media-video/vlc-0.9[dbus] )"
+
+RESTRICT_PYTHON_ABIS="3.*"
 
 DOCS="doc/AUTHORS doc/CHANGES doc/README doc/api.html"
 
