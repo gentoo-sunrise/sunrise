@@ -9,9 +9,9 @@ inherit base
 DESCRIPTION="Filter files out of unified diffs using POSIX extended regular expressions"
 HOMEPAGE="http://ohnopub.net/~ohnobinki/difffilter/"
 SRC_URI="ftp://ohnopub.net/mirror/${P}.tar.bz2"
+
 LICENSE="GPL-3"
 SLOT="0"
-
 KEYWORDS="~amd64"
 IUSE="doc"
 
