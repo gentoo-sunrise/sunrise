@@ -1,0 +1,8 @@
+# ChangeLog for app-benchmarks/ramspeed
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Jun 2010; Dane Smith (smithdanea) <smithdanea@gmail.com>
+  +ramspeed-2.6.0.ebuild, +metadata.xml:
+  New ebuild for 304101
+
