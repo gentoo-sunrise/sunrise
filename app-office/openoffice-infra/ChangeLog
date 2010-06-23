@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jun 2010; Justin Lecher <jlec@gentoo.org>
+  openoffice-infra-3.1.0.ebuild:
+  net-misc/neon -> net-libs/neon
+
   18 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   openoffice-infra-3.1.0.ebuild:
   Migrating away from deprecated postgres virtuals

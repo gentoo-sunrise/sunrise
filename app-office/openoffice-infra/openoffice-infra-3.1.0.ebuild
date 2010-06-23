@@ -67,7 +67,7 @@ COMMON_DEPEND="!app-office/openoffice-infra-bin
 		>=dev-libs/nss-3.11-r1 )
 	opengl? ( virtual/opengl
 		virtual/glu )
-	>=net-misc/neon-0.24.7
+	>=net-libs/neon-0.24.7
 	>=dev-libs/openssl-0.9.8g
 	>=x11-libs/startup-notification-0.5
 	>=media-libs/freetype-2.1.10-r2
