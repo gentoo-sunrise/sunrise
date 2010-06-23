@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jun 2010; Justin Lecher <jlec@gentoo.org>
+  songbird-bin-1.4.3.1438.ebuild:
+  net-misc/neon -> net-libs/neon
+
   19 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>
   songbird-bin-1.4.3.1438.ebuild:
   removed unintentional newline at SRC_URI

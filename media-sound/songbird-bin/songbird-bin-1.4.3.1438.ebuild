@@ -26,7 +26,7 @@ RDEPEND="dev-libs/liboil
 	media-plugins/gst-plugins-neon
 	media-plugins/gst-plugins-x
 	media-plugins/gst-plugins-xvideo
-	net-misc/neon
+	net-libs/neon
 	sys-libs/glibc
 	x11-libs/gtk+:2
 	x11-libs/libX11
