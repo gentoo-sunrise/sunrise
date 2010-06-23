@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jun 2010; Markos Chandras <hwoarang@gentoo.org> bsc-4.0.06_beta.ebuild:
+  Drop dependency to Qt4 metapackage
+
   03 Apr 2010; Markos Chandras <hwoarang@gentoo.org> -bsc-2.27.ebuild:
   Remove qt3 version
 
