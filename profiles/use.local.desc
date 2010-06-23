@@ -338,6 +338,16 @@ net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-misc/uanytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/uanytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
+net-wireless/remuco:amarok - Enable Amarok media player support
+net-wireless/remuco:audacious - Enable Audacious media player support
+net-wireless/remuco:banshee - Enable Banshee media player support
+net-wireless/remuco:exaile - Enable Exaile media player support
+net-wireless/remuco:mpd - Enable Music Player Daemon support
+net-wireless/remuco:quodlibet - Enable Quod Libet media player support
+net-wireless/remuco:rhythmbox - Enable Rhythmbox media player support
+net-wireless/remuco:totem - Enable Totem media player support
+net-wireless/remuco:tvtime - Enable Tvtime support
+net-wireless/remuco:vlc - Enable VLC media player support
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
