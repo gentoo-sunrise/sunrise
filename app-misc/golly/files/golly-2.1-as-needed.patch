@@ -1,0 +1,30 @@
+diff --git a/makefile-gtk b/makefile-gtk
+index 56b31d0..a09aad4 100644
+--- a/makefile-gtk
++++ b/makefile-gtk
+@@ -21,7 +21,7 @@ BINFILES = golly bgolly RuleTableToTree
+ CXXC = g++
+ CXXFLAGS = `wx-config --cxxflags` -O5 -DZLIB -DVERSION=$(VERSION) \
+    -Wall -Wno-non-virtual-dtor -fno-strict-aliasing
+-LDFLAGS = `wx-config --libs` -lz
++LIBS = `wx-config --libs` -lz
+ 
+ # for Perl script support
+ PERL_INCLUDE = `perl -MExtUtils::Embed -e ccopts`
+@@ -72,13 +72,13 @@ clean:
+ 	rm -f golly bgolly RuleTableToTree
+ 
+ golly: $(BASEOBJ) $(WXOBJ)
+-	$(CXXC) $(CXXFLAGS) -o golly $(BASEOBJ) $(WXOBJ) $(LDFLAGS) $(PYTHON_LINK) $(PERL_LINK)
++	$(CXXC) $(CXXFLAGS) $(LDFLAGS) -o golly $(BASEOBJ) $(WXOBJ) $(LIBS) $(PYTHON_LINK) $(PERL_LINK)
+ 
+ bgolly: $(BASEOBJ) $(OBJDIR)/bgolly.o
+-	$(CXXC) $(CXXFLAGS) -o bgolly $(BASEOBJ) $(OBJDIR)/bgolly.o $(LDFLAGS)
++	$(CXXC) $(CXXFLAGS) $(LDFLAGS) -o bgolly $(BASEOBJ) $(OBJDIR)/bgolly.o $(LIBS)
+ 
+ RuleTableToTree: $(BASEOBJ) $(OBJDIR)/RuleTableToTree.o
+-	$(CXXC) $(CXXFLAGS) -o RuleTableToTree $(BASEOBJ) $(OBJDIR)/RuleTableToTree.o $(LDFLAGS)
++	$(CXXC) $(CXXFLAGS) $(LDFLAGS) -o RuleTableToTree $(BASEOBJ) $(OBJDIR)/RuleTableToTree.o $(LIBS)
+ 
+ $(OBJDIR)/bgolly.o: bgolly.cpp
+ 	$(CXXC) $(CXXFLAGS) -c -o $@ bgolly.cpp

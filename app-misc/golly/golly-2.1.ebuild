@@ -6,7 +6,7 @@ EAPI=2
 PYTHON_DEPEND=2
 WX_GTK_VER=2.8
 
-inherit eutils python wxwidgets
+inherit eutils python wxwidgets toolchain-funcs
 
 MY_P=${P}-src
 DESCRIPTION="A simulator for Conway's Game of Life and other cellular automata"
@@ -38,6 +38,9 @@ src_prepare() {
 	# Fix installing data files into a different directory than binaries:
 	epatch "${FILESDIR}"/${PN}-separate-data-directory.patch
 
+	# We need this for correct linking
+	epatch "${FILESDIR}"/${P}-as-needed.patch
+
 	# Get rid of .DS_Store and other stuff that should not be installed:
 	find . -name '.*' -delete || die
 	find Scripts/Python -name '*.pyc' -delete || die
@@ -46,16 +49,16 @@ src_prepare() {
 	sed -i -e "s|libpython2.5.so|$(python_get_library)|" wxprefs.cpp || die
 
 	# Insert user-specified compiler flags into Makefile:
-	sed -i -e "/^CXXFLAGS = /s/-O5/${CXXFLAGS}/" \
-		-e "s/^LDFLAGS = /&${LDFLAGS} /" makefile-gtk || die
+	sed -i -e "/^CXXFLAGS = /s/-O5/${CXXFLAGS}/" makefile-gtk || die
 }
 
 src_compile() {
-	emake -f makefile-gtk || die
+	emake \
+		CXXC="$(tc-getCXX)" \
+		-f makefile-gtk || die
 }
 
 src_install() {
-	insinto /usr/bin
 	dobin golly bgolly RuleTableToTree || die
 
 	insinto /usr/share/${PN}
