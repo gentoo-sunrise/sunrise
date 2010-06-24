@@ -7,6 +7,7 @@
 		<flag name='amarok'>Enable Amarok media player support</flag>
 		<flag name='audacious'>Enable Audacious media player support</flag>
 		<flag name='banshee'>Enable Banshee media player support</flag>
+		<flag name='client'>Compile the MIDP J2ME client</flag>
 		<flag name='exaile'>Enable Exaile media player support</flag>
 		<flag name='mpd'>Enable Music Player Daemon support</flag>
 		<flag name='quodlibet'>Enable Quod Libet media player support</flag>
