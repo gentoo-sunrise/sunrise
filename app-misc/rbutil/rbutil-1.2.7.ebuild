@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI=3
+LANGS="cs de fi fr he it ja nl pl pt pt_BR ru tr zh_CN zh_TW"
 
 inherit eutils qt4-r2
 
