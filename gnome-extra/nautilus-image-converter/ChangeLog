@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/nautilus-image-converter
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +nautilus-image-converter-0.3.0.ebuild, +metadata.xml:
+  New Ebuild for bug 107853
+
