@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc"
 
-RDEPEND="dev-libs/tre"
+RDEPEND=">=dev-libs/liblist-2.3.1
+	dev-libs/tre"
 DEPEND="doc? ( app-text/txt2man )
 	${RDEPEND}"
 

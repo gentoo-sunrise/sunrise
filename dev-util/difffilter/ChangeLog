@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Jun 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -difffilter-0.1.ebuild,
+  +difffilter-0.1.1.ebuild:
+  Fix {R,}DEPEND. Bump to difffilter-0.1.1.
+
   23 Jun 2010; Justin Lecher <jlec@gentoo.org> difffilter-0.1.ebuild:
   Resort to sunrise guidelines
 
