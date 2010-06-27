@@ -3,8 +3,8 @@
 # $Header: $
 
 DESCRIPTION="Automatic open port forwarder using UPnP"
-HOMEPAGE="http://proj.mgorny.alt.pl/misc/#autoupnp"
-SRC_URI="http://dl.mgorny.alt.pl/misc/${P}.sh.bz2"
+HOMEPAGE="http://qwpx.net/~mgorny/autoupnp/"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.sh.bz2"
 
 LICENSE="BSD"
 SLOT="0"

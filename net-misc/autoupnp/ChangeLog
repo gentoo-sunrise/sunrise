@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jun 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  autoupnp-0.3.ebuild:
+  Update HOMEPAGE and SRC_URI.
+
   30 May 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +autoupnp-0.3.ebuild, +metadata.xml:
   New ebuild for bug #322057.
