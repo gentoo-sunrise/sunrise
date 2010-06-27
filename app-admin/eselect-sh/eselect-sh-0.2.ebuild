@@ -4,8 +4,8 @@
 
 MY_P="sh.eselect-${PV}"
 DESCRIPTION="Manages the /bin/sh (POSIX shell) symlink"
-HOMEPAGE="http://proj.mgorny.alt.pl/eselect-sh/"
-SRC_URI="http://dl.mgorny.alt.pl/${PN}/${MY_P}.gz"
+HOMEPAGE="http://qwpx.net/~mgorny/eselect-sh/"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${MY_P}.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
