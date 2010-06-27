@@ -6,8 +6,8 @@ PYTHON_DEPEND=*
 inherit python
 
 DESCRIPTION="Update live packages and emerge the modified ones"
-HOMEPAGE="http://proj.mgorny.alt.pl/smart-live-rebuild/"
-SRC_URI="http://dl.mgorny.alt.pl/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://qwpx.net/~mgorny/smart-live-rebuild/"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.tar.bz2"
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"
