@@ -7,9 +7,9 @@ EAPI="3"
 inherit toolchain-funcs
 
 DESCRIPTION="CD/DVD image converter using libmirage"
-HOMEPAGE="http://proj.mgorny.alt.pl/mirage2iso/"
-SRC_URI="http://dl.mgorny.alt.pl/${PN}/${P}.tar.bz2
-	test? ( http://dl.mgorny.alt.pl/${PN}/${P}-tests.tar.xz )"
+HOMEPAGE="http://qwpx.net/~mgorny/mirage2iso/"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.tar.bz2
+	test? ( http://qwpx.net/~mgorny/${PN}/${P}-tests.tar.xz )"
 
 LICENSE="BSD"
 SLOT="0"
