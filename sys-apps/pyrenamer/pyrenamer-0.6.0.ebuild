@@ -17,6 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="music"
 
 RDEPEND="dev-python/pygtk:2
+	dev-python/gconf-python
 	music? ( || ( dev-python/eyeD3 app-misc/hachoir-metadata ) )"
 
 pkg_postinst() {
