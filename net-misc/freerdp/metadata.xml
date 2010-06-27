@@ -5,6 +5,9 @@
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<longdescription>FreeRDP is a fork of the rdesktop project that intends to rapidly start moving forward and implement features that rdesktop lacks the most.</longdescription>
 <use>
+  <flag name='X'>Install also GUI client</flag>
+  <flag name='alsa'>Enable sound support (using alsa)</flag>
+  <flag name='cups'>Enable printing support (using cups)</flag>
   <flag name='largefile'>Support for large files</flag>
 </use>
 </pkgmetadata>
