@@ -5,8 +5,8 @@
 inherit eutils multilib
 
 DESCRIPTION="Simple udev-based automounter for removable USB media"
-HOMEPAGE="http://proj.mgorny.alt.pl/uam/"
-SRC_URI="http://dl.mgorny.alt.pl/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://qwpx.net/~mgorny/uam/"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
