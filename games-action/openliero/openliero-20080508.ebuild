@@ -16,7 +16,7 @@ IUSE=""
 RDEPEND="media-libs/libsdl
 	media-libs/sdl-mixer"
 DEPEND="${RDEPEND}
-	|| ( dev-util/jam dev-util/ftjam )"
+	dev-util/ftjam"
 
 src_unpack() {
 	unpack ${A}

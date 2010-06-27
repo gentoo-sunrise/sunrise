@@ -1,6 +1,10 @@
 # ChangeLog for games-action/openliero
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Jun 2010; Markos Chandras <hwoarang@gentoo.org>
+  openliero-20080508.ebuild:
+  Remove dev-util/jam from dependencies
 
   08 May 2008; Jan Stępień (jano) <jstepien@users.sourceforge.net>
   -openliero-9.ebuild, +openliero-20080508.ebuild,
