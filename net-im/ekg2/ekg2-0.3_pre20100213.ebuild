@@ -10,7 +10,7 @@ MY_P="${PN}-${PV#*_pre}-scons"
 
 DESCRIPTION="Text-based, multi-protocol instant messenger"
 HOMEPAGE="http://www.ekg2.org"
-SRC_URI="http://dl.mgorny.alt.pl/ekg2/${MY_P}.tar.lzma"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${MY_P}.tar.lzma"
 
 LICENSE="GPL-2"
 SLOT="0"
