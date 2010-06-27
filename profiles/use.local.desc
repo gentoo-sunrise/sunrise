@@ -315,6 +315,7 @@ net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
 net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
 net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
+net-misc/freerdp:largefile - Support for large files
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
 net-misc/gvpe:cipher-aes-192 - Enables aes-192 cipher
 net-misc/gvpe:cipher-aes-256 - Enables aes-256 cipher
@@ -341,6 +342,7 @@ net-misc/uanytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for en
 net-wireless/remuco:amarok - Enable Amarok media player support
 net-wireless/remuco:audacious - Enable Audacious media player support
 net-wireless/remuco:banshee - Enable Banshee media player support
+net-wireless/remuco:client - Compile the MIDP J2ME client
 net-wireless/remuco:exaile - Enable Exaile media player support
 net-wireless/remuco:mpd - Enable Music Player Daemon support
 net-wireless/remuco:quodlibet - Enable Quod Libet media player support
