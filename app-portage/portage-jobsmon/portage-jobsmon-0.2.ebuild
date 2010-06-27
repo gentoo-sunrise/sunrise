@@ -8,8 +8,8 @@ PYTHON_USE_WITH=ncurses
 inherit python
 
 DESCRIPTION="Track parallel merges and display their logs on a split-screen basis"
-HOMEPAGE="http://proj.mgorny.alt.pl/misc/#portage-jobsmon"
-SRC_URI="http://dl.mgorny.alt.pl/misc/${P}.py.bz2"
+HOMEPAGE="http://qwpx.net/~mgorny/portage-jobsmon/"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.py.bz2"
 
 LICENSE="BSD"
 SLOT="0"
