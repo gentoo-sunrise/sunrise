@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  nautilus-rename-exif-date-0.1.1.ebuild:
+  Empty DEPEND has been dropped
+
+  29 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   +nautilus-rename-exif-date-0.1.1.ebuild, +metadata.xml:
   New Ebuild for bug 325455
 

@@ -13,7 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
 RDEPEND=">=gnome-base/nautilus-2.21.0
 	dev-python/nautilus-python"
 
