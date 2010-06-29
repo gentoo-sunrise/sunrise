@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/nautilus-rename-exif-date
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jun 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +nautilus-rename-exif-date-0.1.1.ebuild, +metadata.xml:
+  New Ebuild for bug 325455
+
