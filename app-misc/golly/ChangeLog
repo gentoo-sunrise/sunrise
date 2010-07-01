@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  golly-2.1.ebuild:
+  Adjust 'find' calls to be POSIX-compliant.
+
   23 Jun 2010; Justin Lecher <jlec@gentoo.org> golly-2.1.ebuild,
   +files/golly-2.1-as-needed.patch:
   Respect CXX, link as-needed conform, don't use LDFLAGS for libs

@@ -42,8 +42,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-as-needed.patch
 
 	# Get rid of .DS_Store and other stuff that should not be installed:
-	find . -name '.*' -delete || die
-	find Scripts/Python -name '*.pyc' -delete || die
+	find -type f -name '.*' -exec rm -f {} + || die
+	find Scripts/Python -name '*.pyc' -exec rm -f {} + || die
 
 	# Fix Python library path:
 	sed -i -e "s|libpython2.5.so|$(python_get_library)|" wxprefs.cpp || die
