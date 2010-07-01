@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/vavoom-textures
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  vavoom-textures-1.1.ebuild:
+  Adjust 'find' calls to be POSIX-compliant.
 
   31 Aug 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Add local useflags to metadata.xml (GLEP 56)

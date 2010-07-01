@@ -64,7 +64,7 @@ src_unpack() {
 	done
 
 	# Delete all stale docs
-	find basev/ -name "*.txt" -delete
+	find basev/ -name '*.txt' -exec rm -f {} + || die
 }
 
 src_install() {
