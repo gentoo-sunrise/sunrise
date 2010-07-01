@@ -20,6 +20,7 @@ src_compile() {
 
 src_install() {
 	dobin pe-exec || die
+	dosbin pe-format2-conf.sh || die
 	newconfd pe-format2.conf ${PN} || die
 	newinitd pe-format2.init ${PN} || die
 }
