@@ -67,6 +67,9 @@ pkg_setup() {
 		ewarn 'enabling at least one of following USEflags:'
 		ewarn '  gtk, ncurses, readline, remote, web.'
 	fi
+
+	# workaround for largefile-enabled gpgme (bug #302097)
+	use gpg && has_version '>=app-crypt/gpgme-1.2' && append-flags -D_FILE_OFFSET_BITS=64
 }
 
 use_plug() {
@@ -199,7 +202,7 @@ src_configure() {
 		$(use_var idn) $(use_var srv RESOLV) \
 		PREFIX=/usr LIBDIR="\$EPREFIX/$(get_libdir)" \
 		DOCDIR="\$DATAROOTDIR/doc/${PF}" \
-		DISTNOTES="emdzientoo ebuild ${PVR}, USE=${USE}" \
+		DISTNOTES="Sunrise ebuild ${PVR}, USE=${USE}" \
 		${MAKEOPTS} conf || die "scons conf failed"
 
 	foreach_perl_module perl-module_src_configure
@@ -207,9 +210,6 @@ src_configure() {
 
 src_compile() {
 	# SKIPCONF -> no need to reconfigure
-
-	# fix for LFS bug and gpgme (see bug #302097 and bug #277890)
-	use x86 && use gpg && append-flags -D_FILE_OFFSET_BITS=64
 
 	scons SKIPCONF=1 ${MAKEOPTS} || die "scons failed"
 
