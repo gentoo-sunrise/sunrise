@@ -2,15 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
-inherit multilib perl-module
-
-MY_P="${PN}-${PV#*_pre}-scons"
+inherit flag-o-matic multilib perl-module
 
 DESCRIPTION="Text-based, multi-protocol instant messenger"
 HOMEPAGE="http://www.ekg2.org"
-SRC_URI="http://qwpx.net/~mgorny/${PN}/${MY_P}.tar.lzma"
+SRC_URI="http://qwpx.net/~mgorny/${PN}-scons/${P}.tar.lzma"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -61,14 +59,15 @@ DEPEND="dev-util/scons
 	|| ( app-arch/xz-utils app-arch/lzma-utils )
 	${RDEPEND}"
 
-S=${WORKDIR}/${MY_P}
-
 pkg_setup() {
 	if ! use gtk && ! use ncurses && ! use readline && ! use remote && ! use web; then
 		ewarn 'ekg2 is being compiled without any frontend, you should consider'
 		ewarn 'enabling at least one of following USEflags:'
 		ewarn '  gtk, ncurses, readline, remote, web.'
 	fi
+
+	# workaround for largefile-enabled gpgme (bug #302097)
+	use gpg && has_version '>=app-crypt/gpgme-1.2' && append-flags -D_FILE_OFFSET_BITS=64
 }
 
 use_plug() {
@@ -196,11 +195,12 @@ src_configure() {
 	# DISTNOTES -> are displayed with /version, helpful for upstream bug reports
 
 	scons PLUGINS=$(build_plugin_list) $(build_addopts_list) \
-		HARDDEPS=1 SKIPCHECKS=1 $(use_var unicode) $(use_var nls) \
-		$(use_var static) $(use_var idn) $(use_var srv RESOLV) \
+		HARDDEPS=1 SKIPCHECKS=1 RELPLUGINS=0 \
+		$(use_var unicode) $(use_var nls) $(use_var static) \
+		$(use_var idn) $(use_var srv RESOLV) \
 		PREFIX=/usr LIBDIR="\$EPREFIX/$(get_libdir)" \
 		DOCDIR="\$DATAROOTDIR/doc/${PF}" \
-		DISTNOTES="emdzientoo ebuild ${PVR}, USE=${USE}" \
+		DISTNOTES="Sunrise ebuild ${PVR}, USE=${USE}" \
 		${MAKEOPTS} conf || die "scons conf failed"
 
 	foreach_perl_module perl-module_src_configure
