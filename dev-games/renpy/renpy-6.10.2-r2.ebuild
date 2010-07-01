@@ -28,7 +28,7 @@ src_prepare() {
 	# Fix path to app-editors/jedit
 	epatch "${FILESDIR}"/${PN}-jedit-path.patch
 
-	find renpy -iname '*.pyo' -delete
+	find renpy -name '*.pyo' -exec rm -f {} + || die
 }
 
 src_install() {

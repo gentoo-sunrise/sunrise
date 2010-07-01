@@ -24,7 +24,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	find renpy -iname '*.pyo' -delete
+	find renpy -name '*.pyo' -exec rm -f {} + || die
 }
 
 src_install() {
