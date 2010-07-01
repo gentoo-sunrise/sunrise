@@ -47,7 +47,7 @@ src_unpack() {
 
 src_prepare() {
 	rm -r bin_unix/* source/include || die
-	find packages -name readme.txt -delete || die
+	find packages -name readme.txt -exec rm -f {} + || die
 	winicontoppm icon.ico | ppmtoxpm > ${PN}.xpm || die
 
 	sed -i -e "/^CUBE_DIR=/d ; 2iCUBE_DIR=$(games_get_libdir)/${PN}" ${PN}.sh server.sh || die

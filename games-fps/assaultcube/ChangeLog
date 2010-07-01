@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  assaultcube-1.0.4.ebuild:
+  Adjust 'find' calls to be POSIX-compliant.
+
   16 May 2010; Michael Weber (xmw) <gentoo@xmw.de> assaultcube-1.0.4.ebuild:
   Game initialization crashes with net-libs/enet, revert to the bundled
   version. Remove unneeded autogen folder from documentation.
