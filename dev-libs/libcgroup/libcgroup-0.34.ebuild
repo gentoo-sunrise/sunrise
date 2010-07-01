@@ -60,7 +60,7 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
-	find "${D}" -name "*.la" -delete || die "la removal failed"
+	find "${D}" -name '*.la' -exec rm -f {} + || die "la removal failed"
 
 	insinto /etc/cgroup
 	doins samples/cgrules.conf || die
