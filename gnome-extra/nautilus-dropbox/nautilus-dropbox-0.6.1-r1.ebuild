@@ -47,7 +47,7 @@ src_install () {
 	local extensiondir="$(pkg-config --variable=extensiondir libnautilus-extension)"
 	[ -z ${extensiondir} ] && die "pkg-config unable to get nautilus extensions dir"
 
-	find "${D}" -name '*.la' -delete
+	find "${D}" -name '*.la' -exec rm -f {} + || die
 }
 
 pkg_postinst () {
