@@ -1,0 +1,8 @@
+# ChangeLog for dev-libs/libplayer
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  02 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +libplayer-1.0.0.ebuild, +metadata.xml:
+  New Ebuild for bug 306075 thanks to chithead
+
