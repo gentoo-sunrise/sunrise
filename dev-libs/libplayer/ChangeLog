@@ -3,6 +3,10 @@
 # $Header: $
 
   02 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  libplayer-1.0.0.ebuild:
+  replace package name with ${PN} in SRC_URI
+
+  02 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   +libplayer-1.0.0.ebuild, +metadata.xml:
   New Ebuild for bug 306075 thanks to chithead
 

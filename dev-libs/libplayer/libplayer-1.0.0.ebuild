@@ -11,7 +11,7 @@ inherit python
 DESCRIPTION="A generic A/V API that relies on various multimedia player"
 HOMEPAGE="http://libplayer.geexbox.org/"
 
-SRC_URI="http://libplayer.geexbox.org/releases/${P}.tar.bz2"
+SRC_URI="http://${PN}.geexbox.org/releases/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
