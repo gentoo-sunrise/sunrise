@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/exe
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  exe-1.04.0.3532.ebuild:
+  Update SRC_URI, minor cleanup.
 
   15 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   exe-1.04.0.3532.ebuild:

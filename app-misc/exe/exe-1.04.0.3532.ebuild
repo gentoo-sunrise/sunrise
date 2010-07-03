@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="Authoring application to assist teachers and academics in the publishing of web content"
 HOMEPAGE="http://exelearning.org/"
-SRC_URI="http://eduforge.org/frs/download.php/839/${P}-source.tgz"
+SRC_URI="mirror://sourceforge/${PN}/${P}-source.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,4 +23,4 @@ DEPEND=">=dev-python/pygtk-2.6.1
 	>=dev-lang/python-2.4.1"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/exe"
+S=${WORKDIR}/${PN}
