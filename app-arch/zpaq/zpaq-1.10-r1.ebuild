@@ -11,7 +11,7 @@ DESCRIPTION="Unified compressor for PAQ algorithms"
 HOMEPAGE="http://mattmahoney.net/dc/#zpaq"
 SRC_URI="http://mattmahoney.net/dc/${MY_P}.zip"
 
-LICENSE="GPL-3"
+LICENSE="GPL-3 ISOC-rfc"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="optimization"
