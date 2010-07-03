@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/youtranslate
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  youtranslate-1.1.10.ebuild:
+  Update SRC_URI.
 
   21 Dec 2008; Christian Ruppert (idl0r) <spooky85@gmail.com>
   youtranslate-1.1.10.ebuild:
