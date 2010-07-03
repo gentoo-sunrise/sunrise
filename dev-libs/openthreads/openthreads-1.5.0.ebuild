@@ -8,7 +8,7 @@ MY_PN="OpenThreads"
 OSG_V=1.2
 DESCRIPTION="a minimal & complete Object-Oriented thread interface for C++"
 HOMEPAGE="http://www.openscenegraph.org/"
-SRC_URI="http://www.openscenegraph.org/downloads/snapshots/OSG_OP_OT-${OSG_V}.zip"
+SRC_URI="http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${OSG_V}/source/OSG_OP_OT-${OSG_V}.zip"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
