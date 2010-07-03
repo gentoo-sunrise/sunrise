@@ -1,6 +1,10 @@
 # ChangeLog for app-editors/yzis
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  yzis-1.0_alpha1.ebuild:
+  Update SRC_URI, style.
 
   11 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   yzis-1.0_alpha1.ebuild:

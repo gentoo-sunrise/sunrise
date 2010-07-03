@@ -2,15 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
 inherit cmake-utils
 
 MY_P=${P/_/-}
 
-DESCRIPTION="Vi-like editor inspired by vim."
+DESCRIPTION="Vi-like editor inspired by vim"
 HOMEPAGE="http://www.yzis.org/"
-SRC_URI="http://dl.freehackers.org/${PN}/${MY_P}.tar.bz2"
+SRC_URI="http://labs.freehackers.org/attachments/download/45/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
