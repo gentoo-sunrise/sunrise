@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*plr-8.3.0.10 (02 Jul 2010)
+
+  02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -plr-8.3.0.8.ebuild, +plr-8.3.0.10.ebuild:
+  Version bump.
+
   18 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   plr-8.2.0.10.ebuild, plr-8.3.0.8.ebuild:
   Migrating away from deprecated postgres virtuals
