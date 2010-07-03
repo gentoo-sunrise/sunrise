@@ -8,7 +8,7 @@ MY_PN="Producer"
 OSG_V=1.2
 DESCRIPTION="a cross-platform C++/OpenGL library that is focused on Camera control"
 HOMEPAGE="http://openscenegraph.org/"
-SRC_URI="http://www.openscenegraph.org/downloads/snapshots/OSG_OP_OT-${OSG_V}.zip"
+SRC_URI="http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${OSG_V}/source/OSG_OP_OT-${OSG_V}.zip"
 
 LICENSE="OSGPL"
 SLOT="0"

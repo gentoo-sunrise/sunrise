@@ -1,6 +1,10 @@
 # ChangeLog for dev-libs/openproducer
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  openproducer-1.1.0.ebuild:
+  Update SRC_URI.
 
   24 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
   openproducer-1.1.0.ebuild:
