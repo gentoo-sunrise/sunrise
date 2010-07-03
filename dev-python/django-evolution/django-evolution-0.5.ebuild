@@ -6,13 +6,13 @@ EAPI=2
 
 inherit distutils python
 
-DESCRIPTION="Allows to track changes in database models over time, and to update the db to reflect these"
+DESCRIPTION="Track changes in database models over time, and update the db to reflect them"
 HOMEPAGE="http://code.google.com/p/django-evolution/"
 SRC_URI="http://xmw.de/mirror/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-python/django"
