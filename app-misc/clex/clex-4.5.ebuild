@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P=${P/_beta/-test}
-
 DESCRIPTION="Ncurses file manager with a full-screen user interface"
 HOMEPAGE="http://www.clex.sk/"
-SRC_URI="http://www.clex.sk/download/${MY_P}.tar.gz"
+SRC_URI="http://www.clex.sk/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,9 +14,7 @@ IUSE=""
 DEPEND="sys-libs/ncurses"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${PN}-${PV%_beta*}
-
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ChangeLog || die "dodoc failed"
+	dodoc AUTHORS ChangeLog README || die "dodoc failed"
 }

@@ -1,6 +1,12 @@
 # ChangeLog for app-misc/clex
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*clex-4.5 (02 Jul 2010)
+
+  02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -clex-4.5_beta5.ebuild, +clex-4.5.ebuild:
+  Version bump.
 
   23 Sep 2009; Sebastian Pipping (sping) <sebastian@pipping.org>
   -clex-4.0_beta4.ebuild, +clex-4.5_beta5.ebuild:
