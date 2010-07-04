@@ -30,6 +30,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/0.82_beta2-parallel-make.patch
+	epatch "${FILESDIR}"/0.82_beta2-drop-dprintf.patch
 	sed -i \
 		-e 's: -O2 : :g' \
 		-e "s: -g3 : ${CFLAGS} :" \

@@ -3,6 +3,10 @@
 # $Header: $
 
   04 Jul 2010; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +files/0.82_beta2-drop-dprintf.patch, eresi-0.82_beta2.ebuild:
+  Fix build-time issue due to conflicting dprintf declarations
+
+  04 Jul 2010; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   eresi-0.82_beta2.ebuild:
   Updated SRC_URI to new host
 
