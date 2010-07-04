@@ -54,7 +54,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc doc/{AUTHOR,CREDITS,README.FIRST} || die "dodoc failed"
+	dodoc doc/{AUTHOR,CREDITS} README.FIRST || die "dodoc failed"
 	if use doc; then
 		dodoc doc/{cerberus2,elfsh-network-0.3,elfsh-ref}.txt \
 			doc/{graphers,libelfsh-ref,rtld-multiarch}.txt || die "dodoc failed"
