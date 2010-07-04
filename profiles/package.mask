@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
+# The module no longer exists in CPAN and there's no trace of a related
+# bug in Gentoo Bugzilla. Will be removed in 30 days.
+=dev-perl/Net-Subnets-0.21
+
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
 =sys-power/phc-intel-0.3.199.3_pre
