@@ -8,7 +8,7 @@ MY_P="CurseTheWeather-${PV}"
 
 DESCRIPTION="An ncurses-based weather forecast program"
 HOMEPAGE="http://opensource.hld.ca/trac.cgi/wiki/CurseTheWeather"
-SRC_URI="http://opensource.hld.ca/trac.cgi/export/317/trunk/ctw/dist/${MY_P}.tar.gz"
+SRC_URI="http://opensource.hld.ca/trac.cgi/export/latest/trunk/ctw/dist/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

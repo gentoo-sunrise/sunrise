@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  cursetheweather-0.6.ebuild:
+  Replacing specific revision with 'latest' in SRC_URI, this will be helpful
+  on bumps.
+
   11 Jan 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   +cursetheweather-0.6.ebuild, +metadata.xml:
   New Ebuild for bug 59462 thanks to ohnobinki, chiiph and Tommy
