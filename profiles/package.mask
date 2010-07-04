@@ -29,12 +29,10 @@
 # app-antivirus/panda - bug #78969
 # app-office/openoffice-infra - bug #254572
 # dev-embedded/s51dude - bug #241662
-# dev-util/eresi - bug #253436
 =app-antivirus/kav4fileservers-5.5.3
 =app-antivirus/panda-9.00.00
 =app-office/openoffice-infra-3.1.0
 =dev-embedded/s51dude-0.2.0
-=dev-util/eresi-0.82_beta2
 
 # Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
 # The module no longer exists in CPAN and there's no trace of a related
