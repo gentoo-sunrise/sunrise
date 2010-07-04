@@ -2,7 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-PUTHON_DEPEND="2"
+EAPI=2
+PYTHON_DEPEND=2
+PYTHON_USE_WITH=ncurses
+SUPPORT_PYTHON_ABIS=1
+RESTRICT_PYTHON_ABIS='3.*'
+
 inherit distutils
 
 MY_P="CurseTheWeather-${PV}"
@@ -15,9 +20,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-DEPEND="sys-libs/ncurses"
-RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
