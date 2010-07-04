@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*abcmidi-2010.07.01 (04 Jul 2010)
+
+  04 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -abcmidi-2010.02.09.ebuild, +abcmidi-2010.07.01.ebuild:
+  Version bump, use versionator, remove unnecessary quotes.
+
   07 Mar 2010; Roman Zimmermann (torotil) <torotil@gmail.com>
   -abcmidi-2009.12.21.ebuild, -files/abcmidi-2009.12.21_gentoo.patch,
   +abcmidi-2010.02.09.ebuild, +files/abcmidi-2010.02.09_gentoo.patch:
