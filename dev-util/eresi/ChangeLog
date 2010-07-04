@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/eresi
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Jul 2010; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  eresi-0.82_beta2.ebuild:
+  Updated SRC_URI to new host
 
   09 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   eresi-0.82_beta2.ebuild:

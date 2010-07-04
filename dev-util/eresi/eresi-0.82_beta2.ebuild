@@ -13,7 +13,7 @@ HOMEPAGE="http://www.eresi-project.org/"
 #   svn annotate \
 #   http://svn.eresi-project.org/svn/trunk/librevm/include/revm-io.h \
 #   | egrep 'REVM_(RELEASE|VERSION)'
-SRC_URI="http://dev.gentooexperimental.org/~mvg/${P}.tar.bz2"
+SRC_URI="http://martin.von-gagern.net/gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
