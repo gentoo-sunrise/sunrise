@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  cursetheweather-0.6.ebuild:
+  Keyworded ~amd64, restricted python3
+
   04 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   cursetheweather-0.6.ebuild:
   Replacing specific revision with 'latest' in SRC_URI, this will be helpful

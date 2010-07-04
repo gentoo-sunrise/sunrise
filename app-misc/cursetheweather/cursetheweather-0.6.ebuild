@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+PUTHON_DEPEND="2"
 inherit distutils
 
 MY_P="CurseTheWeather-${PV}"
@@ -12,10 +13,14 @@ SRC_URI="http://opensource.hld.ca/trac.cgi/export/latest/trunk/ctw/dist/${MY_P}.
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="sys-libs/ncurses"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
+
+pkg_setup() {
+	python_set_active_version 2
+}
