@@ -4,6 +4,10 @@
 
   04 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   cursetheweather-0.6.ebuild:
+  Fix breakage introduced by merge of the previous two commits.
+
+  04 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  cursetheweather-0.6.ebuild:
   Support Python ABIs and fix the dependencies.
 
   04 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de>

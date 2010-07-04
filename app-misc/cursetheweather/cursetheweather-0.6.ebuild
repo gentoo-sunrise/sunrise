@@ -22,7 +22,3 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}
-
-pkg_setup() {
-	python_set_active_version 2
-}
