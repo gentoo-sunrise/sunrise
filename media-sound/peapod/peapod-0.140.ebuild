@@ -5,8 +5,9 @@
 inherit distutils
 
 DESCRIPTION="A command line podcast receiver that supports downloads via HTTP and BitTorrent"
-HOMEPAGE="http://www.peapodpy.org/"
-SRC_URI="http://peapodpy.org/downloads/${P}.tar.gz"
+HOMEPAGE="http://www.peapodpy.org.uk/"
+SRC_URI="http://peapodpy.org.uk/downloads/${P}.tar.gz"
+
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,8 +18,7 @@ DEPEND="dev-python/pyxml
 	bittorrent? ( >=net-p2p/bittorrent-4.0.0 )
 	id3? ( dev-python/eyeD3 )
 	vorbis? ( media-sound/vorbis-tools )"
-
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
 DOCS="README docs/about.txt docs/configuration.txt docs/dependencies.txt docs/getting.txt docs/using.txt"
 
