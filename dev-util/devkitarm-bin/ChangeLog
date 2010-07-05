@@ -1,6 +1,12 @@
 # ChangeLog for dev-util/devkitarm-bin
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*devkitarm-bin-30 (03 Jul 2010)
+
+  03 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -devkitarm-bin-23b.ebuild, +devkitarm-bin-30.ebuild:
+  Version bump, cleanup.
 
   26 Jun 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
   -devkitarm-bin-22.ebuild, +devkitarm-bin-23b.ebuild:
