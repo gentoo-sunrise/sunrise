@@ -17,16 +17,16 @@ IUSE="alsa cups iconv ipv6 largefile X"
 
 DEPEND="
 	>=dev-libs/openssl-0.9.8a
+	x11-libs/libX11
 	alsa? ( media-libs/alsa-lib )
 	cups? ( net-print/cups )
-	iconv? ( virtual/libiconv )
-	X? ( x11-libs/libX11 )"
+	iconv? ( virtual/libiconv )"
 RDEPEND="${DEPEND}"
 
 DOCS=( AUTHORS ChangeLog NEWS README )
 
 src_configure() {
-	# openssl is mandatory for now building without it 
+	# openssl is mandatory for now. Building without it 
 	# is strongly discouraged according to upstream.
 	# Warning: Do not trust "./configure --help"
 	# it's wrong sometimes - esp. in --enable/--with parts...
@@ -37,6 +37,5 @@ src_configure() {
 		$(use_enable iconv) \
 		$(use_enable ipv6) \
 		$(use_enable largefile) \
-		$(use_with X x) \
-		|| die
+		$(use_with X x)
 }
