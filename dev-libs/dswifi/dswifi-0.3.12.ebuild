@@ -4,7 +4,7 @@
 
 DESCRIPTION="Wifi for Nintendo DS Homebrew Development"
 HOMEPAGE="http://akkit.org/dswifi/"
-SRC_URI="mirror://sourceforge/devkitpro/dswifi-src-${PV}.tar.bz2"
+SRC_URI="mirror://sourceforge/devkitpro/${PN}-src-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -12,28 +12,27 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=dev-util/devkitarm-bin-21
-		>=dev-libs/libnds-20071023"
+	dev-libs/libnds"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}
 RESTRICT="strip"
 
-DEVKITPRO=/opt/devkitpro
-
 src_compile() {
-	local DEVKITARM=${DEVKITPRO}/devkitARM
-	local PATH=${PATH}:"${DEVKITARM}/bin"
+	export DEVKITPRO=/opt/devkitpro
+	export DEVKITARM=${DEVKITPRO}/devkitARM
+
+	local PATH=${PATH}:${DEVKITARM}/bin
 	emake || die "make failed"
 }
 
 src_install() {
-	local INSTDIR=/opt/devkitpro/libnds
+	insinto "${DEVKITPRO}"/libnds
+	into "${DEVKITPRO}"/libnds
 
 	# libs installation
-	insinto "${INSTDIR}"/lib
-	doins lib/*.a
+	dolib.a lib/*.a || die
 
 	# headers installation
-	insinto "${INSTDIR}"
-	doins -r include/
+	doins -r include/ || die
 }
