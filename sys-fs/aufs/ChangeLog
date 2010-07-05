@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -aufs-20070402.ebuild, -files/aufs-20070402-ksize.patch,
+  -files/aufs-20070402-lhash.patch, metadata.xml:
+  Remove the oldest ebuild due to non-existent distfile.
+
   31 Jan 2010; Markos Chandras <hwoarang@gentoo.org> aufs-20070402.ebuild:
   Drop depcreated built_with_use function call
 
