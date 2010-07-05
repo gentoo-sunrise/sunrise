@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/scala-bin
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  scala-bin-2.2.ebuild:
+  Update HOMEPAGE and SRC_URI, cleanup.
 
   23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
   Added local USE flag description wrt GLEP 56
