@@ -4,9 +4,9 @@
 
 inherit eutils
 
-DESCRIPTION="Per-recipient whitelist policy server for Postfix MTA managed entirely by emails."
+DESCRIPTION="Per-recipient whitelist policy server for Postfix MTA managed entirely by emails"
 HOMEPAGE="http://www.bitcetera.com/products/postwhite"
-SRC_URI="http://www.bitcetera.com/download/${P}.tgz"
+SRC_URI="http://www.bitcetera.com/page_attachments/0000/0014/${P}.tgz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -16,25 +16,26 @@ IUSE=""
 DEPEND="mail-mta/postfix
 	>=dev-lang/ruby-1.8.6
 	dev-ruby/rubygems
-	dev-ruby/facets
+	>=dev-ruby/facets-2.8.4-r1
 	dev-ruby/trollop"
-RDEPEND=${DEPEND}
+RDEPEND="${DEPEND}"
 
-pkg_setup() {
-	enewgroup ${PN}
-	enewuser ${PN} -1 -1 /dev/null ${PN}
-}
+S=${WORKDIR}
 
 src_install() {
 	dosbin ${PN} || die "installing binary failed"
-	newinitd "${FILESDIR}"/${PVR}/${PN}.init ${PN}
-	newconfd "${FILESDIR}"/${PVR}/${PN}.conf ${PN}
+	newinitd "${FILESDIR}"/0.1.0/${PN}.init ${PN} || die
+	newconfd "${FILESDIR}"/0.1.0/${PN}.conf ${PN} || die
 	"${S}"/${PN} --prefix "${D}" configure || die
 	keepdir /etc/postfix/postwhite
 }
 
+pkg_preinst() {
+	enewgroup ${PN}
+	enewuser ${PN} -1 -1 /dev/null ${PN}
+}
+
 pkg_postinst() {
-	elog
 	elog "The following steps are necessary to hook Postwhite into the Postfix"
 	elog "workflow:"
 	elog
@@ -52,6 +53,4 @@ pkg_postinst() {
 	elog "   /etc/init.d/postfix reload"
 	elog "5) Make the Postwhite daemon start at boot time:"
 	elog "   rc-update add postwhite default"
-	elog
-	epause 5
 }
