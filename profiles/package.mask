@@ -27,8 +27,10 @@
 # to a new location, they will be removed in 30 days.
 # dev-embedded/s51dude - bug #241662
 # dev-util/debug - bug #148868
+# x11-misc/gestikk - bug #248260
 =dev-embedded/s51dude-0.2.0
 =dev-util/debug-0.0.21
+=x11-misc/gestikk-0.6.1
 
 # Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
 # The distfiles for these packages no longer exist, and the bump
