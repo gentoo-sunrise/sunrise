@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  mined-2000.16.ebuild:
+  Update SRC_URI, fix using CC, CFLAGS and disable stripping.
+
   04 Mar 2010; g3om1 g3om1s@gmail.com +mined-2000.16.ebuild, +metadata.xml:
   New ebuild for bug 307629
 
