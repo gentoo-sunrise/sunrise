@@ -3,6 +3,10 @@
 # $Header: $
 
   05 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -files/aufs-20080207-disable_security_inode_permission.patch:
+  Drop leftover patch.
+
+  05 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   -aufs-20070402.ebuild, -files/aufs-20070402-ksize.patch,
   -files/aufs-20070402-lhash.patch, metadata.xml:
   Remove the oldest ebuild due to non-existent distfile.
