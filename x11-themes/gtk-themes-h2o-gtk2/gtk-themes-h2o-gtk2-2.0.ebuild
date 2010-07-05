@@ -3,27 +3,28 @@
 # $Header: $
 
 DESCRIPTION="A port of the H2O GTK+ theme to GTK2"
-HOMEPAGE="http://themes.freshmeat.net/projects/h2o-gtk2/"
-SRC_URI="http://themes.freshmeat.net/redir/h2o-gtk2/34135/url_tgz/h2o-gtk2-default-${PV}.tar.gz"
+HOMEPAGE="http://art.gnome.org/themes/gtk2/213"
+SRC_URI="http://art.gnome.org/download/themes/gtk2/213/GTK2-H2O-default-${PV}.tar.gz"
 
-IUSE=""
-KEYWORDS="~x86"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~x86"
+IUSE=""
+
+DEPEND="x11-libs/gtk+"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}
-
-RDEPEND=">=x11-libs/gtk+-2.2"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
 	# Clean up unnecessary files
-	rm -r */*/{*xcf,.gtkrc.swp,.xvpics}
+	rm -rf */*/{*.xcf,.gtkrc.swp,.xvpics} || die
 }
 
 src_install() {
 	insinto /usr/share/themes
-	doins -r *
+	doins -r * || die
 }
