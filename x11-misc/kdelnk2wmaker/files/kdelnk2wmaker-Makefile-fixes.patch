@@ -1,0 +1,23 @@
+From f4ee4f35be9750b608180dacd932d5d9744d8f29 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Micha=C5=82=20G=C3=B3rny?= <gentoo@mgorny.alt.pl>
+Date: Mon, 5 Jul 2010 21:56:48 +0200
+Subject: [PATCH] Fix CC argument passing order, use LDFLAGS, do not strip.
+
+---
+ Makefile |    5 ++---
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index c9a0ad1..f521764 100644
+--- a/Makefile
++++ b/Makefile
+@@ -17 +17 @@ CC=gcc
+-	$(CC) -Wall -c -o $@ $(CFLAGS) $<
++	$(CC) -Wall $(CFLAGS) -c -o $@ $<
+@@ -22,2 +22 @@ all:	$(COBJS)
+-	$(CC) -o kdelnk2wmaker $(COBJS)
+-	@strip kdelnk2wmaker
++	$(CC) $(LDFLAGS) -o kdelnk2wmaker $(COBJS)
+-- 
+1.7.1.1
+
