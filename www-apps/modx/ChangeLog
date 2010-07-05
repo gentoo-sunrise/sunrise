@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*modx-1.0.4 (05 Jul 2010)
+
+  05 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -modx-0.9.6.2.ebuild, +modx-1.0.4.ebuild:
+  Version bump and SRC_URI update. Syntax of 'find' call adjusted to match
+  POSIX.
+
   08 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   modx-0.9.6.2.ebuild:
   Removed dot in description

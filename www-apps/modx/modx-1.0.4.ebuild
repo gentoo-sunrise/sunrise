@@ -2,14 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
 inherit webapp
 
 DESCRIPTION="The Ajax CMS for today. And tomorrow"
-HOMEPAGE="http://www.modxcms.com/"
-SRC_URI="http://www.modxcms.com/assets/snippets/filedownload/download.php?path=YnVpbGRz&fileName=${P}.tar.gz
--> ${P}.tar.gz"
+HOMEPAGE="http://modxcms.com/"
+SRC_URI="http://modxcms.com/download/ga/${P}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
@@ -21,7 +20,9 @@ RDEPEND="virtual/httpd-cgi
 
 src_install() {
 	webapp_src_preinst
-	find . -iname ht.access -execdir mv '{}' .htaccess \; || die "Dot fix failed"
+	find -name ht.access -exec sh -c \
+		'f="{}"; mv "${f}" "${f%ht.access}.htaccess"' \; \
+		|| die "Dot fix failed"
 	insinto ${MY_HTDOCSDIR}
 	doins -r . || die "Instalation failed"
 	webapp_src_install
