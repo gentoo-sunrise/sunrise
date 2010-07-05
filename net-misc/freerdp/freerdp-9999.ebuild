@@ -8,21 +8,40 @@ inherit autotools base git
 
 EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
 
-DESCRIPTION="FreeRDP intends to rapidly start moving forward and implement features that rdesktop lacks the most"
+DESCRIPTION="A Remote Desktop Protocol Client, forked from rdesktop"
 HOMEPAGE="http://freerdp.sourceforge.net/"
 SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="alsa cups iconv ipv6 largefile X"
 
-DEPEND="media-libs/alsa-lib
-	dev-libs/openssl"
+DEPEND="
+	>=dev-libs/openssl-0.9.8a
+	x11-libs/libX11
+	alsa? ( media-libs/alsa-lib )
+	cups? ( net-print/cups )
+	iconv? ( virtual/libiconv )"
 RDEPEND="${DEPEND}"
 
 DOCS=( AUTHORS ChangeLog NEWS README )
 
 src_prepare() {
 	eautoreconf
+}
+
+src_configure() {
+	# openssl is mandatory for now. Building without it 
+	# is strongly discouraged according to upstream.
+	# Warning: Do not trust "./configure --help"
+	# it's wrong sometimes - esp. in --enable/--with parts...
+	econf \
+		--with-crypto=openssl \
+		$(use_with alsa sound alsa) \
+		$(use_with cups printer cups) \
+		$(use_enable iconv) \
+		$(use_enable ipv6) \
+		$(use_enable largefile) \
+		$(use_with X x)
 }

@@ -3,6 +3,10 @@
 # $Header: $
 
   05 Jul 2010; Nils Andresen (nils.andresen) <andresen.nils@googlemail.com>
+  freerdp-9999.ebuild:
+  Refleced newest (0.7.2) changes to 9999 ebuild, thanks to jlec
+
+  05 Jul 2010; Nils Andresen (nils.andresen) <andresen.nils@googlemail.com>
   -freerdp-0.7.1.ebuild, +freerdp-0.7.2.ebuild:
   Version bump for freerdp, thanks to jlec
 
