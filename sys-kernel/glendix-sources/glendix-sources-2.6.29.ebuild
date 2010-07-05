@@ -15,7 +15,7 @@ detect_arch
 DESCRIPTION="Glendix kernel sources (kernel series ${KV_MAJOR}.${KV_MINOR})"
 HOMEPAGE="http://www.glendix.org/"
 
-GLENDIXPATCH_URI="http://glendix.org/code/glendix_${PV}.patch"
+GLENDIXPATCH_URI="http://www.glendix.org/code/glendix_${PV}.patch"
 SRC_URI="${KERNEL_URI} ${GLENDIXPATCH_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
 UNIPATCH_LIST="${DISTDIR}/glendix_${PV}.patch"

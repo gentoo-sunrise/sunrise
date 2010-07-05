@@ -16,7 +16,7 @@ DESCRIPTION="Glendix kernel sources (kernel series ${KV_MAJOR}.${KV_MINOR})"
 HOMEPAGE="http://www.glendix.org/"
 
 GPV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}.${K_GLENDIXPATCH_VER}"
-GLENDIXPATCH_URI="http://glendix.org/code/glendix_${GPV}.patch"
+GLENDIXPATCH_URI="http://www.glendix.org/code/glendix_${GPV}.patch"
 SRC_URI="${KERNEL_URI} ${GLENDIXPATCH_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
 UNIPATCH_LIST="${DISTDIR}/glendix_${GPV}.patch"
