@@ -16,7 +16,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 
 KEYWORDS="~amd64 ~x86"
-IUSE="X debug doc gstreamer mplayer python static vlc xine"
+IUSE="X debug doc gstreamer mplayer python static-libs vlc xine"
 
 RDEPEND="gstreamer? ( media-libs/gstreamer )
 	mplayer? ( media-video/mplayer )
@@ -44,7 +44,7 @@ src_configure() {
 		$(use_enable vlc) \
 		$(use_enable xine) \
 		$(use_enable X x11) \
-		$(use_enable static) \
+		$(use_enable static-libs static) \
 		--disable-binding-python \
 		--disable-optimize \
 		--disable-strip \
