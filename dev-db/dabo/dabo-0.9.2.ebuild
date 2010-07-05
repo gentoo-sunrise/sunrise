@@ -4,9 +4,9 @@
 
 inherit distutils multilib
 
-DESCRIPTION="A 3-tier, cross-platform application development framework written in Python/wxPython."
+DESCRIPTION="A 3-tier, cross-platform application development framework written in Python/wxPython"
 HOMEPAGE="http://dabodev.com/"
-SRC_URI="ftp://dabodev.com/dabo/${P}.tar.gz"
+SRC_URI="http://cdn.cloudfiles.mosso.com/c118811/${PN}/${P}-mac-nix.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,7 +21,7 @@ RDEPEND=">=dev-python/wxpython-2.6.1.1
 	>=dev-python/pysqlite-2.0
 	ide? ( dev-python/imaging dev-python/reportlab )"
 
-S="${WORKDIR}/${PN}"
+S=${WORKDIR}/${PN}
 
 src_install() {
 	distutils_python_version
@@ -30,7 +30,7 @@ src_install() {
 		--install-data="/usr/$(get_libdir)/python${PYVER}/site-packages/" \
 		|| die "setup.py install failed"
 
-	dodoc ANNOUNCE AUTHORS ChangeLog README TODO
+	dodoc ANNOUNCE AUTHORS ChangeLog README TODO || die
 
 	if use ide; then
 		cd "${S}/ide"
@@ -44,7 +44,7 @@ src_install() {
 		do
 			# and if there are any - install them
 			exeinto "${INS}/$(dirname ${EFIL})"
-			doexe "${EFIL}"
+			doexe "${EFIL}" || die
 		done
 	fi
 }
