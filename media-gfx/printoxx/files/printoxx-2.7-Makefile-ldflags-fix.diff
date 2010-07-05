@@ -1,0 +1,21 @@
+diff -dupr printoxx-2.7.orig/Makefile printoxx-2.7/Makefile
+--- printoxx-2.7.orig/Makefile	2010-07-04 14:44:16.750000037 +0200
++++ printoxx-2.7/Makefile	2010-07-04 14:44:42.651000006 +0200
+@@ -10,7 +10,7 @@ LDFLAGS ?= -O3 -g -Wall -rdynamic
+ PREFIX ?= /usr/local
+ 
+ CFLAGS = $(CXXFLAGS) -c `pkg-config --cflags gtk+-2.0`
+-LFLAGS = $(LDFLAGS) `pkg-config --libs gtk+-2.0 gthread-2.0`
++LIBS = `pkg-config --libs gtk+-2.0 gthread-2.0`
+ 
+ BINDIR = $(PREFIX)/bin
+ DATADIR = $(PREFIX)/share/$(PROGRAM)
+@@ -20,7 +20,7 @@ DOCDIR = $(PREFIX)/share/doc/$(PROGRAM)
+ MANDIR = $(PREFIX)/share/man/man1
+ 
+ $(PROGRAM): $(PROGRAM).o zfuncs.o
+-	$(CXX) $(LFLAGS) -o $(PROGRAM) $(PROGRAM).o zfuncs.o
++	$(CXX) $(LDFLAGS) -o $(PROGRAM) $(PROGRAM).o zfuncs.o $(LIBS)
+ 
+ $(PROGRAM).o: $(SOURCE)
+ 	$(CXX) $(CFLAGS) -o $(PROGRAM).o $(SOURCE)		\

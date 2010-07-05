@@ -1,6 +1,14 @@
 # ChangeLog for media-gfx/printoxx
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*printoxx-2.7 (04 Jul 2010)
+
+  04 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -printoxx-2.0.1.ebuild, +printoxx-2.7.ebuild,
+  +files/printoxx-2.7-Makefile-ldflags-fix.diff:
+  Version bump and general rewrite. Fixed building with LDFLAGS set, the
+  installation procedure and usermanual display support.
 
   12 Jul 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   printoxx-2.0.1.ebuild:
