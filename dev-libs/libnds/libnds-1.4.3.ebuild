@@ -4,7 +4,7 @@
 
 DESCRIPTION="Nintendo DS Libraries for devkitPro ARM"
 HOMEPAGE="http://devkitpro.org/"
-SRC_URI="mirror://sourceforge/devkitpro/libnds-src-${PV}.tar.bz2"
+SRC_URI="mirror://sourceforge/devkitpro/${PN}-src-${PV}.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
@@ -17,11 +17,11 @@ RDEPEND=${DEPEND}
 S=${WORKDIR}
 RESTRICT="strip"
 
-DEVKITPRO=/opt/devkitpro
-
 src_compile() {
-	local DEVKITARM=${DEVKITPRO}/devkitARM
-	local PATH=${PATH}:"${DEVKITARM}/bin"
+	export DEVKITPRO=/opt/devkitpro
+	export DEVKITARM=${DEVKITPRO}/devkitARM
+
+	local PATH=${PATH}:${DEVKITARM}/bin
 	emake -j1 || die "make failed"
 }
 
