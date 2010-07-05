@@ -4,6 +4,10 @@
 
   05 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   libplayer-1.0.0.ebuild:
+  some cleanups
+
+  05 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  libplayer-1.0.0.ebuild:
   use 'static-libs' instead of 'static'
 
   02 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
