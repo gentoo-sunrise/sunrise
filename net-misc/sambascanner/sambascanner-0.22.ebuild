@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
 inherit autotools eutils toolchain-funcs
 
 MY_P="SambaScanner-${PV}"
 DESCRIPTION="a tool to search a whole samba network for files"
-HOMEPAGE="http://www.johannes-bauer.com/sambascanner/"
-SRC_URI="http://www.johannes-bauer.com/${PN}/${MY_P}.tar.bz2"
+HOMEPAGE="http://www.johannes-bauer.com/software/sambascanner/"
+SRC_URI="http://www.johannes-bauer.com/software/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -25,7 +25,9 @@ S=${WORKDIR}/${MY_P}
 src_prepare() {
 	if use debug; then
 		#prevent configure from completely replacing our CFLAGS
-		sed 's:CFLAGS="-O0 -g -pthread":CFLAGS="${CFLAGS} -g -pthread":' -i configure.ac
+		sed -i \
+			-e 's:CFLAGS="-O0 -g -pthread":CFLAGS="${CFLAGS} -g -pthread":' \
+			configure.ac || die
 		eautoreconf
 	fi
 }

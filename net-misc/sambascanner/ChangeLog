@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  sambascanner-0.22.ebuild:
+  Update HOMEPAGE & SRC_URI, trivial cleanup.
+
   28 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org>
   sambascanner-0.22.ebuild:
   Missing die added, all recent stable glibc are nptl aware
