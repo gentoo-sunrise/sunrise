@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  rbutil-1.2.7.ebuild:
+  Cleanup, decrease EAPI requirement. Force using our compiler even when
+  ccache is installed. Install icon in PNG format. Add missing speex dep to
+  avoid bundling.
+
   24 Jun 2010; Dane Smith (smithdanea) <smithdanea@gmail.com>
   -rbutil-1.2.6.ebuild, +rbutil-1.2.7.ebuild:
   Version bump for rbutil.
