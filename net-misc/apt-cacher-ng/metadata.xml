@@ -4,7 +4,8 @@
 	<herd>no-herd</herd>
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<use>
-		<flag name="fuse">Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.</flag>
 		<flag name="doc">Installs some documentation and config examples.</flag>
+		<flag name="fuse">Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.</flag>
+		<flag name="logrotate">Install support files for app-admin/logrotate.</flag>
 	</use>
 </pkgmetadata>
