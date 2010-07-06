@@ -40,9 +40,11 @@
 # to a new location, they will be removed in 30 days.
 # dev-embedded/s51dude - bug #241662
 # dev-util/debug - bug #148868
+# sci-libs/candystore - bug #246611
 # x11-misc/gestikk - bug #248260
 =dev-embedded/s51dude-0.2.0
 =dev-util/debug-0.0.21
+=sci-libs/candystore-0.0.5
 =x11-misc/gestikk-0.6.1
 
 # Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
