@@ -19,6 +19,5 @@ IUSE=""
 RDEPEND="dev-python/pycrypto"
 
 src_install() {
-	mv PKG-INFO README || die
-	dodoc README || die
+	newdoc PKG-INFO README || die
 }
