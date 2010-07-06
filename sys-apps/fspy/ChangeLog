@@ -1,6 +1,11 @@
 # ChangeLog for sys-apps/fspy
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  fspy-0.1.1.ebuild:
+  Use Google Code SRC_URI as the original does not work anymore. Fix
+  src_compile() to respect CC & LDFLAGS.
 
   05 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org> fspy-0.1.1.ebuild:
   Fix dodoc command.

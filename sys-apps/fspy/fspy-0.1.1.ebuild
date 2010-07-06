@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit toolchain-funcs
+
 DESCRIPTION="Easy to use filesystem activity monitoring"
 HOMEPAGE="http://mytty.org/fspy/"
-SRC_URI="http://mytty.org/fspy/${P}.tar.bz2"
+SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -12,8 +14,11 @@ KEYWORDS="~x86"
 IUSE=""
 
 src_compile() {
-	emake clean
-	emake INSTBINDIR=$DESTDIR || die "emake failed"
+	local cc=$(tc-getCC)
+
+	emake clean || die
+	# LDFLAGS var is passed when compiling too...
+	emake CC="${cc}" LD="${cc} ${LDFLAGS}" || die
 }
 
 src_install() {
