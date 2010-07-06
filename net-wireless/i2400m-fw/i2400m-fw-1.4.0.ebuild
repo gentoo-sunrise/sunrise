@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
-MY_PV="${PV/.0}"
+EAPI=2
+MY_PV=${PV%.0}
 
 DESCRIPTION="Intel (R) WiMAX 5150/5350 Firmware"
 HOMEPAGE="http://www.linuxwimax.org"
@@ -13,8 +13,6 @@ LICENSE="ipw3945"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-DEPEND=""
 
 src_install() {
 	insinto /lib/firmware
