@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  gxneur-0.9.9.ebuild:
+  Cleanup, install the icon.
+
   01 Jun 2010; Peter Volkov <pva@gentoo.org> -gxneur-0.9.7.ebuild,
   +gxneur-0.9.9.ebuild:
   Version bump, thank Alex Rodionov for report in bug #169494.
