@@ -21,6 +21,12 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny.3ehbo@mailnull.com> (06 Jul 2010)
+# The distfiles are unversioned and the Manifest checksums are outdated.
+# Additionally, the ebuild coexists in science overlay. Masking
+# for removal in 30 days. Bug #157827.
+=sci-biology/tgi-tools-0.1
+
 # Michał Górny <mgorny.3ehbo@mailnull.com> (05 Jul 2010)
 # These ebuilds rely on genpatches not available on distfile mirrors
 # anymore. They should be bumped to use the current genpatches versions.
