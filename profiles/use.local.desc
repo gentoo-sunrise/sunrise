@@ -167,6 +167,7 @@ dev-libs/libcgroup:debug - Enables debug compile and link flags
 dev-libs/libcgroup:pam - Enables build with pam support
 dev-libs/libcgroup:tools - Enables build tools
 dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
+dev-libs/libplayer:vlc - Enable VLC media player support
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
@@ -315,6 +316,9 @@ net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
 net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
 net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
+net-misc/freerdp:X - Install also GUI client
+net-misc/freerdp:alsa - Enable sound support (using alsa)
+net-misc/freerdp:cups - Enable printing support (using cups)
 net-misc/freerdp:largefile - Support for large files
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
 net-misc/gvpe:cipher-aes-192 - Enables aes-192 cipher
@@ -359,7 +363,6 @@ sys-apps/pyrenamer:music - Enable support for renaming music
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-fs/aufs:fuse - Enable FUSE workaround
 sys-fs/aufs:hinotify - Add support for aufs inotify
-sys-fs/aufs:ksize - Patch to support realloc of memory to make the aufs module run more efficiently
 sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
 sys-fs/aufs:robr - Enable aufs readonly-branch
