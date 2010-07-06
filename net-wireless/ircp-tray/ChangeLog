@@ -1,6 +1,13 @@
 # ChangeLog for net-wireless/ircp-tray
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*ircp-tray-0.7.5 (06 Jul 2010)
+
+  06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -ircp-tray-0.7.2.1.ebuild, +ircp-tray-0.7.5.ebuild:
+  Version bump with basically rewritten ebuild -- the application was
+  degnomeized recently.
 
   27 Jun 2007; Ali Polatel <hawking@gentoo.org> ircp-tray-0.7.2.1.ebuild:
   changed SRC_URI
