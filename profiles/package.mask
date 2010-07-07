@@ -56,9 +56,11 @@
 # app-antivirus/kav4fileservers - bug #62588
 # app-antivirus/panda - bug #78969
 # app-office/openoffice-infra - bug #254572
+# net-libs/raknet - bug #164721
 =app-antivirus/kav4fileservers-5.5.3
 =app-antivirus/panda-9.00.00
 =app-office/openoffice-infra-3.1.0
+=net-libs/raknet-3.07
 
 # Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
 # The module no longer exists in CPAN and there's no trace of a related
