@@ -105,10 +105,6 @@ sci-biology/tgi-tools
 # masking until this is fixed
 www-servers/webcit
 
-# Petr Pisar <petr.pisar@atlas.cz> (18 May 2009)
-# Moved to lisp overlay (Bug #261206)
-<=dev-scheme/schemik-1.2.34.1
-
 # Thomas Sachau (Tommy[D]) <tommy@gentoo.org> (24 Jan 2009)
 # Mask because of recommended replacement of portage contolled
 # file, should fix in source instead
