@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+inherit toolchain-funcs
 
-inherit eutils
-
-DESCRIPTION="the Ad-Hoc Configuration Protocol"
+DESCRIPTION="Daemon for configuring a network using AHCP"
 HOMEPAGE="http://www.pps.jussieu.fr/~jch/software/ahcp/"
 SRC_URI="http://www.pps.jussieu.fr/~jch/software/files/${P}.tar.gz"
 
@@ -16,10 +14,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_compile() {
-	emake PREFIX=/usr "CDEBUGFLAGS=${CFLAGS}" all || die "build failed"
+	emake CC="$(tc-getCC)" CDEBUGFLAGS="${CFLAGS}" || die
 }
 
 src_install(){
-	emake install PREFIX=/usr "TARGET=${D}" || die "install failed"
+	emake install PREFIX=/usr TARGET="${D}" || die
 	dodoc CHANGES README || die
 }
