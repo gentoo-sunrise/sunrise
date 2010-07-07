@@ -119,13 +119,6 @@ games-fps/uhexen2-cvs
 # so the ebuild needs a major work :(
 app-antivirus/kav4fileservers
 
-# Jakub Moc <jakub@gentoo.org> (12 Dec 2006)
-# cvs version should be masked
-# Jakub Moc <jakub@gentoo.org> (23 Nov 2007)
-# mask the whole thing as it really does not work
-# ATM and upstream activity ceased - see Bug 156736
-app-portage/rep-rebuild
-
 # Jakub Moc <jakub@gentoo.org> (31 Jul 2006)
 # masked as it needs testing with other virtual/blas providers
 # (blas-atlas, blas-reference, and acml)
