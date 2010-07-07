@@ -71,6 +71,10 @@
 # Highly experimental new interface version
 =sys-power/phc-intel-0.3.199.3_pre
 
+# Laurento Frittella <laurento.frittella@gmail.com> (16 Jun 2010)
+# masked as it bundles net-misc/mimms package. bad security practice
+media-tv/tv-player
+
 # Markus Ullmann <jokey@gentoo.org> (13 Jun 2010)
 # Mask live versions, they're both broken
 app-office/wiipresent
@@ -127,7 +131,3 @@ sci-mathematics/alberta
 # Patrick Zimmermann <patrick@zakweb.de> (28 Jun 2006)
 # Has dependencies that are masked
 games-fps/unreal-tournament-operationnapali
-
-# Laurento Frittella <laurento.frittella@gmail.com> (16 Jun 2010)
-# masked as it bundles net-misc/mimms package. bad security practice
-media-tv/tv-player
