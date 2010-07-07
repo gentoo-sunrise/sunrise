@@ -110,10 +110,6 @@ www-servers/webcit
 # file, should fix in source instead
 net-im/spark
 
-# Jakub Moc <jakub@gentoo.org> (24 Jan 2008)
-# Masking beta versions
-=app-misc/bsc-4.0.06_beta*
-
 # Davide Cendron <scen@gentoo.org> (12 Jun 2007)
 # cvs (snapshot) version should be masked
 games-fps/uhexen2-cvs
