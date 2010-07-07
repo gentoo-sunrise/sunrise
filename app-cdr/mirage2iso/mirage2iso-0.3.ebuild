@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI=2
 
 inherit toolchain-funcs
 
@@ -25,11 +25,14 @@ RDEPEND="${COMMON_DEPEND}
 
 src_configure() {
 	tc-export CC
-	# we have to explicitly pass --bindir to workaround bugs in configure script
-	# (EPREFIX in parent environment causes confusion), fixed in r115
 	econf \
-		--bindir="${EPREFIX}"/usr/bin \
 		$(use_with pinentry assuan)
+}
+
+src_test() {
+	xz -cd "${DISTDIR}"/${P}-tests.tar.xz | \
+		tar -x --strip-components 1 || die
+	emake check || die
 }
 
 src_install() {
