@@ -3,28 +3,26 @@
 # $Header: $
 
 EAPI=2
-
 inherit linux-info versionator
 
 MY_PN="${PN/3g-ar/-3g}"
-MY_PV="$(get_version_component_range 1-3)AR.$(get_version_component_range 4)"
+MY_PV="$(get_version_component_range 1-3)AC.$(get_version_component_range 4)"
 MY_P="${MY_PN}-${MY_PV}"
 
-DESCRIPTION="NTFS-3G variant supporting ACLs, junction points, compression, and more"
+DESCRIPTION="NTFS-3G variant supporting ACLs, junction points, compression and more"
 HOMEPAGE="http://pagesperso-orange.fr/b.andre/advanced-ntfs-3g.html"
 SRC_URI="http://pagesperso-orange.fr/b.andre/${MY_P}.tgz"
 
 LICENSE="GPL-2"
-
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="acl debug hal suid external-fuse"
+IUSE="acl debug external-fuse hal suid udev"
 
-DEPEND="external-fuse? ( >=sys-fs/fuse-2.7.0 )"
-RDEPEND="${DEPEND}
+RDEPEND="external-fuse? ( >=sys-fs/fuse-2.8.0 )
 	hal? ( sys-apps/hal )
-	sys-apps/attr
-	!sys-fs/ntfs3g"
+	!sys-fs/ntfs3g
+	sys-apps/attr"
+DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -60,6 +58,11 @@ src_install() {
 	if use hal; then
 		insinto /etc/hal/fdi/policy/
 		newins "${FILESDIR}/10-ntfs3g.fdi.2009-r1" "10-ntfs3g.fdi" || die "hal fdi install failed"
+	fi
+
+	if use udev; then
+		insinto /etc/udev/rules.d/
+		doins "${FILESDIR}/99-ntfs3g.rules" || die "udev rules install failed"
 	fi
 }
 
