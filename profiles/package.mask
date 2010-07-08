@@ -64,8 +64,10 @@
 
 # Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
 # The module no longer exists in CPAN and there's no trace of a related
-# bug in Gentoo Bugzilla. Will be removed in 30 days.
+# bug in Gentoo Bugzilla. Will be removed with its reverse dependencies
+# in 30 days.
 =dev-perl/Net-Subnets-0.21
+=net-misc/blocksshd-1.1
 
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
