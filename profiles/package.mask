@@ -39,11 +39,13 @@
 # Unless they get back up or somebody updates the ebuilds to point
 # to a new location, they will be removed in 30 days.
 # dev-embedded/s51dude - bug #241662
+# dev-php5/php-xmlsec - bug #242250
 # dev-util/debug - bug #148868
 # net-misc/mugshot - bug #135524
 # sci-libs/candystore - bug #246611
 # x11-misc/gestikk - bug #248260
 =dev-embedded/s51dude-0.2.0
+=dev-php5/php-xmlsec-0_p20061020
 =dev-util/debug-0.0.21
 =net-misc/mugshot-1.1.95
 =sci-libs/candystore-0.0.5
@@ -56,11 +58,17 @@
 # app-antivirus/kav4fileservers - bug #62588
 # app-antivirus/panda - bug #78969
 # app-office/openoffice-infra - bug #254572
+# net-dns/inadyn-mt - bug #231950
 # net-libs/raknet - bug #164721
+# sci-astronomy/midas - bug #148822
+# www-plugins/nexus_personal_SE-bin - bug #268117
 =app-antivirus/kav4fileservers-5.5.3
 =app-antivirus/panda-9.00.00
 =app-office/openoffice-infra-3.1.0
+=net-dns/inadyn-mt-02.14.10
 =net-libs/raknet-3.07
+=sci-astronomy/midas-20060904
+=www-plugins/nexus_personal_SE-bin-4.10.2.16-r1
 
 # Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
 # The module no longer exists in CPAN and there's no trace of a related
