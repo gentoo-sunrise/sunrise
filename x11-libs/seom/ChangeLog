@@ -1,6 +1,10 @@
 # ChangeLog for x11-libs/seom
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  seom-1.0.192.ebuild:
+  Update SRC_URI. Respect LDFLAGS.
 
   05 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   seom-1.0.192.ebuild:
