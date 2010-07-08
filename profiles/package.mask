@@ -21,6 +21,17 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny.3ehbo@mailnull.com> (08 Jul 2010)
+# The distfiles fail to fetch and upstream uses unversioned tarballs.
+# Unless somebody mirrors a versioned tarball or resolves the issue
+# upstream, they will be removed in 30 days.
+# dev-tex/mimetex - bug #172901
+# media-tv/ati-genericv4l - bug #182927
+# games-util/pbsetup - bug #152993
+=dev-tex/mimetex-1.70
+=media-tv/ati-genericv4l-2.6
+=games-util/pbsetup-2.0
+
 # Michał Górny <mgorny.3ehbo@mailnull.com> (06 Jul 2010)
 # The distfiles are unversioned and the Manifest checksums are outdated.
 # Additionally, the ebuild coexists in science overlay. Masking
