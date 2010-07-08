@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jul 2010; John (EBo) David <ebo@users.sourceforge.net>
+  +glendix-sources-2.6.32-r1.ebuild, +glendix-sources-2.6.32-r2.ebuild:
+  coordinated revision bump with gentoo-sources
+
   05 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   glendix-sources-2.6.29.ebuild, glendix-sources-2.6.31.ebuild:
   Fix GLENDIXPATCH_URI.
