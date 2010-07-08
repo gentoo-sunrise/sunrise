@@ -13,11 +13,10 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dbus"
-RESTRICT="mirror"
+IUSE="asf dbus mp4 old-miniplayer"
 
 RDEPEND="dev-db/sqlite
-	media-libs/taglib[mp4]
+	media-libs/taglib[asf?,mp4?]
 	media-libs/xine-lib
 	net-misc/curl
 	x11-libs/fox[png]
@@ -29,5 +28,9 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_with dbus)
+	# using old-miniplayer as USE flag, as the 'new remote' is not remote
+	econf $(use_with asf) \
+		$(use_with dbus) \
+		$(use_with mp4) \
+		$(use_with !old-miniplayer new-remote)
 }

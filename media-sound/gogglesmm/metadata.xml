@@ -6,4 +6,10 @@
 		<email>maintainer-wanted@gentoo.org</email>
 	</maintainer>
 	<longdescription>Lightweight FOX music collection manager and player</longdescription> 
+	<use>
+		<flag name='asf'>Provide support for Microsoft's Advanced Systems Format media container</flag>
+		<flag name='old-miniplayer'>
+			Build the old mini-player instead of the new one
+		</flag>
+	</use>
 </pkgmetadata>
