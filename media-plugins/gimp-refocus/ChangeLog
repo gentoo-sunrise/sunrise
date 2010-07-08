@@ -1,0 +1,11 @@
+# ChangeLog for media-plugins/gimp-refocus
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jul 2010; Stefan Talpalaru (stefantalpalaru)
+  <stefantalpalaru@yahoo.com> +files/refocus-0.9.0-gimp-2.2_rlx.diff,
+  +files/gimp-refocus-gimp2.6.patch, +gimp-refocus-0.9.0.ebuild,
+  +files/refocus-gimp-2.0.patch, +files/gimp-refocus-atlas.patch,
+  +metadata.xml:
+  new ebuild for bug #327179
+
