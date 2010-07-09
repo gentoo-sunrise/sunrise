@@ -17,15 +17,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-libs/openssl
-	|| ( >=net-misc/curl-7.12[ssl] >=net-misc/curl-7.12[openssl] )"
+	>=net-misc/curl-7.12[ssl]"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install || die "Install failed"
 	dobin frontends/snipe || die
-	dodoc README NEWS TODO AUTHORS sample_auction.txt sample_config.txt || die
+	dodoc AUTHORS ChangeLog NEWS README TODO sample_auction.txt sample_config.txt || die
 }
 
 pkg_postinst() {

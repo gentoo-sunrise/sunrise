@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Jul 2010; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
+  -esniper-2.22.0.ebuild, +esniper-2.23.0.ebuild:
+  Version bump esniper-2.23.0.ebuild, bug 96196
+
   14 Feb 2010; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
   -esniper-2.19.0.ebuild, +esniper-2.22.0.ebuild:
   New version to handle ebay login changes, added ~amd64
