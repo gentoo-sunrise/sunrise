@@ -1,6 +1,12 @@
 # ChangeLog for games-action/ballistics-demo
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*ballistics-demo-1.03 (09 Jul 2010)
+
+  09 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -ballistics-demo-1.ebuild, +ballistics-demo-1.03.ebuild:
+  Version bump.
 
   23 Aug 2007; Federico Ferri (federico__) <mescalinum@gmail.com>
   +metadata.xml, +ballistics-demo-1.ebuild:
