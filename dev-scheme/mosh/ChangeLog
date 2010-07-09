@@ -1,0 +1,8 @@
+# ChangeLog for dev-scheme/mosh
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Jul 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
+  +mosh-0.2.5.ebuild, +metadata.xml:
+  mosh schmeme interpreter added, thx hwoarang
+
