@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -gimp-normalmap-1.2.2.ebuild, +gimp-normalmap-1.2.2-r1.ebuild:
+  Upstream regenerated the tarball, update the Manifest. Minimize sed usage
+  in favor of emake arguments.
+
   26 Apr 2010; Denilson (CrazyTB) <denilsonsa@gmail.com>
   +gimp-normalmap-1.2.2.ebuild, +metadata.xml:
   New package, wrt bug 187052, many thanks to Dennis Schridde, binki,

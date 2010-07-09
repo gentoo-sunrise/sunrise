@@ -22,19 +22,14 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	sed -e 's:CFLAGS=.*`:CFLAGS+=`:' \
-	    -e 's:LDFLAGS=:LDFLAGS+=:' \
+	sed -e 's:\(CFLAGS\)=-O3:\1+=:' \
 		-e 's:-L/usr/X11R6/lib::' \
-		-i Makefile.linux || die
-
-	# Fixing incorrect $(LD) usage
-	# http://code.google.com/p/gimp-normalmap/issues/detail?id=1
-	sed -e 's:\t$(LD) :\t$(CC) :' \
 		-i Makefile.linux || die
 }
 
 src_compile() {
-	emake CC="$(tc-getCC)" || die "emake failed"
+	local cc=$(tc-getCC)
+	emake CC="${cc}" LD="${cc}" LDFLAGS="${LDFLAGS}" || die "emake failed"
 }
 
 src_install() {
