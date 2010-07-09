@@ -1,0 +1,8 @@
+# ChangeLog for app-text/FoxitReader
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  09 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  +FoxitReader-1.1.0.ebuild, +files/FoxitReader.png, +metadata.xml:
+  New ebuild for bug 308147, thanks to Jared for the initial ebuild
+
