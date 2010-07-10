@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jul 2010; John (EBo) David <ebo@users.sourceforge.net>
+  -glendix-sources-2.6.32.ebuild, -glendix-sources-2.6.32-r1.ebuild:
+  removed prior two ebuilds that broke on missing genpatches
+
   08 Jul 2010; John (EBo) David <ebo@users.sourceforge.net>
   +glendix-sources-2.6.32-r1.ebuild, +glendix-sources-2.6.32-r2.ebuild:
   coordinated revision bump with gentoo-sources
