@@ -39,13 +39,6 @@
 =sci-biology/tgi-tools-0.1
 
 # Michał Górny <mgorny.3ehbo@mailnull.com> (05 Jul 2010)
-# These ebuilds rely on genpatches not available on distfile mirrors
-# anymore. They should be bumped to use the current genpatches versions.
-# See: bug #303153.
-=sys-kernel/glendix-sources-2.6.31
-=sys-kernel/glendix-sources-2.6.32
-
-# Michał Górny <mgorny.3ehbo@mailnull.com> (05 Jul 2010)
 # HOMEPAGE & SRC_URI are dead, and there is no trace of a new one.
 # Unless they get back up or somebody updates the ebuilds to point
 # to a new location, they will be removed in 30 days.
