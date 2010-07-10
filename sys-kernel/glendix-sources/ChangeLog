@@ -3,6 +3,10 @@
 # $Header: $
 
   10 Jul 2010; John (EBo) David <ebo@users.sourceforge.net>
+  -glendix-sources-2.6.31.ebuild, +glendix-sources-2.6.31-r1.ebuild:
+  genpatch revision bump on 2.6.31
+
+  10 Jul 2010; John (EBo) David <ebo@users.sourceforge.net>
   -glendix-sources-2.6.32.ebuild, -glendix-sources-2.6.32-r1.ebuild:
   removed prior two ebuilds that broke on missing genpatches
 
