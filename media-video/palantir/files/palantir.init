@@ -1,28 +1,28 @@
 #!/sbin/runscript
 
 depend() {
-        need net
-        after coldplug
+	need localmount net
+	after coldplug
 }
 
 start() {
-        if [[ ! -f /etc/palantir/palantir.conf ]]; then
-                eerror "You have to create the configurationfile"
-                eerror "'/etc/palantir/palantir.conf' before"
-                eerror "starting the server!"
-                return 1
-        fi
+	if [ ! -f /etc/palantir/palantir.conf ]; then
+		eerror "You have to create the configuration file"
+		eerror "'/etc/palantir/palantir.conf' before starting the server!"
+		return 1
+	fi
 
-        ebegin "Starting Palantir Streaming Server"
-
-        start-stop-daemon --start -b -q --exec /usr/bin/palantir --chuid palantir:video
-	start-stop-daemon --start -b -q --exec /usr/bin/palantir_sysfeed --chuid palantir:video
-        eend $?
+	ebegin "Starting Palantir Streaming Server"
+	start-stop-daemon --start -b -q --exec /usr/bin/palantir --chuid palantir:video && \
+	start-stop-daemon --start -b -q --exec /usr/bin/sysfeed --chuid palantir:video
+	eend $?
 }
 
 stop() {
-        ebegin "Stopping Palantir Streaming Server"
-        start-stop-daemon --stop -q --exec /usr/bin/palantir
-	start-stop-daemon --stop -q --exec /usr/bin/palantir_sysfeed
-        eend $?
+	ebegin "Stopping Palantir Streaming Server"
+	start-stop-daemon --stop -q --exec /usr/bin/sysfeed
+	ret=$?
+	start-stop-daemon --stop -q --exec /usr/bin/palantir \
+		|| ret=$?
+	eend ${ret}
 }

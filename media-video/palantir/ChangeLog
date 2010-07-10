@@ -1,6 +1,16 @@
 # ChangeLog for media-video/palantir
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*palantir-2.7 (10 Jul 2010)
+
+  10 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -files/2.6-makefile.patch, -palantir-2.6.ebuild, +palantir-2.7.ebuild,
+  -files/palantir.conf.sample, files/palantir.init:
+  Version bump with almost rewritten ebuild. Replace the Makefile patch and
+  bundled config file with appropriate sed calls and make arguments. Use
+  'make install'. Unbundle libgsm. Cleanup the init.d script and make it
+  POSIX-compliant.
 
   07 May 2007; Ali Polatel (hawking) <polatel@gmail.com>
   palantir-2.6.ebuild:
