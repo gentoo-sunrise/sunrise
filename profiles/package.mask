@@ -21,6 +21,21 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny.3ehbo@mailnull.com> (10 Jul 2010)
+# The distfiles fail to fetch and there's noone with Zope knowledge to
+# perform the bump. Removal in 30 days.
+# net-zope/richdocument - bug #158726
+# net-zope/simplecartitem - bug #160194
+=net-zope/richdocument-2.0_rc1
+=net-zope/simplecartitem-0.5.0
+
+# Michał Górny <mgorny.3ehbo@mailnull.com> (10 Jul 2010)
+# The distfile fails to fetch and upstream suggests the project is dead.
+# The ebuild itself does install binary version instead of compiling
+# the sources and thus the bump requires some effort from a maintainer.
+# Masking for removal in 30 days. Bug #257819.
+=games-fps/bloodfrontier-0.8_beta_rc1-r1
+
 # Michał Górny <mgorny.3ehbo@mailnull.com> (08 Jul 2010)
 # The distfiles fail to fetch and upstream uses unversioned tarballs.
 # Unless somebody mirrors a versioned tarball or resolves the issue
@@ -45,12 +60,18 @@
 # dev-embedded/s51dude - bug #241662
 # dev-php5/php-xmlsec - bug #242250
 # dev-util/debug - bug #148868
+# games-engines/dagii - bug #159032
+# games-misc/lucidlife - bug #96852
+# gnome-extra/gnome-osd - bug #80770
 # net-misc/mugshot - bug #135524
 # sci-libs/candystore - bug #246611
 # x11-misc/gestikk - bug #248260
 =dev-embedded/s51dude-0.2.0
 =dev-php5/php-xmlsec-0_p20061020
 =dev-util/debug-0.0.21
+=games-engines/dagii-0.4.1
+=games-misc/lucidlife-0.9.2
+=gnome-extra/gnome-osd-0.11.3
 =net-misc/mugshot-1.1.95
 =sci-libs/candystore-0.0.5
 =x11-misc/gestikk-0.6.1
@@ -62,6 +83,8 @@
 # app-antivirus/kav4fileservers - bug #62588
 # app-antivirus/panda - bug #78969
 # app-office/openoffice-infra - bug #254572
+# games-fps/uhexen2 - bug #105780
+# media-video/r5u870 - bug #176824
 # net-dns/inadyn-mt - bug #231950
 # net-libs/raknet - bug #164721
 # sci-astronomy/midas - bug #148822
@@ -69,6 +92,8 @@
 =app-antivirus/kav4fileservers-5.5.3
 =app-antivirus/panda-9.00.00
 =app-office/openoffice-infra-3.1.0
+=games-fps/uhexen2-1.4.4_pre4
+=media-video/r5u870-0.10.0
 =net-dns/inadyn-mt-02.14.10
 =net-libs/raknet-3.07
 =sci-astronomy/midas-20060904
