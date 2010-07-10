@@ -2,16 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-
+EAPI=2
 PYTHON_DEPEND="2:2.5"
-SUPPORT_PYTHON_ABIS="1"
 
 inherit eutils python versionator
 
-MY_PV=$(replace_version_separator 1 '_' $(replace_version_separator 2 '-' $(replace_version_separator 3 '_')))
-MY_P=${PN}_linux_source_${MY_PV}
+format_version_string() {
+	local fstr=$1
+	set -- $(get_version_components)
+	eval echo "${fstr}"
+}
 
+MY_P=$(format_version_string '${PN}_linux_source_${1}_${2}-${3}_${4}')
 DESCRIPTION="Post-production video editing"
 HOMEPAGE="http://ekd.tuxfamily.org/"
 SRC_URI="http://download.tuxfamily.org/${PN}forum/${PN}/appli/linux/sources/${MY_P}.tar.gz"
@@ -31,24 +33,23 @@ RDEPEND="virtual/libintl
 	media-video/mplayer
 	media-sound/lame
 	media-sound/sox"
-RESTRICT_PYTHON_DEPEND="2.4 3*"
 
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	python_convert_shebangs 2 ekd_gui.py
+
+	# Upstream's configure/Makefile just mindlessly copies the files over
+	# and using it requires much more effort than doing that by hand.
+	rm -f configure.in Makefile.in || die
 }
 
 src_install() {
 	insinto /usr/share/${PN}
 	doins -r * || die
 
-	building() {
-		make_wrapper ekd-${PYTHON_ABI} "$(PYTHON) /usr/share/${PN}/ekd_gui.py"
-	}
-	python_execute_function building
-
-	python_generate_wrapper_scripts "${D}/usr/bin/ekd"
+	fperms +x /usr/share/${PN}/ekd_gui.py || die
+	make_wrapper ${PN} ./ekd_gui.py /usr/share/${PN}
 
 	dodoc README_LISEZMOI.txt || die
 

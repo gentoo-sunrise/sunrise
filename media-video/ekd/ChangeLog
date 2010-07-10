@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*ekd-2.0.1.20100530 (10 Jul 2010)
+
+  10 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -ekd-2.0.0.20100315.ebuild, +ekd-2.0.1.20100530.ebuild:
+  Version bump, cleanup. Drop support for Python ABIs (the package does not
+  install any files in libdir).
+
   07 Apr 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   +ekd-2.0.0.20100315.ebuild, +metadata.xml:
   New Ebuild for bug 310965. Thanks to ohnobinki and Tommy.
