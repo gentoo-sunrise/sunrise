@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/unreal-tournament-operationnapali
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  10 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  unreal-tournament-operationnapali-1.30.ebuild:
+  Update HOMEPAGE and replace SRC_URI with a random mirror. Trivial cleanup.
 
   18 Sep 2006; Markus Ullmann <jokey@gentoo.org> ChangeLog:
   Minor QA fixes

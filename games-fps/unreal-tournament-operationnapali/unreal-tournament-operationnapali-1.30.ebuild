@@ -7,8 +7,8 @@ inherit versionator games
 MY_PV=$(delete_all_version_separators)
 
 DESCRIPTION="Unreal-themed single-player campaign"
-HOMEPAGE="http://www.planetunreal.com/teamvortex/help/"
-SRC_URI="ftp://ftp.planetmirror.com/pub/moddb/2005/07/1263-ONP${MY_PV}_Umod.zip"
+HOMEPAGE="http://www.moddb.com/mods/operation-na-pali"
+SRC_URI="http://www.ut-files.com/Maps/SinglePlayer/1263-ONP${MY_PV}_Umod.zip"
 
 LICENSE="as-is"
 SLOT="0"
@@ -32,14 +32,14 @@ src_unpack() {
 	for f in *.umod ; do
 		umod -x "${f}" || die "umod ${f} failed"
 	done
-	rm *.umod
+	rm *.umod || die
 
 	cd "${S}"
 	unpack ./*.zip
-	rm *.{txt,zip}
+	rm *.{txt,zip} || die
 
-	mv -f *.unr Maps
-	mv -f *.u System
+	mv -f *.unr Maps || die
+	mv -f *.u System || die
 
 	# Fix filenames in HTML
 	sed -i data/docs/*.html \
@@ -64,8 +64,8 @@ src_unpack() {
 		-e '9,12d' \
 		|| die "sed faq failed"
 
-	mv "Operation NaPali Help Doc.html" "${docdir}.html"
-	mv data "${docdir}"
+	mv "Operation NaPali Help Doc.html" "${docdir}.html" || die
+	mv data "${docdir}" || die
 }
 
 src_install() {
@@ -78,7 +78,6 @@ src_install() {
 pkg_postinst() {
 	games_pkg_postinst
 
-	einfo "For instructions and story, read:"
-	einfo "${dir}/${docdir}.html"
-	echo
+	elog "For instructions and story, read:"
+	elog "	${dir}/${docdir}.html"
 }
