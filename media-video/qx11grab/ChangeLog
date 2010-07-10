@@ -1,6 +1,13 @@
 # ChangeLog for media-video/qx11grab
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*qx11grab-0.2.1_rc4 (10 Jul 2010)
+
+  10 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -qx11grab-0.1.8.ebuild, +qx11grab-0.2.1_rc4.ebuild,
+  +files/qx11grab-0.2.1_rc4-as-needed.patch:
+  Version bump.
 
 *qx11grab-0.1.8 (17 Dec 2009)
 
