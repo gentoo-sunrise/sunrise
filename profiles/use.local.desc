@@ -371,7 +371,6 @@ sys-fs/aufs:robr - Enable aufs readonly-branch
 sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
 sys-fs/ntfs3g-ar:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
 sys-fs/ntfs3g-ar:udev - Instal udev rule for sys-apps/udev
-sys-fs/pysize:psyco - Adds psyco support
 sys-kernel/ccs-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
