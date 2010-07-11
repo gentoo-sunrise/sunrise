@@ -1,6 +1,10 @@
 # ChangeLog for net-zope/richdocument
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  -richdocument-2.0_rc1.ebuild, +richdocument-2.0.ebuild:
+  Version bump, SLOT set to 2
 
   09 Jan 2007; Markus Ullmann <jokey@gentoo.org>
   richdocument-2.0_rc1.ebuild:
