@@ -173,8 +173,6 @@ dev-libs/libwiimote:tilt - Enable tilt
 dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
 dev-util/eclim:cdt - Enables C/C++ development support
 dev-util/eresi:server - Build eresi server capability
-dev-util/geany-plugins:enchant - Enable spell checking using enchant
-dev-util/geany-plugins:gtkspell - Use gtkspell for dictionary support
 dev-util/icewing:grabber - Build the grabber plug-in
 dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
@@ -244,12 +242,15 @@ media-gfx/openvrml:player - Build the openvrml-player Gnome application
 media-gfx/openvrml:xembed - Build the XEmbed container control
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
 media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
+media-plugins/gimp-refocus:lapack-atlas - Use the ATLAS version of lapack
 media-radio/ax25-tools:X - Enable some x based configuration tools.
 media-radio/grig:hardware - Enable hardware IO
 media-radio/unixcw:ncurses - Enables building the curses based morse code tutor program 'cwcp'.
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
+media-sound/gogglesmm:asf - Provide support for Microsoft's Advanced Systems Format media container
+media-sound/gogglesmm:old-miniplayer -  Build the old mini-player instead of the new one 
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
