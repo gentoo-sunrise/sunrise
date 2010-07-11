@@ -1,6 +1,9 @@
 # ChangeLog for games-fps/hexen2-lights
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de> hexen2-lights-1.ebuild:
+  Ebuild cleanup
 
   26 Mar 2009; Tiago Cunha <tcunha@gentoo.org> metadata.xml:
   Fix metadata.xml.

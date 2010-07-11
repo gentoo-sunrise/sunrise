@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils games
+inherit games
 
 MY_PN="hexen2"
 
 DESCRIPTION="Colored lighting data for Hexen 2"
 HOMEPAGE="http://uhexen2.sourceforge.net/"
-SRC_URI="mirror://sourceforge/uhexen2/hexen2-lit_files.tgz"
+SRC_URI="mirror://sourceforge/u${MY_PN}/${MY_PN}-lit_files.tgz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -16,17 +16,17 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 S=${WORKDIR}
-dir=${GAMES_DATADIR}/${MY_PN}
 
 src_install() {
-	insinto "${dir}"
-	doins -r data1 || die "doins * failed"
+	local my_dir=${GAMES_DATADIR}/${MY_PN}
+	insinto "${my_dir}"
+	doins -r data1 || die
 
 	# The 3 demo maps are also in the demo data.
-	dodir "${dir}"/demo/data1/maps
-	local i
-	for i in 1 2 3 ; do
-		dosym "${dir}"/data1/maps/demo${i}.lit  "${dir}"/demo/data1/maps
+	dodir "${my_dir}"/demo/data1/maps
+	local my_i
+	for my_i in 1 2 3 ; do
+		dosym "${my_dir}"/data1/maps/demo${my_i}.lit  "${my_dir}"/demo/data1/maps || die
 	done
 
 	dodoc *.txt || die
@@ -38,8 +38,7 @@ pkg_postinst() {
 	games_pkg_postinst
 
 	if ! has_version "games-fps/uhexen2" ; then
-		einfo "This is just lighting data. To play, emerge a client"
-		einfo "such as uhexen2."
-		echo
+		elog "This is just lighting data. To play, emerge a client"
+		elog "such as uhexen2."
 	fi
 }
