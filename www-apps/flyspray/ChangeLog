@@ -1,6 +1,11 @@
 # ChangeLog for www-apps/flyspray
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Jul 2010; Markos Chandras <hwoarang@gentoo.org>
+  flyspray-0.9.9.6.ebuild:
+  Fix the php dependencies until I talk to PHP herd to refactor the virtual
+  package
 
   15 Dec 2009; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> +flyspray-0.9.9.6.ebuild,

@@ -18,10 +18,10 @@ IUSE="graphviz"
 # need_apache and friends not used because they aren't EAPI="2" friendly
 DEPEND="app-arch/unzip"
 RDEPEND="graphviz? ( media-gfx/graphviz )
-	virtual/httpd-php[xml]
-	|| ( virtual/httpd-php[mysql]
-		virtual/httpd-php[mysqli]
-		virtual/httpd-php[postgres] )
+	virtual/httpd-php:5.3
+	|| ( =dev-lang/php-5.3*[mysql]
+		=dev-lang/php-5.3*[mysqli]
+		=dev-lang/php-5.3*[postgres] )
 	dev-php/adodb"
 
 src_prepare () {
