@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de> lucidlife-0.9.2.ebuild:
+  Upstreams HOMEPAGE/SRC_URI is dead, changed them to softpedia and mirrored
+  the tarball
+
   24 Apr 2010; Denilson (CrazyTB) <denilsonsa@gmail.com>
   +lucidlife-0.9.2.ebuild, +metadata.xml:
   New package lucidlife, wrt bug 96852, thanks to Xarthisius and xmw.

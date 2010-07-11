@@ -7,8 +7,8 @@ EAPI=2
 inherit games
 
 DESCRIPTION="A Conway's Life simulator written in GTK+2 - fork from Gtklife"
-HOMEPAGE="http://icculus.org/~jcspray/LucidLife/"
-SRC_URI="http://icculus.org/~jcspray/LucidLife/${P}.tar.gz"
+HOMEPAGE="http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Simulation/LucidLife-26633.shtml"
+SRC_URI="http://xmw.de/mirror/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
