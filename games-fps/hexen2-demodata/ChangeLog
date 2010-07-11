@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  hexen2-demodata-1.4.3.ebuild:
+  Ebuild cleanup, added amd64 specific SRC_URI
+
   31 Jan 2010; Markos Chandras <hwoarang@gentoo.org>
   hexen2-demodata-1.4.3.ebuild:
   Drop depcreated built_with_use call

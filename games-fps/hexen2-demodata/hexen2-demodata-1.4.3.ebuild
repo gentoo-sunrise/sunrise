@@ -2,27 +2,30 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=2
 
 inherit eutils games
 
 MY_PN="hexen2"
+MY_P="${MY_PN}demo-${PV}"
 
 DESCRIPTION="Demo data for Hexen 2"
 HOMEPAGE="http://uhexen2.sourceforge.net/"
-SRC_URI="mirror://sourceforge/uhexen2/hexen2demo-${PV}-linux-i586.tgz"
+SRC_URI="amd64? ( mirror://sourceforge/u${MY_PN}/${MY_P}-linux-x86_64.tgz )
+	ppc? ( mirror://sourceforge/u${MY_PN}/${MY_P}-linux-i586.tgz )
+	x86? ( mirror://sourceforge/u${MY_PN}/${MY_P}-linux-i586.tgz )"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-S=${WORKDIR}/hexen2demo-${PV}
+S=${WORKDIR}/${MY_P}
 dir=${GAMES_DATADIR}/${MY_PN}
 
 src_install() {
-	insinto "${dir}"/demo
-	doins -r data1 || die "doins data1 failed"
+	insinto "${GAMES_DATADIR}"/${MY_PN}/demo
+	doins -r data1 || die
 
 	# All the docs are regarding uhexen2, rather than the demo data.
 
