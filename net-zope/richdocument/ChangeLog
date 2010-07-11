@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de> +richdocument-3.2.ebuild:
+  Additional slot for net-zope/plone:3.0 support.
+
   11 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de>
   -richdocument-2.0_rc1.ebuild, +richdocument-2.0.ebuild:
   Version bump, SLOT set to 2
