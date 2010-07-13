@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  ETL-9999.ebuild:
+  Drop KEYWORDS from a live ebuild. Drop EGIT_FETCH_CMD to avoid breakage
+  with bare checkouts which git.eclass does now. Reorder vars.
+
   17 Feb 2010; Diego Barrios Romero (eldruin) <eldruin@gmail.com>
   +ETL-9999.ebuild:
   New live ebuild for ETL
