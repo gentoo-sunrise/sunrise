@@ -6,7 +6,7 @@ EAPI=2
 
 PYTHON_DEPEND=2
 SUPPORT_PYTHON_ABIS=1
-RESTRICT_PYTHON_ABIS="3.*" # due to python-distutils-extra
+RESTRICT_PYTHON_ABIS='2.4 2.5 3.*'
 
 inherit gnome2-utils distutils versionator
 
