@@ -1,0 +1,8 @@
+# ChangeLog for net-analyzer/icinga
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Jul 2010; Matthew Thode (prometheanfire) <mthode@mthode.org>
+  +icinga-1.0.2.ebuild, +metadata.xml:
+  New Ebuild for bug 271339 thanks to chithead
+
