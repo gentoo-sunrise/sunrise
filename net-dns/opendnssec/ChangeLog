@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jul 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -opendnssec-1.1.0.ebuild, -files/opendnssec-1.1.0-drop-privileges.patch,
+  +opendnssec-1.1.1.ebuild, +files/opendnssec-1.1.1-drop-privileges.patch:
+  version bump
+
   28 May 2010; Justin Lecher <jlec@gentoo.org> metadata.xml:
   Synced metadata.xml w/ sunrise's skel.metadata.xml
 
