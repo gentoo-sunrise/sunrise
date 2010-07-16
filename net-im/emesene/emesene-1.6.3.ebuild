@@ -17,6 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="webcam"
 
 RDEPEND="dev-python/pygtk:2
+	webcam? ( media-plugins/gst-plugins-v4l2 )
 	dev-python/gst-python"
 
 src_prepare() {

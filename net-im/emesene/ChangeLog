@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jul 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  -emesene-1.6.2.ebuild, +emesene-1.6.3.ebuild:
+  Version bump, added gst dep when webcam useflag is enabled. Thanks to
+  Satoshi Hayazaki
+
   19 Jun 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   -emesene-1.5.1.ebuild, +emesene-1.6.2.ebuild, metadata.xml:
   Version bump, ebuild improvement
