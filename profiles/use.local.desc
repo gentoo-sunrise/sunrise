@@ -101,6 +101,7 @@ app-admin/collectd:cd_write_http - Build the write_http output plugin
 app-admin/collectd:cd_zfs_arc - Build the zfs_arc input plugin
 app-admin/collectd:contrib - Install user-contributed files in the doc directory
 app-admin/elektra:coverage - Turn on code coverage analysis tools
+app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
 app-arch/zpaq:optimization - Install additional files required to support ZPAQ's optimized compression mode.
 app-backup/fsarchiver:lzma - Enables LZMA compression
