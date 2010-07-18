@@ -4,12 +4,13 @@
 
 EAPI=2
 
+PYTHON_DEPEND='2:2.6'
 PYTHON_USE_WITH=ncurses
 inherit python
 
 DESCRIPTION="Track parallel merges and display their logs on a split-screen basis"
 HOMEPAGE="http://qwpx.net/~mgorny/portage-jobsmon/"
-SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.py.bz2"
+SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -18,6 +19,10 @@ IUSE=""
 
 RDEPEND="dev-python/pyinotify"
 
+src_prepare() {
+	python_convert_shebangs 2 ${PN}.py
+}
+
 src_install() {
-	newbin ${P}.py ${PN} || die
+	newbin ${PN}.py ${PN} || die
 }

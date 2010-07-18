@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*portage-jobsmon-0.2.1 (18 Jul 2010)
+
+  18 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -portage-jobsmon-0.2.ebuild, +portage-jobsmon-0.2.1.ebuild:
+  Version bump with Python dependency clarification.
+
   27 Jun 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   portage-jobsmon-0.2.ebuild:
   Update HOMEPAGE and SRC_URI.
