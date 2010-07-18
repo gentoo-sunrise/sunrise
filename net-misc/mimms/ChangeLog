@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/mimms
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jul 2010; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  mimms-3.2.1.ebuild:
+  Use PYTHON_DEPEND instead of NEED_PYTHON.
 
   10 Dec 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   mimms-3.2.1.ebuild:

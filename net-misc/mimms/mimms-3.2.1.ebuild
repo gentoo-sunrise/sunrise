@@ -5,7 +5,7 @@
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
 
-NEED_PYTHON="2.5"
+PYTHON_DEPEND="2:2.5"
 inherit distutils
 
 DESCRIPTION="mms stream downloader that uses libmms"
