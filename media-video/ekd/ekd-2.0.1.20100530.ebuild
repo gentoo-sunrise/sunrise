@@ -7,13 +7,7 @@ PYTHON_DEPEND="2:2.5"
 
 inherit eutils python versionator
 
-format_version_string() {
-	local fstr=$1
-	set -- $(get_version_components)
-	eval echo "${fstr}"
-}
-
-MY_P=$(format_version_string '${PN}_linux_source_${1}_${2}-${3}_${4}')
+MY_P=$(version_format_string '${PN}_linux_source_${1}_${2}-${3}_${4}')
 DESCRIPTION="Post-production video editing"
 HOMEPAGE="http://ekd.tuxfamily.org/"
 SRC_URI="http://download.tuxfamily.org/${PN}forum/${PN}/appli/linux/sources/${MY_P}.tar.gz"
