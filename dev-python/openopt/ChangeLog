@@ -1,6 +1,11 @@
 # ChangeLog for dev-python/openopt
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Jul 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -openopt-0.25.ebuild, +openopt-0.29.ebuild:
+  Version bump, don't install examples/docs into site-packages, adapt to new
+  python ebuild syntax and add optional examples use-flag
 
   20 Oct 2009; Jean-Francis Roy (jeanfrancis) <jeanfrancisroy@gmail.com>
   +openopt-0.25.ebuild, +metadata.xml:
