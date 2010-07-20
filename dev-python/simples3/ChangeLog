@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/simples3
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Jul 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -simples3-0.5.ebuild, +simples3-1.0_alpha.ebuild:
+  Version bump, adapt to new python ebuild style
 
   12 Jul 2009; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -simples3-0.4.ebuild, +simples3-0.5.ebuild:
