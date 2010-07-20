@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-NEED_PYTHON=2.5
+EAPI="2"
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
@@ -20,6 +21,7 @@ DEPEND="dev-libs/libevent
 	>=dev-python/greenlet-0.2
 	doc? ( dev-python/sphinx )"
 RDEPEND="${DEPEND}"
+RESTRICT_PYTHON_ABIS="3.*"
 
 src_compile() {
 	distutils_src_compile
@@ -28,6 +30,14 @@ src_compile() {
 		cd "${S}/doc"
 		PYTHONPATH=".." emake html || die "Building documentation failed"
 	fi
+}
+
+src_test() {
+	testing() {
+		cd "${S}/greentest"
+		PYTHONPATH="$(dir -d ../build-${PYTHON_ABI}/lib*)" $(PYTHON) testrunner.py || die "Tests failed"
+	}
+	python_execute_function testing
 }
 
 src_install() {
