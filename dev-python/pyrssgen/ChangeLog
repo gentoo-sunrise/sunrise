@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pyrssgen
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Jul 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pyrssgen-1.0.0.ebuild:
+  Switch to new python ebuild syntax, add examples use flag
 
   08 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> pyrssgen-1.0.0.ebuild:
   Added NEED_PYTHON
