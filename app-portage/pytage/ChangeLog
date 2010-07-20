@@ -1,6 +1,10 @@
 # ChangeLog for app-portage/pytage
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 Jul 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  pytage-0.4.1.ebuild:
+  Replace NEED_PYTHON with PYTHON_DEPEND
 
   16 Mar 2008; Jakub Moc <jakub@gentoo.org> pytage-0.4.1.ebuild:
   Add ~x86 keyword
