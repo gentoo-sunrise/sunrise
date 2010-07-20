@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_PYTHON=2.3
+PYTHON_DEPEND="2"
 
 inherit distutils
 
@@ -17,6 +17,10 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=""
+
+src_prepare() {
+	python_convert_shebangs 2 ${PN}
+}
 
 src_install() {
 	distutils_src_install
