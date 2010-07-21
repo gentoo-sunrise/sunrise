@@ -1,6 +1,13 @@
 # ChangeLog for media-video/gcstar
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Jul 2010; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -gcstar-1.4.3.ebuild, +gcstar-1.5.0.ebuild, metadata.xml:
+  Version bump, thanks to Christian Faulhammer <fauli@gentoo.org> for poke.
+  Plus, EAPI 3 support, updated dependencies, installation of icons in
+  different sizes, and updated descriptions from GCstar's packaging
+  guidelines.
 
   21 Jul 2009; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   gcstar-1.4.3.ebuild:

@@ -2,12 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="3"
+
 GCONF_DEBUG="no"
 SCROLLKEEPER_UPDATE="no"
 
 inherit eutils gnome2
 
-DESCRIPTION="GCstar is a personal collections manager."
+DESCRIPTION="Manage your collections of movies, games, books, music and more"
 HOMEPAGE="http://www.gcstar.org/"
 SRC_URI="http://download.gna.org/gcstar/${P}.tar.gz"
 
@@ -22,20 +24,24 @@ for x in ${LANGS} ; do
 done
 
 DEPEND="dev-lang/perl
-		virtual/perl-Archive-Tar
 		dev-perl/Archive-Zip
-		virtual/perl-IO-Compress
+		dev-perl/DateTime-Format-Strptime
 		dev-perl/gtk2-perl
 		dev-perl/HTML-Parser
 		dev-perl/libwww-perl
 		dev-perl/URI
-		dev-perl/XML-LibXML
 		dev-perl/XML-Parser
 		dev-perl/XML-Simple
-		virtual/perl-Time-Piece
+		virtual/perl-Archive-Tar
+		virtual/perl-Encode
+		virtual/perl-Getopt-Long
+		virtual/perl-File-Path
 		virtual/perl-File-Spec
 		virtual/perl-File-Temp
+		virtual/perl-IO-Compress
 		virtual/perl-libnet
+		virtual/perl-Storable
+		virtual/perl-Time-Piece
 		cddb? ( dev-perl/Net-FreeDB )
 		gnome? ( dev-perl/gnome2-vfs-perl )
 		mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
@@ -47,10 +53,13 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.4.0-man.patch"
+}
+
+src_configure() {
+	# do nothing (otherwise gnome2_src_configure would get called)
+	return
 }
 
 src_compile() {
@@ -74,12 +83,18 @@ src_install() {
 	rm -rf tmp
 
 	cd "${S}"
-	./install --prefix="${D}/usr" \
+	./install --prefix="${ED}usr" \
 		--noclean --nomenu || die "install script failed"
 
 	domenu share/applications/gcstar.desktop
-	newicon share/gcstar/icons/gcstar_64x64.png gcstar.png
-	insinto /usr/share/mime/packages
+	for size in 16x16 22x22 24x24 32x32 36x36 48x48 64x64 72x72 96x96 128x128
+	do
+		insinto ${EPREFIX}/usr/share/icons/hicolor/${size}/apps
+		newins share/gcstar/icons/gcstar_${size}.png gcstar.png
+	done
+	insinto ${EPREFIX}/usr/share/icons/hicolor/scalable/apps
+	newins share/gcstar/icons/gcstar_scalable.svg gcstar.svg
+	insinto ${EPREFIX}/usr/share/mime/packages
 	doins share/applications/gcstar.xml
 
 	dodoc CHANGELOG README
