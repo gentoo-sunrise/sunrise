@@ -6,7 +6,7 @@ EAPI=2
 inherit linux-info versionator
 
 MY_PN="${PN/3g-ar/-3g}"
-MY_PV="$(get_version_component_range 1-3)AC.$(get_version_component_range 4)"
+MY_PV="$(get_version_component_range 1-3)AR.$(get_version_component_range 4)"
 MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="NTFS-3G variant supporting ACLs, junction points, compression and more"
