@@ -17,8 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="webcam"
 
 RDEPEND="dev-python/pygtk:2
-	webcam? ( media-plugins/gst-plugins-v4l2 )
-	dev-python/gst-python"
+	dev-python/gst-python
+	webcam? ( media-plugins/gst-plugins-meta[v4l2] )"
 
 src_prepare() {
 	rm GPL PSF LGPL || die "rm license files failed"
