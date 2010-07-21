@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Jul 2010; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  fyre-1.0.1.ebuild:
+  Keywording ~amd64 again, package works fine on 64-bit systems. Please don't
+  remove keywords without a good reason.
+
   08 Jan 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   +files/fyre_file_dialog_pause_fix.patch:
   Patch forgotten. Thanks to ohnobinki

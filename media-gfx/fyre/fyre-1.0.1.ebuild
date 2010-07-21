@@ -15,7 +15,7 @@ SRC_URI="http://releases.navi.cx/${PN}/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="gnet openexr"
 
 RDEPEND="dev-libs/glib:2
