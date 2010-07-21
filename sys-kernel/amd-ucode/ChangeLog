@@ -1,0 +1,8 @@
+# ChangeLog for sys-kernel/amd-ucode
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Jul 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
+  +amd-ucode-2009.10.09.ebuild, +metadata.xml:
+  initial ebuild AMD's CPU microcode
+
