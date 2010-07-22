@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jul 2010; the_mgt (the_mgt) <themgt@mail.ru> -libcitadel-7.72.ebuild,
+  +libcitadel-7.81.ebuild:
+  Version bump to 7.81, added flag-o-matic filter for -finline-functions
+
   21 Feb 2010; the_mgt themgt@mail.ru -libcitadel-7.71.ebuild,
   +libcitadel-7.72.ebuild:
   Version bump for libcitadel, bugfix/maintenance update

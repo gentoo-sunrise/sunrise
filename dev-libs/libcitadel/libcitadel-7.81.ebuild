@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base
+EAPI=2
+
+inherit flag-o-matic
 
 DESCRIPTION="Contains code which is shared across all the components which make up the Citadel system"
 HOMEPAGE="http://citadel.org/"
@@ -20,3 +22,8 @@ DEPEND="sys-libs/db
 	net-misc/curl"
 
 RDEPEND="${DEPEND}"
+
+src_configure() {
+	filter-flags -finline-functions
+	econf
+}
