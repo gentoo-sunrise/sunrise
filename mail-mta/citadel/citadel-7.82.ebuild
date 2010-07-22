@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="ldap mailwrapper pam pic ssl threads"
 
-DEPEND="=dev-libs/libcitadel-${PV}
+DEPEND="=dev-libs/libcitadel-7.81
 	>=sys-libs/db-4.1.25_p1
 	virtual/libiconv
 	ldap? ( >=net-nds/openldap-2.0.27 )
