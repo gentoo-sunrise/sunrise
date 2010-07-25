@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/tilt
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de> +tilt-0.0.2.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 137352, thanks to Patrick Huber for the initial ebuild.
+
