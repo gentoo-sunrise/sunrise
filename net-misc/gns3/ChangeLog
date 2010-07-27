@@ -1,6 +1,13 @@
 # ChangeLog for net-misc/gns3
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de> -gns3-0.6.1.ebuild,
+  -files/gns3-0.6.1_set_dynamips_path.patch,
+  -files/gns3-0.6.1_set_pemu_path.patch, +gns3-0.7.2.ebuild,
+  +files/gns3-0.7.2_set_dynamips_path.patch,
+  +files/gns3-0.7.2_set_qemu_path.patch, +files/gns3.xpm:
+  Version bump, python3 avoidance stuff, thanks to Dmitry and Ján Bednár
 
   18 Aug 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -files/gns3-0.6_set_dynamips_path.patch,
