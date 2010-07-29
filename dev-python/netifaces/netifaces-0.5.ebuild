@@ -16,4 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
+DEPEND="dev-python/setuptools"
+
 RESTRICT_PYTHON_ABIS="3.*"

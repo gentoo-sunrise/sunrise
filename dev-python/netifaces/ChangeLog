@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  netifaces-0.5.ebuild:
+  dev-python/setuptools depend added
+
+  29 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   +netifaces-0.5.ebuild, +metadata.xml:
   New Ebuild for bug 248601 thanks to Tommy[D]
 
