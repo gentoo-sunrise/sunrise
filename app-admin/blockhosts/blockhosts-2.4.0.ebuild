@@ -57,9 +57,6 @@ src_install() {
 	exeinto /usr/share/${PN}
 	doexe bhrss.py || die
 
-	# keep the test script
-	use test && { doins test_blockhosts.py || die ; }
-
 	# not tested, but should work
 	if use logwatch; then
 		insinto /etc/log.d/conf/services/
