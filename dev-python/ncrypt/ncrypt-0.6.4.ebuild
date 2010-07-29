@@ -24,6 +24,8 @@ RDEPEND="${DEPEND}"
 
 RESTRICT_PYTHON_ABIS="3.*"
 
+DOCS="website/usage.txt"
+
 src_prepare() {
 	epatch "${FILESDIR}/cinit.patch"
 }

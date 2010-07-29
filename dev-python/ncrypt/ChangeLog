@@ -3,6 +3,10 @@
 # $Header: $
 
   29 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  ncrypt-0.6.4.ebuild:
+  Usage doc added
+
+  29 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   +ncrypt-0.6.4.ebuild, +files/cinit.patch, +metadata.xml:
   New Ebuild for bug 139679 thanks to Tommy[D]
 
