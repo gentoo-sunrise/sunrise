@@ -27,7 +27,7 @@ RDEPEND=">=dev-libs/glib-2.6
 	x11-libs/libXScrnSaver
 	>=x11-libs/hippo-canvas-0.2.30
 	x11-libs/pango
-	firefox? ( !xulrunner? ( www-client/mozilla-firefox ) )
+	firefox? ( !xulrunner? ( www-client/firefox ) )
 	xulrunner? ( net-libs/xulrunner )"
 
 DEPEND=">=dev-util/pkgconfig-0.19
