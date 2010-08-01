@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2010; Markos Chandras <hwoarang@gentoo.org> tucan-0.3.9.ebuild,
+  tucan-9999.ebuild:
+  Remove linguas_el use dependency from tesseract
+
   11 Jan 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   tucan-0.3.9.ebuild, tucan-9999.ebuild:
   Fixed live ebuild, updated descriptions
