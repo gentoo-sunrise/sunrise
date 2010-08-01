@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Aug 2010; Markos Chandras <hwoarang@gentoo.org> exe-1.04.0.3532.ebuild:
+  Rename mozilla-firefox -> firefox
+
   02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   exe-1.04.0.3532.ebuild:
   Update SRC_URI, minor cleanup.
