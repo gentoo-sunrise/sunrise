@@ -19,7 +19,7 @@ IUSE=""
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	insinto /lib/firmware/amd-ucode || die "insinto failed"
+	insinto /lib/firmware/amd-ucode
 	doins microcode_amd.bin || die "doins failed"
 	}
 
