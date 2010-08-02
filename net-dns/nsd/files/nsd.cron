@@ -1,10 +1,10 @@
 #!/bin/sh 
-# Copyright 1999-2009 Gentoo Foundation 
+# Copyright 1999-2010 Gentoo Foundation 
 # Distributed under the terms of the GNU General Public License v2 
 # $Header: $ 
 # 
 my_nsdc="/usr/sbin/nsdc" 
 
-if [[ -x ${my_nsdc} ]]; then 
+if test -x ${my_nsdc}; then 
 	${my_nsdc} patch 1>/dev/null
 fi

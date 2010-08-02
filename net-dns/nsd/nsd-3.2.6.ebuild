@@ -13,7 +13,7 @@ SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bind8-stats dnssec ipv6 largefile nsec3 nsid root-server runtime-checks tsig"
+IUSE="bind8-stats ipv6 largefile nsec3 root-server runtime-checks"
 
 DEPEND="tsig? ( dev-libs/openssl )"
 RDEPEND=${DEPEND}
@@ -34,14 +34,11 @@ src_configure() {
 		--with-xfrdfile=/var/db/nsd/xfrd.state \
 		--with-zonesdir=/var/lib/nsd \
 		$(use_enable bind8-stats) \
-		$(use_enable dnssec) \
 		$(use_enable largefile) \
 		$(use_enable ipv6) \
 		$(use_enable nsec3) \
-		$(use_enable nsid) \
 		$(use_enable root-server) \
-		$(use_enable runtime-checks checking) \
-		$(use_enable tsig)
+		$(use_enable runtime-checks checking)
 }
 
 src_install() {
@@ -78,4 +75,8 @@ pkg_postinst() {
 	echo
 	elog "To automatically merge zone transfer changes back to nsd's"
 	elog "zone files using 'nsdc patch', try nsd.cron in /usr/share/nsd"
+	echo
+	# remove on next version bump
+	einfo "Since nsd 3.2.6, USE flags for dnssec, nsid and tsig have been"
+	einfo "removed, as all of them are now enabled by default by upstream."
 }
