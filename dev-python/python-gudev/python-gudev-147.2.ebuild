@@ -20,7 +20,7 @@ RDEPEND=">=sys-fs/udev-147[extras]
 	dev-python/pygobject"
 DEPEND="${RDEPEND}"
 
-S=${WORKDIR}/nzjrs-${PN}-5fac65a
+S=${WORKDIR}/nzjrs-${PN}-ee8a644
 
 DOCS="AUTHORS NEWS README"
 
