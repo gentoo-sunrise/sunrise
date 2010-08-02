@@ -4,7 +4,7 @@
 
 EAPI=2
 
-PYTHON_DEPEND='2:2.6'
+PYTHON_DEPEND='*:2.6'
 PYTHON_USE_WITH=ncurses
 inherit python
 
@@ -18,10 +18,6 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-python/pyinotify"
-
-src_prepare() {
-	python_convert_shebangs 2 ${PN}.py
-}
 
 src_install() {
 	newbin ${PN}.py ${PN} || die
