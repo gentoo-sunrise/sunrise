@@ -1,0 +1,8 @@
+# ChangeLog for net-analyzer/hostmap
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Aug 2010; Dane Smith (c1pher) <smithdanea@gmail.com>
+  +hostmap-0.2.2.ebuild, +metadata.xml:
+  New ebuild for hostmap. Bug 329589.
+
