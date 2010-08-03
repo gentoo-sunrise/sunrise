@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Aug 2010; the_mgt (the_mgt) <themgt@mail.ru> -webcit-7.81.ebuild,
+  +webcit-7.83.ebuild:
+  Version bump by renaming the ebuild, now the complete suite is synced to the
+  upstream versions
+
   22 Jul 2010; the_mgt (the_mgt) <themgt@mail.ru> -webcit-7.72.ebuild,
   +webcit-7.81.ebuild:
   Version bump to 7.81
