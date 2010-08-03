@@ -19,11 +19,11 @@ src_install() {
 	dodoc README sets.conf.example || die
 	insinto /etc/portage
 	newins smart-live-rebuild.conf{.example,} || die
+	insinto /usr/share/portage/config/sets
+	newins sets.conf.example ${PN}.conf || die
 }
 
 pkg_postinst() {
-	elog "If you want to run ${PN} as a portage set, you need to set up"
-	elog "your sets.conf like /usr/share/doc/${PF}/sets.conf.example*."
 	elog "You might also consider installing [dev-python/psutil] then, which is required"
 	elog "for ${PN} automatically detect if it was spawned by emerge."
 }
