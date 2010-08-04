@@ -1,6 +1,0 @@
-OPTS=-D JFS -D GETUSER -D LARGEMEM
-LIBS=-lncurses
-FILE=lmon.c
-
-nmon:
-	$(CC) -o nmon $(FILE) $(OPTS) $(CFLAGS) $(LDFLAGS) $(LIBS)
