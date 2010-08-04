@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>no-herd</herd>
+  <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+  <longdescription>A native PHP-extension to provide OAuth authentication protocol support</longdescription>
+  <upstream>
+    <maintainer status="active">
+        <email>jawed@php.net</email>
+        <name>John Jawed</name>
+    </maintainer>
+    <maintainer status="active">
+        <email>felipe@php.net</email>
+        <name>Felipe Pena</name>
+    </maintainer>
+    <maintainer status="active">
+        <email>rasmus@php.net</email>
+        <name>Rasmus Lerdorf</name>
+    </maintainer>
+    <maintainer status="active">
+        <email>datibbaw@php.net</email>
+        <name>Tjerk Meesters</name>
+    </maintainer>
+    <doc lang="en">http://php.net/oauth/</doc>
+  </upstream>
+</pkgmetadata>
