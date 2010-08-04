@@ -1,0 +1,9 @@
+# ChangeLog for media-gfx/xsplash
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Aug 2010; Olexandr Shalakhin (OSShalakhin) <o.s.shalakhin@gmail.com>
+  +xsplash-0.8.5.ebuild,
+  +files/xsplash-0.8.5-deprecated-gtk_widget_realized.patch, +metadata.xml:
+  New Ebuild for bug 300889 thanks to binki, ssuominen and Tommy[D]
+
