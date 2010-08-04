@@ -1,0 +1,8 @@
+# ChangeLog for net-analyzer/ncrack
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Aug 2010; Michael Weber (xmw) <gentoo@xmw.de> +ncrack-0.2_alpha.ebuild,
+  +metadata.xml:
+  New ebuild for bug 330783
+
