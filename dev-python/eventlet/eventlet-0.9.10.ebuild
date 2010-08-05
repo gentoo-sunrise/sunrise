@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI="2"
-PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
@@ -18,16 +17,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc examples test"
 
 RDEPEND="dev-python/greenlet
-	|| ( ( <dev-lang/python-2.6 ( dev-python/pyopenssl ) ) >=dev-lang/python-2.6 )"
+	<dev-lang/python-2.6? ( dev-python/pyopenssl )"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools
 	doc? ( dev-python/sphinx )
 	test? (
+		|| ( >=dev-lang/python-2.6 dev-python/simplejson )
 		|| ( dev-lang/python[sqlite] dev-python/pysqlite )
 		dev-python/nose )"
 
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3*"
 
 src_compile() {
 	distutils_src_compile
