@@ -3,16 +3,16 @@
 # $Header: $
 
 EAPI=2
-PYTHON_DEPEND='*'
+PYTHON_DEPEND=2:2.5
 SUPPORT_PYTHON_ABIS=1
+RESTRICT_PYTHON_ABIS="2.4 3.*"
 DISTUTILS_USE_SEPARATE_SOURCE_DIRECTORIES=1
 
 inherit distutils
 
 DESCRIPTION="A Python Package for Convex Optimization"
 HOMEPAGE="http://abel.ee.ucla.edu/cvxopt"
-SRC_URI="http://abel.ee.ucla.edu/src/${P}.tar.gz
-	http://abel.ee.ucla.edu/src/python3-${P}.tar.gz"
+SRC_URI="http://abel.ee.ucla.edu/src/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -33,11 +33,6 @@ src_prepare(){
 	distutils_src_prepare
 
 	prepare_builddir() {
-		if [[ $(python_get_version --major) -eq 3 ]]; then
-			rm -r * || die
-			cp -lpr "${WORKDIR}"/python3-${P}/src/* . || die
-		fi
-
 		set_flag() {
 			if use ${1}; then
 				sed -i -e "s/\(BUILD_${2} =\) 0/\1 1/" setup.py || die
@@ -46,7 +41,7 @@ src_prepare(){
 
 		set_flag gsl GSL
 		set_flag fftw FFTW
-		set_flag glpk GPLK
+		set_flag glpk GLPK
 	}
 	python_execute_function -s prepare_builddir
 }
