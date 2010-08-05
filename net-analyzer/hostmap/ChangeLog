@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Aug 2010; Dane Smith (c1pher) <smithdanea@gmail.com>
+  hostmap-0.2.2.ebuild:
+  Fixed dependency issue in hostmap. Thanks for the catch sezdzimir
+
   03 Aug 2010; Dane Smith (c1pher) <smithdanea@gmail.com>
   +hostmap-0.2.2.ebuild, +metadata.xml:
   New ebuild for hostmap. Bug 329589.

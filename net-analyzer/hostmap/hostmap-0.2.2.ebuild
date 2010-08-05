@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 ruby_add_rdepend "dev-ruby/net-dns
-	dev-ruby/plugman"
+	dev-ruby/PlugMan"
 
 all_ruby_prepare() {
 	mkdir bin || die
