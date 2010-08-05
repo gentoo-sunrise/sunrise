@@ -80,13 +80,6 @@
 =sci-libs/candystore-0.0.5
 =x11-misc/gestikk-0.6.1
 
-# Michał Górny <mgorny.3ehbo@mailnull.com> (03 Jul 2010)
-# The distfiles for these packages no longer exist, and the bump
-# is non-trivial to perform. Unless somebody fixes the ebuilds, they
-# will be removed in 30 days.
-# games-fps/uhexen2 - bug #105780
-=games-fps/uhexen2-1.4.4_pre4
-
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
 =sys-power/phc-intel-0.3.199.3_pre

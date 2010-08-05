@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/uhexen2
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Aug 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -uhexen2-1.4.4_pre4.ebuild:
+  Remove the distfile-missing version.
 
   06 May 2009; Christian Ruppert <idl0r@gentoo.org> uhexen2-1.4.3.ebuild,
   uhexen2-1.4.4_pre4.ebuild:
