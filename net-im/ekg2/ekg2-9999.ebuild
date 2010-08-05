@@ -67,9 +67,6 @@ pkg_setup() {
 		ewarn 'enabling at least one of following USEflags:'
 		ewarn '  gtk, ncurses, readline, remote, web.'
 	fi
-
-	# workaround for largefile-enabled gpgme (bug #302097)
-	use gpg && has_version '>=app-crypt/gpgme-1.2' && append-flags -D_FILE_OFFSET_BITS=64
 }
 
 use_plug() {
