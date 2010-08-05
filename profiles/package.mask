@@ -84,24 +84,8 @@
 # The distfiles for these packages no longer exist, and the bump
 # is non-trivial to perform. Unless somebody fixes the ebuilds, they
 # will be removed in 30 days.
-# app-antivirus/kav4fileservers - bug #62588
-# app-antivirus/panda - bug #78969
-# app-office/openoffice-infra - bug #254572
 # games-fps/uhexen2 - bug #105780
-# media-video/r5u870 - bug #176824
-# net-dns/inadyn-mt - bug #231950
-# net-libs/raknet - bug #164721
-# sci-astronomy/midas - bug #148822
-# www-plugins/nexus_personal_SE-bin - bug #268117
-=app-antivirus/kav4fileservers-5.5.3
-=app-antivirus/panda-9.00.00
-=app-office/openoffice-infra-3.1.0
 =games-fps/uhexen2-1.4.4_pre4
-=media-video/r5u870-0.10.0
-=net-dns/inadyn-mt-02.14.10
-=net-libs/raknet-3.07
-=sci-astronomy/midas-20060904
-=www-plugins/nexus_personal_SE-bin-4.10.2.16-r1
 
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
@@ -149,11 +133,6 @@ net-im/spark
 # Davide Cendron <scen@gentoo.org> (12 Jun 2007)
 # cvs (snapshot) version should be masked
 games-fps/uhexen2-cvs
-
-# Jakub Moc <jakub@gentoo.org> (22 Dec 2006)
-# upstream now distributes an RPM-only version
-# so the ebuild needs a major work :(
-app-antivirus/kav4fileservers
 
 # Jakub Moc <jakub@gentoo.org> (31 Jul 2006)
 # masked as it needs testing with other virtual/blas providers
