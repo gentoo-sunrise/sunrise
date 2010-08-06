@@ -59,27 +59,6 @@
 # for removal in 30 days. Bug #157827.
 =sci-biology/tgi-tools-0.1
 
-# Michał Górny <mgorny.3ehbo@mailnull.com> (05 Jul 2010)
-# HOMEPAGE & SRC_URI are dead, and there is no trace of a new one.
-# Unless they get back up or somebody updates the ebuilds to point
-# to a new location, they will be removed in 30 days.
-# dev-embedded/s51dude - bug #241662
-# dev-php5/php-xmlsec - bug #242250
-# dev-util/debug - bug #148868
-# games-engines/dagii - bug #159032
-# gnome-extra/gnome-osd - bug #80770
-# net-misc/mugshot - bug #135524
-# sci-libs/candystore - bug #246611
-# x11-misc/gestikk - bug #248260
-=dev-embedded/s51dude-0.2.0
-=dev-php5/php-xmlsec-0_p20061020
-=dev-util/debug-0.0.21
-=games-engines/dagii-0.4.1
-=gnome-extra/gnome-osd-0.11.3
-=net-misc/mugshot-1.1.95
-=sci-libs/candystore-0.0.5
-=x11-misc/gestikk-0.6.1
-
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
 =sys-power/phc-intel-0.3.199.3_pre
