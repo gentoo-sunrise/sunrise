@@ -123,10 +123,6 @@ www-servers/webcit
 # file, should fix in source instead
 net-im/spark
 
-# Davide Cendron <scen@gentoo.org> (12 Jun 2007)
-# cvs (snapshot) version should be masked
-games-fps/uhexen2-cvs
-
 # Jakub Moc <jakub@gentoo.org> (31 Jul 2006)
 # masked as it needs testing with other virtual/blas providers
 # (blas-atlas, blas-reference, and acml)
