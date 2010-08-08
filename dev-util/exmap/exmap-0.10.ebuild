@@ -46,6 +46,9 @@ src_prepare() {
 	# fix for 64bit from http://www.kdedevelopers.org/node/4166
 	epatch "${FILESDIR}/${P}-fix64bit.patch"
 
+	# fix underlinking with -Wl,--as-needed
+	epatch "${FILESDIR}/${P}-as-needed.patch"
+
 	rm -v src/{*.so,munged-ls-threeloads,prelinked-amule} || die
 }
 

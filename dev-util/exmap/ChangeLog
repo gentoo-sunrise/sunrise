@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Aug 2010; Michael Weber (xmw) <gentoo@xmw.de> exmap-0.10.ebuild,
+  +files/exmap-0.10-as-needed.patch:
+  Fixed compilation bug with -Wl,--as-needed
+
   14 May 2010; Michael Weber (xmw) <gentoo@xmw.de> exmap-0.10.ebuild,
   +files/exmap-0.10-gcc45.patch:
   Fixed critical compilation error with sys-devel/gcc:4.5
