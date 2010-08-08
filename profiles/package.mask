@@ -42,17 +42,6 @@
 # Masking for removal in 30 days. Bug #257819.
 =games-fps/bloodfrontier-0.8_beta_rc1-r1
 
-# Michał Górny <mgorny.3ehbo@mailnull.com> (08 Jul 2010)
-# The distfiles fail to fetch and upstream uses unversioned tarballs.
-# Unless somebody mirrors a versioned tarball or resolves the issue
-# upstream, they will be removed in 30 days.
-# dev-tex/mimetex - bug #172901
-# media-tv/ati-genericv4l - bug #182927
-# games-util/pbsetup - bug #152993
-=dev-tex/mimetex-1.70
-=media-tv/ati-genericv4l-2.6
-=games-util/pbsetup-2.0
-
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
 =sys-power/phc-intel-0.3.199.3_pre
