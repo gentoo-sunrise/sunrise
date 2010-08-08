@@ -53,12 +53,6 @@
 =media-tv/ati-genericv4l-2.6
 =games-util/pbsetup-2.0
 
-# Michał Górny <mgorny.3ehbo@mailnull.com> (06 Jul 2010)
-# The distfiles are unversioned and the Manifest checksums are outdated.
-# Additionally, the ebuild coexists in science overlay. Masking
-# for removal in 30 days. Bug #157827.
-=sci-biology/tgi-tools-0.1
-
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
 =sys-power/phc-intel-0.3.199.3_pre
