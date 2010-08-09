@@ -5,8 +5,8 @@
 inherit toolchain-funcs
 
 DESCRIPTION="A system-wide notification wrapper for notify-send"
-HOMEPAGE="http://qwpx.net/~mgorny/sw-notify-send/"
-SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.c.bz2"
+HOMEPAGE="http://github.com/mgorny/sw-notify-send/"
+SRC_URI="http://github.com/downloads/mgorny/${PN}/${P}.c.bz2"
 
 LICENSE="BSD"
 SLOT="0"
