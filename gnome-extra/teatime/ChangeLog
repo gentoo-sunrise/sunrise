@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/teatime
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Aug 2010; Michael Weber (xmw) <gentoo@xmw.de> teatime-2.8.0.ebuild:
+  resolved: SRC_URI switched to mirror://debian, unresolved: HOMEPAGE dead,
+  doesn't respect LINGUAS
 
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   teatime-2.8.0.ebuild:

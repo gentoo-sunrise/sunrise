@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit gnome2 eutils
+EAPI=2
 
-S=${WORKDIR}/teatime_applet_2-${PV}
+inherit gnome2 eutils
 
 DESCRIPTION="A GNOME panel applet that reminds you when your tea is ready"
 HOMEPAGE="http://det.cable.nu/teatime/index.rbx"
-SRC_URI="http://det.cable.nu/pakete/teatime_applet_2-${PV}.tar.gz"
+SRC_URI="mirror://debian/pool/main/t/${PN}/${PN}_${PV}.orig.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,9 +24,9 @@ DEPEND=">=dev-libs/glib-2.6
 	>=dev-libs/libxml2-2.6"
 RDEPEND=${DEPEND}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+S=${WORKDIR}/${PN}_applet_2-${PV}
+
+src_prepare() {
 	epatch "${FILESDIR}/teatime-2.8.0-adding-slash-for-pixmaps-dir.patch"
 	gnome2_omf_fix
 }
