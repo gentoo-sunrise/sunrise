@@ -4,8 +4,8 @@
 
 MY_P="sh.eselect-${PV}"
 DESCRIPTION="Manages the /bin/sh (POSIX shell) symlink"
-HOMEPAGE="http://qwpx.net/~mgorny/eselect-sh/"
-SRC_URI="http://qwpx.net/~mgorny/${PN}/${MY_P}.gz"
+HOMEPAGE="http://github.com/mgorny/eselect-sh/"
+SRC_URI="http://github.com/downloads/mgorny/${PN}/${MY_P}.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
