@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Aug 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  mirage2iso-0.3.ebuild:
+  Update HOMEPAGE & SRC_URI (once again).
+
   06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   mirage2iso-0.3.ebuild:
   Instead of working around EPREFIX confusion, decrease EAPI and just unpack
