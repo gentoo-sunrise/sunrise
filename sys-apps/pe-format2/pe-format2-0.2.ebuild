@@ -5,8 +5,8 @@
 inherit toolchain-funcs
 
 DESCRIPTION="Intelligent PE executable wrapper for binfmt_misc"
-HOMEPAGE="http://qwpx.net/~mgorny/pe-format2/"
-SRC_URI="http://qwpx.net/~mgorny/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://github.com/mgorny/pe-format2/"
+SRC_URI="http://github.com/downloads/mgorny/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
