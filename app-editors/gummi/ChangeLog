@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*gummi-0.4.8-r1 (09 Aug 2010)
+
+  09 Aug 2010; Justin Lecher <jlec@gentoo.org> gummi-0.4.8.ebuild,
+  +gummi-0.4.8-r1.ebuild:
+  Fixes for multiple Python ABIs
+
   17 May 2010; Alexander van der Mey <alexvandermey@gmail.com>
   -gummi-0.4.5.ebuild, +gummi-0.4.8.ebuild:
   Version bump for Gummi, thanks to chithead & binki for review
