@@ -8,7 +8,7 @@ inherit flag-o-matic multilib perl-module
 
 DESCRIPTION="Text-based, multi-protocol instant messenger"
 HOMEPAGE="http://www.ekg2.org"
-SRC_URI="http://qwpx.net/~mgorny/${PN}-scons/${P}.tar.lzma"
+SRC_URI="http://github.com/downloads/mgorny/${PN}-scons/${P}.tar.lzma"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -65,9 +65,6 @@ pkg_setup() {
 		ewarn 'enabling at least one of following USEflags:'
 		ewarn '  gtk, ncurses, readline, remote, web.'
 	fi
-
-	# workaround for largefile-enabled gpgme (bug #302097)
-	use gpg && has_version '>=app-crypt/gpgme-1.2' && append-flags -D_FILE_OFFSET_BITS=64
 }
 
 use_plug() {
