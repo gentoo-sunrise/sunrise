@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Aug 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
+  -ntfs3g-ar-2010.6.31.1.ebuild, +ntfs3g-ar-2010.6.31.2.ebuild:
+  version bump
+
   21 Jul 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
   -ntfs3g-ar-2010.5.22.6.ebuild, +ntfs3g-ar-2010.6.31.1.ebuild:
   version bump of NTFS-3G AR
