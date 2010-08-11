@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/nltk
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Aug 2010; LABBE Corentin (Montjoie) <corentin.labbe@geomatys.fr
+  +nltk-2.0_beta9.ebuild, +metadata.xml:
+  New Ebuild for bug 237254 thanks to hwoarang and Fauli for reviewing
+
