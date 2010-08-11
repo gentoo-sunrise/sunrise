@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<longdescription lang="en">A rebuild of nagios from the ground up</longdescription>
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
+	<use>
+		<flag name='api'>integrates the icinga api</flag>
+		<flag name='idoutils'>allows for database support</flag>
+		<flag name='lighttpd'>allows for lighttpd to be used as a web front end</flag>
+		<flag name='plugins'>allows the use of nagios plugins</flag>
+		<flag name='web'>allows for a web frontend to be built (lighttpd or apache2)</flag>
+	</use>
+</pkgmetadata>
+
