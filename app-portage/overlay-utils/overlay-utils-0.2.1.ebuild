@@ -6,7 +6,10 @@ EAPI="2"
 
 DESCRIPTION="Utilities for Gentoo repository and overlay development"
 HOMEPAGE="http://gentooexperimental.org/~shillelagh/"
-SRC_URI="http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2"
+SRC_URI="
+	http://dev.gentooexperimental.org/~tommy/distfiles/${P}.tar.bz2
+	http://91.191.147.225/~tommy/distfiles/${P}.tar.bz2
+	http://dev.gentoo.org/~tommy/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  overlay-utils-0.2.1.ebuild:
+  Add ip and backup place for tarball
+
   22 Jun 2010; Markos Chandras <hwoarang@gentoo.org>
   overlay-utils-0.2.1.ebuild:
   Fix subversion dependency
