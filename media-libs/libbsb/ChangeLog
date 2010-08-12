@@ -1,0 +1,8 @@
+# ChangeLog for media-libs/libbsb
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Aug 2010; Marc Schifbauer (mschiff) <marc@schiffbauer.net>
+  +libbsb-0.0.7.ebuild, +metadata.xml:
+  New Ebuild for bug 332265
+
