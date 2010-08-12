@@ -21,12 +21,6 @@
 ##   End example
 ##
 
-# Michał Górny <mgorny.3ehbo@mailnull.com> (11 Jul 2010)
-# The project is unfinished and left dead for over three years,
-# and there's no open bug for it at Bugzie. Masking for removal
-# in 30 days.
-=app-portage/pusher-0.1_alpha3
-
 # Michał Górny <mgorny.3ehbo@mailnull.com> (10 Jul 2010)
 # The distfiles fail to fetch and there's noone with Zope knowledge to
 # perform the bump. Removal in 30 days.
