@@ -35,13 +35,6 @@
 =net-zope/richdocument-2.0_rc1
 =net-zope/simplecartitem-0.5.0
 
-# Michał Górny <mgorny.3ehbo@mailnull.com> (10 Jul 2010)
-# The distfile fails to fetch and upstream suggests the project is dead.
-# The ebuild itself does install binary version instead of compiling
-# the sources and thus the bump requires some effort from a maintainer.
-# Masking for removal in 30 days. Bug #257819.
-=games-fps/bloodfrontier-0.8_beta_rc1-r1
-
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
 # Highly experimental new interface version
 =sys-power/phc-intel-0.3.199.3_pre
