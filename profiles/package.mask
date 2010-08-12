@@ -24,9 +24,7 @@
 # Michał Górny <mgorny.3ehbo@mailnull.com> (10 Jul 2010)
 # The distfiles fail to fetch and there's noone with Zope knowledge to
 # perform the bump. Removal in 30 days.
-# net-zope/richdocument - bug #158726
 # net-zope/simplecartitem - bug #160194
-=net-zope/richdocument-2.0_rc1
 =net-zope/simplecartitem-0.5.0
 
 # Michael Weber <gentoo@xmw.de> (20 Jun 2010)
