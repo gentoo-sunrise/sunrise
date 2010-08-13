@@ -8,7 +8,7 @@ inherit bash-completion distutils
 
 DESCRIPTION="pip is a replacement for easy_install"
 HOMEPAGE="http://pip.openplans.org"
-SRC_URI="http://pypi.python.org/packages/source/p/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/p/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
