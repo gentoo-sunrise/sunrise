@@ -9,7 +9,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Provides an API for accessing localizations and resources packaged in python eggs"
 HOMEPAGE="http://chandlerproject.org/Projects/EggTranslations"
-SRC_URI="http://pypi.python.org/packages/source/E/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/E/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
