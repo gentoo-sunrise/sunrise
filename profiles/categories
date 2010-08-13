@@ -74,7 +74,6 @@ net-p2p
 net-print
 net-wireless
 net-zope
-sci-astronomy
 sci-biology
 sci-chemistry
 sci-geosciences
@@ -96,11 +95,11 @@ sys-process
 www-apps
 www-client
 www-misc
-www-plugins
 www-servers
 x11-drivers
 x11-libs
 x11-misc
 x11-plugins
+x11-terms
 x11-themes
 x11-wm
