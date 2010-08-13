@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pytyrant-1.1.17.ebuild:
+  Switch to pypi mirror list, drop test from IUSE, it is implicit for
+  FEATURES=test
+
   03 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pytyrant-1.1.17.ebuild, files/return_test_status.patch:
   Bring pytyrant up to date. Fix proper testing and inherit
