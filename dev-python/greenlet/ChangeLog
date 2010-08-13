@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  greenlet-0.3.1.ebuild:
+  Switch to pypi mirror list, drop test IUSE, it is implicit for FEATURES=test
+
   06 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -greenlet-0.3.ebuild, +greenlet-0.3.1.ebuild:
   Version bump

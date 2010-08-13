@@ -10,12 +10,12 @@ inherit distutils
 
 DESCRIPTION="Lightweight in-process concurrent programming"
 HOMEPAGE="http://undefined.org/python/#greenlet"
-SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 DEPEND="dev-python/setuptools
 	test? ( dev-python/nose )"
