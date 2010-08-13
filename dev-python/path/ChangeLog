@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> path-2.2.ebuild:
+  Switch to pypi mirror list
+
   03 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   path-2.2.ebuild:
   Support for Python ABIs, replaced HOMEPAGE & SRC_URI with pypi ones as the

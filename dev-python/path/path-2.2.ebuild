@@ -11,7 +11,7 @@ inherit distutils
 
 DESCRIPTION="Helpful python wrapper to the os.path module"
 HOMEPAGE="http://pypi.python.org/pypi/path.py"
-SRC_URI="http://pypi.python.org/packages/source/p/${PN}.py/${P}.zip"
+SRC_URI="mirror://pypi/p/${PN}.py/${P}.zip"
 
 LICENSE="freedist"
 SLOT="0"
