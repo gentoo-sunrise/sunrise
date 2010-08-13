@@ -10,7 +10,7 @@ inherit distutils
 
 DESCRIPTION="Python network library that uses greenlet and libevent for easy and scalable concurrency"
 HOMEPAGE="http://gevent.org/"
-SRC_URI="http://pypi.python.org/packages/source/g/gevent/${P}.tar.gz"
+SRC_URI="mirror://pypi/g/gevent/${P}.tar.gz"
 
 LICENSE="as-is MIT"
 KEYWORDS="~amd64 ~x86"
