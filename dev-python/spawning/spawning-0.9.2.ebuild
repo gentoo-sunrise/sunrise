@@ -8,7 +8,7 @@ MY_PN=Spawning
 MY_P=${MY_PN}-${PV}
 DESCRIPTION="A flexible web server written in Python"
 HOMEPAGE="http://pypi.python.org/pypi/Spawning"
-SRC_URI="http://pypi.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
