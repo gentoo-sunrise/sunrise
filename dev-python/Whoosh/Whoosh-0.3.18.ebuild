@@ -10,7 +10,7 @@ inherit distutils python
 
 DESCRIPTION="Fast, pure-Python full text indexing, search and spell checking library"
 HOMEPAGE="http://bitbucket.org/mchaput/whoosh/wiki/Home"
-SRC_URI="http://pypi.python.org/packages/source/W/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/W/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
