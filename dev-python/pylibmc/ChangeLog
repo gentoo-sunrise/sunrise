@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pylibmc-1.1.1.ebuild:
+  Switch to pypi mirror list
+
   11 Jun 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu> Manifest:
   Tarball somehow changed filesize, update Manifest
 

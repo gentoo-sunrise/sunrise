@@ -9,7 +9,7 @@ SUPPORT_PYTHON_ABIS="1"
 
 DESCRIPTION="Libmemcached wrapper written as a Python extension"
 HOMEPAGE="http://sendapatch.se/projects/pylibmc/"
-SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
