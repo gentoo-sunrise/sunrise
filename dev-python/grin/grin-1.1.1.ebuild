@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="A grep program configured the way I like it"
 HOMEPAGE="http://pypi.python.org/pypi/grin"
-SRC_URI="http://pypi.python.org/packages/source/g/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/g/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
