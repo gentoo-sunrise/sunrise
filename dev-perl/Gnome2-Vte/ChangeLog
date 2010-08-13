@@ -1,0 +1,8 @@
+# ChangeLog for dev-perl/Gnome2-Vte
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Aug 2010; LABBE Corentin (Montjoie) <corentin.labbe@geomatys.fr>
+  +Gnome2-Vte-0.09.ebuild, +metadata.xml:
+  New Ebuild for bug 332263 thanks to Tommy and binki for review
+
