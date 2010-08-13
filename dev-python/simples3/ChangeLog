@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  simples3-1.0_alpha.ebuild:
+  Switch to pypi mirror list, drop empty (R)DEPEND
+
   20 Jul 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -simples3-0.5.ebuild, +simples3-1.0_alpha.ebuild:
   Version bump, adapt to new python ebuild style
