@@ -1,6 +1,9 @@
 # ChangeLog for www-client/ttb
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ttb-0.9.4.ebuild:
+  NEED_PYTHON -> PYTHON_DEPEND, restrict to python-2 for now
 
   11 Mar 2007; Jakub Moc <jakub@gentoo.org> ttb-0.9.4.ebuild:
   Fix inherit

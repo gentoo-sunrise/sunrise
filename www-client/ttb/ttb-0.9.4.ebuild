@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_PYTHON="2.2.0"
-inherit eutils distutils
+PYTHON_DEPEND="2:2.4"
+
+inherit eutils python distutils
 
 DESCRIPTION="TeleText Browser for Dutch teletext pages from NOS"
 HOMEPAGE="http://www.djcbsoftware.nl/code/ttb/"
