@@ -1,0 +1,11 @@
+--- Makefile.orig	2010-08-12 11:12:57.000000000 +0200
++++ Makefile	2010-08-12 11:13:17.000000000 +0200
+@@ -12,7 +12,7 @@
+ all: clusterm.1
+ 
+ clusterm.1: clusterm ClusTerm/App.pm
+-	perldoc -d$@ -onroff -wcenter: -wrelease:$(VERSION) clusterm
++	perldoc -onroff -wcenter: -wrelease:$(VERSION) clusterm > clusterm.1
+ 
+ distclean: do_clean
+ clean:

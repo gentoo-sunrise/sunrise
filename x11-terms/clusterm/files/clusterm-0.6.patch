@@ -1,0 +1,11 @@
+--- ClusTerm/App.pm.orig	2009-03-12 10:20:01.000000000 +0100
++++ ClusTerm/App.pm	2009-03-12 10:20:17.000000000 +0100
+@@ -33,7 +33,7 @@
+ 
+ sub new {
+ 	my ($class, $clients, $options) = @_;
+-	my $self = Glib::Object::new(__PACKAGE__, $title);
++	my $self = Glib::Object::new(__PACKAGE__);
+ 	$self->{term} = [ ];
+ 
+ 	# preferences

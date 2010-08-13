@@ -1,0 +1,9 @@
+# ChangeLog for x11-terms/clusterm
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Aug 2010; LABBE Corentin (Montjoie) <corentin.labbe@geomatys.fr>
+  +clusterm-0.6.ebuild, +files/clusterm-0.6-perldoc.patch,
+  +files/clusterm-0.6.patch, +metadata.xml:
+  New Ebuild for bug 332407 thanks to Tommy for review
+
