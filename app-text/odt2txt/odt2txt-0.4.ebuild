@@ -8,7 +8,7 @@ inherit eutils
 
 DESCRIPTION="A simple converter from OpenDocument Text to plain text"
 HOMEPAGE="http://stosberg.net/odt2txt/"
-SRC_URI="http://stosberg.net/odt2txt/${P}.tar.gz"
+SRC_URI="http://stosberg.net/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,8 +21,7 @@ DEPEND="sys-apps/groff
 	$RDEPEND"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-hardened_makefile.patch || die
-	epatch "${FILESDIR}"/${P}-darwin_iconv.patch || die
+	epatch "${FILESDIR}"/${P}-darwin_iconv.patch
 }
 
 src_install() {
