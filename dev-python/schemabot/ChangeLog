@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  schemabot-0.1.0_alpha4.ebuild:
+  Switch to pypi mirror list, drop test from IUSE, it is implicit for
+  FEATURES=test
+
   23 Jan 2010; Søren Dalby Larsen (ircnick) <sdlarsen@gmail.com>
   +schemabot-0.1.0_alpha4.ebuild, +metadata.xml:
   New Ebuild for bug 301662 thanks to ohnobinki

@@ -12,12 +12,12 @@ MY_P="${MY_PN}-${PV/_alpha/a}"
 
 DESCRIPTION="Automatically manage database schema version control when using SQLAlchemy"
 HOMEPAGE="http://bitbucket.org/chrismiles/schemabot/wiki/Home"
-SRC_URI="http://pypi.python.org/packages/source/${MY_P:0:1}/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_P:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
+IUSE=""
 
 DEPEND="dev-python/setuptools
 	test? ( dev-python/nose )"
