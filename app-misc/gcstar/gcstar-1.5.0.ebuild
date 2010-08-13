@@ -89,12 +89,12 @@ src_install() {
 	domenu share/applications/gcstar.desktop
 	for size in 16x16 22x22 24x24 32x32 36x36 48x48 64x64 72x72 96x96 128x128
 	do
-		insinto ${EPREFIX}/usr/share/icons/hicolor/${size}/apps
+		insinto "${EPREFIX}"/usr/share/icons/hicolor/${size}/apps
 		newins share/gcstar/icons/gcstar_${size}.png gcstar.png
 	done
-	insinto ${EPREFIX}/usr/share/icons/hicolor/scalable/apps
+	insinto "${EPREFIX}"/usr/share/icons/hicolor/scalable/apps
 	newins share/gcstar/icons/gcstar_scalable.svg gcstar.svg
-	insinto ${EPREFIX}/usr/share/mime/packages
+	insinto "${EPREFIX}"/usr/share/mime/packages
 	doins share/applications/gcstar.xml
 
 	dodoc CHANGELOG README
