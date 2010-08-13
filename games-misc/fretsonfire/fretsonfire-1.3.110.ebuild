@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-NEED_PYTHON="2.4"
+PYTHON_DPEEND="2:2.4"
 
 inherit eutils python games
 
