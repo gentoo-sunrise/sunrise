@@ -33,23 +33,19 @@ RDEPEND="dev-python/beautifulsoup
 S=${WORKDIR}/${PN}
 
 src_prepare(){
-	for i in BeautifulSoup.py fpconst-0.7.2 jsonpy nltk nltk_contrib pygoogle pyPdf scapy SOAPpy yaml; do
-		rm -r "${S}"/extlib/$i || die
-	done
+	rm -r extlib/{BeautifulSoup.py,fpconst-0.7.2,jsonpy,nltk,nltk_contrib,pygoogle,pyPdf,scapy,SOAPpy,yaml} || die
+	rm readme/{GPL,INSTALL} || die
 }
 
 src_install() {
 	insinto /usr/$(get_libdir)/w3af
-	doins -r * || die "initial copy failed"
-	dosym /usr/$(get_libdir)/w3af/w3af_gui usr/bin/w3af_gui || die "making w3af_gui symlink failed"
-	dosym /usr/$(get_libdir)/w3af/w3af_console usr/bin/w3af_console || die "making w3af_console symlink failed"
-	chmod +x "${D}"/usr/$(get_libdir)/w3af/w3af_gui || die
-	chmod +x "${D}"/usr/$(get_libdir)/w3af/w3af_console || die
+	doins -r core extlib locales plugins profiles scripts tools w3af_gui w3af_console || die
+	dosym /usr/$(get_libdir)/w3af/w3af_gui usr/bin/w3af_gui || die
+	dosym /usr/$(get_libdir)/w3af/w3af_console usr/bin/w3af_console || die
+	fperms +x /usr/$(get_libdir)/w3af/w3af_{gui,console} || die
 	#use flag doc is here because doc is bigger than 3 Mb
 	if use doc ; then
-		dodir /usr/share/doc/${PF} || die "dodir failed"
-		mv "${D}"/usr/$(get_libdir)/w3af/readme "${D}"/usr/share/doc/${PF} || die
-	else
-		rm -r "${D}"/usr/$(get_libdir)/w3af/readme || die "rm of docs failed"
+		insinto /usr/share/doc/${PF}/
+		doins -r readme/* || die
 	fi
 }
