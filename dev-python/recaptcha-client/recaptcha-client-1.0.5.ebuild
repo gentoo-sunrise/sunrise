@@ -9,7 +9,7 @@ inherit distutils python
 
 DESCRIPTION="Provides a CAPTCHA for Python using the reCAPTCHA service"
 HOMEPAGE="http://pypi.python.org/pypi/recaptcha-client"
-SRC_URI="http://pypi.python.org/packages/source/r/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/r/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
