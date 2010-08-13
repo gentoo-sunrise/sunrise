@@ -9,7 +9,7 @@ inherit distutils
 
 DESCRIPTION="A networking library that achieves high scalability by using non-blocking io"
 HOMEPAGE="http://wiki.secondlife.com/wiki/Eventlet"
-SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc examples test"
 
 RDEPEND="dev-python/greenlet
-	<dev-lang/python-2.6? ( dev-python/pyopenssl )"
+	|| ( >=dev-lang/python-2.6 ( <dev-lang/python-2.6 dev-python/pyopenssl ) )"
 
 DEPEND="${RDEPEND}
 	dev-python/setuptools

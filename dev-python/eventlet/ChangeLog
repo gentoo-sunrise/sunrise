@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  eventlet-0.9.10.ebuild:
+  Add pypi mirror list, fix dependency part
+
   11 Aug 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu> Manifest:
   Upstream changed tarball, rebuild Manifest
 
