@@ -152,9 +152,6 @@ app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
 app-mobilephone/series60-remote:obex - Enable *.sis files transfer and file browser
 app-mobilephone/series60-remote:stats - Enable statistics graph visualization
-app-office/openoffice-infra:binfilter - Enable support for legacy StarOffice 5.x and earlier file formats
-app-office/openoffice-infra:infradicts - Use all bundled dicts from Infra-Resource
-app-office/openoffice-infra:odk - Build the Office Development Kit
 dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
@@ -182,7 +179,6 @@ games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
 games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
-games-fps/bloodfrontier:server - Installs the Server Binary
 games-fps/chocolate-doom:server - Enable installation of server
 games-fps/tremfusion:tty - Enables text based game client
 games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
@@ -196,17 +192,6 @@ games-fps/uhexen2:optimize-cflags - Build with more optimized CFLAGS
 games-fps/uhexen2:sdlaudio - Enable SDL audio
 games-fps/uhexen2:sdlcd - Enable cd audio playback support through SDL
 games-fps/uhexen2:tools - Enable compilation of various useful tools
-games-fps/uhexen2-cvs:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
-games-fps/uhexen2-cvs:cdaudio - Enable cd audio playback support
-games-fps/uhexen2-cvs:demo - Install the demo files (hexen2-demodata) and configure for use
-games-fps/uhexen2-cvs:dynamic - Link to the opengl libraries at compile time
-games-fps/uhexen2-cvs:hexenworld - Build support for HexenWorld
-games-fps/uhexen2-cvs:lights - Install and setup the updated light maps
-games-fps/uhexen2-cvs:midi - Include MIDI music support
-games-fps/uhexen2-cvs:optimize-cflags - Build with more optimized CFLAGS
-games-fps/uhexen2-cvs:sdlaudio - Enable SDL audio
-games-fps/uhexen2-cvs:sdlcd - Enable cd audio playback support through SDL
-games-fps/uhexen2-cvs:tools - Install various useful tools
 games-fps/vavoom:allegro - Adds support for media-libs/allegro(media library)
 games-fps/vavoom:asm - Enable faster assembly-language code for rendering
 games-fps/vavoom:models - Install enhanced 3D models
@@ -267,7 +252,6 @@ media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
 media-video/ripwrap:mp4 - Add mp4 support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
-net-dns/inadyn-mt:async - Enable asyncronous gethostbyname calls. Requires USE=threads
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:largefile - Enable largefile support
 net-dns/nsd:nsec3 - Enable NSEC3 support
@@ -305,8 +289,6 @@ net-im/ekg2-remote:gnutls - Enable SSL/TLS support through GnuTLS. If 'ssl' is s
 net-im/ekg2-remote:ssl - Enable SSL/TLS support through OpenSSL. If 'gnutls' is set too, it will be used instead.
 net-im/ekg2-remote:static - Link statically with plugins instead of installing them as shared libraries (external libraries can still be linked dynamically).
 net-im/emesene:webcam - Enable support for webcam
-net-libs/raknet:autopatcher - Enable RakNet autopatcher support
-net-libs/raknet:rakvoice - Enable RakNet RakVoice module
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
@@ -355,7 +337,6 @@ net-wireless/remuco:totem - Enable Totem media player support
 net-wireless/remuco:tvtime - Enable Tvtime support
 net-wireless/remuco:vlc - Enable VLC media player support
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
-sci-biology/tgi-tools:pvm - Use sys-cluster/pvm (Parallel Virtual Machine) and build the pvmsx utility
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
@@ -373,7 +354,6 @@ sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to p
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 sys-power/phctool:sudo - Enable support for sudo to run gui from non-root user
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
-www-plugins/nexus_personal_SE-bin:epiphany - Enable support for www-client/epiphany
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/bmpanel:libev - Use the libev event loop interface
 x11-misc/bmpanel:libevent - Use the libevent event loop interface
