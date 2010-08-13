@@ -10,7 +10,7 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="a Python extension wrapping IBM's International components for
 Unicode C++ Library"
 HOMEPAGE="http://pyicu.osafoundation.org/"
-SRC_URI="http://pypi.python.org/packages/source/P/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/P/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
