@@ -1,6 +1,10 @@
 # ChangeLog for dev-db/pysql
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pysql-0.13.ebuild:
+  NEED_PYTHON -> PYTHON_DEPEND, restrict to python-2 for now
 
   07 Jun 2009; Pavol Dilung (pdilung) <pavol.dilung@gmail.com>
   +pysql-0.13.ebuild, +metadata.xml:
