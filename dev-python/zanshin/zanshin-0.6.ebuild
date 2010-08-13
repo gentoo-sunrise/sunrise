@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="High-level library for HTTP, WebDAV and CalDAV operations"
 HOMEPAGE="http://chandlerproject.org/Projects/ZanshinProject"
-SRC_URI="http://pypi.python.org/packages/source/z/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/z/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
