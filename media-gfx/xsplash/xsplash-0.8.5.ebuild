@@ -33,4 +33,3 @@ src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README TODO || die
 }
-

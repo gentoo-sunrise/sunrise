@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  xsplash-0.8.5.ebuild:
+  Nuke blank last line
+
   04 Aug 2010; Olexandr Shalakhin (OSShalakhin) <o.s.shalakhin@gmail.com>
   +xsplash-0.8.5.ebuild,
   +files/xsplash-0.8.5-deprecated-gtk_widget_realized.patch, +metadata.xml:
