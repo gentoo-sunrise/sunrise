@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pythonnurbs
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pythonnurbs-0.3.ebuild:
+  Switch to pypi mirror list
 
   10 Nov 2009; Oliver Borm (boroli) <oli.borm@web.de>
   -pythonnurbs-0.2.ebuild, +pythonnurbs-0.3.ebuild:
