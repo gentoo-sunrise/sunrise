@@ -40,10 +40,6 @@ media-tv/tv-player
 app-office/wiipresent
 =dev-libs/libwiimote-9999
 
-# Markus Ullmann <jokey@gentoo.org> (13 Jun 2010)
-# Lost pvm dependencies
-sci-biology/tgi-tools
-
 # Markos Chandras <hwoarang@gentoo.org> (13 Jun 2010)
 # Sandbox violations, Christian Schmidt promised to fix
 =media-video/aegisub-2.1.8
