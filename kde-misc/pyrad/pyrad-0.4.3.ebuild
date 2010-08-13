@@ -10,7 +10,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A wheel type command interface for KDE, heavily inspired by Kommando."
 HOMEPAGE="http://bitbucket.org/ArneBab/pyrad"
-SRC_URI="http://pypi.python.org/packages/source/p/pyRadKDE/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/p/pyRadKDE/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
 SLOT="0"
