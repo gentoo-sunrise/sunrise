@@ -7,11 +7,11 @@ PYTHON_DEPEND="2:2.5"
 
 inherit distutils python versionator
 
-MY_SUBPV=$(get_version_component_range 1-2)
+MY_PV=$(get_version_component_range 1-2)
 
 DESCRIPTION="Fork of the sbackup project with better user interaction"
 HOMEPAGE="https://launchpad.net/nssbackup"
-SRC_URI="http://launchpad.net/${PN}/${MY_SUBPV}/${MY_SUBPV}/+download/${PN}_${PV}.tar.gz"
+SRC_URI="http://launchpad.net/${PN}/${MY_PV}/${MY_PV}/+download/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -21,7 +21,8 @@ IUSE=""
 DOCS="HACKING"
 
 DEPEND="dev-python/setuptools"
-RDEPEND="dev-python/notify-python
+RDEPEND="dev-python/gnome-python
+	dev-python/notify-python
 	dev-python/pexpect
 	dev-python/pygtk
 	net-fs/curlftpfs
@@ -44,12 +45,4 @@ src_install(){
 	for script in *.py; do
 		newbin ${script} ${script/.py/} || die
 	done
-}
-
-pkg_postinst(){
-	elog
-	elog "If you want better gnome integration you may"
-	elog "wish to install dev-python/gnome-python"
-	elog
-
 }
