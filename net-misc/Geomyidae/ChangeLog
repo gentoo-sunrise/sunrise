@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/Geomyidae
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Aug 2010; James Penketh <tamber@furryhelix.co.uk>
+  +Geomyidae-0.15.ebuild, +metadata.xml:
+  New ebuild for bug 327613
+
