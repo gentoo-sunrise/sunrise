@@ -1,0 +1,28 @@
+diff --git a/Makefile b/Makefile
+--- a/Makefile
++++ b/Makefile
+@@ -1,9 +1,9 @@
+ all: id3ted
+ 
+-CC=g++
++CXX?=g++
+ PREFIX?=/usr/local
+ # see INSTALL for available preprocessor variables
+-CFLAGS+= -I$(PREFIX)/include -Wall -pedantic
++CXXFLAGS+= -I$(PREFIX)/include -Wall -pedantic
+ LDFLAGS+= -L$(PREFIX)/lib
+ LIBS+= -ltag -lmagic
+ 
+@@ -11,10 +11,10 @@
+ OBJFILES=$(CPPFILES:.cpp=.o)
+ 
+ id3ted:	$(OBJFILES)
+-	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
++	$(CXX) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ %.o: %.cpp Makefile
+-	$(CC) $(CFLAGS) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) -c -o $@ $<
+ 
+ install: all
+ 	install -D -m 0755 id3ted $(PREFIX)/bin/id3ted
