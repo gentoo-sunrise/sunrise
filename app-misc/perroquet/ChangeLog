@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Aug 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
+  -perroquet-1.0.1.ebuild, +perroquet-1.1.0.ebuild:
+  Version bump
+
   07 Apr 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   perroquet-1.0.1.ebuild:
   Some fixes. Thanks to Tommy
