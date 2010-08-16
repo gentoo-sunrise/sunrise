@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Aug 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
+  -freetuxtv-0.4.2.ebuild, +freetuxtv-0.5.1.ebuild:
+  Version bump for freetuxtv
+
   21 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org>
   -freetuxtv-0.4.1.ebuild, freetuxtv-0.4.2.ebuild:
   Removed old version
