@@ -34,6 +34,18 @@ pkg_setup() {
 	linux-mod_pkg_setup
 }
 
+src_prepare() {
+	if kernel_is eq 2 6 35 ; then
+		cp "${KERNEL_DIR}"/arch/x86/kernel/cpu/cpufreq/mperf.h . || die
+
+		mkdir inc/2.6.35 || die
+		cp "${FILESDIR}"/${P}-2.6.35.patch \
+			inc/2.6.35/linux-phc-$(get_version_component_range 1-3).patch \
+			|| die
+		cp "${KERNEL_DIR}"/arch/x86/kernel/cpu/cpufreq/acpi-cpufreq.c inc/2.6.35 || die
+	fi
+}
+
 src_install() {
 	linux-mod_src_install
 	dodoc README || die

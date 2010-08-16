@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Aug 2010; Michael Weber (xmw) <gentoo@xmw.de>
+  -phc-intel-0.3.2.12.1.ebuild, +phc-intel-0.3.2.12.1-r1.ebuild,
+  +files/phc-intel-0.3.2.12.1-2.6.35.patch:
+  revision bump for 2.6.35 kernel sources, patch from
+  http://aur.archlinux.org/packages.php?ID=24980
+
   20 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de>
   phc-intel-0.3.199.3_pre.ebuild:
   Keywords readded, now PMASK'ed
