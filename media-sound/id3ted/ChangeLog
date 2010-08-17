@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Aug 2010; Christopher Head (Hawk777) <headch@gmail.com> metadata.xml:
+  Added upstream information to metadata.xml
+
   15 Aug 2010; Christopher Head (Hawk777) <headch@gmail.com>
   +id3ted-0.7.3.ebuild, +files/id3ted-0.7.3-gentoo-as-needed.patch,
   +files/id3ted-0.7.3-gentoo-proper-compiler-and-flags.patch, +metadata.xml:

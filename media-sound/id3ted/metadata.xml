@@ -6,4 +6,12 @@
 		<email>maintainer-wanted@gentoo.org</email>
 	</maintainer>
 	<longdescription>A command-line ID3 tag editor using <pkg>media-libs/taglib</pkg>.</longdescription>
+	<upstream>
+		<maintainer status="active">
+			<email>muennich@informatik.hu-berlin.de</email>
+			<name>Bert Muennich</name>
+		</maintainer>
+		<changelog>http://github.com/muennich/id3ted/blob/master/CHANGELOG</changelog>
+		<bugs-to>http://github.com/muennich/id3ted/issues</bugs-to>
+	</upstream>
 </pkgmetadata>
