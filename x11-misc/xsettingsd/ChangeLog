@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/xsettingsd
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Aug 2010; Iurii Zaikin (yzaikin) <punloh@yahoo.com>
+  +xsettingsd-9999.ebuild, +metadata.xml:
+  New Ebuild for bug 332695 thanks to dilfridge, Tommy[D]
+
