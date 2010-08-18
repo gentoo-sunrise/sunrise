@@ -32,6 +32,6 @@ src_install() {
 pkg_postinst() {
 	elog "Please notice that AutoUPnP was rewritten in the form of a C LD_PRELOAD"
 	elog "library, and thus it has to be enabled for a particular program to have"
-	elog "its ports redirected. For more information, please call:"
-	elog "	$ autoupnp --help"
+	elog "its ports redirected. To enable it for the current user, call:"
+	elog "	$ autoupnp install"
 }
