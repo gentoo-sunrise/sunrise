@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Aug 2010; keenblade <keenblade@gmail.com> -clamtk-4.26.ebuild,
+  +clamtk-4.28.ebuild:
+  Version bump. Removed unnecessary sed statement. Added udev as RDEPEND.
+  Added language file eu and zh_TW
+
   07 May 2010; keenblade <keenblade@gmail.com> -clamtk-4.25.ebuild,
   +clamtk-4.26.ebuild:
   Version bump. Added language file pt and uk

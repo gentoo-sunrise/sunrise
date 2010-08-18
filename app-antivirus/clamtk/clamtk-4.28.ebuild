@@ -12,7 +12,7 @@ LICENSE="Artistic GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-LANGS="ar bg cs da de el en_GB es fr gl he hr hu it ja ko ms nb nl nn pl pt pt_BR ro ru sk sl sv th tr uk zh_CN"
+LANGS="ar bg cs da de el en_GB es eu fr gl he hr hu it ja ko ms nb nl nn pl pt pt_BR ro ru sk sl sv th tr uk zh_CN zh_TW"
 IUSE="nls"
 for i in ${LANGS}; do
 	IUSE="${IUSE} linguas_${i}"
@@ -26,14 +26,12 @@ RDEPEND=">=dev-perl/gtk2-perl-1.140
 	dev-perl/Date-Calc
 	dev-util/desktop-file-utils
 	>=app-antivirus/clamav-0.90
-	nls? ( dev-perl/Locale-gettext )"
+	nls? ( dev-perl/Locale-gettext )
+	sys-fs/udev"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	perlinfo
-	sed -i -e "s:'/usr/lib':'${VENDOR_LIB}':"  clamtk \
-		|| die "sed failed"
 	gunzip ${PN}.1.gz || die "gunzip failed"
 }
 
