@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Aug 2010; Thomas Beierlein <tomjbe@gentoo.org> -adifmerg-18.ebuild,
+  +adifmerg-26.ebuild:
+  Version bump
+
   13 Jul 2010; Thomas Beierlein <tomjbe@gentoo.org> -adifmerg-16.ebuild,
   +adifmerg-18.ebuild:
   Version bump
