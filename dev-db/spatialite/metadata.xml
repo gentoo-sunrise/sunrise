@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+<use>
+  <flag name='geos'>Add the <pkg>sci-libs/geos</pkg> library for exact
+    topological tests</flag>
+  <flag name='proj'>Add the <pkg>sci-libs/proj</pkg> library for reprojection
+    features</flag>
+</use>
+</pkgmetadata>
