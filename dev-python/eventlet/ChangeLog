@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Aug 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -eventlet-0.9.10.ebuild, +eventlet-0.9.12.ebuild:
+  Version bump, install examples into proper place and remove IUSE test
+
   13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   eventlet-0.9.10.ebuild:
   Add pypi mirror list, fix dependency part

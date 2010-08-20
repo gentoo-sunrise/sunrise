@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples test"
+IUSE="doc examples"
 
 RDEPEND="dev-python/greenlet
 	|| ( >=dev-lang/python-2.6 ( <dev-lang/python-2.6 dev-python/pyopenssl ) )"
@@ -48,7 +48,8 @@ src_test() {
 src_install() {
 	distutils_src_install
 	if use examples ; then
-		dodoc examples/* || die "Install failed"
+		insinto /usr/share/${PF}/examples
+		doins -r examples/* || die "Install failed"
 	fi
 
 	if use doc; then
