@@ -3,6 +3,10 @@
 # $Header: $
 
   20 Aug 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  spatialite-2.3.1.ebuild:
+  Use distfiles-friendlier naming conventions. Spotted by ohnobinki
+
+  20 Aug 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +spatialite-2.3.1.ebuild, +metadata.xml:
   New ebuild for bug 284476. Thanks to Tommy[D], neurogeek and xarthisius for
   feedback

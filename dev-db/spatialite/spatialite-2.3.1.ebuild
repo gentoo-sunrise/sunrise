@@ -11,7 +11,7 @@ MY_P="lib${PN}-amalgamation-${PV}"
 DESCRIPTION="A complete Spatial DBMS in a nutshell built upon sqlite"
 HOMEPAGE="http://www.gaia-gis.it/spatialite"
 SRC_URI="http://www.gaia-gis.it/spatialite/${MY_P}.tar.gz
-	doc? ( http://www.gaia-gis.it/${PN}/${PN}-sql-${PV}.html -> sql_extensions.html )"
+	doc? ( http://www.gaia-gis.it/${PN}/${PN}-sql-${PV}.html )"
 
 LICENSE="MPL-1.1"
 SLOT="0"
@@ -37,6 +37,6 @@ src_install() {
 	emake DESTDIR="${D}" install || die
 
 	if use doc; then
-		dohtml "${DISTDIR}"/sql_extensions.html || die
+		dohtml "${DISTDIR}"/${PN}-sql-${PV}.html || die
 	fi
 }
