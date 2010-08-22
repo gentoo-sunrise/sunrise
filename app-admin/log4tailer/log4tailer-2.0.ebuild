@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 DEPEND="dev-python/setuptools
-	test? ( dev-python/pymox
+	test? ( dev-python/mox
 		dev-python/paramiko )"
 RDEPEND="virtual/python"
 

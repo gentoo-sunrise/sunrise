@@ -1,6 +1,9 @@
 # ChangeLog for app-admin/log4tailer
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Aug 2010; Markos Chandras <hwoarang@gentoo.org> log4tailer-2.0.ebuild:
+  Rename dev-python/pymox -> dev-python/mox
 
   02 Dec 2009; Marco Simeone (rael86) <ing.marcosimeone@gmail.com>
   +log4tailer-2.0.ebuild, +metadata.xml:
