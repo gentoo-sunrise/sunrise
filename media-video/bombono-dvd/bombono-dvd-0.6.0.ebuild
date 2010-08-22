@@ -12,7 +12,9 @@ SRC_URI="mirror://sourceforge/bombono/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
+
 KEYWORDS="~amd64"
+
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.8
@@ -28,14 +30,12 @@ RDEPEND=">=x11-libs/gtk+-2.8
 DEPEND=">=dev-util/scons-0.96.1
 	${RDEPEND}"
 
-PATCHES=( "${FILESDIR}/${P}-twolame.patch" )
-
 src_compile() {
 	# scons options differ from make options -> remove everything except "-jX" and "-j X"
 	local sconsopts=$(echo "${MAKEOPTS}" | sed -ne "/-j/ { s/.*\(-j[[:space:]]*[0-9]\+\).*/\1/; p }")
 
 	scons CC="$(tc-getCC)" CXX="$(tc-getCXX)" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		${sconsopts} DESTDIR="${D}" PREFIX="/usr" \
+		LDFLAGS="${LDFLAGS}" ${sconsopts} DESTDIR="${D}" PREFIX="/usr" \
 		|| die 'Please add "${S}/config.opts" when filing bugs reports!'
 }
 
