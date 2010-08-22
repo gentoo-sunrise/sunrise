@@ -14,12 +14,25 @@ IUSE="doc"
 
 RDEPEND="media-libs/tiff
 	media-libs/jpeg
-	sys-libs/zlib"
+	sys-libs/zlib
+	x11-libs/libX11
+	x11-libs/libXau
+	x11-libs/libXdmcp
+	x11-libs/libXext
+	x11-libs/libXinerama
+	x11-libs/libXrandr
+	x11-libs/libXxf86vm
+	x11-libs/libXScrnSaver"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	dev-util/ftjam"
 
 S="${WORKDIR}/${MY_P}"
+
+src_compile() {
+	echo "LINKFLAGS += ${LDFLAGS} ;" >> Jamtop
+	emake || die "emake failed"
+}
 
 src_install() {
 	emake install || die
@@ -35,6 +48,9 @@ src_install() {
 
 	insinto /usr/share/${PN}/ref
 	doins   ref/*  || die
+
+	insinto /etc/udev/rules.d
+	doins libusb/55-Argyll.rules
 }
 
 pkg_postinst() {

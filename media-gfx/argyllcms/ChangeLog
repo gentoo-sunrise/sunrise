@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*argyllcms-1.2.1 (22 Aug 2010)
+
+  22 Aug 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
+  -argyllcms-1.1.1.ebuild, +argyllcms-1.2.1.ebuild:
+  Version bump with minor improvements. Thanks to Jesper Saxtorph, Ivan
+  Trombley, and Guillaume Castagnino for fixes. More precise dependencies.
+
   23 Feb 2010; Andreas K. Huettel (dilfridge) <mail@akhuettel.de>
   -argyllcms-1.1.0.ebuild, +argyllcms-1.1.1.ebuild:
   Version bump.
