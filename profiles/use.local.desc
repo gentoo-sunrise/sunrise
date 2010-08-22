@@ -156,6 +156,8 @@ dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
 dev-db/dabo:ide - Enable dabo IDE
+dev-db/spatialite:geos - Add the sci-libs/geos library for exact topological tests
+dev-db/spatialite:proj - Add the sci-libs/proj library for reprojection features
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
