@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Aug 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
+  +gzdoom-1.5.0.ebuild:
+  gzdoom version bump
+
   22 Jun 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
   +gzdoom-1.4.8.ebuild, +gzdoom-9999.ebuild, +metadata.xml, +pubkey.txt:
   New Ebuild for bug 323131, thanks to all in #gentoo-sunrise
