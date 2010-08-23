@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit linux-info perl-app
+inherit base linux-info perl-app autotools
 
 DESCRIPTION="A small daemon which collects system performance statistics - with a near-infinite number of plugins"
 HOMEPAGE="http://collectd.org"
@@ -53,15 +53,15 @@ COMMON_DEPEND="
 	cd_ascent?		( net-misc/curl dev-libs/libxml2 )
 	cd_bind?		( dev-libs/libxml2 )
 	cd_curl?		( net-misc/curl )
-	cd_curl_xml?	( net-misc/curl dev-libs/libxml2 )
+	cd_curl_xml?		( net-misc/curl dev-libs/libxml2 )
 	cd_dbi?			( dev-db/libdbi )
 	cd_dns?			( net-libs/libpcap )
 	cd_gmond?		( sys-cluster/ganglia )
 	cd_ipmi?		( >=sys-libs/openipmi-2.0.11 )
-	cd_iptables?	( net-firewall/iptables )
+	cd_iptables?		( net-firewall/iptables )
 	cd_java?		( virtual/jre dev-java/java-config-wrapper )
 	cd_libvirt?		( app-emulation/libvirt dev-libs/libxml2 )
-	cd_memcachec?	( dev-libs/libmemcached )
+	cd_memcachec?		( dev-libs/libmemcached )
 	cd_modbus?		( dev-libs/libmodbus )
 	cd_mysql?		( >=virtual/mysql-5.0 )
 	cd_netlink?		( sys-apps/iproute2 )
@@ -73,15 +73,15 @@ COMMON_DEPEND="
 	cd_onewire?		( sys-fs/owfs )
 	cd_oracle?		( >=dev-db/oracle-instantclient-basic-11.1.0.7.0 )
 	cd_perl?		( dev-lang/perl[ithreads] sys-devel/libperl[ithreads] )
-	cd_postgresql?	( >=dev-db/postgresql-base-8.2 )
+	cd_postgres?		( >=dev-db/postgresql-base-8.2 )
 	cd_python?		( || ( dev-lang/python:2.4  dev-lang/python:2.5 dev-lang/python:2.6 ) )
 	cd_rrdcached?		( >=net-analyzer/rrdtool-1.4 )
 	cd_rrdtool?		( >=net-analyzer/rrdtool-1.2.27 )
 	cd_sensors?		( sys-apps/lm_sensors )
 	cd_snmp?		( net-analyzer/net-snmp )
-	cd_tokyotyrant?	( net-misc/tokyotyrant )
-	cd_uuid?		( sys-apps/hal )
-	cd_write_http?	( net-misc/curl )
+	cd_tokyotyrant?		( net-misc/tokyotyrant )
+	cd_uuid? 		( sys-apps/hal )
+	cd_write_http?		( net-misc/curl )
 
 	kernel_FreeBSD?	(
 		cd_disk?	( >=sys-libs/libstatgrab-0.16 )
@@ -100,6 +100,8 @@ DEPEND="${COMMON_DEPEND}
 
 RDEPEND="${COMMON_DEPEND}
 	cd_syslog?		( virtual/logger )"
+
+PATCHES=( "${FILESDIR}/${P}-libiptc.patch" )
 
 collectd_plugin_kernel_linux() {
 	#
@@ -228,16 +230,24 @@ pkg_setup() {
 	elog
 
 	if use kernel_linux; then
-		elog "Checking your linux kernel configuration..."
-		collectd_linux_kernel_checks
-		elog "... done."
+		if linux_config_exists; then
+			elog "Checking your linux kernel configuration..."
+			collectd_linux_kernel_checks
+			elog "... done."
+		else
+			elog "Cannot find a linux kernel configuration. Continuing anyway."
+		fi
 	fi
 }
 
 src_prepare() {
-	# There's some strange prefix handling in the default config file, resulting in
+	base_src_prepare
+
+	# There's some strange prefix handling in the default config file, resulting in 
 	# paths like "/usr/var/..."
 	sed -i -e "s:@prefix@/var:/var:g" src/collectd.conf.in || die
+
+	eautoreconf
 }
 
 src_configure() {
