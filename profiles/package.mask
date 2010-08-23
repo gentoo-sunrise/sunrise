@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
+# Masking wrt bug 333939. Dependency on vala-1.0 which is
+# not yet released.
+=x11-wm/cairo-compmgr-0.3.0
+
 # Michał Górny <mgorny.3ehbo@mailnull.com> (10 Jul 2010)
 # The distfiles fail to fetch and there's noone with Zope knowledge to
 # perform the bump. Removal in 30 days.
