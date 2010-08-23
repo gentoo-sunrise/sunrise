@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Michał Górny <gentoo@mgorny.alt.pl> (23 Aug 2010)
+# Masked for removal in 30 days wrt bug #126370. The author suggests
+# using 'eread' from app-portage/gentoolkit instead.
+app-portage/elog-list
+
 # Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
 # Masking wrt bug 333939. Dependency on vala-1.0 which is
 # not yet released.
