@@ -22,6 +22,11 @@
 ##
 
 # Michał Górny <gentoo@mgorny.alt.pl> (23 Aug 2010)
+# As reported in bug #205813, the library is longer necessary with
+# >=exim-4.71. Masking for removal in 30 days.
+mail-filter/libdkim-exim
+
+# Michał Górny <gentoo@mgorny.alt.pl> (23 Aug 2010)
 # Masked for removal in 30 days wrt bug #126370. The author suggests
 # using 'eread' from app-portage/gentoolkit instead.
 app-portage/elog-list
