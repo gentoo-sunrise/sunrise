@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs
+inherit multilib toolchain-funcs
 
 DESCRIPTION="Automatic open port forwarder using UPnP"
 HOMEPAGE="http://github.com/mgorny/autoupnp/"
@@ -20,13 +20,16 @@ DEPEND="${RDEPEND}"
 src_compile() {
 	tc-export CC
 	emake WANT_LIBNOTIFY=$(use libnotify && echo true || echo false) || die
+
+	# Generate the clean wrapper script.
+	sh ./autoupnp cleanup /usr/$(get_libdir)/${PN}.so "${T}"/${PN} || die
 }
 
 src_install() {
 	dolib ${PN}.so || die
-	dobin ${PN} || die
+	dobin "${T}"/${PN} || die
 
-	dodoc README || die
+	dodoc NEWS README || die
 }
 
 pkg_postinst() {
