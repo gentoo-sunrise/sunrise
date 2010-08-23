@@ -1,6 +1,12 @@
 # ChangeLog for sys-fs/fusepod
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Aug 2010; Maks Verver (Soultaker) <maksverver@geocities.com>
+  -fusepod-0.5.2.ebuild, +fusepod-0.5.2-r1.ebuild,
+  +files/fusepod-0.5.2-64bit-fixes.patch,
+  +files/fusepod-0.5.2-additional-headers.patch:
+  Fixed building with recent headers. Fixed broken 64-bit support.
 
   08 Apr 2008; Charles Clément <caratorn@gmail.com>
   -files/fusepod-0.5.1-libgpod-api-fix.patch:

@@ -1,0 +1,29 @@
+--- src.bak/fusepod_ipod.cpp	2010-08-21 00:02:22.000000000 +0200
++++ src/fusepod_ipod.cpp	2010-08-21 00:25:38.000000000 +0200
+@@ -231,7 +231,7 @@
+                              {"m4a", "mp4"},
+                              {"m4p", "mp4"} };
+ 
+-    unsigned int pos = path.rfind ('.');
++    size_t pos = path.rfind ('.');
+     if (pos == string::npos) {
+         itdb_track_free (track);
+         return 0;
+--- src.bak/fusepod_util.cpp	2010-08-21 00:23:41.000000000 +0200
++++ src/fusepod_util.cpp	2010-08-21 00:34:30.000000000 +0200
+@@ -27,11 +27,11 @@
+ }
+ 
+ string fusepod_strip_string (const string & s) {
+-    unsigned int l = s.find_first_not_of (" \t\n\r");
++    size_t l = s.find_first_not_of (" \t\n\r");
+     if (l == string::npos)
+         return "";
+-    int r = s.find_first_not_of (" \t\n\r");
+-    return s.substr (l, s.length () - r);
++    size_t r = s.find_last_not_of (" \t\n\r");
++    return s.substr (l, r + 1 - l);
+ }
+ 
+ string fusepod_check_string (const string & s, const string & unknown) {
+
