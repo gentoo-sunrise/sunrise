@@ -2,6 +2,14 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*miniupnpc-1.4.20100609 (20 Aug 2010)
+
+  20 Aug 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -miniupnpc-1.4.ebuild, +miniupnpc-1.4.20100609.ebuild,
+  +files/miniupnpc-1.4.20100609-cflags.diff,
+  -files/miniupnpc-1.4-cflags.diff:
+  Version bump.
+
   30 May 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   miniupnpc-1.4.ebuild:
   Export CC for make, support building Python module.

@@ -1,0 +1,25 @@
+From 64dd9189d1a41f407943a014c763744c842d3543 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Micha=C5=82=20G=C3=B3rny?= <gentoo@mgorny.alt.pl>
+Date: Fri, 20 Aug 2010 19:50:12 +0200
+Subject: [PATCH] Clean up CFLAGS.
+
+---
+ Makefile |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index ca59031..af257a8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -12,7 +12,7 @@ OS = $(shell uname -s)
+ CC ?= gcc
+ #AR = gar
+ #CFLAGS = -O -Wall -g -DDEBUG
+-CFLAGS ?= -O -Wall -DNDEBUG -DMINIUPNPC_SET_SOCKET_TIMEOUT
++CFLAGS += -Wall -DNDEBUG -DMINIUPNPC_SET_SOCKET_TIMEOUT
+ INSTALL = install
+ SH = /bin/sh
+ JAVA = java
+-- 
+1.7.2
+
