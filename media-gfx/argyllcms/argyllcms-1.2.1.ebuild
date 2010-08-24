@@ -50,7 +50,7 @@ src_install() {
 	doins   ref/*  || die
 
 	insinto /etc/udev/rules.d
-	doins libusb/55-Argyll.rules
+	doins libusb/55-Argyll.rules || die
 }
 
 pkg_postinst() {
