@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  -renpy-modules-6.10.2-r1.ebuild, +renpy-modules-6.11.0.ebuild:
+  Version bump
+
   16 May 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   -renpy-modules-6.10.2.ebuild, +renpy-modules-6.10.2-r1.ebuild:
   Added ~amd64 keyword
