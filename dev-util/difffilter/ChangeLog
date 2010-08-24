@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> difffilter-0.2.ebuild:
+  Add ~amd64-linux keyword -- tested on ubuntu-amd64.
+
   08 Jul 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> -difffilter-0.1.1.ebuild,
   +difffilter-0.2.ebuild:
