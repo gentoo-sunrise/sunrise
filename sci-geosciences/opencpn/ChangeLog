@@ -1,0 +1,8 @@
+# ChangeLog for sci-geosciences/opencpn
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Aug 2010; Marc Schifbauer (mschiff) <marc@schiffbauer.net>
+  +opencpn-2.1.624a.ebuild, +metadata.xml:
+  New Ebuild for bug 334283
+
