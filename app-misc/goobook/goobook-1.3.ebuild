@@ -17,9 +17,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-python/gdata
-    dev-python/argparse
-    =dev-python/hcs-utils-1.1.1
-    dev-python/simplejson"
+	dev-python/argparse
+	=dev-python/hcs-utils-1.1.1
+	dev-python/simplejson"
 
 RESTRICT_PYTHON_ABIS="3.*"
 
