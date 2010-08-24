@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-python/django
 	dev-python/django-evolution
-	dev-python/djblets
+	dev-python/Djblets
 	dev-python/flup
 	dev-python/imaging
 	dev-python/imaging
