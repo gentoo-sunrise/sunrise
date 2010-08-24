@@ -8,7 +8,7 @@ DESCRIPTION="Internet2 version for OpenSAML of log4cpp logging framework"
 HOMEPAGE="http://spaces.internet2.edu/display/OpenSAML/log4shib"
 SRC_URI="http://shibboleth.internet2.edu/downloads/${PN}/${PV}/${P}.tar.gz"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 LICENSE="LGPL-2.1"
 SLOT="0"
 IUSE="doc"
