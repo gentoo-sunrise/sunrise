@@ -21,6 +21,12 @@
 ##   End example
 ##
 
+# Michael Weber <xmw@gentoo.org> (24 Aug 2010)
+# moved to tree as dev-python/Djblets
+# dependency dev-util/reviewboard rev bumped
+# Masked for removal in 30 days
+dev-python/djblets
+
 # Michał Górny <gentoo@mgorny.alt.pl> (23 Aug 2010)
 # As reported in bug #205813, the library is longer necessary with
 # >=exim-4.71. Masking for removal in 30 days.
