@@ -1,9 +1,0 @@
-# ChangeLog for app-admin/conkyforecast
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  09 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de>
-  +conkyforecast-2.10.ebuild, +metadata.xml:
-  New ebuild for bug 255948, thanks to Christopher Robin Elmersson for the
-  initial ebuild
-
