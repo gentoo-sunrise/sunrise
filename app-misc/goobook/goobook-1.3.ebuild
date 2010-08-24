@@ -13,9 +13,20 @@ SRC_URI="mirror://pypi/g/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-python/gdata"
+RDEPEND="dev-python/gdata
+    dev-python/argparse
+    =dev-python/hcs-utils-1.1.1
+    dev-python/simplejson"
 
 RESTRICT_PYTHON_ABIS="3.*"
+
+pkg_postinst() {
+	distutils_pkg_postinst
+
+	ewarn	"If you are upgrading from v1.2 then you may encounter few issues."
+	ewarn	"In order to fix that, you have to delete your old cache:"
+	ewarn	"rm ~/.goobook_cache"
+}
