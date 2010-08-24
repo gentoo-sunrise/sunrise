@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Marc Schiffbauer <marc@schiffbauer.net> (24 Aug 2010)
+# package moved to sci-geosciences/mc2bsbh
+app-misc/mc2bsbh
+
 # Michael Weber <xmw@gentoo.org> (24 Aug 2010)
 # moved to tree as dev-python/Djblets
 # dependency dev-util/reviewboard rev bumped
