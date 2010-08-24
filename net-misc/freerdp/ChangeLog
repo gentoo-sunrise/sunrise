@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2010; Nils Andresen (nils.andresen) <andresen.nils@googlemail.com>
+  -freerdp-0.7.3.ebuild, +freerdp-0.7.4.ebuild:
+  Unmodified bump to version 0.7.4
+
   26 Jul 2010; Nils Andresen (nils.andresen) <andresen.nils@googlemail.com>
   -freerdp-0.7.2.ebuild, +freerdp-0.7.3.ebuild:
   Version bump for freerdp
