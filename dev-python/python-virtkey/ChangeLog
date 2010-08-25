@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*python-virtkey-0.60.0 (25 Aug 2010)
+
+  25 Aug 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -python-virtkey-0.50-r1.ebuild, +python-virtkey-0.60.0.ebuild:
+  Version bump.
+
 *python-virtkey-0.50-r1 (14 Jul 2010)
 
   14 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
