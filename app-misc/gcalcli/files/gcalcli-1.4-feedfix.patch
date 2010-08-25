@@ -1,0 +1,19 @@
+*** gcalcli	Sat Oct 13 20:44:57 2007
+--- gcalcli	Wed Aug 25 14:25:00 2010
+***************
+*** 223,229 ****
+      allCals       = None
+      workCals      = []
+      now           = datetime.now(tzlocal())
+!     feedPrefix    = 'http://www.google.com/calendar/feeds/'
+      agendaLength  = 5
+      username      = ''
+      password      = ''
+--- 223,229 ----
+      allCals       = None
+      workCals      = []
+      now           = datetime.now(tzlocal())
+!     feedPrefix    = 'https?://www.google.com/calendar/feeds/'
+      agendaLength  = 5
+      username      = ''
+      password      = ''
