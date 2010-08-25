@@ -3,4 +3,8 @@
 <pkgmetadata>
 	<herd>no-herd</herd>
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<use>
+		<flag name="suid">Install the library setuid &amp; setgid
+			(required in order to run setuid &amp; setgid applications).</flag>
+	</use>
 </pkgmetadata>
