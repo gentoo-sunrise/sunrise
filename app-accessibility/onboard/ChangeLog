@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*onboard-0.94.0 (25 Aug 2010)
+
+  25 Aug 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -onboard-0.93.2.ebuild, +onboard-0.94.0.ebuild:
+  Version bump.
+
 *onboard-0.93.2 (14 Jul 2010)
 
   14 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
