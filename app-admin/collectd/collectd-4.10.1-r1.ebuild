@@ -101,6 +101,8 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	cd_syslog?		( virtual/logger )"
 
+PATCHES=( "${FILESDIR}/${P}-libiptc.patch" )
+
 collectd_plugin_kernel_linux() {
 	#
 	# USAGE: <plug-in name> <kernel_options> <severity>
