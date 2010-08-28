@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ipe-7.0.8.ebuild:
+  www-client/mozilla-firefox -> www-client/firefox
+
   13 Jun 2010; Markus Ullmann <jokey@gentoo.org> ipe-7.0.8.ebuild:
   Fix up depspec
 

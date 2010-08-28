@@ -22,7 +22,7 @@ DEPEND=">=x11-libs/qt-core-4.5:4
 	app-text/texlive-core"
 
 RDEPEND="${DEPEND}
-	!seamonkey? ( || ( www-client/mozilla-firefox
+	!seamonkey? ( || ( www-client/firefox
 		www-client/firefox-bin ) )
 	seamonkey? ( || ( www-client/seamonkey
 		www-client/seamonkey-bin ) )"
