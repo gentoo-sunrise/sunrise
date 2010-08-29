@@ -1,0 +1,8 @@
+# ChangeLog for app-text/u2ps
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Aug 2010; Jure Varlec (exzombie) <jure.varlec@gmail.com>
+  +u2ps-0.8.1.ebuild, +metadata.xml:
+  New ebuild for bug #335117. Thanks to hwoarang and Nikoli.
+
