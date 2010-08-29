@@ -26,6 +26,16 @@ RESTRICT_PYTHON_ABIS="3.*"
 pkg_postinst() {
 	distutils_pkg_postinst
 
+	einfo	"If you want to use goobook from mutt"
+	einfo	"set in your .muttrc file:"
+	einfo
+	einfo	"set query_command=\"goobook query '%s'\""
+	einfo
+	einfo	"to query address book. (Normally bound to \"Q\" key.)"
+	einfo	
+	einfo	"You can customize few other settings. Please take a look"
+	einfo	"at http://pypi.python.org/pypi/${PN}/${PV} in \"Configure/Mutt\" section"
+	einfo
 	ewarn	"If you are upgrading from v1.2 then you may encounter few issues."
 	ewarn	"In order to fix that, you have to delete your old cache:"
 	ewarn	"rm ~/.goobook_cache"
