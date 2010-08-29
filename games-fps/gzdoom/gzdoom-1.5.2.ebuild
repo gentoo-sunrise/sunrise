@@ -4,30 +4,29 @@
 
 EAPI="2"
 
-inherit games cmake-utils subversion
+inherit games cmake-utils
 
 DESCRIPTION="Enhanced OpenGL port of the official DOOM source code that also supports Heretic, Hexen, and Strife"
 HOMEPAGE="http://grafzahl.drdteam.org/"
-ESVN_REPO_URI="http://mancubus.net/svn/hosted/gzdoom/trunk/"
+SRC_URI="http://omploader.org/vNWRqMQ/${P}.tar.bz2"
 
 LICENSE="DOOMLIC BUILDLIC BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="mmx gtk fluidsynth"
 
-RDEPEND="
+RDEPEND="gtk? ( x11-libs/gtk+:2 )
 	fluidsynth? ( media-sound/fluidsynth )
-	gtk? ( x11-libs/gtk+:2 )
 	media-libs/flac
 	media-libs/fmod:1
 	media-libs/jpeg
 	media-libs/libsdl"
 
-DEPEND="${RDEPEND}
+DEPEND="${REPEND}
 	mmx? ( || ( dev-lang/nasm dev-lang/yasm ) )"
 
 src_prepare() {
-	# Use default game data path
+	# Use default game data path"
 	sed -i \
 		-e "s:/usr/local/share/:${GAMES_DATADIR}/doom-data/:" \
 		src/sdl/i_system.h || die
@@ -37,8 +36,6 @@ src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_no mmx ASM)
 		$(cmake-utils_use_no gtk GTK)
-		-DFMOD_INCLUDE_DIR=/opt/fmodex/api/inc/
-		-DFMOD_LIBRARY=/opt/fmodex/api/lib/libfmodex.so
 	)
 
 	cmake-utils_src_configure
@@ -70,5 +67,5 @@ pkg_postinst() {
 		ewarn "You may need to install a SoundFont to use fluidsynth for music."
 		elog
 	fi
-	elog "See /usr/share/doc/${P}/zdoom.txt.* for more info"
+	elog "See /usr/share/doc/${P}/zdoom.txt.bz2 for more info"
 }

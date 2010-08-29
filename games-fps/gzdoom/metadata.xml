@@ -3,4 +3,5 @@
 <pkgmetadata>
 <herd>no-herd</herd>
 <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+<use><flag name='fluidsynth'>Enables Fluidsynth MIDI software synthesis</flag></use>
 </pkgmetadata>
