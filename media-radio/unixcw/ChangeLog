@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Aug 2010; Thomas Beierlein <tomjbe@gentoo.org> -unixcw-2.3-r5.ebuild,
+  +unixcw-2.3-r6.ebuild, +files/unixcw-2.3-gcc43.patch:
+  Move -qt3to4.patch to mirror://gentoo. Fix gcc4.3 problem
+
   09 Feb 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
   unixcw-2.3-r5.ebuild:
   Missed changes to ebuild body for last commit (rev. 10012)

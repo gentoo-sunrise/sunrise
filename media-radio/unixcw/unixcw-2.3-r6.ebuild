@@ -9,7 +9,7 @@ inherit autotools eutils multilib
 DESCRIPTION="A package of programs that fit together to form a morse code tutor program."
 HOMEPAGE="http://radio.linux.org.au/?sectpat=morse"
 SRC_URI="ftp://metalab.unc.edu/pub/Linux/apps/ham/morse/${P}.tgz
-	qt4? (	http://gentooexperimental.org/~patrick/unixcw-2.3-qt3to4.patch )"
+	qt4? (	mirror://gentoo/unixcw-2.3-qt3to4.patch.gz )"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -28,9 +28,10 @@ src_prepare() {
 		"${FILESDIR}"/${P}--as-needed.patch \
 		"${FILESDIR}"/${P}-ldflags.patch \
 		"${FILESDIR}"/${P}-fPIC.patch \
-		"${FILESDIR}"/${P}-audio.patch
+		"${FILESDIR}"/${P}-audio.patch \
+		"${FILESDIR}"/${P}-gcc43.patch
 	if use qt4 ; then
-		epatch "${DISTDIR}"/${P}-qt3to4.patch
+		epatch "${DISTDIR}"/${P}-qt3to4.patch.gz
 	fi
 	eautoreconf
 }
