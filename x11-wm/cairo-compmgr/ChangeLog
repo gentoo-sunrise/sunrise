@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Aug 2010; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+  cairo-compmgr-0.3.0.ebuild, +files/cairo-compmgr-0.3.0-vala-dep.patch:
+  Fixed configure check for >=dev-lang/vala-0.9.5
+
   22 Mar 2010; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
   -cairo-compmgr-0.2.93.ebuild,
   -files/cairo-compmgr-0.2.93-glitz-code.patch,

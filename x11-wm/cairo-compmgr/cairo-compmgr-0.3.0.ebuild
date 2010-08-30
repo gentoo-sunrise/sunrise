@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit gnome2
+inherit autotools gnome2
 
 DESCRIPTION="A versatile and extensible compositing manager which uses cairo for rendering"
 HOMEPAGE="http://cairo-compmgr.tuxfamily.org/"
@@ -21,3 +21,10 @@ RDEPEND="x11-libs/gtk+:2
 	x11-libs/pixman"
 DEPEND="${RDEPEND}
 	>=x11-proto/glproto-1.4.9"
+
+src_prepare() {
+	if has_version ">=dev-lang/vala-0.9.5"; then
+		epatch "${FILESDIR}/${P}-vala-dep.patch"
+		eautoreconf
+	fi
+}

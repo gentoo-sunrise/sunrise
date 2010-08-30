@@ -1,0 +1,11 @@
+--- configure.ac	2010-03-17 18:13:25.000000000 -0400
++++ configure.ac	2010-08-30 13:12:36.000000000 -0400
+@@ -85,7 +85,7 @@
+         cairo >= $CAIRO_REQUIRED,
+         pixman-1 >= $PIXMAN_REQUIRED,
+         gtk+-2.0 >= $GTK_REQUIRED
+-        vala-1.0 >= $VALA_REQUIRED])
++        vala-0.10 >= $VALA_REQUIRED])
+ AC_SUBST(CAIRO_COMPMGR_CFLAGS)
+ AC_SUBST(CAIRO_COMPMGR_LIBS)
+ 
