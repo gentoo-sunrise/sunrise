@@ -3,6 +3,10 @@
 # $Header: $
 
   31 Aug 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
+  gzdoom-9999.ebuild:
+  edit elog message for the live gzdoom ebuild, too. (Oops.)
+
+  31 Aug 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
   gzdoom-1.5.2.ebuild:
   Edit gzdoom info message to reflect the availability of fluid-soundfont
 
