@@ -65,7 +65,6 @@ pkg_postinst() {
 	elog
 	if use fluidsynth; then
 		ewarn "You may need to install a SoundFont to use fluidsynth for music."
-		elog
 	fi
 	elog "See /usr/share/doc/${P}/zdoom.txt.bz2 for more info"
 }
