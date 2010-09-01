@@ -12,7 +12,7 @@ SRC_URI="ftp://ohnopub.net/mirror/${P}.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DOCS=( README VERSION )
