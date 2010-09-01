@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Sep 2010; mthode <mthode@mthode.org> -icinga-1.0.2.ebuild,
+  +icinga-1.0.3.ebuild, +files/icinga-apache.conf, +files/icinga-conf.d,
+  +files/icinga-init.d, +files/icinga-lighty.conf, +files/ido2db-conf.d,
+  +files/ido2db-init.d, +files/metadata.xml, metadata.xml:
+  New version of icinga (it works now), thanks to chithead
+
   14 Jul 2010; Matthew Thode (prometheanfire) <mthode@mthode.org>
   +icinga-1.0.2.ebuild, +metadata.xml:
   New Ebuild for bug 271339 thanks to chithead
