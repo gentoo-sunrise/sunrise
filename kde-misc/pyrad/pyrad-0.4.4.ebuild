@@ -21,3 +21,4 @@ DEPEND="
 	kde-base/pykde4
 	<dev-lang/python-3.0
 "
+RDEPEND="$DEPEND"
