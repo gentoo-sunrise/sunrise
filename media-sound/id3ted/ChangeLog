@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Sep 2010; Christopher Head (Hawk777) <headch@gmail.com>
+  id3ted-0.7.3.ebuild:
+  Added ~amd64 keyword.
+
   17 Aug 2010; Christopher Head (Hawk777) <headch@gmail.com> metadata.xml:
   Added upstream information to metadata.xml
 
