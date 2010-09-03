@@ -23,6 +23,7 @@ DEPEND="${RDEPEND}
 	>=x11-proto/glproto-1.4.9"
 
 src_prepare() {
+	# workaround to fix upstream change in dev-lang/vala, see bug 335296
 	if has_version ">=dev-lang/vala-0.9.5"; then
 		epatch "${FILESDIR}/${P}-vala-dep.patch"
 		eautoreconf
