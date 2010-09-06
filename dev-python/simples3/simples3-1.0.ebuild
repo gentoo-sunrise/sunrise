@@ -5,14 +5,13 @@
 EAPI="2"
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
+DISTUTILS_SRC_TEST="nosetests"
 
 inherit distutils versionator
 
-MY_P=${PN}-$(replace_version_separator 2 '-')
-
 DESCRIPTION="A fairly simple, decently quick python interface to Amazon's S3 storage service"
 HOMEPAGE="http://lericson.se/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -23,11 +22,6 @@ RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 DOCS="changes.rst"
 
-S=${WORKDIR}/${MY_P}
-
-src_test() {
-	testing() {
-		PYTHONPATH="$(dir -d build-${PYTHON_ABI}/lib*)" "$(PYTHON)" tests.py || die "Tests failed"
-	}
-	python_execute_function testing
+src_prepare() {
+	sed -i -e "s/setuptools/distutils.core/" setup.py || die
 }
