@@ -22,7 +22,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="geoview skins"
+IUSE="${IUSE} geoview skins"
 
 DEPEND="app-arch/unzip"
 RDEPEND=">=virtual/jre-1.4"
