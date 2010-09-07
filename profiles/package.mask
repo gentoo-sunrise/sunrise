@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (07 Sep 2010)
+# Masking for removai in 30 days because of 4suite masked
+# dependency
+net-dns/opendnssec
+
 # Michael Weber <xmw@gentoo.org> (31 Aug 2010)
 # moved to tree as media-radio/KochMorse
 # Masked for removal in 30 days
