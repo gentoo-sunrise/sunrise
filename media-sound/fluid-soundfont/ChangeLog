@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Sep 2010; Markos Chandras <hwoarang@gentoo.org>
+  fluid-soundfont-3.1.ebuild:
+  USE ubuntu mirror on SRC_URI
+
   31 Aug 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
   +fluid-soundfont-3.1.ebuild, +metadata.xml:
   Initial commit of fluid-soundfont. Thanks to binki and hwoarang from

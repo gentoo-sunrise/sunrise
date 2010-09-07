@@ -4,7 +4,7 @@
 
 DESCRIPTION="The Fluid R3 soundfont"
 HOMEPAGE="http://archive.ubuntu.com/ubuntu/pool/universe/f/${PN}"
-SRC_URI="http://archive.ubuntu.com/ubuntu/pool/universe/f/${PN}/${PN}_${PV}.orig.tar.gz
+SRC_URI="mirror://ubuntu/pool/universe/f/${PN}/${PN}_${PV}.orig.tar.gz
 	 http://dev.gentoo.org/~hwoarang/distfiles/timidity.cfg.bz2"
 
 LICENSE="MIT"
