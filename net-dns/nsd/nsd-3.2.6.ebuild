@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bind8-stats ipv6 largefile nsec3 root-server runtime-checks"
 
-DEPEND="tsig? ( dev-libs/openssl )"
+DEPEND="dev-libs/openssl"
 RDEPEND=${DEPEND}
 
 pkg_setup() {

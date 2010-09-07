@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Sep 2010; Markos Chandras <hwoarang@gentoo.org> nsd-3.2.6.ebuild:
+  Drop tsig completely
+
   02 Aug 2010; Tom Hendrikx (whyscream) <tom@whyscream.net> ChangeLog:
   version bump to nsd 3.2.6, dropping 3 USE flags due to upstream cleanup in
   configure script, minor update to init script
