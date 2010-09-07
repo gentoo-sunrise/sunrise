@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Sep 2010; Markos Chandras <hwoarang@gentoo.org> netifaces-0.5.ebuild:
+  Explicitly define RDEPEND
+
   29 Jul 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   netifaces-0.5.ebuild:
   dev-python/setuptools depend added
