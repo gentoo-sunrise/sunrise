@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="allegro asm debug dedicated flac mad mikmod +models +music openal +opengl
-+sdl +textures tools +vorbis wxwindows"
++sdl +textures tools +vorbis wxwidgets"
 
 # From econf:  "Vavoom requires Allegro or SDL to compile"
 # SDL,like Allegro are *software* renderers in this game.
@@ -45,7 +45,7 @@ DEPEND="media-libs/libpng
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	openal? ( media-libs/openal )
-	wxwindows? ( x11-libs/wxGTK:2.8 )"
+	wxwidgets? ( x11-libs/wxGTK:2.8 )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
 PDEPEND="models? ( >=games-fps/vavoom-models-1.4.3 )
@@ -124,7 +124,7 @@ src_compile() {
 					$(cmake-utils_use_enable debug ZONE_DEBUG)
 					$(cmake-utils_use_enable dedicated SERVER)
 					$(cmake-utils_use_enable asm ASM)
-					$(cmake-utils_use_enable wxwindows LAUNCHER)
+					$(cmake-utils_use_enable wxwidgets LAUNCHER)
 					-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}"
 
 	cmake-utils_src_configure
@@ -150,7 +150,7 @@ src_install() {
 		dodoc utils/vcc/vcc.txt || die "dodoc vcc.txt failed"
 	fi
 
-	if use wxwindows ; then
+	if use wxwidgets ; then
 		# Install graphical launcher shortcut
 		doicon utils/vlaunch/vlaunch.xpm || die "doicon vlaunch.xpm failed"
 		make_desktop_entry "vlaunch" "Vavoom Launcher" "vlaunch.xpm"
@@ -173,7 +173,7 @@ pkg_postinst() {
 	elog
 	elog "See documentation for further details."
 
-	if use wxwindows ; then
+	if use wxwidgets ; then
 		einfo
 		einfo "You've also installed a nice graphical launcher. Simply run:"
 		einfo
