@@ -152,6 +152,7 @@ app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
 app-mobilephone/series60-remote:obex - Enable *.sis files transfer and file browser
 app-mobilephone/series60-remote:stats - Enable statistics graph visualization
+app-text/u2ps:fonts - Install a more complete set of unicode fonts
 dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
@@ -182,6 +183,7 @@ games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get so
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
 games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
 games-fps/chocolate-doom:server - Enable installation of server
+games-fps/gzdoom:fluidsynth - Enables Fluidsynth MIDI software synthesis
 games-fps/tremfusion:tty - Enables text based game client
 games-fps/uhexen2:asm - Use x86 assembly on ia32 machines which is faster (it only applies to software renderer)
 games-fps/uhexen2:cdaudio - Enable cd audio playback support
@@ -253,6 +255,11 @@ media-video/pgcedit:video - Add support for video preview
 media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
 media-video/ripwrap:mp4 - Add mp4 support
+net-analyzer/icinga:api - Adds support for the icinga API
+net-analyzer/icinga:idoutils - Adds DB support
+net-analyzer/icinga:lighttpd - Adds Lighttpd support
+net-analyzer/icinga:plugins - Adds support for nagios plugins
+net-analyzer/icinga:web - Adds generic web interface support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:largefile - Enable largefile support
@@ -300,6 +307,7 @@ net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for enc
 net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
 net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
 net-misc/apt-cacher-ng:logrotate - Install support files for app-admin/logrotate.
+net-misc/autoupnp:suid - Install the library setuid & setgid (required in order to run setuid & setgid applications).
 net-misc/freerdp:X - Install also GUI client
 net-misc/freerdp:alsa - Enable sound support (using alsa)
 net-misc/freerdp:cups - Enable printing support (using cups)
@@ -356,6 +364,4 @@ sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to p
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
-x11-misc/bmpanel:libev - Use the libev event loop interface
-x11-misc/bmpanel:libevent - Use the libevent event loop interface
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
