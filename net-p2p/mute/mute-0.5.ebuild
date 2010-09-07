@@ -15,10 +15,10 @@ SRC_URI="mirror://sourceforge/mute-net/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="wxwindows"
+IUSE="wxwidgets"
 
 DEPEND="dev-libs/crypto++
-	wxwindows? ( =x11-libs/wxGTK-2.6* )"
+	wxwidgets? ( =x11-libs/wxGTK-2.6* )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
@@ -44,7 +44,7 @@ src_compile() {
 
 	emake GXX=$(tc-getCXX) CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
 
-	if use wxwindows; then
+	if use wxwidgets; then
 		cd "${S}/MUTE/otherApps/fileSharing/userInterface/wxWindows"
 		emake GXX="$(tc-getCXX)" WX_CONFIG="${WX_CONFIG}" \
 			CRYPTO_LIB="/usr/$(get_libdir)/libcrypto++.a" || die "emake failed"
@@ -55,7 +55,7 @@ src_install() {
 	exeinto /usr/share/mute
 	doexe MUTE/otherApps/fileSharing/userInterface/textBased/textFileSharingMUTE
 	dobin "${FILESDIR}/MUTE"
-	if use wxwindows; then
+	if use wxwidgets; then
 		doexe MUTE/otherApps/fileSharing/userInterface/wxWindows/fileSharingMUTE
 		dohard /usr/bin/MUTE /usr/bin/wxMUTE
 	fi
