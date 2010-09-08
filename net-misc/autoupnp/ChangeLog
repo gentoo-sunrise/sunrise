@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*autoupnp-0.4.4 (08 Sep 2010)
+
+  08 Sep 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
+  -autoupnp-0.4.3-r1.ebuild, +autoupnp-0.4.4.ebuild:
+  Version bump. Install dummy libraries for alternate ABIs (and setuid
+  fallback if not installing setuid).
+
 *autoupnp-0.4.3-r1 (25 Aug 2010)
 
   25 Aug 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
