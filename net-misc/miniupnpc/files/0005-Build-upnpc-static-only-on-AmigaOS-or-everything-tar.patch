@@ -1,0 +1,47 @@
+From a3bd74fbc4fa8c5b45db1d0cf6afb08f812509c3 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Micha=C5=82=20G=C3=B3rny?= <gentoo@mgorny.alt.pl>
+Date: Tue, 7 Sep 2010 23:03:20 +0200
+Subject: [PATCH 5/6] Build upnpc-static only on AmigaOS or everything target.
+
+---
+ Makefile |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 85b9737..a201c9b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -55,7 +55,7 @@ else
+   SONAME = $(SHAREDLIBRARY).$(APIVERSION)
+ endif
+ 
+-EXECUTABLES = upnpc-static
++EXECUTABLES_STATIC = upnpc-static
+ EXECUTABLES_ADDTESTS = testminixml minixmlvalid testupnpreplyparse \
+ 			  testigddescparse testminiwget
+ 
+@@ -72,9 +72,11 @@ TESTIGDDESCPARSE = testigddescparse.o igd_desc_parse.o minixml.o \
+                    minisoap.o connecthostport.o
+ 
+ ifneq ($(OS), AmigaOS)
+-EXECUTABLES := $(EXECUTABLES) upnpc-shared
++EXECUTABLES = upnpc-shared
+ TESTMINIWGETOBJS := $(TESTMINIWGETOBJS) minissdpc.o
+ TESTIGDDESCPARSE := $(TESTIGDDESCPARSE) minissdpc.o
++else
++EXECUTABLES := $(EXECUTABLES_STATIC)
+ endif
+ 
+ # install directories
+@@ -96,7 +98,7 @@ all:	$(LIBRARY) $(EXECUTABLES)
+ 
+ check:	validateminixml
+ 
+-everything:	all $(EXECUTABLES_ADDTESTS)
++everything:	all $(EXECUTABLES_ADDTESTS) $(EXECUTABLES_STATIC)
+ 
+ pythonmodule:	$(LIBRARY) miniupnpcmodule.c setup.py
+ 	python setup.py build
+-- 
+1.7.2.2
+

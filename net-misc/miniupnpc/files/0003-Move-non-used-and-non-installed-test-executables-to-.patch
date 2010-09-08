@@ -1,0 +1,41 @@
+From 154d2f3e29e221e9bb66582ba5defa4c269d75bf Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Micha=C5=82=20G=C3=B3rny?= <gentoo@mgorny.alt.pl>
+Date: Tue, 7 Sep 2010 22:48:13 +0200
+Subject: [PATCH 3/6] Move non-used and non-installed test executables to everything target.
+
+---
+ Makefile |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 427315c..199be58 100644
+--- a/Makefile
++++ b/Makefile
+@@ -55,8 +55,8 @@ else
+   SONAME = $(SHAREDLIBRARY).$(APIVERSION)
+ endif
+ 
+-EXECUTABLES = upnpc-static \
+-              testminixml minixmlvalid testupnpreplyparse \
++EXECUTABLES = upnpc-static
++EXECUTABLES_ADDTESTS = testminixml minixmlvalid testupnpreplyparse \
+ 			  testigddescparse testminiwget
+ 
+ TESTMINIXMLOBJS = minixml.o igd_desc_parse.o testminixml.o
+@@ -89,10 +89,12 @@ FILESTOINSTALL := $(FILESTOINSTALL) $(SHAREDLIBRARY)
+ endif
+ 
+ 
+-.PHONY:	install clean depend all installpythonmodule
++.PHONY:	install clean depend all everything installpythonmodule
+ 
+ all:	validateminixml $(LIBRARY) $(EXECUTABLES)
+ 
++everything:	all $(EXECUTABLES_ADDTESTS)
++
+ pythonmodule:	$(LIBRARY) miniupnpcmodule.c setup.py
+ 	python setup.py build
+ 	touch $@
+-- 
+1.7.2.2
+
