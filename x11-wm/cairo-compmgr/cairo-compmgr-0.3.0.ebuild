@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit autotools gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="A versatile and extensible compositing manager which uses cairo for rendering"
 HOMEPAGE="http://cairo-compmgr.tuxfamily.org/"
