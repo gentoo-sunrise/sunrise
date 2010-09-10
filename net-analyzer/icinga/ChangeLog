@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Sep 2010; mthode <mthode@mthode.org> icinga-1.0.3.ebuild,
+  files/icinga-conf.d, files/icinga-init.d, -files/metadata.xml:
+  New version of icinga, cleaner, thanks to Tommy[D] and chithead
+
   10 Sep 2010; mthode <mthode@mthode.org> icinga-1.0.3.ebuild, metadata.xml:
   New version of icinga, cleaner, thanks to Tommy[D]
 

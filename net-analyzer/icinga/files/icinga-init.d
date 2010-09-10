@@ -1,7 +1,4 @@
 #!/sbin/runscript
-# Copyright 1999-2004 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga-core/files/icinga3,v 1.1 2008/04/27 18:41:25 dertobi123 Exp $
 
 opts="${opts} reload checkconfig"
 

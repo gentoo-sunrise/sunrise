@@ -1,7 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
-# /var/cvsroot/gentoo-x86/net-analyzer/icinga-core/icinga-core-3.1.0.ebuild,v1.3 2010/09/10 17:07:42 dertobi123 Exp $
+# $Header: $
 
 EAPI=2
 
@@ -44,64 +43,55 @@ src_prepare() {
 src_configure() {
 	local myconf
 
-	if use perl ; then
-		myconf="${myconf} --enable-embedded-perl --with-perlcache"
-	fi
-
-	myconf="${myconf} --disable-statuswrl $(use_enable idoutils) $(use_enable ssl)"
-
-	if use debug; then
-		myconf="${myconf} --enable-DEBUG0"
-		myconf="${myconf} --enable-DEBUG1"
-		myconf="${myconf} --enable-DEBUG2"
-		myconf="${myconf} --enable-DEBUG3"
-		myconf="${myconf} --enable-DEBUG4"
-		myconf="${myconf} --enable-DEBUG5"
-	fi
+	myconf="$(use_enable perl embedded-perl) \
+	$(use_with perl perlcache) \
+	$(use_enable idoutils) \
+	$(use_enable ssl) \
+	$(use_enable debug DEBUG0) \
+	$(use_enable debug DEBUG1) \
+	$(use_enable debug DEBUG2) \
+	$(use_enable debug DEBUG3) \
+	$(use_enable debug DEBUG4) \
+	$(use_enable debug DEBUG5) \
+	--disable-statuswrl"
 
 	if use !apache2 && use !lighttpd ; then
-		myconf="${myconf} --with-command-group=icinga"
+		myconf+=" --with-command-group=icinga"
 	else
 		if use apache2 ; then
-			myconf="${myconf} --with-command-group=apache"
-			myconf="${myconf} --with-httpd-conf=/etc/apache2/conf.d"
+			myconf+=" --with-command-group=apache"
+			myconf+=" --with-httpd-conf=/etc/apache2/conf.d"
 		elif use lighttpd ; then
-			myconf="${myconf} --with-command-group=lighttpd"
+			myconf+=" --with-command-group=lighttpd"
 		fi
 	fi
 
-	econf ${myconf} \
-		--prefix=/usr \
+	myconf+=" --prefix=/usr \
 		--bindir=/usr/sbin \
 		--sbindir=/usr/$(get_libdir)/icinga/cgi-bin \
 		--datarootdir=/usr/share/icinga/htdocs \
 		--localstatedir=/var/icinga \
 		--sysconfdir=/etc/icinga \
-		--libexecdir=/usr/$(get_libdir)/icinga/plugins
+		--libexecdir=/usr/$(get_libdir)/icinga/plugins"
+
+	econf ${myconf}
 	if use api ; then
 		cd module/icinga-api
-		econf --prefix=/usr \
-			--bindir=/usr/sbin \
-	        --sbindir=/usr/$(get_libdir)/icinga/cgi-bin \
-			--datarootdir=/usr/share/icinga/htdocs \
-			--localstatedir=/var/icinga \
-	        --sysconfdir=/etc/icinga \
-			--libexecdir=/usr/$(get_libdir)/icinga/plugins
+		econf ${myconf}
 	fi
 }
 
 src_compile() {
+	tc-export CC
 
-	emake CC=$(tc-getCC) icinga || die "make failed"
+	emake icinga || die "make failed"
 
 	if use web ; then
-		# Only compile the CGI's if "web" useflag is set.
-		emake CC=$(tc-getCC) DESTDIR="${D}" cgis || die
+		emake DESTDIR="${D}" cgis || die
 	fi
 
 	if use idoutils ; then
-		# Only compile IDOUtils if "idoutils" useflag is set.
-		emake CC=$(tc-getCC) DESTDIR="${D}" idoutils || die
+		emake DESTDIR="${D}" idoutils || die
 	fi
 }
 
