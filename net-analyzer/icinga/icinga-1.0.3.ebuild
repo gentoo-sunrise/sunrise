@@ -1,6 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga-core/icinga-core-3.1.0.ebuild,v 1.3 2009/02/24 17:07:42 dertobi123 Exp $
+# $Header:
+# /var/cvsroot/gentoo-x86/net-analyzer/icinga-core/icinga-core-3.1.0.ebuild,v1.3 2010/09/10 17:07:42 dertobi123 Exp $
 
 EAPI=2
 
@@ -35,8 +36,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-#	local strip="$(echo '$(MAKE) strip-post-install')"
-#	sed -i -e "s:${strip}::" ${WORKDIR}/{cgi,base}/Makefile.in || die "sed failed in Makefile.in"
 	if use api ; then
 		sed -i -e 's/USE_ICINGAAPI=no/USE_ICINGAAPI=yes/g' Makefile.in || die "sed failed in Makefile.in"
 	fi
@@ -79,9 +78,6 @@ src_configure() {
 		--localstatedir=/var/icinga \
 		--sysconfdir=/etc/icinga \
 		--libexecdir=/usr/$(get_libdir)/icinga/plugins
-	if use api ; then
-	        sed -i -e 's/USE_ICINGAAPI=no/USE_ICINGAAPI=yes/g' Makefile || die
-	fi
 	if use api ; then
 		cd module/icinga-api
 		econf --prefix=/usr \

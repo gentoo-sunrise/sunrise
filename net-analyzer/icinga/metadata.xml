@@ -11,6 +11,6 @@
 		<flag name="web">Adds generic web interface support</flag>
 	</use>
 	<maintainer>
-		<email>mthode@mthode.org</email>
+		<email>maintainer-wanted@gentoo.org</email>
 	</maintainer>
 </pkgmetadata>
