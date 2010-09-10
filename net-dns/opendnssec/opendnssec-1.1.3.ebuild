@@ -17,10 +17,10 @@ IUSE="+auditor debug eppclient external-hsm mysql opensc softhsm sqlite"
 # Test suite needs a preconfigured sqlite/mysql database
 RESTRICT="test"
 
-DEPEND=">=net-libs/ldns-1.6.4
+DEPEND=">=net-libs/ldns-1.6.6
 	dev-libs/libxml2
 	dev-python/4suite
-	auditor? ( dev-lang/ruby[ssl] dev-ruby/dnsruby )
+	auditor? ( dev-lang/ruby[ssl] >=dev-ruby/dnsruby-1.49 )
 	eppclient? ( net-misc/curl )
 	mysql? ( >=virtual/mysql-5.0 )
 	opensc? ( dev-libs/opensc )
@@ -89,10 +89,6 @@ check_pkcs11_setup() {
 }
 
 pkg_setup() {
-	if use eppclient; then
-		ewarn "Use of Eppclient is still considered experimental upstream."
-	fi
-
 	confutils_require_one mysql sqlite
 	confutils_require_one softhsm opensc external-hsm
 
@@ -104,7 +100,7 @@ pkg_setup() {
 
 src_prepare() {
 	# Patch removes xml comments from config file to enable privilege dropping by default
-	epatch "${FILESDIR}/${P}-drop-privileges.patch"
+	epatch "${FILESDIR}/${PN}-drop-privileges.patch"
 }
 
 src_configure() {
