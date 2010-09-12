@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/iniparse
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Sep 2010; Arne Babenhauserheide (ArneBab) <arne_bab@web.de>
+  +iniparse-0.4.ebuild, +metadata.xml:
+  New Ebuild for bug 279529 thanks to manni15, Lukasz Sloninam Nils Andresen
+  Tommy[D] and apostrophe
+
