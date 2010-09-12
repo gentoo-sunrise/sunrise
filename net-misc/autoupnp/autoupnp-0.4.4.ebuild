@@ -39,7 +39,8 @@ src_compile() {
 }
 
 src_install() {
-	emake LIBPREFIX= DESTDIR="${D}" LIBDIRNAME=$(get_libdir) \
+	emake LIBPREFIX= DESTDIR="${D}" \
+		LIBDIR=/$(get_libdir) DUMMYLIBDIR=/usr/$(get_libdir) \
 		$(use suid && echo install-suid || echo install-dummy) || die
 
 	if has_multilib_profile && use multilib; then
@@ -64,9 +65,9 @@ pkg_postinst() {
 		ewarn "is discouraged in the terms of security. You have been warned."
 
 		# need to work-around Portage behavior to make ld.so happy (bug #334473)
-		chmod o+r "${ROOT}"usr/$(get_libdir)/${PN}.so || die
-	else
 		chmod o+r "${ROOT}"$(get_libdir)/${PN}.so || die
+	else
+		chmod o+r "${ROOT}"usr/$(get_libdir)/${PN}.so || die
 	fi
 
 	if has_multilib_profile && use multilib; then
