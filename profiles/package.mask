@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Michał Górny <gentoo@mgorny.alt.pl> (12 Sep 2010)
+# Moved to gx86 as a continuation of dev-dotnet/pe-format. Removal in 30
+# days.
+sys-apps/pe-format2
+
 # Markos Chandras <hwoarang@gentoo.org> (07 Sep 2010)
 # Masking for removai in 30 days because of 4suite masked
 # dependency
