@@ -13,15 +13,15 @@ SRC_URI="http://savannah.nongnu.org/download/nmh/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="gdbm"
 
-DEPEND="|| ( sys-libs/gdbm =sys-libs/db-1.85* )
+DEPEND="gdbm? ( sys-libs/gdbm )
+	!gdbm? ( sys-libs/db )
 	>=sys-libs/ncurses-5.2
 	net-libs/liblockfile
 	app-editors/gentoo-editor
 	!!media-gfx/pixie" # Bug #295996 media-gfx/pixie also uses show
 RDEPEND="${DEPEND}"
-
 
 src_prepare() {
 	# Patches from bug #22173.
@@ -36,26 +36,38 @@ src_prepare() {
 }
 
 src_configure() {
-	[ -z "${EDITOR}" ] && export EDITOR="prompter"
 	[ -z "${PAGER}" ] && export PAGER="/usr/bin/more"
-
-	# Redefining libdir to be bindir so the support binaries get installed
-	# correctly.  Since no libraries are installed with nmh, this does not
-	# pose a problem at this time.
 
 	# strip options from ${PAGER} (quoting not good enough) (Bug #262150)
 	PAGER=${PAGER%% *}
 
+	# Redefining libdir to be bindir so the support binaries get installed
+	# correctly.  Since no libraries are installed with nmh, this does not
+	# pose a problem at this time.
+	myconf="--libdir=/usr/bin"
+
+	# Have gdbm use flag actually control which version of db in use
+	if use gdbm; then
+		myconf="${myconf} --with-ndbmheader=gdbm/ndbm.h --with-ndbm=gdbm_compat"
+	else
+	   	if has_version ">=sys-libs/db-2"; then
+			myconf="${myconf} --with-ndbmheader=db.h --with-ndbm=db"
+		else
+	   		myconf="${myconf} --with-ndbmheader=db1/ndbm.h --with-ndbm=db1"
+		fi
+	fi
+
 	# use gentoo-editor to avoid implicit dependencies (Bug #294762)
+	EDITOR=/usr/libexec/gentoo-editor
 
 	econf \
 		--prefix=/usr \
 		--mandir=/usr/share/man \
-		--with-editor=/usr/libexec/gentoo-editor \
+		--with-editor="${EDITOR}" \
 		--with-pager="${PAGER}" \
 		--enable-nmh-pop \
 		--sysconfdir=/etc/nmh \
-		--libdir=/usr/bin
+		$myconf
 }
 
 src_install() {
