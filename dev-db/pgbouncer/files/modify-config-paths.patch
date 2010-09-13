@@ -1,6 +1,8 @@
---- etc/pgbouncer.ini	2009-02-18 14:34:26.000000000 +0100
-+++ etc/pgbouncer-new.ini	2009-05-17 13:13:32.000000000 +0200
-@@ -22,8 +22,8 @@
+diff --git a/etc/pgbouncer.ini b/etc/pgbouncer.ini
+index 874b639..ffada4d 100644
+--- a/etc/pgbouncer.ini
++++ b/etc/pgbouncer.ini
+@@ -22,8 +22,8 @@ nondefaultdb = pool_size=50 reserve_pool=10
  ;;; Administrative settings
  ;;;
  
@@ -11,7 +13,7 @@
  
  ;;;
  ;;; Where to wait for clients
-@@ -41,7 +41,7 @@
+@@ -41,7 +41,7 @@ unix_socket_dir = /tmp
  ; any, trust, plain, crypt, md5
  auth_type = trust
  #auth_file = 8.0/main/global/pg_auth
@@ -20,4 +22,3 @@
  
  ;;;
  ;;; Users allowed into database 'pgbouncer'
-

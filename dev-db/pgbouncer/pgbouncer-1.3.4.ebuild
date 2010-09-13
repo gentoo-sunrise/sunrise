@@ -10,7 +10,7 @@ RESTRICT="test"
 
 DESCRIPTION="Lightweight connection pooler for PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/projects/pgbouncer/"
-SRC_URI="http://pgfoundry.org/frs/download.php/2677/${P}.tgz"
+SRC_URI="http://pgfoundry.org/frs/download.php/2797/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
