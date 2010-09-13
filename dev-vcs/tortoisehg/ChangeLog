@@ -1,0 +1,8 @@
+# ChangeLog for dev-vcs/tortoisehg
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Sep 2010; Arne Babenhauserheide (ArneBab) <arne_bab@web.de>
+  +tortoisehg-1.1.3.ebuild, +metadata.xml:
+  New Ebuild for bug 277383 thanks to manny15, Tommy[D] and apostrophe
+
