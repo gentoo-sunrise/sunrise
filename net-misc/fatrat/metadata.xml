@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+<use>
+<flag name='bittorrent'>Enables support for the bittorrent protocol</flag>
+<flag name='webinterface'>Support remote control via a web interface</flag>
+</use>
+</pkgmetadata>
