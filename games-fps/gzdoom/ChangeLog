@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Sep 2010; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gzdoom-1.5.2.ebuild, gzdoom-9999.ebuild:
+  Warn only if media-sound/fluid-soundfont is not installed
+
   31 Aug 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
   gzdoom-9999.ebuild:
   edit elog message for the live gzdoom ebuild, too. (Oops.)
