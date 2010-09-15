@@ -3,7 +3,7 @@
 # $Header: $
 
 DESCRIPTION="The Fluid R3 soundfont"
-HOMEPAGE="http://archive.ubuntu.com/ubuntu/pool/universe/f/${PN}"
+HOMEPAGE="http://musescore.org/en/handbook/soundfont"
 SRC_URI="mirror://ubuntu/pool/universe/f/${PN}/${PN}_${PV}.orig.tar.gz
 	 http://dev.gentoo.org/~hwoarang/distfiles/timidity.cfg.bz2"
 
@@ -16,7 +16,7 @@ src_install() {
 	insinto /usr/share/sounds/sf2/
 	doins *.sf2 || die
 	insinto /usr/share/timidity/${PN}/
-	doins ${WORKDIR}/timidity.cfg || die
+	doins "${WORKDIR}"/timidity.cfg || die
 }
 
 pkg_postinst() {
