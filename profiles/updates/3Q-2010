@@ -1,1 +1,2 @@
 move sys-apps/pe-format2 dev-dotnet/pe-format
+move net-misc/miniupnpc net-libs/miniupnpc
