@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="libnotify multilib suid"
 
-RDEPEND="net-misc/miniupnpc
+RDEPEND="net-libs/miniupnpc
 	libnotify? ( x11-libs/libnotify )"
 DEPEND="${RDEPEND}"
 
