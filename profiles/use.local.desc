@@ -178,6 +178,7 @@ dev-util/icewing:grabber - Build the grabber plug-in
 dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+dev-vcs/tortoisehg:nautilus - Integrate with gnome-base/nautilus file manager
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
@@ -235,7 +236,6 @@ media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
 media-plugins/gimp-refocus:lapack-atlas - Use the ATLAS version of lapack
 media-radio/ax25-tools:X - Enable some x based configuration tools.
 media-radio/grig:hardware - Enable hardware IO
-media-radio/unixcw:ncurses - Enables building the curses based morse code tutor program 'cwcp'.
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
@@ -308,6 +308,8 @@ net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
 net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
 net-misc/apt-cacher-ng:logrotate - Install support files for app-admin/logrotate.
 net-misc/autoupnp:suid - Install the library setuid & setgid (required in order to run setuid & setgid applications).
+net-misc/fatrat:bittorrent - Enables support for the bittorrent protocol
+net-misc/fatrat:webinterface - Support remote control via a web interface
 net-misc/freerdp:X - Install also GUI client
 net-misc/freerdp:alsa - Enable sound support (using alsa)
 net-misc/freerdp:cups - Enable printing support (using cups)
