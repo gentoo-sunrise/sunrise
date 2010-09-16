@@ -3,6 +3,10 @@
 # $Header: $
 
   16 Sep 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
+  gzdoom-1.5.2.ebuild:
+  Fix typo
+
+  16 Sep 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
   gzdoom-1.5.2.ebuild, gzdoom-9999.ebuild,
   +files/gzdoom-respect-fluidsynth-useflag.patch:
   Disable automagic fluidsynth detection

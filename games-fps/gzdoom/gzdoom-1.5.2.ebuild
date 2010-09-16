@@ -37,6 +37,7 @@ src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_no mmx ASM)
 		$(cmake-utils_use_no gtk GTK)
+		$(cmake-utils_use_use fluidsynth FLUIDSYNTH)
 	)
 
 	cmake-utils_src_configure
