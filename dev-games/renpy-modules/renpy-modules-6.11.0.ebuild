@@ -19,7 +19,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="media-libs/libpng
+DEPEND="media-libs/glew
+	media-libs/libpng
 	media-libs/libsdl
 	media-libs/freetype:2
 	media-video/ffmpeg
