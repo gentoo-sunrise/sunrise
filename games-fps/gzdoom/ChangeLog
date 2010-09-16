@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Sep 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
+  gzdoom-1.5.2.ebuild, gzdoom-9999.ebuild,
+  +files/gzdoom-respect-fluidsynth-useflag.patch:
+  Disable automagic fluidsynth detection
+
   15 Sep 2010; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   gzdoom-1.5.2.ebuild, gzdoom-9999.ebuild:
   Warn only if media-sound/fluid-soundfont is not installed

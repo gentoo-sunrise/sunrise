@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit games cmake-utils
+inherit games cmake-utils eutils
 
 DESCRIPTION="Enhanced OpenGL port of the official DOOM source code that also supports Heretic, Hexen, and Strife"
 HOMEPAGE="http://grafzahl.drdteam.org/"
@@ -30,6 +30,7 @@ src_prepare() {
 	sed -i \
 		-e "s:/usr/local/share/:${GAMES_DATADIR}/doom-data/:" \
 		src/sdl/i_system.h || die
+	epatch "${FILESDIR}/${PN}-respect-fluidsynth-useflag.patch"
 }
 
 src_configure() {

@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit games cmake-utils subversion
+inherit games cmake-utils subversion eutils
 
 DESCRIPTION="Enhanced OpenGL port of the official DOOM source code that also supports Heretic, Hexen, and Strife"
 HOMEPAGE="http://grafzahl.drdteam.org/"
@@ -31,12 +31,14 @@ src_prepare() {
 	sed -i \
 		-e "s:/usr/local/share/:${GAMES_DATADIR}/doom-data/:" \
 		src/sdl/i_system.h || die
+	epatch "${FILESDIR}/${PN}-respect-fluidsynth-useflag.patch"
 }
 
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_no mmx ASM)
 		$(cmake-utils_use_no gtk GTK)
+		$(cmake-utils_use_use fluidsynth FLUIDSYNTH)
 		-DFMOD_INCLUDE_DIR=/opt/fmodex/api/inc/
 		-DFMOD_LIBRARY=/opt/fmodex/api/lib/libfmodex.so
 	)
