@@ -2,6 +2,18 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Sep 2010; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.16-r5.ebuild,
+  +ccs-sources-2.6.16-r6.ebuild, -ccs-sources-2.6.25-r5.ebuild,
+  -ccs-sources-2.6.26-r5.ebuild, -ccs-sources-2.6.27-r6.ebuild,
+  +ccs-sources-2.6.27-r7.ebuild, -ccs-sources-2.6.28-r11.ebuild,
+  +ccs-sources-2.6.28-r12.ebuild, -ccs-sources-2.6.29-r12.ebuild,
+  +ccs-sources-2.6.29-r13.ebuild, -ccs-sources-2.6.30-r11.ebuild,
+  -ccs-sources-2.6.31-r9.ebuild, -ccs-sources-2.6.32-r8.ebuild,
+  +ccs-sources-2.6.32-r9.ebuild, -ccs-sources-2.6.33-r2.ebuild,
+  +ccs-sources-2.6.33-r3.ebuild, -ccs-sources-2.6.34-r1.ebuild,
+  +ccs-sources-2.6.34-r2.ebuild, +ccs-sources-2.6.35.ebuild:
+  genpatch and ccspatch version bumped.
+
   13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> Manifest:
   Add missing Manifest entries for deblob-checks
 
