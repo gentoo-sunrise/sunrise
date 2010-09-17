@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Sep 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com> ChangeLog:
+  Note that this is for bug #272037
+
   15 Sep 2010; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   fluid-soundfont-3.1.ebuild:
   set proper HOMEPAGE, shut up repoman
