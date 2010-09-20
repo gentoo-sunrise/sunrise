@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Sep 2010; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+  cairo-compmgr-0.3.0.ebuild:
+  fixed deps for dev-lang/vala to be consistent with bugs 335296 and 338067
+
   10 Sep 2010; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
   cairo-compmgr-0.3.0.ebuild:
   fixed missing eutils inherit, thanks Tommy[D]
