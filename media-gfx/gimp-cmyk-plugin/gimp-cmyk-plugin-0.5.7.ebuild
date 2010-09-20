@@ -1,4 +1,4 @@
-# Copyright 2007-2010 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,7 +7,7 @@ EAPI="2"
 inherit eutils multilib toolchain-funcs
 
 MY_P="separate+-${PV}"
-SFNUM="42977"
+SFNUM="46785"
 
 DESCRIPTION="Gimp CMYK plug-in."
 HOMEPAGE="http://cue.yellowmagic.info/softwares/separate.html"
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge.jp/separate-plus/${SFNUM}/${MY_P}.zip
 
 LICENSE="GPL-2 Adobe"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="media-libs/lcms
