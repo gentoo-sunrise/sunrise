@@ -7,7 +7,12 @@
 	</maintainer>
 	<longdescription>Lightweight FOX music collection manager and player</longdescription> 
 	<use>
-		<flag name='asf'>Provide support for Microsoft's Advanced Systems Format media container</flag>
+		<flag name='asf'>
+			Provide support for Microsoft's Advanced Systems Format media container
+		</flag>
+		<flag name='gcrypt'>
+			Use gcrypt for md5 calculation instead of the internal implementation	
+		</flag>
 		<flag name='old-miniplayer'>
 			Build the old mini-player instead of the new one
 		</flag>

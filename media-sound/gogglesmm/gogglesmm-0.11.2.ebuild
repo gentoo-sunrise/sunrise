@@ -13,14 +13,15 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="asf dbus mp4 old-miniplayer"
+IUSE="asf dbus gcrypt mp4 old-miniplayer"
 
-RDEPEND="dev-db/sqlite
-	media-libs/taglib[asf?,mp4?]
+RDEPEND="dev-db/sqlite:3
+	>=media-libs/taglib-1.6.3[asf?,mp4?]
 	media-libs/xine-lib
 	net-misc/curl
 	x11-libs/fox[png]
-	dbus? ( sys-apps/dbus )"
+	dbus? ( sys-apps/dbus )
+	gcrypt? ( dev-libs/libgcrypt )"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
@@ -28,9 +29,20 @@ src_prepare() {
 }
 
 src_configure() {
+	if use gcrypt ; then
+		extraconf="--with-md5=gcrypt"
+	else
+		extraconf="--with-md5=internal"
+	fi
+
 	# using old-miniplayer as USE flag, as the 'new remote' is not remote
-	econf $(use_with asf) \
+	econf $extraconf \
 		$(use_with dbus) \
-		$(use_with mp4) \
 		$(use_with !old-miniplayer new-remote)
+}
+
+src_install() {
+	emake DESTDIR="${D}" install || die
+
+	dodoc AUTHORS README || die
 }

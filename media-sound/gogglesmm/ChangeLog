@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Sep 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  -gogglesmm-0.10.24.ebuild, +gogglesmm-0.11.2.ebuild, metadata.xml:
+  Updated to latest version. New USE=gcrypt for external md5 calculation
+
   08 Jul 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   -gogglesmm-0.10.23.ebuild, +gogglesmm-0.10.24.ebuild, metadata.xml:
   Bump. Added USE=mp4,asf,old-miniplayer, as mp4,asf are optional and some may
