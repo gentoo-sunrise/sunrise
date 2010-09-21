@@ -25,7 +25,7 @@ RDEPEND=">=dev-perl/gtk2-perl-1.140
 	dev-perl/Net-DNS
 	dev-perl/Date-Calc
 	dev-util/desktop-file-utils
-	>=app-antivirus/clamav-0.90
+	>=app-antivirus/clamav-0.95
 	nls? ( dev-perl/Locale-gettext )
 	sys-fs/udev"
 
