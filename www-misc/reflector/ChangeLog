@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*reflector-2010.08.24.1 (22 Sep 2010)
+
+  22 Sep 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -reflector-5.0.ebuild,
+  +reflector-2010.08.24.1.ebuild:
+  Bump to reflector-2010.08.24.1.
+
   04 May 2010; Michael Weber (xmw) <gentoo@xmw.de> reflector-5.0.ebuild:
   QA, removed leading space
 
