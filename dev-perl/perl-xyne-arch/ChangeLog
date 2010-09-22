@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*perl-xyne-arch-2010.09.21.1 (22 Sep 2010)
+
+  22 Sep 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -perl-xyne-arch-2010.08.04.1.ebuild,
+  +perl-xyne-arch-2010.09.21.1.ebuild:
+  Bump to perl-xyne-arch-2010.09.21.1.
+
 *perl-xyne-arch-2010.08.04.1 (05 Aug 2010)
 
   05 Aug 2010; Nathan Phillip Brink (ohnobinki)
