@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Sep 2010; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -gcstar-1.5.0.ebuild, +gcstar-1.6.1.ebuild, metadata.xml:
+  Version bump, thanks to saft <safttuete@googlemail.com> for the reminder.
+  New USE=stats for statistics reporting.
+
   13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gcstar-1.5.0.ebuild:
   Add missing quotes

@@ -13,6 +13,7 @@
 		You may also search and filter your collections by many criteria.
 	</longdescription>
 	<use>
+		<flag name='stats'>Enable statistics reporting</flag>
 		<flag name='tellico'>Enable support for <pkg>kde-misc/tellico</pkg> files</flag>
 	</use>
 </pkgmetadata>

@@ -16,9 +16,9 @@ SRC_URI="http://download.gna.org/gcstar/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cddb gnome mp3 spell tellico vorbis"
+IUSE="cddb gnome mp3 spell stats tellico vorbis"
 
-LANGS="ar bg ca cs de el es fr gl hu id it nl pl pt ro ru sr sv tr uk"
+LANGS="ar bg ca cs de el es fr gl hu id it nl pl pt ro ru sr sv tr uk zh_TW"
 for x in ${LANGS} ; do
 	IUSE="${IUSE} linguas_${x}"
 done
@@ -46,6 +46,8 @@ DEPEND="dev-lang/perl
 		gnome? ( dev-perl/gnome2-vfs-perl )
 		mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
 		spell? ( dev-perl/gtk2-spell )
+		stats? ( dev-perl/Date-Calc
+			dev-perl/GD[png,truetype] )
 		tellico? ( virtual/perl-Digest-MD5
 			virtual/perl-MIME-Base64 )
 		vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )"
@@ -76,8 +78,13 @@ src_install() {
 	mv tmp/EN .
 
 	for x in ${LINGUAS}; do
-		# GCstar uses upper-case language names
-		mv tmp/$(echo ${x} | tr '[:lower:]' '[:upper:]') .
+		# GCstar uses upper-case language names, and refers to its
+		# traditional Chinese translation as 'ZH'.
+		if [ ${x} = zh_TW ] ; then
+			mv tmp/ZH .
+		else
+			mv tmp/$(echo ${x} | tr '[:lower:]' '[:upper:]') .
+		fi
 	done
 
 	rm -rf tmp
