@@ -68,10 +68,6 @@ app-portage/elog-list
 # net-zope/simplecartitem - bug #160194
 =net-zope/simplecartitem-0.5.0
 
-# Michael Weber <gentoo@xmw.de> (20 Jun 2010)
-# Highly experimental new interface version
-=sys-power/phc-intel-0.3.199.3_pre
-
 # Laurento Frittella <laurento.frittella@gmail.com> (16 Jun 2010)
 # masked as it bundles net-misc/mimms package. bad security practice
 media-tv/tv-player
