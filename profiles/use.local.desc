@@ -107,6 +107,7 @@ app-arch/zpaq:optimization - Install additional files required to support ZPAQ's
 app-backup/fsarchiver:lzma - Enables LZMA compression
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-emulation/xenman:lvm2 - Enable lvm2 support
+app-forensics/openscap:nss - Prefer NSS over libgcrypt as the crypto engine
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
 app-misc/2gis-data:astr - The map of Astrakhan for app-misc/2gis
 app-misc/2gis-data:barn - The map of Barnaul for app-misc/2gis
@@ -138,6 +139,7 @@ app-misc/bashstyle-ng:doc - Installs other html documentation
 app-misc/bashstyle-ng:pci - Enable support for pci informations
 app-misc/bashstyle-ng:usb - Enable support for usb informations
 app-misc/ccpublisher:zope - Install zope stuff
+app-misc/gcstar:stats - Enable statistics reporting
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/genealogyj-bin:geoview - Adds support for geographic extensions
 app-misc/genealogyj-bin:skins - Installs some skins
@@ -239,7 +241,8 @@ media-radio/grig:hardware - Enable hardware IO
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
-media-sound/gogglesmm:asf - Provide support for Microsoft's Advanced Systems Format media container
+media-sound/gogglesmm:asf -  Provide support for Microsoft's Advanced Systems Format media container 
+media-sound/gogglesmm:gcrypt -  Use gcrypt for md5 calculation instead of the internal implementation 
 media-sound/gogglesmm:old-miniplayer -  Build the old mini-player instead of the new one 
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
