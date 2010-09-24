@@ -17,9 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=virtual/linux-sources-2.6.30"
-DEPEND="${RDEPEND}"
-
 S=${WORKDIR}/${MY_PN}
 
 BUILD_TARGETS="default"
