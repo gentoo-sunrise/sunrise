@@ -4,8 +4,6 @@
 
 EAPI=2
 
-inherit base
-
 DESCRIPTION="Lightweight FOX music collection manager and player"
 HOMEPAGE="http://gogglesmm.googlecode.com/"
 SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.bz2"
