@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
-inherit qt4 subversion eutils
+EAPI="2"
+inherit qt4-r2 subversion eutils
 
 QT4_BUILT_WITH_USE_CHECK="png"
 
@@ -24,11 +24,6 @@ RDEPEND="${DEPEND}
 	sys-apps/iproute2"
 
 S="${WORKDIR}/${PN}"
-
-src_compile() {
-	eqmake4
-	emake || die "make failed"
-}
 
 src_install() {
 	dosbin wolman || die "dosbin failed"
