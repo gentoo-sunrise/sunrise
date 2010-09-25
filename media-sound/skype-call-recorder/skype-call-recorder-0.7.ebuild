@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit cmake-utils eutils qt4
+inherit cmake-utils eutils qt4-r2
 
 DESCRIPTION="Records Skype calls to MP3/Ogg/WAV files"
 HOMEPAGE="http://atdot.ch/scr/"
