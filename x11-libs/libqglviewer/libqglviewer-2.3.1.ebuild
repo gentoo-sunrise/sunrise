@@ -23,6 +23,10 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}/QGLViewer
 
+src_configure() {
+	true
+}
+
 src_compile() {
 	eqmake4 QGLViewer.pro -o Makefile PREFIX=/usr
 	emake || die "emake QGLViewer failed"

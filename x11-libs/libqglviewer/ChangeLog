@@ -4,6 +4,10 @@
 
   25 Sep 2010; Markos Chandras <hwoarang@gentoo.org>
   libqglviewer-2.3.1.ebuild:
+  Fix my latest commit. Introduce empty src_configure phase
+
+  25 Sep 2010; Markos Chandras <hwoarang@gentoo.org>
+  libqglviewer-2.3.1.ebuild:
   Migrated to qt4-r2 and EAPI=2
 
   20 Apr 2009; Christian Ruppert <idl0r@gentoo.org>
