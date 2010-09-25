@@ -6,7 +6,7 @@ EAPI="2"
 KDE_REQUIRED="optional"
 CMAKE_REQUIRED="false"
 
-inherit eutils gnome2-utils kde4-base qt4
+inherit eutils gnome2-utils kde4-base qt4-r2
 
 MY_P=${P/_rc/-rc}
 
@@ -21,8 +21,8 @@ IUSE="gnome"
 
 S=${WORKDIR}/${MY_P}
 
-DEPEND="x11-libs/qt-core
-	x11-libs/qt-gui
+DEPEND="x11-libs/qt-core:4
+	x11-libs/qt-gui:4
 	gnome? ( gnome-base/gconf )"
 RDEPEND="${DEPEND}
 	app-arch/p7zip"
@@ -32,7 +32,7 @@ PATCHES=( "${FILESDIR}/${P}-gentoo.diff" )
 
 pkg_setup() {
 	use kde && kde4-base_pkg_setup # get KDEDIR for KDE4
-	qt4_pkg_setup
+	qt4-r2_pkg_setup
 }
 
 src_configure() {
@@ -43,13 +43,8 @@ src_configure() {
 	KDE4DIR="${KDEDIR}" INTEGRATION_TARGETS="${integr}" eqmake4
 }
 
-src_compile() {
-	emake || die "emake failed."
-}
-
 src_install() {
-	emake INSTALL_ROOT="${D}" install || die "emake install failed."
-
+	qt4-r2_src_install
 	prepalldocs || die "prepalldocs failed."
 }
 
