@@ -22,7 +22,7 @@ src_compile() {
 src_install() {
 	emake LIBDIR=/$(get_libdir) DESTDIR="${D}" install || die
 
-	dodoc NEWS README TODO || die
+	dodoc NEWS README || die
 }
 
 pkg_postinst() {
