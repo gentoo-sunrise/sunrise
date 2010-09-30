@@ -24,7 +24,7 @@ DOCS=( "AUTHORS" "NEWS" "README" )
 
 src_configure() {
 	local myconf
-	use debug && myconf="--with-loglevel=4"
+	use debug && myconf="--with-loglevel=4 --enable-sigver"
 
 	econf \
 	$(use_enable amd64 64bit) \
