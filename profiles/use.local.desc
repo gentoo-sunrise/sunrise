@@ -6,100 +6,6 @@
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
-app-admin/collectd:cd_apache - Build the apache input plugin (transferred bytes, handled requests, detailed scoreboard statistics)
-app-admin/collectd:cd_apcups - Build the apcups input plugin (UPS charge, load, input/output/battery voltage, etc.)
-app-admin/collectd:cd_apple_sensors - Build the apple_sensors input plugin (temperature, fanspeed and voltage)
-app-admin/collectd:cd_ascent - Build the ascent input plugin (statistics about a free server for World of Warcraft)
-app-admin/collectd:cd_battery - Build the battery input plugin (charge, current and voltage of ACPI and PMU based laptop batteries)
-app-admin/collectd:cd_bind - Build the bind input plugin (name server and resolver statistics)
-app-admin/collectd:cd_conntrack - Build the conntrack input plugin (number of nf_conntrack entries)
-app-admin/collectd:cd_contextswitch - Build the contextswitch input plugin (number of context switches done by the operating system)
-app-admin/collectd:cd_cpu - Build the cpu input plugin (time spent in the system, user, nice, idle, and related states)
-app-admin/collectd:cd_cpufreq - Build the cpufreq input plugin (CPU frequency, for laptops with speedstep or similar)
-app-admin/collectd:cd_csv - Build the csv output plugin (write to comma separated values (CSV) files)
-app-admin/collectd:cd_curl - Build the curl input plugin (parse statistics from websites using regular expressions)
-app-admin/collectd:cd_curl_xml - Build the curl_xml input plugin
-app-admin/collectd:cd_dbi - Build the dbi input plugin (executes SQL statements on databases and interprets the reply)
-app-admin/collectd:cd_df - Build the df input plugin (mountpoint usage)
-app-admin/collectd:cd_disk - Build the disk input plugin (sectors read/written, number of read/write actions, average completion time of IO-operations)
-app-admin/collectd:cd_dns - Build the dns input plugin
-app-admin/collectd:cd_email - Build the email input plugin
-app-admin/collectd:cd_entropy - Build the entropy input plugin
-app-admin/collectd:cd_exec - Build the exec input/output plugin
-app-admin/collectd:cd_filecount - Build the filecount input plugin
-app-admin/collectd:cd_fscache - Build the fscache input plugin
-app-admin/collectd:cd_gmond - Build the gmond input plugin
-app-admin/collectd:cd_hddtemp - Build the hddtemp input plugin
-app-admin/collectd:cd_interface - Build the interface input plugin
-app-admin/collectd:cd_ipmi - Build the ipmi input plugin
-app-admin/collectd:cd_iptables - Build the iptables input plugin
-app-admin/collectd:cd_ipvs - Build the ipvs input plugin
-app-admin/collectd:cd_irq - Build the irq input plugin
-app-admin/collectd:cd_java - Build the java input plugin
-app-admin/collectd:cd_libvirt - Build the libvirt input plugin
-app-admin/collectd:cd_load - Build the load input plugin
-app-admin/collectd:cd_logfile - Build the logfile output plugin
-app-admin/collectd:cd_madwifi - Build the madwifi input plugin
-app-admin/collectd:cd_match_empty_counter - Build the match_empty_counter filter plugin
-app-admin/collectd:cd_match_hashed - Build the match_hashed filter plugin
-app-admin/collectd:cd_match_regex - Build the match_regex filter plugin
-app-admin/collectd:cd_match_timediff - Build the match_timediff filter plugin
-app-admin/collectd:cd_match_value - Build the match_value filter plugin
-app-admin/collectd:cd_mbmon - Build the mbmon input plugin
-app-admin/collectd:cd_memcachec - Build the memcachec input plugin
-app-admin/collectd:cd_memcached - Build the memcached input plugin
-app-admin/collectd:cd_memory - Build the memory input plugin
-app-admin/collectd:cd_modbus - Build the modbus input plugin
-app-admin/collectd:cd_multimeter - Build the multimeter input plugin
-app-admin/collectd:cd_mysql - Build the mysql input plugin
-app-admin/collectd:cd_netlink - Build the netlink input plugin
-app-admin/collectd:cd_network - Build the network input/output plugin
-app-admin/collectd:cd_nfs - Build the nfs input plugin
-app-admin/collectd:cd_nginx - Build the nginx input plugin
-app-admin/collectd:cd_notify_desktop - Build the notify_desktop output plugin
-app-admin/collectd:cd_notify_email - Build the notify_email output plugin
-app-admin/collectd:cd_ntpd - Build the ntpd input plugin
-app-admin/collectd:cd_nut - Build the nut input plugin
-app-admin/collectd:cd_olsrd - Build the olsrd input plugin
-app-admin/collectd:cd_onewire - Build the onewire input plugin
-app-admin/collectd:cd_openvpn - Build the openvpn input plugin
-app-admin/collectd:cd_oracle - Build the oracle input plugin
-app-admin/collectd:cd_perl - Build the perl language binding plugin
-app-admin/collectd:cd_postgresql - Build the postgresql input plugin
-app-admin/collectd:cd_powerdns - Build the powerdns input plugin
-app-admin/collectd:cd_processes - Build the processes input plugin
-app-admin/collectd:cd_protocols - Build the protocols input plugin
-app-admin/collectd:cd_python - Build the python language binding plugin
-app-admin/collectd:cd_routeros - Build the routeros input plugin
-app-admin/collectd:cd_rrdcached - Build the rrdcached input/output plugin
-app-admin/collectd:cd_rrdtool - Build the rrdtool output plugin
-app-admin/collectd:cd_sensors - Build the sensors input plugin
-app-admin/collectd:cd_serial - Build the serial input plugin
-app-admin/collectd:cd_snmp - Build the snmp input plugin
-app-admin/collectd:cd_swap - Build the swap input plugin
-app-admin/collectd:cd_syslog - Build the syslog output plugin
-app-admin/collectd:cd_table - Build the table input plugin
-app-admin/collectd:cd_tail - Build the tail input plugin
-app-admin/collectd:cd_tape - Build the tape input plugin
-app-admin/collectd:cd_target_notification - Build the target_notification filter plugin
-app-admin/collectd:cd_target_replace - Build the target_replace filter plugin
-app-admin/collectd:cd_target_scale - Build the target_scale filter plugin
-app-admin/collectd:cd_target_set - Build the target_set filter plugin
-app-admin/collectd:cd_tcpconns - Build the tcpconns input plugin
-app-admin/collectd:cd_teamspeak2 - Build the teamspeak2 input plugin
-app-admin/collectd:cd_ted - Build the ted input plugin
-app-admin/collectd:cd_thermal - Build the thermal input plugin
-app-admin/collectd:cd_tokyotyrant - Build the tokyotyrant input plugin
-app-admin/collectd:cd_unixsock - Build the unixsock output plugin
-app-admin/collectd:cd_uptime - Build the uptime input plugin
-app-admin/collectd:cd_users - Build the users input plugin
-app-admin/collectd:cd_uuid - Build the uuid plugin
-app-admin/collectd:cd_vmem - Build the vmem input plugin
-app-admin/collectd:cd_vserver - Build the vserver input plugin
-app-admin/collectd:cd_wireless - Build the wireless input plugin
-app-admin/collectd:cd_write_http - Build the write_http output plugin
-app-admin/collectd:cd_zfs_arc - Build the zfs_arc input plugin
-app-admin/collectd:contrib - Install user-contributed files in the doc directory
 app-admin/elektra:coverage - Turn on code coverage analysis tools
 app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
@@ -114,12 +20,15 @@ app-misc/2gis-data:barn - The map of Barnaul for app-misc/2gis
 app-misc/2gis-data:biysk - The map of Biysk for app-misc/2gis
 app-misc/2gis-data:chel - The map of Chelyabinsk for app-misc/2gis
 app-misc/2gis-data:ekb - The map of Ekaterinburg for app-misc/2gis
+app-misc/2gis-data:galt - The map of Gornoaltaysk for app-misc/2gis
 app-misc/2gis-data:irk - The map of Irkutsk for app-misc/2gis
 app-misc/2gis-data:kaz - The map of Kazan for app-misc/2gis
 app-misc/2gis-data:kdar - The map of Krasnodar for app-misc/2gis
 app-misc/2gis-data:kem - The map of Kemerovo for app-misc/2gis
 app-misc/2gis-data:kras - The map of Krasnoyarsk for app-misc/2gis
 app-misc/2gis-data:kur - The map of Kurgan for app-misc/2gis
+app-misc/2gis-data:magn - The map of Magnitogorsk for app-misc/2gis
+app-misc/2gis-data:nchl - The map of Nabchelny for app-misc/2gis
 app-misc/2gis-data:nkuz - The map of Novokuznetsk for app-misc/2gis
 app-misc/2gis-data:nnov - The map of N_Novgorod for app-misc/2gis
 app-misc/2gis-data:nsk - The map of Novosibirsk for app-misc/2gis
@@ -129,10 +38,13 @@ app-misc/2gis-data:omsk - The map of Omsk for app-misc/2gis
 app-misc/2gis-data:perm - The map of Perm for app-misc/2gis
 app-misc/2gis-data:rost - The map of Rostov-na-Donu for app-misc/2gis
 app-misc/2gis-data:sam - The map of Samara for app-misc/2gis
+app-misc/2gis-data:sochi - The map of Sochi for app-misc/2gis
 app-misc/2gis-data:tim - The map of Tyumen for app-misc/2gis
 app-misc/2gis-data:tom - The map of Tomsk for app-misc/2gis
 app-misc/2gis-data:ufa - The map of Ufa for app-misc/2gis
 app-misc/2gis-data:vlad - The map of Vladivostok for app-misc/2gis
+app-misc/2gis-data:vrnz - The map of Voronezh for app-misc/2gis
+app-misc/2gis-data:yar - The map of Yaroslavl for app-misc/2gis
 app-misc/bashstyle-ng:acpi - Enable support for apci informations
 app-misc/bashstyle-ng:dmi - Enable support for sys-apps/dmidecode
 app-misc/bashstyle-ng:doc - Installs other html documentation
