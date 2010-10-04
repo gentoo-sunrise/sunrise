@@ -40,3 +40,4 @@ pkg_postrm() {
 	distutils_pkg_postrm
 	gnome2_icon_cache_update
 }
+:
