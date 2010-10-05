@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Oct 2010; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  eresi-0.82_beta2.ebuild:
+  Fix build issues with glibc 2.12 where __USE_GNU gets unset unless
+  _GNU_SOURCE is defined, preventing the definition of REG_* macros from
+  sys/ucontext.h.
+
   04 Jul 2010; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   +files/0.82_beta2-as-needed.patch,
   +files/0.82_beta2-drop-dprintf.patch, eresi-0.82_beta2.ebuild:

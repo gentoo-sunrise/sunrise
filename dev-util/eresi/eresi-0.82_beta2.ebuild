@@ -34,7 +34,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/0.82_beta2-as-needed.patch
 	sed -i \
 		-e 's: -O2 : :g' \
-		-e "s: -g3 : ${CFLAGS} :" \
+		-e "s: -g3 : ${CFLAGS} -D_GNU_SOURCE :" \
 		-e "/^LDFLAGS/s:=:=${LDFLAGS} :" \
 		$(find -name Makefile) || die
 }
