@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Oct 2010; mthode <mthode@mthode.org> -icinga-1.0.3-r1.ebuild,
+  +icinga-1.2.0.ebuild:
+  revbump of icinga 1.0.3-r1 to 1.2.0
+
   24 Sep 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -icinga-1.0.3.ebuild:
   Nuke old version
