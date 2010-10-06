@@ -1,6 +1,11 @@
 # ChangeLog for dev-ruby/realrand
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Oct 2010; Ian Stakenvicius <ian@aerobiology.ca> -realrand-1.0.2.ebuild,
+  +realrand-1.0.3.ebuild:
+  migrated from gems.eclass to ruby-fakegem.eclass; trivial version bump;
+  thanks to binki,graaff,Tommy[D]
 
   06 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   realrand-1.0.2.ebuild:

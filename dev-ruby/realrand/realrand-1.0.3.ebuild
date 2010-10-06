@@ -2,20 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ruby gems
+EAPI=2
 
 USE_RUBY="ruby18"
+RUBY_FAKEGEM_TASK_TEST=""
+
+inherit ruby-fakegem
+
 DESCRIPTION="Generate real random numbers in Ruby."
 HOMEPAGE="http://realrand.rubyforge.org/"
-SRC_URI="mirror://rubygems/${P}.gem"
 
+KEYWORDS="~x86"
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="~x86"
 IUSE=""
-
-DEPEND=">=dev-lang/ruby-1.8.4"
-RDEPEND="${DEPEND}"
 
 pkg_postinst() {
 	elog "All the HTTP services supported and used by this library are"
