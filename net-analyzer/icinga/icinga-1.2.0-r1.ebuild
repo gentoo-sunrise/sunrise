@@ -94,6 +94,7 @@ src_configure() {
 	$(use_enable debug DEBUG4)
 	$(use_enable debug DEBUG5)
 	--disable-statuswrl
+	--with-cgiurl=cgi-bin
 	--bindir=/usr/sbin
 	--sbindir=/usr/$(get_libdir)/icinga/cgi-bin
 	--datarootdir=/usr/share/icinga/htdocs
