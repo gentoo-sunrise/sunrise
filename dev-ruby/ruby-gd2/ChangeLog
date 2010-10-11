@@ -1,6 +1,15 @@
 # ChangeLog for dev-ruby/ruby-gd2
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*ruby-gd2-1.1.1-r1 (11 Oct 2010)
+
+  11 Oct 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> -ruby-gd2-1.1.1.ebuild,
+  +ruby-gd2-1.1.1-r1.ebuild, +files/ruby-gd2-1.1.1-raketasks.patch:
+  Migrate to ruby-fakegem eclass. Clean up *DEPEND and misc. things. Support
+  tests and rdoc through a patch to Rakefile. Version bump because
+  ruby-fakegem installs a different set of files than the gems eclass.
 
   06 Dec 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   ruby-gd2-1.1.1.ebuild:
