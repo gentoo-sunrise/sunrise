@@ -1,0 +1,25 @@
+From 7079d8c8465fef1ebd40681af590b5355b88aabc Mon Sep 17 00:00:00 2001
+From: Nathan Phillip Brink <ohnobinki@ohnopublishing.net>
+Date: Tue, 12 Oct 2010 00:27:25 -0400
+Subject: [PATCH] Sort refs to produce results predictable enough for test_tag. (The current test_tag assumes that Dir::glob() alphabetically sorts its output before returning it).
+
+---
+ lib/grit/git-ruby.rb |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/lib/grit/git-ruby.rb b/lib/grit/git-ruby.rb
+index 37302c2..ba722b8 100644
+--- a/lib/grit/git-ruby.rb
++++ b/lib/grit/git-ruby.rb
+@@ -112,7 +112,7 @@ module Grit
+       refs = []
+       already = {}
+       Dir.chdir(@git_dir) do
+-        files = Dir.glob(prefix + '/**/*')
++        files = Dir.glob(prefix + '/**/*').sort
+         files.each do |ref|
+           next if !File.file?(ref)
+           id = File.read(ref).chomp
+-- 
+1.7.2.2
+
