@@ -29,7 +29,4 @@ ruby_add_bdepend "doc? ( virtual/ruby-rdoc )
 ruby_add_rdepend "dev-ruby/mime-types
 	dev-ruby/diff-lcs"
 
-all_ruby_prepare() {
-	# http://github.com/mojombo/grit/issues/issue/34
-	epatch "${FILESDIR}"/${P}-sorted-refs.patch
-}
+RUBY_PATCHES=(${P}-sorted-refs.patch)

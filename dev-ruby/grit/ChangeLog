@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Oct 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> grit-2.3.0.ebuild:
+  Replace all_ruby_prepare() with RUBY_PATCHES.
+
 *grit-2.3.0 (12 Oct 2010)
 
   12 Oct 2010; Nathan Phillip Brink (ohnobinki)
