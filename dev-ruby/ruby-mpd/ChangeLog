@@ -1,6 +1,10 @@
 # ChangeLog for dev-ruby/ruby-mpd
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Oct 2010; Nathan Phillip Brink (ohnobinki)
+  <ohnobinki@ohnopublishing.net> ruby-mpd-0.2.3.ebuild:
+  Use ruby-ng eclass. Fix HOMEPAGE.
 
   29 Jun 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   ruby-mpd-0.2.3.ebuild:

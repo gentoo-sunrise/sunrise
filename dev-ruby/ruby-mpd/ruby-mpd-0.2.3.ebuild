@@ -2,12 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ruby
+EAPI=2
 
-MY_P=${P/ruby-mpd/mpd-rb}
+USE_RUBY="ruby18"
+
+inherit ruby-ng
+
+MY_P=mpd-rb-${PV}
 
 DESCRIPTION="Ruby class for communicating with an MPD server"
-HOMEPAGE="http://www.andsoforth.com/geek/mpd_rb.html"
+HOMEPAGE="http://rubyforge.org/projects/mpd"
 SRC_URI="http://rubyforge.org/frs/download.php/8040/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -18,3 +22,7 @@ IUSE=""
 RDEPEND="media-sound/mpd"
 
 S=${WORKDIR}/${MY_P}
+
+each_ruby_install() {
+	doruby lib/mpd.rb
+}
