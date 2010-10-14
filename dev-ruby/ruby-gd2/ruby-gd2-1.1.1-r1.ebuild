@@ -23,6 +23,4 @@ RDEPEND="media-libs/gd[truetype]"
 
 ruby_add_bdepend "doc? ( virtual/ruby-rdoc )"
 
-all_ruby_prepare() {
-	epatch "${FILESDIR}"/${P}-raketasks.patch
-}
+RUBY_PATCHES=( ${P}-raketasks.patch )
