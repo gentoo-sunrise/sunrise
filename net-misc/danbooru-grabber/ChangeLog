@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/danbooru-grabber
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Oct 2010; Dean Matzkov (bapa) <bapabooiee@gmail.com>
+  +danbooru-grabber-0.20.18.ebuild, +metadata.xml:
+  New ebuild for bug #340649
+
