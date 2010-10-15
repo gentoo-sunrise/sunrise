@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils java-utils-2
 
-DESCRIPTION="GenealogyJ is a viewer and editor for genealogic data and is written in Java"
+DESCRIPTION="A viewer and editor for genealogic data, written in Java"
 HOMEPAGE="http://genj.sf.net/"
 SRC_URI="mirror://sourceforge/genj/genj_app-${PV}.zip
 	skins? ( mirror://sourceforge/genj/genj_lnf-2.0.zip )
@@ -21,7 +21,7 @@ done
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="${IUSE} geoview skins"
 
 DEPEND="app-arch/unzip"
@@ -43,17 +43,19 @@ src_compile() {
 src_install() {
 	PROGRAM_DIR=/opt/${PN}
 
-	insinto ${PROGRAM_DIR}
-	exeinto ${PROGRAM_DIR}
+	doexe "${FILESDIR}/genealogyj"
 
+	insinto ${PROGRAM_DIR}
 	doins -r *.jar gedcom report help contrib doc lib
 	use skins && doins -r lnf
-	doexe run.sh
-	# Necessary to be able to run it as a user:
-	fperms a+rx ${PROGRAM_DIR}/run.sh
 
-	into /opt
-	dobin "${FILESDIR}/genealogyj"
+	exeinto ${PROGRAM_DIR}
+	doexe run.sh
+
+	java-pkg_regjar "${D}/${PROGRAM_DIR}"/*.jar
+
+	# Necessary to be able to run it as a user:
+	#fperms a+rx ${PROGRAM_DIR}/run.sh
 }
 
 pkg_postinst() {
