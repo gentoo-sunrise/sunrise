@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Oct 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  files/opendnssec.initd:
+  minor change to initd file
+
   10 Sep 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -opendnssec-1.1.1.ebuild, -files/opendnssec-1.1.1-drop-privileges.patch,
   +opendnssec-1.1.3.ebuild, +files/opendnssec-drop-privileges.patch:

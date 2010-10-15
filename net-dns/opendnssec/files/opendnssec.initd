@@ -22,7 +22,9 @@ depend() {
 checkconfig() {
 	if [ -x "${checkconf_binary}" ]; then
 		output=$(${checkconf_binary})
-		echo $output
+		if [ -n "$output" ]; then
+			echo $output
+		fi
 
 		errors=$(echo $output | grep ERROR | wc -l)
 		if [ $errors -gt 0 ]; then
@@ -66,7 +68,7 @@ start_eppclientd() {
 }
 
 stop_eppclientd() {
-	if [ -f "${eppclientd_pidfile}" ]; then
+	if [ -x "${eppclientd_binary}" ]; then
 		ebegin "Stopping OpenDNSSEC Eppclient"
 		start-stop-daemon --stop --exec "${eppclientd_binary}" --pidfile "${eppclientd_pidfile}" > /dev/null
 		eend $?
