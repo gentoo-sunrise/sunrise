@@ -1,0 +1,8 @@
+# ChangeLog for dev-dotnet/f-sharp
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Oct 2010; Michael Orlitzky <michael@orlitzky.com>
+  +f-sharp-2.0.0.0.ebuild, +files/mono.snk, +metadata.xml:
+  New ebuild to address bug 320675.
+
