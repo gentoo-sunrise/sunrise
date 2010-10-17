@@ -1,0 +1,8 @@
+# ChangeLog for app-text/orayta
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Oct 2010; Binyamin Sagal (bsagal) <bensagal@gmail.com>
+  +orayta-0.03_p2.ebuild, +metadata.xml:
+  New Ebuild for bug 341017, thanks to Tommy
+
