@@ -13,7 +13,7 @@ SRC_URI="http://dists.xneur.ru/release-${PV}/tgz/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="aplay debug gstreamer libnotify nls openal xosd pcre +spell"
+IUSE="aplay debug gstreamer keylogger libnotify nls openal xosd pcre +spell"
 
 COMMON_DEPEND="sys-libs/zlib
 	>=x11-libs/libX11-1.1
@@ -67,7 +67,8 @@ src_configure() {
 		$(use_with pcre) \
 		$(use_with spell aspell) \
 		$(use_with xosd) \
-		$(use_with libnotify)
+		$(use_with libnotify) \
+		$(use_with keylogger)
 }
 
 src_install() {
@@ -82,4 +83,7 @@ pkg_postinst() {
 	ewarn "If you upgraded from <=xneur-0.9.3, you need to remove"
 	ewarn "dictionary files in the home directory:"
 	ewarn " $ rm ~/.xneur/{ru,en,be,etc.}/dict"
+
+	ewarn
+	ewarn "Note: if xneur became slow, try to comment out AddBind options in config file."
 }

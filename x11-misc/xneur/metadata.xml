@@ -6,5 +6,7 @@
 <use>
 	<flag name='aplay'>Use aplay from <pkg>media-sound/alsa-utils</pkg> for
 	playing sounds</flag>
+	<flag name='keylogger'>Enable keylogger support (logs all text into html;
+	<pkg>x11-misc/gxneur</pkg> allows to view this text)</flag>
 </use>
 </pkgmetadata>

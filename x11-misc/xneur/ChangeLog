@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Oct 2010; Peter Volkov <pva@gentoo.org> -xneur-0.9.9.ebuild,
+  +xneur-0.10.0.ebuild, metadata.xml:
+  Version bump, thank Павел aka Nightwelf for report.
+
   06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   xneur-0.9.9.ebuild:
   Decrease EAPI requirement, cleanup. Correct dependencies.
