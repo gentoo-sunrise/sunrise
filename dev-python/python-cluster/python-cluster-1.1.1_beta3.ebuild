@@ -7,7 +7,7 @@ EAPI=3
 PYTHON_DEPEND="*"
 SUPPORT_PYTHON_ABIS=1
 
-inherit distutils eutils python
+inherit distutils eutils
 
 MY_P=cluster-${PV/_beta/b}
 DESCRIPTION="Allows grouping a list of arbitrary objects into related groups (clusters)"
