@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
+	<longdescription>A program for combining (panelizing) Gerber/Excellon files</longdescription>
+	<upstream>
+		<maintainer>
+			<email>steriana@claymore.engineer.gvsu.edu</email>
+			<name>Andrew Sterian</name>
+		</maintainer>
+	</upstream>
+</pkgmetadata>
