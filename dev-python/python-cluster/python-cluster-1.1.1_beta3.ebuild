@@ -6,6 +6,7 @@ EAPI=3
 
 PYTHON_DEPEND="*"
 SUPPORT_PYTHON_ABIS=1
+PYTHON_MODNAME="cluster.py"
 
 inherit distutils eutils
 
@@ -23,13 +24,5 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/python-cluster-python3.patch
+	distutils_src_prepare
 }
-
-pkg_postinst() {
-	python_mod_optimize cluster.py
-}
-
-pkg_postrm() {
-	python_mod_cleanup cluster.py
-}
-
