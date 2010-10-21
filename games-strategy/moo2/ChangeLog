@@ -1,0 +1,14 @@
+# ChangeLog for games-strategy/moo2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*moo2-1.40.24 (21 Oct 2010)
+
+  21 Oct 2010; Daniel Santos (dansan) <daniel.santos@pobox.com>
+  +files/1.40.24/moo2, +moo2-1.40.24.ebuild, +files/1.40.24/moo2rc,
+  +files/1.40.24/utils.sh, +files/DIG.INI, +files/MDI.INI,
+  +files/ORIONCD.INI, +files/installList.txt, +metadata.xml:
+  New ebuild for bug #341859. The "Lord Brazen" version is actually labled
+  1.40b.23, but I'm omitting the "b" as it neither fits in Gentoo's
+  versioning convention or seems to make much sense.
+

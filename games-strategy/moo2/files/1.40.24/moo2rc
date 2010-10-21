@@ -1,0 +1,14 @@
+# Base directory to backup saved games to, relative to moo2UserDir (usually ~/.moo2)
+backupDirBase="saved-game-backups"
+
+# Which executable to run.  M2V140.EXE is the unofficial, hacked-up executable and ORION2.EXE is
+# the official one
+moo2exe=M2V140.EXE
+#moo2exe=ORION2.EXE
+
+# The arguments to pass.  Do not add /seed, as this is randomly generated for you each time. See
+# http://lordbrazen.blogspot.com/2005/01/moo2v140-patch-faq.html for a full list of command-line
+# options
+#moo2args="/picks=10 /hugestart /planets=3 /skipintro /monsters=3"
+moo2args="/picks=10"
+
