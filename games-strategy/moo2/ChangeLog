@@ -2,6 +2,16 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Oct 2010; Daniel Santos (dansan) <daniel.santos@pobox.com>
+  +files/1.40.24/backup.sh, moo2-1.40.24.ebuild, files/1.40.24/moo2,
+  files/1.40.24/moo2rc, files/1.40.24/utils.sh:
+  * Reformatted to 80 cols
+  * Changed license to GPL-2 MicroProse-EULA, repoman can deal
+  * Added icon & make_desktop_entry
+  * Added prepgamesdirs to the end of src_install() which I forgot earlier!
+  * Added functionality for the moo2 script to backup your saved games (I
+    had this earlier, but it wasn't working yet).
+
 *moo2-1.40.24 (21 Oct 2010)
 
   21 Oct 2010; Daniel Santos (dansan) <daniel.santos@pobox.com>

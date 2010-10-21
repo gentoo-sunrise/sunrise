@@ -19,9 +19,12 @@
 
 
 moo2Dir="__MOO2DIR__"
+. "${moo2Dir}/utils.sh"
+. "${moo2Dir}/backup.sh"
 moo2UserDir="${HOME}/.moo2"
 configFile="${moo2UserDir}/moo2rc"
-. "${moo2Dir}/utils.sh"
+postRunMsg=""
+postRunCmd=""
 
 #############################################################################
 # Function    : getSeed
@@ -72,6 +75,7 @@ userInstall() {
 	ln -s "${moo2Dir}/cd" . || die
 	cp "${moo2Dir}/moo2rc" . || die
 
+	# DOS text management is a pain
 	local userMsg="@echo \
 Since this is your first time running Master of Orion II, we need to do some    \
 user-level setup. Master of Orion II uses dosbox.  See the Welcome box above for\
@@ -99,7 +103,7 @@ help with that."
 	pushd "${src}" || die
 
 	# Some files cannot be read only and must be copied
-	cp -L SOUND.LBX SR_R* *.INI "${dest}"
+	cp -L SOUND.LBX SR_R* *.INI "${dest}" || die
 
 	# All the rest can be read-only symlinks
 	for f in *; do
@@ -120,29 +124,28 @@ help with that."
 }
 
 #############################################################################
-# Function    : main
+# Function    : verifyEnv
 # Arguments   : none
-# Description : Main function
+# Description : Performs sanity checks:
+#				* Initates user install if needed
+#				* Corrects moo2exe if lordbrazen patch not installed
+#				* Warns if CD is not present
 #############################################################################
-main() {
-	local postRunMsg=""
-	local postRunCmd=""
-
+verifyEnv() {
 	# If this is the 1st time to run, do user setup
 	if [ ! -e "${moo2UserDir}/MPS/ORION2/ORION2.EXE" ]; then
 		userInstall
 	fi
 	. "${configFile}"
 
-	# If we have the unofficial patch specified in the config, but not installed, use the offical
-	# version
+	# If we have the unofficial patch specified in the config, but not
+	# installed, use the offical version
 	if [ ! -e "${moo2UserDir}/MPS/ORION2/M2V140.EXE" ]; then
 		moo2exe=ORION2.EXE
 	fi
 
 	# Make sure the CD is still in
 	if [ ! -e "${moo2UserDir}/cd/ORION2.EXE" ]; then
-		# DOS text management is a pain
 		postRunMsg="\
 You're Moo2 CD does not appear to be mounted.  You can either put it in,        \
 reinstall with the nocd USE option (while the CD in) or change the symlink      \
@@ -155,7 +158,14 @@ ${moo2UserDir}/cd."
  		warn ${postRunMsg}
 		echo
 	fi
+}
 
+#############################################################################
+# Function    : runGame
+# Arguments   : none
+# Description : (Attempts to) run the game.  Function will not return.
+#############################################################################
+runGame() {
 	# Run the game
 	exec dosbox -conf "${moo2UserDir}/dosboxrc" \
 		-c "mount c ${moo2UserDir}" \
@@ -167,6 +177,35 @@ ${moo2UserDir}/cd."
 		-c "exit" || warn "dosbox exited with error"
 }
 
-main
+showUsage() {
+	echo "USAGE: $0 [backup|restore [file_name]]"
+	exit
+}
+
+#############################################################################
+# Function    : main
+# Arguments   : none
+# Description : Main function
+#############################################################################
+main() {
+	verifyEnv
+
+	# I should probably just make a separate script for this, but screw it.
+	if [[ "$1" == "backup" ]]; then
+		shift
+		(($# <= 1)) || showUsage
+		doBackup "$@"
+	elif [[ "$1" == "restore" ]]; then
+		shift
+		(($# <= 1)) || showUsage
+		echo "Restore not yet supported, but your backups are in" \
+			"${moo2UserDir}/${backupBaseDir}"
+	else
+		(($#)) && showUsage
+		runGame
+	fi
+}
+
+main "$@"
 
 # vim:ts=4
