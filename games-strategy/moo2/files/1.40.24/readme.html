@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+
+  <title>Moo2v140 Patch FAQ</title>
+</head>
+
+<body>
+  <h1>Moo2v140 Patch FAQ</h1>
+  <p>Retrieved from <a href="http://lordbrazen.blogspot.com/2005/01/moo2v140-patch-faq.html">http://lordbrazen.blogspot.com/2005/01/moo2v140-patch-faq.html</a><br>
+  <p>(last updated September 09, 2006)<br>
+  <br>
+  <strong>Table of Contents</strong><br></p>
+
+  <blockquote>
+    <p>Preface</p>
+
+    <blockquote>
+      <p>1. Purpose and audience for this FAQ<br>
+      2. Acknowledgments</p>
+    </blockquote>
+
+    <p>1. Installation</p>
+
+    <blockquote>
+      <p>1.1. What are the requirements of the patch?<br>
+      1.2. How do I apply the patch?<br>
+      1.3. How do I configuring the Moo2v140 desktop shortcut?<br>
+      1.4. Why only the DOS version?<br>
+      1.5. How do I launch Moo2v140 from Kali?<br>
+      1.6. How do I launch Moo2v140 from DOSbox?</p>
+    </blockquote>
+
+    <p>2. Bug fixes</p>
+
+    <blockquote>
+      <p>2.1. What are the bugs in the latest (v1.31) official patch?<br>
+      2.2. What bugs does the v1.40 patch fix?<br>
+      2.3. What bugs do you plan to fix?</p>
+    </blockquote>
+
+    <p>3. New command line switches</p>
+
+    <blockquote>
+      <p>3.1. What command line switches are there already in v1.31?<br>
+      3.2. What command line switches have been added in v1.40?<br>
+      3.3. How do I use the command line switches?<br>
+      3.4. Who needs to use the command line switches in a multiplayer
+      game?<br>
+      3.5. What command line switches do you plan to add?<br>
+      3.6. Why do the save games from v1.40 cause problems with the Map editor
+      / Leveler?<br>
+      3.7. How do the home system switches interact with each other?<br>
+      3.8. Why does the galaxy map seem different in v1.40?</p>
+    </blockquote>
+
+    <p>4. Playing over the internet</p>
+
+    <blockquote>
+      <p>4.1. How do I play Master of Orion 2 over the internet?<br>
+      4.2. What is kali?<br>
+      4.3. Where do I get kali?<br>
+      4.4. What game server to people play Master of Orion 2 on?<br>
+      4.5. Why cant I find the MOO2 server?</p>
+    </blockquote>
+
+    <p>5. Cheat codes</p>
+
+    <blockquote>
+      <p>5.1. What cheat codes are there in Master of Orion 2 ?<br>
+      5.2. Why do you plan to disable cheat codes in multiplayer games
+      ?<br></p>
+    </blockquote>
+
+    <p align="left"><strong>Preface</strong></p>
+  </blockquote>
+
+  <blockquote>
+    <blockquote>
+      <p>1. Purpose and audience for this FAQ</p>
+
+      <blockquote>
+        <p>This FAQ provides answers to frequently asked questions for the
+        Master of Orion II v1.40 patch which I began writing in December 2003.
+        The reason I wrote this FAQ is quite simple, a growing number of people
+        keep asking me the same questions about the patch.</p>
+      </blockquote>
+
+      <p>2. Acknowledgments</p>
+
+      <blockquote>
+        <p>Thanks go out to all those within the Moo2 kali community that have
+        very supportive of this project:<br>
+        <br>
+        INver, Cybersaber, 4381, Skybandit, PK, NightWolf, RedDog, Siron,
+        Alex-D and many others...</p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+
+  <blockquote>
+    <p><strong>Questions and Answers</strong></p>
+
+    <p>1. Installation</p>
+
+    <blockquote>
+      <p>1.1. What are the requirements of the patch?</p>
+
+      <blockquote>
+        <p>This patch requires the DOS v1.31 English version of Master of Orion
+        II. It will not work with earlier versions, other language versions, or
+        the windows version of the game. You should be able to patch a
+        non-english version of master of Orion II with the english v1.31 patch
+        and effectively convert it to the english version (which should allow
+        you to apply the v1.40 patch at that point).</p>
+      </blockquote>
+
+      <p>1.2. How do I apply the patch?</p>
+
+      <blockquote>
+        <p>Applying the patch is simple. Just put the patch exe file into the
+        orion2 game directory and run it. It will create a separate
+        orion2v140.exe file. This is the patched game executable. It will also
+        optionally create a desktop icon for you which you can use to launch
+        the game.</p>
+      </blockquote>
+
+      <p>1.3. How do I configuring the Moo2v140 desktop shortcut?</p>
+
+      <blockquote>
+        <p>I would recommend that you use the patch to create a desktop icon.
+        It is a shortcut.</p>
+      </blockquote>
+
+      <p>1.4. Why only the DOS version?</p>
+
+      <blockquote>
+        <p>I primarily play orion2 on the internet using kali. The windows
+        version of the game does not play very well over the internet (to much
+        lag).</p>
+      </blockquote>
+
+      <p>1.5. How do I launch Moo2v140 from Kali?</p>
+
+      <blockquote>
+        <p>Many players use a private server and the desktop shortcut to launch
+        the game. Game lobbies are also an option and very commonly used by new
+        players. Refer to the kali web site for instructions.</p>
+      </blockquote>
+
+      <p>1.6. How do I launch Moo2v140 from DOSBox?</p>
+
+      <blockquote>
+        <p>Setting up a DOSBox game can be more difficult than with Kali but
+        the players tend to experience less lag during game play. The host of
+        the game must use the 'ipxnet startserver' command in the dosbox window
+        prior to starting orion2. All other players must use the 'ipxnet
+        connect x.x.x.x' command (where x.x.x.x is the hosts ip address) in the
+        dosbox window prior to starting orion2.</p>
+      </blockquote>
+    </blockquote>
+
+    <p>2. Bug fixes</p>
+
+    <blockquote>
+      <p>2.1. What are the bugs in the latest (v1.31) official patch?</p>
+
+      <blockquote>
+        <p><strong>Leaders bug</strong> - The game will instantly crash when
+        you attempt to view your ship leaders but have no ships.</p>
+
+        <p><strong>Arti bug</strong> - This is a LAN game bug that occurs when
+        you are the first player to arrive an arti system. You will receive the
+        free technologies but the arti planet may permanently lose the arti
+        planet special on the next turn.</p>
+
+        <p><strong>Last race bugs</strong> - LAN games crash when a player
+        presses the Last Race button. Also, it is possible to pick the same
+        race picture as an opponent in multiplayer games.</p>
+
+        <p><strong>Credit cheat</strong> - Under certain circumstances a player
+        can both produce an item and receive trade goods (full amount) at a
+        single planet in a single turn. This is an exploit used to generate
+        large amounts of cash by some players.</p>
+
+        <p><strong>Auto factory bug</strong> - The game can crash when you
+        mouse over a building in the colony screen. This often occurs when you
+        go to scrap an Auto Factory but can occur with other buildings
+        also.</p>
+
+        <p><strong>Cloned monsters</strong> - Under certain circumstances the
+        combat round with a monster is ignored. Sometimes monsters or ships
+        which were destroyed in combat are still alive after combat. This seems
+        to be a network game problem only.</p>
+
+        <p><strong>Cloned cship or opship</strong> - Sometimes a colony ship or
+        outpost ship is not deleted after it is used to make a colony or
+        outpost. It can be exploited to generate a very large empire in a very
+        short period of time.</p>
+
+        <p><strong>Soils bug</strong> - Quite often in the round that you
+        produce a building which creates a food or production bonus, the bonus
+        is not applied properly to all workers that turn. Moving workers around
+        can result in all or part of the bonus being lost temporarily or even a
+        game crash.</p>
+
+        <p><strong>Retreat from battle field</strong> - Retreating from a
+        battle sometimes can result in a game crash. It seems to only occur in
+        LAN games when you retreat from the edge of the combat area.</p>
+
+        <p><strong>Retreat with navigator</strong> - Retreating from combat can
+        result in loss of your entire fleet if there is a black hole in the
+        retreat path even if you have a navigator.</p>
+
+        <p><strong>Travel distance/ETA incorrect</strong> - Travel distance and
+        ETA are not calculated correctly in some situations.</p>
+
+        <p><strong>Annihilation bug</strong> - Under certain circumstances,
+        annihilation can result in a planet with zero population. It is
+        impossible to invade or bomb. Also, if an invader remains in orbit of
+        this system it can prevent the invader from entering combat at other
+        systems as well. This can be exploited to create a permanent
+        outpost.</p>
+
+        <p><strong>Overpopulation bug</strong> - Under certain circumstances,
+        it is possible to overpopulate a planet with androids or captured
+        races. This can be exploited to create a super planet.</p>
+
+        <p><strong>Not asked to land opship when cship is present</strong> -
+        When a colony ship and outpost ship are present with your fleet,
+        sometimes you will not be given the option to land your outpost ship.
+        This seems to occur in systems with no habitable worlds.</p>
+
+        <p><strong>Phantom missiles</strong> - Shooting down missiles can
+        result in a missile stack with a quantity of zero. The defender can
+        waste many defensive shots on them but these missiles cannot be shot
+        down. The missiles will proceed to target but they seem to do no
+        damage.</p>
+
+        <p><strong>Stealth bug</strong> - Ships equipped with the stealth
+        technology are still visible on the galaxy map by your opponents. They
+        are visible at the same range as regular ships.</p>
+
+        <p><strong>Cloaking and Phase Cloaking bugs</strong> - Ships equipped
+        with the Cloaking or Phase Cloaking technology are still visible on the
+        galaxy map by your opponents. Also, during combat only player #0 will
+        have his phase cloak revert to regular cloaking after 10 rounds.</p>
+
+        <p><strong>System Specials not shared</strong> - When two players
+        arrive for the first time at a system with a system special, only one
+        player will receive the special (such as rescued leader, money, or
+        technology).</p>
+
+        <p><strong>Evolutionary Mutation</strong> - It is possible to change
+        some race picks that you should not be able to once you have researched
+        Evolutionary Mutation.</p>
+
+        <p><strong>Repeat build cheat</strong> - It is possible to cancel the
+        production of a repeat build item after it has been bought. This allows
+        money to be converted to stored production. It can be exploited to
+        purchase expensive items by canceling multiple cheaper repeat built
+        items over the course of several turns.</p>
+
+        <p><strong>Tractors bug</strong> - Moving a ship while tractor beams
+        are engaged can often crash the game. The crashes occur most frequently
+        if one of the ships involved are off the screen.</p>
+
+        <p><strong>Tech Trading bug</strong> - You cannot demand or trade
+        optronics computer technology.</p>
+
+        <p><strong>Stolen Tech bug</strong> - Some stolen technologies do not
+        apply until you build a new colony or outpost.</p>
+
+        <p><strong>Autobuild bug</strong> - Autobuild can be exploited to
+        produce an item and trade goods in the same turn. The exploit is very
+        simular to Credit Cheat.</p>
+
+        <p><strong>Stategic outposts bug</strong> - Outposts are often
+        destroyed in strategic combat even when the defender wins combat.</p>
+
+        <p><strong>Time Warp Facilitator bug</strong> - Ships equiped with
+        phasing cloak and time warp facilitator can re-cloak in the same combat
+        round in which they fire weapons. This make the ships impossible to
+        destroy.</p>
+
+        <p><strong>Black Hole Generator bug</strong> - Black Hole Generator
+        does not destroy ships when ship initiative is enabled. The ships
+        remain immobilized rather than being destroyed on 3rd turn.</p>
+
+        <p><strong>Immobilization bug</strong> - Ships are not immobilized by
+        tractor beams or blackhole generators until the beginning of the next
+        combat round. This allows them to move when they should not be able
+        to.</p>
+      </blockquote>
+
+      <p>2.2. What bugs does the v1.40 patch fix?</p>
+
+      <blockquote>
+        <p>At present only leaders, arti, credit cheat, stealth, cloned
+        op/cship, repeat build, cloak, phase cloak, tractors, blackhole
+        generators, VESA, and last race.</p>
+      </blockquote>
+
+      <p>2.3. What bugs do you plan to fix?</p>
+
+      <blockquote>
+        <p>Hopefully all of them.</p>
+      </blockquote>
+    </blockquote>
+
+    <p>3. New command line switches</p>
+
+    <blockquote>
+      <p>3.1. What command line switches are there already in v1.31?</p>
+
+      <p>The command line switches that I am aware of are:</p>
+
+      <blockquote>
+        <blockquote>
+          <p><strong>/skipintro</strong> Skips the intro movie.</p>
+
+          <p><strong>/monsters = num</strong> Sets the preferred number of
+          monsters. Valid values are 0 to 255. Default is 255 which is random
+          seed.</p>
+
+          <p><strong>/nolog</strong> Sets a flag in the game that seems to
+          never be used anyways.</p>
+
+          <p><strong>/net = value</strong> Parsed but seems to do nothing.</p>
+
+          <p><strong>/date</strong> Displays the version date and exits
+          game.</p>
+
+          <p><strong>/maps = value</strong> Parsed but seems to do nothing.</p>
+
+          <p><strong>/seed = num</strong> Seed for random number generator.
+          Valid values are signed long integer (-2147483648 to 2147483647).
+          Default is 0. Seems to only effect first galaxy map generated and
+          does not effect monster placement.</p>
+
+          <p><strong>/saveset = value</strong> Something to do with autosave
+          but seems bugged.</p>
+
+          <p><strong>/saveset</strong> Something to do with autosave but seems
+          bugged.</p>
+
+          <p><strong>/quickstart</strong> Parsed but seems to do nothing.</p>
+
+          <p><strong>/nosaves = value</strong> Parsed but seems to do
+          nothing.</p>
+
+          <p><strong>/stats = value</strong> Parsed but seems to do
+          nothing.</p>
+        </blockquote>
+      </blockquote>
+
+      <p>3.2. What command line switches have been added in v1.40?</p>
+
+      <blockquote>
+        <blockquote>
+          <p><strong>/nowh</strong> No wormholes are generated on new maps</p>
+
+          <p><strong>/nobh</strong> No black holes are generated on new
+          maps</p>
+
+          <p><strong>/noorion</strong> Orion and Guardian are not generated on
+          new maps</p>
+
+          <p><strong>/noreport</strong> The report button on the diplomacy
+          screen will be disabled preventing you from seeing what technology
+          your opponent has. Also, Technology demands and trades are greyed
+          out.</p>
+
+          <p><strong>/droids</strong> All players start out with the ability to
+          build androids (all 3 types).</p>
+
+          <p><strong>/minstart</strong> The unoccupied planet closest to the
+          sun in all home systems will be at least 2 production per worker and
+          its gravity will match that of the homeworld.</p>
+
+          <p><strong>/hugestart</strong> The unoccupied planet closest to the
+          sun in all home systems will be huge and its gravity will match that
+          of the homeworld.</p>
+
+          <p><strong>/richstart</strong> The unoccupied planet closest to the
+          sun in all home systems will be rich and its gravity will match that
+          of the homeworld (this switch is ignored if /goodstart is used).</p>
+
+          <p><strong>/goodstart</strong> The unoccupied planet closest to the
+          sun in all home systems will be Ultra Rich and its gravity will match
+          that of the homeworld.</p>
+
+          <p><strong>/nosplint</strong> No splinter worlds unless there is a
+          monster guarding it.</p>
+
+          <p><strong>/planets = num</strong> Sets the minimum number of planets
+          in all home systems to num. This value includes the home world. Valid
+          values are<br>
+          2-5 (default is 2). If you try a value outside of the valid range it
+          will use the default.</p>
+
+          <p><strong>/picks = num</strong> Sets the starting race picks points
+          to num. Valid values are 10-14 (default is 10). If you try a value
+          outside of the valid range it will use the default. Note: some
+          screens in the game only show the first 11 race picks (it is possible
+          to pick more than 11).</p>
+
+          <p><strong>/nonebula</strong> When used the map is generated without
+          any nebulas.</p>
+
+          <p><strong>/nohousing</strong> The housing option will no longer be
+          available from the build list so housing production will not be
+          possible. Also, this switch adds +150% bonus to population growth.
+          The bonus will be added into the growth formula exactly the same way
+          that the bonus from universal antidote is.</p>
+
+          <p><strong>/noscan</strong> This switch will disable the scan button
+          in combat so that detailed scans of ships will no longer be possible.
+          Only quick scans will be possible by mousing over the ships.</p>
+        </blockquote>
+
+        <p>NOTE: the switches /minstart, /hugestart, /richstart, and /goodstart
+        all effect the same planet. The effect is cumulative. These switches
+        ONLY EFFECT ONE PLANET. ALL OTHERS ARE COMPLETELY RANDOM.</p>
+      </blockquote>
+
+      <p>3.3. How do I use the command line switches?</p>
+
+      <blockquote>
+        <p>You need to edit the properties of desktop shortcut. Just right
+        click the icon and pick properties. Go to the program tab. On the
+        command line add the switches you want at the end *(after /skipintro)
+        with spaces between each and click ok.</p>
+
+        <p>NOTE: If you do not spell things correctly there will be no errors
+        when you start the game. Your misspelled switch will simply be ignored.
+        Also, Windows has a limit to the length of the command line. It will
+        not tell you that you have reached this limit. It will just chop off
+        some switches that are over the limit. You can reopen the shortcut
+        properties and look at the command line to verify that the switches are
+        not chopped off.<br></p>
+      </blockquote>
+
+      <p>3.4. Who needs to use the command line switches in a multiplayer
+      game?</p>
+
+      <blockquote>
+        <p>With the exception of the /picks switch, only the host needs to use
+        the command line switches. The switches from all other players are
+        ignored (except /picks).</p>
+
+        <p>The /picks switch in a LAN game must be put on every players command
+        line (if you do not put it on your command line then you will receive
+        the default of 10 points). Each player can have a different number of
+        race pick points. This will allow people to play with a handicap if the
+        choose to.</p>
+      </blockquote>
+
+      <p>3.5. What command line switches do you plan to add in the future?</p>
+
+      <blockquote>
+        <p>Check my blog site. I usually post what I am working on.<br></p>
+      </blockquote>
+
+      <p>3.6. Why do the save games from v1.40 cause problems with the Map
+      editor / Leveler?</p>
+
+      <blockquote>
+        <p>This issue only effected old versions of the patch. Please upgrade
+        to v1.40b21 or later.</p>
+      </blockquote>
+
+      <p>3.7. How do the home system switches interact with each other?</p>
+
+      <blockquote>
+        <p>The home system switches effects add where possible, however they
+        only impact one planet in the home system. For example:</p>
+
+        <p>/hugestart /goodstart gives a huge ultra rich planet</p>
+
+        <p>/hugestart /minstart only gives a huge planet</p>
+
+        <p>/richstart /goodstart only gives an ultra rich</p>
+      </blockquote>
+
+      <p>3.8. Why does the galaxy map seem different in v1.40?</p>
+
+      <blockquote>
+        <p>The /nobh switch converts black holes into stars. As a result, there
+        will be a slight change in the galaxy quality (a few extra planets) if
+        this switch is used.<br>
+        Also, the home systems are improved slightly. This obviously has an
+        effect on the overall galaxy quality.<br>
+        The /noorion switch prevents the game from generating Orion and instead
+        it generates a regular system in its place.<br>
+        Also, the /nosplint switch converts splinters into gold deposits. There
+        will be a slight increase in the number of gold deposit worlds if this
+        switch is used.</p>
+      </blockquote>
+    </blockquote>
+
+    <p>4. Playing over the internet</p>
+
+    <blockquote>
+      <p>4.1. How do I play Master of Orion 2 over the internet?</p>
+
+      <blockquote>
+        <p>I recommend playing using Kali and Windows 98 as your operating
+        system. This is the best combination that I have tried so far. There
+        are also frequently several players on the Kali MOO2 server who enjoy
+        playing games regularly.</p>
+      </blockquote>
+
+      <p>4.2. What is kali?</p>
+
+      <blockquote>
+        <p>Kali is software that lets you play LAN games over the internet. It
+        supports DOS games well. There are many chat servers and game lobbies
+        for players to meet and organize games.</p>
+      </blockquote>
+
+      <p>4.3. Where do I get kali?</p>
+
+      <blockquote>
+        <p><a href="http://www.kali.net">http://www.kali.net</a></p>
+      </blockquote>
+
+      <p>4.4. What game server do people play Master of Orion 2 on?</p>
+
+      <blockquote>
+        <p>Come join us on the kali -&gt;MOO2 chat server (currently #138 in
+        the server list). There are several regular players on this server to
+        play with.</p>
+      </blockquote>
+
+      <p>4.5. Why cant I find the MOO2 server?<br></p>
+
+      <blockquote>
+        <p>Sometime you do not get the full list of Kali chat servers when you
+        load kali. What you need to do is refresh the list. It may take several
+        refreshes to get all 300+ servers on the list.</p>
+      </blockquote>
+    </blockquote>
+
+    <p>5. Cheat codes</p>
+
+    <blockquote>
+      <p>5.1. What cheat codes are there in Master of Orion 2 ?</p>
+
+      <blockquote>
+        <p>There are many cheat codes in Master of Orion II. The codes vary
+        from version to version of the game. These are the codes that are
+        scanned for in v1.31 and v1.40.</p>
+
+        <p>From Galactic Map:</p>
+
+        <p><strong>ALT + EINSTEIN</strong> All research technology<br>
+        <strong>ALT + MOOLA</strong> Add 1000BCs to your treasury<br>
+        <strong>ALT + MENLO</strong> Current research completes next turn<br>
+        <strong>ALT + ISEEALL</strong> Toggle omni race pick on / off<br>
+        <strong>ALT + SCORE</strong> Show your current score</p>
+
+        <p>From the Colony Screen:</p>
+
+        <p><strong>ALT + CRUNCH</strong> Finish current production item
+        immediately.<br>
+        <strong>ALT + TOGGLE</strong> All building will be available on the
+        Construction Orders screen. Even those not researched.</p>
+      </blockquote>
+
+      <p>5.2. Why do you plan to disable cheat codes in multiplayer games ?</p>
+
+      <blockquote>
+        <p>There is no reason to cheat in a multiplayer game. If you want to
+        cheat, do so in a single player game.<br></p>
+      </blockquote><br>
+      <br>
+    </blockquote>
+  </blockquote>
+</body>
+</html>

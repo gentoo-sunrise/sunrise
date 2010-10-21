@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Oct 2010; Daniel Santos (dansan) <daniel.santos@pobox.com>
+  +files/1.40.24/readme.html, moo2-1.40.24.ebuild:
+  Added readme.html which explains the possible options for your configuration.
+
+  21 Oct 2010; Daniel Santos (dansan) <daniel.santos@pobox.com>
   +files/1.40.24/backup.sh, moo2-1.40.24.ebuild, files/1.40.24/moo2,
   files/1.40.24/moo2rc, files/1.40.24/utils.sh:
   * Reformatted to 80 cols

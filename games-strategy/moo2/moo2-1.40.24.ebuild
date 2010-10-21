@@ -114,6 +114,7 @@ src_install() {
 	doicon "${WORKDIR}/${PN}.png" || die "doicon failed"
 	make_desktop_entry "${PN}" "Master of Orion II: Battle at Antares" ||
 		die "make_desktop_entry failed"
+	dodoc "${FILESDIR}/${PVR}/readme.html" || die "dodoc failed"
 	prepgamesdirs
 }
 
