@@ -17,7 +17,7 @@ IUSE="doc examples"
 
 RDEPEND="
 	media-libs/glew
-	virtual/glut
+	media-libs/freeglut
 	x11-libs/wxGTK:2.8
 	dev-lang/lua"
 DEPEND="${RDEPEND}
