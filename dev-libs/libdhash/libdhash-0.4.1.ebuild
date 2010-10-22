@@ -14,5 +14,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_install() {
-	emake DESTDIR="${ED}" install || die
+	emake DESTDIR="${D}" install || die
 }
