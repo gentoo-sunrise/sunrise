@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="virtual/opengl
-	virtual/glut
+DEPEND="media-libs/freeglut
+	media-libs/jpeg
 	virtual/glu
-	media-libs/jpeg"
+	virtual/opengl"
 RDEPEND="${DEPEND}
 	>=dev-lang/perl-5.6
 	dev-perl/perl-tk

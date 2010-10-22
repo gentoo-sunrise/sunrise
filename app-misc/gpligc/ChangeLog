@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2010; Dane Smith <c1pher@gentoo.org> gpligc-1.8.ebuild:
+  Change dependency from virtual/glut to media-libs/freeglut as virtual/glut
+  has been removed
+
   02 Jun 2010; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
   -gpligc-1.7.ebuild, +gpligc-1.8.ebuild:
   Version bump for gpligc
