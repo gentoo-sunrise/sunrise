@@ -7,7 +7,7 @@ EAPI=3
 EGIT_REPO_URI="http://github.com/baverman/snaked.git"
 SUPPORT_PYTHON_ABIS="1"
 PYTHON_DEPEND="2:2.6"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="2.[45] 3.*"
 
 inherit distutils git python
 

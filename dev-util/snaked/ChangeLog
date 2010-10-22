@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2010; Dane Smith <c1pher@gentoo.org> snaked-9999.ebuild:
+  Add 2.[45] to RESTRICT_PYTHON_ABIS.
+
   22 Oct 2010; Maxim (maksbotan) <kolmax94@gmail.com> +snaked-9999.ebuild,
   +metadata.xml:
   New Ebuild for bug 342187
