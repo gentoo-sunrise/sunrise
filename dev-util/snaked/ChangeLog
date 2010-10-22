@@ -1,0 +1,8 @@
+# ChangeLog for dev-util/snaked
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Oct 2010; Maxim (maksbotan) <kolmax94@gmail.com> +snaked-9999.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 342187
+
