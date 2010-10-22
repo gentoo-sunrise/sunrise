@@ -31,15 +31,15 @@ RDEPEND="dev-libs/libxml2
 	png? ( media-libs/libpng )
 	jpeg? ( media-libs/jpeg )
 	truetype? ( >=media-libs/freetype-2 media-libs/fontconfig )
-	opengl? ( virtual/opengl virtual/glut )
+	opengl? ( virtual/opengl media-libs/freeglut )
 	xembed? ( x11-libs/gtk+ x11-libs/gtkglext
-		virtual/opengl virtual/glut )
+		virtual/opengl media-libs/freeglut )
 	player? ( gnome-base/libgnomeui >=gnome-base/libgnome-2.14.1 gnome-base/libglade net-misc/curl
 		x11-libs/gtk+ x11-libs/gtkglext
-		virtual/opengl virtual/glut )
+		virtual/opengl media-libs/freeglut )
 	nsplugin? ( net-libs/xulrunner
 		x11-libs/gtk+ x11-libs/gtkglext
-		virtual/opengl virtual/glut )
+		virtual/opengl media-libs/freeglut )
 	examples? ( media-libs/libsdl )"
 
 DEPEND="${RDEPEND}
