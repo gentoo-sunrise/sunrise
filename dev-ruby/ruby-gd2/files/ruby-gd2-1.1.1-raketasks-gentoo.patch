@@ -1,0 +1,15 @@
+Author: Nathan Phillip Brink <ohnobinki@ohnopublishing.net>
+Date: 2010/10/22
+Purpose: Don't install COPYING.html because that duplicates information already available on a Gentoo system.
+
+diff -r b44a10b352b2 -r 381747a63004 Rakefile
+--- a/Rakefile	Fri Oct 22 11:59:07 2010 -0400
++++ b/Rakefile	Fri Oct 22 11:59:25 2010 -0400
+@@ -35,7 +35,7 @@
+ 
+ Rake::RDocTask.new do |rd|
+   rd.main = 'README'
+-  rd.rdoc_files.include('README', 'COPYING', 'lib/**/*.rb')
++  rd.rdoc_files.include('README', 'lib/**/*.rb')
+   rd.options << '--all'
+ end

@@ -23,4 +23,4 @@ RDEPEND="media-libs/gd[truetype]"
 
 ruby_add_bdepend "doc? ( virtual/ruby-rdoc )"
 
-RUBY_PATCHES=( ${P}-raketasks.patch )
+RUBY_PATCHES=( ${P}-raketasks.patch ${P}-raketasks-gentoo.patch )

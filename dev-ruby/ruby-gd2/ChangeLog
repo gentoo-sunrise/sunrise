@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  ruby-gd2-1.1.1-r1.ebuild, +files/ruby-gd2-1.1.1-raketasks-gentoo.patch:
+  Don't install the COPYING (COPYING.html) file with rdoc (by using a
+  Gentoo-specific patch).
+
   14 Oct 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
   ruby-gd2-1.1.1-r1.ebuild:
   Use RUBY_PATCHES instead of all_ruby_prepare().
