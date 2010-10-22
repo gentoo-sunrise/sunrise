@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2010; Dane Smith <c1pher@gentoo.org> libinstrudeo-0.1.4.ebuild:
+  Change dependency from virtual/glut to media-libs/freeglut as virtual/glut
+  has been removed
+
   13 Jun 2010; Markus Ullmann <jokey@gentoo.org> libinstrudeo-0.1.4.ebuild:
   Fix up depspec
 

@@ -17,6 +17,7 @@ DEPEND=">=dev-cpp/libxmlpp-2.10.0
 	>=media-libs/freetype-2.1.9
 	>=dev-libs/glib-2.10.0
 	>=dev-cpp/glibmm-2.8.4
+	media-libs/freeglut
 	media-libs/libvorbis
 	=media-libs/libdc1394-1*
 	media-libs/libdca
@@ -26,8 +27,7 @@ DEPEND=">=dev-cpp/libxmlpp-2.10.0
 	media-sound/gsm
 	net-misc/curl
 	dev-libs/openssl
-	sys-libs/zlib
-	virtual/glut"
+	sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
 src_unpack(){
