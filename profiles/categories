@@ -20,6 +20,7 @@ app-text
 app-vim
 dev-cpp
 dev-db
+dev-dotnet
 dev-embedded
 dev-games
 dev-java
@@ -75,6 +76,7 @@ net-print
 net-wireless
 net-zope
 sci-biology
+sci-electronics
 sci-geosciences
 sci-libs
 sci-mathematics
@@ -95,6 +97,7 @@ www-apps
 www-client
 www-misc
 www-servers
+x11-apps
 x11-drivers
 x11-libs
 x11-misc
