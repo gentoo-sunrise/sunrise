@@ -31,11 +31,6 @@ dev-libs/libdhash
 # removed in 60 days, if noone steps up and fixes those issues
 app-misc/genealogyj-bin
 
-# Michał Górny <gentoo@mgorny.alt.pl> (12 Sep 2010)
-# Moved to gx86 as a continuation of dev-dotnet/pe-format. Removal in 30
-# days.
-sys-apps/pe-format2
-
 # Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
 # Masking wrt bug 333939. Dependency on vala-1.0 which is
 # not yet released.
