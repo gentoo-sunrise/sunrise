@@ -8,6 +8,11 @@
 	<flag name='X'>Install also GUI client</flag>
 	<flag name='alsa'>Enable sound support (using alsa)</flag>
 	<flag name='cups'>Enable printing support (using cups)</flag>
+	<flag name='gnutls'>Use GnuTLS as crypto backend</flag>
+	<flag name='nss'>Use NSS as crypto backend</flag>
+	<flag name='ssl'>Use OpenSSL as crypto backend</flag>
+	<flag name='polarssl'>Use PolarSSL as crypto backend</flag>	
+	<flag name='debug'>Enable all debugging options</flag>
 	<flag name='largefile'>Support for large files</flag>
 </use>
 </pkgmetadata>
