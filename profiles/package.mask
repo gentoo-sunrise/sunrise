@@ -21,11 +21,6 @@
 ##   End example
 ##
 
-# Dane Smith <c1pher@gentoo.org> (22 Oct 2010)
-# Has issues fetching from the current SRC_URI as it gets redirected
-# to https:// with an invalid certificate.
-dev-libs/libdhash
-
 # Thomas Sachau <tommy@gentoo.org> (24 Sep 2010)
 # Binary java package with bundled libs and other QA issues
 # removed in 60 days, if noone steps up and fixes those issues
