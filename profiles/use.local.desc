@@ -203,7 +203,12 @@ net-misc/fatrat:webinterface - Support remote control via a web interface
 net-misc/freerdp:X - Install also GUI client
 net-misc/freerdp:alsa - Enable sound support (using alsa)
 net-misc/freerdp:cups - Enable printing support (using cups)
+net-misc/freerdp:debug - Enable all debugging options
+net-misc/freerdp:gnutls - Use GnuTLS as crypto backend
 net-misc/freerdp:largefile - Support for large files
+net-misc/freerdp:nss - Use NSS as crypto backend
+net-misc/freerdp:polarssl - Use PolarSSL as crypto backend
+net-misc/freerdp:ssl - Use OpenSSL as crypto backend
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
 net-misc/gvpe:cipher-aes-192 - Enables aes-192 cipher
 net-misc/gvpe:cipher-aes-256 - Enables aes-256 cipher
