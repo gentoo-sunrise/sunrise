@@ -8,7 +8,7 @@ inherit eutils libtool linux-info python gnome2
 
 DESCRIPTION="Store, Sync and Share Files Online"
 HOMEPAGE="http://www.getdropbox.com/"
-SRC_URI="http://www.getdropbox.com/download?dl=packages/${P}.tar.bz2"
+SRC_URI="http://www.dropbox.com/download?dl=packages/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
