@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Oct 2010; mthode <mthode@mthode.org> icinga-1.2.1.ebuild:
+  fixup of enewuser
+
   25 Oct 2010; mthode <mthode@mthode.org> -icinga-1.2.0-r1.ebuild,
   +icinga-1.2.1.ebuild:
   revbump from 1.2.0-r1 to 1.2.1 -- no ebuild changes
