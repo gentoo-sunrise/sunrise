@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Oct 2010; LABBE Corentin (montjoie) <corentin.labbe@geomatys.fr>
+  -openscap-0.6.3.ebuild, +openscap-0.6.4.ebuild:
+  Version bump to openscap-0.6.4
+
   24 Sep 2010; LABBE Corentin (Montjoie) <corentin.labbe@geomatys.fr>
   +openscap-0.6.3.ebuild, +metadata.xml:
   New Ebuild for bug 334455 thanks to binki,idl0r,sedzimir,nao,Tommy for review
