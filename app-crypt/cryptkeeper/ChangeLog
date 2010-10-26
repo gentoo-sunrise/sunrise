@@ -1,0 +1,8 @@
+# ChangeLog for app-crypt/cryptkeeper
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Oct 2010; Dean Matzkov (bapa) <bapabooiee@gmail.com>
+  +cryptkeeper-0.9.5.ebuild, +metadata.xml:
+  New ebuild for bug #245461
+
