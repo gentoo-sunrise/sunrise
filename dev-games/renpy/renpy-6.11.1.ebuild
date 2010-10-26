@@ -5,7 +5,7 @@
 EAPI="2"
 PYTHON_DEPEND="2:2.5"
 
-inherit confutils eutils games python versionator
+inherit confutils eutils python versionator games
 
 DESCRIPTION="Visual novel engine written in python"
 HOMEPAGE="http://www.renpy.org"
@@ -16,11 +16,13 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64 ~x86"
 IUSE="development doc examples"
 
-RDEPEND="dev-python/pygame[X]
+RDEPEND="dev-python/argparse
+	dev-python/pygame[X]
 	>=dev-games/renpy-modules-${PV}"
 
 pkg_setup() {
 	confutils_use_depend_any examples development
+	python_set_active_version 2
 	games_pkg_setup
 }
 
@@ -29,39 +31,40 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-jedit-path.patch
 
 	find renpy -name '*.pyo' -exec rm -f {} + || die
+	python_convert_shebangs 2 renpy.py
+
+	sed -e "s:GAMES_DATADIR:${GAMES_DATADIR}:g" \
+		-e "s:PACKAGE:${P}:g" \
+		"${FILESDIR}"/${PN}.sh > "${T}"/${PN}.sh || die
 }
 
 src_install() {
 	insinto "${GAMES_DATADIR}"/${P}
 	exeinto "${GAMES_DATADIR}"/${P}
 
-	doexe renpy.py || die "doexe failed"
+	doexe renpy.py || die
 
-	dodir "${GAMES_BINDIR}" || die "dodir failed"
-	P_SLOT=${PN}-${SLOT}
-	cat <<-EOF > "${D}"/"${GAMES_BINDIR}"/${P_SLOT} || die "Failed to create ${P_SLOT}"
-		#!/bin/sh
-		RENPY_BASE="${GAMES_DATADIR}"/${P} "${GAMES_DATADIR}"/${P}/renpy.py "\${@}"
-	EOF
+	local P_SLOT=${PN}-${SLOT}
+	newgamesbin "${T}"/${PN}.sh ${P_SLOT} || die
 
-	doins -r common renpy || die "doins failed"
+	doins -r common renpy || die
 
 	if use development; then
-		doins -r launcher template || die "doins failed"
+		doins -r launcher template || die
 
-		newicon launcher/logo32.png ${P}.png || die "newicon failed"
-		make_desktop_entry ${P_SLOT} "Ren'Py ${PV}" ${P} Game "${GAMES_DATADIR}"/${P} || die "make_desktop_entry failed"
+		newicon launcher/logo32.png ${P}.png || die
+		make_desktop_entry ${P_SLOT} "Ren'Py ${PV}" ${P} Game Path="${GAMES_DATADIR}"/${P}
 	fi
 
 	if use examples; then
-		doins -r the_question || die "doins failed"
-		doins -r tutorial || die "doins failed"
+		doins -r the_question || die
+		doins -r tutorial || die
 	fi
 
-	dodoc CHANGELOG.txt || die "dodoc failed"
+	dodoc CHANGELOG.txt || die
 
 	if use doc; then
-		dohtml -r doc || die "dohtml failed"
+		dohtml -r doc || die
 	fi
 
 	prepgamesdirs

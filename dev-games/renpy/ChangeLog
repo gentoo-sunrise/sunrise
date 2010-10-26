@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Oct 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  renpy-6.9.3-r1.ebuild, -renpy-6.10.2-r2.ebuild, +renpy-6.10.2-r3.ebuild,
+  +renpy-6.11.1.ebuild, +files/renpy.sh:
+  New version. Should work if python-3 is set as default.
+  Other minor changes. Thanks to Tommy[D], _AxS_, Mr_Bones_.
+
   01 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   renpy-6.9.3-r1.ebuild, renpy-6.10.2-r2.ebuild:
   Adjust 'find' calls to be POSIX-compliant.
