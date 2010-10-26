@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND="dev-lang/php[pcre,pdo,postgres,xml]
+DEPEND="|| ( <dev-lang/php-5.3[pcre,pdo,postgres,xml]
+		>=dev-lang/php-5.3[pdo,postgres,xml] )
 	doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="${DEPEND}"
 
