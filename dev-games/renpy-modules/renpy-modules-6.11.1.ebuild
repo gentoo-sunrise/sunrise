@@ -4,6 +4,8 @@
 
 EAPI="2"
 PYTHON_DEPEND="2:2.5"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 inherit distutils eutils
 
