@@ -1,0 +1,8 @@
+# ChangeLog for x11-plugins/pidgin-gfire
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Oct 2010; Dean Matzkov (bapa) <bapabooiee@gmail.com>
+  +pidgin-gfire-0.9.2.ebuild, +metadata.xml:
+  New ebuild for bug #252548, with thanks to Andrzej Kardas for his initial work
+
