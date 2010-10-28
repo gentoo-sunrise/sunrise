@@ -112,9 +112,9 @@ src_compile() {
 src_install() {
 	# Just copy the whole directory over to /opt until we split out packages
 	# more efficiently (and/or respect the Makefile destinations)
-	dodir opt/membase
+	dodir opt/membase/${PV}
 	cp -a "${S}"/{bucket_engine,ep-engine,libconflate,libmemcached,libvbucket,membase-cli,memcached,moxi,ns_server,vbucketmigrator} \
-		  "${D}/opt/membase" || die "Install failed!"
+		  "${D}/opt/membase/${PV}" || die "Install failed!"
 
 	# Setup keeps for the data, config, and log dirs
 	dodir "etc/membase/${PV}"
