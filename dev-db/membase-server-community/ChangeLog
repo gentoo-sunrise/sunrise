@@ -1,0 +1,10 @@
+# ChangeLog for net-misc/memcached
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Oct 2010; Brad Folkens (bfolkens) <bfolkens@gmail.com>
+  +membase-server-community-1.6.0.1.ebuild, +files/1.6.0.1,
+  +files/1.6.0.1/config, +files/1.6.0.1/init-epmd,
+  +files/1.6.0.1/init-server, +files/1.6.0.1/limits, +metadata.xml:
+  New ebuild for bug 343021
+

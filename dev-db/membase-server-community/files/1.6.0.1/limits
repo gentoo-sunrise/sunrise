@@ -1,0 +1,3 @@
+#<domain>        <type>  <item>  <value>
+
+membase         -       nofile          10240

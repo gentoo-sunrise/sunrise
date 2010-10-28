@@ -1,0 +1,26 @@
+#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+VER=1.6.0.1
+MEMBASE_USER=membase
+MEMBASE_PATH=/opt/membase/$VER
+
+depend() {
+	need net
+}
+
+start() {
+	cd $MEMBASE_PATH/ns_server
+
+	# Initialize distributed erlang on the system (i.e. epmd)
+	start-stop-daemon --start \
+		-c membase -m --pidfile /var/run/membase/epmd.pid \
+		--exec /usr/bin/erl --oknodo -- \
+			-noshell -setcookie nocookie -sname init -run init stop 2>&1 > /dev/null
+}
+
+stop() {
+	start-stop-daemon --stop --name epmd
+}

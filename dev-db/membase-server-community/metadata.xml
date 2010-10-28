@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+  <email>bfolkens@gmail.com</email>
+</maintainer>
+<longdescription>
+Membase is a distributed key-value database management system, optimized for storing data behind interactive web applications. Membase automatically spreads data and I/O across servers. This "scale out" approach at the data layer permits virtually unlimited growth of transaction capacity, with linear increases in cost and constant per-operation performance.
+
+Membase is in production behind thousands of applications, from shared-server deployments at Heroku to dedicated Membase clusters with hundreds of servers at Zynga and NHN.
+</longdescription>
+</pkgmetadata>

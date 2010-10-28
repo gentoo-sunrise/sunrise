@@ -1,0 +1,51 @@
+#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+VER=1.6.0.1
+NODE_NAME=ns_1@127.0.0.1
+MEMBASE_USER=membase
+MEMBASE_PATH=/opt/membase/$VER
+MEMBASE_LOGS=/var/log/membase/$VER
+MNESIA_PATH=/var/lib/membase/$VER/mnesia
+CONFIG_PATH=/etc/membase/$VER/config
+PIDFILE=/var/run/membase-server.pid
+
+depend() {
+	need net membase-epmd
+}
+
+start() {
+        ebegin "Starting membase"
+
+	touch $PIDFILE
+	chown membase:daemon $PIDFILE
+
+	# pam-limits (/etc/security/limits.d and limits.conf) aren't working with start-stop-daemon
+	ulimit -n 10240
+
+        start-stop-daemon --start --oknodo --chdir $MEMBASE_PATH/ns_server -c "$MEMBASE_USER" --exec /usr/bin/erl -- \
+		+A 16 \
+		-pa `find $MEMBASE_PATH/ns_server -type d -name ebin` \
+		-setcookie nocookie \
+		-ns_server error_logger_mf_dir \"$MEMBASE_LOGS\" \
+		-ns_server error_logger_mf_maxbytes 10485760 \
+		-ns_server error_logger_mf_maxfiles 10 \
+		-kernel inet_dist_listen_min 21100 inet_dist_listen_max 21199 \
+		-ns_server pidfile \"$PIDFILE\" \
+		-ns_server ns_server_config \"$CONFIG_PATH\" \
+		-mnesia dir \"$MNESIA_PATH\" \
+		-detached \
+		-noshell -noinput \
+		-run ns_bootstrap
+		#-name $NODE_NAME \  # causing things to break?
+        eend $? "Failed to start membase" 
+}
+
+stop() {
+        ebegin "Stopping membase" 
+        start-stop-daemon --stop --pidfile ${PIDFILE}
+        eend $? "Failed to stop membase"
+        rm -f ${PIDFILE}
+}
