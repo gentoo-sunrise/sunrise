@@ -31,7 +31,7 @@ want_apache2
 
 pkg_setup() {
 	enewgroup icinga
-	enewuser icinga -1 /var/spool/icinga icinga
+	enewuser icinga -1 -1 /var/spool/icinga icinga
 	if use web ; then
 		elog "This does not include cgis that are perl-dependent"
 		elog "Currently traceroute.cgi is perl-dependent"
