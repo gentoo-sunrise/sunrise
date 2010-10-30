@@ -179,8 +179,8 @@ src_install() {
 
 	fowners -R root:root /usr/$(get_libdir)/icinga
 	cd "${D}" || die
-	find /usr/$(get_libdir)/icinga -type d -exec fperms 755 {} +
-	find /usr/$(get_libdir)/icinga/cgi-bin -type f -exec fperms 755 {} +
+	find usr/$(get_libdir)/icinga -type d -exec fperms 755 {} +
+	find usr/$(get_libdir)/icinga/cgi-bin -type f -exec fperms 755 {} +
 
 	keepdir /etc/icinga
 	keepdir /var/icinga
