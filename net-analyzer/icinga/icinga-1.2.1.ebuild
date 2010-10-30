@@ -56,6 +56,7 @@ pkg_setup() {
 				elog "  usermod -G icinga lighttpd "
 				elog "or"
 				elog "  chown icinga:lighttpd /etc/icinga"
+				elog "Also edit /etc/lighttpd/lighttpd.conf and add 'include \"lighttpd_icinga.conf\"'"
 			fi
 			elog
 			elog "That will make icinga's web front end visable via"
@@ -177,8 +178,9 @@ src_install() {
 	fowners -R icinga:icinga /etc/icinga /var/icinga || die "Failed chown of /etc/icinga"
 
 	fowners -R root:root /usr/$(get_libdir)/icinga
-	find "${D}"/usr/$(get_libdir)/icinga -type d -exec fperms 755 {} +
-	find "${D}"/usr/$(get_libdir)/icinga/cgi-bin -type f -exec fperms 755 {} +
+	cd "${D}" || die
+	find /usr/$(get_libdir)/icinga -type d -exec fperms 755 {} +
+	find /usr/$(get_libdir)/icinga/cgi-bin -type f -exec fperms 755 {} +
 
 	keepdir /etc/icinga
 	keepdir /var/icinga
@@ -186,7 +188,13 @@ src_install() {
 	keepdir /var/icinga/rw
 	keepdir /var/icinga/spool/checkresults
 
-	use apache2 && webserver=apache2 || use lighttpd && webserver=lighttpd || webserver=icinga
+	if use apache2 ; then
+		webserver=apache
+	elif use lighttpd ; then
+		webserver=lighttpd
+	else
+		webserver=icinga
+	fi
 	fowners -R icinga:${webserver} /var/icinga/rw || die "Failed chown of /var/icinga/rw"
 
 	fperms 6755 /var/icinga/rw || die "Failed Chmod of ${D}/var/icinga/rw"
