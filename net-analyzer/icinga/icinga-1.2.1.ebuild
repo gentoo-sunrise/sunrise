@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit eutils depend.apache toolchain-funcs
+inherit eutils depend.apache multilib toolchain-funcs 
 
 DESCRIPTION="Nagios Fork - Check daemon, CGIs, docs, IDOutils"
 HOMEPAGE="http://www.icinga.org/"
@@ -24,24 +24,20 @@ DEPEND="idoutils? ( dev-db/libdbi-drivers[mysql?,postgres?] )
 	)
 	!net-analyzer/nagios-core"
 RDEPEND="${DEPEND}
-	plugins? ( net-analyzer/nagios-plugins )
-	vim-syntax? ( app-vim/nagios-syntax )"
+	plugins? ( net-analyzer/nagios-plugins )"
 
 want_apache2
 
 pkg_setup() {
+	depend.apache_pkg_setup
 	enewgroup icinga
 	enewuser icinga -1 -1 /var/spool/icinga icinga
 	if use web ; then
 		elog "This does not include cgis that are perl-dependent"
 		elog "Currently traceroute.cgi is perl-dependent"
-		elog "To have ministatus.cgi requires copying of ministatus.c"
-		elog "to cgi directory for compiling."
-
-		elog "Note that the user your webserver is running at needs"
+		elog "Note that the user your webserver is running as needs"
 		elog "read-access to /etc/icinga."
 		elog
-
 		if use apache2 || use lighttpd ; then
 			elog "There are several possible solutions to accomplish this,"
 			elog "choose the one you are most comfortable with:"
@@ -51,12 +47,14 @@ pkg_setup() {
 				elog "or"
 				elog "	chown icinga:apache /etc/icinga"
 				elog
-				elog "Also edit /etc/conf.d/apache2 and add \"-D ICINGA\""
+				elog "Also edit /etc/conf.d/apache2 and add:"
+				elog "  \"-D ICINGA\""
 			elif use lighttpd ; then
 				elog "  usermod -G icinga lighttpd "
 				elog "or"
 				elog "  chown icinga:lighttpd /etc/icinga"
-				elog "Also edit /etc/lighttpd/lighttpd.conf and add 'include \"lighttpd_icinga.conf\"'"
+				elog "Also edit /etc/lighttpd/lighttpd.conf and add:"
+				elog "  include \"lighttpd_icinga.conf\""
 			fi
 			elog
 			elog "That will make icinga's web front end visable via"
@@ -82,9 +80,10 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
+	local myconf_core
+	local myconf_common
 
-	myconf="$(use_enable perl embedded-perl)
+	myconf_core="$(use_enable perl embedded-perl)
 	$(use_with perl perlcache)
 	$(use_enable idoutils)
 	$(use_enable ssl)
@@ -95,8 +94,9 @@ src_configure() {
 	$(use_enable debug DEBUG4)
 	$(use_enable debug DEBUG5)
 	--disable-statuswrl
-	--with-cgiurl=cgi-bin
-	--bindir=/usr/sbin
+	--with-cgiurl=/cgi-bin"
+
+	myconf_common="--bindir=/usr/sbin
 	--sbindir=/usr/$(get_libdir)/icinga/cgi-bin
 	--datarootdir=/usr/share/icinga/htdocs
 	--localstatedir=/var/icinga
@@ -104,19 +104,20 @@ src_configure() {
 	--libexecdir=/usr/$(get_libdir)/icinga/plugins"
 
 	if use !apache2 && use !lighttpd ; then
-		myconf+=" --with-command-group=icinga"
+		myconf_common+=" --with-command-group=icinga"
 	else
 		if use apache2 ; then
-			myconf+=" --with-command-group=apache --with-httpd-conf=/etc/apache2/conf.d"
+			myconf_common+=" --with-command-group=apache"
+			myconf_core+=" --with-httpd-conf=/etc/apache2/conf.d"
 		elif use lighttpd ; then
-			myconf+=" --with-command-group=lighttpd"
+			myconf_common+=" --with-command-group=lighttpd"
 		fi
 	fi
 
-	econf ${myconf}
+	econf ${myconf_core} ${myconf_common}
 	if use api ; then
-		cd module/icinga-api
-		econf ${myconf}
+		cd module/icinga-api || die
+		econf ${myconf_common}
 	fi
 }
 
