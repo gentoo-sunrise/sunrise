@@ -24,15 +24,17 @@ RDEPEND="media-libs/speex
 	virtual/libusb:0"
 DEPEND="${RDEPEND}"
 
-S=${WORKDIR}/${MY_P}/${PN}
+S=${WORKDIR}/${MY_P}/${PN}/${PN}qt
 
 src_configure() {
+	epatch ${FILESDIR}/${PV}-lang.patch
+
 	# noccache is required in order to call the correct compiler
 	eqmake4 CONFIG+=noccache
 }
 
 src_install() {
-	newbin rbutilqt/RockboxUtility ${PN} || die
-	newicon rbutilqt/icons/rockbox-5.png ${PN}.png || die
+	newbin RockboxUtility ${PN} || die
+	newicon icons/rockbox-5.png ${PN}.png || die
 	make_desktop_entry ${PN} "Rockbox Utility"
 }
