@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2010; lebarjack <francois.perichon@univ-lille2.fr>
+  davical-0.9.9.ebuild:
+  Dropped the pcre use for >=php-5.3 as done for awl by Michael Weber (xmw)
+  (See bug #342597 - Thanks to Sven Schwyn (svoop) <svoop@delirium.ch>
+  reporting this on bug #343691)
+
   21 Apr 2010; lebarjack <francois.perichon@univ-lille2.fr>
   -davical-0.9.8.4-r1.ebuild, -files/postinstall-en-0.9.8.4.txt,
   +davical-0.9.9.ebuild, +files/postinstall-en-0.9.9.txt, -files/rscds.conf,
