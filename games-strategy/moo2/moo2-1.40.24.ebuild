@@ -17,7 +17,7 @@ SRC_URI="ftp://ftp.infogrames.net/patches/moo2/${OFFICIAL_PATCH}
 LICENSE="GPL-2 Hasbro-EULA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nocd lordbrazen"
+IUSE="lordbrazen nocd"
 
 DEPEND="|| ( media-gfx/graphicsmagick media-gfx/imagemagick )"
 RDEPEND="games-emulation/dosbox"
