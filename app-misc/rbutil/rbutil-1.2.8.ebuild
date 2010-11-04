@@ -27,7 +27,8 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}/${MY_P}/${PN}/${PN}qt
 
 src_configure() {
-	epatch ${FILESDIR}/${PV}-lang.patch
+	# generate binary translations
+	lrelease ${PN}qt.pro || die
 
 	# noccache is required in order to call the correct compiler
 	eqmake4 CONFIG+=noccache
