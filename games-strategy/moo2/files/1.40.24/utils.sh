@@ -1,3 +1,4 @@
+#!/bin/bash
 # utils.sh - Library of general utility functions
 # Copyright (C) 2010 Daniel Santos <daniel.santos@pobox.com>
 # $Header: $

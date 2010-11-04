@@ -14,7 +14,7 @@ HOMEPAGE="http://lordbrazen.blogspot.com"
 SRC_URI="ftp://ftp.infogrames.net/patches/moo2/${OFFICIAL_PATCH}
 	lordbrazen? ( http://www.spheriumnorth.com/blog-images/${LB_PATCH} )"
 
-LICENSE="GPL-2 Hasboro-EULA"
+LICENSE="GPL-2 Hasbro-EULA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nocd lordbrazen"

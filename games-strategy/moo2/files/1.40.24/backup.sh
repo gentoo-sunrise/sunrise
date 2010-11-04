@@ -1,3 +1,4 @@
+#!/bin/bash
 # backup.sh - Library of functions for backing up moo2 saved games
 # Copyright (C) 2010 Daniel Santos <daniel.santos@pobox.com>
 # $Header: $
