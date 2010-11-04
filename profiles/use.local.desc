@@ -83,6 +83,7 @@ dev-libs/libcgroup:pam - Enables build with pam support
 dev-libs/libcgroup:tools - Enables build tools
 dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
 dev-libs/libplayer:vlc - Enable VLC media player support
+dev-libs/libref_array:trace - Enable low level tracing
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
@@ -135,6 +136,8 @@ games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
 games-misc/fretsonfire:guitarhero - Enable Guitar Hero song importer
 games-misc/fretsonfire:psyco - Enable psyco python accelerator
+games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
+games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 gnome-extra/gnome-globalmenu:xfce - Build the Xfce panel applet.
