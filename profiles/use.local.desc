@@ -13,7 +13,6 @@ app-arch/zpaq:optimization - Install additional files required to support ZPAQ's
 app-backup/fsarchiver:lzma - Enables LZMA compression
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-emulation/xenman:lvm2 - Enable lvm2 support
-app-forensics/openscap:nss - Prefer NSS over libgcrypt as the crypto engine
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
 app-misc/2gis-data:astr - The map of Astrakhan for app-misc/2gis
 app-misc/2gis-data:barn - The map of Barnaul for app-misc/2gis
