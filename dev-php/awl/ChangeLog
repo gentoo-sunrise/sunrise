@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2010; lebarjack <francois.perichon@univ-lille2.fr>
+  -awl-0.43.ebuild, +awl-0.45.ebuild:
+  New version of the awl library
+
   26 Oct 2010; Michael Weber (xmw) <xmw@gentoo.org> awl-0.43.ebuild:
   Drop php[pcre] for >=perl-5.3 (thanks to Sven Schwyn (svoop)
   <svoop@delirium.ch> reporting this on bug #342597)
