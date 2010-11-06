@@ -1,0 +1,8 @@
+# ChangeLog for dev-haskell/configfile
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Nov 2010; Michael Orlitzky <michael@orlitzky.com>
+  +configfile-1.0.6.ebuild, +metadata.xml:
+  New ebuild to address bug 343949.
+
