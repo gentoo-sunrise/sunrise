@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2010; Naohiro Aota <naota@elisp.net>
+  -ccs-sources-2.6.32-r11.ebuild, +ccs-sources-2.6.32-r12.ebuild,
+  -ccs-sources-2.6.34-r4.ebuild, +ccs-sources-2.6.34-r5.ebuild,
+  -ccs-sources-2.6.35-r2.ebuild, +ccs-sources-2.6.35-r3.ebuild,
+  +ccs-sources-2.6.36.ebuild:
+  genpatch verion bump; support new kernel version
+
   09 Nov 2010; Naohiro Aota <naota@elisp.net> -ccs-sources-2.6.27-r7.ebuild,
   -ccs-sources-2.6.28-r12.ebuild, -ccs-sources-2.6.29-r13.ebuild:
   removed old packages.
