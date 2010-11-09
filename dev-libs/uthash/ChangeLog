@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -uthash-1.9.2.ebuild, +uthash-1.9.3.ebuild:
+  Version bump
+
   05 Oct 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -uthash-1.9.1.ebuild, +uthash-1.9.2.ebuild:
   Version bump
