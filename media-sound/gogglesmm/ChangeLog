@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  gogglesmm-9999.ebuild:
+  Updated -9999 ebuild in line with stable
+
   24 Sep 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gogglesmm-0.11.2.ebuild:
   Drop unused base eclass

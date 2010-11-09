@@ -15,14 +15,15 @@ ESVN_REPO_URI="http://${PN}.googlecode.com/svn/trunk"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="dbus"
+IUSE="asf dbus gcrypt mp4 old-miniplayer"
 
-RDEPEND="dev-db/sqlite
-	media-libs/taglib[mp4]
+RDEPEND="dev-db/sqlite:3
+	>=media-libs/taglib-1.6.3[asf?,mp4?]
 	media-libs/xine-lib
 	net-misc/curl
 	x11-libs/fox[png]
-	dbus? ( sys-apps/dbus )"
+	dbus? ( sys-apps/dbus )
+	gcrypt? ( dev-libs/libgcrypt )"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
@@ -32,5 +33,20 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_with dbus)
+	if use gcrypt ; then
+		extraconf="--with-md5=gcrypt"
+	else
+		extraconf="--with-md5=internal"
+	fi
+
+	# using old-miniplayer as USE flag, as the 'new remote' is not remote
+	econf $extraconf \
+		$(use_with dbus) \
+		$(use_with !old-miniplayer new-remote)
+}
+
+src_install() {
+	emake DESTDIR="${D}" install || die
+
+	dodoc AUTHORS README || die
 }
