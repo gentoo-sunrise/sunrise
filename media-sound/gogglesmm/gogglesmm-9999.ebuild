@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit base flag-o-matic subversion
+inherit subversion
 
 MY_P=musicmanager-${PV}
 
