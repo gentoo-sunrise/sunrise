@@ -21,6 +21,12 @@
 ##   End example
 ##
 
+# James Penketh <tamber@furryhelix.co.uk> (12 Nov 2010)
+# Package renamed by upstream to change case. Use
+# net-misc/geomyidae instead.
+net-misc/Geomyidae
+
+
 # Thomas Sachau <tommy@gentoo.org> (24 Sep 2010)
 # Binary java package with bundled libs and other QA issues
 # removed in 60 days, if noone steps up and fixes those issues
