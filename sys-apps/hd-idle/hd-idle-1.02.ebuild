@@ -11,6 +11,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+src_unpack() {
+	unpack ${A} || die "unpack failed"
+	mv "${PN}" "${P}" || die "renaming source folder failed"
+}
+
 src_install() {
 	dosbin hd-idle || die "dosbin failed"
 	newinitd "${FILESDIR}"/hd-idle-init hd-idle || die "newinitd failed"
