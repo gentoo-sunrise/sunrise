@@ -33,6 +33,12 @@ QA_PRESTRIPPED="
 	opt/lightscribe/lib/liblightscribe.so.0.0.1
 	opt/lightscribe/lib/libstdcv3.so.5.0.7"
 
+QA_DT_HASH="
+	opt/lightscribe/lib32/liblightscribe.so.0.0.1
+	opt/lightscribe/lib32/libstdcv3.so.5.0.7
+	opt/lightscribe/lib/liblightscribe.so.0.0.1
+	opt/lightscribe/lib/libstdcv3.so.5.0.7"
+
 pkg_setup() {
 	# This is a binary x86 package => ABI=x86
 	# Please keep this in future versions
@@ -63,7 +69,8 @@ src_install() {
 	doins -r usr/include/* || die "includes install failed"
 	insinto /etc
 	doins -r etc/* || die "config install failed"
-	sed -i "s%/usr/lib%${ROOT}${LSDIR}%" "${D}"/etc/lightscribe.rc || die "sed failed"
+	sed -e "s%/usr/lib%${ROOT}${LSDIR}%" \
+	    -e"s%update%updates%" -i "${D}"/etc/lightscribe.rc || die "sed failed"
 	dodoc usr/share/doc/*.* \
 	      usr/share/doc/lightscribe-sdk/*.* \
 	      usr/share/doc/lightscribe-sdk/docs/* || die "doc install failed"
