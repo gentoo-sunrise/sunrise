@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Nov 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  softhsm-1.2.0.ebuild:
+  Updated botan dependency as per upstream Changelog entry for softhsm-1.1.3
+
   30 Sep 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -softhsm-1.1.4.ebuild, +softhsm-1.2.0.ebuild:
   version bump

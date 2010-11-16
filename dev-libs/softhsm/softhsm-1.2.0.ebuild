@@ -15,7 +15,7 @@ IUSE="debug"
 SLOT="0"
 LICENSE="BSD"
 
-RDEPEND="dev-libs/botan[threads]
+RDEPEND=">=dev-libs/botan-1.8.10[threads]
 	dev-db/sqlite:3"
 
 DEPEND="${RDEPEND}"
