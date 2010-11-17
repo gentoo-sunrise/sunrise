@@ -27,7 +27,7 @@ RESTRICT_PYTHON_ABIS="3.*"
 DOCS="TODO Changelog"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-menufix.patch"
+	epatch "${FILESDIR}/${PN}-menufix.patch"
 	distutils_src_prepare
 }
 
