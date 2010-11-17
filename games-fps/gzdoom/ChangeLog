@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Nov 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
+  -gzdoom-1.5.3.ebuild, +gzdoom-1.5.5.ebuild:
+  games-fps/gzdoom: version bump
+
   25 Sep 2010; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
   -gzdoom-1.5.2.ebuild, +gzdoom-1.5.3.ebuild:
   version bump

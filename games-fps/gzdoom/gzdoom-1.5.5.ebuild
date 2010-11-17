@@ -8,7 +8,7 @@ inherit games cmake-utils eutils
 
 DESCRIPTION="Enhanced OpenGL port of the official DOOM source code that also supports Heretic, Hexen, and Strife"
 HOMEPAGE="http://grafzahl.drdteam.org/"
-SRC_URI="http://omploader.org/vNW10eg/${P}.tar.bz2"
+SRC_URI="http://omploader.org/vNjdnZw/${P}.tar.bz2"
 
 LICENSE="DOOMLIC BUILDLIC BSD"
 SLOT="0"
