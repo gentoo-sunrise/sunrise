@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Nov 2010; Michał Górny <mgorny@gentoo.org> hd-idle-1.02.ebuild:
+  Fix S= variable use. Respect CC, CFLAGS and LDFLAGS.
+
   14 Nov 2010; Matthias Treydte <waldheinz@gmail.com> -hd-idle-1.01.ebuild,
   +hd-idle-1.02.ebuild:
   Version bump for hd-idle
