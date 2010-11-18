@@ -3,11 +3,6 @@
 # $Header: $
 
   17 Nov 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
-  +series60-remote-0.4.0.ebuild, -series60-remote-0.4.80.ebuild:
-  Version bump (from previous 0.3.93 version). The version 0.4.80 was an alpha
-  version (upstream) so this commit brings the correct stable version.
-
-  17 Nov 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   -series60-remote-0.3.93-r1.ebuild,
   -files/series60-remote-0.3.93-menufix.patch,
   +series60-remote-0.4.80.ebuild, +files/series60-remote-menufix.patch:
