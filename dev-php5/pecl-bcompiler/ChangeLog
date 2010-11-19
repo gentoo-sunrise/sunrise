@@ -1,0 +1,9 @@
+# ChangeLog for dev-php5/pecl-bcompiler
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Nov 2010; Peter (peter23) <peter@ptm.pp.ru>
+  +pecl-bcompiler-0.9.3.ebuild, +files/zend_is_callable.patch,
+  +metadata.xml:
+  New Ebuild for bug 342357
+
