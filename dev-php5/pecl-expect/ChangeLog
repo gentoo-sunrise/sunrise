@@ -1,0 +1,8 @@
+# ChangeLog for dev-php5/pecl-expect
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Nov 2010; Peter (peter23) <peter@ptm.pp.ru> +pecl-expect-0.2.7.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 342887
+
