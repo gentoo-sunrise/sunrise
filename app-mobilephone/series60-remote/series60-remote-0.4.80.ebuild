@@ -8,7 +8,7 @@ SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils eutils
 
-DESCRIPTION="A Python application to manage your S60 3rd Edition mobile phone"
+DESCRIPTION="A Python application to manage your S60 3rd/5th Edition mobile phone"
 HOMEPAGE="http://series60-remote.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
@@ -20,7 +20,7 @@ IUSE="stats obex"
 RDEPEND="obex? ( app-mobilephone/obexftp[python] )
 	stats? ( dev-python/matplotlib )
 	dev-python/pybluez
-	dev-python/PyQt4[sql]"
+	dev-python/PyQt4[sql,webkit]"
 
 RESTRICT_PYTHON_ABIS="3.*"
 
