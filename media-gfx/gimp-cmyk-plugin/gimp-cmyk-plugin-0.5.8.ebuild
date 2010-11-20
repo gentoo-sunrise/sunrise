@@ -7,22 +7,24 @@ EAPI="2"
 inherit eutils multilib toolchain-funcs
 
 MY_P="separate+-${PV}"
-SFNUM="46785"
+SFNUM="47873"
 
 DESCRIPTION="Gimp CMYK plug-in."
 HOMEPAGE="http://cue.yellowmagic.info/softwares/separate.html"
-SRC_URI="mirror://sourceforge.jp/separate-plus/${SFNUM}/${MY_P}.zip
-	 http://download.adobe.com/pub/adobe/iccprofiles/win/AdobeICCProfilesCS4Win_end-user.zip"
+SRC_URI="
+	mirror://sourceforge.jp/separate-plus/${SFNUM}/${MY_P}.zip -> ${P}.zip
+	http://download.adobe.com/pub/adobe/iccprofiles/win/AdobeICCProfilesCS4Win_end-user.zip"
 
 LICENSE="GPL-2 Adobe"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="media-libs/lcms
+RDEPEND="
+	media-gfx/gimp
 	media-libs/jpeg
-	media-libs/tiff
-	media-gfx/gimp"
+	media-libs/lcms
+	media-libs/tiff"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
