@@ -1,0 +1,9 @@
+# ChangeLog for net-firewall/opendpi-netfilter-wrapper
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Nov 2010; Peter (peter23) <peter@ptm.pp.ru>
+  +opendpi-netfilter-wrapper-1.1.ebuild,
+  +files/opendpi-netfilter-wrapper-1.1_2.6.35_v2.patch.gz, +metadata.xml:
+  New Ebuild for bug 345287
+
