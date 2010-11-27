@@ -3,6 +3,10 @@
 # $Header: $
 
   27 Nov 2010; Arne Babenhauserheide (ArneBab) <arne_bab@web.de>
+  -pyrad-0.5.1.ebuild, +pyrad-0.5.2.ebuild:
+  Version bump for kde-misc/pyrad
+
+  27 Nov 2010; Arne Babenhauserheide (ArneBab) <arne_bab@web.de>
   -pyrad-0.5.0.ebuild, +pyrad-0.5.1.ebuild:
   Version bump for kde-misc/pyrad
 
