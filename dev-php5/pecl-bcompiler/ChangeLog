@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Nov 2010; Michał Górny <mgorny@gentoo.org> pecl-bcompiler-0.9.3.ebuild:
+  Whitespace.
+
   19 Nov 2010; Peter (peter23) <peter@ptm.pp.ru>
   +pecl-bcompiler-0.9.3.ebuild, +files/zend_is_callable.patch,
   +metadata.xml:

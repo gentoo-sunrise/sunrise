@@ -10,7 +10,7 @@ DOCS="README TODO"
 
 inherit php-ext-pecl-r2
 
-DESCRIPTION="PHP bytecode Compiler."
+DESCRIPTION="PHP bytecode Compiler"
 HOMEPAGE="http://pecl.php.net/package/bcompiler"
 
 LICENSE="PHP-3"
@@ -26,6 +26,6 @@ src_prepare() {
 			epatch "${FILESDIR}/zend_is_callable.patch"
 		fi
 	done
-	
+
 	php-ext-source-r2_src_prepare
 }
