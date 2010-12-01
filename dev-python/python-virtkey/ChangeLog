@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 Dec 2010; Alexander van der Mey <alexvandermey@gmail.com>
+  python-virtkey-0.60.0.ebuild:
+  Fixed broken SRC_URI due to website address change
+
 *python-virtkey-0.60.0 (25 Aug 2010)
 
   25 Aug 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
