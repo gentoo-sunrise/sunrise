@@ -1,0 +1,11 @@
+# ChangeLog for app-office/unoconv
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  +unoconv-0.3-r3.ebuild, +files/unoconv-0.3-longer-timeout.patch,
+  +files/unoconv-0.3-openoffice-3.2.patch, +files/unoconv-wrapper,
+  +metadata.xml:
+  New ebuild for bug 324981 thanks to Graaff for initial ebuild, thanks to
+  Walter 'DaK_TaLeS' Dacol for the ebuild and the wrapper
+

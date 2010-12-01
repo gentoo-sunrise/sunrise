@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Wrapper for unoconv, see http://bugs.gentoo.org/show_bug.cgi?format=multiple&id=262083
+# for more detail.
+
+OOO_BIN="/usr/lib/openoffice/program/python"
+OOO_SOURCE="/usr/bin/python"
+UNOCONV="/usr/share/unoconv/unoconv"
+
+if [ -x "${OOO_BIN}" ]; then
+	exec "${OOO_BIN}" "${UNOCONV}" "${@}"
+else
+	exec "${OOO_SOURCE}" "${UNOCONV}" "${@}"
+fi
