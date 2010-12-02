@@ -2,64 +2,53 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-
-inherit eutils libtool linux-info python gnome2
+EAPI="3"
+inherit eutils linux-info gnome2
 
 DESCRIPTION="Store, Sync and Share Files Online"
-HOMEPAGE="http://www.getdropbox.com/"
+HOMEPAGE="http://www.dropbox.com/"
 SRC_URI="http://www.dropbox.com/download?dl=packages/${P}.tar.bz2"
-
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug"
 
 RDEPEND="gnome-base/nautilus
+	dev-libs/glib:2
 	dev-python/pygtk
-	dev-python/docutils
 	net-misc/wget
+	x11-libs/gtk+:2
 	x11-libs/libnotify
 	x11-libs/libXinerama"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	dev-python/docutils"
 
 DOCS="AUTHORS ChangeLog NEWS README"
+G2CONF="${G2CONF} $(use_enable debug) --disable-static"
 
 CONFIG_CHECK="INOTIFY_USER"
 
 pkg_setup () {
-	linux-info_pkg_setup
-
-	# create the group for the daemon, if necessary
-	# truthfully this should be run for any dropbox plugin
+	check_extra_config
 	enewgroup dropbox
 }
 
-src_configure () {
-	econf --disable-static
-}
-
 src_install () {
-	emake DESTDIR="${D}" install || die
+	gnome2_src_install
 
 	local extensiondir="$(pkg-config --variable=extensiondir libnautilus-extension)"
 	[ -z ${extensiondir} ] && die "pkg-config unable to get nautilus extensions dir"
 
 	find "${D}" -name '*.la' -exec rm -f {} + || die
+
+	fowners root:dropbox "${extensiondir}"/libnautilus-dropbox.so
+	fperms o-rwx "${extensiondir}"/libnautilus-dropbox.so
 }
 
 pkg_postinst () {
 	gnome2_pkg_postinst
-
-	# Allow only for users in the dropbox group
-	# see http://forums.getdropbox.com/topic.php?id=3329&replies=5#post-22898
-	local extensiondir="$(pkg-config --variable=extensiondir libnautilus-extension)"
-	[ -z ${extensiondir} ] && die "pkg-config unable to get nautilus extensions dir"
-
-	chown root:dropbox "${ROOT}${extensiondir}"/lib${PN}.so || die "chown failed"
-	chmod o-rwx "${ROOT}${extensiondir}"/lib${PN}.so || die "chmod failed"
 
 	elog "Add any users who wish to have access to the dropbox nautilus"
 	elog "plugin to the group 'dropbox'."
