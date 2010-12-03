@@ -4,7 +4,7 @@
 
   02 Dec 2010; Marc Schifbauer (mschiff) <marc@schiffbauer.net>
   -nautilus-dropbox-0.6.1-r1.ebuild, +nautilus-dropbox-0.6.7.ebuild:
-  Updated ebuild for bug 237433
+  Updated ebuild for bug 237433 (Thanks to _flow_ and tommy)
 
   25 Oct 2010; Sebastian Pipping <sping@gentoo.org>
   nautilus-dropbox-0.6.1-r1.ebuild:
