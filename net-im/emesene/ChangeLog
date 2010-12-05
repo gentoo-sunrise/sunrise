@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  emesene-1.6.3.ebuild:
+  Added elog message about EncryptMessage plugin
+
   21 Jul 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   emesene-1.6.3.ebuild:
   Fixed wrong dependancy when webcam useflag is chosen

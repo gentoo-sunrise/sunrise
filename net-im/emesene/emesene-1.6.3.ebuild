@@ -58,6 +58,9 @@ pkg_postinst() {
 
 	elog "If you want to use the spell-checking feature, you should emerge"
 	elog "dev-python/gtkspell-python"
+	elog
+	elog "If you want to use EncryptMessage plugin, you should emerge"
+	elog "dev-python/pexpect"
 }
 
 pkg_postrm() {
