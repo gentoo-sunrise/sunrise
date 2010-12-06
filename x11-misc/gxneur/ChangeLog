@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Dec 2010; Peter Volkov <pva@gentoo.org> -gxneur-0.10.0.ebuild,
+  +gxneur-0.11.1.ebuild:
+  Version bump, thank nightwelf and Alex Rodionov for report/help.
+
   17 Oct 2010; Peter Volkov <pva@gentoo.org> -gxneur-0.9.9.ebuild,
   +gxneur-0.10.0.ebuild:
   Version bump, thank Павел aka Nightwelf for report.
