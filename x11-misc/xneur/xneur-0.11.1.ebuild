@@ -13,7 +13,7 @@ SRC_URI="http://dists.xneur.ru/release-${PV}/tgz/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="aplay debug gstreamer keylogger libnotify nls openal xosd pcre +spell"
+IUSE="aplay debug gstreamer keylogger libnotify nls openal openmp xosd pcre +spell"
 
 COMMON_DEPEND="sys-libs/zlib
 	>=x11-libs/libX11-1.1
@@ -25,7 +25,7 @@ COMMON_DEPEND="sys-libs/zlib
 			aplay? ( >=media-sound/alsa-utils-1.0.17 ) ) )
 	libnotify? ( >=x11-libs/libnotify-0.4.0 )
 	pcre? ( >=dev-libs/libpcre-5.0 )
-	spell? ( app-text/aspell )
+	spell? ( app-text/enchant )
 	xosd? ( x11-libs/xosd )"
 RDEPEND="${COMMON_DEPEND}
 	gstreamer? ( media-libs/gst-plugins-good
@@ -33,6 +33,7 @@ RDEPEND="${COMMON_DEPEND}
 	nls? ( virtual/libintl )"
 DEPEND="${COMMON_DEPEND}
 	>=dev-util/pkgconfig-0.20
+	openmp? ( sys-devel/gcc[openmp] )
 	nls? ( sys-devel/gettext )"
 
 src_prepare() {
@@ -40,6 +41,8 @@ src_prepare() {
 	find -name '*.c' -exec sed -i -e '${/[^ ]/s:$:\n:}' {} + || die
 	rm -f m4/{lt~obsolete,ltoptions,ltsugar,ltversion,libtool}.m4 \
 		ltmain.sh aclocal.m4 || die
+
+	epatch "${FILESDIR}/${P}-openmp.patch"
 	sed -i -e "s/-Werror -g0//" configure.in
 	eautoreconf
 }
@@ -63,9 +66,10 @@ src_configure() {
 
 	econf ${myconf} \
 		$(use_with debug) \
+		$(use_enable openmp) \
 		$(use_enable nls) \
 		$(use_with pcre) \
-		$(use_with spell aspell) \
+		$(use_with spell) \
 		$(use_with xosd) \
 		$(use_with libnotify) \
 		$(use_with keylogger)
