@@ -1,0 +1,12 @@
+diff -Naur gpspoint-2.030521/src/io.cpp gpspoint-2.030521-hk/src/io.cpp
+--- gpspoint-2.030521/src/io.cpp	2003-04-15 02:23:33.000000000 +1000
++++ gpspoint-2.030521-hk/src/io.cpp	2010-12-06 12:41:17.000000000 +1100
+@@ -15,7 +15,7 @@
+ //Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA. 
+ 
+ #include "io.h"
+-
++#include <cstdio>
+ 
+ namespace gpspoint2 {
+ using namespace std;

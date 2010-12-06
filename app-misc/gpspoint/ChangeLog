@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/gpspoint
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Dec 2010; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
+  gpspoint-2.030521.ebuild, +files/gpspoint-2.030521-gcc44.patch:
+  gcc-4.4 patch added
 
   13 Jul 2009; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
   gpspoint-2.030521.ebuild:

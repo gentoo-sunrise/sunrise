@@ -21,6 +21,7 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-gcc41.patch"
 	epatch "${FILESDIR}/${P}-gcc43.patch"
+	epatch "${FILESDIR}/${P}-gcc44.patch"
 }
 
 src_compile() {
