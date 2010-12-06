@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils versionator
+inherit autotools-utils versionator
 
 MY_PV=$(get_version_component_range 1-2)
 
@@ -32,8 +32,9 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+
 	# Remove useless .la files
-	find "${D}" -name '*.la' -delete
+	remove_libtool_files 'all'
 }
 
 pkg_postinst() {
