@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  Manifest:
+  Updated Manifest since a newer version (with just a micro bug fix) of the
+  extension has been uploaded upstream
+
   01 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   +nautilus-gloobus-preview-0.1.0.ebuild, +metadata.xml:
   New ebuild for bug 324981. Thanks to Walter 'DaK_TaLeS' Da Col for the
