@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs
+inherit base
 
 DESCRIPTION="A system-wide notification wrapper for notify-send"
 HOMEPAGE="http://github.com/mgorny/sw-notify-send/"
-SRC_URI="http://github.com/downloads/mgorny/${PN}/${P}.c.bz2"
+SRC_URI="http://github.com/downloads/mgorny/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -21,11 +21,4 @@ RDEPEND="${DEPEND}"
 # where the host system is libnotify-free. Not to mention that running
 # a libnotify notification daemon implies having libnotify installed.
 
-src_compile() {
-	tc-export CC
-	emake LDLIBS=-lproc ${P} || die
-}
-
-src_install() {
-	newbin ${P} ${PN} || die
-}
+DOCS=( README )
