@@ -4,11 +4,12 @@
 
 EAPI=2
 
-inherit eutils mono
+inherit eutils mono versionator
 
 DESCRIPTION="The F# programming language and tools"
 HOMEPAGE="http://fsharp.net/"
-SRC_URI="http://download.microsoft.com/download/B/8/6/B869DF5B-B2C7-4125-8A1E-23CA77235048/fsharp.zip -> ${P}.zip"
+# November CTP
+SRC_URI="http://download.microsoft.com/download/4/5/B/45BD9FBC-22BA-4B45-84B7-17D1AD0122A1/fsharp.zip -> ${P}.zip"
 
 LICENSE="MSR-SSLA"
 SLOT="0"
@@ -19,7 +20,7 @@ RDEPEND=">=dev-lang/mono-2.6"
 DEPEND="app-arch/unzip
 		${RDEPEND}"
 
-S=${WORKDIR}/FSharp-${PV}
+S=${WORKDIR}/FSharp-$(get_version_component_range 1-4)
 
 create_exe_wrappers() {
 	ebegin "creating compiler wrappers"

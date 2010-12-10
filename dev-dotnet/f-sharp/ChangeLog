@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2010; Artem Melentyev (martx) <melenartem@ya.ru>
+  -f-sharp-2.0.0.0.ebuild, +f-sharp-2.0.0.0.2010.11.ebuild:
+  Version bump to November 2010 CTP
+
   16 Oct 2010; Michael Orlitzky <michael@orlitzky.com>
   +f-sharp-2.0.0.0.ebuild, +files/mono.snk, +metadata.xml:
   New ebuild to address bug 320675.
