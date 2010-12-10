@@ -1,1 +1,2 @@
 move net-misc/Geomyidae net-misc/geomyidae
+move x11-plugins/pidgin-botsentry x11-plugins/pidgin-bot-sentry
