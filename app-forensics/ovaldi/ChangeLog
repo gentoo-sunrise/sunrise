@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2010; LABBE Corentin (montjoie) corentin.labbe@geomatys.fr
+  ovaldi-5.8.2.ebuild, +files/ovaldi-5.8.2-disable-ldap-probes.patch:
+  Add optional LDAP support to ovaldi
+
   08 Dec 2010; LABBE Corentin (montjoie) <corentin.labbe@geomatys.fr>
   +ovaldi-5.8.2.ebuild, +files/ovaldi-5.8.2-strnicmp.patch,
   +files/ovaldi-5.8.2-xerces3.patch, +files/rpmdb.patch,
