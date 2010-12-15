@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Dec 2010; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
+  -gpspoint-2.030521.ebuild, -files/gpspoint-2.030521-gcc41.patch,
+  -files/gpspoint-2.030521-gcc43.patch,
+  -files/gpspoint-2.030521-gcc44.patch, +gpspoint-2.101212.ebuild:
+  Version bump for gpspoint
+
   06 Dec 2010; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
   gpspoint-2.030521.ebuild, +files/gpspoint-2.030521-gcc44.patch:
   gcc-4.4 patch added
