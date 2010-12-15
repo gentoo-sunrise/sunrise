@@ -13,6 +13,7 @@ app-arch/zpaq:optimization - Install additional files required to support ZPAQ's
 app-backup/fsarchiver:lzma - Enables LZMA compression
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-emulation/xenman:lvm2 - Enable lvm2 support
+app-forensics/ovaldi:rpm - Enable the RPM probes
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
 app-misc/2gis-data:astr - The map of Astrakhan for app-misc/2gis
 app-misc/2gis-data:barn - The map of Barnaul for app-misc/2gis
@@ -162,6 +163,7 @@ media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
+media-sound/pithos:gnome - Use gnome-base/gnome-settings-daemon for binding media keys
 media-sound/scala-bin:midi - MIDI support
 media-sound/songbird-bin:faac - Add faac support
 media-sound/songbird-bin:faad - Add faad support
