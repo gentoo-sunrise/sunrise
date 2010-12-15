@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (15 Dec 2010)
+# Broken dependency tree because dev-util/jam has been
+# remove. Removal in 30 days
+app-text/ocropus-svn
+
 # James Penketh <tamber@furryhelix.co.uk> (12 Nov 2010)
 # Package renamed by upstream to change case. Use
 # net-misc/geomyidae instead.
