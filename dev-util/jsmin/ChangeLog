@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Dec 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  jsmin-20080803.ebuild:
+  Fix up jsmin ebuild to comply with mgorny's standards of excellence.
+
 *jsmin-20080803 (17 Dec 2010)
 
   17 Dec 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>

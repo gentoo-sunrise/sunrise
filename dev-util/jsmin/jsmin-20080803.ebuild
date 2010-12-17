@@ -4,8 +4,6 @@
 
 EAPI=2
 
-inherit toolchain-funcs
-
 DESCRIPTION="A simple and lightweight JavaScript minifier"
 HOMEPAGE="http://crockford.com/javascript/jsmin.html"
 SRC_URI="ftp://ohnopub.net/mirror/${P}.c"
@@ -17,10 +15,12 @@ IUSE=""
 
 S=${WORKDIR}
 
-src_unpack() { :; }
+src_unpack() {
+	cp -v "${DISTDIR}"/${P}.c "${S}"/${PN}.c || die
+}
 
 src_compile() {
-	$(tc-getCC) ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${PN} "${DISTDIR}"/${P}.c || die
+	emake ${PN} || die
 }
 
 src_install() {
