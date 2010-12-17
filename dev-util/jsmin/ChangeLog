@@ -4,6 +4,10 @@
 
   17 Dec 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
   jsmin-20080803.ebuild:
+  Fix up jsmin ebuild to comply with tommy[d]'s standards of acceptability.
+
+  17 Dec 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  jsmin-20080803.ebuild:
   Fix up jsmin ebuild to comply with mgorny's standards of excellence.
 
 *jsmin-20080803 (17 Dec 2010)

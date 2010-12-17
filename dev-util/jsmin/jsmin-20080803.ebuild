@@ -6,18 +6,12 @@ EAPI=2
 
 DESCRIPTION="A simple and lightweight JavaScript minifier"
 HOMEPAGE="http://crockford.com/javascript/jsmin.html"
-SRC_URI="ftp://ohnopub.net/mirror/${P}.c"
+SRC_URI="ftp://ohnopub.net/mirror/${P}.tar.bz2"
 LICENSE="as-is"
 
 SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux"
 IUSE=""
-
-S=${WORKDIR}
-
-src_unpack() {
-	cp -v "${DISTDIR}"/${P}.c "${S}"/${PN}.c || die
-}
 
 src_compile() {
 	emake ${PN} || die
