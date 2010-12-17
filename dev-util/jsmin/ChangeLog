@@ -1,0 +1,10 @@
+# ChangeLog for dev-util/jsmin
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*jsmin-20080803 (17 Dec 2010)
+
+  17 Dec 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  +jsmin-20080803.ebuild, +metadata.xml:
+  New ebuild jsmin-20080803 for bug 348903.
+
