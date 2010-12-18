@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
+  -nautilus-dropbox-0.6.4.ebuild, +nautilus-dropbox-0.6.7.ebuild:
+  Bumped again to version 0.6.7 since they have announced today the new
+  version 1 and restore this version on their webpage. I guess they have
+  stopped working on this version so it should be stable now (hopefully).
+
   16 Dec 2010; Marc Schiffbauer (mschiff) <marc@schiffbauer.net>
   +nautilus-dropbox-0.6.4.ebuild, -nautilus-dropbox-0.6.7.ebuild:
   gnome-extra/nautilus-dropbox: downgrade to 0.6.4 because upstream changes
