@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Dec 2010; Matt Carr (mca) <karman05@gmail.com> ,pithos-9999.ebuild:
+  Updated ebuild for pithos, better distutils compliance, thanks to mgorny and
+  Arfrever
+
   06 Dec 2010; Matt Carr (mca) <karman05@gmail.com> +pithos-9999.ebuild,
   +metadata.xml:
   New Ebuild for bug 345815 thanks to marienz, floppym, Hawk777, chithead, and

@@ -7,9 +7,9 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 inherit bzr distutils
 
+EBZR_REPO_URI="lp:${PN}"
 DESCRIPTION="A Pandora Radio (pandora.com) player for the GNOME Desktop"
 HOMEPAGE="http://kevinmehall.net/p/pithos/"
-EBZR_REPO_URI="lp:${PN}"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -32,19 +32,16 @@ RDEPEND="dev-python/pyxdg
 	!gnome? ( dev-libs/keybinder )"
 
 RESTRICT_PYTHON_ABIS="2.[45] 3.*"
+DISTUTILS_USE_SEPARATE_SOURCE_DIRECTORIES="1"
 
 src_prepare() {
+	distutils_src_prepare
+
 	# bug #216009
 	# avoid writing to /root/.gstreamer-0.10/registry.xml
 	export GST_REGISTRY="${T}"/registry.xml
-	python_copy_sources
 }
 
 src_install() {
-	installation() {
-		"$(PYTHON)" \
-		setup.py \
-		install --root="${D}" --no-compile --prefix="${EPREFIX}"/usr
-	}
-	python_execute_function -s installation
+	distutils_src_install --prefix="${EPREFIX}/usr"
 }
