@@ -1,0 +1,9 @@
+# ChangeLog for media-fonts/ubuntu-font-family
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Dec 2010; Thomas Fischer (f15h) <fischer@unix-ag.uni-kl.de>
+  +ubuntu-font-family-0.70.1.ebuild, +metadata.xml:
+  New Ebuild for bug 340477: 4 new fonts included with Ubuntu 10.10, sponsored
+  by Canonical
+
