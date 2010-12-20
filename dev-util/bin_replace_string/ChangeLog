@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Dec 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  bin_replace_string-0.2.ebuild:
+  Add ~x86 keyword, tested on Gentoo x86.
+
   12 Dec 2010; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
   metadata.xml:
   Fix maintainer email to be maintainer-wanted@gentoo.org.

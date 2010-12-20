@@ -12,7 +12,7 @@ SRC_URI="ftp://mirror.calvin.edu/~binki/${P}.tar.bz2"
 LICENSE="AGPL-3"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 RDEPEND="|| ( >=dev-libs/libelf-0.8.13
