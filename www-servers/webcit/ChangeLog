@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Dec 2010; the_mgt themgt@mail.ru -webcit-7.83.ebuild,
+  +webcit-7.84.ebuild:
+  Late version bump to most recent version of Citadel suite packages
+
   03 Aug 2010; the_mgt (the_mgt) <themgt@mail.ru> -webcit-7.81.ebuild,
   +webcit-7.83.ebuild:
   Version bump by renaming the ebuild, now the complete suite is synced to the
