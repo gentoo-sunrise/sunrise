@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Dec 2010; the_mgt themgt@mail.ru -citadel-7.83.ebuild,
+  +citadel-7.84.ebuild:
+  Late version bump to most recent version of Citadel suite packages
+
   03 Aug 2010; the_mgt (the_mgt) <themgt@mail.ru> citadel-7.83.ebuild:
   Since all three Citadel packages are now having the same version number
   again, switching back to PV for dependency in citadel-7.83 ebuild
