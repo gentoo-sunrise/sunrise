@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="media-libs/sdl-mixer
@@ -22,7 +22,9 @@ DEPEND="dev-util/intltool
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog README TODO
+	dodoc AUTHORS ChangeLog README || die "dodoc failed" 
+
 	make_desktop_entry ${PN} Tuxfootball
+
 	prepgamesdirs
 }
