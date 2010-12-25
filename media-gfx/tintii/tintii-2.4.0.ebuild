@@ -5,7 +5,7 @@
 EAPI=2
 WX_GTK_VER="2.9"
 
-inherit scons-utils wxwidgets
+inherit scons-utils toolchain-funcs wxwidgets
 
 DESCRIPTION="Photo filter, striking colour pops in seconds"
 HOMEPAGE="http://www.indii.org/software/tintii"
@@ -22,7 +22,9 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
 src_compile() {
-	escons || die
+	escons CXX="$(tc-getCXX)" \
+		CXXFLAGS="${CXXFLAGS} `wx-config --cxxflags`" \
+		LINKFLAGS="`wx-config --libs` `wx-config --libs aui`" || die
 
 	if use doc ; then
 		doxygen Doxyfile || die
@@ -31,8 +33,8 @@ src_compile() {
 
 src_install() {
 	dobin ${PN} || die
-
 	dodoc README.txt || die
+
 	if use doc ; then
 		dohtml srcdocs/html/* || die
 	fi;
