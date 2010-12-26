@@ -22,13 +22,13 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
 pkg_setup() {
+	append-cxxflags `wx-config --cxxflags`
 	append-ldflags "-fopenmp" $(no-as-needed)
+	LINKFLAGS="${LDFLAGS} `wx-config --libs` `wx-config --libs aui`"
 }
 
 src_compile() {
-	escons CXX="$(tc-getCXX)" \
-		CXXFLAGS+="`wx-config --cxxflags`" \
-		LINKFLAGS="${LDFLAGS} `wx-config --libs` `wx-config --libs aui`" || die
+	escons || die
 
 	if use doc ; then
 		doxygen Doxyfile || die
