@@ -5,7 +5,7 @@
 EAPI=2
 WX_GTK_VER="2.9"
 
-inherit scons-utils toolchain-funcs wxwidgets
+inherit flag-o-matic scons-utils toolchain-funcs wxwidgets
 
 DESCRIPTION="Photo filter, striking colour pops in seconds"
 HOMEPAGE="http://www.indii.org/software/tintii"
@@ -21,10 +21,14 @@ DEPEND="${RDEPEND}
 	dev-libs/boost
 	doc? ( app-doc/doxygen )"
 
+pkg_setup() {
+	append-ldflags "-fopenmp" $(no-as-needed)
+}
+
 src_compile() {
 	escons CXX="$(tc-getCXX)" \
-		CXXFLAGS="${CXXFLAGS} `wx-config --cxxflags`" \
-		LINKFLAGS="`wx-config --libs` `wx-config --libs aui`" || die
+		CXXFLAGS+="`wx-config --cxxflags`" \
+		LINKFLAGS="${LDFLAGS} `wx-config --libs` `wx-config --libs aui`" || die
 
 	if use doc ; then
 		doxygen Doxyfile || die
