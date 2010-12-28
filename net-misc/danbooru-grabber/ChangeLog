@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Dec 2010; Dean Matzkov (bapa) <bapabooiee@gmail.com>
+  -danbooru-grabber-0.20.18.ebuild, +danbooru-grabber-0.20.19.ebuild:
+  Version bump
+
   15 Oct 2010; Dean Matzkov (bapa) <bapabooiee@gmail.com>
   danbooru-grabber-0.20.18.ebuild:
   Tested on x86, thanks to miniBill. Also removed distfile aliasing.
