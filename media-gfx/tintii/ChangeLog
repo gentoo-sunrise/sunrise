@@ -17,8 +17,3 @@
   21 Dec 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   +tintii-2.4.0.ebuild, +metadata.xml:
   New Ebuild for bug 349308. Thanks to Tommy and c1pher.
-
-  21 Dec 2010; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
-  +tintii-2.4.0.ebuild, +metadata.xml:
-  New Ebuild for bug 349308. Thanks to Tommy and c1pher.
-
