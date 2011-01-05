@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (05 Jan 2011)
+# Package renamed to net-analyzer/arpon
+net-analyzer/ArpON
+
 # Markos Chandras <hwoarang@gentoo.org> (15 Dec 2010)
 # Broken dependency tree because dev-util/jam has been
 # remove. Removal in 30 days
