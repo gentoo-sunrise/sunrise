@@ -1,6 +1,10 @@
 # ChangeLog for sys-fs/ntfs3g-ar
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jan 2011; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
+  -ntfs3g-ar-2010.10.2.1.ebuild, +ntfs3g-ar-2010.10.2.3.ebuild:
+  version bump, bugfix
 
   20 Nov 2010; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
   -ntfs3g-ar-2010.6.31.2.ebuild, +ntfs3g-ar-2010.10.2.1.ebuild:
