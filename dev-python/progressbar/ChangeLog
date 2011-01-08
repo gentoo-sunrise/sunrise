@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/progressbar
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Jan 2011; Mike Gilbert (floppym) <floppymaster@gmail.com>
+  +progressbar-2.2.ebuild, +metadata.xml:
+  New ebuild for bug 350022; thanks to mgorny, Tommy[D], et al
+
