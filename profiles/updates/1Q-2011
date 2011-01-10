@@ -1,1 +1,2 @@
 move net-analyzer/ArpON net-analyzer/arpon
+move dev-python/pyrssgen dev-python/PyRSS2Gen
