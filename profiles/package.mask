@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Mike Gilbert <floppymaster@gmail.com> (10 Jan 2011)
+# Package renamed to dev-python/PyRSS2Gen to match upstream
+dev-python/pyrssgen
+
 # Markos Chandras <hwoarang@gentoo.org> (05 Jan 2011)
 # Package renamed to net-analyzer/arpon
 net-analyzer/ArpON
