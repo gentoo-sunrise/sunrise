@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/nautilus-dropbox
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  10 Jan 2011; Marc Schiffbauer (mschiff) <marc@schiffbauer.net>
+  nautilus-dropbox-0.6.7.ebuild:
+  Remove RDEPEND on net-misc/wget as pythons urlib is used to download the daemon
 
   18 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   -nautilus-dropbox-0.6.4.ebuild, +nautilus-dropbox-0.6.7.ebuild:

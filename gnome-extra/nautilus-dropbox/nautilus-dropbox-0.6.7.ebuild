@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,6 @@ IUSE="debug"
 RDEPEND="gnome-base/nautilus
 	dev-libs/glib:2
 	dev-python/pygtk
-	net-misc/wget
 	x11-libs/gtk+:2
 	x11-libs/libnotify
 	x11-libs/libXinerama"
