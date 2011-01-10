@@ -4,6 +4,10 @@
 
   10 Jan 2011; Marc Schiffbauer (mschiff) <marc@schiffbauer.net>
   nautilus-dropbox-0.6.7.ebuild:
+  Added python version checks
+
+  10 Jan 2011; Marc Schiffbauer (mschiff) <marc@schiffbauer.net>
+  nautilus-dropbox-0.6.7.ebuild:
   Remove RDEPEND on net-misc/wget as pythons urlib is used to download the daemon
 
   18 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>

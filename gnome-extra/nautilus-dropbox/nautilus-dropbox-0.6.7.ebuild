@@ -3,7 +3,8 @@
 # $Header: $
 
 EAPI="3"
-inherit eutils linux-info gnome2
+PYTHON_DEPEND="2"
+inherit eutils python linux-info gnome2
 
 DESCRIPTION="Store, Sync and Share Files Online"
 HOMEPAGE="http://www.dropbox.com/"
@@ -32,6 +33,7 @@ CONFIG_CHECK="INOTIFY_USER"
 pkg_setup () {
 	check_extra_config
 	enewgroup dropbox
+	python_pkg_setup
 }
 
 src_install () {
