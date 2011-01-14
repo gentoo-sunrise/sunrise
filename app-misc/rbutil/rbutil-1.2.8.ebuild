@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,6 +25,10 @@ RDEPEND="media-libs/speex
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}/${PN}/${PN}qt
+
+src_prepare() {
+	epatch "${FILESDIR}/${PV}"-fix-parallel-make.patch
+}
 
 src_configure() {
 	# generate binary translations

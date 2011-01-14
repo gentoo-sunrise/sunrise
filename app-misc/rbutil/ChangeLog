@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/rbutil
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Jan 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +files/1.2.8-fix-parallel-make.patch, rbutil-1.2.8.ebuild:
+  Fixed parallel make issue (bug 183494), thanks to Dennis Schridde
 
   04 Nov 2010; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   -files/1.2.8-lang.patch, rbutil-1.2.8.ebuild:
