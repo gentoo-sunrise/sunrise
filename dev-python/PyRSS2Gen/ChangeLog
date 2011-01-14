@@ -1,6 +1,9 @@
-# ChangeLog for dev-python/pyrssgen
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# ChangeLog for dev-python/PyRSS2Gen
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Jan 2011; Michał Górny <mgorny@gentoo.org> PyRSS2Gen-1.0.0.ebuild:
+  Bump EAPI, drop empty *DEPEND, remove unnecessary MY_P.
 
   20 Jul 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pyrssgen-1.0.0.ebuild:
