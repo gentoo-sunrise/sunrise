@@ -29,22 +29,6 @@ dev-python/pyrssgen
 # Package renamed to net-analyzer/arpon
 net-analyzer/ArpON
 
-# Markos Chandras <hwoarang@gentoo.org> (15 Dec 2010)
-# Broken dependency tree because dev-util/jam has been
-# remove. Removal in 30 days
-app-text/ocropus-svn
-
-# James Penketh <tamber@furryhelix.co.uk> (12 Nov 2010)
-# Package renamed by upstream to change case. Use
-# net-misc/geomyidae instead.
-net-misc/Geomyidae
-
-
-# Thomas Sachau <tommy@gentoo.org> (24 Sep 2010)
-# Binary java package with bundled libs and other QA issues
-# removed in 60 days, if noone steps up and fixes those issues
-app-misc/genealogyj-bin
-
 # Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
 # Masking wrt bug 333939. Dependency on vala-1.0 which is
 # not yet released.
@@ -67,12 +51,6 @@ app-office/wiipresent
 # Requires wxGTK 2.9+ which is not in portage and build
 # problems with wxGTK 9999
 =media-video/aegisub-9999
-
-# Markos Chandras <hwoarang@gentoo.org> (05 Jun 2010)
-# Masking live ebuilds for packages that exist on portage
-# tree until maintainers resolve this with respected herds
-=dev-libs/yajl-9999
-=games-action/lugaru-9999
 
 # Thomas Sachau <tommy@gentoo.org> (15 Okt 2009)
 # www-servers/webcit contains included libs, they should be
