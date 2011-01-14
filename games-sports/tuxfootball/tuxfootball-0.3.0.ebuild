@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,15 +14,15 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="media-libs/sdl-mixer
-		media-libs/sdl-image
-		media-libs/libsdl"
+	media-libs/sdl-image
+	media-libs/libsdl"
 DEPEND="dev-util/intltool
-		sys-devel/gettext
-		${RDEPEND}"
+	sys-devel/gettext
+	${RDEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog README || die "dodoc failed" 
+	dodoc AUTHORS ChangeLog README || die "dodoc failed"
 
 	make_desktop_entry ${PN} Tuxfootball
 
