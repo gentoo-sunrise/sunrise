@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,7 +12,7 @@ LICENSE="Artistic GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-LANGS="ar bg bs cs da de el en_GB es eu fr gl he hr hu it ja ko lt ms nb nl nn pl pt pt_BR ro ru sk sl sv th tr uk zh_CN zh_TW"
+LANGS="ar ast bg bs ca cs da de el en_GB es eu fo fr gl he hr hu it ja ko lt ms nb nl nn pl pt pt_BR ro ru sk sl sv th tr uk zh_CN zh_TW"
 IUSE="nls"
 for i in ${LANGS}; do
 	IUSE="${IUSE} linguas_${i}"
