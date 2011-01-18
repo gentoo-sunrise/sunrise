@@ -8,7 +8,7 @@ inherit autotools-utils multilib
 
 DESCRIPTION="Compat library for functions like strlcpy(), strlcat(), and strnlen()"
 HOMEPAGE="http://ohnopub.net/~ohnobinki/libstrl/"
-SRC_URI="ftp://mirror.calvin.edu/~binki/${P}.tar.bz2"
+SRC_URI="ftp://ohnopub.net/mirror/${P}.tar.bz2"
 
 LICENSE="LGPL-3"
 SLOT="0"

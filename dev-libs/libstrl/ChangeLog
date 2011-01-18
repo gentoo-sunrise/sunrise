@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jan 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  libstrl-0.2.ebuild, metadata.xml:
+  Fix metadata.xml to be appropriate for sunrise and switch to a working
+  SRC_URI.
+
 *libstrl-0.2 (17 Jan 2011)
 
   17 Jan 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
