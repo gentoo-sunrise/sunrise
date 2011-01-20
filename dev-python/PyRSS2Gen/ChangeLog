@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Jan 2011; Mike Gilbert <floppymaster@gmail.com> PyRSS2Gen-1.0.0.ebuild:
+  Set PYTHON_MODNAME and move examples to docs dir
+
   14 Jan 2011; Michał Górny <mgorny@gentoo.org> PyRSS2Gen-1.0.0.ebuild:
   Bump EAPI, drop empty *DEPEND, remove unnecessary MY_P.
 

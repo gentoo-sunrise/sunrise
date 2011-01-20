@@ -18,12 +18,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
 RESTRICT_PYTHON_ABIS="3.*"
+PYTHON_MODNAME="${PN}.py"
 
 src_install() {
 	distutils_src_install
 
 	if use examples; then
-		insinto /usr/share/${PF}/examples
-		doins example.py || die
+		dodoc example.py || die
 	fi
 }
