@@ -1,0 +1,8 @@
+# ChangeLog for net-misc/flexget
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Jan 2011; Mike Gilbert <floppymaster@gmail.com>
+  +flexget-1.0_beta1873.ebuild, +metadata.xml:
+  New ebuild for bug 350015
+
