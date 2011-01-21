@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<longdescription lang="en">
+		Hogger leverages nmap scan files to create a Host Attribute Table
+		for you in the XML format that Snort needs to tune your	pre-processors.
+		Hogger makes your network more understandable to snort, assisting
+		Snort in reassembling fragmented packets and streams in the same way
+		that each respective host will, thereby reducing false-positives and
+		false-negatives.
+	</longdescription>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<upstream>
+		<maintainer>
+			<email>parkercrook@gmail.com</email>
+			<name>Parker Crook</name>
+		</maintainer>
+		<changelog>http://code.google.com/p/hogger/source/list</changelog>
+		<doc>http://code.google.com/p/hogger/wiki/FAQ</doc>
+		<bugs-to>http://code.google.com/p/hogger/issues/list</bugs-to>
+		<remote-id type="google-code">hogger</remote-id>
+	</upstream>
+</pkgmetadata>
+
