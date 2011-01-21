@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<longdescription lang="en">
+		PulledPork is a perl script designed to help simplify Snort
+		rule management. PulledPork is capable of updating both the
+		traditional rules as well as the newer shared object (SO) rules
+	</longdescription>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<upstream>
+		<maintainer>
+			<email>cummingsj@gmail.com</email>
+			<name>JJ Cummings</name>
+		</maintainer>
+		<changelog>http://code.google.com/p/pulledpork/source/list</changelog>
+		<doc>http://code.google.com/p/pulledpork/wiki/FAQ</doc>
+		<bugs-to>http://code.google.com/p/pulledpork/issues/list</bugs-to>
+		<remote-id type="google-code">pulledpork</remote-id>
+	</upstream>
+</pkgmetadata>
+
