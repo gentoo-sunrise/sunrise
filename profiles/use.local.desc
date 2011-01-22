@@ -72,6 +72,7 @@ dev-games/opal:double-precision - More precise calculations at the expense of sp
 dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
 dev-lang/xharbour:allegro - Build Allegro-based GT driver
+dev-libs/libaxl:tests - compile and install performance tests
 dev-libs/libcgroup:daemon - Enables build daemon binaries
 dev-libs/libcgroup:debug - Enables debug compile and link flags
 dev-libs/libcgroup:pam - Enables build with pam support
@@ -134,6 +135,7 @@ games-misc/fretsonfire:psyco - Enable psyco python accelerator
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
+games-util/pyfa:graph - Enable support for graphs
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 gnome-extra/gnome-globalmenu:xfce - Build the Xfce panel applet.
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
@@ -198,15 +200,6 @@ net-misc/apt-cacher-ng:logrotate - Install support files for app-admin/logrotate
 net-misc/autoupnp:suid - Install the library setuid & setgid (required in order to run setuid & setgid applications).
 net-misc/fatrat:bittorrent - Enables support for the bittorrent protocol
 net-misc/fatrat:webinterface - Support remote control via a web interface
-net-misc/freerdp:X - Install also GUI client
-net-misc/freerdp:alsa - Enable sound support (using alsa)
-net-misc/freerdp:cups - Enable printing support (using cups)
-net-misc/freerdp:debug - Enable all debugging options
-net-misc/freerdp:gnutls - Use GnuTLS as crypto backend
-net-misc/freerdp:largefile - Support for large files
-net-misc/freerdp:nss - Use NSS as crypto backend
-net-misc/freerdp:polarssl - Use PolarSSL as crypto backend
-net-misc/freerdp:ssl - Use OpenSSL as crypto backend
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
 net-misc/gvpe:cipher-aes-192 - Enables aes-192 cipher
 net-misc/gvpe:cipher-aes-256 - Enables aes-256 cipher
@@ -261,3 +254,5 @@ www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volu
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
+x11-plugins/pidgin-gfire:kmess-status - Publish your Xfire status to net-im/kmess using dbus
+x11-plugins/pidgin-gfire:libnotify - Get notifications for your Xfire contacts' status changes
