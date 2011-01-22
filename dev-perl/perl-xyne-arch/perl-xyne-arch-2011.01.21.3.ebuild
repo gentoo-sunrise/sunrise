@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="perl-core/IO
+RDEPEND="dev-perl/libwww-perl
+	perl-core/IO
 	dev-perl/perl-xyne-common
 	dev-perl/URI"
 

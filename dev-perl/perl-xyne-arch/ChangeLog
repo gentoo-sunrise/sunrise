@@ -1,6 +1,13 @@
 # ChangeLog for dev-perl/perl-xyne-arch
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*perl-xyne-arch-2011.01.21.3 (22 Jan 2011)
+
+  22 Jan 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  -perl-xyne-arch-2010.11.14.1.ebuild, +perl-xyne-arch-2011.01.21.3.ebuild:
+  Bump to perl-xyne-arch-2011.01.21.3 and add missing dep of
+  dev-perl/libwww-perl.
 
 *perl-xyne-arch-2010.11.14.1 (17 Nov 2010)
 
