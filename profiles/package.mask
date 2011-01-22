@@ -21,6 +21,12 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
+# Doesn't compile anymore, neither does the newer version. Has a lot
+# of open bugs and poor upstream. Unless someone is willing to fix it,
+# it will be removed in 30 days.
+gnome-extra/gnome-globalmenu
+
 # Mike Gilbert <floppymaster@gmail.com> (10 Jan 2011)
 # Package renamed to dev-python/PyRSS2Gen to match upstream
 dev-python/pyrssgen
