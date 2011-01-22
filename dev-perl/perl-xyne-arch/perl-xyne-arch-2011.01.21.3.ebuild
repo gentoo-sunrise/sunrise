@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="dev-perl/libwww-perl
+RDEPEND="dev-perl/libwww-perl[ssl]
 	perl-core/IO
 	dev-perl/perl-xyne-common
 	dev-perl/URI"
