@@ -11,7 +11,7 @@ inherit distutils
 MY_P="${P/_alpha/a}"
 
 DESCRIPTION="Selenium client bindings for Python"
-HOMEPAGE="http://code.google.com/p/selenium/ http://pypi.python.org/pypi/Pyccuracy"
+HOMEPAGE="http://code.google.com/p/selenium/ http://pypi.python.org/pypi/selenium"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
