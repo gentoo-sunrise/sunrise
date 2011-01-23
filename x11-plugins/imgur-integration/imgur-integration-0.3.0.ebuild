@@ -1,0 +1,42 @@
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+EAPI=2
+
+MY_P=imgur-${PV}
+
+DESCRIPTION="A command-line utility and media-gfx/eog plugin for uploading to imgur.com"
+HOMEPAGE="https://github.com/tthurman/imgur-integration"
+SRC_URI="http://spectrum.myriadcolours.com/~marnanel/${PN}/${MY_P}.tar.gz"
+LICENSE="GPL-3"
+
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE="eog"
+
+RDEPEND="sys-apps/dbus
+	dev-libs/dbus-glib
+	>=dev-libs/glib-2.24
+	net-misc/curl
+	eog? ( media-gfx/eog )"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
+
+S=${WORKDIR}/${MY_P}
+
+src_configure() {
+	econf $(use_enable eog)
+}
+
+src_install() {
+	emake install DESTDIR="${D}" || die "emake failed"
+	dodoc AUTHORS README || die "dodoc failed"
+}
+
+pkg_postinst() {
+	if use eog; then
+		elog "Please note that in order to use the eog plugin, you have"
+		elog "to first enable it in [Edit -> Preferences -> Plugins]."
+	fi
+}
