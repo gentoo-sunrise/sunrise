@@ -1,0 +1,9 @@
+# ChangeLog for x11-drivers/libfreenect
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Jan 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +files/51-kinect.rules, +libfreenect-0.0.1_p20110105.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 351964
+
