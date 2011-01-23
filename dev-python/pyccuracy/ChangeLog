@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/pyccuracy
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Jan 2011; Denilson (CrazyTB) <denilsonsa@gmail.com>
+  +pyccuracy-1.2.45.ebuild, +metadata.xml:
+  New ebuild for dev-python/pyccuracy-1.2.45, wrt bug 352502, thanks to
+  Tommy[D], chithead, floppym, mgorny
+
