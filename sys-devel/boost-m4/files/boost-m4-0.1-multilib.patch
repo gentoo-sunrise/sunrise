@@ -1,0 +1,31 @@
+From a08684994caf88f28c758c7d579dae92fe69d0fa Mon Sep 17 00:00:00 2001
+From: Nathan Phillip Brink <ohnobinki@ohnopublishing.net>
+Date: Mon, 24 Jan 2011 01:48:25 -0500
+Subject: [PATCH 2/2] Support multilib installations which use both lib32 and lib64.
+
+---
+ build-aux/boost.m4 |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/build-aux/boost.m4 b/build-aux/boost.m4
+index 2ba29bf..3d271f6 100644
+--- a/build-aux/boost.m4
++++ b/build-aux/boost.m4
+@@ -22,2 +22,2 @@
+ 
+-# serial 6
++# serial 6+15
+@@ -379,8 +379,8 @@ for boost_rtopt_ in $boost_rtopt '' -d; do
+     boost_tmp_lib=$with_boost
+     test x"$with_boost" = x && boost_tmp_lib=${boost_cv_inc_path%/include}
+     for boost_ldpath in "$boost_tmp_lib/lib" '' \
+-             /opt/local/lib /usr/local/lib /opt/lib /usr/lib \
+-             "$with_boost" C:/Boost/lib /lib /usr/lib64 /lib64
++             /opt/local/lib* /usr/local/lib* /opt/lib* /usr/lib* \
++             "$with_boost" C:/Boost/lib /lib*
+     do
+       test -e "$boost_ldpath" || continue
+       boost_save_LDFLAGS=$LDFLAGS
+-- 
+1.7.2.2
+
