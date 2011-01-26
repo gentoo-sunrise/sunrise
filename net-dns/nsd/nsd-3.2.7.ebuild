@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -48,8 +48,10 @@ src_install() {
 		|| die "dodoc failed"
 
 	insinto /usr/share/nsd
-	doins "${FILESDIR}/nsd.cron" || die "doins failed"
 	doins contrib/nsd.zones2nsd.conf || die "doins failed"
+
+	exeinto /etc/cron.daily
+	doexe "${FILESDIR}/nsd.cron" || die "doexe failed"
 
 	newinitd "${FILESDIR}"/nsd.initd nsd || die "newinitd failed"
 	newconfd "${FILESDIR}"/nsd.confd nsd || die "newconfd failed"
@@ -72,11 +74,4 @@ src_install() {
 pkg_postinst() {
 	elog "If you are using bind and want to convert (or sync) bind zones"
 	elog "you should check out bind2nsd (http://bind2nsd.sourceforge.net)."
-	echo
-	elog "To automatically merge zone transfer changes back to nsd's"
-	elog "zone files using 'nsdc patch', try nsd.cron in /usr/share/nsd"
-	echo
-	# remove on next version bump
-	einfo "Since nsd 3.2.6, USE flags for dnssec, nsid and tsig have been"
-	einfo "removed, as all of them are now enabled by default by upstream."
 }

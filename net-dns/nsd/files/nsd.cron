@@ -5,6 +5,6 @@
 # 
 my_nsdc="/usr/sbin/nsdc" 
 
-if test -x ${my_nsdc}; then 
-	${my_nsdc} patch 1>/dev/null
+if test -x ${my_nsdc} && ${my_nsdc} running 1> /dev/null; then 
+	${my_nsdc} patch 1> /dev/null
 fi
