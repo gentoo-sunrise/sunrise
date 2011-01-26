@@ -254,5 +254,6 @@ www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volu
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
+x11-plugins/imgur-integration:eog - Build an imgur upload plugin for media-gfx/eog
 x11-plugins/pidgin-gfire:kmess-status - Publish your Xfire status to net-im/kmess using dbus
 x11-plugins/pidgin-gfire:libnotify - Get notifications for your Xfire contacts' status changes
