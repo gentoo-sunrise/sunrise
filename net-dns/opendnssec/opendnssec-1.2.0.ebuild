@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,15 +13,14 @@ LICENSE="BSD"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+auditor debug eppclient external-hsm mysql opensc softhsm sqlite"
-# Test suite needs a preconfigured sqlite/mysql database
+IUSE="+auditor debug eppclient external-hsm mysql opensc +signer softhsm sqlite"
+# Test suite needs a preconfigured sqlite/mysql database, and a cunit with curses support
 RESTRICT="test"
 
-DEPEND=">=net-libs/ldns-1.6.6
-	dev-libs/libxml2
-	dev-python/4suite
-	auditor? ( dev-lang/ruby[ssl] >=dev-ruby/dnsruby-1.49 )
-	eppclient? ( net-misc/curl )
+DEPEND="dev-libs/libxml2
+	>=net-libs/ldns-1.6.7
+	auditor? ( dev-lang/ruby[ssl] >=dev-ruby/dnsruby-1.51 )
+	eppclient? ( net-misc/curl dev-db/sqlite:3 )
 	mysql? ( >=virtual/mysql-5.0 )
 	opensc? ( dev-libs/opensc )
 	softhsm? ( dev-libs/softhsm )
@@ -48,7 +47,7 @@ check_pkcs11_setup() {
 	elif use external-hsm; then
 		# Use an arbitrary non-portage PKCS#11 library, set by an environment variable
 		if [ -n "$PKCS11_SOFTHSM" ]; then
-			# This is for testing, since it's the only actual library I have, set USE=softhsm instead.
+			# This is for testing, since it's the only actual library I have. Set USE=softhsm instead.
 			PKCS11_LIB=softhsm
 			PKCS11_PATH="$PKCS11_SOFTHSM"
 
@@ -81,7 +80,7 @@ check_pkcs11_setup() {
 			die "USE flag 'external-hsm' set but no PKCS#11 library path specified."
 		fi
 
-		elog "Building with external PKCS#11 library support ($PKCS11_LIB): $PKCS11_PATH ."
+		elog "Building with external PKCS#11 library support ($PKCS11_LIB): ${PKCS11_PATH}"
 	else
 		# Should never happen because of 'confutils_require_one softhsm opensc external-hsm'
 		die "No PKCS#11 library specified through USE flags."
@@ -89,6 +88,9 @@ check_pkcs11_setup() {
 }
 
 pkg_setup() {
+	use eppclient && ewarn "Use of eppclient is still experimental"
+	use mysql && ewarn "Use of mysql is still experimental"
+
 	confutils_require_one mysql sqlite
 	confutils_require_one softhsm opensc external-hsm
 
@@ -113,7 +115,8 @@ src_configure() {
 	econf $myconf \
 	$(use_enable auditor) \
 	$(use_enable debug timeshift) \
-	$(use_enable eppclient)
+	$(use_enable eppclient) \
+	$(use_enable signer)
 }
 
 src_install() {
@@ -121,10 +124,17 @@ src_install() {
 
 	newinitd "${FILESDIR}"/opendnssec.initd opendnssec || die "newinitd failed"
 	dodoc KNOWN_ISSUES NEWS README || die "dodoc failed"
-	rm "${D}"/usr/share/opendnssec.spec || die "failed to remove spec file"
 
 	# Remove subversion tags from config files to avoid useless config updates
-	sed -i -e 's/<!-- \$Id:.* \$ -->//g' "${D}"/etc/opendnssec/* || die "sed failed for files in /etc/opendnssec"
+	sed -i -e 's/<!-- \$Id:.* \$ -->//g' "${D}"etc/opendnssec/* || die "sed failed for files in /etc/opendnssec"
+
+	# add upgrade script
+	insinto /usr/share/opendnssec
+	if use sqlite; then
+		doins enforcer/utils/migrate_keyshare_sqlite3.pl || die "doins failed for migrate_keyshare_sqlite3.pl"
+	elif mysql; then
+		doins enforcer/utils/migrate_keyshare_mysql.pl || die "doins failed for migrate_keyshare_mysql.pl"
+	fi
 
 	# Set ownership of config files
 	fowners root:opendnssec /etc/opendnssec/{conf,kasp,zonelist,zonefetch}.xml || die "fowners failed for files in /etc/opendnssec"
@@ -134,15 +144,27 @@ src_install() {
 
 	# Set ownership of working directories
 	fowners opendnssec:opendnssec /var/lib/opendnssec/{,signconf,signed,tmp} || die "fowners failed for dirs in /var/lib/opendnssec"
+	fowners opendnssec:opendnssec /var/lib/run/opendnssec || die "fowners failed for /var/lib/run/opendnssec"
 }
 
 pkg_postinst() {
+	elog "If you are upgrading from a pre-1.2.0 install, you'll need to update your"
+	elog "key (KASP) database. Please run the following command to do so:"
+	if use sqlite; then
+		elog "  perl /usr/share/opendnssec/migrate_keyshare_sqlite3.pl -d /var/lib/opendnssec/kasp.db"
+		elog "You'll need to emerge 'dev-perl/DBD-SQLite' if it is not installed yet."
+	elif use mysql; then
+		elog "  perl /usr/share/opendnssec/migrate_keyshare_mysql.pl -d <database> -u <username> -p <password>"
+		elog "You'll need to emerge 'dev-perl/DBD-mysql' if it is not installed yet."
+	fi
+	elog ""
+
 	if use softhsm; then
-		elog "Please make sure that you create your softhsm database in a location readable"
-		elog "by the opendnssec user. You can set its location in ${ROOT}etc/softhsm.conf."
+		elog "Please make sure that you create your softhsm database in a location writeable"
+		elog "by the opendnssec user. You can set its location in /etc/softhsm.conf."
 		elog "Suggested configuration is:"
-		elog "  echo \"0:${ROOT}var/lib/opendnssec/softhsm_slot0.db\" >> ${ROOT}etc/softhsm.conf"
+		elog "  echo \"0:/var/lib/opendnssec/softhsm_slot0.db\" >> /etc/softhsm.conf"
 		elog "  softhsm --init-token --slot 0 --label OpenDNSSEC"
-		elog "  chown opendnssec:opendnssec ${ROOT}var/lib/opendnssec/softhsm_slot0.db"
+		elog "  chown opendnssec:opendnssec /var/lib/opendnssec/softhsm_slot0.db"
 	fi
 }

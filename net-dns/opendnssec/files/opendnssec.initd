@@ -6,13 +6,12 @@
 # for openrc
 description="An open-source turn-key solution for DNSSEC"
 
-checkconf_binary=/usr/bin/ods-kaspcheck
-signerd_binary=/usr/sbin/ods-signer
-signerd_pidfile=/var/lib/run/opendnssec/signerd.pid
-enforcerd_binary=/usr/sbin/ods-enforcerd
-enforcerd_pidfile=/var/lib/run/opendnssec/enforcerd.pid
-eppclientd_binary=/usr/sbin/eppclientd
-eppclientd_pidfile=/var/lib/run/opendnssec/eppclientd.pid
+checkconf_bin=/usr/bin/ods-kaspcheck
+control_bin=/usr/sbin/ods-control
+enforcer_bin=/usr/sbin/ods-enforcerd
+eppclient_bin=/usr/sbin/eppclientd
+eppclient_pidfile=/var/lib/run/opendnssec/eppclientd.pid
+signer_bin=/usr/sbin/ods-signerd
 
 depend() {
 	need net
@@ -20,8 +19,8 @@ depend() {
 }
 
 checkconfig() {
-	if [ -x "${checkconf_binary}" ]; then
-		output=$(${checkconf_binary})
+	if [ -x "${checkconf_bin}" ]; then
+		output=$(${checkconf_bin} 2>&1| grep -v -E "^/etc/opendnssec/(conf|kasp).xml validates")
 		if [ -n "$output" ]; then
 			echo $output
 		fi
@@ -35,61 +34,65 @@ checkconfig() {
 	return
 }
 
-start_signerd() {
-	ebegin "Starting OpenDNSSEC Signer"
-	start-stop-daemon --start --exec "${signerd_binary}" --pidfile "${signerd_pidfile}" -- start > /dev/null
-	eend $?
-}
 
-stop_signerd() {
-	ebegin "Stopping OpenDNSSEC Signer"
-	start-stop-daemon --stop --exec "${signerd_binary}" --pidfile "${signerd_pidfile}" -- stop > /dev/null
-	eend $?
-}
-
-start_enforcerd() {
-	ebegin "Starting OpenDNSSEC Enforcer"
-	start-stop-daemon --start --exec "${enforcerd_binary}" --pidfile "${enforcerd_pidfile}" > /dev/null
-	eend $?
-}
-
-stop_enforcerd() {
-	ebegin "Stopping OpenDNSSEC Enforcer"
-	start-stop-daemon --stop --exec "${enforcerd_binary}" --pidfile "${enforcerd_pidfile}" > /dev/null
-	eend $?
-}
-
-start_eppclientd() {
-	if [ -x "${eppclientd_binary}" ]; then
-		ebegin "Starting OpenDNSSEC Eppclient"
-		start-stop-daemon --start --exec "${eppclientd_binary}" --pidfile "${eppclientd_pidfile}" > /dev/null
+start_enforcer() {
+	if [ -x "${enforcer_bin}" ]; then
+		ebegin "Starting OpenDNSSEC Enforcer"
+		${control_bin} enforcer start > /dev/null
 		eend $?
 	fi
 }
 
-stop_eppclientd() {
-	if [ -x "${eppclientd_binary}" ]; then
+stop_enforcer() {
+	if [ -x "${enforcer_bin}" ]; then
+		ebegin "Stopping OpenDNSSEC Enforcer"
+		${control_bin} enforcer stop > /dev/null
+		eend $?
+	fi
+}
+
+start_signer() {
+	if [ -x "${signer_bin}" ]; then
+		ebegin "Starting OpenDNSSEC Signer"
+		${control_bin} signer start > /dev/null 2>&1
+		eend $?
+	fi
+}
+
+stop_signer() {
+	if [ -x "${signer_bin}" ]; then
+		ebegin "Stopping OpenDNSSEC Signer"
+		${control_bin} signer stop > /dev/null 2>&1
+		eend $?
+	fi
+}
+
+start_eppclient() {
+	if [ -x "${eppclient_bin}" ]; then
+		ebegin "Starting OpenDNSSEC Eppclient"
+		start-stop-daemon --start --user opendnssec --group opendnssec --exec "${eppclient_bin}" --pidfile "${eppclient_pidfile}" > /dev/null
+		eend $?
+	fi
+}
+
+stop_eppclient() {
+	if [ -x "${eppclient_bin}" ]; then
 		ebegin "Stopping OpenDNSSEC Eppclient"
-		start-stop-daemon --stop --exec "${eppclientd_binary}" --pidfile "${eppclientd_pidfile}" > /dev/null
+		start-stop-daemon --stop --exec "${eppclient_bin}" --pidfile "${eppclient_pidfile}" > /dev/null
 		eend $?
 	fi
 }
 
 start() {
 	checkconfig || return $?
-	start_signerd || return $?
-	start_enforcerd || return $?
-	start_eppclientd || return $?
+	start_enforcer || return $?
+	start_signer || return $?
+	start_eppclient || return $?
 }
 
 stop() {
-	stop_enforcerd || return $?
-	stop_signerd || return $?
-	stop_eppclientd || return $?
-}
-
-restart() {
-	checkconfig || return $?
-	svc_stop
-	svc_start
+	stop_eppclient
+	stop_signer
+	stop_enforcer
+	sleep 1
 }
