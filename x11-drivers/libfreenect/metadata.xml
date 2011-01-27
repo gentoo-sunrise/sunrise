@@ -4,4 +4,11 @@
   <herd>no-herd</herd>
   <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
   <longdescription>Drivers and libraries for the Xbox Kinect device</longdescription>
+  <use>
+    <flag name="c_sync">Install C synchronous library</flag>
+    <flag name="fakenect">Install fakenect mock library</flag>
+    <flag name="examples">Install demo programs</flag>
+    <flag name="opencv">Install opencv library</flag>
+    <flag name="python">Install python library extension</flag>
+  </use>
 </pkgmetadata>

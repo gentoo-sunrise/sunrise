@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Jan 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -libfreenect-0.0.1_p20110105.ebuild,
+  +libfreenect-0.0.1_p20110105-r1.ebuild, metadata.xml:
+  Added several use flags and added library support for opencv and python.
+
   23 Jan 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   +files/51-kinect.rules, +libfreenect-0.0.1_p20110105.ebuild,
   +metadata.xml:
