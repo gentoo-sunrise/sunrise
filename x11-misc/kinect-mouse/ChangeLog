@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/kinect-mouse
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Jan 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +kinect-mouse-0_p20101210.ebuild, +metadata.xml:
+  New Ebuild for bug 352549.
+
