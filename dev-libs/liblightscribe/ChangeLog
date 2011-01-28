@@ -1,6 +1,12 @@
 # ChangeLog for dev-libs/liblightscribe
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*liblightscribe-1.18.21.1 (28 Jan 2011)
+
+  28 Jan 2011; Mario Fetka <mario.fetka@gmail.com>
+  -liblightscribe-1.18.20.1.ebuild, +liblightscribe-1.18.21.1.ebuild:
+  Simple Version Bump
 
   30 Nov 2010; Mario Fetka <mario.fetka@gmail.com>
   -liblightscribe-1.18.19.1.ebuild, +liblightscribe-1.18.20.1.ebuild:
