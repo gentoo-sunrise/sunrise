@@ -1,6 +1,11 @@
 # ChangeLog for dev-libs/libcitadel
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2011; the_mgt the_mgt themgt@mail.ru -libcitadel-7.84.ebuild,
+  +libcitadel-7.85.ebuild:
+  Version Bump, added flag filteriConnection to interozetor
+  closed.line-functions. Waiting for upstream fix...
 
   20 Dec 2010; the_mgt themgt@mail.ru -libcitadel-7.83.ebuild,
   +libcitadel-7.84.ebuild:
