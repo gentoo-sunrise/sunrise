@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,21 +12,22 @@ SRC_URI="http://easyinstall.citadel.org/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="ldap mailwrapper pam pic ssl threads"
+IUSE="ldap pam pic postfix ssl threads"
 
 DEPEND="=dev-libs/libcitadel-${PV}
 	>=sys-libs/db-4.1.25_p1
 	virtual/libiconv
 	ldap? ( >=net-nds/openldap-2.0.27 )
 	pam? ( sys-libs/pam )
+	postfix? ( mail-mta/postfix )
 	ssl? ( >=dev-libs/openssl-0.9.6 )"
 RDEPEND="${DEPEND}
 	net-mail/mailbase
-	!mailwrapper? ( !virtual/mta !net-mail/mailwrapper )
-	mailwrapper? ( >=net-mail/mailwrapper-0.2 )"
-
-PROVIDE="virtual/mta
-	virtual/mda
+	!postfix? ( !virtual/mta )
+	!net-mail/mailwrapper"
+# dropped virtual/mta from PROVIDE in order to install with postfix on a system
+# removed mailwrapper stuff entirely and made sure it isn't left on system
+PROVIDE="virtual/mda
 	virtual/imapd"
 
 MESSAGEBASE="/var/lib/citadel"
@@ -78,12 +79,9 @@ src_install() {
 	#Fix some permissions and sendmail stuff
 	fowners citadel:citadel /etc/citadel /var/lib/citadel || die "Changing owner failed"
 	fowners root:citadel /usr/sbin/citmail || die "Changing owner failed"
-	rm "${D}"/usr/sbin/sendmail || die "Removinf sendmail bin failed"
+	rm "${D}"/usr/sbin/sendmail || die "Removing sendmail bin failed"
 
-	if use mailwrapper ; then
-		insinto /etc/mail
-		doins "${FILESDIR}"/mailer.conf || die "Installing mailer.conf failed"
-	else
+	if ! use postfix ; then
 		dosym /usr/sbin/citmail /usr/sbin/sendmail || die "Linking sendmail to citmail failed"
 		dosym /usr/sbin/citmail /usr/$(get_libdir)/sendmail || die "Compatibility sendmail link failed"
 	fi
@@ -193,9 +191,9 @@ pkg_config() {
 	einfo
 	einfo "The server should now be up and running, enjoy!"
 	einfo "Citadel will listen on its default port 504"
-	if use mailwrapper; then
+	if use postfix ; then
 		einfo
-		einfo "Citadel listens on port 25 by default, even with mailwrapper useflag!"
+		einfo "Citadel listens on port 25 by default, even with postfix useflag!"
 		einfo "Right now this can only be disabled in WebCit or with the cli client."
 		einfo "There is no elegant way to disable that atm, will be fixed upstream."
 		einfo "Sorry for this inconvenience!"

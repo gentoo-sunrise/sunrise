@@ -15,6 +15,7 @@
 	</longdescription>
 	<use>
 		<flag name="pic">Build position-independent executables</flag>
+		<flag name="postfix">Makes it possible to run citadel alongside Postfix. Mailwrapper replacement.</flag>
 	</use>
 	<upstream>
 		<maintainer>

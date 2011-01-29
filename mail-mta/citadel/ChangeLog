@@ -1,6 +1,11 @@
 # ChangeLog for mail-mta/citadel
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Jan 2011; the_mgt the_mgt themgt@mail.ru -citadel-7.84.ebuild,
+  +citadel-7.85.ebuild, metadata.xml:
+  Version Bump. Also removed mailwrapper support and added postfix useflag,
+  since that combination is supported by upstream.
 
   20 Dec 2010; the_mgt themgt@mail.ru -citadel-7.83.ebuild,
   +citadel-7.84.ebuild:
