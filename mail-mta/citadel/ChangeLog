@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2011; the_mgt the_mgt themgt@mail.ru -files/mailer.conf:
+  Removed mailer.conf. No longer needed since mailwrapper was removed.
+
   29 Jan 2011; the_mgt the_mgt themgt@mail.ru -citadel-7.84.ebuild,
   +citadel-7.85.ebuild, metadata.xml:
   Version Bump. Also removed mailwrapper support and added postfix useflag,
