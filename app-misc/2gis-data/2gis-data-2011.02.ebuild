@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -42,6 +42,8 @@ my_add_town irk Irkutsk 2006 4
 my_add_town kaz Kazan 2008 11
 my_add_town kdar Krasnodar 2010 1
 my_add_town kem Kemerovo 2005 4
+my_add_town khb Khabarovsk 2010 11
+my_add_town kost Kostroma 2010 10
 my_add_town kras Krasnoyarsk 2005 8
 my_add_town kur Kurgan 2006 3
 my_add_town magn Magnitogorsk 2010 4
@@ -58,7 +60,9 @@ my_add_town sam Samara 2008 7
 my_add_town sochi Sochi 2010 7
 my_add_town tim Tyumen 2006 11
 my_add_town tom Tomsk 2004 12
+my_add_town tula Tula 2010 11
 my_add_town vlad Vladivostok 2010 3
+my_add_town volg Volgograd 2010 9
 my_add_town vrnz Voronezh 2010 7
 my_add_town ufa Ufa 2008 3
 my_add_town yar Yaroslavl 2010 6
