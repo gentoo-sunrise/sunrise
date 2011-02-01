@@ -23,6 +23,10 @@ DEPEND="${DEPEND}
 src_prepare() {
 	sed -e 's:Categories=Game;$:Categories=Game;RolePlaying;GTK;:' \
 		-i icon/${PN}.desktop || die "sed failed"
+	# upstream fix for new character portrait URL
+	epatch "${FILESDIR}/${P}-portrait.patch"
+	# upstream fix for remap calculation after learning skills removal
+	epatch "${FILESDIR}/${P}-learning.patch.gz"
 }
 
 src_install() {
