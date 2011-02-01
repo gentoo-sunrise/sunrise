@@ -1,6 +1,12 @@
 # ChangeLog for x11-misc/xneur
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Feb 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -xneur-0.11.1.ebuild, -files/xneur-0.11.1-openmp.patch,
+  +xneur-0.12.0.ebuild:
+  Version bump; libpcre dependency is now obligatory; openmp patch is no
+  longer needed.
 
   06 Dec 2010; Peter Volkov <pva@gentoo.org> -xneur-0.10.0.ebuild,
   +xneur-0.11.1.ebuild, +files/xneur-0.11.1-openmp.patch:
