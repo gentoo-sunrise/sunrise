@@ -1,6 +1,10 @@
 # ChangeLog for x11-misc/gxneur
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  01 Feb 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -gxneur-0.11.1.ebuild, +gxneur-0.12.0.ebuild:
+  Version bump.
 
   06 Dec 2010; Peter Volkov <pva@gentoo.org> -gxneur-0.10.0.ebuild,
   +gxneur-0.11.1.ebuild:
