@@ -1,23 +1,21 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit autotools eutils
-
 RESTRICT="test"
 
 DESCRIPTION="Lightweight connection pooler for PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/projects/pgbouncer/"
-SRC_URI="http://pgfoundry.org/frs/download.php/2797/${P}.tgz"
+SRC_URI="http://pgfoundry.org/frs/download.php/2912/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc"
 
-DEPEND=">=dev-db/postgresql-base-8.0
+DEPEND="dev-db/postgresql-base
 	dev-libs/libevent"
 RDEPEND="${DEPEND}"
 
@@ -27,13 +25,15 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/modify-config-paths.patch"
-	eautoreconf -f
+	sed -i -e "s,pgbouncer.log,/var/log/pgbouncer/pgbouncer.log," \
+		-e "s,pgbouncer.pid,/var/run/pgbouncer/pgbouncer.pid," \
+		-e "s,etc/userlist.txt,/etc/userlist.txt," etc/pgbouncer.ini || die
 }
 
 src_configure() {
+	# --enable-debug is only used to disable stripping
 	econf \
-		$(use_enable debug) \
+		--enable-debug \
 		$(use_enable debug cassert) \
 		--docdir=/usr/share/doc/${PF}
 }

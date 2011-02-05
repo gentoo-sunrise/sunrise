@@ -1,5 +1,7 @@
 #!/sbin/runscript
 
+PIDFILE=/var/run/pgbouncer/pgbouncer.pid
+
 opts="start stop reload"
 
 depend() {
@@ -10,19 +12,19 @@ depend() {
 start() {
 	ebegin "Starting pgbouncer"
 	
-	start-stop-daemon --start --pidfile /var/run/pgbouncer/pgbouncer.pid \
-		--exec /usr/bin/pgbouncer -- -d -u pgbouncer /etc/pgbouncer.conf
+	start-stop-daemon --start --pidfile ${PIDFILE} \
+		--exec /usr/bin/pgbouncer -- -q -d -u pgbouncer /etc/pgbouncer.conf
 	eend $? "Failed to start pgbouncer"
 }
 
 stop() {
 	ebegin "Stopping pgbouncer"
-	start-stop-daemon --stop --quiet --pidfile /var/run/pgbouncer/pgbouncer.pid
+	start-stop-daemon --stop --quiet --pidfile ${PIDFILE}
 	eend $?
 } 
 
 reload() {
-	ebegin "Reloading pgbouncer configuration"
-	kill -HUP `cat /var/run/pgbouncer/pgbouncer.pid`
+	ebegin "Gracefully reloading pgbouncer"
+	kill -HUP `cat ${PIDFILE}` &>/dev/null
 	eend $?
 }
