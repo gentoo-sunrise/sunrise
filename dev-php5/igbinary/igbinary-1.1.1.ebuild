@@ -1,12 +1,16 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
 PHP_EXT_NAME="igbinary"
 PHP_EXT_INI="yes"
 PHP_EXT_ZENDEXT="no"
+DOCS="README"
 
-inherit php-ext-source-r1
+USE_PHP="php5-2 php5-3"
+
+inherit php-ext-source-r2
 
 KEYWORDS="~amd64 ~x86"
 
@@ -18,15 +22,10 @@ LICENSE="BSD"
 SLOT="0"
 IUSE=""
 
-need_php_by_category
+DEPEND=""
+RDEPEND="${DEPEND}"
 
-src_compile() {
+src_configure() {
 	my_conf="--enable-igbinary"
-	php-ext-source-r1_src_compile
-}
-
-src_install() {
-	php-ext-source-r1_src_install
-	dodoc-php CREDITS ChangeLog EXPERIMENTAL NEWS README || die
-	php-ext-base-r1_addtoinifiles ";igbinary.compact_strings" '"On"'
+	php-ext-source-r2_src_configure
 }

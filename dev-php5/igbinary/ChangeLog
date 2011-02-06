@@ -1,6 +1,10 @@
 # ChangeLog for dev-php5/igbinary
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Feb 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -igbinary-1.0.2.ebuild, +igbinary-1.1.1.ebuild:
+  Version bump. Use php slots and remove redundant stuff
 
   21 May 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +igbinary-1.0.2.ebuild, +metadata.xml:
