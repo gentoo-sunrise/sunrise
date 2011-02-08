@@ -1,6 +1,10 @@
 # ChangeLog for dev-games/renpy
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Feb 2011; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  renpy-6.11.2.ebuild, +renpy-6.12.0.ebuild:
+  New version. Removed development part from 6.11.2 ebuild.
 
   03 Nov 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   -renpy-6.11.1.ebuild, +renpy-6.11.2.ebuild:
