@@ -8,7 +8,7 @@ MY_P=imgur-${PV}
 
 DESCRIPTION="A command-line utility and media-gfx/eog plugin for uploading to imgur.com"
 HOMEPAGE="https://github.com/tthurman/imgur-integration"
-SRC_URI="http://spectrum.myriadcolours.com/~marnanel/${PN}/${MY_P}.tar.gz"
+SRC_URI="http://www.chiark.greenend.org.uk/~tthurman/imgur/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 
 SLOT="0"
@@ -26,12 +26,15 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${MY_P}
 
 src_configure() {
-	econf $(use_enable eog)
+	econf \
+		--disable-libsocialweb \
+		--disable-libsharing \
+		$(use_enable eog)
 }
 
 src_install() {
 	emake install DESTDIR="${D}" || die "emake failed"
-	dodoc AUTHORS README || die "dodoc failed"
+	dodoc AUTHORS NEWS README || die "dodoc failed"
 }
 
 pkg_postinst() {
