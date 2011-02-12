@@ -1,6 +1,12 @@
 # ChangeLog for dev-python/pyicu
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*pyicu-1.1 (12 Feb 2011)
+
+  12 Feb 2011; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  -pyicu-0.8.1.ebuild, +pyicu-1.1.ebuild, +files/parseArgsConstChar.patch:
+  Version bump. Avoid many gcc warnings.
 
   13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   pyicu-0.8.1.ebuild:
