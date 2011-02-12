@@ -2,6 +2,12 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*flexget-1.0_beta1932 (12 Feb 2011)
+
+  12 Feb 2011; Mike Gilbert <floppymaster@gmail.com>
+  -flexget-1.0_beta1900.ebuild, +flexget-1.0_beta1932.ebuild:
+  Version bump. This release installs the webui modules.
+
   31 Jan 2011; Mike Gilbert <floppymaster@gmail.com>
   -flexget-1.0_beta1873.ebuild, +flexget-1.0_beta1900.ebuild:
   Version bump
