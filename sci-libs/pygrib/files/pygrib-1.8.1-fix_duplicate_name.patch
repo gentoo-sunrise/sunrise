@@ -1,0 +1,155 @@
+diff -rupN pygrib-1.8.1.orgin/MANIFEST.in pygrib-1.8.1/MANIFEST.in
+--- pygrib-1.8.1.orgin/MANIFEST.in	2011-02-12 03:11:51.766307559 +0800
++++ pygrib-1.8.1/MANIFEST.in	2011-02-12 03:13:04.766773095 +0800
+@@ -5,8 +5,7 @@ intluce pygrib.c
+ include setup.py
+ include test.py
+ include README
+-include utils/grib_list
+-include utils/grib_repack
++include utils/*grib*
+ recursive-include docs *
+ include sampledata/*.grb
+ include sampledata/*.grib*
+diff -rupN pygrib-1.8.1.orgin/setup.py pygrib-1.8.1/setup.py
+--- pygrib-1.8.1.orgin/setup.py	2011-02-12 03:11:51.764307684 +0800
++++ pygrib-1.8.1/setup.py	2011-02-12 04:07:25.967567747 +0800
+@@ -69,7 +69,7 @@ setup(name = "pygrib",
+       url               = "http://code.google.com/p/pygrib",
+       download_url      = "http://code.google.com/p/pygrib/downloads/list",
+       scripts =
+-      ['utils/grib_list','utils/grib_repack','utils/grib1to2','utils/grib2to1'],
++      ['utils/grib_list','utils/grib_repack','utils/cnvgrib1to2','utils/cnvgrib2to1'],
+       ext_modules = [Extension(
+         "pygrib",
+         ["pygrib.c"],
+diff -rupN pygrib-1.8.1.orgin/utils/cnvgrib1to2 pygrib-1.8.1/utils/cnvgrib1to2
+--- pygrib-1.8.1.orgin/utils/cnvgrib1to2	1970-01-01 08:00:00.000000000 +0800
++++ pygrib-1.8.1/utils/cnvgrib1to2	2011-01-22 05:31:19.000000000 +0800
+@@ -0,0 +1,33 @@
++#!/usr/bin/env python
++import pygrib, sys
++
++if len(sys.argv) < 3:
++   print """
++   grib1to2 <grib1 filename> <grib2 filename> <packing scheme>
++   <packing_scheme> is optional - can be 'grid_simple', 'grid_complex',
++   'grid_complex_spatial_differencing', 'grid_jpeg', or 'grid_png'. 
++   Default is 'grid_jpeg'
++   """
++   raise SystemExit
++   
++grbs = pygrib.open(sys.argv[1])
++f = open(sys.argv[2],'wb')
++
++if len(sys.argv) > 3:
++   grb2packing = sys.argv[3]
++else:
++   grb2packing = 'grid_jpeg' # default is jpeg2000 
++
++print 'converting %s from grib1 to grib2 (%s) with %s packing ...' % (sys.argv[1],sys.argv[2],grb2packing)
++
++for grb in grbs:
++    try:
++        grb.editionNumber=2 
++        grb.packingType = grb2packing
++    except:
++        print 'cannot convert message %s' % grb.messagenumber
++        continue
++    f.write(grb.tostring())
++
++grbs.close()
++f.close()
+diff -rupN pygrib-1.8.1.orgin/utils/cnvgrib2to1 pygrib-1.8.1/utils/cnvgrib2to1
+--- pygrib-1.8.1.orgin/utils/cnvgrib2to1	1970-01-01 08:00:00.000000000 +0800
++++ pygrib-1.8.1/utils/cnvgrib2to1	2011-01-22 05:31:19.000000000 +0800
+@@ -0,0 +1,24 @@
++#!/usr/bin/env python
++import pygrib, sys
++
++if len(sys.argv) < 3:
++   print """
++   grib2to1 <grib2 filename> <grib1 filename>
++   """
++   raise SystemExit
++   
++grbs = pygrib.open(sys.argv[1])
++f = open(sys.argv[2],'wb')
++
++print 'converting %s from grib2 to grib1 (%s) ...' % (sys.argv[1],sys.argv[2])
++
++for grb in grbs:
++    try:
++        grb.editionNumber=1 
++    except:
++        print 'cannot convert message %s' % grb.messagenumber
++        continue
++    f.write(grb.tostring())
++
++grbs.close()
++f.close()
+diff -rupN pygrib-1.8.1.orgin/utils/grib1to2 pygrib-1.8.1/utils/grib1to2
+--- pygrib-1.8.1.orgin/utils/grib1to2	2011-02-12 03:11:51.766307559 +0800
++++ pygrib-1.8.1/utils/grib1to2	1970-01-01 08:00:00.000000000 +0800
+@@ -1,33 +0,0 @@
+-#!/usr/bin/env python
+-import pygrib, sys
+-
+-if len(sys.argv) < 3:
+-   print """
+-   grib1to2 <grib1 filename> <grib2 filename> <packing scheme>
+-   <packing_scheme> is optional - can be 'grid_simple', 'grid_complex',
+-   'grid_complex_spatial_differencing', 'grid_jpeg', or 'grid_png'. 
+-   Default is 'grid_jpeg'
+-   """
+-   raise SystemExit
+-   
+-grbs = pygrib.open(sys.argv[1])
+-f = open(sys.argv[2],'wb')
+-
+-if len(sys.argv) > 3:
+-   grb2packing = sys.argv[3]
+-else:
+-   grb2packing = 'grid_jpeg' # default is jpeg2000 
+-
+-print 'converting %s from grib1 to grib2 (%s) with %s packing ...' % (sys.argv[1],sys.argv[2],grb2packing)
+-
+-for grb in grbs:
+-    try:
+-        grb.editionNumber=2 
+-        grb.packingType = grb2packing
+-    except:
+-        print 'cannot convert message %s' % grb.messagenumber
+-        continue
+-    f.write(grb.tostring())
+-
+-grbs.close()
+-f.close()
+diff -rupN pygrib-1.8.1.orgin/utils/grib2to1 pygrib-1.8.1/utils/grib2to1
+--- pygrib-1.8.1.orgin/utils/grib2to1	2011-02-12 03:11:51.766307559 +0800
++++ pygrib-1.8.1/utils/grib2to1	1970-01-01 08:00:00.000000000 +0800
+@@ -1,24 +0,0 @@
+-#!/usr/bin/env python
+-import pygrib, sys
+-
+-if len(sys.argv) < 3:
+-   print """
+-   grib2to1 <grib2 filename> <grib1 filename>
+-   """
+-   raise SystemExit
+-   
+-grbs = pygrib.open(sys.argv[1])
+-f = open(sys.argv[2],'wb')
+-
+-print 'converting %s from grib2 to grib1 (%s) ...' % (sys.argv[1],sys.argv[2])
+-
+-for grb in grbs:
+-    try:
+-        grb.editionNumber=1 
+-    except:
+-        print 'cannot convert message %s' % grb.messagenumber
+-        continue
+-    f.write(grb.tostring())
+-
+-grbs.close()
+-f.close()
