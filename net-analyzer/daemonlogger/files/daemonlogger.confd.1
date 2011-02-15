@@ -1,0 +1,59 @@
+# Config file for /etc/init.d/daemonlogger
+
+#### Service related options ####
+# This tell daemonlogger which interface to listen on
+IFACE="eth0"
+#
+# User and Group to run as
+DL_USER="daemonlogger"
+DL_GROUP="daemonlogger"
+#
+# Define the location of your BPF file.
+BPF="/etc/daemonlogger/daemonlogger.bpf"
+#
+# Set the number of bytes to capture per packet. 
+# Specify 0 (zero) to capture the full packet.
+# 'man tcpdump' for more info about snaplen.
+SNAP="0"
+#
+# This option determins if daemonlogger will log captured packets 
+# to disk (log mode) or redirect them out a second interface (tap mode).
+# Valid options are "log" or "tap"
+DL_MODE="log"
+###########################
+
+##### Log Mode Options #####
+# If you specified "log" above, then these options will be used
+# when you start the daemonlogger init script.
+#
+# Directory to log pcap files to.
+LOG_DIR="/var/log/daemonlogger"
+#
+# The pcap files can be rolled over based on size, time or both.
+# If you want to use only size or time, then comment out the one you do not 
+# wish to use. If you use both, then the first boundry the file reaches
+# will cause the pcap file to roll over.
+#
+# Rollover the log file if it reaches this size in bytes.
+#LOG_SIZE="1073741824"
+#
+# Rollover the log file on time intervals.  Append an 'm' to rollover on minute 
+# boundaries, 'h' to rollover on hour boundaries and 'd' to rollover on day boundaries.
+# See the README in the doc directory for more information.
+LOG_TIME="1h"
+#
+# This option will write log files to the disk until it reaches this % utilization and 
+# then roll over and delete the oldest log file.
+LOG_PCT="80"
+############################
+
+##### Tap Mode Options #####
+# If you specified "tap" above, then these options will be used
+# when you start the daemonlogger init script.
+#
+# In tap mode, which interface to output packets to. This can not
+# be the same as IFACE above.
+TAP_OFACE="eth1"
+############################
+
+DL_OPTS="-d -i $IFACE -S $SNAP -f $BPF -u $DL_USER -g $DL_GROUP"

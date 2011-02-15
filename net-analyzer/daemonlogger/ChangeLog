@@ -1,6 +1,12 @@
 # ChangeLog for net-analyzer/daemonlogger
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Feb 2011; Jason Wallace <jason.r.wallace@gmail.com>
+  -daemonlogger-1.0.1.ebuild, +daemonlogger-1.2.1.ebuild,
+  +files/daemonlogger.confd.1, +files/daemonlogger.rc.1,
+  -files/daemonlogger-confd, -files/daemonlogger-initd, ,metadata.xml:
+  Version Bump for daemonlogger. Bug 174128
 
   15 Nov 2007; Jukka Ruohonen <drear@iki.fi> daemonlogger-1.0.1.ebuild:
   Renewed enewuser.

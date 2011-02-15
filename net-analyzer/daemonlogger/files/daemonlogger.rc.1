@@ -1,0 +1,54 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	after net.${IFACE}
+
+	if [[ ${DL_MODE} = "tap" ]] ; then
+		after net.${TAP_OFACE}
+	fi
+}
+
+start() {
+
+	if [ ! -d /var/run/daemonlogger ]; then 
+		mkdir -p /var/run/daemonlogger
+		chown ${DL_USER}:${DL_GROUP} /var/run/daemonlogger
+	fi
+
+	if [[ ${DL_MODE} = "log" ]]; then
+		LOG_OPTS="-l ${LOG_DIR} -M ${LOG_PCT} -r"
+
+		if [[ -n $LOG_SIZE ]]; then
+			LOG_OPTS="${LOG_OPTS} -s ${LOG_SIZE}"
+		fi
+
+		if [[ -n $LOG_TIME ]]; then
+			LOG_OPTS="${LOG_OPTS} -t ${LOG_TIME}"
+		fi
+
+		ebegin "Starting daemonlogger in LOG mode"
+		start-stop-daemon --start --quiet --exec /usr/bin/daemonlogger \
+			--pidfile /var/run/daemonlogger/daemonlogger.pid \
+			-- ${LOG_OPTS} ${DL_OPTS} -P /var/run/daemonlogger -p daemonlogger.pid >/dev/null 2>&1
+		eend $?
+
+	elif [[ ${DL_MODE} = "tap" ]]; then
+		ebegin "Starting daemonlogger in TAP mode"
+		start-stop-daemon --start --quiet --exec /usr/bin/daemonlogger \
+			--pidfile /var/run/daemonlogger/daemonlogger.pid \
+			-- -o ${TAP_OFACE} ${DL_OPTS} -P /var/run/daemonlogger -p daemonlogger.pid >/dev/null 2>&1
+		eend $?
+	else
+		eerror 'DL_MODE not set to "log" or "tap" in /etc/conf.d/daemonlogger!'
+	fi
+}
+
+stop() {
+	ebegin "Stopping daemonlogger"
+	start-stop-daemon --stop --quiet --pidfile /var/run/daemonlogger/daemonlogger.pid
+	eend $?
+}
+

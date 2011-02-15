@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+    <herd>no-herd</herd>
+	<longdescription lang="en">
+		This is a libpcap-based program with two runtime modes:
+		1)It can sniff packets and spools them straight to disk 
+		and can daemonize itself for background packet logging.
+		2)It can sniff packets and rewrite them to a second 
+		interface, acting as a soft tap.
+		These two runtime modes are mutually exclusive. 
+    </longdescription>
+    <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+    <upstream>
+        <maintainer>
+			<email>roesch@sourcefire.com</email>
+			<name>Martin Roesch</name>
+        </maintainer>
+    </upstream>
 </pkgmetadata>
+
