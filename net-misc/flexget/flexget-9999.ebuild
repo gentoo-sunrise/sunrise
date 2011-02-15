@@ -25,7 +25,6 @@ RDEPEND="dev-python/setuptools
 	dev-python/pyyaml
 	dev-python/beautifulsoup
 	>=dev-python/html5lib-0.11
-	dev-python/pygooglechart
 	dev-python/PyRSS2Gen
 	dev-python/pynzb
 	dev-python/progressbar
