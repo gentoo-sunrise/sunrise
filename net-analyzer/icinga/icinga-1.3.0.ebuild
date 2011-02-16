@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit depend.apache eutils toolchain-funcs multilib
+inherit depend.apache eutils multilib toolchain-funcs
 
 DESCRIPTION="Nagios Fork - Check daemon, CGIs, docs, IDOutils"
 HOMEPAGE="http://www.icinga.org/"
