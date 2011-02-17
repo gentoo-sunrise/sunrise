@@ -23,6 +23,8 @@ app-misc/2gis-data:irk - The map of Irkutsk for app-misc/2gis
 app-misc/2gis-data:kaz - The map of Kazan for app-misc/2gis
 app-misc/2gis-data:kdar - The map of Krasnodar for app-misc/2gis
 app-misc/2gis-data:kem - The map of Kemerovo for app-misc/2gis
+app-misc/2gis-data:khb - The map of Khabarovsk for app-misc/2gis
+app-misc/2gis-data:kost - The map of Kostroma for app-misc/2gis
 app-misc/2gis-data:kras - The map of Krasnoyarsk for app-misc/2gis
 app-misc/2gis-data:kur - The map of Kurgan for app-misc/2gis
 app-misc/2gis-data:magn - The map of Magnitogorsk for app-misc/2gis
@@ -39,8 +41,10 @@ app-misc/2gis-data:sam - The map of Samara for app-misc/2gis
 app-misc/2gis-data:sochi - The map of Sochi for app-misc/2gis
 app-misc/2gis-data:tim - The map of Tyumen for app-misc/2gis
 app-misc/2gis-data:tom - The map of Tomsk for app-misc/2gis
+app-misc/2gis-data:tula - The map of Tula for app-misc/2gis
 app-misc/2gis-data:ufa - The map of Ufa for app-misc/2gis
 app-misc/2gis-data:vlad - The map of Vladivostok for app-misc/2gis
+app-misc/2gis-data:volg - The map of Volgograd for app-misc/2gis
 app-misc/2gis-data:vrnz - The map of Voronezh for app-misc/2gis
 app-misc/2gis-data:yar - The map of Yaroslavl for app-misc/2gis
 app-misc/bashstyle-ng:acpi - Enable support for apci informations
@@ -140,6 +144,7 @@ gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 gnome-extra/gnome-globalmenu:xfce - Build the Xfce panel applet.
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
+mail-mta/citadel:postfix - Makes it possible to run citadel alongside Postfix. Mailwrapper replacement.
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:gnet - Add support for cluster rendering
@@ -185,6 +190,7 @@ net-dns/opendnssec:auditor - Enables auditing capabilities for OpenDNSSEC
 net-dns/opendnssec:eppclient - Enables support for automatic submission of DNSSEC keys to an upstream epp server
 net-dns/opendnssec:external-hsm - Enables support for storing DNSSEC keys through an arbitrary non-portage PKCS#11 interface, specified through an environment variable
 net-dns/opendnssec:opensc - Enables support for storing DNSSEC keys through a dev-libs/opensc PKCS#11 interface
+net-dns/opendnssec:signer - Enables signing capabilities for OpenDNSSEC
 net-dns/opendnssec:softhsm - Enables support for storing DNSSEC keys in a dev-libs/softhsm PKCS#11 object
 net-firewall/vuurmuur:logrotate - Install support files for logrotate
 net-im/emesene:webcam - Enable support for webcam
@@ -251,6 +257,11 @@ sys-kernel/ccs-sources:deblob - Remove binary blobs from kernel sources to provi
 sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
+x11-drivers/libfreenect:c_sync - Install C synchronous library
+x11-drivers/libfreenect:examples - Install demo programs
+x11-drivers/libfreenect:fakenect - Install fakenect mock library
+x11-drivers/libfreenect:opencv - Install opencv library
+x11-drivers/libfreenect:python - Install python library extension
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
