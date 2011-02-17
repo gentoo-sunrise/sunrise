@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -90,18 +90,18 @@ src_install() {
 	rm -rf tmp
 
 	cd "${S}"
-	./install --prefix="${ED}usr" \
+	./install --prefix="/usr" \
 		--noclean --nomenu || die "install script failed"
 
 	domenu share/applications/gcstar.desktop
 	for size in 16x16 22x22 24x24 32x32 36x36 48x48 64x64 72x72 96x96 128x128
 	do
-		insinto "${EPREFIX}"/usr/share/icons/hicolor/${size}/apps
+		insinto /usr/share/icons/hicolor/${size}/apps
 		newins share/gcstar/icons/gcstar_${size}.png gcstar.png
 	done
-	insinto "${EPREFIX}"/usr/share/icons/hicolor/scalable/apps
+	insinto /usr/share/icons/hicolor/scalable/apps
 	newins share/gcstar/icons/gcstar_scalable.svg gcstar.svg
-	insinto "${EPREFIX}"/usr/share/mime/packages
+	insinto /usr/share/mime/packages
 	doins share/applications/gcstar.xml
 
 	dodoc CHANGELOG README
