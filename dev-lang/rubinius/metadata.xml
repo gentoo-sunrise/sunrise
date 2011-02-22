@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+	<email>maintainer-wanted@gentoo.org</email>
+	<description>I'd be interested in eventually becoming the maintainer for
+		this ebuild - Judson Lester {nyarly@gmail.com}</description>
+</maintainer>
+<upstream>
+	<maintainer>
+		<email>evan@fallingsnow.net</email>
+		<name>Evan Phoenix</name>
+	</maintainer>
+	<bugs-to>http://github.com/evanphx/rubinius/issues</bugs-to>
+</upstream>
+</pkgmetadata>

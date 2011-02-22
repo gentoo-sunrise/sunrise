@@ -1,0 +1,10 @@
+diff -u -r old-work/Rakefile work/Rakefile
+--- old-work/Rakefile	2010-06-10 11:39:56.000000000 -0700
++++ work/Rakefile	2010-06-10 12:25:16.000000000 -0700
+@@ -38,7 +38,7 @@
+     ENV["CFLAGS"]      = "-Ivm/capi"
+   end
+ 
+-  sh "RUBYOPT='' bin/mspec ci --background"
++  puts "Tests should go here"
+ end
