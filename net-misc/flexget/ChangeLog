@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Feb 2011; Mike Gilbert <floppymaster@gmail.com>
+  -flexget-1.0_beta1932.ebuild, +flexget-1.0_beta1960.ebuild,
+  flexget-9999.ebuild:
+  Version bump. Add warning about database updates.
+
   15 Feb 2011; Mike Gilbert <floppymaster@gmail.com>
   flexget-1.0_beta1932.ebuild, flexget-9999.ebuild:
   Drop pygooglechart dependency
