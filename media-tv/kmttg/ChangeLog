@@ -1,6 +1,10 @@
 # ChangeLog for media-tv/kmttg
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  25 Feb 2011; John Ratliff (jdratlif) <webmaster@technoplaza.net>
+  -kmttg-0.7q.ebuild, +kmttg-0.7t.ebuild:
+  Version bump for kmttg
 
   31 Oct 2010; John Ratliff <webmaster@technoplaza.net> -kmttg-0.7j.ebuild,
   +kmttg-0.7q.ebuild:
