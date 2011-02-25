@@ -1,6 +1,12 @@
 # ChangeLog for net-misc/apt-cacher-ng
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*apt-cacher-ng-0.5.14 (25 Feb 2011)
+
+  25 Feb 2011; Michał Górny <mgorny@gentoo.org> -apt-cacher-ng-0.4.9.ebuild,
+  +apt-cacher-ng-0.5.14.ebuild, metadata.xml:
+  Version bump wrt #356319. Migrated to cmake-utils.
 
 *apt-cacher-ng-0.4.9 (06 Jul 2010)
 

@@ -1,21 +1,25 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs
+EAPI=3
+inherit cmake-utils eutils
 
-PATCHSET_V=1
 DESCRIPTION="Yet another implementation of a HTTP proxy for Debian/Ubuntu software packages written in C++"
 HOMEPAGE="http://www.unix-ag.uni-kl.de/~bloch/acng/"
-SRC_URI="mirror://debian/pool/main/a/${PN}/${PN}_${PV}.orig.tar.gz"
+SRC_URI="mirror://debian/pool/main/a/${PN}/${PN}_${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="doc examples fuse logrotate"
+IUSE="doc examples fuse lzma"
 
 DEPEND="app-arch/bzip2
-	sys-libs/zlib"
+	sys-libs/zlib
+	lzma? (
+		|| ( app-arch/xz-utils
+			app-arch/lzma-utils )
+	)"
 RDEPEND="${DEPEND}
 	dev-lang/perl
 	fuse? ( sys-fs/fuse )"
@@ -26,25 +30,25 @@ pkg_setup() {
 	enewuser ${PN} -1 -1 -1 ${PN}
 }
 
-src_prepare() {
-	# Respect our LDFLAGS for all targets.
-	sed -i \
-		-e 's:\($(CXX)\)\(.*\)-Wl,--as-needed:\1 $(LDFLAGS)\2:' \
-		Makefile || die
-}
+src_configure() {
+	mycmakeargs=(
+		# avoid forcing in LDFLAGS
+		-DHAVE_WL_AS_NEEDED=OFF
+		# assert for possible boost automagic
+		-DHAVE_BOOST_SMARTPTR=OFF
 
-src_compile() {
-	tc-export CXX
-	local build=
-	use fuse && build=acngfs
-	emake CURDIR="${S}" acng ${build} || die
+		$(cmake-utils_use_has lzma LZMA)
+		$(cmake-utils_use_has fuse FUSE_26)
+	)
+
+	cmake-utils_src_configure
 }
 
 src_install() {
-	dosbin ${PN} || die
+	dosbin "${CMAKE_BUILD_DIR}"/${PN} || die
 	doman doc/man/${PN}.8 || die
 	if use fuse; then
-		dobin acngfs || die
+		dobin "${CMAKE_BUILD_DIR}"/acngfs || die
 		doman doc/man/acngfs.8 || die
 	fi
 
@@ -52,13 +56,11 @@ src_install() {
 	newconfd "${FILESDIR}"/confd ${PN} || die
 
 	# for logrotate
-	if use logrotate; then
-		insinto /etc/logrotate.d
-		newins "${FILESDIR}"/logrotate ${PN} || die
-	fi
+	insinto /etc/logrotate.d
+	newins "${FILESDIR}"/logrotate ${PN} || die
 
 	# Documentation
-	dodoc ChangeLog README TODO || die
+	dodoc ChangeLog doc/README TODO || die
 	if use doc; then
 		dodoc doc/*.pdf || die
 		dohtml doc/html/* || die
