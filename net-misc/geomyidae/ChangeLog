@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/Geomyidae
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Feb 2011; James Penketh <tamber@furryhelix.co.uk>
+  geomyidae-0.16.ebuild:
+  Correct case in homepage URL
 
   12 Nov 2010; James Penketh <tamber@furryhelix.co.uk>
   -Geomyidae-0.15.ebuild, +geomyidae-0.16.ebuild:

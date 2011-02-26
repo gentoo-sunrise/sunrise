@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,7 +7,7 @@ EAPI=2
 inherit eutils toolchain-funcs
 
 DESCRIPTION="A daemon to serve the gopher protocol"
-HOMEPAGE="http://r-36.net/src/Geomyidae/"
+HOMEPAGE="http://r-36.net/src/geomyidae/"
 SRC_URI="http://r-36.net/src/${PN}/${P}.tgz"
 
 LICENSE="MIT"
