@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Feb 2011; Markos Chandras <hwoarang@gentoo.org> -index.html:
+  Remove weird index.html file from ebuild directory
+
   22 Feb 2011; Judson Lester(Judson) <nyarly@gmail.com>
   +rubinius-1.2.0.ebuild, +files/auto_gem.rb, +files/gcc-stdc-defines.patch,
   +files/no_specs.patch, +files/rubyopts_unset.patch, +index.html,
