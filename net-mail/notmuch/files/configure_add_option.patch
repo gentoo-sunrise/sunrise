@@ -1,0 +1,148 @@
+diff --git a/Makefile.local b/Makefile.local
+index f9b5a9b..3c6151c 100644
+--- a/Makefile.local
++++ b/Makefile.local
+@@ -277,6 +277,7 @@ ifeq ($(MAKECMDGOALS), install)
+ 	@echo "through the process of configuring notmuch and creating"
+ 	@echo "a database of existing email messages. The \"notmuch\""
+ 	@echo "command will also offer some sample search commands."
++ifeq ($(WITH_EMACS), 1)
+ 	@echo ""
+ 	@echo "Beyond the command-line interface, notmuch also offers"
+ 	@echo "a full-featured interface for reading and writing mail"
+@@ -288,6 +289,7 @@ ifeq ($(MAKECMDGOALS), install)
+ 	@echo "And then run emacs as \"emacs -f notmuch\" or invoke"
+ 	@echo "the command \"M-x notmuch\" from within emacs."
+ endif
++endif
+ 
+ .PHONY: install-desktop
+ install-desktop:
+diff --git a/completion/Makefile.local b/completion/Makefile.local
+index 6a6012d..0b74c06 100644
+--- a/completion/Makefile.local
++++ b/completion/Makefile.local
+@@ -12,7 +12,11 @@ install: install-$(dir)
+ 
+ install-$(dir):
+ 	@echo $@
++ifeq ($(WITH_BASH),1)
+ 	mkdir -p $(DESTDIR)$(bash_completion_dir)
+ 	install -m0644 $(bash_script) $(DESTDIR)$(bash_completion_dir)/notmuch
++endif
++ifeq ($(WITH_ZSH),1)
+ 	mkdir -p $(DESTDIR)$(zsh_completion_dir)
+ 	install -m0644 $(zsh_script) $(DESTDIR)$(zsh_completion_dir)/notmuch
++endif
+diff --git a/configure b/configure
+index c58dd0f..c7ec414 100755
+--- a/configure
++++ b/configure
+@@ -28,6 +28,9 @@ XAPIAN_CONFIG=${XAPIAN_CONFIG:-xapian-config}
+ # options.
+ PREFIX=/usr/local
+ LIBDIR=
++WITH_EMACS=1
++WITH_BASH=1
++WITH_ZSH=1
+ 
+ usage ()
+ {
+@@ -81,6 +84,15 @@ Fine tuning of some installation directories is available:
+ 	--mandir=DIR		Install man pages to DIR [PREFIX/share/man]
+ 	--sysconfdir=DIR	Read-only single-machine data [PREFIX/etc]
+ 	--emacslispdir=DIR	Emacs code [PREFIX/share/emacs/site-lisp]
++	--bashcompletiondir=DIR Bash completions files [SYSCONFDIR/bash_completion.d]
++	--zshcompletiondir=DIR	Zsh completions files [PREFIX/share/zsh/functions/Completion/Unix]
++
++Some features can be disabled (--with-feature=no is equivalent to
++--without-feature) :
++
++	--without-emacs			Do not install lisp file
++	--without-bash-completion	Do not install bash completions files
++	--without-zsh-completion	Do not install zsh completions files
+ 
+ Additional options are accepted for compatibility with other
+ configure-script calling conventions, but don't do anything yet:
+@@ -114,6 +126,34 @@ for option; do
+ 	SYSCONFDIR="${option#*=}"
+     elif [ "${option%%=*}" = '--emacslispdir' ] ; then
+ 	EMACSLISPDIR="${option#*=}"
++    elif [ "${option%%=*}" = '--bashcompletiondir' ] ; then
++	BASHCOMPLETIONDIR="${option#*=}"
++    elif [ "${option%%=*}" = '--zshcompletiondir' ] ; then
++	ZSHCOMLETIONDIR="${option#*=}"
++    elif [ "${option%%=*}" = '--with-emacs' ]; then
++	if [ "${option#*=}" = 'no' ]; then
++	    WITH_EMACS=0
++	else
++	    WITH_EMACS=1
++	fi
++    elif [ "${option}" = '--without-emacs' ] ; then
++	WITH_EMACS=0
++    elif [ "${option%%=*}" = '--with-bash-completion' ]; then
++	if [ "${option#*=}" = 'no' ]; then
++	    WITH_BASH=0
++	else
++	    WITH_BASH=1
++	fi
++    elif [ "${option}" = '--without-bash-completion' ] ; then
++	WITH_BASH=0
++    elif [ "${option%%=*}" = '--with-zsh-completion' ]; then
++	if [ "${option#*=}" = 'no' ]; then
++	    WITH_ZSH=0
++	else
++	    WITH_ZSH=1
++	fi
++    elif [ "${option}" = '--without-zsh-completion' ] ; then
++	WITH_ZSH=0
+     elif [ "${option%%=*}" = '--build' ] ; then
+ 	build_option="${option#*=}"
+ 	case ${build_option} in
+@@ -527,10 +567,10 @@ HAVE_EMACS = ${have_emacs}
+ desktop_dir = \$(prefix)/share/applications
+ 
+ # The directory to which bash completions files should be installed
+-bash_completion_dir = \$(sysconfdir)/bash_completion.d
++bash_completion_dir = ${BASHCOMPLETIONDIR:=\$(sysconfdir)/bash_completion.d}
+ 
+ # The directory to which zsh completions files should be installed
+-zsh_completion_dir = \$(prefix)/share/zsh/functions/Completion/Unix
++zsh_completion_dir = ${ZSHCOMLETIONDIR:=\$(prefix)/share/zsh/functions/Completion/Unix}
+ 
+ # Whether the getline function is available (if not, then notmuch will
+ # build its own version)
+@@ -572,6 +612,15 @@ HAVE_VALGRIND = ${have_valgrind}
+ # And if so, flags needed at compile time for valgrind macros
+ VALGRIND_CFLAGS = ${valgrind_cflags}
+ 
++# Support for emacs
++WITH_EMACS = ${WITH_EMACS}
++
++# Support for bash completion
++WITH_BASH = ${WITH_BASH}
++
++# Support for zsh completion
++WITH_ZSH = ${WITH_ZSH}
++
+ # Combined flags for compiling and linking against all of the above
+ CONFIGURE_CFLAGS = -DHAVE_GETLINE=\$(HAVE_GETLINE) \$(GMIME_CFLAGS)      \\
+ 		   \$(TALLOC_CFLAGS) -DHAVE_VALGRIND=\$(HAVE_VALGRIND)   \\
+diff --git a/emacs/Makefile.local b/emacs/Makefile.local
+index 86f9b07..9ea8e49 100644
+--- a/emacs/Makefile.local
++++ b/emacs/Makefile.local
+@@ -22,11 +22,13 @@ emacs_bytecode := $(subst .el,.elc,$(emacs_sources))
+ %.elc: %.el
+ 	$(call quiet,EMACS) --directory emacs -batch -f batch-byte-compile $<
+ 
++ifeq ($(WITH_EMACS),1)
+ ifeq ($(HAVE_EMACS),1)
+ all: $(emacs_bytecode)
+ endif
+ 
+ install: install-emacs
++endif
+ 
+ .PHONY: install-emacs
+ install-emacs:
