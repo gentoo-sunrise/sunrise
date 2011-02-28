@@ -1,0 +1,8 @@
+# ChangeLog for net-analyzer/nagios-check_multi
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  25 Feb 2011; Your Name (caguiar) <caguiar@madeiratecnopolo.pt
+  +nagios-check_multi-0.24.ebuild, +metadata.xml:
+  New Ebuild for bug 356193
+
