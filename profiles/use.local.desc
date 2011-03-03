@@ -39,6 +39,7 @@ app-misc/2gis-data:perm - The map of Perm for app-misc/2gis
 app-misc/2gis-data:rost - The map of Rostov-na-Donu for app-misc/2gis
 app-misc/2gis-data:sam - The map of Samara for app-misc/2gis
 app-misc/2gis-data:sochi - The map of Sochi for app-misc/2gis
+app-misc/2gis-data:spb - The map of St.Petersburg for app-misc/2gis
 app-misc/2gis-data:tim - The map of Tyumen for app-misc/2gis
 app-misc/2gis-data:tom - The map of Tomsk for app-misc/2gis
 app-misc/2gis-data:tula - The map of Tula for app-misc/2gis
@@ -202,7 +203,6 @@ net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
 net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
 net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
-net-misc/apt-cacher-ng:logrotate - Install support files for app-admin/logrotate.
 net-misc/autoupnp:suid - Install the library setuid & setgid (required in order to run setuid & setgid applications).
 net-misc/fatrat:bittorrent - Enables support for the bittorrent protocol
 net-misc/fatrat:webinterface - Support remote control via a web interface
