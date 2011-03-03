@@ -30,6 +30,7 @@
 		<flag name='rost'>The map of Rostov-na-Donu for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='sam'>The map of Samara for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='sochi'>The map of Sochi for <pkg>app-misc/2gis</pkg></flag>
+		<flag name='spb'>The map of St.Petersburg for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='tim'>The map of Tyumen for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='tom'>The map of Tomsk for <pkg>app-misc/2gis</pkg></flag>
 		<flag name='tula'>The map of Tula for <pkg>app-misc/2gis</pkg></flag>

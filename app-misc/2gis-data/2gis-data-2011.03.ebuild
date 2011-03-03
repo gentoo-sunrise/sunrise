@@ -58,6 +58,7 @@ my_add_town perm Perm 2007 12
 my_add_town rost Rostov 2010 3
 my_add_town sam Samara 2008 7
 my_add_town sochi Sochi 2010 7
+my_add_town spb Spb 2011 2
 my_add_town tim Tyumen 2006 11
 my_add_town tom Tomsk 2004 12
 my_add_town tula Tula 2010 11
