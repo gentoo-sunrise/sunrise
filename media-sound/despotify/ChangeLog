@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/despotify
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2011; Nathan Brink <ohnobinki@gentoo.org> despotify-9999.ebuild:
+  Compile during src_compile() instead of src_install() and fix Subversion
+  URI to point to the src directory, removing `cd src'.
 
   04 Mar 2010; Carles Pagès (page) <page@cubata.homelinux.net>
   +despotify-9999.ebuild, +metadata.xml:

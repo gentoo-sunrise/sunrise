@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit subversion
+inherit base subversion
 
-ESVN_REPO_URI="https://${PN}.svn.sourceforge.net/svnroot/${PN}"
+ESVN_REPO_URI="https://${PN}.svn.sourceforge.net/svnroot/${PN}/src"
 
 DESCRIPTION="An open source Spotify client and library"
 HOMEPAGE="http://despotify.se/"
@@ -20,8 +20,4 @@ DEPEND="sys-libs/zlib
 	media-libs/libao"
 RDEPEND="${DEPEND}"
 
-src_install() {
-	cd src
-	emake DESTDIR="${D}" install || die "install failed"
-	dodoc README TODO || die "dodoc failed"
-}
+DOCS=(README TODO)
