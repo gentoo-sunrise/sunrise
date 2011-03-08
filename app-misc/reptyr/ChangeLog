@@ -1,0 +1,8 @@
+# ChangeLog for app-misc/reptyr
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  08 Mar 2011; Michael Orlitzky <michael@orlitzky.com> +reptyr-0.2.ebuild,
+  +metadata.xml:
+  New ebuild to address bug 357981.
+
