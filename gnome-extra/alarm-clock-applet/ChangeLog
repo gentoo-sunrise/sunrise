@@ -1,6 +1,11 @@
 # ChangeLog for gnome-extra/alarm-clock-applet
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Mar 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -alarm-clock-applet-0.3.1.ebuild, +alarm-clock-applet-0.3.1-r1.ebuild,
+  +files/alarm-clock-applet-0.3.1-libnotify-0.7.patch:
+  Backport upstream patch for libnotify-0.7 compatibility
 
   18 Jun 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   -alarm-clock-applet-0.3.0.ebuild, +alarm-clock-applet-0.3.1.ebuild:

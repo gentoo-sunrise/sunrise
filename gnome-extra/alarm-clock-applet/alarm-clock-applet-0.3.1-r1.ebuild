@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=2
 
-inherit gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="A fully-featured alarm clock for your GNOME panel"
 HOMEPAGE="http://alarm-clock.pseudoberries.com/"
@@ -26,3 +26,9 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	app-text/gnome-doc-utils
 	dev-util/pkgconfig"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-libnotify-0.7.patch"
+	eautoreconf
+	gnome2_src_prepare
+}
