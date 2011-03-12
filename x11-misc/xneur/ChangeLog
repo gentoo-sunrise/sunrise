@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Mar 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -xneur-0.12.0.ebuild, +xneur-0.12.0-r1.ebuild,
+  +files/xneur-0.12.0-libnotify-0.7.patch:
+  Add patch for libnotify-0.7 compatibility
+
   01 Feb 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -xneur-0.11.1.ebuild, -files/xneur-0.11.1-openmp.patch,
   +xneur-0.12.0.ebuild:
