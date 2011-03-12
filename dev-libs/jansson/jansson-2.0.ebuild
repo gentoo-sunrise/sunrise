@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-inherit eutils
+inherit autotools-utils
 
 DESCRIPTION="C library for encoding, decoding and manipulating JSON data"
 HOMEPAGE="http://www.digip.org/jansson/"
@@ -15,31 +15,18 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc static-libs"
 
-DEPEND="doc? ( >dev-python/sphinx-1.0 )"
+DEPEND="doc? ( >=dev-python/sphinx-1.0.4 )"
 RDEPEND=""
 
-src_configure() {
-	econf \
-		$(use_enable static-libs static)
-}
+DOCS=(CHANGES README.rst)
 
 src_compile() {
-	emake || die
+	autotools-utils_src_compile
 
-	if use doc; then
-		emake html || die
-	fi
+	use doc && autotools-utils_src_compile html
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-
-	# remove useless .a and .la files (only for non static compilation)
-	use static-libs || find "${D}" -name '*.la' -delete
-
-	dodoc CHANGES README.rst || die
-
-	if use doc; then
-		dohtml -r doc/_build/html/* || die "Installation of documentation failed"
-	fi
+	use doc && HTML_DOCS=("${AUTOTOOLS_BUILD_DIR}/doc/_build/html/")
+	autotools-utils_src_install
 }
