@@ -1,0 +1,8 @@
+# ChangeLog for sci-chemistry/hoomd
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Mar 2011; Ross Smith (gaurdro) <gaurdro@gmail.com>
+  +hoomd-0.9.1.3815.ebuild, +metadata.xml:
+  New Ebuild for bug 357021.  Thanks to the sunrise devs for their help
+
