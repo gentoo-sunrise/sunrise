@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
 PYTHON_DEPEND="2"
-inherit autotools distutils flag-o-matic multilib python fortran
+inherit autotools distutils flag-o-matic multilib python toolchain-funcs
 
 MY_P=${P}.r1714
 
@@ -30,7 +30,19 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
+get_fcomp() {
+	case $(tc-getFC) in
+	*gfortran* )
+	FCOMP="gfortran" ;;
+	* )
+	FCOMP=$(tc-getFC) ;;
+	esac
+}
+
 src_prepare() {
+	tc-export FC
+	get_fcomp
+	export FC="${FCOMP}"
 	# upstream confused LIBDIRS with LDFLAGS in Makefile. f2py wants only
 	# LIBDIRS as parameter and takes LDFLAGS only from environment.
 	sed -i \
