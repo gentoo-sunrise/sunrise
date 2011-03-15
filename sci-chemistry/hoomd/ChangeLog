@@ -3,6 +3,10 @@
 # $Header: $
 
   15 Mar 2011; Ross Smith (gaurdro) <gaurdro@gmail.com>
+  hoomd-0.9.1.3815.ebuild:
+  Fixed unescaped characters in pkg_setup
+
+  15 Mar 2011; Ross Smith (gaurdro) <gaurdro@gmail.com>
   hoomd-0.9.1.3815.ebuild, +hoomd-0.9.1.3815.patch:
   fixed errors in hoomd ebuild.  Thanks ato mgorny for the review
 

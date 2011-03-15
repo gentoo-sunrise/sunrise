@@ -29,14 +29,14 @@ pkg_setup() {
 	python_pkg_setup
 
 	if use cuda; then
-		if has_version <=nvidia-cuda-toolkit-3.0; then
+		if has_version '<=dev-util/nvidia-cuda-toolkit-3.0'; then
 			if version_is_at_least 4.4 $(gcc-version); then
 				ewarn "Nvidia CUDA SDK version 3.0 and below requires a gcc version less than 4.4"
 				ewarn "Enabling the cuda use flag with gcc version 4.4 or higher will cause build failures in those SDK versions."
 				ewarn "Please use gcc-config to set a gcc version less than 4.4 ."
 			fi
 
-		elif has_version <=nvidia-cuda-toolkit-3.2; then
+		elif has_version '<=dev-util/nvidia-cuda-toolkit-3.2'; then
 			if version_is_at_least 4.5 $(gcc-version); then
 				ewarn "Nvidia CUDA SDK Version 3.2 and below require a gcc version less than 4.5"
 				ewarn "Enabling the cuda use flag with gcc version 4.5 or higher will cause build failures in those SDK versions."
