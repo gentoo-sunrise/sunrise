@@ -20,6 +20,12 @@ RDEPEND=""
 
 DOCS=(CHANGES README.rst)
 
+src_prepare() {
+	sed -ie 's/-Werror//' src/Makefile.am || die
+	eautoreconf
+	autotools-utils_src_prepare
+}
+
 src_compile() {
 	autotools-utils_src_compile
 
