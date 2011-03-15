@@ -18,6 +18,7 @@ IUSE=""
 RDEPEND="dev-perl/libwww-perl[ssl]
 	perl-core/IO
 	dev-perl/perl-xyne-common
-	dev-perl/URI"
+	dev-perl/URI
+	virtual/perl-version"
 
 S=${WORKDIR}/${PN}
