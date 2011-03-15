@@ -28,26 +28,22 @@ RESTRICT_PYTHON_ABIS="3.*"
 pkg_setup() {
 	python_pkg_setup
 
-	if use cuda && version_is_at_least 4.5 $(gcc-version) \
-	&& has_version <=nvidia-cuda-toolkit-3.2 \
-	&& has_version >nvidia-cuda-toolkit-3.0; then
-		ewarn "Nvidia CUDA SDK Version 3.2 and below require a gcc version less than 4.5"
-		ewarn "Enabling the cuda use flag with gcc version 4.5 or higher will cause build failures in those SDK versions."
-		ewarn "Please use gcc-config to set a gcc version less than 4.5."
+	if use cuda; then
+		if has_version <=nvidia-cuda-toolkit-3.0; then
+			if version_is_at_least 4.4 $(gcc-version); then
+				ewarn "Nvidia CUDA SDK version 3.0 and below requires a gcc version less than 4.4"
+				ewarn "Enabling the cuda use flag with gcc version 4.4 or higher will cause build failures in those SDK versions."
+				ewarn "Please use gcc-config to set a gcc version less than 4.4 ."
+			fi
+
+		elif has_version <=nvidia-cuda-toolkit-3.2; then
+			if version_is_at_least 4.5 $(gcc-version); then
+				ewarn "Nvidia CUDA SDK Version 3.2 and below require a gcc version less than 4.5"
+				ewarn "Enabling the cuda use flag with gcc version 4.5 or higher will cause build failures in those SDK versions."
+				ewarn "Please use gcc-config to set a gcc version less than 4.5."
+			fi
+		fi
 	fi
-
-	if use cuda && version_is_at_least 4.4 $(gcc-version) \
-	&& has_version <=nvidia-cuda-toolkit-3.0; then
-		ewarn "Nvidia CUDA SDK version 3.0 and below requires a gcc version less than 4.4"
-		ewarn "Enabling the cuda use flag with gcc version 4.4 or higher will cause build failures in those SDK versions."
-		ewarn "Please use gcc-config to set a gcc version less than 4.4 ."
-	fi
-
-}
-
-src_unpack() {
-	unpack ${P}.tar.bz2
-	use doc && unpack hoomd-devdoc-${PV}.tar.bz2
 }
 
 src_prepare(){
@@ -65,16 +61,16 @@ src_configure(){
 	my_config() {
 		local mycmakeargs=(
 			$(cmake-utils_use_enable cuda CUDA)
-			$(cmake-utils_use_enable static-lib STATIC)
+			$(cmake-utils_use_enable static-libs STATIC)
 			$(cmake-utils_use_enable test BUILD_TESTING)
 			$(cmake-utils_use_enable openmp OPENMP)
 			$(cmake-utils_use_enable zlib ZLIB)
 			-DENABLE_VALGRIND=OFF
 			-DENABLE_NATIVE_INSTALL=0N
 			-DENABLE_DOXYGEN=OFF
-			-DPYTHON_SITEDIR=$(python_get_sitedir)
+			-DPYTHON_SITEDIR="$(python_get_sitedir)"
 			-DENABLE_SINGLE_PRECISION=${sp}
-	        	-DCMAKE_BUILD_TYPE=${cbt}
+			-DCMAKE_BUILD_TYPE=${cbt}
 	        	-DENABLE_OCELOT:BOOL=OFF
 			)
 
@@ -90,13 +86,12 @@ src_test(){
 
 src_install(){
 	if use doc; then
-
 		insinto /usr/share/doc/${PF}
 		newins  "${DISTDIR}/hoomd-userdoc-${MY_DOC_PV}.pdf" hoom-userdoc-${PV}.pdf || die "docs failed"
 
 		insinto /usr/share/doc/${PF}/devdocs
-		mv "hoomd-devdoc-${MY_DOC_PV}/" "hoomd-devdoc-${PV}" || die
-		doins -r "hoomd-devdoc-${PV}/" || die "docs failed"
+		mv "${WORKDIR}/hoomd-devdoc-${MY_DOC_PV}/" "${WORKDIR}/hoomd-devdoc-${PV}" || die
+		doins -r "${WORKDIR}/hoomd-devdoc-${PV}/" || die "docs failed"
 	fi
 
 	python_execute_function -s cmake-utils_src_install
