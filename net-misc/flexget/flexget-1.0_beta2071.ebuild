@@ -6,9 +6,10 @@ EAPI="3"
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 DISTUTILS_SRC_TEST="setup.py"
 
-inherit distutils
+inherit distutils eutils
 
 MY_P="FlexGet-${PV/_beta/r}"
 DESCRIPTION="A multipurpose automation tool for content like torrents, nzbs, podcasts, comics, etc."
@@ -35,7 +36,6 @@ DEPEND="${RDEPEND}
 	dev-python/paver
 	test? ( >=dev-python/nose-0.11 )"
 
-RESTRICT_PYTHON_ABIS="3.*"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
@@ -45,6 +45,7 @@ src_prepare() {
 	# Remove bundled paver
 	rm paver-minilib.zip || die
 
+	epatch_user
 	distutils_src_prepare
 }
 

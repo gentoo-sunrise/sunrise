@@ -6,9 +6,10 @@ EAPI="3"
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 DISTUTILS_SRC_TEST="setup.py"
 
-inherit distutils subversion
+inherit distutils eutils subversion
 
 DESCRIPTION="A multipurpose automation tool for content like torrents, nzbs, podcasts, comics, etc."
 HOMEPAGE="http://flexget.com/"
@@ -34,8 +35,6 @@ DEPEND="${RDEPEND}
 	dev-python/paver
 	test? ( >=dev-python/nose-0.11 )"
 
-RESTRICT_PYTHON_ABIS="3.*"
-
 src_prepare() {
 	# Prevent setup from grabbing nose from pypi
 	sed -e /setup_requires/d -i pavement.py || die
@@ -43,6 +42,7 @@ src_prepare() {
 	# Generate setup.py
 	paver generate_setup || die
 
+	epatch_user
 	distutils_src_prepare
 }
 
