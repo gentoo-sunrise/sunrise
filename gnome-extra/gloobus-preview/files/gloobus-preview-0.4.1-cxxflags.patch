@@ -1,0 +1,12 @@
+From: Nathan Phillip Brink <ohnobinki@ohnopublishing.net>
+Subject: Don't ignore CXXFLAGS, fixes portage-multilib support.
+
+--- a/src/Makefile.am	2009-09-10 08:01:00.000000000 -0400
++++ b/src/Makefile.am	2011-03-16 09:45:30.000000000 -0400
+@@ -1,6 +1,5 @@
+ SUBDIRS = plugin-comic plugin-folder plugin-icns plugin-gstreamer-audio plugin-gstreamer-video plugin-openoffice plugin-pdf plugin-pixbuf plugin-text plugin-ttf .
+ 
+-CXXFLAGS = -Wall -g				#If -O2  iDocument threads don't work
+ #AM_CXXFLAGS = -Wall
+ AM_LDFLAGS = -rdynamic 
+ AM_CPPFLAGS =$(CAIRO_CFLAGS) $(GTK_CFLAGS) $(LIBGNOMEUI_CFLAGS) $(PTHREAD_CFLAGS) $(GTKSOURCEVIEW_CFLAGS)

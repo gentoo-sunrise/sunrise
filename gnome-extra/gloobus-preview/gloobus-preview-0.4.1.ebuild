@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=4
 
-inherit autotools-utils versionator
+inherit autotools autotools-utils eutils versionator
 
 MY_PV=$(get_version_component_range 1-2)
 
@@ -26,15 +26,16 @@ DEPEND="app-text/poppler
 	x11-libs/gtksourceview:2.0"
 RDEPEND="${DEPEND}"
 
-src_configure() {
-	econf --disable-static
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-cxxflags.patch
+	eautomake
 }
 
-src_install() {
-	emake DESTDIR="${D}" install || die
-
-	# Remove useless .la files
-	remove_libtool_files 'all'
+src_configure() {
+	local myeconfargs=(
+		--disable-static
+	)
+	autotools-utils_src_configure
 }
 
 pkg_postinst() {
