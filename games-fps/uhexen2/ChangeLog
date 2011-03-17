@@ -1,6 +1,9 @@
 # ChangeLog for games-fps/uhexen2
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Mar 2011; Michał Górny <mgorny@gentoo.org> uhexen2-1.4.3.ebuild:
+  Drop 3dfx flag relying on glide-v3 being removed from gx86.
 
   05 Aug 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   -uhexen2-1.4.4_pre4.ebuild:

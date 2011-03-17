@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN}source-${PV}.tgz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="3dfx alsa asm cdaudio debug dedicated demo dynamic hexenworld gtk lights
+IUSE="alsa asm cdaudio debug dedicated demo dynamic hexenworld gtk lights
 midi opengl optimize-cflags oss sdlaudio sdlcd tools"
 
 QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
@@ -33,7 +33,6 @@ QA_EXECSTACK="${GAMES_BINDIR:1}/hexen2
 	${GAMES_BINDIR:1}/glhwcl-demo"
 
 UIDEPEND=">=media-libs/libsdl-1.2.7
-	3dfx? ( media-libs/glide-v3 )
 	alsa? ( >=media-libs/alsa-lib-1.0.7 )
 	midi? ( >=media-libs/sdl-mixer-1.2.5[timidity] )
 	!midi? ( >=media-libs/sdl-mixer-1.2.5 )
@@ -142,7 +141,6 @@ src_compile() {
 		USE_OSS="no" \
 		USE_SDLCD="no" \
 		X86_ASM="no" \
-		USE_3DFX="no" \
 		opts
 
 	if use opengl ; then
@@ -161,7 +159,6 @@ src_compile() {
 	use sdlcd && USE_SDLCD="yes"
 	use midi && USE_MIDI="yes"
 	use x86 && use asm && X86_ASM="yes"
-	use 3dfx && USE_3DFX="yes"
 
 	if use gtk ; then
 	# Build launcher
@@ -251,7 +248,7 @@ src_compile() {
 				USE_X86_ASM=${X86_ASM} \
 				OPT_EXTRA=${OPT_EXTRA} \
 				LINK_GL_LIBS=${LINK_GL_LIBS} \
-				USE_3DFXGAMMA="${USE_3DFX}" \
+				USE_3DFXGAMMA=no \
 				CPUFLAGS="${CFLAGS}" \
 				CC="$(tc-getCC)" \
 				${m} \
@@ -277,7 +274,7 @@ src_compile() {
 			USE_X86_ASM=${X86_ASM} \
 			OPT_EXTRA=${OPT_EXTRA} \
 			LINK_GL_LIBS=${LINK_GL_LIBS} \
-			USE_3DFXGAMMA=${USE_3DFX} \
+			USE_3DFXGAMMA=no \
 			CPUFLAGS="${CFLAGS}" \
 			CC="$(tc-getCC)" \
 			${m} \
