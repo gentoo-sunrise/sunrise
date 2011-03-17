@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Mar 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  citadel-7.85.ebuild:
+  Remove PROVIDE="virtual/mda" as virtual/mda is a new-style virtual and
+  gentoo-x86's virtual now lists mail-mta/citadel.
+
   29 Jan 2011; the_mgt the_mgt themgt@mail.ru -files/mailer.conf:
   Removed mailer.conf. No longer needed since mailwrapper was removed.
 
