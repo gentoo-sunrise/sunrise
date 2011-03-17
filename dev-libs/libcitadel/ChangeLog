@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Mar 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  libcitadel-7.85.ebuild:
+  Remove newline which confuses repoman.
+
   29 Jan 2011; the_mgt the_mgt themgt@mail.ru -libcitadel-7.84.ebuild,
   +libcitadel-7.85.ebuild:
   Version Bump, added flag filtering for -O3, since it also contains -finline-functions. Waiting for upstream fix.
