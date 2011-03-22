@@ -1,6 +1,10 @@
 # ChangeLog for app-forensics/ovaldi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Mar 2011; LABBE Corentin (montjoie) <corentin.labbe@geomatys.fr>
+  Manifest:
+  ovaldi-5.9.1 revbump
 
   12 Dec 2010; LABBE Corentin (montjoie) corentin.labbe@geomatys.fr
   ovaldi-5.8.2.ebuild, +files/ovaldi-5.8.2-disable-ldap-probes.patch:
