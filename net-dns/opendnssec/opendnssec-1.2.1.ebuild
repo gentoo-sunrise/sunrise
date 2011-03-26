@@ -18,8 +18,8 @@ IUSE="+auditor debug eppclient external-hsm mysql opensc +signer softhsm sqlite"
 RESTRICT="test"
 
 DEPEND="dev-libs/libxml2
-	>=net-libs/ldns-1.6.7
-	auditor? ( dev-lang/ruby[ssl] >=dev-ruby/dnsruby-1.51 )
+	>=net-libs/ldns-1.6.9
+	auditor? ( dev-lang/ruby[ssl] >=dev-ruby/dnsruby-1.52 )
 	eppclient? ( net-misc/curl dev-db/sqlite:3 )
 	mysql? ( >=virtual/mysql-5.0 )
 	opensc? ( dev-libs/opensc )
