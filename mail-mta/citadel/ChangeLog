@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Mar 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  citadel-7.85.ebuild:
+  Remove old-style virtual virtual/imapd. See bug 350792 comment 14.
+
   17 Mar 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
   citadel-7.85.ebuild:
   Remove PROVIDE="virtual/mda" as virtual/mda is a new-style virtual and

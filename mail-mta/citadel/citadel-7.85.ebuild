@@ -25,9 +25,6 @@ RDEPEND="${DEPEND}
 	net-mail/mailbase
 	!postfix? ( !virtual/mta )
 	!net-mail/mailwrapper"
-# dropped virtual/mta from PROVIDE in order to install with postfix on a system
-# removed mailwrapper stuff entirely and made sure it isn't left on system
-PROVIDE="virtual/imapd"
 
 MESSAGEBASE="/var/lib/citadel"
 
