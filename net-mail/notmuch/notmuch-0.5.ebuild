@@ -30,7 +30,6 @@ RDEPEND="${CDEPEND}
 
 RESTRICT_PYTHON_ABIS="3.*"
 
-
 src_prepare() {
 	if ! use emacs; then
 		ewarn "The default UI is provided as an emacs module."
