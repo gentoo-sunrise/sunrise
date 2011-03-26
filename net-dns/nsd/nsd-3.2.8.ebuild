@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="An authoritative only, high performance, open source name server"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/nsd"
@@ -26,12 +26,17 @@ pkg_setup() {
 	enewuser nsd -1 -1 -1 nsd
 }
 
+src_prepare() {
+	epatch "${FILESDIR}/${P}-configure.patch"
+	eautoreconf
+}
+
 src_configure() {
+	# ebuild.sh sets localstatedir to /var/lib, but nsd expects /var in several locations
+	# some of these cannot be changed by arguments to econf/configure, f.i. logfile
 	econf \
-		--with-dbfile=/var/db/nsd/nsd.db \
-		--with-difffile=/var/db/nsd/ixfr.db \
+		--localstatedir=/var \
 		--with-pidfile=/var/run/nsd/nsd.pid \
-		--with-xfrdfile=/var/db/nsd/xfrd.state \
 		--with-zonesdir=/var/lib/nsd \
 		$(use_enable bind8-stats) \
 		$(use_enable largefile) \
