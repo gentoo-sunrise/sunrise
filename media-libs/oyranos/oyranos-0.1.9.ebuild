@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,7 +28,7 @@ RDEPEND="app-admin/elektra
 		x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/libXxf86vm
-		x11-libs/fltk:1.1
+		x11-libs/fltk:1
 		xinerama? ( x11-libs/libXinerama )
 	)"
 DEPEND="${RDEPEND}

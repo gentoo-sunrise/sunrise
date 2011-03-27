@@ -1,6 +1,9 @@
 # ChangeLog for media-libs/oyranos
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Mar 2011; Markos Chandras <hwoarang@gentoo.org> oyranos-0.1.9.ebuild:
+  Fix fltk slot dependency
 
   19 Apr 2010; Justin Lecher <jlec@gentoo.org> oyranos-0.1.9.ebuild:
   Missing die added
