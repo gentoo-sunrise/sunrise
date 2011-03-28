@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Mar 2011; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
+  gpligc-1.9.ebuild:
+  adapted for renamed file in src tarball
+
   21 Mar 2011; Hannes Krueger (srebrodolskite) <Hannes.Krueger@gmail.com>
   -gpligc-1.8.ebuild, +gpligc-1.9.ebuild:
   version bump for gpligc

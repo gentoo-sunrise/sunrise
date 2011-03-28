@@ -42,7 +42,7 @@ src_install() {
 	keepdir /usr/share/${PN}/data/waypoint
 
 	# paths to perl modules have to be set in scripts/modules
-	sed -i -e "s:PREFIX:/usr:g" openGLIGCexplorer/.openGLIGCexplorerrc || die "sed failed"
+	sed -i -e "s:PREFIX:/usr:g" openGLIGCexplorer/.ogierc || die "sed failed"
 	sed -i -e "s:zzLIBDIRzz:/usr/share/${PN}/:g" GPLIGC/GPLIGC.pl || die "sed failed"
 	sed -i -e "s:zzLIBDIRzz:/usr/share/${PN}/:g" GPLIGC/GPLIGCwaypoints.pm || die "sed failed"
 
@@ -54,7 +54,7 @@ src_install() {
 	# install perl modules and icons/pics and sample configuration
 	insinto /usr/share/${PN}
 	doins GPLIGC/{{GPLIGCfunctions,GPLIGCwaypoints}.pm,gpligc.xbm,icon.png,logo.jpg,logos.gif,logos.jpg} \
-		openGLIGCexplorer/.openGLIGCexplorerrc || die "doins failed"
+		openGLIGCexplorer/.ogierc || die "doins failed"
 
 	dodoc doc/{CHANGES,GPLIGC_Manual.pdf} || die "dodoc failed"
 
