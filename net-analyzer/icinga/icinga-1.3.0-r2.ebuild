@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+apache2 api debug +idoutils lighttpd +mysql perl plugins postgres ssl +vim-syntax +web"
 DEPEND="idoutils? ( dev-db/libdbi-drivers[mysql?,postgres?] )
 	perl? ( dev-lang/perl )
-	virtual/mailx
+	||	(   mail-client/mailx mail-client/nail net-mail/mailutils )
 	web? (
 		media-libs/gd[jpeg,png]
 		lighttpd? ( www-servers/lighttpd dev-lang/php[cgi] )
