@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Mar 2011; mthode <mthode@mthode.org> -icinga-1.3.0-r2.ebuild,
+  +icinga-1.3.1.ebuild:
+  reinstated virtual/mailx, I was stupid, also a version bump (bugfix
+  release), tested
+
   30 Mar 2011; mthode <mthode@mthode.org> -icinga-1.3.0-r1.ebuild,
   +icinga-1.3.0-r2.ebuild:
   removed virtual/mailx and replaced with real packages
