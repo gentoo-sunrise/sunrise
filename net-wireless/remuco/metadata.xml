@@ -9,6 +9,7 @@
 		<flag name='banshee'>Enable Banshee media player support</flag>
 		<flag name='client'>Compile the MIDP J2ME client</flag>
 		<flag name='exaile'>Enable Exaile media player support</flag>
+		<flag name='gmusicbrowser'>Enable Gmusicbrowser media player support</flag>
 		<flag name='mpd'>Enable Music Player Daemon support</flag>
 		<flag name='quodlibet'>Enable Quod Libet media player support</flag>
 		<flag name='rhythmbox'>Enable Rhythmbox media player support</flag>

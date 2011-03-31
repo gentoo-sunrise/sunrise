@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,7 +7,7 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 JAVA_PKG_OPT_USE="client"
 
-inherit distutils python java-pkg-opt-2 java-ant-2
+inherit distutils eutils python java-pkg-opt-2 java-ant-2
 
 MY_P=${PN}-source-${PV}
 DESCRIPTION="A server and J2ME client to control various media players"
@@ -17,7 +17,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="Apache-2.0 GPL-3 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="amarok audacious banshee exaile mpd mplayer quodlibet rhythmbox totem tvtime vlc"
+IUSE="amarok audacious banshee exaile gmusicbrowser mpd mplayer quodlibet rhythmbox totem tvtime vlc"
 
 COMMON_DEPEND="dev-python/dbus-python
 	dev-python/imaging
@@ -34,13 +34,14 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	amarok? ( >=media-sound/amarok-2.0 )
 	audacious? ( >=media-sound/audacious-1.5.1 )
-	banshee? ( >=media-sound/banshee-1.4 )
+	banshee? ( >=media-sound/banshee-1.6 )
 	exaile? ( >=media-sound/exaile-0.3 )
+	gmusicbrowser? ( media-sound/gmusicbrowser )
 	mpd? (
 		>=media-sound/mpd-0.13.2
 		>=dev-python/python-mpd-0.2
 	)
-	mplayer? ( media-video/mplayer )
+	mplayer? ( || ( media-video/mplayer media-video/mplayer2 ) )
 	quodlibet? ( >=media-sound/quodlibet-2.2 )
 	rhythmbox? (
 		>=media-sound/rhythmbox-0.11.5
@@ -54,6 +55,10 @@ RESTRICT_PYTHON_ABIS="3.*"
 S=${WORKDIR}/${MY_P}
 
 DOCS="doc/AUTHORS doc/CHANGES doc/README doc/api.html"
+
+src_prepare() {
+	epatch "${FILESDIR}/gmusicbrowser-adapter.patch"
+}
 
 src_compile() {
 	local adapter
