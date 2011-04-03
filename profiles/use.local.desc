@@ -133,6 +133,7 @@ games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
 games-misc/fretsonfire:guitarhero - Enable Guitar Hero song importer
 games-misc/fretsonfire:psyco - Enable psyco python accelerator
+games-puzzle/hex-a-hop:pango - Use sdl-pango instead of default sdl-ttf for font rendering
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
@@ -230,6 +231,7 @@ net-wireless/remuco:audacious - Enable Audacious media player support
 net-wireless/remuco:banshee - Enable Banshee media player support
 net-wireless/remuco:client - Compile the MIDP J2ME client
 net-wireless/remuco:exaile - Enable Exaile media player support
+net-wireless/remuco:gmusicbrowser - Enable Gmusicbrowser media player support
 net-wireless/remuco:mpd - Enable Music Player Daemon support
 net-wireless/remuco:quodlibet - Enable Quod Libet media player support
 net-wireless/remuco:rhythmbox - Enable Rhythmbox media player support
