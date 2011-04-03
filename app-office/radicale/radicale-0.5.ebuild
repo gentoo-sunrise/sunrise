@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,8 +16,13 @@ SRC_URI="http://www.radicale.org/src/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
-IUSE=""
+KEYWORDS="~x86 ~amd64"
+IUSE="ssl"
+
+# the '>=' goes ok, as radicale supports _all_ other python version
+# this includes all 3.* versions
+DEPEND="ssl? ( >=dev-lang/python-2.6.6[ssl] )"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
@@ -30,9 +35,4 @@ src_install() {
 	# config file
 	insinto /etc/${PN}
 	doins config || die
-}
-
-pkg_postinst() {
-	elog "If you want to use SSL with ${PN}, please check that you have"
-	elog "installed >=dev-lang/python-2.6[ssl]."
 }
