@@ -1,0 +1,8 @@
+# ChangeLog for games-puzzle/hex-a-hop
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Apr 2011; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
+  +hex-a-hop-1.1.0.ebuild, +metadata.xml:
+  New ebuild. Use bug 204532 as the tracker
+
