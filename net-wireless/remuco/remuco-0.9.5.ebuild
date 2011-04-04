@@ -7,7 +7,7 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 JAVA_PKG_OPT_USE="client"
 
-inherit distutils eutils python java-pkg-opt-2 java-ant-2
+inherit distutils python java-pkg-opt-2 java-ant-2
 
 MY_P=${PN}-source-${PV}
 DESCRIPTION="A server and J2ME client to control various media players"
@@ -55,10 +55,6 @@ RESTRICT_PYTHON_ABIS="3.*"
 S=${WORKDIR}/${MY_P}
 
 DOCS="doc/AUTHORS doc/CHANGES doc/README doc/api.html"
-
-src_prepare() {
-	epatch "${FILESDIR}/gmusicbrowser-adapter.patch"
-}
 
 src_compile() {
 	local adapter

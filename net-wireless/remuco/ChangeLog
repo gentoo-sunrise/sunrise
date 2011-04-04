@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Apr 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  -remuco-0.9.4.ebuild, +remuco-0.9.5.ebuild,
+  -files/gmusicbrowser-adapter.patch:
+  version bump, my patch as been merged upstream
+
   31 Mar 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   -remuco-0.9.3.1.ebuild, +remuco-0.9.4.ebuild,
   +files/gmusicbrowser-adapter.patch, metadata.xml:
