@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2011; Mike Gilbert <floppymaster@gmail.com>
+  flexget-1.0_beta2125.ebuild, flexget-9999.ebuild:
+  Restrict Python 2.4; does not work
+
 *flexget-1.0_beta2125 (03 Apr 2011)
 
   03 Apr 2011; Mike Gilbert <floppymaster@gmail.com>
