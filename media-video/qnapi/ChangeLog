@@ -1,6 +1,9 @@
 # ChangeLog for media-video/qnapi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Apr 2011; Mike Gilbert <floppymaster@gmail.com> qnapi-0.1.6_rc2.ebuild:
+  Bump EAPI to fix kde-functions usage
 
   25 Sep 2010; Markos Chandras <hwoarang@gentoo.org> qnapi-0.1.6_rc2.ebuild:
   Migrate to qt4-r2. Clean up ebuild
