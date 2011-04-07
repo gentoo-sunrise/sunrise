@@ -21,11 +21,12 @@
 ##   End example
 ##
 
-# Nathan Phillip Brink <ohnobinki@ohnopublishing.net> (04 Apr 2011)
-# No longer relevant since upstream has moved www-misc/reflector's
-# implementation to python code and actually ships the core
-# www-misc/reflector module with the reflector package instead of in
-# dev-perl/perl-xyne-arch. See bug 317823 comment 3.
+# Nathan Phillip Brink <ohnobinki@ohnopublishing.net> (07 Apr 2011)
+# Masked for removal on 2011/06/07. No longer relevant since upstream
+# has moved www-misc/reflector's implementation to python code and
+# actually ships the core www-misc/reflector module with the reflector
+# package instead of in dev-perl/perl-xyne-arch. See bug 317823
+# comment 3.
 dev-perl/perl-xyne-common
 dev-perl/perl-xyne-arch
 
