@@ -5,14 +5,13 @@
 EAPI="2"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-MY_DOC_PV="0.9.1"
 
 inherit cmake-utils eutils fdo-mime python versionator
 DESCRIPTION="HOOMD performs general purpose molecular dynamics simulations on NVIDIA GPUs"
 HOMEPAGE="http://codeblue.umich.edu/hoomd-blue/index.html"
-SRC_URI="http://umich.edu/~rjsm/${P}.tar.bz2
-	doc? ( http://codeblue.umich.edu/hoomd-blue/downloads/0.9/hoomd-userdoc-${MY_DOC_PV}.pdf
-		http://codeblue.umich.edu/hoomd-blue/downloads/0.9/hoomd-devdoc-${MY_DOC_PV}.tar.bz2 )"
+SRC_URI="http://codeblue.umich.edu/hoomd-blue/downloads/0.9/${P}.tar.bz2
+	doc? ( http://codeblue.umich.edu/hoomd-blue/downloads/0.9/hoomd-userdoc-${PV}.pdf
+		http://codeblue.umich.edu/hoomd-blue/downloads/0.9/hoomd-devdoc-${PV}.tar.bz2 )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -20,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+cuda debug doc +openmp +single-precision static-libs zlib"
 
 RDEPEND="dev-libs/boost
-	cuda? ( >=dev-util/nvidia-cuda-toolkit-2.0 dev-util/nvidia-cuda-sdk )
+	cuda? ( >=dev-util/nvidia-cuda-toolkit-2.0 )
 	sys-libs/zlib"
 DEPEND="${RDEPEND}"
 RESTRICT_PYTHON_ABIS="3.*"
@@ -87,10 +86,9 @@ src_test(){
 src_install(){
 	if use doc; then
 		insinto /usr/share/doc/${PF}
-		newins  "${DISTDIR}/hoomd-userdoc-${MY_DOC_PV}.pdf" hoom-userdoc-${PV}.pdf || die "docs failed"
+		doins  hoom-userdoc-${PV}.pdf || die "docs failed"
 
 		insinto /usr/share/doc/${PF}/devdocs
-		mv "${WORKDIR}/hoomd-devdoc-${MY_DOC_PV}/" "${WORKDIR}/hoomd-devdoc-${PV}" || die
 		doins -r "${WORKDIR}/hoomd-devdoc-${PV}/" || die "docs failed"
 	fi
 

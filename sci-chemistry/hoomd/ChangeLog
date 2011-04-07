@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Apr 2011; Ross Smith (gaurdro) <gaurdro@gmail.com>
+  -hoomd-0.9.1.3815.ebuild, +hoomd-0.9.2.ebuild:
+  Version bump for hoomd.
+
   16 Mar 2011; Ross Smith (gaurdro) <gaurdro@gmail.com> +hoomd-9999.ebuild:
   new ebuild for bug 357021, thanks Tommy[D], mgorny and the rest of the
   sunrise devs
