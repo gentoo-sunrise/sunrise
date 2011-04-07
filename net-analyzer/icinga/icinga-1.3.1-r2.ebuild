@@ -101,9 +101,9 @@ src_configure() {
 	--sysconfdir=/etc/icinga"
 
 	if use plugins ; then
-		myconf2+= "--libexecdir=/usr/$(get_libdir)/nagios/plugins"
+		myconf2+=" --libexecdir=/usr/$(get_libdir)/nagios/plugins"
 	else
-		myconf2+= "--libexecdir=/usr/$(get_libdir)/icinga/plugins"
+		myconf2+=" --libexecdir=/usr/$(get_libdir)/icinga/plugins"
 	fi
 
 	if use !apache2 && use !lighttpd ; then
