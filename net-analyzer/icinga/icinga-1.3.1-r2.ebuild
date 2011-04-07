@@ -98,8 +98,13 @@ src_configure() {
 	--sbindir=/usr/$(get_libdir)/icinga/cgi-bin
 	--datarootdir=/usr/share/icinga/htdocs
 	--localstatedir=/var/icinga
-	--sysconfdir=/etc/icinga
-	--libexecdir=/usr/$(get_libdir)/icinga/plugins"
+	--sysconfdir=/etc/icinga"
+
+	if use plugins ; then
+		myconf2+= "--libexecdir=/usr/$(get_libdir)/nagios/plugins"
+	else
+		myconf2+= "--libexecdir=/usr/$(get_libdir)/icinga/plugins"
+	fi
 
 	if use !apache2 && use !lighttpd ; then
 		myconf2+=" --with-command-group=icinga"
@@ -176,11 +181,11 @@ src_install() {
 
 	mkdir -p "${D}"/var/log/icinga || die "Failed mkdir of /var/log/icinga"
 
-	fowners -R icinga:icinga /etc/icinga /var/icinga /var/log/icinga || die "Failed chown of /etc/icinga"
+	fowners -R icinga:icinga /etc/icinga /var/icinga /var/log/icinga || die
 
 	sed -i -e 's:^log_file=.*:log_file=/var/log/icinga/icinga.log:' "${D}"/etc/icinga/icinga.cfg || die "Failed sed of /etc/icinga/icinga.cfg"
 
-	fowners -R root:root /usr/$(get_libdir)/icinga
+	fowners -R root:root /usr/$(get_libdir)/icinga || die
 	cd "${D}" || die
 	find usr/$(get_libdir)/icinga -type d -exec fperms 755 {} +
 	find usr/$(get_libdir)/icinga/cgi-bin -type f -exec fperms 755 {} +
