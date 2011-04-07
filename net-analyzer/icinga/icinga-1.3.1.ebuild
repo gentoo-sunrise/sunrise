@@ -174,7 +174,12 @@ src_install() {
 
 	fi
 
-	fowners -R icinga:icinga /etc/icinga /var/icinga || die "Failed chown of /etc/icinga"
+	mkdir -p "${D}"/var/log/icinga
+
+	fowners -R icinga:icinga /etc/icinga /var/icinga /var/log/icinga || die "Failed chown of /etc/icinga"
+
+	sed -i -e 's:^log_file=.*:log_file=/var/log/icinga/icinga.log:' "${D}"/etc/icinga/icinga.cfg
+	mv "${D}"/var/icinga/icinga.log "${D}"/var/log/icinga/icinga.log
 
 	fowners -R root:root /usr/$(get_libdir)/icinga
 	cd "${D}" || die
@@ -186,6 +191,7 @@ src_install() {
 	keepdir /var/icinga/archives
 	keepdir /var/icinga/rw
 	keepdir /var/icinga/spool/checkresults
+	keepdir /var/log
 
 	if use apache2 ; then
 		webserver=apache
