@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny@gentoo.org> (08 Apr 2011)
+# Moved to gx86 as app-dicts/dikt. Removal in 30 days.
+kde-misc/dikt
+
 # Nathan Phillip Brink <ohnobinki@ohnopublishing.net> (07 Apr 2011)
 # Masked for removal on 2011/06/07. No longer relevant since upstream
 # has moved www-misc/reflector's implementation to python code and
