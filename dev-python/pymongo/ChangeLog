@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pymongo
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Apr 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pymongo-1.9.ebuild, +pymongo-1.10.1.ebuild:
+  Version bump
 
   05 Oct 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pymongo-1.7.ebuild, +pymongo-1.9.ebuild:
