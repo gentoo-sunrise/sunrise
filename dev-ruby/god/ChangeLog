@@ -1,6 +1,13 @@
 # ChangeLog for dev-ruby/god
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*god-0.11.0 (11 Apr 2011)
+
+  11 Apr 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
+  -god-0.7.13.ebuild, +god-0.11.0.ebuild:
+  Bump to god-0.11.0. Move to ruby-fakegem eclass from the deprecated gems
+  eclass. Restrict failing tests.
 
   04 Aug 2009; CS Shyam Sundar (CS3) <csshyamsundar@gmail.com>
   god-0.7.13.ebuild:
