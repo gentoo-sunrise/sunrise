@@ -3,6 +3,10 @@
 # $Header: $
 
   12 Apr 2011; Jason Wallace <jason.r.wallace@gmail.com>
+  -pulledpork-0.5.0.ebuild:
+  removing 0.5.0 ebuild
+
+  12 Apr 2011; Jason Wallace <jason.r.wallace@gmail.com>
   +pulledpork-0.6.1.ebuild:
   Version Bump for PulledPork for Bug 312639
 
