@@ -6,8 +6,9 @@ EAPI=3
 
 SUPPORT_PYTHON_ABIS=1
 PYTHON_DEPEND="2:2.7 3"
+DISTUTILS_SRC_TEST="setup.py"
 
-inherit distutils python
+inherit distutils
 
 MY_P=${P/_/-}
 
@@ -21,11 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
 DEPEND="doc? ( dev-python/sphinx )"
-RDEPEND="test? ( net-zope/zope-pagetemplate
-		net-zope/zope-component
-		net-zope/zope-i18n
-		net-zope/zope-testing )"
-
+RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 
@@ -37,13 +34,6 @@ src_compile() {
 	if use doc ; then
 		emake html || die "make html failed"
 	fi
-}
-
-src_test() {
-	testing() {
-		PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" setup.py "test"
-	}
-	python_execute_function testing
 }
 
 src_install() {

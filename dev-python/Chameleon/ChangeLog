@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Apr 2011; Jan Matejka (yac) <yac@blesmrt.net> Chameleon-2.0_rc8.ebuild:
+  fixing test dependencies and improving code style
+
   11 Apr 2011; Jan Matejka (yac) <yac@blesmrt.net>
   +Chameleon-2.0_rc8.ebuild, +metadata.xml:
   New ebuild for bug #361629
