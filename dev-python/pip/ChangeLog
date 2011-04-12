@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pip
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Apr 2011; Vladislav Poluhin <nuklea@gmail.com> -pip-0.7.2.ebuild,
+  +pip-1.0.ebuild:
+  version bump, thanks to Alexandre Veyrenc #317791
 
   13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> pip-0.7.2.ebuild:
   Switch to pypi mirror list
