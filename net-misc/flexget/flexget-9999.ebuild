@@ -13,6 +13,7 @@ inherit distutils eutils subversion
 
 DESCRIPTION="A multipurpose automation tool for content like torrents, nzbs, podcasts, comics, etc."
 HOMEPAGE="http://flexget.com/"
+SRC_URI=""
 ESVN_REPO_URI="http://svn.flexget.com/trunk"
 
 LICENSE="MIT"
