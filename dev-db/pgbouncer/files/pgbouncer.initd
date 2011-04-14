@@ -10,6 +10,9 @@ depend() {
 }
 
 start() {
+	mkdir -p /var/run/pgbouncer
+	chown pgbouncer:pgbouncer /var/run/pgbouncer
+
 	ebegin "Starting pgbouncer"
 	
 	start-stop-daemon --start --pidfile ${PIDFILE} \
@@ -25,6 +28,7 @@ stop() {
 
 reload() {
 	ebegin "Gracefully reloading pgbouncer"
-	kill -HUP `cat ${PIDFILE}` &>/dev/null
+	start-stop-daemon --stop --oknodo --signal HUP \
+		--pidfile ${PIDFILE}
 	eend $?
 }

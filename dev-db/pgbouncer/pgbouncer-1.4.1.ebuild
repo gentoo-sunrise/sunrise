@@ -4,11 +4,13 @@
 
 EAPI="2"
 
+inherit eutils
+
 RESTRICT="test"
 
 DESCRIPTION="Lightweight connection pooler for PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/projects/pgbouncer/"
-SRC_URI="http://pgfoundry.org/frs/download.php/2912/${P}.tgz"
+SRC_URI="http://pgfoundry.org/frs/download.php/2987/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -25,9 +27,12 @@ pkg_setup() {
 }
 
 src_prepare() {
-	sed -i -e "s,pgbouncer.log,/var/log/pgbouncer/pgbouncer.log," \
-		-e "s,pgbouncer.pid,/var/run/pgbouncer/pgbouncer.pid," \
-		-e "s,etc/userlist.txt,/etc/userlist.txt," etc/pgbouncer.ini || die
+	sed -i -e "s,${PN}.log,/var/log/${PN}/${PN}.log," \
+		-e "s,${PN}.pid,/var/run/${PN}/${PN}.pid," \
+		-e "s,etc/userlist.txt,/etc/userlist.txt," \
+		-e "s,;unix_socket_dir = /tmp,unix_socket_dir = /var/run/${PN}/${PN}.sock," \
+		"${S}"/etc/pgbouncer.ini || die
+
 }
 
 src_configure() {
