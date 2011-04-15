@@ -1,13 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 MY_PN=danbooru-v7sh-grabber
-MY_P=${MY_PN}-${PV}
+MY_P=${MY_PN}-v${PV}
 
-DESCRIPTION="POSIX shell script to download images from Danbooru and Gelbooru"
+DESCRIPTION="POSIX-compliant shell script to download images from Danbooru and Gelbooru"
 HOMEPAGE="http://code.google.com/p/danbooru-v7sh-grabber"
 SRC_URI="http://${MY_PN}.googlecode.com/files/${MY_P}.tar.gz"
 
@@ -19,11 +19,11 @@ IUSE=""
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	newbin ${MY_PN} ${PN} || die
-	dodoc README || die
+	newbin ${MY_PN} ${PN}
+	#dodoc README
 }
 
 pkg_postinst() {
-	elog "Please note that ${PN} also works with Gelbooru."
-	elog "Just specify \`--engine gelbooru' when running the script."
+	elog "If you need a crash-course on how to use the script, please"
+	elog "visit ${HOMEPAGE}/wiki/Main"
 }
