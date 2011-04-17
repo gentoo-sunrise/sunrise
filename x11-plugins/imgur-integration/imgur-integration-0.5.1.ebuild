@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 MY_P=imgur-${PV}
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.chiark.greenend.org.uk/~tthurman/imgur/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="eog"
 
 RDEPEND="sys-apps/dbus
@@ -33,8 +33,11 @@ src_configure() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "emake failed"
-	dodoc AUTHORS NEWS README || die "dodoc failed"
+	emake install DESTDIR="${D}"
+	dodoc AUTHORS NEWS README
+
+	# icon is useless without the eog plugin
+	use eog || rm -rf "${D}"/usr/share/pixmaps
 }
 
 pkg_postinst() {
