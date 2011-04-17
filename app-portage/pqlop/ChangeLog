@@ -1,0 +1,8 @@
+# ChangeLog for app-portage/pqlop
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Apr 2011; Alexandr Morozov (LK4D4) <lk4dmath@gmail.com>
+  +pqlop-0.01.ebuild, +metadata.xml:
+  New Ebuild for bug 363889
+
