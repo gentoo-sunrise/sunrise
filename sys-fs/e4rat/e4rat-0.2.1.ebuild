@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit cmake-utils
 
 DESCRIPTION="Toolset to accelerate the boot process and application startup"
@@ -14,13 +16,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-lang/perl
-	>=dev-libs/boost-1.41
+	>=dev-libs/boost-1.42[static-libs]
 	sys-fs/e2fsprogs
 	sys-process/audit"
 
 RDEPEND="${DEPEND}"
 
 CMAKE_BUILD_TYPE=release
-PATCHES=( "${FILESDIR}/cmake_mkdir_violation_fix.patch"
-	"${FILESDIR}/v0.2_as-needed_fix.patch"
-	"${FILESDIR}/fix_manpage_source_path.patch" )

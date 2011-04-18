@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Apr 2011; Michael Orlitzky <michael@orlitzky.com> -e4rat-0.2.ebuild,
+  +e4rat-0.2.1.ebuild, -files/cmake_mkdir_violation_fix.patch,
+  -files/fix_manpage_source_path.patch, -files/v0.2_as-needed_fix.patch:
+  Version bump to v0.2.1. Remove patches applied upstream.
+
   12 Apr 2011; Michael Orlitzky <michael@orlitzky.com> +e4rat-0.2.ebuild,
   +files/cmake_mkdir_violation_fix.patch,
   +files/fix_manpage_source_path.patch, +files/v0.2_as-needed_fix.patch,
