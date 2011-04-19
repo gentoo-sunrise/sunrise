@@ -8,7 +8,7 @@ inherit eutils toolchain-funcs
 
 DESCRIPTION="A daemon to serve the gopher protocol"
 HOMEPAGE="http://r-36.net/src/geomyidae/"
-SRC_URI="http://r-36.net/src/${PN}/${P}.tgz"
+SRC_URI="http://r-36.net/src/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
