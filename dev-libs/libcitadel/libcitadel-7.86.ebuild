@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	filter-flags -finline-functions
-	replace-flags -03 -02
+	replace-flags -O3 -O2
 	econf
 }
 

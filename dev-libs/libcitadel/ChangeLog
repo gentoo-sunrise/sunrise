@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Apr 2011; the_mgt themgt@mail.ru libcitadel-7.86.ebuild:
+  Fixed a typo in replace-flags: Used zero instead of O for -O3 filtering
+
   21 Apr 2011; the_mgt themgt@mail.ru -libcitadel-7.85.ebuild,
   +libcitadel-7.86.ebuild:
   Version bump due to fresh release of whole Citadel suite
