@@ -2,6 +2,12 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Apr 2011; the_mgt themgt@mail.ru -citadel-7.85.ebuild,
+  +citadel-7.86.ebuild:
+  Version bump, moved postfix to RDEPEND and removed leftover from binkis
+  PROVIDE cleanup. Need to contact virtual/mta maintainer to get things
+  straight.
+
   26 Mar 2011; Nathan Phillip Brink (binki) <ohnobinki@ohnopublishing.net>
   citadel-7.85.ebuild:
   Remove old-style virtual virtual/imapd. See bug 350792 comment 14.

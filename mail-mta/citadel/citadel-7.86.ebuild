@@ -13,18 +13,19 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="ldap pam pic postfix ssl threads"
+# postfix can be used as mta with citadel. citadel needs to provide virtual/mta
+# in all other cases or other ebuilds depending on virtual/mta cause blockers
 
 DEPEND="=dev-libs/libcitadel-${PV}
 	>=sys-libs/db-4.1.25_p1
 	virtual/libiconv
 	ldap? ( >=net-nds/openldap-2.0.27 )
 	pam? ( sys-libs/pam )
-	postfix? ( mail-mta/postfix )
 	ssl? ( >=dev-libs/openssl-0.9.6 )"
 RDEPEND="${DEPEND}
 	net-mail/mailbase
-	!postfix? ( !virtual/mta )
-	!net-mail/mailwrapper"
+	!net-mail/mailwrapper
+	postfix? ( mail-mta/postfix )"
 
 MESSAGEBASE="/var/lib/citadel"
 
