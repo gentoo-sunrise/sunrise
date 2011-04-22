@@ -1,0 +1,8 @@
+# ChangeLog for games-misc/fortune-mod-giovine01
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Apr 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +fortune-mod-giovine01-9999.ebuild, +metadata.xml:
+  New ebuild for bug 364357 thanks to Tommy[D]
+
