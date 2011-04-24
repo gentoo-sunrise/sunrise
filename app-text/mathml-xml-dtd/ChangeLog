@@ -1,0 +1,8 @@
+# ChangeLog for app-text/mathml-xml-dtd
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Apr 2011; BAUER Samuel (mazes_80) <samuel.bauer@yahoo.fr>
+  +mathml-xml-dtd-2.0.ebuild, +metadata.xml:
+  app-text/mathml-xml-dtd-2.0 - #194501 - Regards to floppym, binki, and Tommy[D]
+
