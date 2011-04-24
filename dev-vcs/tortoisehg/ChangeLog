@@ -2,6 +2,12 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tortoisehg-2.0.3 (24 Apr 2011)
+
+  24 Apr 2011; Mike Gilbert <floppymaster@gmail.com> -tortoisehg-1.1.8.ebuild,
+  +tortoisehg-2.0.3.ebuild:
+  Major version bump plus ebulid cleanup
+
   07 Jan 2011; Denilson (CrazyTB) <denilsonsa@gmail.com>
   -tortoisehg-1.1.4.ebuild, +tortoisehg-1.1.8.ebuild:
   Version bump for tortoisehg-1.1.8, as version 1.1.4 failed to run due to a
