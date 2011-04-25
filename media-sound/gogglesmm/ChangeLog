@@ -1,6 +1,12 @@
 # ChangeLog for media-sound/gogglesmm
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  25 Apr 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  -gogglesmm-0.11.5.ebuild, +gogglesmm-0.12.1.ebuild, gogglesmm-9999.ebuild,
+  metadata.xml:
+  BUMP to media-sound/gogglesmm-0.12.1 removed USE="asf mp4", rely on taglib.
+  Removed USE="old-miniplayer", no longer supported
 
   10 Nov 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   -gogglesmm-0.11.2.ebuild, +gogglesmm-0.11.5.ebuild:
