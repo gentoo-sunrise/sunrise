@@ -2,6 +2,12 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*liblightscribe-1.18.23.1 (27 Apr 2011)
+
+  27 Apr 2011; Mario Fetka <mario.fetka@gmail.com>
+  -liblightscribe-1.18.22.2.ebuild, +liblightscribe-1.18.23.1.ebuild:
+  Simple Version bump
+
 *liblightscribe-1.18.22.2 (09 Mar 2011)
 
   09 Mar 2011; Mario Fetka <mario.fetka@gmail.com>
