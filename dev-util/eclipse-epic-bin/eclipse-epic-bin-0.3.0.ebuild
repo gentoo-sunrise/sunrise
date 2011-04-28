@@ -1,8 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eclipse-ext
+# Commented out becuase eclipse-ext.eclass was removed from gentoo-x86
+# and users should install eclipse plugins using eclipse. See bug 98315
+# comment 3.
+#inherit eclipse-ext
 
 DESCRIPTION="EPIC is an opensource Perl IDE for the Eclipse platform."
 HOMEPAGE="http://e-p-i-c.sourceforge.net/"
