@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/nautilus-gloobus-preview
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org>
+  nautilus-gloobus-preview-0.1.0.ebuild:
+  Corrected for distutils EAPI <=2 deprecation warning
 
   05 Dec 2010; Fabiano Francesconi (elbryan) <fabiano.francesconi@gmail.com>
   Manifest:
