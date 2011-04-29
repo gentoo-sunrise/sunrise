@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,22 +24,36 @@ IUSE="examples jpeg nsplugin opengl player png truetype xembed"
 # the dependencies are done so that this can be resolved automatically
 # in the configure phase, all required functionality is then switched on
 
-RDEPEND="dev-libs/libxml2
+OPENGL_DEPS="
+	virtual/opengl
+	media-libs/freeglut"
+GTK_DEPS="
+	x11-libs/gtk+:2
+	x11-libs/gtkglext"
+
+RDEPEND="
+	dev-libs/libxml2
 	>=dev-libs/boost-1.37
-	>=dev-libs/glib-2.6
+	dev-libs/glib:2
 	sys-libs/zlib
 	png? ( media-libs/libpng )
 	jpeg? ( media-libs/jpeg )
 	truetype? ( >=media-libs/freetype-2 media-libs/fontconfig )
-	opengl? ( virtual/opengl media-libs/freeglut )
-	xembed? ( x11-libs/gtk+ x11-libs/gtkglext
-		virtual/opengl media-libs/freeglut )
-	player? ( gnome-base/libgnomeui >=gnome-base/libgnome-2.14.1 gnome-base/libglade net-misc/curl
-		x11-libs/gtk+ x11-libs/gtkglext
-		virtual/opengl media-libs/freeglut )
-	nsplugin? ( net-libs/xulrunner
-		x11-libs/gtk+ x11-libs/gtkglext
-		virtual/opengl media-libs/freeglut )
+	opengl? ( ${OPENGL_DEPS} )
+	xembed? (
+		${GTK_DEPS}
+		${OPENGL_DEPS} )
+	player? (
+		gnome-base/libgnomeui
+		gnome-base/libgnome
+		gnome-base/libglade
+		net-misc/curl
+		${GTK_DEPS}
+		${OPENGL_DEPS} )
+	nsplugin? (
+		net-libs/xulrunner
+		${GTK_DEPS}
+		${OPENGL_DEPS} )
 	examples? ( media-libs/libsdl )"
 
 DEPEND="${RDEPEND}
