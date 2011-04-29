@@ -1,6 +1,9 @@
 # ChangeLog for net-nds/gq
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> gq-1.2.3.ebuild:
+  Fix deps for gnome3
 
   14 Jan 2008; Christian Faulhammer <opfer@gentoo.org> gq-1.2.3.ebuild:
   use ebuild function for USE=kerberos handling in econf
