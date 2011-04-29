@@ -1,6 +1,9 @@
 # ChangeLog for gnome-extra/startupmanager
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> startupmanager-1.9.13.ebuild:
+  Corrected for distutils EAPI <=2 deprecation warning
 
   06 May 2010; Justin Lecher <jlec@gentoo.org>
   -startupmanager-1.9.10.ebuild, +startupmanager-1.9.13.ebuild:
