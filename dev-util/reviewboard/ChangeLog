@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/reviewboard
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> -reviewboard-1.0.8.ebuild,
+  -reviewboard-1.5_beta2-r1.ebuild, +reviewboard-1.5.5.ebuild:
+  Corrected for distutils EAPI <=2 deprecation warning, Version Bump
 
   24 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
   reviewboard-1.0.8.ebuild:
