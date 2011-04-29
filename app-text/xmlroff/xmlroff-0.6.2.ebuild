@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ IUSE="cairo debug doc svg truetype"
 
 # at least ciaro or gnome-print is required (as backend)
 
-RDEPEND="x11-libs/gtk+
+RDEPEND="x11-libs/gtk+:2
 	x11-libs/pango
 	dev-libs/glib:2
 	dev-libs/libxml2
