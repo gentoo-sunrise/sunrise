@@ -1,6 +1,9 @@
 # ChangeLog for gnome-extra/gdmap
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> gdmap-0.8.1.ebuild:
+  Fix deps for gnome3
 
   09 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   gdmap-0.8.1.ebuild:

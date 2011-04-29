@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="4"
 
 inherit gnome2
 
@@ -13,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 SLOT="0"
 
-RDEPEND=">=x11-libs/gtk+-2.6.0
+RDEPEND="x11-libs/gtk+:2
 	dev-libs/libxml2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
