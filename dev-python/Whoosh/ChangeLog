@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/Whoosh
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> -Whoosh-0.3.18.ebuild,
+  +Whoosh-1.8.2.ebuild:
+  Corrected for multiple PyABI installation
 
   13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   Whoosh-0.3.18.ebuild:
