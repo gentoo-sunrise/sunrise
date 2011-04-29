@@ -39,7 +39,7 @@ UIDEPEND=">=media-libs/libsdl-1.2.7
 	opengl? ( virtual/opengl )"
 
 # Launcher depends from GTK+ libs
-LNCHDEPEND="gtk? ( =x11-libs/gtk+-2* )"
+LNCHDEPEND="gtk? ( x11-libs/gtk+:2 )"
 
 # xdelta is needed to manually run the patch script
 RDEPEND="!games-fps/uhexen2-cvs
