@@ -1,13 +1,17 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit python multilib
+EAPI="3"
+
+PYTHON_DEPEND="2"
+
+inherit multilib python
 
 MY_PN=${PN/deskbar-handlers-/}
 
 DESCRIPTION="Unit conversion handler for the GNOME Deskbar"
-HOMEPAGE="http://www.kryogenix.org/days/2006/09/06/converter-deskbar"
+HOMEPAGE="http://www.kryogenix.org/days/2006/09/06/converter-deskbar/"
 SRC_URI="http://svn.kryogenix.org/svn/deskbar-plugins/tags/${PV}/${MY_PN}.py"
 
 LICENSE="GPL-2"
@@ -15,12 +19,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/python-2.3
-	>=x11-libs/gtk+-2.6
+DEPEND="
+	x11-libs/gtk+:2
 	>=dev-python/pygtk-2.6
 	>=gnome-extra/deskbar-applet-2.14.2"
 RDEPEND="${DEPEND}
 	sci-calculators/units"
+
+pkg_setup() {
+	python_set_active_version 2
+}
 
 src_unpack() { :; }
 
@@ -30,7 +38,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_mod_compile /usr/$(get_libdir)/deskbar-applet/handlers/${MY_PN}.py
+	python_mod_optimize /usr/$(get_libdir)/deskbar-applet/handlers/${MY_PN}.py
 }
 
 pkg_postrm() {
