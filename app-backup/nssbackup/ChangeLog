@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/nssbackup
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> nssbackup-0.3.1.ebuild:
+  Corrected for distutils EAPI <=2 deprecation warning
 
   14 Aug 2010; Dane Smith (c1pher) <smithdanea@gmail.com>
   -nssbackup-0.2.1.ebuild, +nssbackup-0.3.1.ebuild:
