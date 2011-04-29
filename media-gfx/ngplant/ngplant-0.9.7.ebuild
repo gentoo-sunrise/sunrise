@@ -1,10 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit eutils multilib toolchain-funcs
+WX_GTK_VER="2.8"
+
+inherit eutils multilib toolchain-funcs wxwidgets
 
 DESCRIPTION="plant modeling software package"
 HOMEPAGE="http://ngplant.sourceforge.net"
@@ -18,7 +20,7 @@ IUSE="doc examples"
 RDEPEND="
 	media-libs/glew
 	media-libs/freeglut
-	x11-libs/wxGTK:2.8
+	x11-libs/wxGTK:2.8[X]
 	dev-lang/lua"
 DEPEND="${RDEPEND}
 	dev-util/scons
