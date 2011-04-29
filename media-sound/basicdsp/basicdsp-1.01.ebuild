@@ -1,8 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+EAPI="3"
+
+WX_GTK_VER="2.8"
+
+inherit eutils toolchain-funcs wxwidgets
 
 DESCRIPTION="A program for experimenting with simple audio DSP algorithms"
 HOMEPAGE="http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/"
@@ -14,14 +18,12 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
 
-DEPEND=">=x11-libs/wxGTK-2.6.3"
+DEPEND="x11-libs/wxGTK:2.8[X]"
 RDEPEND=${DEPEND}
 
-src_unpack() {
-	unpack $A
-	cd "${S}"
-
+src_prepare() {
 	epatch "${FILESDIR}"/makefile.patch
+	tc-export CXX
 }
 
 src_install() {
