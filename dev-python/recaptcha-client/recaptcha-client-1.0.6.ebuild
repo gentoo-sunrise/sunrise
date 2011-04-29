@@ -1,14 +1,16 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="3"
 
 PYTHON_DEPEND="*"
 SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils python
+inherit distutils
 
 DESCRIPTION="Provides a CAPTCHA for Python using the reCAPTCHA service"
-HOMEPAGE="http://pypi.python.org/pypi/recaptcha-client"
+HOMEPAGE="http://pypi.python.org/pypi/recaptcha-client/"
 SRC_URI="mirror://pypi/r/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
@@ -18,6 +20,5 @@ IUSE=""
 
 RDEPEND="dev-python/pycrypto"
 
-src_install() {
-	newdoc PKG-INFO README || die
-}
+DOCS="PKG-INFO recaptcha_client.egg-info/*"
+PYTHON_MODNAME=recaptcha
