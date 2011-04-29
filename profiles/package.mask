@@ -22,6 +22,12 @@
 ##
 
 # Justin Lecher <jlec@gentoo.org> (29 Apr 2011)
+# Doesn't build with recent compilers, not fixable
+# upstream inactive since 2005
+# Removal in 30 days.
+media-video/sabbu
+
+# Justin Lecher <jlec@gentoo.org> (29 Apr 2011)
 # Unable to find sources
 # upstream inactive since 2007
 # Removal in 30 days.
