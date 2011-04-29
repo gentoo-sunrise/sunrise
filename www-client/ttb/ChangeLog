@@ -1,6 +1,9 @@
 # ChangeLog for www-client/ttb
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> ttb-0.9.4.ebuild:
+  Corrected for multiple PyABI installation, added ~amd64
 
   13 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ttb-0.9.4.ebuild:
   NEED_PYTHON -> PYTHON_DEPEND, restrict to python-2 for now

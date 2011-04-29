@@ -1,10 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-PYTHON_DEPEND="2:2.4"
+EAPI="3"
 
-inherit eutils python distutils
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
+
+inherit eutils distutils
 
 DESCRIPTION="TeleText Browser for Dutch teletext pages from NOS"
 HOMEPAGE="http://www.djcbsoftware.nl/code/ttb/"
@@ -12,13 +16,12 @@ SRC_URI="http://www.djcbsoftware.nl/code/ttb/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/pygtk"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack ${A}
+src_prepare() {
 	epatch "${FILESDIR}/${P}-nodisplay.patch"
 }
