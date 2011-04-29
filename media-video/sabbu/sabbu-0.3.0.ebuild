@@ -22,7 +22,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-src_compile() {
+src_configure() {
 	# none of the current ffmpeg works here
 	econf \
 		--without-ffmpeg \
