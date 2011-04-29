@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,17 +18,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+sqlite"
 
 RDEPEND=">=dev-libs/dbus-glib-0.6
-	>=dev-libs/glib-2.6
+	dev-libs/glib:2
 	>=dev-libs/libpcre-6.3
-	>=gnome-base/gnome-desktop-2.10
+	gnome-base/gnome-desktop:2
 	>=net-libs/loudmouth-1.2.2
 	>=sys-apps/dbus-1
-	>=x11-libs/gtk+-2.6
+	x11-libs/gtk+:2
 	x11-libs/libXScrnSaver
-	sqlite? ( >=dev-db/sqlite-3.3 )"
+	sqlite? ( dev-db/sqlite:3 )"
 
 DEPEND="dev-util/pkgconfig
-	>=gnome-base/gconf-2
+	gnome-base/gconf:2
 	${RDEPEND}"
 
 pkg_setup() {

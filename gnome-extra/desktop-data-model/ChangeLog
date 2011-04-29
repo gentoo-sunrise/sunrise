@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/desktop-data-model
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org>
+  desktop-data-model-1.2.4.ebuild:
+  Fix deps for gnome3
 
   29 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   desktop-data-model-1.2.4.ebuild:
