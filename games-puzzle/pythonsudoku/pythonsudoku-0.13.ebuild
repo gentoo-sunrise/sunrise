@@ -1,6 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="3"
+
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit games distutils
 
@@ -18,25 +24,22 @@ RDEPEND="dev-python/pygtk
 	dev-python/reportlab
 	dev-python/imaging"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	sed -i \
-		-e 's#\(syscfg[ \t]*\)=.*#\1= /etc/games/pythonsudoku/pysdk.cfg#' \
-		-e 's#\(install-scripts[ \t]*\)=.*#\1= /usr/games/bin#' \
-		pythonsudoku/platform.cfg setup.cfg || die "fixing configfile path failed"
+src_prepare() {
+	sed \
+		-e "s:/usr/games:/usr/games/bin:g" \
+		-i setup.cfg || die
 }
 
 src_install() {
 	newgamesbin pysdk.py pysdk || die "newgamesbin failed"
 	distutils_src_install
 
-	dohtml -r doc/*
-	doman doc/pysdk.6
-	dodoc doc/*.txt
+	dohtml -r doc/* || die
+	doman doc/pysdk.6 || die
+	dodoc doc/*.txt || die
 
 	prepgamesdirs
 
 	insinto /etc/games/pythonsudoku
-	doins pysdk.cfg
+	doins pysdk.cfg || die
 }
