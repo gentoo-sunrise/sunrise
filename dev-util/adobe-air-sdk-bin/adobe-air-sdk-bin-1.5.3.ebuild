@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,7 +23,7 @@ RDEPEND="app-arch/unzip
 		net-misc/curl
 		www-plugins/adobe-flash
 		x11-libs/cairo
-		x11-libs/gtk+ )
+		x11-libs/gtk+:2 )
 	amd64? ( app-emulation/emul-linux-x86-baselibs
 		app-emulation/emul-linux-x86-gtklibs )"
 
