@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="3"
 
 inherit eutils games
 
@@ -22,7 +24,7 @@ RESTRICT="mirror strip"
 RDEPEND="
 	x86? (
 		media-libs/libsdl
-		x11-libs/gtk+
+		x11-libs/gtk+:2
 		x11-libs/libX11
 		x11-libs/libXau
 		x11-libs/libXdmcp

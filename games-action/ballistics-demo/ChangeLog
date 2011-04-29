@@ -1,6 +1,9 @@
 # ChangeLog for games-action/ballistics-demo
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> ballistics-demo-1.03.ebuild:
+  Fix deps for gnome3
 
 *ballistics-demo-1.03 (09 Jul 2010)
 
