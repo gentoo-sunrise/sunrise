@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=4
 
 inherit eutils
 
@@ -18,9 +20,9 @@ IUSE="avahi"
 RESTRICT="mirror strip"
 
 RDEPEND="dev-libs/atk
-	>=gnome-base/gconf-2
+	gnome-base/gconf:2
 	media-libs/alsa-lib
-	>=x11-libs/gtk+-2.6
+	x11-libs/gtk+:2
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/pango
