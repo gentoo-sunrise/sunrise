@@ -1,6 +1,10 @@
 # ChangeLog for app-admin/blockhosts
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> -blockhosts-2.4.0.ebuild,
+  +blockhosts-2.5.1.ebuild:
+  Corrected for multiple PyABI installation, Version Bump
 
   29 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de> blockhosts-2.4.0.ebuild:
   removing test-suite from installed files

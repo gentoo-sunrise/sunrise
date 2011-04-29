@@ -1,16 +1,18 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="3"
 
 PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit python distutils
 
 MY_P="BlockHosts-${PV}"
 DESCRIPTION="Blocks abusive IP hosts which probe your services (such as sshd, proftpd)"
-HOMEPAGE="http://www.aczoom.com/cms/blockhosts/"
+HOMEPAGE="http://www.aczoom.com/blockhosts/"
 SRC_URI="http://www.aczoom.com/tools/${PN}/${MY_P}.tar.gz"
 
 LICENSE="public-domain"
@@ -22,7 +24,7 @@ DEPEND="dev-python/pyxml"
 RDEPEND="${DEPEND}
 	logrotate? ( app-admin/logrotate )"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}"/${MY_P}
 
 pkg_setup() {
 	python_pkg_setup
@@ -43,16 +45,14 @@ src_prepare() {
 }
 
 src_test() {
-	$(PYTHON) test_blockhosts.py || die
+	testing() {
+		$(PYTHON) test_blockhosts.py || die
+	}
+	python_execute_function testing
 }
 
 src_install() {
 	distutils_src_install
-
-	exeinto $(python_get_sitedir)
-	doexe ${PN}.py || die
-
-	dosym $(python_get_sitedir)/${PN}.py /usr/bin/${PN}.py || die
 
 	exeinto /usr/share/${PN}
 	doexe bhrss.py || die
