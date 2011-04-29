@@ -15,5 +15,5 @@ IUSE=""
 
 RDEPEND="x11-libs/gtk+:2
 	gnome-base/libglade:2.0
-	>=x11-misc/synergy-1.2.4"
+	|| ( >=x11-misc/synergy-1.2.4 x11-misc/synergy-plus )"
 DEPEND="${RDEPEND}"
