@@ -1,12 +1,16 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="3"
+
+PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
-DESCRIPTION="Log4tailer is a python tailer with advanced features"
+DESCRIPTION="Advanced log tailer written in python"
 HOMEPAGE="http://code.google.com/p/log4tailer/"
 SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 
@@ -18,10 +22,13 @@ IUSE="test"
 DEPEND="dev-python/setuptools
 	test? ( dev-python/mox
 		dev-python/paramiko )"
-RDEPEND="virtual/python"
+RDEPEND=""
 
 src_test() {
-	PYTHONPATH=. "${python}" setup.py test || die "tests failed"
+	testing() {
+		PYTHONPATH=. $(PYTHON) setup.py test
+	}
+	python_execute_function testing
 }
 
 src_install() {
