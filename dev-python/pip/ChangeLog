@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> pip-1.0.ebuild,
+  +files/pip-1.0-unversioned.patch:
+  Corrected for distutils EAPI <=2 deprecation warning
+
   12 Apr 2011; Vladislav Poluhin <nuklea@gmail.com> -pip-0.7.2.ebuild,
   +pip-1.0.ebuild:
   version bump, thanks to Alexandre Veyrenc #317791

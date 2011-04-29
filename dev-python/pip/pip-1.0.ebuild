@@ -2,21 +2,26 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="3"
 
-inherit bash-completion distutils
+PYTHON_DEPEND="*"
+SUPPORT_PYTHON_ABIS="1"
 
-DESCRIPTION="pip is a replacement for easy_install"
-HOMEPAGE="http://pip.openplans.org"
-SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
+inherit bash-completion distutils eutils
+
+DESCRIPTION="Replacement for easy_install"
+HOMEPAGE="http://pip.openplans.org/ http://pypi.python.org/pypi/pip/"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="doc bash-completion zsh-completion"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-unversioned.patch
+	distutils_src_prepare
+}
 
 src_install() {
 	distutils_src_install
