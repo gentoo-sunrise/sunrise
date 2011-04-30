@@ -1,54 +1,51 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=4
+
 inherit eutils
 
-IUSE="nls gnome"
-
 DESCRIPTION="Control and configure soma through a graphic panel"
-HOMEPAGE="http://www.somasuite.org"
+HOMEPAGE="http://www.somasuite.org/"
 SRC_URI="http://www.somasuite.org/src/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="nls gnome"
 
-RDEPEND="media-sound/soma
-	>=x11-libs/gtk+-2.0
+RDEPEND="
+	media-sound/soma
+	x11-libs/gtk+:2
 	x11-libs/libSM
-	x11-libs/vte
-	gnome? ( x11-libs/gtksourceview
-		>=gnome-base/libgnomeprintui-2.0 )"
-
+	x11-libs/vte:0
+	gnome? (
+		x11-libs/gtksourceview:2.0
+		gnome-base/libgnomeprintui:2.2 )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+DOCS="AUTHORS ChangeLog README README.{modules,plugins,library}"
 
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-gtksourceview_env.patch
 }
 
-src_compile() {
+src_configure() {
 	use gnome || myconf="${myconf} --disable-gnomeprint"
 
 	econf \
 		$(use_enable nls) \
 		$(use_enable gnome) \
-		${myconf} \
-		|| die "econf failed"
-	emake || die "emake failed"
+		${myconf}
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	default
 
 	doicon icons/somax.png
 	make_desktop_entry ${PN} SomaX ${PN}.png AudioVideo;GTK
-
-	dodoc AUTHORS ChangeLog README README.{modules,plugins,library}
 }
 
 pkg_postinst() {
