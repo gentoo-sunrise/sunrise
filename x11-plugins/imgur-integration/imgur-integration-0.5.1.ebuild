@@ -7,7 +7,7 @@ EAPI=4
 MY_P=imgur-${PV}
 
 DESCRIPTION="A command-line utility and media-gfx/eog plugin for uploading to imgur.com"
-HOMEPAGE="https://github.com/tthurman/imgur-integration"
+HOMEPAGE="https://github.com/tthurman/imgur-integration/"
 SRC_URI="http://www.chiark.greenend.org.uk/~tthurman/imgur/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 
@@ -15,9 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="eog"
 
-RDEPEND="sys-apps/dbus
+RDEPEND="
+	sys-apps/dbus
 	dev-libs/dbus-glib
-	>=dev-libs/glib-2.24
+	dev-libs/glib:2
 	net-misc/curl
 	eog? ( media-gfx/eog )"
 DEPEND="${RDEPEND}
@@ -33,8 +34,7 @@ src_configure() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}"
-	dodoc AUTHORS NEWS README
+	default
 
 	# icon is useless without the eog plugin
 	use eog || rm -rf "${D}"/usr/share/pixmaps
