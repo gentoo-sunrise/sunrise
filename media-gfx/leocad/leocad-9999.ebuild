@@ -19,7 +19,7 @@ IUSE="jpeg zlib png"
 
 RDEPEND="virtual/opengl
 	x11-libs/gtk+:2
-	jpeg? ( media-libs/jpeg )
+	jpeg? ( virtual/jpeg )
 	zlib? ( sys-libs/zlib )
 	png? ( media-libs/libpng )"
 DEPEND="${RDEPEND}"
