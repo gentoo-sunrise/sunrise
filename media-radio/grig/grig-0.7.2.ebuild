@@ -1,8 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI=4
+
 inherit autotools eutils
 
 DESCRIPTION="A tool for controlling amateur radios"
@@ -14,28 +15,25 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="+hardware"
 
-DEPEND=">=dev-libs/glib-2.6
-	>=x11-libs/gtk+-2.6
-	>=media-libs/hamlib-1.2.5"
+DEPEND="
+	dev-libs/glib:2
+	x11-libs/gtk+:2
+	media-libs/hamlib"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	#patch to support old GtkTooltips above gtk+-2.12
 	epatch "${FILESDIR}/${P}-Tooltip.patch"
 	eautoreconf
 }
 
-src_compile() {
-	econf $(use_enable hardware )
-	emake || die "emake failed!"
+src_configure() {
+	econf $(use_enable hardware)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 	make_desktop_entry ${PN} "GRig" "/usr/share/pixmaps/grig/grig-logo.png" "Application;HamRadio"
 	# make document installation more Gentoo like
 	rm -rf "${D}/usr/share/grig" || die "cleanup docs failed"
-	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"
 }
