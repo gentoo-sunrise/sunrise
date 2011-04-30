@@ -15,9 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc X xinerama"
 
-RDEPEND="app-admin/elektra
+RDEPEND="
+	app-admin/elektra
 	dev-libs/libxml2
-	media-libs/jpeg
+	virtual/jpeg
 	media-libs/lcms
 	media-libs/libpng
 	sys-devel/gettext
