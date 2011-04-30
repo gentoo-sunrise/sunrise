@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/rdup
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> -rdup-1.1.10.ebuild,
+  +rdup-1.1.11.ebuild:
+  Fix deps for gnome3, Version BUmp
 
   05 Dec 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
   -rdup-1.1.8.ebuild, +rdup-1.1.10.ebuild:

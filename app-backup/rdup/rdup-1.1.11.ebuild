@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 DESCRIPTION="Generate a file list suitable for full or incremental backups"
 HOMEPAGE="http://www.miek.nl/projects/rdup"
@@ -13,8 +13,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug test"
 
-RDEPEND="app-arch/libarchive
-	dev-libs/glib
+RDEPEND="
+	app-arch/libarchive
+	dev-libs/glib:2
 	dev-libs/libpcre
 	dev-libs/nettle"
 DEPEND="${RDEPEND}
@@ -30,10 +31,4 @@ src_test() {
 	else
 		default_src_test
 	fi
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-
-	dodoc AUTHORS ChangeLog README RELEASE-NOTES-1.1 || die "dodoc failed"
 }
