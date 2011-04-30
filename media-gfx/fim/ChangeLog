@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/fim
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> fim-0.1_alpha.ebuild:
+  Moved media-libs/jpeg > virtual/jpeg
 
   27 Dec 2009; Peter Volkov <pva@gentoo.org> fim-0.1_alpha.ebuild:
   virtual/ghostscript->app-text/ghostscript-gpl: ghostscript-gpl is the only

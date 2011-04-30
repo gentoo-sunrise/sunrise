@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,11 +11,10 @@ SRC_URI="http://download.savannah.nongnu.org/releases/fbi-improved/${PN}-${PV/_/
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-
 IUSE="debug gif jpeg png tiff postscript screen"
 
 RDEPEND="gif? ( media-libs/giflib )
-	jpeg? ( >=media-libs/jpeg-6b )
+	jpeg? ( virtual/jpeg )
 	png? ( media-libs/libpng )
 	tiff? ( media-libs/tiff )
 	postscript? ( app-text/ghostscript-gpl media-libs/tiff )
