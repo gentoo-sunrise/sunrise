@@ -155,9 +155,7 @@ media-radio/grig:hardware - Enable hardware IO
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
-media-sound/gogglesmm:asf -  Provide support for Microsoft's Advanced Systems Format media container 
 media-sound/gogglesmm:gcrypt -  Use gcrypt for md5 calculation instead of the internal implementation 
-media-sound/gogglesmm:old-miniplayer -  Build the old mini-player instead of the new one 
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
