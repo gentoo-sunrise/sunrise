@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ IUSE="debug ffmpeg +grabber ieee1394 jpeg png readline +unicap"
 DEPEND="
 	sys-libs/zlib
 	x11-libs/gtk+:2[jpeg?]
-	ffmpeg? ( media-video/ffmpeg )
+	ffmpeg? ( virtual/ffmpeg )
 	ieee1394? ( sys-libs/libraw1394 media-libs/libdc1394:2 )
 	jpeg? ( virtual/jpeg )
 	png? ( media-libs/libpng )
