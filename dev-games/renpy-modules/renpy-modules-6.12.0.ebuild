@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI="2"
+
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="2.4 3.*"
@@ -10,7 +11,6 @@ RESTRICT_PYTHON_ABIS="2.4 3.*"
 inherit distutils eutils
 
 MY_P=${PN%-modules}-${PV}
-PYTHON_MODNAME="pysdlsound"
 
 DESCRIPTION="Modules for renpy"
 HOMEPAGE="http://www.renpy.org"
@@ -21,11 +21,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="media-libs/glew
+DEPEND="
+	media-libs/glew
 	media-libs/libpng
 	media-libs/libsdl
 	media-libs/freetype:2
-	media-video/ffmpeg
+	virtual/ffmpeg
 	dev-libs/fribidi
 	dev-python/pygame[X]
 	sys-libs/zlib
@@ -37,3 +38,5 @@ S="${WORKDIR}/${MY_P}/module"
 # RENPY_DEPS_INSTALL is a double-colon separated list of directories that
 # contains all core renpy dependencies. This is usually /usr.
 export RENPY_DEPS_INSTALL="${ROOT}usr"
+
+PYTHON_MODNAME="pysdlsound"
