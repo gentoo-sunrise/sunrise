@@ -1,6 +1,14 @@
 # ChangeLog for media-gfx/xaralx
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org>
+  +files/30_gtk_wxwidgets_symbol_clash.dpatch,
+  +files/50_update_imagemagick_version_parser,
+  +files/60_launchpad_translations, -xaralx-0.7_p1692-r1.ebuild,
+  +files/xaralx-0.7_p1785-pragma.patch, +files/40_algorithm_include,
+  +xaralx-0.7_p1785.ebuild, +files/xaralx-pragma.patch:
+  Fix deps for gnome3, Make it compile again, included patches from debian
 
   13 Jan 2008; Jakub Moc <jakub@gentoo.org> xaralx-0.7_p1692-r1.ebuild:
   Fix wxGTK handling
