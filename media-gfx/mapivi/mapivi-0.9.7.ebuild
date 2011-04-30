@@ -1,31 +1,35 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="${PN}091"
-DESCRIPTION="picture manager / organizer written in Perl/Tk"
+EAPI="4"
+
+inherit versionator
+
+MY_P="${PN}$(delete_all_version_separators)"
+
+DESCRIPTION="Picture manager / organizer written in Perl/Tk"
 HOMEPAGE="http://mapivi.sourceforge.net/mapivi.shtml"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
+SRC_URI="mirror://sourceforge/${PN}/Mapivi_Perl/Mapivi$(delete_all_version_separators)/${MY_P}.tar.gz"
 
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="dev-lang/perl
+DEPEND="
+	dev-lang/perl
+	dev-perl/Image-MetaData-JPEG
 	>=dev-perl/perl-tk-804.025
 	dev-perl/ImageInfo
 	media-gfx/jhead
 	media-gfx/imagemagick
-	media-libs/jpeg
-	dev-perl/Image-MetaData-JPEG"
+	virtual/jpeg"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	sed -i -e 's:$configdir/PlugIns:/usr/share/mapivi/plugins:' mapivi || die
 }
 
@@ -34,7 +38,7 @@ src_install() {
 
 	exeinto /usr/share/mapivi/plugins
 	doexe PlugIns/{Channel-Separator,Join-RGB,checkDir-plugin,filelist-plugin,test-plugin} || die
-	dodoc Changes.txt FAQ README Tips.txt ToDo || die
+	dodoc Changes.txt FAQ README Tips.txt || die
 }
 
 pkg_postinst() {
