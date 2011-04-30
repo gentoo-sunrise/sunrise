@@ -1,8 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit versionator base toolchain-funcs
+EAPI=4
+
+inherit eutils versionator toolchain-funcs
 
 MY_P="${PN}-$(replace_all_version_separators - ${PV})"
 
@@ -15,21 +17,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="sys-libs/ncurses
-	dev-libs/glib"
+RDEPEND="
+	sys-libs/ncurses
+	dev-libs/glib:2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 S="${WORKDIR}"/${PN}
 
-PATCHES=( "${FILESDIR}"/${PV}-DESTDIR.patch )
-
-src_compile() {
-	emake \
-		CC=$(tc-getCC) || \
-		die "compilation failed"
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "installation failed"
-	dodoc README TODO || die "nothing to read"
+src_prepare() {
+	epatch \
+		"${FILESDIR}"/${PV}-DESTDIR.patch \
+		"${FILESDIR}"/${PV}-asneeded.patch
+	tc-export CC
 }

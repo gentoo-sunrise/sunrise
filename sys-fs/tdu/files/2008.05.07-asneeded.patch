@@ -1,0 +1,16 @@
+ Makefile |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 7912b11..b62cfba 100644
+--- a/Makefile
++++ b/Makefile
+@@ -25,7 +25,7 @@ OBJS = $(SRCS:.c=.o)
+ LIBS = -lncurses
+ 
+ $(program): $(OBJS)
+-	$(CC) `pkg-config --libs glib-2.0` $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
++	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) `pkg-config --libs glib-2.0`
+ 
+ .c.o:
+ 	$(CC) `pkg-config --cflags glib-2.0` -Wall $(CFLAGS) -c $< -o $@
