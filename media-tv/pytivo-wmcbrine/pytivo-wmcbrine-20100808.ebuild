@@ -4,27 +4,30 @@
 
 EAPI="2"
 
+PYTHON_DEPEND="2"
+
 inherit eutils multilib python
 
-DESCRIPTION="An HMO and GoBack server for Tivo."
+DESCRIPTION="An HMO and GoBack server for Tivo"
 HOMEPAGE="http://pytivo.sourceforge.net/"
-SRC_URI="http://ompldr.org/vNWtudQ/${P}.tar.bz2
-	 -> ${P}.tar.gz"
+SRC_URI="http://ompldr.org/vNWtudQ/${P}.tar.bz2 -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-lang/python"
+DEPEND=""
 RDEPEND="${DEPEND}
-	media-video/ffmpeg"
+	virtual/ffmpeg"
 
 S="${WORKDIR}/wmcbrine"
 
 pkg_setup() {
 	enewgroup pytivo
 	enewuser pytivo -1 -1 -1 pytivo
+	python_set_active_version 2
+	python_convert_shebangs -r 2 .
 }
 
 src_install() {
