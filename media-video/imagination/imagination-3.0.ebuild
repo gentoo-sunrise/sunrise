@@ -19,7 +19,7 @@ DEPEND="
 	x11-libs/gtk+:2
 	media-sound/sox"
 RDEPEND="${DEPEND}
-	media-video/ffmpeg"
+	virtual/ffmpeg"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-cflags.patch
