@@ -17,8 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="media-libs/freeglut
-	media-libs/jpeg
+DEPEND="
+	media-libs/freeglut
+	virtual/jpeg
 	virtual/glu
 	virtual/opengl"
 RDEPEND="${DEPEND}
