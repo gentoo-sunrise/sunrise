@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND="media-libs/jpeg
+RDEPEND="
+	virtual/jpeg
 	media-sound/gsm"
 DEPEND="${RDEPEND}"
 
