@@ -1,0 +1,32 @@
+ Makefile.am     |    2 +-
+ src/Makefile.am |    6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 8e0dd26..e3372ed 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -2,5 +2,5 @@
+ #
+ #
+ 
+-SUBDIRS = src doc
++SUBDIRS = src
+ 
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 27cebcc..35164b1 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -6,9 +6,9 @@ AUTOMAKE_OPTIONS = foreign
+ 
+ nostromo_daemondir = $(datadir)/pixmaps
+ 
+-CXXFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@ @FLTK_CXXFLAGS@ -DIMG_PATH=\"$(nostromo_daemondir)\"
+-CFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@
+-LDFLAGS =  @NOSTROMO_LIBS@ @FLTK_LIBS@ -lXtst -lpthread @DEBUG_FLAGS@ @LIBS@
++AM_CXXFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@ @FLTK_CXXFLAGS@ -DIMG_PATH=\"$(nostromo_daemondir)\"
++AM_CFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@
++LIBS =  @NOSTROMO_LIBS@ @FLTK_LIBS@ -lXtst -lpthread @DEBUG_FLAGS@ @LIBS@
+ 
+ bin_PROGRAMS = nostromo_config nostromo_daemon nostromo_remote
+ nostromo_config_SOURCES = nost_data.h \
