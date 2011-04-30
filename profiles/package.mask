@@ -82,14 +82,6 @@ media-gfx/tintii
 # it will be removed in 30 days.
 gnome-extra/gnome-globalmenu
 
-# Mike Gilbert <floppymaster@gmail.com> (10 Jan 2011)
-# Package renamed to dev-python/PyRSS2Gen to match upstream
-dev-python/pyrssgen
-
-# Markos Chandras <hwoarang@gentoo.org> (05 Jan 2011)
-# Package renamed to net-analyzer/arpon
-net-analyzer/ArpON
-
 # Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
 # Masking wrt bug 333939. Dependency on vala-1.0 which is
 # not yet released.
