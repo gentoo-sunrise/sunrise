@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,18 +15,27 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND=">=dev-libs/glib-2.6
-	>=x11-libs/gtk+-2.6
-	|| ( >=media-plugins/gst-plugins-gconf-0.10
-	     >=media-libs/gstreamer-0.8 )
-	>=gnome-base/gnome-vfs-2.4
-	>=gnome-base/gnome-panel-2.6
-	>=dev-libs/libxml2-2.6"
+DEPEND="
+	dev-libs/glib:2
+	x11-libs/gtk+:2
+	|| ( media-plugins/gst-plugins-gconf
+	     media-libs/gstreamer )
+	gnome-base/gnome-vfs:2
+	gnome-base/gnome-panel
+	dev-libs/libxml2"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${PN}_applet_2-${PV}
 
 src_prepare() {
-	epatch "${FILESDIR}/teatime-2.8.0-adding-slash-for-pixmaps-dir.patch"
+	epatch \
+		"${FILESDIR}"/teatime-2.8.0-adding-slash-for-pixmaps-dir.patch \
+		"${FILESDIR}"/03_libexec.patch \
+		"${FILESDIR}"/04_intltool.patch \
+		"${FILESDIR}"/70_cs.patch \
+		"${FILESDIR}"/80_implicit.patch \
+		"${FILESDIR}"/81_implicit_vfs.patch \
+		"${FILESDIR}"/90_gst.patch \
+		"${FILESDIR}"/91_gst_enable_playing.patch
 	gnome2_omf_fix
 }

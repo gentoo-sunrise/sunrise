@@ -1,0 +1,12 @@
+diff -urN teatime_applet_2-2.6.0.orig/Makefile.am teatime_applet_2-2.6.0/Makefile.am
+--- teatime_applet_2-2.6.0.orig/Makefile.am	2004-11-01 10:26:21.000000000 +0100
++++ teatime_applet_2-2.6.0/Makefile.am	2006-07-16 19:48:49.000000000 +0200
+@@ -7,8 +7,6 @@
+ 
+ CLEANFILES = $(server_in_files) $(server_DATA)
+ 
+-libexecdir = $(prefix)/libexec
+-
+ $(server_in_files): $(server_in_files:.server.in=.server.in.in)
+ 	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
+ 

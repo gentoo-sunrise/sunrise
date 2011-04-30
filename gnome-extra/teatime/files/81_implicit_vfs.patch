@@ -1,0 +1,10 @@
+--- ./src/teatime.c.old	2006-07-20 15:56:49.000000000 +1000
++++ ./src/teatime.c	2006-07-20 15:58:14.000000000 +1000
+@@ -2,6 +2,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <panel-applet.h>
++#include <libgnomevfs/gnome-vfs-utils.h>
+ 
+ #include "image-loader.h"
+ #include "properties.h"

@@ -1,6 +1,12 @@
 # ChangeLog for gnome-extra/teatime
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> +files/03_libexec.patch,
+  +files/04_intltool.patch, +files/70_cs.patch, +files/80_implicit.patch,
+  +files/81_implicit_vfs.patch, +files/90_gst.patch,
+  +files/91_gst_enable_playing.patch, teatime-2.8.0.ebuild:
+  Fix deps for gnome3, ADded upstream debian patches
 
   09 Aug 2010; Michael Weber (xmw) <gentoo@xmw.de> teatime-2.8.0.ebuild:
   resolved: SRC_URI switched to mirror://debian, unresolved: HOMEPAGE dead,

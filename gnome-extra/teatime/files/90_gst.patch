@@ -1,0 +1,38 @@
+ src/teatime.c |   16 +++++++++++++---
+ 1 files changed, 13 insertions(+), 3 deletions(-)
+
+diff --git a/src/teatime.c b/src/teatime.c
+index 2e472f9..33d1fd5 100644
+--- a/src/teatime.c
++++ b/src/teatime.c
+@@ -258,7 +258,7 @@ bus_callback (GstBus     *bus,
+   switch (GST_MESSAGE_TYPE (msg)) {
+     case GST_MESSAGE_ERROR:
+     case GST_MESSAGE_EOS:
+-      gst_element_set_state (GST_ELEMENT (data), GST_STATE_READY);
++      gst_element_set_state (GST_ELEMENT (data), GST_STATE_NULL);
+       break;
+     default:
+       break;
+@@ -626,9 +626,19 @@ teatime_applet_new (PanelApplet *applet)
+   teatime->sound = gst_element_factory_make ("playbin", "playbin");
+   if (teatime->sound) {
+       GstBus *bus;
++      GstElement *sink;
+ 
+-      g_object_set (G_OBJECT (teatime->sound), "video-sink", NULL, NULL);
+-      g_object_set (G_OBJECT (teatime->sound), "vis-plugin", NULL, NULL);
++      sink = gst_element_factory_make ("gconfaudiosink", "audiosink");
++      if (sink)
++          g_object_set (G_OBJECT (teatime->sound), "audio-sink", sink, NULL);
++
++      sink = gst_element_factory_make ("fakesink", "fakevideosink");
++      if (sink)
++          g_object_set (G_OBJECT (teatime->sound), "video-sink", sink, NULL);
++
++      sink = gst_element_factory_make ("fakesink", "fakevis");
++      if (sink)
++          g_object_set (G_OBJECT (teatime->sound), "vis-plugin", sink, NULL);
+ 
+       bus = gst_pipeline_get_bus (GST_PIPELINE (teatime->sound));
+       gst_bus_add_watch (bus, bus_callback, teatime->sound);

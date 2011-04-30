@@ -1,0 +1,136 @@
+diff -Nur -x '*.orig' -x '*~' old/src/teatime.c old.new/src/teatime.c
+--- old/src/teatime.c	2008-04-20 18:22:02.000000000 +0200
++++ old.new/src/teatime.c	2008-04-20 18:27:15.000000000 +0200
+@@ -88,16 +88,21 @@
+ }
+ 
+ static void
+-popup_hide (GtkWidget *widget, GdkEvent *event, TeatimePopup *popup)
++popup_hide (GtkWidget *widget, GdkEvent *event, Teatime *teatime)
+ {
+-  gtk_timeout_remove (popup->timer_handle);
+-  gtk_widget_hide (popup->cup_window);
+-  gtk_widget_hide (popup->label_window);
+-  popup->visible = FALSE;
++  gtk_timeout_remove (teatime->popup.timer_handle);
++  gtk_widget_hide (teatime->popup.cup_window);
++  gtk_widget_hide (teatime->popup.label_window);  
++
++  GstState state = GST_STATE (teatime->sound);
++  if (state == GST_STATE_PLAYING || state == GST_STATE_PAUSED || GST_STATE_READY)
++    gst_element_set_state (GST_ELEMENT (teatime->sound), GST_STATE_NULL);
++
++  teatime->popup.visible = FALSE;
+ }
+ 
+ static void
+-cup_popup (TeatimePopup *popup)
++cup_popup (Teatime *teatime)
+ {
+   static GdkPixbuf *pixbuf;
+   static GdkPixmap *pixmap;
+@@ -105,20 +110,20 @@
+   GtkWidget *eventbox;
+   gint i;
+     
+-  popup->cup_window = gtk_window_new (GTK_WINDOW_POPUP);
+-  gtk_widget_set_usize (popup->cup_window, CUP_WIDTH, CUP_HEIGHT);
++  teatime->popup.cup_window = gtk_window_new (GTK_WINDOW_POPUP);
++  gtk_widget_set_usize (teatime->popup.cup_window, CUP_WIDTH, CUP_HEIGHT);
+   hbox = gtk_hbox_new (TRUE, 0);
+   for (i=0; i<ROT_FRAMES; i++)
+-    gtk_box_pack_start (GTK_BOX (hbox), popup->image[i], FALSE, FALSE, 0);
+-  gtk_widget_shape_combine_mask (popup->cup_window, popup->bitmap[0], 0, 0);
++    gtk_box_pack_start (GTK_BOX (hbox), teatime->popup.image[i], FALSE, FALSE, 0);
++  gtk_widget_shape_combine_mask (teatime->popup.cup_window, teatime->popup.bitmap[0], 0, 0);
+   eventbox = gtk_event_box_new ();
+   gtk_container_add (GTK_CONTAINER (eventbox), hbox);	
+-  gtk_container_add (GTK_CONTAINER (popup->cup_window), eventbox);
++  gtk_container_add (GTK_CONTAINER (teatime->popup.cup_window), eventbox);
+   g_signal_connect (G_OBJECT (eventbox), "button_release_event",
+-                    G_CALLBACK (popup_hide), popup);
++                    G_CALLBACK (popup_hide), teatime);
+   gtk_widget_show (eventbox);
+   gtk_widget_show (hbox);
+-  gtk_widget_show (popup->image[0]);
++  gtk_widget_show (teatime->popup.image[0]);
+ }
+ 
+ static void
+@@ -273,7 +278,7 @@
+   GstElement *audio_sink;
+   gint center_x, center_y;
+  
+-  if (--teatime->time_left)
++  if (--(teatime->time_left))
+   {
+     animate (teatime);
+     return TRUE;
+@@ -295,7 +300,7 @@
+     if (uri) {
+       g_object_set (G_OBJECT (teatime->sound), "uri", uri, NULL);
+       g_free (uri);
+-      gst_element_set_state (teatime->sound, GST_STATE_PLAYING);
++      gst_element_set_state (GST_ELEMENT (teatime->sound), GST_STATE_PLAYING);
+     }
+   }
+   if (!teatime->properties.popup)
+@@ -312,7 +317,7 @@
+   }
+   else
+   {
+-    cup_popup (&teatime->popup);
++    cup_popup (teatime);
+     label_popup (&teatime->popup, teatime->border);
+   }
+   teatime->popup.frame = 0;    
+@@ -413,7 +418,7 @@
+   if (teatime->timer_handle)
+     gtk_timeout_remove (teatime->timer_handle);
+   if (teatime->popup.visible)
+-    popup_hide (NULL, NULL, &teatime->popup);
++    popup_hide (NULL, NULL, teatime);
+   teatime->full = TRUE;
+   teatime->time_left = teatime->drawing_time * FRAMES;
+   teatime->timer_handle = gtk_timeout_add (333, (GtkFunction)timer, teatime);
+@@ -622,25 +627,25 @@
+   
+   gdk_rgb_init();
+ 
+-  gst_init (0, NULL);
++  gst_init (NULL, NULL);
+ 
+   teatime->sound = gst_element_factory_make ("playbin", "playbin");
+   if (teatime->sound) {
+       GstBus *bus;
+-      GstElement *sink;
+-
+-      sink = gst_element_factory_make ("gconfaudiosink", "audiosink");
+-      if (sink)
+-          g_object_set (G_OBJECT (teatime->sound), "audio-sink", sink, NULL);
+-
+-      sink = gst_element_factory_make ("fakesink", "fakevideosink");
+-      if (sink)
+-          g_object_set (G_OBJECT (teatime->sound), "video-sink", sink, NULL);
+-
+-      sink = gst_element_factory_make ("fakesink", "fakevis");
+-      if (sink)
+-          g_object_set (G_OBJECT (teatime->sound), "vis-plugin", sink, NULL);
+-
++//      GstElement *sink;
++//
++//      sink = gst_element_factory_make ("gconfaudiosink", "audiosink");
++//      if (sink)
++//          g_object_set (G_OBJECT (teatime->sound), "audio-sink", sink, NULL);
++//
++//      sink = gst_element_factory_make ("fakesink", "fakevideosink");
++//      if (sink)
++//          g_object_set (G_OBJECT (teatime->sound), "video-sink", sink, NULL);
++//
++//      sink = gst_element_factory_make ("fakesink", "fakevis");
++//      if (sink)
++//          g_object_set (G_OBJECT (teatime->sound), "vis-plugin", sink, NULL);
++//
+       bus = gst_pipeline_get_bus (GST_PIPELINE (teatime->sound));
+       gst_bus_add_watch (bus, bus_callback, teatime->sound);
+       gst_object_unref (bus);

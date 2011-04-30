@@ -1,0 +1,86 @@
+From dannf@ldl.fc.hp.com Mon Jul 17 17:00:00 2006
+Received: (at submit) by bugs.debian.org; 18 Jul 2006 00:00:00 +0000
+Return-path: <dannf@ldl.fc.hp.com>
+Received: from atlrel7.hp.com ([156.153.255.213])
+	by spohr.debian.org with esmtp (Exim 4.50)
+	id 1G2d0K-00077b-DO
+	for submit@bugs.debian.org; Mon, 17 Jul 2006 17:00:00 -0700
+Received: from smtp1.fc.hp.com (smtp.fc.hp.com [15.15.136.127])
+	by atlrel7.hp.com (Postfix) with ESMTP id A1D8C34991;
+	Mon, 17 Jul 2006 19:59:27 -0400 (EDT)
+Received: from ldl.fc.hp.com (ldl.fc.hp.com [15.11.146.30])
+	by smtp1.fc.hp.com (Postfix) with ESMTP id 6AB024E48D;
+	Mon, 17 Jul 2006 23:59:27 +0000 (UTC)
+Received: from localhost (ldl.lart [127.0.0.1])
+	by ldl.fc.hp.com (Postfix) with ESMTP id E464D1344CA;
+	Mon, 17 Jul 2006 17:59:26 -0600 (MDT)
+Received: from ldl.fc.hp.com ([127.0.0.1])
+	by localhost (ldl [127.0.0.1]) (amavisd-new, port 10024) with ESMTP
+	id 00865-03; Mon, 17 Jul 2006 17:59:23 -0600 (MDT)
+Received: from krebs (krebs.dannf [10.8.0.7])
+	by ldl.fc.hp.com (Postfix) with ESMTP id B185C13415B;
+	Mon, 17 Jul 2006 17:59:22 -0600 (MDT)
+Received: by krebs (Postfix, from userid 20800)
+	id 78F4A3B64E2; Mon, 17 Jul 2006 17:59:23 -0600 (MDT)
+Date: Mon, 17 Jul 2006 17:59:23 -0600
+From: dann frazier <dannf@debian.org>
+To: submit@bugs.debian.org
+Cc: David Mosberger <David.Mosberger@acm.org>
+Subject: teatime: implicit pointer conversion
+Message-ID: <20060717235922.GB14496@krebs.dannf>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+User-Agent: mutt-ng/devel-r804 (Debian)
+X-Virus-Scanned: by amavisd-new-20030616-p10 (Debian) at ldl.fc.hp.com
+Delivered-To: submit@bugs.debian.org
+X-Spam-Checker-Version: SpamAssassin 2.60-bugs.debian.org_2005_01_02 
+	(1.212-2003-09-23-exp) on spohr.debian.org
+X-Spam-Level: 
+X-Spam-Status: No, hits=-8.0 required=4.0 tests=BAYES_00,HAS_PACKAGE 
+	autolearn=no version=2.60-bugs.debian.org_2005_01_02
+
+Package: teatime
+Version: 2.6.0-2
+Severity: important
+Tags: patch
+
+Our automated buildd log filter[1] detected a problem that will cause
+your package to segfault on architectures where the size of a pointer
+is greater than the size of an integer, such as ia64 and amd64.
+
+[1]http://people.debian.org/~dannf/check-implicit-pointer-functions
+
+----- Forwarded message from Build Daemon <buildd@excelsior.roeckx.be> -----
+
+Subject: Log for successful build of teatime_2.6.0-2 (dist=unstable)
+Date: Sun, 16 Jul 2006 18:53:18 +0000 (UTC)
+From: Build Daemon <buildd@excelsior.roeckx.be>
+To: undisclosed-recipients: ;
+X-PMX-Version: 5.1.2.240295, Antispam-Engine: 2.3.0.1, Antispam-Data: 2006.7.16.113932
+X-Virus-Scanned: by amavisd-new-20030616-p10 (Debian) at ldl.fc.hp.com
+X-Spam-Checker-Version: SpamAssassin 3.0.3 (2005-04-27) on ldl.lart
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=3.5 tests=AWL,BAYES_00,UNDISC_RECIPS 
+	autolearn=no version=3.0.3
+Debian-Buildd-Error: Yes
+
+Function `panel_applet_gconf_get_string' implicitly converted to pointer at properties.c:47
+
+----- End forwarded message -----
+
+--- teatime-2.6.0/src/properties.c~	2005-08-28 12:27:14.000000000 -0600
++++ teatime-2.6.0/src/properties.c	2006-07-17 17:56:04.000000000 -0600
+@@ -1,6 +1,7 @@
+ #include "config.h"
+ #include <string.h>
+ #include <panel-applet.h>
++#include <panel-applet-gconf.h>
+ 
+ #include "image-loader.h"
+ #include "properties.h"
+
+-- 
+dann frazier | HP Open Source and Linux Organization
+
+
