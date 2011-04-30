@@ -3,6 +3,11 @@
 # $Header: $
 
   30 Apr 2011; Justin Lecher <jlec@gentoo.org>
+  -files/60_launchpad_translations, xaralx-0.7_p1785.ebuild,
+  files/xaralx-0.7_p1785-pragma.patch, -files/xaralx-pragma.patch:
+  Actually use the patches
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org>
   +files/30_gtk_wxwidgets_symbol_clash.dpatch,
   +files/50_update_imagemagick_version_parser,
   +files/60_launchpad_translations, -xaralx-0.7_p1692-r1.ebuild,

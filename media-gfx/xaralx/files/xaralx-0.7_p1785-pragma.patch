@@ -619,16 +619,4 @@ diff -Nuar xaralx-svn.orig//wxOil/bitmapgriddropdown.cpp xaralx-svn/wxOil/bitmap
  
  
  
-diff -Nuar xaralx-svn.orig//wxOil/ftfonts.cpp xaralx-svn/wxOil/ftfonts.cpp
---- xaralx-svn.orig//wxOil/ftfonts.cpp	2010-08-07 14:12:21.000000000 -0400
-+++ xaralx-svn/wxOil/ftfonts.cpp	2010-08-07 15:37:37.122902407 -0400
-@@ -122,7 +122,9 @@
- #include FT_TYPE1_TABLES_H
- 
- #ifdef __WXGTK20__
-+#define GSocket GlibSocket
- #include <gtk/gtk.h>
-+#undef GSocket
- extern GtkWidget *wxGetRootWindow();
- #endif
  
