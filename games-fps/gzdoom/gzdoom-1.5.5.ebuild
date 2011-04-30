@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ RDEPEND="gtk? ( x11-libs/gtk+:2 )
 	fluidsynth? ( media-sound/fluidsynth )
 	media-libs/flac
 	media-libs/fmod:1
-	media-libs/jpeg
+	virtual/jpeg
 	media-libs/libsdl"
 
 DEPEND="${REPEND}
