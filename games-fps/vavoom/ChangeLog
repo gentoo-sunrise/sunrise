@@ -1,6 +1,10 @@
 # ChangeLog for games-fps/vavoom
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> vavoom-1.30.ebuild,
+  vavoom-9999.ebuild:
+  Moved media-libs/jpeg > virtual/jpeg
 
   07 Sep 2010; Markos Chandras <hwoarang@gentoo.org> vavoom-1.30.ebuild,
   vavoom-9999.ebuild:

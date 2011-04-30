@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -35,7 +35,7 @@ OPENGLDEPEND="opengl? ( virtual/opengl )
 	allegro? ( media-libs/allegro[opengl] )
 	!sdl? ( !allegro? ( ${SDLDEPEND} ) )"
 DEPEND="media-libs/libpng
-	media-libs/jpeg
+	virtual/jpeg
 	sdl? ( ${SDLDEPEND} )
 	!sdl? ( allegro? ( ${ALLEGDEPEND} ) )
 	!sdl? ( !allegro? ( !dedicated? ( ${OPENGLDEPEND} ) ) )
