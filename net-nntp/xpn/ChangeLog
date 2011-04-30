@@ -1,6 +1,10 @@
 # ChangeLog for net-nntp/xpn
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> -xpn-1.2.5.ebuild,
+  +xpn-1.2.6.ebuild:
+  Fix deps for gnome3, Version Bump, Fixes for Python
 
   17 Nov 2008; Tiziano Müller <dev-zero@gentoo.org> -xpn-1.0.0.ebuild,
   +xpn-1.2.5.ebuild:
