@@ -20,7 +20,7 @@ DEPEND="
 	>=sys-libs/ncurses-5.0
 	>=sys-libs/readline-5.0
 	dev-libs/libxml2
-	ffmpeg? ( media-video/ffmpeg )"
+	ffmpeg? ( virtual/ffmpeg )"
 RDEPEND=${DEPEND}
 
 src_prepare() {

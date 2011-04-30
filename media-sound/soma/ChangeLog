@@ -3,6 +3,9 @@
 # $Header: $
 
   30 Apr 2011; Justin Lecher <jlec@gentoo.org> soma-2.4.ebuild:
+  Moved media-video/ffmpeg > virtual/ffmpeg
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> soma-2.4.ebuild:
   Remove unneccessay die, moved to EAPI=4
 
   07 May 2007; Nicola (ZoD) Tomassoni <zod@oziosi.org> +soma-2.4.ebuild,
