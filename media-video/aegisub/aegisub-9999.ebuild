@@ -3,7 +3,9 @@
 # $Header: $
 
 EAPI="2"
+
 WX_GTK_VER="2.8"
+
 inherit eutils subversion wxwidgets
 
 DESCRIPTION="Advanced SSA/ASS subtitle editor"
@@ -17,7 +19,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE="alsa debug +ffmpeg lua openal perl pulseaudio spell ruby"
 
-RDEPEND="=x11-libs/wxGTK-2.8*[opengl]
+RDEPEND="
+	x11-libs/wxGTK:2.8[opengl]
 	media-libs/libass
 	media-libs/fontconfig
 	media-libs/freetype
