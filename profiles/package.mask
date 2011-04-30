@@ -22,6 +22,11 @@
 ##
 
 # Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
+# Doesn't build with recent tracker
+# Removal in 30 days.
+gnome-extra/paperbox
+
+# Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
 # Doesn't build with recent headers
 # linux/videodev.h
 # upstream inactive since 2007
