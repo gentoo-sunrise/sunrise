@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=4
 
 inherit autotools
 
@@ -13,24 +15,22 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=x11-libs/gtk+-2"
+RDEPEND="
+	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	>=dev-libs/glib-2"
+	dev-libs/glib:2"
 
 S=${WORKDIR}/${PN}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	# create missing mkinstalldir and prepare package
 	glib-gettextize --force --copy || die "gettextize failed"
 	eautoreconf
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 	dohtml doc/xwxapt.html || die "dohtml failed"
 	insinto /usr/share/${PN}
 	doins xwxapt/xwxaptrc || die "doins failed"
