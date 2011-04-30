@@ -1,8 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+EAPI="4"
+
+inherit autotools eutils
 
 DESCRIPTION="Simple DVD slideshow maker"
 HOMEPAGE="http://imagination.sourceforge.net/"
@@ -13,22 +15,18 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=">=x11-libs/gtk+-2.12.11
-	>=media-sound/sox-14.2.0"
-
+DEPEND="
+	x11-libs/gtk+:2
+	media-sound/sox"
 RDEPEND="${DEPEND}
 	media-video/ffmpeg"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-transitions.patch"
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-cflags.patch
+	eautoreconf
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
-
-	dodoc AUTHORS NEWS README TODO || die "dodoc failed"
+	default
 	doicon icons/48x48/${PN}.png
 }

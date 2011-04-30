@@ -1,6 +1,11 @@
 # ChangeLog for media-video/imagination
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> -imagination-2.1.ebuild,
+  -files/imagination-2.1-transitions.patch, +imagination-3.0.ebuild,
+  +files/imagination-3.0-cflags.patch:
+  Fix deps for gnome3, Version Bump, Respect CFLAGS
 
   15 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   imagination-2.1.ebuild:
