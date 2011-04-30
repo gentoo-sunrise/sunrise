@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=4
 
 MY_P="libomxil-${P}"
 
@@ -13,13 +13,13 @@ SRC_URI="mirror://sourceforge/omxil/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 IUSE="alsa doc fbcon ffmpeg jpeg mad vorbis"
 
-RDEPEND="media-libs/alsa-lib
+RDEPEND="
+	media-libs/alsa-lib
 	mad? ( media-libs/libmad )
 	vorbis? ( media-libs/libvorbis )
-	ffmpeg? ( media-video/ffmpeg )"
+	ffmpeg? ( virtual/ffmpeg )"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
@@ -34,9 +34,4 @@ src_configure() {
 		$(use_enable jpeg) \
 		$(use_enable mad madcomponents) \
 		$(use_enable vorbis vorbiscomponents)
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc ChangeLog || die "dodoc failed"
 }
