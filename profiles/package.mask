@@ -21,6 +21,13 @@
 ##   End example
 ##
 
+# Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
+# Unable to find sources
+# upstream inactive since 2007
+# Removal in 30 days.
+media-sound/soma
+media-sound/somax
+
 # Justin Lecher <jlec@gentoo.org> (29 Apr 2011)
 # Doesn't build with recent compilers, not fixable
 # upstream inactive since 2005
