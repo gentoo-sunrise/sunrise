@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,7 +9,7 @@ inherit wxwidgets
 
 MY_P="${PN}_v${PV}"
 DESCRIPTION="Free AVI video repair and preview program"
-HOMEPAGE="http://divfixpp.sourceforge.net"
+HOMEPAGE="http://divfixpp.sourceforge.net/"
 SRC_URI="mirror://sourceforge/divfixpp/${MY_P}-src.tar.bz2"
 
 LICENSE="GPL-2"
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=x11-libs/wxGTK-2.8"
+DEPEND="x11-libs/wxGTK:2.8"
 RDEPEND="${DEPEND}
 	virtual/libintl"
 
