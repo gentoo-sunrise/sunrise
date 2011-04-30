@@ -1,0 +1,16 @@
+ CMakeLists.txt |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 615690c..5c83900 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -23,7 +23,7 @@ SET(PREFIX ${CMAKE_INSTALL_PREFIX})
+ SET(BINDIR "${PREFIX}/bin")
+ SET(INCLUDEDIR_B "${PREFIX}/include")
+ SET(INCLUDEDIR "${INCLUDEDIR_B}/${PACKET}")
+-SET(MANDIR "${PREFIX}/man")
++SET(MANDIR "${PREFIX}/share/man")
+ SET(LIBDIR_B "${PREFIX}/lib")
+ SET(LIBDIR "${LIBDIR_B}/${PACKET}")
+ SET(DATADIR "${PREFIX}/share/${PACKET}")

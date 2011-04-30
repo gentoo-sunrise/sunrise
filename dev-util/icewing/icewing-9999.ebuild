@@ -7,7 +7,7 @@ EAPI="2"
 inherit cmake-utils subversion
 
 DESCRIPTION="Integrated Communication Environment Which Is Not Gesten"
-HOMEPAGE="http://icewing.sf.net"
+HOMEPAGE="http://icewing.sf.net/"
 SRC_URI=""
 
 ESVN_REPO_URI="http://icewing.svn.sourceforge.net/svnroot/icewing/iceWing/trunk"
@@ -18,14 +18,15 @@ KEYWORDS=""
 # need to add xcf, dacs, mvimpact as use-flags (and packages)
 IUSE="debug ffmpeg +grabber ieee1394 jpeg png readline +unicap"
 
-DEPEND="ieee1394? ( sys-libs/libraw1394 media-libs/libdc1394:2 )
-	ffmpeg? ( media-video/ffmpeg )
-	jpeg? ( media-libs/jpeg )
-	png? ( media-libs/libpng )
-	unicap? ( media-libs/unicap )
-	readline? ( sys-libs/readline )
+DEPEND="
 	sys-libs/zlib
-	x11-libs/gtk+:2[jpeg?]"
+	x11-libs/gtk+:2[jpeg?]
+	ffmpeg? ( media-video/ffmpeg )
+	ieee1394? ( sys-libs/libraw1394 media-libs/libdc1394:2 )
+	jpeg? ( virtual/jpeg )
+	png? ( media-libs/libpng )
+	readline? ( sys-libs/readline )
+	unicap? ( media-libs/unicap )"
 RDEPEND="${DEPEND}"
 
 src_configure() {

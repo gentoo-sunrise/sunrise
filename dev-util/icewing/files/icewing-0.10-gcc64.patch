@@ -1,0 +1,61 @@
+--- iceWing/trunk/utils/icewing-control.cpp	2009/04/22 23:03:36	1955
++++ iceWing/trunk/utils/icewing-control.cpp	2010/02/10 23:26:07	1987
+@@ -700,7 +700,6 @@
+ 
+ int main (int argc, char **argv)
+ {
+-	char name[256], *line, *s;
+ 	int interactive = TRUE;
+ 	char *optarg;
+ 	int n;
+@@ -796,26 +795,25 @@
+ 	if (sock_name) {
+ 		struct hostent *he;
+ 		struct sockaddr_in addr;
+-		const char *name = strdup (sock_name);
+-		char *pname;
++		char *name = strdup (sock_name);
++		char *portname;
+ 		int port = SOCK_PORT;
+ 
+ 		/* Get destination host and port */
+-		if ((pname = strchr (name, ':'))) {
++		if ((portname = strchr (name, ':'))) {
+ 			char *pend = NULL;
+-			*pname++ = '\0';
+-			port = strtol (pname, &pend, 10);
++			*portname++ = '\0';
++			port = strtol (portname, &pend, 10);
+ 			if (!pend || *pend) {
+ 				fprintf (stderr, "Port specifier from option '-p' is not an int.\n");
+ 				help();
+ 			}
+ 		}
+-		if (!*name)
+-			name = SOCK_NAME;
+-		if ((he = gethostbyname (name)) == NULL) {
++		if ((he = gethostbyname (*name ? name:SOCK_NAME)) == NULL) {
+ 			herror (PRGNAME": gethostbyname()");
+ 			exit (1);
+ 		}
++		free (name);
+ 		fprintf (stderr, "Connecting to %s:%d...\n", he->h_name, port);
+ 
+ 		/* Connect to the destination */
+@@ -835,6 +833,7 @@
+ 
+ #ifdef WITH_DACS
+ 	if (dacs_name) {
++		char name[50];
+ 		sprintf (name, "iwCtrl%d", getpid());
+ 		if ( (dacs_entry = dacs_register (name)) == NULL) {
+ 			fprintf (stderr, PRGNAME": Can't register as '%s'!", name);
+@@ -878,6 +877,8 @@
+ 
+ 	/* Loop reading and executing lines until the user quits. */
+ 	while (!prg_exit) {
++		char *line, *s;
++
+ 		line = readline (PROMPT"> ");
+ 		if (!line) break;
+ 
