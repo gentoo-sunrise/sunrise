@@ -1,6 +1,9 @@
 # ChangeLog for media-sound/soma
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> soma-2.4.ebuild:
+  Remove unneccessay die, moved to EAPI=4
 
   07 May 2007; Nicola (ZoD) Tomassoni <zod@oziosi.org> +soma-2.4.ebuild,
   +files/soma-2.4-pid.patch, +metadata.xml:
