@@ -7,6 +7,7 @@ EAPI=2
 inherit autotools multilib
 
 MY_P="leptonlib-${PV}"
+
 DESCRIPTION="An open source C library for image processing and analysis"
 HOMEPAGE="http://www.leptonica.com/"
 SRC_URI="http://www.leptonica.com/source/${MY_P}.tar.gz"
@@ -16,7 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="media-libs/jpeg
+DEPEND="
+	virtual/jpeg
 	media-libs/giflib
 	media-libs/tiff"
 RDEPEND="${DEPEND}"
