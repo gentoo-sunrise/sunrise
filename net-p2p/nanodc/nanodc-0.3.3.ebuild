@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="4"
 
 inherit toolchain-funcs versionator
 
@@ -13,10 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND="sys-libs/ncurses
+RDEPEND="
+	sys-libs/ncurses
 	sys-libs/zlib
-	>=dev-libs/libsigc++-2.0.0
-	>=dev-libs/glib-2.0.0"
+	dev-libs/libsigc++:2
+	dev-libs/glib:2"
 DEPEND="${RDEPEND}
 	dev-util/scons
 	dev-util/pkgconfig"

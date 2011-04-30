@@ -1,6 +1,9 @@
 # ChangeLog for net-p2p/nanodc
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> nanodc-0.3.3.ebuild:
+  Fixed deps for Gnome3
 
   11 Jan 2007; Jakub Moc <jakub@gentoo.org> -nanodc-0.3.2.ebuild,
   nanodc-0.3.3.ebuild:
