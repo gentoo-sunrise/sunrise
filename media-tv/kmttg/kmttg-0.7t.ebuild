@@ -3,11 +3,12 @@
 # $Header: $
 
 EAPI="2"
+
 JAVA_PKG_IUSE="source"
 
 inherit eutils java-pkg-2 java-ant-2
 
-DESCRIPTION="A free multi-platform replacement for the TiVo Desktop software."
+DESCRIPTION="A free multi-platform replacement for the TiVo Desktop software"
 HOMEPAGE="http://code.google.com/p/kmttg/"
 SRC_URI="http://ompldr.org/vN2szZA/${P}.tar.bz2"
 
@@ -16,10 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="encode"
 
-RDEPEND="encode? ( media-video/ffmpeg )
+RDEPEND="
 	media-video/tivodecode
 	net-misc/curl
-	>=virtual/jre-1.5"
+	>=virtual/jre-1.5
+	encode? ( virtual/ffmpeg )"
 DEPEND=">=virtual/jdk-1.5"
 
 src_prepare() {
