@@ -1,6 +1,10 @@
 # ChangeLog for media-gfx/gimp-cmyk-plugin
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org>
+  gimp-cmyk-plugin-0.5.8.ebuild:
+  Moved media-libs/jpeg > virtual/jpeg
 
   20 Nov 2010; Justin Lecher <jlec@gentoo.org>
   -gimp-cmyk-plugin-0.5.7.ebuild, -files/0.5.7-Makefile.patch,
