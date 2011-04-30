@@ -1,6 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+PYTHON_DEPEND="2"
+
+inherit python
 
 DESCRIPTION="Utilities to change your default sound card in ALSA."
 HOMEPAGE="https://code.launchpad.net/asoundconf-ui"
@@ -17,12 +21,16 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="gtk"
 
-RDEPEND="virtual/python
+RDEPEND="
 	>=media-sound/alsa-utils-1.0.14
 	gtk? ( dev-python/pygtk
 		x11-themes/gnome-icon-theme )" # needed for .desktop file
 
 S="${WORKDIR}"
+
+pkg_setup() {
+	python_set_active_version 2
+}
 
 src_unpack() {
 	unpack ${MY_P}.deb
@@ -36,6 +44,7 @@ src_unpack() {
 		rm -f "${WORKDIR}"/gtk/{{control,data}.tar.gz,debian-binary}
 		popd
 	fi
+	python_convert_shebangs -r 2 .
 }
 
 src_install() {
