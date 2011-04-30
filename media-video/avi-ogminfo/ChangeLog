@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> avi-ogminfo-2.0.5.ebuild:
+  Moved media-video/ffmpeg > virtual/ffmpeg
+
   30 Apr 2011; Justin Lecher <jlec@gentoo.org> -avi-ogminfo-2.0.3.ebuild,
   +avi-ogminfo-2.0.5.ebuild, +files/avi-ogminfo-2.0.5-ffmpeg.patch:
   Fix deps for gnome3, Version Bump, Build against recent ffmpeg

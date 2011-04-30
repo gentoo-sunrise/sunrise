@@ -19,7 +19,7 @@ DEPEND="
 	dev-libs/libxml2
 	x11-libs/gtk+:2
 	dev-cpp/gtkmm:2.4
-	media-video/ffmpeg
+	virtual/ffmpeg
 	media-libs/libogg
 	media-libs/libvorbis"
 RDEPEND=${DEPEND}
