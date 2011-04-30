@@ -36,7 +36,7 @@ RDEPEND="=x11-libs/wxGTK-2.8*[opengl]
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	media-gfx/imagemagick
-	dev-libs/glib"
+	dev-libs/glib:2"
 
 src_configure() {
 	# The provided autogen script executes configure too

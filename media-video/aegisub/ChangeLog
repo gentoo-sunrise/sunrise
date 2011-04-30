@@ -4,6 +4,10 @@
 
   30 Apr 2011; Justin Lecher <jlec@gentoo.org> aegisub-2.1.8.ebuild,
   aegisub-9999.ebuild:
+  Fix deps for gnome2
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> aegisub-2.1.8.ebuild,
+  aegisub-9999.ebuild:
   Moved media-video/ffmpeg > virtual/ffmpeg, Corrected toplevel domain
 
   13 Jun 2010; Markus Ullmann <jokey@gentoo.org> aegisub-2.1.8.ebuild:

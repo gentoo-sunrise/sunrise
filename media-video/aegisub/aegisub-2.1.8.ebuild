@@ -41,7 +41,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	media-gfx/imagemagick
-	dev-libs/glib"
+	dev-libs/glib:2"
 
 S="${WORKDIR}/${MY_P}"
 
