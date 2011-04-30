@@ -1,6 +1,9 @@
 # ChangeLog for media-sound/gnormalize
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> gnormalize-0.63-r1.ebuild:
+  Fix deps for gnome3
 
   25 Oct 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -gnormalize-0.63.ebuild, gnormalize-0.63-r1.ebuild:
