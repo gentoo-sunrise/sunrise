@@ -35,8 +35,9 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}/module"
 
-# RENPY_DEPS_INSTALL is a double-colon separated list of directories that
-# contains all core renpy dependencies. This is usually /usr.
-export RENPY_DEPS_INSTALL="${ROOT}usr"
+src_compile() {
+	export RENPY_DEPS_INSTALL="${ROOT}usr"
+	distutils_src_compile
+}
 
 PYTHON_MODNAME="pysdlsound"
