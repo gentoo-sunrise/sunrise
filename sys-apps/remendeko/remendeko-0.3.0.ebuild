@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk"
 
-RDEPEND="gtk? ( >=x11-libs/gtk+-2.4.0 )"
+RDEPEND="gtk? ( x11-libs/gtk+:2 )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.15"
@@ -25,6 +25,8 @@ S=${WORKDIR}/${MY_PN}
 
 src_prepare() {
 	sed -i \
+		-e 's: -s::g' \
+		-e 's:$(CC) $(LINKOBJ:$(CC) $(LDFLAGS) $(LINKOBJ:g' \
 		-e "s:^\(CC   = \).*$:\1$(tc-getCC):" \
 		-e "s:^\(CFLAGS = \).*$:\1${CFLAGS} -Wall:" \
 		-e "s:^\(CFLAGSGUI = \).*$:\1${CFLAGS} -DUSEGUI -Wall \
