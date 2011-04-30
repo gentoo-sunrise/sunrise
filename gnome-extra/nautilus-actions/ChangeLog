@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/nautilus-actions
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org>
+  nautilus-actions-1.4.1.ebuild:
+  Fix deps for gnome3
 
   10 Jul 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   nautilus-actions-1.4.1.ebuild:
