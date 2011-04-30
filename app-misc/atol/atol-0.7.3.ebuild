@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="4"
 
 inherit eutils multilib
 
@@ -13,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="gnome"
 
-RDEPEND=">=x11-libs/gtk+-2.6"
+RDEPEND="x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 	#test? ( dev-util/valgrind )"
@@ -23,12 +25,13 @@ MAKEOPTS="${MAKEOPTS} -j1"
 # test doesn't work
 RESTRICT="test"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+DOCS="readme.txt"
 
-	# Respect CFLAGS and don't use --as-needed by default
-	epatch "${FILESDIR}/${P}-CFLAGS.patch"
+src_prepare() {
+	edos2unix $(find -type f)
+	epatch \
+		"${FILESDIR}/${P}-CFLAGS.patch" \
+		"${FILESDIR}/${P}-gcc46.patch"
 
 	# Fix multilib
 	sed -i -e "s#/lib/#/$(get_libdir)/#" "${S}/Makefile" \
@@ -39,9 +42,6 @@ src_unpack() {
 		sed -i -e 's/HAVE_GNOME_VFS=1/#HAVE_GNOME_VFS=1/g' Makefile || \
 			die "gnome sed failed"
 	fi
-}
 
-src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
-	dodoc readme.txt
+	export CFLAGS="${CXXFLAGS}"
 }

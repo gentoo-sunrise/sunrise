@@ -1,0 +1,601 @@
+ plugins/src/ArjLib/ArjLib.cpp                   |    1 +
+ plugins/src/ArjLib/Makefile                     |    2 +-
+ plugins/src/Bz2Lib/Bz2Lib.cpp                   |    2 ++
+ plugins/src/Bz2Lib/Makefile                     |    2 +-
+ plugins/src/Bz2Lib/bz2.cpp                      |    1 +
+ plugins/src/GzLib/GzLib.cpp                     |    1 +
+ plugins/src/GzLib/Makefile                      |    2 +-
+ plugins/src/GzLib/gzip.cpp                      |    1 +
+ plugins/src/LstLib/EntryTree.h                  |    1 +
+ plugins/src/LstLib/Makefile                     |    2 +-
+ plugins/src/TarLib/LibTar.cpp                   |    3 +++
+ plugins/src/TarLib/Makefile                     |    2 +-
+ plugins/src/TarLib/TarLib.cpp                   |    2 ++
+ plugins/src/ZLib/Makefile                       |    2 +-
+ plugins/src/ZLib/ZLib.cpp                       |    2 ++
+ plugins/src/ZipLib/Makefile                     |    2 +-
+ plugins/src/ZipLib/ZipArchive/ZipArchive.cpp    |    3 +++
+ plugins/src/ZipLib/ZipArchive/ZipFileHeader.cpp |    2 ++
+ plugins/src/ZipLib/ZipArchive/stl/ZipString.h   |    1 +
+ src/FileSearchDlg.cpp                           |    2 ++
+ src/MainWindow.cpp                              |    2 ++
+ src/OptionsDialog.cpp                           |    1 +
+ src/PackFilesDlg.cpp                            |    1 +
+ src/SiteManagerDlg.cpp                          |    2 ++
+ src/core/ConnectionInfo.h                       |    1 +
+ src/core/ConnectionInfoList.cpp                 |    2 ++
+ src/core/GuiLanguage.cpp                        |    2 ++
+ src/core/OpDecrypt.cpp                          |    1 +
+ src/core/OpEncrypt.cpp                          |    2 ++
+ src/core/PathName.cpp                           |    2 ++
+ src/core/PluginManager.cpp                      |    1 +
+ src/core/ProxyFtp.cpp                           |    1 +
+ src/core/ProxySocks.cpp                         |    2 ++
+ src/core/String.cpp                             |    2 ++
+ src/core/System.cpp                             |    4 +++-
+ src/core/VfsListing.cpp                         |    1 +
+ src/core/_ftp/FtpListParser.cpp                 |    2 ++
+ src/core/_ftp/xSSLContext.cpp                   |    2 +-
+ src/core/_ftp/xSocket.cpp                       |    2 ++
+ src/core/_unx/SystemImpl.cpp                    |    2 ++
+ src/core/_util/Base64.cpp                       |    1 +
+ src/core/util.cpp                               |    2 ++
+ src/main.cpp                                    |    2 ++
+ 43 files changed, 67 insertions(+), 9 deletions(-)
+
+diff --git a/plugins/src/ArjLib/ArjLib.cpp b/plugins/src/ArjLib/ArjLib.cpp
+index 59262f1..2cce523 100644
+--- a/plugins/src/ArjLib/ArjLib.cpp
++++ b/plugins/src/ArjLib/ArjLib.cpp
+@@ -12,6 +12,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <time.h>
++#include <cstring>
+ 
+ #ifndef _WIN32
+  #include <ctype.h>
+diff --git a/plugins/src/ArjLib/Makefile b/plugins/src/ArjLib/Makefile
+index c8f4c9c..c1a2b40 100644
+--- a/plugins/src/ArjLib/Makefile
++++ b/plugins/src/ArjLib/Makefile
+@@ -38,7 +38,7 @@ OBJS= ArjLib.o ArchiveInfo.o ArjUnpack.o unarj.o environ.o decode.o
+ # link program binary
+ # mark symbols with dllexport in source, or try -Wl,--export-all
+ arjlib: $(OBJS)
+-	$(LD) $(OBJS) -o ArjLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic --export-all --enable-auto-import
++	$(LD) $(OBJS) -o ArjLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic
+ 
+ # compile individual objects
+ # TOFIX?: use pattern rules (how to adjust for possible multiple source directories?)
+diff --git a/plugins/src/Bz2Lib/Bz2Lib.cpp b/plugins/src/Bz2Lib/Bz2Lib.cpp
+index e731842..7248170 100644
+--- a/plugins/src/Bz2Lib/Bz2Lib.cpp
++++ b/plugins/src/Bz2Lib/Bz2Lib.cpp
+@@ -8,6 +8,8 @@
+ #include <time.h>
+ #include "../plugin_int.h"
+ 
++#include <cstring>
++
+ #ifndef _WIN32
+  #include <ctype.h>
+ #endif
+diff --git a/plugins/src/Bz2Lib/Makefile b/plugins/src/Bz2Lib/Makefile
+index 5cccce4..08d9e3b 100644
+--- a/plugins/src/Bz2Lib/Makefile
++++ b/plugins/src/Bz2Lib/Makefile
+@@ -39,7 +39,7 @@ OBJS= Bz2Lib.o ArchiveInfo.o bz2.o $(BZ2SRC)/libbz2.a
+ # link program binary
+ # mark symbols with dllexport in source, or try -Wl,--export-all
+ bzlib: $(OBJS)
+-	$(LD) $(OBJS) -o Bz2Lib.atp $(FLAGS) $(LDFLAGS) -shared -fpic --export-all --enable-auto-import
++	$(LD) $(OBJS) -o Bz2Lib.atp $(FLAGS) $(LDFLAGS) -shared -fpic
+ 
+ # compile individual objects
+ # TOFIX?: use pattern rules (how to adjust for possible multiple source directories?)
+diff --git a/plugins/src/Bz2Lib/bz2.cpp b/plugins/src/Bz2Lib/bz2.cpp
+index b361a3d..a481c4b 100644
+--- a/plugins/src/Bz2Lib/bz2.cpp
++++ b/plugins/src/Bz2Lib/bz2.cpp
+@@ -7,6 +7,7 @@
+ ////////////////////////////////////////////////////////////////////////////
+ 
+ #include "bz2.h"
++#include <cstring>
+ 
+ CBZ2::CBZ2()
+ {
+diff --git a/plugins/src/GzLib/GzLib.cpp b/plugins/src/GzLib/GzLib.cpp
+index cb53b75..96a5d31 100644
+--- a/plugins/src/GzLib/GzLib.cpp
++++ b/plugins/src/GzLib/GzLib.cpp
+@@ -14,6 +14,7 @@
+ #include <time.h>
+ #include <stdio.h>
+ #include "zlib/zlib.h"
++#include <cstring>
+ 
+ #ifdef _WIN32
+  #include <windows.h>
+diff --git a/plugins/src/GzLib/Makefile b/plugins/src/GzLib/Makefile
+index 92d9216..e4cc5d2 100644
+--- a/plugins/src/GzLib/Makefile
++++ b/plugins/src/GzLib/Makefile
+@@ -39,7 +39,7 @@ OBJS= GzLib.o ArchiveInfo.o gzip.o $(ZLIBSRC)/libz.a
+ # link program binary
+ # mark symbols with dllexport in source, or try -Wl,--export-all
+ gzlib: $(OBJS)
+-	$(LD) $(OBJS) -o GzLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic --export-all --enable-auto-import
++	$(LD) $(OBJS) -o GzLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic
+ 
+ # compile individual objects
+ # TOFIX?: use pattern rules (how to adjust for possible multiple source directories?)
+diff --git a/plugins/src/GzLib/gzip.cpp b/plugins/src/GzLib/gzip.cpp
+index 9f253bf..e48c38e 100644
+--- a/plugins/src/GzLib/gzip.cpp
++++ b/plugins/src/GzLib/gzip.cpp
+@@ -38,6 +38,7 @@
+ #include "gzip.h"
+ #include <limits.h>
+ #include <time.h>
++#include <cstring>
+ 
+ //////////////////////////////////////////////////////////////////////
+ // Construction/Destruction
+diff --git a/plugins/src/LstLib/EntryTree.h b/plugins/src/LstLib/EntryTree.h
+index cd2a1d9..0ca588f 100644
+--- a/plugins/src/LstLib/EntryTree.h
++++ b/plugins/src/LstLib/EntryTree.h
+@@ -14,6 +14,7 @@
+ #endif // _MSC_VER > 1000
+ 
+ #include <string>
++#include <cstring>
+ #include <vector>
+ #include <algorithm>
+ 
+diff --git a/plugins/src/LstLib/Makefile b/plugins/src/LstLib/Makefile
+index b951beb..7fe12eb 100644
+--- a/plugins/src/LstLib/Makefile
++++ b/plugins/src/LstLib/Makefile
+@@ -38,7 +38,7 @@ OBJS= EntryTree.o LstCatalog.o ArchiveInfo.o LstLib.o
+ # link program binary
+ # mark symbols with dllexport in source, or try -Wl,--export-all
+ lstlib: $(OBJS)
+-	$(LD) $(OBJS) -o LstLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic --export-all --enable-auto-import
++	$(LD) $(OBJS) -o LstLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic
+ 
+ # compile individual objects
+ # TOFIX?: use pattern rules (how to adjust for possible multiple source directories?)
+diff --git a/plugins/src/TarLib/LibTar.cpp b/plugins/src/TarLib/LibTar.cpp
+index 186aeca..182f616 100644
+--- a/plugins/src/TarLib/LibTar.cpp
++++ b/plugins/src/TarLib/LibTar.cpp
+@@ -20,6 +20,9 @@
+  #define min(a,b) ((a)<(b))?(a):(b)
+ #endif
+ 
++#include <cstring>
++#include <cstdio>
++
+ static const int RECORDSIZE = 512;
+ static const int NAMSIZ		= 100;
+ static const int TUNMLEN    =  32;
+diff --git a/plugins/src/TarLib/Makefile b/plugins/src/TarLib/Makefile
+index 7b142d8..1c420c0 100644
+--- a/plugins/src/TarLib/Makefile
++++ b/plugins/src/TarLib/Makefile
+@@ -38,7 +38,7 @@ OBJS= TarLib.o ArchiveInfo.o LibTar.o
+ # link program binary
+ # mark symbols with dllexport in source, or try -Wl,--export-all
+ tarlib: $(OBJS)
+-	$(LD) $(OBJS) -o TarLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic --export-all --enable-auto-import
++	$(LD) $(OBJS) -o TarLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic
+ 
+ # compile individual objects
+ # TOFIX?: use pattern rules (how to adjust for possible multiple source directories?)
+diff --git a/plugins/src/TarLib/TarLib.cpp b/plugins/src/TarLib/TarLib.cpp
+index f5474f4..4c2d6e1 100644
+--- a/plugins/src/TarLib/TarLib.cpp
++++ b/plugins/src/TarLib/TarLib.cpp
+@@ -12,6 +12,8 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <time.h>
++#include <cstring>
++#include <cstdio>
+ 
+ #ifndef _WIN32
+  #include <ctype.h>
+diff --git a/plugins/src/ZLib/Makefile b/plugins/src/ZLib/Makefile
+index ceed8d5..518f8ea 100644
+--- a/plugins/src/ZLib/Makefile
++++ b/plugins/src/ZLib/Makefile
+@@ -38,7 +38,7 @@ OBJS= ZLib.o ArchiveInfo.o Decompress.o
+ # link program binary
+ # mark symbols with dllexport in source, or try -Wl,--export-all
+ zlib: $(OBJS)
+-	$(LD) $(OBJS) -o ZLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic --export-all --enable-auto-import
++	$(LD) $(OBJS) -o ZLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic
+ 
+ # compile individual objects
+ # TOFIX?: use pattern rules (how to adjust for possible multiple source directories?)
+diff --git a/plugins/src/ZLib/ZLib.cpp b/plugins/src/ZLib/ZLib.cpp
+index 079adf1..2901815 100644
+--- a/plugins/src/ZLib/ZLib.cpp
++++ b/plugins/src/ZLib/ZLib.cpp
+@@ -12,6 +12,8 @@
+  #include <ctype.h>
+ #endif
+ 
++#include <cstring>
++
+ //global data
+ COpenArchivesList	g_ArchList;
+ tPasswordProc		g_pfnPwdProc = NULL;
+diff --git a/plugins/src/ZipLib/Makefile b/plugins/src/ZipLib/Makefile
+index 0b488ed..6d30c5e 100644
+--- a/plugins/src/ZipLib/Makefile
++++ b/plugins/src/ZipLib/Makefile
+@@ -43,7 +43,7 @@ OBJS= ZipLib.o ArchiveInfo.o ./ZipArchive/libziparch.a
+ # link program binary
+ # mark symbols with dllexport in source, or try -Wl,--export-all
+ ziplib: $(OBJS)
+-	$(LD) $(OBJS) -o ZipLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic --export-all --enable-auto-import
++	$(LD) $(OBJS) -o ZipLib.atp $(FLAGS) $(LDFLAGS) -shared -fpic
+ 
+ # compile individual objects
+ # TOFIX?: use pattern rules (how to adjust for possible multiple source directories?)
+diff --git a/plugins/src/ZipLib/ZipArchive/ZipArchive.cpp b/plugins/src/ZipLib/ZipArchive/ZipArchive.cpp
+index a8758a0..7aa22bd 100644
+--- a/plugins/src/ZipLib/ZipArchive/ZipArchive.cpp
++++ b/plugins/src/ZipLib/ZipArchive/ZipArchive.cpp
+@@ -27,6 +27,9 @@
+ #endif
+ #endif
+ 
++#include <cstring>
++#include <climits>
++
+ //////////////////////////////////////////////////////////////////////
+ // Construction/Destruction
+ //////////////////////////////////////////////////////////////////////
+diff --git a/plugins/src/ZipLib/ZipArchive/ZipFileHeader.cpp b/plugins/src/ZipLib/ZipArchive/ZipFileHeader.cpp
+index 38cf4c9..4b48ea6 100644
+--- a/plugins/src/ZipLib/ZipArchive/ZipFileHeader.cpp
++++ b/plugins/src/ZipLib/ZipArchive/ZipFileHeader.cpp
+@@ -22,6 +22,8 @@
+ #define FILEHEADERSIZE	46
+ #define LOCALFILEHEADERSIZE	30
+ 
++#include <climits>
++
+ //////////////////////////////////////////////////////////////////////
+ // Construction/Destruction
+ //////////////////////////////////////////////////////////////////////
+diff --git a/plugins/src/ZipLib/ZipArchive/stl/ZipString.h b/plugins/src/ZipLib/ZipArchive/stl/ZipString.h
+index 8ec3996..b9cd8eb 100644
+--- a/plugins/src/ZipLib/ZipArchive/stl/ZipString.h
++++ b/plugins/src/ZipLib/ZipArchive/stl/ZipString.h
+@@ -13,6 +13,7 @@
+ #ifndef __ZIPSTRING_H__
+ #define __ZIPSTRING_H__
+ #include "stdafx.h"
++#include <cstring>
+ 
+ #if defined(_MSC_VER) && (_MSC_VER > 1100) 
+ 	#pragma warning( push, 3 ) // STL requirements
+diff --git a/src/FileSearchDlg.cpp b/src/FileSearchDlg.cpp
+index 46da6c5..f554529 100644
+--- a/src/FileSearchDlg.cpp
++++ b/src/FileSearchDlg.cpp
+@@ -13,6 +13,8 @@
+ #include "core/IniFile.h"
+ #include "core/debug.h"
+ 
++#include <cstdlib>
++
+ extern GtkWidget *atol_main;
+ extern DualPanel g_dp;
+ 
+diff --git a/src/MainWindow.cpp b/src/MainWindow.cpp
+index ebffc91..c7546cc 100644
+--- a/src/MainWindow.cpp
++++ b/src/MainWindow.cpp
+@@ -29,6 +29,8 @@
+ #include "../res/ftp.xpm"
+ #include "../res/close.xpm"
+ 
++#include <cstring>
++
+ extern bool g_bNCSelection;
+ extern bool g_bRefreshPanelsOnFocus;
+ extern bool g_bShowExtColumn;
+diff --git a/src/OptionsDialog.cpp b/src/OptionsDialog.cpp
+index b9ff9ae..51dee77 100644
+--- a/src/OptionsDialog.cpp
++++ b/src/OptionsDialog.cpp
+@@ -12,6 +12,7 @@
+ #include "core/System.h"
+ #include "support.h"
+ #include "DualPanel.h"
++#include <cstring>
+ 
+ #if _MSC_VER > 1000
+  #pragma warning(disable:4786)
+diff --git a/src/PackFilesDlg.cpp b/src/PackFilesDlg.cpp
+index ea08c75..786d0e9 100644
+--- a/src/PackFilesDlg.cpp
++++ b/src/PackFilesDlg.cpp
+@@ -14,6 +14,7 @@
+ #include "core/PathName.h"
+ #include "core/IniFile.h"
+ #include <vector>
++#include <cstring>
+ 
+ extern GtkWidget *atol_main;
+ extern PluginManager g_PlugManager;
+diff --git a/src/SiteManagerDlg.cpp b/src/SiteManagerDlg.cpp
+index 303fa47..a67a545 100644
+--- a/src/SiteManagerDlg.cpp
++++ b/src/SiteManagerDlg.cpp
+@@ -13,6 +13,8 @@
+ #include <gtk/gtk.h>
+ #include "GuiInputDlg.h"
+ 
++#include <cstdlib>
++
+ #ifdef _WIN32
+   #include <io.h>
+   #define access _access
+diff --git a/src/core/ConnectionInfo.h b/src/core/ConnectionInfo.h
+index f2125ae..5876df1 100644
+--- a/src/core/ConnectionInfo.h
++++ b/src/core/ConnectionInfo.h
+@@ -14,6 +14,7 @@
+ #endif // _MSC_VER > 1000
+ 
+ #include "String.h"
++#include <cstring>
+ 
+ class CProxyInfo
+ {
+diff --git a/src/core/ConnectionInfoList.cpp b/src/core/ConnectionInfoList.cpp
+index 4f9f16e..0146045 100644
+--- a/src/core/ConnectionInfoList.cpp
++++ b/src/core/ConnectionInfoList.cpp
+@@ -13,6 +13,8 @@
+   #include <windows.h>
+ #endif
+ 
++#include <cstdio>
++
+ CNodeInfo::CNodeInfo()
+ {
+ 	m_nID	= -1;
+diff --git a/src/core/GuiLanguage.cpp b/src/core/GuiLanguage.cpp
+index 2daa7b9..098744d 100644
+--- a/src/core/GuiLanguage.cpp
++++ b/src/core/GuiLanguage.cpp
+@@ -22,6 +22,8 @@
+  #include<unistd.h>
+ #endif 
+ 
++#include <cstring>
++
+ extern GuiLanguage g_lang;
+ 
+ bool OnDirEnum(const std::string &dir, void *data);
+diff --git a/src/core/OpDecrypt.cpp b/src/core/OpDecrypt.cpp
+index 50de285..cc159c0 100644
+--- a/src/core/OpDecrypt.cpp
++++ b/src/core/OpDecrypt.cpp
+@@ -11,6 +11,7 @@
+ #include "PathName.h"
+ #include "_crypt/blowfish.h"
+ #include "_crypt/md5.h"
++#include <cstring>
+ 
+ #ifdef _WIN32
+  #include <io.h> //access
+diff --git a/src/core/OpEncrypt.cpp b/src/core/OpEncrypt.cpp
+index 76ea15e..3a577b4 100644
+--- a/src/core/OpEncrypt.cpp
++++ b/src/core/OpEncrypt.cpp
+@@ -12,6 +12,8 @@
+ #include "_crypt/md5.h"
+ #include "PathName.h"
+ 
++#include <cstring>
++
+ #ifdef _WIN32
+  #include <io.h> //access
+ #else
+diff --git a/src/core/PathName.cpp b/src/core/PathName.cpp
+index 93f54de..6a1bc83 100644
+--- a/src/core/PathName.cpp
++++ b/src/core/PathName.cpp
+@@ -13,6 +13,8 @@
+ #include <glib/gprintf.h>
+ #include "debug.h"
+ 
++#include <cstring>
++
+ PathName::PathName()
+ {
+ }
+diff --git a/src/core/PluginManager.cpp b/src/core/PluginManager.cpp
+index a40452f..2676094 100644
+--- a/src/core/PluginManager.cpp
++++ b/src/core/PluginManager.cpp
+@@ -11,6 +11,7 @@
+ #include "System.h"
+ #include "util.h"
+ #include "debug.h"
++#include <cstring>
+ 
+ //NOTE: unique plugin file extension ".atp"
+ #define PLUGIN_EXT ".atp"
+diff --git a/src/core/ProxyFtp.cpp b/src/core/ProxyFtp.cpp
+index f27fd90..cebedb9 100644
+--- a/src/core/ProxyFtp.cpp
++++ b/src/core/ProxyFtp.cpp
+@@ -8,6 +8,7 @@
+ 
+ #include "ProxyFtp.h"
+ #include "_ftp/xSocket.h"
++#include <cstring>
+ 
+ CProxyFtp::CProxyFtp()
+ {
+diff --git a/src/core/ProxySocks.cpp b/src/core/ProxySocks.cpp
+index 25ddc7a..e21941c 100644
+--- a/src/core/ProxySocks.cpp
++++ b/src/core/ProxySocks.cpp
+@@ -20,6 +20,8 @@
+  #include <netdb.h>
+ #endif
+ 
++#include <cstring>
++
+ #define  UC(b)	(((int)b)&0xff)
+ 
+ CProxySocks::CProxySocks()
+diff --git a/src/core/String.cpp b/src/core/String.cpp
+index 4714c29..4541de8 100644
+--- a/src/core/String.cpp
++++ b/src/core/String.cpp
+@@ -17,6 +17,8 @@
+  #include <ctype.h>
+ #endif
+ 
++#include <cstring>
++
+ String::String()
+ {
+ }
+diff --git a/src/core/System.cpp b/src/core/System.cpp
+index c346c36..3ad384f 100644
+--- a/src/core/System.cpp
++++ b/src/core/System.cpp
+@@ -11,6 +11,8 @@
+ #include "debug.h"
+ #include "PathName.h"
+ 
++#include <cstring>
++
+ #ifdef _WIN32
+ #include <windows.h>
+ #include <direct.h> //_mkdir
+@@ -288,7 +290,7 @@ void System::GetPartitionList(std::vector<std::string> &lstPartitions)
+ 
+ 	//break result into the set of lines
+ 	const char *szStart = strOutput.c_str();
+-	char *szPos = NULL;
++	const char *szPos = NULL;
+ 	int nLine = 0;
+ 	while(NULL != (szPos = strchr(szStart, '\n')))
+ 	{
+diff --git a/src/core/VfsListing.cpp b/src/core/VfsListing.cpp
+index 4fead72..eab7cf9 100644
+--- a/src/core/VfsListing.cpp
++++ b/src/core/VfsListing.cpp
+@@ -9,6 +9,7 @@
+ #include "VfsListing.h"
+ #include "util.h"
+ #include <algorithm>    //sort
++#include <cstring>
+ 
+ //TOFIX move to VfsItem with enum
+ //used to sort VfsListing class
+diff --git a/src/core/_ftp/FtpListParser.cpp b/src/core/_ftp/FtpListParser.cpp
+index 3b104e7..9e6935d 100644
+--- a/src/core/_ftp/FtpListParser.cpp
++++ b/src/core/_ftp/FtpListParser.cpp
+@@ -9,6 +9,8 @@
+ #include "FtpListParser.h"
+ #include <time.h>
+ #include <ctype.h>
++#include <cstring>
++#include <cstdlib>
+ #ifndef _WIN32
+  #include <strings.h> //Linux strncasecmp
+ #endif
+diff --git a/src/core/_ftp/xSSLContext.cpp b/src/core/_ftp/xSSLContext.cpp
+index 41a602e..4b6a277 100644
+--- a/src/core/_ftp/xSSLContext.cpp
++++ b/src/core/_ftp/xSSLContext.cpp
+@@ -26,7 +26,7 @@ bool xSSLContext::Create(CFtpInfo::FtpEncryptionType nMethod)
+ 	Destroy();	// just in case
+ 
+ 	//create SSL context using selected protocol type
+-	SSL_METHOD *meth = NULL;
++	const SSL_METHOD *meth = NULL;
+ 
+ 	switch(nMethod){
+ 		case CFtpInfo::ENCRYPT_SSLv3:
+diff --git a/src/core/_ftp/xSocket.cpp b/src/core/_ftp/xSocket.cpp
+index b241f14..57df251 100644
+--- a/src/core/_ftp/xSocket.cpp
++++ b/src/core/_ftp/xSocket.cpp
+@@ -34,6 +34,8 @@
+   #include <sys/ioctl.h>
+ #endif
+ 
++#include <cstring>
++
+ xSocket::xSocket()
+ {
+ 	m_hSocket = INVALID_SOCKET;
+diff --git a/src/core/_unx/SystemImpl.cpp b/src/core/_unx/SystemImpl.cpp
+index b66b9cb..7951268 100644
+--- a/src/core/_unx/SystemImpl.cpp
++++ b/src/core/_unx/SystemImpl.cpp
+@@ -30,6 +30,8 @@
+ #include "../debug.h"
+ #include "../util.h"
+ 
++#include <cstring>
++
+ #if defined(HAVE_GNOME_VFS)
+ 
+ // Namespace for Gnome VFS wrappers.
+diff --git a/src/core/_util/Base64.cpp b/src/core/_util/Base64.cpp
+index 8ee60ad..f16e0b0 100644
+--- a/src/core/_util/Base64.cpp
++++ b/src/core/_util/Base64.cpp
+@@ -11,6 +11,7 @@
+ 
+ #include "Base64.h"
+ #include "../debug.h"
++#include <cstring>
+ 
+ // Static Member Initializers
+ //
+diff --git a/src/core/util.cpp b/src/core/util.cpp
+index 61caeeb..0e86725 100644
+--- a/src/core/util.cpp
++++ b/src/core/util.cpp
+@@ -23,6 +23,8 @@
+   #include <ctype.h>
+ #endif
+ 
++#include <cstring>
++
+ extern String g_strTerminal;
+ int gtkMessageBox(const char *szText, int nButtons = GTK_BUTTONS_OK, int nIcon = GTK_MESSAGE_INFO);
+ 
+diff --git a/src/main.cpp b/src/main.cpp
+index 988be0b..b205c3b 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -21,6 +21,8 @@
+ #include "core/PathName.h"
+ #include "core/System.h"
+ 
++#include <cstring>
++
+ #ifdef _WIN32
+  #include "core/_win/SingleInstance.h"
+  CSingleInstance g_instance("Atol");
