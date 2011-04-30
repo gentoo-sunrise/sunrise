@@ -1,0 +1,45 @@
+ configure.in |    8 ++++----
+ src/mpeg.h   |    4 ++--
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/configure.in b/configure.in
+index 1315e77..17fe2bd 100644
+--- a/configure.in
++++ b/configure.in
+@@ -33,8 +33,8 @@ PKG_CHECK_MODULES(FFMPEG, libavcodec >= 49.0.1 libavformat >= 49.0.0,,[
+             [prefix to ffmpeg source, if libavcodec and libavformat are not in /usr (default = /usr)]),
+         ffmpegprefix="$withval", ffmpegprefix="/usr")
+     AC_CHECK_FILES([${ffmpegprefix}/lib/libavcodec.so ${ffmpegprefix}/lib/libavformat.so],[HAVE_FFMPEG=yes])
+-    AC_CHECK_HEADER(${ffmpegprefix}/include/ffmpeg/avcodec.h,[HAVE_SHARED_AVCODEC=yes])
+-    AC_CHECK_HEADER(${ffmpegprefix}/include/ffmpeg/avformat.h, [HAVE_SHARED_AVFORMAT=yes])
++    AC_CHECK_HEADER(${ffmpegprefix}/include/libavcodec/avcodec.h,[HAVE_SHARED_AVCODEC=yes])
++    AC_CHECK_HEADER(${ffmpegprefix}/include/libavformat/avformat.h, [HAVE_SHARED_AVFORMAT=yes])
+     if test "x$HAVE_FFMPEG$HAVE_SHARED_AVCODEC$HAVE_SHARED_AVCODEC" != "xyesyesyes"
+     then
+         AC_MSG_ERROR([missing shared ffmpeg libraries])
+@@ -47,8 +47,8 @@ PKG_CHECK_MODULES(FFMPEG, libavcodec >= 49.0.1 libavformat >= 49.0.0,,[
+     AC_RUN_IFELSE(
+         [AC_LANG_PROGRAM([[
+     #include <stdlib.h>
+-    #include <ffmpeg/avformat.h>
+-    #include <ffmpeg/avcodec.h>
++    #include <libavformat/avformat.h>
++    #include <libavcodec/avcodec.h>
+     ]],
+     [[
+     if (LIBAVCODEC_VERSION_INT >= ((49<<16)+(0<<8)+1) && LIBAVFORMAT_VERSION_INT >= ((49<<16)+(0<<8)+0))
+diff --git a/src/mpeg.h b/src/mpeg.h
+index f7d41d4..d5fca1c 100644
+--- a/src/mpeg.h
++++ b/src/mpeg.h
+@@ -32,8 +32,8 @@ Class working on MPEG files
+ #include <gtkmm.h>
+ // ffmpeg Bindings
+ extern "C" {
+-    #include <ffmpeg/avcodec.h>
+-    #include <ffmpeg/avformat.h>
++    #include <libavcodec/avcodec.h>
++    #include <libavformat/avformat.h>
+ }
+ 
+ #include "info.h"

@@ -1,6 +1,10 @@
 # ChangeLog for media-video/avi-ogminfo
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> -avi-ogminfo-2.0.3.ebuild,
+  +avi-ogminfo-2.0.5.ebuild, +files/avi-ogminfo-2.0.5-ffmpeg.patch:
+  Fix deps for gnome3, Version Bump, Build against recent ffmpeg
 
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   avi-ogminfo-2.0.3.ebuild:
