@@ -1,6 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=4
+
+inherit toolchain-funcs
 
 DESCRIPTION="GTK image viewer"
 HOMEPAGE="http://shallowsky.com/software/pho/"
@@ -11,17 +15,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc"
 IUSE=""
 
-DEPEND="dev-util/pkgconfig
-	x11-libs/gtk+"
-RDEPEND="x11-libs/gtk+"
+RDEPEND="x11-libs/gtk+:2"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	sed -i -e "s:-g -O -Wall:${CFLAGS}:" Makefile\
 		|| die "sed fix of cflags failed"
 	sed -i -e "s:-Wall -g -O2:${CFLAGS}:" exif/Makefile\
 		|| die "sed fix of cflags2 failed"
+	tc-export CC
 }
 
 src_install() {
