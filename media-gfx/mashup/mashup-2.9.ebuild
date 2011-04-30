@@ -1,12 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
+
 inherit eutils toolchain-funcs
 
 DESCRIPTION="Program for printing one or more image files with a user-defined page layout"
-HOMEPAGE="http://kornelix.squarespace.com/printoxx"
+HOMEPAGE="http://kornelix.squarespace.com/mashup"
 SRC_URI="http://kornelix.squarespace.com/storage/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -14,11 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=x11-libs/gtk+-2.8"
+DEPEND="x11-libs/gtk+:2"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-Makefile-ldflags-fix.diff
+	epatch "${FILESDIR}"/${P}-ldflags.patch
 }
 
 src_compile() {
@@ -28,13 +29,12 @@ src_compile() {
 }
 
 src_install() {
-	# emake install installs many junk-files (including the manpage) into DOCDIR
-	# emake menu creates .desktop entry with DESTDIR-paths inside
-	# emake manpage compresses the manpage
-	# and they fail together with parallel make
-	# - thus we call only install and pass a nice DOCDIR for easy removal
-
-	emake DESTDIR="${D}" PREFIX=/usr DOCDIR=/tmp/${P}-doc install || die
+	dobin ${PN}
+	insinto /usr/share/${PN}
+	doins data/*
+	doicon icons/*
+	insinto /usr/share/
+	doins -r locales/*
 
 	make_desktop_entry ${PN} "Printoxx" /usr/share/${PN}/icons/${PN}.png "Application;Graphics;2DGraphics;"
 	newman doc/${PN}.man ${PN}.1 || die
