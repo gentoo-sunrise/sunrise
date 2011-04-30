@@ -39,7 +39,7 @@ RDEPEND="
 	dev-libs/glib:2
 	sys-libs/zlib
 	png? ( media-libs/libpng )
-	jpeg? ( media-libs/jpeg )
+	jpeg? ( virtual/jpeg )
 	truetype? ( >=media-libs/freetype-2 media-libs/fontconfig )
 	opengl? ( ${OPENGL_DEPS} )
 	xembed? (
