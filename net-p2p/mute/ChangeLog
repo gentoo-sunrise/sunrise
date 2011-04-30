@@ -1,6 +1,10 @@
 # ChangeLog for net-p2p/mute
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Apr 2011; Justin Lecher <jlec@gentoo.org> ,mute-0.5.ebuild,
+  ,files/mute-0.5-configure.patch, ,files/mute-0.5-makefile.patch:
+  Fixed usage of wxwidgets.eclass
 
   07 Sep 2010; Markos Chandras <hwoarang@gentoo.org> mute-0.5.ebuild:
   Replace wxwindows with wxwidgets global use flag

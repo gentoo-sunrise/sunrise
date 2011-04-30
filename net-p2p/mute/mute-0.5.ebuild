@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=1
 
 WX_GTK_VER="2.6"
 inherit eutils toolchain-funcs wxwidgets flag-o-matic multilib
@@ -18,7 +20,7 @@ KEYWORDS="~x86"
 IUSE="wxwidgets"
 
 DEPEND="dev-libs/crypto++
-	wxwidgets? ( =x11-libs/wxGTK-2.6* )"
+	wxwidgets? ( x11-libs/wxGTK:2.6 )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
