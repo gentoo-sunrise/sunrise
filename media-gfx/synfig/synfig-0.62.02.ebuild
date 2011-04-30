@@ -4,6 +4,8 @@
 
 EAPI=4
 
+inherit eutils
+
 DESCRIPTION="Film-Quality Vector Animation (core engine)"
 HOMEPAGE="http://www.synfig.org/"
 SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
@@ -28,6 +30,12 @@ RDEPEND="${DEPEND}
 	dv? ( media-libs/libdv )
 	imagemagick? ( media-gfx/imagemagick )"
 
+src_prepare() {
+	epatch \
+		"${FILESDIR}"/${P}-gcc46.patch \
+		"${FILESDIR}"/${P}-png.patch
+}
+
 src_configure() {
 	econf \
 		$(use_with ffmpeg) \
@@ -43,5 +51,5 @@ src_install() {
 	default
 	dodoc doc/*.txt
 	insinto /usr/share/${PN}/examples
-	doins examples/*.si{f,fz}
+	doins examples/*.sifz
 }
