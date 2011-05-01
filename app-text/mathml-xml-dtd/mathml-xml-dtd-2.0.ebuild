@@ -20,9 +20,9 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-src_install() {
-	INSTALL_DIRECTORY="/usr/share/sgml/mathml/${P}"
+INSTALL_DIRECTORY="/usr/share/sgml/mathml/${P}"
 
+src_install() {
 	insinto ${INSTALL_DIRECTORY}
 	doins -r * || die
 }
