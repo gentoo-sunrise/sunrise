@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="doc examples"
 
 RDEPEND="x11-libs/qt-core:4"
 DEPEND="${RDEPEND}"
@@ -21,13 +21,16 @@ PATCHES=(
 	"${FILESDIR}/${P}-install.patch"
 )
 
-src_configure() {
-	eqmake4 "${S}"/qextserialport/qextserialport.pro
-}
+S=${WORKDIR}/${PN}
 
 src_install() {
 	qt4-r2_src_install
+	dolib build/libqextserialport* || die
 	if use doc ; then
-		dohtml -r "${S}"/qextserialport/html/* || die
+		dohtml html/* || die
+	fi
+	if use examples ; then
+		insinto /usr/share/doc/${PF}/examples
+		doins -r examples/* || die
 	fi
 }

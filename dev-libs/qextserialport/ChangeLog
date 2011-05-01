@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  01 May 2011; Igor Ulyanov (Displacer) <disinbox@gmail.com>
+  qextserialport-1.1.ebuild, files/qextserialport-1.1-install.patch:
+  Now installing by dolib from correct S, examples added, patch is now for
+  headers install only. Thanks for Tommy[D]
+
   21 Apr 2011; Igor Ulyanov (Displacer) <disinbox@gmail.com>
   +qextserialport-1.1.ebuild, +files/qextserialport-1.1-install.patch,
   +metadata.xml:
