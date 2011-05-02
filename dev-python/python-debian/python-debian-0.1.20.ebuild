@@ -4,9 +4,9 @@
 
 EAPI="3"
 
-PYTHON_DEPEND="2"
+PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 inherit distutils
 
@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 PYTHON_MODNAME="deb822.py debian debian_bundle"
 
 src_prepare() {
-	sed -e "s/__CHANGELOG_VERSION__/${PV}/" setup.py.in > setup.py || die
+	sed -e s/__CHANGELOG_VERSION__/${PV}/ setup.py.in > setup.py || die
 	distutils_src_prepare
 }
 
@@ -34,7 +34,7 @@ src_test() {
 	testing() {
 		local t
 		for t in test_*.py ; do
-			"$(PYTHON)" "${t}" || return
+			PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" "${t}" || return
 		done
 	}
 	cd tests || die
@@ -44,10 +44,7 @@ src_test() {
 src_install() {
 	distutils_src_install
 	if use examples ; then
-		local e
-		for e in examples/* ; do
-			docinto "${e}"
-			dodoc "${e}"/* || die
-		done
+		insinto /usr/share/doc/${PF}
+		doins -r examples || die
 	fi
 }
