@@ -34,7 +34,7 @@ src_test() {
 	testing() {
 		local t
 		for t in test_*.py ; do
-			PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" "${t}" || return
+			"$(PYTHON)" "${t}" || return
 		done
 	}
 	cd tests || die
