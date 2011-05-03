@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-
-inherit eutils
+EAPI=4
 
 DESCRIPTION="Another set of autoconf macros for compiling against boost"
 HOMEPAGE="http://github.com/tsuna/boost.m4"
@@ -24,13 +22,9 @@ src_unpack() {
 	mv * ${P} || die
 }
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-multilib.patch
-}
-
-# boost.m4 has a buildsystem which doesn't build nor install
-# anything. It only would add a buildtime dependency that boost be
-# installed. Thus, noop it:
+# boost.m4 has a buildsystem, but the distributer didn't use make dist
+# so we'd have to eautoreconf to use it. For installing one file, this
+# isn't worth it.
 src_configure() { :; }
 
 src_compile() { :; }
