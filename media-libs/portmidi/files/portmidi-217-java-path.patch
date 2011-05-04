@@ -1,0 +1,17 @@
+--- portmidi/pm_java/CMakeLists.txt.old	2011-04-29 13:52:34.000000000 -0700
++++ portmidi/pm_java/CMakeLists.txt	2011-04-29 13:52:13.000000000 -0700
+@@ -13,12 +13,12 @@
+     set(PMDEFAULTS_ALL_CLASSES ${JPORTMIDICLASS2} ${PMDEFAULTSCLASS2})
+     # message(STATUS "PMDEFAULTS_ALL_CLASSES is " ${PMDEFAULTS_ALL_CLASSES})
+     add_custom_command(OUTPUT pmdefaults/PmDefaultsFrame.class
+-        COMMAND javac -classpath . pmdefaults/PmDefaultsFrame.java
++        COMMAND javac -classpath ${CMAKE_SOURCE_DIR}/pm_java pmdefaults/PmDefaultsFrame.java
+ 	MAIN_DEPENDENCY pmdefaults/PmDefaultsFrame.java
+ 	DEPENDS pmdefaults/PmDefaults.java
+ 	WORKING_DIRECTORY pm_java)
+     add_custom_command(OUTPUT pmdefaults/PmDefaults.class
+-        COMMAND javac -classpath . pmdefaults/PmDefaults.java
++        COMMAND javac -classpath ${CMAKE_SOURCE_DIR}/pm_java pmdefaults/PmDefaults.java
+ 	MAIN_DEPENDENCY pmdefaults/PmDefaults.java
+ 	DEPENDS pmdefaults/PmDefaultsFrame.java
+ 	WORKING_DIRECTORY pm_java)
