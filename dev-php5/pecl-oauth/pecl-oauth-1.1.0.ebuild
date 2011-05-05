@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ PHP_EXT_NAME="oauth"
 PHP_EXT_INI="yes"
 PHP_EXT_ZENDEXT="no"
 
-inherit php-ext-pecl-r1
+inherit php-ext-pecl-r2 depend.php
 
 DESCRIPTION="A native PHP-extension to provide OAuth authentication protocol support"
 
