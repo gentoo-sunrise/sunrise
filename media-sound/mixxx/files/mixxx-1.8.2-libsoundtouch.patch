@@ -1,0 +1,67 @@
+--- src/SConscript.env.orig	2010-09-22 23:12:44.206967190 -0700
++++ src/SConscript.env	2010-09-22 23:17:40.859942609 -0700
+@@ -873,36 +873,12 @@
+ #Tell SCons to build libraries that are bundled with Mixxx
+ #===================================================
+ 
+-#SoundTouch
+-#XXX this should be done with a subsconscript
+-
+-soundtouch_path = 'soundtouch-1.4.1'
+-
+-env.Append(CPPPATH=['#lib/'+soundtouch_path])
+-sources += Split("""engine/enginebufferscalest.cpp
+-                    #lib/""" + soundtouch_path + """/SoundTouch.cpp
+-                    #lib/""" + soundtouch_path + """/TDStretch.cpp
+-                    #lib/""" + soundtouch_path + """/RateTransposer.cpp
+-                    #lib/""" + soundtouch_path + """/AAFilter.cpp
+-                    #lib/""" + soundtouch_path + """/FIFOSampleBuffer.cpp
+-                    #lib/""" + soundtouch_path + """/FIRFilter.cpp
+-                    #lib/""" + soundtouch_path + """/PeakFinder.cpp
+-                    #lib/""" + soundtouch_path + """/BPMDetect.cpp
+-                    """)
+-
+-if 'win' in platformString:
+-	if bitwidth == '64':
+-		sources += Split("""#lib/""" + soundtouch_path + """/cpu_detect_x64_win.cpp""")
+-	else:
+-		sources += Split("""#lib/""" + soundtouch_path + """/cpu_detect_x86_win.cpp""")
+-else:
+-	if bitwidth == '64':
+-		sources += Split("""#lib/""" + soundtouch_path + """/cpu_detect_x64_gcc.cpp""")
+-	else:
+-		sources += Split("""#lib/""" + soundtouch_path + """/cpu_detect_x86_gcc.cpp""")
+-
+-
+-#KissFFT
++#SoundTouch
++sources += Split("""engine/enginebufferscalest.cpp""")
++env.Append(CPPPATH = [ ARGUMENTS.get('prefix', '/usr/local') + '/include/soundtouch' ])
++env.Append(LIBS = 'SoundTouch')
++
++#KissFFT
+ env.Append(CPPPATH=['#lib/kissfft'])
+ sources += Split("""#lib/kissfft/kiss_fft.c""")
+ 
+@@ -1320,20 +1296,7 @@
+ else:
+ 	print "Agner Fog\'s ASMLIB (http://www.agner.org/optimize)... disabled"
+ 
+-# SoundTouch Optimizations -- turn them on only if we have SSE or MMX
+-# enabled. It's dumb that they appear here, but they make the most sense next to
+-# the optimization stuff. It's safe to assume that if opt > 1, then MMX and SSE
+-# are enabled. All 64-bit CPUs have MMX and SSE as well.
+-if bitwidth == '64' or (not 'win' in platformString and int(flags['optimize']) > 1) \
+-    or ('win' in platformString and int(flags['optimize']) > 2):
+-    sources += Split("""#lib/""" + soundtouch_path + """/mmx_optimized.cpp #lib/""" + soundtouch_path + """/sse_optimized.cpp""")
+-    env.Append(CPPDEFINES='ALLOW_X86_OPTIMIZATIONS')
+-
+-# Enable SoundTouch 3DNow! optimizations for Windows (decides at runtime if they're useful)
+-if 'win' in platformString and not bitwidth == '64':
+-    sources += Split("""#lib/""" + soundtouch_path + """/3dnow_win.cpp""")
+-
+-#Debugging output
++#Debugging output
+ flags['qdebug'] = getFlags(env, 'qdebug', 0)
+ if 'win' in platformString:
+ 	if int(flags['msvcdebug']):

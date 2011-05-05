@@ -1,0 +1,12 @@
+# ChangeLog for media-sound/mixxx
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 May 2011; Alex Barker (KWhat) <alex@1stleg.com> +mixxx-1.8.2.ebuild,
+  +files/mixxx-1.8.2-flags.patch, +files/mixxx-1.8.2-libsoundtouch.patch,
+  +mixxx-1.9.0.ebuild, +files/mixxx-1.9.0-flags.patch,
+  +files/mixxx-1.9.0-libsoundtouch.patch, +mixxx-9999.ebuild,
+  +files/mixxx-9999-flags.patch, +files/mixxx-9999-libsoundtouch.patch,
+  +metadata.xml:
+  New Ebuild for bug 310821
+

@@ -1,0 +1,32 @@
+--- src/SConscript.env.orig	2010-11-01 15:13:25.000000000 -0700
++++ src/SConscript.env	2010-11-11 12:02:58.000000000 -0800
+@@ -281,7 +281,7 @@
+ if os.environ.has_key('CC'):
+ 	env['CC'] = os.environ['CC']
+ if os.environ.has_key('CFLAGS'):
+-	env['CCFLAGS'] += SCons.Util.CLVar(os.environ['CFLAGS'])
++	env['CFLAGS'] += SCons.Util.CLVar(os.environ['CFLAGS'])
+ if os.environ.has_key('CXX'):
+ 	env['CXX'] = os.environ['CXX']
+ if os.environ.has_key('CXXFLAGS'):
+@@ -835,8 +835,8 @@
+ 	env.Append(CPPPATH=["$VCINSTALLDIR/include/atl", "C:/Program Files/Microsoft Platform SDK/Include/atl"])
+ 	env.Append(CPPDEFINES = 'WIN'+bitwidth) #for soundtouch
+ else:
+-	env.Append(CCFLAGS = Split(""" -pipe -Wall -W -g """)) # omghax
+-	env.Append(LINKFLAGS = Split(""" -pipe -Wall -W -g"""))
++	env.Append(CCFLAGS = Split(""" -Wall -Wextra """)) # omghax
++	env.Append(LINKFLAGS = Split(""" -Wall -Wextra """))
+ 	if platformString != 'osx':
+ 		env.Append(LINKFLAGS = "-Wl,-rpath,$QTDIR/lib")
+ 	env.Append(LINKFLAGS = "-Wl,-rpath,$QTDIR/lib")
+@@ -1447,6 +1447,9 @@
+ print "Building with flags: " + build_flags
+ print "================\n"
+ 
++env['CCCOM'] = '$CC -o $TARGET -c $CFLAGS $CCFLAGS $_CCCOMCOM $SOURCES'
++env['CXXCOM'] = '$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS $_CCCOMCOM $SOURCES'
++
+ #Save the options to cache
+ vars.Save(cachefile, env)
+ 
