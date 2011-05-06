@@ -19,7 +19,8 @@ RDEPEND=""
 src_unpack() {
 	default
 
-	mv * ${P} || die
+	# The github-generated zipball kludge.
+	mv *-boost.m4-* ${P} || die
 }
 
 # boost.m4 has a buildsystem, but the distributer didn't use make dist
