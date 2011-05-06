@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 
 SCONS_MIN_VERSION="2.0.1"
 
-S="${S}/${PN}"
+S=${S}/${PN}
 
 src_prepare() {
 	# patch CFLAGS issue
@@ -56,11 +56,8 @@ src_prepare() {
 }
 
 src_compile() {
-	tc-export CC CXX
-	export LINKFLAGS="${LDFLAGS}"
-	export LIBPATH="/usr/$(get_libdir)"
-
-	escons \
+	CC="$(tc-getCC)" CXX="$(tc-getCXX)" LINKFLAGS="${LDFLAGS}" \
+	LIBPATH="/usr/$(get_libdir)" escons \
 		prefix=/usr \
 		qtdir=/usr/$(get_libdir)/qt4 \
 		$(use_scons debug qdebug) \
@@ -77,9 +74,4 @@ src_install() {
 		prefix=/usr \
 		install_root="${D}"/usr \
 		|| die
-
-	dodoc README* || die
-
-	insinto /usr/share/doc/${PF}/pdf
-	doins Mixxx-Manual.pdf || die
 }

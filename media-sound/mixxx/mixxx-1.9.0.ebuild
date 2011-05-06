@@ -46,8 +46,8 @@ SCONS_MIN_VERSION="2.0.1"
 src_unpack() {
 	unpack ${A}
 
-	#Find and set the src dir
-	S="${WORKDIR}"/`basename ${S}~release-*`
+	#Fix the src dir
+	mv * "${S}" || die
 }
 
 src_prepare() {
@@ -62,11 +62,8 @@ src_prepare() {
 }
 
 src_compile() {
-	tc-export CC CXX
-	export LINKFLAGS="${LDFLAGS}"
-	export LIBPATH="/usr/$(get_libdir)"
-
-	escons \
+	CC="$(tc-getCC)" CXX="$(tc-getCXX)" LINKFLAGS="${LDFLAGS}" \
+	LIBPATH="/usr/$(get_libdir)" escons \
 		prefix=/usr \
 		qtdir=/usr/$(get_libdir)/qt4 \
 		$(use_scons debug qdebug) \
@@ -83,9 +80,4 @@ src_install() {
 		prefix=/usr \
 		install_root="${D}"/usr \
 		|| die
-
-	dodoc README* || die
-
-	insinto /usr/share/doc/${PF}/pdf
-	doins Mixxx-Manual.pdf || die
 }
