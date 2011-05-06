@@ -60,8 +60,8 @@ src_compile() {
 	escons \
 		prefix=/usr \
 		qtdir=/usr/$(get_libdir)/qt4 \
-		$(use_scons debug qdebug 1 0) \
-		$(use_scons mp4 m4a 1 0) \
+		$(use_scons debug qdebug) \
+		$(use_scons mp4 m4a) \
 		hifieq=1 \
 		vinylcontrol=1 \
 		optimize=0 \

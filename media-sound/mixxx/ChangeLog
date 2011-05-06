@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 May 2011; Michał Górny <mgorny@gentoo.org> mixxx-1.8.2.ebuild,
+  mixxx-1.9.0.ebuild, mixxx-9999.ebuild:
+  Drop redundant arguments to use_scons.
+
   05 May 2011; Alex Barker (KWhat) <alex@1stleg.com> +mixxx-1.8.2.ebuild,
   +files/mixxx-1.8.2-flags.patch, +files/mixxx-1.8.2-libsoundtouch.patch,
   +mixxx-1.9.0.ebuild, +files/mixxx-1.9.0-flags.patch,

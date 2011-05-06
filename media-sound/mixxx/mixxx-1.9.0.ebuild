@@ -51,8 +51,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	cd "${S}"
-
 	# patch CFLAGS issue
 	epatch "${FILESDIR}"/${P}-flags.patch
 
@@ -71,9 +69,9 @@ src_compile() {
 	escons \
 		prefix=/usr \
 		qtdir=/usr/$(get_libdir)/qt4 \
-		$(use_scons debug qdebug 1 0) \
-		$(use_scons mp4 m4a 1 0) \
-		$(use_scons shout shoutcast 1 0) \
+		$(use_scons debug qdebug) \
+		$(use_scons mp4 m4a) \
+		$(use_scons shout shoutcast) \
 		hifieq=1 \
 		vinylcontrol=1 \
 		optimize=0 \
