@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 May 2011; Michał Górny <mgorny@gentoo.org>
+  -files/portmidi-217-java-path.patch, metadata.xml:
+  Fix <herd/>, remove unused patch.
+
   04 May 2011; Alex Barker (KWhat) <alex@1stleg.com> +portmidi-217.ebuild,
   +files/portmidi-217-cmake-libdir-java-opts.patch,
   +files/portmidi-217-java-path.patch,
