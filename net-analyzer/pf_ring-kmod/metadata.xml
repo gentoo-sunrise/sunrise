@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<longdescription lang="en">
+		PF_RING is a new type of network socket that dramatically improves the
+		packet capture speed.
+	</longdescription>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+</pkgmetadata>
