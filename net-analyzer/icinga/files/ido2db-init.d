@@ -7,7 +7,7 @@ IDO2DBBIN="/usr/sbin/ido2db"
 SOCKET="/var/icinga/ido.sock"
 
 function check() {
-	if [[ -S "${SOCKET}" ]] ; then
+	if [ -S "${SOCKET}" ] ; then
 		ewarn "Strange, the socket file already exist in \"${SOCKET}\""
 		ewarn "it will be removed now and re-created by ido2db"
 		ewarn "BUT please make your checks."
