@@ -1,0 +1,13 @@
+# ChangeLog for games-rpg/pylotro
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*pylotro-0.1.14 (12 May 2011)
+
+  12 May 2011; Daniel Santos (dansan) <daniel.santos@pobox.com>
+  +pylotro-0.1.14.ebuild, +metadata.xml:
+  New build for bug #302337. pylotro is a gui launcher for the commercial
+  MMOs Lord of the Rings & Dungeons and Dragons Online and is written by
+  Alan Jackson <ajackson@bcs.org.uk>. Thanks to Andrzej Kardas
+  <andrzej.kardas@kardasa.pl> for the original ebuild.
+
