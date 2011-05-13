@@ -14,7 +14,6 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
 
 src_unpack() {
 	default
@@ -32,7 +31,7 @@ src_compile() { :; }
 
 src_install() {
 	insinto /usr/share/aclocal
-	doins build-aux/boost.m4 || die
+	doins build-aux/boost.m4
 
-	dodoc AUTHORS NEWS README THANKS || die
+	dodoc AUTHORS NEWS README THANKS
 }

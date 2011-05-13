@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 May 2011; Nathan Phillip Brink <binki@gentoo.org> boost-m4-0.2.ebuild:
+  Remove unnecessary || die() and RDEPEND, as I did an incomplete move to
+  EAPI=4.
+
   06 May 2011; Nathan Phillip Brink <binki@gentoo.org> boost-m4-0.2.ebuild:
   Make the mv * for the github zipball kludge more specific.
 
