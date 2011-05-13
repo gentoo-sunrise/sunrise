@@ -3,8 +3,9 @@
 # $Header: $
 
 EAPI=3
+SUPPORT_PYTHON_ABIS="1"
 
-inherit cmake-utils eutils multilib java-pkg-opt-2 distutils
+inherit cmake-utils distutils eutils java-pkg-opt-2 multilib python
 
 DESCRIPTION="A library for real time MIDI input and output"
 HOMEPAGE="http://portmedia.sourceforge.net/"
@@ -28,6 +29,8 @@ DEPEND="${CDEPEND}
 #	doc? ( app-doc/doxygen
 #		   virtual/latex-base )"
 
+RESTRICT_PYTHON_ABIS="3.*"
+
 S="${WORKDIR}/${PN}"
 
 # Bug #3295129 reported upstream
@@ -37,6 +40,11 @@ CMAKE_IN_SOURCE_BUILD=1
 # problems. f.e. no midi devices in pmdefaults, maybe even no midi devices at
 # all.
 CMAKE_BUILD_TYPE=$(use debug && echo Debug || echo Release)
+
+pkg_setup() {
+	use java && java-pkg-opt-2_pkg_setup
+	use python &&  python_pkg_setup
+}
 
 src_prepare() {
 	# with this patch the java installation directories can be specified and
@@ -56,6 +64,8 @@ src_prepare() {
 		EOF
 		[ "$?" -neq "0" ] && die "cat pmdefaults failed"
 	fi
+
+	use python && python_copy_sources
 }
 
 src_configure() {

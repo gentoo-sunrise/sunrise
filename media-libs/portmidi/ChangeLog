@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 May 2011; Alex Barker (KWhat) <alex@1stleg.com> portmidi-217.ebuild:
+  Fix for multi Python ABI and restriced Python 3
+
   13 May 2011; Nathan Phillip Brink <binki@gentoo.org> portmidi-217.ebuild:
   Fix pmdefaults wrapper on gentoo prefix.
 
