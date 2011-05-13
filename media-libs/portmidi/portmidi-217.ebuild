@@ -51,7 +51,7 @@ src_prepare() {
 		# Gentoo prefers to keep jars, it also specifies a library directory
 		cat > pm_java/pmdefaults/pmdefaults <<-EOF
 			#!/bin/sh
-			java -Djava.library.path=/usr/$(get_libdir)/ \\
+			java -Djava.library.path="${EPREFIX}"/usr/$(get_libdir)/ \\
 				-jar "${EPREFIX}/usr/share/${PN}/lib/pmdefaults.jar"
 		EOF
 		[ "$?" -neq "0" ] && die "cat pmdefaults failed"
@@ -140,13 +140,13 @@ src_install() {
 }
 
 pkg_postinst() {
-	# prevent distutils_pkg_postinst from being called autmatically if 
+	# prevent distutils_pkg_postinst from being called autmatically if
 	# python is disabled
 	use python && distutils_pkg_postinst
 }
 
 pkg_postrm() {
-	# prevent distutils_pkg_postrm from being called autmatically if 
+	# prevent distutils_pkg_postrm from being called autmatically if
 	# python is disabled
 	use python && distutils_pkg_postrm
 }

@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 May 2011; Nathan Phillip Brink <binki@gentoo.org> portmidi-217.ebuild:
+  Fix pmdefaults wrapper on gentoo prefix.
+
   06 May 2011; Michał Górny <mgorny@gentoo.org>
   -files/portmidi-217-java-path.patch, metadata.xml:
   Fix <herd/>, remove unused patch.
