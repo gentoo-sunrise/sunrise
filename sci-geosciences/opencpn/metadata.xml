@@ -6,7 +6,7 @@
 		<email>maintainer-wanted@gentoo.org</email>
 	</maintainer>
 	<use>
-		<flag name='gpsd'>Add support to use a GPS device trough the GPSD
+		<flag name='gpsd'>Add support for using a GPS device through the GPSD
 		deamon</flag>
 	</use>
 </pkgmetadata>

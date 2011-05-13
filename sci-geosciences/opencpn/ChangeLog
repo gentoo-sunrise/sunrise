@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 May 2011; Nathan Phillip Brink <binki@gentoo.org> metadata.xml:
+  Fix English.
+
   01 May 2011; Tim Mohlmann (Muhlemmer) <muhlemmer@gmail.com>
   -opencpn-2.1.624a.ebuild, +opencpn-2.3.1.ebuild:
   Version bumb for opencpn, added gpsd useflag, gpsd dependecy and
