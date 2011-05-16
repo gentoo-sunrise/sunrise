@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -27,6 +27,11 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# Extracted files are in an unneeded sub-directory, move them to .
+	mv ${P}-proper/* .
+	rm ${P}-proper/.gitignore
+	rmdir ${P}-proper
+
 	# Customize config.php so that the right 'DB_TYPE' is already set (according to the USE flag)
 	einfo "Customizing config.php..."
 	mv config.php{-dist,} || die "Could not rename config.php-dist to config.php."
