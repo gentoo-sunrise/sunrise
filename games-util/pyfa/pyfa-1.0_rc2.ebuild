@@ -20,7 +20,7 @@ DESCRIPTION="Python Fitting Assistant - a ship fitting application for EVE Onlin
 HOMEPAGE="http://www.evefit.org/Pyfa"
 SRC_URI="http://dl.evefit.org/${FOLDER}/${PN}-${MY_PV}.tar.bz2"
 
-LICENSE="GPL-3 LGPL-2.1 CCPL-Attribution-2.5"
+LICENSE="GPL-3 LGPL-2.1 CCPL-Attribution-2.5 free-noncomm"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+graph"
