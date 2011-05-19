@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/peppercorn
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 May 2011; Jan Matejka (yac) <yac@blesmrt.net> +peppercorn-0.3.ebuild,
+  +metadata.xml:
+  New ebuild for bug 368013
+
