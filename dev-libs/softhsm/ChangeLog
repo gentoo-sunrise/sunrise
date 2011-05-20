@@ -1,6 +1,10 @@
 # ChangeLog for dev-libs/softhsm
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  20 May 2011; Tom Hendrikx (whyscream) <tom@whyscream.net>
+  -softhsm-1.2.0.ebuild, +softhsm-1.2.1.ebuild:
+  version bump
 
   16 Nov 2010; Tom Hendrikx (whyscream) <tom@whyscream.net>
   softhsm-1.2.0.ebuild:

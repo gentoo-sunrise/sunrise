@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,7 +24,7 @@ DOCS=( "AUTHORS" "NEWS" "README" )
 
 src_configure() {
 	local myconf
-	use debug && myconf="--with-loglevel=4 --enable-sigver"
+	use debug && myconf="--with-loglevel=4"
 
 	econf \
 	$(use_enable amd64 64bit) \
