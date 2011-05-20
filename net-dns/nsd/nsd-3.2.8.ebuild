@@ -13,7 +13,7 @@ SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bind8-stats ipv6 largefile nsec3 root-server runtime-checks"
+IUSE="bind8-stats ipv6 nsec3 root-server runtime-checks"
 
 DEPEND="dev-libs/openssl"
 RDEPEND=${DEPEND}
@@ -38,8 +38,8 @@ src_configure() {
 		--localstatedir=/var \
 		--with-pidfile=/var/run/nsd/nsd.pid \
 		--with-zonesdir=/var/lib/nsd \
+		--enable-largefile \
 		$(use_enable bind8-stats) \
-		$(use_enable largefile) \
 		$(use_enable ipv6) \
 		$(use_enable nsec3) \
 		$(use_enable root-server) \
