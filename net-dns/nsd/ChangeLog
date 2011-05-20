@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 May 2011; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Removed local use desc for largefile
+
   20 May 2011; Justin Lecher <jlec@gentoo.org> nsd-3.2.8.ebuild:
   Enable largefile support by default
   http://archives.gentoo.org/gentoo-dev/msg_8924a26149b5a0c1ba8c97043b47e8c1.x

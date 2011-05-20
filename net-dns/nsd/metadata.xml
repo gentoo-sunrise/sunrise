@@ -6,7 +6,6 @@
 	<use>
 		<flag name='bind8-stats'>Enables BIND8 like NSTATS and 
 			XSTATS</flag>
-		<flag name='largefile'>Enable largefile support</flag>
 		<flag name='nsec3'>Enable NSEC3 support</flag>
 		<flag name='root-server'>Configure NSD as a root server</flag>
 		<flag name='runtime-checks'>Enable runtime checks</flag>
