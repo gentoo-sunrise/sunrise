@@ -21,7 +21,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-RDEPEND=">=dev-libs/icu-4.6"
+RDEPEND=">=dev-libs/icu-4.6
+	<dev-libs/icu-4.8_rc1"
 DEPEND="${RDEPEND}
 	doc? ( dev-python/epydoc )"
 
