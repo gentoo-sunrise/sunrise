@@ -1,6 +1,15 @@
 # ChangeLog for dev-util/eresi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 May 2011; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +files/0.82_beta2-direct-ld.patch, +files/0.82_beta2-gentoo-autodetect.patch,
+  +files/0.82_beta2-sed-in-Makefile.patch, eresi-0.82_beta2.ebuild:
+  * Change to EAPI=4. Prevent readline and server USE flags
+    from being enabled at the same time.
+  * Remove sed call at the top level of the Makefile.
+  * Prevent direct call to ld, call gcc instead.
+  * Avoid automatic autodetection of gentoo via uname.
 
   05 Oct 2010; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   eresi-0.82_beta2.ebuild:

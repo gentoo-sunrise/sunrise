@@ -1,8 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs
+EAPI=4
+
+inherit base eutils toolchain-funcs
 
 DESCRIPTION="The ERESI Reverse Engineering Software Interface: elfsh and friends"
 HOMEPAGE="http://www.eresi-project.org/"
@@ -19,6 +21,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="readline server doc"
+REQUIRED_USE="server? ( !readline )"
 
 DEPEND="readline? ( sys-libs/readline )"
 RDEPEND="${DEPEND}
@@ -26,20 +29,29 @@ RDEPEND="${DEPEND}
 # dev-util/elfsh-0.75 should be used as a transition package,
 # depending on eresi but not installing any files of its own.
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/0.82_beta2-parallel-make.patch
-	epatch "${FILESDIR}"/0.82_beta2-drop-dprintf.patch
-	epatch "${FILESDIR}"/0.82_beta2-as-needed.patch
+PATCHES=(
+	"${FILESDIR}"/0.82_beta2-parallel-make.patch
+	"${FILESDIR}"/0.82_beta2-drop-dprintf.patch
+	"${FILESDIR}"/0.82_beta2-as-needed.patch
+	"${FILESDIR}"/0.82_beta2-sed-in-Makefile.patch
+	"${FILESDIR}"/0.82_beta2-direct-ld.patch
+	"${FILESDIR}"/0.82_beta2-gentoo-autodetect.patch
+)
+
+src_prepare() {
+	base_src_prepare
 	sed -i \
 		-e 's: -O2 : :g' \
 		-e "s: -g3 : ${CFLAGS} -D_GNU_SOURCE :" \
 		-e "/^LDFLAGS/s:=:=${LDFLAGS} :" \
 		$(find -name Makefile) || die
+	sed -i \
+		-e "s:/usr/local:${EPREFIX%/}/usr:" \
+		configure eresi-config libasm/tools/libasm-config.template \
+		$(find -name \*.esh)
 }
 
-src_compile() {
+src_configure() {
 	# non-standard configure script
 	# doesn't understand --disable-*, so don't use use_enable
 	local conf="--prefix /usr"
@@ -49,7 +61,6 @@ src_compile() {
 	use server && conf="${conf} --enable-network"
 	echo "./configure ${conf}"
 	./configure  ${conf} || die "configure failed"
-	emake || die "make failed"
 }
 
 src_install() {
