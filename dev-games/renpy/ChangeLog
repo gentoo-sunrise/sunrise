@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 May 2011; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  -renpy-6.12.0.ebuild, +renpy-6.12.1.ebuild:
+  Version bump
+
   08 Feb 2011; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   renpy-6.11.2.ebuild, +renpy-6.12.0.ebuild:
   New version. Removed development part from 6.11.2 ebuild.
