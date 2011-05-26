@@ -198,8 +198,6 @@ net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail passwo
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
-net-misc/apt-cacher-ng:doc - Installs some documentation and config examples.
-net-misc/apt-cacher-ng:fuse - Build fuse httpfs named 'acngfs'. It's can be used to mount apt cache on server to client filesystem.
 net-misc/autoupnp:suid - Install the library setuid & setgid (required in order to run setuid & setgid applications).
 net-misc/fatrat:bittorrent - Enables support for the bittorrent protocol
 net-misc/fatrat:webinterface - Support remote control via a web interface
