@@ -61,7 +61,7 @@ src_install() {
 		doins -r tutorial || die
 	fi
 
-	dodoc CHANGELOG.txt
+	dodoc CHANGELOG.txt || die
 
 	if use doc; then
 		dohtml -r doc || die
