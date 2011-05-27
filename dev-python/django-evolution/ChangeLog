@@ -3,6 +3,10 @@
 # $Header: $
 
   27 May 2011; Michael Weber (xmw) <xmw@gentoo.org>
+  -django-evolution-0.5.ebuild, +django-evolution-0.6.3.ebuild:
+  Version bump
+
+  27 May 2011; Michael Weber (xmw) <xmw@gentoo.org>
   django-evolution-0.5.ebuild:
   Fix distutils.eclass issue (SUPPORT_PYTHON_ABIS now 1)
 
