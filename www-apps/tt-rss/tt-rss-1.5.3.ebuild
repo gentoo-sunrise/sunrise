@@ -28,9 +28,9 @@ pkg_setup() {
 
 src_prepare() {
 	# Extracted files are in an unneeded sub-directory, move them to .
-	mv ${P}-proper/* .
-	rm ${P}-proper/.gitignore
-	rmdir ${P}-proper
+	mv ${P}-proper/* . || die
+	rm ${P}-proper/.gitignore || die
+	rmdir ${P}-proper || die
 
 	# Customize config.php so that the right 'DB_TYPE' is already set (according to the USE flag)
 	einfo "Customizing config.php..."

@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 May 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  tt-rss-1.5.3.ebuild:
+  Add missing die
+
   16 May 2011; Patrick Nagel (padde) <mail@patrick-nagel.net>
   -tt-rss-1.4.2.ebuild, +tt-rss-1.5.3.ebuild:
   Version bump for tt-rss
