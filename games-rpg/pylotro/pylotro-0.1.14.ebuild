@@ -8,7 +8,7 @@ PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="2.4 3.*"
 
-inherit distutils games
+inherit games distutils
 
 DESCRIPTION="Lord of the Rings Online and Dungeons & Dragons Online Launcher"
 HOMEPAGE="http://www.lotrolinux.com/"
@@ -28,10 +28,6 @@ S="${WORKDIR}"
 PYTHON_MODNAME=PyLotROLauncher
 PYTHON_VERSIONED_SCRIPTS="${GAMES_BINDIR}/${PN}"
 
-src_compile() {
-	distutils_src_compile
-}
-
 src_install() {
 	distutils_src_install \
 		--install-scripts "${GAMES_BINDIR}" \
@@ -49,8 +45,4 @@ pkg_postinst() {
 	elog "GNU/Linux by visiting:"
 	elog "http://appdb.winehq.org/objectManager.php?sClass=application&iId=4891"
 	elog "or http://www.codeweavers.com/compatibility/browse/name/?app_id=4029"
-}
-
-pkg_postrm() {
-	distutils_pkg_postrm
 }
