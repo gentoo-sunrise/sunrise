@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 May 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  eresi-0.82_beta2.ebuild:
+  Remove unneeded base eclass
+
   23 May 2011; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   +files/0.82_beta2-direct-ld.patch, +files/0.82_beta2-gentoo-autodetect.patch,
   +files/0.82_beta2-sed-in-Makefile.patch, eresi-0.82_beta2.ebuild:

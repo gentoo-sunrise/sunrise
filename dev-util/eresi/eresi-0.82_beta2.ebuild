@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit base eutils toolchain-funcs
+inherit eutils toolchain-funcs
 
 DESCRIPTION="The ERESI Reverse Engineering Software Interface: elfsh and friends"
 HOMEPAGE="http://www.eresi-project.org/"
@@ -29,17 +29,14 @@ RDEPEND="${DEPEND}
 # dev-util/elfsh-0.75 should be used as a transition package,
 # depending on eresi but not installing any files of its own.
 
-PATCHES=(
-	"${FILESDIR}"/0.82_beta2-parallel-make.patch
-	"${FILESDIR}"/0.82_beta2-drop-dprintf.patch
-	"${FILESDIR}"/0.82_beta2-as-needed.patch
-	"${FILESDIR}"/0.82_beta2-sed-in-Makefile.patch
-	"${FILESDIR}"/0.82_beta2-direct-ld.patch
-	"${FILESDIR}"/0.82_beta2-gentoo-autodetect.patch
-)
-
 src_prepare() {
-	base_src_prepare
+	epatch "${FILESDIR}"/0.82_beta2-parallel-make.patch \
+	"${FILESDIR}"/0.82_beta2-drop-dprintf.patch \
+	"${FILESDIR}"/0.82_beta2-as-needed.patch \
+	"${FILESDIR}"/0.82_beta2-sed-in-Makefile.patch \
+	"${FILESDIR}"/0.82_beta2-direct-ld.patch \
+	"${FILESDIR}"/0.82_beta2-gentoo-autodetect.patch
+
 	sed -i \
 		-e 's: -O2 : :g' \
 		-e "s: -g3 : ${CFLAGS} -D_GNU_SOURCE :" \
