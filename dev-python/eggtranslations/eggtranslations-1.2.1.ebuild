@@ -1,6 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=3
+SUPPORT_PYTHON_ABIS=1
+PYTHON_DEPEND='2'
+RESTRICT_PYTHON_ABIS='3.*'
 
 inherit distutils
 
@@ -13,7 +18,7 @@ SRC_URI="mirror://pypi/E/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="doc? ( dev-python/epydoc )"
@@ -23,16 +28,14 @@ S="${WORKDIR}/${MY_P}"
 
 DOCS="README.txt"
 
+DISTUTILS_SRC_TEST=setup.py
+
 src_compile() {
 	if use doc; then
 		epydoc --html --verbose --url="${HOMEPAGE}" --name="${MY_P}" egg_translations.py \
 			|| die "Making the docs failed!"
 	fi
 	distutils_src_compile
-}
-
-src_test() {
-	PYTHONPATH="build/lib/" "${python}" setup.py test || die "Completing the tests failed!"
 }
 
 src_install() {
