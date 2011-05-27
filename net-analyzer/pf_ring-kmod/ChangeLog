@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 May 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pf_ring-kmod-4.6.3.ebuild:
+  Switch hardcoded arrow target to P
+
   09 May 2011; Jason Wallace <jason.r.wallace@gmail.com>
   +pf_ring-kmod-4.6.3.ebuild, +files/README.module_options,
   +files/pf_ring.conf, +metadata.xml:

@@ -8,7 +8,7 @@ inherit linux-mod linux-info
 
 DESCRIPTION="A new type of network socket that improves packet capture speed."
 HOMEPAGE="http://www.ntop.org/PF_RING.html"
-SRC_URI="http://sourceforge.net/projects/ntop/files/PF_RING/PF_RING-${PV}.tar.gz/download -> PF_RING-4.6.3.tar.gz"
+SRC_URI="http://sourceforge.net/projects/ntop/files/PF_RING/PF_RING-${PV}.tar.gz/download -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
