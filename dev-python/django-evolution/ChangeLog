@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/django-evolution
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 May 2011; Michael Weber (xmw) <xmw@gentoo.org>
+  django-evolution-0.5.ebuild:
+  Fix distutils.eclass issue (SUPPORT_PYTHON_ABIS now 1)
 
   13 Jun 2010; Michael Weber (xmw) <gentoo@xmw.de>
   -django-evolution-0_pre176.ebuild, +django-evolution-0.5.ebuild:
