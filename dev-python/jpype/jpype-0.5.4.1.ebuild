@@ -1,8 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
+SUPPORT_PYTHON_ABIS=1
+PYTHON_DEPEND=2
+RESTRICT_PYTHON_ABIS='3.*'
 
 inherit distutils
 
@@ -10,7 +13,7 @@ MY_PN=JPype
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Allow python programs full access to java class libraries"
-HOMEPAGE="http://jpype.sourceforge.de"
+HOMEPAGE="http://jpype.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.zip"
 
 LICENSE="Apache-2.0"
