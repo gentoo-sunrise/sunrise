@@ -1,6 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=3
+SUPPORT_PYTHON_ABIS=1
+PYTHON_DEPEND='2:2.5'
+RESTRICT_PYTHON_ABIS='3.*'
 
 inherit distutils
 
@@ -13,9 +18,11 @@ KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="doc examples"
 
-DEPEND=">=dev-lang/python-2.5
+DEPEND="dev-python/pyrex
 	dev-python/setuptools"
-RDEPEND="${DEPEND}"
+RDEPEND=""
+
+DISTUTILS_SRC_TEST=setup.py
 
 src_install() {
 	distutils_src_install
@@ -26,10 +33,6 @@ src_install() {
 
 	if use examples; then
 		docinto examples
-		dodoc examples/* || die "dodoc failed"
+		dodoc examples/* || die
 	fi
-}
-
-src_test() {
-	PYTHONPATH="build/lib" "${python}" setup.py test || die "Tests failed"
 }
