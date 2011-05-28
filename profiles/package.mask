@@ -53,12 +53,6 @@ media-video/sabbu
 # Removal in 30 days.
 media-sound/asoundconf
 
-# Nathan Phillip Brink <ohnobinki@ohnopublishing.net> (28 Apr 2011)
-# Masked for removal on 2011/05/28. Requires eclass eclipse-ext which
-# was killed, users should use Eclipse's built-in Update Manager
-# instead of ebuilds. See bug 98315 comment 3.
-dev-util/eclipse-epic-bin
-
 # Michał Górny <mgorny@gentoo.org> (08 Apr 2011)
 # Moved to gx86 as app-dicts/dikt. Removal in 30 days.
 kde-misc/dikt
