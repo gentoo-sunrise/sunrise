@@ -66,12 +66,6 @@ dev-perl/perl-xyne-arch
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
 
-# Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
-# Doesn't compile anymore, neither does the newer version. Has a lot
-# of open bugs and poor upstream. Unless someone is willing to fix it,
-# it will be removed in 30 days.
-gnome-extra/gnome-globalmenu
-
 # Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
 # Masking wrt bug 333939. Dependency on vala-1.0 which is
 # not yet released.
