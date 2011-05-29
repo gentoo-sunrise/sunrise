@@ -21,15 +21,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-RDEPEND=">=dev-libs/icu-4.6
-	<dev-libs/icu-4.8_rc1"
+RDEPEND=">=dev-libs/icu-4.6"
 DEPEND="${RDEPEND}
 	doc? ( dev-python/epydoc )"
 
 S="${WORKDIR}/${MY_P}"
 
 DOCS="CHANGES CREDITS README"
-PATCHES=( "${FILESDIR}/parseArgsConstChar.patch" )
+PATCHES=(
+	"${FILESDIR}/parseArgsConstChar.patch"
+	"${FILESDIR}/estyleEnums.patch"
+)
 
 src_prepare() {
 	base_src_prepare
