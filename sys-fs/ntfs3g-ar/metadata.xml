@@ -7,5 +7,6 @@
 		<flag name='udev'>Instal udev rule for <pkg>sys-apps/udev</pkg></flag>
 		<flag name='external-fuse'>Use external FUSE library instead of internal
 		one. Must be disabled for unprivileged mounting to work.</flag>
+		<flag name='hal'>Install rules for sys-apps/hal</flag>
 	</use>
 </pkgmetadata>

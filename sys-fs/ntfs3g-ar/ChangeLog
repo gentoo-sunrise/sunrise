@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 May 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Document hal useflag
+
   06 Jan 2011; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com>
   -ntfs3g-ar-2010.10.2.1.ebuild, +ntfs3g-ar-2010.10.2.3.ebuild:
   version bump, bugfix
