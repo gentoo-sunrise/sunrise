@@ -139,7 +139,6 @@ games-strategy/moo2:nocd - Install all files required to run the application wit
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 games-util/pyfa:graph - Enable support for graphs
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
-gnome-extra/gnome-globalmenu:xfce - Build the Xfce panel applet.
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
 mail-mta/citadel:postfix - Makes it possible to run citadel alongside Postfix. Mailwrapper replacement.
@@ -191,7 +190,6 @@ net-dns/opendnssec:opensc - Enables support for storing DNSSEC keys through a de
 net-dns/opendnssec:signer - Enables signing capabilities for OpenDNSSEC
 net-dns/opendnssec:softhsm - Enables support for storing DNSSEC keys in a dev-libs/softhsm PKCS#11 object
 net-firewall/vuurmuur:logrotate - Install support files for logrotate
-net-im/emesene:webcam - Enable support for webcam
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
