@@ -21,6 +21,14 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny@gentoo.org (31 May 2011)
+# Homepage dead, original source tarball gone, requires updates wrt
+# python eclass.
+#
+# Suggested replacement: dev-python/psutil
+# Removal in 30 days.
+dev-python/pyprocps
+
 # Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
 # Doesn't build with recent tracker
 # Removal in 30 days.
