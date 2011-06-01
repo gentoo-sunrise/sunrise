@@ -6,7 +6,7 @@ EAPI=4
 
 EGIT_REPO_URI="git://github.com/drotiro/${PN}.git
 	http://github.com/drotiro/${PN}.git"
-inherit base git-2
+inherit git-2
 
 DESCRIPTION="Utilities for repetitive tasks in app development"
 HOMEPAGE="https://github.com/drotiro/libapp"
@@ -16,8 +16,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
-
-PATCHES=( "${FILESDIR}/makefile_fixes.patch" )
 
 src_install() {
 	dolib ${PN}.so.*
