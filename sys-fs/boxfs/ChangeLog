@@ -1,0 +1,8 @@
+# ChangeLog for sys-fs/boxfs
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Jun 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  +boxfs-0.7.ebuild, +files/makefile_fixes.patch, +metadata.xml:
+  New Ebuild for bug 369489 thanks to mgorny
+

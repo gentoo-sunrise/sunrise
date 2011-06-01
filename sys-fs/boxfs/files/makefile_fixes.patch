@@ -1,0 +1,21 @@
+diff -Naur boxfs-0.7.orig//Makefile boxfs-0.7/Makefile
+--- boxfs-0.7.orig//Makefile	2011-06-01 14:11:42.502273527 +0200
++++ boxfs-0.7/Makefile	2011-06-01 14:12:34.156523428 +0200
+@@ -7,7 +7,7 @@
+ 
+ boxfs:  $(OBJS)
+ 	@echo "Building  $@"
+-	@gcc -o $@ $(OBJS) $(LIBS)
++	$(CC) $(FLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+ boxapi.o:	boxapi.c boxapi.h boxpath.h boxhttp.h boxopts.h
+ boxfs.o:	boxfs.c boxapi.h
+@@ -17,7 +17,7 @@
+ 
+ .c.o:
+ 	@echo Compiling $<
+-	@gcc $(FLAGS) -c $< -o $@
++	$(CC) $(FLAGS) -c $< -o $@
+ 
+ .PHONY: clean install 
+ 	
