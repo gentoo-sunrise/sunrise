@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=4
 
 inherit autotools eutils
 
@@ -35,9 +35,9 @@ src_configure() {
 	# ebuild.sh sets localstatedir to /var/lib, but nsd expects /var in several locations
 	# some of these cannot be changed by arguments to econf/configure, f.i. logfile
 	econf \
-		--localstatedir=/var \
-		--with-pidfile=/var/run/nsd/nsd.pid \
-		--with-zonesdir=/var/lib/nsd \
+		--localstatedir="${EPREFIX}/var" \
+		--with-pidfile="${EPREFIX}/var/run/nsd/nsd.pid" \
+		--with-zonesdir="${EPREFIX}/var/lib/nsd" \
 		--enable-largefile \
 		$(use_enable bind8-stats) \
 		$(use_enable ipv6) \
@@ -47,19 +47,18 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install
 
-	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS} \
-		|| die "dodoc failed"
+	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS}
 
 	insinto /usr/share/nsd
-	doins contrib/nsd.zones2nsd.conf || die "doins failed"
+	doins contrib/nsd.zones2nsd.conf
 
 	exeinto /etc/cron.daily
-	doexe "${FILESDIR}/nsd.cron" || die "doexe failed"
+	doexe "${FILESDIR}/nsd.cron"
 
-	newinitd "${FILESDIR}"/nsd.initd nsd || die "newinitd failed"
-	newconfd "${FILESDIR}"/nsd.confd nsd || die "newconfd failed"
+	newinitd "${FILESDIR}"/nsd.initd nsd
+	newconfd "${FILESDIR}"/nsd.confd nsd
 
 	# database directory, writable by nsd for ixfr.db file
 	dodir /var/db/nsd
@@ -74,9 +73,4 @@ src_install() {
 	# pid dir, writable by nsd
 	dodir /var/run/nsd
 	fowners nsd:nsd /var/run/nsd
-}
-
-pkg_postinst() {
-	elog "If you are using bind and want to convert (or sync) bind zones"
-	elog "you should check out bind2nsd (http://bind2nsd.sourceforge.net)."
 }
