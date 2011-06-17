@@ -11,7 +11,6 @@ app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
 app-backup/fsarchiver:lzma - Enables LZMA compression
 app-emulation/xenman:lvm2 - Enable lvm2 support
-app-forensics/ovaldi:rpm - Enable the RPM probes
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
 app-misc/2gis-data:astr - The map of Astrakhan for app-misc/2gis
 app-misc/2gis-data:barn - The map of Barnaul for app-misc/2gis
@@ -71,8 +70,6 @@ dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
 dev-db/dabo:ide - Enable dabo IDE
-dev-db/spatialite:geos - Add the sci-libs/geos library for exact topological tests
-dev-db/spatialite:proj - Add the sci-libs/proj library for reprojection features
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
@@ -231,7 +228,6 @@ net-wireless/remuco:vlc - Enable VLC media player support
 net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-chemistry/hoomd:cuda - Enables support for the NVIDIA CUDA library. Requires single-precision flag be set.
 sci-chemistry/hoomd:single-precision - Computations will be performed using single precision numbers. Otherwise computations will be performed in double precision. 
-sci-geosciences/opencpn:gpsd - Add support for using a GPS device through the GPSD deamon
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
