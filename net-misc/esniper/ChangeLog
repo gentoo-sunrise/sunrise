@@ -1,6 +1,10 @@
 # ChangeLog for net-misc/esniper
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jun 2011; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
+  -esniper-2.24.0.ebuild, +esniper-2.25.0.ebuild:
+  Update to 2.25.0 to handle changes to ebay login.
 
   28 Aug 2010; Thomas Patrick (curmudgeon) <throw_away_2002@yahoo.com>
   -esniper-2.23.0.ebuild, +esniper-2.24.0.ebuild:
