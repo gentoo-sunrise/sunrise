@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jun 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pgbouncer-1.4.1.ebuild, +pgbouncer-1.4.2.ebuild:
+  Version bump
+
   14 Apr 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pgbouncer-1.4.ebuild, +pgbouncer-1.4.1.ebuild, files/pgbouncer.initd:
   Version bump. Add eutils and some minor fixes to init, config
