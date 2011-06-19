@@ -1,6 +1,10 @@
 # ChangeLog for dev-libs/uthash
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jun 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -uthash-1.9.3.ebuild, +uthash-1.9.4.ebuild:
+  Version bump
 
   09 Nov 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -uthash-1.9.2.ebuild, +uthash-1.9.3.ebuild:
