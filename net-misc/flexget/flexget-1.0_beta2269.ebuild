@@ -48,10 +48,3 @@ src_prepare() {
 	epatch_user
 	distutils_src_prepare
 }
-
-pkg_postinst() {
-	distutils_pkg_postinst
-
-	ewarn "FlexGet's database schema may need to be updated manually."
-	ewarn "See http://flexget.com/wiki/UpgradeActions for more information."
-}
