@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<longdescription>Lips of Suna is a tongue-in-cheek dungeon crawl game that
+		takes place in the chaotic dungeons of Suna. The five intelligent
+		races of the world descend to the dungeons with their goal to save
+		the world from a conclusive disaster.
+		In your journey to the depths of the dungeons, you will, among other
+		things, have to fight creatures of different varieties, solve quests,
+		explore new places, and craft custom items. Luckily you don't need to
+		do all this alone since you can crawl the dungeons with your friends.
+	</longdescription>
+	<upstream>
+		<maintainer>
+			<email>amuzen@users.sourceforge.net</email>
+			<name>Ari Mustonen</name>
+		</maintainer>
+		<doc>http://sourceforge.net/apps/trac/lipsofsuna/wiki</doc>
+		<bugs-to>http://sourceforge.net/apps/trac/lipsofsuna/report</bugs-to>
+	</upstream>
+</pkgmetadata>
