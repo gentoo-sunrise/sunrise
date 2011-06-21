@@ -1,12 +1,16 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
+
 inherit distutils
 
 DESCRIPTION="Parse human-readable date/time expressions"
-HOMEPAGE="http://code-bear.com/code/parsedatetime/"
+HOMEPAGE="http://code-bear.com/code/parsedatetime/ http://code.google.com/p/parsedatetime/"
 SRC_URI="http://code-bear.com/code/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
@@ -17,7 +21,7 @@ IUSE="doc"
 DEPEND="doc? ( dev-python/epydoc )"
 RDEPEND="dev-python/pyicu"
 
-DOCS="THANKS.txt README.txt AUTHORS.txt CHANGES.txt"
+DOCS="THANKS.txt AUTHORS.txt CHANGES.txt"
 
 src_prepare() {
 	# A broken and unnecessary test script made it into the release. delete it.
@@ -28,13 +32,16 @@ src_prepare() {
 
 src_compile() {
 	if use doc; then
-		${python} setup.py doc || die "Making the docs failed"
+		epydoc --config epydoc.conf || die "Couldn't generate docs"
 	fi
 	distutils_src_compile
 }
 
 src_test() {
-	PYTHON_PATH="build/lib/" ${python} run_tests.py || die "Running tests failed!"
+	testing() {
+		PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" run_tests.py
+	}
+	python_execute_function testing
 }
 
 src_install() {
