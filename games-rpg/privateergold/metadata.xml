@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<longdescription>Back in 1993 Privateer was released as part of the
+		Wing Commander series and became a great success in the gaming
+		industry. Over 10 years later a small group of privateer
+		enthusiasts reintroduced the game with a new graphic engine
+		and real 3D spaceflight.
+ 
+		As Grayson Burrows you inherited a small old scout class ship
+		from your grandfather, to start over as a Privateer in a new
+		and sparsely populated sector of the Confederation. Take your
+		chance and become a pirate, merchant or bounty hunter upgrade
+		your ship and experience the hard truth in a border sector
+		where no one has anything to give away ...
+	</longdescription>
+	<upstream>
+		<maintainer>
+			<email>priv@solsector.net</email>
+		</maintainer>
+		<doc>http://privateer.sourceforge.net/faq.shtml</doc>
+		<bugs-to>http://privateer.sourceforge.net/comlink/</bugs-to>
+	</upstream>
+</pkgmetadata>
