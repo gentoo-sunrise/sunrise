@@ -1,23 +1,22 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
+EAPI=4
 inherit gnome2
 
 DESCRIPTION="Virtual Globe library"
-HOMEPAGE="http://lug.rose-hulman.edu/wiki/Libgis"
+HOMEPAGE="http://lug.rose-hulman.edu/wiki/Grits"
 SRC_URI="http://lug.rose-hulman.edu/proj/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="debug doc"
+IUSE="doc"
 
 RDEPEND=">=net-libs/libsoup-2.26
 	dev-libs/glib:2
-	x11-libs/gtk+:2
-	x11-libs/gtkglext"
+	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}"
 
 DOCS="ChangeLog README TODO"

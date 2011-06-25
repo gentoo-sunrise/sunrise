@@ -1,15 +1,15 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/libgis"
+EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/grits"
 EGIT_BOOTSTRAP="gtkdocize && eautoreconf"
 
-EAPI=1
-inherit autotools gnome2 git
+EAPI=4
+inherit autotools gnome2 git-2
 
 DESCRIPTION="Virtual Globe library"
-HOMEPAGE="http://lug.rose-hulman.edu/wiki/Libgis"
+HOMEPAGE="http://lug.rose-hulman.edu/wiki/Grits"
 SRC_URI=""
 
 LICENSE="GPL-3"
@@ -19,8 +19,7 @@ IUSE="doc"
 
 RDEPEND=">=net-libs/libsoup-2.26
 	dev-libs/glib:2
-	x11-libs/gtk+:2
-	x11-libs/gtkglext"
+	x11-libs/gtk+:2"
 
 # gtk-doc-am needed to eautoreconf
 DEPEND="${RDEPEND}
