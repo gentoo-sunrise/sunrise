@@ -15,18 +15,24 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 
-RDEPEND="amd64? ( app-emulation/emul-linux-x86-opengl
+RDEPEND="amd64? ( app-emulation/emul-linux-x86-baselibs
+		app-emulation/emul-linux-x86-gtklibs
+		app-emulation/emul-linux-x86-opengl
 		app-emulation/emul-linux-x86-xlibs )
 	x86? ( virtual/opengl
-		x11-libs/libX11 )"
+		x11-libs/gtk+:1
+		x11-libs/libICE
+		x11-libs/libSM
+		x11-libs/libX11
+		x11-libs/libXext
+		x11-libs/libXi
+		x11-libs/libXrandr )"
 DEPEND="${RDEPEND}"
+S=${WORKDIR}
 
 src_unpack() {
 	unpack_makeself
 }
-
-src_prepare() { :; }
-src_compile() { :; }
 
 src_install() {
 	dodoc Manual.pdf || die "Installation of docs failed"
