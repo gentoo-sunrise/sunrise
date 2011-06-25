@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,14 +17,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="
-	sci-libs/hdf
+RDEPEND="sci-libs/hdf
 	virtual/jpeg"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-"{warnings,automake,type_str,valgrind}".patch"
+	epatch "${FILESDIR}/${PN}-automake.patch"
 	eautoreconf
 }

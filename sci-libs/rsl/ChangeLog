@@ -1,6 +1,11 @@
 # ChangeLog for sci-libs/rsl
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  24 Jun 2011; Andy Spencer <andy753421@gmail.com> -rsl-1.40.ebuild,
+  +rsl-1.41.ebuild, files/rsl-automake.patch, -files/rsl-type_str.patch,
+  -files/rsl-valgrind.patch, -files/rsl-warnings.patch:
+  Version bump for RSL 1.41
 
   13 Jul 2009; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
   Adding maintainer-wanted as herd

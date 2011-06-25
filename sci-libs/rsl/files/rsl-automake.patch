@@ -1,6 +1,7 @@
-diff -ru rsl-v1.40/colors/Makefile.am rsl-v1.40.new/colors/Makefile.am
---- rsl-v1.40/colors/Makefile.am	1999-12-10 03:28:38.000000000 +0000
-+++ rsl-v1.40.new/colors/Makefile.am	2008-12-27 11:26:01.000000000 +0000
+diff --git a/colors/Makefile.am b/colors/Makefile.am
+index 709a367..b043f7f 100644
+--- a/colors/Makefile.am
++++ b/colors/Makefile.am
 @@ -1,6 +1,6 @@
  AUTOMAKE_OPTIONS = foreign
  
@@ -9,21 +10,10 @@ diff -ru rsl-v1.40/colors/Makefile.am rsl-v1.40.new/colors/Makefile.am
  color_DATA = *.???
  
  EXTRA_DIST = $(color_DATA)
-diff -ru rsl-v1.40/colors/Makefile.in rsl-v1.40.new/colors/Makefile.in
---- rsl-v1.40/colors/Makefile.in	2008-12-27 11:30:45.000000000 +0000
-+++ rsl-v1.40.new/colors/Makefile.in	2008-12-27 11:26:07.000000000 +0000
-@@ -166,7 +166,7 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- AUTOMAKE_OPTIONS = foreign
--colordir = $(prefix)/lib/colors
-+colordir = $(datadir)/rsl/colors
- color_DATA = *.???
- EXTRA_DIST = $(color_DATA)
- all: all-am
-diff -ru rsl-v1.40/Makefile.am rsl-v1.40.new/Makefile.am
---- rsl-v1.40/Makefile.am	2008-10-10 20:06:57.000000000 +0000
-+++ rsl-v1.40.new/Makefile.am	2008-12-27 11:25:59.000000000 +0000
+diff --git a/Makefile.am b/Makefile.am
+index 3c106a8..6aca2ec 100644
+--- a/Makefile.am
++++ b/Makefile.am
 @@ -1,73 +1,49 @@
  ## Process w/ automake.  Or, autoreconf; make ##
 +AM_CFLAGS = -DDATADIR="\"$(datadir)/rsl\""
@@ -36,7 +26,7 @@ diff -ru rsl-v1.40/Makefile.am rsl-v1.40.new/Makefile.am
 -
  lib_LTLIBRARIES = librsl.la
  
--librsl_la_LDFLAGS = -version-info 1:40
+-librsl_la_LDFLAGS = -version-info 1:41
 -librsl_la_SOURCES = \
 -$(rapic_c) $(radtec_c)\
 -dorade.c dorade_print.c dorade_to_radar.c\
@@ -67,7 +57,7 @@ diff -ru rsl-v1.40/Makefile.am rsl-v1.40.new/Makefile.am
 +          wsr88d.h \
 +	  $(include_HEADERS)
 +
-+librsl_la_LDFLAGS = -version-info 1:40
++librsl_la_LDFLAGS = -version-info 1:41
 +librsl_la_SOURCES = \
 +    $(rapic_c) $(radtec_c) \
 +    dorade.c dorade_print.c dorade_to_radar.c \
@@ -119,12 +109,13 @@ diff -ru rsl-v1.40/Makefile.am rsl-v1.40.new/Makefile.am
 -	$(INSTALL) -m 644 toolkit_1BC-51_appl.h $(includedir)
 -	$(INSTALL) -m 644 wsr88d_locations.dat $(libdir)
 -
- EXTRA_DIST = CHANGES CHECK_LIST Copyright GPL LGPL wsr88d_locations.dat rapic.h
+ EXTRA_DIST = CHANGES Copyright GPL LGPL wsr88d_locations.dat rapic.h
  
  DISTCLEANFILES = rapic.c rapic-lex.c
-diff -ru rsl-v1.40/radar.c rsl-v1.40.new/radar.c
---- rsl-v1.40/radar.c	2006-08-09 19:35:53.000000000 +0000
-+++ rsl-v1.40.new/radar.c	2008-12-27 11:13:43.000000000 +0000
+diff --git a/radar.c b/radar.c
+index 4078f17..7c07d01 100644
+--- a/radar.c
++++ b/radar.c
 @@ -60,7 +60,7 @@
  
  void RSL_print_version()
@@ -134,22 +125,24 @@ diff -ru rsl-v1.40/radar.c rsl-v1.40.new/radar.c
  }
  
  /* Debug printing global variable: radar_verbose_flag */
-diff -ru rsl-v1.40/radar_to_uf.c rsl-v1.40.new/radar_to_uf.c
---- rsl-v1.40/radar_to_uf.c	2008-04-16 19:34:41.000000000 +0000
-+++ rsl-v1.40.new/radar_to_uf.c	2008-12-27 11:13:58.000000000 +0000
-@@ -316,7 +316,7 @@
- 		uf_ma[37] = tm->tm_year % 100; /* Same format as data year */
- 		uf_ma[38] = tm->tm_mon+1;
- 		uf_ma[39] = tm->tm_mday;
--		memcpy(&uf_ma[40], "RSL" RSL_VERSION_STR, 8);
-+		memcpy(&uf_ma[40], "RSL" VERSION, 8);
- 		if (little_endian()) swap2(&uf_ma[40], 8/2);
- 		uf_ma[44] = (signed short)UF_NO_DATA;
- 		len_ma = 45;
-diff -ru rsl-v1.40/read_write.c rsl-v1.40.new/read_write.c
---- rsl-v1.40/read_write.c	2008-10-07 22:30:06.000000000 +0000
-+++ rsl-v1.40.new/read_write.c	2008-12-27 11:14:05.000000000 +0000
-@@ -314,7 +314,7 @@
+diff --git a/radar_to_uf.c b/radar_to_uf.c
+index 0d3af56..53d2d8d 100644
+--- a/radar_to_uf.c
++++ b/radar_to_uf.c
+@@ -321,7 +321,7 @@ void RSL_radar_to_uf_fp(Radar *r, FILE *fp)
+         uf_ma[37] = tm->tm_year % 100; /* Same format as data year */
+         uf_ma[38] = tm->tm_mon+1;
+         uf_ma[39] = tm->tm_mday;
+-        memcpy(&uf_ma[40], "RSL" RSL_VERSION_STR, 8);
++        memcpy(&uf_ma[40], "RSL" VERSION, 8);
+         if (little_endian()) swap2(&uf_ma[40], 8/2);
+         uf_ma[44] = (signed short)UF_NO_DATA;
+         len_ma = 45;
+diff --git a/read_write.c b/read_write.c
+index 644a7b2..1e5f319 100644
+--- a/read_write.c
++++ b/read_write.c
+@@ -314,7 +314,7 @@ int RSL_write_radar_fp(Radar *radar, FILE *fp)
    if (radar == NULL) return 0;
    
    memset(title, 0, sizeof(title));
@@ -158,14 +151,15 @@ diff -ru rsl-v1.40/read_write.c rsl-v1.40.new/read_write.c
    n += fwrite(title, sizeof(char), sizeof(title), fp);
    
    memset(header_buf, 0, sizeof(header_buf));
-diff -ru rsl-v1.40/rsl.h rsl-v1.40.new/rsl.h
---- rsl-v1.40/rsl.h	2008-10-10 20:09:36.000000000 +0000
-+++ rsl-v1.40.new/rsl.h	2008-12-27 11:15:24.000000000 +0000
+diff --git a/rsl.h b/rsl.h
+index a821765..597069c 100644
+--- a/rsl.h
++++ b/rsl.h
 @@ -27,8 +27,6 @@
  #include "config.h"
  #endif
  
--#define RSL_VERSION_STR "v1.40"
+-#define RSL_VERSION_STR "v1.41"
 -
  /**********************************************************************/
  /* Configure: Define USE_TWO_BYTE_PRECISION to have RSL store internal*/
@@ -210,9 +204,10 @@ diff -ru rsl-v1.40/rsl.h rsl-v1.40.new/rsl.h
  #define RAINFALL_RED_FILE   COLORDIR "/red_rainfall.clr"
  #define RAINFALL_GREEN_FILE COLORDIR "/grn_rainfall.clr"
  #define RAINFALL_BLUE_FILE  COLORDIR "/blu_rainfall.clr"
-diff -ru rsl-v1.40/wsr88d.h rsl-v1.40.new/wsr88d.h
---- rsl-v1.40/wsr88d.h	2004-03-12 17:12:09.000000000 +0000
-+++ rsl-v1.40.new/wsr88d.h	2008-12-27 11:16:01.000000000 +0000
+diff --git a/wsr88d.h b/wsr88d.h
+index ecad620..7d22427 100644
+--- a/wsr88d.h
++++ b/wsr88d.h
 @@ -7,7 +7,7 @@
   * The directory should be the same as the LIBDIR in the makefile.
   */
@@ -222,9 +217,10 @@ diff -ru rsl-v1.40/wsr88d.h rsl-v1.40.new/wsr88d.h
  #endif
  /*===============================================================*/
  typedef struct {
-diff -ru rsl-v1.40/doc/Makefile.am rsl-v1.40.new/doc/Makefile.am
---- rsl-v1.40/doc/Makefile.am
-+++ rsl-v1.40.new/doc/Makefile.am
+diff --git a/doc/Makefile.am b/doc/Makefile.am
+index 6acc059..d4fc3fd 100644
+--- a/doc/Makefile.am
++++ b/doc/Makefile.am
 @@ -1,12 +1,3 @@
  AUTOMAKE_OPTIONS = foreign
  
@@ -239,3 +235,6 @@ diff -ru rsl-v1.40/doc/Makefile.am rsl-v1.40.new/doc/Makefile.am
 -	$(INSTALL) -m 444 ../README $(docdir)
 -	$(INSTALL) -m 444 ../CHANGES $(docdir)
 +dist_doc_DATA = *.html *.gif *.jpg *.fig ../README ../CHANGES
+-- 
+1.7.3.4
+
