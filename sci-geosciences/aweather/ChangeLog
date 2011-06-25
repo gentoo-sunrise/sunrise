@@ -1,6 +1,10 @@
 # ChangeLog for sci-geosciences/aweather
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jun 2011; Andy Spencer <andy753421@gmail.com> -aweather-0.4.1.ebuild,
+  +aweather-0.5.ebuild:
+  Version bump for aweather-0.5
 
   18 May 2010; Andy Spencer <andy753421@gmail.com> -aweather-0.4.ebuild,
   +aweather-0.4.1.ebuild:

@@ -1,20 +1,20 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
+EAPI=4
 inherit gnome2
 
 DESCRIPTION="A weather monitoring program"
-HOMEPAGE="http://lug.rose-hulman.edu/wiki/AWeather"
-SRC_URI="http://lug.rose-hulman.edu/proj/${PN}/${P}.tar.gz"
+HOMEPAGE="http://lug.rose-hulman.edu/proj/aweather"
+SRC_URI="http://lug.rose-hulman.edu/proj/${PN}/files/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="debug"
+IUSE=""
 
-RDEPEND="=sci-libs/libgis-${PV}
+RDEPEND="=sci-libs/grits-${PV}
 	x11-libs/gtk+:2
 	sci-libs/rsl"
 DEPEND="${RDEPEND}"
