@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>no-herd</herd>
+  <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+  <use>
+    <flag name="debug">Enable debug compile type</flag>
+    <flag name="doc">Add maintainer documentation</flag>
+    <flag name="java">Install java libraries</flag>
+    <flag name="perl">Install perl library extension</flag>
+    <flag name="php">Install php library extension</flag>
+    <flag name="python">Install python library extension</flag>
+    <flag name="ruby">Install ruby library extension</flag>
+    <flag name="sql-compiler">Enable SQL to DMQL compiler for java libraries</flag>
+    <flag name="threads">Enable thread safe support</flag>
+  </use>
+</pkgmetadata>

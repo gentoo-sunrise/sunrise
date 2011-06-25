@@ -1,0 +1,26 @@
+--- project/build/java.mk.old	2011-06-25 13:50:54.074226602 -0500
++++ project/build/java.mk	2011-06-25 13:52:07.454837879 -0500
+@@ -2,7 +2,11 @@
+ # java of swig
+ #
+ 
++ifeq (${SWIG_OSNAME}, linux)
++JAVA_BUILD              = ${JAVA_DLL}
++else
+ JAVA_BUILD		= ${JAVA_DLL} ${JAVA_OBJ_DIR}/${JAVA_JAR} ${JAVA_EXAMPLES_CLASSES}
++endif
+ 
+ JAVA_BRIDGE		= ${JAVA_SRC_DIR}/CppInputStream.java
+ # delete the next line to enable the streams prototype for Java
+@@ -24,7 +28,11 @@
+ JAVA_DYNAMICLINK	= ${SWIG_LINK}
+ else
+ JAVA_CLASSPATH		= ${JAVA_OBJ_DIR}/${JAVA_JAR}
++ifeq (${SWIG_OSNAME}, linux)
++JAVA_DLL                = ${JAVA_OBJ_DIR}/librets.${DLL}
++else
+ JAVA_DLL		= ${JAVA_OBJ_DIR}/liblibrets.${DLL}
++endif
+ ifeq (${SWIG_OSNAME}, MSWin32)
+ JAVA_DLL		= ${JAVA_OBJ_DIR}/librets.${DLL}
+ endif
