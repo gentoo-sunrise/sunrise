@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=2
 
 inherit pam
 
@@ -18,7 +20,11 @@ DEPEND=">=sys-libs/pam-0.78-r3
 	dev-db/postgresql-base"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN/_/-}"
+S=${WORKDIR}/${PN/_/-}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PV}-gcc46.patch
+}
 
 src_install() {
 	insinto /etc

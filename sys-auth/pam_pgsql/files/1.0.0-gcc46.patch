@@ -1,0 +1,12 @@
+diff --git a/pam_get_service.c b/pam_get_service.c
+index b1aae22..6abf19f 100644
+--- a/pam_get_service.c
++++ b/pam_get_service.c
+@@ -4,6 +4,7 @@
+ 
+ /* $Id: pam_get_service.c,v 1.1.1.1 2005/05/04 03:02:32 mr-russ Exp $ */
+ #include <security/pam_modules.h>
++#include <stdlib.h>
+ 
+ const char *pam_get_service(pam_handle_t *pamh)
+ {
