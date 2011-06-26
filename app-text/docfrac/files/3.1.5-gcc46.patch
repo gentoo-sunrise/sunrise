@@ -1,0 +1,11 @@
+diff --git a/shared_ptr.h b/shared_ptr.h
+index b291449..bd23979 100755
+--- a/shared_ptr.h
++++ b/shared_ptr.h
+@@ -1,5 +1,5 @@
+ //---------------------------------------------------------------------------
+-
++#include <cstdlib>
+ #ifndef shared_ptrH
+ #define shared_ptrH
+ //---------------------------------------------------------------------------

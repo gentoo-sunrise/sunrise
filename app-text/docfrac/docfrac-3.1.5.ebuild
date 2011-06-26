@@ -1,8 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs
+EAPI=4
+
+inherit eutils toolchain-funcs
 
 DESCRIPTION="rtf/html/text conversion utility"
 HOMEPAGE="http://docfrac.sourceforge.net/"
@@ -13,30 +15,24 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
 RDEPEND=""
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	sed -i \
 		-e "/CPPFLAGS=/s:-.*::" \
 		-e "s:ar -:$(tc-getAR) -:" \
-		-e "s:g++ -:$(tc-getCXX) -:g" Makefile \
-		|| die "sed failed in Makefile"
+		-e "s:g++ -:$(tc-getCXX) -:g" \
+		Makefile || die "sed failed in Makefile"
+
+	epatch "${FILESDIR}"/${PV}-gcc46.patch
 }
 
 src_compile() {
-	make docfrac || die "emake failed"
-}
-
-src_test() {
-	make testhtml testtxt test || die "some tests failed"
+	emake ${PN}
 }
 
 src_install() {
 	# manual install because Makefile doesn't respect DESTDIR
-	dobin docfrac
-	doman doc/docfrac.1
+	dobin ${PN}
+	doman doc/${PN}.1
 }
