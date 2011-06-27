@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,10 +24,12 @@ src_configure() {
 	mkdir -p build/cxx/gnu || die
 	echo "cxx_id := gnu" > build/cxx/configuration-dynamic.make || die
 
-	cat <<EOF > build/cxx/gnu/configuration-dynamic.make || die
-cxx_gnu := $(tc-getCXX)
-cxx_gnu_libraries := /usr/$(get_libdir)
-cxx_gnu_optimization_options := ${CXXFLAGS}
+	cat <<-EOF > build/cxx/gnu/configuration-dynamic.make || die
+	cxx_gnu := $(tc-getCXX)
+	cxx_gnu_libraries := /usr/$(get_libdir)
+	cxx_gnu_optimization_options := ${CXXFLAGS}
+	cxx_ld_extra_options := ${LDFLAGS}
+	cxx_pp_extra_options := ${CPPFLAGS}
 EOF
 
 	echo "libcutl_installed := y" > build/import/libcutl/configuration-dynamic.make || die
