@@ -4,6 +4,10 @@
 
   27 Jun 2011; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
   gzdoom-1.5.5.ebuild, gzdoom-9999.ebuild:
+  add virtual/opengl, too, for good measure
+
+  27 Jun 2011; Mike MacDonald (crazymykl) <crazymykl@gmail.com>
+  gzdoom-1.5.5.ebuild, gzdoom-9999.ebuild:
   add virtual/glu to dependencies
 
   30 Apr 2011; Justin Lecher <jlec@gentoo.org> gzdoom-1.5.5.ebuild,

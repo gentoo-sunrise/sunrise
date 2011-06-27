@@ -21,6 +21,7 @@ RDEPEND="gtk? ( x11-libs/gtk+:2 )
 	media-libs/fmod:1
 	virtual/glu
 	virtual/jpeg
+	virtual/opengl
 	media-libs/libsdl"
 
 DEPEND="${REPEND}

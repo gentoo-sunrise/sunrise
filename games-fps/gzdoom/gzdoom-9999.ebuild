@@ -22,6 +22,7 @@ RDEPEND="
 	media-libs/fmod:1
 	virtual/glu
 	virtual/jpeg
+	virtual/opengl
 	media-libs/libsdl"
 
 DEPEND="${RDEPEND}
