@@ -19,6 +19,7 @@ RDEPEND="gtk? ( x11-libs/gtk+:2 )
 	fluidsynth? ( media-sound/fluidsynth )
 	media-libs/flac
 	media-libs/fmod:1
+	virtual/glu
 	virtual/jpeg
 	media-libs/libsdl"
 

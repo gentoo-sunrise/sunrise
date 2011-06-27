@@ -20,6 +20,7 @@ RDEPEND="
 	gtk? ( x11-libs/gtk+:2 )
 	media-libs/flac
 	media-libs/fmod:1
+	virtual/glu
 	virtual/jpeg
 	media-libs/libsdl"
 
