@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jun 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  libapp-9999.ebuild:
+  Some fixes due to upstream changes. Thanks to binki, mgorny
+
   07 Jun 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   libapp-9999.ebuild:
   The keyword has been stripped out as requested for live ebuilds
