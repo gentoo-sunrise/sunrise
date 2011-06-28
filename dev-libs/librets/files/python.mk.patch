@@ -1,21 +1,13 @@
---- project/build/python.mk.old	2011-06-25 13:54:02.971786719 -0500
-+++ project/build/python.mk	2011-06-25 13:54:40.032087701 -0500
-@@ -16,10 +16,17 @@
- 	-outdir ${PYTHON_OBJ_DIR} ${SWIG_DIR}/librets.i
- 
- ifneq (${SWIG_OSNAME}, MSWin32)
-+ifeq (${SWIG_OSNAME}, linux)
+Index: project/build/python.mk
+===================================================================
+--- project/build/python.mk	(revision 1522)
++++ project/build/python.mk	(revision 1523)
+@@ -19,7 +19,7 @@
  ${PYTHON_DLL}: ${PYTHON_WRAP} ${LIBRETS_LIB}
  	cd ${PYTHON_OBJ_DIR} ; \
  	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 -	${PYTHON} setup.py build --build-lib=. 
-+	${PYTHON} setup.py build
-+else
-+${PYTHON_DLL}: ${PYTHON_WRAP} ${LIBRETS_LIB}
-+	cd ${PYTHON_OBJ_DIR} ; \
-+	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-+	${PYTHON} setup.py build --build-lib=.
-+endif
++	${PYTHON} setup.py build  
  else
  PYTHON_CXX_FLAGS	= -mcygwin -mdll \
  				`${SWIG_LIBRETS_CONFIG} --cflags`

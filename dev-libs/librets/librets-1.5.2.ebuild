@@ -12,9 +12,12 @@ USE_PHP="php5-2 php5-3"
 PYTHON_DEPEND="python? 2"
 PYTHON_MODNAME="librets.py"
 
+USE_RUBY="ree18 ruby18 ruby19"
+RUBY_OPTIONAL="yes"
+
 LIBOPTIONS="-m755"
 
-inherit distutils eutils java-pkg-opt-2 perl-module php-ext-source-r2
+inherit distutils eutils java-pkg-opt-2 perl-module php-ext-source-r2 ruby-ng
 
 DESCRIPTION="A library that implements the RETS 1.7, RETS 1.5 and 1.0 standards"
 HOMEPAGE="http://www.crt.realtors.org/projects/rets/librets/"
@@ -43,7 +46,11 @@ RDEPEND="
 	dev-util/boost-build
 	java? ( >=virtual/jdk-1.6.0 )
 	net-misc/curl
-	ruby? ( dev-lang/ruby:1.8 )
+	ruby? (
+		ruby_targets_ree18? ( dev-lang/ruby-enterprise:1.8 )
+		ruby_targets_ruby18? ( dev-lang/ruby:1.8 )
+		ruby_targets_ruby19? ( dev-lang/ruby:1.9 )
+	)
 	sql-compiler? ( dev-java/antlr:0[script] )
 	sys-libs/zlib
 	${SWIG_RDEPEND}"
@@ -59,6 +66,26 @@ _php-move_swig_build_to_modules_dir() {
 	mv build/swig/php5/* "${1}"/modules || die "Could not move php slot build"
 }
 
+_php-replace_config_with_selected_config() {
+	php_init_slot_env ${1}
+	cd "${S}" || die "cannot change to source directory"
+	# Replace the reference to php-config with the current slotted one
+	sed -i -e "s|${2}|${PHPCONFIG}|g" project/build/php.mk || die "sed php-config change failed"
+}
+
+_ruby-get_use_implementations() {
+	local i implementation
+	for implementation in ${USE_RUBY}; do
+		use ruby_targets_${implementation} && i+=" ${implementation}"
+	done
+	echo $i
+}
+
+_ruby-move_swig_build_to_impl_dir() {
+	mkdir -p "${1}"/${P} || die "Could not create directory for ruby implementation"
+	mv build/swig/ruby/* "${1}"/${P} || die "Could not move ruby implementation build"
+}
+
 pkg_setup() {
 	use java && java-pkg-opt-2_pkg_setup
 	use perl && perl-module_pkg_setup
@@ -66,16 +93,22 @@ pkg_setup() {
 		python_set_active_version 2
 		python_pkg_setup
 	fi
+	use ruby && ruby-ng_pkg_setup
+}
+
+src_unpack() {
+	use php && php-ext-source-r2_src_unpack
+	default
 }
 
 src_prepare() {
-	use php && php-ext-source-r2_src_prepare
-	#Patch upstream patch to allow perl to be built in the compile stage
-	use perl && epatch "${FILESDIR}"/perl.mk.patch
+	#Upstream patch to allow perl to be built in the compile stage
+	epatch "${FILESDIR}"/perl.mk.patch
 	#Patch to fix java errors and allow compilation
-	use java && epatch "${FILESDIR}"/java.mk.patch
+	epatch "${FILESDIR}"/java.mk.patch
 	#Patch to stop python from building the extension again during install
-	use python && epatch "${FILESDIR}"/python.mk.patch
+	epatch "${FILESDIR}"/python.mk.patch
+	use php && php-ext-source-r2_src_prepare
 }
 
 src_configure() {
@@ -91,10 +124,30 @@ src_configure() {
 		myconf="${myconf} --disable-php"
 	fi
 	use python || myconf="${myconf} --disable-python"
-	use ruby || myconf="${myconf} --disable-ruby"
 
 	if use doc; then
 		myconf="${myconf} --enable-maintainer-documentation"
+	fi
+
+	if use threads; then
+		if use perl || use php || use python || use ruby; then
+			ewarn "Enabling threads for perl, php, python or ruby causes segmentation faults."
+			ewarn "Disabling threads"
+			myconf="${myconf} --disable-thread-safe"
+		else
+			myconf="${myconf} --enable-thread-safe"
+		fi
+	fi
+
+	if use ruby; then
+		MYRUBYIMPLS=($(_ruby-get_use_implementations))
+		MYRUBYFIRSTIMPL=${MYRUBYIMPLS[0]}
+		#Set RUBY value in config to the first ruby implementation to build
+		RUBY=$(ruby_implementation_command ${MYRUBYFIRSTIMPL})
+		MYRUBYIMPLS=(${MYRUBYIMPLS[@]:1})
+		myconf="${myconf} RUBY=${RUBY}"
+	else
+		myconf="${myconf} --disable-ruby"
 	fi
 
 	econf \
@@ -102,31 +155,58 @@ src_configure() {
 		--enable-depends \
 		--enable-default-search-path="/usr /opt ${myphpprefix}" \
 		--disable-examples \
+		--disable-dotnet \
 		$(use_enable debug) \
 		$(use_enable sql-compiler) \
-		$(use_enable threads thread-safe) \
-		${myconf} || die
+		${myconf}
 }
 
 src_compile() {
+	if use php; then
+		local slot myphpconfig="php-config"
+		# Shift off the first slot so it doesn't get built again
+		local myphpslots=($(php_get_slots)) myphpfirstslot="${myphpslots[@]:0:1}" myphpslots=(${myphpslots[@]:1})
+		_php-replace_config_with_selected_config ${myphpfirstslot} ${myphpconfig}
+		myphpconfig="${PHPCONFIG}"
+	fi
 	emake || die "emake failed"
 	if use php; then
-		local slot myphpconfig="php-config" myphpselectedslot="php${PHP_CURRENTSLOT}"
-		#Move the current slotted build of php to another dir so other slots can be built
-		_php-move_swig_build_to_modules_dir "${WORKDIR}/${myphpselectedslot}"
-		for slot in $(php_get_slots); do
-			# Don't build the selected slot since the build system already built it
-			[[ "${slot}" != "${myphpselectedslot}" ]] || continue;
-			php_init_slot_env ${slot}
-			cd "${S}" || die "cannot change to source directory"
-			# Replace the reference to php-config with the current slotted one
-			sed -i -e "s|${myphpconfig}|${PHPCONFIG}|g" project/build/php.mk || die "sed php-config change failed"
+		# Move the current slotted build of php to another dir so other slots can be built
+		_php-move_swig_build_to_modules_dir "${WORKDIR}/${myphpfirstslot}"
+		# Build the remaining slots
+		for slot in ${myphpslots[@]}; do
+			_php-replace_config_with_selected_config ${slot} ${myphpconfig}
 			myphpconfig="${PHPCONFIG}"
-			# Build the current slotted
+			# Build the current slot
 			emake build/swig/php5/${PN}.so || die "Unable to make php${slot} extension"
 			_php-move_swig_build_to_modules_dir ${PHP_EXT_S}
 		done
 	fi
+	if use ruby; then
+		# Move the current implementation build of ruby to another dir so other implementations can be built
+		_ruby-move_swig_build_to_impl_dir "${WORKDIR}/${MYRUBYFIRSTIMPL}"
+		unset MYFIRSTRUBYIMPL
+		unset RUBY
+		local impl
+		MYRUBYIMPL="\${RUBY}"
+		# Build the remaining implementations
+		for impl in ${MYRUBYIMPLS[@]}; do
+			cd "${S}" || die "cannot change to source directory"
+			# Replace the reference to ${RUBY} with the current implementation
+			sed -i -e "s|${MYRUBYIMPL}|$(ruby_implementation_command ${impl})|g" project/build/ruby.mk || die "sed ruby implementation change failed"
+			MYRUBYIMPL="$(ruby_implementation_command ${impl})"
+			# Build the current implementation
+			emake build/swig/ruby/${PN}_native.bundle || die "Unable to make ${impl} extension"
+			_ruby-move_swig_build_to_impl_dir "${WORKDIR}/${impl}"
+		done
+		unset MYRUBYIMPLS
+	fi
+}
+
+each_ruby_install() {
+	exeinto "$(ruby_rbconfig_value archdir)"
+	doexe "${S}"/librets_native.so || die
+	doruby "${S}"/librets.rb || die
 }
 
 src_install() {
@@ -157,12 +237,7 @@ src_install() {
 		java-pkg_doso "${S}"/build/swig/java/${PN}.so  || die
 	fi
 
-	if use ruby; then
-		insinto /usr/lib64/ruby/site_ruby/1.8/x86_64-linux
-		doexe "${S}"/build/swig/ruby/librets_native.so || die
-		insinto /usr/lib64/ruby/site_ruby/1.8
-		doins "${S}"/build/swig/ruby/librets.rb || die
-	fi
+	use ruby && ruby-ng_src_install
 
 	if use python; then
 		cd "${S}"/build/swig/python || die

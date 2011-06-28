@@ -2,6 +2,14 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jun 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  librets-1.5.2.ebuild, files/python.mk.patch:
+  Added ruby slot implemention support. Updated python patch to upstream
+  patch. Fixed bug that caused build to fail if more than one binding was
+  enabled. Added disable threads for certain bindings dueo to segfaults.
+  Stopped dotnet from attempting to build if mono was installed. Thanks to
+  binki and mgorny for the reviews.
+
   25 Jun 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   +librets-1.5.2.ebuild, +files/java.mk.patch, +files/perl.mk.patch,
   +files/python.mk.patch, +metadata.xml:
