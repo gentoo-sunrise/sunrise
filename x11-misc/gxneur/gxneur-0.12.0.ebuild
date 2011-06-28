@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 inherit autotools eutils versionator
 
@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
-COMMON_DEPEND=">=gnome-base/libglade-2.6.0
+COMMON_DEPEND="gnome-base/libglade:2.0
+	gnome-base/gconf:2
 	>=sys-devel/gettext-0.16.1
 	>=x11-libs/gtk+-2.18:2
 	>=x11-misc/xneur-$(get_version_component_range 1-2)"
@@ -37,7 +38,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS || die
-	doicon pixmaps/gxneur.png || die
+	emake DESTDIR="${D}" install
+	dodoc AUTHORS ChangeLog NEWS
+	doicon pixmaps/gxneur.png
 }

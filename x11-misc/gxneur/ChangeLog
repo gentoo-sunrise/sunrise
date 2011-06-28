@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Jun 2011; Piotr Szymaniak <szarpaj@grubelek.pl> gxneur-0.12.0.ebuild:
+  Updated to new EAPI, fixed missing depends.
+
   01 Feb 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -gxneur-0.11.1.ebuild, +gxneur-0.12.0.ebuild:
   Version bump.
