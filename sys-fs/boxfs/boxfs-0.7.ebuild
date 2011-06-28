@@ -12,13 +12,14 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="sys-fs/fuse
 	dev-libs/libxml2
 	net-misc/curl
-	dev-libs/libzip"
+	dev-libs/libzip
+	dev-libs/libapp"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
