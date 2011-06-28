@@ -1,6 +1,10 @@
 # ChangeLog for media-tv/otrdecoder-bin
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  28 Jun 2011; Florian Schmaus (flow) <flo@freakempire.de>
+  +otrdecoder-bin-592.ebuild:
+  Version bump, added support for amd64. Thanks to mgorny
 
   01 Feb 2009; Patrick Nagel (padde) <mail@patrick-nagel.net>
   otrdecoder-bin-518.ebuild:
