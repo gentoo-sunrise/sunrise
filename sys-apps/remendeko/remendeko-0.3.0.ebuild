@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 inherit toolchain-funcs
 
@@ -17,9 +17,8 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk"
 
 RDEPEND="gtk? ( x11-libs/gtk+:2 )"
-
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.15"
+	gtk? ( >=dev-util/pkgconfig-0.15 )"
 
 S=${WORKDIR}/${MY_PN}
 
@@ -29,9 +28,18 @@ src_prepare() {
 		-e 's:$(CC) $(LINKOBJ:$(CC) $(LDFLAGS) $(LINKOBJ:g' \
 		-e "s:^\(CC   = \).*$:\1$(tc-getCC):" \
 		-e "s:^\(CFLAGS = \).*$:\1${CFLAGS} -Wall:" \
-		-e "s:^\(CFLAGSGUI = \).*$:\1${CFLAGS} -DUSEGUI -Wall \
-			`pkg-config gtk+-2.0 gthread-2.0 --cflags`:" \
 		Makefile || die "sed Makefile failed"
+
+	if use gtk;	then
+		sed -i \
+			-e "s:^\(CFLAGSGUI = \).*$:\1${CFLAGS} -DUSEGUI -Wall \
+				`pkg-config gtk+-2.0 gthread-2.0 --cflags`:" \
+			Makefile || die "sed Makefile failed"
+	else
+		sed -i \
+			-e "s:^\(CFLAGSGUI = \).*$:\1${CFLAGS} -Wall:" \
+			Makefile || die "sed Makefile failed"
+	fi
 }
 
 src_compile() {
@@ -43,7 +51,7 @@ src_compile() {
 }
 
 src_install() {
-	dodoc CHANGELOG || die "dodoc failed"
-	dobin rdko || die "dobin failed"
-	use gtk && dobin gredeko || die "dobin failed"
+	dobin rdko
+	use gtk && dobin gredeko
+	dodoc CHANGELOG
 }
