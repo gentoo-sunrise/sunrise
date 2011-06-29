@@ -7,6 +7,7 @@
     <flag name="debug">Enable debug compile type</flag>
     <flag name="doc">Add maintainer documentation</flag>
     <flag name="java">Install java libraries</flag>
+    <flag name="mono">Install mono  libraries</flag>
     <flag name="perl">Install perl library extension</flag>
     <flag name="php">Install php library extension</flag>
     <flag name="python">Install python library extension</flag>

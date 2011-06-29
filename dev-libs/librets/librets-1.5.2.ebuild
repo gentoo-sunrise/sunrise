@@ -17,7 +17,7 @@ RUBY_OPTIONAL="yes"
 
 LIBOPTIONS="-m755"
 
-inherit distutils eutils java-pkg-opt-2 perl-module php-ext-source-r2 ruby-ng
+inherit distutils eutils java-pkg-opt-2 mono perl-module php-ext-source-r2 ruby-ng
 
 DESCRIPTION="A library that implements the RETS 1.7, RETS 1.5 and 1.0 standards"
 HOMEPAGE="http://www.crt.realtors.org/projects/rets/librets/"
@@ -26,7 +26,7 @@ SRC_URI="http://www.crt.realtors.org/projects/rets/${PN}/files/${P}.tar.gz"
 LICENSE="BSD-NAR"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug doc java perl php python ruby sql-compiler threads"
+IUSE="debug doc java mono perl php python ruby sql-compiler threads"
 
 for i in java perl php python ruby; do
 	SWIG_DEPEND+=" ${i}? ( dev-lang/swig )"
@@ -45,6 +45,7 @@ RDEPEND="
 	dev-libs/expat
 	dev-util/boost-build
 	java? ( >=virtual/jdk-1.6.0 )
+	mono? ( dev-lang/mono )
 	net-misc/curl
 	ruby? (
 		ruby_targets_ree18? ( dev-lang/ruby-enterprise:1.8 )
@@ -102,12 +103,17 @@ src_unpack() {
 }
 
 src_prepare() {
-	#Upstream patch to allow perl to be built in the compile stage
+	# Upstream patch to allow perl to be built in the compile stage
 	epatch "${FILESDIR}"/perl.mk.patch
-	#Patch to fix java errors and allow compilation
+	# Patch to fix java errors and allow compilation
 	epatch "${FILESDIR}"/java.mk.patch
-	#Patch to stop python from building the extension again during install
+	# Patch to stop python from building the extension again during install
 	epatch "${FILESDIR}"/python.mk.patch
+	# Upstream patch to allow dotnet binding to build
+	epatch "${FILESDIR}"/swig.m4.patch
+	# Patch to allow dotnet binding to build
+	epatch "${FILESDIR}"/dotnet.mk.patch
+	eautoreconf
 	use php && php-ext-source-r2_src_prepare
 }
 
@@ -116,6 +122,7 @@ src_configure() {
 	local myphpprefix
 
 	use java || myconf="--disable-java"
+	use mono || myconf="${myconf} --disable-dotnet"
 	use perl || myconf="${myconf} --disable-perl"
 	if use php; then
 		# Enable php extension when it finds the current selected slot
@@ -142,7 +149,7 @@ src_configure() {
 	if use ruby; then
 		MYRUBYIMPLS=($(_ruby-get_use_implementations))
 		MYRUBYFIRSTIMPL=${MYRUBYIMPLS[0]}
-		#Set RUBY value in config to the first ruby implementation to build
+		# Set RUBY value in config to the first ruby implementation to build
 		RUBY=$(ruby_implementation_command ${MYRUBYFIRSTIMPL})
 		MYRUBYIMPLS=(${MYRUBYIMPLS[@]:1})
 		myconf="${myconf} RUBY=${RUBY}"
@@ -155,7 +162,6 @@ src_configure() {
 		--enable-depends \
 		--enable-default-search-path="/usr /opt ${myphpprefix}" \
 		--disable-examples \
-		--disable-dotnet \
 		$(use_enable debug) \
 		$(use_enable sql-compiler) \
 		${myconf}
@@ -168,6 +174,10 @@ src_compile() {
 		local myphpslots=($(php_get_slots)) myphpfirstslot="${myphpslots[@]:0:1}" myphpslots=(${myphpslots[@]:1})
 		_php-replace_config_with_selected_config ${myphpfirstslot} ${myphpconfig}
 		myphpconfig="${PHPCONFIG}"
+	fi
+	if use mono; then
+		# patched dotnet.mk make needs key pair to generate strong-named dll
+		cp "${FILESDIR}"/librets.snk project/swig/csharp || die
 	fi
 	emake || die "emake failed"
 	if use php; then
@@ -193,7 +203,8 @@ src_compile() {
 		for impl in ${MYRUBYIMPLS[@]}; do
 			cd "${S}" || die "cannot change to source directory"
 			# Replace the reference to ${RUBY} with the current implementation
-			sed -i -e "s|${MYRUBYIMPL}|$(ruby_implementation_command ${impl})|g" project/build/ruby.mk || die "sed ruby implementation change failed"
+			sed -i -e "s|${MYRUBYIMPL}|$(ruby_implementation_command ${impl})|g" \
+				project/build/ruby.mk || die "sed ruby implementation change failed"
 			MYRUBYIMPL="$(ruby_implementation_command ${impl})"
 			# Build the current implementation
 			emake build/swig/ruby/${PN}_native.bundle || die "Unable to make ${impl} extension"
@@ -224,7 +235,7 @@ src_install() {
 	fi
 
 	if use perl; then
-		#Install manually since the package install has sandbox violations
+		# Install manually since the package install has sandbox violations
 		insinto ${SITE_ARCH}
 		insopts "-m755"
 		doins -r "${S}"/build/swig/perl/blib/arch/auto || die
@@ -238,6 +249,10 @@ src_install() {
 	fi
 
 	use ruby && ruby-ng_src_install
+
+	if use mono; then
+		egacinstall "${S}"/build/swig/csharp/${PN}-dotnet.dll
+	fi
 
 	if use python; then
 		cd "${S}"/build/swig/python || die

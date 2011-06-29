@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  librets-1.5.2.ebuild, +files/dotnet.mk.patch, +files/librets.snk,
+  +files/swig.m4.patch, metadata.xml:
+  Added support for mono.
+
   28 Jun 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   librets-1.5.2.ebuild, files/python.mk.patch:
   Added ruby slot implemention support. Updated python patch to upstream
