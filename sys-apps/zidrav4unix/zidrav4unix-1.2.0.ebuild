@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
-inherit toolchain-funcs
+inherit eutils toolchain-funcs
 
 DESCRIPTION="File corruption detection and repair program"
 HOMEPAGE="http://sourceforge.net/projects/zidrav/"
@@ -20,10 +20,12 @@ src_prepare() {
 		-e "s:g++:$(tc-getCXX):" \
 		-e "s:-O2:${CXXFLAGS}:" \
 		Makefile || die "sed Makefile failed"
+
+	epatch "${FILESDIR}"/${PV}-gcc46.patch
 }
 
 src_install() {
-	dodoc README TODO Changelog zidrav.txt || die "dodoc failed"
-	doman zidrav.1 || die "doman failed"
-	dobin zidrav || die "dobin failed"
+	dobin zidrav
+	doman zidrav.1
+	dodoc README TODO Changelog zidrav.txt
 }

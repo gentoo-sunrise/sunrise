@@ -1,0 +1,13 @@
+diff --git a/core.h b/core.h
+index 47daa0b..fa12ddc 100644
+--- a/core.h
++++ b/core.h
+@@ -21,7 +21,7 @@
+ 
+ #include <iostream>
+ #include <fstream>
+-#include <string>
++#include <cstring>
+ 
+ using namespace std;
+ 
