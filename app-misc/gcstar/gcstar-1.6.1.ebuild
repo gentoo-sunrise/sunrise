@@ -90,7 +90,8 @@ src_install() {
 	rm -rf tmp
 
 	cd "${S}"
-	./install --prefix="/usr" \
+	# Yes, ED *is* needed here. gcstar's install lacks any concept of DESTDIR.
+	./install --prefix="${ED}usr" \
 		--noclean --nomenu || die "install script failed"
 
 	domenu share/applications/gcstar.desktop

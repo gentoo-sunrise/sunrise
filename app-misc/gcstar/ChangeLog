@@ -2,6 +2,15 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jun 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  gcstar-1.6.1.ebuild:
+  Restore ${ED} to install's prefix argument, otherwise gcstar fails to
+  install with access violations (see bug #139940, comment 15). Gcstar's
+  install lacks any concept of DESTDIR; to install it to ${ED} with a prefix
+  of /usr, we need to use --prefix="${ED}usr". Note that using prefix-aware
+  variables is safe because gcstar loads everything relative to the main
+  executable's path.
+
   17 Feb 2011; Markos Chandras <hwoarang@gentoo.org> gcstar-1.6.1.ebuild:
   Remove duplicate variables
 
