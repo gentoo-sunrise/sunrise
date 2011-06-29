@@ -1,0 +1,13 @@
+=== modified file 'mixxx/build/mixxx.py'
+--- mixxx/build/mixxx.py	2011-06-13 01:29:39 +0000
++++ mixxx/build/mixxx.py	2011-06-17 17:37:59 +0000
+@@ -188,7 +188,7 @@
+         # Should cover {Net,Open,Free,DragonFly}BSD, but only tested on OpenBSD
+         if 'bsd' in sys.platform:
+             return 'bsd'
+-        if 'linux2' == sys.platform:
++        if sys.platform in ['linux2', 'linux3']:
+             return 'linux'
+         if sys.platform == 'darwin':
+             return 'osx'
+

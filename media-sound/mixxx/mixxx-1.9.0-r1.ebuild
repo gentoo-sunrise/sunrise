@@ -51,6 +51,9 @@ src_unpack() {
 }
 
 src_prepare() {
+	# patch for linux 3.0 support
+	epatch "${FILESDIR}"/${P}-linux3.patch
+
 	# patch CFLAGS issue
 	epatch "${FILESDIR}"/${P}-flags.patch
 
