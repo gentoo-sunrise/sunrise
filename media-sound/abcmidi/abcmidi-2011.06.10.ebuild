@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 inherit eutils toolchain-funcs versionator
 
@@ -19,8 +19,9 @@ IUSE=""
 S=${WORKDIR}/${PN}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2010.02.09_gentoo.patch
-	rm -rf doc/programming/cvs || die
+	epatch "${FILESDIR}"/2010.02.09_gentoo.patch
+	epatch "${FILESDIR}"/${MY_PV}_makefile.patch
+	rm -r doc/programming/cvs doc/gpl.txt || die
 }
 
 src_compile() {
@@ -30,7 +31,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install prefix="/usr" docdir="share/doc/${PF}" || die "Unable to install"
+	emake DESTDIR="${D}" install prefix="/usr" docdir="share/doc/${PF}"
 	docinto programming
-	dodoc doc/programming/* *.abc || die "Unable to install documentation"
+	dodoc doc/programming/*
 }

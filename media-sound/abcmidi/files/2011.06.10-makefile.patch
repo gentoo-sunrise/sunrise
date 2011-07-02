@@ -1,0 +1,12 @@
+diff --git a/makefile b/makefile
+index 886cf0f..adf5381 100644
+--- a/makefile
++++ b/makefile
+@@ -123,7 +123,6 @@ install: abc2midi midi2abc abc2abc mftext midicopy yaps abcmatch
+ 	$(INSTALL) -m 644 doc/*.txt $(DESTDIR)${prefix}/${docdir}
+ 	$(INSTALL) -m 644 doc/AUTHORS $(DESTDIR)${prefix}/${docdir}
+ 	$(INSTALL) -m 644 doc/CHANGES $(DESTDIR)${prefix}/${docdir}
+-	$(INSTALL) -m 644 VERSION $(DESTDIR)${prefix}/${docdir}
+ 
+ 	# install manpages
+ 	test -d $(DESTDIR)${prefix}/${mandir} || mkdir -p $(DESTDIR)${prefix}/${mandir};

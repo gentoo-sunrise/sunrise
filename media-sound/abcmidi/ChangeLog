@@ -1,6 +1,12 @@
 # ChangeLog for media-sound/abcmidi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
+  -files/abcmidi-2010.02.09_gentoo.patch, -abcmidi-2010.07.01.ebuild,
+  +files/2010.02.09_gentoo.patch, +abcmidi-2011.06.10.ebuild,
+  +files/2011.06.10-makefile.patch:
+  Version bump, EAPI bump, updated doc installation.
 
 *abcmidi-2010.07.01 (04 Jul 2010)
 
