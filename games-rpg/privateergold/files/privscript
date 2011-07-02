@@ -2,7 +2,7 @@
 GAMESDIR="/usr/share/games"
 PRIVDIR="$GAMESDIR/privateergold"
 
-VERSION=`head -1 $PRIVDIR/Version.txt`
+VERSION=$(head -n 1 $PRIVDIR/Version.txt)
 if [ \! -e ~/$VERSION ]; then
   cd $PRIVDIR/bin && ./vsinstall.sh
 else

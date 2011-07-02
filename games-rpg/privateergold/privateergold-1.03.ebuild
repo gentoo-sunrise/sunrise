@@ -27,7 +27,7 @@ RDEPEND="amd64? ( app-emulation/emul-linux-x86-baselibs
 		x11-libs/libXext
 		x11-libs/libXi
 		x11-libs/libXrandr )"
-DEPEND="${RDEPEND}"
+
 S=${WORKDIR}
 
 src_unpack() {
