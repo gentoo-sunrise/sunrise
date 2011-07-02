@@ -15,8 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=""
-
 src_prepare() {
 	sed -i \
 		-e "/CPPFLAGS=/s:-.*::" \
