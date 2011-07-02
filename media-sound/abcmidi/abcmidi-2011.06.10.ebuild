@@ -16,11 +16,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+DEPEND="app-arch/unzip"
+
 S=${WORKDIR}/${PN}
 
 src_prepare() {
 	epatch "${FILESDIR}"/2010.02.09_gentoo.patch
-	epatch "${FILESDIR}"/${MY_PV}_makefile.patch
+	epatch "${FILESDIR}"/${PV}-makefile.patch
 	rm -r doc/programming/cvs doc/gpl.txt || die
 }
 

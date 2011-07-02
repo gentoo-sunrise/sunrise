@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jul 2011; Nathan Phillip Brink <binki@gentoo.org>
+  abcmidi-2011.06.10.ebuild:
+  Fix reference to 2011.06.10-makefile.patch to not try to reference
+  2011-06-10_makefile.patch.
+
   02 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
   -files/abcmidi-2010.02.09_gentoo.patch, -abcmidi-2010.07.01.ebuild,
   +files/2010.02.09_gentoo.patch, +abcmidi-2011.06.10.ebuild,
