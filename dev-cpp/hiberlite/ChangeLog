@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/hiberlite
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  02 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl> hiberlite-0.6.ebuild,
+  +files/hiberlite-0.6-gcc46.patch:
+  EAPI bump, added missing unzip depend, added gcc46 patch.
 
   01 Apr 2009; Kyle Cavin (sonar) <kyle.cavin@ieee.org>
   +hiberlite-0.6.ebuild, +metadata.xml:
