@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jul 2011; Nathan Phillip Brink <binki@gentoo.org>
+  pidgin-extended-blist-sort-1.6.ebuild:
+  Add missing DEPEND on dev-util/pkgconfig.
+
   29 Jun 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
   pidgin-extended-blist-sort-1.6.ebuild:
   EAPI bump, added missing useflag depend.
