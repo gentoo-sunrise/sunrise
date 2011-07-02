@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jul 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  librets-1.5.2.ebuild, -files/dotnet.mk.patch, +files/dotnet.patch:
+  Replaced the dotnet patch with an upstream patch to allow passing a strong
+  name key file to the configure script so the mono dotnet dll can be signed.
+
   29 Jun 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   librets-1.5.2.ebuild, +files/dotnet.mk.patch, +files/librets.snk,
   +files/swig.m4.patch, metadata.xml:

@@ -1,0 +1,101 @@
+Index: Makefile.in
+===================================================================
+--- Makefile.in	(revision 1523)
++++ Makefile.in	(revision 1524)
+@@ -44,6 +44,7 @@
+ HAVE_DOTNET=@HAVE_DOTNET@
+ CSC=@CSC@
+ MCS=@MCS@
++SNK_FILE=@SNK_FILE@
+ HAVE_PERL=@HAVE_PERL@
+ PERL=@PERL@
+ HAVE_PHP=@HAVE_PHP@
+Index: project/build/ac-macros/swig.m4
+===================================================================
+--- project/build/ac-macros/swig.m4	(revision 1523)
++++ project/build/ac-macros/swig.m4	(revision 1524)
+@@ -21,6 +21,7 @@
+     HAVE_RUBY=0
+     JAVA_INCLUDES=
+     USE_SWIG_BINDINGS=
++    SNK_FILE=
+     my_have_java=no
+     my_have_dotnet=no
+     my_have_perl=no
+@@ -63,6 +64,14 @@
+             AC_CHECK_PROG(MCS, mcs, mcs, no)
+             AC_CHECK_PROG(GMCS, gmcs, gmcs, no)
+             AC_CHECK_PROG(CSC, csc, csc, no)
++            AC_ARG_WITH([snk-file], 
++                AC_HELP_STRING(
++                    [--with-snk-file=PATH],
++                    [strong name key file to sign the .NET dll.
++                ]),
++                SNK_FILE="$withval",
++                SNK_FILE="")
++
+             generics=`expr \
+                 $ver_major \> 1 \| \
+                 $ver_major \= 1 \& \
+@@ -236,6 +245,7 @@
+   AC_SUBST(HAVE_DOTNET)
+   AC_SUBST(CSC)
+   AC_SUBST(MCS)
++  AC_SUBST(SNK_FILE)
+   AC_SUBST(HAVE_PERL)
+   AC_SUBST(HAVE_PHP)
+   AC_SUBST(PHP)
+Index: project/build/dotnet.mk
+===================================================================
+--- project/build/dotnet.mk	(revision 1523)
++++ project/build/dotnet.mk	(revision 1524)
+@@ -6,7 +6,11 @@
+ 				${DOTNET_UNMANAGED_DLL}				\
+ 				${DOTNET_DEMO_EXE}
+ 
+-DOTNET_BUILD		= ${DOTNET_WRAP}  ${DOTNET_ALL}
++ifeq (${SWIG_OSNAME}, linux)
++DOTNET_BUILD           = ${DOTNET_WRAP}
++else
++DOTNET_BUILD           = ${DOTNET_WRAP}  ${DOTNET_ALL}
++endif
+ DOTNET_CXX_FLAGS	= -fPIC `${SWIG_LIBRETS_CONFIG} --cflags`
+ DOTNET_DEMO_EXE		= ${DOTNET_GETOBJECT_EXE}				\
+ 				${DOTNET_INTERLEAVED_EXE}			\
+@@ -90,8 +94,14 @@
+ # Not Windows/MinGW
+ #
+ 
++
++ifeq (${strip ${SNK_FILE}},)
+ ${DOTNET_MANAGED_DLL}:	${DOTNET_UNMANAGED_DLL} ${DOTNET_MANAGED_SRC}
+ 	${MCS} -target:library -out:${DOTNET_MANAGED_DLL} ${DOTNET_PLATFORM} ${DOTNET_MANAGED_SRC}
++else
++${DOTNET_MANAGED_DLL}:	${DOTNET_UNMANAGED_DLL} ${DOTNET_MANAGED_SRC}
++	${MCS} -target:library -keyfile:${SNK_FILE} -out:${DOTNET_MANAGED_DLL} ${DOTNET_PLATFORM} ${DOTNET_MANAGED_SRC}
++endif
+ 
+ ${DOTNET_GETOBJECT_EXE}:	${DOTNET_GETOBJECT_SRC}
+ 	${MCS} -r:${DOTNET_MANAGED_DLL} ${DOTNET_PLATFORM} -out:${DOTNET_GETOBJECT_EXE} ${DOTNET_GETOBJECT_SRC}
+@@ -126,12 +136,21 @@
+ # Windows/MinGW
+ #
+ 
++ifeq (${strip ${SNK_FILE}},)
+ ${DOTNET_MANAGED_DLL}:	${DOTNET_UNMANAGED_DLL} ${DOTNET_MANAGED_SRC}
+ 	${CSC} -target:library \
+ 		-platform:${TARGET_CPU} \
+                 -out:${shell echo ${DOTNET_MANAGED_DLL} | ${BACKSLASH}} \
+                 ${shell echo ${DOTNET_PLATFORM} | ${BACKSLASH}} \
+                 ${shell echo ${DOTNET_MANAGED_SRC} | ${BACKSLASH}}
++else
++${DOTNET_MANAGED_DLL}:  ${DOTNET_UNMANAGED_DLL} ${DOTNET_MANAGED_SRC}
++	${CSC} -target:library -keyfile:${SNK_FILE} \
++		-platform:${TARGET_CPU} \
++                -out:${shell echo ${DOTNET_MANAGED_DLL} | ${BACKSLASH}} \
++                ${shell echo ${DOTNET_PLATFORM} | ${BACKSLASH}} \
++                ${shell echo ${DOTNET_MANAGED_SRC} | ${BACKSLASH}}
++endif
+ 
+ ${DOTNET_GETOBJECT_EXE}:	${DOTNET_GETOBJECT_SRC}
+ 	${CSC} -r:${shell echo ${DOTNET_MANAGED_DLL} | ${BACKSLASH}} \

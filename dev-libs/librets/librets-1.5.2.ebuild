@@ -15,8 +15,6 @@ PYTHON_MODNAME="librets.py"
 USE_RUBY="ree18 ruby18 ruby19"
 RUBY_OPTIONAL="yes"
 
-LIBOPTIONS="-m755"
-
 inherit distutils eutils java-pkg-opt-2 mono perl-module php-ext-source-r2 ruby-ng
 
 DESCRIPTION="A library that implements the RETS 1.7, RETS 1.5 and 1.0 standards"
@@ -111,8 +109,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/python.mk.patch
 	# Upstream patch to allow dotnet binding to build
 	epatch "${FILESDIR}"/swig.m4.patch
-	# Patch to allow dotnet binding to build
-	epatch "${FILESDIR}"/dotnet.mk.patch
+	# Patch to allow dotnet binding to build and set snk key file
+	epatch "${FILESDIR}"/dotnet.patch
 	eautoreconf
 	use php && php-ext-source-r2_src_prepare
 }
@@ -164,6 +162,7 @@ src_configure() {
 		--disable-examples \
 		$(use_enable debug) \
 		$(use_enable sql-compiler) \
+		$(use_with mono "snk-file" "${FILESDIR}"/${PN}.snk) \
 		${myconf}
 }
 
@@ -245,7 +244,7 @@ src_install() {
 
 	if use java; then
 		java-pkg_dojar "${S}"/build/swig/java/${PN}.jar || die
-		java-pkg_doso "${S}"/build/swig/java/${PN}.so  || die
+		LIBOPTIONS="-m755" java-pkg_doso "${S}"/build/swig/java/${PN}.so  || die
 	fi
 
 	use ruby && ruby-ng_src_install
