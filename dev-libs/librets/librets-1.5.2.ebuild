@@ -174,10 +174,6 @@ src_compile() {
 		_php-replace_config_with_selected_config ${myphpfirstslot} ${myphpconfig}
 		myphpconfig="${PHPCONFIG}"
 	fi
-	if use mono; then
-		# patched dotnet.mk make needs key pair to generate strong-named dll
-		cp "${FILESDIR}"/librets.snk project/swig/csharp || die
-	fi
 	emake || die "emake failed"
 	if use php; then
 		# Move the current slotted build of php to another dir so other slots can be built
