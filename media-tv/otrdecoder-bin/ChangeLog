@@ -4,6 +4,11 @@
 
   02 Jul 2011; Nathan Phillip Brink <binki@gentoo.org>
   otrdecoder-bin-592.ebuild:
+  Use x86? as a condition for i686 binaries instad of \!amd64?, simplify
+  src_unpack() as suggested by tommy[d].
+
+  02 Jul 2011; Nathan Phillip Brink <binki@gentoo.org>
+  otrdecoder-bin-592.ebuild:
   Fix KEYWORDS to include -* for binary package, quote expansion of ${S},
   missing newline at end of file.
 

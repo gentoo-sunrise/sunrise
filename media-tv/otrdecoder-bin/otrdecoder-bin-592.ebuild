@@ -7,7 +7,7 @@ EAPI=2
 DESCRIPTION="Decoder for onlinetvrecorder.com (German)"
 HOMEPAGE="http://www.onlinetvrecorder.com/"
 SRC_URI="amd64? ( http://www.onlinetvrecorder.com/downloads/${PN}-linux-Ubuntu_8.04.2-x86_64-0.4.613.tar.bz2 )
-	!amd64? ( http://www.onlinetvrecorder.com/downloads/${PN}-linux-Ubuntu_9.04-i686-0.4.${PV}.tar.bz2 )"
+	x86? ( http://www.onlinetvrecorder.com/downloads/${PN}-linux-Ubuntu_9.04-i686-0.4.${PV}.tar.bz2 )"
 
 LICENSE="as-is"
 SLOT="0"
@@ -21,11 +21,7 @@ RESTRICT="strip"
 
 src_unpack() {
 	default
-	if use amd64; then
-		mv ${PN}-linux-Ubuntu_8.04.2-x86_64-0.4.613 "${S}" || die "move failed"
-	else
-		mv ${PN}-linux-Ubuntu_9.04-i686-0.4.${PV} "${S}" || die "move failed"
-	fi
+	mv ${PN}-linux-Ubuntu_* "${S}" || die
 }
 
 src_prepare() {
