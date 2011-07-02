@@ -11,7 +11,7 @@ SRC_URI="amd64? ( http://www.onlinetvrecorder.com/downloads/${PN}-linux-Ubuntu_8
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 -*"
 IUSE="X"
 
 RDEPEND="X? ( gnome-base/libglade
@@ -22,9 +22,9 @@ RESTRICT="strip"
 src_unpack() {
 	default
 	if use amd64; then
-		mv ${PN}-linux-Ubuntu_8.04.2-x86_64-0.4.613 ${S} || die "move failed"
+		mv ${PN}-linux-Ubuntu_8.04.2-x86_64-0.4.613 "${S}" || die "move failed"
 	else
-		mv ${PN}-linux-Ubuntu_9.04-i686-0.4.${PV} ${S} || die "move failed"
+		mv ${PN}-linux-Ubuntu_9.04-i686-0.4.${PV} "${S}" || die "move failed"
 	fi
 }
 

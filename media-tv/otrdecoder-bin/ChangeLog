@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jul 2011; Nathan Phillip Brink <binki@gentoo.org>
+  otrdecoder-bin-592.ebuild:
+  Fix KEYWORDS to include -* for binary package, quote expansion of ${S},
+  missing newline at end of file.
+
   28 Jun 2011; Florian Schmaus (flow) <flo@freakempire.de>
   +otrdecoder-bin-592.ebuild:
   Version bump, added support for amd64. Thanks to mgorny
