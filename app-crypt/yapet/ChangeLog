@@ -1,6 +1,11 @@
 # ChangeLog for app-crypt/yapet
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl> -yapet-0.4-r1.ebuild,
+  +yapet-0.8_pre2.ebuild, metadata.xml:
+  EAPI bump, version bump, changed inherit, added missing USE flags, added USE
+  description.
 
   15 Aug 2009; Rafael Ostertag (rafi) <rafi@guengel.ch> yapet-0.4-r1.ebuild:
   Changed DEPEND and RDEPEND to include libintl, not gettext
