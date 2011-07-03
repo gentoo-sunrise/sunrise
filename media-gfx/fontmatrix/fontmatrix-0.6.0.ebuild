@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=4
 
 inherit qt4-r2 cmake-utils
 
@@ -16,6 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 RDEPEND="x11-libs/qt-gui:4
+	x11-libs/qt-sql:4
 	x11-libs/qt-svg:4
 	x11-libs/qt-webkit:4
 	media-libs/freetype:2"
@@ -29,11 +30,11 @@ src_configure() {
 }
 
 src_install() {
-	dobin "${CMAKE_BUILD_DIR}"/src/${PN} || die
-	doman ${PN}.1 || die
-	domenu ${PN}.desktop || die
+	dobin "${CMAKE_BUILD_DIR}"/src/${PN}
+	doman ${PN}.1
+	domenu ${PN}.desktop
 	doicon ${PN}.png
-	dodoc ChangeLog TODO || die
+	dodoc ChangeLog TODO
 }
 
 pkg_postinst() {
