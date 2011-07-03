@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=4
 
 inherit multilib rpm
 
@@ -15,13 +17,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="x11-themes/gnome-icon-theme"
+DEPEND="x11-libs/gtk+:2"
+RDEPEND="${DEPEND}
+	x11-themes/gnome-icon-theme"
 
 S=${WORKDIR}/ia_ora-gnome-${PV}
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	rm -f "${D}usr/$(get_libdir)/gtk-2.0/2.10.0/engines/libia_ora.la" || die "removing .la file"
-	dodoc AUTHORS README ChangeLog || die "dodoc failed"
+	emake DESTDIR="${D}" install
+	rm -f "${D}usr/$(get_libdir)/gtk-2.0/2.10.0/engines/libia_ora.la" \
+		|| die "removing .la file"
+	dodoc AUTHORS README ChangeLog
 }
