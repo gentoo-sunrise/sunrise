@@ -4,9 +4,9 @@
 
 EAPI=2
 
-inherit pam
+inherit eutils pam
 
-DESCRIPTION="pam_pgsql is a module for pam to authenticate users with PostgreSQL"
+DESCRIPTION="A module for pam to authenticate users with PostgreSQL"
 HOMEPAGE="http://pgfoundry.org/frs/?group_id=1000039"
 SRC_URI="mirror://postgresql/projects/pgFoundry/sysauth/${PN/_/-}-${PV}.tgz"
 
