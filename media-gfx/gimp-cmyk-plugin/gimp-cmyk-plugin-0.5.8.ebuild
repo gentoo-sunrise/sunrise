@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=4
 
 inherit eutils multilib toolchain-funcs
 
@@ -20,14 +20,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="
-	media-gfx/gimp
+RDEPEND="media-gfx/gimp
 	virtual/jpeg
-	media-libs/lcms
+	media-libs/lcms:0
 	media-libs/tiff"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PV}-Makefile.patch
@@ -35,13 +35,13 @@ src_prepare() {
 }
 
 src_compile() {
-	emake CC="$(tc-getCC)" || die "compilation failed"
+	emake CC="$(tc-getCC)"
 }
 
 src_install() {
-	emake PREFIX="${D}/usr" install || die "emake install failed"
+	emake PREFIX="${D}/usr" install
 	insinto /usr/share/color/icc
-	doins -r sRGB || die "doins failed installing sRGB icc profiles"
+	doins -r sRGB
 	cd "${WORKDIR}/Adobe ICC Profiles (end-user)"
-	doins -r CMYK RGB || die "doins failed installing Adobe CMYK and RGB icc profiles"
+	doins -r CMYK RGB
 }

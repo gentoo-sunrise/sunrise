@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
+  gimp-cmyk-plugin-0.5.8.ebuild:
+  EAPI bump, fixed and added missing depends.
+
   30 Apr 2011; Justin Lecher <jlec@gentoo.org>
   gimp-cmyk-plugin-0.5.8.ebuild:
   Moved media-libs/jpeg > virtual/jpeg
