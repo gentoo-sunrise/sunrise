@@ -1,6 +1,11 @@
 # ChangeLog for app-admin/elektra
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl> -elektra-0.7.0.ebuild,
+  +elektra-0.7.1.ebuild, metadata.xml:
+  EAPI bump, version bump, changed depends logic. Based heavly on ebuild from
+  xmv overlay.
 
   15 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de> elektra-0.7.0.ebuild:
   pimped DESCRIPTION, use base.eclass, shortened single line if statements
