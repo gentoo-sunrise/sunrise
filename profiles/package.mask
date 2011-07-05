@@ -46,14 +46,6 @@ dev-python/pyprocps
 gnome-extra/paperbox
 
 # Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
-# Doesn't build with recent headers
-# linux/videodev.h
-# upstream inactive since 2007
-# Removal in 30 days.
-media-video/webcamserver
-media-video/webcamserver-client
-
-# Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
 # Unable to find sources
 # upstream inactive since 2007
 # Removal in 30 days.
