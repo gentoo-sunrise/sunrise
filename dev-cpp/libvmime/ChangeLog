@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/libvmime
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl> -libvmime-0.9.0.ebuild,
+  -files/libvmime-0.9.0-gcc4_4.patch, +libvmime-0.9.1.ebuild:
+  EAPI bump, version bump, changed license, removed obsolete patch.
 
   23 Jul 2009; Tiziano Müller <dev-zero@gentoo.org> libvmime-0.9.0.ebuild:
   Use EAPI-2 and virtuals.

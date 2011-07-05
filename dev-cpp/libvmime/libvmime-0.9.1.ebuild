@@ -1,16 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-
-inherit eutils
+EAPI=4
 
 DESCRIPTION="Library for working with MIME messages and Internet messaging services like IMAP, POP or SMTP"
 HOMEPAGE="http://www.vmime.org"
 SRC_URI="mirror://sourceforge/vmime/${P}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc examples +imap +maildir +pop sasl sendmail +smtp ssl"
@@ -27,8 +25,6 @@ src_prepare() {
 		-e "s|doc/\${PACKAGE_TARNAME}|doc/${PF}|" \
 		-e "s|doc/\$(GENERIC_LIBRARY_NAME)|doc/${PF}|" \
 		configure Makefile.in || die "sed failed"
-
-	epatch "${FILESDIR}/${P}-gcc4_4.patch"
 }
 
 src_configure() {
@@ -50,14 +46,14 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog || die "dodoc failed"
+	emake DESTDIR="${D}" install
+	dodoc AUTHORS ChangeLog
 	if use doc ; then
-		dohtml doc/html/* || die "dohtml failed"
+		dohtml doc/html/*
 	fi
 
 	insinto /usr/share/doc/${PF}
 	if use examples ; then
-		doins -r examples || die "doins examples failed"
+		doins -r examples
 	fi
 }
