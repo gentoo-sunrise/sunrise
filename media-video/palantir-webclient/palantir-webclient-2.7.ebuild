@@ -1,13 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit webapp java-utils-2
+inherit webapp java-pkg-2
 
 MY_PN=${PN/-webclient/}
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="Transmit live video, audio and data over a TCP/IP network, as well as to control remote devices."
+DESCRIPTION="Transmit live video, audio and data over a TCP/IP network, as well as to control remote devices"
 HOMEPAGE="http://www.fastpath.it/products/palantir/index.php"
 SRC_URI="http://www.fastpath.it/products/${MY_PN}/pub/${MY_P}.tgz"
 
@@ -20,6 +20,11 @@ RDEPEND=">=virtual/jre-1.4"
 
 S=${WORKDIR}/${MY_P}/clients/java
 
+pkg_setup() {
+	webapp_pkg_setup
+	java-pkg-2_pkg_setup
+}
+
 src_compile() {
 	ejavac *.java || die "ejavac failed!"
 	jar cfm pclient.jar MANIFEST.MF *.class || die "jar failed!"
@@ -29,6 +34,6 @@ src_install() {
 	webapp_src_preinst
 	cp *.jar *.html "${D}/${MY_HTDOCSDIR}"
 	dodoc README TODO
-	webapp_postinst_txt en "${FILESDIR}/postinstall-en-${PV}.txt"
+	webapp_postinst_txt en "${FILESDIR}/postinstall-en-2.6.txt"
 	webapp_src_install
 }
