@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl> -libaxl-0.6.3.ebuild,
+  +libaxl-0.6.4.ebuild, +files/libaxl-0.6.4-werror.patch:
+  EAPI bump, version bump, added patch for -Werror.
+
   19 Jan 2011; Jan Matejka (yac) <yac@blesmrt.net> +libaxl-0.6.3.ebuild,
   +metadata.xml:
   new ebuild for bug 197101

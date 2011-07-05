@@ -1,0 +1,26 @@
+diff --git a/configure b/configure
+index e67a0d8..b50317f 100755
+--- a/configure
++++ b/configure
+@@ -21339,7 +21339,7 @@ PYTHON_CONFIG=`./get-python-config`
+ # get python includes
+ PYTHON_INCLUDES=`$PYTHON_CONFIG --includes 2>/dev/null`
+ old_CPPFLAGS=$CPPFLAGS
+-CPPFLAGS="-Wall -Werror $PYTHON_INCLUDES"
++CPPFLAGS="-Wall $PYTHON_INCLUDES"
+ echo "Python includes: $PYTHON_INCLUDES"
+ 
+ 
+diff --git a/configure.ac b/configure.ac
+index 4dde3ba..f75c909 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -63,7 +63,7 @@ PYTHON_CONFIG=`./get-python-config`
+ # get python includes 
+ PYTHON_INCLUDES=`$PYTHON_CONFIG --includes 2>/dev/null`
+ old_CPPFLAGS=$CPPFLAGS
+-CPPFLAGS="-Wall -Werror $PYTHON_INCLUDES"
++CPPFLAGS="-Wall $PYTHON_INCLUDES"
+ echo "Python includes: $PYTHON_INCLUDES"
+ AC_SUBST(PYTHON_INCLUDES)
+ 

@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI=4
 
-REVNUM="b4475.g4476"
+inherit autotools eutils
+
+REVNUM="b4604.g4608"
 MY_P="${PN/lib}-${PV}.${REVNUM}"
 
 DESCRIPTION="Another XML library"
@@ -16,20 +18,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc tests"
 
-RDEPEND=""
 DEPEND="sys-devel/libtool
 	dev-util/pkgconfig
 	doc? ( app-doc/doxygen )"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-werror.patch
+
+	eautoreconf
+}
 
 src_configure() {
 	econf \
 		$(use_enable doc axl-doc) \
 		$(use_enable tests axl-test)
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
-	dodoc README NEWS AUTHORS ChangeLog || die "dodoc failed"
 }
