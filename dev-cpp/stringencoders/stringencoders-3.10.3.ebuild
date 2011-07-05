@@ -1,8 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base
+EAPI=4
+
+inherit autotools eutils
 
 MY_P="${PN}-v${PV}"
 DESCRIPTION="A collection of high performance c-string transformations"
@@ -15,9 +17,14 @@ KEYWORDS="~amd64"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}
-DOCS=( AUTHORS ChangeLog NEWS README )
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-werror.patch
+
+	eautoreconf
+}
 
 # default `make check` doesn't work
 src_test() {
-	emake test || die
+	emake test
 }

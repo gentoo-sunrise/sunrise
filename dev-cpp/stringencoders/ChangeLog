@@ -1,6 +1,10 @@
 # ChangeLog for dev-cpp/stringencoders
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
+  stringencoders-3.10.3.ebuild, +files/stringencoders-3.10.3-werror.patch:
+  EAPI bump, changed inherit, added patch for -Werror.
 
   05 Jun 2010; Dagg Stompler (daggs1) <stompdagger1@yahoo.com>
   +stringencoders-3.10.3.ebuild, +metadata.xml:
