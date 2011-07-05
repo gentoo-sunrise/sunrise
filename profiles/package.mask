@@ -21,6 +21,12 @@
 ##   End example
 ##
 
+# Nathan Phillip Brink <binki@gentoo.org> (05 Jul 2011)
+# These packages require x11-libs/gtksourceview:1.0 and are thus
+# masked for removal in 30 days, see bug #354241 and the respective
+# mask in gentoo-x86.
+dev-util/openldev
+
 # Michał Górny <mgorny@gentoo.org (31 May 2011)
 # No longer maintained, requires a bump and changes wrt python eclass.
 # Known issues, hashing not compatible with cmemcache.
