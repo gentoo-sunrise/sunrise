@@ -21,6 +21,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.6
 	dev-libs/glib:2
 	>=dev-libs/libpcre-6.3
 	gnome-base/gnome-desktop:2
+	gnome-base/gnome-vfs:2
 	>=net-libs/loudmouth-1.2.2
 	>=sys-apps/dbus-1
 	x11-libs/gtk+:2
