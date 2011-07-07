@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 inherit eutils toolchain-funcs versionator
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc examples"
 
 RDEPEND="dev-lang/lua
-	media-libs/gd"
+	media-libs/gd[png]"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -30,19 +30,19 @@ src_prepare() {
 }
 
 src_compile() {
-	emake LUAPKG=lua CC="$(tc-getCC)" || die "emake failed"
+	emake LUAPKG=lua CC="$(tc-getCC)"
 }
 
 src_install() {
-	emake install LUAPKG=lua DESTDIR="${D}" || die "Install failed"
-	dodoc README || die
+	emake install LUAPKG=lua DESTDIR="${D}"
+	dodoc README
 
 	if use doc; then
-		dohtml doc/* || die
+		dohtml doc/*
 	fi
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}
-		doins -r demos || die
+		doins -r demos
 	fi
 }
