@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jul 2011; mthode <mthode@mthode.org> -icinga-1.4.0.ebuild,
+  +icinga-1.4.2.ebuild:
+  version bump, tested amd64
+
   11 May 2011; mthode <mthode@mthode.org> -icinga-1.3.1-r3.ebuild,
   +icinga-1.4.0.ebuild:
   version bump, tested
