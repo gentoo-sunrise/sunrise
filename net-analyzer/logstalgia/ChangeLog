@@ -1,6 +1,10 @@
 # ChangeLog for net-analyzer/logstalgia
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
+  logstalgia-0.9.9.ebuild:
+  EAPI bump, added missing depends.
 
   06 Mar 2010; Stefan Behte (Craig) <craig@gentoo.org>
   -logstalgia-0.9.2.ebuild:
