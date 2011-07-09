@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/mtag
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  09 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl> mtag-3.ebuild,
+  +files/mtag-3-gcc46.patch, mtag-9999.ebuild:
+  EAPI bump, added gcc46 patch, slotted depends, updated description.
 
   22 Apr 2009; Christian Ruppert <idl0r@gentoo.org> mtag-3.ebuild,
   mtag-9999.ebuild:

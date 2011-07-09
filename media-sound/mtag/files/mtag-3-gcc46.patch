@@ -1,0 +1,36 @@
+diff --git a/main.cpp b/main.cpp
+index aab75d2..114b8dc 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -7,6 +7,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <cstdlib>
++#include <iostream>
+ 
+ /* For taglib */
+ #include <fileref.h>
+diff --git a/meta.cpp b/meta.cpp
+index 79b7abc..dd53007 100644
+--- a/meta.cpp
++++ b/meta.cpp
+@@ -15,6 +15,7 @@
+ #include "tagger.h"
+ #include "sql.h"
+ #include "utils.h"
++#include <iostream>
+ 
+ /* For taglib */
+ #include <fileref.h>
+diff --git a/utils.cpp b/utils.cpp
+index 1521efb..7283785 100644
+--- a/utils.cpp
++++ b/utils.cpp
+@@ -16,6 +16,7 @@
+ #include <unistd.h>
+ #include <fileref.h>
+ #include <tag.h>
++#include <iostream>
+ 
+ #include "utils.h"
+ 

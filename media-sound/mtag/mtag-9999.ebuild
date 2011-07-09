@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit cmake-utils subversion
 
-DESCRIPTION="the fast media tag lib"
+DESCRIPTION="Fast media tag lib"
 HOMEPAGE="http://mtag.berlios.de/"
 SRC_URI=""
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/mtag/trunk/mtag"
@@ -29,8 +29,8 @@ src_compile() {
 }
 
 src_install() {
-	dobin mtag || die "dobin failed"
-	dodoc README ChangeLog AUTHORS || die "dodoc failed"
+	dobin ${PN} || die "dobin failed"
+	dodoc AUTHORS ChangeLog README || die "dodoc failed"
 	if use doc; then
 		dohtml -r html/* || die "dohtml failed"
 	fi
