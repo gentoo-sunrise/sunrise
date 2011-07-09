@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=4
 
 DESCRIPTION="Utility for manipulating the scancode/keycode translation tables of keyboard drivers"
 HOMEPAGE="http://0pointer.de/lennart/projects/keyfuzz/"
@@ -21,7 +21,7 @@ src_configure() {
 }
 
 src_install() {
-	dobin src/keyfuzz || die "dobin failed"
-	dodoc README || die "dodoc failed"
-	doman man/* || die "doman failed"
+	dobin src/${PN}
+	dodoc README
+	doman man/${PN}.8
 }
