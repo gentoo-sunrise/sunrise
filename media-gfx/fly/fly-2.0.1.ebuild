@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=4
 
 DESCRIPTION="Creates PNG, JPEG or GIF images from CGI and other programs"
 HOMEPAGE="http://martin.gleeson.net/fly/"
@@ -12,17 +14,15 @@ KEYWORDS="~amd64"
 IUSE="examples"
 
 DEPEND="media-libs/freetype
-	media-libs/gd
-	virtual/jpeg
-	media-libs/libpng"
+	media-libs/gd[jpeg,png]"
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dobin fly || die
+	dobin ${PN}
 
-	dodoc doc/* README || die
+	dodoc doc/* README
 
 	if use examples ; then
-		dodoc examples/* || die
+		dodoc examples/*
 	fi
 }
