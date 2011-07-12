@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=4
 
 DESCRIPTION="A log analyzer for amavisd-new"
 HOMEPAGE="http://logreporters.sourceforge.net/"
@@ -25,12 +27,12 @@ src_install() {
 	# tarball: a standalone executable and a logwatch filter. The
 	# standalone is always installed. However, the logwatch filter is
 	# only installed with USE="logwatch".
-	dodoc Bugs Changes README || die "failed to install documentation"
-	doman ${PN}.1 || die "failed to install man page"
-	dohtml ${PN}.1.html || die "failed to install html documentation"
-	dobin ${PN} || die "failed to install executable"
+	dodoc Bugs Changes README
+	doman ${PN}.1
+	dohtml ${PN}.1.html
+	dobin ${PN}
 	insinto /etc
-	doins ${PN}.conf || die "failed to install config file"
+	doins ${PN}.conf
 
 	if use logwatch; then
 		# Remove the taint mode (-T) switch from the header of the
@@ -40,10 +42,9 @@ src_install() {
 			|| die "failed to remove the perl taint switch"
 
 		insinto /etc/logwatch/scripts/services
-		doins amavis || die "failed to install the 'amavis' logwatch filter"
+		doins amavis
 
 		insinto /etc/logwatch/conf/services
-		newins ${PN}.conf amavis.conf \
-			|| die "failed to install the logwatch 'amavis.conf' file"
+		newins ${PN}.conf amavis.conf
 	fi
 }
