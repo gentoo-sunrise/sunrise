@@ -1,6 +1,10 @@
 # ChangeLog for kde-misc/pyrad
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jul 2011; Arne Babenhauserheide (ArneBab) <arne_bab@web.de>
+  -pyrad-0.5.3.ebuild, +pyrad-0.5.3-r1.ebuild:
+  cleanup of the kde-misc/pyrad ebuild thanks to neurogeek, floppym and Tommy[D].
 
   28 Nov 2010; Arne Babenhauserheide (ArneBab) <arne_bab@web.de>
   -pyrad-0.5.2.ebuild, +pyrad-0.5.3.ebuild:
