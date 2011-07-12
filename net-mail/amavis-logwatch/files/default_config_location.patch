@@ -1,0 +1,11 @@
+--- a/amavis-logwatch	2010-11-12 21:35:02.000000000 -0500
++++ b/amavis-logwatch	2011-07-12 12:57:18.005618573 -0400
+@@ -50,7 +50,7 @@
+ our $progname_prefix = 'amavis';
+ 
+ # Specifies the default configuration file for use in standalone mode.
+-my $config_file = "/usr/local/etc/${progname_prefix}-logwatch.conf";
++my $config_file = "/etc/${progname_prefix}-logwatch.conf";
+ 
+ #MODULE: ../Logreporters/Utils.pm
+ package Logreporters::Utils;

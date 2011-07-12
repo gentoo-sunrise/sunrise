@@ -3,6 +3,10 @@
 # $Header: $
 
   12 Jul 2011; Michael Orlitzky <michael@orlitzky.com>
+  amavis-logwatch-1.50.03.ebuild, +files/default_config_location.patch:
+  Patch the default config location, and remove an unnecessary dohtml.
+
+  12 Jul 2011; Michael Orlitzky <michael@orlitzky.com>
   amavis-logwatch-1.50.03.ebuild:
   Bump for EAPI=4.
 

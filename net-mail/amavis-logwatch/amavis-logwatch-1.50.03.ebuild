@@ -4,6 +4,8 @@
 
 EAPI=4
 
+inherit eutils
+
 DESCRIPTION="A log analyzer for amavisd-new"
 HOMEPAGE="http://logreporters.sourceforge.net/"
 SRC_URI="mirror://sourceforge/logreporters/${P}.tgz"
@@ -15,6 +17,10 @@ IUSE="logwatch"
 
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	epatch "${FILESDIR}/default_config_location.patch"
+}
 
 src_compile() {
 	# The default make target just outputs instructions. We don't want
@@ -29,7 +35,6 @@ src_install() {
 	# only installed with USE="logwatch".
 	dodoc Bugs Changes README
 	doman ${PN}.1
-	dohtml ${PN}.1.html
 	dobin ${PN}
 	insinto /etc
 	doins ${PN}.conf
