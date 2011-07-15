@@ -32,13 +32,14 @@ src_install() {
 	# install scanner firmware
 	insinto /opt/iscan/share
 	doins "${WORKDIR}"/usr/share/iscan/*
+	dosym /opt/iscan/share/esfw7C.bin /usr/share/iscan/esfw7C.bin
 	# install scanner plugins
 	exeinto /opt/iscan/lib
 	doexe "${WORKDIR}/usr/$(get_libdir)/iscan/"*
 }
 
 pkg_setup() {
-	basecmd="iscan-registry --COMMAND interpreter usb 0x04b8 0x0130 /opt/iscan/lib/libesint7C /opt/iscan/share/esfw7C.bin"
+	basecmd="iscan-registry --COMMAND interpreter usb 0x04b8 0x0130 /opt/iscan/lib/libesint7C"
 }
 
 pkg_postinst() {

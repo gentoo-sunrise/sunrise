@@ -2,6 +2,12 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jul 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -iscan-plugin-gt-x770-2.1.2.1.ebuild,
+  +iscan-plugin-gt-x770-2.1.2.1-r1.ebuild:
+  Symlinked the firmware binary since its location cannot be configured by
+  iscan-registry
+
   21 May 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   +iscan-plugin-gt-x770-2.1.2.1.ebuild, +metadata.xml:
   New ebuild for bug 367585
