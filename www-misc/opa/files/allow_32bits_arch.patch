@@ -1,0 +1,18 @@
+diff -ur opalang.orig//configure opalang//configure
+--- opalang.orig//configure	2011-07-17 02:05:45.000000000 +0200
++++ opalang//configure	2011-07-17 02:06:00.000000000 +0200
+@@ -226,14 +226,6 @@
+         echo "Your ocaml installation seems broken, please fix it"
+         false
+     fi >&2
+-    if RET=$(_build/test.native); then
+-        echo-ok $RET
+-    else
+-        R=$?
+-        echo-err $RET
+-        echo "Your ocaml seems to be a 32bit version. Please install a native 64 bit package."
+-        false
+-    fi >&2
+     rm -rf /tmp/${DIR#/tmp/}
+     trap - EXIT
+     cd "$OPA_SOURCE_DIR"
