@@ -14,7 +14,8 @@ DESCRIPTION="General purpose vector graphics program"
 HOMEPAGE="http://www.xaraxtreme.org/"
 SRC_URI="
 	http://downloads.xara.com/opensource/${MY_P}.tar.bz2
-	http://dev.gentoo.org/~jlec/distfiles/60_launchpad_translations.xz"
+	http://dev.gentoo.org/~jlec/distfiles/60_launchpad_translations.xz
+	http://ompldr.org/vOWptaQ/${P}-pragma.patch"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -39,7 +40,7 @@ S=${WORKDIR}/${MY_P/Src/}
 src_prepare() {
 	epatch \
 		"${WORKDIR}"/60_launchpad_translations \
-		"${FILESDIR}"/${P}-pragma.patch \
+		"${DISTDIR}"/${P}-pragma.patch \
 		"${FILESDIR}"/{3,4,5}0*
 	sed -i -e "s/CXFTreeDlg:://" Kernel/cxftree.h
 	sed -i -e "s:XaraLX:xaralx:g" Makefile.am
