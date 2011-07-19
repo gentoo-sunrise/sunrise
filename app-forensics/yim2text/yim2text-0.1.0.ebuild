@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=3
 
 PYTHON_DEPEND="2"
 
@@ -15,14 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
 src_prepare() {
 	python_convert_shebangs 2 ${PN}
 }
 
 src_install() {
 	distutils_src_install
-	doman ${PN}.man.1
+	doman ${PN}.man.1 || die
 }
