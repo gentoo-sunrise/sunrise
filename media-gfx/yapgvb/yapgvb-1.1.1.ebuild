@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=3
 
 inherit distutils eutils
 
@@ -17,13 +19,11 @@ RDEPEND=">=dev-lang/python-2.4
 DEPEND="${RDEPEND}
 	dev-libs/boost"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}"/boost_include_path.patch
 }
 
 src_install() {
 	distutils_src_install
-	doenvd "${FILESDIR}"/90graphviz
+	doenvd "${FILESDIR}"/90graphviz || die
 }
