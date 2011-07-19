@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,10 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples force tilt"
 
-RDEPEND="
-	|| ( net-wireless/bluez
-		( >=net-wireless/bluez-libs-3
-		net-wireless/bluez-utils ) )"
+RDEPEND="net-wireless/bluez"
 DEPEND=${RDEPEND}
 
 src_prepare() {
