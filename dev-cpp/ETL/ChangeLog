@@ -1,6 +1,9 @@
 # ChangeLog for dev-cpp/ETL
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> ETL-9999.ebuild:
+  Switch eclass: git -> git-2
 
   10 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   ETL-9999.ebuild:
