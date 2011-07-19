@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,7 +26,7 @@ RDEPEND=">=mail-client/evolution-2.24
 	gnome-base/libgnomeui
 	>=gnome-extra/evolution-data-server-1.2
 	|| ( net-libs/xulrunner:1.9 www-client/seamonkey
-		www-client/mozilla-firefox )
+		www-client/firefox )
 	dbus? ( dev-libs/dbus-glib )
 	webkit? ( net-libs/webkit-gtk )"
 DEPEND="${RDEPEND}
