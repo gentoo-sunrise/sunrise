@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/cx-oracle
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  cx-oracle-5.0.2.ebuild:
+  Forced move to EAPI-3 from distutils eclass
 
   07 Jun 2009; Pavol Dilung (pdilung) <pavol.dilung@gmail.com>
   +cx-oracle-5.0.2.ebuild, +metadata.xml:
