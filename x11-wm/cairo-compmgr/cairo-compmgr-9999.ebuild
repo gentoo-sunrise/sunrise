@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit autotools gnome2 git
+inherit autotools gnome2 git-2
 
 EGIT_REPO_URI="git://git.tuxfamily.org/gitroot/ccm/cairocompmgr.git"
 
