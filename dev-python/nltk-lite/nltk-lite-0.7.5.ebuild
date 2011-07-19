@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=3
 
 inherit distutils
 
@@ -28,27 +30,23 @@ S="${WORKDIR}/${MY_P}"
 
 src_install() {
 	if ! use minimal ; then
-		ebegin "Installing corpora"
 		insinto /usr/share/${MY_PN}
-		doins -r "${WORKDIR}/corpora"
-		doenvd "${FILESDIR}/99nltk-lite"
-		eend 0
+		doins -r "${WORKDIR}/corpora" || die
+		doenvd "${FILESDIR}/99nltk-lite" || die
 	fi
 	if use doc ; then
-		ebegin "Installing doc"
 		if ! use linguas_pt_BR ; then
-			rm -rf "${WORKDIR}/doc/pt-br"
+			rm -rf "${WORKDIR}/doc/pt-br" || die
 		fi
 		insinto /usr/share/${MY_PN}
-		doins -r "${WORKDIR}/doc"
-		eend 0
+		doins -r "${WORKDIR}/doc" || die
 	fi
 	if use examples ; then
 		insinto /usr/share/${MY_PN}
-		doins -r "${WORKDIR}/examples"
+		doins -r "${WORKDIR}/examples" || die
 	fi
 
-	dodoc README.txt
+	dodoc README.txt || die
 
 	distutils_src_install
 }
