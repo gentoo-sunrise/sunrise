@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git
+inherit git-2
 
 DESCRIPTION="split tcp requests of different type to different servers"
 HOMEPAGE="http://ypd.berlios.de/"
@@ -13,9 +13,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
-
-DEPEND=""
-RDEPEND=""
 
 src_install() {
 	dobin src/ypd || die "dobin failed"
