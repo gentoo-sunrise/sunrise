@@ -23,7 +23,7 @@ RDEPEND="dev-python/iniparse
 	dev-python/pygments
 	dev-python/PyQt4
 	dev-python/qscintilla-python
-	>=dev-vcs/mercurial-1.8
+	>=dev-vcs/mercurial-1.9
 	nautilus? ( dev-python/nautilus-python )"
 DEPEND="${RDEPEND}
 	doc? ( >=dev-python/sphinx-1.0.3 )"
