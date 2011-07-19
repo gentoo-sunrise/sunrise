@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pyprocps
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pyprocps-0.4.ebuild:
+  Forced move to EAPI-3 from distutils eclass
 
   23 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com>
   -pyprocps-0.2.ebuild, +pyprocps-0.4.ebuild:
