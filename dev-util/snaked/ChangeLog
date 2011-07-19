@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/snaked
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  snaked-9999.ebuild:
+  Switch eclass: git -> git-2
 
   22 Oct 2010; Dane Smith <c1pher@gentoo.org> snaked-9999.ebuild:
   Add 2.[45] to RESTRICT_PYTHON_ABIS.
