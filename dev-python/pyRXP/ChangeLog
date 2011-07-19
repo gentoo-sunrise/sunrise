@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pyRXP
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pyRXP-9999.ebuild:
+  Forced move to EAPI-3 from distutils eclass
 
   17 Feb 2009; PERIER Romain (mrpouet) <mrpouet@tuxfamily.org>
   +pyRXP-9999.ebuild, +metadata.xml:
