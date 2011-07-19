@@ -6,10 +6,11 @@
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
-app-admin/elektra:coverage - Turn on code coverage analysis tools
 app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
 app-backup/fsarchiver:lzma - Enables LZMA compression
+app-crypt/yapet:csv - Enable csv import utility
+app-crypt/yapet:pwgen - Enable build-in password generator
 app-emulation/xenman:lvm2 - Enable lvm2 support
 app-misc/2gis:data - Use maps and other data from app-misc/2gis-data
 app-misc/2gis-data:astr - The map of Astrakhan for app-misc/2gis
@@ -78,6 +79,16 @@ dev-libs/libaxl:tests - compile and install performance tests
 dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
 dev-libs/libplayer:vlc - Enable VLC media player support
 dev-libs/libref_array:trace - Enable low level tracing
+dev-libs/librets:debug - Enable debug compile type
+dev-libs/librets:doc - Add maintainer documentation
+dev-libs/librets:java - Install java libraries
+dev-libs/librets:mono - Install mono libraries
+dev-libs/librets:perl - Install perl library extension
+dev-libs/librets:php - Install php library extension
+dev-libs/librets:python - Install python library extension
+dev-libs/librets:ruby - Install ruby library extension
+dev-libs/librets:sql-compiler - Enable SQL to DMQL compiler for java libraries
+dev-libs/librets:threads - Enable thread safe support
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
 dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
