@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/pygtk-shell
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pygtk-shell-0.9.1.ebuild:
+  Forced move to EAPI-3 from distutils eclass
 
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> pygtk-shell-0.9.1.ebuild:
   Fix desktop entry
