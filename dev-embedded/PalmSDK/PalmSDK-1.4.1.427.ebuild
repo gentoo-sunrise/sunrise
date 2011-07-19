@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,7 @@ IUSE=${MY_LINGUAS}
 
 RDEPEND="|| (
 		app-emulation/virtualbox-bin
-		app-emulation/virtualbox-ose
+		app-emulation/virtualbox
 	)
 	>=virtual/jre-1.5
 	x86? (
