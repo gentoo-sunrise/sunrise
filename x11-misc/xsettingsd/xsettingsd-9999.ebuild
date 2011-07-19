@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EGIT_REPO_URI="git://github.com/derat/xsettingsd.git"
 
-inherit git toolchain-funcs
+inherit git-2 toolchain-funcs
 
 DESCRIPTION="A daemon that implements the XSETTINGS specification."
 HOMEPAGE="http://code.google.com/p/xsettingsd/"

@@ -1,6 +1,10 @@
 # ChangeLog for x11-misc/xsettingsd
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  xsettingsd-9999.ebuild:
+  Switch eclass: git -> git-2
 
   17 Aug 2010; Iurii Zaikin (yzaikin) <punloh@yahoo.com>
   +xsettingsd-9999.ebuild, +metadata.xml:
