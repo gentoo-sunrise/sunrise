@@ -41,7 +41,7 @@ all_ruby_prepare() {
 }
 
 each_ruby_test() {
-	if hasq userpriv ${FEATURES}; then
+	if has userpriv ${FEATURES}; then
 		ewarn "${PN} requires root priviliges to run its test. Thus, I am not running ${PN}'s"
 		ewarn "tests. Remove \"userpriv\" from FEATURES to run the tests."
 	else
