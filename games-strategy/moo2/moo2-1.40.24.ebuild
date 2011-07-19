@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,7 +12,8 @@ LB_PATCH="Moo2v140b24.zip"
 DESCRIPTION="A classic 4X turn-based space strategy game"
 HOMEPAGE="http://lordbrazen.blogspot.com"
 SRC_URI="ftp://ftp.infogrames.net/patches/moo2/${OFFICIAL_PATCH}
-	lordbrazen? ( http://www.spheriumnorth.com/blog-images/${LB_PATCH} )"
+	lordbrazen? ( http://www.spheriumnorth.com/blog-images/${LB_PATCH} )
+	http://ompldr.org/vOWptOA/FAQ-${PV}.html"
 
 LICENSE="GPL-2 Hasbro-EULA"
 SLOT="0"
@@ -177,7 +178,7 @@ src_install() {
 	dodoc "${WORKDIR}/docs/"* || die
 
 	# FAQ covering both official and unofficial patched versions.
-	dodoc "${FILESDIR}/${PVR}/FAQ.html" || die
+	newdoc "${DISTDIR}/FAQ-${PV}.html" FAQ.html || die
 
 	# README.TXT on all CD-ROMs
 	dodoc "${CDROM_ROOT}/README.TXT" || die
