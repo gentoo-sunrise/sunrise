@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=3
 
 inherit distutils eutils multilib
 
@@ -24,31 +26,28 @@ S="${WORKDIR}/GNUmed-${PV}"
 
 PYTHON_MODNAME="Gnumed"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}/gnumed-0.1-gnumed.patch"
 }
 
 src_compile() {
 	distutils_python_version
-	cd "${S}"
-	sed -i -e "s@usr/lib/python@usr/$(get_libdir)/python${PYVER}@g" client/usr/bin/gnumed
+	sed -i -e "s@usr/lib/python@usr/$(get_libdir)/python${PYVER}@g" client/usr/bin/gnumed || die
 }
 
 src_install() {
 	distutils_python_version
-	dobin client/usr/bin/gnumed
+	dobin client/usr/bin/gnumed || die
 	insinto /usr/share
-	doins -r client/usr/share/gnumed
+	doins -r client/usr/share/gnumed || die
 	insinto /usr/$(get_libdir)/python${PYVER}
-	doins -r client/usr/lib/python/site-packages
+	doins -r client/usr/lib/python/site-packages || die
 
 	insinto /etc/gnumed
-	doins client/etc/gnumed/*.conf
+	doins client/etc/gnumed/*.conf || die
 
-	dohtml client/usr/share/doc/gnumed/client/user-manual/*.html
-	dohtml client/usr/share/doc/gnumed/medical_knowledge/de/STIKO/STI_NEU.htm
+	dohtml client/usr/share/doc/gnumed/client/user-manual/*.html || die
+	dohtml client/usr/share/doc/gnumed/medical_knowledge/de/STIKO/STI_NEU.htm || die
 	docinto examples
-	dodoc client/etc/gnumed/*.conf
+	dodoc client/etc/gnumed/*.conf || die
 }
