@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -44,11 +44,11 @@ src_compile() {
 	export \
 		C_USR="${CFLAGS}" \
 		L_USR="${LDFLAGS}" \
-		HB_GTALLEG=$(useq allegro && echo yes) \
-		HB_GPM_MOUSE=$(useq gpm && echo yes) \
-		HB_WITHOUT_GTSLN=$(useq slang || echo yes) \
-		HB_MT=$(useq threads && echo MT) \
-		HB_WITHOUT_X11=$(useq X || echo yes) \
+		HB_GTALLEG=$(use allegro && echo yes) \
+		HB_GPM_MOUSE=$(use gpm && echo yes) \
+		HB_WITHOUT_GTSLN=$(use slang || echo yes) \
+		HB_MT=$(use threads && echo MT) \
+		HB_WITHOUT_X11=$(use X || echo yes) \
 		HB_COMPILER="gcc" \
 		HB_CMP="$(tc-getCC)" \
 		HB_ARCHITECTURE="$(uname -s | sed -e 's/-//g;y/BDFHLNOPSUX/bdfhlnopsux/;s/.*bsd/bsd/')" \

@@ -1,6 +1,10 @@
 # ChangeLog for dev-lang/xharbour
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  xharbour-1.0.0_beta1.ebuild:
+  Switch from deprecated useq to use
 
   09 Mar 2009; Christian Ruppert (idl0r) <spooky85@gmail.com> -big.diff:
   removed useless big.diff :)
