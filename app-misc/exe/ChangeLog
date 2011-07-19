@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/exe
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  exe-1.04.0.3532.ebuild:
+  Forced move to EAPI-3 from distutils eclass
 
   01 Aug 2010; Markos Chandras <hwoarang@gentoo.org> exe-1.04.0.3532.ebuild:
   Rename mozilla-firefox -> firefox
