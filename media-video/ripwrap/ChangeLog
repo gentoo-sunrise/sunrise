@@ -1,6 +1,11 @@
 # ChangeLog for media-video/ripwrap
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ripwrap-0.20.ebuild:
+  Drop aac USE flag and use-dependency on mplayer, there should always be aac
+  support in mmplayer
 
   21 Feb 2010; Markos Chandras <hwoarang@gentoo.org> ripwrap-0.20.ebuild,
   metadata.xml:
