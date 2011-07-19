@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git linux-info
+inherit git-2 linux-info
 
 EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}"
 EGIT_PROJECT="${PN}"
