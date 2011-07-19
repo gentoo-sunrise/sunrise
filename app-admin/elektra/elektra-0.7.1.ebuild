@@ -53,7 +53,7 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install
 
-	if use static-libs; then
+	if ! use static-libs; then
 		find "${D}" -name "*.a" -delete || die
 	fi
 
