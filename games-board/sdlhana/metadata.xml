@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<longdescription>SDL Hana is an SDL-based Hanafuda game.</longdescription>
+	<upstream>
+		<maintainer>
+			<email>whistler@savannah.nongnu.org</email>
+			<name>Wei Mingzhi</name>
+		</maintainer>
+		<doc>http://savannah.nongnu.org/support/?group=sdlhana</doc>
+		<bugs-to>http://savannah.nongnu.org/bugs/?group=sdlhana</bugs-to>
+	</upstream>
+</pkgmetadata>
