@@ -1,0 +1,15 @@
+Make staticPath settable from configforced
+
+--- a/config.py
++++ b/config.py
+@@ -30,7 +30,9 @@ if savePath is None:
+     savePath = unicode(os.path.expanduser(os.path.join("~", ".pyfa")), sys.getfilesystemencoding())
+ 
+ # Static EVE Data from the staticdata repository, should be in the staticdata directory in our pyfa directory
+-staticPath = os.path.join(pyfaPath, "staticdata")
++staticPath = getattr(configforced, "staticPath", None)
++if staticPath is None:
++    staticPath = os.path.join(pyfaPath, "staticdata")
+ 
+ # The database where we store all the fits etc
+ saveDB = os.path.join(savePath, "saveddata.db")

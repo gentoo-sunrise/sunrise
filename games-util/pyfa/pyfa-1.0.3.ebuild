@@ -4,16 +4,16 @@
 
 EAPI=3
 PYTHON_DEPEND="2:2.6"
-PYTHON_USE_WITH="sqlite"
+PYTHON_USE_WITH="sqlite threads"
 
 inherit eutils python
 
-FOLDER="stable"
 if [[ ${PV/_rc*/} == ${PV} ]] ; then
-	MY_PV=${PV}-stable-src
+	MY_PV=${PV}-incarna-src
+	FOLDER=stable/${PV}
 else
 	MY_PV=${PV/_rc/-stable-RC}-src
-	FOLDER+=/${PV/*_rc/RC}
+	FOLDER=stable/${PV/*_rc/RC}
 fi
 
 DESCRIPTION="Python Fitting Assistant - a ship fitting application for EVE Online"
@@ -33,6 +33,9 @@ DEPEND=${RDEPEND}
 S=${WORKDIR}/${PN}
 
 src_prepare() {
+	# make staticPath settable from configforced again
+	epatch "${FILESDIR}/${P}-staticPath.patch"
+
 	python_convert_shebangs -r -x 2 .
 	sed -e "s:%%SITEDIR%%:$(python_get_sitedir):" -e "s:%%EROOT%%:${EROOT}:" \
 		"${FILESDIR}/configforced.py" > configforced.py

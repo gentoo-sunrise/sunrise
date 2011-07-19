@@ -2,6 +2,14 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jul 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
+  -pyfa-1.0_rc2.ebuild, +pyfa-1.0.3.ebuild,
+  +files/pyfa-1.0.3-staticPath.patch:
+  Version bump. Adjust SRC_URI logic again (for some reason upstream *loves*
+  changing it). Require python built with threads. Add a patch to allow
+  setting staticPath from configforced again (like in 1.0_rc2) so that we can
+  keep a sane filesystem layout.
+
   19 May 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   pyfa-1.0_rc2.ebuild:
   Adjust license: eve.db and contents of staticdata directory are derived from
