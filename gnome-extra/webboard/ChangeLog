@@ -1,6 +1,10 @@
 # ChangeLog for gnome-extra/webboard
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  webboard-0.2.ebuild:
+  Forced move to EAPI-3 from distutils eclass
 
   09 Jan 2007; Markus Ullmann <jokey@gentoo.org> webboard-0.2.ebuild:
   QA Whitespace
