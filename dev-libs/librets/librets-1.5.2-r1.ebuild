@@ -45,11 +45,7 @@ RDEPEND="
 	java? ( >=virtual/jdk-1.6.0 )
 	mono? ( dev-lang/mono )
 	net-misc/curl
-	ruby? (
-		ruby_targets_ree18? ( dev-lang/ruby-enterprise:1.8 )
-		ruby_targets_ruby18? ( dev-lang/ruby:1.8 )
-		ruby_targets_ruby19? ( dev-lang/ruby:1.9 )
-	)
+	ruby? ( $(ruby_implementations_depend) )
 	sql-compiler? ( dev-java/antlr:0[script] )
 	sys-libs/zlib
 	${SWIG_RDEPEND}"
@@ -70,14 +66,6 @@ _php-replace_config_with_selected_config() {
 	cd "${S}" || die "cannot change to source directory"
 	# Replace the reference to php-config with the current slotted one
 	sed -i -e "s|${2}|${PHPCONFIG}|g" project/build/php.mk || die "sed php-config change failed"
-}
-
-_ruby-get_use_implementations() {
-	local i implementation
-	for implementation in ${USE_RUBY}; do
-		use ruby_targets_${implementation} && i+=" ${implementation}"
-	done
-	echo $i
 }
 
 _ruby-move_swig_build_to_impl_dir() {
@@ -145,7 +133,7 @@ src_configure() {
 	fi
 
 	if use ruby; then
-		MYRUBYIMPLS=($(_ruby-get_use_implementations))
+		MYRUBYIMPLS=($(ruby_get_use_implementations))
 		MYRUBYFIRSTIMPL=${MYRUBYIMPLS[0]}
 		# Set RUBY value in config to the first ruby implementation to build
 		RUBY=$(ruby_implementation_command ${MYRUBYFIRSTIMPL})

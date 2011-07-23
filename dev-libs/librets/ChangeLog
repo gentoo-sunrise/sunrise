@@ -2,6 +2,12 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 Jul 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -librets-1.5.2.ebuild, +librets-1.5.2-r1.ebuild:
+  Changed ruby dependency to use eclass function and removed custom
+  ruby_get_use_implementations since the functionality is now provided by the
+  ruby-ng eclass
+
   02 Jul 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   librets-1.5.2.ebuild:
   Removed unnecessary snk copy since the configure patch no longer requires this.
