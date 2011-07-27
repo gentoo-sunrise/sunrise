@@ -1,6 +1,12 @@
 # ChangeLog for dev-util/valide
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Jul 2011; Serhij Stasyuk (sstass) <stas@onlineua.net>
+  -valide-0.7.0.ebuild, +valide-0.7.1.ebuild:
+  Version bump for dev-util/valide (bugfix release). Usual thanks to Tommy[D].
+  Changed required dev-lang/vala version to :0.12, changed libunique
+  requirement to be optional (IUSE="unique")
 
   16 Jun 2010; Serhij Stasyuk (sstass) <stas@onlineua.net>
   -valide-0.6.1.ebuild, +valide-0.7.0.ebuild:

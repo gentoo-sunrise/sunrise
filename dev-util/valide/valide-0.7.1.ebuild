@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,18 +8,18 @@ inherit multilib toolchain-funcs
 
 DESCRIPTION="Val(a)IDE is an IDE for the Vala programming language"
 HOMEPAGE="http://www.valaide.org/"
-SRC_URI="http://valide.googlecode.com/files/${P}.tar.gz"
+SRC_URI="http://launchpad.net/valide/trunk/${PV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="unique"
 
 RDEPEND="dev-db/sqlite:3
-	>=dev-lang/vala-0.7.8
+	>=dev-lang/vala-0.12.0:0.12
 	>=dev-libs/gdl-2.28
 	dev-libs/glib:2
-	dev-libs/libunique
+	unique? ( dev-libs/libunique )
 	dev-libs/libxml2
 	>=x11-libs/gtk+-2.18.0:2
 	>=x11-libs/gtksourceview-2.10"
@@ -28,14 +28,15 @@ DEPEND="${RDEPEND}
 
 src_compile() {
 	tc-export CC CXX CPP AR RANLIB
-	./waf configure \
+	VALAC="valac-0.12" ./waf configure \
 		--nocache \
 		--prefix=/usr \
+		$(use unique || echo --with_libunique) \
 		--with-libdir=/usr/"$(get_libdir)" || die "Configure failed!"
 
-	./waf build || die "Build failed!"
+	VALAC="valac-0.12" ./waf build || die "Build failed!"
 }
 
 src_install() {
-	./waf install --destdir="${D}" || die "Install to ${D} failed!"
+	VALAC="valac-0.12" ./waf install --destdir="${D}" || die "Install to ${D} failed!"
 }
