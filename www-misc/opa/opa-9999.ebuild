@@ -25,7 +25,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}/allow_32bits_arch.patch"
 	epatch "${FILESDIR}/site_lib_fix.patch"
 }
 
