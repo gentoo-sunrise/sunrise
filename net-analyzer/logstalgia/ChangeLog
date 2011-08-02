@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  logstalgia-1.0.3.ebuild:
+  EAPI4 does not need || die
+
   09 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
   logstalgia-0.9.9.ebuild:
   EAPI bump, added missing depends.
