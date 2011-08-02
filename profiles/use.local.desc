@@ -98,6 +98,7 @@ dev-util/icewing:grabber - Build the grabber plug-in
 dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
+dev-util/valide:unique - 
 dev-vcs/tortoisehg:nautilus - Integrate with gnome-base/nautilus file manager
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
@@ -198,7 +199,6 @@ net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail passwo
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
-net-misc/autoupnp:suid - Install the library setuid & setgid (required in order to run setuid & setgid applications).
 net-misc/fatrat:bittorrent - Enables support for the bittorrent protocol
 net-misc/fatrat:webinterface - Support remote control via a web interface
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
