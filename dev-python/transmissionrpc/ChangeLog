@@ -1,0 +1,12 @@
+# ChangeLog for dev-python/transmissionrpc
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*transmissionrpc-9999 (03 Aug 2011)
+*transmissionrpc-0.7 (03 Aug 2011)
+
+  03 Aug 2011; Mike Gilbert <floppymaster@gmail.com>
+  +transmissionrpc-0.7.ebuild, +transmissionrpc-9999.ebuild,
+  +files/fix-test.patch, +metadata.xml:
+  New ebuild for bug 377565; thanks hwoarang and Hawk777.
+
