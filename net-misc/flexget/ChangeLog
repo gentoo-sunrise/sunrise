@@ -2,6 +2,13 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*flexget-1.0_beta2296 (02 Aug 2011)
+
+  02 Aug 2011; Mike Gilbert <floppymaster@gmail.com>
+  -flexget-1.0_beta2269.ebuild, +flexget-1.0_beta2296.ebuild,
+  flexget-9999.ebuild:
+  Update deps. Remove dependency on paver for non-live version.
+
 *flexget-1.0_beta2269 (20 Jun 2011)
 
   20 Jun 2011; Mike Gilbert <floppymaster@gmail.com>
