@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2011; Mike Gilbert <floppymaster@gmail.com>
+  transmissionrpc-9999.ebuild:
+  Remove unused eutils.
+
 *transmissionrpc-9999 (03 Aug 2011)
 *transmissionrpc-0.7 (03 Aug 2011)
 

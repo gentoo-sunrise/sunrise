@@ -9,7 +9,7 @@ SUPPORT_PYTHON_ABIS=1
 RESTRICT_PYTHON_ABIS="2.[45] 3.*"
 DISTUTILS_SRC_TEST="setup.py"
 
-inherit distutils eutils mercurial
+inherit distutils mercurial
 
 DESCRIPTION="Python module that implements the Transmission bittorrent client RPC protocol"
 HOMEPAGE="https://bitbucket.org/blueluna/transmissionrpc"
