@@ -15,7 +15,7 @@ SRC_URI="http://notmuchmail.org/releases/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+emacs python zsh-completion"
+IUSE="+emacs python vim zsh-completion"
 
 CDEPEND="emacs? ( virtual/emacs )
 	dev-libs/gmime:2.4
@@ -26,6 +26,7 @@ DEPEND="${CDEPEND}
 	dev-util/pkgconfig"
 
 RDEPEND="${CDEPEND}
+	vim? ( app-editors/vim )
 	zsh-completion? ( app-shells/zsh-completion )"
 
 RESTRICT_PYTHON_ABIS="3.*"
@@ -36,11 +37,10 @@ src_prepare() {
 		ewarn "You should set USE=emacs if you want to use ${PN} as a MUA."
 	fi
 
-	epatch "${FILESDIR}/configure_add_option.patch"
-
 	if use python ; then
-		cd bindings/python || die "bindings/python not found"
-		LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${S}/lib distutils_src_prepare
+		pushd bindings/python || die "bindings/python not found"
+		distutils_src_prepare
+		popd
 	fi
 }
 
@@ -58,8 +58,9 @@ src_compile() {
 	default
 
 	if use python ; then
-		cd bindings/python || die "bindings/python not found"
-		LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${S}/lib distutils_src_compile
+		pushd bindings/python || die "bindings/python not found"
+		distutils_src_compile
+		popd
 	fi
 }
 
@@ -72,8 +73,17 @@ src_install() {
 	fi
 
 	if use python ; then
-		cd bindings/python || die "bindings/python not found"
-		LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${S}/lib distutils_src_install
+		pushd bindings/python || die "bindings/python not found"
+		distutils_src_install
+		popd
+	fi
+
+	if use vim ; then
+		insinto /usr/share/vim/vimfiles/plugin/
+		doins vim/plugin/*.vim || die "cannot install plugin"
+
+		insinto /usr/share/vim/vimfiles/syntax/
+		doins vim/syntax/*.vim || die "cannot install syntax files"
 	fi
 }
 

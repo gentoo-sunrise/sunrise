@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Aug 2011; Cédric Cabessa (ced_c) <ced@ryick.net> -notmuch-0.5.ebuild,
+  +notmuch-0.7.ebuild, -files/configure_add_option.patch, metadata.xml:
+  bump and add vim support. Thanks to floppym, hwoarang
+
   28 Feb 2011; Cédric Cabessa (ced_c) <ced@ryick.net> +notmuch-0.5.ebuild,
   +files/50notmuch-gentoo.el, -notmuch-0.3.1.ebuild,
   +files/configure_add_option.patch:
