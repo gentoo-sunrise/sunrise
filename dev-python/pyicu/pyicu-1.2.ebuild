@@ -29,8 +29,7 @@ S="${WORKDIR}/${MY_P}"
 
 DOCS="CHANGES CREDITS README"
 PATCHES=(
-	"${FILESDIR}/parseArgsConstChar.patch"
-	"${FILESDIR}/estyleEnums.patch"
+	"${FILESDIR}/linux3.patch"
 )
 
 src_prepare() {

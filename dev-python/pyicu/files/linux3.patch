@@ -1,0 +1,22 @@
+Treat all linux platforms the same.
+Workaround while we wait for Python upstream to decide on their solution.
+
+2011-08-06 Martin von Gagern
+
+References:
+http://bugs.python.org/issue12326
+
+Index: PyICU-1.2/setup.py
+===================================================================
+--- PyICU-1.2.orig/setup.py
++++ PyICU-1.2/setup.py
+@@ -41,6 +41,9 @@ LIBRARIES = {
+     'sunos5': ['icui18n', 'icuuc', 'icudata'],
+ }
+ 
++if sys.platform.startswith('linux'):
++    sys.platform = 'linux2'
++
+ if 'PYICU_INCLUDES' in os.environ:
+     _includes = os.environ['PYICU_INCLUDES'].split(os.pathsep)
+ else:

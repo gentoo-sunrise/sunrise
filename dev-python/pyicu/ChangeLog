@@ -2,6 +2,13 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*pyicu-1.2 (05 Aug 2011)
+
+  05 Aug 2011; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +files/linux3.patch, -pyicu-1.1-r1.ebuild, +pyicu-1.2.ebuild,
+  -files/estyleEnums.patch, -files/parseArgsConstChar.patch:
+  Version bump.
+
 *pyicu-1.1-r1 (29 May 2011)
 
   29 May 2011; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
