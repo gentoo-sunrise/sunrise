@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Aug 2011; Markos Chandras <hwoarang@gentoo.org> grits-9999.ebuild:
+  drop autotools eclass
+
   19 Jun 2011; Andy Spencer <andy753421@gmail.com> -libgis-0.4.1.ebuild,
   -libgis-9999.ebuild, +grits-0.4.1.ebuild, +grits-9999.ebuild:
   Rename libgis to grits and bump version to 0.5
