@@ -6,7 +6,7 @@ EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/aweather"
 EGIT_BOOTSTRAP="eautoreconf"
 
 EAPI=4
-inherit autotools gnome2 git-2
+inherit gnome2 git-2
 
 DESCRIPTION="A weather monitoring program"
 HOMEPAGE="http://lug.rose-hulman.edu/proj/aweather"
