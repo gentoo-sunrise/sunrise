@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Aug 2011; Markos Chandras <hwoarang@gentoo.org> Manifest:
+  Remanifest per bug #301324
+
   27 May 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   renpy-6.12.1.ebuild:
   Re-add removed die
