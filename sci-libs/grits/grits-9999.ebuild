@@ -6,7 +6,7 @@ EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/grits"
 EGIT_BOOTSTRAP="gtkdocize && eautoreconf"
 
 EAPI=4
-inherit gnome2 git-2
+inherit autotools gnome2 git-2
 
 DESCRIPTION="Virtual Globe library"
 HOMEPAGE="http://lug.rose-hulman.edu/wiki/Grits"
