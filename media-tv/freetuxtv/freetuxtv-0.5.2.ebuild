@@ -16,7 +16,6 @@ IUSE="nls"
 RDEPEND="x11-libs/gtk+:2
 	dev-libs/glib:2
 	dev-libs/dbus-glib
-	sys-apps/hal
 	dev-db/sqlite:3
 	media-video/vlc[live,rtsp]
 	net-misc/curl

@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Aug 2011; Nathan Phillip Brink <binki@gentoo.org> freetuxtv-0.5.2.ebuild:
+  Drop unneeded sys-apps/hal dependency leftover from old version.
+
   20 Mar 2011; Christophe LEFEBVRE (chtof) <chtof62@gmail.com>
   -freetuxtv-0.5.1.ebuild, +freetuxtv-0.5.2.ebuild:
   Version bump
