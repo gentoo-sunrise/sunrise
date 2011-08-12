@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 # TODO: add SDL support
 IUSE="doc examples nextaw Xaw3d"
 
-RDEPEND="Xaw3d? ( x11-libs/Xaw3d )
+RDEPEND="Xaw3d? ( x11-libs/libXaw3d )
 	!Xaw3d? (
 		nextaw? ( x11-libs/neXtaw )
 		!nextaw? ( x11-libs/libXaw )

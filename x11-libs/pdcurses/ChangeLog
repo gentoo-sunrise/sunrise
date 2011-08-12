@@ -1,6 +1,9 @@
 # ChangeLog for x11-libs/pdcurses
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Aug 2011; Nathan Phillip Brink <binki@gentoo.org> pdcurses-3.4.ebuild:
+  Dependency x11-libs/Xaw3d renamed to x11-libs/libXaw3d.
 
   25 Apr 2010; Denilson (CrazyTB) <denilsonsa@gmail.com>
   -pdcurses-2.8.ebuild, -files/pdcurses-2.8-configure.patch,
