@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,10 +16,11 @@ IUSE=""
 
 DEPEND="app-text/asciidoc
 	dev-python/setuptools"
-RDEPEND="|| ( app-office/openoffice app-office/openoffice-bin )"
+RDEPEND="|| ( app-office/openoffice app-office/openoffice-bin
+		app-office/libreoffice app-office/libreoffice-bin )"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-openoffice-3.2.patch" \
+	epatch "${FILESDIR}/${P}-openoffice-3.2-libreoffice.patch" \
 		"${FILESDIR}/${P}-longer-timeout.patch"
 }
 
