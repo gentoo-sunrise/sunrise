@@ -1,7 +1,0 @@
-# ChangeLog for dev-libs/libpath_utils
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  29 Oct 2010; Maxim (maksbotan) <kolmax94@gmail.com> ChangeLog:
-  New ebuild for bug 343257
-
