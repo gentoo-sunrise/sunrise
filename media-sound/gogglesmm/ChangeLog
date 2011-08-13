@@ -3,6 +3,10 @@
 # $Header: $
 
   13 Aug 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  +files/gogglesmm-parallel-make.patch:
+  Including patch this time
+
+  13 Aug 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   -gogglesmm-0.12.1.ebuild, +gogglesmm-0.12.2.ebuild,
   -gogglesmm-9999.ebuild:
   Bump. Removed old svn -9999 ebuild, need fox-1.7 for new VCS versions
