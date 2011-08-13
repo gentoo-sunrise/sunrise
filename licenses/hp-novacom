@@ -1,0 +1,115 @@
+HP LICENSE AGREEMENT
+CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS (“AGREEMENT”) BEFORE USING
+OR OTHERWISE ACCESSING THE NOVACOM SOFTWARE. THE SOFTWARE IS LICENSED BY HP,
+INC. (“HP”) TO YOU, THE ORIGINAL END USER, SOLELY FOR YOUR PERSONAL USE AS SET
+FORTH BELOW. IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS
+AGREEMENT, DO NOT USE OR OTHERWISE ACCESS THE SOFTWARE. USING OR OTHERWISE
+ACCESSING ANY PART OF THE SOFTWARE INDICATES THAT YOU ACCEPT THESE TERMS.
+PLEASE NOTE THAT IF YOU ARE A CONSUMER IN THE EUROPEAN ECONOMIC AREA,
+SWITZERLAND or AUSTRALIA, THIS AGREEMENT DOES NOT AFFECT YOUR STATUTORY
+RIGHTS. For further information about your statutory rights contact your local authority, Trading
+Standards Department or Citizens Advice Bureau (OR LOCAL EQUIVALENT).
+LICENSE: HP grants you a limited, nonexclusive license to use the Novacom Software (the “Software”),
+subject to the terms and conditions set forth in this Agreement. You may use the Software for the purpose
+replacing open source software components on a WebOS-based device with open source software
+components that are modified versions of the replaced components.
+RESTRICTIONS: Replacing files or otherwise changing the software or configuration of the device could
+cause the device to fail to operate or to operate incorrectly. You are responsible for the consequences of
+any changes that you make using the Software. Whether any warranty or service contract or other legal
+arrangement is affected by such software component replacement or by any other use of this Software
+shall depend on the terms of such warranty, contract, or arrangement. You may not use the Software,
+directly or indirectly, for obtaining unauthorized access to HP services or to services of others with which
+the device may interact. You may not distribute the Software or make the Software available over a
+network. The Software and supporting documentation may be copied only as necessary for backup or
+archive purposes in support of your use of the Software. You must reproduce and include all copyright
+notices and any other proprietary rights notices appearing on the Software on any copies that you make.
+You may not modify or alter the Software in any way. You may only use the Software as expressly set
+forth above. Except as set forth above, HP and its licensors reserve all other rights in or to the Software.
+You acknowledge and agree that ownership of the Software and all subsequent copies thereof,
+regardless of the form or media, is retained by HP or its suppliers. If applicable law permits you to copy or
+modify the Software, then you may copy and modify the Software solely to the extent, and for such
+purposes as, expressly permitted by applicable law.
+REVERSE ENGINEERING: You may not reverse engineer, decompile, or disassemble the Software,
+except and only to the extent that such activity is expressly permitted by applicable law.
+WARRANTY AND DISCLAIMERS: IF SOFTWARE IS BEING PROVIDED TO YOU IN CONNECTION
+WITH AN HP DEVICE WHICH YOU HAVE NEWLY PURCHASED FROM HP, INC. OR ITS
+AUTHORIZED DISTRIBUTORS, THE SOFTWARE MAY BE UNDER A WARRANTY, AS PROVIDED
+ON A LIMITED WARRANTY CARD PROVIDED WITH YOUR NEW DEVICE. PLEASE NOTE THAT IF
+YOU ARE DEALING AS A CONSUMER IN THE EUROPEAN ECONOMIC AREA OR SWITZERLAND,
+SUCH LIMITED WARRANTY DOES NOT AFFECT YOUR STATUTORY RIGHTS. EXCEPT AS MAY BE
+PROVIDED UNDER SUCH A WARRANTY FOR NEWLY PURCHASED DEVICES, AND TO THE
+MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOU EXPRESSLY ACKNOWLEDGE AND
+AGREE THAT USE OF THE SOFTWARE IS AT YOUR SOLE RISK AND THAT THE SOFTWARE IS
+PROVIDED TO YOU ON AN “AS IS” AND “AS AVAILABLE” BASIS AND WITHOUT ANY WARRANTY
+OF ANY KIND OR NATURE. HP DOES NOT WARRANT THAT USE OF THE SOFTWARE WILL BE
+UNINTERRUPTED, FAULT-TOLERANT OR ERROR FREE. TO THE MAXIMUM EXTENT PERMITTED
+BY APPLICABLE LAW, HP AND ITS SUPPLIERS EXPRESSLY DISCLAIM ANY IMPLIED OR
+
+STATUTORY WARRANTIES, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, TITLE, ACCURACY, CORRESPONDENCE WITH DESCRIPTION,
+SATISFACTORY QUALITY AND NON-INFRINGEMENT. HP MAKES NO WARRANTY OF ANY KIND,
+WHETHER EXPRESS OR IMPLIED, WITH REGARD TO ANY THIRD PARTY SOFTWARE. ALL THIRD
+PARTY SOFTWARE IS PROVIDED "AS-IS," WITHOUT WARRANTIES OF ANY KIND BY HP.
+LIMITATION OF LIABILITY: NOTHING IN THIS LIMITATION OF LIABILITY LIMITS OR EXCLUDES
+HP’S OR ITS SUPPLIERS’ LIABILITY FOR DEATH OR PERSONAL INJURY CAUSED BY
+NEGLIGENCE, FOR REPRESENTATIONS MADE FRAUDULENTLY, OR FOR ANY OTHER LIABILITY
+WHICH CANNOT BE LIMITED OR EXCLUDED BY APPLICABLE LAW. TO THE MAXIMUM EXTENT
+PERMITTED BY APPLICABLE LAW, NEITHER HP NOR ITS SUPPLIERS SHALL BE LIABLE FOR
+INCIDENTAL, CONSEQUENTIAL, INDIRECT, SPECIAL, OR PUNITIVE DAMAGES OF ANY KIND,
+LOSS OF INFORMATION OR DATA, LOSS OF REVENUE, FOR BUSINESS INTERUPTION,
+PERSONAL INJURY, LOSS OF PRIVACY, LOSS OF BUSINESS OR OTHER FINANCIAL LOSS
+ARISING OUT OF OR IN CONNECTION WITH THE LICENSE OR USE OF THE SOFTWARE,
+WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT PRODUCT LIABILITY
+OR ANY OTHER THEORY, EVEN IF HP HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGES AND EVEN IF ANY LIMITED REMEDY IS DEEMED TO HAVE FAILED OF ITS ESSENTIAL
+PURPOSE. HP’S ENTIRE LIABILITY SHALL BE LIMITED TO REPLACEMENT, REPAIR, OR REFUND
+OF THE PURCHASE PRICE PAID, AT HP’S OPTION. IN NO EVENT WILL HP BE LIABLE TO YOU OR
+ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, PUNITIVE, EXEMPLARY, INCIDENTAL, SPECIAL,
+OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE THIRD PARTY SOFTWARE, EVEN IF HP
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR LOSSES. Some countries,
+states, or provinces do not allow the exclusion or limitation of implied warranties or the limitation of
+incidental or consequential damages so the above limitations and exclusions may be limited in their
+application to you.
+EXPORT RESTRICTIONS: You agree that you will not export or re-export the Software or accompanying
+documentation (or any copies thereof) or any products utilizing the Software or such documentation in
+violation of any applicable laws or regulations of the United States, the European Union or the country in
+which you obtained them.
+TERM AND TERMINATION: This Agreement is effective until terminated. You may terminate it at any
+time by destroying the Software and documentation together with all copies and merged portions in any
+form. It will also terminate immediately if you fail to comply with any term or condition of this Agreement.
+Upon such termination you agree to destroy the Software and documentation, together with all copies.
+Some countries, states, or provinces do not allow the termination of this type of Agreement, so the above
+provision may be limited in its application to you.
+SPECIAL RIGHTS FOR THE LICENSE OR USE BY THE U.S. GOVERNMENT: If this Software is being
+used by or licensed to the United States Government, the following shall apply: The Software licensed
+under this Agreement is “commercial computer software” as the term is described in 48 C.F.R. 252.227-
+7014(a)(1). If acquired by or on behalf of a civilian agency, the U.S. Government acquires this commercial
+computer software and/or commercial computer software documentation subject to the terms of this
+Agreement as specified in 48 C.F.R. 12.212 (Computer Software) and 48 C.F.R. 12.211 (Technical Data)
+of the Federal Acquisition Regulations (“FAR”) and its successors. If acquired by or on behalf of any
+agency within the Department of Defense (“DOD”), the U.S. Government acquires this commercial
+computer software and/ or commercial computer software documentation subject to the terms of this
+Agreement as specified in 48 C.F.R. 227.7202-3 of the DOD FAR Supplement (“DFAR”) and its
+successors.
+GOVERNING LAW: This Agreement shall be governed by the laws of the State of California and by the
+federal laws of the United States, excluding their conflicts of laws provisions. The United Nations
+Convention on Contracts for the International Sale of Goods (1980) is hereby excluded in its entirety from
+application to this Agreement. If you acquired this Software or the HP device in the European Economic
+Area or Switzerland, this Agreement shall be governed by the law of the country in which you purchased
+he Software or the HP device. You consent to the transfer of your information (including without limitation
+any registration data you provide) to the United States and other countries for processing by HP and its
+affiliates in accordance with HP’s privacy policy.
+SEVERABILITY: In the event any provision of this Agreement is found to be invalid, illegal or
+unenforceable, the validity, legality and enforceability of any of the remaining provisions shall not in any
+way be affected or impaired.
+ENTIRE AGREEMENT: By accepting his Agreement and the accompanying Limited Warranty (if any),
+you agree that the Agreement and Limited Warranty set forth the entire agreement between you and HP,
+and supersede all prior agreements, whether written or oral, with respect to the Software, notwithstanding
+he terms or conditions of any such prior agreements.
+HP, Inc.
+950 W. Maude Ave.
+Sunnyvale CA 94085-2801
+United States of America
+www.HP.com
+June 27, 2011
+
