@@ -4,6 +4,8 @@
 
 EAPI=2
 
+inherit autotools-utils
+
 DESCRIPTION="Lightweight FOX music collection manager and player"
 HOMEPAGE="http://gogglesmm.googlecode.com/"
 SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.bz2"
@@ -22,28 +24,32 @@ RDEPEND="dev-db/sqlite:3
 	gcrypt? ( dev-libs/libgcrypt )"
 DEPEND="${RDEPEND}"
 
+DOCS=(AUTHORS README)
+# Upstream patch to fix parallel builds. Won't be needed >=0.12.3
+PATCHES=( "${FILESDIR}/${PN}-parallel-make.patch" )
+
+AUTOTOOLS_IN_SOURCE_BUILD=0
+
 src_prepare() {
 	sed -i -e 's:icons/hicolor/48x48/apps:pixmaps:' Makefile || die
+	autotools-utils_src_prepare
 }
 
 src_configure() {
-	local extraconf=""
+	local myeconfargs=""
+
 	if use gcrypt ; then
-		extraconf="--with-md5=gcrypt"
+		myeconfargs="--with-md5=gcrypt"
 	else
-		extraconf="--with-md5=internal"
+		myeconfargs="--with-md5=internal"
 	fi
 
-	econf ${extraconf} $(use_with dbus)
-}
+	myeconfargs="${myeconfargs} $(use_with dbus)"
 
-src_install() {
-	emake DESTDIR="${D}" install || die
-
-	dodoc AUTHORS README || die
+	autotools-utils_src_configure
 }
 
 pkg_postinst() {
-	elog "For asf or mp4 tag support, build "
-	elog "media-libs/taglib with USE=\"asf mp4\""
+	elog "For asf and/or mp4 tag support, build "
+	elog "    media-libs/taglib with USE='asf mp4'"
 }
