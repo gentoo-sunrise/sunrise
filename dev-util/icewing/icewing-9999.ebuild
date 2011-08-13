@@ -20,7 +20,8 @@ IUSE="debug ffmpeg +grabber ieee1394 jpeg png readline +unicap"
 
 DEPEND="
 	sys-libs/zlib
-	x11-libs/gtk+:2[jpeg?]
+	x11-libs/gtk+:2
+	x11-libs/gdk-pixbuf[jpeg?]
 	ffmpeg? ( virtual/ffmpeg )
 	ieee1394? ( sys-libs/libraw1394 media-libs/libdc1394:2 )
 	jpeg? ( virtual/jpeg )
