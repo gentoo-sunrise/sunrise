@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Aug 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  PalmSDK-1.4.1.427.ebuild:
+  Changed LICENSE to be grep-friendly
+
   19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   PalmSDK-1.4.1.427.ebuild:
   Fix dependency: virtualbox-ose -> virtualbox

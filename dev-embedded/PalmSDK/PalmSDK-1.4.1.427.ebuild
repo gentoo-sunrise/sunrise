@@ -12,7 +12,7 @@ HOMEPAGE="http://developer.palm.com/"
 MY_VER="$(get_version_component_range 1-3)-svn274946-sdk1436-pho$(get_version_component_range 4)"
 SRC_URI="http://cdn.downloads.palm.com/sdkdownloads/${PV}/sdkBinaries/palm-sdk_${MY_VER}_i386.deb"
 
-LICENSE="${PN}"
+LICENSE="PalmSDK"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 -*"
 MY_LINGUAS="linguas_de linguas_it linguas_pt_BR linguas_ru linguas_sv"
