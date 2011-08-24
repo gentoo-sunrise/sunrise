@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -librets-1.5.2-r1.ebuild, +librets-1.5.2-r2.ebuild:
+  Fixed problem with boost dependency so that it builds with the latest
+  compatible version.
+
   23 Jul 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   -librets-1.5.2.ebuild, +librets-1.5.2-r1.ebuild:
   Changed ruby dependency to use eclass function and removed custom
