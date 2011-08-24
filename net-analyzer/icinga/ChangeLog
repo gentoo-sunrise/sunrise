@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Aug 2011; mthode <mthode@mthode.org> -icinga-1.4.2.ebuild,
+  +icinga-1.5.0.ebuild:
+  removed the logdir sed and added --with-log-dir=/var/log/icinga; also added
+  comment to enewuser
+
   08 Jul 2011; mthode <mthode@mthode.org> -icinga-1.4.0.ebuild,
   +icinga-1.4.2.ebuild:
   version bump, tested amd64

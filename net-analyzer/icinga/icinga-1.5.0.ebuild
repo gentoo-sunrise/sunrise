@@ -31,7 +31,7 @@ want_apache2
 pkg_setup() {
 	depend.apache_pkg_setup
 	enewgroup icinga
-	enewuser icinga -1 -1 /var/spool/icinga icinga
+	enewuser icinga -1 -1 /var/spool/icinga icinga -c "icinga alert"
 	if use web ; then
 		elog "This does not include cgis that are perl-dependent"
 		elog "Currently traceroute.cgi is perl-dependent"
@@ -92,7 +92,8 @@ src_configure() {
 	$(use_enable debug DEBUG4)
 	$(use_enable debug DEBUG5)
 	--disable-statuswrl
-	--with-cgiurl=/icinga/cgi-bin"
+	--with-cgiurl=/icinga/cgi-bin
+	--with-log-dir=/var/log/icinga"
 
 	myconf2="--bindir=/usr/sbin
 	--sbindir=/usr/$(get_libdir)/icinga/cgi-bin
@@ -176,14 +177,7 @@ src_install() {
 			ewarn "out-of-the-box. Since you are not using one of them, you"
 			ewarn "have to configure your webserver accordingly yourself."
 		fi
-
 	fi
-
-	mkdir -p "${D}"/var/log/icinga || die "Failed mkdir of /var/log/icinga"
-
-	fowners -R icinga:icinga /etc/icinga /var/icinga /var/log/icinga || die
-
-	sed -i -e 's:^log_file=.*:log_file=/var/log/icinga/icinga.log:' "${D}"/etc/icinga/icinga.cfg || die "Failed sed of /etc/icinga/icinga.cfg"
 
 	fowners -R root:root /usr/$(get_libdir)/icinga || die
 	cd "${D}" || die
@@ -195,7 +189,6 @@ src_install() {
 	keepdir /var/icinga/archives
 	keepdir /var/icinga/rw
 	keepdir /var/icinga/spool/checkresults
-	keepdir /var/log
 
 	if use apache2 ; then
 		webserver=apache
