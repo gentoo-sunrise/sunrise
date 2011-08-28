@@ -1,0 +1,10 @@
+# ChangeLog for kde-misc/kdirstat
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*kdirstat-2.7.0_pre20101010 (28 Aug 2011)
+
+  28 Aug 2011; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
+  +kdirstat-2.7.0_pre20101010.ebuild:
+  Initial commit for sunrise, bug #373103.
+
