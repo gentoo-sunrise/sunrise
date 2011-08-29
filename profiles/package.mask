@@ -45,12 +45,6 @@ dev-python/pyprocps
 # Removal in 30 days.
 gnome-extra/paperbox
 
-# Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
-# Unable to find sources
-# upstream inactive since 2007
-# Removal in 30 days.
-media-sound/soma
-
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
