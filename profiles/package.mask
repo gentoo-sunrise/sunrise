@@ -64,14 +64,6 @@ media-video/sabbu
 # Removal in 30 days.
 media-sound/asoundconf
 
-# Nathan Phillip Brink <ohnobinki@ohnopublishing.net> (07 Apr 2011)
-# Masked for removal on 2011/06/07. No longer relevant since upstream
-# has moved www-misc/reflector's implementation to python code and
-# actually ships the core www-misc/reflector module with the reflector
-# package instead of in dev-perl/perl-xyne-arch. See bug 317823
-# comment 3.
-dev-perl/perl-xyne-common
-
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
