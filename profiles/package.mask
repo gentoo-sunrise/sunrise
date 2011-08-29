@@ -21,17 +21,6 @@
 ##   End example
 ##
 
-# Michał Górny <mgorny@gentoo.org (31 May 2011)
-# No longer maintained, requires a bump and changes wrt python eclass.
-# Known issues, hashing not compatible with cmemcache.
-#
-# Suggested replacements:
-# - dev-python/python-memcached (pure Python)
-# - dev-python/pylibmc (extension written in C).
-#
-# Removal in 30 days.
-dev-python/cmemcache
-
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
