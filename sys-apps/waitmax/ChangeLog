@@ -1,0 +1,8 @@
+# ChangeLog for sys-apps/waitmax
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Aug 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  +waitmax-1.1.ebuild, +files/waitmax-1.1-make.patch, +metadata.xml:
+  New ebuild for bug 214461. Thanks to Tommy for feedback.
+
