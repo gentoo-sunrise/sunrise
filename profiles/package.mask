@@ -32,14 +32,6 @@
 # Removal in 30 days.
 dev-python/cmemcache
 
-# Michał Górny <mgorny@gentoo.org (31 May 2011)
-# Homepage dead, original source tarball gone, requires updates wrt
-# python eclass.
-#
-# Suggested replacement: dev-python/psutil
-# Removal in 30 days.
-dev-python/pyprocps
-
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
