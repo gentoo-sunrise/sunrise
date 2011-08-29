@@ -52,12 +52,6 @@ gnome-extra/paperbox
 media-sound/soma
 media-sound/somax
 
-# Justin Lecher <jlec@gentoo.org> (29 Apr 2011)
-# Doesn't build with recent compilers, not fixable
-# upstream inactive since 2005
-# Removal in 30 days.
-media-video/sabbu
-
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
