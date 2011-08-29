@@ -40,11 +40,6 @@ dev-python/cmemcache
 # Removal in 30 days.
 dev-python/pyprocps
 
-# Justin Lecher <jlec@gentoo.org> (30 Apr 2011)
-# Doesn't build with recent tracker
-# Removal in 30 days.
-gnome-extra/paperbox
-
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
