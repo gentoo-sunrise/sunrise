@@ -50,7 +50,6 @@ gnome-extra/paperbox
 # upstream inactive since 2007
 # Removal in 30 days.
 media-sound/soma
-media-sound/somax
 
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
