@@ -39,15 +39,6 @@ media-tv/tv-player
 app-office/wiipresent
 =dev-libs/libwiimote-9999
 
-# Markos Chandras <hwoarang@gentoo.org> (13 Jun 2010)
-# Sandbox violations, Christian Schmidt promised to fix
-=media-video/aegisub-2.1.8
-
-# Christian Schmidt <schmidt@digadd.de> (13 Jun 2010)
-# Requires wxGTK 2.9+ which is not in portage and build
-# problems with wxGTK 9999
-=media-video/aegisub-9999
-
 # Thomas Sachau <tommy@gentoo.org> (15 Okt 2009)
 # www-servers/webcit contains included libs, they should be
 # installed as external ebuilds instead
