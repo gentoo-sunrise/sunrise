@@ -3,6 +3,10 @@
 # $Header: $
 
   04 Sep 2011; Christopher Head (Hawk777) <headch@gmail.com>
+  -gerbmerge-1.6.ebuild:
+  Remove old v1.6.
+
+  04 Sep 2011; Christopher Head (Hawk777) <headch@gmail.com>
   gerbmerge-1.6.ebuild, +gerbmerge-1.8.ebuild,
   +files/gerbmerge-1.8-fix-main.patch, +files/gerbmerge-1.8-fix-setup.patch,
   +files/gerbmerge-1.8-launcher.py, metadata.xml:
