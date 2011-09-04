@@ -1,6 +1,12 @@
 # ChangeLog for sci-electronics/gerbmerge
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Sep 2011; Christopher Head (Hawk777) <headch@gmail.com>
+  gerbmerge-1.6.ebuild, +gerbmerge-1.8.ebuild,
+  +files/gerbmerge-1.8-fix-main.patch, +files/gerbmerge-1.8-fix-setup.patch,
+  +files/gerbmerge-1.8-launcher.py, metadata.xml:
+  Version bump to sci-electronics/gerbmerge-1.8.
 
   20 Oct 2010; Christopher Head (Hawk777) <headch@gmail.com>
   +gerbmerge-1.6.ebuild, +files/gerbmerge-1.6-no-fixperms.patch,

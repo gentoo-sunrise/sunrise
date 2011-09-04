@@ -8,8 +8,8 @@
 	<longdescription>A program for combining (panelizing) Gerber/Excellon files</longdescription>
 	<upstream>
 		<maintainer>
-			<email>steriana@claymore.engineer.gvsu.edu</email>
-			<name>Andrew Sterian</name>
+			<email>support@ruggedcircuits.com</email>
+			<name>Rugged Circuits LLC</name>
 		</maintainer>
 	</upstream>
 </pkgmetadata>

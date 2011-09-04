@@ -1,0 +1,21 @@
+diff --git a/gerbmerge/gerbmerge.py b/gerbmerge/gerbmerge.py
+index 149baca..e3866fc 100644
+--- a/gerbmerge/gerbmerge.py
++++ b/gerbmerge/gerbmerge.py
+@@ -719,7 +719,7 @@ def updateGUI(text = None):
+   if GUI != None:
+     GUI.updateProgress(text)
+ 
+-if __name__=="__main__":
++def main():
+   try:
+     opts, args = getopt.getopt(sys.argv[1:], 'hv', ['help', 'version', 'octagons=', 'random-search', 'full-search', 'rs-fsjobs=', 'search-timeout=', 'place-file=', 'no-trim-gerber', 'no-trim-excellon'])
+   except getopt.GetoptError:
+@@ -750,4 +750,7 @@ http://ruggedcircuits.com/gerbmerge
+   disclaimer()
+   
+   sys.exit(merge(opts, args)) ## run germberge
++
++if __name__=="__main__":
++  main()
+ # vim: expandtab ts=2 sw=2 ai syntax=python
