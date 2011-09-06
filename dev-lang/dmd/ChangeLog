@@ -1,0 +1,11 @@
+# ChangeLog for dev-lang/dmd
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  06 Sep 2011; Marco Leise (mleise) <marco.leise@gmx.de> +dmd-2.054.ebuild,
+  +files/dmd-2.054-makefile.patch, +files/dmd-2.054-no-execstack.patch,
+  +files/dmd.bashcomp, +metadata.xml:
+  New Ebuild for bug 376519, builds dmd from source, 64-bit support. Thanks to
+  kahrl for the patch regarding the QA notices about executable stacks!
+  Reviewed by: binki, mgorny, Tommy
+
