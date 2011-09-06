@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Sep 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -bottle-0.9.5.ebuild, +bottle-0.9.6.ebuild:
+  Version bump. Fix proper support for Python 3.x. Expect src_test soon
+
   29 Jun 2011; Mike MacDonald (crazymykl) <crazymykl@gmail.com> ChangeLog:
   fix Manifest snafu
 
