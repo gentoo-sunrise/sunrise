@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Sep 2011; Stefan Garthe (the_mgt) <themgt@uncensored.citadel.org>
+  -lipsofsuna-0.4.0.ebuild, +lipsofsuna-0.5.0.ebuild:
+  Simple version bump to 0.5.0 of Lips of Suna
+
   21 Jun 2011; the_mgt themgt@uncensored.citadel.org
   +lipsofsuna-0.4.0.ebuild, +lipsofsuna-9999.ebuild, +metadata.xml:
   New Ebuild for bug #372501, thanks to mgorny, floppym and Enlik for review
