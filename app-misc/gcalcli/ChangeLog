@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/gcalcli
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  13 Sep 2011; Alexander van der Mey (alexandervdm)
+  <alexvandermey@gmail.com> +gcalcli-2.1.ebuild:
+  Version bump for gcalcli
 
   30 Aug 2010; Michael Weber <xmw@gentoo.org> gcalcli-1.4.ebuild:
   Removed useless DEPEND.
