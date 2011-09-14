@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Sep 2011; Alexander van der Mey <alexvandermey@gmail.com>
+  -gcalcli-1.4.ebuild, -files/gcalcli-1.4-feedfix.patch:
+  Removing old 1.4 release and deprecated patches for gcalcli
+
   13 Sep 2011; Alexander van der Mey (alexandervdm)
   <alexvandermey@gmail.com> +gcalcli-2.1.ebuild:
   Version bump for gcalcli
