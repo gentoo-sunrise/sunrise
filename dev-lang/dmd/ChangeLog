@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Sep 2011; Marco Leise (mleise) <marco.leise@gmx.de>
+  files/dmd-2.054-makefile.patch, +dmd-2.055.ebuild,
+  +files/dmd-2.055-makefile.patch:
+  Version bump and removal of no-execstack patch.
+
   06 Sep 2011; Marco Leise (mleise) <marco.leise@gmx.de> +dmd-2.054.ebuild,
   +files/dmd-2.054-makefile.patch, +files/dmd-2.054-no-execstack.patch,
   +files/dmd.bashcomp, +metadata.xml:

@@ -1,16 +1,16 @@
---- dmd2/src/dmd/posix.mak.orig	2011-07-10 22:19:30.000000000 +0200
-+++ dmd2/src/dmd/posix.mak	2011-07-22 19:39:07.797180890 +0200
-@@ -28,7 +28,7 @@ C=backend
+--- dmd2/src/dmd/posix.mak.orig	2011-09-08 05:10:14.000000000 +0200
++++ dmd2/src/dmd/posix.mak	2011-09-14 15:29:04.635180684 +0200
+@@ -29,7 +29,7 @@ C=backend
  TK=tk
  ROOT=root
-
+ 
 -MODEL=32
 +MODEL?=32
-
+ 
  ifeq (OSX,$(TARGET))
      ## See: http://developer.apple.com/documentation/developertools/conceptual/cross_development/Using/chapter_3_section_2.html#//apple_ref/doc/uid/20002000-1114311-BABGCAAB
---- dmd2/src/druntime/posix.mak.orig	2011-06-25 02:39:28.000000000 +0200
-+++ dmd2/src/druntime/posix.mak	2011-07-22 17:42:40.570533111 +0200
+--- dmd2/src/druntime/posix.mak.orig	2011-09-01 21:22:06.000000000 +0200
++++ dmd2/src/druntime/posix.mak	2011-09-14 15:29:04.636180672 +0200
 @@ -20,21 +20,21 @@ ifeq (,$(OS))
      endif
  endif
@@ -37,8 +37,8 @@
  
  DOCFMT=
  
---- dmd2/src/phobos/etc/c/zlib/gzio.c.orig	2011-07-26 23:58:57.240222466 +0200
-+++ dmd2/src/phobos/etc/c/zlib/gzio.c	2011-07-26 23:59:20.136336207 +0200
+--- dmd2/src/phobos/etc/c/zlib/gzio.c.orig	2010-09-16 22:27:48.000000000 +0200
++++ dmd2/src/phobos/etc/c/zlib/gzio.c	2011-09-14 15:29:29.412870920 +0200
 @@ -8,6 +8,7 @@
  /* @(#) $Id$ */
  
@@ -47,8 +47,8 @@
  
  #include "zutil.h"
  
---- dmd2/src/phobos/posix.mak.orig	2011-07-10 22:19:30.000000000 +0200
-+++ dmd2/src/phobos/posix.mak	2011-07-22 17:51:00.901014107 +0200
+--- dmd2/src/phobos/posix.mak.orig	2011-09-08 05:10:16.000000000 +0200
++++ dmd2/src/phobos/posix.mak	2011-09-14 15:29:04.638180648 +0200
 @@ -48,7 +48,7 @@ endif
  DRUNTIME_PATH = ../druntime
  ZIPFILE = phobos.zip
@@ -59,16 +59,16 @@
  DOCSRC = ../d-programming-language.org
  WEBSITE_DIR = ../web
 @@ -61,8 +61,6 @@ DDOCFLAGS=-m$(MODEL) -d -c -o- -version=
-
+ 
  # Variable defined in an OS-dependent manner (see below)
  CC =
 -DMD =
 -DDOC =
  CFLAGS =
  DFLAGS =
-
+ 
 @@ -75,7 +73,7 @@ MAKEFILE:=$(lastword $(MAKEFILE_LIST))
-
+ 
  # Set DRUNTIME name and full path
  ifeq (,$(findstring win,$(OS)))
 -	DRUNTIME = $(DRUNTIME_PATH)/lib/libdruntime.a
@@ -96,11 +96,10 @@
  		else
 @@ -141,7 +139,7 @@ else
  endif
-
+ 
  # Set DDOC, the documentation generator
 -DDOC=dmd
 +DDOC?=$(DMD)
-
+ 
  # Set LIB, the ultimate target
  ifeq (,$(findstring win,$(OS)))
-
