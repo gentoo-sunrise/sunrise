@@ -2,10 +2,6 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  20 Aug 2011; Nick Robbins (Nicias) <nickrobbins@yahoo.com>
-  +asus-switcheroo-0_p20110814.ebuild, metadata.xml:
-  Updating to allow use of /etc/X11/xorg.conf.d/ and byo-switcheroo
-
   19 May 2011; Nick Robbins (Nicias) <nickrobbins@yahoo.com>
   +asus-switcheroo-0_p20110504.ebuild, +asus-switcheroo-9999.ebuild,
   +files/asus-switcheroo.conf-nvidia, +files/switcheroo.rc,
