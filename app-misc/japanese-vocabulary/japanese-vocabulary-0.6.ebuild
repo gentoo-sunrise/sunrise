@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 inherit eutils qt4-r2 toolchain-funcs
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 
 MY_PN=JapaneseVocabulary
 

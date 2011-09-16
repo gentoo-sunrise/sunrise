@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/japanese-vocabulary
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Sep 2011; Christian Asseburg (Zoominee) <christianasseburg@yahoo.co.uk>
+  japanese-vocabulary-0.6.ebuild:
+  Added ~amd64 for bug 166275 after consultation with _AxS_ on #gentoo-sunrise
 
   12 Jan 2010; Markos Chandras <hwoarang@gentoo.org>
   japanese-vocabulary-0.6.ebuild:
