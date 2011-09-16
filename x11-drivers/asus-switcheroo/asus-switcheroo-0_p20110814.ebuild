@@ -27,13 +27,8 @@ pkg_setup() {
 	use byo && MODULE_NAMES="byo-switcheroo(extra/${PN}:${S})"
 	use video_cards_nouveau && MODULE_NAMES="${MODULE_NAMES}  nouveau-jprobe(extra/${PN}:${S})"
 
-	if kernel_is ge 3 0 0; then
-		eerror "This package has only been tested with 2.6.x version kernels"
-		die
-	fi
-
 	if kernel_is ge 2 6 38; then
-		CONFIG_CHECK="VGA_SWITCHEROO"
+		CONFIG_CHECK="~VGA_SWITCHEROO"
 	else
 		use video_cards_intel && MODULE_NAMES="${MODULE_NAMES}  i915-jprobe(extra/${PN}:${S})"
 	fi

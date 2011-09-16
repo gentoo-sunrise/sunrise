@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Sep 2011; Nathan Phillip Brink <binki@gentoo.org>
+  asus-switcheroo-0_p20110814.ebuild:
+  Relax kernel checks and increase life expectency.
+
   20 Aug 2011; Nick Robbins (Nicias) <nickrobbins@yahoo.com>
   +asus-switcheroo-0_p20110814.ebuild, metadata.xml:
   Updating to allow use of /etc/X11/xorg.conf.d/ and byo-switcheroo
