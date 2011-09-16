@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Sep 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  gogglesmm-0.12.2.ebuild:
+  Ebuild fix, remove autotools_utils dep
+
   13 Aug 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   +files/gogglesmm-parallel-make.patch:
   Including patch this time
