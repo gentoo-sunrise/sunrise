@@ -1,0 +1,8 @@
+# ChangeLog for media-fonts/openfontlibrary
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Sep 2011; Thomas Fischer (f15h) <fischer@unix-ag.uni-kl.de>
+  +openfontlibrary-20110916.ebuild, +metadata.xml:
+  New Ebuild for bug 383279: installing fonts from OpenFontLibrary
+
