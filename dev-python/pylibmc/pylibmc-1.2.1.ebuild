@@ -4,12 +4,13 @@
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 inherit distutils
-SUPPORT_PYTHON_ABIS="1"
 
 DESCRIPTION="Libmemcached wrapper written as a Python extension"
-HOMEPAGE="http://sendapatch.se/projects/pylibmc/"
+HOMEPAGE="http://sendapatch.se/projects/pylibmc/ http://pypi.python.org/pypi/pylibmc"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -20,11 +21,9 @@ IUSE=""
 RDEPEND=">=dev-libs/libmemcached-0.32"
 DEPEND="${RDEPEND}"
 
-RESTRICT_PYTHON_ABIS="2.4 3.*"
-
 src_test() {
 	testing() {
-		PYTHONPATH="$(dir -d build-${PYTHON_ABI}/lib*)" "$(PYTHON)" tests.py || die "Tests failed"
+		PYTHONPATH="$(dir -d build-${PYTHON_ABI}/lib*)" "$(PYTHON)" runtests.py || die "Tests failed"
 	}
 	python_execute_function testing
 }
