@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Michał Górny <mgorny@gentoo.org> (18 Sep 2011)
+# Requires media-libs/libdc1394:1 which is no longer in gx86.
+# Removal in 30 days.
+media-libs/libinstrudeo
+
 # Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
 # Requires masked wxGTK:2.9.
 media-gfx/tintii
