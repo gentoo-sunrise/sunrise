@@ -98,7 +98,6 @@ dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber metho
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 dev-util/valide:unique - 
-dev-vcs/tortoisehg:nautilus - Integrate with gnome-base/nautilus file manager
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
@@ -159,7 +158,6 @@ media-gfx/synfigstudio:fmod - Enables support for using mod files for audio supp
 media-libs/portmidi:test-programs - Install tools for testing of various midi functions
 media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
 media-plugins/gimp-refocus:lapack-atlas - Use the ATLAS version of lapack
-media-radio/grig:hardware - Enable hardware IO
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
@@ -254,6 +252,7 @@ sys-kernel/ccs-sources:deblob - Remove binary blobs from kernel sources to provi
 sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
+x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
 x11-drivers/libfreenect:c_sync - Install C synchronous library
 x11-drivers/libfreenect:examples - Install demo programs
 x11-drivers/libfreenect:fakenect - Install fakenect mock library
