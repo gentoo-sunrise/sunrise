@@ -1,0 +1,8 @@
+# ChangeLog for media-video/periscope
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Sep 2011; Alexander van der Mey (alexandervdm) <alexvandermey@gmail.com
+  +periscope-0.2.4.ebuild, +metadata.xml:
+  New ebuild for bug 383499 - thanks to jbergstroem, Tommy[D] & mgorny
+
