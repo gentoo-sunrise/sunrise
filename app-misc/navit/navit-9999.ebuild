@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,7 +25,7 @@ RDEPEND="dev-libs/glib:2
 	python? ( dev-lang/python )
 	dbus? ( sys-apps/dbus )
 	gps? ( sci-geosciences/gpsd )
-	speechd? ( app-accessibility/speechd )"
+	speechd? ( app-accessibility/speech-dispatcher )"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
