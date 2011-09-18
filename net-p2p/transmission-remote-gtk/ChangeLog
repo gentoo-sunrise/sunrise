@@ -1,8 +1,0 @@
-# ChangeLog for net-p2p/transmission-remote-gtk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  11 Sep 2011; JD Horelick (jdhore) <jdhore1@gmail.com>
-  +transmission-remote-gtk-0.5.1.ebuild, +metadata.xml:
-  New ebuild for bug 364721 thanks to floppym, mgorny, binki and atommixz.
-
