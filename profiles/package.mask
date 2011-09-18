@@ -23,7 +23,8 @@
 
 # Michał Górny <mgorny@gentoo.org> (18 Sep 2011)
 # Zope is no longer supported in gx86 which results in unsatisfied
-# dependencies.
+# dependencies. Feel free to contact arfrever.fta@gmail.com on moving
+# the packages to progress overlay where Zope is now.
 # Removal in 30 days.
 dev-python/repoze-tm2
 net-zope/datagridfield
