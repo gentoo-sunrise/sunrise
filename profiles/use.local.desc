@@ -149,6 +149,10 @@ gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
 mail-mta/citadel:postfix - Makes it possible to run citadel alongside Postfix. Mailwrapper replacement.
+media-fonts/openfontlibrary:handwriting - Install handwriting-like fonts
+media-fonts/openfontlibrary:monospaced - Install mono-spaced fonts
+media-fonts/openfontlibrary:sansserif - Install sans-serif fonts
+media-fonts/openfontlibrary:serif - Install serif fonts
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:gnet - Add support for cluster rendering
