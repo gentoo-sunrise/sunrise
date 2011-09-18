@@ -6,11 +6,14 @@ EAPI=2
 
 SUPPORT_PYTHON_ABIS=1
 
-inherit distutils python
+inherit distutils
+
+MY_PN="${PN/-/_}"
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Track changes in database models over time, and update the db to reflect them"
 HOMEPAGE="http://code.google.com/p/django-evolution/"
-SRC_URI="http://xmw.de/mirror/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://pypi/d/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,7 +22,10 @@ IUSE=""
 
 RDEPEND="dev-python/django"
 
+S="${WORKDIR}/${MY_P}"
+
 src_prepare() {
+	# TODO: run the tests
 	rm -r tests || die
 	distutils_src_prepare
 }
