@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Sep 2011; Pavel Sanda (ps) <ps at twin.jikos.cz> rush-1.7.ebuild:
+  Add ~amd64 keyword
+
   05 Apr 2011; Pavel Sanda (ps) <ps at twin.jikos.cz> -rush-1.5.ebuild,
   +rush-1.7.ebuild:
   Bump new version 1.7
