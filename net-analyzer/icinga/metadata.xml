@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
 	<longdescription lang="en">A rebuild of nagios from the ground up</longdescription>
 	<use>
 		<flag name="api">Adds support for the icinga API</flag>

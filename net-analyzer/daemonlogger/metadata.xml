@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-    <herd>no-herd</herd>
 	<longdescription lang="en">
 		This is a libpcap-based program with two runtime modes:
 		1)It can sniff packets and spools them straight to disk 

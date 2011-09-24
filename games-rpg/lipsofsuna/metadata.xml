@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<longdescription>Lips of Suna is a tongue-in-cheek dungeon crawl game that
 		takes place in the chaotic dungeons of Suna. The five intelligent
