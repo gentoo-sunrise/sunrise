@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="logwatch"
 
-DEPEND="dev-lang/perl"
-RDEPEND="${DEPEND}"
+RDEPEND="dev-lang/perl"
 
 src_prepare() {
 	epatch "${FILESDIR}/default_config_location.patch"

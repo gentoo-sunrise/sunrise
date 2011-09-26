@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Sep 2011; Michael Orlitzky <michael@orlitzky.com>
+  amavis-logwatch-1.50.04.ebuild:
+  Fix DEPEND/RDEPEND mixup.
+
   12 Jul 2011; Michael Orlitzky <michael@orlitzky.com>
   -amavis-logwatch-1.50.03.ebuild, +amavis-logwatch-1.50.04.ebuild:
   Version bump.
