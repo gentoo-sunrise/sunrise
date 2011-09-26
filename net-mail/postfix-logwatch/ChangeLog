@@ -1,6 +1,10 @@
 # ChangeLog for net-mail/postfix-logwatch
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Sep 2011; Michael Orlitzky <michael@orlitzky.com>
+  -postfix-logwatch-1.39.05.ebuild, +postfix-logwatch-1.39.06.ebuild:
+  Version bump to v1.39.06.
 
   13 Nov 2010; Michael Orlitzky <michael@orlitzky.com>
   -postfix-logwatch-1.39.04.ebuild, +postfix-logwatch-1.39.05.ebuild:
