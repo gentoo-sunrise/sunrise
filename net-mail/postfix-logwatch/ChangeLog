@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Sep 2011; Michael Orlitzky <michael@orlitzky.com>
+  -postfix-logwatch-1.39.06.ebuild, +postfix-logwatch-1.39.07.ebuild:
+  Version bump to v1.39.07.
+
   26 Sep 2011; Michael Orlitzky <michael@orlitzky.com>
   -postfix-logwatch-1.39.05.ebuild, +postfix-logwatch-1.39.06.ebuild:
   Version bump to v1.39.06.
