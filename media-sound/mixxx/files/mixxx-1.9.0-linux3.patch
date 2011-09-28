@@ -10,4 +10,14 @@
              return 'linux'
          if sys.platform == 'darwin':
              return 'osx'
-
+--- mixxx/build/qt4.py	2011-09-15 01:05:21.872433812 +0100
++++ mixxx/build/qt4.py	2011-09-15 01:06:34.628431259 +0100
+@@ -409,7 +409,7 @@
+ 		self.AppendUnique(CPPFLAGS=['-DQT_GUI_LIB'])
+ 
+ 	debugSuffix = ''
+-	if sys.platform == "linux2" :
++	if sys.platform in ["linux2", "linux3"]:
+ 		if debug : debugSuffix = '_debug'
+ 		for module in modules :
+ 			if module not in pclessModules : continue
