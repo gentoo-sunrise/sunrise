@@ -70,7 +70,8 @@ src_compile() {
 }
 
 src_install() {
-	escons install \
+	CC="$(tc-getCC)" CXX="$(tc-getCXX)" LINKFLAGS="${LDFLAGS}" \
+	LIBPATH="/usr/$(get_libdir)" escons install \
 		prefix=/usr \
 		install_root="${D}"/usr \
 		|| die

@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Sep 2011; Alex Barker (KWhat) <alex@1stleg.com> mixxx-1.9.0-r2.ebuild,
+  mixxx-9999.ebuild:
+  Added env vars for installation phase.
+
   28 Sep 2011; Alex Barker (KWhat) <alex@1stleg.com> -mixxx-1.9.0-r1.ebuild,
   +mixxx-1.9.0-r2.ebuild, files/mixxx-1.9.0-linux3.patch:
   Added additional Linux 3.0 support patch from upstream.
