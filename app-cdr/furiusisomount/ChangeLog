@@ -1,0 +1,8 @@
+# ChangeLog for app-cdr/furiusisomount
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Oct 2011; Moritz Schlarb (moschlar) <mail@moritz-schlarb.de>
+  +furiusisomount-0.11.3.1.ebuild, +metadata.xml:
+  New Ebuild for bug 261362, thanks to Tommy[D], hwoarang, Hawk777 and _AxS_
+
