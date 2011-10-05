@@ -9,17 +9,6 @@
          if os.environ.has_key('CXX'):
              self.env['CXX'] = os.environ['CXX']
          if os.environ.has_key('CXXFLAGS'):
-@@ -203,6 +203,10 @@
-         self.env['LIBS'] = []
-         self.env['LIBPATH'] = []
- 
-+        # Tell Scons how to call the CC and CXX to account for the custom flags.
-+        self.env['CCCOM'] = '$CC -o $TARGET -c $CFLAGS $CCFLAGS $_CCCOMCOM $SOURCES'
-+        self.env['CXXCOM'] = '$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS $_CCCOMCOM $SOURCES'
-+
-     def install_options(self):
-         # Global cache directory Put all project files in it so a rm -rf cache
-         # will clean up the config
 --- build/depends.py.orig	2010-12-22 11:13:22.000000000 -0800
 +++ build/depends.py	2010-12-22 11:14:02.000000000 -0800
 @@ -587,10 +587,8 @@
