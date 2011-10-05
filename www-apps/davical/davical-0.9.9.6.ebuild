@@ -21,11 +21,15 @@ RDEPEND="app-admin/pwgen
 	dev-perl/DBI
 	dev-perl/DBD-Pg
 	dev-perl/yaml
-	>=dev-php/awl-0.46
+	>=dev-php/awl-0.48
 	www-servers/apache"
 
 need_php5
 need_httpd
+
+src_prepare() {
+	epatch "${FILESDIR}/awl_location.patch"
+}
 
 src_compile() {
 	if use doc ; then
@@ -65,7 +69,7 @@ src_install() {
 	doins config/* "${FILESDIR}/vhost-example" \
 		|| die "newins failed"
 
-	webapp_postinst_txt en "${FILESDIR}/postinstall-en-${PV}.txt"
+	webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
 	webapp_src_install
 
 	fperms +x "${MY_SQLSCRIPTSDIR}/create-database.sh"

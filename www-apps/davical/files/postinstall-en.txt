@@ -11,6 +11,8 @@ upgrade the database structure with
 	cd /usr/share/webapps/davical/${PVR}/sqlscripts/
 	./update-davical-database -dbuser xxxxxxx -appuser xxxxxx
 
+You can safely ignore any message about missing time_zone table.
+
 If you are upgrading from a version <= 0.9.8.4 please note inc/ and locale/
 have been moved away from the htdocs directory and placed into hostroot for
 safety reasons. Update you include_path accordingly.
