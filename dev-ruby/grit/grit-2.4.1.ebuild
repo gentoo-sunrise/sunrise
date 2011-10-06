@@ -5,6 +5,7 @@
 EAPI=4
 
 RUBY_FAKEGEM_DOCDIR="rdoc"
+RUBY_S="mojombo-${PN}-*"
 USE_RUBY="ruby18"
 
 inherit eutils ruby-fakegem
@@ -28,13 +29,13 @@ ruby_add_bdepend "doc? ( virtual/ruby-rdoc )
 ruby_add_rdepend "dev-ruby/mime-types
 	dev-ruby/diff-lcs"
 
-# Override fakegem's all_ruby_unpack() for github fix.
 all_ruby_unpack() {
 	unpack ${A}
-	mv mojombo-${PN}-* "${S}" || die "Removing githubiness."
 
 	# Tests require the grit directory to look like a git repo.
 	if [[ -e ${P}.git ]]; then
-		mv ${P}.git "${S}"/.git || die "Inserting .git for tests."
+		# Expand RUBY_S in a manner similar to
+		# _ruby_invoke_environment().
+		eval mv ${P}.git $(eval ls -d ${RUBY_S})/.git || die "Inserting .git/ for tests."
 	fi
 }
