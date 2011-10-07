@@ -1,6 +1,10 @@
 # ChangeLog for dev-perl/Authen-SASL-Cyrus-server
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  Authen-SASL-Cyrus-server-0.13.ebuild:
+  Remove non-existing dependency to dev-perl/Authen-SASL-Cyrus
 
   08 Dec 2009; Martin von Gagern (MvG) <Martin.vGagern@gmx.net>
   Authen-SASL-Cyrus-server-0.13.ebuild:

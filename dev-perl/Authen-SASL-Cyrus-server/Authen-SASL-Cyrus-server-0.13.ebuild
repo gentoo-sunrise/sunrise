@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,8 +17,7 @@ IUSE=""
 
 DEPEND=">=dev-perl/Authen-SASL-2.06
 	>=dev-libs/cyrus-sasl-2"
-RDEPEND="${DEPEND}
-	!dev-perl/Authen-SASL-Cyrus"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
