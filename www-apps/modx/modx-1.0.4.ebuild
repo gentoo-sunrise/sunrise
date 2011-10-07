@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ IUSE=""
 
 RDEPEND="virtual/httpd-cgi
 	>=virtual/mysql-4.1
-	|| ( dev-lang/php:5[mysql] dev-lang/php:5[mysqli] )"
+	|| ( dev-lang/php[mysql] dev-lang/php[mysqli] )"
 
 src_install() {
 	webapp_src_preinst
