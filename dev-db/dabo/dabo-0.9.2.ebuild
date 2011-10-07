@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="ide"
 
-DEPEND=">=dev-python/setuptools-0.6_alpha9
-	ide? ( !dev-db/daboide )"
+DEPEND=">=dev-python/setuptools-0.6_alpha9"
 
 RDEPEND=">=dev-python/wxpython-2.6.1.1
 	>=dev-db/sqlite-3.0
