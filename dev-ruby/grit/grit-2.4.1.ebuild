@@ -36,6 +36,6 @@ all_ruby_unpack() {
 	if [[ -e ${P}.git ]]; then
 		# Expand RUBY_S in a manner similar to
 		# _ruby_invoke_environment().
-		eval mv ${P}.git $(eval ls -d ${RUBY_S})/.git || die "Inserting .git/ for tests."
+		mv ${P}.git $(eval ls -d ${RUBY_S} 2>/dev/null)/.git || die "Inserting .git/ for tests."
 	fi
 }

@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Oct 2011; Nathan Phillip Brink <binki@gentoo.org> grit-2.4.1.ebuild:
+  Remove extraneous eval instead of just committing a new Manifest.
+
   06 Oct 2011; Nathan Phillip Brink <binki@gentoo.org> grit-2.4.1.ebuild:
   Take advantage of RUBY_S's github support.
 
