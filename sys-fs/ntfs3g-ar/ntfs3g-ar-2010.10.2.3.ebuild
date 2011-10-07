@@ -16,10 +16,9 @@ SRC_URI="http://pagesperso-orange.fr/b.andre/${MY_P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="acl debug external-fuse hal suid udev"
+IUSE="acl debug external-fuse suid udev"
 
 RDEPEND="external-fuse? ( >=sys-fs/fuse-2.8.0 )
-	hal? ( sys-apps/hal )
 	!sys-fs/ntfs3g
 	sys-apps/attr"
 DEPEND="${RDEPEND}"
@@ -54,11 +53,6 @@ src_install() {
 	dodoc AUTHORS ChangeLog CREDITS || die "dodoc failed"
 
 	use suid && { fperms u+s "/bin/${MY_PN}" || die "set suid failed" ; }
-
-	if use hal; then
-		insinto /etc/hal/fdi/policy/
-		newins "${FILESDIR}/10-ntfs3g.fdi.2009-r1" "10-ntfs3g.fdi" || die "hal fdi install failed"
-	fi
 
 	if use udev; then
 		insinto /etc/udev/rules.d/
