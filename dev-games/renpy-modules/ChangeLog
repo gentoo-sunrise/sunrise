@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  renpy-modules-6.12.2.ebuild:
+  Make blocker to dev-games/renpy less error prone
+
   11 Aug 2011; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   -renpy-modules-6.12.1.ebuild, +renpy-modules-6.12.2.ebuild:
   Version bump
