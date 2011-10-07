@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header$
 
 EAPI=4
 
@@ -36,6 +36,6 @@ all_ruby_unpack() {
 	if [[ -e ${P}.git ]]; then
 		# Expand RUBY_S in a manner similar to
 		# _ruby_invoke_environment().
-		mv ${P}.git $(eval ls -d ${RUBY_S} 2>/dev/null)/.git || die "Inserting .git/ for tests."
+		mv ${P}.git $(eval ls -d ${RUBY_S} 2>/dev/null)/.git || die "Inserting .git/ for tests"
 	fi
 }
