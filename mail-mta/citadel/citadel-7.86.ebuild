@@ -24,7 +24,6 @@ DEPEND="=dev-libs/libcitadel-${PV}
 	ssl? ( >=dev-libs/openssl-0.9.6 )"
 RDEPEND="${DEPEND}
 	net-mail/mailbase
-	!net-mail/mailwrapper
 	postfix? ( mail-mta/postfix )"
 
 MESSAGEBASE="/var/lib/citadel"

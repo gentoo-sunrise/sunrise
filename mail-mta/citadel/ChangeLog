@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org> citadel-7.86.ebuild:
+  Drop non-existing dependency to net-mail/mainwrapper
+
   21 Apr 2011; the_mgt themgt@mail.ru -citadel-7.85.ebuild,
   +citadel-7.86.ebuild:
   Version bump, moved postfix to RDEPEND and removed leftover from binkis
