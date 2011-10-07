@@ -9,6 +9,7 @@ app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
 app-backup/fsarchiver:lzma - Enables LZMA compression
+app-cdr/furiusisomount:brasero - Enables support for burning images using app-cdr/brasero
 app-crypt/yapet:csv - Enable csv import utility
 app-crypt/yapet:pwgen - Enable build-in password generator
 app-emulation/xenman:lvm2 - Enable lvm2 support
@@ -179,6 +180,7 @@ media-sound/songbird-bin:faad - Add faad support
 media-sound/songbird-bin:ugly - Add ugly support
 media-tv/freetuxtv:nls - Enable native language support (using intltool)
 media-video/image2mpeg:devil - Enable image loading via DevIL
+media-video/periscope:nautilus - Integrate with nautilus file manager
 media-video/pgcedit:video - Add support for video preview
 media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
