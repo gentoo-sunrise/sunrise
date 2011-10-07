@@ -21,6 +21,10 @@
 ##   End example
 ##
 
+# Markos Chandras <hwoarang@gentoo.org> (07 Oct 2011)
+# Masking due to zprd-manager removal. Removal in 30 days
+app-misc/ccpublisher
+
 # Michał Górny <mgorny@gentoo.org> (18 Sep 2011)
 # Zope is no longer supported in gx86 which results in unsatisfied
 # dependencies. Feel free to contact arfrever.fta@gmail.com on moving
