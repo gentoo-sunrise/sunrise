@@ -1,6 +1,10 @@
 # ChangeLog for net-analyzer/packetgarden
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  packetgarden-1.0-r1.ebuild:
+  Remove non-existing version of dev-python/soya
 
   16 Mar 2009; Nick Fortino (nfortino) <nfortino@gmail.com>
   -packetgarden-1.0.ebuild, +packetgarden-1.0-r1.ebuild:

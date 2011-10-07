@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,7 +22,7 @@ RDEPEND="dev-python/dpkt
 	dev-python/imaging
 	dev-python/geoip-python
 	dev-python/pypcap
-	|| ( >=dev-python/soya-0.13_rc1[openal] =dev-python/soya-0.14 )
+	dev-python/soya
 	x11-libs/gksu"
 
 S=${WORKDIR}/trunk
