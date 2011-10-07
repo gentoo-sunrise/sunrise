@@ -17,8 +17,7 @@ IUSE=""
 
 DEPEND="dev-libs/openssl
 	app-arch/unzip"
-RDEPEND="!mail-filter/libdkim-exim
-	dev-libs/openssl"
+RDEPEND="dev-libs/openssl"
 
 S=${WORKDIR}/${PN}/src
 
