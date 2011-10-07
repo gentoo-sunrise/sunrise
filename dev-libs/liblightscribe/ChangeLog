@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  liblightscribe-1.18.24.1.ebuild:
+  Remove blocker to old location
+
 *liblightscribe-1.18.24.1 (30 Jul 2011)
 
   30 Jul 2011; Mario Fetka <mario.fetka@gmail.com>

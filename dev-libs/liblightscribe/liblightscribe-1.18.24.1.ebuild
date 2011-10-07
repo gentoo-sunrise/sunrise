@@ -19,9 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="multilib"
 
 RDEPEND="x86? ( sys-libs/libstdc++-v3 )
-	amd64? ( sys-libs/libstdc++-v3[multilib] )
-	!app-cdr/lightscribe
-	!app-cdr/liblightscribe"
+	amd64? ( sys-libs/libstdc++-v3[multilib] )"
 
 RESTRICT="mirror fetch"
 
