@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -29,7 +29,7 @@ RDEPEND="dev-python/pyxdg
 	media-plugins/gst-plugins-faad
 	media-plugins/gst-plugins-soup
 	gnome? ( gnome-base/gnome-settings-daemon )
-	!gnome? ( dev-libs/keybinder )"
+	!gnome? ( dev-libs/keybinder[python] )"
 
 RESTRICT_PYTHON_ABIS="2.[45] 3.*"
 DISTUTILS_USE_SEPARATE_SOURCE_DIRECTORIES="1"
