@@ -1,0 +1,11 @@
+# ChangeLog for x11-plugins/pidgin-blinklight
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Oct 2011; Moritz Schlarb (moschlar) <mail@moritz-schlarb.de>
+  +pidgin-blinklight-0.11.1.ebuild, +files/fix-paths.patch,
+  +files/new-acpi-path.patch, +metadata.xml:
+  New ebuild for bug 268778 and version bump. Thanks to Andrew for the initial
+  ebuild and bug report. I tried patching the sysfs paths to the paths used by
+  new acpi modules, but that failed.
+

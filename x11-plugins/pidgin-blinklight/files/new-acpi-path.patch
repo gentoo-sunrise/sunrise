@@ -1,0 +1,22 @@
+diff -u src.old/blink.c src/blink.c
+--- src.old/blink.c	2011-10-11 13:37:34.451041509 +0200
++++ src/blink.c	2011-10-11 13:49:40.412965734 +0200
+@@ -41,6 +41,7 @@
+ 	{"/proc/acpi/ibm/light", 	                {"off","on"},	"status: %9s" },
+ 	{"/proc/acpi/asus/mled", 	                {"0","1"},	    "%9s" },
+ 	{"/sys/class/leds/asus:phone/brightness",   {"0","1"},	    "%9s" }
++	{"/sys/class/leds/tpacpi::thinklight/brightness",	{"0","1"},	"%9s"}
+ };
+ 
+ static struct interface *interface = NULL;
+diff -u src.old/blinklight-fixperm.c src/blinklight-fixperm.c
+--- src.old/blinklight-fixperm.c	2011-10-11 13:37:34.451041509 +0200
++++ src/blinklight-fixperm.c	2011-10-11 13:50:20.246467747 +0200
+@@ -12,6 +12,7 @@
+ 	"/proc/acpi/ibm/light",
+ 	"/proc/acpi/asus/mled",
+ 	"/sys/class/leds/asus:phone/brightness",
++	"/sys/class/leds/tpacpi::thinklight/brightness",
+ };
+ 
+ int main(int argc, char* argv[]) {
