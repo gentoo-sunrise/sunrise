@@ -93,7 +93,7 @@ while [[ $# > 0 ]] ; do
 	esac
 done
 
-cd sunrise
+cd sunrise || { eerror "You must run this script from the top level of the sunrise subversion repository."; exit 1; }
 LC_ALL="C" ls -d *-* > profiles/categories
 if [[ $(svn diff profiles/categories) ]]; then
 	svn diff profiles/categories | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
