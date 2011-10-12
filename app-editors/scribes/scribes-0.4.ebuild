@@ -12,7 +12,7 @@ build=954
 inherit autotools eutils gnome2 python
 
 MY_P="${P}-dev-build${build}"
-DESCRIPTION="a text editor that is simple, slim and sleek, yet powerful."
+DESCRIPTION="a text editor that is simple, slim and sleek, yet powerful"
 HOMEPAGE="http://scribes.sourceforge.net"
 SRC_URI="http://launchpad.net/scribes/${PV}/scribes-milestone1/+download/${MY_P}.tar.bz2"
 
@@ -34,7 +34,7 @@ DEPEND="app-text/gnome-doc-utils
 	dev-util/intltool
 	sys-devel/gettext"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 DOCS="AUTHORS ChangeLog CONTRIBUTORS NEWS README TODO TRANSLATORS"
 
