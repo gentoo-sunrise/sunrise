@@ -1,0 +1,9 @@
+# ChangeLog for x11-plugins/pidgin-blinklight
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  12 Oct 2011; Moritz Schlarb (moschlar) <mail@moritz-schlarb.de>
+  +pidgin-blinklight-0.11.1.ebuild, +files/fix-paths.patch, +metadata.xml:
+  New ebuild for bug 268778 and version bump. Thanks to Andrew for the initial
+  ebuild, _AxS_ for advice and binki for review.
+
