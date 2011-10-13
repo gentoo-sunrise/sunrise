@@ -98,6 +98,14 @@ src_prepare() {
 	epatch "${FILESDIR}"/swig.m4.patch
 	# Patch to allow dotnet binding to build and set snk key file
 	epatch "${FILESDIR}"/dotnet.patch
+	local myboostpackage=$(best_version "<dev-libs/boost-1.46")
+	local myboostpackagever=${myboostpackage/*boost-/}
+	local myboostver=$(get_version_component_range 1-2 ${myboostpackagever})
+	local myboostslot=$(replace_version_separator 1 _ ${myboostver})
+	sed -i -e "s|boost_include_dir=\"include\"|boost_include_dir=\"include/boost-${myboostslot}\"|g" project/build/ac-macros/boost.m4
+	sed -i -e "s|/lib/libboost|/lib/boost-${myboostslot}/liboost|g" project/build/ac-macros/boost.m4
+	sed -i -e "s|-L\${BOOST_PREFIX}/lib|-L\${BOOST_PREFIX}/lib/boost-${myboostslot}|g" project/build/ac-macros/boost.m4
+	einfo "Using boost version ${myboostver}"
 	eautoreconf
 	use php && php-ext-source-r2_src_prepare
 }
@@ -161,12 +169,7 @@ src_compile() {
 		_php-replace_config_with_selected_config ${myphpfirstslot} ${myphpconfig}
 		myphpconfig="${PHPCONFIG}"
 	fi
-	local myboostpackage=$(best_version "<dev-libs/boost-1.46")
-	local myboostpackagever=${myboostpackage/*boost-/}
-	local myboostver=$(get_version_component_range 1-2 ${myboostpackagever})
-	local myboostslot=$(replace_version_separator 1 _ ${myboostver})
-	einfo "Using boost version ${myboostver}"
-	emake BOOST_CFLAGS="-I/usr/include/boost-${myboostslot}" BOOST_LIBS="-L/usr/$(get_libdir)/boost-${myboostslot}" || die "emake failed"
+	emake || die "emake failed"
 	if use php; then
 		# Move the current slotted build of php to another dir so other slots can be built
 		_php-move_swig_build_to_modules_dir "${WORKDIR}/${myphpfirstslot}"
