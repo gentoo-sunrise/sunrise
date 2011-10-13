@@ -1,0 +1,71 @@
+--- acinclude.m4	2001-02-17 10:47:11.000000000 -0600
++++ acinclude.m4	2011-10-13 09:53:23.496357037 -0500
+@@ -1,4 +1,4 @@
+-AC_DEFUN(AC_YYY_CC_CXX_BEGIN, [
++AC_DEFUN([AC_YYY_CC_CXX_BEGIN], [
+ 
+ AC_ARG_ENABLE(debug,
+ [  --enable-debug          do not strip binaries but add debug info],
+@@ -42,7 +42,7 @@
+ ])
+ 
+ 
+-AC_DEFUN(AC_YYY_CC_INIT, [
++AC_DEFUN([AC_YYY_CC_INIT], [
+ 
+ AC_ARG_WITH(ccpre,
+ [  --with-ccpre=x          add at beginning of C options],
+@@ -52,7 +52,7 @@
+ [  --with-ccpost=x         add at end of C options],
+ yyyccpost="$withval",yyyccpost="")
+ 
+-# if not set then set it as empty, so that AC_PROG_CC doesn't set it
++dnl if not set then set it as empty, so that AC_PROG_CC doesn't set it
+ if test "$CFLAGS" = ""; then
+   CFLAGS=""
+ fi
+@@ -74,8 +74,6 @@
+ 
+ if test "$yyydebug" = "yes"; then
+   YYY_CFLAGS="$YYY_CFLAGS -g"
+-else
+-  YYY_LDFLAGS="$YYY_LDFLAGS -s"
+ fi
+ 
+ if test "$yyynowarnerror" = "yes"; then
+@@ -87,7 +85,7 @@
+ ])
+ 
+ 
+-AC_DEFUN(AC_YYY_CXX_INIT, [
++AC_DEFUN([AC_YYY_CXX_INIT], [
+ 
+ AC_ARG_WITH(cxxpre,
+ [  --with-cxxpre=x         add at beginning of C++ options],
+@@ -97,7 +95,7 @@
+ [  --with-cxxpost=x        add at end of C++ options],
+ yyycxxpost="$withval",yyycxxpost="")
+ 
+-# if not set then set it as empty, so that AC_PROG_CXX doesn't set it
++dnl if not set then set it as empty, so that AC_PROG_CXX doesn't set it
+ if test "$CXXFLAGS" = ""; then
+   CXXFLAGS=""
+ fi
+@@ -119,8 +117,6 @@
+ 
+ if test "$yyydebug" = "yes"; then
+   YYY_CXXFLAGS="$YYY_CXXFLAGS -g"
+-else
+-  YYY_LDFLAGS="$YYY_LDFLAGS -s"
+ fi
+ 
+ if test "$yyynowarnerror" = "yes"; then
+@@ -132,7 +128,7 @@
+ ])
+ 
+ 
+-AC_DEFUN(AC_YYY_CC_CXX_END, [
++AC_DEFUN([AC_YYY_CC_CXX_END], [
+ 
+ CFLAGS="$yyyccpre $yyycccxxpre $YYY_CFLAGS $yyycccxxpost $yyyccpost"
+ CXXFLAGS="$yyycxxpre $yyycccxxpre $YYY_CXXFLAGS $yyycccxxpost $yyycxxpost"

@@ -1,0 +1,77 @@
+diff -u common.cpp common.cpp
+--- common.cpp	2011-10-12 15:27:06.797684095 -0500
++++ common.cpp	2011-10-12 16:42:06.967086746 -0500
+@@ -1,6 +1,7 @@
+ #include <stdio.h>
+ 
+ #include "common.hpp"
++#include <cstdlib>
+ 
+ void show (char *msg, mpz_t num)
+ {
+diff -u decipher.cpp decipher.cpp
+--- decipher.cpp	2011-10-12 15:27:06.796684104 -0500
++++ decipher.cpp	2011-10-12 16:42:06.968086738 -0500
+@@ -7,6 +7,7 @@
+ #include "numberio.hpp"
+ 
+ #include <stdlib.h>
++#include <cstring>
+ 
+ int decipher (int argc, char *argv[])
+ {
+@@ -34,7 +35,9 @@
+ 
+   assert ((inputfile = fopen (argv[2], "r"))!=0);
+   long inputlength;
+-  fscanf (inputfile, "%ld", &inputlength);
++  if (0 == fscanf(inputfile, "%ld", &inputlength)) {
++    printf("fscanf failed!");
++  }
+   //  printf ("length of input file %ld bytes\n", inputlength);
+ 
+   assert ((outputfile = fopen (argv[3], "w"))!=0);
+diff -u encrypt.cpp encrypt.cpp
+--- encrypt.cpp	2011-10-12 15:27:06.795684112 -0500
++++ encrypt.cpp	2011-10-12 16:42:06.968086738 -0500
+@@ -8,6 +8,7 @@
+ #include "numberio.hpp"
+ 
+ #include <stdlib.h>
++#include <cstring>
+ 
+ int encrypt (int argc, char *argv[])
+ {
+diff -u gen_random.cpp gen_random.cpp
+--- gen_random.cpp	2011-10-12 15:27:06.797684095 -0500
++++ gen_random.cpp	2011-10-12 16:42:06.969086730 -0500
+@@ -3,6 +3,7 @@
+ #include "common.hpp"
+ 
+ #include <stdio.h>
++#include <cstdlib>
+ 
+ void gen_random (int numbits, mpz_t x)
+ {
+diff -u main.cpp main.cpp
+--- main.cpp	2011-10-12 15:27:06.796684104 -0500
++++ main.cpp	2011-10-12 16:42:06.969086730 -0500
+@@ -2,6 +2,7 @@
+ #include "make_keys.hpp"
+ #include "encrypt.hpp"
+ #include "decipher.hpp"
++#include <cstring>
+ 
+ int main (int argc, char *argv[])
+ {
+diff -u numberio.cpp numberio.cpp
+--- numberio.cpp	2011-10-12 15:27:06.795684112 -0500
++++ numberio.cpp	2011-10-12 16:42:06.969086730 -0500
+@@ -1,6 +1,7 @@
+ #include "numberio.hpp"
+ 
+ #include "common.hpp"
++#include <cstdlib>
+ 
+ static char codec[] = { // codec has 64 elements.
+   'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 
