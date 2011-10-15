@@ -14,7 +14,7 @@ LICENSE="Artistic GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-LANGS="ar ast bg bs ca cs da de el en_GB es eu fi fo fr gl he hr hu it ja ko lt ms nb nl nn pl pt pt_BR ro ru sk sl sv th tr ug uk zh_CN zh_TW"
+LANGS="ar ast bg bs ca cs da de el en_GB es eu fi fo fr gl he hr hu id it ja ko lt ms nb nl nn pl pt pt_BR ro ru sk sl sv th tr ug uk zh_CN zh_TW"
 IUSE="nls"
 for i in ${LANGS}; do
 	IUSE="${IUSE} linguas_${i}"
