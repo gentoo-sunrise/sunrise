@@ -3,6 +3,9 @@
 # $Header: $
 
   15 Oct 2011; keenblade <keenblade@gmail.com> ChangeLog:
+  Version bump to clamtk-4.36
+
+  15 Oct 2011; keenblade <keenblade@gmail.com> ChangeLog:
   Version bump to clamtk-4.35. Added language file id
 
   22 Aug 2011; keenblade <keenblade@gmail.com> -clamtk-4.33.ebuild,
