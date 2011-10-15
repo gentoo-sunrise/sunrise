@@ -3,6 +3,9 @@
 # $Header: $
 
   15 Oct 2011; keenblade <keenblade@gmail.com> ChangeLog:
+  Version downgraded to clamtk-4.35, since clamtk-4.36 isn't released
+
+  15 Oct 2011; keenblade <keenblade@gmail.com> ChangeLog:
   Version bump to clamtk-4.36
 
   15 Oct 2011; keenblade <keenblade@gmail.com> ChangeLog:
