@@ -11,7 +11,7 @@ inherit distutils
 MY_P=${PN/-/.}-${PV}
 DESCRIPTION="Library for parsing, manipulating, and generating URIs"
 HOMEPAGE="http://launchpad.net/lazr.uri"
-SRC_URI="http://launchpad.net/${MY_PN}/trunk/${PV}/+download/${MY_P}.tar.gz"
+SRC_URI="http://launchpad.net/${PN/-/.}/trunk/${PV}/+download/${MY_P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"

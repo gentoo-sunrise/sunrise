@@ -4,5 +4,9 @@
 
   16 Oct 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
   ChangeLog:
+  SRC_URI fix
+
+  16 Oct 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  ChangeLog:
   New Ebuild for bug 387113 thanks to Tommy[D] and mgorny
 
