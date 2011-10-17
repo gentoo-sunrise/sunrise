@@ -1,0 +1,8 @@
+# ChangeLog for dev-python/wadllib
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Oct 2011; Laurento Frittella (mrfree) <laurento.frittella@gmail.com>
+  ChangeLog:
+  New Ebuild for bug 387111 thanks to Tommy[D] and mgorny
+
