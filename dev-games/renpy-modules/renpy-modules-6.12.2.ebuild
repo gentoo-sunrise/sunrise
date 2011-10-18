@@ -29,8 +29,7 @@ DEPEND="
 	virtual/ffmpeg
 	dev-libs/fribidi
 	dev-python/pygame[X]
-	sys-libs/zlib
-	!~dev-games/renpy-6.10.2"
+	sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}/module"
