@@ -19,7 +19,7 @@ IUSE="gnome"
 DEPEND="dev-python/python-distutils-extra"
 
 RDEPEND="dev-python/pyxdg
-	dev-python/pygobject
+	dev-python/pygobject:2
 	dev-python/notify-python
 	dev-python/pygtk
 	dev-python/gst-python
