@@ -17,7 +17,7 @@ IUSE="doc"
 
 DEPEND="dev-lang/python
 	>=dev-python/pygtk-2.0.0
-	dev-python/pygobject
+	dev-python/pygobject:2
 	>=dev-python/pygtksourceview-2.0.0"
 
 RDEPEND="${DEPEND}"
