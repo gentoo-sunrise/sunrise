@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> ChangeLog:
+  Depend on correct slot of pygobject.
+
   06 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
   -files/perroquet-1.0.1-setup-options.patch, -perroquet-1.1.0.ebuild,
   +perroquet-1.1.1.ebuild:

@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="virtual/libintl"
 DEPEND="${RDEPEND}
-	dev-python/pygobject
+	dev-python/pygobject:2
 	dev-python/gst-python
 	dev-perl/XML-Parser"
 RESTRICT_PYTHON_ABIS="2.[45] 3.*"
