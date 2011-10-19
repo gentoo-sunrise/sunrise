@@ -1,6 +1,9 @@
 # ChangeLog for x11-libs/libubuntuone
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> ChangeLog:
+  Depend on correct slot of pygobject.
 
   21 May 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   libubuntuone-0.3.1.ebuild:

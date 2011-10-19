@@ -29,7 +29,7 @@ RDEPEND="mono? (
 	dev-libs/libxml2
 	dev-libs/openssl
 	python? (
-		dev-python/pygobject
+		dev-python/pygobject:2
 		dev-python/pygtk:2
 	)
 	gnome-base/gconf:2
