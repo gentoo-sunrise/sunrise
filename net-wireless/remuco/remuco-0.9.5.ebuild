@@ -22,7 +22,7 @@ IUSE="amarok audacious banshee exaile gmusicbrowser mpd mplayer quodlibet rhythm
 COMMON_DEPEND="dev-python/dbus-python
 	dev-python/imaging
 	dev-python/pybluez
-	dev-python/pygobject
+	dev-python/pygobject:2
 	dev-python/pyxdg"
 DEPEND="${COMMON_DEPEND}
 	client? (
