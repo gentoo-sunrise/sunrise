@@ -1,0 +1,8 @@
+# ChangeLog for app-admin/ajenti
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  20 Oct 2011; Eugeny 'Punkoff' Pankov <john.pankov@gmail.com>
+  +ajenti-0.5.101.ebuild, +metadata.xml:
+  Initial ebuild for bug #387595. Thanks to Tommy, _AxS_ and mgorny for support.
+
