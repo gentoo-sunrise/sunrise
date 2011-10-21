@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
@@ -33,6 +33,12 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}/module"
+
+src_prepare() {
+	# Fix building with libpng-1.5	
+	# https://bugs.launchpad.net/renpy/+bug/879474
+	epatch "${FILESDIR}/${PN}-libpng15.patch"
+}
 
 src_compile() {
 	export RENPY_DEPS_INSTALL="${ROOT}usr"
