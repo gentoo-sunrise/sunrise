@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2011; keenblade <keenblade@gmail.com> ChangeLog:
+  Version bump
+
   15 Oct 2011; keenblade <keenblade@gmail.com> ChangeLog:
   Version downgraded to clamtk-4.35, since clamtk-4.36 isn't released
 
