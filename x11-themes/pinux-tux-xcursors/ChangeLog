@@ -1,0 +1,8 @@
+# ChangeLog for x11-themes/pinux-tux-xcursors
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Oct 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +pinux-tux-xcursors-0.3.ebuild, +metadata.xml:
+  Reworked ebuild for bug 102203.
+
