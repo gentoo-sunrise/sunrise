@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Oct 2011; Justin Lecher <jlec@gentoo.org> ChangeLog:
+  Version Bump, add USE=applet
+
   29 Apr 2011; Justin Lecher <jlec@gentoo.org> gnome-schedule-2.1.1.ebuild:
   Fix deps for gnome3, Fix for New Python stuff
 

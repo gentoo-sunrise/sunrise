@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="applet"
 
 RDEPEND="
 	x11-libs/gtk+:2
@@ -36,4 +36,6 @@ DOCS="AUTHORS NEWS README TODO"
 
 pkg_setup () {
 	python_set_active_version 2
+	G2CONF="${G2CONF}
+		$(use_enable applet)"
 }
