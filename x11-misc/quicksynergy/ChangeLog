@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Oct 2011; BAUER Samuel (mazes_80) <samuel.bauer@yahoo.fr>
+  -quicksynergy-0.8.1.ebuild, +quicksynergy-0.9.0.ebuild:
+  quicksynergy version bump (0.9.0), thanks to Tommy[D]
+
   29 Apr 2011; Justin Lecher <jlec@gentoo.org> quicksynergy-0.8.1.ebuild:
   Fix deps for gnome3
 
