@@ -264,6 +264,7 @@ x11-drivers/libfreenect:fakenect - Install fakenect mock library
 x11-drivers/libfreenect:opencv - Install opencv library
 x11-drivers/libfreenect:python - Install python library extension
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
+x11-misc/gnome-schedule:applet - Enable Gnome 2 applet support
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
 x11-plugins/imgur-integration:eog - Build an imgur upload plugin for media-gfx/eog
