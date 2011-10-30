@@ -1,8 +1,4 @@
-_dmd_opts="$(dmd --help 2>&1 | sed -n 's/^\s*\(-\+\w*=*-*\).*/\1/p' | \
-             sed 's/filename\|docdir\|directory\|path\|linkerflag\|objdir//g')"
-_ld_opts_dmd="$(ld --help 2>&1 | sed -n 's/.*\(--[-a-z0-9]\{1,\}\).*/-L\1/p')"
-_env_vars_dmd="$(printenv | cut -d = -f 1 | sort -u)"
-
+# bash completion for dmd
 
 _filedir_dmd()
 {
@@ -33,6 +29,11 @@ _filedir_dmd()
 
 _dmd()
 {
+    _dmd_opts="$(dmd --help 2>&1 | sed -n 's/^\s*\(-\+\w*=*-*\).*/\1/p' | \
+               sed 's/filename\|docdir\|directory\|path\|linkerflag\|objdir//g')"
+    _ld_opts_dmd="$(ld --help 2>&1 | sed -n 's/.*\(--[-a-z0-9]\{1,\}\).*/-L\1/p')"
+    _env_vars_dmd="$(printenv | cut -d = -f 1 | sort -u)"
+
     COMPREPLY=()
     local cur
     _get_comp_words_by_ref -n = cur
@@ -47,7 +48,7 @@ _dmd()
             COMPREPLY=( $( compgen -W "${_ld_opts_dmd}" -- ${cur} ) )
             ;;
         -L*) # match linker options
-            local opts=$(echo -e "-L-L\n-L--")
+            local opts=$(echo -e "-L-L\n-L--") 
             COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
             ;;
         -*) # match dmd options
@@ -98,8 +99,8 @@ _dmd()
                 L=$(echo -e "-cov${C}-fPIC${C}-gc${C}--help${C}-ignore\
                     ${C}-inline${C}-lib${C}-m32${C}-m64${C}-man${C}-map\
                     ${C}-noboundscheck${C}-nofloat${C}-O${C}-o-${C}-op\
-                    ${C}-profile${C}-property${C}-quiet${C}-release\
-                    ${C}-run${C}-unittest${C}-vtls${C}-wi" | sed 's: ::g')
+                    ${C}-profile${C}-quiet${C}-release${C}-run${C}-unittest\
+                    ${C}-vtls${C}-wi" | sed 's: ::g')
                 if test ${#COMPREPLY[@]} -eq 1 ;then
                     for I in ${L}
                     do
@@ -126,3 +127,11 @@ _dmd()
 
 
 complete -F _dmd dmd
+
+# Local variables:
+# mode: shell-script
+# sh-basic-offset: 4
+# sh-indent-comment: t
+# indent-tabs-mode: nil
+# End:
+# ex: ts=4 sw=4 et filetype=sh

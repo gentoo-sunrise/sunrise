@@ -4,19 +4,17 @@
 
 EAPI="4"
 
-inherit eutils multilib bash-completion
+inherit eutils multilib bash-completion-r1
 
 DESCRIPTION="Reference compiler for the D programming language"
 HOMEPAGE="http://www.digitalmars.com/d/"
 SRC_URI="http://ftp.digitalmars.com/${PN}.${PV}.zip"
 
-# DMD supports amd64/x86 exclusively
-KEYWORDS="-* ~amd64 ~x86"
+LICENSE="DMD"
 SLOT="2"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE="multilib doc examples"
 
-# License doesn't allow redistribution
-LICENSE="DMD"
 RESTRICT="mirror"
 
 DEPEND="sys-apps/findutils
@@ -26,7 +24,7 @@ RDEPEND="!dev-lang/dmd-bin"
 S="${WORKDIR}/${PN}2/src"
 
 rdos2unix() {
-	edos2unix $(find . -name '*'.$1 -type f) || die "Failed to convert line-endings of all .$1 files"
+	edos2unix `find . -name '*'.$1 -type f` || die "Failed to convert line-endings of all .$1 files"
 }
 
 src_prepare() {
@@ -76,8 +74,8 @@ src_compile() {
 }
 
 src_test() {
-	local DFLAGS="-Iphobos -Idruntime/import -L-lrt"
-	local DMD="dmd/dmd"
+	DFLAGS="-Iphobos -Idruntime/import -L-lrt"
+	DMD="dmd/dmd"
 	if use x86 || (use amd64 && use multilib); then
 		${DMD} -m32 ${DFLAGS} -Lphobos/generated/linux/release32/libphobos2.a ../samples/d/hello.d || die "Failed to build hello.d (32bit)"
 		./hello 32bit || die "Failed to run test sample (32bit)"
@@ -98,7 +96,7 @@ DFLAGS=-I/usr/include/phobos2 -I/usr/include/druntime -L-L--no-warn-search-misma
 EOF
 	insinto /etc
 	doins dmd.conf
-	dobashcompletion "${FILESDIR}/${PN}.bashcomp"
+	dobashcomp "${FILESDIR}/${PN}.bashcomp"
 
 	# Compiler
 	dobin "dmd"
@@ -110,10 +108,9 @@ EOF
 
 	use doc && dohtml -r ../html/*
 
-	docompress -x /usr/share/doc/${PF}/samples/
-	insinto /usr/share/doc/${PF}/samples/
 	if use examples; then
-		doins -r ../samples/d/*
+		dodir /usr/share/doc/${PF}/samples
+		cp -R ../samples/d/* "${D}"/usr/share/doc/${PF}/samples/ || die
 	fi
 
 	# druntime & Phobos
@@ -139,17 +136,18 @@ EOF
 	rm "phobos/index.d" || die
 	rm -r "phobos/etc/c/zlib" || die
 
-	# imports
-	insinto /usr/include/druntime/
-	doins -r druntime/import/*
+	# includes
+	dodir /usr/include/druntime
+	mv "druntime/import"/* "${D}/usr/include/druntime/" || die
 
-	insinto /usr/include/phobos2
-	doins -r phobos/*
+	dodir /usr/include/phobos2
+	mv "phobos"/* "${D}/usr/include/phobos2/" || die
+
 }
 
 pkg_postinst() {
 	if use doc || use examples; then
-		elog "The bundled docs and/or samples may be found in"
-		elog "/usr/share/doc/${PF}"
+		elog "The bundled docs and/or samples may be found in  "
+		elog "/usr/share/doc/${PF}                             "
 	fi
 }

@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit eutils multilib bash-completion
+inherit eutils multilib bash-completion-r1
 
 DESCRIPTION="Reference compiler for the D programming language"
 HOMEPAGE="http://www.digitalmars.com/d/"
@@ -94,7 +94,7 @@ DFLAGS=-I/usr/include/phobos2 -I/usr/include/druntime -L-L--no-warn-search-misma
 EOF
 	insinto /etc
 	doins dmd.conf
-	dobashcompletion "${FILESDIR}/${PN}.bashcomp"
+	dobashcomp "${FILESDIR}/${PN}.bashcomp"
 
 	# Compiler
 	dobin "dmd"
