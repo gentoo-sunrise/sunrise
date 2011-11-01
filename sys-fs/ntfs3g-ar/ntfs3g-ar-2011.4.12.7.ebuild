@@ -7,7 +7,7 @@ inherit linux-info versionator
 
 MY_PN="${PN/3g-ar/-3g}"
 MY_PV="$(get_version_component_range 1-3)AR.$(get_version_component_range 4)"
-MY_P="${MY_PN}-${MY_PV}"
+MY_P="${MY_PN}_ntfsprogs-${MY_PV}"
 
 DESCRIPTION="NTFS-3G variant supporting ACLs, junction points, compression and more"
 HOMEPAGE="http://pagesperso-orange.fr/b.andre/advanced-ntfs-3g.html"
@@ -16,12 +16,15 @@ SRC_URI="http://pagesperso-orange.fr/b.andre/${MY_P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="acl debug external-fuse suid udev"
+IUSE="acl crypt debug +external-fuse ntfsprogs  static-libs suid xattr udev"
 
 RDEPEND="external-fuse? ( >=sys-fs/fuse-2.8.0 )
-	!sys-fs/ntfs3g
+	ntfsprogs? ( !!sys-fs/ntfsprogs )
+	crypt? ( net-libs/gnutls )"
+
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig
 	sys-apps/attr"
-DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -42,15 +45,18 @@ src_configure() {
 		--enable-ldscript \
 		--disable-ldconfig \
 		--with-fuse=$(use external-fuse && echo external || echo internal) \
+		$(use_enable ntfsprogs) \
+		$(use_enable crypt crypto) \
 		$(use_enable acl posix-acls) \
+		$(use_enable xattr xattr-mappings)	\
+		$(use_enable static-libs static) \
 		$(use_enable debug)
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 
-	prepalldocs || die "prepalldocs failed"
-	dodoc AUTHORS ChangeLog CREDITS || die "dodoc failed"
+	dodoc AUTHORS ChangeLog CREDITS README || die "doc failed"
 
 	use suid && { fperms u+s "/bin/${MY_PN}" || die "set suid failed" ; }
 
@@ -58,6 +64,8 @@ src_install() {
 		insinto /etc/udev/rules.d/
 		doins "${FILESDIR}/99-ntfs3g.rules" || die "udev rules install failed"
 	fi
+
+	find "${D}" -name '*.la' -delete
 }
 
 pkg_postinst() {

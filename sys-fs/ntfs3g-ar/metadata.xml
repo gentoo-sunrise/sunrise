@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
 	<use>
-		<flag name='udev'>Instal udev rule for <pkg>sys-apps/udev</pkg></flag>
 		<flag name='external-fuse'>Use external FUSE library instead of internal
 		one. Must be disabled for unprivileged mounting to work.</flag>
+		<flag name='udev'>Install udev rule to make udisks use ntfs-3g instead
+		of the kernel NTFS driver.</flag>
+		<flag name='crypt'>Add support for encrypted NTFS drives/partitions.</flag>
+		<flag name='ntfsprogs'>Include internal version of ntfsprogs. This will
+		block sys-fs/ntfsprogs.</flag>
 	</use>
 </pkgmetadata>
