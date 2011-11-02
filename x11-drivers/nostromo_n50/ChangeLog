@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Nov 2011; Dwayne Asbury <kisak42@gmail.com>
+  files/nostromo_n50-1.4.1-asneeded.patch:
+  Reduce nostromo_n50-1.4.1-asneeded.patch to essentials
+
   30 Apr 2011; Justin Lecher <jlec@gentoo.org> -nostromo_n50-1.3.ebuild,
   +nostromo_n50-1.4.ebuild, +files/nostromo_n50-1.4-asneeded.patch:
   Fix deps for gnome3, Version Bump, Fix fltk slot, as-needed fix

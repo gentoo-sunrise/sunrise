@@ -9,18 +9,3 @@ index 8e0dd26..e3372ed 100644
 -SUBDIRS = src doc
 +SUBDIRS = src
  
-diff --git a/src/Makefile.am b/src/Makefile.am
-index 9d6a71a..6b4f014 100644
---- a/src/Makefile.am
-+++ b/src/Makefile.am
-@@ -6,8 +6,8 @@ AUTOMAKE_OPTIONS = foreign
- 
- nostromo_daemondir = $(datadir)/pixmaps
- 
--CXXFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@ @FLTK_CXXFLAGS@ -DIMG_PATH=\"$(nostromo_daemondir)\" `xml2-config --cflags`
--CFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@ `xml2-config --cflags`
-+AM_CXXFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@ @FLTK_CXXFLAGS@ -DIMG_PATH=\"$(nostromo_daemondir)\" `xml2-config --cflags`
-+AM_CFLAGS = @DEBUG_FLAGS@ @NOSTROMO_CFLAGS@ `xml2-config --cflags`
- LDFLAGS = @DEBUG_FLAGS@ 
- LIBS =  @NOSTROMO_LIBS@ @FLTK_LIBS@ -lXtst -lpthread @DEBUG_FLAGS@ @LIBS@ `xml2-config --libs`
- 
