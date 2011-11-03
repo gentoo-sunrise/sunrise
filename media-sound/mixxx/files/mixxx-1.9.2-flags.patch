@@ -1,14 +1,3 @@
---- build/mixxx.py.orig	2010-12-22 11:21:56.000000000 -0800
-+++ build/mixxx.py	2010-12-22 11:16:22.000000000 -0800
-@@ -189,7 +189,7 @@
-         if os.environ.has_key('CC'):
-             self.env['CC'] = os.environ['CC']
-         if os.environ.has_key('CFLAGS'):
--            self.env['CCFLAGS'] += SCons.Util.CLVar(os.environ['CFLAGS'])
-+            self.env['CFLAGS'] += SCons.Util.CLVar(os.environ['CFLAGS'])
-         if os.environ.has_key('CXX'):
-             self.env['CXX'] = os.environ['CXX']
-         if os.environ.has_key('CXXFLAGS'):
 --- build/depends.py.orig	2010-12-22 11:13:22.000000000 -0800
 +++ build/depends.py	2010-12-22 11:14:02.000000000 -0800
 @@ -587,10 +587,8 @@

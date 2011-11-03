@@ -43,17 +43,7 @@ DEPEND="${RDEPEND}
 
 SCONS_MIN_VERSION="2.0.1"
 
-src_unpack() {
-	unpack ${A}
-
-	#Fix the src dir
-	mv * "${S}" || die
-}
-
 src_prepare() {
-	# patch for linux 3.0 support
-	epatch "${FILESDIR}"/${P}-linux3.patch
-
 	# patch CFLAGS issue
 	epatch "${FILESDIR}"/${P}-flags.patch
 

@@ -2,6 +2,12 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Nov 2011; Alex Barker (KWhat) <alex@1stleg.com> -mixxx-1.9.0-r2.ebuild,
+  -files/mixxx-1.9.0-flags.patch, -files/mixxx-1.9.0-libsoundtouch.patch,
+  -files/mixxx-1.9.0-linux3.patch, +mixxx-1.9.2.ebuild,
+  +files/mixxx-1.9.2-flags.patch, +files/mixxx-1.9.2-libsoundtouch.patch:
+  Version bump for 1.9.2
+
   05 Oct 2011; Alex Barker (KWhat) <alex@1stleg.com>
   files/mixxx-1.9.0-flags.patch, files/mixxx-9999-flags.patch:
   Modifed flags patch to remove CCCOM and CXXCOM overrides that are not needed
