@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Nov 2011; Eugeny 'Punkoff' Pankov <john.pankov@gmail.com>
+  +ajenti-0.6.1.ebuild, +files/ajenti:
+  Version bump for ajenti
+
   23 Oct 2011; Eugeny 'Punkoff' Pankov <john.pankov@gmail.com>
   +ajenti-0.6.0.ebuild:
   Version bump for ajenti
