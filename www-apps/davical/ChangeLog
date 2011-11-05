@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2011; Sven Schwyn (svoop) <gentoo@bitcetera.com>
+  -davical-0.9.9.6.ebuild, +davical-0.9.9.7.ebuild:
+  Version bump for davical
+
   05 Oct 2011; lebarjack <francois.perichon@univ-lille2.fr>
   -davical-0.9.9.4.ebuild, -files/postinstall-en-0.9.9.4.txt,
   +davical-0.9.9.6.ebuild, +files/awl_location.patch,

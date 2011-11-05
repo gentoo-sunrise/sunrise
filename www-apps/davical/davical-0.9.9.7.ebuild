@@ -21,7 +21,7 @@ RDEPEND="app-admin/pwgen
 	dev-perl/DBI
 	dev-perl/DBD-Pg
 	dev-perl/yaml
-	>=dev-php/awl-0.48
+	>=dev-php/awl-0.49
 	www-servers/apache"
 
 need_php5
