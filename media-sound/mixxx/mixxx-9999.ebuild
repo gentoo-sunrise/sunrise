@@ -26,12 +26,12 @@ RDEPEND="media-libs/flac
 	media-libs/taglib
 	virtual/opengl
 	virtual/glu
-	x11-libs/qt-gui:4
-	x11-libs/qt-svg:4
-	x11-libs/qt-opengl:4
-	x11-libs/qt-qt3support:4
-	x11-libs/qt-webkit:4
-	x11-libs/qt-xmlpatterns:4
+	>=x11-libs/qt-gui-4.6:4
+	>=x11-libs/qt-svg-4.6:4
+	>=x11-libs/qt-opengl-4.6:4
+	>=x11-libs/qt-qt3support-4.6:4
+	>=x11-libs/qt-webkit-4.6:4
+	>=x11-libs/qt-xmlpatterns-4.6:4
 	mp4? (	media-libs/faad2
 		media-libs/libmp4v2
 	)

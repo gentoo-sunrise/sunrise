@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2011; Alex Barker (KWhat) <alex@1stleg.com> mixxx-9999.ebuild,
+  files/mixxx-9999-libsoundtouch.patch:
+  Live ebuild update to depend on qt 4.6 or later and fixed the libsoundtouch
+  externalization patch broken by upstream updates.
+
   03 Nov 2011; Alex Barker (KWhat) <alex@1stleg.com> -mixxx-1.9.0-r2.ebuild,
   -files/mixxx-1.9.0-flags.patch, -files/mixxx-1.9.0-libsoundtouch.patch,
   -files/mixxx-1.9.0-linux3.patch, +mixxx-1.9.2.ebuild,
