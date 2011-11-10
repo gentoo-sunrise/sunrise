@@ -1,0 +1,10 @@
+# ChangeLog for sys-libs/libapparmor
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Nov 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  +libapparmor-2.6.1.ebuild, +files/libapparmor-2.6.1-python3.patch,
+  +metadata.xml:
+  New ebuild for bug #118779. Thanks to Tommy, binki, _AxS_, & floppym for
+  feedback.
+
