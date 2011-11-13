@@ -1,0 +1,211 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+extra_started_commands="reload"
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	eindent
+
+	if ! check_config || ! remove_profiles || ! load_profiles load ; then
+		eend 1
+		return 1
+	fi
+
+	eoutdent
+	eend 0
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+
+	if ! check_config ; then
+		eend 1
+		return 1
+	fi
+
+	eindent
+	ebegin "Removing profiles"
+	remove_profiles
+	eoutdent
+	rc=$?
+	eend $rc
+	return $rc
+}
+
+reload() {
+	ebegin "Reloading ${SVCNAME} profiles"
+
+	if ! ( check_config && load_profiles reload && unload_obsolete_profiles ); then
+		eend 1
+		return 1
+	fi
+
+	eend 0
+	return 0
+}
+
+check_config() {
+
+	if [ -z "$PARSER" -o -z "$PROFILE_DIR" -o -z "$SECURITYFS" ]; then
+		eerror "/etc/conf.d/${SVCNAME} has missing variables"
+		return 1
+	fi
+
+	if ! is_securityfs_mounted ; then
+		if ! mount_securityfs ; then
+			eerror "Failed to mount securityfs"
+			return 1
+		fi
+	fi
+
+	if ! is_apparmor_present ; then
+		modprobe -q apparmor
+		if ! is_apparmor_present ; then
+			eerror "${SVCNAME} kernel support is not present"
+			return 1
+		fi
+	fi
+
+	if ! check_apparmor_compat ; then
+		eerror "${SVCNAME} compatibility is not present in the kernel"
+		return 1
+	fi
+}
+
+get_profile_files() {
+	if [[ "$PROFILE_DIR" != */ ]]; then
+		PROFILE_DIR="${PROFILE_DIR}/"
+	fi
+
+	ARGS=""
+	LENGTH=${#IGNORE_PROFILES[@]}
+
+	for ((I=1; I <= $LENGTH; I++)); do
+		ARGS="${ARGS} -path ${PROFILE_DIR}${IGNORE_PROFILES[$(($I-1))]} -prune"
+		if [ $LENGTH -gt 1 -a $I -lt $LENGTH ]; then
+			ARGS="${ARGS} -o"
+		fi
+	done
+
+	if [ -z "$ARGS" ]; then
+		PROFILES="find /etc/apparmor.d"
+	else
+		PROFILES="find /etc/apparmor.d "$ARGS" -o -type f -print"
+	fi
+
+	echo $( $PROFILES )
+}
+
+get_active_profiles() {
+	PROFILES=`sed -e "s/ (\(enforce\|complain\))//" "${SECURITYFS}/profiles"`
+	echo $PROFILES
+}
+
+load_profiles() {
+
+	case "$1" in
+		load)
+			PARSER_ARGS="--add"
+			MESSAGE="Loading ${SVCNAME} profiles"
+			;;
+		reload)
+			PARSER_ARGS="--replace"
+			MESSAGE="Reloading ${SVCNAME} profiles"
+			;;
+		*)
+			eerror "Invalid load_profile argument"
+			exit 1
+			;;
+	esac	
+
+	if [ ! -x "${PARSER}" ]; then
+		eerror "Could not find apparmor_parser"
+		return 1
+	fi
+
+	if [ ! -d "${PROFILE_DIR}" -o -z "$(ls $PROFILE_DIR 2> /dev/null)" ]; then
+		ewarn "No profiles found"
+		return 0
+	fi
+
+	PROFILES="$(get_profile_files)"
+	for PROFILE in $PROFILES; do
+		$PARSER $PARSER_ARGS $PROFILE
+		if [ $? -ne 0 ]; then
+			if [ "${PARSER_ARGS}" == "replace" ]; then
+				ewarn "Error loading '${PROFILE}', continuing"
+			else
+				eerror "Error loading '${PROFILE}', aborting"
+				remove_profiles
+				return 1
+			fi
+		fi
+	done
+
+	return 0
+}
+
+remove_profiles() {
+	PROFILES=$(get_active_profiles)
+	for PROFILE in $PROFILES; do
+		echo -n "$PROFILE" > "${SECURITYFS}/.remove"
+	done
+	return 0
+}
+
+is_securityfs_mounted() {
+	grep -q securityfs /proc/filesystems && grep -q securityfs /proc/mounts
+	return $?
+}
+
+mount_securityfs() {
+	if [ grep -q securityfs /proc/filesystems ]; then
+		mount -t securityfs securityfs "${SECURITYFS}"
+		return $?
+	else
+		return 1
+	fi
+}
+
+is_apparmor_present() {
+	grep -q "^apparmor" /proc/modules
+	[ $? -ne 0 -a -d /sys/module/apparmor ]
+	return $?
+}
+
+check_apparmor_compat() {
+	if [ -f "${SECURITYFS}/profiles" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+unload_obsolete_profiles() {
+
+	TEMPDIR=$(umask 0077 && mktemp -d)
+
+	if [ ! -d "${TEMPDIR}" ]; then
+		eerror "Failed to create temporary directory"
+		return 1
+	fi
+
+	cd $TEMPDIR
+
+	echo $(get_active_profiles) | tr ' ' '\n' | sort > old
+
+	for PROFILE in $(get_profile_files); do
+		echo $(${PARSER} -N "$PROFILE") >> new
+	done
+
+	for PROFILE in $(comm -2 -3 old new); do
+		echo -n "$PROFILE" > "${SECURITYFS}/.remove"
+	done
+
+	rm -rf "${TEMPDIR}"
+
+	return 0
+}

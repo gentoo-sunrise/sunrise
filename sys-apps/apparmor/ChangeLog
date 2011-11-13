@@ -1,0 +1,9 @@
+# ChangeLog for sys-apps/apparmor
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Nov 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  +apparmor-2.6.1.ebuild, +files/apparmor-2.6.1-makefile.patch,
+  +files/apparmor-confd, +files/apparmor-init, +metadata.xml:
+  New Ebuild for bug #118779. Thanks to floppym & hwoarang for feedback.
+

@@ -1,0 +1,14 @@
+# config file for /etc/init.d/apparmor
+
+# Location of parser
+PARSER=/sbin/apparmor_parser
+
+# Directory in which profiles are stored
+PROFILE_DIR=/etc/apparmor.d/
+
+# Directories within PROFILE_DIR to be ignored
+IGNORE_PROFILES=( "abstractions" "tunables" )
+
+# Where securityfs is/will be mounted
+SECURITYFS=/sys/kernel/security/apparmor
+
