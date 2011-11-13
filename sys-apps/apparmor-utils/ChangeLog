@@ -1,0 +1,9 @@
+# ChangeLog for sys-apps/apparmor-utils
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Nov 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  +apparmor-utils-2.6.1.ebuild, +files/apparmor-utils-2.6.1-jobserver.patch,
+  +metadata.xml:
+  New Ebuild for bug 118779. Thanks to hwoarang for feedback.
+
