@@ -1,0 +1,8 @@
+# ChangeLog for x11-misc/trayfreq
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Nov 2011; BAUER Samuel (mazes_80) <samuel.bauer@yahoo.fr>
+  +trayfreq-0.2_pre2.ebuild, +metadata.xml:
+  trayfreq ebuild: #388643; thanks to all reviewers
+
