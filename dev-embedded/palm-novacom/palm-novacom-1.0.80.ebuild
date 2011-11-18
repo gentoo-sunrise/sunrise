@@ -6,7 +6,7 @@ EAPI=2
 
 inherit eutils
 
-SDK_V="3.0.2.652"
+SDK_V="3.0.4.669"
 MY_P="${PN}_${PV}"
 
 DESCRIPTION="A part of the Palm Mojo SDK for communication with and rootaccess to the webOS based devices"

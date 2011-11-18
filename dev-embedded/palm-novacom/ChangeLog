@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Nov 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  -palm-novacom-1.0.76.ebuild, +palm-novacom-1.0.80.ebuild:
+  dev-embedded/palm-novacom bump
+
   13 Aug 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   -palm-novacom-1.0.55.ebuild, -files/palm-novacom-1.0.55-initd,
   -files/palm-novacom-1.0.55-novacom.sh,
