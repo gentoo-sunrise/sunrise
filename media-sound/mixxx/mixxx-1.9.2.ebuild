@@ -13,7 +13,7 @@ SRC_URI="http://downloads.mixxx.org/${P}/${P}-src.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug mp4 pulseaudio shout"
+IUSE="aac debug mp4 pulseaudio shout wavpack"
 
 RDEPEND="media-libs/flac
 	media-libs/libid3tag
@@ -33,11 +33,13 @@ RDEPEND="media-libs/flac
 	x11-libs/qt-qt3support:4
 	x11-libs/qt-webkit:4
 	x11-libs/qt-xmlpatterns:4
+	aac? ( media-libs/faad2 )
 	mp4? (	media-libs/faad2
 		media-libs/libmp4v2
 	)
 	pulseaudio? ( media-sound/pulseaudio )
-	shout? ( media-libs/libshout )"
+	shout? ( media-libs/libshout )
+	wavpack? ( media-sound/wavpack )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -59,9 +61,11 @@ src_compile() {
 	LIBPATH="/usr/$(get_libdir)" escons \
 		prefix=/usr \
 		qtdir=/usr/$(get_libdir)/qt4 \
+		$(use_scons aac faad) \
 		$(use_scons debug qdebug) \
 		$(use_scons mp4 m4a) \
 		$(use_scons shout shoutcast) \
+		$(use_scons wavpack wv) \
 		hifieq=1 \
 		vinylcontrol=1 \
 		optimize=0 \

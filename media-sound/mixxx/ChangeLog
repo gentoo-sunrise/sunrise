@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Nov 2011; Alex Barker (KWhat) <alex@1stleg.com> mixxx-1.9.2.ebuild,
+  mixxx-9999.ebuild:
+  Added support for AAC and WavPack audio codecs.
+
   09 Nov 2011; Alex Barker (KWhat) <alex@1stleg.com> mixxx-9999.ebuild,
   files/mixxx-9999-libsoundtouch.patch:
   Live ebuild update to depend on qt 4.6 or later and fixed the libsoundtouch
