@@ -1,6 +1,11 @@
 # ChangeLog for dev-python/pottymouth
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -pottymouth-1.2.2.ebuild, +pottymouth-2.1.0.ebuild,
+  +files/pottymouth-2.1.0-fix-setup.patch:
+  Version bump. Switch sed to a patch and simplify setup.py while at it .
 
   03 Apr 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pottymouth-1.2.2.ebuild:

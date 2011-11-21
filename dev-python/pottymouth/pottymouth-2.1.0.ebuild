@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ EAPI="2"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils
+inherit distutils eutils
 
 MY_P=PottyMouth-${PV}
 DESCRIPTION="A python library that scrubs untrusted text to valid, nice-looking, completely safe XHTML"
@@ -22,8 +22,10 @@ RESTRICT_PYTHON_ABIS="3.*"
 
 S=${WORKDIR}/${MY_P}
 
+DOCS="readme.html"
+
 src_prepare() {
-	sed -i -e "s/python-pottymouth/${PF}/g" setup.py || die "sed failed"
+	epatch "${FILESDIR}/${P}-fix-setup.patch" || die
 }
 
 src_test() {
