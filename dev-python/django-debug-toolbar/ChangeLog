@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -django-debug-toolbar-0.8.4.ebuild, +django-debug-toolbar-0.8.5.ebuild:
+  Version bump
+
   25 Feb 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +django-debug-toolbar-0.8.4.ebuild, +metadata.xml:
   New ebuild for bug 356279. Thanks to mgorny for reviewing
