@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,21 +28,15 @@ DEPEND="${RDEPEND}
 		dev-python/nose )"
 
 RESTRICT_PYTHON_ABIS="3*"
+RESTRICT="test"
 
 src_compile() {
 	distutils_src_compile
 
 	if use doc; then
-		mkdir html
-		PYTHONPATH=. sphinx-build doc html || die "Building docs failed"
+		cd doc
+		PYTHONPATH=.. emake html || die "Building docs failed"
 	fi
-}
-
-src_test() {
-	testing() {
-		"$(PYTHON)" tests/nosewrapper.py
-	}
-	python_execute_function testing
 }
 
 src_install() {
@@ -53,6 +47,13 @@ src_install() {
 	fi
 
 	if use doc; then
-		dohtml -r html/* || die "Error installing docs"
+		dohtml -r doc/_build/html/* || die "Error installing docs"
 	fi
+}
+
+src_test() {
+	testing() {
+		"$(PYTHON)" tests/nosewrapper.py
+	}
+	python_execute_function testing
 }
