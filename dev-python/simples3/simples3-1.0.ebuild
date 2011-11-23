@@ -1,24 +1,24 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
+PYTHON_USE_WITH="ssl"
 DISTUTILS_SRC_TEST="nosetests"
+RESTRICT_PYTHON_ABIS="2.4 3.*"
 
-inherit distutils versionator
+inherit distutils
 
 DESCRIPTION="A fairly simple, decently quick python interface to Amazon's S3 storage service"
-HOMEPAGE="http://lericson.se/"
+HOMEPAGE="http://sendapatch.se/projects/simples3/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 DOCS="changes.rst"
 

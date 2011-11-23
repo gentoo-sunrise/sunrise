@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/simples3
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  simples3-1.0.ebuild:
+  Make sure python is built with ssl. Remove unused inherit, update homepage
 
   06 Sep 2010; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -simples3-1.0_alpha.ebuild, +simples3-1.0.ebuild:
