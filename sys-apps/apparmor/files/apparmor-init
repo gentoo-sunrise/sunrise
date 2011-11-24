@@ -76,18 +76,17 @@ check_config() {
 }
 
 get_profile_files() {
-	if [[ "$PROFILE_DIR" != */ ]]; then
-		PROFILE_DIR="${PROFILE_DIR}/"
-	fi
-
 	ARGS=""
-	LENGTH=${#IGNORE_PROFILES[@]}
+	IGNORES="$( find ${PROFILE_DIR} -name .ignore )"
+	LENGTH=$( echo "$IGNORES" | wc -l )
 
-	for ((I=1; I <= $LENGTH; I++)); do
-		ARGS="${ARGS} -path ${PROFILE_DIR}${IGNORE_PROFILES[$(($I-1))]} -prune"
+	I=1;
+	for IGNORE in $IGNORES; do
+		ARGS="${ARGS} -path $( dirname ${IGNORE} ) -prune"
 		if [ $LENGTH -gt 1 -a $I -lt $LENGTH ]; then
 			ARGS="${ARGS} -o"
 		fi
+		I=$(($I+1))
 	done
 
 	if [ -z "$ARGS" ]; then
@@ -132,10 +131,11 @@ load_profiles() {
 	fi
 
 	PROFILES="$(get_profile_files)"
+
 	for PROFILE in $PROFILES; do
 		$PARSER $PARSER_ARGS $PROFILE
 		if [ $? -ne 0 ]; then
-			if [ "${PARSER_ARGS}" == "replace" ]; then
+			if [ "${PARSER_ARGS}" = "replace" ]; then
 				ewarn "Error loading '${PROFILE}', continuing"
 			else
 				eerror "Error loading '${PROFILE}', aborting"
@@ -151,7 +151,8 @@ load_profiles() {
 remove_profiles() {
 	PROFILES=$(get_active_profiles)
 	for PROFILE in $PROFILES; do
-		echo -n "$PROFILE" > "${SECURITYFS}/.remove"
+		#use printf instead of echo -n for POSIX compatibility
+		printf "$PROFILE" > "${SECURITYFS}/.remove"
 	done
 	return 0
 }
@@ -201,8 +202,11 @@ unload_obsolete_profiles() {
 		echo $(${PARSER} -N "$PROFILE") >> new
 	done
 
-	for PROFILE in $(comm -2 -3 old new); do
-		echo -n "$PROFILE" > "${SECURITYFS}/.remove"
+	sort new > new_sorted
+
+	for PROFILE in $(comm -2 -3 old new_sorted); do
+		#use printf instead of echo -n for POSIX compatibility
+		printf "$PROFILE" > "${SECURITYFS}/.remove"
 	done
 
 	rm -rf "${TEMPDIR}"

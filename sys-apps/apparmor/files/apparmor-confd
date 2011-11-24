@@ -4,10 +4,9 @@
 PARSER=/sbin/apparmor_parser
 
 # Directory in which profiles are stored
+# Note, subdirectories can be ignored by placing
+# an empty ".ignore" file within
 PROFILE_DIR=/etc/apparmor.d/
-
-# Directories within PROFILE_DIR to be ignored
-IGNORE_PROFILES=( "abstractions" "tunables" )
 
 # Where securityfs is/will be mounted
 SECURITYFS=/sys/kernel/security/apparmor
