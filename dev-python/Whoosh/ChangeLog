@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -Whoosh-1.8.2.ebuild, +Whoosh-2.3.0.ebuild:
+  Version bump. Thanks to Tommy[D] for reviewing
+
   29 Apr 2011; Justin Lecher <jlec@gentoo.org> -Whoosh-0.3.18.ebuild,
   +Whoosh-1.8.2.ebuild:
   Corrected for multiple PyABI installation

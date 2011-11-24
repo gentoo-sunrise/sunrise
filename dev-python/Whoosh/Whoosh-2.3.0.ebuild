@@ -4,9 +4,12 @@
 
 EAPI="3"
 
-PYTHON_DEPEND="2"
+PYTHON_DEPEND="*"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="2.4"
+DISTUTILS_SRC_TEST="setup.py"
+PYTHON_TESTS_RESTRICTED_ABIS="3.*"
+PYTHON_MODNAME="whoosh"
 
 inherit distutils
 
@@ -17,6 +20,13 @@ SRC_URI="mirror://pypi/W/${PN}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc"
 
-PYTHON_MODNAME="whoosh"
+src_install() {
+	distutils_src_install
+
+	if use doc; then
+		insinto "/usr/share/doc/${PF}/"
+		doins -r docs/build/html/_sources/* || die
+	fi
+}
