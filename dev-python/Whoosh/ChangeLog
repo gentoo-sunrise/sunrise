@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  Whoosh-2.3.0.ebuild:
+  Specify versions in depend
+
   24 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -Whoosh-1.8.2.ebuild, +Whoosh-2.3.0.ebuild:
   Version bump. Thanks to Tommy[D] for reviewing
