@@ -32,7 +32,7 @@ src_prepare() {
 
 src_test() {
 	my_test() {
-		"$(PYTHON)" test_path.py || die
+		"$(PYTHON)" test_path.py
 	}
 	python_execute_function my_test
 }

@@ -4,6 +4,10 @@
 
   25 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   path-2.2.2.ebuild:
+  Skip unnecessary die. Spotted by floppym
+
+  25 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  path-2.2.2.ebuild:
   Whitespace nit. Spotted by mgorny
 
   24 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
