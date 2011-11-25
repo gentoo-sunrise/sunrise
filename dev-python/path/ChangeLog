@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  path-2.2.2.ebuild:
+  Whitespace nit. Spotted by mgorny
+
   24 Nov 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -path-2.2.ebuild, +path-2.2.2.ebuild:
   Version bump. Overall fixes to the ebuild. Thanks to Tommy[D] for reviewing
