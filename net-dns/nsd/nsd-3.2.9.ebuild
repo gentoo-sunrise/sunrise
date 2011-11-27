@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit autotools eutils
+inherit eutils versionator
 
 DESCRIPTION="An authoritative only, high performance, open source name server"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/nsd"
@@ -26,11 +26,6 @@ pkg_setup() {
 	enewuser nsd -1 -1 -1 nsd
 }
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}-configure.patch"
-	eautoreconf
-}
-
 src_configure() {
 	# ebuild.sh sets localstatedir to /var/lib, but nsd expects /var in several locations
 	# some of these cannot be changed by arguments to econf/configure, f.i. logfile
@@ -49,7 +44,7 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install
 
-	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,REQUIREMENTS}
+	dodoc doc/{ChangeLog,CREDITS,NSD-FOR-BIND-USERS,README,RELNOTES,REQUIREMENTS}
 
 	insinto /usr/share/nsd
 	doins contrib/nsd.zones2nsd.conf
@@ -73,4 +68,12 @@ src_install() {
 	# pid dir, writable by nsd
 	dodir /var/run/nsd
 	fowners nsd:nsd /var/run/nsd
+}
+
+pkg_postinst() {
+	version_compare "3.2.9" "${REPLACING_VERSIONS}"
+	if test $? -eq 3; then
+		ewarn "In ${PN}-3.2.9, the database format was changed."
+		ewarn "Please run '/usr/sbin/nsdc rebuild' to rebuild the database, then restart nsd."
+	fi
 }
