@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Nov 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  gogglesmm-0.12.2.ebuild:
+  Changing DEPEND to fox:1.6, in advance of fox:1.7 unmasking
+
   16 Sep 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   gogglesmm-0.12.2.ebuild:
   Ebuild fix, remove autotools_utils dep

@@ -19,7 +19,7 @@ RDEPEND="dev-db/sqlite:3
 	media-libs/taglib
 	media-libs/xine-lib
 	net-misc/curl
-	x11-libs/fox[png]
+	x11-libs/fox:1.6[png]
 	dbus? ( sys-apps/dbus )
 	gcrypt? ( dev-libs/libgcrypt )"
 DEPEND="${RDEPEND}"
