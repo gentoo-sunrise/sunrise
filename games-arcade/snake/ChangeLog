@@ -1,6 +1,9 @@
 # ChangeLog for games-arcade/snake
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  28 Nov 2011; Piotr Szymaniak <szarpaj@grubelek.pl> ChangeLog:
+  Version bump, minor ebuild and Makefile patch fixes.
 
   24 Aug 2009; Romain Perier (mrpouet) <mrpouet@gentoo.org>
   snake-0.5.1.ebuild, files/snake-0.5.1-clean-up-Makefile.patch:
