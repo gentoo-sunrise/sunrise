@@ -8,7 +8,6 @@ app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
-app-backup/fsarchiver:lzma - Enables LZMA compression
 app-cdr/furiusisomount:brasero - Enables support for burning images using app-cdr/brasero
 app-crypt/yapet:csv - Enable csv import utility
 app-crypt/yapet:pwgen - Enable build-in password generator
@@ -55,8 +54,6 @@ app-misc/bashstyle-ng:doc - Installs other html documentation
 app-misc/bashstyle-ng:pci - Enable support for pci informations
 app-misc/bashstyle-ng:usb - Enable support for usb informations
 app-misc/ccpublisher:zope - Install zope stuff
-app-misc/gcstar:stats - Enable statistics reporting
-app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/gizmod:libvisual - Enable the media-libs/libvisual (Amarok) plugin
 app-misc/heyu:cm17a - Support the X10 CM17A "Firecracker" device
 app-misc/heyu:dmx210 - Support the Digimax 210 remote thermostat device
@@ -145,7 +142,6 @@ games-puzzle/hex-a-hop:pango - Use sdl-pango instead of default sdl-ttf for font
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
-games-util/pyfa:graph - Enable support for graphs
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
@@ -185,11 +181,6 @@ media-video/pgcedit:video - Add support for video preview
 media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
 media-video/ripwrap:mp4 - Add mp4 support
-net-analyzer/icinga:api - Adds support for the icinga API
-net-analyzer/icinga:idoutils - Adds DB support
-net-analyzer/icinga:lighttpd - Adds Lighttpd support
-net-analyzer/icinga:plugins - Adds support for nagios plugins
-net-analyzer/icinga:web - Adds generic web interface support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:nsec3 - Enable NSEC3 support
@@ -199,7 +190,6 @@ net-firewall/vuurmuur:logrotate - Install support files for logrotate
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
 net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
-net-mail/notmuch:vim - Install notmuch UI for vim
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
@@ -251,8 +241,10 @@ sys-fs/aufs:nfs - Patch for lhash support
 sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
 sys-fs/aufs:robr - Enable aufs readonly-branch
 sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
+sys-fs/ntfs3g-ar:crypt - Add support for encrypted NTFS drives/partitions.
 sys-fs/ntfs3g-ar:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
-sys-fs/ntfs3g-ar:udev - Instal udev rule for sys-apps/udev
+sys-fs/ntfs3g-ar:ntfsprogs - Include internal version of ntfsprogs. This will block sys-fs/ntfsprogs.
+sys-fs/ntfs3g-ar:udev - Install udev rule to make udisks use ntfs-3g instead of the kernel NTFS driver.
 sys-kernel/ccs-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
@@ -265,6 +257,7 @@ x11-drivers/libfreenect:opencv - Install opencv library
 x11-drivers/libfreenect:python - Install python library extension
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/gnome-schedule:applet - Enable Gnome 2 applet support
+x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
 x11-plugins/imgur-integration:eog - Build an imgur upload plugin for media-gfx/eog
