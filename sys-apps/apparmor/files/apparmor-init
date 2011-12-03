@@ -152,7 +152,7 @@ remove_profiles() {
 	PROFILES=$(get_active_profiles)
 	for PROFILE in $PROFILES; do
 		#use printf instead of echo -n for POSIX compatibility
-		printf "$PROFILE" > "${SECURITYFS}/.remove"
+		printf '%s' "$PROFILE" > "${SECURITYFS}/.remove"
 	done
 	return 0
 }
@@ -206,7 +206,7 @@ unload_obsolete_profiles() {
 
 	for PROFILE in $(comm -2 -3 old new_sorted); do
 		#use printf instead of echo -n for POSIX compatibility
-		printf "$PROFILE" > "${SECURITYFS}/.remove"
+		printf '%s' "$PROFILE" > "${SECURITYFS}/.remove"
 	done
 
 	rm -rf "${TEMPDIR}"

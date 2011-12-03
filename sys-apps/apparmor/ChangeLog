@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Dec 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  files/apparmor-init:
+  Explicitly state printf format. Thanks to mgorny for the report and fix, and
+  Tommy[D] for the review.
+
   24 Nov 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
   files/apparmor-confd, files/apparmor-init:
   Avoid bashisms in initscript. Thanks to mgorny for the report, and Tommy[D]
