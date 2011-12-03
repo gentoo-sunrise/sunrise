@@ -26,6 +26,8 @@
 # dev-python/gnome-python-extras
 # dev-python/gnome-python
 # dev-python/gnome-python-desktop
+# dev-perl/Gtk2-Sexy
+# x11-libs/wxGTK:2
 app-backup/nssbackup
 app-misc/exe
 app-arch/parano
@@ -34,6 +36,10 @@ gnome-extra/gnome-osd
 gnome-extra/startupmanager
 gnome-extra/timer-applet
 gnome-extra/webboard
+net-mail/checkgmail
+net-mail/gmail-notify
+net-misc/internode-applet
+net-p2p/mute/
 x11-misc/gnome-schedule
 
 # Michał Górny <mgorny@gentoo.org> (18 Sep 2011)
