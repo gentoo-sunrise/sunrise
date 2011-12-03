@@ -42,10 +42,6 @@ net-misc/internode-applet
 net-p2p/mute
 x11-misc/gnome-schedule
 
-# Michał Górny <mgorny@gentoo.org> (22 Jan 2011)
-# Requires masked wxGTK:2.9.
-media-gfx/tintii
-
 # Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
 # Masking wrt bug 333939. Dependency on vala-1.0 which is
 # not yet released.
