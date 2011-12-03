@@ -39,7 +39,7 @@ gnome-extra/webboard
 net-mail/checkgmail
 net-mail/gmail-notify
 net-misc/internode-applet
-net-p2p/mute/
+net-p2p/mute
 x11-misc/gnome-schedule
 
 # Michał Górny <mgorny@gentoo.org> (18 Sep 2011)
