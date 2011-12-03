@@ -21,12 +21,20 @@
 ##   End example
 ##
 
-# Markos Chandras <hwoarang@gentoo.org> (07 Oct 2011)
+# Markos Chandras <hwoarang@gentoo.org> (03 Dec 2011)
 # Masked for removal in 30 days because of masked dependencies:
 # dev-python/gnome-python-extras
 # dev-python/gnome-python
+# dev-python/gnome-python-desktop
+app-backup/nssbackup
 app-misc/exe
 app-arch/parano
+gnome-extra/disk-status-applet
+gnome-extra/gnome-osd
+gnome-extra/startupmanager
+gnome-extra/timer-applet
+gnome-extra/webboard
+x11-misc/gnome-schedule
 
 # Michał Górny <mgorny@gentoo.org> (18 Sep 2011)
 # Zope is no longer supported in gx86 which results in unsatisfied
