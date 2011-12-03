@@ -22,8 +22,11 @@
 ##
 
 # Markos Chandras <hwoarang@gentoo.org> (07 Oct 2011)
-# Masking due to zprd-manager removal. Removal in 30 days
-app-misc/ccpublisher
+# Masked for removal in 30 days because of masked dependencies:
+# dev-python/gnome-python-extras
+# dev-python/gnome-python
+app-misc/exe
+app-arch/parano
 
 # Michał Górny <mgorny@gentoo.org> (18 Sep 2011)
 # Zope is no longer supported in gx86 which results in unsatisfied
