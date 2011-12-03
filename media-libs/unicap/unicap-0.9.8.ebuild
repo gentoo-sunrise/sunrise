@@ -11,11 +11,11 @@ SRC_URI="http://unicap-imaging.org/downloads/lib${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug doc ieee1394 libv4l nls threads v4l v4l2"
+IUSE="debug doc ieee1394 libv4l nls threads v4l"
 
 RDEPEND="ieee1394? ( sys-libs/libraw1394 )
 	nls? ( virtual/libintl )
-	v4l2? ( libv4l? ( media-libs/libv4l ) )"
+	v4l? ( libv4l? ( media-libs/libv4l ) )"
 DEPEND="${RDEPEND}
 	doc? ( dev-util/gtk-doc )"
 
@@ -29,8 +29,7 @@ src_configure() {
 		#myconf=( --enable-thing )
 		myconf+=( --enable-debug-unicap --enable-debug-ucil --enable-debug-thing )
 		use ieee1394 && myconf+=( --enable-debug-dcam --enable-debug-vid21394 )
-		use v4l && myconf+=( --enable-debug-v4l )
-		use v4l2 && myconf+=( --enable-debug-v4l2 )
+		use v4l && myconf+=( --enable-debug-v4l2 )
 	fi
 
 	econf "${myconf[@]}" \
@@ -40,8 +39,7 @@ src_configure() {
 		$(use_enable libv4l ) \
 		$(use_enable nls) \
 		$(use_enable threads unicap-threads) \
-		$(use_enable v4l) \
-		$(use_enable v4l2)
+		$(use_enable v4l v4l2)
 }
 
 src_install() {
