@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=4
 
 inherit autotools eutils gnome2
 
 DESCRIPTION="Graphical user interface for smartctl"
-HOMEPAGE="http://gsmartcontrol.berlios.de"
+HOMEPAGE="http://gsmartcontrol.berlios.de/"
 SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"

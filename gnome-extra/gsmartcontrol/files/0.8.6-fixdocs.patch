@@ -13,7 +13,7 @@
 -	LICENSE_gsmartcontrol.txt \
 -	LICENSE_hz.txt \
 -	LICENSE_pcrecpp.txt \
--	LICENSE_whatever.txt \
+-	LICENSE_unlicense.txt \
 -	LICENSE_zlib.txt
 +dist_doc_DATA = AUTHORS.txt ChangeLog NEWS README.txt
  
