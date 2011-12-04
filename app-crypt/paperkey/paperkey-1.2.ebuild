@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=4
 
 DESCRIPTION="OpenPGP key archiver"
 HOMEPAGE="http://www.jabberwocky.com/software/paperkey/"
@@ -11,7 +13,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-src_install() {
-	emake DESTDIR="${D}" install || die "unable to install"
-	dodoc README || die "unable to install documentation"
-}
+DOCS="README"
