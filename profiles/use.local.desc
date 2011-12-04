@@ -227,7 +227,6 @@ net-wireless/remuco:rhythmbox - Enable Rhythmbox media player support
 net-wireless/remuco:totem - Enable Totem media player support
 net-wireless/remuco:tvtime - Enable Tvtime support
 net-wireless/remuco:vlc - Enable VLC media player support
-net-zope/imagerepository:kupu - Pulls in kupu as a dependency
 sci-chemistry/hoomd:cuda - Enables support for the NVIDIA CUDA library. Requires single-precision flag be set.
 sci-chemistry/hoomd:single-precision - Computations will be performed using single precision numbers. Otherwise computations will be performed in double precision. 
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
