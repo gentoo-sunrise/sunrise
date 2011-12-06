@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=4
 
 DESCRIPTION="Utilities for Gentoo repository and overlay development"
 HOMEPAGE="http://gentooexperimental.org/~shillelagh/"
@@ -16,10 +16,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-RDEPEND="dev-vcs/subversion
+RDEPEND="app-portage/gentoolkit-dev
+	dev-vcs/subversion
 	>=sys-apps/portage-2.1"
 
+src_prepare() {
+	# Remove echangelog-tng. The modern echangelog from gentoolkit-dev
+	# supports subversion just fine.
+	sed -i -e s/echangelog-tng/echangelog/g sunrise-commit || die
+}
+
 src_install() {
-	dobin sunrise-commit echangelog-tng || die "dobin failed"
-	doman sunrise-commit.1 || die "doman failed"
+	dobin sunrise-commit
+	doman sunrise-commit.1
 }

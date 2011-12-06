@@ -1,6 +1,13 @@
 # ChangeLog for app-portage/overlay-utils
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*overlay-utils-0.2.1-r1 (06 Dec 2011)
+
+  06 Dec 2011; Nathan Phillip Brink <binki@gentoo.org>
+  -overlay-utils-0.2.1.ebuild, +overlay-utils-0.2.1-r1.ebuild:
+  Drop echangelog-tng which is incompatible with >=dev-vcs/subversion-1.7. Use
+  instead echangelog from app-portage/gentoolkit-dev. Bump to EAPI=4.
 
   12 Aug 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   overlay-utils-0.2.1.ebuild:
