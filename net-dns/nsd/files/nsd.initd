@@ -1,12 +1,10 @@
 #!/sbin/runscript 
-# Copyright 1999-2010 Gentoo Foundation 
+# Copyright 1999-2011 Gentoo Foundation 
 # Distributed under the terms of the GNU General Public License v2 
 # $Header: $ 
 #
-opts="${opts} reload"
+extra_commands="reload"
 description="NSD is an authoritative only, high performance, open source name server"
-description_start="Start the server"
-description_stop="Stop the server"
 description_reload="Rebuild zone database and reload it"
 
 config_file=${config_file:-/etc/nsd/nsd.conf}
