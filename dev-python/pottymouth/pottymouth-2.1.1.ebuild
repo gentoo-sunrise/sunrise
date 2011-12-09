@@ -25,7 +25,7 @@ S=${WORKDIR}/${MY_P}
 DOCS="readme.html"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-fix-setup.patch" || die
+	epatch "${FILESDIR}/${PN}-2.1.0-fix-setup.patch" || die
 }
 
 src_test() {
