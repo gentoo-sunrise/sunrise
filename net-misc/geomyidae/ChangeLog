@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Dec 2011; James Penketh <tamber@furryhelix.co.uk>
+  -geomyidae-0.25.ebuild, +geomyidae-0.25.1.ebuild:
+  Version bump
+
   19 Apr 2011; James Penketh <tamber@furryhelix.co.uk>
   -geomyidae-0.16.ebuild, +geomyidae-0.25.ebuild:
   Version bump with upstream source URI fix
