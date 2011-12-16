@@ -1,0 +1,106 @@
+Index: src/sound/fmodsound.cpp
+===================================================================
+--- src/sound/fmodsound.cpp	(revision 1280)
++++ src/sound/fmodsound.cpp	(working copy)
+@@ -79,6 +79,10 @@
+ #define FMOD_OPENSTATE_PLAYING FMOD_OPENSTATE_STREAMING
+ #endif
+ 
++#if FMOD_VERSION < 0x43702
++#define FMOD_INIT_HRTF_LOWPASS FMOD_INIT_SOFTWARE_HRTF
++#endif
++
+ // TYPES -------------------------------------------------------------------
+ 
+ struct FEnumList
+@@ -348,7 +352,7 @@
+ 		Channel->setSpeakerMix(1, 1, 1, 1, 1, 1, 1, 1);
+ 		Channel->setVolume(volume);
+ 		// Ensure reverb is disabled.
+-		FMOD_REVERB_CHANNELPROPERTIES reverb = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
++		FMOD_REVERB_CHANNELPROPERTIES reverb = { 0, 0, 0, NULL};
+ 		if (FMOD_OK == Channel->getReverbProperties(&reverb))
+ 		{
+ 			reverb.Room = -10000;
+@@ -842,7 +846,7 @@
+ 		result = Sys->setDriver(driver);
+ 	}
+ 	result = Sys->getDriver(&driver);
+-	result = Sys->getDriverCaps(driver, &Driver_Caps, &Driver_MinFrequency, &Driver_MaxFrequency, &speakermode);
++	result = Sys->getDriverCaps(driver, &Driver_Caps, &Driver_MaxFrequency, &speakermode);
+ 	if (result != FMOD_OK)
+ 	{
+ 		Printf(TEXTCOLOR_BLUE"Could not ascertain driver capabilities. Some things may be weird. (Error %d)\n", result);
+@@ -922,7 +926,7 @@
+ 	initflags = FMOD_INIT_NORMAL;
+ 	if (snd_hrtf)
+ 	{
+-		initflags |= FMOD_INIT_SOFTWARE_HRTF;
++		initflags |= FMOD_INIT_HRTF_LOWPASS;
+ 	}
+ 	if (snd_profile)
+ 	{
+@@ -1014,7 +1018,7 @@
+ 	}
+ 	else
+ 	{
+-		result = Sys->createDSPByType(FMOD_DSP_TYPE_REVERB, &WaterReverb);
++		result = Sys->createDSPByType(FMOD_DSP_TYPE_SFXREVERB, &WaterReverb);
+ 		if (result != FMOD_OK)
+ 		{
+ 			Printf(TEXTCOLOR_BLUE"  Could not create underwater reverb unit. (Error %d)\n", result);
+@@ -1081,8 +1085,8 @@
+ 								result = sfx_head->addInput(WaterReverb, NULL);
+ 								if (result == FMOD_OK)
+ 								{
+-									WaterReverb->setParameter(FMOD_DSP_REVERB_ROOMSIZE, 0.001f);
+-									WaterReverb->setParameter(FMOD_DSP_REVERB_DAMP, 0.2f);
++									//WaterReverb->setParameter(FMOD_DSP_REVERB_ROOMSIZE, 0.001f);
++									//WaterReverb->setParameter(FMOD_DSP_REVERB_DAMP, 0.2f);
+ 									WaterReverb->setActive(false);
+ 								}
+ 							}
+@@ -1233,7 +1237,7 @@
+ 		Printf ("Driver: "TEXTCOLOR_GREEN"%d"TEXTCOLOR_NORMAL" ("TEXTCOLOR_ORANGE"%s"TEXTCOLOR_NORMAL")\n", driver, name);
+ 		DumpDriverCaps(Driver_Caps, Driver_MinFrequency, Driver_MaxFrequency);
+ 	}
+-	if (FMOD_OK == Sys->getHardwareChannels(&num2d, &num3d, &total))
++	if (FMOD_OK == Sys->getHardwareChannels(&total))
+ 	{
+ 		Printf (TEXTCOLOR_YELLOW "Hardware 2D channels: "TEXTCOLOR_GREEN"%d\n", num2d);
+ 		Printf (TEXTCOLOR_YELLOW "Hardware 3D channels: "TEXTCOLOR_GREEN"%d\n", num3d);
+@@ -1276,6 +1280,7 @@
+ 	{
+ 		Printf("\n");
+ 	}
++	/*
+ 	if (caps & FMOD_CAPS_REVERB_EAX2)				Printf(TEXTCOLOR_OLIVE "   EAX2");
+ 	if (caps & FMOD_CAPS_REVERB_EAX3)				Printf(TEXTCOLOR_OLIVE "   EAX3");
+ 	if (caps & FMOD_CAPS_REVERB_EAX4)				Printf(TEXTCOLOR_OLIVE "   EAX4");
+@@ -1284,7 +1289,7 @@
+ 	if (caps & (FMOD_CAPS_REVERB_EAX2 | FMOD_CAPS_REVERB_EAX3 | FMOD_CAPS_REVERB_EAX4 | FMOD_CAPS_REVERB_EAX5 | FMOD_CAPS_REVERB_I3DL2))
+ 	{
+ 		Printf("\n");
+-	}
++	}*/
+ 	if (caps & FMOD_CAPS_REVERB_LIMITED)			Printf("TEXTCOLOR_OLIVE    Limited reverb\n");
+ }
+ 
+@@ -1689,7 +1694,7 @@
+ 		}
+ 		if (flags & SNDF_NOREVERB)
+ 		{
+-			FMOD_REVERB_CHANNELPROPERTIES reverb = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
++			FMOD_REVERB_CHANNELPROPERTIES reverb = { 0, 0, 0, NULL };
+ 			if (FMOD_OK == chan->getReverbProperties(&reverb))
+ 			{
+ 				reverb.Room = -10000;
+@@ -1809,7 +1814,7 @@
+ 		}
+ 		if (flags & SNDF_NOREVERB)
+ 		{
+-			FMOD_REVERB_CHANNELPROPERTIES reverb = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
++			FMOD_REVERB_CHANNELPROPERTIES reverb = { 0, 0, 0, NULL };
+ 			if (FMOD_OK == chan->getReverbProperties(&reverb))
+ 			{
+ 				reverb.Room = -10000;

@@ -34,6 +34,7 @@ src_prepare() {
 		-e "s:/usr/local/share/:${GAMES_DATADIR}/doom-data/:" \
 		src/sdl/i_system.h || die
 	epatch "${FILESDIR}/${PN}-respect-fluidsynth-useflag.patch"
+	epatch "${FILESDIR}/${P}-fix-new-fmod.patch"
 }
 
 src_configure() {

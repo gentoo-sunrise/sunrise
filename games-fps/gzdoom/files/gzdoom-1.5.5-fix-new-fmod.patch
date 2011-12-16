@@ -1,0 +1,134 @@
+--- src/sound/fmodsound.cpp	2010-11-17 10:13:29.000000000 -0500
++++ fmodsound.cpp.new	2011-12-16 01:48:55.361040907 -0500
+@@ -75,6 +75,14 @@
+ 
+ #define SPECTRUM_SIZE				256
+ 
++#if FMOD_VERSION < 0x43400
++#define FMOD_OPENSTATE_PLAYING FMOD_OPENSTATE_STREAMING
++#endif
++
++#if FMOD_VERSION < 0x43702
++#define FMOD_INIT_HRTF_LOWPASS FMOD_INIT_SOFTWARE_HRTF
++#endif
++
+ // TYPES -------------------------------------------------------------------
+ 
+ struct FEnumList
+@@ -157,7 +165,7 @@
+ 	{ "Windows Multimedia",		FMOD_OUTPUTTYPE_WINMM },
+ 	{ "WinMM",					FMOD_OUTPUTTYPE_WINMM },
+ 	{ "WaveOut",				FMOD_OUTPUTTYPE_WINMM },
+-	{ "OpenAL",					FMOD_OUTPUTTYPE_OPENAL },
++//	{ "OpenAL",					FMOD_OUTPUTTYPE_OPENAL },
+ 	{ "WASAPI",					FMOD_OUTPUTTYPE_WASAPI },
+ 	{ "ASIO",					FMOD_OUTPUTTYPE_ASIO },
+ 
+@@ -387,13 +395,13 @@
+ 	{
+ 		bool is;
+ 		FMOD_OPENSTATE openstate = FMOD_OPENSTATE_MAX;
+-		bool starving;
++		bool starving, diskbusy;
+ 
+ 		if (Stream == NULL)
+ 		{
+ 			return true;
+ 		}
+-		if (FMOD_OK != Stream->getOpenState(&openstate, NULL, &starving))
++		if (FMOD_OK != Stream->getOpenState(&openstate, NULL, &starving, &diskbusy))
+ 		{
+ 			openstate = FMOD_OPENSTATE_ERROR;
+ 		}
+@@ -436,7 +444,7 @@
+ 			Owner->Sys->setStreamBufferSize(16*1024, FMOD_TIMEUNIT_RAWBYTES);
+ 			return result != FMOD_OK;
+ 		}
+-		if (JustStarted && openstate == FMOD_OPENSTATE_STREAMING)
++		if (JustStarted && openstate == FMOD_OPENSTATE_PLAYING)
+ 		{
+ 			JustStarted = false;
+ 		}
+@@ -479,15 +487,15 @@
+ 		FMOD_OPENSTATE openstate;
+ 		unsigned int percentbuffered;
+ 		unsigned int position;
+-		bool starving;
++		bool starving, diskbusy;
+ 		float volume;
+ 		float frequency;
+ 		bool paused;
+ 		bool isplaying;
+ 
+-		if (FMOD_OK == Stream->getOpenState(&openstate, &percentbuffered, &starving))
++		if (FMOD_OK == Stream->getOpenState(&openstate, &percentbuffered, &starving, &diskbusy))
+ 		{
+-			stats = (openstate <= FMOD_OPENSTATE_STREAMING ? OpenStateNames[openstate] : "Unknown state");
++			stats = (openstate <= FMOD_OPENSTATE_PLAYING ? OpenStateNames[openstate] : "Unknown state");
+ 			stats.AppendFormat(",%3d%% buffered, %s", percentbuffered, starving ? "Starving" : "Well-fed");
+ 		}
+ 		if (Channel == NULL)
+@@ -819,7 +827,7 @@
+ 		result = Sys->setDriver(driver);
+ 	}
+ 	result = Sys->getDriver(&driver);
+-	result = Sys->getDriverCaps(driver, &Driver_Caps, &Driver_MinFrequency, &Driver_MaxFrequency, &speakermode);
++	result = Sys->getDriverCaps(driver, &Driver_Caps, &Driver_MaxFrequency, &speakermode);
+ 	if (result != FMOD_OK)
+ 	{
+ 		Printf(TEXTCOLOR_BLUE"Could not ascertain driver capabilities. Some things may be weird. (Error %d)\n", result);
+@@ -899,7 +907,7 @@
+ 	initflags = FMOD_INIT_NORMAL;
+ 	if (snd_hrtf)
+ 	{
+-		initflags |= FMOD_INIT_SOFTWARE_HRTF;
++		initflags |= FMOD_INIT_HRTF_LOWPASS;
+ 	}
+ 	if (snd_profile)
+ 	{
+@@ -991,7 +999,7 @@
+ 	}
+ 	else
+ 	{
+-		result = Sys->createDSPByType(FMOD_DSP_TYPE_REVERB, &WaterReverb);
++		result = Sys->createDSPByType(FMOD_DSP_TYPE_SFXREVERB, &WaterReverb);
+ 		if (result != FMOD_OK)
+ 		{
+ 			Printf(TEXTCOLOR_BLUE"  Could not create underwater reverb unit. (Error %d)\n", result);
+@@ -1058,8 +1066,8 @@
+ 								result = sfx_head->addInput(WaterReverb, NULL);
+ 								if (result == FMOD_OK)
+ 								{
+-									WaterReverb->setParameter(FMOD_DSP_REVERB_ROOMSIZE, 0.001f);
+-									WaterReverb->setParameter(FMOD_DSP_REVERB_DAMP, 0.2f);
++									//WaterReverb->setParameter(FMOD_DSP_REVERB_ROOMSIZE, 0.001f);
++									//WaterReverb->setParameter(FMOD_DSP_REVERB_DAMP, 0.2f);
+ 									WaterReverb->setActive(false);
+ 								}
+ 							}
+@@ -1210,7 +1218,7 @@
+ 		Printf ("Driver: "TEXTCOLOR_GREEN"%d"TEXTCOLOR_NORMAL" ("TEXTCOLOR_ORANGE"%s"TEXTCOLOR_NORMAL")\n", driver, name);
+ 		DumpDriverCaps(Driver_Caps, Driver_MinFrequency, Driver_MaxFrequency);
+ 	}
+-	if (FMOD_OK == Sys->getHardwareChannels(&num2d, &num3d, &total))
++	if (FMOD_OK == Sys->getHardwareChannels(&total))
+ 	{
+ 		Printf (TEXTCOLOR_YELLOW "Hardware 2D channels: "TEXTCOLOR_GREEN"%d\n", num2d);
+ 		Printf (TEXTCOLOR_YELLOW "Hardware 3D channels: "TEXTCOLOR_GREEN"%d\n", num3d);
+@@ -1253,6 +1261,7 @@
+ 	{
+ 		Printf("\n");
+ 	}
++	/*
+ 	if (caps & FMOD_CAPS_REVERB_EAX2)				Printf(TEXTCOLOR_OLIVE "   EAX2");
+ 	if (caps & FMOD_CAPS_REVERB_EAX3)				Printf(TEXTCOLOR_OLIVE "   EAX3");
+ 	if (caps & FMOD_CAPS_REVERB_EAX4)				Printf(TEXTCOLOR_OLIVE "   EAX4");
+@@ -1261,7 +1270,7 @@
+ 	if (caps & (FMOD_CAPS_REVERB_EAX2 | FMOD_CAPS_REVERB_EAX3 | FMOD_CAPS_REVERB_EAX4 | FMOD_CAPS_REVERB_EAX5 | FMOD_CAPS_REVERB_I3DL2))
+ 	{
+ 		Printf("\n");
+-	}
++	}*/
+ 	if (caps & FMOD_CAPS_REVERB_LIMITED)			Printf("TEXTCOLOR_OLIVE    Limited reverb\n");
+ }
+ 
