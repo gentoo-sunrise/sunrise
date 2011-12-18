@@ -21,21 +21,19 @@ DEPEND="dev-lang/perl
 	doc? ( dev-tex/latex2html )"
 RDEPEND=""
 
-RESTRICT="test"
-
 S=${WORKDIR}/apparmor-${PV}/parser
 
 src_prepare() {
-	epatch "${FILESDIR}"/apparmor-2.6.1-makefile.patch
+	epatch "${FILESDIR}"/${P}-makefile.patch
 }
 
 src_compile()  {
-	emake CC="$(tc-getCC)" CXX="$(tc-getCXX)" main manpages
+	emake CC="$(tc-getCC)" CXX="$(tc-getCXX)" arch manpages
 	use doc && emake pdf
 }
 
 src_install() {
-	emake DISTRO=unknown DESTDIR="${D}" main manpages install
+	emake DESTDIR="${D}" arch manpages install
 
 	dodir /etc/apparmor.d
 
