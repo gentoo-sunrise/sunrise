@@ -15,20 +15,20 @@ MY_PN="PyICU"
 MY_P="${MY_PN}-${PV}"
 DESCRIPTION="Python bindings for dev-libs/icu"
 HOMEPAGE="http://pyicu.osafoundation.org/"
-SRC_URI="mirror://pypi/P/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-RDEPEND=">=dev-libs/icu-4.6"
+RDEPEND="dev-libs/icu"
 DEPEND="${RDEPEND}
 	doc? ( dev-python/epydoc )"
 
 S="${WORKDIR}/${MY_P}"
 
-DOCS="CHANGES CREDITS README"
+DOCS="CHANGES CREDITS"
 PATCHES=(
 	"${FILESDIR}/r191-tzinfo.patch" # epydoc will fail without this
 )
@@ -49,7 +49,7 @@ src_compile() {
 			fi
 		done
 		local epydoc=epydoc-${doc_abi}
-		[[ -x ${EROOT}/usr/bin/${epydoc} ]] || epydoc=epydoc
+		[[ -x ${EPREFIX}/usr/bin/${epydoc} ]] || epydoc=epydoc
 		echo " * Making documentation from ${doc_abi} build using ${epydoc}"
 		cd "${S}-${doc_abi}"
 		PYTHON_ABI=${doc_abi}
