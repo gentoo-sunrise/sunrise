@@ -29,7 +29,7 @@ S="${WORKDIR}/${MY_P}"
 
 DOCS="CHANGES CREDITS README"
 PATCHES=(
-	"${FILESDIR}/linux3.patch"
+	"${FILESDIR}/r191-tzinfo.patch" # epydoc will fail without this
 )
 
 src_prepare() {
