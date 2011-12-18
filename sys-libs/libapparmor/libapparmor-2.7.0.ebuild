@@ -32,10 +32,8 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/apparmor-${PV}/libraries/${PN}
 
 src_prepare() {
-	epatch "${FILESDIR}"/libapparmor-2.6.1-python3.patch
 	rm -rf m4 || die "failed to remove bundled macros"
-
-	#fixes libtool version mismatch error
+	# to force use of system macros
 	eautoreconf
 }
 

@@ -2,6 +2,13 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*libapparmor-2.7.0 (18 Dec 2011)
+
+  18 Dec 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -libapparmor-2.6.1.ebuild, -files/libapparmor-2.6.1-python3.patch,
+  +libapparmor-2.7.0.ebuild:
+  Version bump. Thanks to Tommy[D] for review.
+
   10 Nov 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
   +libapparmor-2.6.1.ebuild, +files/libapparmor-2.6.1-python3.patch,
   +metadata.xml:
