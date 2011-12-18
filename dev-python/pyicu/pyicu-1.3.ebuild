@@ -5,8 +5,9 @@
 EAPI=3
 
 SUPPORT_PYTHON_ABIS=1
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+RESTRICT_PYTHON_ABIS="*-jython"
 DISTUTILS_SRC_TEST=setup.py
+DISTUTILS_USE_SEPARATE_SOURCE_DIRECTORIES=1 # setup.py applies 2to3 to tests
 
 inherit base distutils
 
@@ -37,11 +38,24 @@ src_prepare() {
 	distutils_src_prepare
 }
 
-distutils_src_compile_post_hook() {
+src_compile() {
+	distutils_src_compile
 	if use doc; then
-		echo " * Making documentation"
+		local doc_abi abi
+		for abi in ${PYTHON_ABIS}; do
+			# Find latest 2.* ABI, fall back to latest ABI if there is no 2.*
+			if [[ ${abi} == 2* ]] || [[ ${doc_abi} != 2* ]]; then
+				doc_abi=${abi}
+			fi
+		done
+		local epydoc=epydoc-${doc_abi}
+		[[ -x ${EROOT}/usr/bin/${epydoc} ]] || epydoc=epydoc
+		echo " * Making documentation from ${doc_abi} build using ${epydoc}"
+		cd "${S}-${doc_abi}"
+		PYTHON_ABI=${doc_abi}
 		PYTHONPATH=$(_distutils_get_PYTHONPATH) \
-			epydoc --html --verbose --url="${HOMEPAGE}" --name="${MY_P}" \
+			${epydoc} --html --verbose \
+			--url="${HOMEPAGE}" --name="${MY_P}" \
 			icu.py || die "Making the docs failed!"
 	fi
 }
@@ -49,6 +63,6 @@ distutils_src_compile_post_hook() {
 src_install() {
 	distutils_src_install
 	if use doc; then
-		dohtml -r html/* || die "Installing the docs failed!"
+		dohtml -r ../*/html/* || die "Installing the docs failed!"
 	fi
 }
