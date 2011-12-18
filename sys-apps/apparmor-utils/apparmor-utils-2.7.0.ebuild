@@ -27,10 +27,6 @@ RDEPEND="${DEPEND}
 
 S=${WORKDIR}/apparmor-${PV}/utils
 
-src_prepare() {
-	epatch "${FILESDIR}"/apparmor-utils-2.6.1-jobserver.patch
-}
-
 src_install() {
 	perlinfo
 	emake DESTDIR="${D}" PERLDIR="${D}/${VENDOR_LIB}/Immunix" install

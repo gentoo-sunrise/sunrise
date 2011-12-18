@@ -2,6 +2,13 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*apparmor-utils-2.7.0 (18 Dec 2011)
+
+  18 Dec 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -apparmor-utils-2.6.1.ebuild, -files/apparmor-utils-2.6.1-jobserver.patch,
+  +apparmor-utils-2.7.0.ebuild:
+  Version bump. Thanks to Tommy[D] for review.
+
   13 Nov 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
   +apparmor-utils-2.6.1.ebuild, +files/apparmor-utils-2.6.1-jobserver.patch,
   +metadata.xml:
