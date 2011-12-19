@@ -10,11 +10,13 @@ DESCRIPTION="Reference compiler for the D programming language"
 HOMEPAGE="http://www.digitalmars.com/d/"
 SRC_URI="http://ftp.digitalmars.com/${PN}.${PV}.zip"
 
-LICENSE="DMD"
-SLOT="2"
+# DMD supports amd64/x86 exclusively
 KEYWORDS="-* ~amd64 ~x86"
+SLOT="2"
 IUSE="multilib doc examples"
 
+# License doesn't allow redistribution
+LICENSE="DMD"
 RESTRICT="mirror"
 
 DEPEND="sys-apps/findutils
@@ -24,7 +26,7 @@ RDEPEND="!dev-lang/dmd-bin"
 S="${WORKDIR}/${PN}2/src"
 
 rdos2unix() {
-	edos2unix `find . -name '*'.$1 -type f` || die "Failed to convert line-endings of all .$1 files"
+	edos2unix $(find . -name '*'.$1 -type f) || die "Failed to convert line-endings of all .$1 files"
 }
 
 src_prepare() {
@@ -41,10 +43,6 @@ src_prepare() {
 
 	# misc patches for the build process
 	epatch "${FILESDIR}/${P}-makefile.patch"
-
-	# fix the compile of an assembly file in druntime and the output of 
-	# DMD to produce binaries with no executable stack
-	epatch "${FILESDIR}/${P}-no-execstack.patch"
 }
 
 src_compile() {
@@ -74,8 +72,8 @@ src_compile() {
 }
 
 src_test() {
-	DFLAGS="-Iphobos -Idruntime/import -L-lrt"
-	DMD="dmd/dmd"
+	local DFLAGS="-Iphobos -Idruntime/import -L-lrt"
+	local DMD="dmd/dmd"
 	if use x86 || (use amd64 && use multilib); then
 		${DMD} -m32 ${DFLAGS} -Lphobos/generated/linux/release32/libphobos2.a ../samples/d/hello.d || die "Failed to build hello.d (32bit)"
 		./hello 32bit || die "Failed to run test sample (32bit)"
@@ -108,9 +106,10 @@ EOF
 
 	use doc && dohtml -r ../html/*
 
+	docompress -x /usr/share/doc/${PF}/samples/
+	insinto /usr/share/doc/${PF}/samples/
 	if use examples; then
-		dodir /usr/share/doc/${PF}/samples
-		cp -R ../samples/d/* "${D}"/usr/share/doc/${PF}/samples/ || die
+		doins -r ../samples/d/*
 	fi
 
 	# druntime & Phobos
@@ -136,18 +135,17 @@ EOF
 	rm "phobos/index.d" || die
 	rm -r "phobos/etc/c/zlib" || die
 
-	# includes
-	dodir /usr/include/druntime
-	mv "druntime/import"/* "${D}/usr/include/druntime/" || die
+	# imports
+	insinto /usr/include/druntime/
+	doins -r druntime/import/*
 
-	dodir /usr/include/phobos2
-	mv "phobos"/* "${D}/usr/include/phobos2/" || die
-
+	insinto /usr/include/phobos2
+	doins -r phobos/*
 }
 
 pkg_postinst() {
 	if use doc || use examples; then
-		elog "The bundled docs and/or samples may be found in  "
-		elog "/usr/share/doc/${PF}                             "
+		elog "The bundled docs and/or samples may be found in"
+		elog "/usr/share/doc/${PF}"
 	fi
 }

@@ -96,7 +96,7 @@ _dmd()
             else
                 COMPREPLY=( $(compgen -W "${_dmd_opts}" -- ${cur}) )
                 C='\n'
-                L=$(echo -e "-cov${C}-fPIC${C}-gc${C}--help${C}-ignore\
+                L=$(echo -e "-cov${C}-fPIC${C}-gc${C}-gs${C}--help${C}-ignore\
                     ${C}-inline${C}-lib${C}-m32${C}-m64${C}-man${C}-map\
                     ${C}-noboundscheck${C}-nofloat${C}-O${C}-o-${C}-op\
                     ${C}-profile${C}-quiet${C}-release${C}-run${C}-unittest\
