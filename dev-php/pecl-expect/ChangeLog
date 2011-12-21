@@ -3,6 +3,10 @@
 # $Header: $
 
   21 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pecl-expect-0.2.9.ebuild:
+  remove php:5.2 target, masked for removal and unsupported
+
+  21 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   -pecl-expect-0.2.7.ebuild, -pecl-expect-0.2.8.ebuild:
   Drop old versions
 

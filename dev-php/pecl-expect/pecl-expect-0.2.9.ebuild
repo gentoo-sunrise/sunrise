@@ -6,6 +6,7 @@ EAPI="3"
 PHP_EXT_NAME="expect"
 PHP_EXT_INI="yes"
 PHP_EXT_ZENDEXT="no"
+USE_PHP="php5-3"
 
 inherit php-ext-pecl-r2
 
