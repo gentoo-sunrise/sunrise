@@ -21,6 +21,11 @@
 ##   End example
 ##
 
+# Thomas Sachau <tommy@gentoo.org> (19 Dez 2011)
+# Masking for removal, outdated and missing sources
+# for the current version
+dev-python/django-haystack
+
 # Markos Chandras <hwoarang@gentoo.org> (03 Dec 2011)
 # Masked for removal in 30 days because of masked dependencies:
 # dev-python/gnome-python-extras
