@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pyccuracy-1.2.45.ebuild:
+  Use mirror:// for cloud.github
+
   23 Jan 2011; Denilson (CrazyTB) <denilsonsa@gmail.com>
   +pyccuracy-1.2.45.ebuild, +metadata.xml:
   New ebuild for dev-python/pyccuracy-1.2.45, wrt bug 352502, thanks to

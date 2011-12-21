@@ -15,7 +15,7 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="Python tool that aims to make it easier to write automated acceptance tests"
 HOMEPAGE="https://github.com/heynemann/pyccuracy http://pypi.python.org/pypi/Pyccuracy"
 SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz
-	http://cloud.github.com/downloads/heynemann/${PN}/${MY_P}.tar.gz"
+	mirror://github/heynemann/${PN}/${MY_P}.tar.gz"
 
 LICENSE="OSL-3.0"
 SLOT="0"
