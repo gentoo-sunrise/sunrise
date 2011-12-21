@@ -7,7 +7,7 @@ EAPI="3"
 PHP_EXT_OPTIONAL_USE="php"
 PHP_EXT_NAME="librets"
 PHP_EXT_SKIP_PHPIZE="yes"
-USE_PHP="php5-2 php5-3"
+USE_PHP="php5-3"
 
 PYTHON_DEPEND="python? 2"
 PYTHON_MODNAME="librets.py"
