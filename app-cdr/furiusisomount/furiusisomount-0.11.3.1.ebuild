@@ -42,12 +42,12 @@ src_prepare() {
 
 	# Disable the nautilus radio button because we can't use it anyway, Gentoo does not have nautilus-cd-burner
 	sed -e '/<widget class="GtkRadioButton" id="radiobutton_nautilus">/ a\
-                                 <property name="sensitive">False</property>' -i res/main_window.glade
+		<property name="sensitive">False</property>' -i res/main_window.glade
 
 	# If brasero is disabled, we disable all burning-related widgets
 	if ! use brasero; then
 		sed -e '/<widget class="GtkRadioButton" id="radiobutton_brasero">/ a\
-                                 <property name="sensitive">False</property>' -i res/main_window.glade
+			<property name="sensitive">False</property>' -i res/main_window.glade
 		sed -e "s/self.interface.get_widget('button_burn').set_sensitive(True)/#&/" -i src/main.py
 	fi
 
