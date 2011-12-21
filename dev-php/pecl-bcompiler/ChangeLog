@@ -1,6 +1,10 @@
-# ChangeLog for dev-php5/pecl-bcompiler
+# ChangeLog for dev-php/pecl-bcompiler
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  pecl-bcompiler-1.0.2.ebuild:
+  remove php:5.2 target, masked for removal and unsupported
 
   02 Dec 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pecl-bcompiler-0.9.3.ebuild, +pecl-bcompiler-1.0.2.ebuild:
