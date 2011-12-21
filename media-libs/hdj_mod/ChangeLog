@@ -1,0 +1,10 @@
+# ChangeLog for media-libs/hdj_mod
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Dec 2011; Alex Barker (KWhat) <alex@1stleg.com>
+  +files/dj_console_mp3_e2.patch, +hdj_mod-1.28.ebuild,
+  +files/kernel_2.6.31_fix.patch, +files/kernel_2.6.37_fix.patch,
+  +metadata.xml:
+  New Ebuild for bug 272100 Thanks Tommy[D] and Floppym.
+
