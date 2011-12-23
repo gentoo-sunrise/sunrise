@@ -2,6 +2,13 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*dmd-1.066 (23 Dec 2011)
+
+  23 Dec 2011; hasufell <julian.ospald@googlemail.com> +dmd-1.066.ebuild,
+  +files/dmd-1.066-makefile.patch, +files/slot-compat.patch,
+  +files/stackelf.patch, metadata.xml:
+  New Ebuild for bug 395415
+
   19 Dec 2011; Marco Leise <marco.leise@gmx.de> -dmd-2.054-r1.ebuild,
   -files/dmd-2.054-makefile.patch, -files/dmd-2.054-no-execstack.patch,
   +dmd-2.057.ebuild, +files/dmd-2.057-makefile.patch, files/dmd.bashcomp:
