@@ -1,0 +1,10 @@
+# ChangeLog for app-admin/cpu-g
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*cpu-g-0.9.0 (26 Dec 2011)
+
+  26 Dec 2011; hasufell <julian.ospald@googlemail.com> +cpu-g-0.9.0.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 396007
+
