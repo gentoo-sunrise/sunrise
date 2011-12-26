@@ -1,0 +1,42 @@
+# HG changeset patch
+# User Matt Chaput <matt@whoosh.ca>
+# Date 1324378116 18000
+# Node ID d8001e7edb2854a664570edd9ca97d93aba7c4e3
+# Parent  3544fa894e795ef62bf5ea00f11a393655a8b70f
+Removed print_function import to fix error in Python 2.5.
+Removed debug flag from parsing test.
+
+diff -r 3544fa894e795ef62bf5ea00f11a393655a8b70f -r d8001e7edb2854a664570edd9ca97d93aba7c4e3 src/whoosh/qparser/common.py
+--- a/src/whoosh/qparser/common.py	Tue Dec 20 01:33:13 2011 -0500
++++ b/src/whoosh/qparser/common.py	Tue Dec 20 05:48:36 2011 -0500
+@@ -30,7 +30,8 @@
+ parser modules.
+ """
+ 
+-from __future__ import print_function
++import sys
++
+ from whoosh.compat import string_type
+ 
+ 
+@@ -55,6 +56,6 @@
+     return q
+ 
+ 
+-def print_debug(level, msg):
++def print_debug(level, msg, out=sys.stderr):
+     if level:
+-        print("  " * (level - 1), msg)
++        out.write("%s%s\n" % (" " * (level - 1), msg))
+diff -r 3544fa894e795ef62bf5ea00f11a393655a8b70f -r d8001e7edb2854a664570edd9ca97d93aba7c4e3 tests/test_parsing.py
+--- a/tests/test_parsing.py	Tue Dec 20 01:33:13 2011 -0500
++++ b/tests/test_parsing.py	Tue Dec 20 05:48:36 2011 -0500
+@@ -608,7 +608,7 @@
+ def test_stopped():
+     schema = fields.Schema(text=fields.TEXT)
+     qp = default.QueryParser("text", schema)
+-    q = qp.parse(u("a b"), debug=True)
++    q = qp.parse(u("a b"))
+     assert_equal(q, query.NullQuery)
+ 
+ def test_analyzing_terms():
