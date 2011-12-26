@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Dec 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -django-coverage-1.1.1.ebuild, +django-coverage-1.2.1.ebuild:
+  Version bump
+
   22 Jan 2011; Denilson (CrazyTB) <denilsonsa@gmail.com>
   +django-coverage-1.1.1.ebuild, +metadata.xml:
   New ebuild for dev-python/django-coverage-1.1.1, wrt bug 352387, thanks to
