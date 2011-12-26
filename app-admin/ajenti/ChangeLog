@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Dec 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -ajenti-0.5.101.ebuild, -ajenti-0.6.0.ebuild:
+  Remove old versions.
+
   03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> ChangeLog:
   whitespace. Drop || die because of EAPI4
 
