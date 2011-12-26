@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Dec 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -files/pottymouth-2.1.0-fix-setup.patch, -pottymouth-2.1.1.ebuild,
+  +pottymouth-2.1.2.ebuild, +files/pottymouth-2.1.2-fix-setup.patch:
+  Version bump. Drop old patch
+
   09 Dec 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   -pottymouth-2.1.0.ebuild, +pottymouth-2.1.1.ebuild:
   Version bump

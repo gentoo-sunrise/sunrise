@@ -1,0 +1,15 @@
+diff --git a/setup.py b/setup.py
+index 180f378..4c39292 100755
+--- a/setup.py
++++ b/setup.py
+@@ -1,9 +1,6 @@
+ #!/usr/bin/env python
+ 
+-try:
+-    from setuptools import setup
+-except ImportError:
+-    from distutils.core import setup
++from distutils.core import setup
+ from pottymouth import __version__
+ 
+ import os
