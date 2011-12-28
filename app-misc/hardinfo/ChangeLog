@@ -1,0 +1,10 @@
+# ChangeLog for app-misc/hardinfo
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*hardinfo-0.5.1 (28 Dec 2011)
+
+  28 Dec 2011; hasufell <julian.ospald@googlemail.com> +hardinfo-0.5.1.ebuild,
+  +files/makefile.patch, +metadata.xml:
+  New Ebuild for bug 147547 with makefile patched
+
