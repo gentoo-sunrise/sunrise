@@ -1,0 +1,10 @@
+# ChangeLog for app-office/writerscafe
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*writerscafe-2.31 (29 Dec 2011)
+
+  29 Dec 2011; hasufell <julian.ospald@googlemail.com>
+  +writerscafe-2.31.ebuild, +metadata.xml:
+  New Ebuild for bug 396383
+
