@@ -11,7 +11,7 @@ inherit distutils python
 
 DESCRIPTION="Modular search for django"
 HOMEPAGE="http://haystacksearch.org"
-SRC_URI="http://cloud.github.com/downloads/toastdriven/${PN}/${P}-final.tar.gz"
+SRC_URI="mirror://github/toastdriven/${PN}/${P}-final.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
