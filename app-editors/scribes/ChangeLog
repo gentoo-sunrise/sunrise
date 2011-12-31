@@ -3,6 +3,9 @@
 # $Header: $
 
   31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> scribes-0.4.ebuild:
+  Simplify py-compile fix.
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> scribes-0.4.ebuild:
   Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585).
 
   12 Oct 2011; Nathan Phillip Brink <binki@gentoo.org> scribes-0.4.ebuild:
