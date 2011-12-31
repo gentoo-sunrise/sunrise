@@ -50,7 +50,7 @@ src_prepare() {
 	eautoreconf
 
 	# make py-compile useless (but true)
-	ln -nfs $(type -P true) py-compile || die "Could not kill py-compile"
+	echo -e '#!'$(type -P sh)'\n:' > py-compile || die "Could not kill py-compile"
 
 	python_convert_shebangs -r 2 .
 
