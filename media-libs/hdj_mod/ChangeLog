@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
+  Drop empty use section from metadata.xml
+
   21 Dec 2011; Alex Barker (KWhat) <alex@1stleg.com>
   +files/dj_console_mp3_e2.patch, +hdj_mod-1.28.ebuild,
   +files/kernel_2.6.31_fix.patch, +files/kernel_2.6.37_fix.patch,
