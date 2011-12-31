@@ -71,6 +71,7 @@ dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
+dev-lang/dmd:tools - Install optional tools, leave disabled if you use "dmd-common" from d-overlay
 dev-lang/xharbour:allegro - Build Allegro-based GT driver
 dev-libs/libaxl:tests - compile and install performance tests
 dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
