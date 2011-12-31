@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  penumbra-collection-1.1.ebuild:
+  Drop app-arch/lzma-utils from depend, no longer in main tree
+
   07 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
   penumbra-collection-1.1.ebuild:
   Fix SLOT for x11-libs/fltk dependency

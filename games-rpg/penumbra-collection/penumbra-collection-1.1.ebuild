@@ -20,7 +20,7 @@ IUSE=""
 PROPERTIES="interactive"
 RESTRICT="fetch strip"
 
-DEPEND="|| ( app-arch/xz-utils app-arch/lzma-utils )"
+DEPEND="app-arch/xz-utils"
 RDEPEND="virtual/opengl
 	x86? (
 		x11-libs/libXft
