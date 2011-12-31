@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -35,7 +35,7 @@ DOCS="AUTHORS ChangeLog NEWS README"
 
 src_prepare() {
 	eautoreconf
-	ln -sf $(type -P true) "${S}/py-compile" || die
+	echo -e '#!'$(type -P sh)'\n:' > py-compile || die
 }
 
 pkg_postinst() {
