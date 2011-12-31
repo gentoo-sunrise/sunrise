@@ -4,6 +4,10 @@
 
   31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
   timer-applet-2.1.2.ebuild:
+  Simplify py-compile fix.
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  timer-applet-2.1.2.ebuild:
   Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585).
 
   09 Apr 2010; Michael Weber (xmw) <gentoo@xmw.de>

@@ -35,7 +35,7 @@ DOCS="AUTHORS ChangeLog NEWS README"
 
 src_prepare() {
 	eautoreconf
-	echo -e '#!'$(type -P sh)'\n:' > py-compile || die
+	echo '#!/bin/sh' > py-compile || die
 }
 
 pkg_postinst() {
