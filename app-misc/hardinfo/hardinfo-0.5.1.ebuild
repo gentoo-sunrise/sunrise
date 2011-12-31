@@ -8,7 +8,7 @@ inherit eutils flag-o-matic
 
 DESCRIPTION="A system information and benchmark tool for Linux systems"
 HOMEPAGE="http://hardinfo.berlios.de/"
-SRC_URI="http://download.berlios.de/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"

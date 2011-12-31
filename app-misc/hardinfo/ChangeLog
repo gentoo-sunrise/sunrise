@@ -2,6 +2,10 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  hardinfo-0.5.1.ebuild:
+  USE mirror:// as berlos is in thirdpartymirrors
+
 *hardinfo-0.5.1 (28 Dec 2011)
 
   28 Dec 2011; hasufell <julian.ospald@googlemail.com> +hardinfo-0.5.1.ebuild,
