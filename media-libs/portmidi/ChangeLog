@@ -1,6 +1,11 @@
 # ChangeLog for media-libs/portmidi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Jan 2012; Alex Barker (KWhat) <alex@1stleg.com> -portmidi-217.ebuild,
+  +portmidi-217-r1.ebuild,
+  +files/portmidi-217-cmake-workdir-java-opts.patch:
+  Added patch to fix compalation problems with cmake 2.8.6, thanks Tommy[D]
 
   13 May 2011; Alex Barker (KWhat) <alex@1stleg.com> portmidi-217.ebuild:
   Fix for multi Python ABI and restriced Python 3

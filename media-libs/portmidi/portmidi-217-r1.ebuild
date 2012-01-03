@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -50,6 +50,9 @@ src_prepare() {
 	# with this patch the java installation directories can be specified and
 	# allows java to be enabled/disabled
 	epatch "${FILESDIR}/${P}-cmake-libdir-java-opts.patch"
+
+	# fix problems with cmake 2.8.6
+	epatch "${FILESDIR}/${P}-cmake-workdir-java-opts.patch"
 
 	# find the header and our compiled libs in the distutils setup.py
 	epatch "${FILESDIR}/${P}-python-setup.py.patch"
