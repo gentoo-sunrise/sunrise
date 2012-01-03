@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,7 +25,7 @@ S=${WORKDIR}/${MY_P}
 DOCS="readme.html"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-2.1.0-fix-setup.patch" || die
+	epatch "${FILESDIR}/${P}-fix-setup.patch" || die
 }
 
 src_test() {
