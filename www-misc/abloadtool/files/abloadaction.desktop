@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin,image/*
-MimeType=image/*
-Actions=uploadBackground;upload
+Actions=uploadBackground;upload;
+MimeType=image/*;
 
 [Desktop Action uploadBackground]
 Name=upload in background

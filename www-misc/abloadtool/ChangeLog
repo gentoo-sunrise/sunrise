@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*abloadtool-3.0-r1 (06 Jan 2012)
+
+  06 Jan 2012; hasufell <julian.ospald@googlemail.com> -abloadtool-3.0.ebuild,
+  +abloadtool-3.0-r1.ebuild, +files/nautilus1.sh, +files/nautilus2.sh,
+  -files/abloadaction.desktop:
+  Switched to wrapper-script; nautilus-support added
+
 *abloadtool-3.0 (04 Jan 2012)
 
   04 Jan 2012; hasufell <julian.ospald@googlemail.com> +abloadtool-3.0.ebuild,

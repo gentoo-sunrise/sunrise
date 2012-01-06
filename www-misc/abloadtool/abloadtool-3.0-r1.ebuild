@@ -14,7 +14,7 @@ SRC_URI="amd64? ( http://download.${PN}.de/ubuntu-64/${P}.x86_64.deb )
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="kde"
+IUSE="gnome kde"
 
 DEPEND=""
 RDEPEND="x11-libs/qt-core:4
@@ -44,15 +44,25 @@ src_install() {
 		doins "${FILESDIR}"/abloadaction.desktop
 	fi
 
-	cat > 91${PN} <<-END
-	LDPATH=/opt/${PN}/$(get_libdir)
-	END
+	if use gnome ; then
+		insinto /usr/share/${PN}
+		newins "${FILESDIR}"/nautilus1.sh "abload in background"
+		newins "${FILESDIR}"/nautilus2.sh "open in abload"
+	fi
 
-	doenvd 91${PN}
+	make_wrapper ${PN} /opt/${PN}/bin/${PN} "" /opt/${PN}/$(get_libdir)
 }
 
 pkg_postinst() {
 	fdo-mime_desktop_database_update
+
+	if use gnome ; then
+		elog "                                              "
+		elog "Nautilus scripts are in /usr/share/abloadtool."
+		elog "Copy them to ~/.gnome2/nautilus-scripts and   "
+		elog "make them executable!                         "
+		elog "                                              "
+	fi
 }
 
 pkg_postrm() {
