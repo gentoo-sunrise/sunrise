@@ -1,9 +1,10 @@
 #!/sbin/runscript 
-# Copyright 1999-2011 Gentoo Foundation 
+# Copyright 1999-2012 Gentoo Foundation 
 # Distributed under the terms of the GNU General Public License v2 
 # $Header: $ 
 #
-extra_commands="reload"
+extra_commands="rebuild"
+extra_started_commands="reload"
 description="NSD is an authoritative only, high performance, open source name server"
 description_reload="Rebuild zone database and reload it"
 
@@ -49,18 +50,19 @@ _patch() {
 	fi
 }
 
-_rebuild() {
+rebuild() {
+	ebegin "Rebuilding NSD zone database"
 	if ! ${my_nsdc} rebuild > /dev/null; then
 		eerror "There was an error rebuilding the database. Please review your zone files."
 		return 1
 	fi
-	return 0
+	eend $?
 }
 
 start() { 
 	ebegin "Starting NSD"
 	_checkconf || return 1
-	_checkdb || _rebuild || return 1
+	_checkdb || rebuild || return 1
 	${my_nsdc} start
 	${my_nsdc} running
 	eend $? 
@@ -74,9 +76,9 @@ stop() {
 } 
 
 reload() {
-	ebegin "Rebuilding and reloading NSD zone database"
 	_checkconf || return 1
-	_rebuild || return 1
+	rebuild || return 1
+	ebegin "Reloading NSD zone database"
 	${my_nsdc} reload
 	eend $? 
 }

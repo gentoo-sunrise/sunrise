@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -74,6 +74,6 @@ pkg_postinst() {
 	version_compare "3.2.9" "${REPLACING_VERSIONS}"
 	if test $? -eq 3; then
 		ewarn "In ${PN}-3.2.9, the database format was changed."
-		ewarn "Please run '/usr/sbin/nsdc rebuild' to rebuild the database, then restart nsd."
+		ewarn "Please run '/etc/init.d/nsd rebuild' to rebuild the database, then restart nsd."
 	fi
 }

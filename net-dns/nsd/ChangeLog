@@ -1,6 +1,10 @@
 # ChangeLog for net-dns/nsd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Jan 2012; Tom Hendrikx (whyscream) <tom@whyscream.net> nsd-3.2.9.ebuild,
+  files/nsd.initd:
+  correct $extra_commands usage
 
   09 Dec 2011; Tom Hendrikx (whyscream) <tom@whyscream.net> files/nsd.initd:
   updated init script, replaced deprecated $opts with new $extra_commands (no
