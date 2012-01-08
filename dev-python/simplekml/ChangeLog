@@ -1,0 +1,10 @@
+# ChangeLog for dev-python/simplekml
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*simplekml-0.8.1 (08 Jan 2012)
+
+  08 Jan 2012; Dominik George (natureshadow) <gentoo@naturalnik.de>
+  +simplekml-0.8.1.ebuild, +metadata.xml:
+  New ebuild for dev-python/simplekml-0.8.1, bug #398099
+
