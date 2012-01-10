@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Keeps track of EVERY kernel module that has ever been probed. Useful for 'make localmodconfig'"
 HOMEPAGE="https://wiki.archlinux.org/index.php/Modprobed_db"
-SRC_URI="http://repo-ck.com/source/${P}.tar.xz"
+SRC_URI="http://repo-ck.com/source/${PN}/${P}.tar.xz"
 
 LICENSE="GPL-3"
 SLOT="0"

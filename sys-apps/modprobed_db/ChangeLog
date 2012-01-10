@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*modprobed_db-2.0-r1 (10 Jan 2012)
+
+  10 Jan 2012; hasufell <julian.ospald@googlemail.com>
+  -modprobed_db-2.0.ebuild, +modprobed_db-2.0-r1.ebuild:
+  new src_uri
+
 *modprobed_db-2.0 (09 Jan 2012)
 
   09 Jan 2012; hasufell <julian.ospald@googlemail.com>
