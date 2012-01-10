@@ -1,0 +1,52 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="Webbrowser profile syncing"
+extra_commands="sync"
+PIDFILE=/var/run/${SVCNAME}.pid
+
+[ -e /etc/psd.conf ] && . /etc/psd.conf
+
+start() {
+	ebegin "Starting Profile-Sync-Daemon"
+	if [[ -z $USERS ]]; then
+		eerror "Define at least one user in /etc/psd.conf"
+		return 1
+	fi
+
+	for i in $USERS; do
+		if [[ ! -d /home/$i ]]; then
+			eerror "Invalid user defined in /etc/psd.conf"
+			return 1
+		fi
+	done
+
+	/usr/bin/profile-sync-daemon check 
+	start-stop-daemon --start --pidfile ${PIDFILE} --make-pidfile --background \
+		--exec /usr/bin/profile-sync-daemon -- sync
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping Profile-Sync-Daemon"
+	if [[ ! -f $PIDFILE ]]; then
+		eerror "Profile-Sync-Daemon is not running, nothing to stop!"
+		return 1
+	else
+		/usr/bin/profile-sync-daemon unsync
+		rm -f ${PIDFILE}
+	fi
+	eend $?
+}
+
+sync() {
+	ebegin "Syncing browser profiles in tmpfs to physical disc"
+	if [[ ! -f $PIDFILE ]]; then
+		eerror "Profile-Sync-Daemon is not running... cannot sync!"
+		return 1
+	else
+		/usr/bin/profile-sync-daemon sync
+	fi
+	eend $?
+}

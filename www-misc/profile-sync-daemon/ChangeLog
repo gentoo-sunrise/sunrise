@@ -1,0 +1,11 @@
+# ChangeLog for www-misc/profile-sync-daemon
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*profile-sync-daemon-2.6 (10 Jan 2012)
+
+  10 Jan 2012; hasufell <julian.ospald@googlemail.com>
+  +profile-sync-daemon-2.6.ebuild, +files/cronjob, +files/daemon,
+  +files/psd-manreadme.patch, +files/psd-pid.patch, +metadata.xml:
+  New Ebuild for bug 398431
+

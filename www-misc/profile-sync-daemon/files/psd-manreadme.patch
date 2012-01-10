@@ -1,0 +1,79 @@
+--- psd.manpage.old	2012-01-09 22:25:17.000000000 +0100
++++ psd.manpage	2012-01-10 21:01:35.000000000 +0100
+@@ -6,7 +6,7 @@
+ .SH SYNOPSIS
+ .nf
+ .fam C
+-      rc.d [\fIoptions\fP] \fIpsd\fP
++      rc -s \fIpsd\fP [\fIoptions\fP]
+ 
+ .fam T
+ .fi
+@@ -27,7 +27,7 @@
+ .PP
+ Note that Chromium actually keeps its cache directory separately from its browser profile directory. It is not within the scope of profile-sync-daemon to modify this behavior; users are encouraged to refer to the following url for several work-arounds: https://wiki.archlinux.org/index.php/Chromium_Tips_and_Tweaks#Cache_in_tmpfs
+ .SH OPTIONS
+-Users should not call /usr/bin/profile-sync-daemon directly. Instead use the distro provided /usr/bin/rc.d to interact with \fIpsd\fP via the daemon script.
++Users should not call '/usr/bin/profile-sync-daemon' directly. Instead use the distro provided '/sbin/rc' to interact with \fIpsd\fP via the daemon script.
+ .TP
+ .B
+ start
+@@ -41,16 +41,14 @@
+ sync
+ Sync data between locations. The \fBprofile\fP(s) in tmpfs are sync'ed back to the disc and the symlinks are left in place.
+ .SH SETUP AND USAGE
+-Edit the included /etc/psd.conf defining which \fBuser\fP(s) will have their profiles managed by \fIpsd\fP and note that at least one user must be defined.
++Edit the included '/etc/psd.conf' defining which \fBuser\fP(s) will have their profiles managed by \fIpsd\fP and note that at least one user must be defined.
+ .PP
+ Example: 
+ USERS="bar foo"
+ .PP
+-The initial synchronization will occur when the daemon starts. Additionally, cron (if running on your system) will call it to sync or update once per hour. Finally, \fIpsd\fP will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Arch daemon.
++The initial synchronization will occur when the daemon starts. Additionally, you can set up a cronjob with the provided file in '/usr/share/profile-sync-daemon'. Finally, \fIpsd\fP will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Gentoo daemon.
+ .PP
+-It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding \fIpsd\fP to the DAEMONS array in /etc/rc.conf like so: 
+-.PP
+-\fBDAEMONS=\fP(\.\.\. @\fIpsd\fP \.\.\.)
++It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding \fIpsd\fP to the default runlevel by issuing 'rc-update add psd default'.
+ .PP
+ For more, see: https://wiki.archlinux.org/index.php/Modprobed_db
+ .SH BUGS
+--- README-for_other_distros.old	2012-01-09 22:24:29.000000000 +0100
++++ README-for_other_distros	2012-01-10 21:07:38.000000000 +0100
+@@ -2,7 +2,7 @@
+ 	profile-sync-daemon - Symlinks and syncs browser profile dirs to RAM thus reducing HDD/SDD calls and speeding-up browsers.
+ 
+ SYNOPSIS
+-	rc.d [options] psd
++	rc -s psd [options]
+ 
+ DESCRIPTION
+ 	Profile-sync-daemon (psd) is a tiny shell script designed to manage your browser's profile in tmpfs and to periodically sync it back to your physical disc (HDD/SSD). This is accomplished via a symlinking step and an innovative use of rsync to maintain back-up and synchronization between the two. One of the major design goals of psd is completely transparent user experience.
+@@ -19,23 +19,21 @@
+ 	Note that Chromium actually keeps its cache directory separately from its browser profile directory. It is not within the scope of profile-sync-daemon to modify this behavior; users are encouraged to refer to the following url for several work-arounds: https://wiki.archlinux.org/index.php/Chromium_Tips_and_Tweaks#Cache_in_tmpfs
+ 
+ OPTIONS
+-	Users should not call /usr/bin/profile-sync-daemon directly. Instead use the distro provided /usr/bin/rc.d to interact with psd via the daemon script.
++	Users should not call '/usr/bin/profile-sync-daemon' directly. Instead use the distro provided '/sbin/rc' to interact with psd via the daemon script.
+ 
+ 	start		Turn on psd. Make symlinks and sync the profile(s) from disc to tmpfs.
+ 	stop		Turn off psd. Sync the profiles(s) from tmpfs back to disc and remove the symlinks.
+ 	sync		Sync data between locations. The profile(s) in tmpfs are sync'ed back to the disc and the symlinks are left in place.
+ 	
+ SETUP AND USAGE
+-	Edit the included /etc/psd.conf defining which user(s) will have their profiles managed by psd and note that at least one user must be defined.
++	Edit the included '/etc/psd.conf' defining which user(s) will have their profiles managed by psd and note that at least one user must be defined.
+ 
+ 	Example: 
+ 	USERS="bar foo"
+ 
+-	The initial synchronization will occur when the daemon starts. Additionally, cron (if running on your system) will call it to sync or update once per hour. Finally, psd will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Arch daemon.
++	The initial synchronization will occur when the daemon starts. Additionally, you can set up a cronjob with the provided file in '/usr/share/profile-sync-daemon'. Finally, psd will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Gentoo daemon.
+ 	
+-	It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding psd to the DAEMONS array in /etc/rc.conf like so: 
+-	
+-	DAEMONS=(... @psd ...)
++	It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding psd to the default runlevel by issuing 'rc-update add psd default'. 
+ 
+ 	For more, see: https://wiki.archlinux.org/index.php/Modprobed_db
+ 
