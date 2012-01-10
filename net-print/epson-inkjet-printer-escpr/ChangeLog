@@ -1,0 +1,11 @@
+# ChangeLog for net-print/epson-inkjet-printer-escpr
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*epson-inkjet-printer-escpr-1.1.1 (10 Jan 2012)
+
+  10 Jan 2012; Moritz Schlarb (moschlar) <mail@moritz-schlarb.de>
+  +epson-inkjet-printer-escpr-1.1.1.ebuild, +metadata.xml:
+  New ebuild for bug 337953. Thanks to Tommy[D], floppym and all other
+  commenters and testers
+
