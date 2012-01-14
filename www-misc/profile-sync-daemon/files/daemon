@@ -16,7 +16,8 @@ start() {
 	fi
 
 	for i in $USERS; do
-		if [[ ! -d /home/$i ]]; then
+		homedir=$(su -c 'echo $HOME' $i)
+		if [[ ! -d $homedir ]]; then
 			eerror "Invalid user defined in /etc/psd.conf"
 			return 1
 		fi

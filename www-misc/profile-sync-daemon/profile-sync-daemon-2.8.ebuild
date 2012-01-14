@@ -42,7 +42,8 @@ src_install() {
 	newinitd "${FILESDIR}"/daemon ${MY_PN}
 
 	# manpage, readme
-	dodoc README*
+	newdoc README* README
+	dodoc CHANGELOG
 	newman ${MY_PN}.manpage ${PN}.1
 }
 

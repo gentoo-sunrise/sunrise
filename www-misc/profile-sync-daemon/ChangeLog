@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*profile-sync-daemon-2.8 (14 Jan 2012)
+
+  14 Jan 2012; hasufell <julian.ospald@googlemail.com>
+  -profile-sync-daemon-2.6.ebuild, +profile-sync-daemon-2.8.ebuild,
+  -files/daemon, -files/psd-pid.patch:
+  Version bump, fixes issues with asymmetrical username/homedir
+
 *profile-sync-daemon-2.6 (10 Jan 2012)
 
   10 Jan 2012; hasufell <julian.ospald@googlemail.com>
