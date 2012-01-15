@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*profile-sync-daemon-3.0 (15 Jan 2012)
+
+  15 Jan 2012; hasufell <julian.ospald@googlemail.com>
+  -profile-sync-daemon-2.8.ebuild, +profile-sync-daemon-3.0.ebuild,
+  -files/psd-manreadme.patch, -files/psd-pid.patch:
+  Version bump, support to exclude browser profiles
+
 *profile-sync-daemon-2.8 (14 Jan 2012)
 
   14 Jan 2012; hasufell <julian.ospald@googlemail.com>
