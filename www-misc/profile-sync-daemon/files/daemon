@@ -35,7 +35,7 @@ stop() {
 		eerror "Profile-Sync-Daemon is not running, nothing to stop!"
 		return 1
 	else
-		/usr/bin/profile-sync-daemon unsync
+		/usr/bin/profile-sync-daemon sync && /usr/bin/profile-sync-daemon unsync
 		rm -f ${PIDFILE}
 	fi
 	eend $?

@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*profile-sync-daemon-3.0-r1 (15 Jan 2012)
+
+  15 Jan 2012; hasufell <julian.ospald@googlemail.com>
+  -profile-sync-daemon-3.0.ebuild, +profile-sync-daemon-3.0-r1.ebuild,
+  -files/daemon:
+  Bugfix in daemon script
+
 *profile-sync-daemon-3.0 (15 Jan 2012)
 
   15 Jan 2012; hasufell <julian.ospald@googlemail.com>
