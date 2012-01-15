@@ -1,13 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 DESCRIPTION="A c++-class-library for easy and light database-access. Currently for postgresql, sqlite3 and mysql"
-HOMEPAGE="http://www.tntnet.org/tntdb.hms"
+HOMEPAGE="http://www.tntnet.org/tntdb.html"
 SRC_URI="http://www.tntnet.org/download/${P}.tar.gz"
-LICENSE="LGPL-2"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc mysql postgres sqlite"
@@ -15,7 +15,7 @@ IUSE="doc mysql postgres sqlite"
 RDEPEND="mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base )
 	sqlite? ( dev-db/sqlite:3 )
-	>=dev-libs/cxxtools-1.4.8"
+	>=dev-libs/cxxtools-2.0"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
@@ -30,7 +30,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS ChangeLog README NEWS doc/*.pdf
 
 	insinto /usr/share/doc/${PF}/examples
