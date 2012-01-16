@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ EAPI=2
 
 inherit depend.php webapp
 
-DESCRIPTION="A CalDAV and iCal server"
+DESCRIPTION="A CalDAV and CardDAV Server"
 HOMEPAGE="http://davical.org/"
 SRC_URI="http://debian.mcmillan.net.nz/packages/${PN}/${P}.tar.gz"
 
@@ -21,7 +21,7 @@ RDEPEND="app-admin/pwgen
 	dev-perl/DBI
 	dev-perl/DBD-Pg
 	dev-perl/yaml
-	>=dev-php/awl-0.49
+	>=dev-php/awl-0.51
 	www-servers/apache"
 
 need_php5
@@ -29,12 +29,13 @@ need_httpd
 
 src_prepare() {
 	epatch "${FILESDIR}/awl_location.patch"
+	epatch "${FILESDIR}/inc_path.patch"
 }
 
 src_compile() {
 	if use doc ; then
 		einfo "Generating documentation"
-		phpdoc -c "docs/api/phpdoc.ini"\
+		phpdoc -q -c "docs/api/phpdoc.ini"\
 			|| die "Documentation failed to build"
 	fi
 	emake built-po || die "emake failed"
@@ -52,9 +53,9 @@ src_install() {
 	doins -r htdocs/* htdocs/.htaccess || die "doins failed"
 
 	einfo "Installing main files and i18n"
-	insinto "${MY_HOSTROOTDIR}"
+	insinto "${MY_HOSTROOTDIR}/${PN}"
 	doins -r inc locale || die "doins failed"
-	rm -f "${D}/${MY_HOSTROOTDIR}/inc/always.php.in"
+	rm -f "${D}/${MY_HOSTROOTDIR}/${PN}/inc/always.php.in"
 
 	einfo "Installing sql files"
 	insinto "${MY_SQLSCRIPTSDIR}"
