@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -38,8 +38,5 @@ src_install() {
 		dohtml -r "docs/api/" || die "dohtml failed"
 	fi
 
-	insinto /usr/share/awl
-	doins -r dba  || die "doins failed"
-
-	php-lib-r1_src_install ./inc `find ./inc -type f -print | sed -e "s|./inc||g"`
+	php-lib-r1_src_install . dba/* inc/* scripts/*
 }

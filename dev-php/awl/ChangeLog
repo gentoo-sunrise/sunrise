@@ -1,6 +1,10 @@
 # ChangeLog for dev-php/awl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Jan 2012; lebarjack <francois.perichon@univ-lille2.fr>
+  -awl-0.49.ebuild, +awl-0.51.ebuild:
+  New version of the awl library
 
   05 Nov 2011; Sven Schwyn (svoop) <gentoo@bitcetera.com> -awl-0.48.ebuild,
   +awl-0.49.ebuild:
