@@ -1,6 +1,10 @@
 # ChangeLog for media-tv/otrdecoder-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Jan 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -otrdecoder-bin-518.ebuild:
+  Remove old.
 
   02 Jul 2011; Nathan Phillip Brink <binki@gentoo.org>
   otrdecoder-bin-592.ebuild:
