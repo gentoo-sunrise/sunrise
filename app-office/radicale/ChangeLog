@@ -1,6 +1,10 @@
 # ChangeLog for app-office/radicale
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Jan 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -radicale-0.5.ebuild:
+  Remove old.
 
   10 Oct 2011; René Neumann (Necoro) <gentoo@necoro.eu>
   +radicale-0.6.2.ebuild:
