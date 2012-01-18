@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jan 2012; hasufell <julian.ospald@googlemail.com>
+  -conkyguayadeque-9999.ebuild:
+  removed keywords
+
 *conkyguayadeque-9999 (14 Jan 2012)
 
   14 Jan 2012; hasufell <julian.ospald@googlemail.com>

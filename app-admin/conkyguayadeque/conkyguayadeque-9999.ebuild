@@ -15,7 +15,7 @@ EBZR_REPO_URI="lp:~conky-companions/+junk/${EBZR_BRANCH}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="app-admin/conky
