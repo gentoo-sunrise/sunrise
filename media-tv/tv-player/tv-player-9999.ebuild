@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ HOMEPAGE="https://launchpad.net/tv-player"
 SRC_URI=""
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 EBZR_REPO_URI="lp:tv-player"
