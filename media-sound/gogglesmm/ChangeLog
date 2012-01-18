@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/gogglesmm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Jan 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  gogglesmm-0.12.2.ebuild:
+  Fix dep on xine on behalf of hangfire.
 
   27 Nov 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   gogglesmm-0.12.2.ebuild:

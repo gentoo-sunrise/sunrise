@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ IUSE="dbus gcrypt"
 
 RDEPEND="dev-db/sqlite:3
 	media-libs/taglib
-	media-libs/xine-lib
+	=media-libs/xine-lib-1.1*
 	net-misc/curl
 	x11-libs/fox:1.6[png]
 	dbus? ( sys-apps/dbus )
