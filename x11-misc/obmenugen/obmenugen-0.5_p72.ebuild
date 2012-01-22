@@ -20,7 +20,8 @@ IUSE=""
 
 DEPEND="app-text/txt2tags
 	dev-lang/dmd:1"
-RDEPEND="x11-wm/openbox"
+RDEPEND="!x11-misc/obmenugen-bin
+	x11-wm/openbox"
 
 S="${WORKDIR}/${MY_P}"
 
