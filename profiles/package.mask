@@ -31,11 +31,6 @@ app-portage/portage-jobsmon
 # for the current version
 dev-python/django-haystack
 
-# Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
-# Masking wrt bug 333939. Dependency on vala-1.0 which is
-# not yet released.
-=x11-wm/cairo-compmgr-0.3.0
-
 # Laurento Frittella <laurento.frittella@gmail.com> (16 Jun 2010)
 # masked as it bundles net-misc/mimms package. bad security practice
 media-tv/tv-player
