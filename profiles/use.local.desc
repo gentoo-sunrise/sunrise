@@ -187,8 +187,6 @@ net-dns/nsd:root-server - Configure NSD as a root server
 net-dns/nsd:runtime-checks - Enable runtime checks
 net-firewall/vuurmuur:logrotate - Install support files for logrotate
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
-net-mail/checkgmail:clickurl - Add support to click urls in the popup notification
-net-mail/checkgmail:savepwd - Add support for saving and encrypting GMail password
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
@@ -254,7 +252,6 @@ x11-drivers/libfreenect:fakenect - Install fakenect mock library
 x11-drivers/libfreenect:opencv - Install opencv library
 x11-drivers/libfreenect:python - Install python library extension
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
-x11-misc/gnome-schedule:applet - Enable Gnome 2 applet support
 x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
