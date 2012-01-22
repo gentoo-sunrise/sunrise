@@ -28,7 +28,7 @@ S="${WORKDIR}/${PN}"
 src_unpack() {
 	default
 
-	cp "${DISTDIR}/arc4random.c.${MY_ARC4RANDOM_V}" "${S}/arc4random.c"
+	cp "${DISTDIR}/arc4random.c.${MY_ARC4RANDOM_V}" "${S}/arc4random.c" || die
 }
 
 src_compile() {
