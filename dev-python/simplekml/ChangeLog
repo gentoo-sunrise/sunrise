@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jan 2012; Mike Gilbert <floppym@gentoo.org> simplekml-0.8.1.ebuild:
+  dev-python/simplekml: Fix PYTHON_DEPEND and remove PYTHON_MODNAME.
+
 *simplekml-0.8.1 (08 Jan 2012)
 
   08 Jan 2012; Dominik George (natureshadow) <gentoo@naturalnik.de>

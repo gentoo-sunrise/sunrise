@@ -5,7 +5,7 @@
 EAPI="4"
 
 SUPPORT_PYTHON_ABIS="1"
-PYTHON_DEPEND="*:2.6:3.2"
+PYTHON_DEPEND="*:2.6"
 
 inherit distutils eutils
 
@@ -17,8 +17,6 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-PYTHON_MODNAME="simplekml"
 
 RESTRICT_PYTHON_ABIS="2.[45]"
 
