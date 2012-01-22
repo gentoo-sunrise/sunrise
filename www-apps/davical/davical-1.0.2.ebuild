@@ -54,7 +54,7 @@ src_install() {
 	einfo "Installing main files and i18n"
 	insinto "${MY_HOSTROOTDIR}/${PN}"
 	doins -r inc locale || die "doins failed"
-	rm -f "${D}/${MY_HOSTROOTDIR}/${PN}/inc/always.php.in"
+	rm "${D}/${MY_HOSTROOTDIR}/${PN}/inc/always.php.in" || die
 
 	einfo "Installing sql files"
 	insinto "${MY_SQLSCRIPTSDIR}"
