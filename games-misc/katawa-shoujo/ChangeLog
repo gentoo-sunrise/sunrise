@@ -4,5 +4,5 @@
 
   09 Jan 2012; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   +katawa-shoujo-1.0.ebuild, +metadata.xml:
-  New ebuild for Katawa Shoujo
+  New ebuild for Katawa Shoujo. Bug #398267
 
