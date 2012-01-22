@@ -88,7 +88,6 @@ dev-libs/librets:sql-compiler - Enable SQL to DMQL compiler for java libraries
 dev-libs/librets:threads - Enable thread safe support
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
-dev-python/cvxopt:glpk - Enable support for the linear programming solver GLPK
 dev-util/eclim:cdt - Enables C/C++ development support
 dev-util/eresi:server - Build eresi server capability
 dev-util/icewing:grabber - Build the grabber plug-in
