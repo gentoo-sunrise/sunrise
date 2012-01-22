@@ -31,27 +31,6 @@ app-portage/portage-jobsmon
 # for the current version
 dev-python/django-haystack
 
-# Markos Chandras <hwoarang@gentoo.org> (03 Dec 2011)
-# Masked for removal in 30 days because of masked dependencies:
-# dev-python/gnome-python-extras
-# dev-python/gnome-python
-# dev-python/gnome-python-desktop
-# dev-perl/Gtk2-Sexy
-# x11-libs/wxGTK:2
-app-backup/nssbackup
-app-misc/exe
-app-arch/parano
-gnome-extra/disk-status-applet
-gnome-extra/gnome-osd
-gnome-extra/startupmanager
-gnome-extra/timer-applet
-gnome-extra/webboard
-net-mail/checkgmail
-net-mail/gmail-notify
-net-misc/internode-applet
-net-p2p/mute
-x11-misc/gnome-schedule
-
 # Dane Smith <smithdanea@gmail.com> (23 Aug 2010)
 # Masking wrt bug 333939. Dependency on vala-1.0 which is
 # not yet released.
