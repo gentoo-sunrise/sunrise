@@ -1,20 +1,22 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 PYTHON_DEPEND="python? 2:2.6"
 
 inherit cmake-utils multilib python
 
 DESCRIPTION="Drivers and libraries for the Xbox Kinect device"
 HOMEPAGE="https://github.com/OpenKinect/libfreenect"
-SRC_URI="http://ompldr.org/vNzQ5bg/${P}.tar.bz2"
+SRC_URI="https://github.com/OpenKinect/${PN}/tarball/v${PV} -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples fakenect c_sync opencv python"
+IUSE="c_sync examples fakenect opencv python"
+REQUIRED_USE="opencv? ( c_sync )
+	python? ( c_sync )"
 
 RDEPEND="dev-libs/libusb:1
 	examples? (
@@ -26,6 +28,11 @@ RDEPEND="dev-libs/libusb:1
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+src_unpack() {
+	unpack ${A}
+	mv OpenKinect-${PN}-* ${P} || die
+}
+
 pkg_setup() {
 	if use python; then
 		python_set_active_version 2
@@ -35,28 +42,13 @@ pkg_setup() {
 
 src_configure() {
 	local mycmakeargs=(
+		$(cmake-utils_use_build c_sync)
 		$(cmake-utils_use_build examples)
-		$(cmake-utils_use_build fakenect)
 		$(cmake-utils_use_build examples CPP)
+		$(cmake-utils_use_build fakenect)
 		$(cmake-utils_use_build opencv CV)
 		$(cmake-utils_use_build python)
 	)
-	# opencv & python requires c_sync
-	if ! use c_sync && ( use opencv || use python ); then
-		if use opencv; then
-			local useflag="opencv"
-		else
-			local useflag="python"
-		fi
-		ewarn "${useflag} requires c synchronous support to be enabled; c_sync enabled"
-	        mycmakeargs+=(
-			-DBUILD_C_SYNC=ON
-		)
-	else
-		mycmakeargs+=(
-			$(cmake-utils_use_build c_sync)
-		)
-	fi
 	if use python; then
 		#Add numpy core include path in python CMakeList.txt to allow compilation
 		sed -i -e "s|../c_sync/|$(python_get_sitedir)/numpy/core/include/ ../c_sync/|" "wrappers/python/CMakeLists.txt" || die
@@ -66,12 +58,16 @@ src_configure() {
 
 src_install() {
 	cmake-utils_src_install
+	# Rename record example so it does not collide with xawtv
+	if use examples && use fakenect; then
+		mv "${D}"/usr/bin/record "${D}"/usr/bin/frecord || die
+	fi
 	# Remove cvdemo if examples is not enabled
 	if use opencv && ! use examples; then
 		rm -f "${D}"/usr/bin/cvdemo || die
 	fi
 	insinto /$(get_libdir)/udev/rules.d/
-	doins "${FILESDIR}/51-kinect.rules" || die
+	doins "${FILESDIR}/51-kinect.rules"
 }
 
 pkg_postinst() {

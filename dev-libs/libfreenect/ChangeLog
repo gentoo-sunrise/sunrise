@@ -1,6 +1,12 @@
-# ChangeLog for x11-drivers/libfreenect
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# ChangeLog for dev-libs/libfreenect
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*libfreenect-0.1.2 (24 Jan 2012)
+
+  24 Jan 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -libfreenect-0.0.1_p20110105-r1.ebuild, +libfreenect-0.1.2.ebuild:
+  Version bump
 
   27 Jan 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   -libfreenect-0.0.1_p20110105.ebuild,
