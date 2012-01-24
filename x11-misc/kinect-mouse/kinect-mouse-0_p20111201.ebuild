@@ -1,12 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="4"
 
 inherit cmake-utils
 
 DESCRIPTION="A program that uses the libfreenect drivers to control mouse input"
 HOMEPAGE="https://github.com/Ooblik/Kinect-Mouse"
-SRC_URI="http://ompldr.org/vNzRldA/${P}.tar.bz2"
+SRC_URI="http://ompldr.org/vY2ZuMQ/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,7 +20,7 @@ DEPEND="media-libs/freeglut
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/libXtst
-	x11-drivers/libfreenect"
+	dev-libs/libfreenect"
 RDEPEND="${DEPEND}"
 
 pkg_postinst() {
