@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -33,12 +33,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}/module"
-
-src_prepare() {
-	# Fix building with libpng-1.5	
-	# https://bugs.launchpad.net/renpy/+bug/879474
-	epatch "${FILESDIR}/${PN}-libpng15.patch"
-}
 
 src_compile() {
 	export RENPY_DEPS_INSTALL="${ROOT}usr"
