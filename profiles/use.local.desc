@@ -74,6 +74,11 @@ dev-lang/brainwash:char - Compile with support for unsigned character (instead o
 dev-lang/dmd:tools - Install optional tools, leave disabled if you use "dmd-common" from d-overlay
 dev-lang/xharbour:allegro - Build Allegro-based GT driver
 dev-libs/libaxl:tests - compile and install performance tests
+dev-libs/libfreenect:c_sync - Install C synchronous library
+dev-libs/libfreenect:examples - Install demo programs
+dev-libs/libfreenect:fakenect - Install fakenect mock library
+dev-libs/libfreenect:opencv - Install opencv library
+dev-libs/libfreenect:python - Install python library extension
 dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
 dev-libs/libplayer:vlc - Enable VLC media player support
 dev-libs/librets:debug - Enable debug compile type
@@ -246,11 +251,6 @@ sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to p
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
-x11-drivers/libfreenect:c_sync - Install C synchronous library
-x11-drivers/libfreenect:examples - Install demo programs
-x11-drivers/libfreenect:fakenect - Install fakenect mock library
-x11-drivers/libfreenect:opencv - Install opencv library
-x11-drivers/libfreenect:python - Install python library extension
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
