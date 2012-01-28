@@ -1,6 +1,9 @@
 # ChangeLog for net-misc/sshmenu
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  28 Jan 2012; Nathan Phillip Brink <binki@gentoo.org> sshmenu-3.18.ebuild:
+  Drop USE_RUBY=ruby19 because dependencies do not support ruby19.
 
   11 Feb 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   -sshmenu-3.15.ebuild, -files/sshmenu-3.15-fixmultilib.patch,
