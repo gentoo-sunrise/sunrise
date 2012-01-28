@@ -21,11 +21,6 @@
 ##   End example
 ##
 
-# Nathan Phillip Brink <binki@gentoo.org> (26 Dec 2011)
-# Masked for removal in 30 days. Does not work with modern portage at
-# all and fixes are not yet prophesied. See bug 306439 comment 4.
-app-portage/portage-jobsmon
-
 # Laurento Frittella <laurento.frittella@gmail.com> (16 Jun 2010)
 # masked as it bundles net-misc/mimms package. bad security practice
 media-tv/tv-player
