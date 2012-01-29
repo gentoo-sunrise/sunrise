@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Jan 2012; Artem Sidorenko (Scader) <artem@2realities.com> metadata.xml:
+  Fixed maintainer for ebuild www-apache/mod_authn_otp
+
 *mod_authn_otp-1.1.4 (29 Jan 2012)
 
   29 Jan 2012; Artem Sidorenko (Scader) <artem@2realities.com>
