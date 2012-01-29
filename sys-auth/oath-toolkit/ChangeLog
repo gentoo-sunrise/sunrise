@@ -1,0 +1,10 @@
+# ChangeLog for sys-auth/oath-toolkit
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*oath-toolkit-1.10.5 (29 Jan 2012)
+
+  29 Jan 2012; Artem Sidorenko (Scader) <artem@2realities.com>
+  +oath-toolkit-1.10.5.ebuild, +metadata.xml:
+  New Ebuild for bug 401409
+
