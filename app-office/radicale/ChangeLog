@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jan 2012; René Neumann (Necoro) <gentoo@necoro.eu>
+  -radicale-0.6.2.ebuild, +radicale-0.6.4.ebuild:
+  Bump to version 0.6.4 / apply changes from bug #32281. Thanks to Micha Gleve.
+
   17 Jan 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
   -radicale-0.5.ebuild:
   Remove old.
