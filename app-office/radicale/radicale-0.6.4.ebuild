@@ -6,7 +6,7 @@ EAPI=2
 PYTHON_DEPEND="*:2.6"
 SUPPORT_PYTHON_ABIS=1
 
-inherit distutils
+inherit distutils eutils
 
 MY_PN="Radicale"
 MY_P="${MY_PN}-${PV}"
@@ -28,6 +28,18 @@ RDEPEND="ssl? ( >=dev-lang/python-2.6.6[ssl] )
 
 S=${WORKDIR}/${MY_P}
 
+RDIR=/var/lib/radicale
+
+pkg_setup() {
+	enewgroup radicale
+	enewuser radicale -1 -1 ${RDIR} radicale
+}
+
+src_prepare() {
+	sed -i -e "s:^folder = .*$:folder = ${RDIR}:g" \
+				config || die
+}
+
 src_install() {
 	# delete the useless .rst, so that it is not installed
 	rm README.rst
@@ -36,6 +48,9 @@ src_install() {
 
 	# init file
 	newinitd "${FILESDIR}"/radicale.init.d radicale || die
+
+	keepdir ${RDIR}
+	fowners radicale:radicale ${RDIR}
 
 	# config file
 	insinto /etc/${PN}

@@ -11,8 +11,11 @@ depend() {
 }
 
 start() {
+    touch /var/log/radicale
+    chown radicale:radicale /var/log/radicale
     ebegin "Starting radicale"
         start-stop-daemon --start --quiet --background \
+        --user radicale \
         --pidfile ${PIDFILE} --make-pidfile \
         --exec /usr/bin/radicale -- --foreground
     eend $?
