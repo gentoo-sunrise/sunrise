@@ -93,6 +93,7 @@ sys-kernel
 sys-libs
 sys-power
 sys-process
+www-apache
 www-apps
 www-client
 www-misc
