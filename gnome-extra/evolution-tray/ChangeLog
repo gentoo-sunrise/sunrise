@@ -1,0 +1,10 @@
+# ChangeLog for gnome-extra/evolution-tray
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*evolution-tray-0.0.8 (02 Feb 2012)
+
+  02 Feb 2012; Artem Sidorenko (Scader) <artem@2realities.com>
+  +evolution-tray-0.0.8.ebuild, +metadata.xml:
+  New Ebuild for bug 401995
+
