@@ -1,6 +1,12 @@
 # ChangeLog for net-firewall/fwsnort
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*fwsnort-1.6.1 (02 Feb 2012)
+
+  02 Feb 2012; Piotr Szymaniak <szarpaj@grubelek.pl> -fwsnort-1.1.ebuild,
+  +fwsnort-1.6.1.ebuild:
+  Simple version bump.
 
   22 Jun 2010; Dane Smith (smithdanea) <smithdanea@gmail.com>
   fwsnort-1.1.ebuild:
