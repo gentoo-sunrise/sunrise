@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,6 +15,16 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
+LANGS="af ar bg bn bs ca cs cy da de el en_GB en_US es et fi fr gl
+	gu he hi hr hu id it ja ka km ko lo lt mk mr nb nl pa pl pt
+	pt_BR pt_PT ro ru si sk sl sr sv ta th tr uk vi wa xh zh_CN
+	zh_TW zu"
+
+for X in ${LANGS} ; do
+	IUSE+=" linguas_${X}"
+done
+unset X
+
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
 	~sys-libs/libapparmor-${PV}[perl]
@@ -26,6 +36,15 @@ RDEPEND="${DEPEND}
 	virtual/perl-Getopt-Long"
 
 S=${WORKDIR}/apparmor-${PV}/utils
+
+src_prepare() {
+	local lang
+	for lang in ${LANGS}; do
+		if ! use linguas_${lang}; then
+			rm po/${lang}.po || die "failed to remove nls"
+		fi
+	done
+}
 
 src_install() {
 	perlinfo
