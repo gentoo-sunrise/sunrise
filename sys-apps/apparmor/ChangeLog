@@ -1,6 +1,14 @@
 # ChangeLog for sys-apps/apparmor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*apparmor-2.7.2 (05 Feb 2012)
+
+  05 Feb 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -apparmor-2.7.0.ebuild, +apparmor-2.7.2.ebuild,
+  +files/apparmor-2.7.2-makefile.patch:
+  Version bump. Respect LINGUAS. Thanks to mgorny, hasufull, and Tommy[D] for
+  review.
 
 *apparmor-2.7.0 (18 Dec 2011)
 
