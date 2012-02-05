@@ -1,6 +1,13 @@
 # ChangeLog for sys-libs/libapparmor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*libapparmor-2.7.2 (05 Feb 2012)
+
+  05 Feb 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -libapparmor-2.7.0.ebuild, +libapparmor-2.7.2.ebuild:
+  Version bump. Add static-libs use flag and refrain from installing .la files.
+  Thanks to mgorny, hasufell, and Tommy[D] for review.
 
 *libapparmor-2.7.0 (18 Dec 2011)
 

@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ SRC_URI="http://launchpad.net/apparmor/$(get_version_component_range 1-2)/${PV}/
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc perl python"
+IUSE="doc perl python static-libs"
 
 RDEPEND="perl? ( dev-lang/perl )"
 
@@ -40,7 +40,8 @@ src_prepare() {
 src_configure() {
 	econf \
 		$(use_with perl) \
-		$(use_with python)
+		$(use_with python) \
+		$(use_enable static-libs static)
 }
 
 src_compile() {
@@ -49,7 +50,7 @@ src_compile() {
 	use doc && emake -C doc
 	use perl && emake -C swig/perl
 
-	if use python; then
+	if use python ; then
 		python_copy_sources swig/python
 		compile_bindings() {
 			emake PYTHON="$(PYTHON)" PYTHON_INCLUDEDIR="$(python_get_includedir)" PYTHON_LIBDIR="$(python_get_libdir)"
@@ -62,17 +63,19 @@ src_install() {
 	emake -C src DESTDIR="${D}" install
 	use doc && emake -C doc DESTDIR="${D}" install
 
-	if use perl; then
+	if use perl ; then
 		emake -C swig/perl DESTDIR="${D}" install
 		perlinfo
 		insinto "${VENDOR_ARCH}"
 		doins swig/perl/LibAppArmor.pm
 	fi
 
-	if use python; then
+	if use python ; then
 		install_bindings() {
 			emake -C swig/python DESTDIR="${D}" install
 		}
 		python_execute_function -q install_bindings
 	fi
+
+	find "${D}" -name '*.la' -delete || die "failed to remove .la files"
 }
