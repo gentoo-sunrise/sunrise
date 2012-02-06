@@ -1,6 +1,10 @@
 # ChangeLog for dev-python/flask-debugtoolbar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  06 Feb 2012; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
+  -flask-debugtoolbar-0.5.ebuild, +flask-debugtoolbar-0.6.ebuild:
+  Version bump. Rename module
 
   25 Feb 2011; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   +flask-debugtoolbar-0.5.ebuild, +metadata.xml:

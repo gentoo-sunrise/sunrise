@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,7 +28,7 @@ DEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 
-PYTHON_MODNAME="flaskext/debugtoolbar"
+PYTHON_MODNAME="flask_debugtoolbar"
 
 src_install() {
 	distutils_src_install
