@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ inherit base
 
 DESCRIPTION="A tool to edit C strings in compiled binaries"
 HOMEPAGE="http://ohnopub.net/~ohnobinki/bin_replace_string"
-SRC_URI="ftp://mirror.calvin.edu/~binki/${P}.tar.bz2"
+SRC_URI="ftp://mirror.ohnopub.net/mirror/${P}.tar.bz2"
 LICENSE="AGPL-3"
 
 SLOT="0"
