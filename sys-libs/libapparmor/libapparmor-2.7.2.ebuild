@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/apparmor-${PV}/libraries/${PN}
 
 src_prepare() {
-	rm -rf m4 || die "failed to remove bundled macros"
+	rm -r m4 || die "failed to remove bundled macros"
 	# to force use of system macros
 	eautoreconf
 }
