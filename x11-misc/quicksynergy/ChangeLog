@@ -1,6 +1,10 @@
 # ChangeLog for x11-misc/quicksynergy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Feb 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  quicksynergy-0.9.0.ebuild:
+  Remove not existing optional dependency: x11-misc/synergy-plus
 
   27 Oct 2011; BAUER Samuel (mazes_80) <samuel.bauer@yahoo.fr>
   -quicksynergy-0.8.1.ebuild, +quicksynergy-0.9.0.ebuild:
