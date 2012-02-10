@@ -1,0 +1,10 @@
+--- conkyGuayadeque.py.old	2012-01-22 02:09:49.000000000 +0100
++++ conkyGuayadeque.py	2012-01-22 02:59:08.000000000 +0100
+@@ -209,6 +209,7 @@
+                             length_seconds = 0
+                                                                                 
+                         current_seconds = int(iface_player.PositionGet() / 1000)
++			length_seconds = int(length_seconds / 1000)
+ 
+                         if length_seconds > 0:
+                             current_position_percent = str(int((float(current_seconds) / float(length_seconds))*100))

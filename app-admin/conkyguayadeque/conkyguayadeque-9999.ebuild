@@ -5,7 +5,7 @@
 EAPI=4
 PYTHON_DEPEND="2"
 
-inherit bzr distutils
+inherit bzr distutils eutils
 
 DESCRIPTION="conky plugin for guayadeque"
 HOMEPAGE="http://bazaar.launchpad.net/~conky-companions/+junk/conkyguayadeque"
@@ -19,9 +19,11 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="app-admin/conky
-	media-sound/guayadeque"
+	>=media-sound/guayadeque-0.3.5"
 
 src_prepare() {
 	default
+	# incorrect time format since 0.3.5
+	epatch "${FILESDIR}"/time.patch
 	python_convert_shebangs -r 2 .
 }
