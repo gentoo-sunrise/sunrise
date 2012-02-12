@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -71,7 +71,7 @@ src_configure(){
 			-DPYTHON_SITEDIR="$(python_get_sitedir)"
 			-DENABLE_SINGLE_PRECISION=${sp}
 			-DCMAKE_BUILD_TYPE=${cbt}
-	        	-DENABLE_OCELOT:BOOL=OFF
+			-DENABLE_OCELOT:BOOL=OFF
 			)
 
 		cmake-utils_src_configure
