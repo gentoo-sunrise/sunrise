@@ -1,6 +1,9 @@
-diff -Nur src/dmd/posix.mak src.new/dmd/posix.mak
---- src/dmd/posix.mak	2012-02-14 22:49:44.000000000 +0100
-+++ src.new/dmd/posix.mak	2012-02-16 17:25:53.583285148 +0100
+The patches allow for MODEL, DMD (compiler for the library) and
+DDOC (documentation generator) to be overriden on the command line.
+The patch to gzio.c adds the missing errno.h include, to make the code portable:
+http://d.puremagic.com/issues/show_bug.cgi?id=5463
+--- dmd2/src/dmd/posix.mak
++++ dmd2/src/dmd/posix.mak
 @@ -29,7 +29,7 @@
  TK=tk
  ROOT=root
@@ -10,9 +13,8 @@ diff -Nur src/dmd/posix.mak src.new/dmd/posix.mak
  
  ifeq (OSX,$(TARGET))
      ## See: http://developer.apple.com/documentation/developertools/conceptual/cross_development/Using/chapter_3_section_2.html#//apple_ref/doc/uid/20002000-1114311-BABGCAAB
-diff -Nur src/druntime/posix.mak src.new/druntime/posix.mak
---- src/druntime/posix.mak	2012-02-07 22:44:58.000000000 +0100
-+++ src.new/druntime/posix.mak	2012-02-16 17:26:44.912643441 +0100
+--- dmd2/src/druntime/posix.mak
++++ dmd2/src/druntime/posix.mak
 @@ -20,12 +20,12 @@
      endif
  endif
@@ -28,9 +30,8 @@ diff -Nur src/druntime/posix.mak src.new/druntime/posix.mak
  
  DFLAGS=-m$(MODEL) -O -release -inline -nofloat -w -d -Isrc -Iimport -property
  UDFLAGS=-m$(MODEL) -O -release -nofloat -w -d -Isrc -Iimport -property
-diff -Nur src/phobos/etc/c/zlib/gzio.c src.new/phobos/etc/c/zlib/gzio.c
---- src/phobos/etc/c/zlib/gzio.c	2012-02-16 17:01:01.525938431 +0100
-+++ src.new/phobos/etc/c/zlib/gzio.c	2012-02-16 16:32:35.975260749 +0100
+--- dmd2/src/phobos/etc/c/zlib/gzio.c
++++ dmd2/src/phobos/etc/c/zlib/gzio.c
 @@ -8,6 +8,7 @@
  /* @(#) $Id$ */
  
@@ -39,9 +40,8 @@ diff -Nur src/phobos/etc/c/zlib/gzio.c src.new/phobos/etc/c/zlib/gzio.c
  
  #include "zutil.h"
  
-diff -Nur src/phobos/posix.mak src.new/phobos/posix.mak
---- src/phobos/posix.mak	2012-02-14 22:49:46.000000000 +0100
-+++ src.new/phobos/posix.mak	2012-02-16 17:30:58.843468871 +0100
+--- dmd2/src/phobos/posix.mak
++++ dmd2/src/phobos/posix.mak
 @@ -61,8 +61,6 @@
  
  # Variable defined in an OS-dependent manner (see below)
