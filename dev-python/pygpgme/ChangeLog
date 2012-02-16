@@ -1,0 +1,10 @@
+# ChangeLog for dev-python/pygpgme
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*pygpgme-0.2 (16 Feb 2012)
+
+  16 Feb 2012; Moritz Schlarb (moschlar) <mail@moritz-schlarb.de>
+  +pygpgme-0.2.ebuild, +files/pygpgme-0.2-include-dir.patch, +metadata.xml:
+  New ebuild for bug 404145, thanks to hasufell and Tommy[D]
+
