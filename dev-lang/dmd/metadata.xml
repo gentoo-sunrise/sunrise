@@ -6,6 +6,7 @@
 </maintainer>
 
 <use>
-  <flag name='tools'>Install optional tools, leave disabled if you use "dmd-common" from d-overlay</flag>
+  <flag name="tools">Install optional, precompiled tools (rdmd, obj2asm and dumpobj);
+    leave disabled if you use "dmd-common" from d-overlay</flag>
 </use>
 </pkgmetadata>

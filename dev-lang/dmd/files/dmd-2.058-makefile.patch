@@ -1,0 +1,80 @@
+diff -Nur src/dmd/posix.mak src.new/dmd/posix.mak
+--- src/dmd/posix.mak	2012-02-14 22:49:44.000000000 +0100
++++ src.new/dmd/posix.mak	2012-02-16 17:25:53.583285148 +0100
+@@ -29,7 +29,7 @@
+ TK=tk
+ ROOT=root
+ 
+-MODEL=32
++MODEL?=32
+ 
+ ifeq (OSX,$(TARGET))
+     ## See: http://developer.apple.com/documentation/developertools/conceptual/cross_development/Using/chapter_3_section_2.html#//apple_ref/doc/uid/20002000-1114311-BABGCAAB
+diff -Nur src/druntime/posix.mak src.new/druntime/posix.mak
+--- src/druntime/posix.mak	2012-02-07 22:44:58.000000000 +0100
++++ src.new/druntime/posix.mak	2012-02-16 17:26:44.912643441 +0100
+@@ -20,12 +20,12 @@
+     endif
+ endif
+ 
+-DMD=dmd
++DMD?=dmd
+ 
+ DOCDIR=doc
+ IMPDIR=import
+ 
+-MODEL=32
++MODEL?=32
+ 
+ DFLAGS=-m$(MODEL) -O -release -inline -nofloat -w -d -Isrc -Iimport -property
+ UDFLAGS=-m$(MODEL) -O -release -nofloat -w -d -Isrc -Iimport -property
+diff -Nur src/phobos/etc/c/zlib/gzio.c src.new/phobos/etc/c/zlib/gzio.c
+--- src/phobos/etc/c/zlib/gzio.c	2012-02-16 17:01:01.525938431 +0100
++++ src.new/phobos/etc/c/zlib/gzio.c	2012-02-16 16:32:35.975260749 +0100
+@@ -8,6 +8,7 @@
+ /* @(#) $Id$ */
+ 
+ #include <stdio.h>
++#include <errno.h>
+ 
+ #include "zutil.h"
+ 
+diff -Nur src/phobos/posix.mak src.new/phobos/posix.mak
+--- src/phobos/posix.mak	2012-02-14 22:49:46.000000000 +0100
++++ src.new/phobos/posix.mak	2012-02-16 17:30:58.843468871 +0100
+@@ -61,8 +61,6 @@
+ 
+ # Variable defined in an OS-dependent manner (see below)
+ CC =
+-DMD =
+-DDOC =
+ CFLAGS =
+ DFLAGS =
+ 
+@@ -83,14 +81,14 @@
+ # Set CC and DMD
+ ifeq ($(OS),win32wine)
+ 	CC = wine dmc.exe
+-	DMD = wine dmd.exe
++	DMD ?= wine dmd.exe
+ 	RUN = wine
+ else
+ 	ifeq ($(OS),win32remote)
+-		DMD = ssh 206.125.170.138 "cd code/dmd/phobos && dmd"
++		DMD ?= ssh 206.125.170.138 "cd code/dmd/phobos && dmd"
+ 		CC = ssh 206.125.170.138 "cd code/dmd/phobos && dmc"
+ 	else
+-		DMD = dmd
++		DMD ?= dmd
+ 		ifeq ($(OS),win32)
+ 			CC = dmc
+ 		else
+@@ -141,7 +139,7 @@
+ endif
+ 
+ # Set DDOC, the documentation generator
+-DDOC=$(DMD)
++DDOC?=$(DMD)
+ 
+ # Set LIB, the ultimate target
+ ifeq (,$(findstring win,$(OS)))

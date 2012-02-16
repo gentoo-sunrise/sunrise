@@ -1,6 +1,14 @@
 # ChangeLog for dev-lang/dmd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*dmd-2.058 (16 Feb 2012)
+
+  16 Feb 2012; Marco Leise (mleise) <marco.leise@gmx.de> -dmd-2.055-r1.ebuild,
+  -files/dmd-2.055-makefile.patch, +dmd-2.058.ebuild,
+  +files/dmd-2.058-makefile.patch, +Manifest.edited, metadata.xml:
+  version bump; changed to new upstream way of compiling 32-bit and 64-bit in
+  one source tree; optionally installs pre-compiled, bundled tools
 
 *dmd-1.066 (23 Dec 2011)
 
