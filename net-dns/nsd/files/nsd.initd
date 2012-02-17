@@ -6,6 +6,7 @@
 extra_commands="rebuild"
 extra_started_commands="reload"
 description="NSD is an authoritative only, high performance, open source name server"
+description_rebuild="Rebuild zone database"
 description_reload="Rebuild zone database and reload it"
 
 config_file=${config_file:-/etc/nsd/nsd.conf}
