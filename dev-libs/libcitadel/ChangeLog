@@ -1,6 +1,13 @@
 # ChangeLog for dev-libs/libcitadel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*libcitadel-8.04 (19 Feb 2012)
+
+  19 Feb 2012; the_mgt themgt@uncensored.citadel.org -libcitadel-7.86.ebuild,
+  +libcitadel-8.04.ebuild:
+  Version bump to 8.04, EAPI=4 and minor improvements. Thanks to floppym and
+  hasufell.
 
   21 Apr 2011; the_mgt themgt@mail.ru libcitadel-7.86.ebuild:
   Fixed a typo in replace-flags: Used zero instead of O for -O3 filtering
