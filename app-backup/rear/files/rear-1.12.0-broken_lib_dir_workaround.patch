@@ -1,0 +1,18 @@
+# Many Linux distributions other than Gentoo provide symlinks /lib64 and /lib32 pointing to /lib. Gentoo rather has /lib
+# pointing to either /lib32 or /lib64 (depending on your arch). ReaR wasn't aware of the fact, that Gentoo handles this
+# differently than most other distributions. This patch provides a workaround for ReaR's image creation workflow by
+# flipping the symlink into Gentoo compatible style.
+#
+# The issue has been addressed upstream in Feb. 2012 and will be fixed shortly but not released before next major
+# release.
+
+--- usr/share/rear/build/GNU/Linux/09_create_lib_directories_and_symlinks.sh.orig    2011-11-22 10:17:57.000000000 +0100
++++ usr/share/rear/build/GNU/Linux/09_create_lib_directories_and_symlinks.sh   2012-02-05 12:45:58.322572332 +0100
+@@ -1,4 +1,6 @@
+ # Create lib directories
++[ -L /lib ] && linktarget=$(readlink /lib)
++[ -n $linktarget ] && mv $ROOTFS_DIR/lib $ROOTFS_DIR/$linktarget
+ for libdir in /lib* ; do
+        # $libdir always contains a leading / !
+        if [ -L $libdir ] ; then
+
