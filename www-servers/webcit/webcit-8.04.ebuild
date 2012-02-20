@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-inherit eutils
+EAPI=4
+inherit user
 
-DESCRIPTION="Modern AJAX-style web interface for Citadel"
+DESCRIPTION="Groupdav compliant AJAX'ed Blog/Forum/Wiki/Webserver for Citadel groupware"
 HOMEPAGE="http://www.citadel.org/"
 SRC_URI="http://easyinstall.citadel.org/${P}.tar.gz"
 
@@ -16,7 +16,8 @@ IUSE="ssl"
 
 DEPEND=">=dev-libs/libical-0.43
 	>=dev-libs/libcitadel-${PV}
-	ssl? ( >=dev-libs/openssl-0.9.6 )"
+	ssl? ( dev-libs/openssl )
+	sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
 WWWDIR="/usr/share/citadel-webcit"
@@ -31,33 +32,31 @@ pkg_setup() {
 src_configure() {
 	econf \
 		$(use_with ssl) \
-		--with-libical \
-		--without-newt \
 		--prefix=/usr/sbin/ \
-		--with-wwwdir="${WWWDIR}" \
-		--with-localedir=/usr/share/ \
+		--with-datadir=/var/run/citadel \
 		--with-editordir=/usr/share/citadel-webcit/tiny_mce/ \
+		--with-localedir=/usr/share/ \
 		--with-rundir=/var/run/citadel \
 		--with-ssldir=/etc/ssl/webcit/ \
-		--with-datadir=/var/run/citadel
+		--with-wwwdir="${WWWDIR}"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
-	newinitd "${FILESDIR}"/webcit.init.d webcit || die "Installing initscript failed"
-	newconfd "${FILESDIR}"/webcit.conf.d webcit || die "Installing conf for initscript failed"
+	emake DESTDIR="${D}" install
+	newinitd "${FILESDIR}"/webcit.init.d webcit
+	newconfd "${FILESDIR}"/webcit.conf.d webcit
 
 	##House cleaning...
-	#We don't use Webcit's setup program
-	#Settings are in /etc/conf.d/webcit
+	#We don't use the setup program, settings are in /etc/conf.d/webcit
 	rm "${D}"/usr/sbin/setup || "Removing upstreams setup bin failed"
 
-	dodoc *.txt || die "dodoc failed"
+	dodoc *.txt
 }
 
 pkg_postinst() {
-	einfo "Make sure to configure webcit under /etc/conf.d/webcit."
-	einfo "Then start the server with /etc/init.d/webcit start"
-	einfo
-	einfo "Webcit will listen on port 2000 by default"
+	elog "You can now connect more than one Citadel server with different configs:"
+	elog "Make sure to configure webcit under /etc/conf.d/webcit(.yourinstance)."
+	elog "Then start the server with /etc/init.d/webcit(.yourinstance) start"
+	elog
+	elog "Webcit will listen on port 2000 by default"
 }

@@ -1,6 +1,10 @@
 # Config file for /etc/init.d/webcit
+# It is possible to run multiple instances of webcit on the same system,
+# if you use different ports. It works the same way openvpn does:
+# # ln -s /etc/init.d/webcit /etc/init.d/webcit.servername
+# # cp /etc/conf.d/webcit /etc/conf.d/webcit.servername
+#
 #See /usr/share/docs/webcit/readme for details.
-WEBCIT_OPTS=""
 
 ##[-i ip_addr] The IP address you wish to bind.
 ##Leave this out and WebCit will listen on all network interfaces.
@@ -11,7 +15,7 @@ WEBCIT_OPTS=""
 #WEBCIT_OPTS="${WEBCIT_OPTS} -p 2000"
 
 ##[-u username] Lets Webcit drop root privileges and run as a useraccount.
-#WEBCIT_OPTS="${WEBCIT_OPTS} -u webcit"
+WEBCIT_OPTS="${WEBCIT_OPTS} -u webcit"
 
 ##[-t tracefile] Where you want WebCit to log information.
 WEBCIT_OPTS="${WEBCIT_OPTS} -t /var/log/webcit"
@@ -28,4 +32,7 @@ WEBCIT_OPTS="${WEBCIT_OPTS} -t /var/log/webcit"
 
 ##[remotehost [remoteport]] IP address and port of your Citadel server.
 ##Defaults to localhost 504
-#WEBCIT_OPTS="${WEBCIT_OPTS} 127.0.0.1"
+WEBCIT_OPTS="${WEBCIT_OPTS} 127.0.0.1"
+
+## Template debug option, only used when you debug the layout
+#WEBCIT_OPTS="-T1"

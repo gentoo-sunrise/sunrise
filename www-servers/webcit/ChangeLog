@@ -1,6 +1,14 @@
 # ChangeLog for www-servers/webcit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*webcit-8.04 (20 Feb 2012)
+
+  20 Feb 2012; the_mgt themgt@uncensored.citadel.org -webcit-7.86.ebuild,
+  +webcit-8.04.ebuild, files/webcit.conf.d, files/webcit.init.d:
+  Version bump to 8.04 and EAPI=4 cleanups. Initscript enhanced to support
+  multiple running instances. Fixed locale path. Thanks to floppym, hasufell
+  and everyone else who was most helpful.
 
   21 Apr 2011; the_mgt themgt@mail.ru -webcit-7.85.ebuild,
   +webcit-7.86.ebuild:
