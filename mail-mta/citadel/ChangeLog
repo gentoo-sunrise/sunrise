@@ -1,6 +1,14 @@
 # ChangeLog for mail-mta/citadel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*citadel-8.04 (20 Feb 2012)
+
+  20 Feb 2012; the_mgt themgt@uncensored.citadel.org +citadel-8.04.ebuild,
+  +files/README.gentoo, -C, files/citadel.init:
+  Version bump to 8.04 and EAPI=4 cleanups. Initscript improved and gentoo
+  helpfile added. Thanks to floppym, hasufell and everyone else who was most
+  helpful.
 
   07 Oct 2011; Markos Chandras <hwoarang@gentoo.org> citadel-7.86.ebuild:
   Drop non-existing dependency to net-mail/mainwrapper
