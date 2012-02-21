@@ -1,37 +1,17 @@
-Override automagic fluidsynth detection.
-
---- FindFluidSynth.cmake
-+++ FindFluidSynth.cmake
-@@ -5,19 +5,19 @@
- #  FLUIDSYNTH_LIBRARIES   - List of libraries when using fluidsynth.
+Index: FindFluidSynth.cmake
+===================================================================
+--- FindFluidSynth.cmake	(revision 1286)
++++ FindFluidSynth.cmake	(working copy)
+@@ -6,6 +6,7 @@
  #  FLUIDSYNTH_FOUND       - True if fluidsynth found.
  
-+IF (USE_FLUIDSYNTH)
-+    IF (FLUIDSYNTH_INCLUDE_DIR AND FLUIDSYNTH_LIBRARIES)
-+    # Already in cache, be silent
-+    SET(FluidSynth_FIND_QUIETLY TRUE)
-+    ENDIF (FLUIDSYNTH_INCLUDE_DIR AND FLUIDSYNTH_LIBRARIES)
  
--IF (FLUIDSYNTH_INCLUDE_DIR AND FLUIDSYNTH_LIBRARIES)
--  # Already in cache, be silent
--  SET(FluidSynth_FIND_QUIETLY TRUE)
--ENDIF (FLUIDSYNTH_INCLUDE_DIR AND FLUIDSYNTH_LIBRARIES)
-+    FIND_PATH(FLUIDSYNTH_INCLUDE_DIR fluidsynth.h)
++IF(USE_FLUIDSYNTH)
+ IF (FLUIDSYNTH_INCLUDE_DIR AND FLUIDSYNTH_LIBRARIES)
+   # Already in cache, be silent
+   SET(FluidSynth_FIND_QUIETLY TRUE)
+@@ -21,3 +22,4 @@
+ INCLUDE(FindPackageHandleStandardArgs)
+ FIND_PACKAGE_HANDLE_STANDARD_ARGS(FluidSynth DEFAULT_MSG FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR)
  
--FIND_PATH(FLUIDSYNTH_INCLUDE_DIR fluidsynth.h)
-+    FIND_LIBRARY(FLUIDSYNTH_LIBRARIES NAMES fluidsynth )
-+    MARK_AS_ADVANCED( FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR )
- 
--FIND_LIBRARY(FLUIDSYNTH_LIBRARIES NAMES fluidsynth )
--MARK_AS_ADVANCED( FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR )
--
--# handle the QUIETLY and REQUIRED arguments and set FLUIDSYNTH_FOUND to TRUE if 
--# all listed variables are TRUE
--INCLUDE(FindPackageHandleStandardArgs)
--FIND_PACKAGE_HANDLE_STANDARD_ARGS(FluidSynth DEFAULT_MSG FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR)
--
-+    # handle the QUIETLY and REQUIRED arguments and set FLUIDSYNTH_FOUND to TRUE if
-+    # all listed variables are TRUE
-+    INCLUDE(FindPackageHandleStandardArgs)
-+    FIND_PACKAGE_HANDLE_STANDARD_ARGS(FluidSynth DEFAULT_MSG FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR)
-+ENDIF (USE_FLUIDSYNTH)
++ENDIF(USE_FLUIDSYNTH)

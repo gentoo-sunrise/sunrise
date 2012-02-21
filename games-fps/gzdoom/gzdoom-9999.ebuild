@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -34,7 +34,7 @@ src_prepare() {
 		-e "s:/usr/local/share/:${GAMES_DATADIR}/doom-data/:" \
 		src/sdl/i_system.h || die
 	epatch "${FILESDIR}/${PN}-respect-fluidsynth-useflag.patch"
-	epatch "${FILESDIR}/${P}-fix-new-fmod.patch"
+#	epatch "${FILESDIR}/${P}-fix-new-fmod.patch"
 }
 
 src_configure() {
