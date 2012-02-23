@@ -1,0 +1,10 @@
+# ChangeLog for www-misc/ppastats
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*ppastats-0.0.6 (23 Feb 2012)
+
+  23 Feb 2012; Alexander van der Mey (alexandervdm) <alexvandermey@gmail.com>
+  +ppastats-0.0.6.ebuild, +metadata.xml:
+  New ebuild for bug 405407 thanks to Tommy[D], kensington and hasufell
+
