@@ -1,6 +1,12 @@
 # ChangeLog for net-mail/amavis-logwatch
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*amavis-logwatch-1.51.02 (29 Feb 2012)
+
+  29 Feb 2012; Michael Orlitzky <michael@orlitzky.com>
+  -amavis-logwatch-1.50.04.ebuild, +amavis-logwatch-1.51.02.ebuild:
+  Version bump and license change (GPL-2 to MIT).
 
   26 Sep 2011; Michael Orlitzky <michael@orlitzky.com>
   amavis-logwatch-1.50.04.ebuild:
