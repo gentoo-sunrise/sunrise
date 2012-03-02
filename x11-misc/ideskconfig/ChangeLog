@@ -1,0 +1,10 @@
+# ChangeLog for x11-misc/ideskconfig
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*ideskconfig-0.9.1 (02 Mar 2012)
+
+  02 Mar 2012; hasufell <julian.ospald@googlemail.com>
+  +ideskconfig-0.9.1.ebuild, +metadata.xml:
+  New Ebuild for bug 406673 thanks to ssuominen floppym Tommy[D]
+
