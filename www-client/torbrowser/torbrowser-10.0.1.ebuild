@@ -276,7 +276,7 @@ src_install() {
 	doins -r "${WORKDIR}"/tor-browser_en-US/Data/profile || die
 
 	# create wrapper to start torbrowser
-	make_wrapper ${PN} "/usr/$(get_libdir)/${PN}/${MY_PN}/${MY_PN} -no-remote -profile ~/.${PN}"
+	make_wrapper ${PN} "/usr/$(get_libdir)/${PN}/${MY_PN}/${MY_PN} -no-remote -profile ~/.${PN}/profile"
 
 	doicon "${DISTDIR}"/torbrowser.png
 	make_desktop_entry ${PN} "Torbrowser" torbrowser.png "Network;WebBrowser"
@@ -285,10 +285,12 @@ src_install() {
 
 pkg_postinst() {
 	einfo ""
-	elog "Copy /usr/share/${PN}/profile to ~/.${PN} and run '${PN}'."
+	elog "Copy the folder /usr/share/${PN}/profile into ~/.${PN} and run '${PN}'."
 	elog ""
 	elog "This profile folder includes pre-configuration recommended by upstream,"
 	elog "as well as the _extensions_ Torbutton, NoScript and HTTPS-Everywhere."
+	elog "If you want to start from scratch just create the directories ~/.${PN}/profile."
+	elog ""
 	elog "Note that torbrowser uses a different _plugins_ folder too:"
 	elog "/usr/$(get_libdir)/${PN}/nsbrowser/plugins"
 	einfo ""

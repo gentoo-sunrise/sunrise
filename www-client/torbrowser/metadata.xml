@@ -11,7 +11,6 @@
 			symbols are not required for reporting crashes.</flag>
 		<flag name="ipc">Use inter-process communication between tabs and plugins.
 			Allows for greater stability in case of plugin crashes</flag>
-		<flag name="minimal"> Prevent sdk and headers from being installed</flag>
 		<flag name="pgo">Add support for profile-guided optimization using gcc-4.5,
 			for faster binaries. This option will double the compile time.</flag>
 		<flag name="system-sqlite">Use the system-wide <pkg>dev-db/sqlite</pkg>
