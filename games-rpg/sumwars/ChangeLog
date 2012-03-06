@@ -1,0 +1,11 @@
+# ChangeLog for games-rpg/sumwars
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*sumwars-9999 (05 Mar 2012)
+*sumwars-0.5.6 (05 Mar 2012)
+
+  05 Mar 2012; Michael Kunz (Protogenes) <Michael.Kunz@s2005.tu-chemnitz.de>
+  +sumwars-0.5.6.ebuild, +sumwars-9999.ebuild, +metadata.xml:
+  New Ebuild for 383377 thanks to Thomas, Mike and Julian.
+
