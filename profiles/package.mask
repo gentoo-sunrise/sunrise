@@ -22,6 +22,10 @@
 ##
 
 # Thomas Sachau <tommy@gentoo.org> (15 Okt 2009)
+# mask due to masked dev-python/PyQrcodec
+dev-python/pygooglechart
+
+# Thomas Sachau <tommy@gentoo.org> (15 Okt 2009)
 # mask due to masked postgresql-server-8.2*
 dev-db/plr
 
