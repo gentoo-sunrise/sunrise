@@ -71,7 +71,7 @@ dev-db/dabo:ide - Enable dabo IDE
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
-dev-lang/dmd:tools - Install optional tools, leave disabled if you use "dmd-common" from d-overlay
+dev-lang/dmd:tools - Install optional, precompiled tools (rdmd, obj2asm and dumpobj); leave disabled if you use "dmd-common" from d-overlay
 dev-lang/xharbour:allegro - Build Allegro-based GT driver
 dev-libs/libaxl:tests - compile and install performance tests
 dev-libs/libfreenect:c_sync - Install C synchronous library
@@ -143,6 +143,8 @@ games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
 games-misc/fretsonfire:guitarhero - Enable Guitar Hero song importer
 games-misc/fretsonfire:psyco - Enable psyco python accelerator
 games-puzzle/hex-a-hop:pango - Use sdl-pango instead of default sdl-ttf for font rendering
+games-rpg/sumwars:stl - Compile with TIXML_USE_STL support in dev-libs/tinyxml.
+games-rpg/sumwars:tools - Compile with additional game tools like content editor.
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
@@ -160,7 +162,6 @@ media-gfx/fyre:gnet - Add support for cluster rendering
 media-gfx/openvrml:player - Build the openvrml-player Gnome application
 media-gfx/openvrml:xembed - Build the XEmbed container control
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
-media-libs/portmidi:test-programs - Install tools for testing of various midi functions
 media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
 media-plugins/gimp-refocus:lapack-atlas - Use the ATLAS version of lapack
 media-sound/arename:zsh-completion - enable zsh completion support
@@ -249,6 +250,13 @@ sys-fs/ntfs3g-ar:udev - Install udev rule to make udisks use ntfs-3g instead of 
 sys-kernel/ccs-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
+www-client/torbrowser:bindist - Disable official Firefox branding (icons, name) which are not binary-redistributable according to upstream.
+www-client/torbrowser:crashreporter - Enable crashreporter for mozilla upstream, debugging symbols are not required for reporting crashes.
+www-client/torbrowser:custom-optimization - Fine-tune custom compiler optimizations, setting this is not recommended.
+www-client/torbrowser:ipc - Use inter-process communication between tabs and plugins. Allows for greater stability in case of plugin crashes
+www-client/torbrowser:pgo - Add support for profile-guided optimization using gcc-4.5, for faster binaries. This option will double the compile time.
+www-client/torbrowser:system-sqlite - Use the system-wide dev-db/sqlite installation with secure-delete enabled
+www-client/torbrowser:webm - Use system media-libs/libvpx for HTML5 WebM video support.
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
