@@ -1,0 +1,10 @@
+# ChangeLog for dev-python/lcdproc
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*lcdproc-0.03 (07 Mar 2012)
+
+  07 Mar 2012; Raphaël Barrois (Xelnor) <raphael.barrois@polytechnique.org>
+  +lcdproc-0.03.ebuild, +metadata.xml:
+  New Ebuild for bug 407201, thanks to floppym for the review.
+
