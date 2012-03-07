@@ -23,6 +23,6 @@ src_install() {
 	dodoc CHANGES
 	dohtml ${PN}.html
 
-	insinto /usr/share/idesk 
+	insinto /usr/share/idesk
 	doins -r icons
 }
