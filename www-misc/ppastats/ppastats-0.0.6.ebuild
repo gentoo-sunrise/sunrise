@@ -16,5 +16,3 @@ IUSE=""
 DEPEND="dev-libs/json-c
 	net-misc/curl"
 RDEPEND="${DEPEND}"
-
-

@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Mar 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  ppastats-0.0.6.ebuild:
+  Drop useless blank lines
+
 *ppastats-0.0.6 (23 Feb 2012)
 
   23 Feb 2012; Alexander van der Mey (alexandervdm) <alexvandermey@gmail.com>
