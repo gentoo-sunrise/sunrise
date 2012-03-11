@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*mpdlcd-0.2.4 (11 Mar 2012)
+
+  11 Mar 2012; Raphaël Barrois (Xelnor) <raphael.barrois+gentoo@xelmail.com>
+  -mpdlcd-0.2.3.ebuild, +mpdlcd-0.2.4.ebuild:
+  Version bump for app-misc/mpdlcd
+
 *mpdlcd-0.2.3 (08 Mar 2012)
 
   08 Mar 2012; Raphaël Barrois (Xelnor) <raphael.barrois+gentoo@xelmail.com>
