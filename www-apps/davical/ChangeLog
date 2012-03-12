@@ -3,6 +3,10 @@
 # $Header: $
 
   12 Mar 2012; lebarjack <francois.perichon@univ-lille2.fr>
+  -davical-1.0.2.ebuild, +davical-1.0.2-r1.ebuild:
+  Added a php dependency on calendar and curl uses
+
+  12 Mar 2012; lebarjack <francois.perichon@univ-lille2.fr>
   files/awl_location.patch:
   Corrected path for awl when building translations
 

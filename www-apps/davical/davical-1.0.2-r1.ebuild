@@ -16,7 +16,7 @@ IUSE="doc"
 
 DEPEND="doc? ( dev-php/PEAR-PhpDocumentor )"
 RDEPEND="app-admin/pwgen
-	dev-lang/php[pdo,postgres,xml]
+	dev-lang/php[calendar,curl,pdo,postgres,xml]
 	dev-perl/DBI
 	dev-perl/DBD-Pg
 	dev-perl/yaml
