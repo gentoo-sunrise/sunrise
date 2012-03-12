@@ -5,7 +5,7 @@
  LOCALEDIR="locale"
  APPLICATION="davical"
 -AWL_LOCATION="../awl"
-+AWL_LOCATION="/usr/share/php5/awl/inc"
++AWL_LOCATION="/usr/share/php/awl/inc"
  
  if [ ! -d "${AWL_LOCATION}" ]; then
    AWL_LOCATION="`find .. -type d -name 'awl-*.*'`"

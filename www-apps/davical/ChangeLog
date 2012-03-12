@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Mar 2012; lebarjack <francois.perichon@univ-lille2.fr>
+  files/awl_location.patch:
+  Corrected path for awl when building translations
+
   22 Jan 2012; Mike Gilbert <floppym@gentoo.org> davical-1.0.2.ebuild:
   www-apps/davical: rm || die
 
