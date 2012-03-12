@@ -1,12 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 
 PHP_EXT_OPTIONAL_USE="php"
 PHP_EXT_NAME="librets"
 PHP_EXT_SKIP_PHPIZE="yes"
+# Will add php5-4 support as soon as someone fixes gentoo bug 404453
 USE_PHP="php5-3"
 
 PYTHON_DEPEND="python? 2"
@@ -25,6 +26,11 @@ LICENSE="BSD-NAR"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc java mono perl php python ruby sql-compiler threads"
+# Enabling threads for perl, php, python or ruby causes segmentation faults.
+REQUIRED_USE="perl? ( !threads )
+	php? ( !threads )
+	python? ( !threads )
+	ruby? ( !threads )"
 
 for i in java perl php python ruby; do
 	SWIG_DEPEND+=" ${i}? ( dev-lang/swig )"
@@ -50,10 +56,25 @@ RDEPEND="
 	${SWIG_RDEPEND}"
 
 DEPEND="${RDEPEND} ${SWIG_DEPEND}"
+# Reset to the default $S since ruby-ng overrides it
+S="${WORKDIR}/${P}"
 
 unset SWIG_DEPEND
 unset SWIG_RDEPEND
 unset i
+
+# Since php-ext-source-r2_src_install tries to install non-existant headers
+# and a bad emake fails on EAPI 4, a copied subset must be used instead (bug 404307).
+_php-ext-source-r2_src_install() {
+	local slot
+	for slot in $(php_get_slots); do
+		php_init_slot_env ${slot}
+		# Let's put the default module away
+		insinto "${EXT_DIR}"
+		newins "modules/${PHP_EXT_NAME}.so" "${PHP_EXT_NAME}.so" || die "Unable to install extension"
+	done
+	php-ext-source-r2_createinifiles
+}
 
 _php-move_swig_build_to_modules_dir() {
 	mkdir "${1}"/modules || die "Could not create directory for php slot"
@@ -98,13 +119,15 @@ src_prepare() {
 	epatch "${FILESDIR}"/swig.m4.patch
 	# Patch to allow dotnet binding to build and set snk key file
 	epatch "${FILESDIR}"/dotnet.patch
+	# Patch to allow the ruby extension to compile when multiple versions of boost are installed
+	epatch "${FILESDIR}"/extconf.rb.patch
 	local myboostpackage=$(best_version "<dev-libs/boost-1.46")
 	local myboostpackagever=${myboostpackage/*boost-/}
 	local myboostver=$(get_version_component_range 1-2 ${myboostpackagever})
 	local myboostslot=$(replace_version_separator 1 _ ${myboostver})
-	sed -i -e "s|boost_include_dir=\"include\"|boost_include_dir=\"include/boost-${myboostslot}\"|g" project/build/ac-macros/boost.m4
-	sed -i -e "s|/lib/libboost|/lib/boost-${myboostslot}/liboost|g" project/build/ac-macros/boost.m4
-	sed -i -e "s|-L\${BOOST_PREFIX}/lib|-L\${BOOST_PREFIX}/lib/boost-${myboostslot}|g" project/build/ac-macros/boost.m4
+	sed -i -e "s|boost_include_dir=\"include\"|boost_include_dir=\"include/boost-${myboostslot}\"|g" project/build/ac-macros/boost.m4 || die
+	sed -i -e "s|/lib/libboost|/lib/boost-${myboostslot}/libboost|g" project/build/ac-macros/boost.m4 || die
+	sed -i -e "s|-L\${BOOST_PREFIX}/lib|-L\${BOOST_PREFIX}/lib/boost-${myboostslot}|g" project/build/ac-macros/boost.m4 || die
 	einfo "Using boost version ${myboostver}"
 	eautoreconf
 	use php && php-ext-source-r2_src_prepare
@@ -129,15 +152,7 @@ src_configure() {
 		myconf="${myconf} --enable-maintainer-documentation"
 	fi
 
-	if use threads; then
-		if use perl || use php || use python || use ruby; then
-			ewarn "Enabling threads for perl, php, python or ruby causes segmentation faults."
-			ewarn "Disabling threads"
-			myconf="${myconf} --disable-thread-safe"
-		else
-			myconf="${myconf} --enable-thread-safe"
-		fi
-	fi
+	use threads && myconf="${myconf} --enable-thread-safe"
 
 	if use ruby; then
 		MYRUBYIMPLS=($(ruby_get_use_implementations))
@@ -169,7 +184,7 @@ src_compile() {
 		_php-replace_config_with_selected_config ${myphpfirstslot} ${myphpconfig}
 		myphpconfig="${PHPCONFIG}"
 	fi
-	emake || die "emake failed"
+	emake
 	if use php; then
 		# Move the current slotted build of php to another dir so other slots can be built
 		_php-move_swig_build_to_modules_dir "${WORKDIR}/${myphpfirstslot}"
@@ -178,7 +193,7 @@ src_compile() {
 			_php-replace_config_with_selected_config ${slot} ${myphpconfig}
 			myphpconfig="${PHPCONFIG}"
 			# Build the current slot
-			emake build/swig/php5/${PN}.so || die "Unable to make php${slot} extension"
+			emake build/swig/php5/${PN}.so
 			_php-move_swig_build_to_modules_dir ${PHP_EXT_S}
 		done
 	fi
@@ -197,7 +212,7 @@ src_compile() {
 				project/build/ruby.mk || die "sed ruby implementation change failed"
 			MYRUBYIMPL="$(ruby_implementation_command ${impl})"
 			# Build the current implementation
-			emake build/swig/ruby/${PN}_native.bundle || die "Unable to make ${impl} extension"
+			emake build/swig/ruby/${PN}_native.bundle
 			_ruby-move_swig_build_to_impl_dir "${WORKDIR}/${impl}"
 		done
 		unset MYRUBYIMPLS
@@ -206,36 +221,36 @@ src_compile() {
 
 each_ruby_install() {
 	exeinto "$(ruby_rbconfig_value archdir)"
-	doexe "${S}"/librets_native.so || die
-	doruby "${S}"/librets.rb || die
+	doexe "${S}"/librets_native.so
+	doruby "${S}"/librets.rb
 }
 
 src_install() {
-	dolib.a build/${PN}/lib/${PN}.a || die
+	dolib.a build/${PN}/lib/${PN}.a
 
 	insinto /usr/include
-	doins -r project/${PN}/include/${PN} || die
+	doins -r project/${PN}/include/${PN}
 
-	dobin "${PN}-config" || die
+	dobin "${PN}-config"
 
 	if use php; then
-		php-ext-source-r2_src_install
+		_php-ext-source-r2_src_install
 		insinto /usr/share/php
-		doins "${WORKDIR}"/php"${PHP_CURRENTSLOT}"/modules/${PN}.php || die
+		doins "${WORKDIR}"/php"${PHP_CURRENTSLOT}"/modules/${PN}.php
 	fi
 
 	if use perl; then
 		# Install manually since the package install has sandbox violations
 		insinto ${SITE_ARCH}
 		insopts "-m755"
-		doins -r "${S}"/build/swig/perl/blib/arch/auto || die
+		doins -r "${S}"/build/swig/perl/blib/arch/auto
 		insopts "-m644"
-		doins "${S}"/build/swig/perl/${PN}.pm || die
+		doins "${S}"/build/swig/perl/${PN}.pm
 	fi
 
 	if use java; then
-		java-pkg_dojar "${S}"/build/swig/java/${PN}.jar || die
-		LIBOPTIONS="-m755" java-pkg_doso "${S}"/build/swig/java/${PN}.so  || die
+		java-pkg_dojar "${S}"/build/swig/java/${PN}.jar
+		LIBOPTIONS="-m755" java-pkg_doso "${S}"/build/swig/java/${PN}.so
 	fi
 
 	use ruby && ruby-ng_src_install

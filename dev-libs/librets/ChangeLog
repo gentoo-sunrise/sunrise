@@ -1,6 +1,13 @@
 # ChangeLog for dev-libs/librets
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*librets-1.5.2-r4 (12 Mar 2012)
+
+  12 Mar 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -librets-1.5.2-r3.ebuild, +librets-1.5.2-r4.ebuild, +files/extconf.rb.patch:
+  Upgraded to EAPI 4 and fixed ruby extension compilation failure if multiple
+  versions of boost were installed.
 
   21 Dec 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   librets-1.5.2-r3.ebuild:
