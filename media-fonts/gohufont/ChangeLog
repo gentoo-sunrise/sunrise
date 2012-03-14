@@ -1,0 +1,10 @@
+# ChangeLog for media-fonts/gohufont
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*gohufont-2.0 (14 Mar 2012)
+
+  14 Mar 2012; Marc van der Wal (IRC: xtab, username: x0r)
+  <jupiter1716@yahoo.fr> +gohufont-2.0.ebuild, +metadata.xml:
+  New Ebuild for bug 408207 thanks to ssuominen and Tommy[D]
+
