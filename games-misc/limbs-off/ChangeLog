@@ -1,0 +1,10 @@
+# ChangeLog for games-misc/limbs-off
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*limbs-off-9999 (14 Mar 2012)
+
+  14 Mar 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
+  +limbs-off-9999.ebuild, +metadata.xml:
+  Ebuild for bug 408155
+
