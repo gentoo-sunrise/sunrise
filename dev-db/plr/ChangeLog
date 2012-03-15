@@ -1,6 +1,11 @@
 # ChangeLog for dev-db/plr
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Mar 2012; Ian Stakenvicius <axs@gentoo.org> -plr-8.2.0.10.ebuild,
+  -plr-8.3.0.10.ebuild, +plr-8.3.0.13.ebuild:
+  version bumped, cleaned out old versions that don't work with the
+  postgresql's in portage
 
 *plr-8.3.0.10 (02 Jul 2010)
 
