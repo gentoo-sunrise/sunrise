@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Mar 2012; hasufell <julian.ospald@googlemail.com>
+  dwarf-fortress-0.34.05.ebuild, -files/dwarf-fortress-0.34.05-wrapper,
+  +files/dwarf-fortress-wrapper:
+  generic name for wrapper script
+
 *dwarf-fortress-0.34.05 (14 Mar 2012)
 
   14 Mar 2012; hasufell <julian.ospald@googlemail.com>

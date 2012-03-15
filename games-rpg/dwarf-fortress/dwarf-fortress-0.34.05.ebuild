@@ -67,7 +67,7 @@ src_install() {
 	doins -r raw data libs || die
 
 	# install our wrapper
-	newgamesbin "${FILESDIR}"/${P}-wrapper ${PN} || die
+	newgamesbin "${FILESDIR}"/${PN}-wrapper ${PN} || die
 
 	# install docs
 	dodoc README.linux *.txt || die
