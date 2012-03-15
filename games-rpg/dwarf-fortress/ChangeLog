@@ -3,6 +3,10 @@
 # $Header: $
 
   15 Mar 2012; hasufell <julian.ospald@googlemail.com>
+  files/dwarf-fortress-wrapper:
+  comment out dirty hack in wrapper
+
+  15 Mar 2012; hasufell <julian.ospald@googlemail.com>
   dwarf-fortress-0.34.05.ebuild, -files/dwarf-fortress-0.34.05-wrapper,
   +files/dwarf-fortress-wrapper:
   generic name for wrapper script
