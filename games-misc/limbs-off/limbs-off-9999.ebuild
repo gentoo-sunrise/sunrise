@@ -27,10 +27,6 @@ src_prepare() {
 	eautoreconf
 }
 
-src_configure() {
-	econf --with-popt
-}
-
 src_install() {
 	default
 	dodoc HACKING
