@@ -32,14 +32,13 @@ RDEPEND="
 		app-emulation/emul-linux-x86-xlibs
 	)
 	x86? (
-		media-libs/fmod
+		media-libs/fmod:1
 		media-libs/freetype
 		media-libs/libsdl[opengl,video,X]
-		media-libs/libsndfile
+		media-libs/libsndfile[alsa]
 		media-libs/openal
-		media-libs/sdl-image[png]
+		media-libs/sdl-image[png,tiff,jpeg]
 		media-libs/sdl-ttf
-		sys-libs/ncurses
 		sys-libs/zlib
 		x11-libs/cairo[xcb,X]
 		x11-libs/gtk+:2[xinerama]
@@ -74,13 +73,10 @@ src_install() {
 
 	# create symlinks for several directories we want to have 
 	# in a different place
-	dodir "${GAMES_STATEDIR}"/${PN}/save
-	dodir "${GAMES_STATEDIR}"/${PN}/movies
-	dodir "${GAMES_STATEDIR}"/${PN}/objects
-	ln -s "${GAMES_SYSCONFDIR}"/${PN} "${D}${gamesdir}"/data/init || die
-	ln -s "${GAMES_STATEDIR}"/${PN}/save "${D}${gamesdir}"/data/save || die
-	ln -s "${GAMES_STATEDIR}"/${PN}/movies "${D}${gamesdir}"/data/movies || die
-	ln -s "${GAMES_STATEDIR}"/${PN}/objects "${D}${gamesdir}"/data/objects || die
+	dosym "${GAMES_SYSCONFDIR}"/${PN} "${gamesdir}"/data/init || die
+	dosym "${GAMES_STATEDIR}"/${PN}/save "${gamesdir}"/data/save || die
+	dosym "${GAMES_STATEDIR}"/${PN}/movies "${gamesdir}"/data/movies || die
+	dosym "${GAMES_STATEDIR}"/${PN}/objects "${gamesdir}"/data/objects || die
 
 	prepgamesdirs
 
