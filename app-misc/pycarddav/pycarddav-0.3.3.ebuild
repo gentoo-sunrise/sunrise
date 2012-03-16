@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-python/lxml
-		dev-python/pycurl
-		dev-python/vobject
-		|| ( dev-lang/python:2.7 dev-python/argparse )"
+	dev-python/pycurl
+	dev-python/vobject
+	|| ( dev-lang/python:2.7 dev-python/argparse )"
 DEPEND="${RDEPEND}"
 
 src_prepare(){
