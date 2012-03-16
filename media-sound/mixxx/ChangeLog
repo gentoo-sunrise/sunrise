@@ -1,6 +1,10 @@
 # ChangeLog for media-sound/mixxx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Mar 2012; Alex Barker (KWhat) <alex@1stleg.com>
+  files/mixxx-9999-flags.patch, files/mixxx-9999-libsoundtouch.patch:
+  Patch offset and consistency adjustments due to upstream modifications.
 
   24 Dec 2011; Alex Barker (KWhat) <alex@1stleg.com> -mixxx-1.9.2.ebuild,
   -files/mixxx-1.9.2-flags.patch, -files/mixxx-1.9.2-libsoundtouch.patch,

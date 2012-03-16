@@ -1,7 +1,7 @@
 === modified file 'mixxx/build/depends.py'
---- build/depends.py	2011-11-08 20:10:32 +0000
-+++ build/depends.py	2011-11-08 23:38:43 +0000
-@@ -222,33 +222,19 @@
+--- build/depends.py	2012-03-12 05:23:47 +0000
++++ build/depends.py	2012-03-16 04:18:42 +0000
+@@ -218,34 +218,20 @@
          build.env.Append(CPPPATH="#lib/replaygain")
  
  class SoundTouch(Dependence):
@@ -23,7 +23,8 @@
 -        # SoundTouch CPU optimizations are only for x86
 -        # architectures. SoundTouch automatically ignores these files when it is
 -        # not being built for an architecture that supports them.
--        cpu_detection = '#lib/%s/cpu_detect_x86_win.cpp' if build.toolchain_is_msvs else '#lib/%s/cpu_detect_x86_gcc.cpp'
+-        cpu_detection = '#lib/%s/cpu_detect_x86_win.cpp' if build.toolchain_is_msvs else \
+-                '#lib/%s/cpu_detect_x86_gcc.cpp'
 -        sources.append(cpu_detection % self.SOUNDTOUCH_PATH)
 +        sources =  ['engine/enginebufferscalest.cpp']
          return sources
@@ -37,6 +38,7 @@
 +            raise Exception('Did not find libSoundTouch.a, libSoundTouch.lib, or the libSoundTouch development header files - exiting!')
 +        build.env.Append(CPPPATH=[SCons.ARGUMENTS.get('prefix', '/usr/local') + '/include/soundtouch'])
 +        build.env.Append(LIBS='SoundTouch')
++
  
  class TagLib(Dependence):
      def configure(self, build, conf):
