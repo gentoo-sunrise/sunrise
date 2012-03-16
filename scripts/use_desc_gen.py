@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Written by Alec Warner for the Gentoo Foundation 2008
 # This code is hereby placed into the public domain.
 
