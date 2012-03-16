@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """find empty dirs and check for obsolete package.mask entries"""
 
