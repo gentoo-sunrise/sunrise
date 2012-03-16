@@ -39,5 +39,5 @@ pkg_postinst() {
 	ewarn "If you want to install PL/R for other versions of postgres, please use eselect"
 	ewarn "to select the other version and then re-emerge this package."
 	elog "For instructions on how to add PL/R to your postgresql database(s), please visit"
-	elog "http://www.joeconway.com/plr/"
+	elog "http://www.joeconway.com/plr/doc/plr-install.html"
 }
