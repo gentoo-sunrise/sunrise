@@ -1,0 +1,10 @@
+# ChangeLog for app-misc/shelr
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*shelr-0.11.4 (18 Mar 2012)
+
+  18 Mar 2012; Alexander Kolesen (m0use) <kolesen.a@gmail.com>
+  +shelr-0.11.4.ebuild, +metadata.xml:
+  New Ebuild for bug 408729
+
