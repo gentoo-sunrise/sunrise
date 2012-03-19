@@ -1,0 +1,10 @@
+# ChangeLog for x11-misc/obapps
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*obapps-0.1.7 (19 Mar 2012)
+
+  19 Mar 2012; hasufell <julian.ospald@googlemail.com> +obapps-0.1.7.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 322311 thanks to floppym
+
