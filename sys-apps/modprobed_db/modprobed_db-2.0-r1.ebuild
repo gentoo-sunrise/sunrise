@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="app-arch/xz-utils"
-RDEPEND="sys-apps/module-init-tools"
+RDEPEND="virtual/modutils"
 
 src_install() {
 	dobin ${PN}
