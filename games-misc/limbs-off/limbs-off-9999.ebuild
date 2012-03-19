@@ -6,7 +6,7 @@ EAPI=4
 
 inherit autotools eutils git-2
 
-DESCRIPTION="Free Software fighting game"
+DESCRIPTION="Gratis free Software fighting game"
 HOMEPAGE="http://plaimi.net/games/"
 EGIT_REPO_URI="git://github.com/stiell/limbs-off.git"
 

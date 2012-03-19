@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Mar 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
+  limbs-off-9999.ebuild:
+  Update description to include that the game is gratis
+
   15 Mar 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
   limbs-off-9999.ebuild:
   remove src_configure()
