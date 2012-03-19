@@ -1,0 +1,250 @@
+Creator: Julian Ospald <julian.ospald@googlemail.com>
+Date: Thu Mar 15 22:33:16 CET 2012
+
+fix build system
+remove all sound/esound references
+port to gtk+:2
+
+--- Makefile
++++ Makefile
+@@ -5,8 +5,6 @@
+ # See file COPYRIGHT and COPYING
+ 
+ # This you may want to change
+-RELEASE=no
+-DEBUG=no
+ prefix=/opt/cervi
+ incdir=$(prefix)/include
+ bindir=$(prefix)/bin
+@@ -18,64 +16,35 @@
+ export
+ VERSION=0.0.4
+ PACKAGE=cervi
+-CFLAGS=
+-CXXFLAGS=
+ CFLAGS+=-Wall -D_GNU_SOURCE -D_REENTRANT -DVERSION=\"$(VERSION)\" \
+-       $(shell gtk-config --cflags) $(shell pkg-config --cflags esound) \
++       $(shell pkg-config --cflags gtk+-2.0) \
+        -DDATADIR=\"$(datadir)\"
+ CXXFLAGS+=-Wall -D_GNU_SOURCE -D_REENTRANT -DVERSION=\"$(VERSION)\" \
+-	 $(shell gtk-config --cflags) $(shell pkg-config --cflags esound) \
++	 $(shell pkg-config --cflags gtk+-2.0) \
+ 	 -DDATADIR=\"$(datadir)\"
+-CPPFLAGS=
+-LDFLAGS=
+-LDLIBS=-lm $(shell gtk-config --libs) $(shell pkg-config --libs esound) \
++LDLIBS=-lm $(shell pkg-config --libs gtk+-2.0) \
+        -lpthread
+ LINK.o=$(CXX) $(LDFLAGS) $(TARGET_ARCH)
+ MAIN=cervi
+ INSTALL=install -c -m 644
+ INSTALL_BIN=install -c -m 755 -D
+ 
+-ifeq ($(RELEASE),yes)
+- CFLAGS += -O2
+- CXXFLAGS += -O2
+- LDFLAGS += -s -Wl,-O,2
+-endif
+-
+-ifeq ($(DEBUG),yes)
+- CFLAGS += -g -DDEBUG
+- CXXFLAGS += -g -DDEBUG
+-else
+- CFLAGS += -DNDEBUG
+- CXXFLAGS += -DNDEBUG
+-endif
+-
+-.PHONY: all backup clean tags DEBUG RELEASE install clean-music \
+-	install-music all-music
+-all: all-music $(MAIN)
+-all-music:
+-	$(MAKE) -C music
++.PHONY: all backup clean tags install
++
++all: $(MAIN)
+ backup:
+ 	./backup.sh $(PACKAGE)-$(VERSION)
+-clean: clean-music
++clean:
+ 	$(RM) $(MAIN) *.o
+-clean-music:
+-	$(MAKE) -C music clean
+ tags:
+ 	ctags -R .
+-DEBUG: clean
+-	$(MAKE) DEBUG=yes
+-RELEASE: clean
+-	$(MAKE) RELEASE=yes
+-install: all install-music
++install: all
+ 	$(INSTALL_BIN) $(MAIN) $(DESTDIR)/$(bindir)/$(MAIN)
+-install-music: all-music
+-	$(MAKE) -C music install
+ 
+-$(MAIN): main.o keymap.o game.o field.o music.o
++$(MAIN): main.o keymap.o game.o field.o
+ 	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+-main.o: main.cc field.h game.h music.h
++main.o: main.cc field.h game.h
+ keymap.o: keymap.cc keymap.h
+-game.o: game.cc game.h field.h keymap.h music.h
++game.o: game.cc game.h field.h keymap.h
+ game.h: keymap.h field.h
+ field.o: field.cc field.h
+-music.o: music.cc music.h
+--- game.cc
++++ game.cc
+@@ -13,7 +13,6 @@
+ #include <cmath>
+ #include <gdk/gdkkeysyms.h>
+ #include "game.h"
+-#include "music.h"
+ 
+ /*
+  * TODO:
+@@ -22,9 +21,6 @@
+  *             or bounce.
+  */
+ 
+-// from main.cc for signalling music thread
+-extern void signal_mt();
+-
+ namespace std {
+     // colors of cerv's
+     unsigned int colors[] = {
+@@ -107,10 +103,6 @@
+ 	    }
+ 	}
+ 
+-	m.reset(); // reset music to initial state
+-	m.speed = speed();
+-	m.play = true;
+-	signal_mt(); // signal it
+     }
+ 
+     // delete all cervi
+@@ -119,8 +111,6 @@
+ 	for (int i=0; i<n_cervi; i++) {
+ 	    delete cervi[i];
+ 	}
+-	m.play = false;
+-	signal_mt();
+     }
+ 
+     // darken color
+@@ -216,7 +206,6 @@
+ 		    cervi[i]->_speed += (ncollision - _ncollided) * 20;
+ 		    cervi[i]->_rotspeed -= (ncollision - _ncollided);
+ 		}
+-	    m.speed = speed();
+ 	}
+ 
+ 	// set place numbers
+@@ -243,8 +232,6 @@
+ 	    for (int i=0; i<n_cervi; i++) {
+ 		if (!cervi[i]->_collision) {
+ 		    cervi[i]->_collision = true;
+-		    m.play = false;
+-		    signal_mt();
+ 		}
+ 	    }
+ 	}
+@@ -310,7 +297,6 @@
+ 	    _cspeed += _speed * ticks / 1000;
+ 	    if (_cspeed > _speed)
+ 		_cspeed = _speed;
+-	    m.speed = _game->speed();
+ 	}
+ 
+ 	if (_x < 1) {
+--- main.cc
++++ main.cc
+@@ -21,7 +21,6 @@
+ #include <stdint.h>
+ #include "field.h"
+ #include "game.h"
+-#include "music.h"
+ using namespace std;
+ 
+ // delete and set to NULL
+@@ -66,7 +65,6 @@
+ void chspeed(gpointer, gpointer n);
+ void updatefsize();
+ void chfsize(gpointer, gpointer n);
+-void chmusic(gpointer, gpointer n);
+ void about();
+ void quit();
+ 
+@@ -104,7 +102,6 @@
+  { "/Options/Field 1580x1100",	NULL,	 A chfsize,	4,
+      "/Options/Field 600x410"},
+  { "/Options/sep3",		NULL,	    	NULL,	0, "<Separator>" },
+- { "/Options/Mute music",	NULL,	 A chmusic,	0, "<ToggleItem>"},
+  { "/_Help",			NULL,		NULL,	0, "<LastBranch>" },
+  { "/_Help/_About...",		NULL,	       about,	0, NULL }
+ };
+@@ -334,11 +331,6 @@
+     updatefsize();
+ }
+ 
+-void chmusic(gpointer, gpointer n)
+-{
+-    m.playmusic = !m.playmusic;
+-}
+-
+ // create backing pixmap (and show about)
+ gint configure_event(GtkWidget *widget, GdkEventConfigure *event)
+ {
+@@ -471,21 +463,6 @@
+     return;
+ }
+ 
+-// music thread
+-pthread_t mt;
+-void* music_t(void*)
+-{
+-    signal(SIGUSR1,sigusr1);
+-    m.thread();
+-    return 0;
+-}
+-
+-// signal music thread to stop waiting
+-void signal_mt()
+-{
+-    pthread_kill(mt,SIGUSR1);
+-}
+-
+ // all loved C main function
+ int main(int argc, char *argv[])
+ {
+@@ -502,19 +479,16 @@
+     // when everything is stable
+     //gdk_key_repeat_disable();
+ 
+-    // music thread init
+-    pthread_create(&mt,0,music_t,0);
+-
+     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+     gtk_window_set_title(GTK_WINDOW(window), "GTK Cervi");
+     gtk_window_set_policy(GTK_WINDOW(window),0,0,1);
+ 
+     // set up fonts
+     bigfont = gdk_font_load("-*-helvetica-bold-r-normal--34-*");
+-    if (!bigfont) bigfont = gdk_font_ref(window->style->font);
++    if (!bigfont) bigfont = gtk_style_get_font(window->style);
+ 
+     medfont = gdk_font_load("-misc-fixed-medium-r-normal--14-*");
+-    if (!medfont) medfont = gdk_font_ref(window->style->font);
++    if (!medfont) medfont = gtk_style_get_font(window->style);
+     medfontheight = gdk_string_height(medfont,"GNU Iy") + 3;
+ 
+     vbox = gtk_vbox_new(0, 0);
+@@ -569,7 +543,7 @@
+ 	for (int x=0; x<8; x++)
+ 	    for (int y=0; y<8; y++)
+ 		gdk_image_put_pixel(im,x,y,gdk_rgb_xpixel_from_rgb(colors[i]));
+-	label = gtk_image_new(im,0);
++	label = gtk_image_new_from_image(im,0);
+ 	gtk_box_pack_end(GTK_BOX(status), label, 0, 0, 0);
+ 	gtk_widget_show(label);
+ 
