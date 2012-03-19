@@ -28,7 +28,7 @@ pkg_setup() {
 
 src_prepare() {
 	# Fix path to app-editors/jedit
-	epatch "${FILESDIR}"/${PN}-jedit-path.patch
+	epatch "${FILESDIR}"/${PN}-jedit-path-6.13.9.patch
 
 	find renpy -name '*.pyo' -exec rm -f {} + || die
 	python_convert_shebangs 2 renpy.py

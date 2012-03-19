@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Mar 2012; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  -renpy-6.13.8.ebuild, +renpy-6.13.9.ebuild,
+  +files/renpy-jedit-path-6.13.9.patch:
+  Version bump
+
   28 Jan 2012; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   +renpy-6.9.3-r1.ebuild, +renpy-6.11.2.ebuild, +renpy-6.12.2.ebuild:
   Re-adding removed ebuilds
