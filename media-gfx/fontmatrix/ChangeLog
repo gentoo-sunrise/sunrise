@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/fontmatrix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  21 Mar 2012; hasufell <julian.ospald@googlemail.com> fontmatrix-0.6.0.ebuild:
+  fix dead source link
 
   03 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl>
   fontmatrix-0.6.0.ebuild:

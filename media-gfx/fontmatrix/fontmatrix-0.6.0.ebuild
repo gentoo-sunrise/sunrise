@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,8 +7,9 @@ EAPI=4
 inherit qt4-r2 cmake-utils
 
 DESCRIPTION="A font manager"
-HOMEPAGE="http://www.fontmatrix.net/"
-SRC_URI="http://www.fontmatrix.net/archives/${P}-Source.tar.gz"
+HOMEPAGE="http://oep-h.com/fontmatrix/"
+# old link dead, no official one yet ( Mar 21 2012 )
+SRC_URI="http://pkgs.fedoraproject.org/repo/pkgs/${PN}/${P}-Source.tar.gz/6a00c9448a50d3bab5acb4145f778f2d/${P}-Source.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -39,7 +40,7 @@ src_install() {
 
 pkg_postinst() {
 	elog "If you encounter problems or just have questions or if you have"
-	elog " suggestions, please take time to suscribe to the undertype-users"
-	elog " mailing list ( https://mail.gna.org/listinfo/undertype-users )."
-	elog " If you want to reach us quickly, come to #fontmatrix at Freenode."
+	elog "suggestions, please take time to suscribe to the undertype-users"
+	elog "mailing list ( https://mail.gna.org/listinfo/undertype-users )."
+	elog "If you want to reach us quickly, come to #fontmatrix at Freenode."
 }
