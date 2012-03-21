@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ SRC_URI="amd64? ( http://download.songbirdnest.com/installer/linux/x86_64/${MY_P
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa esd faac faad ffmpeg flac gnome jpeg lame mpeg musepack ogg oss speex theora ugly vorbis"
+IUSE="alsa faac faad ffmpeg flac gnome jpeg lame mpeg musepack ogg oss speex theora ugly vorbis"
 
 RDEPEND="dev-libs/liboil
 	media-libs/gst-plugins-base
@@ -41,7 +41,6 @@ RDEPEND="dev-libs/liboil
 	x11-libs/libXrender
 	x11-libs/pango
 	alsa? ( media-plugins/gst-plugins-alsa )
-	esd?  ( media-plugins/gst-plugins-esd )
 	faac? ( media-plugins/gst-plugins-faac )
 	faad? ( media-plugins/gst-plugins-faad )
 	ffmpeg? ( media-plugins/gst-plugins-ffmpeg )
