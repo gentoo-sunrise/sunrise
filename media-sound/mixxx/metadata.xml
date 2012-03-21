@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
-	<use>
-		<flag name="pulseaudio">Disables <pkg>media-sound/pulseaudio</pkg> support for mixxx with pasuspender</flag>
-		<flag name="shout">Enables <pkg>media-libs/libshout</pkg> support</flag>
-	</use>
-</pkgmetadata>
