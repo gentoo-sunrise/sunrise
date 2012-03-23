@@ -18,7 +18,7 @@ RUBY_OPTIONAL="yes"
 
 inherit distutils eutils java-pkg-opt-2 mono multilib perl-module php-ext-source-r2 ruby-ng versionator
 
-DESCRIPTION="A library that implements the RETS 1.7, RETS 1.5 and 1.0 standards"
+DESCRIPTION="A library that implements the RETS 1.8, 1.7, 1.5 and 1.0 standards"
 HOMEPAGE="http://www.crt.realtors.org/projects/rets/librets/"
 SRC_URI="http://www.crt.realtors.org/projects/rets/${PN}/files/${P}.tar.gz"
 
@@ -26,7 +26,7 @@ LICENSE="BSD-NAR"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc java mono perl php python ruby sql-compiler threads"
-# Enabling threads for perl, php, python or ruby causes segmentation faults.
+# Enabling threads for perl, php, python or ruby causes segmentation faults in cli scripts but not through apache
 REQUIRED_USE="perl? ( !threads )
 	php? ( !threads )
 	python? ( !threads )
@@ -44,9 +44,9 @@ for i in java perl php python ruby; do
 done
 
 RDEPEND="
-	<dev-libs/boost-1.46
+	>=dev-libs/boost-1.46
 	dev-libs/expat
-	<dev-util/boost-build-1.46
+	>=dev-util/boost-build-1.46
 	java? ( >=virtual/jdk-1.6.0 )
 	mono? ( dev-lang/mono )
 	net-misc/curl
@@ -71,7 +71,7 @@ _php-ext-source-r2_src_install() {
 		php_init_slot_env ${slot}
 		# Let's put the default module away
 		insinto "${EXT_DIR}"
-		newins "modules/${PHP_EXT_NAME}.so" "${PHP_EXT_NAME}.so" || die "Unable to install extension"
+		newins "modules/${PHP_EXT_NAME}.so" "${PHP_EXT_NAME}.so"
 	done
 	php-ext-source-r2_createinifiles
 }
@@ -109,19 +109,11 @@ src_unpack() {
 }
 
 src_prepare() {
-	# Upstream patch to allow perl to be built in the compile stage
-	epatch "${FILESDIR}"/perl.mk.patch
-	# Patch to fix java errors and allow compilation
+	# Patch to fix compilation errors by removing the java exmaples target when building for java
 	epatch "${FILESDIR}"/java.mk.patch
-	# Patch to stop python from building the extension again during install
-	epatch "${FILESDIR}"/python.mk.patch
-	# Upstream patch to allow dotnet binding to build
-	epatch "${FILESDIR}"/swig.m4.patch
-	# Patch to allow dotnet binding to build and set snk key file
-	epatch "${FILESDIR}"/dotnet.patch
 	# Patch to allow the ruby extension to compile when multiple versions of boost are installed
 	epatch "${FILESDIR}"/extconf.rb.patch
-	local myboostpackage=$(best_version "<dev-libs/boost-1.46")
+	local myboostpackage=$(best_version ">=dev-libs/boost-1.46")
 	local myboostpackagever=${myboostpackage/*boost-/}
 	local myboostver=$(get_version_component_range 1-2 ${myboostpackagever})
 	local myboostslot=$(replace_version_separator 1 _ ${myboostver})

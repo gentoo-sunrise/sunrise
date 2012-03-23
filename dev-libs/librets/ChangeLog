@@ -2,6 +2,14 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*librets-1.5.3 (23 Mar 2012)
+
+  23 Mar 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -librets-1.5.2-r4.ebuild, +librets-1.5.3.ebuild, -files/dotnet.patch,
+  -files/perl.mk.patch, -files/python.mk.patch, -files/swig.m4.patch,
+  files/java.mk.patch:
+  Version bump.
+
 *librets-1.5.2-r4 (12 Mar 2012)
 
   12 Mar 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
