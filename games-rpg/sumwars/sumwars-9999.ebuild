@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $ $Header: $
+# $Header: $
 
 EAPI=3
 
@@ -63,8 +63,8 @@ src_configure() {
 		-DSUMWARS_NO_TINYXML=ON
 		-DSUMWARS_NO_ENET=ON
 		-DSUMWARS_DOC_DIR="share/doc/${PF}"
-		-DSUMWARS_EXECUTABLE_DIR="${GAMES_BINDIR#/usr/}"
-		-DSUMWARS_SHARE_DIR="${GAMES_DATADIR#/usr/}/${PN}"
+		-DSUMWARS_EXECUTABLE_DIR="${GAMES_BINDIR}"
+		-DSUMWARS_SHARE_DIR="${GAMES_DATADIR}/${PN}"
 		-DSUMWARS_STANDALONE_MODE=OFF
 		-DSUMWARS_POST_BUILD_COPY=OFF
 		-DSUMWARS_PORTABLE_MODE=OFF
