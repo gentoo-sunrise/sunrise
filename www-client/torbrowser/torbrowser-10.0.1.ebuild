@@ -115,18 +115,9 @@ src_prepare() {
 
 	# Torbrowser patches for firefox 10, check regularly/for every version-bump
 	# https://gitweb.torproject.org/torbrowser.git/history/HEAD:/src/current-patches
-	epatch "${FILESDIR}"/0001-Block-Components.interfaces-lookupMethod-from-conten.patch
-	epatch "${FILESDIR}"/0002-Make-Permissions-Manager-memory-only.patch
-	epatch "${FILESDIR}"/0003-Make-Intermediate-Cert-Store-memory-only.patch
-	epatch "${FILESDIR}"/0004-Add-HTTP-auth-headers-before-the-modify-request-obse.patch
-	epatch "${FILESDIR}"/0005-Add-a-string-based-cacheKey.patch
-	epatch "${FILESDIR}"/0006-Randomize-HTTP-pipeline-order-and-depth.patch
-	epatch "${FILESDIR}"/0007-Block-all-plugins-except-flash.patch
-	epatch "${FILESDIR}"/0008-Make-content-pref-service-memory-only-clearable.patch
-	epatch "${FILESDIR}"/0010-Disable-SSL-Session-ID-tracking.patch
-	epatch "${FILESDIR}"/0011-Provide-an-observer-event-to-close-persistent-connec.patch
-	epatch "${FILESDIR}"/0012-Provide-client-values-only-to-CSS-Media-Queries.patch
-	epatch "${FILESDIR}"/0013-Limit-the-number-of-fonts-per-document.patch
+	EPATCH_SUFFIX="patch" \
+	EPATCH_FORCE="yes" \
+	epatch "${FILESDIR}/${PV}"
 
 	# Allow user to apply any additional patches without modifing ebuild
 	epatch_user
