@@ -32,9 +32,11 @@ src_prepare() {
 
 src_configure() {
 	mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX="/usr"
-		-DMEANDMYSHADOW_EXECUTABLE_DIR="${GAMES_BINDIR#/usr/}"
-		-DMEANDMYSHADOW_DATA_DIR="${GAMES_DATADIR#/usr/}"
+		"-DCMAKE_INSTALL_PREFIX=${GAMES_PREFIX}"
+		"-DBINDIR=${GAMES_BINDIR}"
+		"-DDATAROOTDIR=${GAMES_DATADIR}"
+		"-DICONDIR=/usr/share/icons"
+		"-DDESKTOPDIR=/usr/share/applications"
 		)
 	cmake-utils_src_configure
 }
