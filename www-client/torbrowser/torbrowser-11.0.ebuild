@@ -25,7 +25,7 @@ HOMEPAGE="https://www.torproject.org/projects/torbrowser.html.en"
 # may work on other arches, but untested
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-# BSD license applies to torproject-related code like the patches 
+# BSD license applies to torproject-related code like the patches
 # GPL-2 and MIT applies to the extensions
 # icons are under CCPL-Attribution-3.0
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )
@@ -45,8 +45,8 @@ SRC_URI="${SRC_URI}
 # Mesa 7.10 needed for WebGL + bugfixes
 RDEPEND="
 	>=sys-devel/binutils-2.16.1
-	>=dev-libs/nss-3.13.1
-	>=dev-libs/nspr-4.8.8
+	>=dev-libs/nss-3.13.3
+	>=dev-libs/nspr-4.9
 	>=dev-libs/glib-2.26:2
 	>=media-libs/mesa-7.10
 	media-libs/libpng[apng]
@@ -62,7 +62,8 @@ DEPEND="${RDEPEND}
 	pgo? (
 		=dev-lang/python-2*[sqlite]
 		>=sys-devel/gcc-4.5 )
-	webm? ( >=dev-lang/yasm-1.1 )"
+	webm? ( >=dev-lang/yasm-1.1
+		virtual/opengl )"
 
 S="${WORKDIR}/mozilla-release"
 

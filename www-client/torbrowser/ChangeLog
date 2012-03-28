@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Mar 2012; Nathan Phillip Brink <binki@gentoo.org> torbrowser-11.0.ebuild:
+  Update RDEPEND and DEPEND to better match that from
+  www-browser/firefox-11.0-r1.
+
 *torbrowser-11.0 (27 Mar 2012)
 
   27 Mar 2012; hasufell <julian.ospald@googlemail.com>
