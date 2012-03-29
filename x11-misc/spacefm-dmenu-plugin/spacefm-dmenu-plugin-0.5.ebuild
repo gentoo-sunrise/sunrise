@@ -16,6 +16,8 @@ IUSE=""
 RDEPEND="x11-misc/dmenu
 	x11-misc/spacefm"
 
+S=${WORKDIR}
+
 src_install() {
 	find -name COPYING -delete
 	insinto /usr/share/spacefm/plugins/dmenu
