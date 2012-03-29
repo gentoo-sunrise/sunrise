@@ -17,6 +17,7 @@ RDEPEND="x11-misc/spacefm
 	app-cdr/cdemu[cdemud]
 	|| ( x11-misc/xdialog gnome-extra/zenity )"
 
+S=${WORKDIR}
 
 src_unpack() {
 	unpack ${A}
