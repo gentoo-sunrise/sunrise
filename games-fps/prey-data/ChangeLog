@@ -1,6 +1,11 @@
 # ChangeLog for games-fps/prey-data
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Mar 2012; Igor Ulyanov (Displacer) <disinbox@gmail.com>
+  prey-data-20090219.ebuild:
+  Fixed cdrom eclass dependency for cdrom functions (splitted from
+  eutils.eclass)
 
   17 May 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   prey-data-20090219.ebuild:
