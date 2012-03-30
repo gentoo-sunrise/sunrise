@@ -1,6 +1,10 @@
 # ChangeLog for games-rpg/bs2
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Mar 2012; Igor Ulyanov (Displacer) <disinbox@gmail.com> bs2-1.ebuild:
+  Fixed cdrom eclass dependency for cdrom functions (splitted from
+  eutils.eclass)
 
   23 Aug 2007; Nathan Egge (unlord) <nathanegge@yahoo.com> +files/bs2.png,
   +metadata.xml, +bs2-1.ebuild:
