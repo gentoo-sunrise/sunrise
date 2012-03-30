@@ -24,6 +24,9 @@ src_install() {
 	doins -r cstm_* plugin
 	insinto /usr/share/spacefm/plugin-files
 	doins "${DISTDIR}"/Share_v${PV}.spacefm-plugin.tar.gz
+
+	cd "${D}"
+	find . -name "exec.sh" -exec fperms +x '{}' + || die
 }
 
 pkg_postinst() {
