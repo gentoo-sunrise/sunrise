@@ -21,7 +21,7 @@ S=${WORKDIR}
 
 src_unpack() {
 	unpack ${A}
-	unpack ./cdemu.spacefm-plugin.tar.gz 
+	unpack ./cdemu.spacefm-plugin.tar.gz
 }
 
 src_install() {
@@ -29,6 +29,9 @@ src_install() {
 	doins -r cstm_* plugin
 	insinto /usr/share/spacefm/plugin-files
 	doins cdemu.spacefm-plugin.tar.gz
+
+	cd "${D}"
+	find . -name "exec.sh" -exec fperms +x '{}' + || die
 }
 
 pkg_postinst() {
