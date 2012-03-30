@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Mar 2012; Igor Ulyanov (Displacer) <disinbox@gmail.com>
+  moo2-1.40.24.ebuild:
+  Fixed cdrom eclass dependency for cdrom functions (splitted from
+  eutils.eclass)
+
   12 Feb 2012; Mike Gilbert <floppym@gentoo.org> files/1.40.24/moo2,
   files/1.40.24/utils.sh:
   games-strategy/moo2: Remove svn:executable property.
