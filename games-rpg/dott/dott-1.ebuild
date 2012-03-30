@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils games
+inherit eutils games cdrom
 
 DESCRIPTION="Day of the Tentacle"
 HOMEPAGE="http://wiki.scummvm.org/index.php/Day_of_the_Tentacle"
