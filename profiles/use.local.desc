@@ -258,6 +258,10 @@ www-client/torbrowser:webm - Use system media-libs/libvpx for HTML5 WebM video s
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
+x11-misc/spacefm-plugins:cdemu - Plugin for interacting with cdemu
+x11-misc/spacefm-plugins:dmenu - This plugin allows user to open file(s) with any command in the user's $PATH via dmenu
+x11-misc/spacefm-plugins:httpshare - Plugin to quickly share files/folders via http server
+x11-misc/spacefm-plugins:trash - Plugin that adds trash-support
 x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
