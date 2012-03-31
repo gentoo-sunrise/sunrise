@@ -29,18 +29,13 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo ""
 	einfo "You might need to restart spacefm for the changes to take effect."
-	einfo ""
 	elog "If you want to add a plugin to a different menu via design-mode"
 	elog "use the plugin-files from '/usr/share/spacefm/plugin-files'."
-	einfo ""
 }
 
 pkg_postrm() {
-	einfo ""
 	elog "If you have copied the plugin to a different menu using the"
 	elog "design mode you might want to remove it from there as well."
-	einfo ""
 }
 
