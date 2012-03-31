@@ -1,0 +1,10 @@
+# ChangeLog for dev-libs/libuv
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*libuv-0_pre20120331 (31 Mar 2012)
+
+  31 Mar 2012; hasufell <julian.ospald@googlemail.com>
+  +libuv-0_pre20120331.ebuild, +metadata.xml:
+  New Ebuild for bug 410337 thanks to Tommy[D] chithead and ssuominen
+
