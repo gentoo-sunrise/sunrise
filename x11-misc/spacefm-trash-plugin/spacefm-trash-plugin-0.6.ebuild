@@ -38,4 +38,3 @@ pkg_postrm() {
 	elog "If you have copied the plugin to a different menu using the"
 	elog "design mode you might want to remove it from there as well."
 }
-
