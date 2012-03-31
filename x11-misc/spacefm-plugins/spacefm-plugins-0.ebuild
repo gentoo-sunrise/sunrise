@@ -11,10 +11,11 @@ SRC_URI=""
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cdemu dmenu httpshare trash"
+IUSE="cdemu dmenu httpshare pdfmerge trash"
 
 RDEPEND="cdemu? ( x11-misc/spacefm-cdemu-plugin )
 	dmenu? ( x11-misc/spacefm-dmenu-plugin )
 	httpshare? ( x11-misc/spacefm-httpshare-plugin )
+	pdfmerge? ( x11-misc/spacefm-pdfmerge-plugin )
 	trash? ( x11-misc/spacefm-trash-plugin )"
 REQUIRED_USE="|| ( ${IUSE} )"
