@@ -261,6 +261,7 @@ x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/spacefm-plugins:cdemu - Plugin for interacting with cdemu
 x11-misc/spacefm-plugins:dmenu - This plugin allows user to open file(s) with any command in the user's $PATH via dmenu
 x11-misc/spacefm-plugins:httpshare - Plugin to quickly share files/folders via http server
+x11-misc/spacefm-plugins:pdfmerge - Plugin to merge multiple pdf files into one
 x11-misc/spacefm-plugins:trash - Plugin that adds trash-support
 x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
