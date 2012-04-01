@@ -147,6 +147,7 @@ games-rpg/sumwars:stl - Compile with TIXML_USE_STL support in dev-libs/tinyxml.
 games-rpg/sumwars:tools - Compile with additional game tools like content editor.
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
+games-strategy/openra:cg - NVIDIA toolkit plugin
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
