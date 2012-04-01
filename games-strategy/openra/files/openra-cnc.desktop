@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+GenericName=OpenRA - Command & Conquer
+Name=OpenRA CNC
+Icon=openra
+Exec=openra Game.Mods=cnc Graphics.Renderer=Gl
+Terminal=false
+Categories=Game;

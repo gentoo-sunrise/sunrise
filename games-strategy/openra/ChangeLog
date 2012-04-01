@@ -1,0 +1,12 @@
+# ChangeLog for games-strategy/openra
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*openra-0_pre20120304 (31 Mar 2012)
+
+  31 Mar 2012; hasufell <julian.ospald@googlemail.com>
+  +openra-0_pre20120304.ebuild, +files/openra-0_pre20120304-makefile.patch,
+  +files/openra-cnc.desktop, +files/openra-editor.desktop,
+  +files/openra-ra.desktop, +metadata.xml:
+  New Ebuild for bug 372029
+

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+GenericName=OpenRA - Editor
+Name=OpenRA Map Editor
+Icon=openra
+Exec=openra-editor
+Terminal=false
+Categories=Game;
