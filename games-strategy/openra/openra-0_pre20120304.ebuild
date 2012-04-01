@@ -38,7 +38,7 @@ src_prepare() {
 			-i ${PN}-{cnc,ra}.desktop \
 			|| die "setting default renderer in desktop file failed"
 	fi
-	
+
 	# register game-version
 	sed \
 		-e "/Version/s/{DEV_VERSION}/release-${MY_PV}/" \
