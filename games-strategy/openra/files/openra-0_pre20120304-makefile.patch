@@ -34,7 +34,7 @@ fix non-modifable paths and broken install-rules
 -	@echo "mono "$(datadir)"/openra/OpenRA.Game.exe \"$$""@\"" >> openra
 +	@echo "exec mono "$(datadir)"/openra/OpenRA.Game.exe \"$$""@\"" >> openra
 +
-+	@echo "#!/bin/sh" > openra
++	@echo "#!/bin/sh" > openra-editor
 +	@echo "cd "$(datadir)"/openra" >> openra-editor
 +	@echo "exec mono "$(datadir)"/openra/OpenRA.Editor.exe \"$$""@\"" >> openra-editor
  
