@@ -6,6 +6,8 @@ EAPI=3
 
 inherit eutils mono gnome2-utils games
 
+MY_PV=${PV#*pre}
+
 DESCRIPTION="A Libre/Free RTS engine supporting early Westwood games like Command & Conquer and Red Alert"
 HOMEPAGE="http://open-ra.org/"
 SRC_URI="http://badading.googlecode.com/files/${P}.tar.gz"
@@ -36,6 +38,11 @@ src_prepare() {
 			-i ${PN}-{cnc,ra}.desktop \
 			|| die "setting default renderer in desktop file failed"
 	fi
+	
+	# register game-version
+	sed \
+		-e "/Version/s/{DEV_VERSION}/release-${MY_PV}/" \
+		-i mods/{ra,cnc}/mod.yaml || die
 }
 
 src_install() {
