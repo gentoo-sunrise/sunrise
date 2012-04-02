@@ -4,13 +4,13 @@
 
 EAPI=3
 
-inherit eutils mono gnome2-utils games
+EGIT_REPO_URI="git://github.com/OpenRA/OpenRA.git"
+EGIT_COMMIT="release-${PV}"
 
-MY_PV=${PV#*pre}
+inherit eutils mono gnome2-utils games git-2
 
 DESCRIPTION="A Libre/Free RTS engine supporting early Westwood games like Command & Conquer and Red Alert"
 HOMEPAGE="http://open-ra.org/"
-SRC_URI="http://badading.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,6 +19,7 @@ IUSE="cg"
 
 DEPEND="dev-dotnet/libgdiplus
 	dev-lang/mono
+	!games-strategy/openra-bin
 	media-libs/freetype:2[X]
 	media-libs/libsdl[X,audio,video]
 	media-libs/openal
@@ -31,17 +32,9 @@ src_prepare() {
 	# fix a few paths and install-rules
 	epatch "${FILESDIR}"/${P}-makefile.patch
 
-	if use cg ; then
-		# set default renderer to cg
-		sed \
-			-e '/Renderer/s/Gl/Cg/' \
-			-i ${PN}-{cnc,ra}.desktop \
-			|| die "setting default renderer in desktop file failed"
-	fi
-
 	# register game-version
 	sed \
-		-e "/Version/s/{DEV_VERSION}/release-${MY_PV}/" \
+		-e "/Version/s/{DEV_VERSION}/${EGIT_COMMIT}/" \
 		-i mods/{ra,cnc}/mod.yaml || die
 }
 
@@ -58,13 +51,20 @@ src_install() {
 	# icons
 	insinto /usr/share/icons/
 	doins -r packaging/linux/hicolor || die
-	newicon soviet-logo.png ${PN}.png || die
 
 	# .desktop files
 	domenu "${FILESDIR}"/${PN}-{cnc,editor,ra}.desktop || die
 
 	#docs
 	dodoc README HACKING CHANGELOG || die
+
+	if use cg ; then
+		# set default renderer to cg
+		sed \
+			-e '/Renderer/s/Gl/Cg/' \
+			-i "${D}"/usr/share/applications/${PN}-{cnc,ra}.desktop \
+			|| die "setting default renderer in desktop file failed"
+	fi
 
 	# file permissions
 	prepgamesdirs

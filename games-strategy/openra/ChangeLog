@@ -2,6 +2,14 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*openra-20120315 (02 Apr 2012)
+
+  02 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  -openra-0_pre20120304.ebuild, -files/openra-0_pre20120304-makefile.patch,
+  +openra-20120315.ebuild, +files/openra-20120315-makefile.patch:
+  properly match upstream versioning, switch to git-based, fix sed-call for
+  .desktop files, remove needless doicon rule
+
   01 Apr 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   openra-0_pre20120304.ebuild:
   hasufell: add a sed-call otherwise the game does not report any version when
