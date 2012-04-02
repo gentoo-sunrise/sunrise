@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*overlay-utils-0.3 (02 Apr 2012)
+
+  02 Apr 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -overlay-utils-0.2.1-r1.ebuild, +overlay-utils-0.3.ebuild,
+  files/sunrise-commit:
+  Version bump, switch to git
+
   16 Mar 2012; Mike Gilbert <floppym@gentoo.org> overlay-utils-0.2.1-r1.ebuild,
   +files/sunrise-commit, +files/sunrise-commit.1:
   Move sunrise-commit source to FILESDIR.

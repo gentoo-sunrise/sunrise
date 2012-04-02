@@ -20,5 +20,6 @@ S=${WORKDIR}
 
 src_install() {
 	dobin "${FILESDIR}"/sunrise-commit
-	doman "${FILESDIR}"/sunrise-commit.1
+# manpage is outdated with move to git
+#	doman "${FILESDIR}"/sunrise-commit.1
 }
