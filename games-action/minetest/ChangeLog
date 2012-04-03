@@ -1,0 +1,12 @@
+# ChangeLog for games-action/minetest
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*minetest-0.4_pre20120320 (03 Apr 2012)
+
+  03 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +minetest-0.4_pre20120320.ebuild,
+  +files/minetest-0.4_pre20120320-cmake.patch,
+  +files/minetest-0.4_pre20120320-sharepath.patch, +metadata.xml:
+  New Ebuild for bug 399867 thanks to binki
+
