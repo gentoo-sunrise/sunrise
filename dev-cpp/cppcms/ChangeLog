@@ -1,0 +1,11 @@
+# ChangeLog for dev-cpp/cppcms
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*cppcms-1.0.1 (03 Apr 2012)
+
+  03 Apr 2012; Jauhien Piatlicki (jauhien) piatlicki@gmail.com
+  +cppcms-1.0.1.ebuild, +metadata.xml:
+  New Ebuild for bug #410383 thanks to hasufell, floppym, Tommy[D] and other
+  people from #gentoo-sunrise
+

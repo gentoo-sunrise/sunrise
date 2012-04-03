@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+
+<pkgmetadata>
+
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
+
+	<use>
+		<flag name="cache">If unset disables caching system at all</flag>
+		<flag name="fcgi">Build FastCGI Server API</flag>
+		<flag name="gcrypt">Enables usage of <pkg>dev-libs/libgcrypt</pkg>, if unset <pkg>dev-libs/openssl</pkg> will be used</flag>
+		<flag name="http">Build internal HTTP server</flag>
+		<flag name="icu">Disables usage of <pkg>virtual/libiconv</pkg> (<pkg>dev-libs/icu</pkg> would be used instead)</flag>
+		<flag name="prefork_cache">Enables cache support for preforking modes</flag>
+		<flag name="scgi">Build SCGI Server API</flag>
+		<flag name="tcpcache">Enables distributed cache support</flag>
+	</use>
+
+</pkgmetadata>
