@@ -1,6 +1,10 @@
 # ChangeLog for app-misc/bdfresize
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  03 Apr 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  bdfresize-1.5.ebuild:
+  Keyword ~amd64 and EAPI bump.
 
   24 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   bdfresize-1.5.ebuild:
