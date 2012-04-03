@@ -1,0 +1,10 @@
+# ChangeLog for sys-apps/fwts
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*fwts-0.24.21 (03 Apr 2012)
+
+  03 Apr 2012; Manuel Rüger (mrueg) gentoo@rueg.eu +fwts-0.24.21.ebuild,
+  +metadata.xml:
+  New Ebuild for bug #410595 Thanks to Tommy[D], idl0r, hasufell and kensington
+
