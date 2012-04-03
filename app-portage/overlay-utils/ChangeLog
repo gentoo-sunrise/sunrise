@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*overlay-utils-0.3.1 (03 Apr 2012)
+
+  03 Apr 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -overlay-utils-0.3.ebuild, +overlay-utils-0.3.1.ebuild, files/sunrise-commit:
+  Version bump to fix a bug, when user forgot to rebase
+
 *overlay-utils-0.3 (02 Apr 2012)
 
   02 Apr 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>

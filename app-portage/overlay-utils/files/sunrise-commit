@@ -235,6 +235,12 @@ git_up() {
 
 		ebegin "Updating working copy to latest version from repository"
 
+		# rebase does temporarily remove the current workdir, so the following push
+		# would fail because of the unknown workdir
+		while ! [[ -e .git ]] ; do
+			cd .. 2>/dev/null
+		done
+
 		if [[ $opt_verbose == 1 ]] ; then
 			git pull --rebase -v origin master || set $?  
 		else
