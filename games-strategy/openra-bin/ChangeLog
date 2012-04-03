@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  openra-bin-20120315.ebuild:
+  older versions of nvidia-cg-toolkit don't work
+
 *openra-bin-20120315 (02 Apr 2012)
 
   02 Apr 2012; hasufell <julian.ospald@googlemail.com>
