@@ -25,7 +25,7 @@ DEPEND="dev-dotnet/libgdiplus
 	media-libs/openal
 	virtual/jpeg
 	virtual/opengl
-	cg? ( media-gfx/nvidia-cg-toolkit )"
+	cg? ( >=media-gfx/nvidia-cg-toolkit-2.1.0017 )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
