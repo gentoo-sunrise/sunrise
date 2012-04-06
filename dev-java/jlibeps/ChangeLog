@@ -1,0 +1,10 @@
+# ChangeLog for dev-java/jlibeps
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*jlibeps-0.1 (06 Apr 2012)
+
+  06 Apr 2012; Manuel Rüger (mrueg) gentoo@rueg.eu +jlibeps-0.1.ebuild,
+  +files/jlibeps-build.xml.patch, +metadata.xml:
+  New Ebuild for bug #162790 thanks to Tommy[D], sera, hasufell
+
