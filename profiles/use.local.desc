@@ -64,10 +64,24 @@ app-misc/navit:garmin - Enable the ability to read Garmin Road/Topo maps
 app-misc/navit:speechd - Enable speech output for routing notifications
 app-mobilephone/series60-remote:obex - Enable *.sis files transfer and file browser
 app-mobilephone/series60-remote:stats - Enable statistics graph visualization
+dev-cpp/cppcms:cache - If unset disables caching system at all
+dev-cpp/cppcms:fcgi - Build FastCGI Server API
+dev-cpp/cppcms:gcrypt - Enables usage of dev-libs/libgcrypt, if unset dev-libs/openssl will be used
+dev-cpp/cppcms:http - Build internal HTTP server
+dev-cpp/cppcms:icu - Disables usage of virtual/libiconv (dev-libs/icu would be used instead)
+dev-cpp/cppcms:prefork_cache - Enables cache support for preforking modes
+dev-cpp/cppcms:scgi - Build SCGI Server API
+dev-cpp/cppcms:tcpcache - Enables distributed cache support
 dev-cpp/libvmime:pop - Support POP for mail retrieval
 dev-cpp/libvmime:sendmail - Support for mail-mta/sendmail as a mail transport agent
 dev-cpp/libvmime:smtp - Enable support for the SMTP protocol
+dev-db/cppdb:mysql_internal - Don't build a separate mysql loadable module but rather build it into the cppdb library itself
+dev-db/cppdb:odbc_internal - Don't build a separate postgresql loadable module but rather build it into the cppdb library itself
+dev-db/cppdb:postgres_internal - Don't build a separate odbc loadable module but rather build it into the cppdb library itself
+dev-db/cppdb:sqlite_internal - Don't build a separate sqlite3 loadable module but rather build it into the cppdb library itself
 dev-db/dabo:ide - Enable dabo IDE
+dev-db/soci:boost - Enable boost support
+dev-db/soci:empty - Build the sample backend called Empty
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
@@ -100,6 +114,8 @@ dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber metho
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 dev-util/valide:unique - 
+games-action/minetest:client - Minetest client
+games-action/minetest:server - Minetest server
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
