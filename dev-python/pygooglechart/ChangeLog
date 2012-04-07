@@ -1,8 +1,0 @@
-# ChangeLog for dev-python/pygooglechart
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  09 Jan 2011; Mike Gilbert (floppym) <floppymaster@gmail.com>
-  +pygooglechart-0.3.0.ebuild, +metadata.xml:
-  New ebuild for bug 242132
-
