@@ -1,6 +1,13 @@
 # ChangeLog for sys-process/ts
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*ts-0.7.2 (08 Apr 2012)
+
+  08 Apr 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -ts-0.6.6.ebuild, +ts-0.7.2.ebuild:
+  Version bump. Add blockers to fix bug #285276. Don't install useless
+  documentation. Thanks to everyone in #gentoo-sunrise for feedback and review.
 
   17 Jan 2010; Carles Pagès (page) <page@cubata.homelinux.net>
   -ts-0.6.4.ebuild, +ts-0.6.6.ebuild:
