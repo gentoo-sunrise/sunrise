@@ -1,0 +1,3 @@
+#!/bin/sh
+# Convenience script for running pcheck from pkgcore
+exec pcheck -o portdir -d unstable_only -d dropped_keywords "$@"
