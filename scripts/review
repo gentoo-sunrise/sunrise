@@ -89,7 +89,10 @@ if [[ $(git diff profiles/categories) ]]; then
 			exit ;;
 	esac
 fi
-LC_ALL="C" sh scripts/use_desc_gen.sh . || exit $?
+
+egencache --ignore-default-opts --portdir-overlay=. \
+	--repo=sunrise --update-use-local-desc || exit $?
+
 if [[ $(git diff profiles/use.local.desc) ]]; then
 	git diff profiles/use.local.desc | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
 	echo -n "${BOLD}Commit changes?${NORMAL} [${GREEN}Yes${NORMAL}/${RED}No${NORMAL}] "
