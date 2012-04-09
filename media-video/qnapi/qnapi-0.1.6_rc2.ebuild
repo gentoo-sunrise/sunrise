@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 KDE_REQUIRED="optional"
 CMAKE_REQUIRED="false"
 
@@ -32,7 +32,6 @@ PATCHES=( "${FILESDIR}/${P}-gentoo.diff" )
 
 pkg_setup() {
 	use kde && kde4-base_pkg_setup # get KDEDIR for KDE4
-	qt4-r2_pkg_setup
 }
 
 src_configure() {
@@ -41,11 +40,6 @@ src_configure() {
 	use gnome && integr="gnome_integration"
 	use kde && integr="${integr} kde4_integration"
 	KDE4DIR="${KDEDIR}" INTEGRATION_TARGETS="${integr}" eqmake4
-}
-
-src_install() {
-	qt4-r2_src_install
-	prepalldocs || die "prepalldocs failed."
 }
 
 pkg_preinst() {
