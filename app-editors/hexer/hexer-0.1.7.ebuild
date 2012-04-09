@@ -2,7 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Hex Editor with vi/ex-style user interface"
+EAPI=4
+
+inherit eutils toolchain-funcs
+
+DESCRIPTION="Hex editor with vi/ex-style user interface"
 HOMEPAGE="http://devel.ringlet.net/editors/hexer/"
 SRC_URI="http://devel.ringlet.net/editors/${PN}/${P}.tar.gz"
 
@@ -11,8 +15,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+DEPEND="sys-libs/ncurses"
+RDEPEND="${DEPEND}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-qa.patch
+}
+
+src_compile() {
+	tc-export CC
+	default
+}
+
 src_install() {
-	dobin ${PN} || die
-	doman ${PN}.1 || die
-	dodoc CHANGES README || die
+	dobin ${PN} bin2c
+	doman ${PN}.1
+	dodoc CHANGES README
 }

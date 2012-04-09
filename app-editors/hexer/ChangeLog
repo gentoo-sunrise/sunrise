@@ -1,6 +1,13 @@
 # ChangeLog for app-editors/hexer
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*hexer-0.1.7 (09 Apr 2012)
+
+  09 Apr 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -hexer-0.1.5.ebuild, +hexer-0.1.7.ebuild, +files/hexer-0.1.7-qa.patch:
+  Version bump. Respect build variables, add missing dep, install additional
+  tool. Thanks to mgorny for review.
 
   05 Apr 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
   +hexer-0.1.5.ebuild, +metadata.xml:

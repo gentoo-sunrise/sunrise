@@ -1,0 +1,18 @@
+--- Makefile
++++ Makefile
+@@ -76,13 +76,13 @@
+ 	    fi; }
+ 
+ $(HEXER): $(OBJECTS)
+-	$(CC) $(LDFLAGS) -o $@ $(OBJECTS) $(LDLIBS)
++	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(OBJECTS) $(LDLIBS)
+ 
+ $(MYC): calc.c
+ 	$(CC) $(LDFLAGS) $(CFLAGS) -DMYCALC=1 -o $@ calc.c -lm
+ 
+ bin2c: bin2c.c
+-	$(CC) $(CFLAGS) -o $@ bin2c.c
++	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ bin2c.c
+ 
+ helptext.c: help.txt bin2c
+ 	./bin2c -n helptext -o $@ help.txt
