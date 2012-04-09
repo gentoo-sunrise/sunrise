@@ -94,12 +94,12 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	doicon "${DISTDIR}"/${PN}.png
+	doicon "${DISTDIR}"/${PN}.png || die
 	newgamesbin "${FILESDIR}"/${PN}-wrapper-script.sh ${PN} || die
 	make_desktop_entry ${PN} ${PN}
 
 	if use doc ; then
-		dohtml -r docs/online/*
+		dohtml -r docs/online/* || die
 	fi
 
 	prepgamesdirs
