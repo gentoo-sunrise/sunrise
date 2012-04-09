@@ -1,0 +1,20 @@
+--- src/FindFile.cpp
++++ src/FindFile.cpp
+@@ -485,7 +485,7 @@
+ 	AddToFileList(&basesearchpaths, "${HOME}/Library/Application Support/Commander Genius");
+ 	AddToFileList(&basesearchpaths, ".");
+ 	AddToFileList(&basesearchpaths, "${BIN}/../Resources");
+-	AddToFileList(&basesearchpaths, SYSTEM_DATA_DIR"/commandergenius");
++	AddToFileList(&basesearchpaths, SYSTEM_DATA_DIR"/CommanderGenius");
+ #elif defined(WIN32)
+ 	AddToFileList(&basesearchpaths, "${HOME}/Commander Genius");
+ 	AddToFileList(&basesearchpaths, ".");
+@@ -497,7 +497,7 @@
+ 	AddToFileList(&basesearchpaths, "${HOME}/.CommanderGenius");
+ #endif
+ 	AddToFileList(&basesearchpaths, ".");
+-	AddToFileList(&basesearchpaths, SYSTEM_DATA_DIR"/commandergenius"); // no use of ${SYSTEM_DATA}, because it is uncommon and could cause confusion to the user
++	AddToFileList(&basesearchpaths, SYSTEM_DATA_DIR"/CommanderGenius"); // no use of ${SYSTEM_DATA}, because it is uncommon and could cause confusion to the user
+ #endif
+ }
+ 
