@@ -115,6 +115,7 @@ dev-util/valide:unique -
 games-action/minetest:client - Minetest client
 games-action/minetest:server - Minetest server
 games-action/openclonk:audio - Audio output
+games-arcade/clonekeenplus:tremor - Use media-libs/tremor as audio decoder
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
