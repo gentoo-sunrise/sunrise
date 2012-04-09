@@ -1,0 +1,10 @@
+# ChangeLog for games-engines/openmw
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*openmw-0.13.0 (09 Apr 2012)
+
+  09 Apr 2012; hasufell <julian.ospald@googlemail.com> +openmw-0.13.0.ebuild,
+  +files/openmw-0.13.0-cmake.patch, +metadata.xml:
+  New ebuild for bug 411295 thanks to mgorny
+
