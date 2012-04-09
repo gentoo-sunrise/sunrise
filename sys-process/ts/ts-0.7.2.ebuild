@@ -33,7 +33,7 @@ src_compile() {
 }
 
 src_test() {
-	./testbench.sh || die "tests failed"
+	sh testbench.sh || die "tests failed"
 }
 
 src_install() {
