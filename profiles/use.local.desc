@@ -1,8 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation.
-# Distributed under the terms of the GNU General Public License v2
-# $Header: $
-# This file contains descriptions of local USE flags, and the ebuilds which
-# contain them.
+# This file is deprecated as per GLEP 56 in favor of metadata.xml. Please add
+# your descriptions to your package's metadata.xml ONLY.
+# * generated automatically using egencache *
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
@@ -116,6 +114,7 @@ dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 dev-util/valide:unique - 
 games-action/minetest:client - Minetest client
 games-action/minetest:server - Minetest server
+games-action/openclonk:audio - Audio output
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
@@ -185,7 +184,7 @@ media-plugins/gimp-refocus:lapack-atlas - Use the ATLAS version of lapack
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
-media-sound/gogglesmm:gcrypt -  Use gcrypt for md5 calculation instead of the internal implementation 
+media-sound/gogglesmm:gcrypt - Use gcrypt for md5 calculation instead of the internal implementation
 media-sound/om:dssi - Enables support for DSSI plugins
 media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
@@ -211,7 +210,7 @@ net-firewall/vuurmuur:logrotate - Install support files for logrotate
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
-net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
+net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption
 net-misc/fatrat:bittorrent - Enables support for the bittorrent protocol
 net-misc/fatrat:webinterface - Support remote control via a web interface
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
@@ -234,7 +233,7 @@ net-misc/moblock:network-cron - Adds monthly cronjob to update blocklist files
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
 net-misc/uanytun:examples - Install example configuration into /usr/share/doc/...
-net-misc/uanytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption 
+net-misc/uanytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption
 net-wireless/remuco:amarok - Enable Amarok media player support
 net-wireless/remuco:audacious - Enable Audacious media player support
 net-wireless/remuco:banshee - Enable Banshee media player support
@@ -248,7 +247,7 @@ net-wireless/remuco:totem - Enable Totem media player support
 net-wireless/remuco:tvtime - Enable Tvtime support
 net-wireless/remuco:vlc - Enable VLC media player support
 sci-chemistry/hoomd:cuda - Enables support for the NVIDIA CUDA library. Requires single-precision flag be set.
-sci-chemistry/hoomd:single-precision - Computations will be performed using single precision numbers. Otherwise computations will be performed in double precision. 
+sci-chemistry/hoomd:single-precision - Computations will be performed using single precision numbers. Otherwise computations will be performed in double precision.
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
