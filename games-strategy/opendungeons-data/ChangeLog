@@ -1,0 +1,10 @@
+# ChangeLog for games-strategy/opendungeons-data
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*opendungeons-data-9999 (10 Apr 2012)
+
+  10 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +opendungeons-data-9999.ebuild, +metadata.xml:
+  New Ebuild for bug 411457 thanks to mgorny
+
