@@ -1,0 +1,102 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="400" width="400" version="1.0" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<defs>
+<linearGradient id="linearGradient3232">
+<stop stop-color="#FFF" offset="0"/>
+<stop stop-color="#FFF" offset="0.5"/>
+<stop stop-color="#d6d6d6" offset="1"/>
+</linearGradient>
+<radialGradient id="radialGradient3448" gradientUnits="userSpaceOnUse" cy="611" cx="125" gradientTransform="matrix(1,0,0,0.9343106,-9.7369164e-8,-34.298217)" r="127">
+<stop stop-color="#e00000" offset="0"/>
+<stop stop-color="#e00000" offset="0.3"/>
+<stop stop-color="#F00" offset="0.66"/>
+<stop stop-color="#c00000" offset="1"/>
+</radialGradient>
+<radialGradient id="radialGradient3480" gradientUnits="userSpaceOnUse" cy="619" cx="270" gradientTransform="matrix(1.584713,0,0,1.5743073,-158.02739,-429.84868)" r="80.6">
+<stop stop-color="#c00000" offset="0"/>
+<stop stop-color="#c00000" offset="0.3"/>
+<stop stop-color="#F00" offset="0.66"/>
+<stop stop-color="#c00000" offset="1"/>
+</radialGradient>
+<radialGradient id="radialGradient3488" xlink:href="#linearGradient3232" gradientUnits="userSpaceOnUse" cy="515" cx="228" gradientTransform="matrix(1,0,0,1.0723253,-9.7369164e-8,-111.92788)" r="21"/>
+<radialGradient id="radialGradient2531" xlink:href="#linearGradient3232" gradientUnits="userSpaceOnUse" cy="515" cx="228" gradientTransform="matrix(1,0,0,-1.0723253,3.3026308e-6,1200.2299)" r="21"/>
+<radialGradient id="radialGradient3819" gradientUnits="userSpaceOnUse" cy="619" cx="264" gradientTransform="matrix(2.6839613,7.6099957e-7,-8.57159e-7,3.023105,-444.56477,-1326.0532)" r="37.2">
+<stop stop-color="#FFF" offset="0"/>
+<stop stop-color="#FFF" offset="0.763"/>
+<stop stop-color="#d6d6d6" offset="1"/>
+</radialGradient>
+<radialGradient id="radialGradient3836" xlink:href="#linearGradient3232" gradientUnits="userSpaceOnUse" cy="581" cx="279" gradientTransform="matrix(1,0,0,1.184194,-9.7369164e-8,-181.89913)" r="23"/>
+<radialGradient id="radialGradient3844" xlink:href="#linearGradient3232" gradientUnits="userSpaceOnUse" cy="658" cx="279" gradientTransform="matrix(1,0,0,1.184194,-9.7369164e-8,-195.22465)" r="23"/>
+<radialGradient id="radialGradient3844-1" xlink:href="#linearGradient3232" gradientUnits="userSpaceOnUse" cy="658" cx="279" gradientTransform="matrix(1,0,0,1.184194,0,-120.80633)" r="23"/>
+<radialGradient id="radialGradient3874" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3232" cx="279" cy="581" r="23" gradientTransform="matrix(1,0,0,1.184194,0,-107.48081)"/>
+<radialGradient id="radialGradient3949" gradientUnits="userSpaceOnUse" cx="264" cy="619" r="37.2" gradientTransform="matrix(2.6839613,7.6099957e-7,-8.57159e-7,3.023105,-444.56478,-1251.6349)">
+<stop stop-color="#FFF" offset="0"/>
+<stop stop-color="#FFF" offset="0.763"/>
+<stop stop-color="#d6d6d6" offset="1"/>
+</radialGradient>
+<radialGradient id="radialGradient3393" xlink:href="#linearGradient3232" gradientUnits="userSpaceOnUse" cy="515" cx="228" gradientTransform="matrix(1,0,0,1.0723253,0,-37.50956)" r="21"/>
+<radialGradient id="radialGradient3395" xlink:href="#linearGradient3232" gradientUnits="userSpaceOnUse" cy="515" cx="228" gradientTransform="matrix(1,0,0,-1.0723253,3.4492424e-6,1274.6482)" r="21"/>
+</defs>
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+<dc:date>2008-08-27</dc:date>
+<dc:creator>
+<cc:Agent>
+<dc:title>Casper Kejlberg-Rasmussen</dc:title>
+</cc:Agent>
+</dc:creator>
+<dc:rights>
+<cc:Agent>
+<dc:title>GPL v3</dc:title>
+</cc:Agent>
+</dc:rights>
+<cc:license rdf:resource="http://www.gnu.org/licenses/gpl-3.0.txt"/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g transform="translate(0,146.12601)" display="none">
+<path fill="#000" d="M130,0.255c-44.6-1.16-88.8,21.7-113,63.4-35,60.6-14.8,139,48.6,175,0,0,38.4-66.5,38.8-67.2-25.9-15-33.3-46-19.7-69,13.6-24.1,43.7-32.2,67.7-18.6,23.6,13.6,31.7,43.8,18.1,67.4-4.58,7.92-10.1,13.6-20.2,19.3,38.8,67.5,0.463,1.15,38.8,67.2,22.5-12.5,36.9-27.6,48.6-47.7,34-60,13-138-48-173-19-11-39-16.5-60-17zm143-0.192c-7.21,0.00001-20.7,1.3-24,2.41,2.08,4.21,4.09,13.6,4.09,19.5,0,12.7-4.85,24.6-14.8,34.3,14.9,20.9,22.7,44.9,22.7,70.6,0.00001,25.9-7.84,50.1-23,71.4,9.63,9.56,14.3,21.1,14.3,33.6,0.00001,5.89-1.01,11.6-4.06,19.4,9.97,2.12,17.3,2.53,24.8,2.53,70,0.00003,127-56.9,127-127s-57-127-127-127zm36.7,43.9c6.86,3.48,13.2,7.93,19,13.1h-8.28c-3.25-4.42-6.85-8.79-10.7-13.1zm-4.91,3.91c2.74,3.03,5.24,6.1,7.66,9.19h-4.38c-1.01-3.09-2.14-6.15-3.28-9.19zm5.16,15.4,7.16,0c2.53,3.59,4.87,7.21,6.97,10.8h-11.2c-0.878-3.64-1.85-7.25-2.91-10.8zm14.7,0,10.2,0c3.18,3.41,6.11,7.01,8.78,10.8h-12.5c-1.98-3.64-4.15-7.25-6.53-10.8zm-62.7,6.94,28.3,0,3.66,42.7-7.34,0-24.7-42.7zm52.4,10.2,13.2,0c2.43,4.78,4.59,9.58,6.28,14.4h-16.9c-0.7-4.83-1.52-9.64-2.53-14.4zm20.2,0,13.2,0c2.72,4.61,4.98,9.44,6.91,14.4h-14.4c-1.6-4.82-3.41-9.64-5.69-14.4zm-52.5,2.22-5.72,2.53,9.56,21.7,5.72-2.53-9.56-21.7zm35.6,18.4,17.9,0c2.23,7.82,3.51,15.6,3.84,23.4h-20.2c-1-7-1-15-2-23zm24.4,0,14.8,0c1.46,4.75,2.66,9.57,3.31,14.5v0.0625,0.0625c0.514,2.95,0.806,5.9,0.969,8.84h-15.5c-0.316-7.81-1.5-15.6-3.59-23.4zm-22.9,29.7,20.4,0c-0.183,8.25-1.49,16.4-3.81,24.5h-18.2c0.986-8.14,1.52-16.3,1.62-24.5zm26.6,0,15.5,0c-0.213,8.37-1.72,16.6-4.41,24.5h-14.6c2.18-8.08,3.36-16.3,3.53-24.5zm-59.2,11.9,7.34,0-3.66,42.7-28.3,0,24.7-42.7zm-0.719,5.62-9.56,21.7,5.72,2.53,9.56-21.7-5.72-2.53zm30.9,13.3,17.1,0c-1.74,4.86-3.94,9.66-6.47,14.4h-13.3c1.04-4.77,1.93-9.58,2.66-14.4zm23.6,0,14.1,0c-2.13,5-4.68,9.82-7.66,14.4h-12.3c2.36-4.73,4.24-9.55,5.88-14.4zm-27.7,20.6,11.2,0c-2.27,3.68-4.77,7.29-7.53,10.9h-6.69c1.1-3.6,2.12-7.22,3.03-10.9zm18.3,0,11.4,0c-2.95,3.86-6.2,7.49-9.69,10.9h-8.78c2.56-3.58,4.92-7.2,7.03-10.9zm-23.3,17.1,3.47,0c-1.88,2.17-3.74,4.34-5.81,6.47,0.805-2.15,1.61-4.29,2.34-6.47zm11.7,0,6.34,0c-4.69,3.76-9.71,7.12-15,9.91,3.09-3.23,5.97-6.56,8.66-9.91zm-78-196-2,0.44c-12,2.8-22,6.35-33,13.4h-0.0312l-0.281,0.188-0.719,0.5-2.62,1.72,2.56,1.84c10,7.26,19.4,16.6,27.4,26.6l1.72,2.16,1.72-2.16c9.48-12,11.8-28.7,6.16-42.8l-0.688-1.75zm-2,5.19c3.87,11.4,2.15,24.4-4.59,34.4-7.1-8.53-15.2-16.5-23.9-23.1,9-5.6,18-8.8,29-11.3zm-4.41,194-1.72,2.16c-7.99,9.94-17.4,19.3-27.4,26.5l-2.56,1.84,2.62,1.75,0.719,0.5,0.281,0.188h0.0312c10.6,6.96,21.4,10.5,33.4,13.3l1.84,0.438,0.688-1.75c5.63-14.2,3.32-30.8-6.16-42.8l-1.72-2.16zm-0.188,7.09c6.75,9.97,8.47,23,4.59,34.4-10.3-2.52-19.6-5.72-28.5-11.3,8.68-6.64,16.8-14.6,23.9-23.2z"/>
+</g>
+<g transform="translate(1.9644217,-345.80619)" display="none" stroke="#000" stroke-dasharray="none" stroke-miterlimit="4">
+<path d="m187,727-36.3-62.9c8.25-4.76,14.2-10.7,19-19,14.3-24.8,5.8-56.4-19-70.7s-56.4-5.8-70.7,19-5.8,56.4,19,70.7l-36.3,62.9c-59.7-34-80.1-111-45.8-170,34.4-60,111-80,170-46,59.5,34.4,79.9,111,45.6,170-11.5,19.8-25.7,34.1-45.6,45.6z" stroke-dashoffset="0" stroke-width="5" fill="#000"/>
+<path d="m239,690c8.39,8.87,13.5,20.8,13.5,34,0,6.19-1.14,12.1-3.22,17.6,6.99,1.22,14.2,1.88,21.5,1.88,68.7,0.00001,124-55.8,124-124,0-68.7-55.8-124-124-124-7.07,0-14,0.613-20.8,1.75,2.12,5.51,3.31,11.5,3.31,17.8-0.00001,13.4-5.34,25.6-14,34.5,13.8,20,21.9,44.3,21.9,70.5,0,26.4-8.25,50.9-22.3,71z" stroke-dashoffset="0" stroke-width="5" fill="#000"/>
+<path d="m206,511c10.3-6.77,20.8-10.2,32.7-13,5.34,13.4,3.12,29.3-5.85,40.6-8.1-10.1-17.7-19.6-27.9-27l0.727-0.487,0.282-0.189z" stroke-dashoffset="0" stroke-width="4.37643147" fill="url(#radialGradient3393)"/>
+<path d="m206,726c10.3,6.77,20.8,10.2,32.7,13,5.34-13.4,3.12-29.3-5.85-40.6-8.1,10.1-17.7,19.6-27.9,27l0.727,0.487,0.282,0.189z" stroke-dashoffset="0" stroke-width="4.37643147" fill="url(#radialGradient3395)"/>
+<path stroke-linejoin="miter" d="m295,608-11.9,0-27.8-48.2,35.6,0,4.14,48.2z" fill-rule="evenodd" stroke-linecap="butt" stroke-width="6.23664141" fill="url(#radialGradient3874)"/>
+<path stroke-linejoin="miter" d="m288,602-9.56-21.7" stroke-linecap="butt" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m295,632-11.9,0-27.8,48.2,35.6,0,4.14-48.2z" fill-rule="evenodd" stroke-linecap="butt" stroke-width="6.23664141" fill="url(#radialGradient3844-1)"/>
+<path stroke-linejoin="miter" d="m288,637-9.56,21.7" stroke-linecap="butt" stroke-width="6.23664141" fill="none"/>
+<path d="m295,528c25.7,56.8,26.3,125,0.195,182,42.3-13.1,74.3-58.2,66.5-103-4.85-36.2-31.7-69.7-67-79.8l0.351,0.78z" stroke-dashoffset="0" stroke-linecap="round" stroke-width="6.23664141" fill="url(#radialGradient3949)"/>
+<path stroke-linejoin="miter" d="m296,709c60.2-52.5,60.5-123,0.323-181" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m314,619,48.2,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m312,590,44.9,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m309,569,39.2,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m305,552,28.1,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m312,650,44.9,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m309,671,38,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m305,688,25.8,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+</g>
+<g transform="translate(1.9644217,-345.80619)" stroke="#000" stroke-miterlimit="4" stroke-dasharray="none">
+<path d="m187,652-36.3-62.9c8.25-4.76,14.2-10.7,19-19,14.3-24.8,5.8-56.4-19-70.7s-56.4-5.8-70.7,19-5.8,56.4,19,70.7l-36.5,63c-59.5-34-79.9-110-45.6-170,34.4-59,111-79,170-45,59.5,34.4,79.9,111,45.6,170-11.5,19.8-25.7,34.1-45.6,45.6z" stroke-dashoffset="0" stroke-width="5" fill="url(#radialGradient3448)"/>
+<path d="m239,615c8.39,8.87,13.5,20.8,13.5,34,0,6.19-1.14,12.1-3.22,17.6,6.99,1.22,14.2,1.88,21.5,1.88,68.7,0.00001,124-55.8,124-124,0-68.7-55.8-124-124-124-7.07,0-14,0.613-20.8,1.75,2.12,5.51,3.31,11.5,3.31,17.8-0.00001,13.4-5.34,25.6-14,34.5,13.8,20,21.9,44.3,21.9,70.5,0,26.4-8.25,50.9-22.3,71z" stroke-dashoffset="0" stroke-width="5" fill="url(#radialGradient3480)"/>
+<path d="m206,437c10.3-6.77,20.8-10.2,32.7-13,5.34,13.4,3.12,29.3-5.85,40.6-8.1-10.1-17.7-19.6-27.9-27l0.727-0.487,0.282-0.189z" stroke-dashoffset="0" stroke-width="4.37643147" fill="url(#radialGradient3488)"/>
+<path d="m295,454c25.7,56.8,26.3,125,0.195,182,42.3-13.1,74.3-58.2,66.5-103-4.85-36.2-31.7-69.7-67-79.8l0.351,0.78z" stroke-dashoffset="0" stroke-linecap="round" stroke-width="6.23664141" fill="url(#radialGradient3819)"/>
+<path stroke-linejoin="miter" d="m295,533-11.9,0-27.8-48.2,35.6,0,4.14,48.2z" fill-rule="evenodd" stroke-linecap="butt" stroke-width="6.23664141" fill="url(#radialGradient3836)"/>
+<path stroke-linejoin="miter" d="m288,528-9.56-21.7" stroke-linecap="butt" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m296,635c60.2-52.5,60.5-123,0.323-181" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m314,545,48.2,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m312,515,44.9,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m309,495,39.2,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m305,478,28.1,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m295,557-11.9,0-27.8,48.2,35.6,0,4.14-48.2z" fill-rule="evenodd" stroke-linecap="butt" stroke-width="6.23664141" fill="url(#radialGradient3844)"/>
+<path stroke-linejoin="miter" d="m288,563-9.56,21.7" stroke-linecap="butt" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m312,576,44.9,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m309,597,38,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path stroke-linejoin="miter" d="m305,614,25.8,0" stroke-linecap="round" stroke-width="6.23664141" fill="none"/>
+<path d="m206,651c10.3,6.77,20.8,10.2,32.7,13,5.34-13.4,3.12-29.3-5.85-40.6-8.1,10.1-17.7,19.6-27.9,27l0.727,0.487,0.282,0.189z" stroke-dashoffset="0" stroke-width="4.37643147" fill="url(#radialGradient2531)"/>
+</g>
+</svg>
