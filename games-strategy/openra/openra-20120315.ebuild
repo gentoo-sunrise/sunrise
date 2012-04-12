@@ -7,7 +7,7 @@ EAPI=3
 EGIT_REPO_URI="git://github.com/OpenRA/OpenRA.git"
 EGIT_COMMIT="release-${PV}"
 
-inherit eutils mono gnome2-utils games git-2
+inherit eutils mono gnome2-utils git-2 games
 
 DESCRIPTION="A Libre/Free RTS engine supporting early Westwood games like Command & Conquer and Red Alert"
 HOMEPAGE="http://open-ra.org/"
@@ -21,12 +21,16 @@ DEPEND="dev-dotnet/libgdiplus
 	dev-lang/mono
 	!games-strategy/openra-bin
 	media-libs/freetype:2[X]
-	media-libs/libsdl[X,audio,video]
+	media-libs/libsdl[X,video]
 	media-libs/openal
 	virtual/jpeg
 	virtual/opengl
 	cg? ( >=media-gfx/nvidia-cg-toolkit-2.1.0017 )"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	git-2_src_unpack
+}
 
 src_prepare() {
 	# fix a few paths and install-rules
