@@ -1,0 +1,37 @@
+--- build.xml.old	2012-04-11 10:57:22.576966498 +0200
++++ build.xml	2012-04-11 13:02:55.343075640 +0200
+@@ -27,12 +27,16 @@
+ 		
+ 		
+ 		
++	<!-- Compiles the java classes -->
++	<target name="compile" description="Compiles the java classes">
++	  <mkdir dir="bin" />
++	  <javac srcdir="src/" destdir="bin/">
++	    <classpath />
++	    <include name="**/*.java" />
++	  </javac>
++	</target>
+ 	<!-- Creates the jar -->
+-	<target name="jar" description="Generates latexdraw.jar">
+-		<!-- copies the librairies -->
+-		<copy todir="${dir.data}/lib/" overwrite="true" failonerror="true">
+-			<fileset dir="lib/" />
+-		</copy>
++	<target name="jar" description="Generates latexdraw.jar" depends="compile">
+ 		
+ 		<copy todir="${dir.out}/" overwrite="true" failonerror="true">
+ 			<fileset dir="" includes="license.txt ; history.txt ; release_note.txt ; readme.txt ; install_vista_seven.vbs ; install_debian_ubuntu"/>
+@@ -47,6 +51,12 @@
+ 		</copy>
+ 		
+ 		<chmod file="${dir.data}/install_debian_ubuntu" perm="ugo+rx" verbose="true"/>
++				<copy todir="res" overwrite="true" failonerror="true">
++		  <fileset dir="src/res" />
++		</copy>
++		<copy todir="lang" overwrite="true" failonerror="true">
++		  <fileset dir="src/lang" />
++		 </copy>
+ 		
+ 		<jar jarfile="${dir.data}/LaTeXDraw.jar" manifest="META-INF/MANIFEST.MF">
+ 			<!-- Creates the manifest -->

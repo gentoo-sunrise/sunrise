@@ -1,0 +1,41 @@
+From 8267ca8ba454af75e11b248ab74e9b680eef6e44 Mon Sep 17 00:00:00 2001
+From: arno_b <arno_b@users.sourceforge.net>
+Date: Tue, 10 Apr 2012 22:48:48 +0200
+Subject: [PATCH] fixed: the code does not compile with jdk6
+
+---
+ .../sf/latexdraw/glib/models/interfaces/IAxes.java |    3 ---
+ .../sf/latexdraw/glib/models/interfaces/IText.java |    3 ---
+ 2 files changed, 0 insertions(+), 6 deletions(-)
+
+diff --git a/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IAxes.java b/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IAxes.java
+index 84e7e07..b04be67 100644
+--- a/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IAxes.java
++++ b/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IAxes.java
+@@ -311,9 +311,6 @@ public interface IAxes extends IStandardGrid {
+ 	}
+ 
+ 
+-	@Override
+-	IAxes duplicate();
+-
+ 	/**
+ 	 * @return The X increment of the axes.
+ 	 * @since 3.0
+diff --git a/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IText.java b/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IText.java
+index 27a6556..1aba347 100644
+--- a/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IText.java
++++ b/LaTeXDraw/src/net/sf/latexdraw/glib/models/interfaces/IText.java
+@@ -210,9 +210,6 @@ public interface IText extends IPositionShape {
+ 	}
+ 
+ 
+-	@Override
+-	IText duplicate();
+-
+ 	/**
+ 	 * @return The text position of the text (bottom-right, top-left, etc.).
+ 	 * @since 3.0
+-- 
+1.7.4.1
+

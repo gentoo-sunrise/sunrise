@@ -1,0 +1,11 @@
+# ChangeLog for dev-tex/latexdraw
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*latexdraw-3.0.0_alpha3 (12 Apr 2012)
+
+  12 Apr 2012; Manuel Rüger (mrueg) gentoo@rueg.eu
+  +latexdraw-3.0.0_alpha3.ebuild, +files/latexdraw-3.0.0_alpha3-java6.patch,
+  +files/latexdraw-build.xml.patch, +metadata.xml:
+  New Ebuild for bug #403579 thanks to Tommy[D], sera and hasufell
+
