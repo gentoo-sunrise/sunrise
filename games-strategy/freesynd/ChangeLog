@@ -1,0 +1,10 @@
+# ChangeLog for games-strategy/freesynd
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*freesynd-9999 (12 Apr 2012)
+
+  12 Apr 2012; hasufell <julian.ospald@googlemail.com> +freesynd-9999.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 159251 thanks to Tommy[D]
+
