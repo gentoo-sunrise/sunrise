@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*http-parser-1.0_pre20120413 (13 Apr 2012)
+
+  13 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +files/20120413-makefile.patch, +http-parser-1.0_pre20120413.ebuild:
+  version bump
+
 *http-parser-1.0_pre20120331 (31 Mar 2012)
 
   31 Mar 2012; hasufell <julian.ospald@googlemail.com>
