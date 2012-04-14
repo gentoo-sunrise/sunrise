@@ -12,10 +12,15 @@ DESCRIPTION="A Free C++ Web Development Framework aimed for Rapid Web Applicatio
 HOMEPAGE="http://cppcms.sourceforge.net/wikipp/en/page/main"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
-LICENSE="LGPL-3"
+LICENSE="ALADDIN Boost-1.0 LGPL-3 MIT public-domain"
+#This project has LGPL-3 license, but some parts of it are distributed under other mentioned licenses,
+#for more information see THIRD_PARTY_SOFTWARE.TXT in docs directory
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cache doc examples +fcgi gcrypt +http icu +prefork_cache +scgi +tcpcache"
+
+REQUIRED_USE="prefork_cache? ( cache )
+	tcpcache? ( cache )"
 
 DEPEND="dev-libs/libpcre
 	sys-libs/zlib
@@ -50,6 +55,7 @@ src_configure() {
 
 src_install() {
 	cmake-utils_src_install
+	dodoc THIRD_PARTY_SOFTWARE.TXT
 	if use doc; then
 		dohtml -r doc/doxygen/html/*
 	fi
