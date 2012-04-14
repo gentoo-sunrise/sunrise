@@ -60,7 +60,7 @@ src_install() {
 	domenu "${FILESDIR}"/${PN}-{cnc,editor,ra}.desktop || die
 
 	#docs
-	dodoc README HACKING CHANGELOG || die
+	dodoc "${FILESDIR}"/README.gentoo README HACKING CHANGELOG || die
 
 	if use cg ; then
 		# set default renderer to cg
