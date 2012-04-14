@@ -1,0 +1,210 @@
+From: hasufell <julian.ospald@googlemail.com>
+Date: Fri Apr 13 18:57:29 UTC 2012
+Subject: build system
+
+ignore bundled 3rd party sources and assume system libs/headers instead
+fix install-rules
+
+--- Makefile
++++ Makefile
+@@ -13,16 +13,10 @@
+ CRYPTODIR=deps/luacrypto
+ 
+ PREFIX?=/usr/local
+-BINDIR?=${DESTDIR}${PREFIX}/bin
+-INCDIR?=${DESTDIR}${PREFIX}/include/luvit
+-LIBDIR?=${DESTDIR}${PREFIX}/lib/luvit
+-
+-OPENSSL_LIBS=$(shell pkg-config openssl --libs 2> /dev/null)
+-ifeq (${OPENSSL_LIBS},)
+-USE_SYSTEM_SSL?=0
+-else
+-USE_SYSTEM_SSL?=1
+-endif
++LIBDIR?=lib
++BINDIR_LUVIT?=${PREFIX}/bin
++INCDIR_LUVIT?=${PREFIX}/include/luvit
++LIBDIR_LUVIT?=${PREFIX}/${LIBDIR}/luvit
+ 
+ OS_NAME=$(shell uname -s)
+ MH_NAME=$(shell uname -m)
+@@ -45,20 +39,28 @@
+ export Q=
+ MAKEFLAGS+=-e
+ 
++CC ?= gcc
++
+ LDFLAGS+=-L${BUILDDIR}
+-LIBS += ${ZLIBDIR}/libz.a \
+-	${YAJLDIR}/yajl.a \
+-	${UVDIR}/uv.a \
+-	${LUADIR}/src/libluajit.a \
+-	-lluvit -lm -ldl -lpthread
+-ifeq (${USE_SYSTEM_SSL},1)
++LIBS += \
++	-luv \
++	-lyajl \
++	-lhttp_parser \
++	-lluacrypto \
++	-lluvit -ldl -lpthread \
++	$(shell pkg-config --libs-only-l lua) \
++	$(shell pkg-config --libs-only-l luajit) \
++	$(shell pkg-config --libs-only-l zlib) \
++	$(shell pkg-config --libs-only-l openssl)
++
++CPPFLAGS += \
++	-I${PREFIX}/include/libuv \
++	-I${PREFIX}/include/http-parser \
++	-I${PREFIX}/include/yajl
++
+ CFLAGS+=-Wall -w
+ CPPFLAGS+=$(shell pkg-config --cflags openssl)
+ LIBS+=${OPENSSL_LIBS}
+-else
+-CPPFLAGS+=-I${SSLDIR}/openssl/include
+-LIBS+=${SSLDIR}/libopenssl.a
+-endif
+ 
+ ifeq (${OS_NAME},Linux)
+ LIBS+=-lrt
+@@ -86,12 +88,6 @@
+ CPPFLAGS += -DOPENSSL_NO_SEED
+ CPPFLAGS += -DOPENSSL_NO_SOCK
+ 
+-ifeq (${MH_NAME},x86_64)
+-CPPFLAGS += -I${SSLDIR}/openssl-configs/x64
+-else
+-CPPFLAGS += -I${SSLDIR}/openssl-configs/ia32
+-endif
+-
+ LUVLIBS=${BUILDDIR}/utils.o          \
+         ${BUILDDIR}/luv_fs.o         \
+         ${BUILDDIR}/luv_dns.o        \
+@@ -117,87 +113,28 @@
+         ${BUILDDIR}/luv_zlib.o       \
+         ${BUILDDIR}/lhttp_parser.o
+ 
+-DEPS=${LUADIR}/src/libluajit.a \
+-     ${YAJLDIR}/yajl.a         \
+-     ${UVDIR}/uv.a             \
+-     ${ZLIBDIR}/libz.a         \
+-     ${HTTPDIR}/http_parser.o
+-
+-ifeq (${USE_SYSTEM_SSL},0)
+-DEPS+=${SSLDIR}/libopenssl.a
+-endif
+-
+ all: ${BUILDDIR}/luvit
+ 
+-${LUADIR}/Makefile:
+-	git submodule update --init ${LUADIR}
+-
+-${LUADIR}/src/libluajit.a: ${LUADIR}/Makefile
+-	touch -c ${LUADIR}/src/*.h
+-	$(MAKE) -C ${LUADIR}
+-
+-${YAJLDIR}/CMakeLists.txt:
+-	git submodule update --init ${YAJLDIR}
+-
+-${YAJLDIR}/Makefile: deps/Makefile.yajl ${YAJLDIR}/CMakeLists.txt
+-	cp deps/Makefile.yajl ${YAJLDIR}/Makefile
+-
+-${YAJLDIR}/yajl.a: ${YAJLDIR}/Makefile
+-	rm -rf ${YAJLDIR}/src/yajl
+-	cp -r ${YAJLDIR}/src/api ${YAJLDIR}/src/yajl
+-	$(MAKE) -C ${YAJLDIR}
+-
+-${UVDIR}/Makefile:
+-	git submodule update --init ${UVDIR}
+-
+-${UVDIR}/uv.a: ${UVDIR}/Makefile
+-	$(MAKE) -C ${UVDIR} uv.a
+-
+-${HTTPDIR}/Makefile:
+-	git submodule update --init ${HTTPDIR}
+-
+-${HTTPDIR}/http_parser.o: ${HTTPDIR}/Makefile
+-	$(MAKE) -C ${HTTPDIR} http_parser.o
+-
+-${ZLIBDIR}/zlib.gyp:
+-	git submodule update --init ${ZLIBDIR}
+-
+-${ZLIBDIR}/libz.a: ${ZLIBDIR}/zlib.gyp
+-	cd ${ZLIBDIR} && ${CC} -c *.c && \
+-	$(AR) rvs libz.a *.o
+-
+-${SSLDIR}/Makefile.openssl:
+-	git submodule update --init ${SSLDIR}
+-
+-${SSLDIR}/libopenssl.a: ${SSLDIR}/Makefile.openssl
+-	$(MAKE) -C ${SSLDIR} -f Makefile.openssl
+-
+-${BUILDDIR}/%.o: src/%.c ${DEPS}
++${BUILDDIR}/%.o: src/%.c
+ 	mkdir -p ${BUILDDIR}
+-	$(CC) ${CPPFLAGS} ${CFLAGS} --std=c89 -D_GNU_SOURCE -g -Wall -Werror -c $< -o $@ \
+-		-I${HTTPDIR} -I${UVDIR}/include -I${LUADIR}/src -I${YAJLDIR}/src/api \
+-		-I${YAJLDIR}/src -I${ZLIBDIR} -I${CRYPTODIR}/src \
++	$(CC) \
++		${CPPFLAGS} \
++		${CFLAGS} --std=c89 -D_GNU_SOURCE -g -Wall -Werror \
++		-c $< -o $@ \
+ 		-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 \
+-		-DUSE_SYSTEM_SSL=${USE_SYSTEM_SSL} \
++		-DUSE_SYSTEM_SSL=1 \
+ 		-DHTTP_VERSION=\"${HTTP_VERSION}\" \
+ 		-DUV_VERSION=\"${UV_VERSION}\" \
+ 		-DYAJL_VERSIONISH=\"${YAJL_VERSION}\" \
+ 		-DLUVIT_VERSION=\"${VERSION}\" \
+ 		-DLUAJIT_VERSION=\"${LUAJIT_VERSION}\"
+ 
+-${BUILDDIR}/libluvit.a: ${CRYPTODIR}/Makefile ${LUVLIBS} ${DEPS}
+-	$(AR) rvs ${BUILDDIR}/libluvit.a ${LUVLIBS} ${DEPS}
+-
+-${CRYPTODIR}/Makefile:
+-	git submodule update --init ${CRYPTODIR}
+-
+-${CRYPTODIR}/src/lcrypto.o: ${CRYPTODIR}/Makefile
+-	${CC} ${CPPFLAGS} -c -o ${CRYPTODIR}/src/lcrypto.o -I${CRYPTODIR}/src/ \
+-		 -I${LUADIR}/src/ ${CRYPTODIR}/src/lcrypto.c
++${BUILDDIR}/libluvit.a: ${LUVLIBS}
++	$(AR) rvs ${BUILDDIR}/libluvit.a ${LUVLIBS}
+ 
+-${BUILDDIR}/luvit: ${BUILDDIR}/libluvit.a ${BUILDDIR}/luvit_main.o ${CRYPTODIR}/src/lcrypto.o
++${BUILDDIR}/luvit: ${BUILDDIR}/libluvit.a ${BUILDDIR}/luvit_main.o
+ 	$(CC) ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -g -o ${BUILDDIR}/luvit ${BUILDDIR}/luvit_main.o ${BUILDDIR}/libluvit.a \
+-		${CRYPTODIR}/src/lcrypto.o ${LIBS}
++		${LIBS}
+ 
+ clean:
+ 	${MAKE} -C ${LUADIR} clean
+@@ -209,21 +146,14 @@
+ 	rm -rf build bundle
+ 
+ install: all
+-	mkdir -p ${BINDIR}
+-	install ${BUILDDIR}/luvit ${BINDIR}/luvit
+-	mkdir -p ${LIBDIR}
+-	cp lib/luvit/*.lua ${LIBDIR}
+-	mkdir -p ${INCDIR}/luajit
+-	cp ${LUADIR}/src/lua.h ${INCDIR}/luajit/
+-	cp ${LUADIR}/src/lauxlib.h ${INCDIR}/luajit/
+-	cp ${LUADIR}/src/luaconf.h ${INCDIR}/luajit/
+-	cp ${LUADIR}/src/luajit.h ${INCDIR}/luajit/
+-	cp ${LUADIR}/src/lualib.h ${INCDIR}/luajit/
+-	mkdir -p ${INCDIR}/http_parser
+-	cp ${HTTPDIR}/http_parser.h ${INCDIR}/http_parser/
+-	mkdir -p ${INCDIR}/uv
+-	cp -r ${UVDIR}/include/* ${INCDIR}/uv/
+-	cp src/*.h ${INCDIR}/
++	install -d ${DESTDIR}${BINDIR_LUVIT}
++	install -m755 ${BUILDDIR}/luvit ${DESTDIR}${BINDIR_LUVIT}/luvit
++	install -d ${DESTDIR}${LIBDIR_LUVIT}
++	for i in `ls lib/luvit`; do \
++		install -Dm644 lib/luvit/$$i ${DESTDIR}${LIBDIR_LUVIT}/$$i; done
++	install -d ${DESTDIR}${INCDIR_LUVIT}/luajit
++	for i in `ls src/*.h`; do \
++		install -Dm644 $$i ${DESTDIR}${INCDIR_LUVIT}/$$(basename $$i); done
+ 
+ bundle: build/luvit ${BUILDDIR}/libluvit.a
+ 	build/luvit tools/bundler.lua
