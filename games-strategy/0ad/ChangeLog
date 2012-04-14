@@ -1,0 +1,12 @@
+# ChangeLog for games-strategy/0ad
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*0ad-99999 (14 Apr 2012)
+*0ad-11339_alpha9 (14 Apr 2012)
+
+  14 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +files/11339_alpha9-fcollada-makefile.patch, +0ad-11339_alpha9.ebuild,
+  +0ad-99999.ebuild, +metadata.xml:
+  New Ebuild for bug 278541 thanks to mgorny and binki
+
