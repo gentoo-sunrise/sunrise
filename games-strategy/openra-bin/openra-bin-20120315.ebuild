@@ -36,7 +36,8 @@ src_prepare() {
 
 src_install() {
 	# docs
-	dodoc usr/share/${MY_PN}/{CHANGELOG,HACKING} || die
+	dodoc "${FILESDIR}"/README.gentoo \
+		usr/share/${MY_PN}/{CHANGELOG,HACKING} || die
 	rm usr/share/${MY_PN}/{CHANGELOG,HACKING} || die
 
 	# data files
