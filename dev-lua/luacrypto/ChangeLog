@@ -1,0 +1,11 @@
+# ChangeLog for dev-lua/luacrypto
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*luacrypto-0.3.0_p20120413 (14 Apr 2012)
+
+  14 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +files/20120413-makefile.patch, +luacrypto-0.3.0_p20120413.ebuild,
+  +metadata.xml:
+  New Ebuild for bug 412015
+
