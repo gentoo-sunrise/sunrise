@@ -1,0 +1,10 @@
+# ChangeLog for dev-util/peg
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*peg-0.1.8 (14 Apr 2012)
+
+  14 Apr 2012; Jauhien Piatlicki (jauhien) piatlicki@gmail.com
+  +peg-0.1.8.ebuild, +files/peg-0.1.8-Makefile.patch, +metadata.xml:
+  New ebuild for bug #411515 thanks to hasufell and mgorny
+

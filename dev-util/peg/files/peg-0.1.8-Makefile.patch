@@ -1,0 +1,53 @@
+--- Makefile
++++ Makefile
+@@ -1,28 +1,36 @@
+-CFLAGS = -g -Wall $(OFLAGS) $(XFLAGS)
+-OFLAGS = -O3 -DNDEBUG
+-#OFLAGS = -pg
++CC ?= gcc
++CFLAGS += -Wall
++
++DEBUG ?= 0
++
++ifeq ($(DEBUG), 1)
++CFLAGS += -g -DDEBUG
++else
++CFLAGS += -DNDEBUG
++endif
+ 
+ OBJS = tree.o compile.o
+ 
+ all : peg leg
+ 
+ peg : peg.o $(OBJS)
+-	$(CC) $(CFLAGS) -o $@-new peg.o $(OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@-new peg.o $(OBJS)
+ 	mv $@-new $@
+ 
+ leg : leg.o $(OBJS)
+-	$(CC) $(CFLAGS) -o $@-new leg.o $(OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@-new leg.o $(OBJS)
+ 	mv $@-new $@
+ 
+-ROOT	=
+-PREFIX	= /usr/local
+-BINDIR	= $(ROOT)$(PREFIX)/bin
+-
+-install : $(BINDIR)/peg $(BINDIR)/leg
+-
+-$(BINDIR)/% : %
+-	cp -p $< $@
+-	strip $@
++PREFIX	?= /usr/local
++BINDIR	?= $(PREFIX)/bin
++
++INSTALL ?= install
++INSTALL_PROG ?= $(INSTALL) -m755
++
++install : all
++	$(INSTALL) -d $(BINDIR)
++	$(INSTALL_PROG) peg $(BINDIR)/peg
++	$(INSTALL_PROG) leg $(BINDIR)/leg
+ 
+ uninstall : .FORCE
+ 	rm -f $(BINDIR)/peg
