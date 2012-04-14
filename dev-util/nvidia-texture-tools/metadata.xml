@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
+	<use>
+		<flag name="cg">Use NVIDIA toolkit plugin</flag>
+		<flag name="cuda">Use nvidia cuda toolkit</flag>
+		<flag name="glew">Enable glew extensions</flag>
+	</use>
+</pkgmetadata>
+
