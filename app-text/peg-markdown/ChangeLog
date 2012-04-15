@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Apr 2012; Jauhien Piatlicki (jauhien) piatlicki@gmail.com
+  files/peg-markdown-0.4.12-Makefile.patch:
+  Makefile.patch was changed a little: not used variables removed (they were
+  there by error)
+
 *peg-markdown-0.4.12 (14 Apr 2012)
 
   14 Apr 2012; Jauhien Piatlicki (jauhien) piatlicki@gmail.com
