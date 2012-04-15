@@ -13,7 +13,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}-1.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cg cuda glew glut openexr static"
+IUSE="cg cuda glew glut openexr static-libs"
 
 DEPEND="media-libs/libpng:0
 	media-libs/ilmbase
@@ -49,7 +49,7 @@ src_configure() {
 		$(cmake-utils_use glew GLEW)
 		$(cmake-utils_use glut GLUT)
 		$(cmake-utils_use openexr OPENEXR)
-		$(cmake-utils_use !static NVTT_SHARED)
+		$(cmake-utils_use !static-libs NVTT_SHARED)
 		)
 
 	cmake-utils_src_configure
