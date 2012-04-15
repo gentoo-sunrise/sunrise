@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-USE_RUBY="ruby18"
 EAPI="2"
+USE_RUBY="ruby18"
 inherit gems
 
 DESCRIPTION="Git Library for Ruby"
