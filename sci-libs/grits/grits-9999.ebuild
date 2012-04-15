@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=4
 EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/grits"
 EGIT_BOOTSTRAP="gtkdocize && eautoreconf"
 
-EAPI=4
 inherit autotools gnome2 git-2
 
 DESCRIPTION="Virtual Globe library"
