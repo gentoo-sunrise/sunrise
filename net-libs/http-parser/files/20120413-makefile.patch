@@ -1,7 +1,6 @@
 From: Julian Ospald <julian.ospald@googlemail.com>
 Date: Fri Apr 13 18:44:35 UTC 2012
 
-fix "QA Notice: The following shared libraries lack a SONAME"
 respect LDFLAGS and CFLAGS
 
 --- Makefile
@@ -11,7 +10,7 @@ respect LDFLAGS and CFLAGS
  
  library: libhttp_parser.o
 -	$(CC) -shared -o libhttp_parser.so libhttp_parser.o
-+	$(CC) $(CFLAGS) $(LDFLAGS) -Wl,-soname,libhttp_parser.so -shared -o libhttp_parser.so libhttp_parser.o
++	$(CC) $(CFLAGS) $(LDFLAGS) -shared -o libhttp_parser.so libhttp_parser.o
  
  package: http_parser.o
  	$(AR) rcs libhttp_parser.a http_parser.o
