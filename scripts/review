@@ -120,7 +120,7 @@ scripts/portdupe
 eend $?
 
 if [[ "$opt_quiet" == "0" ]] ; then
-	git diff master reviewed/master
+	git diff reviewed/master master
 fi
 ) | if [[ "$opt_quiet" == "0" ]] ; then less; else cat; fi
 
