@@ -13,7 +13,7 @@ HOMEPAGE="http://opendungeons.sourceforge.net"
 EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
 EGIT_BRANCH="development"
 
-LICENSE="GPL-2 CCPL-Attribution-ShareAlike-3.0"
+LICENSE="GPL-3 CCPL-Attribution-ShareAlike-3.0"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
