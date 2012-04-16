@@ -1,0 +1,10 @@
+# ChangeLog for dev-cpp/mpfrc++
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*mpfrc++-20120116 (16 Apr 2012)
+
+  16 Apr 2012; Jauhien Piatlicki (jauhien) piatlicki@gmail.com
+  +mpfrc++-20120116.ebuild, +files/Makefile, +metadata.xml:
+  New ebuild for bug #412249 thanks to hasufell and floppym
+
