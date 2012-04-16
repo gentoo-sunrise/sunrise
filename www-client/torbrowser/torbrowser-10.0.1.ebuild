@@ -25,7 +25,7 @@ HOMEPAGE="https://www.torproject.org/projects/torbrowser.html.en"
 # may work on other arches, but untested
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-# BSD license applies to torproject-related code like the patches 
+# BSD license applies to torproject-related code like the patches
 # GPL-2 and MIT applies to the extensions
 # icons are under CCPL-Attribution-3.0
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )

@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Apr 2012; Mike Gilbert <floppym@gentoo.org> torbrowser-10.0.1.ebuild:
+  Whitespace
+
   28 Mar 2012; Nathan Phillip Brink <binki@gentoo.org> torbrowser-11.0.ebuild:
   Update RDEPEND and DEPEND to better match that from
   www-browser/firefox-11.0-r1.
