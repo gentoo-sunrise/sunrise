@@ -1,6 +1,10 @@
-# ChangeLog for games-rpg/dwarf-fortress
+# ChangeLog for games-roguelike/dwarf-fortress
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Apr 2012; Mike Gilbert <floppym@gentoo.org> dwarf-fortress-0.34.05.ebuild,
+  dwarf-fortress-9999.ebuild:
+  Whitespace
 
   15 Mar 2012; hasufell <julian.ospald@googlemail.com>
   dwarf-fortress-0.34.05.ebuild:

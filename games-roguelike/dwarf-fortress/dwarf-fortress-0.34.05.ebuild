@@ -71,7 +71,7 @@ src_install() {
 	# install docs
 	dodoc README.linux *.txt || die
 
-	# create symlinks for several directories we want to have 
+	# create symlinks for several directories we want to have
 	# in a different place
 	dosym "${GAMES_SYSCONFDIR}"/${PN} "${gamesdir}"/data/init || die
 	dosym "${GAMES_STATEDIR}"/${PN}/save "${gamesdir}"/data/save || die
