@@ -8,7 +8,7 @@ inherit eutils multilib toolchain-funcs
 
 DESCRIPTION="Lua Crypto Library"
 HOMEPAGE="https://github.com/LuaDist/luacrypto"
-SRC_URI="https://github.com/downloads/hasufell/tinkerbox/${P}.tar.gz"
+SRC_URI="mirror://github/hasufell/tinkerbox/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

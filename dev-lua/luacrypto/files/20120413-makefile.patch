@@ -37,7 +37,7 @@ Subject: build system
 +CC ?= gcc
 +CFLAGS += -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings
 +CPPFLAGS += $(OPENSSL_CPPFLAGS) $(LUA_CPPFLAGS)
-+LDFLAGS += -shared -Wl,-soname,${LIBNAME}
++LDFLAGS += -shared
 +LIBS += $(OPENSSL_LIBS)
 --- Makefile
 +++ Makefile
