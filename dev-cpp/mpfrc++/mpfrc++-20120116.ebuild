@@ -8,7 +8,7 @@ inherit multilib toolchain-funcs vcs-snapshot
 
 DESCRIPTION="High-performance C++ interface for MPFR library"
 HOMEPAGE="http://www.holoborodko.com/pavel/mpfr/"
-SRC_URI="https://bitbucket.org/advanpix/nika/get/88fa1ed2a7a5.tar.gz -> ${P}.tar.gz"
+SRC_URI="http://github.com/downloads/jauhien/sources/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
