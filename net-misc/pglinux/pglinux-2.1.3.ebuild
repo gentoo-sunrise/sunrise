@@ -69,7 +69,7 @@ src_install() {
 	newman docs/pgld.1 pglinux.1
 	dosym pglinux.1 /usr/share/man/man1/pgl.1
 
-	# optional networkmanager support 
+	# optional networkmanager support
 	if ! use networkmanager ; then
 		rm -r "${D}"/etc/NetworkManager || die
 	fi
