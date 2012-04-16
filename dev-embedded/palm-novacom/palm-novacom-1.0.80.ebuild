@@ -20,7 +20,7 @@ LICENSE="PalmSDK"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 -*"
 IUSE=""
-# May not be necessary. 
+# May not be necessary.
 RESTRICT="mirror"
 
 RDEPEND="virtual/libusb:0"
