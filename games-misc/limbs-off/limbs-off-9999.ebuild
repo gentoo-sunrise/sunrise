@@ -29,5 +29,5 @@ src_prepare() {
 
 src_install() {
 	default
-	dodoc HACKING
+	dodoc HACKING TODO
 }
