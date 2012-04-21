@@ -13,7 +13,7 @@ SRC_URI="http://ftp.digitalmars.com/${PN}.${PV}.zip"
 # DMD supports amd64/x86 exclusively
 KEYWORDS="-* ~amd64 ~x86"
 SLOT="2"
-IUSE="multilib doc examples"
+IUSE="multilib doc examples tools"
 
 # License doesn't allow redistribution
 LICENSE="DMD"
@@ -32,7 +32,9 @@ rdos2unix() {
 src_prepare() {
 	cd .. || die
 
-	rm -r osx linux windows freebsd README.TXT || die "Failed to remove included binaries"
+	rm -r README.TXT windows freebsd osx linux/{lib32,lib64} \
+	linux/{bin32,bin64}/{README.TXT,dmd,dmd.conf} \
+	|| die "Failed to remove included binaries"
 
 	# convert line-endings of file-types that start as cr-lf and are
 	# patched or installed later on
@@ -43,6 +45,11 @@ src_prepare() {
 
 	# misc patches for the build process
 	epatch "${FILESDIR}/${P}-makefile.patch"
+	epatch "${FILESDIR}/${PV}-issue-7907.patch"
+	epatch "${FILESDIR}/${PV}-issue-7911.patch"
+	epatch "${FILESDIR}/${PV}-issue-7922.patch"
+	epatch "${FILESDIR}/${PV}-std-path-sep-deprecation.patch"
+	epatch "${FILESDIR}/${PV}-outOfMemoryError-undeprecation.patch"
 }
 
 src_compile() {
@@ -90,7 +97,7 @@ src_install() {
 	cd "dmd" || die
 	cat > dmd.conf << EOF
 [Environment]
-DFLAGS=-I/usr/include/phobos2 -I/usr/include/druntime -L-L--no-warn-search-mismatch -L--export-dynamic -L-lrt
+DFLAGS=-I/usr/include/phobos2 -I/usr/include/druntime -L--no-warn-search-mismatch -L--export-dynamic -L-lrt
 EOF
 	insinto /etc
 	doins dmd.conf
@@ -106,6 +113,20 @@ EOF
 
 	use doc && dohtml -r ../html/*
 
+	if use tools; then
+		doman ../man/man1/dumpobj.1
+		doman ../man/man1/obj2asm.1
+		doman ../man/man1/rdmd.1
+
+		# Bundled pre-compiled tools
+		if use amd64; then
+			dobin ../linux/bin64/{dumpobj,obj2asm,rdmd}
+		fi
+		if use x86; then
+			dobin ../linux/bin32/{dumpobj,obj2asm,rdmd}
+		fi
+	fi
+
 	docompress -x /usr/share/doc/${PF}/samples/
 	insinto /usr/share/doc/${PF}/samples/
 	if use examples; then
@@ -114,18 +135,18 @@ EOF
 
 	# druntime & Phobos
 	if use amd64; then
-		dolib.a "druntime/lib64/libdruntime.a"
-		dolib.a "phobos/generated/linux/release64/libphobos2.a"
+		newlib.a "druntime/lib/libdruntime-linux64.a" "libdruntime.a"
+		dolib.a "phobos/generated/linux/release/64/libphobos2.a"
 	fi
 	if use x86 || (use amd64 && use multilib); then
 		use amd64 && multilib_toolchain_setup x86
-		dolib.a "druntime/lib32/libdruntime.a"
-		dolib.a "phobos/generated/linux/release32/libphobos2.a"
+		newlib.a "druntime/lib/libdruntime-linux32.a" "libdruntime.a"
+		dolib.a "phobos/generated/linux/release/32/libphobos2.a"
 		# TODO: restore target architecture
 	fi
 
 	# cleanup builds
-	rm -r "druntime/obj"* "druntime/lib"* || die
+	rm -r "druntime/obj" "druntime/lib" || die
 	rm -r "phobos/generated" || die
 
 	# remove files that are not required
