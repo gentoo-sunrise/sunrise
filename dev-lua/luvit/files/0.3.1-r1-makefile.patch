@@ -45,17 +45,17 @@ fix install-rules
 +	-luv \
 +	-lyajl \
 +	-lhttp_parser \
-+	-lluacrypto \
 +	-lluvit -ldl -lpthread \
++	$(shell pkg-config --libs luacrypto) \
 +	$(shell pkg-config --libs-only-l lua) \
 +	$(shell pkg-config --libs-only-l luajit) \
 +	$(shell pkg-config --libs-only-l zlib) \
 +	$(shell pkg-config --libs-only-l openssl)
 +
 +CPPFLAGS += \
-+	-I${PREFIX}/include/libuv \
 +	-I${PREFIX}/include/http-parser \
-+	-I${PREFIX}/include/yajl
++	-I${PREFIX}/include/yajl \
++	$(shell pkg-config --cflags luacrypto)
 +
  CFLAGS+=-Wall -w
  CPPFLAGS+=$(shell pkg-config --cflags openssl)
@@ -160,16 +160,16 @@ fix install-rules
  
 -${BUILDDIR}/libluvit.a: ${CRYPTODIR}/Makefile ${LUVLIBS} ${DEPS}
 -	$(AR) rvs ${BUILDDIR}/libluvit.a ${LUVLIBS} ${DEPS}
--
++${BUILDDIR}/libluvit.a: ${LUVLIBS}
++	$(AR) rvs ${BUILDDIR}/libluvit.a ${LUVLIBS}
+ 
 -${CRYPTODIR}/Makefile:
 -	git submodule update --init ${CRYPTODIR}
 -
 -${CRYPTODIR}/src/lcrypto.o: ${CRYPTODIR}/Makefile
 -	${CC} ${CPPFLAGS} -c -o ${CRYPTODIR}/src/lcrypto.o -I${CRYPTODIR}/src/ \
 -		 -I${LUADIR}/src/ ${CRYPTODIR}/src/lcrypto.c
-+${BUILDDIR}/libluvit.a: ${LUVLIBS}
-+	$(AR) rvs ${BUILDDIR}/libluvit.a ${LUVLIBS}
- 
+-
 -${BUILDDIR}/luvit: ${BUILDDIR}/libluvit.a ${BUILDDIR}/luvit_main.o ${CRYPTODIR}/src/lcrypto.o
 +${BUILDDIR}/luvit: ${BUILDDIR}/libluvit.a ${BUILDDIR}/luvit_main.o
  	$(CC) ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -g -o ${BUILDDIR}/luvit ${BUILDDIR}/luvit_main.o ${BUILDDIR}/libluvit.a \

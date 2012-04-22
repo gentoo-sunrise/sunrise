@@ -22,19 +22,20 @@ RESTRICT="test"
 RDEPEND="dev-lang/luajit:2
 	dev-libs/openssl:0
 	>=dev-libs/yajl-2.0.2
-	dev-lua/luacrypto
+	>=dev-lua/luacrypto-0.3.1
 	net-libs/http-parser
-	dev-libs/libuv
+	=dev-libs/libuv-0.7.6_p20120404
 	sys-libs/zlib"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PV}-makefile.patch
+	epatch "${FILESDIR}"/${PVR}-makefile.patch
 
 	sed \
 		-e "s:^YAJL_VERSION=.*:YAJL_VERSION=$(pkg-config --modversion yajl):" \
 		-e "s:^LUAJIT_VERSION=.*:LUAJIT_VERSION=$(pkg-config --modversion luajit):" \
+		-e "s:^UV_VERSION=.*:UV_VERSION=0.7.6_p20120404:" \
 		-i Makefile || die "sed failed"
 }
 

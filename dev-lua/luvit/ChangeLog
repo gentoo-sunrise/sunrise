@@ -2,6 +2,14 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*luvit-0.3.1-r1 (22 Apr 2012)
+
+  22 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +files/0.3.1-r1-makefile.patch, -files/0.2.0-includes.patch,
+  -files/0.2.0-makefile.patch, -files/0.3.1-makefile.patch,
+  -luvit-0.2.0.ebuild, -luvit-0.3.1.ebuild, +luvit-0.3.1-r1.ebuild:
+  revbump because deps changed, remove old
+
 *luvit-0.3.1 (14 Apr 2012)
 
   14 Apr 2012; hasufell <julian.ospald@googlemail.com>
