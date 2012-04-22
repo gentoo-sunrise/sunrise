@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit multilib toolchain-funcs
+inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="A new platform layer for Node"
 HOMEPAGE="https://github.com/joyent/libuv"
@@ -17,11 +17,12 @@ IUSE=""
 
 src_compile() {
 	tc-export CC AR
+	append-flags -fno-strict-aliasing
 	emake
 }
 
 src_install() {
-	insinto /usr/include/${PN}
+	insinto /usr/include
 	doins -r include/*
 	newlib.a uv.a ${PN}.a
 

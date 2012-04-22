@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*libuv-0.7.6_p20120404 (22 Apr 2012)
+
+  22 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  -libuv-0_pre20120331.ebuild, +libuv-0.7.6_p20120404.ebuild:
+  relocate headers as requested per bug 410337, remove old
+
 *libuv-0_pre20120331 (31 Mar 2012)
 
   31 Mar 2012; hasufell <julian.ospald@googlemail.com>
