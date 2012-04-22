@@ -1,0 +1,10 @@
+# ChangeLog for x11-plugins/pidgin-window_merge
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*pidgin-window_merge-0.2_p20120420 (22 Apr 2012)
+
+  22 Apr 2012; Manuel Rüger (mrueg) gentoo@rueg.eu
+  +pidgin-window_merge-0.2_p20120420.ebuild, +metadata.xml:
+  New Ebuild for bug #412149 thanks to hasufell and floppym
+
