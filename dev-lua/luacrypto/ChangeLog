@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*luacrypto-0.3.1_p20120320 (22 Apr 2012)
+
+  22 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  -files/20120413-makefile.patch, -luacrypto-0.3.0_p20120413.ebuild,
+  +luacrypto-0.3.1_p20120320.ebuild:
+  version bump, new build system upstream, remove old
+
   16 Apr 2012; hasufell <julian.ospald@googlemail.com>
   files/20120413-makefile.patch, luacrypto-0.3.0_p20120413.ebuild:
   update SRC_URI, makefile fix
