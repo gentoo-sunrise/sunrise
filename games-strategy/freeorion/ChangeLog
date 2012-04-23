@@ -1,0 +1,10 @@
+# ChangeLog for games-strategy/freeorion
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*freeorion-0.3.17_p4823 (23 Apr 2012)
+
+  23 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +freeorion-0.3.17_p4823.ebuild, +metadata.xml:
+  New Ebuild for bug 402019 thanks to all
+
