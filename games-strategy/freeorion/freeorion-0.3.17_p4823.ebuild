@@ -22,7 +22,7 @@ IUSE="cg"
 RDEPEND="
 	dev-games/gigi[ogre,ois]
 	dev-games/ogre[cg?,opengl]
-	>=dev-libs/boost-1.47
+	>=dev-libs/boost-1.47[python]
 	media-libs/freealut
 	media-libs/libogg
 	media-libs/libsdl[X,opengl,video]
