@@ -80,6 +80,10 @@ dev-db/cppdb:sqlite_internal - Don't build a separate sqlite3 loadable module bu
 dev-db/dabo:ide - Enable dabo IDE
 dev-db/soci:boost - Enable boost support
 dev-db/soci:empty - Build the sample backend called Empty
+dev-games/gigi:devil - Use DevIL instead of libpng/libjpeg/libtiff
+dev-games/gigi:eve - Add experimental eve support
+dev-games/gigi:ogre - Add support for dev-games/ogre
+dev-games/gigi:ois - Add support for dev-games/ois
 dev-games/opal:double-precision - More precise calculations at the expense of speed
 dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
@@ -166,6 +170,7 @@ games-rpg/sumwars:stl - Compile with TIXML_USE_STL support in dev-libs/tinyxml.
 games-rpg/sumwars:tools - Compile with additional game tools like content editor.
 games-strategy/0ad:audio - Audio support
 games-strategy/0ad:editor - Include Atlas scenario editor projects
+games-strategy/freeorion:cg - Add support for NVIDIA toolkit plugin
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-strategy/openra:cg - NVIDIA toolkit plugin
