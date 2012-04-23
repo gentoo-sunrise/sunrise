@@ -2,6 +2,14 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*nvidia-texture-tools-2.0.8-r1 (23 Apr 2012)
+
+  23 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  -nvidia-texture-tools-2.0.8.ebuild, +nvidia-texture-tools-2.0.8-r1.ebuild,
+  -files/nvidia-texture-tools-2.0.8-cmake.patch,
+  +files/nvidia-texture-tools-2.0.8-r1-cmake.patch:
+  revbump fixes not installed headers, add check for gcc-version
+
   15 Apr 2012; hasufell <julian.ospald@googlemail.com>
   nvidia-texture-tools-2.0.8.ebuild:
   correct static to static-libs

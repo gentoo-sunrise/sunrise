@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit cmake-utils eutils multilib
+inherit cmake-utils eutils multilib toolchain-funcs
 
 DESCRIPTION="A set of cuda-enabled texture tools and compressors"
 HOMEPAGE="http://developer.nvidia.com/object/texture_tools.html"
@@ -32,13 +32,22 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 
+pkg_setup() {
+	if use cuda; then
+		if [[ $(( $(gcc-major-version) * 10 + $(gcc-minor-version) )) -gt 44 ]] ; then
+			eerror "gcc 4.5 and up are not supported for useflag cuda!"
+			die "gcc 4.5 and up are not supported for useflag cuda!"
+		fi
+	fi
+}
+
 src_prepare() {
 	epatch "${FILESDIR}"/gcc4.4.4-aliasing.patch \
 		"${FILESDIR}"/libpng1.5-build.patch \
 		"${FILESDIR}"/valgrind.patch \
 		"${FILESDIR}"/cuda.patch \
 		"${FILESDIR}"/libtiff4.patch \
-		"${FILESDIR}"/${P}-cmake.patch
+		"${FILESDIR}"/${PF}-cmake.patch
 }
 
 src_configure() {
