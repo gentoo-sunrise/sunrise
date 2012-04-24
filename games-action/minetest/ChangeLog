@@ -2,6 +2,18 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*minetest-0.4_pre20120408 (24 Apr 2012)
+
+  24 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  -minetest-0.4_pre20120320.ebuild, +minetest-0.4_pre20120408.ebuild,
+  -files/minetest-0.4_pre20120320-cmake.patch,
+  -files/minetest-0.4_pre20120320-sharepath.patch,
+  +files/minetest-0.4_pre20120408-cmake.patch,
+  +files/minetest-0.4_pre20120408-jthread.patch,
+  +files/minetest-0.4_pre20120408-lua.patch,
+  +files/minetest-0.4_pre20120408-sharepath.patch:
+  version bump, use system headers
+
 *minetest-0.4_pre20120320 (03 Apr 2012)
 
   03 Apr 2012; hasufell <julian.ospald@googlemail.com>

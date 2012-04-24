@@ -4,37 +4,44 @@
 
 EAPI=3
 
-inherit eutils cmake-utils games
+inherit eutils cmake-utils git-2 games
 
-DESCRIPTION="Building single/multiplayer game"
+DESCRIPTION="Building single/multiplayer game (engine)"
 HOMEPAGE="http://c55.me/minetest/"
-SRC_URI="https://github.com/celeron55/${PN}/tarball/${PV%_pre*}.dev-${PV#*_pre} ->
-	${PF}.tar.gz"
+EGIT_REPO_URI="git://github.com/celeron55/${PN}.git"
+EGIT_COMMIT="${PV%_pre*}.dev-${PV#*_pre}"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2 CCPL-Attribution-ShareAlike-3.0"
 SLOT="0"
 
 KEYWORDS="~amd64 ~x86"
 IUSE="+client nls +server"
 
-DEPEND="app-arch/bzip2
+RDEPEND="app-arch/bzip2
 	dev-db/sqlite:3
-	>=dev-games/irrlicht-1.7
+	dev-lang/lua
 	>=dev-libs/jthread-1.2
-	media-libs/libpng
+	media-libs/libpng:0
+	media-libs/libvorbis
 	sys-libs/zlib
 	x11-libs/libX11
 	x11-libs/libXxf86vm
 	virtual/jpeg
 	virtual/opengl
-	nls? ( sys-devel/gettext )"
-RDEPEND="${DEPEND}"
+	nls? ( virtual/libintl )
+	"
+DEPEND="${RDEPEND}
+	>=dev-games/irrlicht-1.7
+	nls? ( sys-devel/gettext )
+	"
 
-S=${WORKDIR}/celeron55-${PN}-94f1ab4
+src_unpack() {
+	git-2_src_unpack
+}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-cmake.patch \
-		"${FILESDIR}"/${P}-sharepath.patch
+	epatch "${FILESDIR}"/${P}-{cmake,jthread,lua,sharepath}.patch
+	rm -r src/{jthread,lua,sqlite} || die
 }
 
 src_configure() {
@@ -44,7 +51,7 @@ src_configure() {
 		-DBINDIR="${GAMES_BINDIR}"
 		$(cmake-utils_use_build client CLIENT)
 		$(cmake-utils_use_build server SERVER)
-		$(cmake-utils_use_use nls GETTEXT)
+		$(cmake-utils_use_enable nls GETTEXT)
 		)
 
 	cmake-utils_src_configure
