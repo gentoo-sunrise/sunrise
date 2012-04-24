@@ -10,6 +10,7 @@ DESCRIPTION="Gratis Free Software fighting game"
 HOMEPAGE="http://plaimi.net/games/"
 EGIT_REPO_URI="https://github.com/stiell/${PN}.git
     git://github.com/stiell/${PN}.git"
+EGIT_COMMIT="5cb4434e89e945d215e1f9b12ffc6e998c3367e5"
 
 LICENSE="GPL-3"
 SLOT="0"

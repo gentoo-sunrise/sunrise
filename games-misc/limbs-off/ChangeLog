@@ -2,13 +2,15 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*limbs-off-1.0_alpha1 (24 Apr 2012)
+
+  24 Apr 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
+  +limbs-off-1.0_alpha1.ebuild, limbs-off-9999.ebuild:
+  Add alpha1 and fix various issues with 9999
+
   19 Apr 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
   limbs-off-9999.ebuild:
   Add dodoc TODO
-
-  26 Mar 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
-  limbs-off-9999.ebuild:
-  Uppercase f in Free Software
 
   26 Mar 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
   limbs-off-9999.ebuild:
