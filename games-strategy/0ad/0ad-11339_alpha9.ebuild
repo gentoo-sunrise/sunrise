@@ -47,7 +47,9 @@ S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	# respect flags for 3rd party fcollada
-	epatch "${FILESDIR}"/11339_alpha9-fcollada-makefile.patch
+	# fix test-phase
+	epatch "${FILESDIR}"/11339_alpha9-fcollada-makefile.patch \
+		"${FILESDIR}"/11339_alpha9-test.patch
 }
 
 src_configure() {

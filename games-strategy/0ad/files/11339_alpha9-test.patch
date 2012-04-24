@@ -1,0 +1,46 @@
+upstream patch: http://trac.wildfiregames.com/changeset/11661
+
+Build test executable with same linker settings as game executable,
+to fix --without-fam
+
+--- build/premake/premake4.lua
++++ build/premake/premake4.lua
+@@ -1167,13 +1167,20 @@
+ 
+ 		project_add_manifest()
+ 
+-	elseif os.is("linux") or os.is ("bsd") then
+-
+-		links {
+-			"fam",
+-			-- Utilities
+-			"rt",
+-		}
++	elseif os.is("linux") or os.is("bsd") then
++
++		if not _OPTIONS["without-fam"] then
++			links { "fam" }
++		end
++
++		if not _OPTIONS["android"] then
++			links { "rt" }
++		end
++
++		if _OPTIONS["android"] then
++			-- NDK's STANDALONE-TOOLCHAIN.html says this is required
++			linkoptions { "-Wl,--fix-cortex-a8" }
++		end
+ 
+ 		if os.is("linux") then
+ 			links {
+@@ -1189,7 +1196,9 @@
+ 
+ 		-- Threading support
+ 		buildoptions { "-pthread" }
+-		linkoptions { "-pthread" }
++		if not _OPTIONS["android"] then
++			linkoptions { "-pthread" }
++		end
+ 
+ 		-- For debug_resolve_symbol
+ 		configuration "Debug"
