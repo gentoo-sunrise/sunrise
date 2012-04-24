@@ -85,12 +85,8 @@ src_compile() {
 }
 
 src_test() {
-	if use nvtt ; then
-		cd binaries/system || die
-		./test || die "test phase failed"
-	else
-		ewarn "Skipping tests because USE nvtt is disabled"
-	fi
+	cd binaries/system || die
+	./test || die "test phase failed"
 }
 
 src_install() {
