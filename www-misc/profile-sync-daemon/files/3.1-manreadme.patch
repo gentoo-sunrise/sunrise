@@ -1,0 +1,70 @@
+fix readme for proper gentoo instructions
+
+--- psd.manpage
++++ psd.manpage
+@@ -6,7 +6,7 @@
+ .SH SYNOPSIS
+ .nf
+ .fam C
+-      rc.d [\fIoptions\fP] \fIpsd\fP
++       rc -s \fIpsd\fP [\fIoptions\fP]
+ 
+ .fam T
+ .fi
+@@ -34,7 +34,7 @@
+ .PP
+ Optionally redefine the location of your distro's tmpfs. Do this in the VOLATILE variable. Note that for Arch Linux, the default value of "/tmp" should work just fine.
+ .SH USAGE
+-Do not call /usr/bin/profile-sync-daemon directly. Instead use the distro provided /usr/bin/rc.d to interact with \fIpsd\fP via the daemon script.
++Do not call /usr/bin/profile-sync-daemon directly. Instead use the distro provided /sbin/rc to interact with \fIpsd\fP via the daemon script.
+ .TP
+ .B
+ start
+@@ -50,11 +50,9 @@
+ .PP
+ Note that as of version 2.9, a template for systemd is provided for profile-sync-daemon.
+ .PP
+-The initial synchronization will occur when the daemon starts. Additionally, cron (if running on your system) will call it to sync or update once per hour. Finally, \fIpsd\fP will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Arch daemon.
++The initial synchronization will occur when the daemon starts. Additionally, you can set up a cronjob with the provided file in '/usr/share/profile-sync-daemon'. Finally, \fIpsd\fP will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Arch daemon.
+ .PP
+-It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding \fIpsd\fP to the DAEMONS array in /etc/rc.conf like so: 
+-.PP
+-\fBDAEMONS=\fP(\.\.\. @\fIpsd\fP \.\.\.)
++It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding \fIpsd\fP to the default runlevel by issuing 'rc-update add psd default'. 
+ .PP
+ For more, see: https://wiki.archlinux.org/index.php/Profile-sync-daemon
+ .SH SUPPORTED BROWSERS AND CAVEATS
+--- README-for_other_distros
++++ README-for_other_distros
+@@ -2,7 +2,7 @@
+ 	profile-sync-daemon - Symlinks and syncs browser profile dirs to RAM thus reducing HDD/SDD calls and speeding-up browsers.
+ 
+ SYNOPSIS
+-	rc.d [options] psd
++	rc -s psd [options]
+ 
+ DESCRIPTION
+ 	Profile-sync-daemon (psd) is a tiny shell script designed to manage your browser's profile in tmpfs and to periodically sync it back to your physical disc (HDD/SSD). This is accomplished via a symlinking step and an innovative use of rsync to maintain back-up and synchronization between the two. One of the major design goals of psd is completely transparent user experience.
+@@ -26,7 +26,7 @@
+ 	Optionally redefine the location of your distro's tmpfs. Do this in the VOLATILE variable. Note that for Arch Linux, the default value of "/tmp" should work just fine.
+ 
+ USAGE
+-	Do not call /usr/bin/profile-sync-daemon directly. Instead use the distro provided /usr/bin/rc.d to interact with psd via the daemon script.
++	Do not call /usr/bin/profile-sync-daemon directly. Instead use the distro provided /sbin/rc to interact with psd via the daemon script.
+ 
+ 	start		Turn on psd. Make symlinks and sync the profile(s) from disc to tmpfs.
+ 	stop		Turn off psd. Sync the profiles(s) from tmpfs back to disc and remove the symlinks.
+@@ -34,11 +34,9 @@
+ 
+ 	Note that as of version 2.9, a template for systemd is provided for profile-sync-daemon.
+ 
+-	The initial synchronization will occur when the daemon starts. Additionally, cron (if running on your system) will call it to sync or update once per hour. Finally, psd will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Arch daemon.
++	The initial synchronization will occur when the daemon starts. Additionally, you can set up a cronjob with the provided file in '/usr/share/profile-sync-daemon'. Finally, psd will sync back a final time when it is called to stop. Users can call the daemon to start, stop, or sync like any standard Arch daemon.
+ 	
+-	It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding psd to the DAEMONS array in /etc/rc.conf like so: 
+-	
+-	DAEMONS=(... @psd ...)
++	It is highly recommended to start/stop the daemon at boot/shutdown. This is accomplished by adding psd to the default runlevel by issuing 'rc-update add psd default'.
+ 
+ 	For more, see: https://wiki.archlinux.org/index.php/Profile-sync-daemon
+ 

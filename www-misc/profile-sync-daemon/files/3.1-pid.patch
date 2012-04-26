@@ -1,19 +1,20 @@
---- profile-sync-daemon.old	2012-01-15 03:34:37.000000000 +0100
-+++ profile-sync-daemon	2012-01-15 17:48:36.000000000 +0100
-@@ -4,6 +4,7 @@
- # By graysky <graysky AT archlinux DOT us>
+--- profile-sync-daemon
++++ profile-sync-daemon
+@@ -5,7 +5,7 @@
  # Inspired by some code originally  written by Colin Verot
  
-+PIDFILE=/var/run/psd.pid
- BROWSERS="chromium google-chrome midori mozilla opera" # all supported browsers
- . /etc/psd.conf
+ BROWSERS="chromium google-chrome midori mozilla opera opera-next" # all supported browsers
+-. /etc/psd.conf
++. /etc/conf.d/psd
  
-@@ -105,17 +106,17 @@
+ set_which() {
+ 	homedir="$(su -c 'echo $HOME' $user)"
+@@ -108,17 +108,17 @@
  		;;
  	check)
  		# do not run if the daemon is running
 -		[[ ! -f /run/daemons/psd ]] && check
-+		[[ ! -f $PIDFILE ]] && check	
++		[[ ! -f $PIDFILE ]] && check
  		;;
  	sync)
  		sync
@@ -29,3 +30,15 @@
 +		[[ -f $PIDFILE ]] && echo "You should not call this script directly, let the /etc/rc.d/psd do it for you!" && exit 1
  esac
  exit 0
+--- psd.conf
++++ psd.conf
+@@ -2,6 +2,9 @@
+ # /etc/psd.conf
+ #
+ # For documentation, see: https://wiki.archlinux.org/index.php/Profile-sync-daemon
++
++# path to PIDFILE to use
++PIDFILE=/var/run/psd.pid
+ 
+ # List users separated by spaces whose browser(s) profile(s) will get symlinked 
+ # and sync'ed to tmpfs.

@@ -17,32 +17,32 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="app-arch/xz-utils"
-RDEPEND="net-misc/rsync"
+RDEPEND="app-shells/bash
+	net-misc/rsync"
 
 src_prepare() {
 	# fix manpage/readme for proper gentoo instructions
-	epatch "${FILESDIR}"/${MY_PN}-manreadme.patch
-	# fix script to work with our daemon
-	epatch "${FILESDIR}"/${MY_PN}-pid.patch
+	epatch "${FILESDIR}"/${PV}-manreadme.patch
+	# fix script to work with our initscript
+	epatch "${FILESDIR}"/${PV}-pid.patch
 }
 
 src_install() {
-	# install script
+	# script
 	dobin ${PN}
 
-	# install conf
-	insinto /etc
-	doins ${MY_PN}.conf
-
-	# install optional cronjob
+	# optional cronjob
 	insinto /usr/share/${PN}
 	doins "${FILESDIR}"/cronjob
 
-	# install our daemon
+	# initscript
 	newinitd "${FILESDIR}"/daemon ${MY_PN}
 
+	# conf
+	newconfd ${MY_PN}.conf ${MY_PN}
+
 	# manpage, readme
-	newdoc README* README
+	newdoc README-for_other_distros README
 	dodoc CHANGELOG
 	newman ${MY_PN}.manpage ${PN}.1
 }

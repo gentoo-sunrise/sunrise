@@ -4,21 +4,18 @@
 
 description="Webbrowser profile syncing"
 extra_commands="sync"
-PIDFILE=/var/run/${SVCNAME}.pid
-
-[ -e /etc/psd.conf ] && . /etc/psd.conf
 
 start() {
 	ebegin "Starting Profile-Sync-Daemon"
 	if [ -z "$USERS" ]; then
-		eerror "Define at least one user in /etc/psd.conf"
+		eerror "Define at least one user in /etc/conf.d/psd"
 		return 1
 	fi
 
 	for i in $USERS; do
 		homedir=$(su -c 'echo $HOME' $i)
 		if [ ! -d "$homedir" ]; then
-			eerror "Invalid user defined in /etc/psd.conf"
+			eerror "Invalid user defined in /etc/conf.d/psd"
 			return 1
 		fi
 	done
@@ -51,3 +48,13 @@ sync() {
 	fi
 	eend $?
 }
+
+status() {
+	if [ ! -f "$PIDFILE" ]; then
+		eerror "Profile-Sync-Daemon is not running"
+	else
+		einfo "Profile-Sync-Daemon is running"
+	fi
+	eend $?
+}
+
