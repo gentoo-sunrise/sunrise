@@ -8,7 +8,7 @@ inherit fdo-mime multilib mono
 
 DESCRIPTION="Simple Painting for Gtk"
 HOMEPAGE="http://pinta-project.com"
-SRC_URI="http://github.com/downloads/PintaProject/Pinta/${P}.tar.gz"
+SRC_URI="mirror://github/PintaProject/Pinta/${P}.tar.gz"
 
 LICENSE="MIT CCPL-Attribution-3.0"
 SLOT="0"
