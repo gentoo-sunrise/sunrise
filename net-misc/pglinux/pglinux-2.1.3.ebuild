@@ -8,6 +8,7 @@ inherit eutils linux-info multilib toolchain-funcs
 
 MY_PN="pgl"
 MY_P="${MY_PN}-${PV}"
+
 DESCRIPTION="Privacy oriented firewall application"
 HOMEPAGE="http://methlabs.org/"
 SRC_URI="mirror://sourceforge/peerguardian/${MY_P}.tar.gz"
@@ -31,7 +32,20 @@ RDEPEND="${COMMON_DEPEND}
 	net-firewall/iptables
 	networkmanager? ( net-misc/networkmanager )"
 
-CONFIG_CHECK="~NETFILTER_NETLINK_QUEUE"
+CONFIG_CHECK="~NETFILTER_NETLINK
+	~NETFILTER_NETLINK_QUEUE
+	~NETFILTER_XTABLES
+	~NETFILTER_XT_TARGET_NFQUEUE
+	~NETFILTER_XT_MATCH_IPRANGE
+	~NETFILTER_XT_MARK
+	~NETFILTER_XT_MATCH_MULTIPORT
+	~NETFILTER_XT_MATCH_STATE
+	~NF_CONNTRACK
+	~NF_CONNTRACK_IPV4
+	~NF_DEFRAG_IPV4
+	~IP_NF_FILTER
+	~IP_NF_IPTABLES
+	~IP_NF_TARGET_REJECT"
 
 S=${WORKDIR}/${MY_P}
 
