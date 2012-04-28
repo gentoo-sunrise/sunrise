@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*pinta-9999 (28 Apr 2012)
+
+  28 Apr 2012; hasufell <julian.ospald@googlemail.com> +pinta-9999.ebuild:
+  add live-ebuild
+
 *pinta-1.2 (27 Apr 2012)
 
   27 Apr 2012; hasufell <julian.ospald@googlemail.com> +pinta-1.2.ebuild:
