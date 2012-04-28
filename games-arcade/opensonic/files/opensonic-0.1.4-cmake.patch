@@ -62,7 +62,7 @@ add rules for icon, desktop-file and game-wrapper
 +  SET(GAME_DESKTOPDIR "share/applications" CACHE PATH "")
 +
 +  FILE(WRITE ${GAME_UNIXNAME}.sh
-+"#!/bin/bash
++"#!/bin/sh
 +cd ${GAME_INSTALL_DIR}
 +exec ./${GAME_UNIXNAME} \"$@\"
 +"
