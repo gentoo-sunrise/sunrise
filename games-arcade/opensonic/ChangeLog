@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  28 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  files/opensonic-0.1.4-cmake.patch:
+  small fix for wrapper-script
+
 *opensonic-0.1.4 (28 Apr 2012)
 
   28 Apr 2012; hasufell <julian.ospald@googlemail.com> +opensonic-0.1.4.ebuild,

@@ -64,7 +64,7 @@ add rules for icon, desktop-file and game-wrapper
 +  FILE(WRITE ${GAME_UNIXNAME}.sh
 +"#!/bin/bash
 +cd ${GAME_INSTALL_DIR}
-+./${GAME_UNIXNAME}
++exec ./${GAME_UNIXNAME} \"$@\"
 +"
 +)
 +
