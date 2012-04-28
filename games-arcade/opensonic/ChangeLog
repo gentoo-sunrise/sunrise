@@ -1,0 +1,10 @@
+# ChangeLog for games-arcade/opensonic
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*opensonic-0.1.4 (28 Apr 2012)
+
+  28 Apr 2012; hasufell <julian.ospald@googlemail.com> +opensonic-0.1.4.ebuild,
+  +files/opensonic-0.1.4-cmake.patch, +metadata.xml:
+  New Ebuild for bug 413907 thanks to floppym
+
