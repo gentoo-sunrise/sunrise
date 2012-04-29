@@ -3,13 +3,12 @@
 # $Header: $
 
 EAPI=4
-inherit autotools git-2
+inherit autotools
 
 DESCRIPTION="A Pidgin plugin that merges the Buddy List window with a conversation window"
 HOMEPAGE="https://github.com/dm0-/window_merge"
-
-EGIT_REPO_URI="git://github.com/dm0-/${PN#pidgin-}.git"
-EGIT_COMMIT="cf1dba5ff3b1006552a7a779b3bf9acfd56e9e82"
+COMMIT="cf1dba5ff3b1006552a7a779b3bf9acfd56e9e82"
+SRC_URI="http://github.com/dm0-/${PN#pidgin-}/tarball/${COMMIT} -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -21,6 +20,7 @@ RDEPEND="dev-libs/glib:2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+S="${WORKDIR}"/dm0--${PN#pidgin-}-${COMMIT:0:7}
 src_prepare(){
 	sed -e "/ACLOCAL_AMFLAGS/d" -i Makefile.am || die
 	eautoreconf
