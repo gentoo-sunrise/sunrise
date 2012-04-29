@@ -8,6 +8,8 @@ inherit git-2 games
 
 DESCRIPTION="Building single/multiplayer game (game)"
 HOMEPAGE="http://c55.me/minetest/"
+SRC_URI=""
+
 EGIT_REPO_URI="git://github.com/celeron55/${PN}.git"
 EGIT_COMMIT="${PV%_pre*}.dev-${PV#*_pre}"
 
