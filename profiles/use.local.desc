@@ -243,6 +243,8 @@ net-misc/moblock:logrotate - Use app-admin/logrotate to rotate log files
 net-misc/moblock:network-cron - Adds monthly cronjob to update blocklist files
 net-misc/netbrake:httpfs - Enable the HTTP filesystem support
 net-misc/openlldp:libpcap - Enable the use of PCAP/DNET instead of native handler
+net-misc/pglinux:cron - Add support for cronjobs
+net-misc/pglinux:logrotate - Add support for app-admin/logrotate
 net-misc/uanytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/uanytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption
 net-wireless/remuco:amarok - Enable Amarok media player support
@@ -262,6 +264,7 @@ sci-chemistry/hoomd:single-precision - Computations will be performed using sing
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
+sys-apps/etckeeper:bazaar - Support dev-vcs/bzr based overlays
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-fs/aufs:fuse - Enable FUSE workaround
 sys-fs/aufs:hinotify - Add support for aufs inotify
