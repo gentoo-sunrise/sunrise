@@ -1,0 +1,10 @@
+# ChangeLog for sys-apps/etckeeper
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*etckeeper-0.62 (29 Apr 2012)
+
+  29 Apr 2012; Manuel Rüger (mrueg) gentoo@rueg.eu +etckeeper-0.62.ebuild,
+  +files/etckeeper-0.62-gentoo.patch, +files/bashrc, +metadata.xml:
+  New ebuild for bug #216114 thanks to hasufell and floppym
+
