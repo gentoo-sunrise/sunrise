@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*gnome-manual-duplex-0.44 (30 Apr 2012)
+
+  30 Apr 2012; hasufell <julian.ospald@googlemail.com>
+  +gnome-manual-duplex-0.44.ebuild,
+  +files/gnome-manual-duplex-0.44-makefile.patch:
+  version bump
+
   07 Apr 2012; hasufell <julian.ospald@googlemail.com> ChangeLog:
   New Ebuild for bug 394761 thanks to Tommy[D]
 

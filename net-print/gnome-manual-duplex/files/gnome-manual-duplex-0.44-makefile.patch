@@ -1,0 +1,164 @@
+From: hasufell <julian.ospald@googlemail.com>
+Date: Thu Apr  5 10:54:55 UTC 2012
+
+make paths modifiable, clean up and split install-rules
+
+--- Makefile
++++ Makefile
+@@ -2,23 +2,28 @@
+ PROG=gnome-manual-duplex
+ VERSION=0.44
+ 
+-INSTALL=install
+-LPADMIN=/usr/sbin/lpadmin
+-
+-BIN=$(DESTDIR)/usr/bin
+-SHARE=$(DESTDIR)/usr/share
+-APPL=$(DESTDIR)/usr/share/applications
+-PIXMAPS=$(DESTDIR)/usr/share/pixmaps
+-LIBCUPS=$(DESTDIR)/usr/lib/cups
+-LIBBONOBO=$(DESTDIR)/usr/lib/bonobo
+-MANDIR=$(DESTDIR)/usr/share/man
+-SERVICES=$(DESTDIR)/usr/share/dbus-1/services/
+-APPLETS=$(DESTDIR)/usr/share/gnome-panel/4.0/applets/
++INSTALL ?= install -c
++INSTALL_DATA ?= ${INSTALL} -m 644
++INSTALL_PROGRAM ?= ${INSTALL} -m 755
++LPADMIN ?= /usr/sbin/lpadmin
++
++LIBDIR ?= lib
++PREFIX ?= /usr
++BIN ?= $(PREFIX)/bin
++SHARE ?= $(PREFIX)/share
++APPL ?= $(SHARE)/applications
++PIXMAPS ?= $(SHARE)/pixmaps
++LIBCUPS ?= $(PREFIX)/$(LIBDIR)/cups
++LIBBONOBO ?= $(PREFIX)/$(LIBDIR)/bonobo
++MANDIR ?= $(SHARE)/man
++DOCDIR ?= $(SHARE)/doc/$(PROG)
++SERVICES ?= $(SHARE)/dbus-1/services/
++APPLETS ?= $(SHARE)/gnome-panel/4.0/applets/
+ 
+ UNAME := $(shell uname)
+-GSED=sed
++GSED ?= sed
+ ifeq ($(UNAME),Darwin)
+-    GSED=gsed
++    GSED ?= gsed
+ endif
+ 
+ NULL=
+@@ -215,65 +220,67 @@
+ #
+ install: all
+ 	# /usr/bin...
+-	$(INSTALL) -d $(BIN)
+-	$(INSTALL) $(PROG) $(BIN)
++	$(INSTALL) -d $(DESTDIR)$(BIN)
++	$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(BIN)
+ 	# /usr/share/gnome-manual-duplex
+-	$(INSTALL) -d $(SHARE)/$(PROG)
+-	$(INSTALL) -m644 *.xml $(SHARE)/$(PROG)
+-	$(INSTALL) -m644 *.xpm $(SHARE)/$(PROG)
+-	$(INSTALL) -m755 gmd-applet.py $(SHARE)/$(PROG)
+-	#
+-	$(INSTALL) -d $(APPL)
+-	$(INSTALL) -c -m 644 *.desktop $(APPL)
+-	#
+-	$(INSTALL) -d $(PIXMAPS)
+-	$(INSTALL) -c -m644 $(PROG).png $(PIXMAPS)
+-	$(INSTALL) -m644 gmd.svg $(PIXMAPS)
+-	#
+-	$(INSTALL) -d $(LIBCUPS)
+-	$(INSTALL) -d $(LIBCUPS)/backend
+-	$(INSTALL) -m755 gmd-backend.sh $(LIBCUPS)/backend/gmd
+-	#
+-	$(INSTALL) -d $(SHARE)/cups/model
+-	$(INSTALL) $(PROG).ppd $(SHARE)/cups/model
++	$(INSTALL) -d $(DESTDIR)$(SHARE)/$(PROG)
++	$(INSTALL_DATA) *.xml $(DESTDIR)$(SHARE)/$(PROG)
++	$(INSTALL_DATA) *.xpm $(DESTDIR)$(SHARE)/$(PROG)
++	#
++	$(INSTALL) -d $(DESTDIR)$(APPL)
++	$(INSTALL_DATA) *.desktop $(DESTDIR)$(APPL)
++	#
++	$(INSTALL) -d $(DESTDIR)$(PIXMAPS)
++	$(INSTALL_DATA) $(PROG).png $(DESTDIR)$(PIXMAPS)
++	#
++	$(INSTALL) -d $(DESTDIR)$(LIBCUPS)
++	$(INSTALL) -d $(DESTDIR)$(LIBCUPS)/backend
++	$(INSTALL_PROGRAM) gmd-backend.sh $(DESTDIR)$(LIBCUPS)/backend/gmd
++	#
++	$(INSTALL) -d $(DESTDIR)$(SHARE)/cups/model
++	$(INSTALL_DATA) $(PROG).ppd $(DESTDIR)$(SHARE)/cups/model
+ 	#
+ 	# Done in gmd-applet.py now...
+ 	#$(LPADMIN) -p GnomeManualDuplex -E -v gmd:/ -L "Virtual Printer"
+ 	#
+-	$(INSTALL) -d $(LIBBONOBO)
+-	$(INSTALL) -d $(LIBBONOBO)/servers
+-	$(INSTALL) -m644 gmd.server $(LIBBONOBO)/servers/
+-	#
+-	# For Gnome 3.0 (Fedora 15+)...
+-	#
+-	$(INSTALL) -m755 gmd-applet-3.py $(SHARE)/$(PROG)
+-	$(INSTALL) -d $(SERVICES)
+-	$(INSTALL) -m644 \
+-	    org.gnome.panel.applet.GnomeManualDuplexAppletFactory.service \
+-	    $(SERVICES)
+-	$(INSTALL) -d $(APPLETS)
+-	$(INSTALL) -m644 \
+-	    org.gnome.panel.GnomeManualDuplex.panel-applet \
+-	    $(APPLETS)
+ 	#
+ 	# Doc...
+ 	#
+-	$(INSTALL) -d $(SHARE)/doc/$(PROG)
+-	$(INSTALL) -m644 README $(SHARE)/doc/$(PROG)
+-	$(INSTALL) -m644 COPYING $(SHARE)/doc/$(PROG)
++	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
++	$(INSTALL_DATA) README $(DESTDIR)$(DOCDIR)
+ 	# /usr/share/locale
+-	$(INSTALL) -d $(SHARE)/locale
++	$(INSTALL) -d $(DESTDIR)$(SHARE)/locale
+ 	cd locale; \
+ 	for xx_XX in *; do \
+-	    $(INSTALL) -d $(SHARE)/locale/$$xx_XX; \
+-	    $(INSTALL) -d $(SHARE)/locale/$$xx_XX/LC_MESSAGES; \
+-	    $(INSTALL) -m644 $$xx_XX/LC_MESSAGES/$(PROG).mo \
+-		$(SHARE)/locale/$$xx_XX/LC_MESSAGES/ ; \
++	    $(INSTALL) -d $(DESTDIR)$(SHARE)/locale/$$xx_XX; \
++	    $(INSTALL) -d $(DESTDIR)$(SHARE)/locale/$$xx_XX/LC_MESSAGES; \
++	    $(INSTALL_DATA) $$xx_XX/LC_MESSAGES/$(PROG).mo \
++		$(DESTDIR)$(SHARE)/locale/$$xx_XX/LC_MESSAGES/ ; \
+ 	done
+ 	# Install manual pages
+-	$(INSTALL) -d -m 755 $(MANDIR)
+-	$(INSTALL) -d -m 755 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 $(PROG).1 $(MANDIR)/man1/
++	$(INSTALL) -d $(DESTDIR)$(MANDIR)
++	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man1/
++	$(INSTALL_DATA) $(PROG).1 $(DESTDIR)$(MANDIR)/man1/
++
++install-gnome: install
++	$(INSTALL_PROGRAM) gmd-applet.py $(DESTDIR)$(SHARE)/$(PROG)
++	$(INSTALL) -d $(DESTDIR)$(LIBBONOBO)
++	$(INSTALL) -d $(DESTDIR)$(LIBBONOBO)/servers
++	$(INSTALL_DATA) gmd.server $(DESTDIR)$(LIBBONOBO)/servers/
++	# icon
++	$(INSTALL_DATA) gmd.svg $(DESTDIR)$(PIXMAPS)
++	#
++	# For Gnome 3.0 (Fedora 15+)...
++	#
++	$(INSTALL_PROGRAM) gmd-applet-3.py $(DESTDIR)$(SHARE)/$(PROG)
++	$(INSTALL) -d $(DESTDIR)$(SERVICES)
++	$(INSTALL_DATA) \
++	    org.gnome.panel.applet.GnomeManualDuplexAppletFactory.service \
++	    $(DESTDIR)$(SERVICES)
++	$(INSTALL) -d $(DESTDIR)$(APPLETS)
++	$(INSTALL_DATA) \
++	    org.gnome.panel.GnomeManualDuplex.panel-applet \
++	    $(DESTDIR)$(APPLETS)
+ 
+ clean:
+ 	rm -f $(PROG) $(PROG).xml *.tar.gz *.spec *.dsc
