@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 May 2012; Julian Ospald <hasufell@gentoo.org> +files/9999-cmake.patch,
+  +files/9999-soundconverter.patch, s25rttr-9999.ebuild, -files/cmake.patch:
+  relocate soundconverter exe, clean up - thanks to mgorny
+
 *s25rttr-9999 (08 Apr 2012)
 
   08 Apr 2012; hasufell <julian.ospald@googlemail.com> +s25rttr-9999.ebuild,

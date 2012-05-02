@@ -28,10 +28,14 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	# date Sat Apr 7 2012
-	epatch "${FILESDIR}"/cmake.patch
+	epatch "${FILESDIR}"/${PV}-cmake.patch
+	# date Mon Apr 30 2012
+	epatch "${FILESDIR}"/${PV}-soundconverter.patch
 }
 
 src_configure() {
+	# build system does not set the version for us
+	# will prevent us from connecting to other players
 	local mydate
 	mydate=$(bzr version-info "${EBZR_STORE_DIR}/${EBZR_PROJECT}" 2> /dev/null \
 		| awk '{if ($1 == "date:") {gsub("-", "",$2); print $2}}')
@@ -52,29 +56,35 @@ src_configure() {
 
 src_compile() {
 	# build system uses some relative paths
-	ln -s "${S}"/RTTR "${WORKDIR}"/${P}_build/RTTR || die
+	# CMAKE_IN_SOURCE_BUILD fails/unsupported
+	ln -s "${CMAKE_USE_DIR}"/RTTR "${CMAKE_BUILD_DIR}"/RTTR || die
 
 	cmake-utils_src_compile
 }
 
 src_install() {
-	# work around dirty install-script
-	cd "${WORKDIR}"/${P}_build || die
-	insinto "${GAMES_DATADIR}"
-	doins -r RTTR || die
+	cd "${CMAKE_BUILD_DIR}" || die
 
-	doicon "${S}"/debian/${PN}.png || die
-
-	dogamesbin src/s25client || die
-	make_desktop_entry "s25client" "Settlers RTTR" "${PN}"
-
-	# libs
+	# libs, converter
+	exeinto "$(games_get_libdir)"/${PN}
+	doexe RTTR/{sound-convert,s-c_resample} || die
 	exeinto "$(games_get_libdir)"/${PN}/video
 	doexe driver/video/SDL/src/libvideoSDL.so || die
 	exeinto "$(games_get_libdir)"/${PN}/audio
 	doexe driver/audio/SDL/src/libaudioSDL.so || die
 
+	# data
+	insinto "${GAMES_DATADIR}"
+	rm RTTR/{sound-convert,s-c_resample} || die
+	doins -r RTTR || die
+
+	# icon, bin, wrapper, docs
+	doicon "${CMAKE_USE_DIR}"/debian/${PN}.png || die
+	dogamesbin src/s25client || die
+	make_desktop_entry "s25client" "Settlers RTTR" "${PN}"
 	dodoc RTTR/texte/{keyboardlayout.txt,readme.txt} || die
+
+	# permissions
 	prepgamesdirs
 }
 
