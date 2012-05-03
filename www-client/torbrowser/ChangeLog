@@ -2,6 +2,28 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*torbrowser-12.0 (03 May 2012)
+
+  03 May 2012; Julian Ospald <hasufell@gentoo.org>
+  +files/12.0/0001-Block-Components.interfaces-lookupMethod-from-conten.patch,
+  +files/12.0/0002-Make-Permissions-Manager-memory-only.patch,
+  +files/12.0/0003-Make-Intermediate-Cert-Store-memory-only.patch,
+  +files/12.0/0004-Add-a-string-based-cacheKey.patch,
+  +files/12.0/0005-Block-all-plugins-except-flash.patch,
+  +files/12.0/0006-Make-content-pref-service-memory-only-clearable.patch,
+  +files/12.0/0008-Disable-SSL-Session-ID-tracking.patch,
+  +files/12.0/0009-Provide-an-observer-event-to-close-persistent-connec.patch,
+  +files/12.0/0010-Provide-client-values-only-to-CSS-Media-Queries.patch,
+  +files/12.0/0011-Limit-the-number-of-fonts-per-document.patch,
+  +files/12.0/0012-Randomize-HTTP-request-order-and-pipeline-depth.patch,
+  +files/12.0/0013-Rebrand-Firefox-to-TorBrowser.patch,
+  +files/12.0/0014-Make-Download-manager-memory-only.patch,
+  +files/12.0/0015-Add-DDG-and-StartPage-to-Omnibox.patch,
+  +files/12.0/0016-Adapt-Steven-Michaud-s-Mac-crashfix-patch-for-FF12.patch,
+  +files/12.0/0017-Make-nsICacheService.EvictEntries-synchronous.patch,
+  +torbrowser-12.0.ebuild:
+  version bump
+
   16 Apr 2012; Mike Gilbert <floppym@gentoo.org> torbrowser-10.0.1.ebuild:
   Whitespace
 
