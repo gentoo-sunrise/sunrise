@@ -1,0 +1,10 @@
+# ChangeLog for app-editors/x2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*x2-1.1.0 (04 May 2012)
+
+  04 May 2012; Manuel Rüger (mrueg) gentoo@rueg.eu +x2-1.1.0.ebuild,
+  +metadata.xml:
+  New ebuild for bug #385483 thanks to hasufell and floppym
+
