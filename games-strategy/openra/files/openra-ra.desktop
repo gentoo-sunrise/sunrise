@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-GenericName=OpenRA - Red Alert
-Name=OpenRA RA
-Icon=openra
-Exec=openra Game.Mods=ra Graphics.Renderer=Gl
-Terminal=false
-Categories=Game;
