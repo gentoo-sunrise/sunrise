@@ -115,9 +115,6 @@ dev-util/icewing:grabber - Build the grabber plug-in
 dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
-dev-util/nvidia-texture-tools:cg - Use NVIDIA toolkit plugin
-dev-util/nvidia-texture-tools:cuda - Use nvidia cuda toolkit
-dev-util/nvidia-texture-tools:glew - Enable glew extensions
 dev-util/valide:unique - 
 games-action/minetest:client - Minetest client
 games-action/minetest:server - Minetest server
@@ -173,8 +170,6 @@ games-strategy/0ad:editor - Include Atlas scenario editor projects
 games-strategy/freeorion:cg - Add support for NVIDIA toolkit plugin
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
-games-strategy/openra:cg - NVIDIA toolkit plugin
-games-strategy/openra-bin:cg - NVIDIA toolkit plugin
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
