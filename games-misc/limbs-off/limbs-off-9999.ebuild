@@ -9,7 +9,7 @@ inherit autotools git-2 games
 DESCRIPTION="Gratis Free Software fighting game"
 HOMEPAGE="http://plaimi.net/games/"
 EGIT_REPO_URI="https://github.com/stiell/${PN}.git
-    git://github.com/stiell/${PN}.git"
+	git://github.com/stiell/${PN}.git"
 
 LICENSE="GPL-3"
 SLOT="0"

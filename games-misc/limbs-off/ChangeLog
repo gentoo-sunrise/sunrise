@@ -4,6 +4,10 @@
 
   05 May 2012; Mike Gilbert <floppym@gentoo.org> limbs-off-1.0_alpha1.ebuild,
   limbs-off-9999.ebuild:
+  Whitespace.
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> limbs-off-1.0_alpha1.ebuild,
+  limbs-off-9999.ebuild:
   Use pkgconfig virtual.
 
   24 Apr 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
