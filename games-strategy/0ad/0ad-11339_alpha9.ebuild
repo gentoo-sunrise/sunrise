@@ -24,7 +24,7 @@ RDEPEND="
 	~dev-lang/spidermonkey-1.8.5
 	dev-libs/boost
 	dev-libs/libxml2
-	dev-util/nvidia-texture-tools
+	media-gfx/nvidia-texture-tools
 	~games-strategy/0ad-data-${PV}
 	media-libs/libpng:0
 	media-libs/libsdl[X,opengl,video]

@@ -4,6 +4,11 @@
 
   05 May 2012; Mike Gilbert <floppym@gentoo.org> 0ad-11339_alpha9.ebuild,
   0ad-99999.ebuild:
+  Change dev-util/nvidia-texture-tools to media-gfx/nvidia-texture-tools to
+  match gentoo-x86 naming.
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> 0ad-11339_alpha9.ebuild,
+  0ad-99999.ebuild:
   Use pkgconfig virtual.
 
   24 Apr 2012; hasufell <julian.ospald@googlemail.com>
