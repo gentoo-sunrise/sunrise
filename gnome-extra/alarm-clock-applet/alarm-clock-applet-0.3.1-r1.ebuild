@@ -25,7 +25,7 @@ RDEPEND="dev-libs/dbus-glib
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	app-text/gnome-doc-utils
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-libnotify-0.7.patch"

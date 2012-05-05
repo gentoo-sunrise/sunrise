@@ -1,6 +1,9 @@
 # ChangeLog for media-plugins/gimp-refocus
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> gimp-refocus-0.9.0.ebuild:
+  Use pkgconfig virtual.
 
   08 Jul 2010; Stefan Talpalaru (stefantalpalaru)
   <stefantalpalaru@yahoo.com> +files/refocus-0.9.0-gimp-2.2_rlx.diff,

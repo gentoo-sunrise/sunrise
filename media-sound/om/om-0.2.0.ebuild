@@ -23,7 +23,7 @@ RDEPEND=">=media-libs/liblo-0.22
 		>=dev-cpp/libglademm-2.4.1 )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	if use gtk && ! use patch-loader ; then

@@ -28,7 +28,7 @@ RDEPEND="media-libs/libogg
 	!tremor? ( media-libs/libvorbis )
 	tremor? ( media-libs/tremor )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 CMAKE_IN_SOURCE_BUILD=1
 

@@ -20,7 +20,7 @@ RDEPEND="
 	dev-libs/libpcre
 	sys-apps/smartmontools"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 G2CONF="--docdir=/usr/share/doc/${P}"
 

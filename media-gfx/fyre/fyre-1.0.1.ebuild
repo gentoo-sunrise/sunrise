@@ -25,7 +25,7 @@ RDEPEND="dev-libs/glib:2
 	openexr? ( media-libs/openexr )"
 DEPEND="${RDEPEND}
 	dev-util/desktop-file-utils
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-misc/shared-mime-info"
 
 pkg_setup() {

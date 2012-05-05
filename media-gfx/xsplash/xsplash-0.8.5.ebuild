@@ -22,7 +22,7 @@ RDEPEND="dev-libs/dbus-glib
 	x11-libs/libXcomposite
 	"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	"
 
 src_prepare() {

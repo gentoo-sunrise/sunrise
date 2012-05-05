@@ -19,7 +19,7 @@ IUSE="doc"
 
 RDEPEND="dev-cpp/gtkmm:2.4"
 DEPEND="
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( app-doc/doxygen )
 	${RDEPEND}"
 

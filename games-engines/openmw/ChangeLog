@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> openmw-0.13.0.ebuild:
+  Use pkgconfig virtual.
+
 *openmw-0.13.0 (09 Apr 2012)
 
   09 Apr 2012; hasufell <julian.ospald@googlemail.com> +openmw-0.13.0.ebuild,

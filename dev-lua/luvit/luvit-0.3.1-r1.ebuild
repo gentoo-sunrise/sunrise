@@ -27,7 +27,7 @@ RDEPEND="dev-lang/luajit:2
 	=dev-libs/libuv-0.7.6_p20120404
 	sys-libs/zlib"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PVR}-makefile.patch

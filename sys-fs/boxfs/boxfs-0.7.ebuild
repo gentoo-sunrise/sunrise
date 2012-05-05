@@ -21,7 +21,7 @@ RDEPEND="sys-fs/fuse
 	dev-libs/libzip
 	dev-libs/libapp"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 PATCHES=( "${FILESDIR}/makefile_fixes.patch" )
 

@@ -16,7 +16,7 @@ IUSE=""
 RDEPEND="net-im/pidgin[gtk]
 	media-libs/libmpd"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install () {
 	make DESTDIR="${D}" install || die "make install failed"

@@ -18,7 +18,7 @@ IUSE="gtk"
 
 RDEPEND="gtk? ( x11-libs/gtk+:2 )"
 DEPEND="${RDEPEND}
-	gtk? ( >=dev-util/pkgconfig-0.15 )"
+	gtk? ( virtual/pkgconfig )"
 
 S=${WORKDIR}/${MY_PN}
 

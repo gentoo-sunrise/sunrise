@@ -1,6 +1,9 @@
 # ChangeLog for media-sound/mmsap2
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> mmsap2-2.0.2.ebuild:
+  Use pkgconfig virtual.
 
   19 Aug 2008; Chad A Simmons (CCIEChad) <chad.simmons@member.fsf.org>
   mmsap2-2.0.2.ebuild:

@@ -23,7 +23,7 @@ RDEPEND="external-fuse? ( >=sys-fs/fuse-2.8.0 )
 	crypt? ( net-libs/gnutls )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-apps/attr"
 
 S="${WORKDIR}/${MY_P}"

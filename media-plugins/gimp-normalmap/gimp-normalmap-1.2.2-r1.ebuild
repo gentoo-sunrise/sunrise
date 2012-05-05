@@ -19,7 +19,7 @@ RDEPEND="media-gfx/gimp
 	media-libs/glew
 	x11-libs/gtkglext"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	sed -e 's:\(CFLAGS\)=-O3:\1+=:' \

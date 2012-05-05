@@ -18,7 +18,7 @@ RDEPEND=">=dev-cpp/gtkmm-2.10
 	media-libs/alsa-lib"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S="${WORKDIR}/${PN}"
 

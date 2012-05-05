@@ -32,7 +32,7 @@ RDEPEND="${COMMON_DEPEND}
 		media-plugins/gst-plugins-alsa )
 	nls? ( virtual/libintl )"
 DEPEND="${COMMON_DEPEND}
-	>=dev-util/pkgconfig-0.20
+	virtual/pkgconfig
 	openmp? ( sys-devel/gcc[openmp] )
 	nls? ( sys-devel/gettext )"
 

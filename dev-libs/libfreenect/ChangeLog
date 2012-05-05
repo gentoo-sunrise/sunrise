@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> libfreenect-0.1.2.ebuild:
+  Use pkgconfig virtual.
+
 *libfreenect-0.1.2 (24 Jan 2012)
 
   24 Jan 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>

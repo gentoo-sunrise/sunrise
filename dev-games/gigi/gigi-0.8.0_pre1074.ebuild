@@ -39,7 +39,7 @@ RDEPEND="
 	)
 	sdl? ( media-libs/libsdl )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( app-doc/doxygen )"
 REQUIRED_USE="ois? ( ogre )"
 

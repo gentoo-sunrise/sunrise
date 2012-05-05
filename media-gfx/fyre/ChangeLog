@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/fyre
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> fyre-1.0.1.ebuild:
+  Use pkgconfig virtual.
 
   21 Jul 2010; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   fyre-1.0.1.ebuild:

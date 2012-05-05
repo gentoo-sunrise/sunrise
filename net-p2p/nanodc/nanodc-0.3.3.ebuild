@@ -22,7 +22,7 @@ RDEPEND="
 	dev-libs/glib:2"
 DEPEND="${RDEPEND}
 	dev-util/scons
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 BIGVERSION=nanodc-$(get_version_component_range 1-2 )
 

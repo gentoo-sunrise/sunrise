@@ -1,6 +1,9 @@
 # ChangeLog for dev-libs/libwiimote
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> libwiimote-9999.ebuild:
+  Use pkgconfig virtual.
 
   19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   libwiimote-0.4.ebuild, libwiimote-9999.ebuild:

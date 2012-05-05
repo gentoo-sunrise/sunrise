@@ -1,6 +1,9 @@
 # ChangeLog for gnome-extra/gsmartcontrol
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> gsmartcontrol-0.8.6.ebuild:
+  Use pkgconfig virtual.
 
   04 Dec 2011; Justin Lecher <jlec@gentoo.org> -files/0.8.5-fixdocs.patch,
   -gsmartcontrol-0.8.5.ebuild, +files/0.8.6-fixdocs.patch,

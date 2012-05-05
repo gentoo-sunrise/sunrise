@@ -1,6 +1,9 @@
 # ChangeLog for sys-fs/ntfs3g-ar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> ntfs3g-ar-2011.4.12.7.ebuild:
+  Use pkgconfig virtual.
 
   01 Nov 2011; Ondrej Sukup (mimi_vx) <mimi.vx@gmail.com> ChangeLog:
   version bump

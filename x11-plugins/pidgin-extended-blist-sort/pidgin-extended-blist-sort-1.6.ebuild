@@ -17,7 +17,7 @@ IUSE=""
 
 RDEPEND="net-im/pidgin[gtk]"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 

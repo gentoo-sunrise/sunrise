@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc tests"
 
 DEPEND="sys-devel/libtool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( app-doc/doxygen )"
 
 S=${WORKDIR}/${MY_P}

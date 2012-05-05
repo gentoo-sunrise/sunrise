@@ -17,7 +17,7 @@ IUSE=""
 
 RDEPEND=">=dev-games/clanlib-0.8.0[opengl,sdl]"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${P}-src
 

@@ -18,5 +18,5 @@ SLOT="0"
 RDEPEND="x11-libs/gtk+:2
 	dev-libs/libxml2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 DOCS="ChangeLog README NEWS AUTHORS"

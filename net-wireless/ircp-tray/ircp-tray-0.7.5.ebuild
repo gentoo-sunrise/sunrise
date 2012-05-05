@@ -20,7 +20,7 @@ RDEPEND="dev-libs/openobex
 	x11-libs/libnotify"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 src_install( ) {

@@ -42,7 +42,7 @@ RDEPEND="
 	)"
 DEPEND="${RDEPEND}
 	>=dev-libs/boost-1.40
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? (
 		=dev-lang/python-2*
 		dev-libs/libxml2[python]

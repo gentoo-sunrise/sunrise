@@ -21,7 +21,7 @@ RDEPEND=">=x11-libs/cairo-1.6.4-r1[X]
 	>=x11-libs/libsexy-0.1.11"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"

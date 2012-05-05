@@ -19,7 +19,7 @@ RDEPEND="gnome-base/gconf:2
 	gnome-base/libgnomeui
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	dobin src/${PN} || die

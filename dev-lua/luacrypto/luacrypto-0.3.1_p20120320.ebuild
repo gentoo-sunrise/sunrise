@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND=">=dev-lang/lua-5.1
 	dev-libs/openssl:0"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	econf \

@@ -1,6 +1,9 @@
 # ChangeLog for x11-misc/xneur
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> xneur-0.12.0-r1.ebuild:
+  Use pkgconfig virtual.
 
   12 Mar 2011; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
   -xneur-0.12.0.ebuild, +xneur-0.12.0-r1.ebuild,

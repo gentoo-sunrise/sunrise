@@ -21,7 +21,7 @@ IUSE="doc examples"
 RDEPEND="dev-lang/lua
 	media-libs/gd[png]"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 

@@ -25,7 +25,7 @@ RDEPEND="x11-libs/gtk+:2
 	gnome-base/libglade:2.0
 	dev-libs/libgcrypt"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/intltool"
 
 src_configure() {

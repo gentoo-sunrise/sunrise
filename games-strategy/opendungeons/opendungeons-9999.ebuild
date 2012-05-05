@@ -34,7 +34,7 @@ RDEPEND=">=dev-games/cegui-0.7.0[ogre,opengl]
 	media-libs/openal
 	virtual/opengl"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 CMAKE_IN_SOURCE_BUILD=1
 

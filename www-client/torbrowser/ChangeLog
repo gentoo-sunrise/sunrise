@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> torbrowser-10.0.1.ebuild,
+  torbrowser-11.0.ebuild, torbrowser-12.0.ebuild:
+  Use pkgconfig virtual.
+
 *torbrowser-12.0 (03 May 2012)
 
   03 May 2012; Julian Ospald <hasufell@gentoo.org>

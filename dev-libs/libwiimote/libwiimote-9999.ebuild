@@ -17,7 +17,7 @@ IUSE="examples"
 
 RDEPEND="net-wireless/bluez"
 DEPEND="${RDEPEND}
-		dev-util/pkgconfig"
+		virtual/pkgconfig"
 
 src_unpack() {
 	subversion_src_unpack

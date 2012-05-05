@@ -1,6 +1,9 @@
 # ChangeLog for app-editors/scribes
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> scribes-0.4.ebuild:
+  Use pkgconfig virtual.
 
   31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> scribes-0.4.ebuild:
   Simplify py-compile fix.

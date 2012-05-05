@@ -21,7 +21,7 @@ RDEPEND="
 	sys-libs/ncurses
 	dev-libs/glib:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 S="${WORKDIR}"/${PN}
 
 src_prepare() {

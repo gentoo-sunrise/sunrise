@@ -19,7 +19,7 @@ RDEPEND="
 	net-libs/libsoup
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}"/makefile.patch

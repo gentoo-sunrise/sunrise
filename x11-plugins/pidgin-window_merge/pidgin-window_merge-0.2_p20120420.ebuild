@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND="dev-libs/glib:2
 	net-im/pidgin[gtk]"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S="${WORKDIR}"/dm0--${PN#pidgin-}-${COMMIT:0:7}
 src_prepare(){

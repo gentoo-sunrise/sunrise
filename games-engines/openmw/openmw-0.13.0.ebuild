@@ -29,7 +29,7 @@ RDEPEND=">=dev-games/ogre-1.7.0[cg,ois]
 			media-sound/mpg123 )
 	)"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${P}-source
 

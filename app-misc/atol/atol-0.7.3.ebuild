@@ -17,7 +17,7 @@ IUSE="gnome"
 
 RDEPEND="x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 	#test? ( dev-util/valgrind )"
 
 MAKEOPTS="${MAKEOPTS} -j1"

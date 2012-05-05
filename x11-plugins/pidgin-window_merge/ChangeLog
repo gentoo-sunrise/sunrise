@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 May 2012; Mike Gilbert <floppym@gentoo.org>
+  pidgin-window_merge-0.2_p20120420.ebuild:
+  Use pkgconfig virtual.
+
   29 Apr 2012; Manuel Rüger (mrueg) gentoo@rueg.eu
   pidgin-window_merge-0.2_p20120420.ebuild:
   Drop usage of git-2 eclass and pull generated tarball, thanks to floppym

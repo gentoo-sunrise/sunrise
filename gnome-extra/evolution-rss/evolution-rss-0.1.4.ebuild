@@ -30,7 +30,7 @@ RDEPEND=">=mail-client/evolution-2.24
 	dbus? ( dev-libs/dbus-glib )
 	webkit? ( net-libs/webkit-gtk )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/intltool
 	sys-devel/gettext"
 

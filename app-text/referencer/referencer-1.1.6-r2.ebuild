@@ -26,7 +26,7 @@ RDEPEND=">=app-text/poppler-0.12.3-r3
 
 DEPEND="${RDEPEND}
 	>=app-text/gnome-doc-utils-0.3.2
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=dev-lang/perl-5.8.1
 	dev-perl/libxml-perl
 	dev-util/intltool

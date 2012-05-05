@@ -28,7 +28,7 @@ RDEPEND="dev-libs/glib:2
 	speechd? ( app-accessibility/speech-dispatcher )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-vcs/cvs
 	svg? ( || ( gnome-base/librsvg media-gfx/imagemagick[png,svg] ) )"
 

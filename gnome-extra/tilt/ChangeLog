@@ -1,6 +1,9 @@
 # ChangeLog for gnome-extra/tilt
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> tilt-0.0.2.ebuild:
+  Use pkgconfig virtual.
 
   25 Jul 2010; Michael Weber (xmw) <gentoo@xmw.de> +tilt-0.0.2.ebuild,
   +metadata.xml:

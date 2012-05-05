@@ -1,6 +1,9 @@
 # ChangeLog for sys-fs/tdu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> tdu-2008.05.07.ebuild:
+  Use pkgconfig virtual.
 
   30 Apr 2011; Justin Lecher <jlec@gentoo.org>
   +files/2008.05.07-asneeded.patch, tdu-2008.05.07.ebuild:

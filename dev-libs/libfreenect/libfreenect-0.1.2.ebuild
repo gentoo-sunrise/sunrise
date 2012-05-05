@@ -26,7 +26,7 @@ RDEPEND="dev-libs/libusb:1
 	opencv? ( media-libs/opencv )
 	python? ( dev-python/numpy )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}

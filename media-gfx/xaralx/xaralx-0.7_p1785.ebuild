@@ -32,7 +32,7 @@ RDEPEND="
 	dev-lang/perl
 	dev-libs/libxml2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=sys-devel/gettext-0.14.3"
 
 S=${WORKDIR}/${MY_P/Src/}

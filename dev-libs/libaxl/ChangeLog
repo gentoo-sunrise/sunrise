@@ -1,6 +1,9 @@
 # ChangeLog for dev-libs/libaxl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> libaxl-0.6.4.ebuild:
+  Use pkgconfig virtual.
 
   05 Jul 2011; Piotr Szymaniak <szarpaj@grubelek.pl> -libaxl-0.6.3.ebuild,
   +libaxl-0.6.4.ebuild, +files/libaxl-0.6.4-werror.patch:

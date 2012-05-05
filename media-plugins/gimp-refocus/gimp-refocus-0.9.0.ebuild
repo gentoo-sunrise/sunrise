@@ -25,7 +25,7 @@ RDEPEND="lapack-atlas? (
 	media-gfx/gimp:2
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 

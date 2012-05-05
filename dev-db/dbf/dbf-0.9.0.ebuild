@@ -18,7 +18,7 @@ DEPEND="${RDEPEND}
 	app-arch/unzip
 	dev-perl/XML-Parser
 	doc? ( app-text/docbook-sgml-utils )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_PN}
 

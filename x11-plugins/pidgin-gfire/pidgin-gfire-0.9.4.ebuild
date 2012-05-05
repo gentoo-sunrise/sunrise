@@ -22,7 +22,7 @@ RDEPEND="
 	libnotify? ( x11-libs/libnotify )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 src_prepare() {

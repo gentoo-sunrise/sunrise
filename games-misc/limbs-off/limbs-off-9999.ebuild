@@ -25,7 +25,7 @@ RDEPEND="
 	"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	"
 
 src_unpack() {

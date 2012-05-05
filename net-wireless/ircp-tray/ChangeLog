@@ -1,6 +1,9 @@
 # ChangeLog for net-wireless/ircp-tray
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> ircp-tray-0.7.5.ebuild:
+  Use pkgconfig virtual.
 
 *ircp-tray-0.7.5 (06 Jul 2010)
 

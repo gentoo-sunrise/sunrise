@@ -40,7 +40,7 @@ RDEPEND="
 	fam? ( virtual/fam )
 	"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	test? ( dev-lang/perl )"
 
 S=${WORKDIR}/${MY_P}

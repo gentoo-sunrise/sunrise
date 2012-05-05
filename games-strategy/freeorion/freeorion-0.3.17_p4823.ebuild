@@ -32,7 +32,7 @@ RDEPEND="
 	sys-libs/zlib
 	virtual/opengl"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 CMAKE_USE_DIR="${S}"/FreeOrion
 CMAKE_VERBOSE="1"

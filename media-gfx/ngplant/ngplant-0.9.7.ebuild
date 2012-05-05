@@ -24,7 +24,7 @@ RDEPEND="
 	dev-lang/lua"
 DEPEND="${RDEPEND}
 	dev-util/scons
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-libs/libxslt"
 
 src_prepare() {

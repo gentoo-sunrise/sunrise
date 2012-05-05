@@ -1,6 +1,9 @@
 # ChangeLog for x11-plugins/pidgimpd
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> pidgimpd-1.1.1.ebuild:
+  Use pkgconfig virtual.
 
   05 Nov 2009; René Neumann (Necoro) <gentoo@necoro.eu>
   -pidgimpd-1.1.ebuild, +pidgimpd-1.1.1.ebuild:

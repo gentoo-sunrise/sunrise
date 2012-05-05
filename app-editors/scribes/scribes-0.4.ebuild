@@ -30,7 +30,7 @@ RDEPEND="gnome-base/gconf
 	dev-python/pygtksourceview
 	dev-python/pyxdg"
 DEPEND="app-text/gnome-doc-utils
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/intltool
 	sys-devel/gettext"
 

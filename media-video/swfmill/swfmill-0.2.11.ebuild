@@ -17,7 +17,7 @@ RDEPEND="dev-libs/libxml2
 	media-libs/libpng"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"

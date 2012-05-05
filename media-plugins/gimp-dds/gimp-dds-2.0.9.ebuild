@@ -17,7 +17,7 @@ IUSE=""
 
 RDEPEND=">=media-gfx/gimp-2.6"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	sed -e 's:CFLAGS=.*\$(:CFLAGS+=\$(:' \

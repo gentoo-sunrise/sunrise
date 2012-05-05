@@ -22,7 +22,7 @@ RDEPEND="
 	net-misc/curl
 	eog? ( media-gfx/eog )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 

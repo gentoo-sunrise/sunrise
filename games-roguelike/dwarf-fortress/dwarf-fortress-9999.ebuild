@@ -44,7 +44,7 @@ RDEPEND="
 	)"
 DEPEND="
 	${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	amd64? (
 		${COMMON_DEPEND}
 	)"

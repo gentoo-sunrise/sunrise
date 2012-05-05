@@ -27,7 +27,7 @@ RDEPEND="x11-libs/gtk+:2
 	svg? ( gnome-base/librsvg )
 	truetype? ( media-libs/freetype )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}/automagic.patch"
