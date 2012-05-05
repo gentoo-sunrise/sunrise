@@ -21,8 +21,12 @@
 ##   End example
 ##
 
+# Mike Gilbert (05 May 2012)
+# Depdendency dev-ruby/facets is masked
+mail-filter/postwhite
+
 # Mike Gilbert (23 Apr 2012)
-# dev-ruby/ruby-panel-applet2 masked
+# Dependency dev-ruby/ruby-panel-applet2 masked
 net-misc/sshmenu
 
 # Mike Gilbert (23 Apr 2012)
