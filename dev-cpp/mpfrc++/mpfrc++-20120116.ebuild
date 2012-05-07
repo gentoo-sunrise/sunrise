@@ -12,7 +12,7 @@ SRC_URI="http://github.com/downloads/jauhien/sources/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-libs/mpfr"
