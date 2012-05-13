@@ -6,6 +6,8 @@ app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
+app-backup/rear:examples - Install example configuration files
+app-backup/rear:udev - Have ReaR start backup when attaching your USB backup drive
 app-cdr/furiusisomount:brasero - Enables support for burning images using app-cdr/brasero
 app-crypt/yapet:csv - Enable csv import utility
 app-crypt/yapet:pwgen - Enable build-in password generator
@@ -118,7 +120,6 @@ dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 dev-util/valide:unique - 
 games-action/minetest:client - Minetest client
 games-action/minetest:server - Minetest server
-games-action/openclonk:audio - Audio output
 games-arcade/clonekeenplus:tremor - Use media-libs/tremor as audio decoder
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
@@ -272,13 +273,6 @@ sys-fs/ntfs3g-ar:udev - Install udev rule to make udisks use ntfs-3g instead of 
 sys-kernel/ccs-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
-www-client/torbrowser:bindist - Disable official Firefox branding (icons, name) which are not binary-redistributable according to upstream.
-www-client/torbrowser:crashreporter - Enable crashreporter for mozilla upstream, debugging symbols are not required for reporting crashes.
-www-client/torbrowser:custom-optimization - Fine-tune custom compiler optimizations, setting this is not recommended.
-www-client/torbrowser:ipc - Use inter-process communication between tabs and plugins. Allows for greater stability in case of plugin crashes
-www-client/torbrowser:pgo - Add support for profile-guided optimization using gcc-4.5, for faster binaries. This option will double the compile time.
-www-client/torbrowser:system-sqlite - Use the system-wide dev-db/sqlite installation with secure-delete enabled
-www-client/torbrowser:webm - Use system media-libs/libvpx for HTML5 WebM video support.
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
