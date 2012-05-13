@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*clamtk-4.39 (13 May 2012)
+
+  13 May 2012; Hakan Demiralp (keenblade) <keenblade@gmail.com>
+  -clamtk-4.38.ebuild, +clamtk-4.39.ebuild:
+  Version bump to clamtk-4.39. Removed Net::DNS dep. Added language file uz and
+  te
+
 *clamtk-4.38 (30 Mar 2012)
 
   30 Mar 2012; keenblade <keenblade@gmail.com> -clamtk-4.37.ebuild,
