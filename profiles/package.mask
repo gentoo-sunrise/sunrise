@@ -21,6 +21,13 @@
 ##   End example
 ##
 
+# Thomas Sachau <tommy@gentoo.org> (13 May 2012)
+# outdated and unmaintained kernel sources
+# probably also contain security issues, so masked
+# for removal in 30 days
+sys-kernel/ccs-sources
+sys-kernel/glendix-sources
+
 # Mike Gilbert (05 May 2012)
 # Depdendency dev-ruby/facets is masked
 mail-filter/postwhite
