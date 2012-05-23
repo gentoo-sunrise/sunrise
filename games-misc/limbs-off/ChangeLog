@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*limbs-off-1.0_alpha2 (23 May 2012)
+
+  23 May 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
+  -limbs-off-1.0_alpha1.ebuild, +limbs-off-1.0_alpha2.ebuild:
+  Version bump for games-misc/limbs-off-alpha
+
   05 May 2012; Mike Gilbert <floppym@gentoo.org> limbs-off-1.0_alpha1.ebuild,
   limbs-off-9999.ebuild:
   Whitespace.
