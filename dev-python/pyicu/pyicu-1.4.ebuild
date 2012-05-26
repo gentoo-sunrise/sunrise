@@ -29,9 +29,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 DOCS="CHANGES CREDITS"
-PATCHES=(
-	"${FILESDIR}/r191-tzinfo.patch" # epydoc will fail without this
-)
 
 src_prepare() {
 	base_src_prepare
