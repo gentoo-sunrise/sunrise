@@ -18,13 +18,16 @@ IUSE="c_sync examples fakenect opencv python"
 REQUIRED_USE="opencv? ( c_sync )
 	python? ( c_sync )"
 
-RDEPEND="dev-libs/libusb:1
+RDEPEND="virtual/libusb:1
 	examples? (
 		media-libs/freeglut
 		virtual/opengl
 	)
 	opencv? ( media-libs/opencv )
-	python? ( dev-python/numpy )"
+	python? (
+		dev-python/numpy
+		>=dev-python/cython-0.14.1-r1
+	)"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
@@ -49,10 +52,6 @@ src_configure() {
 		$(cmake-utils_use_build opencv CV)
 		$(cmake-utils_use_build python)
 	)
-	if use python; then
-		#Add numpy core include path in python CMakeList.txt to allow compilation
-		sed -i -e "s|../c_sync/|$(python_get_sitedir)/numpy/core/include/ ../c_sync/|" "wrappers/python/CMakeLists.txt" || die
-	fi
 	cmake-utils_src_configure
 }
 

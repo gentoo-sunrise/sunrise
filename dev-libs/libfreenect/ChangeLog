@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*libfreenect-0.1.2-r1 (30 May 2012)
+
+  30 May 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -libfreenect-0.1.2.ebuild, +libfreenect-0.1.2-r1.ebuild:
+  Added missing dependency for cython. Changed libusb dependency to virtual.
+  Removed sed replace line which was fixed upstream.
+
   05 May 2012; Mike Gilbert <floppym@gentoo.org> libfreenect-0.1.2.ebuild:
   Use pkgconfig virtual.
 
