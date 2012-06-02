@@ -26,6 +26,9 @@ G2CONF="--docdir=/usr/share/doc/${P}"
 
 src_prepare() {
 	gnome2_src_prepare
-	epatch "${FILESDIR}"/${PV}-fixdocs.patch
+	epatch \
+		"${FILESDIR}"/${PV}-fixdocs.patch \
+		"${FILESDIR}"/${PV}-gcc47.patch \
+		"${FILESDIR}"/${PV}-glib-2.31-mutex.patch
 	eautoreconf
 }

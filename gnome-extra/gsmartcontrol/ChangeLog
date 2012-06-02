@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  02 Jun 2012; Justin Lecher <jlec@gentoo.org> +files/0.8.6-gcc47.patch,
+  gsmartcontrol-0.8.6.ebuild, +files/0.8.6-glib-2.31-mutex.patch:
+  Add fix for gcc-4.7 and changes in glib-2.31 for mutex
+
   05 May 2012; Mike Gilbert <floppym@gentoo.org> gsmartcontrol-0.8.6.ebuild:
   Use pkgconfig virtual.
 
