@@ -33,10 +33,6 @@ games-rpg/pylotro
 sys-kernel/ccs-sources
 sys-kernel/glendix-sources
 
-# Mike Gilbert (05 May 2012)
-# Depdendency dev-ruby/facets is masked
-mail-filter/postwhite
-
 # Mike Gilbert (23 Apr 2012)
 # Dependency dev-ruby/ruby-panel-applet2 masked
 net-misc/sshmenu
