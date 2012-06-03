@@ -78,7 +78,7 @@ pkg_postinst() {
 	elog "SABnzbd has been installed with default directories in ${DHOMEDIR}"
 	elog
 	elog "Please configure /etc/conf.d/${PN} before starting as daemon!"
-	elog "If you use SSL connection for SABnzbd WebUi, you have to change SAB_PORT with “9090”."
+	elog "If you use SSL connection for SABnzbd WebUi, you have to change SAB_PORT with \"9090\"."
 	elog
 	elog "Start with ${ROOT}etc/init.d/${PN} start"
 	elog "Visit http://<host ip>:8080 to configure SABnzbd"

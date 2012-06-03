@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  sabnzbd-0.6.15.ebuild, files/sabnzbd.conf, metadata.xml:
+  Replace fancy quotes, drop herd, no herds in sunrise
+
 *sabnzbd-0.6.15 (19 May 2012)
 
   19 May 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com
