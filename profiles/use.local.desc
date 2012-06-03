@@ -6,8 +6,6 @@ app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/vlogger:dbi - Enable support for DBI
-app-backup/rear:examples - Install example configuration files
-app-backup/rear:udev - Have ReaR start backup when attaching your USB backup drive
 app-cdr/furiusisomount:brasero - Enables support for burning images using app-cdr/brasero
 app-crypt/yapet:csv - Enable csv import utility
 app-crypt/yapet:pwgen - Enable build-in password generator
@@ -164,8 +162,6 @@ games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
 games-misc/fretsonfire:guitarhero - Enable Guitar Hero song importer
 games-misc/fretsonfire:psyco - Enable psyco python accelerator
 games-puzzle/hex-a-hop:pango - Use sdl-pango instead of default sdl-ttf for font rendering
-games-rpg/sumwars:stl - Compile with TIXML_USE_STL support in dev-libs/tinyxml.
-games-rpg/sumwars:tools - Compile with additional game tools like content editor.
 games-strategy/0ad:audio - Audio support
 games-strategy/0ad:editor - Include Atlas scenario editor projects
 games-strategy/freeorion:cg - Add support for NVIDIA toolkit plugin
