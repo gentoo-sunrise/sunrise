@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Fully automated disaster Recovery supporting a broad variety of backup strategies and scenarios"
 HOMEPAGE="http://rear.github.com/"
-SRC_URI="mirror://github/downloads/${PN}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://github/${PN}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
