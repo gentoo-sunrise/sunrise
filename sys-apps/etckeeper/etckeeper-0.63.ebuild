@@ -26,7 +26,7 @@ S="${WORKDIR}"/${PN}-${COMMIT:0:7}
 SHAREDIR="/usr/share/${PN}"
 
 src_prepare(){
-	epatch "${FILESDIR}"/${P}-gentoo.patch
+	epatch "${FILESDIR}"/${PN}-0.62-gentoo.patch
 	if use bazaar; then
 		python_convert_shebangs 2 "${S}"/etckeeper-bzr/__init__.py
 	fi
