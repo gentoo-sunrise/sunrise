@@ -8,7 +8,7 @@ inherit eutils bash-completion-r1 python
 
 DESCRIPTION="a collection of tools to let /etc be stored in a repository"
 HOMEPAGE="http://kitenet.net/~joey/code/etckeeper/"
-COMMIT="40eeedebb6be23035aea9d15aed1be706479ce79"
+COMMIT="cdca967f6f041e79970c1392e74fffac9ce49885"
 SRC_URI="http://git.kitenet.net/?p=etckeeper.git;a=snapshot;h=${COMMIT};sf=tgz
 -> ${P}.tar.gz"
 
@@ -26,7 +26,7 @@ S="${WORKDIR}"/${PN}-${COMMIT:0:7}
 SHAREDIR="/usr/share/${PN}"
 
 src_prepare(){
-	epatch "${FILESDIR}"/${P}-gentoo.patch
+	epatch "${FILESDIR}"/${PN}-0.62-gentoo.patch
 	if use bazaar; then
 		python_convert_shebangs 2 "${S}"/etckeeper-bzr/__init__.py
 	fi
