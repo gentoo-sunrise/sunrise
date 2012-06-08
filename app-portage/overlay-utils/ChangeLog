@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jun 2012; Mike Gilbert <floppym@gentoo.org> overlay-utils-0.3.1.ebuild:
+  Change subversion dep to git.
+
 *overlay-utils-0.3.1 (03 Apr 2012)
 
   03 Apr 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>

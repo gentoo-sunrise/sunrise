@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND="app-portage/gentoolkit-dev
-	dev-vcs/subversion
+	dev-vcs/git
 	>=sys-apps/portage-2.1"
 
 S=${WORKDIR}
