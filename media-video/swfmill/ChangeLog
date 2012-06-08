@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*swfmill-0.3.2 (08 Jun 2012)
+
+  08 Jun 2012; A.C.Heron (ache) acheron@front.ru +swfmill-0.3.2.ebuild:
+  New Ebuild for bug #109611, corrections from hasufell, Tommy[D], floppym
+
   05 May 2012; Mike Gilbert <floppym@gentoo.org> swfmill-0.2.11.ebuild:
   Use pkgconfig virtual.
 
