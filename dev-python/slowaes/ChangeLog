@@ -1,0 +1,10 @@
+# ChangeLog for dev-python/slowaes
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*slowaes-0.1 (09 Jun 2012)
+
+  09 Jun 2012; Maks Verver (Soultaker) <maksverver@geocities.com>
+  +slowaes-0.1.ebuild, +metadata.xml:
+  New Ebuild for bug #420071 (thanks to chithead, hasufell, et al.)
+
