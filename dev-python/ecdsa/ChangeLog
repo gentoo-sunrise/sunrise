@@ -1,0 +1,10 @@
+# ChangeLog for dev-python/ecdsa
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*ecdsa-0.8 (09 Jun 2012)
+
+  09 Jun 2012; Maks Verver (Soultaker) <maksverver@geocities.com>
+  +ecdsa-0.8.ebuild, +metadata.xml:
+  New Ebuild for bug #420071 (thanks to chithead, hasufell, et al.)
+
