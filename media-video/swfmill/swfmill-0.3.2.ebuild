@@ -10,7 +10,7 @@ SRC_URI="http://swfmill.org/releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 # until media-video/mtasc is fixed
@@ -28,8 +28,6 @@ DEPEND="${RDEPEND}
 
 # until parallel compilation is fixed upstream
 # https://github.com/djcsdy/swfmill/issues/21
-src_compile() { 
-	emake -j1 
+src_compile() {
+	emake -j1
 }
-
-
