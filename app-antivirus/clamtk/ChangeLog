@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*clamtk-4.41 (10 Jun 2012)
+
+  10 Jun 2012; Hakan Demiralp (keenblade) <keenblade@gmail.com>
+  -clamtk-4.39.ebuild, +clamtk-4.41.ebuild:
+  Version bump to clamtk-4.41
+
 *clamtk-4.39 (13 May 2012)
 
   13 May 2012; Hakan Demiralp (keenblade) <keenblade@gmail.com>
