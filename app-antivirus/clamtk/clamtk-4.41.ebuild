@@ -39,7 +39,7 @@ src_unpack() {
 src_install() {
 	dobin ${PN} || die "dobin failed"
 
-	doicon ${PN}.png || die "doicon failed"
+	doicon images/${PN}.png || die "doicon failed"
 	domenu ${PN}.desktop || die "domenu failed"
 
 	dodoc CHANGES README || die "dodoc failed"
