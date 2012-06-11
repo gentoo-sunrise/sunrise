@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*apparmor-utils-2.8.0 (11 Jun 2012)
+
+  11 Jun 2012; Michael Palimaka <kensington@gentoo.org>
+  -apparmor-utils-2.7.2.ebuild, +apparmor-utils-2.8.0.ebuild:
+  Version bump.
+
 *apparmor-utils-2.7.2 (05 Feb 2012)
 
   05 Feb 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
