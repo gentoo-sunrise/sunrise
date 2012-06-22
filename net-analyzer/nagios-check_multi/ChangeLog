@@ -1,6 +1,10 @@
 # ChangeLog for net-analyzer/nagios-check_multi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  nagios-check_multi-0.24.ebuild:
+  Add missing multilib eclass inherit for get_libdir
 
   25 Feb 2011; Your Name (caguiar) <caguiar@madeiratecnopolo.pt
   +nagios-check_multi-0.24.ebuild, +metadata.xml:

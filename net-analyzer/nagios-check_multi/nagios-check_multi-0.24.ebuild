@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit eutils multilib
 
 DESCRIPTION="A multi-purpose wrapper plugin for Nagios"
 HOMEPAGE="http://my-plugin.de/wiki/projects/check_multi/start"
