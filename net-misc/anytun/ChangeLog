@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v3
 # $Header: $
 
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> anytun-0.3.4.ebuild:
+  inherit user eclass instead of eutils eclass for enewuser
+
 *anytun-0.3.4 (14 Jan 2012)
 
   14 Jan 2012; Bernhard Tittelbach (xro) <xro@gmx.net> -anytun-0.3.3.ebuild,
