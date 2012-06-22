@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs user
 
 DESCRIPTION="A daemon to serve the gopher protocol"
 HOMEPAGE="http://r-36.net/src/geomyidae/"
