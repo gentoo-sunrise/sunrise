@@ -6,7 +6,7 @@ EAPI=2
 PYTHON_DEPEND="*:2.6"
 SUPPORT_PYTHON_ABIS=1
 
-inherit distutils eutils
+inherit distutils user
 
 MY_PN="Radicale"
 MY_P="${MY_PN}-${PV}"
