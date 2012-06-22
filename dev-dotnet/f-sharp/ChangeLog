@@ -1,6 +1,10 @@
 # ChangeLog for dev-dotnet/f-sharp
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  f-sharp-2.0.0.0.2010.11.ebuild:
+  inherit multilib eclass for get_libdir
 
   10 Dec 2010; Artem Melentyev (martx) <melenartem@ya.ru>
   -f-sharp-2.0.0.0.ebuild, +f-sharp-2.0.0.0.2010.11.ebuild:

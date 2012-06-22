@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit eutils mono versionator
+inherit eutils mono multilib versionator
 
 DESCRIPTION="The F# programming language and tools"
 HOMEPAGE="http://fsharp.net/"
