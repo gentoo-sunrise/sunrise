@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> slowaes-0.1.ebuild:
+  Fix header
+
 *slowaes-0.1 (09 Jun 2012)
 
   09 Jun 2012; Maks Verver (Soultaker) <maksverver@geocities.com>
