@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit eutils toolchain-funcs
+inherit toolchain-funcs user
 
 DESCRIPTION="A video/audio/data interactive streaming server"
 HOMEPAGE="http://www.fastpath.it/products/palantir/index.php"

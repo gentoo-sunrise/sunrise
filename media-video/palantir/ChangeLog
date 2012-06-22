@@ -1,6 +1,9 @@
 # ChangeLog for media-video/palantir
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> palantir-2.7.ebuild:
+  inherit user eclass instead of eutils eclass for enewuser
 
 *palantir-2.7 (10 Jul 2010)
 
