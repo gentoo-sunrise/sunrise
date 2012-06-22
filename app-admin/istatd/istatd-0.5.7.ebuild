@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit eutils
+inherit user
 
 DESCRIPTION="Monitoring daemon serving statistics to your iStat iPhone application"
 HOMEPAGE="http://bjango.com/apps/istat/"
