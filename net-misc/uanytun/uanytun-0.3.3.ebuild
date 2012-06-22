@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit user
 
 DESCRIPTION="Tiny VPN daemon using Secure Anycast Tunneling"
 HOMEPAGE="http://anytun.org/"
