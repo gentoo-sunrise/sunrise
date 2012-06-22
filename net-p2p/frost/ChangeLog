@@ -1,6 +1,10 @@
 # ChangeLog for net-p2p/frost
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  frost-20080304.ebuild:
+  inherit user eclass instead of eutils eclass for enewgroup
 
   13 Jun 2010; Markus Ullmann <jokey@gentoo.org> frost-20080304.ebuild:
   Fix up depspec

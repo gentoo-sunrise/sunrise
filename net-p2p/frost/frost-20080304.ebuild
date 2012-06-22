@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils java-pkg-2 java-ant-2 eutils
+inherit java-pkg-2 java-ant-2 user
 
 DESCRIPTION="Message board and file sharing client for freenet network"
 HOMEPAGE="http://jtcfrost.sourceforge.net/"
