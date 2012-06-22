@@ -21,11 +21,6 @@
 ##   End example
 ##
 
-# Thomas Sachau <tommy@gentoo.org> (19 May 2012)
-# masked due to masked dependency:
-# dev-python/4suite
-games-rpg/pylotro
-
 # Thomas Sachau <tommy@gentoo.org> (13 May 2012)
 # outdated and unmaintained kernel sources
 # probably also contain security issues, so masked
