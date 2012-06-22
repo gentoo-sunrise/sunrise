@@ -1,6 +1,10 @@
 # ChangeLog for net-libs/libvuurmuur
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  libvuurmuur-0.8_beta2.ebuild:
+  Add missing eutils eclass inherit for epatch
 
   11 Dec 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
   libvuurmuur-0.8_beta2.ebuild:

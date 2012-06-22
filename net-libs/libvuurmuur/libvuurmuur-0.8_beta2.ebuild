@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit autotools multilib
+inherit autotools eutils multilib
 
 MY_PV=${PV/_beta/beta}
 MY_P="Vuurmuur-${MY_PV}"
