@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit eutils multilib
+inherit eutils multilib user
 
 DESCRIPTION="Lightweight low-dependency web interface to mpd"
 HOMEPAGE="http://ion0.com/davemp/"
