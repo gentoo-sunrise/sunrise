@@ -1,6 +1,10 @@
 # ChangeLog for app-backup/darbackup
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  darbackup-0.7.27.ebuild:
+  inherit user eclass instead of eutils eclass for enewuser
 
   09 Mar 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> darbackup-0.7.27.ebuild, metadata.xml:

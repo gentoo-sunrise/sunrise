@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils subversion
+inherit subversion user
 
 ESVN_REPO_URI="https://faracvs.cs.uni-magdeburg.de/svn/christsc-${PN}/${PN}/branches/${PV}"
 ESVN_USER="anonymous"
