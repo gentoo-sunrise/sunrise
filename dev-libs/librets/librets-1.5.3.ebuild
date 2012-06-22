@@ -16,7 +16,7 @@ PYTHON_MODNAME="librets.py"
 USE_RUBY="ree18 ruby18 ruby19"
 RUBY_OPTIONAL="yes"
 
-inherit distutils eutils java-pkg-opt-2 mono multilib perl-module php-ext-source-r2 ruby-ng versionator
+inherit autotools distutils eutils java-pkg-opt-2 mono multilib perl-module php-ext-source-r2 ruby-ng versionator
 
 DESCRIPTION="A library that implements the RETS 1.8, 1.7, 1.5 and 1.0 standards"
 HOMEPAGE="http://www.crt.realtors.org/projects/rets/librets/"

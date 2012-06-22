@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  librets-1.5.3.ebuild:
+  inherit missing autotools eclass for eautoreconf
+
 *librets-1.5.3 (23 Mar 2012)
 
   23 Mar 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
