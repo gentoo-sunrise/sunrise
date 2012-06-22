@@ -1,6 +1,9 @@
 # ChangeLog for app-misc/heyu
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> heyu-2.8.0.ebuild:
+  inherit user eclass instead of eutils eclass for enewuser
 
   04 Oct 2009; Sven Schwyn (svoop) <gentoo@bitcetera.com>
   -heyu-2.7.0.ebuild, +heyu-2.8.0.ebuild:
