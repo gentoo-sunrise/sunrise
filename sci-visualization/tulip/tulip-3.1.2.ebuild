@@ -4,7 +4,7 @@
 
 EAPI="1"
 
-inherit autotools multilib
+inherit autotools multilib user
 
 DESCRIPTION="Large Graph Visualization System"
 HOMEPAGE="http://tulip.labri.fr/"
