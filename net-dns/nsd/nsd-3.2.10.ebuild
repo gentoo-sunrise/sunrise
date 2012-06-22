@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit eutils versionator
+inherit user versionator
 
 DESCRIPTION="An authoritative only, high performance, open source name server"
 HOMEPAGE="http://www.nlnetlabs.nl/projects/nsd"
