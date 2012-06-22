@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit rpm versionator
+inherit multilib rpm versionator
 
 MY_P="${PN}-$(replace_version_separator 3 -)"
 MY_PV="$(get_version_component_range 1-3)"
