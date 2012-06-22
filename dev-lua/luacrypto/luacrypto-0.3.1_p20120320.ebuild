@@ -4,8 +4,6 @@
 
 EAPI=4
 
-inherit autotools
-
 DESCRIPTION="Lua Crypto Library"
 HOMEPAGE="https://github.com/mkottman/luacrypto.git" # most active fork
 SRC_URI="mirror://github/hasufell/tinkerbox/${P}.tar.gz"
