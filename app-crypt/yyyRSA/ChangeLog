@@ -1,6 +1,9 @@
 # ChangeLog for app-crypt/yyyRSA
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> yyyRSA-1.0.2.ebuild:
+  inherit eutils for epatch
 
   13 Oct 2011; Matthew Schultz (mschultz) <mattsch@gmail.com>
   +yyyRSA-1.0.2.ebuild, +files/yyyRSA-1.0.2-build-fix.patch,

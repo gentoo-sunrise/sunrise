@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit autotools
+inherit autotools eutils
 
 DESCRIPTION="Encrypting and deciphering of messages with the RSA asymmetrical encryption algorithm"
 HOMEPAGE="http://www.erikyyy.de/yyyRSA/"
