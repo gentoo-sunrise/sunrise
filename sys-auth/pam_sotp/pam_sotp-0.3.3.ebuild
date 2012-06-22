@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils multilib pam
+inherit user multilib pam
 
 DESCRIPTION="pam module for simple one time password authentication"
 HOMEPAGE="http://www.cavecanen.org/cs/projects/pam_sotp/"
