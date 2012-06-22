@@ -1,6 +1,10 @@
 # ChangeLog for net-analyzer/daemonlogger
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  daemonlogger-1.2.1.ebuild:
+  inherit user eclass instead of eutils eclass for enewuser
 
   15 Feb 2011; Jason Wallace <jason.r.wallace@gmail.com>
   -daemonlogger-1.0.1.ebuild, +daemonlogger-1.2.1.ebuild,
