@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+inherit user
 
 DESCRIPTION="The eXtensible Open Router Platform"
 HOMEPAGE="http://www.xorp.org/"
