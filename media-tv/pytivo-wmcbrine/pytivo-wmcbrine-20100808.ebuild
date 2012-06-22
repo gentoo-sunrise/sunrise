@@ -6,7 +6,7 @@ EAPI="2"
 
 PYTHON_DEPEND="2"
 
-inherit eutils multilib python
+inherit multilib python user
 
 DESCRIPTION="An HMO and GoBack server for Tivo"
 HOMEPAGE="http://pytivo.sourceforge.net/"
