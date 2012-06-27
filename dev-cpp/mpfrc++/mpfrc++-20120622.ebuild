@@ -8,7 +8,7 @@ inherit multilib toolchain-funcs vcs-snapshot
 
 DESCRIPTION="High-performance C++ interface for MPFR library"
 HOMEPAGE="http://www.holoborodko.com/pavel/mpfr/"
-SRC_URI="http://github.com/downloads/jauhien/sources/${P}.tar.gz"
+SRC_URI="mirror://github/jauhien/sources/${P//+/%2B}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -19,16 +19,11 @@ DEPEND="dev-libs/mpfr"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	cp "${FILESDIR}/Makefile" Makefile || die
-}
-
-src_compile() {
-	emake CXX="$(tc-getCXX)"
+	cp "${FILESDIR}/makefile" makefile || die
+	tc-export CXX
+	export VER="${PV}"
 }
 
 src_install() {
-	dolib.so lib${PN}.so.${PV}
-	dosym lib${PN}.so.${PV} usr/$(get_libdir)/lib${PN}.so
-	insinto usr/include
-	doins dlmalloc.h mpreal.h
+	emake DESTDIR="${D}" LIBDIR="${D}/usr/$(get_libdir)/" install
 }
