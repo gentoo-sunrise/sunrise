@@ -39,7 +39,7 @@ src_install() {
 	cmake-utils_src_install
 	if use doc; then
 		rm docs/build.txt || die
-		dodoc -r docs/* pdf/*
+		dodoc -r docs/*
 		dohtml -r html/*
 	fi
 	if use examples; then
