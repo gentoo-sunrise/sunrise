@@ -1,0 +1,10 @@
+# ChangeLog for www-plugins/oxygenkde
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*oxygenkde-3.9.1 (02 Jul 2012)
+
+  02 Jul 2012; Shubhadeep Chaudhuri (TimeManx) shubhadeepc@gmail.com
+  +oxygenkde-3.9.1.ebuild, +metadata.xml:
+  Initial ebuild for bug #384565
+
