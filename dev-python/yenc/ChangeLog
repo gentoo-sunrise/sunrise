@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*yenc-0.4.0-r1 (07 Jul 2012)
+
+  07 Jul 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com
+  -yenc-0.4.0.ebuild, +yenc-0.4.0-r1.ebuild, +files/yenc-remove-cflags.patch:
+  Add a patch and rewrite with python-distutils-ng, thanks to Tommy[D]
+
   03 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> metadata.xml:
   Drop perl herd, there are no herds in sunrise
 
