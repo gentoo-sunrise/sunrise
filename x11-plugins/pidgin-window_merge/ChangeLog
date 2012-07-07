@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*pidgin-window_merge-0.2_p20120531 (07 Jul 2012)
+
+  07 Jul 2012; Manuel Rüger (mrueg) gentoo@rueg.eu
+  -pidgin-window_merge-0.2_p20120420.ebuild,
+  +pidgin-window_merge-0.2_p20120531.ebuild:
+  Version bump for x11-plugins/pidgin-window_merge
+
   05 May 2012; Mike Gilbert <floppym@gentoo.org>
   pidgin-window_merge-0.2_p20120420.ebuild:
   Use pkgconfig virtual.
