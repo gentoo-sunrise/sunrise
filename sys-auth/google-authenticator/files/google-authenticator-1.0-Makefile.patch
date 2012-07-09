@@ -1,0 +1,58 @@
+Sa 7. Jul 19:54:31 CEST 2012
+Manuel Rueger (gentoo@rueg.eu)
+Make CC overwritable
+Drop -g and -O2
+
+--- Makefile.old	2012-06-02 08:10:18.115493988 +0200
++++ Makefile	2012-07-07 18:51:19.923536018 +0200
+@@ -18,9 +18,7 @@
+ 
+ .SUFFIXES: .so
+ 
+-ifeq ($(origin CC), default)
+-  CC := gcc
+-endif
++CC ?= gcc
+ 
+ DEF_CFLAGS := $(shell [ `uname` = SunOS ] &&                                  \
+                 echo ' -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT')              \
+@@ -70,14 +68,14 @@
+ 	               libpam-google-authenticator-*-source.tar.bz2
+ 
+ google-authenticator: google-authenticator.o base32.o hmac.o sha1.o
+-	$(CC) -g $(DEF_LDFLAGS) -o $@ $+ $(LDL_LDFLAGS)
++	$(CC) $(DEF_LDFLAGS) -o $@ $+ $(LDL_LDFLAGS)
+ 
+ demo: demo.o pam_google_authenticator_demo.o base32.o hmac.o sha1.o
+-	$(CC) -g $(DEF_LDFLAGS) -rdynamic -o $@ $+ $(LDL_LDFLAGS)
++	$(CC) $(DEF_LDFLAGS) -rdynamic -o $@ $+ $(LDL_LDFLAGS)
+ 
+ pam_google_authenticator_unittest: pam_google_authenticator_unittest.o        \
+                                    base32.o hmac.o sha1.o
+-	$(CC) -g $(DEF_LDFLAGS) -rdynamic -o $@ $+ -lc $(LDL_LDFLAGS)
++	$(CC) $(DEF_LDFLAGS) -rdynamic -o $@ $+ -lc $(LDL_LDFLAGS)
+ 
+ pam_google_authenticator.so: base32.o hmac.o sha1.o
+ pam_google_authenticator_testing.so: base32.o hmac.o sha1.o
+@@ -85,10 +83,10 @@
+ pam_google_authenticator.o: pam_google_authenticator.c base32.h hmac.h sha1.h
+ pam_google_authenticator_demo.o: pam_google_authenticator.c base32.h hmac.h   \
+ 	                         sha1.h
+-	$(CC) -DDEMO --std=gnu99 -Wall -O2 -g -fPIC -c $(DEF_CFLAGS) -o $@ $<
++	$(CC) -DDEMO --std=gnu99 -Wall -fPIC -c $(DEF_CFLAGS) -o $@ $<
+ pam_google_authenticator_testing.o: pam_google_authenticator.c base32.h       \
+                                     hmac.h sha1.h
+-	$(CC) -DTESTING --std=gnu99 -Wall -O2 -g -fPIC -c $(DEF_CFLAGS)       \
++	$(CC) -DTESTING --std=gnu99 -Wall -fPIC -c $(DEF_CFLAGS)       \
+               -o $@ $<
+ pam_google_authenticator_unittest.o: pam_google_authenticator_unittest.c      \
+                                      pam_google_authenticator_testing.so      \
+@@ -100,6 +98,6 @@
+ sha1.o: sha1.c sha1.h
+ 
+ .c.o:
+-	$(CC) --std=gnu99 -Wall -O2 -g -fPIC -c $(DEF_CFLAGS) -o $@ $<
++	$(CC) --std=gnu99 -Wall -fPIC -c $(DEF_CFLAGS) -o $@ $<
+ .o.so:
+-	$(CC) -shared -g $(DEF_LDFLAGS) -o $@ $+ -lpam
++	$(CC) -shared $(DEF_LDFLAGS) -o $@ $+ -lpam
