@@ -3,10 +3,12 @@
 <pkgmetadata>
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<use>
-		<flag name='bind8-stats'>Enables BIND8 like NSTATS and 
-			XSTATS</flag>
+		<flag name='bind8-stats'>Enables BIND8 like NSTATS and XSTATS</flag>
 		<flag name='nsec3'>Enable NSEC3 support</flag>
 		<flag name='root-server'>Configure NSD as a root server</flag>
-		<flag name='runtime-checks'>Enable runtime checks</flag>
+		<flag name='runtime-checks'>Enable runtime checks, this could lead 
+			to a reduced service level</flag>
+		<flag name='zone-stats'>Enable per-zone statistics logging, this 
+			could lead to a reduced service level</flag>
 	</use>
 </pkgmetadata>

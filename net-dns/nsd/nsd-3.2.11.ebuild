@@ -13,15 +13,18 @@ SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bind8-stats ipv6 nsec3 root-server runtime-checks"
+IUSE="bind8-stats ipv6 mmap +nsec3 root-server runtime-checks zone-stats"
 
-DEPEND="dev-libs/openssl"
-RDEPEND=${DEPEND}
+RDEPEND="
+	dev-libs/openssl
+	virtual/yacc
+"
+DEPEND="
+	${RDEPEND}
+	sys-devel/flex
+"
 
 pkg_setup() {
-	if use runtime-checks; then
-		ewarn "You enabled runtime-checks USE flag, this could lead to a reduced service level"
-	fi
 	enewgroup nsd
 	enewuser nsd -1 -1 -1 nsd
 }
@@ -36,9 +39,11 @@ src_configure() {
 		--enable-largefile \
 		$(use_enable bind8-stats) \
 		$(use_enable ipv6) \
+		$(use_enable mmap) \
 		$(use_enable nsec3) \
 		$(use_enable root-server) \
-		$(use_enable runtime-checks checking)
+		$(use_enable runtime-checks checking) \
+		$(use_enable zone-stats)
 }
 
 src_install() {
@@ -50,7 +55,7 @@ src_install() {
 	doins contrib/nsd.zones2nsd.conf
 
 	exeinto /etc/cron.daily
-	doexe "${FILESDIR}/nsd.cron"
+	doexe "${FILESDIR}"/nsd.cron
 
 	newinitd "${FILESDIR}"/nsd.initd nsd
 	newconfd "${FILESDIR}"/nsd.confd nsd

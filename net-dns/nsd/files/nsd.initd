@@ -37,7 +37,7 @@ _checkdb() {
 	local database=$(${my_nsd_checkconf} -o database ${config_file})
 	if ! test -f $database; then
 		eerror "You have no database file in ${database}, will try to rebuild"
-		_rebuild
+		rebuild
 	fi
 	return 0
 }
@@ -63,7 +63,7 @@ rebuild() {
 start() { 
 	ebegin "Starting NSD"
 	_checkconf || return 1
-	_checkdb || rebuild || return 1
+	_checkdb || return 1
 	${my_nsdc} start
 	${my_nsdc} running
 	eend $? 
