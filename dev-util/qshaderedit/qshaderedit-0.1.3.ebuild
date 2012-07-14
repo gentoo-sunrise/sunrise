@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=4
+
 inherit cmake-utils
 
 DESCRIPTION="A simple multiplatform shader editor inspired by Apple's OpenGL Shader Builder"
@@ -10,12 +12,15 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="x11-libs/qt-gui
-	x11-libs/qt-opengl
-	 media-libs/glew"
-RDEPEND=${DEPEND}
+DEPEND="media-libs/glew
+	x11-libs/qt-core:4
+	x11-libs/qt-gui:4
+	x11-libs/qt-opengl:4"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
+
+DOCS=( AUTHORS ChangeLog )
