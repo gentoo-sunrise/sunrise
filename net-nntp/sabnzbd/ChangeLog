@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jul 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com
+  files/sabnzbd.init:
+  Remove a bashism, thanks to floppym
+
 *sabnzbd-0.7.1 (07 Jul 2012)
 
   07 Jul 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com

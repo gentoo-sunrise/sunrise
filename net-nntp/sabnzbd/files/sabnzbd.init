@@ -11,7 +11,7 @@ start() {
 	ebegin "Starting SABnzbd"
 
 	# Control if folders exist and create them
-	if [[ ! -d "${SAB_PID_FOLDER}" ]]
+	if [ ! -d "${SAB_PID_FOLDER}" ]
 	then
 		mkdir "${SAB_PID_FOLDER}"
 		chmod 770 "${SAB_PID_FOLDER}"
@@ -19,7 +19,7 @@ start() {
 
 	fi
 
-	if [[ ! -d "${SAB_LOG_FOLDER}" ]]
+	if [ ! -d "${SAB_LOG_FOLDER}" ]
 	then
 		mkdir "${SAB_LOG_FOLDER}"
 		chmod 770 "${SAB_LOG_FOLDER}"
