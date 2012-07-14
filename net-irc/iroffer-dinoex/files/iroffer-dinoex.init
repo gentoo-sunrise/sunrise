@@ -1,0 +1,77 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+extra_commands="reload reconnect"
+
+description="Script to use iroffer-dinoex like a daemon. You have to make a symbolic link of this script: ln -s /etc/init.d/iroffer-dinoex /etc/init.d/iroffer-dinoex.MyBot. Create a config file: cp -p /etc/iroffer-dinoex/******.config /etc/iroffer-dinoex/MyBot.config and adapt it (take care of first variables \"pidfile\", \"logfile\", \"statefile\" and \"xdcclistfile\")."
+description_reload="Reload the config file"
+description_reconnect="Force reconnection to an IRC server"
+
+# Bot name from filename
+BOT=${RC_SVCNAME#*.}
+
+depend(){
+	need net
+}
+
+start(){
+	ebegin "Starting $RC_SVCNAME"
+
+	# Control mandatory folders or files
+	if [ ! -f "/etc/iroffer-dinoex/${BOT}.config" ]
+	then
+		eerror "/etc/iroffer-dinoex/${BOT}.config not found"
+	fi
+
+	if [ ! -d "${IROFFER_PID}" ]
+	then
+		einfo "Create ${IROFFER_PID}"
+
+		mkdir "${IROFFER_PID}"
+		chown "root:${IROFFER_USER}" "${IROFFER_PID}"
+		chmod 770 "${IROFFER_PID}"
+	fi
+
+	if [ ! -d "${IROFFER_LOG}" ]
+	then
+		einfo "Create ${IROFFER_LOG}"
+
+		mkdir "${IROFFER_LOG}"
+		chown "root:${IROFFER_USER}" "${IROFFER_LOG}"
+		chmod 770 "${IROFFER_LOG}"
+	fi
+
+	if [ ! -d "${IROFFER_STATE}" ]
+	then
+		einfo "Create ${IROFFER_STATE}"
+
+		mkdir "${IROFFER_STATE}"
+		chown "root:${IROFFER_USER}" "${IROFFER_STATE}"
+		chmod 770 "${IROFFER_STATE}"
+	fi
+
+	# Start iroffer-dinoex in background mode
+	start-stop-daemon --start --quiet --user "${IROFFER_USER}" --pidfile "${IROFFER_PID}/${BOT}.pid" --exec "${IROFFER_BIN}" -- -b "/etc/iroffer-dinoex/${BOT}.config"
+
+	eend $?
+}
+
+stop(){
+	ebegin "Stop $RC_SVCNAME"
+	start-stop-daemon --stop --retry 10 --pidfile "${IROFFER_PID}/${BOT}.pid"
+	eend $?
+}
+
+reload(){
+	ebegin "Reload $RC_SVCNAME"
+	start-stop-daemon --signal SIGUSR2 --pidfile "${IROFFER_PID}/${BOT}.pid"
+	eend $?
+}
+
+reconnect(){
+	ebegin "Try to reconnect $RC_SVCNAME"
+	start-stop-daemon --signal SIGUSR1 --pidfile "${IROFFER_PID}/${BOT}.pid"
+	eend $?
+}
