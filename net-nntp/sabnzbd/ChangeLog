@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*sabnzbd-0.7.2 (20 Jul 2012)
+
+  20 Jul 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com
+  -sabnzbd-0.7.1.ebuild, +sabnzbd-0.7.2.ebuild, files/sabnzbd.ini:
+  Version bump and permission improvements for sabnzbd. Thanks to floppym
+
   14 Jul 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com
   files/sabnzbd.init:
   Remove a bashism, thanks to floppym

@@ -48,28 +48,25 @@ src_install() {
 	dodoc {ABOUT,CHANGELOG,ISSUES,README}.txt Sample-PostProc.sh
 
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
-
 	newinitd "${FILESDIR}/${PN}.init" ${PN}
 
-	# Default configuration file
+	# Default configuration file and directory
+	diropts -m0770 -o root -g ${PN}
+	dodir "${DHOMEDIR}" "${DHOMEDIR}/config"
+
 	insinto "${DHOMEDIR}/config"
+	insopts -m0660 -o root -g ${PN}
 	doins "${FILESDIR}/${PN}.ini"
 
-	# Assign ownership of SABnzbd default directory
-	fowners -R root:${PN} "${DHOMEDIR}"
-	fperms -R 770 "${DHOMEDIR}"
-
-	# Rotation of logfile
+	# Rotation of log files
 	insinto /etc/logrotate.d
+	insopts -m0644 -o root -g root
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	# Add themes & code into /usr/share
 	insinto /usr/share/${PN}
+	insopts -m0640 -o root -g ${PN}
 	doins -r cherrypy email gntp interfaces locale po sabnzbd SABnzbd.py tools util
-
-	# Adjust permissions in python source directory for root:sabnzbd
-	fowners -R root:${PN} /usr/share/${PN}
-	fperms -R 770 /usr/share/${PN}
 }
 
 pkg_postinst() {
