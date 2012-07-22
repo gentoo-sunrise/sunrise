@@ -132,7 +132,7 @@ src_install(){
 	done
 
 	# Common docs
-	dodoc LICENSE README README.modDinoex dynip.sh iroffer.cron
+	dodoc README README.modDinoex dynip.sh iroffer.cron
 	newdoc "${FILESDIR}/${PN}-HOWTO" HOWTO
 	doman iroffer.1
 

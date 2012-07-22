@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jul 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  iroffer-dinoex-3.27.ebuild, metadata.xml:
+  Drop LICENSE file, drop comment in metadata.xml
+
 *iroffer-dinoex-3.27 (14 Jul 2012)
 
   14 Jul 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com
