@@ -179,8 +179,6 @@ media-fonts/openfontlibrary:serif - Install serif fonts
 media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:gnet - Add support for cluster rendering
-media-gfx/openvrml:player - Build the openvrml-player Gnome application
-media-gfx/openvrml:xembed - Build the XEmbed container control
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
 media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
 media-plugins/gimp-refocus:lapack-atlas - Use the ATLAS version of lapack
@@ -207,8 +205,24 @@ net-dialup/iwar:iax2 - Enable iax2 protocol support
 net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
 net-dns/nsd:nsec3 - Enable NSEC3 support
 net-dns/nsd:root-server - Configure NSD as a root server
-net-dns/nsd:runtime-checks - Enable runtime checks
+net-dns/nsd:runtime-checks - Enable runtime checks, this could lead to a reduced service level
+net-dns/nsd:zone-stats - Enable per-zone statistics logging, this could lead to a reduced service level
 net-firewall/vuurmuur:logrotate - Install support files for logrotate
+net-irc/iroffer-dinoex:admin - Add HTTP admin (need flag “http”)
+net-irc/iroffer-dinoex:blowfish - Add blowfish encryption support (for channel)
+net-irc/iroffer-dinoex:chroot - Add chroot support
+net-irc/iroffer-dinoex:curl - Needed for FETCH command
+net-irc/iroffer-dinoex:daemon - Add daemon support
+net-irc/iroffer-dinoex:debug - Compile with debug option
+net-irc/iroffer-dinoex:geoip - Add geoip support (country and city lookup)
+net-irc/iroffer-dinoex:gnutls - Add SSL and TLS support with net-libs/gnutls
+net-irc/iroffer-dinoex:http - Add HTTP server support
+net-irc/iroffer-dinoex:memsave - Memory protection
+net-irc/iroffer-dinoex:ruby - Add RUBY support
+net-irc/iroffer-dinoex:ssl - Add SSL support with OpenSSL
+net-irc/iroffer-dinoex:static - Build a static binary
+net-irc/iroffer-dinoex:telnet - Add support for telnet administration
+net-irc/iroffer-dinoex:upnp - Forward ports using UPnP
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
@@ -264,8 +278,6 @@ sys-fs/ntfs3g-ar:crypt - Add support for encrypted NTFS drives/partitions.
 sys-fs/ntfs3g-ar:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
 sys-fs/ntfs3g-ar:ntfsprogs - Include internal version of ntfsprogs. This will block sys-fs/ntfsprogs.
 sys-fs/ntfs3g-ar:udev - Install udev rule to make udisks use ntfs-3g instead of the kernel NTFS driver.
-sys-kernel/ccs-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
-sys-kernel/glendix-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
 www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
