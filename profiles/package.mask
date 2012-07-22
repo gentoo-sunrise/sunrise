@@ -26,13 +26,6 @@
 # dev-util/eclipse-sdk:3.5
 dev-util/eclim
 
-# Thomas Sachau <tommy@gentoo.org> (13 May 2012)
-# outdated and unmaintained kernel sources
-# probably also contain security issues, so masked
-# for removal in 30 days
-sys-kernel/ccs-sources
-sys-kernel/glendix-sources
-
 # Thomas Sachau <tommy@gentoo.org> (15 Okt 2009)
 # mask due to masked postgresql-server-8.2*
 dev-db/plr
