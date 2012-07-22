@@ -91,7 +91,6 @@ sys-block
 sys-cluster
 sys-devel
 sys-fs
-sys-kernel
 sys-libs
 sys-power
 sys-process
@@ -99,6 +98,7 @@ www-apache
 www-apps
 www-client
 www-misc
+www-plugins
 www-servers
 x11-drivers
 x11-libs
