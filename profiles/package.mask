@@ -22,11 +22,6 @@
 ##
 
 # Thomas Sachau <tommy@gentoo.org> (13 May 2012)
-# masked due to masked dependency:
-# net-libs/xulrunner
-media-gfx/openvrml
-
-# Thomas Sachau <tommy@gentoo.org> (13 May 2012)
 # outdated and unmaintained kernel sources
 # probably also contain security issues, so masked
 # for removal in 30 days
