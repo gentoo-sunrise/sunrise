@@ -11,7 +11,7 @@ inherit distutils vcs-snapshot
 
 DESCRIPTION="ECDSA cryptographic signature library in pure Python"
 HOMEPAGE="http://github.com/warner/python-ecdsa"
-SRC_URI="http://github.com/warner/python-${P}/tarball/python-${P} -> ${P}.tar.gz"
+SRC_URI="http://github.com/warner/python-${PN}/tarball/python-${P} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
