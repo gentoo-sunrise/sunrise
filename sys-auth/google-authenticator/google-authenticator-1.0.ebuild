@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit eutils toolchain-funcs multilib
+inherit eutils toolchain-funcs pam
 
 DESCRIPTION="PAM Module for two step verification via mobile platform"
 HOMEPAGE="http://code.google.com/p/google-authenticator/"
@@ -32,15 +32,15 @@ src_prepare(){
 }
 
 src_install(){
-	dodoc README
-	insinto $(get_libdir)/security
-	doins pam_google_authenticator.so
+	dopammod pam_google_authenticator.so
 	dobin google-authenticator
+	dodoc README
+	dohtml totp.html
 }
 
 pkg_postinst(){
-	elog "Add this line to your PAM configuration file in /etc/pam.d:"
-	elog "auth required pam_google_authenticator.so"
+	elog "For further information see"
+	elog "http://wiki.gentoo.org/wiki/Google_Authenticator"
 	elog ""
 	elog "If you want support for QR-Codes, install media-gfx/qrencode."
 }
