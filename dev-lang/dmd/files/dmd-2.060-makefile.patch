@@ -1,0 +1,35 @@
+The patches allow for MODEL, DMD (compiler for the library) and
+DDOC (documentation generator) to be overriden on the command line.
+--- dmd2/src/dmd/posix.mak
++++ dmd2/src/dmd/posix.mak
+@@ -29,7 +29,7 @@
+ TK=tk
+ ROOT=root
+ 
+-MODEL=32
++MODEL?=32
+ 
+ ifeq (OSX,$(TARGET))
+     SDKDIR=/Developer/SDKs
+--- dmd2/src/druntime/posix.mak
++++ dmd2/src/druntime/posix.mak
+@@ -25,7 +25,7 @@
+ DOCDIR=doc
+ IMPDIR=import
+ 
+-MODEL=32
++MODEL?=32
+ 
+ DFLAGS=-m$(MODEL) -O -release -inline -w -Isrc -Iimport -property
+ UDFLAGS=-m$(MODEL) -O -release -w -Isrc -Iimport -property
+--- dmd2/src/phobos/posix.mak
++++ dmd2/src/phobos/posix.mak
+@@ -138,7 +138,7 @@
+ endif
+ 
+ # Set DDOC, the documentation generator
+-DDOC=$(DMD)
++DDOC?=$(DMD)
+ 
+ # Set LIB, the ultimate target
+ ifeq (,$(findstring win,$(OS)))
