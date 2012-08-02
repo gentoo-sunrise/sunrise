@@ -1,0 +1,13 @@
+# ChangeLog for mail-client/mutt-kz
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*mutt-kz-0_pre20120627 (02 Aug 2012)
+
+  02 Aug 2012; Stefan Kuhn (Wuodan) wuodan-gentoo@hispeed.ch
+  +mutt-kz-0_pre20120627.ebuild,
+  +files/mutt-kz-0_pre20120627-progress-bar.patch,
+  +files/mutt-kz-0_pre20120627-severe-warnings.patch, +files/Muttrc,
+  +files/Muttrc.mbox, +metadata.xml:
+  New Ebuild for bug #427334 thanks to everyone on sunrise IRC
+

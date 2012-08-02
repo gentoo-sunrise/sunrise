@@ -1,0 +1,16 @@
+Fixes for QA notices about severe warning
+* mh.c:1415:2: warning: implicit declaration of function ‘nm_update_filename’
+see upstream bugs #22/#23 at https://github.com/karelzak/mutt-kz/issues?state=open
+--- mh.c	2012-07-29 16:16:46.076000048 +0200
++++ mh.c	2012-07-29 16:17:32.579999940 +0200
+@@ -54,6 +54,10 @@
+ #include <sys/time.h>
+ #endif
+ 
++#ifdef USE_NOTMUCH
++#include "mutt_notmuch.h"
++#endif
++
+ #define		INS_SORT_THRESHOLD		6
+ 
+ struct maildir

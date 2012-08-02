@@ -1,0 +1,123 @@
+Adds the Gentoo specific progress bar that is used in Gentoo's Mutt guide.
+Proposed upstreams in https://github.com/karelzak/mutt-kz/pull/23
+diff --git a/PATCHES b/PATCHES
+index e69de29..785edd0 100644
+--- a/PATCHES
++++ b/PATCHES
+@@ -0,0 +1 @@
++patch-1.5.20hg.pdmef.progress.vl.2
+diff --git a/color.c b/color.c
+index 9a3a552..f7db847 100644
+--- a/color.c
++++ b/color.c
+@@ -96,6 +96,7 @@ static const struct mapping_t Fields[] =
+   { "sidebar_new",	MT_COLOR_NEW },
+   { "sidebar_flagged",	MT_COLOR_FLAGGED },
+   { "sidebar",		MT_COLOR_SIDEBAR },
++  { "progress",		MT_COLOR_PROGRESS },
+   { NULL,		0 }
+ };
+ 
+diff --git a/curs_lib.c b/curs_lib.c
+index e5a0113..c5ee2e6 100644
+--- a/curs_lib.c
++++ b/curs_lib.c
+@@ -390,6 +390,52 @@ void mutt_progress_init (progress_t* progress, const char *msg,
+   mutt_progress_update (progress, 0, 0);
+ }
+ 
++static void message_bar (int percent, const char *fmt, ...)
++{
++  va_list ap;
++  char buf[STRING], buf2[STRING];
++  int w = percent * COLS / 100;
++  size_t l;
++
++  va_start (ap, fmt);
++  vsnprintf (buf, sizeof (buf), fmt, ap);
++  l = mutt_strwidth (buf);
++  va_end (ap);
++
++  mutt_format_string(buf2, sizeof (buf2),
++    0, COLS-2, FMT_LEFT, 0, buf, sizeof (buf), 0);
++
++  move (LINES - 1, 0);
++
++  if (l < w)
++  {
++    SETCOLOR(MT_COLOR_PROGRESS);
++    addstr (buf2);
++    w -= l;
++    while (w--)
++      addch(' ');
++    SETCOLOR(MT_COLOR_NORMAL);
++    clrtoeol ();
++    mutt_refresh();
++  }
++  else
++  {
++    size_t bw;
++    char ch;
++    int off = mutt_wstr_trunc (buf2, sizeof (buf2), w, &bw);
++
++    ch = buf2[off];
++    buf2[off] = 0;
++    SETCOLOR(MT_COLOR_PROGRESS);
++    addstr (buf2);
++    buf2[off] = ch;
++    SETCOLOR(MT_COLOR_NORMAL);
++    addstr (&buf2[off]);
++    clrtoeol ();
++    mutt_refresh();
++  }
++}
++
+ void mutt_progress_update (progress_t* progress, long pos, int percent)
+ {
+   char posstr[SHORT_STRING];
+@@ -440,16 +486,16 @@ void mutt_progress_update (progress_t* progress, long pos, int percent)
+ 
+     if (progress->size > 0)
+     {
+-      mutt_message ("%s %s/%s (%d%%)", progress->msg, posstr, progress->sizestr,
+-		    percent > 0 ? percent :
+-		   	(int) (100.0 * (double) progress->pos / progress->size));
++      message_bar (percent > 0 ? percent : (int) (100.0 * (double) progress->pos / progress->size),
++        "%s %s/%s (%d%%)", progress->msg, posstr, progress->sizestr,
++        percent > 0 ? percent : (int) (100.0 * (double) progress->pos / progress->size));
+     }
+     else
+     {
+       if (percent > 0)
+-	mutt_message ("%s %s (%d%%)", progress->msg, posstr, percent);
++        message_bar (percent, "%s %s (%d%%)", progress->msg, posstr, percent);
+       else
+-	mutt_message ("%s %s", progress->msg, posstr);
++        mutt_message ("%s %s", progress->msg, posstr);
+     }
+   }
+ 
+diff --git a/doc/manual.xml.head b/doc/manual.xml.head
+index 0d95886..025af03 100644
+--- a/doc/manual.xml.head
++++ b/doc/manual.xml.head
+@@ -2641,6 +2641,7 @@ specify one or the other).
+ <listitem><para>markers (the <quote>+</quote> markers at the beginning of wrapped lines in the pager)</para></listitem>
+ <listitem><para>message (informational messages)</para></listitem>
+ <listitem><para>normal</para></listitem>
++<listitem><para>progress (visual progress bar)</para></listitem>
+ <listitem><para>quoted (text matching <link linkend="quote-regexp">$quote_regexp</link> in the body of a message)</para></listitem>
+ <listitem><para>quoted1, quoted2, ..., quoted<emphasis>N</emphasis> (higher levels of quoting)</para></listitem>
+ <listitem><para>search (highlighting of words in the pager)</para></listitem>
+diff --git a/mutt_curses.h b/mutt_curses.h
+index cb1acf2..b915fd7 100644
+--- a/mutt_curses.h
++++ b/mutt_curses.h
+@@ -128,6 +128,7 @@ enum
+   MT_COLOR_SIDEBAR,
+   MT_COLOR_UNDERLINE,
+   MT_COLOR_INDEX,
++  MT_COLOR_PROGRESS,
+   MT_COLOR_NEW,
+   MT_COLOR_FLAGGED,
+   MT_COLOR_MAX
