@@ -1,0 +1,11 @@
+# ChangeLog for games-board/cockatrice
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*cockatrice-20120624 (02 Aug 2012)
+
+  02 Aug 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
+  +cockatrice-20120624.ebuild,
+  +files/cockatrice-20120630-servatrice-cmakelists.patch, +metadata.xml:
+  New ebuild games-board/cockatrice for bug #424273
+

@@ -1,0 +1,13 @@
+*** servatrice/CMakeLists.txt	2012-06-24 21:48:27.000000000 +0200
+--- servatrice/CMakeLists.txt	2012-06-30 03:09:45.000000000 +0200
+***************
+*** 45,50 ****
+--- 45,52 ----
+  ADD_EXECUTABLE(servatrice ${servatrice_SOURCES} ${servatrice_HEADERS_MOC})
+  TARGET_LINK_LIBRARIES(servatrice cockatrice_common ${QT_LIBRARIES} ${LIBGCRYPT_LIBRARY})
+  
++ INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/servatrice DESTINATION bin)
++ 
+  #add_custom_target(versionheader ALL DEPENDS version_header)
+  add_custom_command(
+  	OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/version_string.h ${CMAKE_CURRENT_BINARY_DIR}/version_string.cpp
