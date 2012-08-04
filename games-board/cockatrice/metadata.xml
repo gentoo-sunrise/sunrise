@@ -5,6 +5,7 @@
 		<email>maintainer-wanted@gentoo.org</email>
 	</maintainer>
 	<use>
-		<flag name='client'>Build with client</flag>
+		<flag name='dedicated'>Build dedicated server</flag>
+		<flag name='server'>Build with server</flag>
     </use>
 </pkgmetadata>

@@ -1,0 +1,75 @@
+From: Julian Ospald <hasufell@gentoo.org>
+Date: Thu Aug  2 21:27:25 UTC 2012
+Subject: build system
+
+add install rule for cockatrice binary
+make paths for ICONDIR and DESKTOPDIR modifiable
+
+--- servatrice/CMakeLists.txt
++++ servatrice/CMakeLists.txt
+@@ -2,6 +2,9 @@
+ SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+ PROJECT(servatrice)
+ 
++# cmake modules
++include(GNUInstallDirs)
++
+ SET(servatrice_SOURCES
+  src/main.cpp
+  src/passwordhasher.cpp
+@@ -51,3 +54,5 @@
+ 	COMMAND ${CMAKE_COMMAND} -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR} -P ${CMAKE_CURRENT_SOURCE_DIR}/../common/getversion.cmake
+ )
+ 
++# install rules
++INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/servatrice DESTINATION ${CMAKE_INSTALL_BINDIR})
+--- cockatrice/CMakeLists.txt
++++ cockatrice/CMakeLists.txt
+@@ -201,6 +201,11 @@
+ set(CMAKE_CXX_FLAGS_DEBUG "-ggdb -O0")
+ set(CMAKE_CXX_FLAGS_RELEASE "-s -O2")
+ 
++# paths
++set(ICONDIR share/icons CACHE STRING "icon dir")
++set(DESKTOPDIR share/applications CACHE STRING "desktop file destination")
++
++
+ QT4_WRAP_CPP(cockatrice_HEADERS_MOC ${cockatrice_HEADERS})
+ QT4_ADD_TRANSLATION(cockatrice_QM ${cockatrice_TS})
+ QT4_ADD_RESOURCES(cockatrice_RESOURCES_RCC ${cockatrice_RESOURCES})
+@@ -218,9 +223,9 @@
+ 
+ INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/cockatrice DESTINATION bin)
+ if (NOT WIN32 AND NOT APPLE)
+-	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources/cockatrice.png DESTINATION share/icons/hicolor/48x48/apps)
+-	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources/cockatrice.svg DESTINATION share/icons/hicolor/scalable/apps)
+-	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cockatrice.desktop DESTINATION share/applications)
++	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources/cockatrice.png DESTINATION ${ICONDIR}/hicolor/48x48/apps)
++	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources/cockatrice.svg DESTINATION ${ICONDIR}/hicolor/scalable/apps)
++	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cockatrice.desktop DESTINATION ${DESKTOPDIR})
+ 	INSTALL(FILES ${cockatrice_QM} DESTINATION share/cockatrice/translations)
+ ENDIF(NOT WIN32 AND NOT APPLE)
+ 
+From: Julian Ospald <hasufell@gentoo.org>
+Date: Thu Aug  2 22:50:59 UTC 2012
+Subject: 
+
+--- oracle/CMakeLists.txt
++++ oracle/CMakeLists.txt
+@@ -1,6 +1,9 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+ PROJECT(oracle)
+ 
++# paths
++set(DESKTOPDIR share/appliactions CACHE STRING "path to .desktop files")
++
+ SET(oracle_SOURCES src/main.cpp src/oracleimporter.cpp src/window_main.cpp ../cockatrice/src/carddatabase.cpp ../cockatrice/src/settingscache.cpp)
+ SET(oracle_HEADERS src/oracleimporter.h src/window_main.h ../cockatrice/src/carddatabase.h ../cockatrice/src/settingscache.h)
+ 
+@@ -21,5 +24,5 @@
+ 
+ INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/oracle DESTINATION bin)
+ IF (NOT WIN32 AND NOT APPLE)
+-	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/oracle.desktop DESTINATION share/applications)
++	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/oracle.desktop DESTINATION ${DESKTOPDIR})
+ ENDIF (NOT WIN32 AND NOT APPLE)
