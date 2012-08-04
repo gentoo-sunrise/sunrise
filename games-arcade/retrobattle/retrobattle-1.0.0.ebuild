@@ -12,21 +12,31 @@ SRC_URI="${HOMEPAGE}files/${PN}-src-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT="test"
 
 RDEPEND="
-	media-libs/libsdl
+	media-libs/libsdl[X,audio,video]
 	media-libs/sdl-mixer
 	"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${PN}-src-${PV}/src/
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-build.patch
+}
+
 src_install() {
-	emake RETROINSTALLDIR="${D}/${GAMES_DATADIR}" install || die "emake failed"
-	prepgamesdirs
-	# Following games.eclass the binary should be in /usr/games/bin/
-	dosym "${GAMES_DATADIR}/${PN}/${PN}" "${GAMES_PREFIX}/bin/${PN}" || die "dosym failed"
+	insinto "${GAMES_DATADIR}"/${PN}
+	doins -r "${WORKDIR}"/${PN}-src-${PV}/data
+
+	newgamesbin "${WORKDIR}"/${PN}-src-${PV}/${PN} ${PN}.bin
+	games_make_wrapper ${PN} "${PN}.bin \"${GAMES_DATADIR}/${PN}\""
+	make_desktop_entry ${PN} &{PN} ""
+
 	dodoc "../manual.txt" "../README"
+
+	prepgamesdirs
 }
