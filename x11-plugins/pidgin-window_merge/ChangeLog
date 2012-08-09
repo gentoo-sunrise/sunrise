@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*pidgin-window_merge-0.3 (09 Aug 2012)
+
+  09 Aug 2012; Manuel Rüger (mrueg) gentoo@rueg.eu
+  -pidgin-window_merge-0.2_p20120531.ebuild, +pidgin-window_merge-0.3.ebuild:
+  Version bump, thanks to Tommy[D]
+
 *pidgin-window_merge-0.2_p20120531 (07 Jul 2012)
 
   07 Jul 2012; Manuel Rüger (mrueg) gentoo@rueg.eu

@@ -3,12 +3,10 @@
 # $Header: $
 
 EAPI=4
-inherit autotools
 
 DESCRIPTION="A Pidgin plugin that merges the Buddy List window with a conversation window"
 HOMEPAGE="https://github.com/dm0-/window_merge"
-COMMIT="8799eadf17a6f42f9d80932c1f9f2f99e3457a6a"
-SRC_URI="http://github.com/dm0-/${PN#pidgin-}/tarball/${COMMIT} -> ${P}.tar.gz"
+SRC_URI="mirror://github/dm0-/${PN#pidgin-}/${P#pidgin-}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,11 +18,7 @@ RDEPEND="dev-libs/glib:2
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
-S="${WORKDIR}"/dm0--${PN#pidgin-}-${COMMIT:0:7}
-src_prepare(){
-	sed -e "/ACLOCAL_AMFLAGS/d" -i Makefile.am || die
-	eautoreconf
-}
+S=${WORKDIR}/${P#pidgin-}
 
 pkg_postinst(){
 	ewarn "This plugin and infopane plugin (purple-plugin_pack) activated"
