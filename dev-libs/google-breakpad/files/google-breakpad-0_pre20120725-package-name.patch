@@ -1,0 +1,11 @@
+--- configure.ac
++++ configure.ac
+@@ -30,7 +30,7 @@
+ 
+ AC_PREREQ(2.57)
+ 
+-AC_INIT(breakpad, 0.1, google-breakpad-dev@googlegroups.com)
++AC_INIT(google-breakpad, 0_pre20120725, google-breakpad-dev@googlegroups.com)
+ dnl Sanity check: the argument is just a file that should exist.
+ AC_CONFIG_SRCDIR(README)
+ AC_CONFIG_AUX_DIR(autotools)

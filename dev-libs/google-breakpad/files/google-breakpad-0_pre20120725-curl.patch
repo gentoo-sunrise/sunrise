@@ -1,0 +1,45 @@
+--- configure.ac
++++ configure.ac
+@@ -138,5 +138,7 @@
+               [selftest=false])
+ AM_CONDITIONAL(SELFTEST, test x$selftest = xtrue)
+ 
++AC_CHECK_HEADERS([curl/curl.h],	[CURL_HEADER=yes; break;])
++
+ AC_CONFIG_FILES([Makefile])
+ AC_OUTPUT
+
+--- src/common/linux/http_upload.cc
++++ src/common/linux/http_upload.cc
+@@ -31,7 +31,14 @@
+ 
+ #include <assert.h>
+ #include <dlfcn.h>
++
++#include "config.h"
++
++#ifdef HAVE_CURL_CURL_H
++#include <curl/curl.h>
++#else
+ #include "third_party/curl/curl.h"
++#endif
+ 
+ namespace {
+ 
+--- src/common/linux/libcurl_wrapper.h
++++ src/common/linux/libcurl_wrapper.h
+@@ -34,7 +34,14 @@
+ #include <map>
+ 
+ #include "common/using_std_string.h"
++
++#include "config.h"
++
++#ifdef HAVE_CURL_CURL_H
++#include <curl/curl.h>
++#else
+ #include "third_party/curl/curl.h"
++#endif
+ 
+ namespace google_breakpad {
+ class LibcurlWrapper {

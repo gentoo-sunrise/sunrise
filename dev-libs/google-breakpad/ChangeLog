@@ -1,0 +1,13 @@
+# ChangeLog for dev-libs/google-breakpad
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*google-breakpad-0_pre20120725 (10 Aug 2012)
+
+  10 Aug 2012; Jauhien Piatlicki (jauhien) piatlicki@gmail.com
+  +google-breakpad-0_pre20120725.ebuild,
+  +files/google-breakpad-0_pre20120725-curl.patch,
+  +files/google-breakpad-0_pre20120725-headers.patch,
+  +files/google-breakpad-0_pre20120725-package-name.patch, +metadata.xml:
+  New Ebuild for bug #428024 thanks to hasufell.
+
