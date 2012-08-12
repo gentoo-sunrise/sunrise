@@ -160,7 +160,6 @@ games-fps/vavoom-textures:hexen - Install Hexen resources
 games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
 games-misc/fretsonfire:guitarhero - Enable Guitar Hero song importer
-games-misc/fretsonfire:psyco - Enable psyco python accelerator
 games-puzzle/hex-a-hop:pango - Use sdl-pango instead of default sdl-ttf for font rendering
 games-strategy/0ad:audio - Audio support
 games-strategy/0ad:editor - Include Atlas scenario editor projects
@@ -169,6 +168,12 @@ games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogs
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
 gnome-extra/evolution-rss:webkit - Build using the webkit renderer
+mail-client/mutt-kz:gpg - Enable support for app-crypt/gpgme
+mail-client/mutt-kz:notmuch - Enable support for net-mail/notmuch
+mail-client/mutt-kz:pop - Enable support for pop
+mail-client/mutt-kz:smime - Enable support for smime
+mail-client/mutt-kz:smtp - Enable support for smtp
+mail-client/mutt-kz:tokyocabinet - Enable tokyocabinet database backend for header caching
 mail-filter/gross:ares - Enables dnsbl checking using c-ares library
 mail-mta/citadel:pic - Build position-independent executables
 mail-mta/citadel:postfix - Makes it possible to run citadel alongside Postfix. Mailwrapper replacement.
