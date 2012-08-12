@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-RDEPEND="net-fs/mount-cifs
+RDEPEND="net-fs/cifs-utils
 	=dev-python/pygtk-2*"
 
 S="${WORKDIR}/${MY_P}"
