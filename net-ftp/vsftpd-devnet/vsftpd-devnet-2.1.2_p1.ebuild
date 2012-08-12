@@ -20,7 +20,7 @@ DEPEND="caps? ( sys-libs/libcap )
 RDEPEND="${DEPEND}
 	!net-ftp/vsftpd
 	net-ftp/ftpbase
-	selinux? ( sec-policy/selinux-ftpd )
+	selinux? ( sec-policy/selinux-ftp )
 	xinetd? ( sys-apps/xinetd )"
 
 S=${WORKDIR}/${PN%-*}-${PV%_p*}-ext.${PV#*_p}

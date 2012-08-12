@@ -1,6 +1,9 @@
 # ChangeLog for net-ftp/vsftpd-devnet
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Aug 2012; Mike Gilbert <floppym@gentoo.org> vsftpd-devnet-2.1.2_p1.ebuild:
+  Update selinux policy.
 
   04 Sep 2009; Peter Volkov <pva@gentoo.org>
   files/vsftpd-devnet-2.1.0-dont-link-caps.patch:
