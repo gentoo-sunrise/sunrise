@@ -14,12 +14,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="sys-apps/pciutils
+RDEPEND="dev-libs/json-c
+	dev-libs/libpcre
+	sys-apps/pciutils
 	sys-power/iasl
 	sys-power/pmtools
 	sys-apps/dmidecode"
 DEPEND="${RDEPEND}
-	dev-libs/json-c
 	sys-devel/libtool"
 
 src_prepare(){
