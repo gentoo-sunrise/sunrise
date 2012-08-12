@@ -24,8 +24,8 @@
 # Manuel Rueger <gentoo@rueg.eu> (12 Aug 2012)
 # needs <=app-text/poppler-0.17, which was dropped from tree
 # doesn't compile with dev-lang/vala:0.16
-# use x11-apps/pdfpc instead (fork of pdf_presenter_console)
-x11-apps/pdf_presenter_console
+# use x11-misc/pdfpc instead (fork of pdf_presenter_console)
+x11-misc/pdf_presenter_console
 
 # Thomas Sachau <tommy@gentoo.org> (22 Jun 2012)
 # masked due to masked dependency:
