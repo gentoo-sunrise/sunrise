@@ -6,7 +6,7 @@ EAPI=4
 
 inherit cmake-utils
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="A db access library for C++ that makes the illusion of embedding SQL queries in the regular C++ code"
 HOMEPAGE="http://soci.sourceforge.net/"
