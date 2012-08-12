@@ -21,21 +21,23 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="
+RDEPEND="
 	media-libs/glew
-	media-libs/libpng
-	media-libs/libsdl
+	media-libs/libpng:0
+	media-libs/libsdl[X,video]
 	media-libs/freetype:2
 	virtual/ffmpeg
 	dev-libs/fribidi
 	dev-python/pygame[X]
 	sys-libs/zlib"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
-S="${WORKDIR}/${MY_P}/module"
+S=${WORKDIR}/${MY_P}/module
 
 src_compile() {
 	export RENPY_DEPS_INSTALL="${ROOT}usr"
+	export CFLAGS="${CFLAGS} $(pkg-config --cflags fribidi)"
 	distutils_src_compile
 }
 
