@@ -1,0 +1,11 @@
+# ChangeLog for dev-util/lttngtop
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*lttngtop-9999 (16 Aug 2012)
+*lttngtop-0.2 (16 Aug 2012)
+
+  16 Aug 2012; Lan Yixun (dlan) <dennis.yxun@gmail.com> +lttngtop-0.2.ebuild,
+  +lttngtop-9999.ebuild, +metadata.xml:
+  New ebuild for bug #431364, thanks floppym and Tommy[D]
+
