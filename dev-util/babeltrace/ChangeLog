@@ -1,0 +1,11 @@
+# ChangeLog for dev-util/babeltrace
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*babeltrace-9999 (16 Aug 2012)
+*babeltrace-1.0.0_rc4 (16 Aug 2012)
+
+  16 Aug 2012; Lan Yixun (dlan) <dennis.yxun@gmail.com>
+  +babeltrace-1.0.0_rc4.ebuild, +babeltrace-9999.ebuild, +metadata.xml:
+  New ebuild for bug #431362, thanks floppym and Tommy[D]
+
