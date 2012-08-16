@@ -1,0 +1,11 @@
+# ChangeLog for dev-util/lttng-tools
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*lttng-tools-9999 (16 Aug 2012)
+*lttng-tools-2.0.4 (16 Aug 2012)
+
+  16 Aug 2012; Lan Yixun (dlan) <dennis.yxun@gmail.com>
+  +lttng-tools-2.0.4.ebuild, +lttng-tools-9999.ebuild, +metadata.xml:
+  New ebuild for bug #431356, thanks floppym and Tommy[D]
+
