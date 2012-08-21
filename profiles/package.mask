@@ -21,6 +21,17 @@
 ##   End example
 ##
 
+# Julian Ospald <julian.ospald@googlemail.com> (21 Aug 2012)
+# masked for removal in 60 days because it does not need to be
+# installed via package manager and is impossible to maintain
+# due to frequent version bumps and increasing plugins amount
+x11-misc/spacefm-cdemu-plugin
+x11-misc/spacefm-dmenu-plugin
+x11-misc/spacefm-httpshare-plugin
+x11-misc/spacefm-pdfmerge-plugin
+x11-misc/spacefm-plugins
+x11-misc/spacefm-trash-plugin
+
 # Manuel Rueger <gentoo@rueg.eu> (12 Aug 2012)
 # needs <=app-text/poppler-0.17, which was dropped from tree
 # doesn't compile with dev-lang/vala:0.16
