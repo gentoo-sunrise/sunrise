@@ -113,6 +113,7 @@ dev-util/eclim:cdt - Enables C/C++ development support
 dev-util/eresi:server - Build eresi server capability
 dev-util/icewing:grabber - Build the grabber plug-in
 dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
+dev-util/lttng-tools:ust - Support LTTng-UST (Userspace Tracing)
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 dev-util/valide:unique - 
