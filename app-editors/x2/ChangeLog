@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Sep 2012; Manuel Rüger (mrueg) gentoo@rueg.eu x2-1.1.0.ebuild,
+  +files/x2-1.1.0-Makefile.patch, +files/x2-1.1.0-desktop.patch, metadata.xml:
+  Respect CC, use pkg-config, fix desktop file. Thanks to floppym
+
 *x2-1.1.0 (04 May 2012)
 
   04 May 2012; Manuel Rüger (mrueg) gentoo@rueg.eu +x2-1.1.0.ebuild,
