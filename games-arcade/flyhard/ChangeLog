@@ -1,6 +1,12 @@
 # ChangeLog for games-arcade/flyhard
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*flyhard-0.42 (09 Sep 2012)
+
+  09 Sep 2012; Manuel Rüger (mrueg) gentoo@rueg.eu -flyhard-0.41.ebuild,
+  +flyhard-0.42.ebuild, +files/flyhard-0.42-Makefile.patch:
+  Version bump. Thanks to hasufell and floppym
 
   05 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
   -flyhard-0.3.ebuild, +flyhard-0.41.ebuild:
