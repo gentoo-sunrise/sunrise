@@ -26,9 +26,15 @@ RDEPEND="ssl? ( >=dev-lang/python-2.6.6[ssl] )
 		ldap? ( dev-python/python-ldap )
 		fastcgi? ( dev-python/flup )"
 
+# radicale's authentication against PAM is not possible here:
+# Gentoo has not included the package
+# also it seems old, which is bad with respect to
+# http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-1502
+
 S=${WORKDIR}/${MY_P}
 
 RDIR=/var/lib/radicale
+LDIR=/var/log/radicale
 
 pkg_setup() {
 	enewgroup radicale
@@ -36,8 +42,12 @@ pkg_setup() {
 }
 
 src_prepare() {
-	sed -i -e "s:^folder = .*$:folder = ${RDIR}:g" \
+	# fix pathes
+	sed -i -e "s:^\(filesystem_folder = \).*$:\1${RDIR}:g" \
 				config || die
+	sed -i -e "s;^\(args = ('/var/log/radicale\);\1/radicale.log;" \
+				logging || die
+	distutils_src_prepare
 }
 
 src_install() {
@@ -49,8 +59,10 @@ src_install() {
 	# init file
 	newinitd "${FILESDIR}"/radicale.init.d radicale || die
 
-	keepdir ${RDIR}
-	fowners radicale:radicale ${RDIR}
+	# directories
+	diropts -m0750
+	dodir ${RDIR}; fowners radicale:radicale ${RDIR}
+	dodir ${LDIR}; fowners radicale:radicale ${LDIR}
 
 	# config file
 	insinto /etc/${PN}
@@ -66,4 +78,6 @@ pkg_postinst() {
 	einfo "Radicale now supports WSGI."
 	einfo "A sample wsgi-script has been put into ${ROOT}usr/share/${PN}."
 	use fastcgi && einfo "You will also find there an example fcgi-script."
+
+	distutils_pkg_postinst
 }

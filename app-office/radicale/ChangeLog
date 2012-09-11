@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*radicale-0.7.1 (11 Sep 2012)
+
+  11 Sep 2012; René Neumann (Necoro) <gentoo@necoro.eu>
+  -radicale-0.6.4.ebuild, +radicale-0.7.1.ebuild, files/radicale.init.d:
+  Bump to version 0.7.1 / now move logs to its own directory
+
   22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   radicale-0.6.4.ebuild:
   inherit user eclass instead of eutils eclass for enewuser

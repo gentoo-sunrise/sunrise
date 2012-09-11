@@ -1,5 +1,5 @@
 #!/sbin/runscript
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,8 +11,6 @@ depend() {
 }
 
 start() {
-    touch /var/log/radicale
-    chown radicale:radicale /var/log/radicale
     ebegin "Starting radicale"
         start-stop-daemon --start --quiet --background \
         --user radicale \
