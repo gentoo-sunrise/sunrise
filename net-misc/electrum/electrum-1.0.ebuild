@@ -10,9 +10,9 @@ RESTRICT_PYTHON_ABIS="2.5 3.*"
 inherit eutils distutils gnome2-utils
 
 MY_P=Electrum-${PV}
-DESCRIPTION="Lightweight Bitcoin client"
-HOMEPAGE="http://ecdsa.org/electrum/"
-SRC_URI="http://ecdsa.org/${PN}/${MY_P}.tar.gz"
+DESCRIPTION="User friendly Bitcoin client"
+HOMEPAGE="http://electrum-desktop.com/"
+SRC_URI="http://electrum-desktop.com/files/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,14 +20,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="gtk qt4"
 REQUIRED_USE="|| ( gtk qt4 )"
 
-LANGS="en de fr sl vi"
+LANGS="en cs de fr nl ru sl vi zh"
 
 for X in ${LANGS}; do
 	IUSE+=" linguas_${X}"
 done
 unset X
 
-DEPEND=""
 RDEPEND="dev-python/ecdsa
 	dev-python/slowaes
 	gtk? ( dev-python/pygtk:2 )
@@ -42,25 +41,26 @@ src_prepare() {
 	sed -i '/electrum\.png/ d' setup.py || die
 	sed -i "s:^Icon=.*:Icon=${PN}:" "${PN}.desktop" || die
 
-	# Fix language codes (from country codes)
-	mv locale/vn locale/vi || die  # Vietnamese
-	mv locale/si locale/sl || die  # Slovenian
+	# Fix language code
+	mv locale/cn locale/zh || die  # Chinese
 
-	# Remove unused localizations:
+	# Remove unrequested localization files:
 	local lang
-	for lang in $LANGS; do
-		if [ $lang != en ] && use !linguas_$lang; then
-			rm -r locale/$lang || die
+	for lang in ${LANGS#en}; do
+		if use linguas_$lang; then
+			test -f "locale/$lang/LC_MESSAGES/${PN}.mo" || die
+		else
+			rm -r "locale/$lang" || die
 		fi
 	done
 
-	# Get rid of unused GUI implementations:
+	# Remove unrequested GUI implementations:
 	if use !gtk; then
 		rm lib/gui.py || die
 	fi
 	if use !qt4; then
-		rm lib/gui_qt.py || die
-		sed -i 's/default="qt"/default="gtk"/' electrum || die
+		rm lib/gui_qt.py lib/gui_lite.py || die
+		sed -i 's/default="lite"/default="gtk"/' electrum || die
 	fi
 
 	distutils_src_prepare
