@@ -11,11 +11,12 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc mysql postgres sqlite"
+REQUIRED_USE="|| ( mysql postgres sqlite )"
 
 RDEPEND="mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base )
 	sqlite? ( dev-db/sqlite:3 )
-	>=dev-libs/cxxtools-2.0"
+	>=dev-libs/cxxtools-2.1"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
@@ -30,8 +31,8 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	dodoc AUTHORS ChangeLog README NEWS doc/*.pdf
+	default
+	dodoc doc/*.pdf
 
 	insinto /usr/share/doc/${PF}/examples
 	doins demo/*.{cpp,h}

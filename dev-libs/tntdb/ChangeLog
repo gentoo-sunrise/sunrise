@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tntdb-1.2 (16 Sep 2012)
+
+  16 Sep 2012; Christopher Head (Hawk777) <chead@chead.ca> -tntdb-1.1.ebuild,
+  +tntdb-1.2.ebuild:
+  Version bump to 1.2 and set REQUIRED_USE sensibly; thanks to yngwin and
+  Tommy[D] for review.
+
 *tntdb-1.1 (15 Jan 2012)
 
   15 Jan 2012; Christopher Head (Hawk777) <headch@gmail.com>
