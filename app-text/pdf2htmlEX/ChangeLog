@@ -1,0 +1,10 @@
+# ChangeLog for app-text/pdf2htmlEX
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*pdf2htmlEX-0.5 (07 Oct 2012)
+
+  07 Oct 2012; Manuel Rueger (mrueg) gentoo@rueg.eu +pdf2htmlEX-0.5.ebuild,
+  +metadata.xml:
+  Initial ebuild bug 435284, thanks to floppym and hasufell
+
