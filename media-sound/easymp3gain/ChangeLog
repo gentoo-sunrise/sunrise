@@ -1,0 +1,10 @@
+# ChangeLog for media-sound/easymp3gain
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*easymp3gain-0.5.0 (07 Oct 2012)
+
+  07 Oct 2012; Manuel Rueger (mrueg) gentoo@rueg.eu +easymp3gain-0.5.0.ebuild,
+  +files/easymp3gain-0.5.0-desktop.patch, +metadata.xml:
+  Initial ebuild bug 434168, thanks to floppym
+
