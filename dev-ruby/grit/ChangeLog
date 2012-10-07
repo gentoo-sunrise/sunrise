@@ -1,6 +1,12 @@
 # ChangeLog for dev-ruby/grit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*grit-2.5.0 (07 Oct 2012)
+
+  07 Oct 2012; Manuel Rueger (mrueg) gentoo@rueg.eu -grit-2.4.1.ebuild,
+  +grit-2.5.0.ebuild:
+  Version bump bug 340623, thanks to floppym
 
   07 Oct 2011; Nathan Phillip Brink <binki@gentoo.org> grit-2.4.1.ebuild:
   Remove extraneous eval instead of just committing a new Manifest.
