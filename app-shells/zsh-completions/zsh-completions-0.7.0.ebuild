@@ -17,7 +17,7 @@ RDEPEND="app-shells/zsh
 	app-shells/zsh-completion"
 
 src_prepare() {
-	rm src/_{baselayout,eselect,gcc-config,genlop,gentoo_packages,gentoolkit,layman,portage,portage_utilsi,yaourt} || die
+	rm src/_{baselayout,eselect,gcc-config,genlop,gentoo_packages,gentoolkit,layman,portage,portage_utils,yaourt} || die
 }
 
 src_install() {
