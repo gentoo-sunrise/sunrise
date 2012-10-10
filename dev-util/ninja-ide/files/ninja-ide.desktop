@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=2.1.1
+Name=Ninja-IDE
+GenericName=Ninja-IDE Is Not Just Another IDE
+Comment=Ninja-IDE is a cross-platform integrated development environment.
+Exec=ninja-ide
+Icon=ninja-ide
+StartupNotify=false
+Terminal=false
+Type=Application
+MimeType=text/plain;
+Categories=Development;
