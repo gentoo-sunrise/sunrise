@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*oxygenkde-3.9.4 (11 Oct 2012)
+
+  11 Oct 2012; Shubhadeep Chaudhuri (TimeManx) <shubhadeepc@gmail.com>
+  -oxygenkde-3.9.3.ebuild, +oxygenkde-3.9.4.ebuild:
+  Version bump
+
 *oxygenkde-3.9.3 (30 Sep 2012)
 
   30 Sep 2012; Shubhadeep Chaudhuri (TimeManx) <shubhadeepc@gmail.com>
