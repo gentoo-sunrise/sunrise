@@ -1,5 +1,5 @@
 #!/sbin/runscript
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,8 +11,8 @@ depend() {
 start() {
 	ebegin "Starting pyTivo"
 	start-stop-daemon --start --exec /usr/bin/pytivo \
-		--pidfile /var/run/pytivo.pid -m -N 19 -c pytivo:pytivo \
-		-- > /dev/null 2>&1 &
+		--pidfile /var/run/pytivo.pid -m -N 19 -u pytivo:pytivo \
+		-- > /tmp/pyTivo.log 2>&1 &
 	eend $?
 }
 

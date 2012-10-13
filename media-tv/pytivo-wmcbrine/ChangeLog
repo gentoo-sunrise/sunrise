@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*pytivo-wmcbrine-20120910 (13 Oct 2012)
+
+  13 Oct 2012; John Ratliff (jdratlif) <webmaster@technoplaza.net>
+  -pytivo-wmcbrine-20100808.ebuild, +pytivo-wmcbrine-20120910.ebuild,
+  +files/pytivo, -files/pyTivo.initd.sh:
+  Version bump for pytivo-wmcbrine. Thanks to _AxS_, SebastienP, and Tommy[D]
+
   22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   pytivo-wmcbrine-20100808.ebuild:
   inherit user eclass instead of eutils eclass for enewuser

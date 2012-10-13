@@ -6,11 +6,14 @@ EAPI="2"
 
 PYTHON_DEPEND="2"
 
-inherit multilib python user
+inherit git-2 multilib python user
 
 DESCRIPTION="An HMO and GoBack server for Tivo"
 HOMEPAGE="http://pytivo.sourceforge.net/"
-SRC_URI="http://ompldr.org/vNWtudQ/${P}.tar.bz2 -> ${P}.tar.gz"
+SRC_URI=""
+
+EGIT_REPO_URI="git://github.com/wmcbrine/pytivo.git"
+EGIT_COMMIT="cf0971e929661dabd3a34f363500f8d6f575d58f"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,12 +24,13 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	virtual/ffmpeg"
 
-S="${WORKDIR}/wmcbrine"
-
 pkg_setup() {
 	enewgroup pytivo
 	enewuser pytivo -1 -1 -1 pytivo
 	python_set_active_version 2
+}
+
+src_prepare() {
 	python_convert_shebangs -r 2 .
 }
 
@@ -39,8 +43,7 @@ src_install() {
 
 	fperms 0755 ${MY_LIBDIR}/pyTivo.py || die "Cannot set permissions"
 
-	newinitd "${FILESDIR}"/pyTivo.initd.sh pytivo \
-		|| die "Cannot create init.d launcher"
+	doinitd "${FILESDIR}"/pytivo || die "Cannot create init.d launcher"
 
 	dodoc README || die "Cannot install docs"
 	newdoc pyTivo.conf.dist pyTivo.conf || die "Cannot install docs"
