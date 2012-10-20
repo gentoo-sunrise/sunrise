@@ -4,8 +4,6 @@
 
 EAPI=4
 
-inherit multilib toolchain-funcs vcs-snapshot
-
 DESCRIPTION="High-performance C++ interface for MPFR library"
 HOMEPAGE="http://www.holoborodko.com/pavel/mpfr/"
 SRC_URI="mirror://github/jauhien/sources/${P//+/%2B}.tar.gz -> ${P}.tar.gz"
@@ -15,15 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-libs/mpfr"
+DEPEND="dev-libs/mpfr
+	dev-libs/gmp"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	cp "${FILESDIR}/makefile" makefile || die
-	tc-export CXX
-	export VER="${PV}"
-}
-
 src_install() {
-	emake DESTDIR="${D}" LIBDIR="${D}/usr/$(get_libdir)/" install
+	insinto /usr/include
+	doins mpreal.h
+	dodoc -r example
 }
