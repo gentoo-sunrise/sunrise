@@ -11,7 +11,7 @@ SRC_URI="https://github.com/zsh-users/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 RDEPEND="app-shells/zsh
 	app-shells/zsh-completion"

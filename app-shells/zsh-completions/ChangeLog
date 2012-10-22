@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Oct 2012; Jauhien Piatlicki (jauhien) <piatlicki@gmail.com>
+  zsh-completions-0.7.0.ebuild:
+  ~x86 keyword added
+
   08 Oct 2012; Manuel Rueger (mrueg) gentoo@rueg.eu
   zsh-completions-0.7.0.ebuild:
   Fix typo
