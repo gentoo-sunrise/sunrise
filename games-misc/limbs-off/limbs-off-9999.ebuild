@@ -19,7 +19,7 @@ IUSE=""
 RDEPEND="
 	media-libs/fontconfig
 	media-libs/libpng:0
-	media-libs/libsdl
+	media-libs/libsdl[opengl]
 	media-libs/sdl-ttf
 	virtual/opengl
 	"

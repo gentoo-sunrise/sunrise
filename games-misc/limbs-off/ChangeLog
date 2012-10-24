@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Oct 2012; Alexander Berntsen (alexander__b) <alexander@plaimi.net>
+  limbs-off-1.0_alpha2.ebuild, limbs-off-9999.ebuild:
+  games-misc/limbs-off: Add opengl USE to libsdl RDEPEND
+
 *limbs-off-1.0_alpha2 (23 May 2012)
 
   23 May 2012; Alexander Berntsen (alexander__b) <alexanderberntsen@linux.com>
