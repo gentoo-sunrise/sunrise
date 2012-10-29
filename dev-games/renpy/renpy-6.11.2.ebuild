@@ -16,9 +16,9 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-python/argparse
-	dev-python/pygame[X]
-	>=dev-games/renpy-modules-${PV}"
+RDEPEND="dev-python/pygame[X]
+	>=dev-games/renpy-modules-${PV}
+	virtual/python-argparse"
 
 pkg_setup() {
 	python_set_active_version 2

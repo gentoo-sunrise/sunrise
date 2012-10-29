@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Oct 2012; Michał Górny <mgorny@gentoo.org> renpy-6.11.2.ebuild,
+  renpy-6.12.2.ebuild, renpy-6.13.9.ebuild:
+  dev-games/renpy: Use virtual/python-argparse.
+
   19 Mar 2012; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   -renpy-6.13.8.ebuild, +renpy-6.13.9.ebuild,
   +files/renpy-jedit-path-6.13.9.patch:
@@ -90,4 +94,3 @@
   03 Feb 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
   +renpy-6.10.2.ebuild, +files/renpy-jedit-path.patch, +metadata.xml:
   New ebuild for bug 301324
-
