@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-python/lxml
 	dev-python/pycurl
 	dev-python/vobject
-	|| ( dev-lang/python:2.7 dev-python/argparse )"
+	virtual/python-argparse"
 DEPEND="${RDEPEND}"
 
 src_prepare(){

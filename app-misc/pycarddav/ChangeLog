@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Oct 2012; Michał Górny <mgorny@gentoo.org> pycarddav-0.3.3.ebuild:
+  app-misc/pycarddav: Use virtual/python-argparse.
+
   16 Mar 2012; rainbow (ra1nb0w) <rainbow@irh.it> pycarddav-0.3.3.ebuild:
   deleted tabs from RDEPEND
 
@@ -10,4 +13,3 @@
   08 Mar 2012; rainbow (ra1nb0w) <rainbow@irh.it> +pycarddav-0.3.3.ebuild,
   +metadata.xml:
   New Ebuild for bug 405945
-
