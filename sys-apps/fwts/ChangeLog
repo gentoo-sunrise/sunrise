@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*fwts-0.26.01 (07 Nov 2012)
+
+  07 Nov 2012; Manuel Rueger (mrueg) gentoo@rueg.eu -fwts-0.26.00.ebuild,
+  +fwts-0.26.01.ebuild:
+  Version bump
+
 *fwts-0.26.00 (20 Sep 2012)
 
   20 Sep 2012; Manuel Rueger (mrueg) gentoo@rueg.eu -fwts-0.25.07.ebuild,
