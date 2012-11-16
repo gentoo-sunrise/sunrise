@@ -1,0 +1,10 @@
+# ChangeLog for app-admin/reprepro
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*reprepro-4.12.3 (16 Nov 2012)
+
+  16 Nov 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +reprepro-4.12.3.ebuild, +metadata.xml:
+  New Ebuild for bug #443476.
+
