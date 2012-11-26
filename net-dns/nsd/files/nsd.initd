@@ -62,6 +62,10 @@ rebuild() {
 
 start() { 
 	ebegin "Starting NSD"
+
+	local pidfile=$(${my_nsd_checkconf} -o pidfile ${config_file})
+	checkpath -d -o nsd:nsd $(dirname ${pidfile})
+
 	_checkconf || return 1
 	_checkdb || return 1
 	${my_nsdc} start

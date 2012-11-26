@@ -70,9 +70,9 @@ src_install() {
 	fowners root:nsd /var/lib/nsd
 	fperms 750 /var/lib/nsd
 
-	# pid dir, writable by nsd
-	dodir /var/run/nsd
-	fowners nsd:nsd /var/run/nsd
+	# remove /var/run data created by Makefile, handled by initd script
+	rm -rf "${D}"/var/run || die "could not remove /var/run/ directory"
+
 }
 
 pkg_postinst() {
