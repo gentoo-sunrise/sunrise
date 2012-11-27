@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Nov 2012; Julian Ospald <hasufell@gentoo.org> fwts-0.26.01.ebuild:
+  use type -p to detect lspci binary location
+
 *fwts-0.26.01 (07 Nov 2012)
 
   07 Nov 2012; Manuel Rueger (mrueg) gentoo@rueg.eu -fwts-0.26.00.ebuild,

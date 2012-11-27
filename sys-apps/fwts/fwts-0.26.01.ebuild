@@ -27,7 +27,7 @@ S=${WORKDIR}
 
 src_prepare(){
 	sed -i -e 's/-Wall -Werror/-Wall/' configure.ac {,src/,src/lib/src/}Makefile.am || die
-	sed -i -e 's:/usr/bin/lspci:/usr/sbin/lspci:' src/lib/include/fwts_binpaths.h || die
+	sed -i -e 's:/usr/bin/lspci:'$(type -p lspci)':' src/lib/include/fwts_binpaths.h || die
 	# No Makefile included - upstream wants autoreconf
 	eautoreconf
 }
