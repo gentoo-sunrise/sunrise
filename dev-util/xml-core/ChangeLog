@@ -1,0 +1,10 @@
+# ChangeLog for dev-util/xml-core
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*xml-core-0.13_p2 (27 Nov 2012)
+
+  27 Nov 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +xml-core-0.13_p2.ebuild, +metadata.xml:
+  New Ebuild for bug #445014. Thanks for the review hasufell.
+
