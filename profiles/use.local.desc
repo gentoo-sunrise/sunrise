@@ -5,6 +5,8 @@
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
 app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
+app-admin/reprepro:archive - Enable archive support using app-arch/libarchive
+app-admin/reprepro:gpgme - Enable gpgme support using app-crypt/gpgme
 app-admin/vlogger:dbi - Enable support for DBI
 app-cdr/furiusisomount:brasero - Enables support for burning images using app-cdr/brasero
 app-crypt/yapet:csv - Enable csv import utility
@@ -269,12 +271,6 @@ sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' an
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
-sys-fs/aufs:fuse - Enable FUSE workaround
-sys-fs/aufs:hinotify - Add support for aufs inotify
-sys-fs/aufs:nfs - Patch for lhash support
-sys-fs/aufs:nfsexport - Enable support for exporting aufs via nfs
-sys-fs/aufs:robr - Enable aufs readonly-branch
-sys-fs/aufs:sec_perm - Enable patch for kernel with CONFIG_SECURITY enabled
 sys-fs/ntfs3g-ar:crypt - Add support for encrypted NTFS drives/partitions.
 sys-fs/ntfs3g-ar:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
 sys-fs/ntfs3g-ar:ntfsprogs - Include internal version of ntfsprogs. This will block sys-fs/ntfsprogs.
