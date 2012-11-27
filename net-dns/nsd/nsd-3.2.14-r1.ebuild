@@ -71,7 +71,7 @@ src_install() {
 	fperms 750 /var/lib/nsd
 
 	# remove /var/run data created by Makefile, handled by initd script
-	rm -rf "${D}"/var/run || die "could not remove /var/run/ directory"
+	rm -r "${D}"/var/run || die "could not remove /var/run/ directory"
 
 }
 
