@@ -1,0 +1,10 @@
+# ChangeLog for dev-libs/sgml-data
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*sgml-data-2.0.8 (30 Nov 2012)
+
+  30 Nov 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +sgml-data-2.0.8.ebuild, +metadata.xml:
+  New Ebuild for bug bug #445376
+
