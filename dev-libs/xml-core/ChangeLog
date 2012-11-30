@@ -1,6 +1,11 @@
-# ChangeLog for dev-util/xml-core
+# ChangeLog for dev-libs/xml-core
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  30 Nov 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  xml-core-0.13_p2.ebuild:
+  Changed ebuild to only install library and catalog files since
+  update-xmlcatalog conflicts with xmlcatalog provided by libxml2.
 
 *xml-core-0.13_p2 (27 Nov 2012)
 
