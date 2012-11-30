@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Nov 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  debiandoc-sgml-1.2.27.ebuild:
+  Fixed reference to license.
+
 *debiandoc-sgml-1.2.27 (30 Nov 2012)
 
   30 Nov 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
