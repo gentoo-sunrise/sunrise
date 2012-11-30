@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+  <longdescription>
+   This is an SGML-based documentation formatting package used for the Debian manuals. It reads markup files and 
+   produces HTML, LaTeX, DVI (via LaTeX), PostScript (via LaTeX/DVI), PDF (via LaTeX), Texinfo, Info 
+   (via Texinfo), DebianDoc SGML, DocBook XML, plain text (with overstrikes a la troff as well as without) files. 
+  </longdescription>
+</pkgmetadata>
