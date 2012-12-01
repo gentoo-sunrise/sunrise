@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
-inherit eutils user
+EAPI="5"
+inherit eutils toolchain-funcs user
 
 DESCRIPTION="IRC bot to share files via DCC"
 HOMEPAGE="http://iroffer.dinoex.de/projects/iroffer"
@@ -53,17 +53,7 @@ pkg_setup(){
 }
 
 src_prepare(){
-	# Patch for Makefile:
-	# add an option on "install" (otherwise it will install some files outside of sandbox) [ FIXME: Will be replace on next version to avoid the problem ]
-	# remove forced "-o2" option when "debug" is not select [ FIXME: Will be replace on next version to avoid the problem ]
-	# remove a chroot test (always fail due to sandbox I presume) [ FIXME: Refused by upstream because it is system specific ]
-	# add an option to avoid automagic with chroot (-no-chroot, enabled by default) [ FIXME: Will be upstream on next version ]
 	epatch "${FILESDIR}/${P}-Makefile.patch"
-
-	# Although the launch is ok, exit status is 69 in background mode [ FIXME: Will be upstream on next version ]
-	epatch "${FILESDIR}/${P}-exit-status-background.patch"
-
-	# Update defaults configuration files (usefull for "+daemon")
 	epatch "${FILESDIR}/${PN}-config.patch"
 }
 
@@ -100,8 +90,8 @@ src_configure(){
 		fi
 	done
 
-	# Iroffer uses a unusual configuration file. Need PREFIX (install in /usr/local, forbidden in portage)
-	./Configure PREFIX="/usr" ${my_conf} || die "Error during ./Configure"
+	# Iroffer uses an unusual configuration file. Need PREFIX (install by default in /usr/local, forbidden in portage)
+	./Configure CC=$(tc-getCC) PREFIX="/usr" ${my_conf} || die "Error during ./Configure"
 }
 
 src_compile(){

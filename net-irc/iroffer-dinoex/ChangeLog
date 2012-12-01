@@ -2,6 +2,15 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*iroffer-dinoex-3.28 (01 Dec 2012)
+
+  01 Dec 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com
+  -iroffer-dinoex-3.27.ebuild, -files/iroffer-dinoex-3.27-Makefile.patch,
+  -files/iroffer-dinoex-3.27-exit-status-background.patch,
+  +iroffer-dinoex-3.28.ebuild, +files/iroffer-dinoex-3.28-Makefile.patch:
+  Version bump and updates for net-irc/iroffer-dinoex, thanks to hasufell and
+  binki
+
   22 Jul 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   iroffer-dinoex-3.27.ebuild, metadata.xml:
   Drop LICENSE file, drop comment in metadata.xml

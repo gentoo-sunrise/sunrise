@@ -1,0 +1,28 @@
+--- iroffer-dinoex-3.28/Configure	2012-09-08 18:13:37.534831001 +0200
++++ iroffer-dinoex-3.28/Configure.WITHOUTWERROR	2012-09-08 18:36:49.814831001 +0200
+@@ -1325,7 +1325,7 @@
+   echo "${irmain1}
+  chroot(\".\");
+ ${main2}" > config.temp.c
+-  if $cctype -o config.temp $WARNS $WERROR $CFLAGS config.temp.c $LDFLAGS $libs $LIBS; then
++  if $cctype -o config.temp $WARNS $CFLAGS config.temp.c $LDFLAGS $libs $LIBS; then
+ ${msg} "${irt_found}"
+   else
+     echo "#define NO_CHROOT" >> src/iroffer_config.h
+@@ -1843,13 +1843,13 @@
+  echo 'all: $(IRNAME)$(CONFIG_EXE) $(TARGET_STATIC) $(TARGET_CHROOT) $(OBJDIR)'
+  echo '
+ $(IRNAME)$(CONFIG_EXE): $(OBJDIR) $(IROFFER_OBJECTS)
+-	$(CC) $(LDFLAGS) $(IROFFER_OBJECTS) $(LOADLIBES) $(LDLIBS) $(CONFIG_SHARED) -o $(IRNAME)
++	$(CC) $(CFLAGS) $(LDFLAGS) $(IROFFER_OBJECTS) $(LOADLIBES) $(LDLIBS) $(CONFIG_SHARED) -o $(IRNAME)
+ 
+ $(IRNAME)_chroot$(CONFIG_EXE): $(OBJDIR) $(IROFFER_OBJECTS)
+-	$(CC) $(LDFLAGS) $(IROFFER_OBJECTS) $(LOADLIBES) $(LDLIBS) $(CONFIG_SHARED) $(CONFIG_CHROOT) -o $(IRNAME)_chroot
++	$(CC) $(CFLAGS) $(LDFLAGS) $(IROFFER_OBJECTS) $(LOADLIBES) $(LDLIBS) $(CONFIG_SHARED) $(CONFIG_CHROOT) -o $(IRNAME)_chroot
+ 
+ $(IRNAME)_static$(CONFIG_EXE): $(OBJDIR) $(IROFFER_OBJECTS)
+-	$(CC) $(LDFLAGS) $(IROFFER_OBJECTS) $(LOADLIBES) $(LDLIBS) $(CONFIG_STATIC) -o $(IRNAME)_static
++	$(CC) $(CFLAGS) $(LDFLAGS) $(IROFFER_OBJECTS) $(LOADLIBES) $(LDLIBS) $(CONFIG_STATIC) -o $(IRNAME)_static
+ 
+ obj: $(OBJDIR)
+ 
