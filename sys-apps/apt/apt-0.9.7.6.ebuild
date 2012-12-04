@@ -33,7 +33,7 @@ COMMON_DEPEND="sys-libs/zlib
 	berkdb? ( sys-libs/db )"
 RDEPEND="app-arch/dpkg
 	app-crypt/gnupg
-	sys-fs/udev
+	virtual/udev
 	ssl? ( net-misc/curl[ssl] )
 	${COMMON_DEPEND}"
 DEPEND="app-text/debiandoc-sgml

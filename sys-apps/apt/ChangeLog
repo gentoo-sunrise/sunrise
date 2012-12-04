@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  04 Dec 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  apt-0.9.7.6.ebuild:
+  Changed udev dependency to the new virtual udev dependency.
+
 *apt-0.9.7.6 (04 Dec 2012)
 
   04 Dec 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
