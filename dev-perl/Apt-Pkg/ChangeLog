@@ -1,0 +1,10 @@
+# ChangeLog for dev-perl/Apt-Pkg
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*Apt-Pkg-0.1.26 (04 Dec 2012)
+
+  04 Dec 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +Apt-Pkg-0.1.26.ebuild, +metadata.xml:
+  New Ebuild for bug #446014. Thanks hasufell for the review.
+

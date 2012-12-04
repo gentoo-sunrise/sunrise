@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+  <longdescription lang="en">
+  A Perl interface to APT's libapt-pkg which provides modules for configuration file/command line parsing, 
+  version comparison, inspection of the binary package cache and source package details.
+  </longdescription>
+</pkgmetadata>
