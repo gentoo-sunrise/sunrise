@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+  <use>
+    <flag name="apt-pkg">Install development header files for APT's libapt-pkg and libapt-inst</flag>
+    <flag name="berkdb">Build and install apt-ftparchive and supporting documentation</flag>
+    <flag name="graphviz">Install graph related API documentation</flag>
+    <flag name="largefile">Enable support for large files</flag>
+    <flag name="latex">Install latex formatted API documentation</flag>
+    <flag name="nls">Enable Native Language Support</flag>
+    <flag name="rpath">Enable hardcoding of runtime library paths</flag>
+    <flag name="utils">Install apt utility programs</flag>
+  </use>
+  <longdescription lang="en">
+   This package provides commandline tools for searching and managing as well as querying information 
+   about packages as a low-level access to all features of the libapt-pkg library. 
+  </longdescription>
+</pkgmetadata>

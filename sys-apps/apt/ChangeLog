@@ -1,0 +1,11 @@
+# ChangeLog for sys-apps/apt
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*apt-0.9.7.6 (04 Dec 2012)
+
+  04 Dec 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +apt-0.9.7.6.ebuild, +files/apt.lintian, +metadata.xml:
+  New Ebuild for bug #445990. Thanks for the review hasufell. We got apt, oh
+  crap. :-)
+
