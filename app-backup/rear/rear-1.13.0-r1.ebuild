@@ -21,7 +21,7 @@ RDEPEND="net-dialup/mingetty
 	sys-block/parted
 	sys-boot/syslinux
 	virtual/cdrtools
-	udev? ( sys-fs/udev )
+	udev? ( virtual/udev )
 	"
 
 src_install () {
