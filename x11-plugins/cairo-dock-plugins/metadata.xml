@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
+	<use>
+		<flag name='disks'>Build disks applet</flag>
+		<flag name='doncky'>Build doncky applet</flag>
+		<flag name='gmenu'>Build gnome menus</flag>
+		<flag name='nwmon'>Build network monitor</flag>
+		<flag name='scooby'>Build scooby applet</flag>
+		<flag name='xfce'>Enable xfce integration</flag>
+	</use>
+</pkgmetadata>
