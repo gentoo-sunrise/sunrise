@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
+  <longdescription>
+  Intltool is a bunch of scripts written by the GNOME project to internationalize many different file formats. 
+  This package is a slightly modified version which adds support for RFC822 compliant config  files, e.g. 
+  Debconf templates files.
+  </longdescription>
+</pkgmetadata>
