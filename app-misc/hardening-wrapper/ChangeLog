@@ -1,0 +1,10 @@
+# ChangeLog for app-misc/hardening-wrapper
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*hardening-wrapper-2.3 (20 Dec 2012)
+
+  20 Dec 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +hardening-wrapper-2.3.ebuild, +metadata.xml:
+  New Ebuild for bug #448016.
+
