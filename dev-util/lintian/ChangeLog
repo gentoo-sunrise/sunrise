@@ -1,0 +1,11 @@
+# ChangeLog for dev-util/lintian
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*lintian-2.5.10.3 (26 Dec 2012)
+
+  26 Dec 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  +lintian-2.5.10.3.ebuild, +files/lintian-2.5.10.3-FrontendUtil.pm.patch,
+  +metadata.xml:
+  New Ebuild for bug #448704. Thanks for the review hasufell.
+

@@ -1,0 +1,26 @@
+--- lib/Lintian/Internal/FrontendUtil.pm	2012-11-26 11:39:38.000000000 -0600
++++ lib/Lintian/Internal/FrontendUtil.pm	2012-11-26 10:42:58.415371245 -0600
+@@ -44,11 +44,8 @@
+     my $par;
+     chomp($par = `dpkg-vendor --vendor "$cur" --query Parent`);
+     # dpkg-vendor returns 1 if there is no parent (because the query failed),
+-    # which we translate into ''; but other values suggests an internal
+-    # dpkg-vendor error.
++    # which we translate into '';
+     if ( $? ){
+-        my $err = ($? >> 8) & 256;
+-        fail('dpkg-vendor failed (status: ' .  ($? >> 8). ").\n") if $err != 1;
+         return '';
+     }
+     return $par;
+@@ -81,7 +78,9 @@
+     # Use dpkg-vendor if present (unless we are testing our libdpkg-perl code)
+     if(check_path('dpkg-vendor') && !check_test_feature('vendor-libdpkg-perl')){
+         chomp($vendor = `dpkg-vendor --query Vendor`);
+-        fail('dpkg-vendor failed (status: ' .  ($? >> 8). ").\n") if $?;
++	if ( $? ) {
++	        fail('dpkg-vendor failed (status: ' .  ($? >> 8). ").\n");
++	}
+         $qparent = \&_find_parent_vendor_dpkg_vendor;
+     } else {
+         require Dpkg::Vendor;
