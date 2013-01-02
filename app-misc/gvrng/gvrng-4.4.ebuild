@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
-inherit eutils
+PYTHON_COMPAT=( python2_7 )
+inherit eutils python-r1
 
 DESCRIPTION="The Guido van Robot Programming Language"
 HOMEPAGE="http://gvr.sourceforge.net"
@@ -15,14 +16,14 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc"
 
-DEPEND="dev-lang/python
-	>=dev-python/pygtk-2.0.0
+DEPEND="${PYTHON_DEPS}
+	dev-python/pygtk:2
 	dev-python/pygobject:2
-	>=dev-python/pygtksourceview-2.0.0"
+	dev-python/pygtksourceview:2"
 
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/GvRng_${PV}
+S="${WORKDIR}/GvRng_${PV}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/01_gui_gtk_path.patch
@@ -30,16 +31,16 @@ src_prepare() {
 
 src_install() {
 	insinto /usr/share/${PN}
-	doins -r *.py gvrngrc gui-gtk bitmaps gvr_progs locale po || die "Failed to install files"
-	dodoc Changelog docs/Summary-en.txt || die "Failed to install docs"
+	doins -r *.py gvrngrc gui-gtk bitmaps gvr_progs locale po
+	dodoc Changelog docs/Summary-en.txt
 	if use doc; then
-		dohtml -r docs/tutorial.html docs/lessons || die "Failed to install tutorial and lessons"
+		dohtml -r docs/tutorial.html docs/lessons
 	fi
-	fperms 755 /usr/share/${PN}/gvrng.py || die "Failed to set permissions on gvrng.py"
-	dodir /usr/bin || die "Failed to create /usr/bin"
-	dosym /usr/share/${PN}/gvrng.py /usr/bin/gvrng || die "Failed to create symlink"
-	domenu "${FILESDIR}"/gvrng.desktop || die "Failed to copy desktop file"
-	doman docs/gvrng.1.gz  || die "Failed to install man page"
+	fperms 755 /usr/share/${PN}/gvrng.py
+	dodir /usr/bin
+	dosym /usr/share/${PN}/gvrng.py /usr/bin/gvrng
+	domenu "${FILESDIR}"/gvrng.desktop
+	doman docs/gvrng.1.gz
 }
 
 pkg_postinst() {
