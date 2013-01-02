@@ -1,6 +1,15 @@
 # ChangeLog for dev-libs/librets
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*librets-1.5.3-r1 (02 Jan 2013)
+
+  02 Jan 2013; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -librets-1.5.3.ebuild, +librets-1.5.3-r1.ebuild,
+  +files/librets-1.5.3-build.patch, +files/librets-1.5.3-extconf.rb.patch,
+  +files/librets-1.5.3-java.mk.patch, -files/extconf.rb.patch,
+  -files/java.mk.patch, metadata.xml:
+  Revision bump for librets-1.5.3. Thanks hasufell and floppym for your help.
 
   22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   librets-1.5.3.ebuild:

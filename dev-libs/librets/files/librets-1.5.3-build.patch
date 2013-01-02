@@ -1,0 +1,104 @@
+--- librets-1.5.3/project/build/java.mk
++++ librets-1.5.3/project/build/java.mk
+@@ -46,7 +46,7 @@
+   ${JAVA_DYNAMICLINK} -o ${JAVA_DLL} ${JAVA_OBJ_DIR}/librets_wrap.o ${SWIG_LIBRETS_LIBS} ${SWIG_BRIDGE_OBJ}
+ 
+ ${JAVA_OBJ_DIR}/librets_wrap.o: ${JAVA_OBJ_DIR}/librets_wrap.cpp
+-	${CXX}  ${JAVA_CXX_FLAGS} -I${LIBRETS_INC_DIR} -I${SWIG_DIR} ${BOOST_CFLAGS} ${JAVA_INCLUDES} -c $< -o $@
++	${CXX}  ${CXXFLAGS} ${JAVA_CXX_FLAGS} -I${LIBRETS_INC_DIR} -I${SWIG_DIR} ${BOOST_CFLAGS} ${JAVA_INCLUDES} -c $< -o $@
+ 
+ 
+ ifneq (${SWIG_OSNAME}, MSWin32)
+--- librets-1.5.3/project/build/rules.mk
++++ librets-1.5.3/project/build/rules.mk
+@@ -3,7 +3,7 @@
+ SRC_TGZ  	= librets-$(VERSION).tar.gz
+ SRC_ZIP		= librets-$(VERSION).zip
+ 
+-CFLAGS		+= $(TARGET_CFLAGS) -DLIBRETS_VERSION='"$(VERSION)"'
++CPPFLAGS		+= $(TARGET_CFLAGS) -DLIBRETS_VERSION='"$(VERSION)"'
+ 
+ LIBRETS_LDFLAGS = $(BOOST_LIBS) $(BOOST_FILESYSTEM) $(BOOST_SYSTEM) \
+ 	$(BOOST_THREAD) $(CURL_LDFLAGS) $(EXPAT_LDFLAGS) $(ANTLR_LDFLAGS)
+--- librets-1.5.3/project/build/swig.mk
++++ librets-1.5.3/project/build/swig.mk
+@@ -13,13 +13,13 @@
+ SWIG_OBJ_DIR		= ${BUILD}/swig
+ SWIG_OSNAME		= $(shell perl -e 'use Config; print $$Config{osname};')
+ 
+-SWIG_BRIDGE_CFLAGS	= `${SWIG_LIBRETS_CONFIG} --cflags` ${CFLAGS}
++SWIG_BRIDGE_CFLAGS	= `${SWIG_LIBRETS_CONFIG} --cflags` ${CXXFLAGS}
+ SWIG_BRIDGE_H		= ${SWIG_DIR}/librets_bridge.h
+ SWIG_BRIDGE_SRC		= ${SWIG_DIR}/librets_bridge.cpp
+ SWIG_BRIDGE_OBJ		= ${SWIG_OBJ_DIR}/librets_bridge.o
+ 
+ DLL			= so
+-SWIG_LINK		= ${CXX} -shared
++SWIG_LINK		= ${CXX} ${LDFLAGS} -shared
+ 
+ ifeq (${SWIG_OSNAME}, darwin)
+ SWIG_LINK		= ${CXX} -bundle -undefined suppress -flat_namespace 
+--- librets-1.5.3/project/build/sources.mk
++++ librets-1.5.3/project/build/sources.mk
+@@ -37,7 +37,7 @@
+   		LookupTreeParser.cpp LookupColumnsTreeParser.cpp)
+ LIBRETS_ANTLR_OBJECTS := $(LIBRETS_ANTLR_SRC_FILES:.cpp=.o)
+ LIBRETS_ANTLR_DEPENDS := $(LIBRETS_ANTLR_SRC_FILES:.cpp=.d)
+-LIBRETS_ANTLR_CFLAGS = $(CFLAGS) $(CPPFLAGS) $(BOOST_CFLAGS) $(ARCH_CFLAGS)
++LIBRETS_ANTLR_CFLAGS = $(CXXFLAGS) $(CPPFLAGS) $(BOOST_CFLAGS) $(ARCH_CFLAGS)
+ 
+ ANTLR_FLAGS = -o $(LIBRETS_ANTLR_SRC_DIR)
+ ANTLR_TREE_FLAGS = $(ANTLR_FLAGS) -glib $(LIBRETS_ANTLR_PARSER)
+@@ -68,7 +68,7 @@
+ 
+ #####
+ 
+-LIBRETS_CFLAGS = $(CFLAGS) $(CPPFLAGS) $(CURL_CFLAGS) $(EXPAT_CFLAGS) \
++LIBRETS_CFLAGS = $(CXXFLAGS) $(CPPFLAGS) $(CURL_CFLAGS) $(EXPAT_CFLAGS) \
+ 	${LIBRETS_THREAD_FLAGS} $(BOOST_CFLAGS) -I$(LIBRETS_INC_DIR) 
+ 
+ ifeq ($(USE_SQL_COMPILER),1)
+--- librets-1.5.3/configure.ac
++++ librets-1.5.3/configure.ac
+@@ -158,6 +158,7 @@
+ 
+ if test "$my_use_pic" = "yes"; then
+    CFLAGS="$CFLAGS -fPIC"
++   CXXFLAGS="$CXXFLAGS -fPIC"
+    LIBRETS_CFLAGS="$LIBRETS_CFLAGS -fPIC"
+ fi
+ 
+--- librets-1.5.3/Makefile.in
++++ librets-1.5.3/Makefile.in
+@@ -23,6 +23,7 @@
+ CC=@CC@
+ CXX=@CXX@
+ CFLAGS=@CFLAGS@ @DEFS@
++CXXFLAGS=@CXXFLAGS@ @DEFS@
+ CPPFLAGS=@CPPFLAGS@
+ LIBS=@LIBS@
+ LDFLAGS=@LDFLAGS@
+--- librets-1.5.3/project/build/php.mk
++++ librets-1.5.3/project/build/php.mk
+@@ -21,5 +21,5 @@
+ 	${SWIG_LINK} -o ${PHP_DLL} ${PHP_OBJ_DIR}/librets_wrap.o ${SWIG_LIBRETS_LIBS} ${SWIG_BRIDGE_OBJ}
+ 
+ ${PHP_OBJ_DIR}/librets_wrap.o: ${PHP_OBJ_DIR}/librets_wrap.cpp
+-	${CXX} ${PHP_CXX_FLAGS} -g -DLIBRETS_VERSION='"$(VERSION)"' -I${LIBRETS_INC_DIR} -I${PHP_SRC_DIR} \
++	${CXX} ${CXXFLAGS} ${PHP_CXX_FLAGS} -DLIBRETS_VERSION='"$(VERSION)"' -I${LIBRETS_INC_DIR} -I${PHP_SRC_DIR} \
+ 			-I${SWIG_DIR} ${BOOST_CFLAGS} ${PHP_INCLUDES} -c $< -o $@
+--- librets-1.5.3/project/build/dotnet.mk
++++ librets-1.5.3/project/build/dotnet.mk
+@@ -83,10 +83,10 @@
+ 	${SWIG_LINK} -o ${DOTNET_UNMANAGED_DLL} ${DOTNET_UNMANAGED_OBJ} ${SWIG_LIBRETS_LIBS} 
+ 
+ ${DOTNET_OBJ_DIR}/%.o: ${DOTNET_OBJ_DIR}/%.cpp 
+-	${CXX} ${DOTNET_CXX_FLAGS} -I${LIBRETS_INC_DIR} -I${DOTNET_OBJ_DIR} -I${DOTNET_DIR} -I${SWIG_DIR} -c $< -o $@
++	${CXX} ${CXXFLAGS} ${DOTNET_CXX_FLAGS} -I${LIBRETS_INC_DIR} -I${DOTNET_OBJ_DIR} -I${DOTNET_DIR} -I${SWIG_DIR} -c $< -o $@
+ 
+ ${DOTNET_OBJ_DIR}/%.o: ${DOTNET_DIR}/%.cpp
+-	${CXX} ${DOTNET_CXX_FLAGS} -I${LIBRETS_INC_DIR} -I${DOTNET_OBJ_DIR} -I${DOTNET_DIR} -I${SWIG_DIR} -c $< -o $@
++	${CXX} ${CXXFLAGS} ${DOTNET_CXX_FLAGS} -I${LIBRETS_INC_DIR} -I${DOTNET_OBJ_DIR} -I${DOTNET_DIR} -I${SWIG_DIR} -c $< -o $@
+ 
+ ifneq (${SWIG_OSNAME}, MSWin32)
+ ########

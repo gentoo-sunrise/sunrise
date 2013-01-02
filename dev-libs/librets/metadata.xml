@@ -3,7 +3,6 @@
 <pkgmetadata>
   <maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
   <use>
-    <flag name="debug">Enable debug compile type</flag>
     <flag name="doc">Add maintainer documentation</flag>
     <flag name="java">Install java libraries</flag>
     <flag name="mono">Install mono  libraries</flag>
