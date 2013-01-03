@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<maintainer>
-		<email>maintainer-wanted@gentoo.org</email>
-	</maintainer>
-	<longdescription>A fairly simple module, it provide only raw yEnc encoding/decoding with builitin crc32 calculation.</longdescription>
-</pkgmetadata>
