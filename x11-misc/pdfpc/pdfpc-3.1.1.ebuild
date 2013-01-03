@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,3 +20,10 @@ RDEPEND="app-text/poppler[cairo]
 	gnome-base/librsvg
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}"
+
+src_configure(){
+	local mycmakeargs=(
+		-DSYSCONFDIR="/etc"
+		)
+	cmake-utils_src_configure
+}
