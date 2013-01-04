@@ -1,6 +1,11 @@
 # ChangeLog for sys-fs/ntfs3g-ar
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  04 Jan 2013; Sergey Popov <pinkbyte@gentoo.org>
+  -ntfs3g-ar-2011.4.12.7.ebuild, ntfs3g-ar-2012.1.15.8.ebuild:
+  QA: replace rm -rf on sbin with rmdir, add missing 'die' statement, drop old
+  version. Thanks to Thomas Sachau for pointing on these issues
 
 *ntfs3g-ar-2012.1.15.8 (19 Dec 2012)
 

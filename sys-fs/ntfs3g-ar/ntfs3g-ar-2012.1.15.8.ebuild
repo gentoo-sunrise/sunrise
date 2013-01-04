@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -75,7 +75,7 @@ src_install() {
 	# http://bugs.gentoo.org/398069
 	dodir /usr/sbin
 	mv "${D}"/sbin/* "${ED}"/usr/sbin || die
-	rm -rf "${D}"/sbin
+	rmdir "${D}"/sbin || die 'rmdir failed'
 
 	dosym mount.ntfs-3g /usr/sbin/mount.ntfs #374197
 }
