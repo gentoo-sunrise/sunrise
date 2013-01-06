@@ -1,0 +1,20 @@
+Prevent the test suite from requiring python 2.7 or later.
+
+2013-01-06 Martin von Gagern
+
+References:
+https://bugzilla.osafoundation.org/show_bug.cgi?id=13075
+
+Index: PyICU-1.5/test/test_Collator.py
+===================================================================
+--- PyICU-1.5.orig/test/test_Collator.py
++++ PyICU-1.5/test/test_Collator.py
+@@ -92,7 +92,7 @@ class TestCollator(TestCase):
+         self.assertEqual(-1, collator.compare(hira_ge, kana_ge))
+         hira_ge_key = collator.getSortKey(hira_ge)
+         kana_ge_key = collator.getSortKey(kana_ge)
+-        self.assertLess(hira_ge_key, kana_ge_key)
++        self.assertTrue(hira_ge_key < kana_ge_key)
+ 
+     def setupCollator(self, collator):
+ 
