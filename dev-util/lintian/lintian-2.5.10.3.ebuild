@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -71,6 +71,9 @@ src_install() {
 	newdoc doc/README.in README
 	doman man/man1/*
 
-	keepdir /var/lib/${PN}
-	keepdir /var/spool/${PN}
+	# Lintian requires a UTF-8 locale in order to properly do man page tests.
+	local mylocaledir=/var/lib/${PN}/locale
+	dodir ${mylocaledir}
+	localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias \
+		--quiet "${D}${mylocaledir}"/en_US.UTF-8 || die
 }
