@@ -1,6 +1,12 @@
 # ChangeLog for dev-cpp/cppcms
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*cppcms-1.0.3 (07 Jan 2013)
+
+  07 Jan 2013; Jauhien Piatlicki (jauhien) <piatlicki@gmail.com>
+  -cppcms-1.0.2.ebuild, +cppcms-1.0.3.ebuild:
+  version bump
 
 *cppcms-1.0.2 (15 Aug 2012)
 
