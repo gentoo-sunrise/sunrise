@@ -1,0 +1,10 @@
+# ChangeLog for dev-tex/mnsymbol
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*mnsymbol-1.4 (11 Jan 2013)
+
+  11 Jan 2013; Moritz Schlarb (moschlar) <moschlar@metalabs.de>
+  +mnsymbol-1.4.ebuild, +metadata.xml:
+  New Ebuild for bug #449478, thanks to hasufell, chithead and ulm.
+
