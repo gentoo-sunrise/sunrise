@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+
+<pkgmetadata>
+
+<maintainer>
+	<email>maintainer-wanted@gentoo.org</email>
+</maintainer>
+
+<use>
+	<flag name="minionpro">Generate LaTeX support for the MinionPro font</flag>
+	<flag name="myriadpro">Generate LaTeX support for the Myriad Pro font</flag>
+</use>
+</pkgmetadata>
