@@ -1,6 +1,10 @@
 # ChangeLog for dev-libs/libuv
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2013; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  libuv-0.7.6_p20120404.ebuild:
+  USE mirror:// instead of http(s)
 
   22 Apr 2012; hasufell <julian.ospald@googlemail.com>
   libuv-0.7.6_p20120404.ebuild:
