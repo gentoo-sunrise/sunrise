@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ inherit eutils multilib bash-completion-r1
 
 DESCRIPTION="Reference compiler for the D programming language"
 HOMEPAGE="http://dlang.org/"
-SRC_URI="https://github.com/downloads/D-Programming-Language/dmd/${PN}.${PV}.zip"
+SRC_URI="mirror://github/D-Programming-Language/dmd/${PN}.${PV}.zip"
 
 # DMD supports amd64/x86 exclusively
 KEYWORDS="-* ~amd64 ~x86"

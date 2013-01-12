@@ -1,6 +1,9 @@
 # ChangeLog for dev-lang/dmd
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Jan 2013; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> dmd-2.060.ebuild:
+  USE mirror:// instead of direct URL
 
 *dmd-2.060 (02 Aug 2012)
 
