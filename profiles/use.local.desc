@@ -95,7 +95,6 @@ dev-libs/libfreenect:opencv - Install opencv library
 dev-libs/libfreenect:python - Install python library extension
 dev-libs/liblightscribe:multilib - Installs the lib into the right dir on amd64
 dev-libs/libplayer:vlc - Enable VLC media player support
-dev-libs/librets:debug - Enable debug compile type
 dev-libs/librets:doc - Add maintainer documentation
 dev-libs/librets:java - Install java libraries
 dev-libs/librets:mono - Install mono libraries
@@ -107,6 +106,8 @@ dev-libs/librets:sql-compiler - Enable SQL to DMQL compiler for java libraries
 dev-libs/librets:threads - Enable thread safe support
 dev-libs/libwiimote:force - Enable force feedback
 dev-libs/libwiimote:tilt - Enable tilt
+dev-tex/fontpro:minionpro - Generate LaTeX support for the MinionPro font
+dev-tex/fontpro:myriadpro - Generate LaTeX support for the Myriad Pro font
 dev-util/eclim:cdt - Enables C/C++ development support
 dev-util/eresi:server - Build eresi server capability
 dev-util/icewing:grabber - Build the grabber plug-in
@@ -200,7 +201,6 @@ media-sound/songbird-bin:ugly - Add ugly support
 media-tv/freetuxtv:nls - Enable native language support (using intltool)
 media-video/image2mpeg:devil - Enable image loading via DevIL
 media-video/periscope:nautilus - Integrate with nautilus file manager
-media-video/pgcedit:video - Add support for video preview
 media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
 media-video/ripwrap:mp4 - Add mp4 support
@@ -270,9 +270,18 @@ sci-chemistry/hoomd:single-precision - Computations will be performed using sing
 sci-misc/ised:long-types - Use 'long long' and 'long double' instead of 'int' and 'double' data types
 sci-visualization/tulip:stats - Build with graph stats
 sci-visualization/tulip:tlprender - Build tlprender
+sys-apps/apt:apt-pkg - Install development header files for APT's libapt-pkg and libapt-inst
+sys-apps/apt:berkdb - Build and install apt-ftparchive and supporting documentation
+sys-apps/apt:graphviz - Install graph related API documentation
+sys-apps/apt:largefile - Enable support for large files
+sys-apps/apt:latex - Install latex formatted API documentation
+sys-apps/apt:nls - Enable Native Language Support
+sys-apps/apt:rpath - Enable hardcoding of runtime library paths
+sys-apps/apt:utils - Install apt utility programs
 sys-auth/pam_sotp:urandom - Use /dev/urandom for password generations (faster but less secure)
 sys-fs/ntfs3g-ar:crypt - Add support for encrypted NTFS drives/partitions.
 sys-fs/ntfs3g-ar:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
+sys-fs/ntfs3g-ar:extras - Enable extra ntfsprogs utilities.
 sys-fs/ntfs3g-ar:ntfsprogs - Include internal version of ntfsprogs. This will block sys-fs/ntfsprogs.
 sys-fs/ntfs3g-ar:udev - Install udev rule to make udisks use ntfs-3g instead of the kernel NTFS driver.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
@@ -282,6 +291,12 @@ x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
 x11-misc/xneur:aplay - Use aplay from media-sound/alsa-utils for playing sounds
 x11-misc/xneur:keylogger - Enable keylogger support (logs all text into html; x11-misc/gxneur allows to view this text)
+x11-plugins/cairo-dock-plugins:disks - Build disks applet
+x11-plugins/cairo-dock-plugins:doncky - Build doncky applet
+x11-plugins/cairo-dock-plugins:gmenu - Build gnome menus
+x11-plugins/cairo-dock-plugins:nwmon - Build network monitor
+x11-plugins/cairo-dock-plugins:scooby - Build scooby applet
+x11-plugins/cairo-dock-plugins:xfce - Enable xfce integration
 x11-plugins/imgur-integration:eog - Build an imgur upload plugin for media-gfx/eog
 x11-plugins/pidgin-gfire:kmess-status - Publish your Xfire status to net-im/kmess using dbus
 x11-plugins/pidgin-gfire:libnotify - Get notifications for your Xfire contacts' status changes
