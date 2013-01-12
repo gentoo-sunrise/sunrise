@@ -21,6 +21,13 @@
 ##   End example
 ##
 
+# Thomas Sachau <tommy@gentoo.org> (12 Jan 2013)
+# depends on sci-libs/lapack-atlas, which is
+# masked for removal, so this package will also
+# be removed, when lapack-atlas is removed unless
+# somebody updates the ebuild
+media-plugins/gimp-refocus
+
 # Thomas Sachau <tommy@gentoo.org> (16 Sep 2012)
 # based on tla eclass, which will be masked/removed,
 # also upstream dead since 2006, if anyone is still
