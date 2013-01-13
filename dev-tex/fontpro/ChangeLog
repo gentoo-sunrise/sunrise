@@ -3,9 +3,8 @@
 # $Header: $
 
 *fontpro-20121224 (11 Jan 2013)
-*fontpro-20121216 (11 Jan 2013)
 
   11 Jan 2013; Moritz Schlarb (moschlar) <moschlar@metalabs.de>
-  +fontpro-20121216.ebuild, +fontpro-20121224.ebuild, +metadata.xml:
+  +fontpro-20121224.ebuild, +metadata.xml:
   New Ebuild for bug #449474, thanks to hasufell, chithead and ulm.
 
