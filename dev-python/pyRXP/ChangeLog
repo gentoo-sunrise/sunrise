@@ -1,6 +1,9 @@
 # ChangeLog for dev-python/pyRXP
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2013; Davide Gerhard (ra1nb0w) <rainbow@irh.it> pyRXP-9999.ebuild:
+  Changed the license to GPL-2+
 
   19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   pyRXP-9999.ebuild:
