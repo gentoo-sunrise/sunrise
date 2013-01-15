@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ DESCRIPTION="Powerful software tool to experiment with musical tunings"
 HOMEPAGE="http://www.huygens-fokker.org/scala/"
 SRC_URI="http://www.huygens-fokker.org/software/${MY_P}.tar.bz2"
 
-LICENSE="as-is"
+LICENSE="SCALA"
 SLOT="0"
 KEYWORDS="-* ~x86"
 IUSE="midi"
