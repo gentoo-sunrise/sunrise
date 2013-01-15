@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ DESCRIPTION="Domain-specific language for defining command line interfaces"
 HOMEPAGE="http://www.codesynthesis.com/projects/cli/"
 SRC_URI="http://www.codesynthesis.com/download/${PN}/${MY_PV}/${P}.tar.bz2"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
