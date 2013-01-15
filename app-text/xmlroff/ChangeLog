@@ -1,6 +1,9 @@
 # ChangeLog for app-text/xmlroff
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2013; Davide Gerhard (ra1nb0w) <rainbow@irh.it> xmlroff-0.6.2.ebuild:
+  Changed the license to BSD
 
   05 May 2012; Mike Gilbert <floppym@gentoo.org> xmlroff-0.6.2.ebuild:
   Use pkgconfig virtual.
