@@ -1,6 +1,10 @@
 # ChangeLog for dev-libs/findlocale
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2013; Davide Gerhard (ra1nb0w) <rainbow@irh.it>
+  findlocale-0.47.ebuild:
+  Changed the license to MIT
 
   01 Sep 2010; Nathan Phillip Brink (ohnobinki)
   <ohnobinki@ohnopublishing.net> findlocale-0.47.ebuild:
