@@ -1,0 +1,58 @@
+ 0 A.D. Licensing Details
+==========================
+
+0 A.D. is released as open source: you can freely use, copy, modify and
+distribute the game's source code and data files, as long as you include
+attribution to Wildfire Games and let anyone freely modify and distribute any
+of your own modifications to the game's files.
+
+The distribution includes several different types of files, and a number of
+third-party components. The details are described here, based on the directory
+structure. For any file, see the longest path name below which is a prefix of
+the file's path.
+
+Some files don't yet have licensing details specified - if you care about any
+in particular, let us know and we can try to clarify it.
+
+  /source
+    GPL version 2 (or later) - see license_gpl-2.0.txt
+
+  /source/lib
+    MIT
+
+  /source/third_party/mikktspace
+    zlib
+
+  /source/third_party/mongoose
+    MIT
+
+  /source/tools
+    Various (unspecified)
+
+  /source/tools/atlas
+    GPL version 2 (or later) - see license_gpl-2.0.txt
+
+  /binaries/data
+    GPL version 2 (or later) - see license_gpl-2.0.txt
+
+  /binaries/data/mods/art
+  /binaries/data/mods/audio
+    Creative Commons Attribution-Share Alike 3.0 - see
+    http://creativecommons.org/licenses/by-sa/3.0/
+    and also see LICENSE.txt within those directories
+
+  /binaries/system
+    Various (unspecified)
+
+  /binaries/system/dbghelp.dll
+    Proprietary - see license_dbghelp.txt for restrictions you must agree to
+    before distributing this particular file
+
+  /libraries
+    Various - see individual directories and files for details
+
+  /build
+    Various (unspecified)
+
+  /docs
+    Various (unspecified)

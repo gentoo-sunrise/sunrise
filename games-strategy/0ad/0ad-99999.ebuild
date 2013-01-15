@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ DESCRIPTION="A free, real-time strategy game"
 HOMEPAGE="http://wildfiregames.com/0ad/"
 ESVN_REPO_URI="http://svn.wildfiregames.com/public/ps/trunk"
 
-LICENSE="GPL-2 LGPL-2.1 MIT CCPL-Attribution-ShareAlike-3.0 as-is"
+LICENSE="0AD"
 SLOT="0"
 KEYWORDS=""
 IUSE="+audio +editor fam +pch test"

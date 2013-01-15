@@ -1,6 +1,10 @@
 # ChangeLog for games-strategy/0ad
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2013; Davide Gerhard (ra1nb0w) <rainbow@irh.it>
+  0ad-11339_alpha9.ebuild, 0ad-99999.ebuild:
+  Changed the license to 0AD
 
   05 May 2012; Mike Gilbert <floppym@gentoo.org> 0ad-11339_alpha9.ebuild,
   0ad-99999.ebuild:
