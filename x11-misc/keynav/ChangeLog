@@ -1,6 +1,10 @@
 # ChangeLog for x11-misc/keynav
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2013; Davide Gerhard (ra1nb0w) <rainbow@irh.it>
+  keynav-20091231.04.ebuild:
+  Changed the license to BSD
 
   04 Jan 2010; Russell Harmon (eatnumber1) <russ@eatnumber1.com>
   -keynav-20091108.ebuild:
