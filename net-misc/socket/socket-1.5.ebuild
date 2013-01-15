@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ DESCRIPTION="A shell-level interface to TCP sockets"
 HOMEPAGE="http://www.jnickelsen.de/socket/"
 SRC_URI="http://www.jnickelsen.de/${PN}/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
