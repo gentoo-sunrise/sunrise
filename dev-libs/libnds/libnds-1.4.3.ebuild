@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ DESCRIPTION="Nintendo DS Libraries for devkitPro ARM"
 HOMEPAGE="http://devkitpro.org/"
 SRC_URI="mirror://sourceforge/devkitpro/${PN}-src-${PV}.tar.bz2"
 
-LICENSE="as-is"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
