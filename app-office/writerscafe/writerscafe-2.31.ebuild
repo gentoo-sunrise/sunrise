@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.writerscafe.co.uk"
 SRC_URI="amd64? ( http://www.writerscafe.co.uk/${MY_P}-x86_64.tar.gz )
 	x86? ( http://www.writerscafe.co.uk/${MY_P}-i386.tar.gz )"
 
-LICENSE="as-is"
+LICENSE="AnthemionSoftware-EULA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 -*"
 IUSE=""

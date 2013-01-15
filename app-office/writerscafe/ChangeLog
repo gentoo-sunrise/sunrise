@@ -1,6 +1,10 @@
 # ChangeLog for app-office/writerscafe
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  15 Jan 2013; Davide Gerhard (ra1nb0w) <rainbow@irh.it>
+  writerscafe-2.31.ebuild:
+  Changed the license to AnthemionSoftware-EULA
 
 *writerscafe-2.31 (29 Dec 2011)
 
