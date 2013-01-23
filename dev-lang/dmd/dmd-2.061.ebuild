@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,8 +7,8 @@ EAPI="4"
 inherit eutils multilib bash-completion-r1
 
 DESCRIPTION="Reference compiler for the D programming language"
-HOMEPAGE="http://www.digitalmars.com/d/"
-SRC_URI="http://ftp.digitalmars.com/${PN}.${PV}.zip"
+HOMEPAGE="http://dlang.org/"
+SRC_URI="http://downloads.dlang.org.s3.amazonaws.com/releases/2013/${PN}.${PV}.zip"
 
 # DMD supports amd64/x86 exclusively
 KEYWORDS="-* ~amd64 ~x86"
@@ -92,7 +92,7 @@ src_install() {
 	cd "dmd" || die
 	cat > dmd.conf << EOF
 [Environment]
-DFLAGS=-I/usr/include/phobos2 -I/usr/include/druntime -L--no-warn-search-mismatch -L--export-dynamic -L-lrt
+DFLAGS=-I/usr/include/phobos2 -I/usr/include/druntime -L--no-warn-search-mismatch -L--export-dynamic
 EOF
 	insinto /etc
 	doins dmd.conf
@@ -115,10 +115,10 @@ EOF
 
 		# Bundled pre-compiled tools
 		if use amd64; then
-			dobin ../linux/bin64/{dumpobj,obj2asm,rdmd}
+			dobin ../linux/bin64/{ddemangle,dman,dumpobj,obj2asm,rdmd}
 		fi
 		if use x86; then
-			dobin ../linux/bin32/{dumpobj,obj2asm,rdmd}
+			dobin ../linux/bin32/{ddemangle,dman,dumpobj,obj2asm,rdmd}
 		fi
 	fi
 
