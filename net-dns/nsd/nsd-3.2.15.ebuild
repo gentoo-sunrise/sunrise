@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bind8-stats ipv6 mmap +nsec3 root-server runtime-checks zone-stats"
+IUSE="bind8-stats ipv6 minimal-responses mmap +nsec3 ratelimit root-server runtime-checks zone-stats"
 
 RDEPEND="
 	dev-libs/openssl
@@ -39,8 +39,10 @@ src_configure() {
 		--enable-largefile \
 		$(use_enable bind8-stats) \
 		$(use_enable ipv6) \
+		$(use_enable minimal-responses) \
 		$(use_enable mmap) \
 		$(use_enable nsec3) \
+		$(use_enable ratelimit) \
 		$(use_enable root-server) \
 		$(use_enable runtime-checks checking) \
 		$(use_enable zone-stats)
