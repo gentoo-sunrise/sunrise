@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ DESCRIPTION="Data files for 0ad"
 HOMEPAGE="http://wildfiregames.com/0ad/"
 SRC_URI="mirror://sourceforge/zero-ad/${MY_P}-unix-data.tar.xz"
 
-LICENSE="GPL-2 CCPL-Attribution-ShareAlike-3.0"
+LICENSE="GPL-2 CC-BY-SA-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
