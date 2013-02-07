@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,8 +9,7 @@ DESCRIPTION="Jewish Book Collection for use with Orayta (app-text/orayta)"
 HOMEPAGE="http://orayta.googlecode.com/"
 SRC_URI="http://launchpad.net/~moshe-wagner/+archive/orayta/+files/${PN}_${MY_PV}.tar.gz"
 
-LICENSE="GPL-2 LGPL-2.1 LGPL-3 CCPL-Attribution-ShareAlike-NonCommercial-2.5
-		CCPL-Attribution-ShareAlike-3.0 FDL-1.3"
+LICENSE="GPL-2 LGPL-2.1 LGPL-3 CC-BY-NC-SA-2.5 CC-BY-SA-3.0 FDL-1.3"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
