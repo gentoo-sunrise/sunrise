@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -27,8 +27,8 @@ FONTLIST="handwriting|http://openfontlibrary.org/assets/downloads/graziano/493b3
 	sansserif|http://openfontlibrary.org/assets/downloads/pfennig/bfe495172cefc2388a81ee630281d8e5/pfennig.zip|Pfennig*.ttf|OFL
 	sansserif|http://openfontlibrary.org/assets/downloads/jura/514421954ac740cb72effbd2aa7c477e/jura.zip|Jura-*.ttf|OFL
 	sansserif|http://openfontlibrary.org/assets/downloads/didact-gothic/e12a3678deb5791ac79cf0e3f0569663/didact-gothic.zip|DidactGothic.ttf|OFL
-	sansserif|http://openfontlibrary.org/assets/downloads/sansus-webissimo/9e7ef959f7aeef22383039a04e56def9/sansus-webissimo.zip|Sansus*.otf|CCPL-Attribution-3.0
-	sansserif|http://openfontlibrary.org/assets/downloads/designosaur/20b76920b181bc400c45166473687ed6/designosaur.zip|OT-ps/Designosaur-*.otf|CCPL-Attribution-3.0
+	sansserif|http://openfontlibrary.org/assets/downloads/sansus-webissimo/9e7ef959f7aeef22383039a04e56def9/sansus-webissimo.zip|Sansus*.otf|CC-BY-3.0
+	sansserif|http://openfontlibrary.org/assets/downloads/designosaur/20b76920b181bc400c45166473687ed6/designosaur.zip|OT-ps/Designosaur-*.otf|CC-BY-3.0
 	sansserif|http://openfontlibrary.org/assets/downloads/klaudia-and-berenika/0a3b87bd1a161792058e644854ee7b9b/klaudia-and-berenika.zip|Klaudia*/*/*.ttf|OFL
 	monospaced|http://openfontlibrary.org/assets/downloads/notcouriersans/283f31e5facea102ba05ffe4d60b340f/notcouriersans.zip|OSP_NotCourierSans/NotCourierSans*.otf|OFL
 	serif|http://openfontlibrary.org/assets/downloads/squareantiqua/9e7334002d839460e2d6cb7fe9f217b0/squareantiqua.zip|*Antiqua/SquareAntiqua*.ttf|OFL
