@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,7 @@ DESCRIPTION="Bishoujo-style visual novel set in the fictional Yamaku High School
 HOMEPAGE="http://katawa-shoujo.com/"
 SRC_URI="http://naodesu.org/files/katawa-shoujo/${P}.tar.bz2"
 
-LICENSE="CCPL-Attribution-NonCommercial-NoDerivs-3.0"
+LICENSE="CC-BY-NC-ND-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
