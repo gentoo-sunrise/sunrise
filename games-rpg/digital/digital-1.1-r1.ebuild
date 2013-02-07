@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://scoutshonour.com/digital/"
 SRC_URI="http://digital.artfulgamer.com/${P}.tar.bz2
 	http://www.scoutshonour.com/lilyofthevalley/${P}.tar.bz2"
 
-LICENSE="CCPL-Attribution-ShareAlike-NonCommercial-3.0"
+LICENSE="CC-BY-NC-SA-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
