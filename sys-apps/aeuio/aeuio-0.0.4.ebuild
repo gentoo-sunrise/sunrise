@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ DESCRIPTION="Make an initramfs/initrd with root on crypto, lvm, mdadm, etc."
 HOMEPAGE="https://sourceforge.net/projects/aeuio/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"	# or .lzma
 
-LICENSE=" || ( GPL-2 GPL-3 LGPL-3 BSD CCPL-Attribution-3.0 )"
+LICENSE=" || ( GPL-2 GPL-3 LGPL-3 BSD CC-BY-3.0 )"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
