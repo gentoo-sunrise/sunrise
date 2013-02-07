@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://gva.noekeon.org/blahtexml"
 SRC_URI="http://gva.noekeon.org/${PN}/${P}-src.tar.gz"
 
 # Manual licensed under CCPL
-LICENSE="BSD CCPL-Attribution-3.0 ZLIB"
+LICENSE="BSD CC-BY-3.0 ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc"

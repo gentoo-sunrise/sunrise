@@ -1,6 +1,9 @@
 # ChangeLog for dev-tex/blahtexml
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Feb 2013; Ulrich Müller <ulm@gentoo.org> blahtexml-0.9.ebuild:
+  Move Creative Commons licenses to shorter names.
 
 *blahtexml-0.9 (17 Aug 2012)
 
