@@ -1,8 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
+
+inherit eutils
 
 DESCRIPTION="Generate a file list suitable for full or incremental backups"
 HOMEPAGE="http://www.miek.nl/projects/rdup"
@@ -20,6 +22,12 @@ RDEPEND="
 	dev-libs/nettle"
 DEPEND="${RDEPEND}
 	test? ( dev-util/dejagnu )"
+
+src_prepare() {
+	default_src_prepare
+	# see https://github.com/miekg/rdup/pull/4
+	epatch "${FILESDIR}/${P}-fix-strip.patch"
+}
 
 src_configure() {
 	econf $(use_enable debug)
