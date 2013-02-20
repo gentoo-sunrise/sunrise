@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,10 +18,14 @@ IUSE="ldap pam pic postfix ssl threads"
 
 DEPEND="=dev-libs/libcitadel-${PV}
 	>=sys-libs/db-4.2
+	dev-libs/libev
+	net-dns/c-ares
+	net-mail/mailbase
 	virtual/libiconv
 	ldap? ( net-nds/openldap )
 	pam? ( sys-libs/pam )
 	ssl? ( dev-libs/openssl )"
+
 RDEPEND="${DEPEND}
 	net-mail/mailbase
 	postfix? ( mail-mta/postfix )"

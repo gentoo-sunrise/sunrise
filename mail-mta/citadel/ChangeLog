@@ -1,6 +1,12 @@
 # ChangeLog for mail-mta/citadel
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*citadel-8.14 (20 Feb 2013)
+
+  20 Feb 2013; the_mgt themgt@uncensored.citadel.org -citadel-8.04.ebuild,
+  +citadel-8.14.ebuild:
+  Version bump for bug #62119
 
 *citadel-8.04 (20 Feb 2012)
 
