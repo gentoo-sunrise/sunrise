@@ -1,6 +1,12 @@
 # ChangeLog for www-servers/webcit
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*webcit-8.14 (20 Feb 2013)
+
+  20 Feb 2013; the_mgt themgt@uncensored.citadel.org -webcit-8.04.ebuild,
+  +webcit-8.14.ebuild:
+  Version bump for bug #123139
 
 *webcit-8.04 (20 Feb 2012)
 
