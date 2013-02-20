@@ -1,10 +1,13 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
 
 inherit flag-o-matic
+
+MY_LIBV="3"
+S="${WORKDIR}/${PN}-${MY_LIBV}.${PV}"
 
 DESCRIPTION="Code shared across all the components of a Citadel system"
 HOMEPAGE="http://citadel.org/"
