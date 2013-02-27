@@ -2,6 +2,12 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*digital-1.1-r2 (27 Feb 2013)
+
+  27 Feb 2013; Maks Verver (Soultaker) <maksverver@geocities.com>
+  -digital-1.1-r1.ebuild, +digital-1.1-r2.ebuild:
+  Updated ebuild to work with revamped renpy package (thanks, hasufell)
+
   07 Feb 2013; Ulrich Müller <ulm@gentoo.org> digital-1.1-r1.ebuild:
   Move Creative Commons licenses to shorter names.
 
