@@ -1,6 +1,12 @@
 # ChangeLog for app-text/pdf2htmlEX
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*pdf2htmlEX-0.7 (01 Mar 2013)
+
+  01 Mar 2013; Manuel Rueger (mrueg) gentoo@rueg.eu -pdf2htmlEX-0.5.ebuild,
+  +pdf2htmlEX-0.7.ebuild:
+  Version bump
 
 *pdf2htmlEX-0.5 (07 Oct 2012)
 
