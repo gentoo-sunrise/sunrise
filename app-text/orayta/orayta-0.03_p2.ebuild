@@ -16,10 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=">=dev-libs/qtgui-4.5:4
-	>=dev-libs/qtxmlpatterns-4.5:4
+DEPEND=">=dev-qt/qtgui-4.5:4
+	>=dev-qt/qtxmlpatterns-4.5:4
 	>=kde-base/kdelibs-4
-	>=dev-libs/qtwebkit-4.5:4"
+	>=dev-qt/qtwebkit-4.5:4"
 RDEPEND="${DEPEND}
 	app-dicts/orayta-books"
 
