@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="dev-libs/qtgui:4
+DEPEND="dev-qt/qtgui:4
 	net-libs/libnet
 	net-libs/libpcap"
 RDEPEND="${DEPEND}
