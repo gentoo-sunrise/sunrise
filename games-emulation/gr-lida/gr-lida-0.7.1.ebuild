@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="dosbox scummvm"
 
-DEPEND="x11-libs/qt-gui:4
-	x11-libs/qt-sql:4[sqlite]
+DEPEND="dev-libs/qtgui:4
+	dev-libs/qtsql:4[sqlite]
 	dosbox? ( games-emulation/dosbox )
 	scummvm? ( games-engines/scummvm )"
 RDEPEND="${DEPEND}"
