@@ -4,7 +4,7 @@
 
 inherit eutils toolchain-funcs
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="SQL C++ code generator (to use with dev-db/*wrapped packages)"
 HOMEPAGE="http://www.alhem.net/project/sql2class/index.html"
