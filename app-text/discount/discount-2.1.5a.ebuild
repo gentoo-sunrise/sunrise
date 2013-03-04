@@ -10,7 +10,7 @@ SRC_URI="http://www.pell.portland.or.us/~orc/Code/${PN}/${P}.tar.bz2"
 
 LICENSE="DLPARSONS"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="minimal"
 
 src_prepare() {
