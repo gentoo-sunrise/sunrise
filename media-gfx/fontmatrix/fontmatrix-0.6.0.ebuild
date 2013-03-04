@@ -16,10 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND="x11-libs/qt-gui:4
-	x11-libs/qt-sql:4
-	x11-libs/qt-svg:4
-	x11-libs/qt-webkit:4
+RDEPEND="dev-libs/qtgui:4
+	dev-libs/qtsql:4
+	dev-libs/qtsvg:4
+	dev-libs/qtwebkit:4
 	media-libs/freetype:2"
 DEPEND=${RPEDEND}
 
