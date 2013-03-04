@@ -11,10 +11,10 @@ SRC_URI="http://www.alinden.mynetcologne.de/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="4"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-libs/qtgui:4
+DEPEND="dev-qt/qtgui:4
 	x11-libs/libX11
 	x11-libs/libXext"
 RDEPEND="${DEPEND}"
