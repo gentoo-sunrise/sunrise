@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="x11-libs/libX11
 	x11-libs/libXcomposite
 	x11-libs/libXdamage
-	x11-libs/qt-gui:4"
+	dev-libs/qtgui:4"
 DEPEND="${RDEPEND}"
 
 src_install() {
