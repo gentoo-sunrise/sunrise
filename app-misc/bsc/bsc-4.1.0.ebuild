@@ -15,7 +15,7 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="x11-libs/qt-gui:4
+DEPEND="dev-qt/qtgui:4
 	x11-libs/libX11
 	x11-libs/libXext"
 RDEPEND="${DEPEND}"
