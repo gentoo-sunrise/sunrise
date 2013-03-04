@@ -64,7 +64,7 @@ RDEPEND="
 	gmenu? ( gnome-base/gnome-menus )
 	kde? (
 		kde-base/kdelibs
-		x11-libs/qt-core )
+		dev-libs/qtcore )
 	webkit? ( net-libs/webkit-gtk:2 )
 	xfce? ( xfce-base/thunar )"
 
