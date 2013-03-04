@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-DEPEND="dev-libs/qtgui:4
-	dev-libs/qtopengl:4"
+DEPEND="dev-qt/qtgui:4
+	dev-qt/qtopengl:4"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
