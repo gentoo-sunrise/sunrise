@@ -19,9 +19,9 @@ IUSE="stats tlprender"
 RDEPEND="dev-libs/libxml2
 	media-libs/freetype:2
 	media-libs/glew
-	dev-libs/qthelp:4
-	dev-libs/qtgui:4
-	dev-libs/qtopengl:4"
+	dev-qt/qthelp:4
+	dev-qt/qtgui:4
+	dev-qt/qtopengl:4"
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
