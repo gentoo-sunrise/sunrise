@@ -10,7 +10,7 @@ SRC_URI="http://art.gnome.org/download/themes/gtk2/213/GTK2-H2O-default-${PV}.ta
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="x11-libs/gtk+:2"
