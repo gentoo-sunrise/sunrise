@@ -22,7 +22,7 @@ RDEPEND=">=dev-games/ogre-1.7.0[cg,ois]
 	media-libs/freetype:2
 	media-libs/openal
 	sci-physics/bullet
-	>=x11-libs/qt-gui-4.7.0:4
+	>=dev-libs/qtgui-4.7.0:4
 	mp3? (
 		ffmpeg? ( media-video/ffmpeg[mp3] )
 		!ffmpeg? ( media-libs/libsndfile
