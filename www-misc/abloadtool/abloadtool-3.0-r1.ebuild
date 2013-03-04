@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="gnome kde"
 
-RDEPEND="x11-libs/qt-core:4
-	x11-libs/qt-gui:4"
+RDEPEND="dev-libs/qtcore:4
+	dev-libs/qtgui:4"
 
 S=${WORKDIR}/usr
 
