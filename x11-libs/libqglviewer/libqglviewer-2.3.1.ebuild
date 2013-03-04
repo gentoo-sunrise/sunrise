@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="virtual/opengl
-	dev-libs/qtgui:4"
+	dev-qt/qtgui:4"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}/QGLViewer
