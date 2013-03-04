@@ -9,7 +9,7 @@ HOMEPAGE="http://2gis.ru"
 
 LICENSE="2Gis-ru"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 DEPEND="app-arch/unzip"
 RDEPEND=">=app-misc/2gis-3.0.7.1"
@@ -67,10 +67,6 @@ my_add_town volg Volgograd 2010 9
 my_add_town vrnz Voronezh 2010 7
 my_add_town ufa Ufa 2008 3
 my_add_town yar Yaroslavl 2010 6
-
-pkg_setup() {
-	check_license "${FILESDIR%/files}"/../../licenses/${LICENSE}
-}
 
 src_install() {
 	insinto /opt/2gis
