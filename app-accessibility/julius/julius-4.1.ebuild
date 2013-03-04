@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge.jp/${PN}/33146/${P}.tar.gz"
 
 LICENSE="julius"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 LANGS="ja"
