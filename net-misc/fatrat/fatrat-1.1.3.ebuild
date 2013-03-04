@@ -23,7 +23,7 @@ RDEPEND="dev-libs/qtgui:4[dbus]
 	curl? ( >=net-misc/curl-7.18.2 )
 	doc? ( dev-libs/qthelp:4 )
 	jabber? ( net-libs/gloox )
-	webinterface? ( x11-libs/qt-script:4 )"
+	webinterface? ( dev-libs/qtscript:4 )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
