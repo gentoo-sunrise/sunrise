@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/cppcms/${P}.tar.bz2"
 
 LICENSE="|| ( Boost-1.0 MIT )"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc examples mysql mysql_internal odbc odbc_internal postgres postgres_internal sqlite sqlite_internal"
 
 DEPEND="mysql? ( virtual/mysql )
