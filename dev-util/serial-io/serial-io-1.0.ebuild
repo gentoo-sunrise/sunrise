@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="x11-libs/qt-gui:4
+DEPEND="dev-libs/qtgui:4
 	dev-libs/libserial"
 RDEPEND="${DEPEND}"
 
