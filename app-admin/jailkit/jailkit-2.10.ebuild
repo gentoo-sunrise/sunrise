@@ -12,7 +12,7 @@ SRC_URI="http://olivier.sessink.nl/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_prepare() {
