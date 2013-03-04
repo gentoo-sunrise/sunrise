@@ -12,16 +12,12 @@ SRC_URI="http://download.2gis.ru/arhives/2GISShell-${PV}.orig.zip"
 
 LICENSE="2Gis-ru"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="+data"
 
 DEPEND="app-arch/unzip"
 RDEPEND="app-emulation/wine
 	data? ( app-misc/2gis-data )"
-
-pkg_setup() {
-	check_license "${FILESDIR%/files}"/../../licenses/${LICENSE}
-}
 
 src_install() {
 	insinto /opt/${PN}
