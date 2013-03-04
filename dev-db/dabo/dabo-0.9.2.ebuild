@@ -12,24 +12,20 @@ SRC_URI="http://cdn.cloudfiles.mosso.com/c118811/${PN}/${P}-mac-nix.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="ide"
 
 DEPEND=">=dev-python/setuptools-0.6_alpha9"
 
 RDEPEND=">=dev-python/wxpython-2.6.1.1
 	>=dev-db/sqlite-3.0
-	>=dev-python/pysqlite-2.0
+	dev-lang/python[sqlite]
 	ide? ( dev-python/imaging dev-python/reportlab )"
 
 S=${WORKDIR}/${PN}
 
 src_install() {
-	distutils_python_version
-	${python} setup.py install --root="${D}" --no-compile \
-		--single-version-externally-managed "$@" \
-		--install-data="/usr/$(get_libdir)/python${PYVER}/site-packages/" \
-		|| die "setup.py install failed"
+	distutils_src_install
 
 	dodoc ANNOUNCE AUTHORS ChangeLog README TODO || die
 
