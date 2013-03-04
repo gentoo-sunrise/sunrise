@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples"
 
-RDEPEND="dev-libs/qtcore:4"
+RDEPEND="dev-qt/qtcore:4"
 DEPEND="${RDEPEND}"
 
 PATCHES=(
