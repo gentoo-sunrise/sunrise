@@ -25,6 +25,6 @@ RDEPEND="dev-python/feedparser
 RESTRICT_PYTHON_ABIS="2.4 2.5 3.*"
 
 src_install() {
-	emake DESTDIR="${D}" install
+	distutils_src_install
 	doinitd "${FILESDIR}/ajenti"
 }
