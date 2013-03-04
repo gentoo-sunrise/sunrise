@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-RDEPEND="dev-libs/qtgui:4"
+RDEPEND="dev-qt/qtgui:4"
 DEPEND="${RDEPEND}
 	app-arch/unzip"
 
