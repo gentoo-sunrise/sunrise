@@ -16,8 +16,8 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND="x11-libs/qt-gui:4
-	x11-libs/qt-sql:4[sqlite]"
+DEPEND="dev-libs/qtgui:4
+	dev-libs/qtsql:4[sqlite]"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
