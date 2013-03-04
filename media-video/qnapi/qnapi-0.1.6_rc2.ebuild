@@ -21,8 +21,8 @@ IUSE="gnome"
 
 S=${WORKDIR}/${MY_P}
 
-DEPEND="dev-libs/qtcore:4
-	dev-libs/qtgui:4
+DEPEND="dev-qt/qtcore:4
+	dev-qt/qtgui:4
 	gnome? ( gnome-base/gconf )"
 RDEPEND="${DEPEND}
 	app-arch/p7zip"
