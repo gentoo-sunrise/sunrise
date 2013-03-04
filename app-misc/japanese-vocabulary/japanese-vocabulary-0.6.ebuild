@@ -5,7 +5,7 @@
 EAPI="2"
 inherit eutils qt4-r2 toolchain-funcs
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 MY_PN=JapaneseVocabulary
 
@@ -16,8 +16,8 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND="dev-libs/qtgui:4
-	dev-libs/qtsql:4[sqlite]"
+DEPEND="dev-qt/qtgui:4
+	dev-qt/qtsql:4[sqlite]"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
