@@ -14,15 +14,21 @@ SRC_URI="http://labs.freehackers.org/attachments/download/45/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/lua-5.1
+DEPEND="
+	app-doc/doxygen
+	>=dev-lang/lua-5.1
 	sys-libs/ncurses
-	x11-libs/qt-gui:4"
+	dev-qt/qtgui:4
+	dev-qt/qttest:4
+	"
 RDEPEND="${DEPEND}"
 
 DOCS="ChangeLog README"
+
+S="${WORKDIR}/${MY_P}"
 
 src_configure() {
 	mycmakeargs="${mycmakeargs}  -DENABLE_TESTS=OFF \
