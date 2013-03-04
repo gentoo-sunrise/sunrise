@@ -16,9 +16,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="media-libs/glew
-	x11-libs/qt-core:4
-	x11-libs/qt-gui:4
-	x11-libs/qt-opengl:4"
+	dev-libs/qtcore:4
+	dev-libs/qtgui:4
+	dev-libs/qtopengl:4"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
