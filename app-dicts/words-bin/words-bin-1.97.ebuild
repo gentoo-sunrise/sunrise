@@ -12,7 +12,7 @@ SRC_URI="http://atrey.karlin.mff.cuni.cz/~sanda/mirror/${MY_P}-linux.tar.gz"
 
 SLOT="0"
 LICENSE="words"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 DEPEND=""
