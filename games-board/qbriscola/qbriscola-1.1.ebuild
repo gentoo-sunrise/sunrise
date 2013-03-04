@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="dev-libs/qtsql:4[sqlite]
-	dev-libs/qtgui:4"
+DEPEND="dev-qt/qtsql:4[sqlite]
+	dev-qt/qtgui:4"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
