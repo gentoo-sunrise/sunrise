@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="5"
 
 inherit eutils
 
@@ -27,9 +27,7 @@ DEPEND=">=sys-libs/readline-4.1
 	sys-libs/zlib"
 RDEPEND=${DEPEND}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}"/julius-4.1-makefile.patch
 	epatch "${FILESDIR}"/julius-4.1-newParam.patch
 	epatch "${FILESDIR}"/julius-4.1-mkfacrash.patch
