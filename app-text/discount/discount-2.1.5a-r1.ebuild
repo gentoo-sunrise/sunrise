@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 DESCRIPTION="An implementation of John Gruber's Markdown text to html language written in C"
 HOMEPAGE="http://www.pell.portland.or.us/~orc/Code/discount/"
