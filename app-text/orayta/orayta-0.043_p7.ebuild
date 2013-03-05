@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="5"
 
 inherit qt4-r2
 
@@ -26,9 +26,6 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/svn"
 
 src_prepare() {
-	#Unhide project file (for some reason hidden in tarball)
-	mv hide.tmp Orayta.pro || die 'Project File missing'
-
 	sed -i 's|/usr/local/bin|/usr/bin|' Orayta.pro
 
 	qt4-r2_src_prepare
