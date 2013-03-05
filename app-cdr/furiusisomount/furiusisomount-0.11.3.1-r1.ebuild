@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI="5"
 
 PYTHON_DEPEND="2:2.5"
 PYTHON_USE_WITH="threads"
@@ -34,7 +34,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# The tarball ships *.pyc files, but we don't want to install them, do we?
+	# The tarball ships *.pyc files, but we should not install them.
 	rm src/*.pyc || die "rm failed"
 
 	# Change python binary call and path to main in furiusisomount
