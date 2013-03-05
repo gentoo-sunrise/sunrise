@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="5"
+
 inherit versionator
 
 MY_P=$(delete_version_separator "_" ${P})
