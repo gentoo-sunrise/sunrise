@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 inherit multilib qt4-r2
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-DEPEND="dev-qt/qtgui:4"
+DEPEND="dev-qt/qtgui:4[qt3support]"
 RDEPEND="${DEPEND}
 	app-admin/noobjuice-viewer
 	>=app-portage/eix-0.18.0
