@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="5"
+
 inherit toolchain-funcs
 
 DESCRIPTION="Open source file compressor and archiver"
@@ -16,7 +18,7 @@ IUSE=""
 DEPEND="app-arch/unzip"
 RDEPEND=""
 
-S=${WORKDIR}/${PN}
+S=${WORKDIR} #/${PN}
 
 src_compile() {
 	$( tc-getCXX ) ${CXXFLAGS} -DNOASM -DUNIX ${PN}.cpp -o ${PN} || die "compile failed"
