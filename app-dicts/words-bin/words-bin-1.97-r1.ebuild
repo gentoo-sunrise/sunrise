@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="5"
+
 inherit eutils
 
 MY_P="${P/-bin}Ed"
@@ -20,9 +22,7 @@ RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 
-src_unpack(){
-	unpack ${A}
-	cd "${S}"
+src_prepare(){
 	epatch "${FILESDIR}"/words_dir.patch
 }
 
