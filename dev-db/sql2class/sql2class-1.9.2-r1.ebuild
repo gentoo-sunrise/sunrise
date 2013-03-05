@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="5"
+
 inherit eutils toolchain-funcs
 
 KEYWORDS="~amd64 ~x86"
@@ -16,10 +18,7 @@ IUSE="mysql sqlite"
 DEPEND=""
 RDEPEND=""
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	sed -i \
 		-e 's/\(CPPFLAGS\) =/\1+=/' \
 		-e 's/-Wall -O2 -g//' \
