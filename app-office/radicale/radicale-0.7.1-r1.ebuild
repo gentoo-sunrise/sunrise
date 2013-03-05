@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="5"
 PYTHON_DEPEND="*:2.6"
 SUPPORT_PYTHON_ABIS=1
 
@@ -37,6 +37,7 @@ RDIR=/var/lib/radicale
 LDIR=/var/log/radicale
 
 pkg_setup() {
+	python_pkg_setup
 	enewgroup radicale
 	enewuser radicale -1 -1 ${RDIR} radicale
 }
