@@ -1,6 +1,12 @@
 # ChangeLog for dev-util/qshaderedit
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*qshaderedit-0.1.3-r1 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -qshaderedit-0.1.3.ebuild,
+  +qshaderedit-0.1.3-r1.ebuild:
+  Fix qt deps
 
   12 Apr 2009; Wilfried Holzke (justXi) <justXi@basefacility.org>
   +qshaderedit-0.1.3.ebuild, +metadata.xml:

@@ -1,6 +1,12 @@
 # ChangeLog for app-arch/paq8l
-# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*paq8l-20070308-r1 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -paq8l-20070308.ebuild,
+  +paq8l-20070308-r1.ebuild:
+  Adding ~amd64 keyword, bump EAPI
 
   11 Sep 2008; Tiago Cunha (tcunha) <me@tiagocunha.org> metadata.xml:
   Fix metadata.xml

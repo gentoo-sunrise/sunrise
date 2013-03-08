@@ -1,6 +1,9 @@
 # ChangeLog for app-admin/ajenti
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> ajenti-0.6.1.ebuild:
+  Fixing distutils usage
 
   26 Dec 2011; Michael Palimaka (kensington) <kensington@astralcloak.net>
   -ajenti-0.5.101.ebuild, -ajenti-0.6.0.ebuild:

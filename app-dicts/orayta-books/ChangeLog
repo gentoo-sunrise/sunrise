@@ -2,6 +2,12 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*orayta-books-0.05 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org>
+  -orayta-books-0.02_p16.ebuild, +orayta-books-0.05.ebuild:
+  bump
+
   07 Feb 2013; Ulrich Müller <ulm@gentoo.org> orayta-books-0.02_p16.ebuild:
   Move Creative Commons licenses to shorter names.
 

@@ -1,6 +1,10 @@
 # ChangeLog for sci-physics/KRT
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org>
+  KRT-2009.11.20.09.34.38.ebuild:
+  Fix qt deps
 
   30 Apr 2010; Michał Górny (sedzimir) <gentoo@mgorny.alt.pl>
   +KRT-2009.11.20.09.34.38.ebuild, +files/KRT.xpm, +metadata.xml:

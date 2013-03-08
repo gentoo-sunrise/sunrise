@@ -1,6 +1,12 @@
 # ChangeLog for app-editors/yzis
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*yzis-1.0_alpha1-r1 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -yzis-1.0_alpha1.ebuild,
+  +yzis-1.0_alpha1-r1.ebuild:
+  Fix deps, add ~amd64 keyword, fix S so it compiles
 
   02 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   yzis-1.0_alpha1.ebuild:

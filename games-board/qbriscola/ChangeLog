@@ -1,6 +1,12 @@
 # ChangeLog for games-board/qbriscola
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*qbriscola-1.1-r1 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -qbriscola-1.1.ebuild,
+  +qbriscola-1.1-r1.ebuild:
+  Fix qt deps
 
   02 Feb 2010; Markos Chandras <hwoarang@gentoo.org> qbriscola-1.1.ebuild:
   Use DOCS variable from cmake-utils eclass to install documentation

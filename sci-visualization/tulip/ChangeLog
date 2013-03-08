@@ -1,6 +1,9 @@
 # ChangeLog for sci-visualization/tulip
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> tulip-3.1.2.ebuild:
+  Fix qt deps
 
   22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> tulip-3.1.2.ebuild:
   inherit user eclass for enewgroup

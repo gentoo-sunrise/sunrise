@@ -1,6 +1,9 @@
 # ChangeLog for www-misc/abloadtool
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> abloadtool-3.0-r1.ebuild:
+  Fix qt deps
 
   22 Jan 2012; Mike Gilbert <floppym@gentoo.org> files/abloadaction.desktop:
   Convert desktop file to unix line endings

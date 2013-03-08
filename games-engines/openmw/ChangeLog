@@ -1,6 +1,9 @@
 # ChangeLog for games-engines/openmw
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> openmw-0.13.0.ebuild:
+  Fix qt deps
 
   05 May 2012; Mike Gilbert <floppym@gentoo.org> openmw-0.13.0.ebuild:
   Use pkgconfig virtual.

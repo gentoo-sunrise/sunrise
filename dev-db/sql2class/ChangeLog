@@ -1,6 +1,12 @@
 # ChangeLog for dev-db/sql2class
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*sql2class-1.9.2-r1 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -sql2class-1.9.2.ebuild,
+  +sql2class-1.9.2-r1.ebuild:
+  Adding ~amd64 keyword, bump EAPI
 
   20 Jun 2007; Jakub Moc <jakub@gentoo.org> sql2class-1.9.2.ebuild:
   Nuke bogus use flags

@@ -1,6 +1,12 @@
 # ChangeLog for app-office/radicale
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*radicale-0.7.1-r1 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -radicale-0.7.1.ebuild,
+  +radicale-0.7.1-r1.ebuild:
+  Adding amd64 keyword, bump EAPI
 
 *radicale-0.7.1 (11 Sep 2012)
 

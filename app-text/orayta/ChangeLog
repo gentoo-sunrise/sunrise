@@ -1,6 +1,12 @@
 # ChangeLog for app-text/orayta
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*orayta-0.043_p7 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -orayta-0.03_p2.ebuild,
+  +orayta-0.043_p7.ebuild:
+  Bump, bump EAPI, fix qt deps
 
   12 Feb 2012; Mike Gilbert <floppym@gentoo.org> orayta-0.03_p2.ebuild:
   Add missing newline at EOF.

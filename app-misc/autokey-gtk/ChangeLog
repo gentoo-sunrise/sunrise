@@ -1,6 +1,12 @@
 # ChangeLog for app-misc/autokey-gtk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*autokey-gtk-0.61.3-r1 (08 Mar 2013)
+
+  08 Mar 2013; Patrick Lauer <patrick@gentoo.org> -autokey-gtk-0.61.3.ebuild,
+  +autokey-gtk-0.61.3-r1.ebuild:
+  Adding ~amd64 keyword, bump EAPI
 
   19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   autokey-gtk-0.61.3.ebuild:
