@@ -83,7 +83,6 @@ dev-db/dabo:ide - Enable dabo IDE
 dev-db/soci:boost - Enable boost support
 dev-db/soci:empty - Build the sample backend called Empty
 dev-games/opal:double-precision - More precise calculations at the expense of speed
-dev-games/renpy:development - Install IDE for game developers and an empty game template
 dev-lang/brainwash:char - Compile with support for unsigned character (instead of signed integer) cells
 dev-lang/dmd:tools - Install optional, precompiled tools (rdmd, obj2asm and dumpobj); leave disabled if you use "dmd-common" from d-overlay
 dev-lang/xharbour:allegro - Build Allegro-based GT driver
@@ -161,8 +160,6 @@ games-fps/vavoom-textures:plutonia - Install 'The Plutonia Experiment' resources
 games-fps/vavoom-textures:tnt - Install 'TNT: Evilution' resources
 games-misc/fretsonfire:guitarhero - Enable Guitar Hero song importer
 games-puzzle/hex-a-hop:pango - Use sdl-pango instead of default sdl-ttf for font rendering
-games-strategy/0ad:audio - Audio support
-games-strategy/0ad:editor - Include Atlas scenario editor projects
 games-strategy/moo2:lordbrazen - Installs unofficial patch from lordbrazen.blogspot.com
 games-strategy/moo2:nocd - Install all files required to run the application without a CD mounted
 games-util/bsp:dmalloc - Enable debugging with the dmalloc library
@@ -185,7 +182,6 @@ media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:gnet - Add support for cluster rendering
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
 media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
-media-plugins/gimp-refocus:lapack-atlas - Use the ATLAS version of lapack
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
@@ -205,27 +201,7 @@ media-video/qnapi:gnome - Enable GNOME menu integration.
 media-video/qnapi:kde - Enable KDE4 menu integration.
 media-video/ripwrap:mp4 - Add mp4 support
 net-dialup/iwar:iax2 - Enable iax2 protocol support
-net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
-net-dns/nsd:nsec3 - Enable NSEC3 support
-net-dns/nsd:root-server - Configure NSD as a root server
-net-dns/nsd:runtime-checks - Enable runtime checks, this could lead to a reduced service level
-net-dns/nsd:zone-stats - Enable per-zone statistics logging, this could lead to a reduced service level
 net-firewall/vuurmuur:logrotate - Install support files for logrotate
-net-irc/iroffer-dinoex:admin - Add HTTP admin (need flag “http”)
-net-irc/iroffer-dinoex:blowfish - Add blowfish encryption support (for channel)
-net-irc/iroffer-dinoex:chroot - Add chroot support
-net-irc/iroffer-dinoex:curl - Needed for FETCH command
-net-irc/iroffer-dinoex:daemon - Add daemon support
-net-irc/iroffer-dinoex:debug - Compile with debug option
-net-irc/iroffer-dinoex:geoip - Add geoip support (country and city lookup)
-net-irc/iroffer-dinoex:gnutls - Add SSL and TLS support with net-libs/gnutls
-net-irc/iroffer-dinoex:http - Add HTTP server support
-net-irc/iroffer-dinoex:memsave - Memory protection
-net-irc/iroffer-dinoex:ruby - Add RUBY support
-net-irc/iroffer-dinoex:ssl - Add SSL support with OpenSSL
-net-irc/iroffer-dinoex:static - Build a static binary
-net-irc/iroffer-dinoex:telnet - Add support for telnet administration
-net-irc/iroffer-dinoex:upnp - Forward ports using UPnP
 net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
