@@ -48,7 +48,7 @@ src_install() {
 
 	##House cleaning...
 	#We don't use the setup program, settings are in /etc/conf.d/webcit
-	rm "${D}"/usr/sbin/setup || "Removing upstreams setup bin failed"
+	rm "${D}"/usr/sbin/setup || die "Removing upstreams setup bin failed"
 
 	dodoc *.txt
 }

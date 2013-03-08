@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Mar 2013; Julian Ospald <hasufell@gentoo.org> webcit-8.14.ebuild:
+  add missing die
+
 *webcit-8.14 (20 Feb 2013)
 
   20 Feb 2013; the_mgt themgt@uncensored.citadel.org -webcit-8.04.ebuild,
