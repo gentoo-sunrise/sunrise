@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,12 +16,9 @@ SRC_URI="mirror://sourceforge/${MY_PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="lapack-atlas"
+IUSE=""
 
-RDEPEND="lapack-atlas? (
-		dev-libs/libf2c
-		sci-libs/lapack-atlas
-	)
+RDEPEND="
 	media-gfx/gimp:2
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
@@ -41,12 +38,7 @@ src_prepare() {
 src_configure() {
 	export GIMPTOOL="/usr/bin/gimptool-2.0"
 
-	if use lapack-atlas; then
-		econf --with-lapack-libs="$($(tc-getPKG_CONFIG) --libs lapack)" \
-		--with-lapack-includes="$($(tc-getPKG_CONFIG) --cflags lapack)"
-	else
-		econf
-	fi
+	econf
 }
 
 src_install() {
