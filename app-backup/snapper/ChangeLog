@@ -2,6 +2,10 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Mar 2013; Dainius Masiliūnas (GreatEmerald) <pastas4@gmail.com>
+  metadata.xml:
+  New Ebuild for bug #446680
+
 *snapper-9999 (11 Mar 2013)
 
   11 Mar 2013; Dainius Masiliūnas (GreatEmerald) <pastas4@gmail.com>
