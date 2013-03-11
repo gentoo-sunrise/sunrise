@@ -10,7 +10,7 @@ SRC_URI="http://rimonbarr.com/repository/${PN}/code/${PN}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_unpack() {
@@ -18,7 +18,6 @@ src_unpack() {
 }
 
 src_install() {
-	python_version
 	cd "${WORKDIR}"
 	insinto /usr/$(get_libdir)/python${PYVER}/site-packages/
 	newins pyq pyq.py
@@ -26,11 +25,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	python_version
 	python_mod_optimize "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages"
 }
 
 pkg_postrm() {
-	python_version
 	python_mod_cleanup "${ROOT}usr/$(get_libdir)/python${PYVER}/site-packages"
 }
