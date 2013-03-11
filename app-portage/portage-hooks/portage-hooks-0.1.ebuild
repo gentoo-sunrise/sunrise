@@ -7,7 +7,7 @@ HOMEPAGE="http://www.salug.it/~sydro/progetti/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 src_install() {
