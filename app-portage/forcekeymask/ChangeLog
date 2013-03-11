@@ -1,6 +1,9 @@
 # ChangeLog for app-portage/forcekeymask
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  11 Mar 2013; Patrick Lauer <patrick@gentoo.org> forcekeymask-1.1.ebuild:
+  Adding ~amd64 keyword, adapting to OpenRC
 
   24 Oct 2006; Luca Marturana (luca89) <lucamarturana@gmail.com>
   forcekeymask-1.1.ebuild:
