@@ -1,6 +1,12 @@
 # ChangeLog for sys-apps/pcp
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*pcp-3.7.0 (12 Mar 2013)
+
+  12 Mar 2013; Patrick Lauer <patrick@gentoo.org> -pcp-2.5.0.ebuild,
+  +pcp-3.7.0.ebuild:
+  [sys-apps/pcp] Adding ~amd64 keyword, bump, EAPI bump
 
   29 Jan 2010; Piotr Szymaniak <lazy_bum@o2.pl> pcp-2.5.0.ebuild:
   Fixed SRC_URI, this needs a bump.
