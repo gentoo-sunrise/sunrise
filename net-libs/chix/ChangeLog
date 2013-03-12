@@ -1,6 +1,9 @@
 # ChangeLog for net-libs/chix
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Mar 2013; Patrick Lauer <patrick@gentoo.org> chix-1.0.0.ebuild:
+  [net-libs/chix] Adding ~amd64 keyword, make it work
 
   30 Oct 2006; Niel Anthony E. Acuna (schoolboy) <amerei@gmail.com>
   +chix-1.0.0.ebuild, +metadata.xml:
