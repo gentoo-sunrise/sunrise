@@ -1,6 +1,9 @@
 # ChangeLog for sys-apps/fspy
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Mar 2013; Patrick Lauer <patrick@gentoo.org> fspy-0.1.1.ebuild:
+  [sys-apps/fspy] Adding ~amd64 keyword
 
   06 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   fspy-0.1.1.ebuild:
