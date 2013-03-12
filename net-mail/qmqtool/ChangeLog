@@ -1,6 +1,9 @@
 # ChangeLog for net-mail/qmqtool
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Mar 2013; Patrick Lauer <patrick@gentoo.org> qmqtool-1.14.ebuild:
+  [net-mail/qmqtool] Adding ~amd64 keyword
 
 *qmqtool-1.14 (07 Jul 2010)
 
