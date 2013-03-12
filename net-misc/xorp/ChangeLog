@@ -1,6 +1,13 @@
 # ChangeLog for net-misc/xorp
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*xorp-1.8.5 (12 Mar 2013)
+
+  12 Mar 2013; Patrick Lauer <patrick@gentoo.org> -xorp-1.4.ebuild,
+  +xorp-1.8.5.ebuild:
+  [net-misc/xorp] Adding ~amd64 keyword, bump, adapt to new build system,
+  installs to /usr/local still but is now at least buildable
 
   22 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> xorp-1.4.ebuild:
   inherit user eclass instead of eutils eclass for enewgroup
