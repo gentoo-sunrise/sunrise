@@ -1,3 +1,5 @@
+Patch to fix compilation errors by removing the java examples target when building for java
+
 Index: project/build/java.mk
 ===================================================================
 --- project/build/java.mk	(revision 1551)

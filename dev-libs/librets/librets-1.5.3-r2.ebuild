@@ -7,9 +7,7 @@ EAPI="5"
 PHP_EXT_OPTIONAL_USE="php"
 PHP_EXT_NAME="librets"
 PHP_EXT_SKIP_PHPIZE="yes"
-# Will add php5-4 support as soon as someone fixes gentoo bug 404453 with swig 2.0.4
-# or upstream fixes the build error with swig >= 2.0.8
-USE_PHP="php5-3"
+USE_PHP="php5-3 php5-4"
 
 PYTHON_COMPAT=( python2_{6,7} )
 
@@ -26,7 +24,7 @@ LICENSE="BSD-NAR"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc java mono perl php python ruby sql-compiler threads"
-# Enabling threads for perl, php, python or ruby causes segmentation faults in cli scripts but not through apache
+# Enabling thread safety for perl, php, python or ruby causes segmentation faults in cli scripts but not through apache
 REQUIRED_USE="perl? ( !threads )
 	php? ( !threads )
 	python? ( !threads )
@@ -47,15 +45,14 @@ RDEPEND=">=dev-libs/boost-1.46
 	java? ( >=virtual/jdk-1.6.0 ${SWIG_RDEPEND} )
 	mono? ( dev-lang/mono ${SWIG_RDEPEND} )
 	php? ( ${SWIG_RDEPEND} )
-	python? ( ${SWIG_RDEPEND} )
+	python? ( ${SWIG_RDEPEND} ${PYTHON_DEPS} )
 	ruby? ( $(ruby_implementations_depend) ${SWIG_RDEPEND} )"
 
 # An upstream bug prevents the php extension from building with swig >= 2.0.5
 DEPEND="java? ( >=dev-lang/swig-1.3.40-r1 )
 	mono? ( >=dev-lang/swig-1.3.40-r1 )
-	php? ( <dev-lang/swig-2.0.5 >=dev-lang/swig-1.3.40-r1 )
+	php? ( dev-lang/php[-threads] >=dev-lang/swig-1.3.40-r1 )
 	python? ( >=dev-lang/swig-1.3.40-r1 )
-	ruby_targets_ruby18? ( >=dev-lang/swig-1.3.40-r1 )
 	ruby_targets_ruby18? ( >=dev-lang/swig-1.3.40-r1 )
 	ruby_targets_ruby19? ( >=dev-lang/swig-2.0.4-r1 )
 	${RDEPEND}"
@@ -107,11 +104,8 @@ src_unpack() {
 }
 
 src_prepare() {
-	# Patch to allow the ruby extension to compile when multiple versions of boost are installed
 	epatch "${FILESDIR}"/${P}-extconf.rb.patch
-	# Patch to fix compilation errors by removing the java examples target when building for java
 	epatch "${FILESDIR}"/${P}-java.mk.patch
-	# add missing LDFLAGS and change CFLAGS to CXXFLAGS
 	epatch "${FILESDIR}"/${P}-build.patch
 	eautoreconf
 

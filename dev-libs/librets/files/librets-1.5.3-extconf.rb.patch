@@ -1,3 +1,5 @@
+Upstream patch to allow the ruby extension to compile when multiple versions of boost are installed
+
 Index: project/swig/ruby/extconf.rb
 ===================================================================
 --- project/swig/ruby/extconf.rb	(revision 1547)

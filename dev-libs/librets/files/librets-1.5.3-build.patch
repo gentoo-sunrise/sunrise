@@ -1,3 +1,5 @@
+Add missing LDFLAGS and change CFLAGS to CXXFLAGS
+
 --- librets-1.5.3/project/build/java.mk
 +++ librets-1.5.3/project/build/java.mk
 @@ -46,7 +46,7 @@
