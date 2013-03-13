@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,8 +8,8 @@ USE_RUBY="ruby19"
 inherit ruby-ng
 
 DESCRIPTION="A Linux editor for the masses"
-HOMEPAGE="http://purepistos.net/diakonos"
-SRC_URI="http://purepistos.net/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://diakonos.pist0s.ca"
+SRC_URI="http://diakonos.pist0s.ca/archives/${P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
