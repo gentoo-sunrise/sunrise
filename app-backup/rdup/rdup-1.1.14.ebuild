@@ -27,6 +27,7 @@ src_prepare() {
 	default_src_prepare
 	# see https://github.com/miekg/rdup/pull/4
 	epatch "${FILESDIR}/${P}-fix-strip.patch"
+	sed -i -e 's/ -Werror//' GNUmakefile.in || die "Failed to fix Makefile"
 }
 
 src_configure() {
