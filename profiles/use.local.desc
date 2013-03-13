@@ -4,10 +4,8 @@
 
 app-admin/blockhosts:logrotate - Enable logrotate file installation
 app-admin/blockhosts:logwatch - Install support files for logwatch
-app-admin/istatd:qnaptemp - Read temperature from procfs on qnap NAS products
 app-admin/reprepro:archive - Enable archive support using app-arch/libarchive
 app-admin/reprepro:gpgme - Enable gpgme support using app-crypt/gpgme
-app-admin/vlogger:dbi - Enable support for DBI
 app-cdr/furiusisomount:brasero - Enables support for burning images using app-cdr/brasero
 app-crypt/yapet:csv - Enable csv import utility
 app-crypt/yapet:pwgen - Enable build-in password generator
@@ -261,7 +259,6 @@ sys-fs/ntfs3g-ar:extras - Enable extra ntfsprogs utilities.
 sys-fs/ntfs3g-ar:ntfsprogs - Include internal version of ntfsprogs. This will block sys-fs/ntfsprogs.
 sys-fs/ntfs3g-ar:udev - Install udev rule to make udisks use ntfs-3g instead of the kernel NTFS driver.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
-www-misc/monitorix:evms - Add support for (root) filesystems on sys-fs/evms volumes
 x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
