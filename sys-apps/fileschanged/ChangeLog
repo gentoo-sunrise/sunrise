@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Mar 2013; Julian Ospald <hasufell@gentoo.org> -fileschanged-0.6.5.ebuild:
+  remove old
+
 *fileschanged-0.6.5-r1 (12 Mar 2013)
 
   12 Mar 2013; Patrick Lauer <patrick@gentoo.org> fileschanged-0.6.5.ebuild,
