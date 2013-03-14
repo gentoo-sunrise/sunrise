@@ -1,15 +1,15 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 inherit eutils
 
 DESCRIPTION="Plain (stupid) text-based todo manager"
 HOMEPAGE="http://requiescant.tuxfamily.org/tofu/index.html"
-SRC_URI="http://requiescant.tuxfamily.org/${PN}/${P}.tar.gz"
-
+SRC_URI="http://requiescant.tuxfamily.org/files/${P}.tar.gz"
+	
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
