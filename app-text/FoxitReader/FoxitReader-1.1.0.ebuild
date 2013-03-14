@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ MY_PV2=$(get_version_component_range 1-2)
 
 DESCRIPTION="A free PDF document viewer, featuring small size, quick startup, and fast page rendering"
 HOMEPAGE="http://www.foxitsoftware.com/pdf/desklinux/"
-SRC_URI="http://mirrors.foxitsoftware.com/pub/foxit/reader/desktop/linux/${MY_PV1}.x/${MY_PV2}/enu/${P}.tar.bz2"
+SRC_URI="http://cdn04.foxitsoftware.com/pub/foxit/reader/desktop/linux/${MY_PV1}.x/${MY_PV2}/enu/${P}.tar.bz2"
 
 LICENSE="${PN}"
 SLOT="0"
