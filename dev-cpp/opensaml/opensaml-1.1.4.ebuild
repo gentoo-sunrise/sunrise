@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ inherit eutils autotools
 
 DESCRIPTION="Open Source Security Assertion Markup Language implementation"
 HOMEPAGE="http://www.opensaml.org/"
-SRC_URI="http://shibboleth.internet2.edu/downloads/${PN}/cpp/${PV}/${P}.tar.gz"
+SRC_URI="http://shibboleth.net/downloads/c++-opensaml/archive/${PV}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

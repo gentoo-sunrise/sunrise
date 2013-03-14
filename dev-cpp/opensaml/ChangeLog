@@ -1,6 +1,9 @@
 # ChangeLog for dev-cpp/opensaml
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Mar 2013; Patrick Lauer <patrick@gentoo.org> opensaml-1.1.4.ebuild:
+  [dev-cpp/opensaml] Fix SRC_URI
 
 *opensaml-1.1.4 (02 Jul 2010)
 
