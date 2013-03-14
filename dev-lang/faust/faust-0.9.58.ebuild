@@ -1,23 +1,19 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 inherit eutils
 
 DESCRIPTION="Functional programming language for realtime audio plugins and applications development"
 HOMEPAGE="http://faust.grame.fr/"
-SRC_URI="mirror://sourceforge/faudiostream/${P}b.tar.gz"
+SRC_URI="mirror://sourceforge/faudiostream/${P}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE="doc examples"
-
-src_prepare() {
-	epatch "${FILESDIR}/${P}_Makefile.patch"
-}
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
