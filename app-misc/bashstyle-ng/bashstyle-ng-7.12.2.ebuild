@@ -17,6 +17,8 @@ IUSE="acpi dmi doc pci pdf usb"
 
 DEPEND="x11-libs/vte[python]
 	sys-devel/gettext
+	dev-libs/newt
+	dev-python/pygtk
 	acpi? ( sys-power/acpi )
 	dmi? ( sys-apps/dmidecode )
 	pci? ( sys-apps/pciutils )
@@ -25,10 +27,6 @@ DEPEND="x11-libs/vte[python]
 RDEPEND="${DEPEND}"
 
 DOCS="AUTHORS ChangeLog README TODO"
-
-src_prepare() {
-	epatch "${FILESDIR}/${P}-gconf-update.patch" || die
-}
 
 src_install() {
 	if use doc; then
