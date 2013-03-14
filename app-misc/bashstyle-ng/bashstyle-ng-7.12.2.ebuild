@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="acpi dmi doc pci pdf usb"
 
-DEPEND="app-shells/bash
+DEPEND="${PYTHON_DEPS}
+	app-shells/bash
 	dev-libs/newt
 	dev-python/gconf-python:2
 	dev-python/pygtk[${PYTHON_USEDEP}]
