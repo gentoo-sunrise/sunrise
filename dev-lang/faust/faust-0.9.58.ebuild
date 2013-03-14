@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit eutils
+inherit toolchain-funcs
 
 DESCRIPTION="Functional programming language for realtime audio plugins and applications development"
 HOMEPAGE="http://faust.grame.fr/"
@@ -12,21 +12,29 @@ SRC_URI="mirror://sourceforge/faudiostream/${P}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc examples"
 
+DEPEND="app-arch/unzip"
+
+pkg_setup() {
+	tc-export CC CXX AR RANLIB
+}
+
+src_compile() {
+	emake PREFIX="/usr"
+}
+
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install || die "emake install failed"
-	dodoc README || die "Installing README failed"
+	emake DESTDIR="${D}" PREFIX="/usr" install
+	dodoc README
 
 	if use doc; then
-		dodoc documentation/faust{-quick-reference,-soft-computing,_tutorial}.pdf \
-			|| die "Installing docs failed"
+		dodoc documentation/faust{-quick-reference,-soft-computing,_tutorial}.pdf
 	fi
 
 	if use examples; then
-		docinto examples
-		dodoc examples/* || die "Installing examples failed"
+		dodoc -r examples
 	fi
 }
 

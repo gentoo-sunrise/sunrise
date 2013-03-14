@@ -2,6 +2,10 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Mar 2013; Julian Ospald <hasufell@gentoo.org>
+  -files/faust-0.9.9.4_Makefile.patch, faust-0.9.58.ebuild:
+  small cleanup, basic toolchain QA, remove old patch
+
 *faust-0.9.58 (14 Mar 2013)
 
   14 Mar 2013; Patrick Lauer <patrick@gentoo.org> -faust-0.9.9.4.ebuild,
