@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -27,7 +27,7 @@ DEPEND=">=virtual/jdk-1.5"
 S=${WORKDIR}
 
 src_prepare() {
-	cp "${FILESDIR}"/build-${PV}.xml build.xml || die "copying build.xml failed"
+	cp "${FILESDIR}"/build-2.043.xml build.xml || die "copying build.xml failed"
 }
 
 src_install() {

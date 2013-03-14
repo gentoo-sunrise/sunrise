@@ -1,6 +1,12 @@
 # ChangeLog for dev-java/eva
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*eva-2.05 (14 Mar 2013)
+
+  14 Mar 2013; Patrick Lauer <patrick@gentoo.org> +eva-2.05.ebuild,
+  -eva-2.043.ebuild:
+  [dev-java/eva] Bump
 
   02 Mar 2010; Oliver Borm (boroli) <oli.borm@web.de> files/build-2.043.xml:
   set encoding to UTF-8 for javac in build.xml file
