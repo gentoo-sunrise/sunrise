@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Mar 2013; Julian Ospald <hasufell@gentoo.org> tofu-3.5.ebuild:
+  drop unused eclasses, remove obsolete die
+
 *tofu-3.5 (14 Mar 2013)
 
   14 Mar 2013; Patrick Lauer <patrick@gentoo.org> -tofu-3.0.ebuild,
