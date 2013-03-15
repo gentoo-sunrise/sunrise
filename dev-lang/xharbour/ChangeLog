@@ -1,6 +1,12 @@
 # ChangeLog for dev-lang/xharbour
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*xharbour-1.2.1 (15 Mar 2013)
+
+  15 Mar 2013; Patrick Lauer <patrick@gentoo.org> -xharbour-1.0.0_beta1.ebuild,
+  +xharbour-1.2.1.ebuild:
+  [dev-lang/xharbour] Bump, remove useless useflag, fix compilation
 
   19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   xharbour-1.0.0_beta1.ebuild:

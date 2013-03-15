@@ -1,23 +1,22 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit base toolchain-funcs
 
-MY_P=${P/_/-}
 DESCRIPTION="An extended implementation of the Clipper dialect of the xBase language family"
 HOMEPAGE="http://www.xharbour.org/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.src.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.src.tar.gz"
 
 LICENSE="GPL-2-with-exceptions"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro doc gpm odbc slang threads X"
+IUSE="allegro doc gpm slang threads X"
 
 RDEPEND="sys-libs/ncurses
+	dev-db/unixODBC
 	allegro? ( media-libs/allegro )
 	gpm? ( sys-libs/gpm )
-	odbc? ( dev-db/unixODBC )
 	slang? ( sys-libs/slang )
 	X? ( media-libs/freetype
 		 x11-libs/libX11
@@ -27,17 +26,6 @@ RDEPEND="sys-libs/ncurses
 		 x11-libs/libXt )"
 DEPEND="${RDEPEND}
 	sys-devel/bison"
-
-S=${WORKDIR}/${MY_P}
-
-PATCHES=(
-	"${FILESDIR}"/${PN}-as-needed.patch
-	"${FILESDIR}"/${PN}-fPIC.patch
-	"${FILESDIR}"/${PN}-mkinstdir.patch
-	"${FILESDIR}"/${PN}-override-cc.patch
-	"${FILESDIR}"/${PN}-parallel-make.patch
-	"${FILESDIR}"/${PN}-skip-static-utils.patch
-)
 
 src_compile() {
 	# xHarbour uses environment vars to configure the build
@@ -55,7 +43,7 @@ src_compile() {
 		HB_GT_LIB="gtstd" \
 		HB_MULTI_GT="yes" \
 		HB_COMMERCE="no"
-	emake || die
+	emake -j1 || die
 }
 
 src_test() {
