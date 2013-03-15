@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,6 @@ RDEPEND="dev-db/sqlite:3
 	>=dev-lang/vala-0.12.0:0.12
 	>=dev-libs/gdl-2.28
 	dev-libs/glib:2
-	unique? ( dev-libs/libunique )
 	dev-libs/libxml2
 	>=x11-libs/gtk+-2.18.0:2
 	>=x11-libs/gtksourceview-2.10"
@@ -31,7 +30,6 @@ src_compile() {
 	VALAC="valac-0.12" ./waf configure \
 		--nocache \
 		--prefix=/usr \
-		$(use unique || echo --with_libunique) \
 		--with-libdir=/usr/"$(get_libdir)" || die "Configure failed!"
 
 	VALAC="valac-0.12" ./waf build || die "Build failed!"
