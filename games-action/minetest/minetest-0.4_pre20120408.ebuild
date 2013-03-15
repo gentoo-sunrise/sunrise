@@ -16,7 +16,7 @@ EGIT_COMMIT="${PV%_pre*}.dev-${PV#*_pre}"
 LICENSE="GPL-2 CC-BY-SA-3.0"
 SLOT="0"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="+client nls +server"
 
 RDEPEND="app-arch/bzip2
