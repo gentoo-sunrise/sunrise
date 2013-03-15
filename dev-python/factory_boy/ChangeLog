@@ -1,6 +1,12 @@
 # ChangeLog for dev-python/factory_boy
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*factory_boy-1.3.0 (15 Mar 2013)
+
+  15 Mar 2013; Patrick Lauer <patrick@gentoo.org> -factory_boy-1.1.3.ebuild,
+  +factory_boy-1.3.0.ebuild:
+  [dev-python/factory_boy] Bump
 
   16 Mar 2012; Raphaël Barrois (Xelnor) <raphael.barrois+gentoo@xelmail.com>
   factory_boy-1.1.3.ebuild:
