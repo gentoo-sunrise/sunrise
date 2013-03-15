@@ -1,6 +1,12 @@
 # ChangeLog for sys-apps/apt
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*apt-0.9.7.8 (15 Mar 2013)
+
+  15 Mar 2013; Patrick Lauer <patrick@gentoo.org> -apt-0.9.7.6.ebuild,
+  +apt-0.9.7.8.ebuild:
+  [sys-apps/apt] Bump
 
   04 Dec 2012; Matthew Schultz (mschultz) <mattsch@gmail.com>
   apt-0.9.7.6.ebuild:
