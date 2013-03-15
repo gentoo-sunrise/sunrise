@@ -2,6 +2,10 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Mar 2013; Patrick Lauer <patrick@gentoo.org>
+  minetest_game-0.4_pre20120408.ebuild:
+  [games-action/minetest_game] Live ebuild, punt keywords
+
   07 Feb 2013; Ulrich Müller <ulm@gentoo.org>
   minetest_game-0.4_pre20120408.ebuild:
   Move Creative Commons licenses to shorter names.
