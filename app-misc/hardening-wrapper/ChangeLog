@@ -1,6 +1,12 @@
 # ChangeLog for app-misc/hardening-wrapper
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*hardening-wrapper-2.3-r1 (15 Mar 2013)
+
+  15 Mar 2013; Matthew Schultz (mschultz) <mattsch@gmail.com>
+  -hardening-wrapper-2.3.ebuild, +hardening-wrapper-2.3-r1.ebuild:
+  Added missing build dependency on dpkg.
 
 *hardening-wrapper-2.3 (20 Dec 2012)
 
