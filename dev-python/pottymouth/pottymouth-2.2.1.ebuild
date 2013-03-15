@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ inherit distutils eutils
 MY_P=PottyMouth-${PV}
 DESCRIPTION="A python library that scrubs untrusted text to valid, nice-looking, completely safe XHTML"
 HOMEPAGE="http://glyphobet.net/pottymouth/"
-SRC_URI="${HOMEPAGE}dist/${MY_P}.tar.gz"
+SRC_URI="http://dev.gentooexperimental.org/~dreeevil/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -25,13 +25,5 @@ S=${WORKDIR}/${MY_P}
 DOCS="readme.html"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-fix-setup.patch" || die
-}
-
-src_test() {
-	testing() {
-		PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" test.py || die "Tests failed"
-	}
-	python_execute_function testing
-
+	epatch "${FILESDIR}/${PN}-2.1.2-fix-setup.patch" || die
 }

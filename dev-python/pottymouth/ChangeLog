@@ -1,6 +1,12 @@
 # ChangeLog for dev-python/pottymouth
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*pottymouth-2.2.1 (15 Mar 2013)
+
+  15 Mar 2013; Patrick Lauer <patrick@gentoo.org> -pottymouth-2.1.2.ebuild,
+  +pottymouth-2.2.1.ebuild:
+  [dev-python/pottymouth] Bump, fix
 
   03 Jan 2012; Johan Bergström (jbergstroem) <bugs@bergstroem.nu>
   pottymouth-2.1.2.ebuild:
