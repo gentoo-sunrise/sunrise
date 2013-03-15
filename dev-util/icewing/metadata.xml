@@ -8,6 +8,5 @@ It is optimized for, but not limited to, image processing and vision system deve
 </longdescription>
 <use>
   <flag name='grabber'>Build the grabber plug-in</flag>
-  <flag name='unicap'>Build support for <pkg>media-libs/unicap</pkg> as a grabber method</flag>
 </use>
 </pkgmetadata>

@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 # need to add xcf, dacs, mvimpact as use-flags (and packages)
-IUSE="debug ffmpeg +grabber ieee1394 jpeg png readline +unicap"
+IUSE="debug ffmpeg +grabber ieee1394 jpeg png readline"
 
 DEPEND="
 	sys-libs/zlib
@@ -24,8 +24,7 @@ DEPEND="
 	ieee1394? ( sys-libs/libraw1394 media-libs/libdc1394:2 )
 	jpeg? ( virtual/jpeg )
 	png? ( media-libs/libpng )
-	readline? ( sys-libs/readline )
-	unicap? ( media-libs/unicap )"
+	readline? ( sys-libs/readline )"
 RDEPEND="${DEPEND}"
 
 PATCHES=(
@@ -42,7 +41,6 @@ src_configure() {
 		$(cmake-utils_use_with jpeg JPEG)
 		$(cmake-utils_use_with png PNG)
 		$(cmake-utils_use_with readline READLINE)
-		$(cmake-utils_use_with unicap UNICAP)
 		-DWITH_GTK1=OFF
 		-DWITH_DACS=OFF
 		-DWITH_MVIMPACT=OFF

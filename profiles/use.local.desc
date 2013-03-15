@@ -108,7 +108,6 @@ dev-tex/fontpro:myriadpro - Generate LaTeX support for the Myriad Pro font
 dev-util/eclim:cdt - Enables C/C++ development support
 dev-util/eresi:server - Build eresi server capability
 dev-util/icewing:grabber - Build the grabber plug-in
-dev-util/icewing:unicap - Build support for media-libs/unicap as a grabber method
 dev-util/lttng-tools:ust - Support LTTng-UST (Userspace Tracing)
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
@@ -179,7 +178,6 @@ media-gfx/fim:postscript - Install a postscript wrapper script
 media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:gnet - Add support for cluster rendering
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
-media-libs/unicap:libv4l - Use libv4l to communicate with v4l2 devices
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end

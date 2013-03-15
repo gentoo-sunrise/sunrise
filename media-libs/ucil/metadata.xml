@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
-	<longdescription>The ucil library provides easy-to-use functions to render
-	text and graphic overlays onto video images.</longdescription>
-</pkgmetadata>
