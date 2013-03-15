@@ -1,10 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="3"
 
-inherit eutils games
+inherit eutils games unpacker
 
 DESCRIPTION="Super-fast 3D racing on hover bikes"
 HOMEPAGE="http://www.linuxgamepublishing.com/info.php?id=ballistics"
