@@ -3,6 +3,9 @@
 # $Header: $
 
   15 Mar 2013; Patrick Lauer <patrick@gentoo.org> valide-0.7.1.ebuild:
+  [dev-util/valide] Fix deps
+
+  15 Mar 2013; Patrick Lauer <patrick@gentoo.org> valide-0.7.1.ebuild:
   [dev-util/valide] Fix buildsystem invocation
 
   27 Jul 2011; Serhij Stasyuk (sstass) <stas@onlineua.net>
