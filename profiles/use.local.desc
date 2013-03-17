@@ -112,8 +112,6 @@ dev-util/lttng-tools:ust - Support LTTng-UST (Userspace Tracing)
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 dev-util/valide:unique - 
-games-action/minetest:client - Minetest client
-games-action/minetest:server - Minetest server
 games-arcade/clonekeenplus:tremor - Use media-libs/tremor as audio decoder
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
