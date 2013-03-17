@@ -10,7 +10,7 @@ SRC_URI="amd64? ( mirror://sourceforge/devkitpro/${MY_PN}_r${PV}-x86_64-linux.ta
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 S=${WORKDIR}/${MY_PN}
