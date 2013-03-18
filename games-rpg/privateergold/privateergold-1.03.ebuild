@@ -4,7 +4,7 @@
 
 EAPI=3
 
-inherit eutils games
+inherit eutils games unpacker
 
 DESCRIPTION="WC: Privateer Gemini Gold, remake of the adventure space flight simulation"
 HOMEPAGE="http://privateer.sourceforge.net/"

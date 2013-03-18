@@ -31,7 +31,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake failed"
+	emake -j1 DESTDIR="${D}" install || die "emake failed"
 	diropts -o nobody -g nobody
 	dodir /var/run/grossd || die "dodir failed"
 	keepdir /var/db/grossd || die "dodir db failed"
