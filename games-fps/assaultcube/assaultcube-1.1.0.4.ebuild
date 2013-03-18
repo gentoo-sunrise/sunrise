@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,9 +9,9 @@ inherit eutils games multilib toolchain-funcs
 DESCRIPTION="Fast and fun first-person-shooter based on the Cube fps"
 HOMEPAGE="http://assault.cubers.net"
 MY_PN="AssaultCube"
-MY_PV_BASE=1.0.2
-SRC_URI="mirror://sourceforge/actiongame/${MY_PN}_v${MY_PV_BASE}.tar.bz2
-	mirror://sourceforge/actiongame/${MY_PN}_v${PV}-Update.tar.bz2"
+
+SRC_URI="mirror://sourceforge/actiongame/${MY_PN}%20Version%20${PV}/${MY_PN}_v${PV}.tar.bz2
+	mirror://sourceforge/actiongame/${MY_PN}%20Version%20${PV}/${MY_PN}_v${PV}_source.tar.bz2"
 
 LICENSE="ZLIB"
 SLOT="0"
@@ -27,10 +27,9 @@ RDEPEND="opengl? (
 		virtual/opengl
 		x11-libs/libX11 )"
 DEPEND="${RDEPEND}
-	media-libs/netpbm
 	>=net-libs/enet-1.2.1"
 
-S=${WORKDIR}/${MY_PN}_v${MY_PV_BASE}
+S=${WORKDIR}/${PV}
 
 pkg_setup() {
 	if ! use dedicated && ! use opengl ; then
@@ -39,17 +38,12 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${MY_PN}_v${MY_PV_BASE}.tar.bz2
-	cd "${S}" || die
-	unpack ${MY_PN}_v${PV}-Update.tar.bz2
-}
-
 src_prepare() {
-	rm -r bin_unix/* source/include || die
+	rm -r bin_unix/* || die
 	find packages -name readme.txt -exec rm -f {} + || die
-	winicontoppm icon.ico | ppmtoxpm > ${PN}.xpm || die
-
+	#winicontoppm fails with compressed icons
+	#winicontoppm source/vcpp/buildEnv/icon.ico | ppmtoxpm > ${PN}.xpm || die
+	mv source/vcpp/buildEnv/icon.ico ${PN}.ico || die
 	sed -i -e "/^CUBE_DIR=/d ; 2iCUBE_DIR=$(games_get_libdir)/${PN}" ${PN}.sh server.sh || die
 	sed -i -e "s:bin_unix/\${SYSTEM_NAME}\${MACHINE_NAME}:ac_:" ${PN}.sh server.sh || die
 	sed -i -e "s:cd \${CUBE_DIR}:cd ${GAMES_DATADIR}/${PN}:" ${PN}.sh server.sh || die
@@ -68,7 +62,9 @@ src_compile() {
 
 src_install() {
 	insinto "${GAMES_DATADIR}/${PN}"
-	doins -r bot config packages || die
+
+	#doins -r bot config packages || die
+	doins -r config packages || die
 
 	exeinto "$(games_get_libdir)/${PN}"
 	if use opengl ; then
@@ -82,7 +78,8 @@ src_install() {
 		make_desktop_entry ${PN}-server "${MY_PN} Server" ${PN}
 	fi
 	insinto /usr/share/pixmaps
-	doins ${PN}.xpm || die
+#	doins ${PN}.xpm || die
+	doins ${PN}.ico || die
 
 	if use doc ; then
 		rm -r docs/autogen || die
@@ -91,3 +88,4 @@ src_install() {
 
 	prepgamesdirs
 }
+

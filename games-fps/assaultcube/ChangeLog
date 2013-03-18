@@ -1,6 +1,12 @@
 # ChangeLog for games-fps/assaultcube
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*assaultcube-1.1.0.4 (18 Mar 2013)
+
+  18 Mar 2013; Patrick Lauer <patrick@gentoo.org> -assaultcube-1.0.4.ebuild,
+  +assaultcube-1.1.0.4.ebuild:
+  [games-fps/assaultcube] Bump, see #162945
 
   01 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
   assaultcube-1.0.4.ebuild:
