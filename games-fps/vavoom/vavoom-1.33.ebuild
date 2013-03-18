@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 WX_GTK_VER="2.8"
 
@@ -15,31 +15,27 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro asm debug dedicated flac mad mikmod +models +music openal +opengl
-+sdl +textures tools +vorbis wxwidgets"
+IUSE="allegro asm debug dedicated flac mad mikmod models music openal +sdl textures tools vorbis wxwidgets"
 
-# From econf:  "Vavoom requires Allegro or SDL to compile"
-# SDL,like Allegro are *software* renderers in this game.
-# So, if not selected through proper USEs, the default is SDL,
-# without opengl (vavoom can run in software-mode only).
-# To enable it, enable proper USE.
-# OpenGL is the normally-desired hardware renderer, selected on command-line
-# (through "-opengl" switch). This switch is also added to the desktop entry,
-# if "opengl" USE flag is enabled
+# Vavoom requires either Allegro or SDL to compile.
+# Set appropriate USE flags to select which library is used.
 
-SDLDEPEND=">=media-libs/libsdl-1.2[X,alsa,opengl?]
-	media-libs/sdl-mixer[timidity]"
-ALLEGDEPEND=">=media-libs/allegro-4.0[X,alsa]"
-OPENGLDEPEND="opengl? ( virtual/opengl )
-	sdl? ( ${SDLDEPEND} )
-	allegro? ( media-libs/allegro[opengl] )
-	!sdl? ( !allegro? ( ${SDLDEPEND} ) )"
+# As of 1.33, OpenGL is required and thus forced on.
+
+SDLDEPEND="
+	|| ( >=media-libs/libsdl-1.2[alsa,X,opengl]
+		>=media-libs/libsdl-1.2[oss,X,opengl] )
+	music? ( media-libs/sdl-mixer )
+	!music? ( media-libs/sdl-mixer[timidity] )
+	"
+ALLEGDEPEND="
+	|| ( >=media-libs/allegro-4.0[alsa,X,opengl]
+		>=media-libs/allegro-4.0[oss,X,opengl] )
+	"
 DEPEND="media-libs/libpng
 	virtual/jpeg
 	sdl? ( ${SDLDEPEND} )
 	!sdl? ( allegro? ( ${ALLEGDEPEND} ) )
-	!sdl? ( !allegro? ( !dedicated? ( ${OPENGLDEPEND} ) ) )
-	opengl? ( ${OPENGLDEPEND} )
 	vorbis? ( media-libs/libvorbis )
 	flac? ( media-libs/flac )
 	mad? ( media-libs/libmad )
@@ -52,56 +48,42 @@ PDEPEND="models? ( >=games-fps/vavoom-models-1.4.3 )
 	music? ( games-fps/vavoom-music )
 	textures? ( games-fps/vavoom-textures )"
 
+REQUIRED_USE="^^ ( allegro sdl dedicated )
+	music? ( vorbis )"
+
 datadir=${GAMES_DATADIR}/${PN}
 
 CMAKE_IN_SOURCE_BUILD=true
 
 pkg_setup() {
 	games_pkg_setup
-
-	# Print some warning if needed
-	if use sdl && use allegro ; then
-		ewarn
-		ewarn "Both 'allegro' and 'sdl' USE flags enabled. Using SDL as default."
-	elif ! use sdl && ! use allegro ; then
-		ewarn
-		ewarn "Both 'allegro' and 'sdl' USE flags disabled. Using SDL as default."
-	fi
-
-	! use opengl && ewarn "'opengl' USE flag disabled. OpenGL is recommended, for best graphics."
 }
 
 src_prepare() {
 	# Got rid of icon installation
-	sed -i \
-		-e "/vavoom\.png/d" \
-		source/CMakeLists.txt || die "sed CMakeLists.txt failed"
+	sed -e "/vavoom\.png/d" \
+		-i source/CMakeLists.txt || die "sed CMakeLists.txt failed"
 
 	# Set shared data directory
-	sed -i \
-		-e "s:fl_basedir = \".\":fl_basedir = \"${datadir}\":" \
-		source/files.cpp || die "sed files.cpp failed"
+	sed -e "s:fl_basedir = \".\":fl_basedir = \"${datadir}\":" \
+		-i source/files.cpp || die "sed files.cpp failed"
+
+	# Fix zlib/minizip build error
+	sed -e '1i#define OF(x) x' \
+		-i "${S}/utils/vlumpy/ioapi.h" || die "sed iompi.h failed"
 }
 
 src_compile() {
 	local \
 		with_allegro="-DWITH_ALLEGRO=OFF" \
 		with_sdl="-DWITH_SDL=OFF" \
+		with_opengl="-DWITH_OPENGL=ON" \
 		with_vorbis=$(cmake-utils_use_with vorbis)
 
 	# Sdl is the default, unless sdl=off & allegro=on
-	if ! use sdl && use allegro ; then
-		with_allegro="-DWITH_ALLEGRO=ON"
-	else
-		with_sdl="-DWITH_SDL=ON"
-	fi
-
-	# Forcibly enable vorbis support if "music" USE flag is enabled
-	if ! use vorbis && use music ; then
-		ewarn "\"music\" USE flag requires Vorbis support enabled."
-		ewarn "Forced enabling of \"vorbis\" USE flag"
-		with_vorbis="-DWITH_VORBIS=ON"
-	fi
+	use sdl && with_sdl="-DWITH_SDL=ON"
+	use allegro && with_allegro="-DWITH_ALLEGRO=ON"
+	use dedicated && with_opengl="-DWITH_OPENGL=OFF"
 
 	mycmakeargs="${mycmakeargs}
 					-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
@@ -112,8 +94,8 @@ src_compile() {
 					-DENABLE_WRAPPERS=OFF
 					${with_allegro}
 					${with_sdl}
+					${with_opengl}
 					${with_vorbis}
-					$(cmake-utils_use_with opengl OPENGL)
 					$(cmake-utils_use_with openal OPENAL)
 					$(cmake-utils_use_with mad LIBMAD)
 					$(cmake-utils_use_with mikmod MIKMOD)
@@ -130,14 +112,11 @@ src_compile() {
 }
 
 src_install() {
-	local de_cmd="${PN}"
-
 	cmake-utils_src_install
 
-	# Enable OpenGL in desktop entry, if relevant USE flag is enabled
-	use opengl && de_cmd="${PN} -opengl"
+	# Create desktop entry
+	make_desktop_entry "${PN}" "Vavoom" || die "make_desktop_entry failed"
 	doicon "source/${PN}.png" || die "doicon ${PN}.png failed"
-	make_desktop_entry "${de_cmd}" "Vavoom"
 
 	dodoc "docs/${PN}.txt" || die "dodoc vavoom.txt failed"
 
@@ -166,31 +145,30 @@ pkg_postinst() {
 	elog "ln -sn "${GAMES_DATADIR}"/doom-data/doom.wad "${datadir}"/"
 	elog
 	elog "Example command-line:"
-	elog "   vavoom -doom -opengl"
+	elog "   vavoom -doom -openal"
 	elog
 	elog "See documentation for further details."
 
 	if use wxwidgets ; then
-		einfo
-		einfo "You've also installed a nice graphical launcher. Simply run:"
-		einfo
-		einfo "   vlaunch"
-		einfo
-		einfo "to enjoy it :)"
+		echo
+		elog "You've also installed a nice graphical launcher. Simply run:"
+		elog "   vlaunch"
+		elog
+		elog "to enjoy it :)"
 	fi
 
 	if use tools; then
-		einfo
-		einfo "You have also installed some Vavoom-related utilities"
-		einfo "(useful for mod developing):"
-		einfo
-		einfo " - acc (ACS Script Compiler)"
-		einfo " - fixmd2 (MD2 models utility)"
-		einfo " - vcc (Vavoom C Compiler)"
-		einfo " - vlumpy (Vavoom Lump utility)"
-		einfo
-		einfo "See the Vavoom Wiki at http://vavoom-engine.com/wiki/ or"
-		einfo "Vavoom Forum at http://www.vavoom-engine.com/forums/"
-		einfo "for further help."
+		echo
+		elog "You have also installed some Vavoom-related utilities"
+		elog "(useful for mod developing):"
+		elog
+		elog " - acc (ACS Script Compiler)"
+		elog " - fixmd2 (MD2 models utility)"
+		elog " - vcc (Vavoom C Compiler)"
+		elog " - vlumpy (Vavoom Lump utility)"
+		elog
+		elog "See the Vavoom Wiki at http://vavoom-engine.com/wiki/ or"
+		elog "Vavoom Forum at http://www.vavoom-engine.com/forums/"
+		elog "for further help."
 	fi
 }
