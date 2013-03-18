@@ -1,6 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="5"
 
 inherit games
 
@@ -14,7 +16,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=dev-cpp/libxmlpp-2.6
-	>=dev-cpp/gtkmm-2.8
+	dev-cpp/gtkmm:2.4
 	>=gnome-base/librsvg-2.8.1
 	>=media-libs/libao-0.8.6
 	>=media-libs/libvorbis-1.1"

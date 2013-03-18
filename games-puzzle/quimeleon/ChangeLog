@@ -1,6 +1,9 @@
 # ChangeLog for games-puzzle/quimeleon
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  18 Mar 2013; Patrick Lauer <patrick@gentoo.org> quimeleon-0.9.3.1.ebuild:
+  [games-puzzle/quimeleon] Fix deps
 
   25 Apr 2007; Nuno J. Silva (njsg) <nunojsg@gmail.com>
   quimeleon-0.9.3.1.ebuild:
