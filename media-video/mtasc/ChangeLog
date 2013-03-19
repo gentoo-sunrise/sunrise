@@ -1,6 +1,9 @@
 # ChangeLog for media-video/mtasc
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Mar 2013; Patrick Lauer <patrick@gentoo.org> mtasc-1.12.ebuild:
+  [media-video/mtasc] Live ebuild, unfetchable?
 
   19 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   mtasc-1.12.ebuild:
