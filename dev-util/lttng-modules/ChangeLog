@@ -1,6 +1,12 @@
 # ChangeLog for dev-util/lttng-modules
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*lttng-modules-2.1.1 (19 Mar 2013)
+
+  19 Mar 2013; Lan Yixun (dlan) <dennis.yxun@gmail.com>
+  +lttng-modules-2.1.1.ebuild, lttng-modules-9999.ebuild:
+  bump to 2.1.1, convert to linux-mod, #431358
 
 *lttng-modules-9999 (16 Aug 2012)
 *lttng-modules-2.0.4 (16 Aug 2012)
