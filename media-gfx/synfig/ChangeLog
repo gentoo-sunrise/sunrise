@@ -1,6 +1,12 @@
 # ChangeLog for media-gfx/synfig
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*synfig-0.63.05 (19 Mar 2013)
+
+  19 Mar 2013; Patrick Lauer <patrick@gentoo.org> -synfig-0.62.02.ebuild,
+  +synfig-0.63.05.ebuild:
+  [media-gfx/synfig] Bump
 
   30 Apr 2011; Justin Lecher <jlec@gentoo.org> -synfig-0.62.00.ebuild,
   +synfig-0.62.02.ebuild, +files/synfig-0.62.02-gcc46.patch,
