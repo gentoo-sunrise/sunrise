@@ -117,6 +117,7 @@ games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
 games-emulation/gr-lida:scummvm - Enable support for scummvm emulator
+games-fps/assaultcube:server - Build server
 games-fps/chocolate-doom:server - Enable installation of server
 games-fps/gzdoom:fluidsynth - Enables Fluidsynth MIDI software synthesis
 games-fps/tremfusion:tty - Enables text based game client
@@ -135,6 +136,7 @@ games-fps/vavoom:allegro - Adds support for media-libs/allegro(media library)
 games-fps/vavoom:asm - Enable faster assembly-language code for rendering
 games-fps/vavoom:models - Install enhanced 3D models
 games-fps/vavoom:music - Install enhanced hi-quality music (in OGG format)
+games-fps/vavoom:server - Build server
 games-fps/vavoom:textures - Install enhanced hi-res textures
 games-fps/vavoom:tools - Enable compilation of mod-developing tools
 games-fps/vavoom-models:doom - Install Doom resources
@@ -172,22 +174,15 @@ media-fonts/openfontlibrary:handwriting - Install handwriting-like fonts
 media-fonts/openfontlibrary:monospaced - Install mono-spaced fonts
 media-fonts/openfontlibrary:sansserif - Install sans-serif fonts
 media-fonts/openfontlibrary:serif - Install serif fonts
-media-gfx/fim:postscript - Install a postscript wrapper script
-media-gfx/fim:screen - Add (experimental!) support for running under screen
 media-gfx/fyre:gnet - Add support for cluster rendering
 media-gfx/synfigstudio:fmod - Enables support for using mod files for audio support
 media-sound/arename:zsh-completion - enable zsh completion support
 media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
-media-sound/om:dssi - Enables support for DSSI plugins
-media-sound/om:patch-loader - Installs a command line patch loading client
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
 media-sound/pithos:gnome - Use gnome-base/gnome-settings-daemon for binding media keys
 media-sound/scala-bin:midi - MIDI support
-media-sound/songbird-bin:faac - Add faac support
-media-sound/songbird-bin:faad - Add faad support
-media-sound/songbird-bin:ugly - Add ugly support
 media-tv/freetuxtv:nls - Enable native language support (using intltool)
 media-video/image2mpeg:devil - Enable image loading via DevIL
 media-video/periscope:nautilus - Integrate with nautilus file manager
