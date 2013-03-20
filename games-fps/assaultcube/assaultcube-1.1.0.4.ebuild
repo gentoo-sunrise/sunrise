@@ -2,90 +2,101 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
-inherit eutils games multilib toolchain-funcs
+inherit eutils gnome2-utils games
 
+MY_PN="AssaultCube"
 DESCRIPTION="Fast and fun first-person-shooter based on the Cube fps"
 HOMEPAGE="http://assault.cubers.net"
-MY_PN="AssaultCube"
-
-SRC_URI="mirror://sourceforge/actiongame/${MY_PN}%20Version%20${PV}/${MY_PN}_v${PV}.tar.bz2
-	mirror://sourceforge/actiongame/${MY_PN}%20Version%20${PV}/${MY_PN}_v${PV}_source.tar.bz2"
+SRC_URI="mirror://sourceforge/actiongame/AssaultCube%20Version%20${PV}/${MY_PN}_v${PV}.tar.bz2
+	mirror://sourceforge/actiongame/AssaultCube%20Version%20${PV}/${MY_PN}_v${PV}_source.tar.bz2
+	http://dev.gentoo.org/~hasufell/distfiles/${PN}.png"
 
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dedicated doc opengl"
+IUSE="dedicated doc server"
 
-RDEPEND="opengl? (
-		media-libs/libsdl
+RDEPEND="
+	>=net-libs/enet-1.3.0:1.3
+	sys-libs/zlib
+	!dedicated? (
+		media-libs/libsdl[X,opengl,video]
 		media-libs/libogg
 		media-libs/libvorbis
 		media-libs/openal
-		media-libs/sdl-image
+		media-libs/sdl-image[jpeg,png]
 		virtual/opengl
-		x11-libs/libX11 )"
+		x11-libs/libX11
+	)"
 DEPEND="${RDEPEND}
-	>=net-libs/enet-1.2.1"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${PV}
 
-pkg_setup() {
-	if ! use dedicated && ! use opengl ; then
-		eerror "You need to set USE=dedicated for game server or USE=opengl for game client."
-		die
-	fi
-}
-
 src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.1.0.4-QA.patch
+
+	# remove unsued stuff
 	rm -r bin_unix/* || die
-	find packages -name readme.txt -exec rm -f {} + || die
-	#winicontoppm fails with compressed icons
-	#winicontoppm source/vcpp/buildEnv/icon.ico | ppmtoxpm > ${PN}.xpm || die
-	mv source/vcpp/buildEnv/icon.ico ${PN}.ico || die
-	sed -i -e "/^CUBE_DIR=/d ; 2iCUBE_DIR=$(games_get_libdir)/${PN}" ${PN}.sh server.sh || die
-	sed -i -e "s:bin_unix/\${SYSTEM_NAME}\${MACHINE_NAME}:ac_:" ${PN}.sh server.sh || die
-	sed -i -e "s:cd \${CUBE_DIR}:cd ${GAMES_DATADIR}/${PN}:" ${PN}.sh server.sh || die
+	find packages -name readme.txt -delete || die
+
+	# respect FHS and fix binary name
+	sed -i \
+		-e "/^CUBE_DIR=/d ; 2iCUBE_DIR=$(games_get_libdir)/${PN}" \
+		-e "s:bin_unix/\${SYSTEM_NAME}\${MACHINE_NAME}:ac_:" \
+		-e "s:cd \${CUBE_DIR}:cd ${GAMES_DATADIR}/${PN}:" \
+		${PN}.sh server.sh || die
+
+	# remove bundled enet
+	rm -r source/enet || die
 }
 
 src_compile() {
-	tc-export CXX
-	emake -C source/src CXXOPTFLAGS="${CXXFLAGS}" libenet || die
-	if use opengl ; then
-		emake -C source/src CXXOPTFLAGS="${CXXFLAGS}" client || die
-	fi
-	if use dedicated ; then
-		emake -C source/src CXXOPTFLAGS="${CXXFLAGS}" server || die
-	fi
+	BUNDLED_ENET=NO \
+		emake -C source/src \
+		$(usex dedicated "" "client") \
+		$(usex dedicated "server" "$(usex server "server" "")")
 }
 
 src_install() {
 	insinto "${GAMES_DATADIR}/${PN}"
-
-	#doins -r bot config packages || die
-	doins -r config packages || die
+	doins -r config packages
 
 	exeinto "$(games_get_libdir)/${PN}"
-	if use opengl ; then
-		doexe source/src/ac_client || die
-		newgamesbin ${PN}.sh ${PN} || die
+	if ! use dedicated ; then
+		doexe source/src/ac_client
+		newgamesbin ${PN}.sh ${PN}
 		make_desktop_entry ${PN} ${MY_PN} ${PN}
 	fi
-	if use dedicated ; then
-		doexe source/src/ac_server || die
-		newgamesbin server.sh ${PN}-server || die
+
+	if use dedicated || use server ; then
+		doexe source/src/ac_server
+		newgamesbin server.sh ${PN}-server
 		make_desktop_entry ${PN}-server "${MY_PN} Server" ${PN}
 	fi
-	insinto /usr/share/pixmaps
-#	doins ${PN}.xpm || die
-	doins ${PN}.ico || die
+
+	doicon -s 48 "${DISTDIR}"/${PN}.png
 
 	if use doc ; then
 		rm -r docs/autogen || die
-		dohtml -r docs/* || die
+		dohtml -r docs/*
 	fi
 
 	prepgamesdirs
 }
 
+pkg_preinst() {
+	games_pkg_preinst
+	gnome2_icon_savelist
+}
+
+pkg_postinst() {
+	games_pkg_postinst
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
+}

@@ -1,0 +1,171 @@
+From: Julian Ospald <hasufell@gentoo.org>
+Date: Wed Mar 20 15:05:13 UTC 2013
+Subject: build system
+
+* respect system CXXFLAGS
+* respect LDFLAGS in linking invocation
+* use PKG_CONFIG where possible
+* make bundled enet switchable
+* fix underlinking on X11
+
+--- 1.1.0.4/source/src/Makefile
++++ 1.1.0.4/source/src/Makefile
+@@ -1,32 +1,77 @@
+-//CXX=g++-gcc-4.2.3
+-CXXFLAGS= -O3 -fomit-frame-pointer
++## options
++# set to YES or NO
++#
++# BUNDLED_ENET=YES (use bundled enet)
++#
++# MINGWBUILD=YES (mingw build)
++
++
++CXXFLAGS ?= -O3 -fomit-frame-pointer
+ override CXXFLAGS+= -Wall -fsigned-char
+ 
++PKG_CONFIG ?= pkg-config
++
+ PLATFORM= $(shell uname -s)
+ PLATFORM_PREFIX=native
+ 
+-INCLUDES= -I. -Ibot -I../enet/include
++INCLUDES = -I. -Ibot
+ 
+-STRIP=
+-ifeq (,$(findstring -g,$(CXXFLAGS)))
+-ifeq (,$(findstring -pg,$(CXXFLAGS)))
+-  STRIP=strip
+-endif
++BUNDLED_ENET ?= YES
++ifeq ($(BUNDLED_ENET),YES)
++INCLUDES += -I../enet/include
++else
++INCLUDES += $(shell $(PKG_CONFIG) --cflags libenet)
+ endif
+ 
++
++STRIP=
++
+ MV=mv
+ 
+ ifneq (,$(findstring MINGW,$(PLATFORM)))
++MINGWBUILD=YES
++endif
++
++ifeq ($(MINGWBUILD),YES)
+ WINDRES= windres
+ CLIENT_INCLUDES= $(INCLUDES) -I../include
+ # -lSDL_ttf 
+ CLIENT_LIBS= -mwindows -L../lib -lSDL -lSDL_image -lzdll -lopengl32 -lenet -lOpenAL32 -llibvorbisfile -llibintl -lws2_32 -lwinmm
+ else
+-USRLIB=$(shell if [ -e /usr/lib64 ]; then echo "/usr/lib64"; else echo "/usr/lib"; fi)
+ override CXXFLAGS+= -rdynamic
+-CLIENT_INCLUDES= $(INCLUDES) -I/usr/include `sdl-config --cflags` -idirafter ../include
++CLIENT_INCLUDES= \
++		 $(INCLUDES) \
++		 -I/usr/include \
++		 `sdl-config --cflags` \
++		 -idirafter ../include \
++		 $(shell $(PKG_CONFIG) --cflags SDL_image) \
++		 $(shell $(PKG_CONFIG) --cflags zlib) \
++		 $(shell $(PKG_CONFIG) --cflags gl) \
++		 $(shell $(PKG_CONFIG) --cflags openal) \
++		 $(shell $(PKG_CONFIG) --cflags vorbisfile) \
++		 $(shell $(PKG_CONFIG) --cflags x11)
++
++ifneq ($(BUNDLED_ENET),YES)
++CLIENT_INCLUDES += $(shell $(PKG_CONFIG) --cflags libenet)
++endif
++
+ # -lSDL_ttf 
+-CLIENT_LIBS= -L../enet/.libs -lenet -L$(USRLIB) `sdl-config --libs` -lSDL_image -lz -lGL -lopenal -lvorbisfile
++CLIENT_LIBS= \
++	     `sdl-config --libs` \
++	     $(shell $(PKG_CONFIG) --libs SDL_image) \
++	     $(shell $(PKG_CONFIG) --libs zlib) \
++	     $(shell $(PKG_CONFIG) --libs gl) \
++	     $(shell $(PKG_CONFIG) --libs openal) \
++	     $(shell $(PKG_CONFIG) --libs vorbisfile) \
++	     $(shell $(PKG_CONFIG) --libs x11)
++
++
++ifeq ($(BUNDLED_ENET),YES)
++CLIENT_LIBS += -L../enet/.libs -lenet
++else
++CLIENT_LIBS += $(shell $(PKG_CONFIG) --libs libenet)
++endif
++
+ endif
+ 
+ CLIENT_OBJS= \
+@@ -83,17 +128,27 @@
+ 	bot/bot_waypoint.o \
+ 	bot/ac_bot.o \
+ 	bot/ac_bot_ai.o 
+-ifneq (,$(findstring MINGW,$(PLATFORM)))
++ifeq ($(MINGWBUILD),YES)
+ CLIENT_OBJS+= ../vcpp/SDL_win32_main.o
+ endif
+ CLIENT_PCH= cube.h.gch
+ 
+-ifneq (,$(findstring MINGW,$(PLATFORM)))
++ifeq ($(MINGWBUILD),YES)
+ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -I../include
+ SERVER_LIBS= -L../lib -lzdll -lenet -llibintl -lws2_32 -lwinmm
+ else
+-SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
+-SERVER_LIBS= -L../enet/.libs -lenet -lz
++SERVER_INCLUDES= \
++		 -DSTANDALONE \
++		 $(INCLUDES) \
++		 $(shell $(PKG_CONFIG) --cflags zlib)
++
++SERVER_LIBS= $(shell $(PKG_CONFIG) --libs zlib)
++ifeq ($(BUNDLED_ENET),YES)
++SERVER_LIBS += -L../enet/.libs -lenet
++else
++SERVER_LIBS += $(shell $(PKG_CONFIG) --libs libenet)
++endif
++
+ endif
+ 
+ SERVER_OBJS= \
+@@ -146,7 +201,7 @@
+ $(SERVER_OBJS): CXXFLAGS += $(SERVER_INCLUDES)
+ $(filter-out $(SERVER_OBJS),$(MASTER_OBJS)): CXXFLAGS += $(SERVER_INCLUDES)
+ 
+-ifneq (,$(findstring MINGW,$(PLATFORM)))
++ifeq ($(MINGWBUILD),YES)
+ ../vcpp/%.o:
+ 	$(CXX) $(CXXFLAGS) -c -o $@ $(subst .o,.c,$@) 
+ 
+@@ -164,14 +219,25 @@
+ server_install: server
+ 
+ else
++ifeq ($(BUNDLED_ENET),YES)
+ client: libenet $(CLIENT_OBJS)
+-	$(CXX) $(CXXFLAGS) -o ac_client $(CLIENT_OBJS) $(CLIENT_LIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o ac_client $(CLIENT_OBJS) $(CLIENT_LIBS)
+ 
+ server: libenet $(SERVER_OBJS)
+-	$(CXX) $(CXXFLAGS) -o ac_server $(SERVER_OBJS) $(SERVER_LIBS)  
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o ac_server $(SERVER_OBJS) $(SERVER_LIBS)
+ 
+ master: libenet $(MASTER_OBJS)
+-	$(CXX) $(CXXFLAGS) -o ac_master $(MASTER_OBJS) $(SERVER_LIBS)  
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o ac_master $(MASTER_OBJS) $(SERVER_LIBS)
++else
++client: $(CLIENT_OBJS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o ac_client $(CLIENT_OBJS) $(CLIENT_LIBS)
++
++server: $(SERVER_OBJS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o ac_server $(SERVER_OBJS) $(SERVER_LIBS)
++
++master: $(MASTER_OBJS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o ac_master $(MASTER_OBJS) $(SERVER_LIBS)
++endif
+ 	
+ client_install: client
+ 	cp ac_client ../../bin_unix/$(PLATFORM_PREFIX)_client
