@@ -13,6 +13,7 @@
 		<flag name='music'>Install enhanced hi-quality music (in OGG format)</flag>
 		<flag name='textures'>Install enhanced hi-res textures</flag>
 		<flag name='tools'>Enable compilation of mod-developing tools</flag>
+		<flag name='server'>Build server</flag>
 	</use>
 </pkgmetadata>
 

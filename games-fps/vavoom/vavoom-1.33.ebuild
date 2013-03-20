@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI=5
 
 WX_GTK_VER="2.8"
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="allegro asm debug dedicated flac mad mikmod models music openal +sdl textures tools vorbis wxwidgets"
+IUSE="allegro asm debug dedicated flac mad mikmod models music openal +sdl server textures tools vorbis wxwidgets"
 
 # Vavoom requires either Allegro or SDL to compile.
 # Set appropriate USE flags to select which library is used.
@@ -23,8 +23,8 @@ IUSE="allegro asm debug dedicated flac mad mikmod models music openal +sdl textu
 # As of 1.33, OpenGL is required and thus forced on.
 
 SDLDEPEND="
-	|| ( >=media-libs/libsdl-1.2[alsa,X,opengl]
-		>=media-libs/libsdl-1.2[oss,X,opengl] )
+	|| ( >=media-libs/libsdl-1.2[alsa,X,video,opengl]
+		>=media-libs/libsdl-1.2[oss,X,video,opengl] )
 	music? ( media-libs/sdl-mixer )
 	!music? ( media-libs/sdl-mixer[timidity] )
 	"
@@ -32,7 +32,7 @@ ALLEGDEPEND="
 	|| ( >=media-libs/allegro-4.0[alsa,X,opengl]
 		>=media-libs/allegro-4.0[oss,X,opengl] )
 	"
-DEPEND="media-libs/libpng
+DEPEND="media-libs/libpng:0
 	virtual/jpeg
 	sdl? ( ${SDLDEPEND} )
 	!sdl? ( allegro? ( ${ALLEGDEPEND} ) )
@@ -41,7 +41,7 @@ DEPEND="media-libs/libpng
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	openal? ( media-libs/openal )
-	wxwidgets? ( x11-libs/wxGTK:2.8 )"
+	wxwidgets? ( x11-libs/wxGTK:${WX_GTK_VER} )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
 PDEPEND="models? ( >=games-fps/vavoom-models-1.4.3 )
@@ -55,80 +55,71 @@ datadir=${GAMES_DATADIR}/${PN}
 
 CMAKE_IN_SOURCE_BUILD=true
 
-pkg_setup() {
-	games_pkg_setup
-}
-
 src_prepare() {
 	# Got rid of icon installation
-	sed -e "/vavoom\.png/d" \
-		-i source/CMakeLists.txt || die "sed CMakeLists.txt failed"
+	sed -i \
+		-e "/vavoom\.png/d" \
+		source/CMakeLists.txt || die "sed CMakeLists.txt failed"
 
 	# Set shared data directory
-	sed -e "s:fl_basedir = \".\":fl_basedir = \"${datadir}\":" \
-		-i source/files.cpp || die "sed files.cpp failed"
+	sed -i \
+		-e "s:fl_basedir = \".\":fl_basedir = \"${datadir}\":" \
+		source/files.cpp || die "sed files.cpp failed"
 
 	# Fix zlib/minizip build error
-	sed -e '1i#define OF(x) x' \
-		-i "${S}/utils/vlumpy/ioapi.h" || die "sed iompi.h failed"
+	sed -i \
+		-e '1i#define OF(x) x' \
+		"${S}/utils/vlumpy/ioapi.h" || die "sed iompi.h failed"
+}
+
+src_configure() {
+	local mycmakeargs=(
+		-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
+		-DCMAKE_CXX_FLAGS_DEBUG=
+		-DDATADIR=${datadir}
+		-DBINDIR="${GAMES_BINDIR}"
+		-DENABLE_WRAPPERS=OFF
+		$(cmake-utils_use_with allegro ALLEGRO)
+		$(cmake-utils_use_with sdl SDL)
+		$(cmake-utils_use_enable !dedicated CLIENT)
+		$(cmake-utils_use_with !dedicated OPENGL)
+		$(cmake-utils_use_with vorbis VORBIS)
+		$(cmake-utils_use_with openal OPENAL)
+		$(cmake-utils_use_with mad LIBMAD)
+		$(cmake-utils_use_with mikmod MIKMOD)
+		$(cmake-utils_use_with flac FLAC)
+		$(cmake-utils_use_enable debug ZONE_DEBUG)
+		$(usex dedicated "-DENABLE_SERVER=ON" "$(usex server "-DENABLE_SERVER=ON" "-DENABLE_SERVER=OFF")")
+		$(cmake-utils_use_enable asm ASM)
+		$(cmake-utils_use_enable wxwidgets LAUNCHER)
+		-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
+	)
+
+	cmake-utils_src_configure
 }
 
 src_compile() {
-	local \
-		with_allegro="-DWITH_ALLEGRO=OFF" \
-		with_sdl="-DWITH_SDL=OFF" \
-		with_opengl="-DWITH_OPENGL=ON" \
-		with_vorbis=$(cmake-utils_use_with vorbis)
-
-	# Sdl is the default, unless sdl=off & allegro=on
-	use sdl && with_sdl="-DWITH_SDL=ON"
-	use allegro && with_allegro="-DWITH_ALLEGRO=ON"
-	use dedicated && with_opengl="-DWITH_OPENGL=OFF"
-
-	mycmakeargs="${mycmakeargs}
-					-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
-					-DCMAKE_CXX_FLAGS_DEBUG=-g2
-					-DDATADIR=${datadir}
-					-DBINDIR="${GAMES_BINDIR}"
-					-DENABLE_CLIENT=ON
-					-DENABLE_WRAPPERS=OFF
-					${with_allegro}
-					${with_sdl}
-					${with_opengl}
-					${with_vorbis}
-					$(cmake-utils_use_with openal OPENAL)
-					$(cmake-utils_use_with mad LIBMAD)
-					$(cmake-utils_use_with mikmod MIKMOD)
-					$(cmake-utils_use_with flac FLAC)
-					$(cmake-utils_use_enable debug ZONE_DEBUG)
-					$(cmake-utils_use_enable dedicated SERVER)
-					$(cmake-utils_use_enable asm ASM)
-					$(cmake-utils_use_enable wxwidgets LAUNCHER)
-					-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}"
-
-	cmake-utils_src_configure
-
-	cmake-utils_src_make -j1
+	cmake-utils_src_compile -j1
 }
 
 src_install() {
 	cmake-utils_src_install
 
 	# Create desktop entry
-	make_desktop_entry "${PN}" "Vavoom" || die "make_desktop_entry failed"
-	doicon "source/${PN}.png" || die "doicon ${PN}.png failed"
+	make_desktop_entry "${PN}" "Vavoom"
+	doicon "source/${PN}.png"
 
-	dodoc "docs/${PN}.txt" || die "dodoc vavoom.txt failed"
+	dodoc "docs/${PN}.txt"
 
 	if use tools ; then
 		# The tools are always built
-		dogamesbin utils/bin/{acc,fixmd2,vcc,vlumpy} || die "dobin utils failed"
-		dodoc utils/vcc/vcc.txt || die "dodoc vcc.txt failed"
+		dogamesbin utils/bin/{acc,fixmd2,vcc,vlumpy}
+		dodoc utils/vcc/vcc.txt
 	fi
 
 	if use wxwidgets ; then
 		# Install graphical launcher shortcut
-		doicon utils/vlaunch/vlaunch.xpm || die "doicon vlaunch.xpm failed"
+		doicon utils/vlaunch/vlaunch.xpm
 		make_desktop_entry "vlaunch" "Vavoom Launcher" "vlaunch.xpm"
 	fi
 
@@ -153,8 +144,6 @@ pkg_postinst() {
 		echo
 		elog "You've also installed a nice graphical launcher. Simply run:"
 		elog "   vlaunch"
-		elog
-		elog "to enjoy it :)"
 	fi
 
 	if use tools; then

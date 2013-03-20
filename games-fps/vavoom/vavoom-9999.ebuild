@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=5
 
 WX_GTK_VER="2.8"
 
@@ -14,62 +14,46 @@ ESVN_REPO_URI="https://vavoom.svn.sourceforge.net/svnroot/vavoom/trunk/vavoom"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
-IUSE="allegro asm debug dedicated flac mad mikmod +models +music openal +opengl
-+sdl +textures tools +vorbis wxwidgets"
+KEYWORDS="~amd64 ~x86"
+IUSE="allegro asm debug dedicated flac mad mikmod models music openal +sdl server textures tools vorbis wxwidgets"
 
-# From econf:  "Vavoom requires Allegro or SDL to compile"
-# SDL,like Allegro are *software* renderers in this game.
-# So, if not selected through proper USEs, the default is SDL,
-# without opengl (vavoom can run in software-mode only).
-# To enable it, enable proper USE.
-# OpenGL is the normally-desired hardware renderer, selected on command-line
-# (through "-opengl" switch). This switch is also added to the desktop entry,
-# if "opengl" USE flag is enabled
+# Vavoom requires either Allegro or SDL to compile.
+# Set appropriate USE flags to select which library is used.
 
-SDLDEPEND=">=media-libs/libsdl-1.2[X,alsa,opengl?]
-	media-libs/sdl-mixer[timidity]"
-ALLEGDEPEND=">=media-libs/allegro-4.0[X,alsa]"
-OPENGLDEPEND="opengl? ( virtual/opengl )
-	sdl? ( ${SDLDEPEND} )
-	allegro? ( media-libs/allegro[opengl] )
-	!sdl? ( !allegro? ( ${SDLDEPEND} ) )"
-DEPEND="media-libs/libpng
+# As of 1.33, OpenGL is required and thus forced on.
+
+SDLDEPEND="
+	|| ( >=media-libs/libsdl-1.2[alsa,X,video,opengl]
+		>=media-libs/libsdl-1.2[oss,X,video,opengl] )
+	music? ( media-libs/sdl-mixer )
+	!music? ( media-libs/sdl-mixer[timidity] )
+	"
+ALLEGDEPEND="
+	|| ( >=media-libs/allegro-4.0[alsa,X,opengl]
+		>=media-libs/allegro-4.0[oss,X,opengl] )
+	"
+DEPEND="media-libs/libpng:0
 	virtual/jpeg
 	sdl? ( ${SDLDEPEND} )
 	!sdl? ( allegro? ( ${ALLEGDEPEND} ) )
-	!sdl? ( !allegro? ( !dedicated? ( ${OPENGLDEPEND} ) ) )
-	opengl? ( ${OPENGLDEPEND} )
 	vorbis? ( media-libs/libvorbis )
 	flac? ( media-libs/flac )
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	openal? ( media-libs/openal )
-	wxwidgets? ( x11-libs/wxGTK:2.8 )"
+	wxwidgets? ( x11-libs/wxGTK:${WX_GTK_VER} )"
 RDEPEND="${DEPEND}
 	allegro? ( media-sound/timidity++ )"
 PDEPEND="models? ( >=games-fps/vavoom-models-1.4.3 )
 	music? ( games-fps/vavoom-music )
 	textures? ( games-fps/vavoom-textures )"
 
+REQUIRED_USE="^^ ( allegro sdl dedicated )
+	music? ( vorbis )"
+
 datadir=${GAMES_DATADIR}/${PN}
 
 CMAKE_IN_SOURCE_BUILD=true
-
-pkg_setup() {
-	games_pkg_setup
-
-	# Print some warning if needed
-	if use sdl && use allegro ; then
-		ewarn
-		ewarn "Both 'allegro' and 'sdl' USE flags enabled. Using SDL as default."
-	elif ! use sdl && ! use allegro ; then
-		ewarn
-		ewarn "Both 'allegro' and 'sdl' USE flags disabled. Using SDL as default."
-	fi
-
-	! use opengl && ewarn "'opengl' USE flag disabled. OpenGL is recommended, for best graphics."
-}
 
 src_prepare() {
 	subversion_src_unpack
@@ -84,75 +68,61 @@ src_prepare() {
 	sed -i \
 		-e "s:fl_basedir = \".\":fl_basedir = \"${datadir}\":" \
 		source/files.cpp || die "sed files.cpp failed"
+
+	# Fix zlib/minizip build error
+	sed -i \
+		-e '1i#define OF(x) x' \
+		"${S}/utils/vlumpy/ioapi.h" || die "sed iompi.h failed"
+}
+
+src_configure() {
+	local mycmakeargs=(
+		-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
+		-DCMAKE_CXX_FLAGS_DEBUG=
+		-DDATADIR=${datadir}
+		-DBINDIR="${GAMES_BINDIR}"
+		-DENABLE_WRAPPERS=OFF
+		$(cmake-utils_use_with allegro ALLEGRO)
+		$(cmake-utils_use_with sdl SDL)
+		$(cmake-utils_use_enable !dedicated CLIENT)
+		$(cmake-utils_use_with !dedicated OPENGL)
+		$(cmake-utils_use_with vorbis VORBIS)
+		$(cmake-utils_use_with openal OPENAL)
+		$(cmake-utils_use_with mad LIBMAD)
+		$(cmake-utils_use_with mikmod MIKMOD)
+		$(cmake-utils_use_with flac FLAC)
+		$(cmake-utils_use_enable debug ZONE_DEBUG)
+		$(usex dedicated "-DENABLE_SERVER=ON" "$(usex server "-DENABLE_SERVER=ON" "-DENABLE_SERVER=OFF")")
+		$(cmake-utils_use_enable asm ASM)
+		$(cmake-utils_use_enable wxwidgets LAUNCHER)
+		-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
+	)
+
+	cmake-utils_src_configure
 }
 
 src_compile() {
-	local \
-		with_allegro="-DWITH_ALLEGRO=OFF" \
-		with_sdl="-DWITH_SDL=OFF" \
-		with_vorbis=$(cmake-utils_use_with vorbis)
-
-	# Sdl is the default, unless sdl=off & allegro=on
-	if ! use sdl && use allegro ; then
-		with_allegro="-DWITH_ALLEGRO=ON"
-	else
-		with_sdl="-DWITH_SDL=ON"
-	fi
-
-	# Forcibly enable vorbis support if "music" USE flag is enabled
-	if ! use vorbis && use music ; then
-		ewarn "\"music\" USE flag requires Vorbis support enabled."
-		ewarn "Forced enabling of \"vorbis\" USE flag"
-		with_vorbis="-DWITH_VORBIS=ON"
-	fi
-
-	mycmakeargs="${mycmakeargs}
-					-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
-					-DCMAKE_CXX_FLAGS_DEBUG=-g2
-					-DDATADIR=${datadir}
-					-DBINDIR="${GAMES_BINDIR}"
-					-DENABLE_CLIENT=ON
-					-DENABLE_WRAPPERS=OFF
-					${with_allegro}
-					${with_sdl}
-					${with_vorbis}
-					$(cmake-utils_use_with opengl OPENGL)
-					$(cmake-utils_use_with openal OPENAL)
-					$(cmake-utils_use_with mad LIBMAD)
-					$(cmake-utils_use_with mikmod MIKMOD)
-					$(cmake-utils_use_with flac FLAC)
-					$(cmake-utils_use_enable debug ZONE_DEBUG)
-					$(cmake-utils_use_enable dedicated SERVER)
-					$(cmake-utils_use_enable asm ASM)
-					$(cmake-utils_use_enable wxwidgets LAUNCHER)
-					-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}"
-
-	cmake-utils_src_configure
-
-	cmake-utils_src_make -j1
+	cmake-utils_src_compile -j1
 }
 
 src_install() {
-	local de_cmd="${PN}"
-
 	cmake-utils_src_install
 
-	# Enable OpenGL in desktop entry, if relevant USE flag is enabled
-	use opengl && de_cmd="${PN} -opengl"
-	doicon "source/${PN}.png" || die "doicon ${PN}.png failed"
-	make_desktop_entry "${de_cmd}" "Vavoom"
+	# Create desktop entry
+	make_desktop_entry "${PN}" "Vavoom"
+	doicon "source/${PN}.png"
 
-	dodoc "docs/${PN}.txt" || die "dodoc vavoom.txt failed"
+	dodoc "docs/${PN}.txt"
 
 	if use tools ; then
 		# The tools are always built
-		dogamesbin utils/bin/{acc,fixmd2,vcc,vlumpy} || die "dobin utils failed"
-		dodoc utils/vcc/vcc.txt || die "dodoc vcc.txt failed"
+		dogamesbin utils/bin/{acc,fixmd2,vcc,vlumpy}
+		dodoc utils/vcc/vcc.txt
 	fi
 
 	if use wxwidgets ; then
 		# Install graphical launcher shortcut
-		doicon utils/vlaunch/vlaunch.xpm || die "doicon vlaunch.xpm failed"
+		doicon utils/vlaunch/vlaunch.xpm
 		make_desktop_entry "vlaunch" "Vavoom Launcher" "vlaunch.xpm"
 	fi
 
@@ -169,31 +139,28 @@ pkg_postinst() {
 	elog "ln -sn "${GAMES_DATADIR}"/doom-data/doom.wad "${datadir}"/"
 	elog
 	elog "Example command-line:"
-	elog "   vavoom -doom -opengl"
+	elog "   vavoom -doom -openal"
 	elog
 	elog "See documentation for further details."
 
 	if use wxwidgets ; then
-		einfo
-		einfo "You've also installed a nice graphical launcher. Simply run:"
-		einfo
-		einfo "   vlaunch"
-		einfo
-		einfo "to enjoy it :)"
+		echo
+		elog "You've also installed a nice graphical launcher. Simply run:"
+		elog "   vlaunch"
 	fi
 
 	if use tools; then
-		einfo
-		einfo "You have also installed some Vavoom-related utilities"
-		einfo "(useful for mod developing):"
-		einfo
-		einfo " - acc (ACS Script Compiler)"
-		einfo " - fixmd2 (MD2 models utility)"
-		einfo " - vcc (Vavoom C Compiler)"
-		einfo " - vlumpy (Vavoom Lump utility)"
-		einfo
-		einfo "See the Vavoom Wiki at http://vavoom-engine.com/wiki/ or"
-		einfo "Vavoom Forum at http://www.vavoom-engine.com/forums/"
-		einfo "for further help."
+		echo
+		elog "You have also installed some Vavoom-related utilities"
+		elog "(useful for mod developing):"
+		elog
+		elog " - acc (ACS Script Compiler)"
+		elog " - fixmd2 (MD2 models utility)"
+		elog " - vcc (Vavoom C Compiler)"
+		elog " - vlumpy (Vavoom Lump utility)"
+		elog
+		elog "See the Vavoom Wiki at http://vavoom-engine.com/wiki/ or"
+		elog "Vavoom Forum at http://www.vavoom-engine.com/forums/"
+		elog "for further help."
 	fi
 }
