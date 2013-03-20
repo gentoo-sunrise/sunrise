@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Mar 2013; Julian Ospald <hasufell@gentoo.org> synfig-0.63.05.ebuild:
+  remove unused inherit
+
 *synfig-0.63.05 (19 Mar 2013)
 
   19 Mar 2013; Patrick Lauer <patrick@gentoo.org> -synfig-0.62.02.ebuild,

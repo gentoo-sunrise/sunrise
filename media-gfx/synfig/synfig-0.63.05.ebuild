@@ -4,8 +4,6 @@
 
 EAPI=4
 
-inherit eutils
-
 DESCRIPTION="Film-Quality Vector Animation (core engine)"
 HOMEPAGE="http://www.synfig.org/"
 SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
