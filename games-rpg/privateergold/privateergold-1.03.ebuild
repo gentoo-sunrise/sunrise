@@ -1,10 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=3
 
-inherit eutils games unpacker
+inherit eutils unpacker games
 
 DESCRIPTION="WC: Privateer Gemini Gold, remake of the adventure space flight simulation"
 HOMEPAGE="http://privateer.sourceforge.net/"
