@@ -23,6 +23,6 @@ DEPEND=">=dev-cpp/libxmlpp-2.6
 RDEPEND="${DEPEND}"
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	prepgamesdir
+	emake DESTDIR="${D}" install
+	prepgamesdirs
 }
