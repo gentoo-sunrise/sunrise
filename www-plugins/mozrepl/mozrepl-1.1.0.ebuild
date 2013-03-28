@@ -36,7 +36,9 @@ src_install() {
 	local emid="mozrepl@hyperstruct.net" #test install.rdf during version bumps
 
 	insinto "/usr/share/${P}"
-	doins -r ./*
+	doins -r ./{components,defaults,chrome.manifest,install.rdf,logo.png}
+	insinto "/usr/share/${P}/chrome/content"
+	doins -r ./chrome/content/*.{js,xul}
 
 	local MOZ_DIRS=(
 		"/usr/$(get_libdir)/firefox"
