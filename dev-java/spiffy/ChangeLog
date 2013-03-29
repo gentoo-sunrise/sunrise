@@ -2,6 +2,10 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Mar 2013; Fabian Köster (untoasted) <f.koester@tarent.de>
+  spiffy-0.05.ebuild:
+  Tested spiffy on x86
+
 *spiffy-0.05 (28 Mar 2013)
 
   28 Mar 2013; Fabian Köster (untoasted) <f.koester@tarent.de>

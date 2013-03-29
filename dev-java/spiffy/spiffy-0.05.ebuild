@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/spiffyframework/spiffyframework/v0.xx/${PN}-all-${
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 COMMON_DEPS="dev-java/log4j"
