@@ -2,6 +2,6 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  30 Mar 2013; Joe M <joe9mail@gmail.com> -ChangeLog:
-  Initial import
+  31 Mar 2013; Joe M <joe9mail@gmail.com> bootinfoscript-061.ebuild:
+  initial import
 
