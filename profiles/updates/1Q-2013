@@ -1,2 +1,3 @@
 move media-libs/gphotofs media-gfx/gphotofs
 move games-rpg/digital games-misc/digital
+move dev-python/Whoosh dev-python/whoosh
