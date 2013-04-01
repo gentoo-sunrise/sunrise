@@ -86,6 +86,7 @@ sci-visualization
 sys-apps
 sys-auth
 sys-block
+sys-boot
 sys-cluster
 sys-devel
 sys-fs
