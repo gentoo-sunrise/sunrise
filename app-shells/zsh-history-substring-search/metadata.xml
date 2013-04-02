@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
+        <upstream>
+                <bugs-to>https://github.com/zsh-users/zsh-history-substring-search/issues</bugs-to>
+                <remote-id type="github">zsh-users/zsh-history-substring-search</remote-id>
+        </upstream>
+</pkgmetadata>
