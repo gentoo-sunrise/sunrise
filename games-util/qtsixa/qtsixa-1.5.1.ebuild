@@ -35,7 +35,8 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	epatch "${FILESDIR}"/qtsixa-1.5.1-fix-missing-includes.patch
 
-	sed -i -e s/exec\ python/exec\ "${EPYTHON}"/g qtsixa/qtsixa
+	sed -i -e s/exec\ python/exec\ "${EPYTHON}"/g qtsixa/qtsixa || \
+		die "Replace hardcoded python executable fails."
 }
 
 src_compile() {
@@ -61,13 +62,14 @@ src_install() {
 	# Remove unused configuration file.
 	# Since we are using hand-written startup files.
 	# We could coexist with the bluetooth daemon if input plugin is disabled.
-	rm -rf "${D}etc/default"
+	rm -r "${D}etc/default" || die "Remove not needed configuration file fails."
 
 	# Remove unused logrotate configuration file.
-	rm -rf "${D}etc/logrotate.d"
+	rm -r "${D}etc/logrotate.d" || \
+		die "Remove not needed log configuration fails."
 
 	# Use our own init script compatible with OpenRC.
-	cp "${FILESDIR}"/sixad.init "${D}etc/init.d/sixad"
+	newinitd "${FILESDIR}"/sixad.initd sixad
 
 	# Install systemd unit file.
 	systemd_dounit "${FILESDIR}"/sixad.service
@@ -77,7 +79,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	udevadm control --reload-rules
+	udev_reload
 
 	einfo "Requirements:"
 	einfo "Ensure that the uinput module is loaded."
