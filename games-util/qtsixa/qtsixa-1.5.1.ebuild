@@ -58,10 +58,21 @@ src_install() {
 		python_optimize "${D}"/usr/share/qtsixa/gui
 	fi
 
-	rm "${D}etc/init.d/sixad" || die # TODO: Write a Gentoo version.
+	# Remove unused configuration file.
+	# Since we are using hand-written startup files.
+	# We could coexist with the bluetooth daemon if input plugin is disabled.
+	rm -rf "${D}etc/default"
 
+	# Remove unused logrotate configuration file.
+	rm -rf "${D}etc/logrotate.d"
+
+	# Use our own init script compatible with OpenRC.
+	cp "${FILESDIR}"/sixad.init "${D}etc/init.d/sixad"
+
+	# Install systemd unit file.
 	systemd_dounit "${FILESDIR}"/sixad.service
 
+	# Add an udev rule for automatically pairing.
 	udev_dorules "${FILESDIR}"/97-sixpair.rules
 }
 
