@@ -68,6 +68,11 @@ src_install() {
 	rm -r "${D}etc/logrotate.d" ||
 		die "Remove not needed log configuration fails."
 
+	# Do not install upstream start script.
+	# It does not work nicely.
+	# We added custom startup scripts for OpenRC and systemd.
+	rm "${D}usr/bin/sixad" || die "Could not remove upstream start script."
+
 	# Use our own init script compatible with OpenRC.
 	newinitd "${FILESDIR}"/sixad.initd sixad
 
