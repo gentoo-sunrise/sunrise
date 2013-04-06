@@ -70,10 +70,14 @@ pkg_postinst() {
 
 	einfo "Requirements:"
 	einfo "Ensure that the uinput module is loaded."
-
+	einfo ""
 	einfo "Solve conflicts:"
 	einfo "Do not forget to disable the input plugin of your bluetooth daemon."
 	einfo "You could disable the plugin by adding the following line to the"
 	einfo "configuration file of the bluetooth daemon (/etc/bluetooth/main.conf):"
 	einfo "DisablePlugins = input"
+	einfo ""
+	einfo "Pairing:"
+	einfo "There is an udev rule installed, that will pair PS3 remote"
+	einfo "controllers if they are plugged in on USB."
 }
