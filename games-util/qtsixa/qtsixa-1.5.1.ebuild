@@ -20,10 +20,10 @@ IUSE="doc jack qt4"
 DEPEND="net-wireless/bluez
 	virtual/libusb:1
 	jack? ( media-sound/jack-audio-connection-kit )
-	qt4? ( dev-python/PyQt4 )"
+	qt4? ( dev-python/PyQt4[${PYTHON_USEDEP}] )"
 
 RDEPEND="${DEPEND}
-	dev-python/dbus-python
+	dev-python/dbus-python[${PYTHON_USEDEP}]
 	qt4? (
 		net-wireless/bluez-hcidump
 		x11-libs/libnotify
