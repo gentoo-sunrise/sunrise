@@ -35,7 +35,7 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	epatch "${FILESDIR}"/qtsixa-1.5.1-fix-missing-includes.patch
 
-	sed -i -e s/exec\ python/exec\ "${EPYTHON}"/g qtsixa/qtsixa || \
+	sed -i -e s/exec\ python/exec\ "${EPYTHON}"/g qtsixa/qtsixa ||
 		die "Replace hardcoded python executable fails."
 }
 
@@ -65,7 +65,7 @@ src_install() {
 	rm -r "${D}etc/default" || die "Remove not needed configuration file fails."
 
 	# Remove unused logrotate configuration file.
-	rm -r "${D}etc/logrotate.d" || \
+	rm -r "${D}etc/logrotate.d" ||
 		die "Remove not needed log configuration fails."
 
 	# Use our own init script compatible with OpenRC.
