@@ -5,7 +5,7 @@
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
-inherit eutils python-single-r1 systemd udev
+inherit eutils linux-info python-single-r1 systemd udev
 
 MY_P="QtSixA-${PV}"
 DESCRIPTION="Sixaxis Joystick Manager"
@@ -31,6 +31,8 @@ RDEPEND="${DEPEND}
 	)"
 
 S="${WORKDIR}/${MY_P}"
+
+CONFIG_CHECK="~BT_HIDP ~INPUT_UINPUT"
 
 src_prepare() {
 	epatch "${FILESDIR}"/qtsixa-1.5.1-fix-missing-includes.patch
