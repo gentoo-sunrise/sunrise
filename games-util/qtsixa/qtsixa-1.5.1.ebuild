@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P/-/%20}/${MY_P}-src.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc jack qt4"
+IUSE="jack qt4"
 
 DEPEND="net-wireless/bluez
 	virtual/libusb:1
@@ -57,7 +57,7 @@ src_install() {
 	emake -C utils install DESTDIR="${D}" WANT_JACK=$(use jack && echo true)
 	emake -C sixad install DESTDIR="${D}"
 
-	use doc && dodoc INSTALL manual.pdf README TODO
+	dodoc INSTALL manual.pdf README TODO
 
 	if use qt4; then
 		python_fix_shebang "${D}"/usr/bin/sixad-lq
