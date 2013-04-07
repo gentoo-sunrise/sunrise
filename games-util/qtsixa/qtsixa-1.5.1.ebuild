@@ -34,6 +34,11 @@ S="${WORKDIR}/${MY_P}"
 
 CONFIG_CHECK="~BT_HIDP ~INPUT_UINPUT"
 
+pkg_setup() {
+	python-single-r1_pkg_setup
+	linux-info_pkg_setup
+}
+
 src_prepare() {
 	epatch "${FILESDIR}"/qtsixa-1.5.1-fix-missing-includes.patch
 
