@@ -1,0 +1,10 @@
+# ChangeLog for dev-vcs/git-extras
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*git-extras-9999 (08 Apr 2013)
+
+  08 Apr 2013; Joe M <joe9mail@gmail.com> +git-extras-9999.ebuild,
+  +metadata.xml:
+  Initial Import
+
