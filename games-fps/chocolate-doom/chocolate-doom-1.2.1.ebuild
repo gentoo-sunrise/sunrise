@@ -1,8 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit games autotools
+EAPI=5
+
+PYTHON_COMPAT=( python2_6 python2_7 )
+inherit autotools python-any-r1 flag-o-matic games
 
 DESCRIPTION="Doom port designed to act identically to the original game"
 HOMEPAGE="http://www.chocolate-doom.org/"
@@ -18,10 +21,12 @@ DEPEND=">=media-libs/libsdl-1.1.3
 	media-libs/sdl-net"
 RDEPEND=${DEPEND}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+pkg_setup() {
+	games_pkg_setup
+	python-any-r1_pkg_setup
+}
 
+src_prepare() {
 	# Change default search path for IWAD
 	sed -i \
 		-e "s:/usr/share/games/doom:${GAMES_DATADIR}/doom-data:" \
@@ -31,34 +36,31 @@ src_unpack() {
 		-e "s:^gamesdir =.*:gamesdir = ${GAMES_BINDIR}:" \
 		setup/Makefile.am || die "sed Makefile.am failed"
 
+	append-libs -lm
 	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	egamesconf \
-		--disable-sdltest \
-		--disable-dependency-tracking \
-		|| die "egamesconf failed"
-
-	emake || die "emake failed"
+		--disable-sdltest
 }
 
 src_install() {
-	dogamesbin "src/${PN}" || die "dogamesbin ${PN} failed"
-	dogamesbin setup/chocolate-setup || die "dogamesbin chocolate-setup failed"
+	dogamesbin "src/${PN}"
+	dogamesbin setup/chocolate-setup
 	if use server ; then
-		dogamesbin src/chocolate-server || die "dogamesbin chocolate-server failed"
+		dogamesbin src/chocolate-server
 	fi
 
-	newicon data/doom.png "${PN}.png" || die "doicon failed"
+	newicon data/doom.png "${PN}.png"
 	make_desktop_entry "${PN}" "Chocolate Doom"
-	newicon data/setup.png chocolate-setup.png || die "doicon failed"
+	newicon data/setup.png chocolate-setup.png
 	make_desktop_entry chocolate-setup "Chocolate Doom Setup" chocolate-setup.png
 
-	doman man/*.{5,6} || die "doman failed"
-	dodoc AUTHORS BUGS CMDLINE ChangeLog NEWS README TODO || die "dodoc failed"
+	doman man/*.{5,6}
+	dodoc AUTHORS BUGS CMDLINE ChangeLog NEWS README TODO
 
-	dodir "${GAMES_DATADIR}/doom-data" || die "dodir failed"
+	keepdir "${GAMES_DATADIR}/doom-data"
 
 	prepgamesdirs
 }
