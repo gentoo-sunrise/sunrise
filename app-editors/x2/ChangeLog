@@ -1,6 +1,9 @@
 # ChangeLog for app-editors/x2
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  19 Apr 2013; Manuel Rueger (mrueg) gentoo@rueg.eu metadata.xml:
+  Fix metadata.xml
 
   09 Sep 2012; Manuel Rüger (mrueg) gentoo@rueg.eu x2-1.1.0.ebuild,
   +files/x2-1.1.0-Makefile.patch, +files/x2-1.1.0-desktop.patch, metadata.xml:
