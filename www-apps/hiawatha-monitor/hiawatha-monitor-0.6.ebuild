@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="
-	www-servers/hiawatha[xsl]
+	www-servers/hiawatha[xslt]
 	virtual/cron
 	=dev-lang/php-5*[mysql,xsl]
 	virtual/mysql"
