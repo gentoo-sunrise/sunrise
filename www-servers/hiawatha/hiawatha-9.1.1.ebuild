@@ -19,21 +19,27 @@ SRC_URI="http://www.hiawatha-webserver.org/files/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="debug +cache chroot ipv6 monitor +rewrite rproxy ssl tomahawk xsl"
+IUSE="debug +cache ipv6 monitor +rewrite rproxy ssl tomahawk +xslt"
 
 DEPEND="
 	sys-libs/zlib
 	ssl? ( >=net-libs/polarssl-1.2 )
-	xsl? (	dev-libs/libxslt
+	xslt? (	dev-libs/libxslt
 			dev-libs/libxml2 )"
 
 RDEPEND="${DEPEND}"
 PDEPEND="monitor? ( www-apps/hiawatha-monitor )"
 
+pkg_setup() {
+	if ! use xslt; then
+		ewarn "XSLT has been disabled on your request."
+		ewarn "Note that XSLT is needed for directory listings."
+	fi
+}
+
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_enable cache CACHE)
-		$(cmake-utils_use_enable chroot CHROOT)
 		$(cmake-utils_use_enable ipv6 IPV6)
 		$(cmake-utils_use_enable debug DEBUG)
 		$(cmake-utils_use_enable monitor MONITOR)
@@ -41,7 +47,8 @@ src_configure() {
 		$(cmake-utils_use_enable rproxy RPROXY)
 		$(cmake-utils_use_enable ssl SSL)
 		$(cmake-utils_use_use    ssl SYSTEM_POLARSSL)
-		$(cmake-utils_use_enable xsl XSLT)
+		$(cmake-utils_use_enable tomahawk TOMAHAWK)
+		$(cmake-utils_use_enable xslt XSLT)
 
 		$(cmake_utils_use_enable kernel_linux LOADCHECK)
 		-DLOG_DIR:STRING=/var/log/hiawatha
