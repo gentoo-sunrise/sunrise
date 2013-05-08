@@ -15,7 +15,6 @@ SLOT="0"
 
 RDEPEND="dev-vcs/git"
 
-
 src_compile() {
 	:;
 	# we skip this because the first target of the
