@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 May 2013; Manuel Rueger (mrueg) gentoo@rueg.eu metadata.xml:
+  Drop unused local USE-description: 'chroot' in metadata.xml
+
   25 Apr 2013; René Neumann (Necoro) <gentoo@necoro.eu> hiawatha-9.1.1.ebuild,
   metadata.xml:
   Fix useflags: Remove 'chroot' and rename 'xsl' to 'xslt'

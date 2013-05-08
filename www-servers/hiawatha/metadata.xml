@@ -4,7 +4,6 @@
 	<maintainer><email>maintainer-wanted@gentoo.org</email></maintainer>
 	<use>
 		<flag name='cache'>Enable caching of content.</flag>
-		<flag name='chroot'>Enable running in a chroot.</flag>
 		<flag name='monitor'>Pull in www-apps/hiawatha-monitor.</flag>
 		<flag name='rewrite'>Enable the rewrite toolkit.</flag>
 		<flag name='rproxy'>Allow Hiawatha to serve as a reverse proxy.</flag>
