@@ -112,7 +112,6 @@ dev-util/lttng-tools:ust - Support LTTng-UST (Userspace Tracing)
 dev-util/mockpp:boost - Use boost.test instead of cxxtest as framework
 dev-util/mockpp:cppunit - Use cppunit instead of cxxtest as framework
 dev-util/valide:unique - 
-games-arcade/clonekeenplus:tremor - Use media-libs/tremor as audio decoder
 games-board/dreamchess:music - Install the music pack
 games-board/dreamchess:sound - Enable support for media-libs/sdl-mixer to get sound
 games-emulation/gr-lida:dosbox - Enable support for dosbox emulator
@@ -238,6 +237,12 @@ sys-fs/ntfs3g-ar:extras - Enable extra ntfsprogs utilities.
 sys-fs/ntfs3g-ar:ntfsprogs - Include internal version of ntfsprogs. This will block sys-fs/ntfsprogs.
 sys-fs/ntfs3g-ar:udev - Install udev rule to make udisks use ntfs-3g instead of the kernel NTFS driver.
 sys-power/acpi-support:hibernate-script - Use sys-power/hibernate-script for sleep and hibernate actions
+www-servers/hiawatha:cache - Enable caching of content.
+www-servers/hiawatha:monitor - Pull in www-apps/hiawatha-monitor.
+www-servers/hiawatha:rewrite - Enable the rewrite toolkit.
+www-servers/hiawatha:rproxy - Allow Hiawatha to serve as a reverse proxy.
+www-servers/hiawatha:tomahawk - Enable Tomahawk control server.
+www-servers/hiawatha:xslt - Enable XSLT support. This is also needed for directory listings.
 x11-drivers/asus-switcheroo:byo - Enables usage of the byo-swicheroo module
 x11-libs/pdcurses:nextaw - Use neXtaw instead of Xaw
 x11-misc/trayfreq:autostart - adds a desktop file to /etc/xdg/autostart
