@@ -63,7 +63,7 @@ src_configure() {
 src_install() {
 	cmake-utils_src_install
 
-	newinitd "${FILESDIR}"/hiawatha.initd  hiawatha
+	newinitd "${FILESDIR}"/hiawatha.initd hiawatha
 
 	keepdir /var/{lib,log}/hiawatha
 }
