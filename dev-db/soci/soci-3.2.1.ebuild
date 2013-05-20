@@ -13,9 +13,10 @@ HOMEPAGE="http://soci.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
 LICENSE="Boost-1.0"
 SLOT="0"
-IUSE="boost doc +empty mysql odbc oracle postgres sqlite"
+IUSE="boost doc +empty firebird mysql odbc oracle postgres sqlite"
 
 DEPEND="boost? ( dev-libs/boost )
+	firebird? ( dev-db/firebird )
 	mysql? ( virtual/mysql )
 	odbc? ( dev-db/unixODBC )
 	oracle? ( dev-db/oracle-instantclient-basic )
@@ -27,11 +28,13 @@ RDEPEND=${DEPEND}
 src_configure() {
 	local mycmakeargs="$(cmake-utils_use_with boost )
 		$(cmake-utils_use empty SOCI_EMPTY)
+		$(cmake-utils_use_with firebird FIREBIRD)
 		$(cmake-utils_use_with mysql MYSQL)
 		$(cmake-utils_use_with odbc ODBC)
 		$(cmake-utils_use_with oracle ORACLE)
 		$(cmake-utils_use_with postgres POSTGRESQL)
-		$(cmake-utils_use_with sqlite SQLITE3)"
+		$(cmake-utils_use_with sqlite SQLITE3)
+		-DWITH_DB2=OFF" #use MYCMAKEARGS if you want enable IBM DB2 support
 	cmake-utils_src_configure
 }
 
