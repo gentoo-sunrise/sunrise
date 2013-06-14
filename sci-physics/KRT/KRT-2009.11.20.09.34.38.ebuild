@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
+EAPI=5
 
 inherit cmake-utils eutils versionator
 
 MY_P=${PN}-$(replace_version_separator 3 -)
 DESCRIPTION="A lattice solver"
-HOMEPAGE="http://czlug.icis.pcz.pl/~zygmunt/programs/KRT/"
-SRC_URI="http://czlug.icis.pcz.pl/~zygmunt/public/programs/${MY_P}.tar.bz2"
+HOMEPAGE="http://zygmuntptak.pl/programs/KRT/"
+SRC_URI="http://zygmuntptak.pl/public/programs/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,13 +24,13 @@ S=${WORKDIR}/${PN}
 
 src_install() {
 	_check_build_dir
-	dobin "${CMAKE_BUILD_DIR}"/${PN} || die
+	dobin "${CMAKE_BUILD_DIR}"/${PN}
 
 	if use examples; then
 		docinto examples
-		dodoc example/* || die
+		dodoc example/*
 	fi
 
-	doicon "${FILESDIR}"/${PN}.xpm || die
+	doicon "${FILESDIR}"/${PN}.xpm
 	make_desktop_entry ${PN} ${PN} ${PN} 'Education;Science;Engineering'
 }
