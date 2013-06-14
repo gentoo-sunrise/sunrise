@@ -1,6 +1,10 @@
 # ChangeLog for dev-util/icewing
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  14 Jun 2013; Michael Palimaka <kensington@gentoo.org> icewing-0.10.ebuild,
+  icewing-9999.ebuild:
+  Migrate to EAPI 5.
 
   13 Aug 2011; Nathan Phillip Brink <binki@gentoo.org> icewing-0.10.ebuild,
   icewing-9999.ebuild:

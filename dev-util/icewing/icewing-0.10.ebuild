@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 inherit cmake-utils
 
@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}"
 PATCHES=(
 	"${FILESDIR}"/${P}-gcc64.patch
 	"${FILESDIR}"/${P}-mandir.patch
-	)
+)
 
 src_configure() {
 	local mycmakeargs="
