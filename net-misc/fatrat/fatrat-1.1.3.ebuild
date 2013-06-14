@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 inherit cmake-utils
 
@@ -26,6 +26,11 @@ RDEPEND="dev-qt/qtgui:4[dbus]
 	webinterface? ( dev-qt/qtscript:4 )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
+
+PATCHES=(
+	"${FILESDIR}/${P}-gcc-4.7.patch"
+	"${FILESDIR}/${P}-gold.patch"
+)
 
 src_configure() {
 		local mycmakeargs="
