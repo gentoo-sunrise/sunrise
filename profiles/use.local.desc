@@ -51,7 +51,6 @@ app-misc/bashstyle-ng:dmi - Enable support for sys-apps/dmidecode
 app-misc/bashstyle-ng:doc - Installs other html documentation
 app-misc/bashstyle-ng:pci - Enable support for pci informations
 app-misc/bashstyle-ng:usb - Enable support for usb informations
-app-misc/gizmod:libvisual - Enable the media-libs/libvisual (Amarok) plugin
 app-misc/heyu:cm17a - Support the X10 CM17A "Firecracker" device
 app-misc/heyu:dmx210 - Support the Digimax 210 remote thermostat device
 app-misc/heyu:ext0 - Support extended type 0 (shutter and shade) commands
