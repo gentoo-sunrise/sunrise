@@ -7,7 +7,7 @@ EAPI="5"
 inherit games cmake-utils subversion eutils
 
 DESCRIPTION="Enhanced OpenGL port of the official DOOM source code that also supports Heretic, Hexen, and Strife"
-HOMEPAGE="http://grafzahl.drdteam.org/"
+HOMEPAGE="http://www.osnanet.de/c.oelckers/gzdoom/index.html"
 ESVN_REPO_URI="http://mancubus.net/svn/hosted/gzdoom/trunk/"
 
 LICENSE="DOOMLIC BUILDLIC BSD"
