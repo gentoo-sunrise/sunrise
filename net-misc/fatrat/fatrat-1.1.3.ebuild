@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit cmake-utils
+inherit eutils cmake-utils
 
 DESCRIPTION="Qt4-based download/upload manager"
 HOMEPAGE="http://fatrat.dolezel.info/"
@@ -27,10 +27,10 @@ RDEPEND="dev-qt/qtgui:4[dbus]
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
-PATCHES=(
-	"${FILESDIR}/${P}-gcc-4.7.patch"
-	"${FILESDIR}/${P}-gold.patch"
-)
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-gcc-4.7.patch \
+		"${FILESDIR}"/${P}-gold.patch
+}
 
 src_configure() {
 		local mycmakeargs="
