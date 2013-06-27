@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit cmake-utils subversion
 
 DESCRIPTION="Fast media tag lib"
@@ -30,8 +32,8 @@ src_compile() {
 
 src_install() {
 	dobin ${PN} || die "dobin failed"
-	dodoc AUTHORS ChangeLog README || die "dodoc failed"
+	dodoc AUTHORS ChangeLog README
 	if use doc; then
-		dohtml -r html/* || die "dohtml failed"
+		dohtml -r html/*
 	fi
 }
