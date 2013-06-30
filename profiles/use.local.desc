@@ -193,8 +193,6 @@ net-mail/amavis-logwatch:logwatch - Install filters for use with sys-apps/logwat
 net-mail/postfix-logwatch:logwatch - Install filters for use with sys-apps/logwatch.
 net-misc/anytun:examples - Install example configuration into /usr/share/doc/...
 net-misc/anytun:gcrypt - Prefer dev-libs/libgcrypt over dev-libs/openssl for encryption
-net-misc/fatrat:bittorrent - Enables support for the bittorrent protocol
-net-misc/fatrat:webinterface - Support remote control via a web interface
 net-misc/gvpe:cipher-aes-128 - Enables aes-128 cipher
 net-misc/gvpe:cipher-aes-192 - Enables aes-192 cipher
 net-misc/gvpe:cipher-aes-256 - Enables aes-256 cipher
