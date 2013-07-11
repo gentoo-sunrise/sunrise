@@ -1,0 +1,11 @@
+# ChangeLog for x11-terms/finalterm
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*finalterm-9999 (11 Jul 2013)
+
+  11 Jul 2013; Ferenc Erki (FErki) <erkiferenc@gmail.com>
+  +finalterm-9999.ebuild, +metadata.xml:
+  Live ebuild for bug #474734. Thanks to hasufell for review and to everyone
+  else who helped on #gentoo-dev-help.
+
