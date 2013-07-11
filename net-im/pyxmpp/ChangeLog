@@ -1,6 +1,12 @@
 # ChangeLog for net-im/pyxmpp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*pyxmpp-1.1.2 (11 Jul 2013)
+
+  11 Jul 2013; Sergey Popov <pinkbyte@gentoo.org> -pyxmpp-1.0.0-r2.ebuild,
+  +pyxmpp-1.1.2.ebuild:
+  Version bump - port to EAPI 5 and distutils-r1
 
   19 Jul 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   pyxmpp-1.0.0-r2.ebuild:
