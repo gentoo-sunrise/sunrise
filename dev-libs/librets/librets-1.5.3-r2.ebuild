@@ -11,7 +11,7 @@ USE_PHP="php5-3 php5-4"
 
 PYTHON_COMPAT=( python2_{6,7} )
 
-USE_RUBY="ree18 ruby18 ruby19"
+USE_RUBY="ruby18 ruby19"
 RUBY_OPTIONAL="yes"
 
 inherit autotools eutils java-pkg-opt-2 mono perl-module php-ext-source-r2 python-r1 ruby-ng toolchain-funcs versionator
