@@ -179,7 +179,6 @@ media-sound/crip:normalize - Enable for being able to normalize ripped tracks
 media-sound/gnormalize:normalize - Enable the normalize front-end
 media-sound/peapod:bittorrent - Enable support for the BitTorrent protocol
 media-sound/peapod:id3 - Support ID3 in the player
-media-sound/pithos:gnome - Use gnome-base/gnome-settings-daemon for binding media keys
 media-sound/scala-bin:midi - MIDI support
 media-tv/freetuxtv:nls - Enable native language support (using intltool)
 media-video/image2mpeg:devil - Enable image loading via DevIL
