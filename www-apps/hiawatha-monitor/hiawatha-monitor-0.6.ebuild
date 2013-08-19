@@ -19,7 +19,7 @@ DEPEND=""
 RDEPEND="
 	www-servers/hiawatha[xslt]
 	virtual/cron
-	=dev-lang/php-5*[mysql,xsl]
+	=dev-lang/php-5*[mysql,xslt]
 	virtual/mysql"
 
 S=${WORKDIR}/${MY_P}
