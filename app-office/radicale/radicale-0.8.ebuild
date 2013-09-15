@@ -2,11 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
-PYTHON_DEPEND="*:2.6"
-SUPPORT_PYTHON_ABIS=1
+EAPI=5
 
-inherit distutils user
+# radicale also supports python3_{2,3}
+# but python-ldap and flup are blocking here
+PYTHON_COMPAT=( python2_7 )
+PYTHON_REQ_USE="ssl?"
+
+inherit distutils-r1 user
 
 MY_PN="Radicale"
 MY_P="${MY_PN}-${PV}"
@@ -17,14 +20,12 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="fastcgi ldap ssl"
+KEYWORDS="~x86 ~amd64"
+IUSE="fastcgi ldap sql ssl"
 
-# the '>=' goes ok, as radicale supports _all_ other python version
-# this includes all 3.* versions
-RDEPEND="ssl? ( >=dev-lang/python-2.6.6[ssl] )
-		ldap? ( dev-python/python-ldap )
-		fastcgi? ( dev-python/flup )"
+RDEPEND="ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )
+		fastcgi? ( dev-python/flup[${PYTHON_USEDEP}] )
+		sql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )"
 
 # radicale's authentication against PAM is not possible here:
 # Gentoo has not included the package
@@ -36,26 +37,16 @@ S=${WORKDIR}/${MY_P}
 RDIR=/var/lib/radicale
 LDIR=/var/log/radicale
 
+PATCHES=( "${FILESDIR}"/${P}-config.patch )
+
 pkg_setup() {
-	python_pkg_setup
 	enewgroup radicale
 	enewuser radicale -1 -1 ${RDIR} radicale
 }
 
-src_prepare() {
-	# fix pathes
-	sed -i -e "s:^\(filesystem_folder = \).*$:\1${RDIR}:g" \
-				config || die
-	sed -i -e "s;^\(args = ('/var/log/radicale\);\1/radicale.log;" \
-				logging || die
-	distutils_src_prepare
-}
-
-src_install() {
+python_install_all() {
 	# delete the useless .rst, so that it is not installed
 	rm README.rst
-
-	distutils_src_install
 
 	# init file
 	newinitd "${FILESDIR}"/radicale.init.d radicale || die
@@ -73,12 +64,12 @@ src_install() {
 	insinto /usr/share/${PN}
 	doins radicale.wsgi
 	use fastcgi && doins radicale.fcgi
+
+	distutils-r1_python_install_all
 }
 
 pkg_postinst() {
 	einfo "Radicale now supports WSGI."
 	einfo "A sample wsgi-script has been put into ${ROOT}usr/share/${PN}."
 	use fastcgi && einfo "You will also find there an example fcgi-script."
-
-	distutils_pkg_postinst
 }
