@@ -20,12 +20,13 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="fastcgi ldap sql ssl"
 
-RDEPEND="ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )
-		fastcgi? ( dev-python/flup[${PYTHON_USEDEP}] )
-		sql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )"
+RDEPEND="
+	fastcgi? ( dev-python/flup[${PYTHON_USEDEP}] )
+	ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )
+	sql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )"
 
 # radicale's authentication against PAM is not possible here:
 # Gentoo has not included the package
@@ -49,16 +50,18 @@ python_install_all() {
 	rm README.rst
 
 	# init file
-	newinitd "${FILESDIR}"/radicale.init.d radicale || die
+	newinitd "${FILESDIR}"/radicale.init.d radicale
 
 	# directories
 	diropts -m0750
-	dodir ${RDIR}; fowners radicale:radicale ${RDIR}
-	dodir ${LDIR}; fowners radicale:radicale ${LDIR}
+	dodir ${RDIR}
+	fowners radicale:radicale ${RDIR}
+	dodir ${LDIR}
+	fowners radicale:radicale ${LDIR}
 
 	# config file
 	insinto /etc/${PN}
-	doins config logging || die
+	doins config logging
 
 	# fcgi and wsgi files
 	insinto /usr/share/${PN}

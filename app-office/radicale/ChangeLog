@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Sep 2013; Julian Ospald <hasufell@gentoo.org> radicale-0.8.ebuild:
+  style fixes
+
 *radicale-0.8 (15 Sep 2013)
 
   15 Sep 2013; René Neumann (Necoro) <gentoo@necoro.eu>
