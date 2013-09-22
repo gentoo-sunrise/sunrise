@@ -1,6 +1,9 @@
 # ChangeLog for media-plugins/gimp-normalmap
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Sep 2013; Peter Asplund <peterasplund@gentoo.se> gimp-normalmap-1.2.2-r2.ebuild:
+  Add -lm to linker libraries
 
   05 May 2012; Mike Gilbert <floppym@gentoo.org> gimp-normalmap-1.2.2-r1.ebuild:
   Use pkgconfig virtual.
