@@ -1,0 +1,13 @@
+--- src/gf_base_original.h	2013-10-12 10:34:57.606992925 -0700
++++ src/gf_base.h	2013-10-12 10:36:00.832991848 -0700
+@@ -56,10 +56,7 @@
+ #include <errno.h>
+ 
+ // Glib
+-#include <glib-object.h>
+ #include <glib.h>
+-#include <glib/gprintf.h>
+-#include <glib/gthread.h>
+ 
+ #ifdef HAVE_GTK
+ 	#include <gtk/gtk.h>
