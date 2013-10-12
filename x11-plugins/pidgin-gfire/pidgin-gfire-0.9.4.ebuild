@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-libnotify-0.7-support.patch
 	epatch "${FILESDIR}"/${P}-disabled-nls-fix.patch
+	epatch "${FILESDIR}"/${P}-glib.patch
 }
 
 src_configure() {
