@@ -1,0 +1,68 @@
+Fixes boost filesystem version detection error when compiling
+
+Index: project/librets/include/librets/RetsExceptionContext.h
+===================================================================
+--- project/librets/include/librets/RetsExceptionContext.h	(revision 1552)
++++ project/librets/include/librets/RetsExceptionContext.h	(revision 1553)
+@@ -22,6 +22,7 @@
+  */
+ /// @cond MAINTAINER
+ #include <string>
++#include <boost/filesystem/path.hpp>
+ 
+ namespace librets {
+ /**
+@@ -36,12 +37,12 @@
+     
+     bool IsValid() const throw();
+     
+-    std::string GetFileName() const throw();
++    boost::filesystem::path GetFileName() const throw();
+     
+     int GetLineNumber() const throw();
+     
+   private:
+-        std::string mFileName;
++    boost::filesystem::path mFileName;
+     int mLineNumber;
+ };
+ 
+Index: project/librets/src/RetsExceptionContext.cpp
+===================================================================
+--- project/librets/src/RetsExceptionContext.cpp	(revision 1552)
++++ project/librets/src/RetsExceptionContext.cpp	(revision 1553)
+@@ -14,14 +14,12 @@
+  * both the above copyright notice(s) and this permission notice
+  * appear in supporting documentation.
+  */
+-#define BOOST_FILESYSTEM_VERSION 2
+ #include <boost/filesystem/path.hpp>
+ #include "librets/RetsExceptionContext.h"
+ 
+ using namespace librets;
+ using namespace std;
+ 
+-#undef BOOST_FILESYSTEM_VERSION
+ #define BOOST_FILESYSTEM_VERSION 3
+ namespace fs = boost::filesystem;
+ 
+@@ -43,7 +41,7 @@
+     return (!mFileName.empty());
+ }
+ 
+-string RetsExceptionContext::GetFileName() const throw()
++fs::path RetsExceptionContext::GetFileName() const throw()
+ {
+     return mFileName;
+ }
+Index: project/librets/src/RetsReplyException.cpp
+===================================================================
+--- project/librets/src/RetsReplyException.cpp	(revision 1552)
++++ project/librets/src/RetsReplyException.cpp	(revision 1553)
+@@ -52,4 +52,4 @@
+ string RetsReplyException::GetExtendedMeaning() const throw()
+ {
+     return mExtendedMeaning;
+-}
+\ No newline at end of file
++}

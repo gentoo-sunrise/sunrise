@@ -1,0 +1,17 @@
+Fixes bug: Could not Verify SSL Host: curl error #43
+
+Index: project/librets/src/CurlEasy.cpp
+===================================================================
+--- project/librets/src/CurlEasy.cpp	(revision 1308)
++++ project/librets/src/CurlEasy.cpp	(revision 1556)
+@@ -209,8 +209,8 @@
+     if (verify)
+         verifies    = 2;
+ 
+-    CurlAssert(curl_easy_setopt(mCurl, CURLOPT_SSL_VERIFYPEER, verify), "Verify SSL Peer");
+-    CurlAssert(curl_easy_setopt(mCurl, CURLOPT_SSL_VERIFYHOST, verify), "Verify SSL Host");
++    CurlAssert(curl_easy_setopt(mCurl, CURLOPT_SSL_VERIFYPEER, verifies), "Verify SSL Peer");
++    CurlAssert(curl_easy_setopt(mCurl, CURLOPT_SSL_VERIFYHOST, verifies), "Verify SSL Host");
+ }
+ 
+ void CurlEasy::Perform()

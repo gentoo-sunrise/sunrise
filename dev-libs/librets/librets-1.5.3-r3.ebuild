@@ -7,14 +7,14 @@ EAPI="5"
 PHP_EXT_OPTIONAL_USE="php"
 PHP_EXT_NAME="librets"
 PHP_EXT_SKIP_PHPIZE="yes"
-USE_PHP="php5-3 php5-4"
+USE_PHP="php5-3 php5-4 php5-5"
 
 PYTHON_COMPAT=( python2_{6,7} )
 
 USE_RUBY="ruby18 ruby19"
 RUBY_OPTIONAL="yes"
 
-inherit autotools eutils java-pkg-opt-2 mono perl-module php-ext-source-r2 python-r1 ruby-ng toolchain-funcs versionator
+inherit autotools eutils java-pkg-opt-2 mono-env perl-module php-ext-source-r2 python-r1 ruby-ng toolchain-funcs
 
 DESCRIPTION="A library that implements the RETS 1.8, 1.7, 1.5 and 1.0 standards"
 HOMEPAGE="http://www.crt.realtors.org/projects/rets/librets/"
@@ -48,7 +48,6 @@ RDEPEND=">=dev-libs/boost-1.46
 	python? ( ${SWIG_RDEPEND} ${PYTHON_DEPS} )
 	ruby? ( $(ruby_implementations_depend) ${SWIG_RDEPEND} )"
 
-# An upstream bug prevents the php extension from building with swig >= 2.0.5
 DEPEND="java? ( >=dev-lang/swig-1.3.40-r1 )
 	mono? ( >=dev-lang/swig-1.3.40-r1 )
 	php? ( dev-lang/php[-threads] >=dev-lang/swig-1.3.40-r1 )
@@ -94,6 +93,7 @@ my_ruby-move_swig_build_to_impl_dir() {
 
 pkg_setup() {
 	use java && java-pkg-opt-2_pkg_setup
+	use mono && mono-env_pkg_setup
 	use perl && perl-module_pkg_setup
 	use ruby && ruby-ng_pkg_setup
 }
@@ -104,9 +104,12 @@ src_unpack() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-extconf.rb.patch
-	epatch "${FILESDIR}"/${P}-java.mk.patch
-	epatch "${FILESDIR}"/${P}-build.patch
+	epatch "${FILESDIR}"/${P}-extconf.rb.patch \
+		"${FILESDIR}"/${P}-java.mk.patch \
+		"${FILESDIR}"/${P}-build.patch \
+		"${FILESDIR}"/${P}-curl.patch \
+		"${FILESDIR}"/${P}-boost.patch
+	epatch_user
 	eautoreconf
 
 	# Change the path to librets-config-inplace for python slotted build support
@@ -119,7 +122,6 @@ src_prepare() {
 
 src_configure() {
 	local myphpprefix
-
 	if use php; then
 		# Enable php extension when it finds the current selected slot
 		myphpprefix="${PHPPREFIX}/include"
@@ -242,7 +244,12 @@ src_install() {
 	use ruby && ruby-ng_src_install
 
 	if use mono; then
-		egacinstall "${S}"/build/swig/csharp/${PN}-dotnet.dll
+		local dll="${S}"/build/swig/csharp/${PN}-dotnet.dll
+		gacutil -i "${dll}" \
+			-root "${ED}"/usr/$(get_libdir) \
+			-gacdir /usr/$(get_libdir) \
+			-package ${PN} \
+			|| die "installing ${dll} into the Global Assembly Cache failed"
 	fi
 
 	if use python; then
