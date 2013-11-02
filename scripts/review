@@ -145,8 +145,12 @@ ebegin "Pushing changes..."
 if [[ "$opt_verbose" == "1" ]] ; then
 	git push -v origin master
 	git push -v reviewed master
+	git push -v bitbucket master
+	git push -v github master
 else
 	git push origin master
 	git push reviewed master
+	git push bitbucket master
+	git push github master
 fi
 eend ${?}
