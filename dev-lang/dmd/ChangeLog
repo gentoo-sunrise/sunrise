@@ -2,6 +2,14 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*dmd-2.064.2 (08 Nov 2013)
+
+  08 Nov 2013; Marco Leise (mleise) <marco.leise@gmx.de> -dmd-2.061.ebuild,
+  -files/dmd-2.061-makefile.patch, +dmd-2.064.2.ebuild:
+  Version bump and rewrite of the ebuild. Keeping two older versions in case of
+  regressions. Multilib support still needed manual tweaking due to how dmd is
+  setup.
+
 *dmd-2.063.2 (17 Jun 2013)
 
   17 Jun 2013; Marco Leise (mleise) <marco.leise@gmx.de> -dmd-2.060.ebuild,
