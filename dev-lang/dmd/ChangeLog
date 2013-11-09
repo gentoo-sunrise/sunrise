@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2013; Marco Leise (mleise) <marco.leise@gmx.de> dmd-2.064.2.ebuild:
+  Quick fix to set the executable name back to dmd from dmd2.
+
 *dmd-2.064.2 (08 Nov 2013)
 
   08 Nov 2013; Marco Leise (mleise) <marco.leise@gmx.de> -dmd-2.061.ebuild,

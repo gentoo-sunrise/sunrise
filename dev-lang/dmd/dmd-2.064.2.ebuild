@@ -95,7 +95,7 @@ EOF
 	dobashcomp "${FILESDIR}/${PN}.bashcomp"
 
 	# Compiler
-	newbin src/dmd/dmd dmd2
+	dobin src/dmd/dmd
 
 	# Man pages, docs and samples
 	doman man/man1/{dmd.1,dmd.conf.5}
